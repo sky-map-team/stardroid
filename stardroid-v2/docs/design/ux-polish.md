@@ -31,7 +31,9 @@ sky, hairline outline), sitting where v1's sliding sidebar sat. Contents, top to
 2. *Thin divider*, then the non-object reference elements: grid, horizon.
 3. *Thin divider*, then an **expand button** (M3 "tune"/sliders glyph — a chevron on a
    left-edge rail reads as "move this panel") that opens the Layers sheet. Long-press on
-   the rail is a bonus gesture for the same thing, never the only entry.
+   a rail layer opens a help popup (what it draws, what is customizable, and a Customize
+   button into that layer's options in the sheet). It originally opened the sheet — a
+   duplicate of this button that nobody discovered.
 
 Icons are v1's metaphors (`star_on/off`, `planet_on/off`, `b_meteor_on`, `grid_on`,
 `horizon_on`, `stars_on` = constellations, `deep_sky_objects_on`…) redrawn as stroke

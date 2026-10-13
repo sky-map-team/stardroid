@@ -27,6 +27,7 @@ import com.google.android.stardroid.startup.Experiment
 import com.google.android.stardroid.startup.ExperimentConfig
 import com.google.android.stardroid.widget.CountdownWidgetReceiver
 import com.google.android.stardroid.widget.MoonWidgetReceiver
+import com.google.android.stardroid.announcements.AnnouncementScheduler
 import com.google.android.stardroid.widget.TonightWidgetReceiver
 import com.google.android.stardroid.widget.WidgetGate
 import com.google.android.stardroid.widget.WidgetScheduler
@@ -101,15 +102,11 @@ class SkyMapApplication : Application(), ImageLoaderFactory {
         // moves on rather than set once and forgotten. Cancelling when the opt-in goes off is
         // what stops an already-armed alarm interrupting someone who just said no.
         CoroutineScope(SupervisorJob() + Dispatchers.Default).launch {
-            settings
-                .layerParameter(
-                    SatelliteLayer.LAYER_ID,
-                    LayerParameter.PASS_ALERTS,
-                    false.toString(),
-                ).map { it.toBoolean() }
+            // Includes the Satellites layer being on, so switching the layer off cancels the alarm.
+            settings.passAlertsEnabled
                 .distinctUntilChanged()
                 .collect { wanted ->
-                    if (!wanted) {
+                    if (!wanted || !experimentConfig.isEnabled(Experiment.NOTIFICATIONS)) {
                         PassAlerts.cancel(this@SkyMapApplication)
                         return@collect
                     }
@@ -140,6 +137,16 @@ class SkyMapApplication : Application(), ImageLoaderFactory {
                         EclipseAlertScheduler.cancel(this@SkyMapApplication)
                     }
                 }
+        }
+        // Remote announcements: the 12h refresh runs only while the experiment is on and the user
+        // hasn't opted out.
+        CoroutineScope(SupervisorJob() + Dispatchers.Default).launch {
+            settings.announcementsEnabled.distinctUntilChanged().collect { optedIn ->
+                AnnouncementScheduler.syncSchedule(
+                    this@SkyMapApplication,
+                    enabled = optedIn && experimentConfig.isEnabled(Experiment.ANNOUNCEMENTS),
+                )
+            }
         }
         // Notification scheduling follows the preferences for the process lifetime (D77):
         // either opt-in on → planner scheduled; both off → everything cancelled.

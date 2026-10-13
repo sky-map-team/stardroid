@@ -12,6 +12,8 @@ package com.google.android.stardroid.startup
 import android.util.Log
 import com.google.android.stardroid.R
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig
+import kotlinx.coroutines.suspendCancellableCoroutine
+import kotlin.coroutines.resume
 
 /**
  * [ExperimentConfig] over Firebase Remote Config — v1's gms `ExperimentConfigImpl`.
@@ -48,6 +50,35 @@ class RemoteConfigExperimentConfig : ExperimentConfig {
             value.asBoolean()
         }
     }
+
+    override val canFetch = true
+
+    override val lastFetchTimeMillis: Long?
+        get() {
+            val info = remoteConfig.info
+            return if (info.lastFetchStatus == FirebaseRemoteConfig.LAST_FETCH_STATUS_NO_FETCH_YET) {
+                null
+            } else {
+                info.fetchTimeMillis
+            }
+        }
+
+    /** `fetch(0)` bypasses the 12-hour client throttle; the server may still throttle. */
+    override suspend fun fetchNow(): FetchResult =
+        suspendCancellableCoroutine { continuation ->
+            remoteConfig
+                .fetch(0)
+                .onSuccessTask { remoteConfig.activate() }
+                .addOnCompleteListener { task ->
+                    val result =
+                        if (task.isSuccessful) {
+                            FetchResult.Success(updated = task.result == true)
+                        } else {
+                            FetchResult.Failure(task.exception?.message ?: "unknown error")
+                        }
+                    continuation.resume(result)
+                }
+        }
 
     private companion object {
         const val TAG = "RemoteConfigExperiment"

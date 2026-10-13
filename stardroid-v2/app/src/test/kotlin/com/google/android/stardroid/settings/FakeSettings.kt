@@ -16,6 +16,7 @@ import com.google.android.stardroid.settings.OneEuroEaseOff
 import com.google.android.stardroid.settings.OneEuroSteadiness
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.map
 
 /** In-memory [Settings] for JVM tests: every flow is a hot [MutableStateFlow]. */
 class FakeSettings : Settings {
@@ -246,20 +247,20 @@ class FakeSettings : Settings {
         enableAnalyticsState.value = enabled
     }
 
-    val showerAlertsEnabledState = MutableStateFlow(false)
-
-    override val showerAlertsEnabled: Flow<Boolean> = showerAlertsEnabledState
-
-    override suspend fun setShowerAlertsEnabled(enabled: Boolean) {
-        showerAlertsEnabledState.value = enabled
-    }
-
     val tonightDigestEnabledState = MutableStateFlow(false)
 
     override val tonightDigestEnabled: Flow<Boolean> = tonightDigestEnabledState
 
     override suspend fun setTonightDigestEnabled(enabled: Boolean) {
         tonightDigestEnabledState.value = enabled
+    }
+
+    val announcementsEnabledState = MutableStateFlow(true)
+
+    override val announcementsEnabled: Flow<Boolean> = announcementsEnabledState
+
+    override suspend fun setAnnouncementsEnabled(enabled: Boolean) {
+        announcementsEnabledState.value = enabled
     }
 
     val satelliteDataEnabledState = MutableStateFlow(false)

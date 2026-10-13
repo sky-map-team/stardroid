@@ -28,6 +28,18 @@ class RotationQuaternionTest {
     }
 
     @Test
+    fun `only a near-unit quaternion counts as usable`() {
+        assertThat(floatArrayOf(0f, 0f, 0f, 1f).isUsableQuaternion()).isTrue()
+        assertThat(floatArrayOf(0f, 0f, 0f, -1f).isUsableQuaternion()).isTrue()
+        // Slightly long, as a three-value rotation vector whose vector part overshoots gives.
+        assertThat(floatArrayOf(0.6f, 0.6f, 0.6f, 0f).isUsableQuaternion()).isTrue()
+        assertThat(floatArrayOf(0f, 0f, 0f, 0f).isUsableQuaternion()).isFalse()
+        assertThat(floatArrayOf(Float.NaN, 0f, 0f, 1f).isUsableQuaternion()).isFalse()
+        assertThat(floatArrayOf(Float.POSITIVE_INFINITY, 0f, 0f, 1f).isUsableQuaternion())
+            .isFalse()
+    }
+
+    @Test
     fun `round-trips rotations about each axis`() {
         // 45 degrees keeps the trace positive (branch one); 170 degrees drives it negative and
         // makes a different component largest, selecting each of the other three branches.

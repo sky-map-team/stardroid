@@ -23,6 +23,7 @@ import com.google.android.stardroid.math.Vector3
 import com.google.android.stardroid.render.api.RenderState
 import com.google.android.stardroid.sensors.MagneticDeclinationSource
 import com.google.android.stardroid.sensors.OrientationSource
+import com.google.android.stardroid.sensors.SensorPath
 import com.google.android.stardroid.sensors.ZeroMagneticDeclinationSource
 import com.google.android.stardroid.settings.FakeSettings
 import com.google.android.stardroid.settings.FontSize
@@ -85,6 +86,8 @@ class MapViewModelTest {
         private val flow: Flow<Matrix3>,
     ) : OrientationSource {
         override fun orientations(): Flow<Matrix3> = flow
+
+        override fun sensorPath(disableGyro: Boolean) = SensorPath.FUSED
     }
 
     @BeforeEach
@@ -103,6 +106,7 @@ class MapViewModelTest {
         sensors: Boolean = true,
         declinationSource: MagneticDeclinationSource = ZeroMagneticDeclinationSource,
         frameMillis: Long = FRAME_MILLIS,
+        wallClockMillis: () -> Long = System::currentTimeMillis,
     ) = MapViewModel(
         orientationSource = FakeOrientationSource(sensors, orientations),
         declinationSource = declinationSource,
@@ -112,6 +116,7 @@ class MapViewModelTest {
         timeFlow = times,
         now = { times.value },
         frameTicker = TestFrameTicker(dispatcher.scheduler, frameMillis),
+        wallClockMillis = wallClockMillis,
     ).also { createdViewModels += it }
 
     @Test
@@ -171,6 +176,18 @@ class MapViewModelTest {
                 .isLessThan(TOL)
             assertThat(vm.camera.value.up.distanceTo(expected.perpendicular)).isLessThan(TOL)
             assertThat(vm.camera.value.fovDeg).isEqualTo(MapViewModel.INITIAL_FOV_DEG)
+        }
+
+    @Test
+    fun `records when the map last took a sensor orientation, for diagnostics`() =
+        testScope.runCurrentTest {
+            val vm = viewModel(wallClockMillis = { 5_000L })
+            runCurrent()
+            assertThat(vm.lastOrientationAtMillis).isNull()
+
+            orientations.emit(Matrix3.IDENTITY)
+            runCurrent()
+            assertThat(vm.lastOrientationAtMillis).isEqualTo(5_000L)
         }
 
     @Test

@@ -11,6 +11,7 @@ package com.google.android.stardroid
 
 import android.app.Application
 import com.google.android.stardroid.analytics.Analytics
+import com.google.android.stardroid.announcements.AnnouncementSource
 import com.google.android.stardroid.analytics.NoOpAnalytics
 import com.google.android.stardroid.location.LocationProvider
 import com.google.android.stardroid.location.PlatformLocationProvider
@@ -37,6 +38,8 @@ object FlavorEdges {
     fun analytics(application: Application): Analytics = NoOpAnalytics
 
     fun experimentConfig(application: Application): ExperimentConfig = ExperimentConfig.Static
+
+    fun announcementSource(application: Application): AnnouncementSource = AnnouncementSource.None
 
     fun locationProvider(application: Application): LocationProvider =
         PlatformLocationProvider(application)

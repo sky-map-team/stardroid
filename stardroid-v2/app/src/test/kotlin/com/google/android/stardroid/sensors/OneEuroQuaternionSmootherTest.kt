@@ -141,6 +141,20 @@ class OneEuroQuaternionSmootherTest {
     }
 
     @Test
+    fun `a NaN sample does not leave the filter stuck on NaN`() {
+        // NaN is absorbing: once in the filter's state, every later output was NaN too, which
+        // the map draws as a sky that never moves again (issue #1109).
+        val smoother = smoother()
+        smoother.update(IDENTITY, t(0))
+        repeat(5) { smoother.update(IDENTITY, t(it + 1)) }
+        smoother.update(floatArrayOf(Float.NaN, 0f, 0f, 1f), t(6))
+        var last = IDENTITY
+        repeat(200) { last = smoother.update(rotationAboutZ(10.0), t(it + 7)) }
+        assertThat(last.isUsableQuaternion()).isTrue()
+        assertThat(angleBetweenDegrees(last, rotationAboutZ(10.0))).isLessThan(0.05)
+    }
+
+    @Test
     fun `a non-advancing timestamp does not produce a broken quaternion`() {
         val smoother = smoother()
         smoother.update(IDENTITY, t(5))

@@ -86,6 +86,7 @@ import com.google.android.stardroid.analytics.AnalyticsEvents
 import com.google.android.stardroid.camera.SkyCameraPreview
 import com.google.android.stardroid.catalog.ObjectInfo
 import com.google.android.stardroid.location.LocationState
+import com.google.android.stardroid.render.api.LayerId
 import com.google.android.stardroid.sensors.CalibrationPrompt
 import com.google.android.stardroid.share.SkyShare
 import com.google.android.stardroid.startup.Experiment
@@ -197,6 +198,8 @@ fun MapScreen(
     // diagnostics, and calibration are no longer local booleans here — they're Navigation
     // destinations (D48), reached through the onOpenX callbacks below.
     var showLayersSheet by rememberSaveable { mutableStateOf(false) }
+    // The layer whose options the sheet opens expanded, from the rail's help popup.
+    var layersSheetFocus by rememberSaveable { mutableStateOf<String?>(null) }
     var showOverflowSheet by rememberSaveable { mutableStateOf(false) }
     var showTimeTravelDialog by rememberSaveable { mutableStateOf(false) }
     var showSearchDialog by rememberSaveable { mutableStateOf(false) }
@@ -683,7 +686,14 @@ fun MapScreen(
                     mapViewModel.logMenuItem(AnalyticsEvents.TIME_TRAVEL_OPENED_LABEL)
                     showTimeTravelDialog = true
                 },
-                onOpenLayersSheet = { showLayersSheet = true },
+                onOpenLayersSheet = {
+                    layersSheetFocus = null
+                    showLayersSheet = true
+                },
+                onCustomizeLayer = {
+                    layersSheetFocus = it.id
+                    showLayersSheet = true
+                },
                 onOpenOverflow = { showOverflowSheet = true },
             )
         }
@@ -722,7 +732,11 @@ fun MapScreen(
         if (showLayersSheet) {
             LayersSheet(
                 layersViewModel,
-                onDismiss = { showLayersSheet = false },
+                onDismiss = {
+                    showLayersSheet = false
+                    layersSheetFocus = null
+                },
+                expandLayer = layersSheetFocus?.let { LayerId(it) },
                 arModeOn = arModeOn,
                 hasCamera = arCamera.hasCamera && cameraArEnabled,
                 sensorsAvailable = mapViewModel.sensorsAvailable,

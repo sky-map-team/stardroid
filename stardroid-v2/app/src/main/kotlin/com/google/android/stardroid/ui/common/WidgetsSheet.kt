@@ -25,6 +25,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.google.android.stardroid.R
+import com.google.android.stardroid.analytics.AnalyticsEvents
 import com.google.android.stardroid.startup.Experiment
 import com.google.android.stardroid.startup.ExperimentConfig
 import com.google.android.stardroid.widget.CountdownWidgetReceiver
@@ -106,7 +107,7 @@ fun WidgetOfferList(
                         color = MaterialTheme.colorScheme.onSurfaceVariant,
                     )
                 }
-                AddWidgetButton(offer.receiver)
+                AddWidgetButton(offer.receiver, AnalyticsEvents.WIDGET_PIN_SOURCE_WIDGETS_SHEET)
             }
         }
     }

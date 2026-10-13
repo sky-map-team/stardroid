@@ -77,6 +77,29 @@ class SatelliteElementsRepositoryTest {
     }
 
     @Test
+    fun `a completed fetch is counted so observers need not wait for a poll`() {
+        val clock = FakeClock(Instant.parse("2026-08-15T12:00:00Z"))
+        val repository = repository(FakeClient(FetchOutcome.Success(issElements, null)), clock)
+        assertThat(repository.fetchCount.value).isEqualTo(0)
+
+        repository.refresh()
+
+        assertThat(repository.fetchCount.value).isEqualTo(1)
+    }
+
+    @Test
+    fun `a refresh the policy skips is not counted`() {
+        val clock = FakeClock(Instant.parse("2026-08-15T12:00:00Z"))
+        val repository = repository(FakeClient(FetchOutcome.Success(issElements, null)), clock)
+        repository.refresh()
+
+        // Inside the two-hour minimum interval, so this is skipped rather than fetched.
+        assertThat(repository.refresh()).isInstanceOf(RefreshResult.Skipped::class.java)
+
+        assertThat(repository.fetchCount.value).isEqualTo(1)
+    }
+
+    @Test
     fun `nothing cached reports an absent state rather than an empty success`() {
         val clock = FakeClock(Instant.parse("2026-08-15T12:00:00Z"))
         val elements = repository(FakeClient(FetchOutcome.NotModified), clock).current()

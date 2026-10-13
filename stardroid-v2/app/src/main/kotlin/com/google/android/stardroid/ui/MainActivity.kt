@@ -31,6 +31,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -38,23 +39,30 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.core.view.WindowCompat
+import androidx.glance.appwidget.updateAll
 import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.ProcessLifecycleOwner
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
+import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.google.android.stardroid.CatalogAccess
 import com.google.android.stardroid.R
 import com.google.android.stardroid.analytics.Analytics
 import com.google.android.stardroid.analytics.AnalyticsEvents
 import com.google.android.stardroid.analytics.SessionBucket
+import com.google.android.stardroid.announcements.AnnouncementAction
+import com.google.android.stardroid.announcements.AnnouncementSource
+import com.google.android.stardroid.announcements.AnnouncementState
 import com.google.android.stardroid.astronomy.MeeusEphemeris
 import com.google.android.stardroid.camera.SkyCameraPreview
 import com.google.android.stardroid.catalog.CelestialObjectId
 import com.google.android.stardroid.data.satellites.RefreshResult
 import com.google.android.stardroid.layers.LayerRegistry
+import com.google.android.stardroid.layers.SatelliteLayer
 import com.google.android.stardroid.locale.LocaleSource
 import com.google.android.stardroid.location.AndroidGeocoding
 import com.google.android.stardroid.location.LocationController
@@ -96,6 +104,8 @@ import com.google.android.stardroid.ui.objectinfo.ObjectInfoViewModel
 import com.google.android.stardroid.ui.search.SearchViewModel
 import com.google.android.stardroid.ui.settings.SettingsViewModel
 import com.google.android.stardroid.ui.startup.EulaScreen
+import com.google.android.stardroid.ui.startup.AnnouncementDialog
+import com.google.android.stardroid.ui.startup.AnnouncementViewModel
 import com.google.android.stardroid.ui.startup.StartupViewModel
 import com.google.android.stardroid.ui.startup.VersionBanner
 import com.google.android.stardroid.ui.startup.WhatsNewDialog
@@ -103,13 +113,16 @@ import com.google.android.stardroid.ui.theme.SkyMapTheme
 import com.google.android.stardroid.ui.timetravel.TimeTravelViewModel
 import com.google.android.stardroid.widget.MoonWidget
 import com.google.android.stardroid.widget.MoonWidgetReceiver
+import com.google.android.stardroid.widget.TonightWidget
 import com.google.android.stardroid.widget.WidgetScheduler
 import dagger.hilt.android.AndroidEntryPoint
 import java.util.Calendar
 import javax.inject.Inject
 import kotlin.time.Duration
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.combine
+import kotlinx.coroutines.flow.filterNotNull
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
@@ -159,10 +172,17 @@ class MainActivity : ComponentActivity() {
 
     @Inject lateinit var displayRotation: DisplayRotationBus
 
+    @Inject lateinit var announcementSource: AnnouncementSource
+
+    @Inject lateinit var announcementState: AnnouncementState
+
     @Inject lateinit var catalogAccess: CatalogAccess
 
     /** v1's session anchor: foreground time between onStart and onStop. */
     private var sessionStartTimeMillis = 0L
+
+    /** A launch or [onNewIntent] intent, held until the nav graph exists to act on it. */
+    private val pendingDeepLink = MutableStateFlow<Intent?>(null)
 
     private val mapViewModel: MapViewModel by viewModels {
         viewModelFactory {
@@ -188,6 +208,8 @@ class MainActivity : ComponentActivity() {
                     settings,
                     analytics,
                     satellitesEnabled = experimentConfig.isEnabled(Experiment.SATELLITES),
+                    notificationsEnabled =
+                        experimentConfig.isEnabled(Experiment.NOTIFICATIONS),
                     satelliteStatus =
                         satelliteUiStatusFlow(
                             satelliteEntryPoint(this@MainActivity)
@@ -238,6 +260,27 @@ class MainActivity : ComponentActivity() {
                         mapViewModel.referenceFrame.value == ReferenceFrame.MANUAL
                     },
                     location = { locationController.locations.value },
+                    satellites = {
+                        trackedSatellites(
+                            this@MainActivity,
+                            locationController.locations.value,
+                            applicationContext.getString(R.string.satellite_description),
+                            timeController.now(),
+                            requireLayerEnabled = false,
+                        )
+                    },
+                    // Application resources follow the live locale; this activity's would be
+                    // frozen at the language it was created in, and the view model outlives it.
+                    satelliteAliases = { norad ->
+                        val app = applicationContext
+                        when (norad) {
+                            SatelliteLayer.ISS_NORAD_ID ->
+                                listOf(app.getString(R.string.satellite_search_name_iss))
+                            SatelliteLayer.TIANGONG_NORAD_ID ->
+                                listOf(app.getString(R.string.satellite_search_name_tiangong), "CSS")
+                            else -> emptyList()
+                        }
+                    },
                 )
             }
         }
@@ -265,7 +308,9 @@ class MainActivity : ComponentActivity() {
                         trackedSatellites(
                             this@MainActivity,
                             locationController.locations.value,
-                            getString(R.string.satellite_description),
+                            // Not this activity's resources: those stay in the language it was
+                            // created in, and this view model outlives it (as for search).
+                            applicationContext.getString(R.string.satellite_description),
                             timeController.now(),
                         )
                     },
@@ -333,6 +378,13 @@ class MainActivity : ComponentActivity() {
                     orientationSource = orientationSource,
                     localFrame = mapViewModel.localFrame,
                     rendererInfo = rendererInfoStore::get,
+                    analytics = analytics,
+                    mapReferenceFrame = { mapViewModel.referenceFrame.value },
+                    lastMapOrientationAtMillis = { mapViewModel.lastOrientationAtMillis },
+                    processLifecycleState = {
+                        // Runs off the main thread; currentState's getter doesn't check.
+                        ProcessLifecycleOwner.get().lifecycle.currentState
+                    },
                 )
             }
         }
@@ -355,6 +407,24 @@ class MainActivity : ComponentActivity() {
         viewModelFactory {
             initializer {
                 StartupViewModel(startupRouter, startupState, analytics)
+            }
+        }
+    }
+
+    private val announcementViewModel: AnnouncementViewModel by viewModels {
+        viewModelFactory {
+            initializer {
+                AnnouncementViewModel(
+                    source = announcementSource,
+                    state = announcementState,
+                    settings = settings,
+                    experimentConfig = experimentConfig,
+                    locale = { localeSource.current },
+                    appVersion =
+                        packageManager.getPackageInfo(packageName, 0).longVersionCode,
+                    analytics = analytics,
+                    onDismissed = { runCatching { TonightWidget().updateAll(applicationContext) } },
+                )
             }
         }
     }
@@ -423,11 +493,7 @@ class MainActivity : ComponentActivity() {
         // activity, so only the first creation logs.
         if (savedInstanceState == null) {
             logStartupSnapshot()
-            // A widget tap (D75) lands on the tapped object's info card once the map is up;
-            // the card state waits out any startup gates in ObjectInfoViewModel.
-            intent.getStringExtra(MoonWidget.EXTRA_SHOW_OBJECT_ID)?.let {
-                objectInfoViewModel.show(CelestialObjectId(it))
-            }
+            pendingDeepLink.value = intent
         } else {
             sessionStartTimeMillis = savedInstanceState.getLong(SAVED_SESSION_START_TIME_KEY, 0L)
         }
@@ -530,8 +596,9 @@ class MainActivity : ComponentActivity() {
                 // The start destination is decided once; the gates keep flowing after.
                 val startOnWelcome = remember { gates.needsWarmWelcome }
                 val sensorPresence = remember { sensorPresence() }
+                val navController = rememberNavController()
                 SkyMapNavHost(
-                    navController = rememberNavController(),
+                    navController = navController,
                     startOnWelcome = startOnWelcome,
                     glSurfaceView = glSurfaceView,
                     mapViewModel = mapViewModel,
@@ -563,6 +630,16 @@ class MainActivity : ComponentActivity() {
                     },
                     experimentConfig = experimentConfig,
                 )
+                // The info card is a dialog window and would float above the EULA, so links
+                // wait for acceptance; the pending intent is kept until then.
+                if (!gates.needsEula) {
+                    LaunchedEffect(navController) {
+                        pendingDeepLink.filterNotNull().collect {
+                            pendingDeepLink.value = null
+                            handleDeepLink(it, navController)
+                        }
+                    }
+                }
                 // v1 SplashScreenActivity's gating order: the EULA blocks everything until
                 // accepted (declining exits); What's New then shows on upgrades only. A true
                 // fresh install never gets it (nothing to report); anyone with real
@@ -586,6 +663,23 @@ class MainActivity : ComponentActivity() {
                         onDismiss = startupViewModel::dismissWhatsNew,
                     )
                 }
+                // Remote announcement interstitial: only once every startup gate has cleared,
+                // so it never stacks on the EULA, the tour or What's New.
+                val gatesClear = !gates.needsEula && !gates.needsWarmWelcome && !gates.needsWhatsNew
+                LaunchedEffect(gatesClear) {
+                    if (gatesClear) announcementViewModel.loadIfNeeded()
+                }
+                val announcement by announcementViewModel.pending.collectAsStateWithLifecycle()
+                announcement?.let { pending ->
+                    AnnouncementDialog(
+                        announcement = pending,
+                        onOpen = {
+                            (pending.action as? AnnouncementAction.Search)?.let { runSearch(it.query) }
+                            announcementViewModel.close()
+                        },
+                        onDismiss = announcementViewModel::dismiss,
+                    )
+                }
                 // The branded version banner: shown once per cold start, covering the app while
                 // it loads, then faded out to reveal the map (survives rotation via
                 // rememberSaveable, so it plays once).
@@ -598,6 +692,42 @@ class MainActivity : ComponentActivity() {
                 }
             }
         }
+    }
+
+    // singleTop: a widget or notification tap while the app is open arrives here instead of
+    // stacking a fresh copy of the app on top of the running one (#1105).
+    override fun onNewIntent(intent: Intent) {
+        super.onNewIntent(intent)
+        setIntent(intent)
+        pendingDeepLink.value = intent
+    }
+
+    private fun handleDeepLink(
+        intent: Intent,
+        navController: NavController,
+    ) {
+        // A widget tap (D75) lands on the tapped object's info card. Cards show on the map and
+        // over the gallery, and leaving the gallery dismisses its card, so only other screens
+        // return to the map. During the first-run tour there is no map yet; the card appears
+        // when the tour ends and the map is composed.
+        intent.getStringExtra(MoonWidget.EXTRA_SHOW_OBJECT_ID)?.let {
+            if (navController.currentDestination?.route != Routes.GALLERY) {
+                navController.popBackStack(Routes.MAP, inclusive = false)
+            }
+            objectInfoViewModel.show(CelestialObjectId(it))
+            intent.removeExtra(MoonWidget.EXTRA_SHOW_OBJECT_ID)
+        }
+        // An announcement notification or widget banner whose action is a search.
+        intent.getStringExtra(AnnouncementAction.EXTRA_SEARCH_QUERY)?.let {
+            navController.popBackStack(Routes.MAP, inclusive = false)
+            runSearch(it)
+            intent.removeExtra(AnnouncementAction.EXTRA_SEARCH_QUERY)
+        }
+    }
+
+    private fun runSearch(query: String) {
+        searchViewModel.setQuery(query)
+        searchViewModel.submit()
     }
 
     private fun sensorPresence(): SensorPresence {

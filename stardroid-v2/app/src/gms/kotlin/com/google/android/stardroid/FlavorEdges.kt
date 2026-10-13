@@ -14,6 +14,8 @@ import com.google.android.gms.common.ConnectionResult
 import com.google.android.gms.common.GoogleApiAvailability
 import com.google.android.gms.location.LocationServices
 import com.google.android.stardroid.analytics.Analytics
+import com.google.android.stardroid.announcements.AnnouncementSource
+import com.google.android.stardroid.announcements.RemoteConfigAnnouncementSource
 import com.google.android.stardroid.analytics.FirebaseAnalyticsAdapter
 import com.google.android.stardroid.location.FusedLocationProvider
 import com.google.android.stardroid.location.LocationProvider
@@ -43,6 +45,9 @@ object FlavorEdges {
 
     fun experimentConfig(application: Application): ExperimentConfig =
         RemoteConfigExperimentConfig()
+
+    fun announcementSource(application: Application): AnnouncementSource =
+        RemoteConfigAnnouncementSource()
 
     /**
      * The fused provider when Play Services is up, else the platform fallback — v1 instead

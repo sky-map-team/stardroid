@@ -33,6 +33,7 @@ import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
@@ -54,7 +55,12 @@ import com.google.android.stardroid.satellites.forceSatelliteFetchForDebugging
 import com.google.android.stardroid.satellites.readSatelliteDiagnostics
 import com.google.android.stardroid.sensors.SensorAccuracy
 import com.google.android.stardroid.sensors.SensorKind
+import com.google.android.stardroid.sensors.SensorPath
+import com.google.android.stardroid.startup.Experiment
+import com.google.android.stardroid.startup.ExperimentConfig
+import com.google.android.stardroid.startup.FetchResult
 import com.google.android.stardroid.ui.common.topBarWindowInsets
+import com.google.android.stardroid.ui.map.ReferenceFrame
 import com.google.android.stardroid.ui.theme.StatusColors
 import com.google.android.stardroid.ui.theme.statusColors
 import kotlinx.coroutines.Dispatchers
@@ -80,6 +86,8 @@ import java.util.Locale
 fun DiagnosticsScreen(
     viewModel: DiagnosticsViewModel,
     nightMode: Boolean,
+    satellitesEnabled: Boolean,
+    experimentConfig: ExperimentConfig,
     onBack: () -> Unit,
 ) {
     BackHandler(onBack = onBack)
@@ -90,16 +98,23 @@ fun DiagnosticsScreen(
     val scope = rememberCoroutineScope()
     var satelliteState by remember { mutableStateOf<SatelliteDiagnosticsState?>(null) }
     var forceFetchResult by remember { mutableStateOf<String?>(null) }
-    LaunchedEffect(Unit) { satelliteState = readSatelliteDiagnostics(context) }
+    // Bumped after a forced experiment fetch so the section is rebuilt with the new values.
+    var experimentsRefresh by remember { mutableIntStateOf(0) }
+    var experimentFetchResult by remember { mutableStateOf<String?>(null) }
+    LaunchedEffect(satellitesEnabled) {
+        satelliteState = if (satellitesEnabled) readSatelliteDiagnostics(context) else null
+    }
     val sections =
         buildList {
             add(generalSection())
             add(graphicsSection(snapshot.rendererInfo))
             add(sensorsSection(viewModel, colors))
             add(orientationSettingsSection(snapshot, jitter))
+            add(mapSection(snapshot, colors))
             add(locationAndTimeSection(snapshot, colors))
             add(networkSection(snapshot))
             satelliteState?.let { add(satelliteSection(it)) }
+            add(experimentsSection(experimentConfig, experimentsRefresh))
         }
     val reportHeader = stringResource(R.string.diagnostics_report_header)
     val reportSubject = stringResource(R.string.diagnostics_share_subject)
@@ -162,6 +177,30 @@ fun DiagnosticsScreen(
                     for (row in section.rows) {
                         DiagnosticRow(row.label, row.value, row.valueColor)
                     }
+                }
+                if (experimentConfig.canFetch) {
+                    Button(
+                        onClick = {
+                            scope.launch {
+                                experimentFetchResult =
+                                    when (val result = viewModel.fetchExperiments(experimentConfig)) {
+                                        FetchResult.Unsupported -> "Not supported in this build"
+                                        is FetchResult.Success ->
+                                            if (result.updated) {
+                                                "Fetched; values changed"
+                                            } else {
+                                                "Fetched; no change"
+                                            }
+                                        is FetchResult.Failure -> "Failed: ${result.message}"
+                                    }
+                                experimentsRefresh++
+                            }
+                        },
+                        modifier = Modifier.padding(vertical = 8.dp),
+                    ) {
+                        Text(stringResource(R.string.diagnostics_experiments_fetch_now))
+                    }
+                    experimentFetchResult?.let { DiagnosticRow("Result", it) }
                 }
                 // Debug builds only. A discoverable "fetch now" in release is the retry storm
                 // the circuit breaker exists to prevent, so the gate is the build type — the
@@ -319,10 +358,10 @@ private fun orientationSettingsSection(
             DiagnosticsRow(
                 stringResource(R.string.diagnostics_gyro_mode),
                 stringResource(
-                    if (snapshot.disableGyro) {
-                        R.string.diagnostics_gyro_disabled
-                    } else {
-                        R.string.diagnostics_gyro_fused
+                    when (snapshot.sensorPath) {
+                        SensorPath.FUSED -> R.string.diagnostics_gyro_fused
+                        SensorPath.ACCELEROMETER_COMPASS -> R.string.diagnostics_gyro_disabled
+                        SensorPath.NONE -> R.string.diagnostics_gyro_none
                     },
                 ),
             ),
@@ -370,6 +409,70 @@ private fun orientationSettingsSection(
             ),
         ),
     )
+
+/**
+ * What the map itself is doing with the sensor pipeline above (issue #1109): whether it is
+ * listening at all, whether orientations are still arriving, and whether any were thrown away.
+ */
+@Composable
+private fun mapSection(
+    snapshot: DiagnosticsSnapshot,
+    colors: StatusColors,
+): DiagnosticsSection {
+    val sensorMode = snapshot.mapReferenceFrame == ReferenceFrame.SENSOR
+    val age = snapshot.mapOrientationAgeSeconds
+    val rows =
+        buildList {
+            add(
+                DiagnosticsRow(
+                    stringResource(R.string.diagnostics_map_mode),
+                    stringResource(
+                        if (sensorMode) {
+                            R.string.diagnostics_map_mode_auto
+                        } else {
+                            R.string.diagnostics_map_mode_manual
+                        },
+                    ),
+                ),
+            )
+            add(
+                DiagnosticsRow(
+                    label = stringResource(R.string.diagnostics_map_orientation),
+                    value =
+                        age?.let {
+                            stringResource(R.string.diagnostics_map_orientation_format, it)
+                        } ?: stringResource(R.string.diagnostics_map_orientation_none),
+                    // Only a fault in auto mode: manual mode doesn't listen to the sensors.
+                    valueColor =
+                        if (sensorMode && (age == null || age > MAP_ORIENTATION_STALE_SECONDS)) {
+                            colors.bad
+                        } else {
+                            Color.Unspecified
+                        },
+                ),
+            )
+            add(
+                DiagnosticsRow(
+                    label = stringResource(R.string.diagnostics_rejected_samples),
+                    value = snapshot.rejectedSensorSamples.toString(),
+                    valueColor =
+                        if (snapshot.rejectedSensorSamples > 0) colors.bad else Color.Unspecified,
+                ),
+            )
+            snapshot.processLifecycleState?.let {
+                add(
+                    DiagnosticsRow(
+                        stringResource(R.string.diagnostics_app_lifecycle),
+                        enumDisplayName(it),
+                    ),
+                )
+            }
+        }
+    return DiagnosticsSection(stringResource(R.string.diagnostics_section_map), rows)
+}
+
+/** Sensors report at ~50 Hz, so this long without one in auto mode means they've stopped. */
+private const val MAP_ORIENTATION_STALE_SECONDS = 2.0
 
 @Composable
 private fun onOffText(enabled: Boolean): String =
@@ -522,6 +625,30 @@ private fun satelliteSection(state: SatelliteDiagnosticsState): DiagnosticsSecti
     return DiagnosticsSection(stringResource(R.string.diagnostics_section_satellites), rows)
 }
 
+/**
+ * The current value of every [Experiment] flag as the app is reading it — Remote Config on gms,
+ * the shipped defaults on fdroid. Re-read on every recomposition — cheap in-memory lookups — so a
+ * fetch that activates while the screen is open shows up with the next recomposition.
+ */
+@Composable
+private fun experimentsSection(
+    config: ExperimentConfig,
+    @Suppress("UNUSED_PARAMETER") refresh: Int,
+): DiagnosticsSection {
+    val lastFetched =
+        config.lastFetchTimeMillis?.let {
+            formatTime(Instant.fromEpochMilliseconds(it), ZoneId.systemDefault())
+        } ?: stringResource(R.string.diagnostics_experiments_never_fetched)
+    val rows =
+        buildList {
+            if (config.canFetch) {
+                add(DiagnosticsRow(stringResource(R.string.diagnostics_experiments_last_fetched), lastFetched))
+            }
+            Experiment.entries.forEach { add(DiagnosticsRow(it.key, config.isEnabled(it).toString())) }
+        }
+    return DiagnosticsSection(stringResource(R.string.diagnostics_section_experiments), rows)
+}
+
 @Composable
 private fun SectionHeader(title: String) {
     Text(
@@ -542,7 +669,7 @@ private fun DiagnosticRow(
         Text(
             label,
             style = MaterialTheme.typography.bodyMedium,
-            modifier = Modifier.weight(0.4f),
+            modifier = Modifier.weight(0.4f).padding(end = 12.dp),
         )
         Text(
             value,
@@ -568,8 +695,9 @@ private fun sensorText(row: SensorRow): String =
     }
 
 /**
- * " (52 Hz, 0.1s ago)" for a present, reporting sensor — nothing for an absent one or one that
- * hasn't delivered a first event yet, since [sensorText] already says so.
+ * "\n(52 Hz, 0.1s ago)" for a present, reporting sensor — nothing for an absent one or one that
+ * hasn't delivered a first event yet, since [sensorText] already says so. Always on its own
+ * line so the row height doesn't change with the width of the values.
  */
 @Composable
 private fun rateSuffix(
@@ -578,7 +706,7 @@ private fun rateSuffix(
 ): String {
     if (row !is SensorRow.Present || rate == null) return ""
     val staleForMillis = rate.staleForMillis ?: return ""
-    return " " +
+    return "\n" +
         stringResource(
             R.string.diagnostics_sensor_rate_format,
             rate.hz,

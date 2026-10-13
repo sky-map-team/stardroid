@@ -21,6 +21,13 @@ import kotlinx.coroutines.flow.map
  */
 data class OrientationSample(val raw: Matrix3, val smoothed: Matrix3)
 
+/** Which sensors actually drive orientation. */
+enum class SensorPath {
+    FUSED,
+    ACCELEROMETER_COMPASS,
+    NONE,
+}
+
 /**
  * The phone-orientation edge: a stream of phone→world rotation matrices in Android's
  * rotation-matrix convention (rows are world East, magnetic North, Up in phone coordinates),
@@ -33,6 +40,18 @@ interface OrientationSource {
     /** False on devices with neither a rotation-vector sensor nor an accelerometer+magnetometer
      * pair — callers fall back to manual mode (v1's no-sensor warning). */
     val available: Boolean
+
+    /**
+     * Sensor samples dropped since startup for not being a rotation at all (NaN, all zeros) —
+     * shown in diagnostics, since a source that only ever produces these looks like a frozen map.
+     */
+    val rejectedSampleCount: Int get() = 0
+
+    /**
+     * The path [orientations] runs with the Gyro setting at [disableGyro]. The setting alone
+     * can't say: with no fused sensor on the device, the legacy path runs whatever it is.
+     */
+    fun sensorPath(disableGyro: Boolean): SensorPath
 
     /**
      * Orientation samples while collected; registers the underlying sensor listeners on

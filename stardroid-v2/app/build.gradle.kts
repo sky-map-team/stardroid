@@ -19,15 +19,22 @@ android {
     namespace = "com.google.android.stardroid"
     defaultConfig {
         applicationId = "com.google.android.stardroid"
-        versionCode = 1748
-        versionName = "2.1.2:Artemis"
+        versionCode = 1762
+        versionName = "2.2.0:Buran:Beta"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        // D95: CI passes -PskipGlBenchmarks=true, which the D19 perf gate reads to skip
+        // D105: CI passes -PskipGlBenchmarks=true, which the D19 perf gate reads to skip
         // itself. Set through the DSL rather than
         // -Pandroid.testInstrumentationRunnerArguments.*, which AGP warns is incompatible
         // with configuration caching.
         providers.gradleProperty("skipGlBenchmarks").orNull?.let {
             testInstrumentationRunnerArguments["skipGlBenchmarks"] = it
+        }
+        // D140: CI runs RendererPerfTest in a pass of its own, selected the same way.
+        providers.gradleProperty("testClass").orNull?.let {
+            testInstrumentationRunnerArguments["class"] = it
+        }
+        providers.gradleProperty("testNotClass").orNull?.let {
+            testInstrumentationRunnerArguments["notClass"] = it
         }
         resValue(
             "string",
@@ -116,6 +123,8 @@ dependencies {
     implementation(project(":render:gles3"))
     implementation(project(":data"))
     implementation(libs.kotlinx.coroutines.android)
+    // Parses the Remote Config announcements payload (JsonElement API only; no plugin).
+    implementation(libs.kotlinx.serialization.json)
     implementation(libs.androidx.core.ktx)
 
     implementation(platform(libs.androidx.compose.bom))

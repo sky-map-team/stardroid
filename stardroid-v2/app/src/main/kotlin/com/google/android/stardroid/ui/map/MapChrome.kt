@@ -49,13 +49,13 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.windowInsetsPadding
 import androidx.compose.foundation.rememberScrollState
-import androidx.compose.foundation.selection.toggleable
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.KeyboardArrowDown
 import androidx.compose.material.icons.filled.KeyboardArrowUp
+import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -97,6 +97,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.semantics.clearAndSetSemantics
 import androidx.compose.ui.semantics.contentDescription
+import androidx.compose.ui.semantics.disabled
 import androidx.compose.ui.semantics.role
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.semantics.toggleableState
@@ -174,6 +175,8 @@ fun MapChrome(
     onOpenSearch: () -> Unit,
     onOpenTimeTravel: () -> Unit,
     onOpenLayersSheet: () -> Unit,
+    // The help popup's Customize button: the Layers sheet, opened on that layer's options.
+    onCustomizeLayer: (LayerId) -> Unit,
     onOpenOverflow: () -> Unit,
     modifier: Modifier = Modifier,
     // Null hides the HUD — the warm-welcome tour renders this chrome with canned state and
@@ -210,7 +213,28 @@ fun MapChrome(
     ) {
         // Top-right (D65): top-centre belongs to the time-travel player, the rail owns the
         // left edge in landscape, and the action cluster owns the bottom/right-edge corner.
-        if (hudState != null) {
+        // While the camera layer is on, the AR panel takes the HUD's slot (the HUD's alignment
+        // correction rides along inside it); in landscape it steps left of the action column,
+        // which is tall enough to reach it.
+        if (arUi != null) {
+            ChromeZone(visible, ChromeEdge.TOP, Modifier.align(Alignment.TopEnd)) {
+                ArControls(
+                    state = arUi,
+                    specs = arSpecs,
+                    onScrimChange = onArScrimChange,
+                    onExposureChange = onArExposureChange,
+                    onIsoFractionChange = onArIsoFractionChange,
+                    onShutterFractionChange = onArShutterFractionChange,
+                    hudState = hudState,
+                    onResetAlignment = onResetAlignment,
+                    modifier =
+                        Modifier.padding(
+                            top = 8.dp + hudTopClearance,
+                            end = if (landscape) ACTION_COLUMN_CLEARANCE else 8.dp,
+                        ),
+                )
+            }
+        } else if (hudState != null) {
             ChromeZone(visible, ChromeEdge.TOP, Modifier.align(Alignment.TopEnd)) {
                 MapHud(
                     state = hudState,
@@ -229,33 +253,16 @@ fun MapChrome(
                 nightMode = nightMode,
                 onToggleLayer = onToggleLayer,
                 onOpenLayersSheet = onOpenLayersSheet,
+                onCustomizeLayer = onCustomizeLayer,
                 tourTargetModifier = tourTargetModifier,
                 railLabels = railLabels,
                 modifier = Modifier.fillMaxHeight().padding(start = 8.dp),
             )
         }
-        // Bottom-left, lifted clear of the portrait action row (Zone B), whose buttons reach
-        // far enough left to collide with the dimmer slider; in landscape the actions are a
-        // right-edge column, so the corner itself is free.
         if (arUi != null) {
-            ChromeZone(visible, ChromeEdge.BOTTOM, Modifier.align(Alignment.BottomStart)) {
-                ArControls(
-                    state = arUi,
-                    specs = arSpecs,
-                    onScrimChange = onArScrimChange,
-                    onExposureChange = onArExposureChange,
-                    onIsoFractionChange = onArIsoFractionChange,
-                    onShutterFractionChange = onArShutterFractionChange,
-                    modifier =
-                        Modifier.padding(
-                            start = 8.dp,
-                            bottom = if (landscape) 8.dp else 68.dp,
-                        ),
-                )
-            }
             // "Photograph the moment" is most compelling while the camera is live
             // (camera-ar-mode.md slice 4): a transient shutter, lifted clear of the
-            // portrait action row like the controls panel.
+            // portrait action row.
             if (shareEnabled) {
                 ChromeZone(visible, ChromeEdge.BOTTOM, Modifier.align(Alignment.BottomCenter)) {
                     ShareShutter(
@@ -349,8 +356,8 @@ internal const val CHROME_ZONE_EXIT_MS = 420
 /**
  * Zone A: a slim vertical column of layer toggles in a translucent pill where v1's sliding
  * sidebar sat. State is shown v1-style by tint (checked = primary + faint pill; unchecked =
- * outline grey), and the expand button at the foot opens the Layers sheet — long-press on
- * any item is the bonus gesture for the same thing.
+ * outline grey), and the expand button at the foot opens the Layers sheet. Long-press on a
+ * layer explains it (and what can be customized) rather than opening the sheet.
  *
  * Rail membership borrows the action-bar mechanism (D56): `always` items and the expand
  * button are unconditional; `ifroom` items drop from the end of the rail — never from the
@@ -363,10 +370,25 @@ private fun LayerRail(
     nightMode: Boolean,
     onToggleLayer: (LayerId, Boolean) -> Unit,
     onOpenLayersSheet: () -> Unit,
+    onCustomizeLayer: (LayerId) -> Unit,
     tourTargetModifier: (ChromeTourTarget) -> Modifier,
     railLabels: RailLabelState?,
     modifier: Modifier = Modifier,
 ) {
+    var helpFor by rememberSaveable { mutableStateOf<String?>(null) }
+    helpFor?.let { raw ->
+        val id = LayerId(raw)
+        LayerHelpDialog(
+            icon = layerIcon(id),
+            label = layerName(id),
+            help = layerHelp(id),
+            onDismiss = { helpFor = null },
+            onCustomize = {
+                helpFor = null
+                onCustomizeLayer(id)
+            },
+        )
+    }
     val byId = toggles.associateBy { it.id }
     val always = RAIL_ALWAYS_IDS.mapNotNull { byId[it] }
     val ifroom = RAIL_IFROOM_IDS.mapNotNull { byId[it] }
@@ -412,8 +434,7 @@ private fun LayerRail(
                         nightMode,
                         onToggleLayer,
                         tourTargetModifier,
-                        onOpenLayersSheet,
-                    )
+                    ) { helpFor = toggle.id.id }
                 }
                 if (shownIfroom.isNotEmpty()) {
                     RailDivider()
@@ -423,8 +444,7 @@ private fun LayerRail(
                             nightMode,
                             onToggleLayer,
                             tourTargetModifier,
-                            onOpenLayersSheet,
-                        )
+                        ) { helpFor = toggle.id.id }
                     }
                 }
                 RailDivider()
@@ -586,7 +606,7 @@ private fun RailDivider() {
 /**
  * One rail slot: the 48 dp minimum touch target (M3/accessibility baseline) around a ~36 dp
  * visual pill, so the rail still reads slim (D56). A hand-rolled `IconToggleButton`: the M3
- * component has no long-press slot, and long-press-to-open-the-Layers-sheet is part of the
+ * component has no long-press slot, and long-press-to-explain-the-layer is part of the
  * agreed design.
  *
  * [tint] overrides the checked/unchecked icon colour; the expand button uses it to sit outside
@@ -612,7 +632,12 @@ private fun RailItem(
             modifier
                 .size(48.dp)
                 .clip(CircleShape)
-                .combinedClickable(onClick = onClick, onLongClick = onLongClick)
+                .combinedClickable(
+                    onClick = onClick,
+                    onLongClickLabel =
+                        onLongClick?.let { stringResource(R.string.layer_help_long_click_label) },
+                    onLongClick = onLongClick,
+                )
                 .semantics {
                     if (checked != null) {
                         role = Role.Checkbox
@@ -909,6 +934,8 @@ fun LayersSheet(
     hasCamera: Boolean = false,
     sensorsAvailable: Boolean = false,
     onSetArMode: (Boolean) -> Unit = {},
+    // Opens with this layer's options already expanded (the rail's help popup → Customize).
+    expandLayer: LayerId? = null,
 ) {
     val toggles by layersViewModel.toggles.collectAsStateWithLifecycle()
     val parameters by layersViewModel.parameters.collectAsStateWithLifecycle()
@@ -946,6 +973,8 @@ fun LayersSheet(
                     onParameterChange = { key, option ->
                         layersViewModel.setParameter(toggle.id, key, option)
                     },
+                    help = layerHelp(toggle.id),
+                    initiallyExpanded = toggle.id == expandLayer,
                 )
                 if (toggle.id == SatelliteLayer.LAYER_ID && satelliteDataMissing) {
                     SatelliteEmptyStateCard(
@@ -965,6 +994,8 @@ fun LayersSheet(
                     onParameterChange = { key, option ->
                         layersViewModel.setParameter(toggle.id, key, option)
                     },
+                    help = layerHelp(toggle.id),
+                    initiallyExpanded = toggle.id == expandLayer,
                 )
             }
             LayerGroupHeader(R.string.layers_group_display)
@@ -973,12 +1004,14 @@ fun LayersSheet(
                 label = R.string.layer_sky_gradient,
                 checked = skyGradientEnabled,
                 onCheckedChange = { layersViewModel.setSkyGradientEnabled(it) },
+                help = LayerHelp(R.string.layer_help_sky_gradient),
             )
             LayerRow(
                 icon = R.drawable.ic_layer_hud,
                 label = R.string.layer_hud,
                 checked = hudEnabled,
                 onCheckedChange = { layersViewModel.setHudEnabled(it) },
+                help = LayerHelp(R.string.layer_help_hud),
             )
             if (hasCamera) {
                 LayerRow(
@@ -989,6 +1022,7 @@ fun LayersSheet(
                     enabled = sensorsAvailable,
                     subtitle =
                         if (sensorsAvailable) null else R.string.layer_camera_needs_sensors,
+                    help = LayerHelp(R.string.layer_help_camera),
                 )
             }
         }
@@ -1017,8 +1051,14 @@ private fun LayerRow(
     @StringRes subtitle: Int? = null,
     parameters: List<LayerParameterState> = emptyList(),
     onParameterChange: (String, String) -> Unit = { _, _ -> },
+    help: LayerHelp,
+    initiallyExpanded: Boolean = false,
 ) {
-    var expanded by rememberSaveable(label) { mutableStateOf(false) }
+    var expanded by rememberSaveable(label) { mutableStateOf(initiallyExpanded) }
+    var showHelp by rememberSaveable(label) { mutableStateOf(false) }
+    if (showHelp) {
+        LayerHelpDialog(icon = icon, label = label, help = help, onDismiss = { showHelp = false })
+    }
     Column {
         LayerRowContent(
             icon = icon,
@@ -1030,6 +1070,7 @@ private fun LayerRow(
             expandable = parameters.isNotEmpty(),
             expanded = expanded,
             onExpandToggle = { expanded = !expanded },
+            onLongClick = { showHelp = true },
         )
         if (expanded) {
             for (state in parameters) {
@@ -1141,6 +1182,7 @@ private fun LayerParameterChooser(
     }
 }
 
+@OptIn(ExperimentalFoundationApi::class)
 @Composable
 private fun LayerRowContent(
     @DrawableRes icon: Int,
@@ -1152,6 +1194,7 @@ private fun LayerRowContent(
     expandable: Boolean,
     expanded: Boolean,
     onExpandToggle: () -> Unit,
+    onLongClick: () -> Unit,
 ) {
     val contentColor =
         if (enabled) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.outline
@@ -1161,11 +1204,20 @@ private fun LayerRowContent(
         modifier =
             Modifier
                 .fillMaxWidth()
-                .toggleable(
-                    value = checked,
+                // combinedClickable rather than toggleable, which has no long-press slot. The
+                // row must stay long-pressable when disabled (the camera row explains why it is
+                // unavailable), so the gestures are enabled regardless and only the tap is gated.
+                .semantics {
+                    toggleableState = ToggleableState(checked)
+                    // The gestures stay live so the row can still be long-pressed, which means
+                    // the row itself must say it is disabled; only the visual Switch did.
+                    if (!enabled) disabled()
+                }
+                .combinedClickable(
                     role = Role.Switch,
-                    enabled = enabled,
-                    onValueChange = onCheckedChange,
+                    onLongClickLabel = stringResource(R.string.layer_help_long_click_label),
+                    onLongClick = onLongClick,
+                    onClick = { if (enabled) onCheckedChange(!checked) },
                 )
                 .padding(vertical = 8.dp),
     ) {
@@ -1194,7 +1246,7 @@ private fun LayerRowContent(
             }
         }
         if (expandable) {
-            // Its own click target inside the toggleable row: tapping the chevron opens the
+            // Its own click target inside the clickable row: tapping the chevron opens the
             // options, tapping anywhere else still toggles the layer.
             IconButton(onClick = onExpandToggle) {
                 Icon(
@@ -1220,7 +1272,9 @@ private fun parameterLabel(key: String): Int =
         LayerParameter.DISC_SIZE -> R.string.layer_param_disc_size
         LayerParameter.PASS_ALERTS -> R.string.layer_param_pass_alerts
         LayerParameter.ECLIPSE_ALERTS -> R.string.layer_param_eclipse_alerts
+        LayerParameter.SHOWER_ALERTS -> R.string.layer_param_shower_alerts
         LayerParameter.ALTAZ_GRID_DENSITY -> R.string.layer_param_altaz_grid_density
+        LayerParameter.RADEC_GRID_DENSITY -> R.string.layer_param_radec_grid_density
         else -> R.string.layer_param_disc_size
     }
 
@@ -1230,6 +1284,7 @@ private fun parameterDescription(key: String): Int =
     when (key) {
         LayerParameter.PASS_ALERTS -> R.string.layer_param_pass_alerts_description
         LayerParameter.ECLIPSE_ALERTS -> R.string.layer_param_eclipse_alerts_description
+        LayerParameter.SHOWER_ALERTS -> R.string.layer_param_shower_alerts_description
         else -> R.string.layer_param_pass_alerts_description
     }
 
@@ -1239,8 +1294,12 @@ private fun parameterOptionLabel(option: String): Int =
         LayerParameter.DISC_SIZE_TRUE -> R.string.layer_param_disc_size_true
         LayerParameter.DISC_SIZE_GLYPHS -> R.string.layer_param_disc_size_glyphs
         LayerParameter.DISC_SIZE_AUTO -> R.string.layer_param_disc_size_auto
-        LayerParameter.ALTAZ_GRID_DENSITY_COARSE -> R.string.layer_param_altaz_grid_density_coarse
-        LayerParameter.ALTAZ_GRID_DENSITY_MEDIUM -> R.string.layer_param_altaz_grid_density_medium
+        LayerParameter.ALTAZ_GRID_DENSITY_COARSE,
+        LayerParameter.RADEC_GRID_DENSITY_COARSE,
+        -> R.string.layer_param_altaz_grid_density_coarse
+        LayerParameter.ALTAZ_GRID_DENSITY_MEDIUM,
+        LayerParameter.RADEC_GRID_DENSITY_MEDIUM,
+        -> R.string.layer_param_altaz_grid_density_medium
         else -> R.string.layer_param_altaz_grid_density_fine
     }
 
@@ -1254,8 +1313,96 @@ private fun parameterOptionDescription(option: String): Int =
             R.string.layer_param_altaz_grid_density_coarse_desc
         LayerParameter.ALTAZ_GRID_DENSITY_MEDIUM ->
             R.string.layer_param_altaz_grid_density_medium_desc
+        LayerParameter.RADEC_GRID_DENSITY_COARSE ->
+            R.string.layer_param_radec_grid_density_coarse_desc
+        LayerParameter.RADEC_GRID_DENSITY_MEDIUM ->
+            R.string.layer_param_radec_grid_density_medium_desc
+        LayerParameter.RADEC_GRID_DENSITY_FINE -> R.string.layer_param_radec_grid_density_fine_desc
         else -> R.string.layer_param_altaz_grid_density_fine_desc
     }
+
+/**
+ * What the long-press popup on a layer row says: what the layer draws, and (when it has any)
+ * what the user can change about it.
+ */
+private class LayerHelp(
+    @StringRes val description: Int,
+    @StringRes val options: Int? = null,
+)
+
+private fun layerHelp(id: LayerId): LayerHelp =
+    when (id) {
+        CatalogLayers.STARS_LAYER_ID -> LayerHelp(R.string.layer_help_stars)
+        CatalogLayers.CONSTELLATIONS_LAYER_ID -> LayerHelp(R.string.layer_help_constellations)
+        CatalogLayers.DEEP_SKY_LAYER_ID -> LayerHelp(R.string.layer_help_deep_sky)
+        SolarSystemLayer.LAYER_ID ->
+            LayerHelp(R.string.layer_help_solar_system, R.string.layer_help_options_solar_system)
+        MeteorShowerLayer.LAYER_ID ->
+            LayerHelp(R.string.layer_help_meteor_showers, R.string.layer_help_options_meteor_showers)
+        SatelliteLayer.LAYER_ID ->
+            LayerHelp(R.string.layer_help_satellites, R.string.layer_help_options_satellites)
+        GridLayer.LAYER_ID ->
+            LayerHelp(R.string.layer_help_grid, R.string.layer_help_options_grid)
+        HorizonLayer.LAYER_ID -> LayerHelp(R.string.layer_help_horizon)
+        EclipticLayer.LAYER_ID -> LayerHelp(R.string.layer_help_ecliptic)
+        AltAzGridLayer.LAYER_ID ->
+            LayerHelp(R.string.layer_help_altaz_grid, R.string.layer_help_options_altaz_grid)
+        else -> error("No help text for layer ${id.id}")
+    }
+
+/** The popup a long-press on a layer row opens. */
+@Composable
+private fun LayerHelpDialog(
+    @DrawableRes icon: Int,
+    @StringRes label: Int,
+    help: LayerHelp,
+    onDismiss: () -> Unit,
+    // Null inside the sheet itself, where the options are already a tap away.
+    onCustomize: (() -> Unit)? = null,
+) {
+    AlertDialog(
+        onDismissRequest = onDismiss,
+        icon = { Icon(painterResource(icon), contentDescription = null) },
+        title = { Text(stringResource(label)) },
+        text = {
+            Column(Modifier.verticalScroll(rememberScrollState())) {
+                Text(stringResource(help.description), style = MaterialTheme.typography.bodyMedium)
+                if (help.options != null) {
+                    Text(
+                        stringResource(R.string.layer_help_customizable),
+                        style = MaterialTheme.typography.labelLarge,
+                        modifier = Modifier.padding(top = 16.dp, bottom = 4.dp),
+                    )
+                    Text(
+                        stringResource(help.options),
+                        style = MaterialTheme.typography.bodyMedium,
+                    )
+                    if (onCustomize == null) {
+                        Text(
+                            stringResource(R.string.layer_help_expand_hint),
+                            style = MaterialTheme.typography.bodySmall,
+                            color = MaterialTheme.colorScheme.onSurfaceVariant,
+                            modifier = Modifier.padding(top = 8.dp),
+                        )
+                    }
+                }
+            }
+        },
+        confirmButton = {
+            TextButton(onClick = onDismiss) { Text(stringResource(R.string.layer_help_close)) }
+        },
+        dismissButton =
+            if (help.options != null && onCustomize != null) {
+                {
+                    TextButton(onClick = onCustomize) {
+                        Text(stringResource(R.string.layer_help_customize))
+                    }
+                }
+            } else {
+                null
+            },
+    )
+}
 
 /** Core object layers — `always` in the rail (D56). */
 private val RAIL_ALWAYS_IDS: List<LayerId> =
@@ -1353,9 +1500,14 @@ fun chromeTourLabel(target: ChromeTourTarget): Int =
         ChromeTourTarget.Overflow -> R.string.more_button
     }
 
-/** Every-rail-layer-on toggle state for the warm-welcome tour's non-interactive chrome. */
-fun demoChromeToggles(): List<LayerToggle> =
-    (RAIL_ALWAYS_IDS + RAIL_IFROOM_IDS).map { LayerToggle(it, enabled = true) }
+/**
+ * Every-rail-layer-on toggle state for the warm-welcome tour's non-interactive chrome. Satellites
+ * are left out unless [satellitesEnabled], so the tour never shows a control the real rail hides.
+ */
+fun demoChromeToggles(satellitesEnabled: Boolean): List<LayerToggle> =
+    (RAIL_ALWAYS_IDS + RAIL_IFROOM_IDS)
+        .filter { satellitesEnabled || it != SatelliteLayer.LAYER_ID }
+        .map { LayerToggle(it, enabled = true) }
 
 @DrawableRes
 private fun layerIcon(id: LayerId): Int =
@@ -1442,3 +1594,6 @@ private fun retryWaitText(wait: Duration): Int =
         wait <= 36.hours -> R.string.satellites_retry_tomorrow
         else -> R.string.satellites_retry_days
     }
+
+/** Landscape right inset that clears the action column: 8 dp edge + 48 dp button + 8 dp gap. */
+private val ACTION_COLUMN_CLEARANCE: Dp = 64.dp

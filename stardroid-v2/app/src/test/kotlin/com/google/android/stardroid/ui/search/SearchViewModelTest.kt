@@ -22,11 +22,15 @@ import com.google.android.stardroid.catalog.GalleryItem
 import com.google.android.stardroid.catalog.LayerKind
 import com.google.android.stardroid.catalog.LocaleSpec
 import com.google.android.stardroid.catalog.MeteorShower
+import com.google.android.stardroid.astronomy.Tle
 import com.google.android.stardroid.catalog.ObjectInfo
 import com.google.android.stardroid.catalog.SearchHit
 import com.google.android.stardroid.catalog.TypeCode
 import com.google.android.stardroid.layers.CatalogLayers
+import com.google.android.stardroid.layers.SatelliteLayer
 import com.google.android.stardroid.layers.SolarSystemLayer
+import com.google.android.stardroid.satellites.SatelliteIds
+import com.google.android.stardroid.satellites.TrackedSatellite
 import com.google.android.stardroid.math.RaDec
 import com.google.android.stardroid.settings.FakeSettings
 import com.google.common.truth.Truth.assertThat
@@ -119,6 +123,12 @@ class SearchViewModelTest {
 
     private var manualMode = false
 
+    private var trackedSatellites = listOf<TrackedSatellite>()
+
+    private var aliases = mapOf(25544 to listOf("International Space Station"))
+
+    private var satelliteFailure: (() -> Throwable)? = null
+
     private val locale = MutableStateFlow(LocaleSpec("en"))
 
     private fun viewModel(): SearchViewModel =
@@ -130,6 +140,11 @@ class SearchViewModelTest {
             settings = settings,
             analytics = analytics,
             isManualMode = { manualMode },
+            satelliteAliases = { aliases[it].orEmpty() },
+            satellites = {
+                satelliteFailure?.let { throw it() }
+                trackedSatellites
+            },
         ).also { createdViewModels += it }
 
     @Test
@@ -211,6 +226,116 @@ class SearchViewModelTest {
             ).isLessThan(TOL)
             assertThat(target.fovDeg).isEqualTo(20.0)
         }
+
+    @Test
+    fun `satellites are found by name, word and alias even though they are not in the catalog`() =
+        testScope.runCurrentTest {
+            trackedSatellites = listOf(ISS)
+            val vm = viewModel()
+            backgroundScope.launch { vm.suggestions.collect {} }
+            runCurrent()
+
+            for (query in listOf("iss", "ISS (Z", "zarya", "international sp", "space stat")) {
+                vm.setQuery(query)
+                advanceTimeBy(debounceSettle)
+                runCurrent()
+                assertThat(vm.suggestions.value.map { it.name }).containsExactly("ISS (ZARYA)")
+            }
+
+            vm.setQuery("tian")
+            advanceTimeBy(debounceSettle)
+            runCurrent()
+            assertThat(vm.suggestions.value).isEmpty()
+        }
+
+    @Test
+    fun `selecting a satellite aims at its fresh position and re-enables its layer`() =
+        testScope.runCurrentTest {
+            trackedSatellites = listOf(ISS)
+            settings.setLayerEnabled(SatelliteLayer.LAYER_ID, enabled = false)
+            val vm = viewModel()
+            val stale = ISS_HIT.copy(position = RaDec(0.0, 0.0))
+            vm.select(stale)
+            runCurrent()
+
+            val target = vm.target.value!!
+            assertThat(target.name).isEqualTo("ISS (ZARYA)")
+            assertThat(
+                target.direction.distanceTo(ISS_POSITION.toGeocentricVector()),
+            ).isLessThan(TOL)
+            assertThat(settings.layerEnabled(SatelliteLayer.LAYER_ID).first()).isTrue()
+        }
+
+    @Test
+    fun `selecting a satellite that is no longer tracked falls back to the hit position`() =
+        testScope.runCurrentTest {
+            val vm = viewModel()
+            vm.select(ISS_HIT)
+            runCurrent()
+
+            val target = vm.target.value!!
+            assertThat(
+                target.direction.distanceTo(ISS_POSITION.toGeocentricVector()),
+            ).isLessThan(TOL)
+        }
+
+    @Test
+    fun `a failing satellite lookup does not blank catalog results or crash select`() =
+        testScope.runCurrentTest {
+            repository.hits = listOf(ISS_LIKE_HIT)
+            val vm = viewModel()
+            backgroundScope.launch { vm.suggestions.collect {} }
+            runCurrent()
+            satelliteFailure = { IllegalStateException("boom") }
+
+            vm.setQuery("iss")
+            advanceTimeBy(debounceSettle)
+            runCurrent()
+            assertThat(vm.suggestions.value).containsExactly(ISS_LIKE_HIT)
+
+            vm.select(ISS_HIT)
+            runCurrent()
+            assertThat(vm.target.value).isNotNull()
+        }
+
+    @Test
+    fun `submitting a satellite name selects the sole hit`() =
+        testScope.runCurrentTest {
+            trackedSatellites = listOf(ISS)
+            val vm = viewModel()
+            vm.setQuery("iss")
+            vm.submit()
+            runCurrent()
+
+            assertThat(vm.target.value?.name).isEqualTo("ISS (ZARYA)")
+        }
+
+    @Test
+    fun `satellite aliases come from the injected, localized provider`() =
+        testScope.runCurrentTest {
+            trackedSatellites = listOf(ISS)
+            aliases = mapOf(25544 to listOf("Estación Espacial Internacional"))
+            val vm = viewModel()
+            backgroundScope.launch { vm.suggestions.collect {} }
+            runCurrent()
+
+            vm.setQuery("estación esp")
+            advanceTimeBy(debounceSettle)
+            runCurrent()
+            assertThat(vm.suggestions.value.map { it.name }).containsExactly("ISS (ZARYA)")
+
+            vm.setQuery("international")
+            advanceTimeBy(debounceSettle)
+            runCurrent()
+            assertThat(vm.suggestions.value).isEmpty()
+        }
+
+    @Test
+    fun `a separator-only query matches no satellite`() {
+        for (q in listOf("(", ")", "-", "( )")) {
+            assertThat(SearchViewModel.matchesWordPrefix("ISS (ZARYA)", q)).isFalse()
+        }
+    }
 
     @Test
     fun `an engaged search logs the query and the lock with the frame mode`() =
@@ -506,6 +631,23 @@ class SearchViewModelTest {
             SearchHit(CelestialObjectId("star/sirius"), "Sirius", "Star", SIRIUS_POSITION, 20.0)
         val JUPITER_HIT =
             SearchHit(CelestialObjectId("planet/jupiter"), "Jupiter", "Planet", null, 15.0)
+        val ISS_POSITION = RaDec(210.0, 35.0)
+        val ISS_TLE =
+            Tle.parse(
+                line1 = "1 25544U 98067A   26227.08368470  .00004985  00000+0  97076-4 0  9993",
+                line2 = "2 25544  51.6331   8.6030 0007568  47.4901 312.6726 15.49446860580882",
+                name = "ISS (ZARYA)",
+            )
+        val ISS =
+            TrackedSatellite(
+                tle = ISS_TLE,
+                info = SatelliteIds.cardFor(ISS_TLE, ISS_POSITION, null),
+                position = ISS_POSITION,
+            )
+        val ISS_HIT =
+            SearchHit(SatelliteIds.idFor(25544), "ISS (ZARYA)", null, ISS_POSITION, null)
+        val ISS_LIKE_HIT =
+            SearchHit(CelestialObjectId("star/issa"), "Issa", "Star", SIRIUS_POSITION, 20.0)
         val IO_HIT = SearchHit(CelestialObjectId("moon/io"), "Io", "Orbits Jupiter", null, null)
 
         fun objectInfo(

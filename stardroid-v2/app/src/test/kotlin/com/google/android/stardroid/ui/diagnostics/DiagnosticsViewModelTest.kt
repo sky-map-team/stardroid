@@ -9,6 +9,7 @@
 
 package com.google.android.stardroid.ui.diagnostics
 
+import androidx.lifecycle.Lifecycle
 import com.google.android.stardroid.astronomy.LocalFrame
 import com.google.android.stardroid.astronomy.ViewDirectionMode
 import com.google.android.stardroid.location.LocationSource
@@ -24,10 +25,17 @@ import com.google.android.stardroid.sensors.OrientationSample
 import com.google.android.stardroid.sensors.OrientationSource
 import com.google.android.stardroid.sensors.SensorAccuracy
 import com.google.android.stardroid.sensors.SensorKind
+import com.google.android.stardroid.sensors.SensorPath
 import com.google.android.stardroid.sensors.SensorReading
 import com.google.android.stardroid.settings.FakeSettings
 import com.google.android.stardroid.settings.OneEuroEaseOff
 import com.google.android.stardroid.settings.OneEuroSteadiness
+import com.google.android.stardroid.analytics.AnalyticsEvents
+import com.google.android.stardroid.analytics.FakeAnalytics
+import com.google.android.stardroid.startup.Experiment
+import com.google.android.stardroid.startup.ExperimentConfig
+import com.google.android.stardroid.startup.FetchResult
+import com.google.android.stardroid.ui.map.ReferenceFrame
 import com.google.common.truth.Truth.assertThat
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -75,6 +83,8 @@ class DiagnosticsViewModelTest {
         )
     private val orientationSamples = MutableSharedFlow<OrientationSample>(replay = 1)
     private val orientationSource = FakeOrientationSource(orientationSamples)
+    private var mapReferenceFrame = ReferenceFrame.SENSOR
+    private var lastMapOrientationAtMillis: Long? = null
 
     private val viewModel by lazy {
         DiagnosticsViewModel(
@@ -96,13 +106,24 @@ class DiagnosticsViewModelTest {
             orientationSource = orientationSource,
             localFrame = localFrame,
             ioContext = dispatcher,
+            analytics = analytics,
+            mapReferenceFrame = { mapReferenceFrame },
+            lastMapOrientationAtMillis = { lastMapOrientationAtMillis },
+            processLifecycleState = { Lifecycle.State.RESUMED },
         )
     }
+
+    private val analytics = FakeAnalytics()
 
     private class FakeOrientationSource(
         private val samples: Flow<OrientationSample>,
     ) : OrientationSource {
         override val available = true
+
+        override var rejectedSampleCount = 0
+
+        // No fused sensor, so the Gyro setting can't select that path.
+        override fun sensorPath(disableGyro: Boolean) = SensorPath.ACCELEROMETER_COMPASS
 
         override fun orientations(): Flow<Matrix3> = throw NotImplementedError("unused in tests")
 
@@ -211,6 +232,50 @@ class DiagnosticsViewModelTest {
         }
 
     @Test
+    fun `the gyro row reports the legacy path on a device without a fused sensor`() =
+        testScope.runTest {
+            // This fixture has no rotation-vector sensor, so the setting can't select it.
+            settings.disableGyroState.value = false
+            val collector = launch { viewModel.snapshots.collect {} }
+            runCurrent()
+            assertThat(viewModel.snapshots.value.sensorPath)
+                .isEqualTo(SensorPath.ACCELEROMETER_COMPASS)
+            collector.cancel()
+        }
+
+    @Test
+    fun `snapshot reports what the map is doing with the sensors`() =
+        testScope.runTest {
+            val collector = launch { viewModel.snapshots.collect {} }
+            runCurrent()
+            assertThat(viewModel.snapshots.value.mapReferenceFrame).isEqualTo(ReferenceFrame.SENSOR)
+            assertThat(viewModel.snapshots.value.mapOrientationAgeSeconds).isNull()
+            assertThat(viewModel.snapshots.value.rejectedSensorSamples).isEqualTo(0)
+            assertThat(viewModel.snapshots.value.processLifecycleState)
+                .isEqualTo(Lifecycle.State.RESUMED)
+
+            mapReferenceFrame = ReferenceFrame.MANUAL
+            lastMapOrientationAtMillis = System.currentTimeMillis() - 3_000
+            orientationSource.rejectedSampleCount = 4
+            advanceTimeBy(DiagnosticsViewModel.UPDATE_PERIOD_MILLIS + 1)
+            runCurrent()
+            assertThat(viewModel.snapshots.value.mapReferenceFrame).isEqualTo(ReferenceFrame.MANUAL)
+            assertThat(viewModel.snapshots.value.mapOrientationAgeSeconds).isWithin(1.0).of(3.0)
+            assertThat(viewModel.snapshots.value.rejectedSensorSamples).isEqualTo(4)
+            collector.cancel()
+        }
+
+    @Test
+    fun `orientation age never goes negative when the wall clock steps back`() =
+        testScope.runTest {
+            lastMapOrientationAtMillis = System.currentTimeMillis() + 60_000
+            val collector = launch { viewModel.snapshots.collect {} }
+            runCurrent()
+            assertThat(viewModel.snapshots.value.mapOrientationAgeSeconds).isEqualTo(0.0)
+            collector.cancel()
+        }
+
+    @Test
     fun `pointing jitter shows the raw wobble the smoothed stream damps out`() =
         testScope.runTest {
             val collector = launch { viewModel.pointingJitter.collect {} }
@@ -312,4 +377,33 @@ class DiagnosticsViewModelTest {
         assertThat(quarterTurn[3]).isWithin(1e-6f).of(1f)
         assertThat(quarterTurn[4]).isWithin(1e-6f).of(0f)
     }
+
+    @Test
+    fun `forcing an experiment fetch records the outcome`() =
+        testScope.runTest {
+            val config =
+                object : ExperimentConfig {
+                    override fun isEnabled(experiment: Experiment) = true
+
+                    override suspend fun fetchNow(): FetchResult = FetchResult.Success(updated = true)
+                }
+
+            viewModel.fetchExperiments(config)
+
+            assertThat(analytics.events.map { it.name })
+                .containsExactly(AnalyticsEvents.EXPERIMENT_FETCH_REQUESTED_EVENT)
+            assertThat(analytics.events.single().params)
+                .containsEntry(
+                    AnalyticsEvents.EXPERIMENT_FETCH_OUTCOME,
+                    AnalyticsEvents.EXPERIMENT_FETCH_OUTCOME_UPDATED,
+                )
+        }
+
+    @Test
+    fun `an unsupported experiment fetch records nothing`() =
+        testScope.runTest {
+            viewModel.fetchExperiments(ExperimentConfig.Static)
+
+            assertThat(analytics.events).isEmpty()
+        }
 }
