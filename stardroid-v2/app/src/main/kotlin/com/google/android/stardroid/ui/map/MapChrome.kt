@@ -962,19 +962,23 @@ fun LayersSheet(
     val scope = rememberCoroutineScope()
     // Material re-targets a fully expanded sheet to half height whenever its content resizes,
     // so opening a section would undo the user's drag to full screen (#1122). Put it back.
-    val keepExpanded = {
-        if (sheetState.targetValue == SheetValue.Expanded) {
-            scope.launch {
-                val retreated =
-                    withTimeoutOrNull(SHEET_RETREAT_WINDOW_MS) {
-                        snapshotFlow { sheetState.targetValue }
-                            .first { it != SheetValue.Expanded }
+    val keepExpanded: () -> Unit =
+        remember(sheetState, scope) {
+            {
+                if (sheetState.targetValue == SheetValue.Expanded) {
+                    scope.launch {
+                        val retreated =
+                            withTimeoutOrNull(SHEET_RETREAT_WINDOW_MS) {
+                                snapshotFlow { sheetState.targetValue }
+                                    .first { it != SheetValue.Expanded }
+                            }
+                        if (retreated != null && retreated != SheetValue.Hidden) {
+                            sheetState.expand()
+                        }
                     }
-                if (retreated != null && retreated != SheetValue.Hidden) sheetState.expand()
+                }
             }
         }
-        Unit
-    }
     ModalBottomSheet(onDismissRequest = onDismiss, sheetState = sheetState) {
         // Scrollable: in landscape the rows are taller than the sheet.
         Column(
