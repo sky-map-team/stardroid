@@ -40,9 +40,9 @@ import kotlin.math.roundToInt
 /**
  * The in-AR exposure and dimmer controls (camera-ar-mode.md/D64, exposure levers 1 + 2):
  * shown only while the camera layer is on, in the HUD's top-right slot, riding the chrome
- * show/hide like everything else. The dimmer is the GL scrim ("how bright is the video"); exposure is AE
- * compensation ("what did the sensor capture") — the row hides when the camera doesn't
- * support compensation.
+ * show/hide like everything else. The dimmer is the GL scrim ("how bright is the video");
+ * exposure is AE compensation ("what did the sensor capture") — the row hides when the camera
+ * doesn't support compensation.
  */
 @Composable
 fun ArControls(
