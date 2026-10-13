@@ -157,7 +157,7 @@ private fun HudRow(
  * clears both axes (undo rides the snackbar the caller shows).
  */
 @Composable
-private fun CorrectionRow(
+internal fun CorrectionRow(
     state: HudState,
     onResetAlignment: () -> Unit,
 ) {

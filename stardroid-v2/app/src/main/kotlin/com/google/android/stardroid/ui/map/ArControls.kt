@@ -13,6 +13,7 @@ import androidx.annotation.DrawableRes
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.IntrinsicSize
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -36,8 +37,8 @@ import kotlin.math.roundToInt
 
 /**
  * The in-AR exposure and dimmer controls (camera-ar-mode.md/D64, exposure levers 1 + 2):
- * shown only while the camera layer is on, riding the chrome show/hide like everything
- * else. The dimmer is the GL scrim ("how bright is the video"); exposure is AE
+ * shown only while the camera layer is on, in the HUD's top-right slot, riding the chrome
+ * show/hide like everything else. The dimmer is the GL scrim ("how bright is the video"); exposure is AE
  * compensation ("what did the sensor capture") — the row hides when the camera doesn't
  * support compensation.
  */
@@ -50,11 +51,14 @@ fun ArControls(
     onIsoFractionChange: (Double) -> Unit,
     onShutterFractionChange: (Double) -> Unit,
     modifier: Modifier = Modifier,
+    hudState: HudState? = null,
+    onResetAlignment: () -> Unit = {},
 ) {
     val shape = RoundedCornerShape(14.dp)
     Column(
         modifier =
             modifier
+                .width(IntrinsicSize.Max)
                 .clip(shape)
                 .background(MaterialTheme.colorScheme.surface.copy(alpha = 0.62f))
                 .border(1.dp, MaterialTheme.colorScheme.outline.copy(alpha = 0.3f), shape)
@@ -111,6 +115,13 @@ fun ArControls(
                     },
                 onChange = onShutterFractionChange,
             )
+        }
+        // The HUD this panel replaces owns the drag-to-align readout and its reset, which
+        // are most needed here, so the correction row travels with the panel.
+        if (hudState != null &&
+            HudFormats.correctionActive(hudState.correctionAzDeg, hudState.correctionAltDeg)
+        ) {
+            CorrectionRow(hudState, onResetAlignment)
         }
     }
 }

@@ -213,7 +213,28 @@ fun MapChrome(
     ) {
         // Top-right (D65): top-centre belongs to the time-travel player, the rail owns the
         // left edge in landscape, and the action cluster owns the bottom/right-edge corner.
-        if (hudState != null) {
+        // While the camera layer is on, the AR panel takes the HUD's slot (the HUD's alignment
+        // correction rides along inside it); in landscape it steps left of the action column,
+        // which is tall enough to reach it.
+        if (arUi != null) {
+            ChromeZone(visible, ChromeEdge.TOP, Modifier.align(Alignment.TopEnd)) {
+                ArControls(
+                    state = arUi,
+                    specs = arSpecs,
+                    onScrimChange = onArScrimChange,
+                    onExposureChange = onArExposureChange,
+                    onIsoFractionChange = onArIsoFractionChange,
+                    onShutterFractionChange = onArShutterFractionChange,
+                    hudState = hudState,
+                    onResetAlignment = onResetAlignment,
+                    modifier =
+                        Modifier.padding(
+                            top = 8.dp + hudTopClearance,
+                            end = if (landscape) 64.dp else 8.dp,
+                        ),
+                )
+            }
+        } else if (hudState != null) {
             ChromeZone(visible, ChromeEdge.TOP, Modifier.align(Alignment.TopEnd)) {
                 MapHud(
                     state = hudState,
@@ -238,28 +259,10 @@ fun MapChrome(
                 modifier = Modifier.fillMaxHeight().padding(start = 8.dp),
             )
         }
-        // Bottom-left, lifted clear of the portrait action row (Zone B), whose buttons reach
-        // far enough left to collide with the dimmer slider; in landscape the actions are a
-        // right-edge column, so the corner itself is free.
         if (arUi != null) {
-            ChromeZone(visible, ChromeEdge.BOTTOM, Modifier.align(Alignment.BottomStart)) {
-                ArControls(
-                    state = arUi,
-                    specs = arSpecs,
-                    onScrimChange = onArScrimChange,
-                    onExposureChange = onArExposureChange,
-                    onIsoFractionChange = onArIsoFractionChange,
-                    onShutterFractionChange = onArShutterFractionChange,
-                    modifier =
-                        Modifier.padding(
-                            start = 8.dp,
-                            bottom = if (landscape) 8.dp else 68.dp,
-                        ),
-                )
-            }
             // "Photograph the moment" is most compelling while the camera is live
             // (camera-ar-mode.md slice 4): a transient shutter, lifted clear of the
-            // portrait action row like the controls panel.
+            // portrait action row.
             if (shareEnabled) {
                 ChromeZone(visible, ChromeEdge.BOTTOM, Modifier.align(Alignment.BottomCenter)) {
                     ShareShutter(
