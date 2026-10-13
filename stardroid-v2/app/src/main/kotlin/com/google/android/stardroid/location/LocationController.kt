@@ -75,6 +75,19 @@ class LocationController(
      */
     val fixes: SharedFlow<LatLong> = _fixes.asSharedFlow()
 
+    private val _manualRefusals =
+        MutableSharedFlow<Boolean>(
+            extraBufferCapacity = 1,
+            onBufferOverflow = BufferOverflow.DROP_OLDEST,
+        )
+
+    /**
+     * Permission refusals that arrived while a manual location was in effect, as the
+     * `canAsk` verdict. They leave [state] alone, so the location sheet keeps showing the
+     * manual position; the UI reports them as one-off events instead.
+     */
+    val manualRefusals: SharedFlow<Boolean> = _manualRefusals.asSharedFlow()
+
     /** The last position [fixes] emitted, for suppressing re-delivered identical fixes. */
     private var lastFixEvent: LatLong? = null
 
@@ -133,6 +146,11 @@ class LocationController(
 
     /** The permission request came back negative; [canAsk] is `shouldShowRationale`. */
     fun onPermissionDenied(canAsk: Boolean) {
+        val current = _state.value
+        if (current is LocationState.Confirmed && current.source == LocationSource.MANUAL) {
+            _manualRefusals.tryEmit(canAsk)
+            return
+        }
         cancelPendingStart()
         provider.stopUpdates()
         cancelAcquiringTimeout()

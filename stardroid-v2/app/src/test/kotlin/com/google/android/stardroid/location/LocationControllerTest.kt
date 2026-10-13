@@ -275,6 +275,27 @@ class LocationControllerTest {
         }
 
     @Test
+    fun `refusal from manual mode keeps the manual state and reports an event`() =
+        runTest {
+            val controller = controller()
+            val refusals = mutableListOf<Boolean>()
+            backgroundScope.launch { controller.manualRefusals.collect(refusals::add) }
+            runCurrent()
+            val manual = LatLong(48.85, 2.35)
+            controller.setManualLocation(manual)
+            val before = controller.state.value
+
+            controller.onPermissionDenied(canAsk = false)
+            runCurrent()
+            controller.onPermissionDenied(canAsk = true)
+            runCurrent()
+
+            assertThat(controller.state.value).isEqualTo(before)
+            assertThat(controller.locations.value).isEqualTo(manual)
+            assertThat(refusals).containsExactly(false, true).inOrder()
+        }
+
+    @Test
     fun `revocation while tracking returns to PermissionDenied and stops updates`() =
         runTest {
             val controller = controller()
