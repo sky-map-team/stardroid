@@ -391,13 +391,7 @@ private fun orientationSettingsSection(
             ),
             DiagnosticsRow(
                 stringResource(R.string.diagnostics_calibration_dialog),
-                stringResource(
-                    if (snapshot.dontShowCalibrationDialog) {
-                        R.string.diagnostics_calibration_dialog_suppressed
-                    } else {
-                        R.string.diagnostics_calibration_dialog_shown
-                    },
-                ),
+                onOffText(!snapshot.dontShowCalibrationDialog),
             ),
             DiagnosticsRow(
                 stringResource(R.string.diagnostics_jitter_raw),
