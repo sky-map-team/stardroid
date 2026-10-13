@@ -194,6 +194,7 @@ class MainActivity : ComponentActivity() {
     private val layersViewModel: LayersViewModel by viewModels {
         viewModelFactory {
             initializer {
+                val appContext = applicationContext
                 LayersViewModel(
                     settings,
                     analytics,
@@ -202,7 +203,7 @@ class MainActivity : ComponentActivity() {
                         experimentConfig.isEnabled(Experiment.NOTIFICATIONS),
                     satelliteStatus =
                         satelliteUiStatusFlow(
-                            satelliteEntryPoint(this@MainActivity)
+                            satelliteEntryPoint(appContext)
                                 .satelliteElementsRepository(),
                         ),
                     // The ordinary policy-respecting refresh, never the debug force path.
@@ -210,7 +211,7 @@ class MainActivity : ComponentActivity() {
                     onRefreshSatellites = {
                         withContext(Dispatchers.IO) {
                             val repository =
-                                satelliteEntryPoint(this@MainActivity)
+                                satelliteEntryPoint(appContext)
                                     .satelliteElementsRepository()
                             when (val result = repository.refresh()) {
                                 is RefreshResult.Skipped -> result.retryAfter
@@ -239,6 +240,7 @@ class MainActivity : ComponentActivity() {
     private val searchViewModel: SearchViewModel by viewModels {
         viewModelFactory {
             initializer {
+                val appContext = applicationContext
                 SearchViewModel(
                     catalog = catalogAccess::repository,
                     locale = localeSource.specs,
@@ -252,9 +254,9 @@ class MainActivity : ComponentActivity() {
                     location = { locationController.locations.value },
                     satellites = {
                         trackedSatellites(
-                            this@MainActivity,
+                            appContext,
                             locationController.locations.value,
-                            applicationContext.getString(R.string.satellite_description),
+                            appContext.getString(R.string.satellite_description),
                             timeController.now(),
                             requireLayerEnabled = false,
                         )
@@ -262,12 +264,14 @@ class MainActivity : ComponentActivity() {
                     // Application resources follow the live locale; this activity's would be
                     // frozen at the language it was created in, and the view model outlives it.
                     satelliteAliases = { norad ->
-                        val app = applicationContext
                         when (norad) {
                             SatelliteLayer.ISS_NORAD_ID ->
-                                listOf(app.getString(R.string.satellite_search_name_iss))
+                                listOf(appContext.getString(R.string.satellite_search_name_iss))
                             SatelliteLayer.TIANGONG_NORAD_ID ->
-                                listOf(app.getString(R.string.satellite_search_name_tiangong), "CSS")
+                                listOf(
+                                    appContext.getString(R.string.satellite_search_name_tiangong),
+                                    "CSS",
+                                )
                             else -> emptyList()
                         }
                     },
@@ -279,6 +283,7 @@ class MainActivity : ComponentActivity() {
     private val objectInfoViewModel: ObjectInfoViewModel by viewModels {
         viewModelFactory {
             initializer {
+                val appContext = applicationContext
                 ObjectInfoViewModel(
                     catalog = catalogAccess::repository,
                     locale = localeSource.specs,
@@ -290,29 +295,27 @@ class MainActivity : ComponentActivity() {
                     experimentConfig = experimentConfig,
                     moonWidgetPlaced = {
                         WidgetScheduler.hasInstances(
-                            this@MainActivity,
+                            appContext,
                             MoonWidgetReceiver::class.java,
                         )
                     },
                     satellites = {
                         trackedSatellites(
-                            this@MainActivity,
+                            appContext,
                             locationController.locations.value,
-                            // Not this activity's resources: those stay in the language it was
-                            // created in, and this view model outlives it (as for search).
-                            applicationContext.getString(R.string.satellite_description),
+                            appContext.getString(R.string.satellite_description),
                             timeController.now(),
                         )
                     },
                     passTimesReliable = {
-                        satelliteEntryPoint(this@MainActivity)
+                        satelliteEntryPoint(appContext)
                             .satelliteElementsRepository()
                             .current()
                             .mayShowPassTimes
                     },
                     nextPass = { norad ->
                         nextVisiblePass(
-                            this@MainActivity,
+                            appContext,
                             norad,
                             locationController.locations.value,
                             timeController.now(),
