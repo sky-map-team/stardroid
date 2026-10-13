@@ -453,6 +453,13 @@ private fun mapSection(
                         if (snapshot.rejectedSensorSamples > 0) colors.bad else Color.Unspecified,
                 ),
             )
+            add(
+                DiagnosticsRow(
+                    label = stringResource(R.string.diagnostics_smoother_heals),
+                    value = snapshot.smootherHeals.toString(),
+                    valueColor = if (snapshot.smootherHeals > 0) colors.bad else Color.Unspecified,
+                ),
+            )
             snapshot.processLifecycleState?.let {
                 add(
                     DiagnosticsRow(

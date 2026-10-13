@@ -9,7 +9,10 @@
 
 package com.google.android.stardroid.sensors
 
+import com.google.android.stardroid.astronomy.orientationFromSensors
 import com.google.android.stardroid.math.Matrix3
+import com.google.android.stardroid.math.Vector3
+import kotlin.math.max
 import kotlin.math.sqrt
 
 /**
@@ -84,6 +87,43 @@ internal fun FloatArray.isUsableQuaternion(): Boolean {
     val norm2 = this[0] * this[0] + this[1] * this[1] + this[2] * this[2] + this[3] * this[3]
     // A NaN norm fails both comparisons, so this one range check also covers non-finite input.
     return norm2 in MIN_USABLE_NORM2..MAX_USABLE_NORM2
+}
+
+/**
+ * The fused path's per-event step: a `TYPE_ROTATION_VECTOR` sample's [values] as a usable
+ * `(x, y, z, w)` quaternion in [out], or `null` if the sample is not a rotation.
+ *
+ * Some devices (e.g. Galaxy S4) report more than four values, others only three (no scalar
+ * component); the scalar is derived where it's missing.
+ */
+internal fun rotationVectorQuaternion(
+    values: FloatArray,
+    out: FloatArray,
+): FloatArray? {
+    out[0] = values[0]
+    out[1] = values[1]
+    out[2] = values[2]
+    out[3] =
+        if (values.size >= 4) {
+            values[3]
+        } else {
+            sqrt(max(0f, 1f - (out[0] * out[0] + out[1] * out[1] + out[2] * out[2])))
+        }
+    return out.takeIf { it.isUsableQuaternion() }
+}
+
+/**
+ * The legacy path's per-event step: the natural-frame orientation fused from one
+ * accelerometer and magnetometer reading, with its quaternion written to [quaternionOut], or
+ * `null` if the readings are degenerate or don't make a usable rotation.
+ */
+internal fun accelMagOrientation(
+    acceleration: Vector3,
+    magneticField: Vector3,
+    quaternionOut: FloatArray,
+): Matrix3? {
+    val fused = orientationFromSensors(acceleration, magneticField) ?: return null
+    return fused.takeIf { it.writeQuaternion(quaternionOut).isUsableQuaternion() }
 }
 
 private const val MIN_USABLE_NORM2 = 0.5f

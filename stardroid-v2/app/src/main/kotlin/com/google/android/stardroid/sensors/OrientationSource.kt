@@ -48,6 +48,12 @@ interface OrientationSource {
     val rejectedSampleCount: Int get() = 0
 
     /**
+     * Times the smoother discarded its state after producing a non-finite orientation since
+     * startup. Non-zero means the self-heal from #1109 fired on this device.
+     */
+    val smootherHealCount: Int get() = 0
+
+    /**
      * The path [orientations] runs with the Gyro setting at [disableGyro]. The setting alone
      * can't say: with no fused sensor on the device, the legacy path runs whatever it is.
      */
