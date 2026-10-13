@@ -94,7 +94,7 @@ internal fun FloatArray.isUsableQuaternion(): Boolean {
  * `(x, y, z, w)` quaternion in [out], or `null` if the sample is not a rotation.
  *
  * Some devices (e.g. Galaxy S4) report more than four values, others only three (no scalar
- * component); the scalar is derived where it's missing.
+ * component); the scalar is derived where it's missing. [out] is overwritten either way.
  */
 internal fun rotationVectorQuaternion(
     values: FloatArray,

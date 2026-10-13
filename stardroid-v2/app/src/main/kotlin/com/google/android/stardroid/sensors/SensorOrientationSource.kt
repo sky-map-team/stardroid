@@ -261,7 +261,6 @@ class SensorOrientationSource(
                         val mag = magneticField ?: return
                         val fused =
                             accelMagOrientation(accel, mag, quaternion) ?: return reject()
-                        val fusedQuaternion = quaternion
                         // Smoothing happens here, on the fused orientation in the natural
                         // frame, rather than on the two raw vectors feeding
                         // orientationFromSensors. v1's per-axis smoothers ran the
@@ -273,7 +272,7 @@ class SensorOrientationSource(
                         // rotation from being smoothed through as though it were movement.
                         val smoothed =
                             smoother
-                                ?.update(fusedQuaternion, event.timestamp)
+                                ?.update(quaternion, event.timestamp)
                                 ?.toRotationMatrix3()
                                 ?: fused
                         // ROTATION_0 needs no remap; skip the FloatArray round-trip (two
@@ -330,10 +329,9 @@ class SensorOrientationSource(
                         val mag = magneticField ?: return
                         val fused =
                             accelMagOrientation(accel, mag, quaternion) ?: return reject()
-                        val fusedQuaternion = quaternion
                         val smoothed =
                             smoother
-                                ?.update(fusedQuaternion, event.timestamp)
+                                ?.update(quaternion, event.timestamp)
                                 ?.toRotationMatrix3()
                                 ?: fused
                         val remappedFused =

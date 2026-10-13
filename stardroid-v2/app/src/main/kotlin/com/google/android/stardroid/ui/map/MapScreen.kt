@@ -992,9 +992,7 @@ private fun LocationStateDialogs(
     }
 
     LaunchedEffect(locationViewModel) {
-        locationViewModel.manualRefusals.collect { canAsk ->
-            if (!canAsk) manualRefusalPending = true
-        }
+        locationViewModel.manualRefusals.collect { manualRefusalPending = true }
     }
 
     val permanentlyDenied =

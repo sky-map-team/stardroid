@@ -278,21 +278,20 @@ class LocationControllerTest {
     fun `refusal from manual mode keeps the manual state and reports an event`() =
         runTest {
             val controller = controller()
-            val refusals = mutableListOf<Boolean>()
-            backgroundScope.launch { controller.manualRefusals.collect(refusals::add) }
-            runCurrent()
             val manual = LatLong(48.85, 2.35)
             controller.setManualLocation(manual)
             val before = controller.state.value
 
+            // Before anyone collects: the event must wait for the UI.
             controller.onPermissionDenied(canAsk = false)
-            runCurrent()
             controller.onPermissionDenied(canAsk = true)
+            val refusals = mutableListOf<Unit>()
+            backgroundScope.launch { controller.manualRefusals.collect(refusals::add) }
             runCurrent()
 
             assertThat(controller.state.value).isEqualTo(before)
             assertThat(controller.locations.value).isEqualTo(manual)
-            assertThat(refusals).containsExactly(false, true).inOrder()
+            assertThat(refusals).hasSize(1)
         }
 
     @Test

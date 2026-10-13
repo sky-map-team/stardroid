@@ -16,6 +16,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.channels.BufferOverflow
+import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableSharedFlow
@@ -25,6 +26,7 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asSharedFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.flow.receiveAsFlow
 import kotlinx.coroutines.launch
 
 /**
@@ -75,18 +77,15 @@ class LocationController(
      */
     val fixes: SharedFlow<LatLong> = _fixes.asSharedFlow()
 
-    private val _manualRefusals =
-        MutableSharedFlow<Boolean>(
-            extraBufferCapacity = 1,
-            onBufferOverflow = BufferOverflow.DROP_OLDEST,
-        )
+    private val _manualRefusals = Channel<Unit>(Channel.CONFLATED)
 
     /**
-     * Permission refusals that arrived while a manual location was in effect, as the
-     * `canAsk` verdict. They leave [state] alone, so the location sheet keeps showing the
-     * manual position; the UI reports them as one-off events instead.
+     * Permanent permission refusals that arrived while a manual location was in effect. They
+     * leave [state] alone, so the location sheet keeps showing the manual position; the UI
+     * gets them as one-off events instead. Buffered until collected, so a refusal that lands
+     * while the map isn't composed (rotation) still reaches the dialog.
      */
-    val manualRefusals: SharedFlow<Boolean> = _manualRefusals.asSharedFlow()
+    val manualRefusals: Flow<Unit> = _manualRefusals.receiveAsFlow()
 
     /** The last position [fixes] emitted, for suppressing re-delivered identical fixes. */
     private var lastFixEvent: LatLong? = null
@@ -148,7 +147,8 @@ class LocationController(
     fun onPermissionDenied(canAsk: Boolean) {
         val current = _state.value
         if (current is LocationState.Confirmed && current.source == LocationSource.MANUAL) {
-            _manualRefusals.tryEmit(canAsk)
+            // Nothing is acquiring or pending in manual mode, so there is nothing to cancel.
+            if (!canAsk) _manualRefusals.trySend(Unit)
             return
         }
         cancelPendingStart()
