@@ -5,6 +5,12 @@ All notable changes to Sky Map are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [2.1.4:Artemis] (v2) - 2026-10-13
+
+### Fixed
+- The terms screen no longer clips the Accept button at large font or display sizes; the bottom
+  bar now grows with its content. (#1101)
+
 ## [2.1.3:Artemis] (v2) - 2026-10-12
 
 ### Fixed
