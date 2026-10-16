@@ -9,20 +9,21 @@
 
 // ktlint-gradle only registers source-set tasks when `org.jetbrains.kotlin.android` is applied,
 // which AGP's built-in Kotlin never does, so Android modules would lint only their .kts scripts
-// (#1054). Run the same ktlint version over src/**/*.kt directly and hook it into the
+// (#1054). Run the catalog's ktlint version over src/**/*.kt directly and hook it into the
 // plugin's ktlintCheck / ktlintFormat.
 
 plugins {
     id("org.jlleitschuh.gradle.ktlint")
 }
 
-// Keep in sync with ktlint-gradle's default ktlint version (see libs.versions.toml).
-val ktlintVersion = "1.0.1"
+val libs = extensions.getByType<VersionCatalogsExtension>().named("libs")
+
+ktlint { version.set(libs.findVersion("ktlint").get().requiredVersion) }
 
 val ktlintCli by configurations.creating
 
 dependencies {
-    ktlintCli("com.pinterest.ktlint:ktlint-cli:$ktlintVersion")
+    ktlintCli(libs.findLibrary("ktlint-cli").get())
 }
 
 fun registerKtlintSources(name: String, format: Boolean) =
@@ -42,7 +43,16 @@ fun registerKtlintSources(name: String, format: Boolean) =
         )
     }
 
-val checkSources = registerKtlintSources("ktlintSourcesCheck", format = false)
+val checkSources = registerKtlintSources("ktlintSourcesCheck", format = false).also {
+    // A marker output lets Gradle skip the check when no source or .editorconfig changed.
+    val marker = layout.buildDirectory.file("ktlint-sources/ok")
+    it.configure {
+        inputs.files(fileTree("src") { include("**/*.kt") }).withPropertyName("sources")
+        inputs.files(rootProject.file(".editorconfig")).withPropertyName("editorconfig")
+        outputs.file(marker)
+        doLast { marker.get().asFile.writeText("ok") }
+    }
+}
 val formatSources = registerKtlintSources("ktlintSourcesFormat", format = true)
 
 tasks.named("ktlintCheck") { dependsOn(checkSources) }

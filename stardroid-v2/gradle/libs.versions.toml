@@ -2,6 +2,7 @@
 agp = "9.0.1"
 kotlin = "2.2.10"
 ktlint-gradle = "12.1.2"
+ktlint = "1.0.1"
 junit5 = "5.11.0"
 junitPlatform = "1.11.0"
 truth = "1.4.4"
@@ -38,6 +39,7 @@ hilt = "2.60.1"
 # Gradle plugin artifacts, used on the build-logic classpath for convention plugins.
 android-gradlePlugin = { group = "com.android.tools.build", name = "gradle", version.ref = "agp" }
 kotlin-gradlePlugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
+ktlint-cli = { group = "com.pinterest.ktlint", name = "ktlint-cli", version.ref = "ktlint" }
 ktlint-gradlePlugin = { group = "org.jlleitschuh.gradle", name = "ktlint-gradle", version.ref = "ktlint-gradle" }
 ksp-gradlePlugin = { group = "com.google.devtools.ksp", name = "com.google.devtools.ksp.gradle.plugin", version.ref = "ksp" }
 compose-compiler-gradlePlugin = { group = "org.jetbrains.kotlin", name = "compose-compiler-gradle-plugin", version.ref = "kotlin" }
