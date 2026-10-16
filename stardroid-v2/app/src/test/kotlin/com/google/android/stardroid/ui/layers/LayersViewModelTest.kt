@@ -74,9 +74,10 @@ class LayersViewModelTest {
             assertThat(stars.enabled).isFalse()
             // The explicit disable, plus every layer that defaults off on its own.
             val expectedDisabled =
-                1 + LayerRegistry.toggleableIds(satellitesEnabled = false).count {
-                    !LayerRegistry.defaultEnabled(it)
-                }
+                1 +
+                    LayerRegistry.toggleableIds(satellitesEnabled = false).count {
+                        !LayerRegistry.defaultEnabled(it)
+                    }
             assertThat(vm.toggles.value.count { !it.enabled }).isEqualTo(expectedDisabled)
         }
 

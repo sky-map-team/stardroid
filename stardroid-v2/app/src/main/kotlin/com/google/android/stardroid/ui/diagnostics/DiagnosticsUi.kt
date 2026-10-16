@@ -183,7 +183,9 @@ fun DiagnosticsScreen(
                         onClick = {
                             scope.launch {
                                 experimentFetchResult =
-                                    when (val result = viewModel.fetchExperiments(experimentConfig)) {
+                                    when (
+                                        val result = viewModel.fetchExperiments(experimentConfig)
+                                    ) {
                                         FetchResult.Unsupported -> "Not supported in this build"
                                         is FetchResult.Success ->
                                             if (result.updated) {
@@ -643,9 +645,18 @@ private fun experimentsSection(
     val rows =
         buildList {
             if (config.canFetch) {
-                add(DiagnosticsRow(stringResource(R.string.diagnostics_experiments_last_fetched), lastFetched))
+                add(
+                    DiagnosticsRow(
+                        stringResource(R.string.diagnostics_experiments_last_fetched),
+                        lastFetched,
+                    ),
+                )
             }
-            Experiment.entries.forEach { add(DiagnosticsRow(it.key, config.isEnabled(it).toString())) }
+            Experiment.entries.forEach {
+                add(
+                    DiagnosticsRow(it.key, config.isEnabled(it).toString()),
+                )
+            }
         }
     return DiagnosticsSection(stringResource(R.string.diagnostics_section_experiments), rows)
 }

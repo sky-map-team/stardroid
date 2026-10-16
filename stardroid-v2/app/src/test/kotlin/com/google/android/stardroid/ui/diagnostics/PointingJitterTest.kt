@@ -33,7 +33,10 @@ class PointingJitterTest {
             jitter = accumulator.add(i * 10L, 0.0, altitudes[i])
         }
         val mean = altitudes.average()
-        val expected = kotlin.math.sqrt(altitudes.sumOf { (it - mean) * (it - mean) } / altitudes.size)
+        val expected =
+            kotlin.math.sqrt(
+                altitudes.sumOf { (it - mean) * (it - mean) } / altitudes.size,
+            )
         assertThat(jitter.altitudeStdDevDeg).isWithin(1e-9).of(expected)
     }
 

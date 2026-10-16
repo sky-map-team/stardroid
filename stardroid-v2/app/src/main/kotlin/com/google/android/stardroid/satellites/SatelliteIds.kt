@@ -41,7 +41,10 @@ object SatelliteIds {
         }
 
     /** [live] with the static content of [catalog], its row in the bundled catalog, if any. */
-    fun withCatalogContent(live: ObjectInfo, catalog: ObjectInfo?): ObjectInfo =
+    fun withCatalogContent(
+        live: ObjectInfo,
+        catalog: ObjectInfo?,
+    ): ObjectInfo =
         if (catalog == null) {
             live
         } else {

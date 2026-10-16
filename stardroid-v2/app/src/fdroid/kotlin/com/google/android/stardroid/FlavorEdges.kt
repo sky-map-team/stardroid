@@ -11,8 +11,8 @@ package com.google.android.stardroid
 
 import android.app.Application
 import com.google.android.stardroid.analytics.Analytics
-import com.google.android.stardroid.announcements.AnnouncementSource
 import com.google.android.stardroid.analytics.NoOpAnalytics
+import com.google.android.stardroid.announcements.AnnouncementSource
 import com.google.android.stardroid.location.LocationProvider
 import com.google.android.stardroid.location.PlatformLocationProvider
 import com.google.android.stardroid.startup.ExperimentConfig

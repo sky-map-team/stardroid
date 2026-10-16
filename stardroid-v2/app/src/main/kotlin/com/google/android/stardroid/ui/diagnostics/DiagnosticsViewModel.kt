@@ -26,13 +26,13 @@ import com.google.android.stardroid.sensors.MagneticDeclinationSource
 import com.google.android.stardroid.sensors.OrientationSource
 import com.google.android.stardroid.sensors.SensorKind
 import com.google.android.stardroid.sensors.SensorPath
-import com.google.android.stardroid.startup.ExperimentConfig
-import com.google.android.stardroid.startup.FetchResult
 import com.google.android.stardroid.sensors.SensorReading
 import com.google.android.stardroid.sensors.SensorStatusSource
 import com.google.android.stardroid.settings.OneEuroEaseOff
 import com.google.android.stardroid.settings.OneEuroSteadiness
 import com.google.android.stardroid.settings.Settings
+import com.google.android.stardroid.startup.ExperimentConfig
+import com.google.android.stardroid.startup.FetchResult
 import com.google.android.stardroid.ui.map.ReferenceFrame
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.FlowPreview
@@ -254,12 +254,6 @@ class DiagnosticsViewModel(
             rotationMatrixFromVector(values)
         }
 
-    /**
-     * The correction the map actually applies (MapViewModel's declination plus the
-     * drag-to-align azimuth offset, D64 — v1 showed its model's live value the same way),
-     * plus the raw alignment pair as its own read-only row. Reactive to settings changes
-     * rather than only re-sampling them on the next 500 ms tick.
-     */
     /** Bundles every settings flow the sensor pipeline reads, one combine slot's worth. */
     private val orientationSettings: Flow<OrientationSettingsSnapshot> =
         combine(
@@ -319,6 +313,12 @@ class DiagnosticsViewModel(
                 )
             }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), null)
 
+    /**
+     * The correction the map actually applies (MapViewModel's declination plus the
+     * drag-to-align azimuth offset, D64 — v1 showed its model's live value the same way),
+     * plus the raw alignment pair as its own read-only row. Reactive to settings changes
+     * rather than only re-sampling them on the next 500 ms tick.
+     */
     val snapshots: StateFlow<DiagnosticsSnapshot> =
         combine(
             flow {
