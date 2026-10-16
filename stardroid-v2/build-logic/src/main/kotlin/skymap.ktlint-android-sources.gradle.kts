@@ -41,4 +41,5 @@ val checkSources = registerKtlintSources("ktlintSourcesCheck", format = false)
 val formatSources = registerKtlintSources("ktlintSourcesFormat", format = true)
 
 tasks.named("ktlintCheck") { dependsOn(checkSources) }
+tasks.named("check") { dependsOn(checkSources) }
 tasks.named("ktlintFormat") { dependsOn(formatSources) }
