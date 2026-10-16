@@ -38,14 +38,23 @@ class SensorOrientationSourceTest {
     init {
         `when`(manager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER)).thenReturn(accelerometer)
         `when`(manager.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD)).thenReturn(magnetometer)
-        `when`(manager.registerListener(any(SensorEventListener::class.java), any(Sensor::class.java), anyInt()))
+        `when`(
+            manager.registerListener(
+                any(SensorEventListener::class.java),
+                any(Sensor::class.java),
+                anyInt(),
+            ),
+        )
             .thenAnswer {
                 listeners += it.getArgument<SensorEventListener>(0)
                 true
             }
     }
 
-    private fun sensor(type: Int) = mock(Sensor::class.java).also { `when`(it.type).thenReturn(type) }
+    private fun sensor(type: Int) =
+        mock(
+            Sensor::class.java,
+        ).also { `when`(it.type).thenReturn(type) }
 
     // SensorEvent has no public constructor; values/sensor/timestamp are public final fields.
     private fun event(
@@ -54,6 +63,7 @@ class SensorOrientationSourceTest {
         vararg values: Float,
     ): SensorEvent {
         val event = mock(SensorEvent::class.java)
+
         fun set(
             name: String,
             value: Any,
@@ -74,8 +84,7 @@ class SensorOrientationSourceTest {
         vararg values: Float,
     ) = onSensorChanged(event(magnetometer, timestampNanos, *values))
 
-    private fun source(config: SensorConfig) =
-        SensorOrientationSource(manager, flowOf(config))
+    private fun source(config: SensorConfig) = SensorOrientationSource(manager, flowOf(config))
 
     private fun TestScope.collect(
         source: SensorOrientationSource,
