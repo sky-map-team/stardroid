@@ -148,7 +148,8 @@ object PassAlerts {
  * Posts the pass alert when its alarm fires.
  *
  * Re-checks the opt-in at fire time rather than trusting the armed alarm: a user who turned pass
- * alerts off after one was armed must not be interrupted by it.
+ * alerts off after one was armed must not be interrupted by it. Also drops the alert if the pass
+ * has already begun.
  */
 class PassAlertReceiver : BroadcastReceiver() {
     override fun onReceive(
