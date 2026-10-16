@@ -24,6 +24,8 @@ data class MoonWidgetModel(
     val illuminatedFraction: Double,
     /** Whether the illuminated fraction is increasing (lit limb on the east/right, N hemisphere). */
     val waxing: Boolean,
+    /** Days since the last new moon. */
+    val ageDays: Double,
     /**
      * Whether the disc should be drawn mirrored: a southern-hemisphere observer sees the Moon
      * "upside down", putting the lit limb on the opposite side. False without a location.
@@ -53,6 +55,7 @@ fun moonWidgetModel(
         phase = lunarPhaseBucket(time, ephemeris),
         illuminatedFraction = ephemeris.illuminatedFraction(SolarSystemBody.MOON, time),
         waxing = waxing,
+        ageDays = moonAgeDays(time, ephemeris),
         mirrored = location != null && location.latitudeDeg < 0,
         riseTime =
             location?.let {

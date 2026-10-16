@@ -44,6 +44,14 @@ class MoonWidgetModelTest {
     }
 
     @Test
+    fun age_countsDaysSinceNewMoon() {
+        // 2024-01-11 11:57 UTC new moon -> 2024-01-25 17:54 UTC full moon is ~14.25 days later.
+        assertThat(moonWidgetModel(utc(2024, 1, 25, 17, 54), LONDON).ageDays)
+            .isWithin(1.0).of(14.25)
+        assertThat(moonWidgetModel(utc(2024, 1, 18, 12), LONDON).ageDays).isWithin(1.0).of(7.0)
+    }
+
+    @Test
     fun mirrored_followsHemisphere() {
         val time = utc(2024, 1, 18, 12)
         assertThat(moonWidgetModel(time, LONDON).mirrored).isFalse()
