@@ -79,15 +79,8 @@ class DataStoreAnnouncementState(
         now: Instant,
     ) = update { entries ->
         val old = entries[id]
-        entries + (
-            id to
-                Entry(
-                    (old?.record ?: SeenRecord()).let {
-                        it.copy(shownOn = it.shownOn + surface)
-                    },
-                    old?.firstSeen ?: now,
-                )
-        )
+        val record = (old?.record ?: SeenRecord()).let { it.copy(shownOn = it.shownOn + surface) }
+        entries + (id to Entry(record, old?.firstSeen ?: now))
     }
 
     override suspend fun dismiss(

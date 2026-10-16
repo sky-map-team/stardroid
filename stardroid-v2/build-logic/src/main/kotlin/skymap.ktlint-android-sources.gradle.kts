@@ -12,6 +12,10 @@
 // (#1054). Run the same ktlint version over src/**/*.kt directly and hook it into the
 // plugin's ktlintCheck / ktlintFormat.
 
+plugins {
+    id("org.jlleitschuh.gradle.ktlint")
+}
+
 val ktlintVersion = "1.0.1"
 
 val ktlintCli by configurations.creating
