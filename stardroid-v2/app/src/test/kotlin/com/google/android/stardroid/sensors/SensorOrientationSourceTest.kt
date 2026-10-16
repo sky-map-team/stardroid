@@ -14,10 +14,12 @@ import android.hardware.SensorEvent
 import android.hardware.SensorEventListener
 import android.hardware.SensorManager
 import com.google.android.stardroid.math.Matrix3
+import com.google.android.stardroid.math.Vector3
 import com.google.common.truth.Truth.assertThat
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.test.TestScope
 import kotlinx.coroutines.test.UnconfinedTestDispatcher
 import kotlinx.coroutines.test.runTest
 import org.junit.jupiter.api.Test
@@ -75,13 +77,15 @@ class SensorOrientationSourceTest {
     private fun source(config: SensorConfig) =
         SensorOrientationSource(manager, flowOf(config))
 
-    private fun kotlinx.coroutines.test.TestScope.collect(
+    private fun TestScope.collect(
         source: SensorOrientationSource,
         out: MutableList<Matrix3>,
-    ) {
+    ): SensorEventListener {
+        listeners.clear()
         backgroundScope.launch(UnconfinedTestDispatcher(testScheduler)) {
             source.orientations().collect { out += it }
         }
+        return listeners.first()
     }
 
     @Test
@@ -89,8 +93,7 @@ class SensorOrientationSourceTest {
         runTest {
             val out = mutableListOf<Matrix3>()
             val source = source(SensorConfig())
-            collect(source, out)
-            val listener = listeners.first()
+            val listener = collect(source, out)
 
             listener.mag(1_000_000L, 20f, 0f, -40f)
             assertThat(out).isEmpty()
@@ -111,15 +114,13 @@ class SensorOrientationSourceTest {
             val interleaved = mutableListOf<Matrix3>()
             val frames = listOf(0f, 0.2f, 0.4f, 0.6f)
 
-            collect(source(config), clean)
-            val cleanListener = listeners.last()
+            val cleanListener = collect(source(config), clean)
             cleanListener.mag(0L, 20f, 0f, -40f)
             frames.forEachIndexed { i, tilt ->
                 cleanListener.accel((i + 1) * 20_000_000L, tilt, 0f, 9.8f)
             }
 
-            collect(source(config), interleaved)
-            val interleavedListener = listeners.last()
+            val interleavedListener = collect(source(config), interleaved)
             interleavedListener.mag(0L, 20f, 0f, -40f)
             frames.forEachIndexed { i, tilt ->
                 // Magnetometer clock stepping backwards against the accelerometer's.
@@ -130,44 +131,59 @@ class SensorOrientationSourceTest {
             assertThat(interleaved).isEqualTo(clean)
         }
 
+    private val tilts = listOf(0f, 1f, 2f, 3f)
+
+    // The same fused orientations through a smoother on the legacy tables.
+    private fun legacyReference(): List<Matrix3> {
+        val config = SensorConfig(smoothingEnabled = true)
+        val reference =
+            OneEuroQuaternionSmoother(
+                minCutoff = OneEuroQuaternionSmoother.minCutoffFor(config.steadiness, true),
+                beta = OneEuroQuaternionSmoother.betaFor(config.easeOff, true),
+                speedFloor = OneEuroQuaternionSmoother.speedFloorFor(true),
+            )
+        val quaternion = FloatArray(4)
+        return tilts.mapIndexed { i, tilt ->
+            accelMagOrientation(
+                Vector3(tilt.toDouble(), 0.0, 9.8f.toDouble()),
+                Vector3(20.0, 0.0, -40.0),
+                quaternion,
+            )
+            reference.update(quaternion, (i + 1) * 20_000_000L).toRotationMatrix3()
+        }
+    }
+
+    private fun TestScope.feedTilts(listener: SensorEventListener) {
+        listener.mag(0L, 20f, 0f, -40f)
+        tilts.forEachIndexed { i, tilt -> listener.accel((i + 1) * 20_000_000L, tilt, 0f, 9.8f) }
+    }
+
     @Test
     fun `without a rotation vector sensor disableGyro does not change the tables`() =
         runTest {
             val off = mutableListOf<Matrix3>()
             val on = mutableListOf<Matrix3>()
-            val frames = listOf(0f, 1f, 2f, 3f)
-
-            collect(source(SensorConfig(smoothingEnabled = true, disableGyro = false)), off)
-            val offListener = listeners.last()
-            collect(source(SensorConfig(smoothingEnabled = true, disableGyro = true)), on)
-            val onListener = listeners.last()
-            listOf(offListener, onListener).forEach { it.mag(0L, 20f, 0f, -40f) }
-            frames.forEachIndexed { i, tilt ->
-                listOf(offListener, onListener).forEach {
-                    it.accel((i + 1) * 20_000_000L, tilt, 0f, 9.8f)
-                }
-            }
-
-            // Reference: the same fused orientations through a smoother on the legacy tables.
-            val config = SensorConfig(smoothingEnabled = true)
-            val reference =
-                OneEuroQuaternionSmoother(
-                    minCutoff = OneEuroQuaternionSmoother.minCutoffFor(config.steadiness, true),
-                    beta = OneEuroQuaternionSmoother.betaFor(config.easeOff, true),
-                    speedFloor = OneEuroQuaternionSmoother.speedFloorFor(true),
-                )
-            val quaternion = FloatArray(4)
-            val expected =
-                frames.mapIndexed { i, tilt ->
-                    accelMagOrientation(
-                        com.google.android.stardroid.math.Vector3(tilt.toDouble(), 0.0, 9.8f.toDouble()),
-                        com.google.android.stardroid.math.Vector3(20.0, 0.0, -40.0),
-                        quaternion,
-                    )
-                    reference.update(quaternion, (i + 1) * 20_000_000L).toRotationMatrix3()
-                }
+            val offListener =
+                collect(source(SensorConfig(smoothingEnabled = true, disableGyro = false)), off)
+            feedTilts(offListener)
+            val onListener =
+                collect(source(SensorConfig(smoothingEnabled = true, disableGyro = true)), on)
+            feedTilts(onListener)
 
             assertThat(on).isEqualTo(off)
-            assertThat(on).isEqualTo(expected)
+            assertThat(on).isEqualTo(legacyReference())
+        }
+
+    @Test
+    fun `with a rotation vector sensor disableGyro still gets the legacy tables`() =
+        runTest {
+            val rotationSensor = sensor(Sensor.TYPE_ROTATION_VECTOR)
+            `when`(manager.getDefaultSensor(Sensor.TYPE_ROTATION_VECTOR)).thenReturn(rotationSensor)
+            val out = mutableListOf<Matrix3>()
+            val listener =
+                collect(source(SensorConfig(smoothingEnabled = true, disableGyro = true)), out)
+            feedTilts(listener)
+
+            assertThat(out).isEqualTo(legacyReference())
         }
 }
