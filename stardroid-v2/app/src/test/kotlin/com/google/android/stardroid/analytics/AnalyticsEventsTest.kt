@@ -15,23 +15,25 @@ import org.junit.jupiter.api.Test
 class AnalyticsEventsTest {
     @Test
     fun `user property names fit Firebase's 24 character limit`() {
-        val userProperties = AnalyticsEvents::class.java.declaredFields
-            .filter { it.name in USER_PROPERTY_FIELDS }
-            .map { it.apply { isAccessible = true }.get(null) as String }
+        val userProperties =
+            AnalyticsEvents::class.java.declaredFields
+                .filter { it.name in USER_PROPERTY_FIELDS }
+                .map { it.apply { isAccessible = true }.get(null) as String }
 
         assertThat(userProperties).hasSize(USER_PROPERTY_FIELDS.size)
         userProperties.forEach { assertThat(it.length).isAtMost(24) }
     }
 
     private companion object {
-        val USER_PROPERTY_FIELDS = setOf(
-            "NEW_USER",
-            "DEVICE_SENSORS",
-            "HAS_GYRO",
-            "HAS_ROTATION_VECTOR",
-            "FIRST_INSTALL_VERSION",
-            "USER_LOCALE",
-            "COMPLETED_WARM_WELCOME",
-        )
+        val USER_PROPERTY_FIELDS =
+            setOf(
+                "NEW_USER",
+                "DEVICE_SENSORS",
+                "HAS_GYRO",
+                "HAS_ROTATION_VECTOR",
+                "FIRST_INSTALL_VERSION",
+                "USER_LOCALE",
+                "COMPLETED_WARM_WELCOME",
+            )
     }
 }

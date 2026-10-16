@@ -56,7 +56,9 @@ class RemoteConfigExperimentConfig : ExperimentConfig {
     override val lastFetchTimeMillis: Long?
         get() {
             val info = remoteConfig.info
-            return if (info.lastFetchStatus == FirebaseRemoteConfig.LAST_FETCH_STATUS_NO_FETCH_YET) {
+            val notFetchedYet =
+                info.lastFetchStatus == FirebaseRemoteConfig.LAST_FETCH_STATUS_NO_FETCH_YET
+            return if (notFetchedYet) {
                 null
             } else {
                 info.fetchTimeMillis

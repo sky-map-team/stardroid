@@ -12,11 +12,8 @@ package com.google.android.stardroid.settings
 import com.google.android.stardroid.astronomy.ViewDirectionMode
 import com.google.android.stardroid.math.LatLong
 import com.google.android.stardroid.render.api.LayerId
-import com.google.android.stardroid.settings.OneEuroEaseOff
-import com.google.android.stardroid.settings.OneEuroSteadiness
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.map
 
 /** In-memory [Settings] for JVM tests: every flow is a hot [MutableStateFlow]. */
 class FakeSettings : Settings {

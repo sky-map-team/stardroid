@@ -179,7 +179,6 @@ class SettingsViewModel(
                 fontSize = appearance.fontSize,
                 autoDimness = appearance.autoDimness,
                 disableGyro = sensors.disableGyro,
-
                 reverseMagneticZ = sensors.reverseMagneticZ,
                 smoothingEnabled = sensors.smoothingEnabled,
                 steadiness = sensors.steadiness,

@@ -66,17 +66,17 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.ModalBottomSheet
-import androidx.compose.material3.SheetValue
-import androidx.compose.material3.rememberModalBottomSheetState
 import androidx.compose.material3.PlainTooltip
 import androidx.compose.material3.SegmentedButton
 import androidx.compose.material3.SegmentedButtonDefaults
+import androidx.compose.material3.SheetValue
 import androidx.compose.material3.SingleChoiceSegmentedButtonRow
 import androidx.compose.material3.Switch
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.material3.TooltipBox
 import androidx.compose.material3.TooltipDefaults
+import androidx.compose.material3.rememberModalBottomSheetState
 import androidx.compose.material3.rememberTooltipState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -84,9 +84,9 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
-import androidx.compose.runtime.snapshotFlow
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
+import androidx.compose.runtime.snapshotFlow
 import androidx.compose.runtime.withFrameNanos
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -1383,7 +1383,10 @@ private fun layerHelp(id: LayerId): LayerHelp =
         SolarSystemLayer.LAYER_ID ->
             LayerHelp(R.string.layer_help_solar_system, R.string.layer_help_options_solar_system)
         MeteorShowerLayer.LAYER_ID ->
-            LayerHelp(R.string.layer_help_meteor_showers, R.string.layer_help_options_meteor_showers)
+            LayerHelp(
+                R.string.layer_help_meteor_showers,
+                R.string.layer_help_options_meteor_showers,
+            )
         SatelliteLayer.LAYER_ID ->
             LayerHelp(R.string.layer_help_satellites, R.string.layer_help_options_satellites)
         GridLayer.LAYER_ID ->

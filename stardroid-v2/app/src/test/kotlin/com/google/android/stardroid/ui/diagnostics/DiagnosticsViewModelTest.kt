@@ -10,6 +10,8 @@
 package com.google.android.stardroid.ui.diagnostics
 
 import androidx.lifecycle.Lifecycle
+import com.google.android.stardroid.analytics.AnalyticsEvents
+import com.google.android.stardroid.analytics.FakeAnalytics
 import com.google.android.stardroid.astronomy.LocalFrame
 import com.google.android.stardroid.astronomy.ViewDirectionMode
 import com.google.android.stardroid.location.LocationSource
@@ -30,8 +32,6 @@ import com.google.android.stardroid.sensors.SensorReading
 import com.google.android.stardroid.settings.FakeSettings
 import com.google.android.stardroid.settings.OneEuroEaseOff
 import com.google.android.stardroid.settings.OneEuroSteadiness
-import com.google.android.stardroid.analytics.AnalyticsEvents
-import com.google.android.stardroid.analytics.FakeAnalytics
 import com.google.android.stardroid.startup.Experiment
 import com.google.android.stardroid.startup.ExperimentConfig
 import com.google.android.stardroid.startup.FetchResult
@@ -385,7 +385,10 @@ class DiagnosticsViewModelTest {
                 object : ExperimentConfig {
                     override fun isEnabled(experiment: Experiment) = true
 
-                    override suspend fun fetchNow(): FetchResult = FetchResult.Success(updated = true)
+                    override suspend fun fetchNow(): FetchResult =
+                        FetchResult.Success(
+                            updated = true,
+                        )
                 }
 
             viewModel.fetchExperiments(config)

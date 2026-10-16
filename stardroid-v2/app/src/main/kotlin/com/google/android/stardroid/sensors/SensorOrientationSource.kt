@@ -426,5 +426,4 @@ class SensorOrientationSource(
                 onHeal = { smootherHeals.incrementAndGet() },
             )
         }
-
 }

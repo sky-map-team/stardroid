@@ -9,8 +9,8 @@
 
 package com.google.android.stardroid.announcements
 
-import com.google.common.truth.Truth.assertThat
 import com.google.android.stardroid.catalog.LocaleSpec
+import com.google.common.truth.Truth.assertThat
 import org.junit.jupiter.api.Test
 
 class AnnouncementParserTest {
@@ -63,7 +63,10 @@ class AnnouncementParserTest {
 
     @Test
     fun `unknown surfaces are ignored but known ones kept`() {
-        val a = AnnouncementParser.parse(doc(message(surfaces = """["pigeon","widget"]"""))).single()
+        val a =
+            AnnouncementParser.parse(
+                doc(message(surfaces = """["pigeon","widget"]""")),
+            ).single()
         assertThat(a.surfaces).containsExactly(Surface.WIDGET)
     }
 
@@ -84,7 +87,10 @@ class AnnouncementParserTest {
 
     @Test
     fun `search action needs an argument`() {
-        val ok = AnnouncementParser.parse(doc(message(extra = ""","action":{"type":"search","arg":"Saturn"}""")))
+        val ok =
+            AnnouncementParser.parse(
+                doc(message(extra = ""","action":{"type":"search","arg":"Saturn"}""")),
+            )
         assertThat(ok.single().action).isEqualTo(AnnouncementAction.Search("Saturn"))
         val bare = AnnouncementParser.parse(doc(message(extra = ""","action":{"type":"search"}""")))
         assertThat(bare.single().action).isEqualTo(AnnouncementAction.OpenSky)
@@ -103,7 +109,9 @@ class AnnouncementParserTest {
     @Test
     fun `no english and no match yields null`() {
         val a =
-            AnnouncementParser.parse(doc(message(text = """{"de":{"title":"Nordlicht"}}"""))).single()
+            AnnouncementParser.parse(
+                doc(message(text = """{"de":{"title":"Nordlicht"}}""")),
+            ).single()
         assertThat(a.localized(LocaleSpec("fr"))).isNull()
     }
 }

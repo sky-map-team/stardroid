@@ -14,9 +14,9 @@ import com.google.android.gms.common.ConnectionResult
 import com.google.android.gms.common.GoogleApiAvailability
 import com.google.android.gms.location.LocationServices
 import com.google.android.stardroid.analytics.Analytics
+import com.google.android.stardroid.analytics.FirebaseAnalyticsAdapter
 import com.google.android.stardroid.announcements.AnnouncementSource
 import com.google.android.stardroid.announcements.RemoteConfigAnnouncementSource
-import com.google.android.stardroid.analytics.FirebaseAnalyticsAdapter
 import com.google.android.stardroid.location.FusedLocationProvider
 import com.google.android.stardroid.location.LocationProvider
 import com.google.android.stardroid.location.PlatformLocationProvider
