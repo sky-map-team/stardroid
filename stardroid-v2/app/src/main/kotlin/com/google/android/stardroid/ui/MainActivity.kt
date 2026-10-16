@@ -100,9 +100,9 @@ import com.google.android.stardroid.ui.map.ReferenceFrame
 import com.google.android.stardroid.ui.objectinfo.ObjectInfoViewModel
 import com.google.android.stardroid.ui.search.SearchViewModel
 import com.google.android.stardroid.ui.settings.SettingsViewModel
-import com.google.android.stardroid.ui.startup.EulaScreen
 import com.google.android.stardroid.ui.startup.AnnouncementDialog
 import com.google.android.stardroid.ui.startup.AnnouncementViewModel
+import com.google.android.stardroid.ui.startup.EulaScreen
 import com.google.android.stardroid.ui.startup.StartupViewModel
 import com.google.android.stardroid.ui.startup.VersionBanner
 import com.google.android.stardroid.ui.startup.WhatsNewDialog
@@ -639,7 +639,11 @@ class MainActivity : ComponentActivity() {
                     AnnouncementDialog(
                         announcement = pending,
                         onOpen = {
-                            (pending.action as? AnnouncementAction.Search)?.let { runSearch(it.query) }
+                            (pending.action as? AnnouncementAction.Search)?.let {
+                                runSearch(
+                                    it.query,
+                                )
+                            }
                             announcementViewModel.close()
                         },
                         onDismiss = announcementViewModel::dismiss,

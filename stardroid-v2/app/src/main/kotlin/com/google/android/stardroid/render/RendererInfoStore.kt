@@ -23,15 +23,17 @@ import javax.inject.Singleton
  * practice is always true by the time diagnostics can be opened.
  */
 @Singleton
-class RendererInfoStore @Inject constructor() {
-    @Volatile
-    private var info: RendererInfo? = null
+class RendererInfoStore
+    @Inject
+    constructor() {
+        @Volatile
+        private var info: RendererInfo? = null
 
-    /** Called on the GL thread from the backend's surface-created callback. */
-    fun set(info: RendererInfo) {
-        this.info = info
+        /** Called on the GL thread from the backend's surface-created callback. */
+        fun set(info: RendererInfo) {
+            this.info = info
+        }
+
+        /** Called from whatever thread the diagnostics snapshot happens to be built on. */
+        fun get(): RendererInfo? = info
     }
-
-    /** Called from whatever thread the diagnostics snapshot happens to be built on. */
-    fun get(): RendererInfo? = info
-}

@@ -79,9 +79,15 @@ class DataStoreAnnouncementState(
         now: Instant,
     ) = update { entries ->
         val old = entries[id]
-        entries + (id to Entry((old?.record ?: SeenRecord()).let {
-            it.copy(shownOn = it.shownOn + surface)
-        }, old?.firstSeen ?: now))
+        entries + (
+            id to
+                Entry(
+                    (old?.record ?: SeenRecord()).let {
+                        it.copy(shownOn = it.shownOn + surface)
+                    },
+                    old?.firstSeen ?: now,
+                )
+        )
     }
 
     override suspend fun dismiss(
@@ -147,7 +153,10 @@ class DataStoreAnnouncementState(
                     val surfaces =
                         (obj["s"] as? JsonArray)
                             .orEmpty()
-                            .mapNotNull { (it as? JsonPrimitive)?.contentOrNull?.let(Surface::fromWire) }
+                            .mapNotNull { element ->
+                                (element as? JsonPrimitive)?.contentOrNull
+                                    ?.let(Surface::fromWire)
+                            }
                             .toSet()
                     val dismissed = (obj["d"] as? JsonPrimitive)?.booleanOrNull ?: false
                     val firstSeen =

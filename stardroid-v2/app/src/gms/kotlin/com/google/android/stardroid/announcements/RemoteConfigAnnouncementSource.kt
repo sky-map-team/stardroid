@@ -11,8 +11,8 @@ package com.google.android.stardroid.announcements
 
 import android.util.Log
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig
-import kotlin.coroutines.resume
 import kotlinx.coroutines.suspendCancellableCoroutine
+import kotlin.coroutines.resume
 
 /**
  * [AnnouncementSource] over the Remote Config `announcements` parameter (a JSON string; see
@@ -34,7 +34,10 @@ class RemoteConfigAnnouncementSource : AnnouncementSource {
         }
     }
 
-    override fun current(): List<Announcement> = AnnouncementParser.parse(remoteConfig.getString(KEY))
+    override fun current(): List<Announcement> =
+        AnnouncementParser.parse(
+            remoteConfig.getString(KEY),
+        )
 
     private companion object {
         const val TAG = "RemoteConfigAnnouncements"

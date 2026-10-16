@@ -136,6 +136,7 @@ class RendererTestActivity : Activity() {
     private lateinit var connector: RenderConnector
     private lateinit var fpsTv: TextView
     private val scope = CoroutineScope(SupervisorJob() + Dispatchers.Main)
+
     // Written on the main thread, read by the scope-completion handler in onDestroy.
     @Volatile private var database: SkyMapDatabase? = null
 

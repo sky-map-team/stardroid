@@ -93,7 +93,10 @@ object AnnouncementParser {
         }
     }
 
-    private fun JsonElement?.string(): String? = (this as? JsonPrimitive)?.takeIf { it.isString }?.contentOrNull
+    private fun JsonElement?.string(): String? =
+        (this as? JsonPrimitive)?.takeIf {
+            it.isString
+        }?.contentOrNull
 
     private fun JsonElement?.long(): Long? = (this as? JsonPrimitive)?.longOrNull
 

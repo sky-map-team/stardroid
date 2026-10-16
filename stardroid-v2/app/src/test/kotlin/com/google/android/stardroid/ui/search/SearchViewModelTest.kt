@@ -14,6 +14,7 @@ import com.google.android.stardroid.analytics.AnalyticsEvents
 import com.google.android.stardroid.analytics.FakeAnalytics
 import com.google.android.stardroid.astronomy.KeplerianEphemeris
 import com.google.android.stardroid.astronomy.SolarSystemBody
+import com.google.android.stardroid.astronomy.Tle
 import com.google.android.stardroid.catalog.CatalogObject
 import com.google.android.stardroid.catalog.CatalogRepository
 import com.google.android.stardroid.catalog.CelestialObjectId
@@ -22,16 +23,15 @@ import com.google.android.stardroid.catalog.GalleryItem
 import com.google.android.stardroid.catalog.LayerKind
 import com.google.android.stardroid.catalog.LocaleSpec
 import com.google.android.stardroid.catalog.MeteorShower
-import com.google.android.stardroid.astronomy.Tle
 import com.google.android.stardroid.catalog.ObjectInfo
 import com.google.android.stardroid.catalog.SearchHit
 import com.google.android.stardroid.catalog.TypeCode
 import com.google.android.stardroid.layers.CatalogLayers
 import com.google.android.stardroid.layers.SatelliteLayer
 import com.google.android.stardroid.layers.SolarSystemLayer
+import com.google.android.stardroid.math.RaDec
 import com.google.android.stardroid.satellites.SatelliteIds
 import com.google.android.stardroid.satellites.TrackedSatellite
-import com.google.android.stardroid.math.RaDec
 import com.google.android.stardroid.settings.FakeSettings
 import com.google.common.truth.Truth.assertThat
 import kotlinx.coroutines.Dispatchers

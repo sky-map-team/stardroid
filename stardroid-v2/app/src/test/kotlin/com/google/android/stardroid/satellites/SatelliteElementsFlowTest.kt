@@ -16,8 +16,8 @@ import com.google.android.stardroid.data.satellites.SatelliteElementsRepository
 import com.google.android.stardroid.data.satellites.SatelliteGroup
 import com.google.android.stardroid.data.satellites.TleStore
 import com.google.common.truth.Truth.assertThat
-import kotlinx.coroutines.launch
 import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.withTimeout
 import org.junit.jupiter.api.Test
