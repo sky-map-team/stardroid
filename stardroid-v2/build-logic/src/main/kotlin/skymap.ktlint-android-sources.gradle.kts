@@ -16,6 +16,7 @@ plugins {
     id("org.jlleitschuh.gradle.ktlint")
 }
 
+// Keep in sync with ktlint-gradle's default ktlint version (see libs.versions.toml).
 val ktlintVersion = "1.0.1"
 
 val ktlintCli by configurations.creating
