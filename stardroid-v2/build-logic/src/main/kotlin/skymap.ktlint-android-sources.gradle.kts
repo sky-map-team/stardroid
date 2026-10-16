@@ -9,7 +9,7 @@
 
 // ktlint-gradle only registers source-set tasks when `org.jetbrains.kotlin.android` is applied,
 // which AGP's built-in Kotlin never does, so Android modules would lint only their .kts scripts
-// (#1054). Run the same ktlint version over src/**/*.kt directly and hook it into the
+// (#1054). Run the catalog's ktlint version over src/**/*.kt directly and hook it into the
 // plugin's ktlintCheck / ktlintFormat.
 
 plugins {
@@ -17,6 +17,8 @@ plugins {
 }
 
 val libs = extensions.getByType<VersionCatalogsExtension>().named("libs")
+
+ktlint { version.set(libs.findVersion("ktlint").get().requiredVersion) }
 
 val ktlintCli by configurations.creating
 
@@ -46,10 +48,9 @@ val checkSources = registerKtlintSources("ktlintSourcesCheck", format = false).a
     val marker = layout.buildDirectory.file("ktlint-sources/ok")
     it.configure {
         inputs.files(fileTree("src") { include("**/*.kt") }).withPropertyName("sources")
-        inputs.files(rootProject.fileTree(rootDir) { include(".editorconfig") })
-            .withPropertyName("editorconfig")
+        inputs.files(rootProject.file(".editorconfig")).withPropertyName("editorconfig")
         outputs.file(marker)
-        doLast { marker.get().asFile.apply { parentFile.mkdirs() }.writeText("ok") }
+        doLast { marker.get().asFile.writeText("ok") }
     }
 }
 val formatSources = registerKtlintSources("ktlintSourcesFormat", format = true)

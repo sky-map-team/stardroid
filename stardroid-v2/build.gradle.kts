@@ -6,9 +6,9 @@
 // The ktlint plugin alone skips those sources there (#1054).
 gradle.projectsEvaluated {
     listOf(":app", ":render:gles1").forEach { path ->
-        val check = project(path).tasks.getByName("check")
+        val checkTask = project(path).tasks.getByName("check")
         val wired =
-            check.taskDependencies.getDependencies(check).any { it.name == "ktlintSourcesCheck" }
+            checkTask.taskDependencies.getDependencies(checkTask).any { it.name == "ktlintSourcesCheck" }
         check(wired) { "$path: check no longer depends on ktlintSourcesCheck (see #1054)" }
     }
 }

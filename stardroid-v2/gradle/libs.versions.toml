@@ -2,7 +2,6 @@
 agp = "9.0.1"
 kotlin = "2.2.10"
 ktlint-gradle = "12.1.2"
-# Keep equal to ktlint-gradle's default ktlint version.
 ktlint = "1.0.1"
 junit5 = "5.11.0"
 junitPlatform = "1.11.0"
