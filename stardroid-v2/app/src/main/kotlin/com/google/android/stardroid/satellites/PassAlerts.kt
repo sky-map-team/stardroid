@@ -63,6 +63,16 @@ object PassAlerts {
      */
     private val MINIMUM_NOTICE: Duration = 2.minutes
 
+    /**
+     * True once the pass has begun. The OS can hold an inexact alarm for hours (e.g. OEM battery
+     * managers deferring it until the app is next opened), and a late alert sends the user out
+     * to an empty sky.
+     */
+    internal fun isStale(
+        passStart: Instant,
+        now: Instant,
+    ): Boolean = now >= passStart
+
     private const val ACTION_PASS_ALERT = "com.google.android.stardroid.PASS_ALERT"
     private const val EXTRA_NORAD_ID = "norad_id"
     private const val EXTRA_START_MILLIS = "start_millis"
@@ -151,6 +161,10 @@ class PassAlertReceiver : BroadcastReceiver() {
     ) {
         val start = PassAlerts.startTimeFrom(intent) ?: return
         val noradId = PassAlerts.noradIdFrom(intent)
+        if (PassAlerts.isStale(start, Clock.System.now())) {
+            Log.i(TAG, "Pass alert fired after the pass began ($start); not posting")
+            return
+        }
         // A BroadcastReceiver's process can be killed the moment onReceive returns, so the
         // opt-in re-check must finish before then — but reading DataStore (disk I/O) is not
         // safe to block the main thread on, especially from a Doze wake-up. goAsync() keeps the
