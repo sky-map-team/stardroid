@@ -157,6 +157,7 @@ dependencies {
 
     testImplementation(libs.junit.jupiter)
     testImplementation(libs.truth)
+    testImplementation(libs.mockito.core)
     testImplementation(libs.kotlinx.coroutines.test)
     testRuntimeOnly(libs.junit.platform.launcher)
 
