@@ -24,7 +24,7 @@ data class MoonWidgetModel(
     val illuminatedFraction: Double,
     /** Whether the illuminated fraction is increasing (lit limb on the east/right, N hemisphere). */
     val waxing: Boolean,
-    /** Days since the last new moon. */
+    /** Approximate days since the last new moon, in `[0, 29.53)`. */
     val ageDays: Double,
     /**
      * Whether the disc should be drawn mirrored: a southern-hemisphere observer sees the Moon

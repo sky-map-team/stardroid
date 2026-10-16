@@ -12,6 +12,7 @@ package com.google.android.stardroid.astronomy
 import com.google.android.stardroid.math.LatLong
 import com.google.common.truth.Truth.assertThat
 import org.junit.jupiter.api.Test
+import kotlin.time.Duration.Companion.hours
 
 /**
  * The moon widget's display model (D75). Reference values from published almanacs
@@ -49,6 +50,16 @@ class MoonWidgetModelTest {
         assertThat(moonWidgetModel(utc(2024, 1, 25, 17, 54), LONDON).ageDays)
             .isWithin(1.0).of(14.25)
         assertThat(moonWidgetModel(utc(2024, 1, 18, 12), LONDON).ageDays).isWithin(1.0).of(7.0)
+    }
+
+    @Test
+    fun age_staysInRangeAroundNewMoon() {
+        // 2024-01-11 11:57 UTC new moon: age is near 0 or just under a full month, never outside.
+        for (hour in 0..24 step 6) {
+            val age = moonWidgetModel(utc(2024, 1, 11, 0).plus(hour.hours), LONDON).ageDays
+            assertThat(age).isAtLeast(0.0)
+            assertThat(age).isLessThan(30.0)
+        }
     }
 
     @Test

@@ -80,7 +80,7 @@ fun nextLunarPhaseEvent(
     return time
 }
 
-/** Days since the last new moon at [time], in `[0, SYNODIC_MONTH_DAYS)`. */
+/** Approximate days since the last new moon at [time] (mean-rate, good to ~0.7 d), in `[0, SYNODIC_MONTH_DAYS)`. */
 fun moonAgeDays(
     time: Instant,
     ephemeris: Ephemeris = KeplerianEphemeris,
