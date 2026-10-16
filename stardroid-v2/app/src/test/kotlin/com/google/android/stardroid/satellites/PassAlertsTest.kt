@@ -13,6 +13,7 @@ import com.google.common.truth.Truth.assertThat
 import kotlinx.datetime.Instant
 import org.junit.jupiter.api.Test
 import kotlin.time.Duration.Companion.hours
+import kotlin.time.Duration.Companion.milliseconds
 import kotlin.time.Duration.Companion.minutes
 
 class PassAlertsTest {
@@ -26,6 +27,11 @@ class PassAlertsTest {
     @Test
     fun `an alert delayed but still before the pass is not stale`() {
         assertThat(PassAlerts.isStale(passStart, passStart - 1.minutes)).isFalse()
+    }
+
+    @Test
+    fun `an alert one millisecond before the pass is not stale`() {
+        assertThat(PassAlerts.isStale(passStart, passStart - 1.milliseconds)).isFalse()
     }
 
     @Test
