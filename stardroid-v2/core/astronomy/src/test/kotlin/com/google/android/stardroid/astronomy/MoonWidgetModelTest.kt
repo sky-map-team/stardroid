@@ -53,12 +53,11 @@ class MoonWidgetModelTest {
     }
 
     @Test
-    fun age_staysInRangeAroundNewMoon() {
+    fun age_wrapsAroundNewMoon() {
         // 2024-01-11 11:57 UTC new moon: age is near 0 or just under a full month, never outside.
         for (hour in 0..24 step 6) {
             val age = moonWidgetModel(utc(2024, 1, 11, 0).plus(hour.hours), LONDON).ageDays
-            assertThat(age).isAtLeast(0.0)
-            assertThat(age).isLessThan(30.0)
+            assertThat(age < 1.0 || age > 28.5).isTrue()
         }
     }
 
