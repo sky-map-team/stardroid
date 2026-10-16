@@ -16,13 +16,12 @@ plugins {
     id("org.jlleitschuh.gradle.ktlint")
 }
 
-// Keep in sync with ktlint-gradle's default ktlint version (see libs.versions.toml).
-val ktlintVersion = "1.0.1"
+val libs = extensions.getByType<VersionCatalogsExtension>().named("libs")
 
 val ktlintCli by configurations.creating
 
 dependencies {
-    ktlintCli("com.pinterest.ktlint:ktlint-cli:$ktlintVersion")
+    ktlintCli(libs.findLibrary("ktlint-cli").get())
 }
 
 fun registerKtlintSources(name: String, format: Boolean) =
@@ -42,7 +41,17 @@ fun registerKtlintSources(name: String, format: Boolean) =
         )
     }
 
-val checkSources = registerKtlintSources("ktlintSourcesCheck", format = false)
+val checkSources = registerKtlintSources("ktlintSourcesCheck", format = false).also {
+    // A marker output lets Gradle skip the check when no source or .editorconfig changed.
+    val marker = layout.buildDirectory.file("ktlint-sources/ok")
+    it.configure {
+        inputs.files(fileTree("src") { include("**/*.kt") }).withPropertyName("sources")
+        inputs.files(rootProject.fileTree(rootDir) { include(".editorconfig") })
+            .withPropertyName("editorconfig")
+        outputs.file(marker)
+        doLast { marker.get().asFile.apply { parentFile.mkdirs() }.writeText("ok") }
+    }
+}
 val formatSources = registerKtlintSources("ktlintSourcesFormat", format = true)
 
 tasks.named("ktlintCheck") { dependsOn(checkSources) }
