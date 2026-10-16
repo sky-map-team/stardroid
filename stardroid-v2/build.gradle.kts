@@ -7,8 +7,8 @@
 gradle.projectsEvaluated {
     listOf(":app", ":render:gles1").forEach { path ->
         val checkTask = project(path).tasks.getByName("check")
-        val wired =
-            checkTask.taskDependencies.getDependencies(checkTask).any { it.name == "ktlintSourcesCheck" }
+        val wired = checkTask.taskDependencies.getDependencies(checkTask)
+            .any { it.name == "ktlintSourcesCheck" }
         check(wired) { "$path: check no longer depends on ktlintSourcesCheck (see #1054)" }
     }
 }
