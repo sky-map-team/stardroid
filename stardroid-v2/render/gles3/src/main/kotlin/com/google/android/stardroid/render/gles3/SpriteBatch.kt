@@ -142,9 +142,8 @@ class SpriteBatch(private val program: ShaderProgram) {
         clear()
     }
 
-    // Binds through gl rather than raw GL calls — see PointDrawer.upload's KDoc for why a
-    // freed-and-regenerated VAO id makes that matter. The window here is narrower (this runs
-    // once ever, guarded by `vao != 0`, not once per scene change), but it is the same hazard.
+    // Binds through gl rather than raw GL calls — see PointDrawer.upload's KDoc for why. This
+    // runs once ever (guarded by `vao != 0`) but still mid-frame, so the same hazard applies.
     private fun ensureVao(gl: GlState) {
         if (vao != 0) return
         vao = Mesh.genVertexArray()

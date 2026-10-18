@@ -82,7 +82,7 @@ object LineDrawer {
 
     /**
      * Must be called on the GL thread. Binds through [gl] rather than raw GL calls — see
-     * [PointDrawer.upload]'s KDoc for why a freed-and-regenerated VAO id makes that matter here.
+     * [PointDrawer.upload]'s KDoc for why.
      */
     fun upload(
         gl: GlState,
