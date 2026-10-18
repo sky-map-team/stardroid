@@ -4,8 +4,8 @@
 // Night mode (D12). GLES1 bakes this into every vertex colour on the CPU and keeps a second
 // red-shifted copy of every texture; here it is one uniform and one function, which is what lets
 // this backend hold a single texture per image.
-vec4 applyNightMode(vec4 color, float nightMode) {
-    if (nightMode < 0.5) return color;
+vec4 applyNightMode(vec4 color, bool nightMode) {
+    if (!nightMode) return color;
     float luminance = dot(color.rgb, vec3(0.299, 0.587, 0.114));
     return vec4(luminance, 0.0, 0.0, color.a);
 }

@@ -115,7 +115,7 @@ class SpriteBatch(private val program: ShaderProgram) {
         gl.blend(GlState.BlendMode.ALPHA)
         GLES30.glUniform2f(program.uniform("uViewportPx"), viewportWidthPx, viewportHeightPx)
         GLES30.glUniform2f(program.uniform("uTexelSize"), texelSize[0], texelSize[1])
-        GLES30.glUniform1f(program.uniform("uNightMode"), if (nightMode) 1f else 0f)
+        GLES30.glUniform1i(program.uniform("uNightMode"), if (nightMode) 1 else 0)
         GLES30.glUniform4f(
             program.uniform("uHaloColor"),
             haloColor.r,

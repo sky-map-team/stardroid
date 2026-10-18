@@ -126,7 +126,7 @@ object PointDrawer {
             program.uniform("uMagnitudeLimit"),
             magnitudeLimit?.toFloat() ?: NO_MAGNITUDE_LIMIT,
         )
-        GLES30.glUniform1f(program.uniform("uNightMode"), if (nightMode) 1f else 0f)
+        GLES30.glUniform1i(program.uniform("uNightMode"), if (nightMode) 1 else 0)
         gl.bindVertexArray(mesh.vao)
         GLES30.glDrawArrays(GLES30.GL_POINTS, 0, mesh.count)
     }

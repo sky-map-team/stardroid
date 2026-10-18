@@ -111,7 +111,7 @@ object LineDrawer {
         gl.useProgram(program)
         gl.blend(GlState.BlendMode.ALPHA)
         GLES30.glUniformMatrix4fv(program.uniform("uViewProj"), 1, false, viewProj, 0)
-        GLES30.glUniform1f(program.uniform("uNightMode"), if (nightMode) 1f else 0f)
+        GLES30.glUniform1i(program.uniform("uNightMode"), if (nightMode) 1 else 0)
         gl.bindVertexArray(mesh.vao)
 
         // Indexed loop and cached state, as on GLES1: a for-in over a List allocates an iterator
