@@ -16,4 +16,6 @@ dependencies {
     implementation(libs.compose.compiler.gradlePlugin)
     // Hilt's Gradle plugin, applied by bare id in `skymap.android-app` (D59).
     implementation(libs.hilt.gradlePlugin)
+    // Bytecode rewriting for the iOS shell's RoboVM backport transform (RoboVmBackports.kt).
+    implementation(libs.asm)
 }
