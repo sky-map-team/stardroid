@@ -482,6 +482,9 @@ Not part of the staged work, but recorded because this design makes each of them
   extent.
 - **`BodyImageMapper`'s dot fallback** is largely redundant once discs are floored and
   true-scale; the "Glyphs" parameter supersedes its intent. Decide whether it stays.
+  **Update:** in production it is already unreachable. `PlanetImages` returns `null` only for
+  Earth, which `SolarSystemLayer.BODIES` excludes, so every body is drawn as a disc and the
+  planet-as-dot branch never runs. Removal is tracked in #1140.
 - **`AssetImageLoader` needs a generated-bitmap path.** It resolves `planet/*` to a fixed `.webp`
   filename today. The compositor sits in front of it: the loader fetches the base disc, the
   compositor applies the terminator, the §2 cache stores the result. Under GLES3 the compositor
