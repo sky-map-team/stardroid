@@ -22,6 +22,7 @@ import androidx.core.app.NotificationManagerCompat
 import androidx.core.content.ContextCompat
 import com.google.android.stardroid.R
 import com.google.android.stardroid.layers.SatelliteLayer
+import com.google.android.stardroid.notifications.SkyNotification
 import com.google.android.stardroid.notifications.SkyNotifier
 import com.google.android.stardroid.settings.Settings
 import com.google.android.stardroid.ui.MainActivity
@@ -47,12 +48,6 @@ import java.util.Date
  */
 object SatellitePassNotifier {
     const val CHANNEL_PASSES = "satellite_passes"
-
-    /**
-     * Its own id, so a pass alert never replaces tonight's digest or a shower alert. Also the
-     * content PendingIntent's request code: those differ only in extras, which matching ignores.
-     */
-    private const val NOTIFICATION_ID = 72
 
     fun ensureChannel(context: Context) {
         context.getSystemService(NotificationManager::class.java)?.createNotificationChannel(
@@ -101,7 +96,7 @@ object SatellitePassNotifier {
                 .setContentIntent(
                     PendingIntent.getActivity(
                         context,
-                        NOTIFICATION_ID,
+                        SkyNotification.SATELLITE_PASS.id,
                         contentIntent,
                         PendingIntent.FLAG_IMMUTABLE or PendingIntent.FLAG_UPDATE_CURRENT,
                     ),
@@ -115,7 +110,9 @@ object SatellitePassNotifier {
             return
         }
         try {
-            NotificationManagerCompat.from(context).notify(NOTIFICATION_ID, notification)
+            NotificationManagerCompat
+                .from(context)
+                .notify(SkyNotification.SATELLITE_PASS.id, notification)
         } catch (e: SecurityException) {
             // Permission revoked between the check and the post; the alert stays silent.
         }

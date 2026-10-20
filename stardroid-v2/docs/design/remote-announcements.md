@@ -55,7 +55,7 @@ One RC string parameter, `announcements`:
 
 ## Surfaces
 
-- **Notification**: channel `announcements`, id 72 (never replaces a shower alert or digest).
+- **Notification**: channel `announcements`, id 45, from `SkyNotification` (never replaces a shower alert, digest, pass or eclipse alert).
   Held back 22:00–08:00 local and re-run at 08:00.
 - **Widget**: banner row under the Sky Tonight header; refreshed by the worker.
 - **Interstitial**: after the EULA / welcome / What's New gates clear, once per process.
