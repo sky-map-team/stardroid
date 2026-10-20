@@ -48,15 +48,11 @@ import java.util.Date
 object SatellitePassNotifier {
     const val CHANNEL_PASSES = "satellite_passes"
 
-    /** Its own id, so a pass alert never replaces tonight's digest or a shower alert. */
-    private const val NOTIFICATION_ID = 72
-
     /**
-     * Unique among the app's `MainActivity` PendingIntents: they differ only in extras, which
-     * PendingIntent matching ignores, so a shared code would let FLAG_UPDATE_CURRENT overwrite
-     * another notification's tap target.
+     * Its own id, so a pass alert never replaces tonight's digest or a shower alert. Also the
+     * content PendingIntent's request code: those differ only in extras, which matching ignores.
      */
-    private const val CONTENT_REQUEST_CODE = 72
+    private const val NOTIFICATION_ID = 72
 
     fun ensureChannel(context: Context) {
         context.getSystemService(NotificationManager::class.java)?.createNotificationChannel(
@@ -105,7 +101,7 @@ object SatellitePassNotifier {
                 .setContentIntent(
                     PendingIntent.getActivity(
                         context,
-                        CONTENT_REQUEST_CODE,
+                        NOTIFICATION_ID,
                         contentIntent,
                         PendingIntent.FLAG_IMMUTABLE or PendingIntent.FLAG_UPDATE_CURRENT,
                     ),
