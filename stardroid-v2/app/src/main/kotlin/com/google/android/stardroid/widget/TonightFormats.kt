@@ -61,12 +61,11 @@ internal fun highlightLine(
                     event.pass.satelliteName,
                     formatTime(context, event.pass.start),
                 ),
-                // Direction and peak altitude, the two things you need to point yourself; the
+                // Direction lives on the satellite card; the row is too narrow for it. The
                 // magnitude is shown to one decimal and no more, because the model is only good
                 // to about half a magnitude (D94).
                 context.getString(
-                    R.string.tonight_trailing_pass,
-                    cardinal(context, event.pass.startAzimuthDeg),
+                    R.string.tonight_trailing_pass_peak,
                     event.pass.maxAltitudeDeg.roundToInt(),
                     event.pass.peakMagnitude,
                 ),
