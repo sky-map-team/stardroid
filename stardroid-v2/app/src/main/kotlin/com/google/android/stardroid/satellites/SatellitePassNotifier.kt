@@ -12,7 +12,9 @@ package com.google.android.stardroid.satellites
 import android.Manifest
 import android.app.NotificationChannel
 import android.app.NotificationManager
+import android.app.PendingIntent
 import android.content.Context
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Build
 import androidx.core.app.NotificationCompat
@@ -22,6 +24,8 @@ import com.google.android.stardroid.R
 import com.google.android.stardroid.layers.SatelliteLayer
 import com.google.android.stardroid.notifications.SkyNotifier
 import com.google.android.stardroid.settings.Settings
+import com.google.android.stardroid.ui.MainActivity
+import com.google.android.stardroid.widget.MoonWidget
 import kotlinx.coroutines.flow.first
 import kotlinx.datetime.Instant
 import java.text.DateFormat
@@ -44,7 +48,10 @@ import java.util.Date
 object SatellitePassNotifier {
     const val CHANNEL_PASSES = "satellite_passes"
 
-    /** Its own id, so a pass alert never replaces tonight's digest or a shower alert. */
+    /**
+     * Its own id, so a pass alert never replaces tonight's digest or a shower alert. Also the
+     * content PendingIntent's request code: those differ only in extras, which matching ignores.
+     */
     private const val NOTIFICATION_ID = 72
 
     fun ensureChannel(context: Context) {
@@ -76,6 +83,12 @@ object SatellitePassNotifier {
             DateFormat
                 .getTimeInstance(DateFormat.SHORT)
                 .format(Date(passStart.toEpochMilliseconds()))
+        // Opens this satellite's card. Without a content intent the tap does nothing, and
+        // setAutoCancel never fires either (#1144).
+        val contentIntent =
+            Intent(context, MainActivity::class.java).apply {
+                putExtra(MoonWidget.EXTRA_SHOW_OBJECT_ID, SatelliteIds.idFor(noradId).value)
+            }
 
         val notification =
             NotificationCompat
@@ -85,7 +98,14 @@ object SatellitePassNotifier {
                 .setContentText(context.getString(R.string.notif_pass_text, time))
                 .setPriority(NotificationCompat.PRIORITY_HIGH)
                 .setAutoCancel(true)
-                .build()
+                .setContentIntent(
+                    PendingIntent.getActivity(
+                        context,
+                        NOTIFICATION_ID,
+                        contentIntent,
+                        PendingIntent.FLAG_IMMUTABLE or PendingIntent.FLAG_UPDATE_CURRENT,
+                    ),
+                ).build()
         if (Build.VERSION.SDK_INT >= 33 &&
             ContextCompat.checkSelfPermission(
                 context,
