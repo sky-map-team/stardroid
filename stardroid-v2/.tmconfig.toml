@@ -81,11 +81,10 @@ da = "Use the informal 'du/din' register throughout — never the formal 'De/Dem
 sv = "Use the informal 'du/din' register throughout."
 nb = "Use the informal 'du/din' register throughout."
 en-GB = "The asterism within Ursa Major that American English calls \"The Big Dipper\" is called \"The Plough\" in British English. Use \"The Plough\", never \"The Big Dipper\"."
-# Thai, Korean and Persian have no italic tradition: Android synthesises a slant that looks
-# poor in those scripts (and can distort joined Persian letters). Drop <i>, keep the text.
-ko = "Do not use italics: omit the <i> and </i> tags from the source and keep the enclosed text unchanged. This language has no italic tradition and synthetic slanting renders poorly."
-th = "Do not use italics: omit the <i> and </i> tags from the source and keep the enclosed text unchanged. This language has no italic tradition and synthetic slanting renders poorly."
-fa = "Do not use italics: omit the <i> and </i> tags from the source and keep the enclosed text unchanged. This language has no italic tradition and synthetic slanting renders poorly."
+# No italic tradition in these scripts; synthetic slant renders poorly (and distorts joined Persian).
+ko = "Do not use italics: omit the <i> and </i> tags from the source and keep the enclosed text unchanged."
+th = "Do not use italics: omit the <i> and </i> tags from the source and keep the enclosed text unchanged."
+fa = "Do not use italics: omit the <i> and </i> tags from the source and keep the enclosed text unchanged."
 
 # Android UI strings. Every string carries a translation_description
 # attribute with translator-facing context — preserved automatically.
