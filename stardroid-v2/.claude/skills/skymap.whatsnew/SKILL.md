@@ -53,6 +53,8 @@ separate `whatsnew_content.xml`, that's a v1-only split v2 doesn't mirror at tha
 
 - Use `<h2>` for each feature heading followed by a short descriptive paragraph.
 - Only use `<ul><li>` to group multiple minor items under a single heading.
+- Keep the closing `<h2>About the release name</h2>` section (one or two sentences on the
+  release's namesake, owned by `skymap.release`) as the last item — don't drop or rewrite it.
 - Keep it concise. This content is shown both in the What's New dialog
   (`StartupDialogs.kt` → `WhatsNewDialog`) and appended to the Help screen — don't let it grow
   so long it dominates either.
