@@ -92,7 +92,8 @@
     <string name="object_info_no_eclipse" translation_description="Shown on the Moon\'s info card when no lunar eclipse is coming up in the searched time range.">Aucune éclipse lunaire prévue prochainement</string>
     <string name="object_info_eclipse_greatest" translation_description="The next lunar eclipse\'s type and greatest-eclipse date/time. %1$s is a localized eclipse type like \'Total lunar eclipse\', %2$s a date, %3$s a time.">%1$s — éclipse maximale le %2$s à %3$s</string>
     <string name="object_info_eclipse_totality" translation_description="The start and end time of totality during a total lunar eclipse. %1$s and %2$s are times.">Totalité %1$s – %2$s</string>
-    <string name="tonight_satellite_pass" translation_description="Tonight-widget row announcing a visible satellite pass. %1$s is the satellite name, %2$s is a time of day.">%1$s passe au-dessus à %2$s</string>
+    <!-- tm:omitted name="tonight_satellite_pass" reason="identical_to_source" -->
+    <string name="tonight_trailing_pass_peak" translation_description="Small trailing note on a satellite pass row. %1$d is the peak altitude in degrees, %2$.1f is a brightness magnitude.">Pic %1$d°, mag %2$.1f</string>
     <string name="satellites_no_data" translation_description="Explanation shown when satellite orbital data has not been downloaded yet and so no satellites can be drawn.">
     Les positions des satellites nécessitent une connexion internet pour être mises à jour.
     </string>
@@ -494,7 +495,7 @@ Alertes d’éclipse : une notification avant une éclipse lunaire.
     <string name="diagnostics_reverse_magnetic_z" translation_description="Row label in the diagnostics screen for whether the magnetometer's Z axis is reversed">Inverser Z magnétique</string>
     <string name="diagnostics_use_magnetic_correction_setting" translation_description="Row label in the diagnostics screen for whether magnetic declination correction is applied">Correction magnétique</string>
     <string name="diagnostics_view_direction_mode" translation_description="Row label in the diagnostics screen for which phone axis is treated as pointing at the sky">Direction de vue</string>
-    <string name="diagnostics_calibration_dialog" translation_description="Row label in the diagnostics screen for whether the automatic compass-calibration dialog is suppressed">Boîte de dialogue de calibrage</string>
+    <string name="diagnostics_calibration_dialog" translation_description="Row label in the diagnostics screen for whether the compass-calibration screen may open automatically; value is On or Off">Invite de calibrage automatique</string>
     <string name="diagnostics_jitter_raw" translation_description="Row label in the diagnostics screen for how much the sensor-derived pointing wobbles before smoothing is applied">Gigue (brute)</string>
     <string name="diagnostics_jitter_smoothed" translation_description="Row label in the diagnostics screen for how much the sensor-derived pointing wobbles after smoothing is applied">Gigue (lissée)</string>
     <!-- tm:omitted name="diagnostics_jitter_format" reason="identical_to_source" -->
@@ -506,6 +507,7 @@ Alertes d’éclipse : une notification avant une éclipse lunaire.
     <string name="diagnostics_map_orientation" translation_description="Row label in the diagnostics screen for how long ago the map last received the phone\'s orientation from its sensors">Dernière mise à jour de l\'orientation</string>
     <string name="diagnostics_map_orientation_format" translation_description="Row value in the diagnostics screen giving how long ago the map last received the phone\'s orientation. %1$.1f is a number of seconds.">Il y a %1$.1f s</string>
     <string name="diagnostics_map_orientation_none" translation_description="Value shown for the last orientation update row when the map has not received any orientation from the sensors">Aucune reçue</string>
+    <string name="diagnostics_smoother_heals" translation_description="Row label in the diagnostics screen for how many times the orientation smoother had to reset itself after producing an invalid value since the app started">Réinitialisations du stabilisateur (depuis le démarrage)</string>
     <string name="diagnostics_rejected_samples" translation_description="Row label in the diagnostics screen for how many sensor readings have been thrown away as invalid since the app started">Échantillons de capteurs rejetés (depuis le démarrage)</string>
     <string name="diagnostics_app_lifecycle" translation_description="Row label in the diagnostics screen for the app\'s technical lifecycle state (for example Started or Resumed), which controls whether sensors are listened to">Cycle de vie de l\'application</string>
     <string name="diagnostics_section_location_time">Position et heure</string>
@@ -649,6 +651,7 @@ Alertes d’éclipse : une notification avant une éclipse lunaire.
     La phase de la Lune, son illumination et ses heures de lever et de coucher, mis à jour quotidiennement.
     </string>
     <string name="moon_widget_illumination" tm_human="true" translation_description="Widget line showing how much of the Moon\'s disc is lit; %1$d is a percentage number">%1$d%% illuminée</string>
+    <string name="moon_widget_age" translation_description="Widget line giving the Moon\'s age as the day of the lunar cycle, counting the day of new moon as day 1; %1$d is a number from 1 to 30">Jour %1$d</string>
     <string name="moon_widget_rise_time" translation_description="Widget fragment showing today\'s moonrise time; %1$s is a clock time like 17:42">se lève %1$s</string>
     <string name="moon_widget_set_time" translation_description="Widget fragment showing today\'s moonset time; %1$s is a clock time like 03:12">se couche %1$s</string>
     <string name="moon_widget_time_day_offset" translation_description="Compact suffix appended after a widget rise/set time that falls on a later day than today, so a reader doesn\'t mistake it for today\'s crossing; %1$d is the number of days ahead (almost always 1). Keep it short — the widget is very narrow. Note the leading space.">+%1$d</string>
