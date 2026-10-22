@@ -19,6 +19,7 @@ import com.google.android.stardroid.astronomy.LocalFrame
 import com.google.android.stardroid.astronomy.SkyModel
 import com.google.android.stardroid.astronomy.SolarSystemBody
 import com.google.android.stardroid.astronomy.ViewDirectionMode
+import com.google.android.stardroid.layers.SkyColors
 import com.google.android.stardroid.location.LocationController
 import com.google.android.stardroid.math.DEGREES_TO_RADIANS
 import com.google.android.stardroid.math.LatLong
@@ -28,7 +29,6 @@ import com.google.android.stardroid.math.RaDec
 import com.google.android.stardroid.math.Vector3
 import com.google.android.stardroid.math.normalizeDegrees
 import com.google.android.stardroid.math.rotationMatrix
-import com.google.android.stardroid.layers.SkyColors
 import com.google.android.stardroid.render.api.Ground
 import com.google.android.stardroid.render.api.RenderState
 import com.google.android.stardroid.render.api.SkyCamera
@@ -1013,7 +1013,6 @@ class MapViewModel(
     }
 
     companion object {
-
         /**
          * v1's initial camera: due south-ish along the equator, celestial north up.
          *

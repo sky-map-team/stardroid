@@ -2,17 +2,18 @@
 <resources>
     <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[
 <h1>Say hello to the new Sky Map</h1>
-<p>Sky Map has been completely rebuilt from scratch — a new rendering engine, a new astronomy engine and a new interface, made to be faster, more accurate and easier on the eyes. Version 2.1 builds on that with some of the most-requested features:</p>
+<p>Sky Map has been completely rebuilt from scratch — a new rendering engine, a new astronomy engine and a new interface, made to be faster, more accurate and easier on the eyes. Versions 2.1 and 2.2 build on that with some of the most-requested features:</p>
+<h2>Sky alerts</h2>
+<p>Sky Map can now tell you when something is worth stepping outside for: <b>Meteor shower peaks</b> and a <b>Tonight\'s sky digest</b>. Choose which alerts you want under <b>Settings → Notifications</b>, or from the Meteor showers layer.</p>
+<h2>Layer help</h2>
+<p>Not sure what a layer shows? <b>Long-press</b> any layer in the layers menu, or on the left-hand side of the map, to see what it does and what you can customize. The right ascension and declination grid can also be customized, like the alt/az grid.</p>
 <h2>Sky Map on your home screen</h2>
-<p>Three new widgets put the sky in your launcher: <b>Moon phase</b> (the phase, how much is lit, and moonrise and moonset), <b>Tonight\'s sky</b> (sunset, when it gets dark, and the best sights tonight) and <b>Sky countdown</b> (days until the next meteor shower peak or moon event). Add one from the new <b>Widgets</b> menu item, or from your launcher\'s widget picker.</p>
-<h2>Steadier view</h2>
-<p>We\'ve improved the way Sky Map steadies the picture while you hold your phone still — it shakes less and keeps up better when you move. You can turn it off any time under <b>Settings → Sensors → Smooth sensor movement</b> if you\'d rather use the raw sensor.</p>
-<h2>Search the Help</h2>
-<p>Help is now searchable, and results jump straight to the relevant part of the app.</p>
-<h2>A new alt/az grid</h2>
-<p>Sky Map can now overlay a grid of altitude and azimuth lines on the map, alongside the existing celestial grid. It\'s off by default — turn it on from the layers menu.</p>
+<p>Three new widgets put the sky in your launcher: <b>Moon phase</b> (the phase, how much is lit, and moonrise and moonset, plus the Moon\'s age), <b>Tonight\'s sky</b> (sunset, when it gets dark, and the best sights tonight) and <b>Sky countdown</b> (days until the next meteor shower peak or moon event). Add one from the new <b>Widgets</b> menu item, or from your launcher\'s widget picker.</p>
 <h2>Also new in version 2</h2>
 <ul>
+<li><b>Steadier view:</b> the picture shakes less and keeps up better when you move. Turn it off under <b>Settings → Sensors → Smooth sensor movement</b> if you prefer the raw sensor.</li>
+<li><b>Searchable Help:</b> results jump straight to the relevant part of the app.</li>
+<li><b>Alt/az grid:</b> overlay altitude and azimuth lines alongside the celestial grid. It\'s off by default — turn it on from the layers menu.</li>
 <li><b>A fresh look:</b> the new Deep Space / Star Gold color scheme and sharper Sun, Moon and planet artwork.</li>
 <li><b>More accurate Sun and Moon:</b> the Moon sits where <em>you</em> see it, and eclipses and conjunctions land at the right minute.</li>
 <li><b>A more realistic solar system:</b> the Moon\'s phase is calculated from its true geometry, Venus, Mercury and Mars show phases, and you can view planets at their real size.</li>
@@ -23,6 +24,8 @@
 </ul>
 <h2>And this is just the start...</h2>
 <p>We have many long asked-for features coming very soon.</p>
+<h2>About the release name</h2>
+<p><b>Cassini</b> was the NASA/ESA/ASI spacecraft that orbited Saturn from 2004 to 2017, studying its rings and moons and delivering the Huygens probe to the surface of Titan.</p>
     ]]></string>
     <string name="whats_new_support" translation_description="HTML paragraph inviting users to support the project, shown in the What's new dialog and the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[
 <h1>Support Sky Map</h1>

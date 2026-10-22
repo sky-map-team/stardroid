@@ -12,9 +12,9 @@ package com.google.android.stardroid
 import android.app.Application
 import coil.ImageLoader
 import coil.ImageLoaderFactory
+import com.google.android.stardroid.announcements.AnnouncementScheduler
 import com.google.android.stardroid.eclipses.EclipseAlertScheduler
 import com.google.android.stardroid.layers.LayerParameter
-import com.google.android.stardroid.layers.SatelliteLayer
 import com.google.android.stardroid.layers.SolarSystemLayer
 import com.google.android.stardroid.notifications.NotificationScheduler
 import com.google.android.stardroid.notifications.SkyNotifier
@@ -27,7 +27,6 @@ import com.google.android.stardroid.startup.Experiment
 import com.google.android.stardroid.startup.ExperimentConfig
 import com.google.android.stardroid.widget.CountdownWidgetReceiver
 import com.google.android.stardroid.widget.MoonWidgetReceiver
-import com.google.android.stardroid.announcements.AnnouncementScheduler
 import com.google.android.stardroid.widget.TonightWidgetReceiver
 import com.google.android.stardroid.widget.WidgetGate
 import com.google.android.stardroid.widget.WidgetScheduler

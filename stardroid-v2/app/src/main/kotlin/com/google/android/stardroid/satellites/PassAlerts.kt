@@ -129,6 +129,12 @@ object PassAlerts {
             PendingIntent.FLAG_NO_CREATE or PendingIntent.FLAG_IMMUTABLE,
         )
 
+    /** True once the pass has begun; a late alert would send the user to an empty sky. */
+    internal fun isStale(
+        passStart: Instant,
+        now: Instant,
+    ): Boolean = now >= passStart
+
     internal fun startTimeFrom(intent: Intent): Instant? =
         intent
             .getLongExtra(EXTRA_START_MILLIS, 0L)
@@ -142,7 +148,8 @@ object PassAlerts {
  * Posts the pass alert when its alarm fires.
  *
  * Re-checks the opt-in at fire time rather than trusting the armed alarm: a user who turned pass
- * alerts off after one was armed must not be interrupted by it.
+ * alerts off after one was armed must not be interrupted by it. Also drops the alert if the pass
+ * has already begun.
  */
 class PassAlertReceiver : BroadcastReceiver() {
     override fun onReceive(
@@ -158,10 +165,14 @@ class PassAlertReceiver : BroadcastReceiver() {
         val pending = goAsync()
         CoroutineScope(SupervisorJob() + Dispatchers.IO).launch {
             try {
-                if (passAlertsEnabled(context)) {
-                    SatellitePassNotifier.post(context, noradId, start)
-                } else {
+                if (!passAlertsEnabled(context)) {
                     Log.i(TAG, "Pass alert fired but the opt-in is off; not posting")
+                } else if (PassAlerts.isStale(start, Clock.System.now())) {
+                    // Checked after the DataStore read, which can be slow on a Doze wake-up. The OS
+                    // may also have deferred the alarm itself (e.g. OEM battery managers).
+                    Log.i(TAG, "Pass alert fired after the pass began ($start); not posting")
+                } else {
+                    SatellitePassNotifier.post(context, noradId, start)
                 }
             } finally {
                 pending.finish()

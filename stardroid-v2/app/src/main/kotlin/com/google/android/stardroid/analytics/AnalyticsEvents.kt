@@ -16,7 +16,7 @@ package com.google.android.stardroid.analytics
  * [LAYER_TOGGLED_EVENT]) and the `MAP_LOAD_*` set (no Geoapify map preview in v2).
  */
 object AnalyticsEvents {
-    // User properties.
+    // User properties. Firebase rejects names over 24 characters.
     const val NEW_USER = "new_user_prop"
     const val DEVICE_SENSORS = "device_sensors_prop"
     const val DEVICE_SENSORS_NONE = "none"
@@ -26,9 +26,9 @@ object AnalyticsEvents {
     const val DEVICE_SENSORS_ROTATION = "rot"
     const val HAS_GYRO = "has_gyro_prop"
     const val HAS_ROTATION_VECTOR = "has_rotation_vector_prop"
-    const val FIRST_INSTALL_VERSION = "first_install_version_prop"
+    const val FIRST_INSTALL_VERSION = "first_install_ver_prop"
     const val USER_LOCALE = "user_locale_prop"
-    const val COMPLETED_WARM_WELCOME = "completed_warm_welcome_prop"
+    const val COMPLETED_WARM_WELCOME = "warm_welcome_done_prop"
 
     // Startup gates.
     const val TOS_ACCEPTED_EVENT = "TOS_accepted_ev"

@@ -5,7 +5,7 @@
     <!-- Rendered last on the terms screen, after the permissions notice, so the sentence the
          Accept button refers to is the final thing the user reads. -->
     <string name="eula_agree_line" translation_description="Closing line of the first-launch terms screen, immediately above the Accept button. Please do not change the markup"><![CDATA[<br/>
-<p><i>با کلیک بر روی "پذیرش"، شما با این شرایط موافقت می‌کنید.</i></p>]]></string>
+<p>با کلیک بر روی "پذیرش"، شما با این شرایط موافقت می‌کنید.</p>]]></string>
 
     <!--
       The access-permission notice (KISA / Korean Network Act art. 22-2, and good practice

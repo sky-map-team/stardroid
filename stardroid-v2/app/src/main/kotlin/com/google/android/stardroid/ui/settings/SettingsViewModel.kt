@@ -194,7 +194,6 @@ class SettingsViewModel(
                 fontSize = appearance.fontSize,
                 autoDimness = appearance.autoDimness,
                 disableGyro = sensors.disableGyro,
-
                 reverseMagneticZ = sensors.reverseMagneticZ,
                 smoothingEnabled = sensors.smoothingEnabled,
                 steadiness = sensors.steadiness,
@@ -241,7 +240,6 @@ class SettingsViewModel(
         trackChange("renderer_backend", backend)
         viewModelScope.launch { settings.setRendererBackend(backend) }
     }
-
 
     fun setDisableGyro(enabled: Boolean) {
         trackChange("disable_gyro", enabled)

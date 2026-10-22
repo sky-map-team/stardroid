@@ -26,11 +26,19 @@ class AlertSettingsTest {
             settings.setShowerAlertsEnabled(true)
             assertThat(
                 settings
-                    .layerParameter(MeteorShowerLayer.LAYER_ID, LayerParameter.SHOWER_ALERTS, "false")
+                    .layerParameter(
+                        MeteorShowerLayer.LAYER_ID,
+                        LayerParameter.SHOWER_ALERTS,
+                        "false",
+                    )
                     .first(),
             ).isEqualTo("true")
 
-            settings.setLayerParameter(MeteorShowerLayer.LAYER_ID, LayerParameter.SHOWER_ALERTS, "false")
+            settings.setLayerParameter(
+                MeteorShowerLayer.LAYER_ID,
+                LayerParameter.SHOWER_ALERTS,
+                "false",
+            )
             assertThat(settings.showerAlertsEnabled.first()).isFalse()
         }
 

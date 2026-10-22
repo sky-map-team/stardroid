@@ -85,7 +85,6 @@ import com.google.android.stardroid.sensors.SensorKind
 import com.google.android.stardroid.sensors.SensorStatusSource
 import com.google.android.stardroid.settings.AutoDimness
 import com.google.android.stardroid.settings.RendererBackend
-import com.google.android.stardroid.settings.Settings as SkyMapSettings
 import com.google.android.stardroid.startup.Experiment
 import com.google.android.stardroid.startup.ExperimentConfig
 import com.google.android.stardroid.startup.StartupRouter
@@ -103,9 +102,9 @@ import com.google.android.stardroid.ui.map.ReferenceFrame
 import com.google.android.stardroid.ui.objectinfo.ObjectInfoViewModel
 import com.google.android.stardroid.ui.search.SearchViewModel
 import com.google.android.stardroid.ui.settings.SettingsViewModel
-import com.google.android.stardroid.ui.startup.EulaScreen
 import com.google.android.stardroid.ui.startup.AnnouncementDialog
 import com.google.android.stardroid.ui.startup.AnnouncementViewModel
+import com.google.android.stardroid.ui.startup.EulaScreen
 import com.google.android.stardroid.ui.startup.StartupViewModel
 import com.google.android.stardroid.ui.startup.VersionBanner
 import com.google.android.stardroid.ui.startup.WhatsNewDialog
@@ -116,9 +115,6 @@ import com.google.android.stardroid.widget.MoonWidgetReceiver
 import com.google.android.stardroid.widget.TonightWidget
 import com.google.android.stardroid.widget.WidgetScheduler
 import dagger.hilt.android.AndroidEntryPoint
-import java.util.Calendar
-import javax.inject.Inject
-import kotlin.time.Duration
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.combine
@@ -127,6 +123,10 @@ import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.withContext
+import java.util.Calendar
+import javax.inject.Inject
+import kotlin.time.Duration
+import com.google.android.stardroid.settings.Settings as SkyMapSettings
 
 /**
  * The single-activity Compose shell (layers-and-app.md): builds the GL surface, wires the
@@ -137,9 +137,6 @@ import kotlinx.coroutines.withContext
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     private lateinit var glSurfaceView: GLSurfaceView
-
-    /** Filled in by the GL backend once its surface exists; read by the diagnostics screen. */
-    private val rendererInfoStore = RendererInfoStore()
 
     /**
      * The backend this activity's surface was built for. The EGL context version is fixed when
@@ -178,6 +175,9 @@ class MainActivity : ComponentActivity() {
 
     @Inject lateinit var catalogAccess: CatalogAccess
 
+    /** Filled in by the GL backend once its surface exists; read by the diagnostics screen. */
+    @Inject lateinit var rendererInfoStore: RendererInfoStore
+
     /** v1's session anchor: foreground time between onStart and onStop. */
     private var sessionStartTimeMillis = 0L
 
@@ -204,6 +204,7 @@ class MainActivity : ComponentActivity() {
     private val layersViewModel: LayersViewModel by viewModels {
         viewModelFactory {
             initializer {
+                val appContext = applicationContext
                 LayersViewModel(
                     settings,
                     analytics,
@@ -212,7 +213,7 @@ class MainActivity : ComponentActivity() {
                         experimentConfig.isEnabled(Experiment.NOTIFICATIONS),
                     satelliteStatus =
                         satelliteUiStatusFlow(
-                            satelliteEntryPoint(this@MainActivity)
+                            satelliteEntryPoint(appContext)
                                 .satelliteElementsRepository(),
                         ),
                     // The ordinary policy-respecting refresh, never the debug force path.
@@ -220,7 +221,7 @@ class MainActivity : ComponentActivity() {
                     onRefreshSatellites = {
                         withContext(Dispatchers.IO) {
                             val repository =
-                                satelliteEntryPoint(this@MainActivity)
+                                satelliteEntryPoint(appContext)
                                     .satelliteElementsRepository()
                             when (val result = repository.refresh()) {
                                 is RefreshResult.Skipped -> result.retryAfter
@@ -236,11 +237,12 @@ class MainActivity : ComponentActivity() {
     private val timeTravelViewModel: TimeTravelViewModel by viewModels {
         viewModelFactory {
             initializer {
+                val locations = locationController.locations
                 TimeTravelViewModel(
                     timeController = timeController,
                     ephemeris = MeeusEphemeris,
                     analytics = analytics,
-                    location = { locationController.locations.value },
+                    location = { locations.value },
                 )
             }
         }
@@ -249,6 +251,10 @@ class MainActivity : ComponentActivity() {
     private val searchViewModel: SearchViewModel by viewModels {
         viewModelFactory {
             initializer {
+                val appContext = applicationContext
+                val locations = locationController.locations
+                val time = timeController
+                val map = mapViewModel
                 SearchViewModel(
                     catalog = catalogAccess::repository,
                     locale = localeSource.specs,
@@ -256,28 +262,28 @@ class MainActivity : ComponentActivity() {
                     now = timeController::now,
                     settings = settings,
                     analytics = analytics,
-                    isManualMode = {
-                        mapViewModel.referenceFrame.value == ReferenceFrame.MANUAL
-                    },
-                    location = { locationController.locations.value },
+                    isManualMode = { map.referenceFrame.value == ReferenceFrame.MANUAL },
+                    location = { locations.value },
                     satellites = {
                         trackedSatellites(
-                            this@MainActivity,
-                            locationController.locations.value,
-                            applicationContext.getString(R.string.satellite_description),
-                            timeController.now(),
+                            appContext,
+                            locations.value,
+                            appContext.getString(R.string.satellite_description),
+                            time.now(),
                             requireLayerEnabled = false,
                         )
                     },
                     // Application resources follow the live locale; this activity's would be
                     // frozen at the language it was created in, and the view model outlives it.
                     satelliteAliases = { norad ->
-                        val app = applicationContext
                         when (norad) {
                             SatelliteLayer.ISS_NORAD_ID ->
-                                listOf(app.getString(R.string.satellite_search_name_iss))
+                                listOf(appContext.getString(R.string.satellite_search_name_iss))
                             SatelliteLayer.TIANGONG_NORAD_ID ->
-                                listOf(app.getString(R.string.satellite_search_name_tiangong), "CSS")
+                                listOf(
+                                    appContext.getString(R.string.satellite_search_name_tiangong),
+                                    "CSS",
+                                )
                             else -> emptyList()
                         }
                     },
@@ -289,6 +295,9 @@ class MainActivity : ComponentActivity() {
     private val objectInfoViewModel: ObjectInfoViewModel by viewModels {
         viewModelFactory {
             initializer {
+                val appContext = applicationContext
+                val locations = locationController.locations
+                val time = timeController
                 ObjectInfoViewModel(
                     catalog = catalogAccess::repository,
                     locale = localeSource.specs,
@@ -296,36 +305,34 @@ class MainActivity : ComponentActivity() {
                     now = timeController::now,
                     settings = settings,
                     analytics = analytics,
-                    location = { locationController.locations.value },
+                    location = { locations.value },
                     experimentConfig = experimentConfig,
                     moonWidgetPlaced = {
                         WidgetScheduler.hasInstances(
-                            this@MainActivity,
+                            appContext,
                             MoonWidgetReceiver::class.java,
                         )
                     },
                     satellites = {
                         trackedSatellites(
-                            this@MainActivity,
-                            locationController.locations.value,
-                            // Not this activity's resources: those stay in the language it was
-                            // created in, and this view model outlives it (as for search).
-                            applicationContext.getString(R.string.satellite_description),
-                            timeController.now(),
+                            appContext,
+                            locations.value,
+                            appContext.getString(R.string.satellite_description),
+                            time.now(),
                         )
                     },
                     passTimesReliable = {
-                        satelliteEntryPoint(this@MainActivity)
+                        satelliteEntryPoint(appContext)
                             .satelliteElementsRepository()
                             .current()
                             .mayShowPassTimes
                     },
                     nextPass = { norad ->
                         nextVisiblePass(
-                            this@MainActivity,
+                            appContext,
                             norad,
-                            locationController.locations.value,
-                            timeController.now(),
+                            locations.value,
+                            time.now(),
                         )
                     },
                 )
@@ -361,10 +368,11 @@ class MainActivity : ComponentActivity() {
         viewModelFactory {
             initializer {
                 val appContext = applicationContext
+                val map = mapViewModel
                 DiagnosticsViewModel(
                     sensorStatus = sensorStatusSource,
                     locationStates = locationController.state,
-                    camera = mapViewModel.camera,
+                    camera = map.camera,
                     settings = settings,
                     declinationSource = declinationSource,
                     now = timeController::now,
@@ -376,11 +384,11 @@ class MainActivity : ComponentActivity() {
                     gpsStatus = { gpsStatus(appContext) },
                     networkStatus = { networkStatus(appContext) },
                     orientationSource = orientationSource,
-                    localFrame = mapViewModel.localFrame,
+                    localFrame = map.localFrame,
                     rendererInfo = rendererInfoStore::get,
                     analytics = analytics,
-                    mapReferenceFrame = { mapViewModel.referenceFrame.value },
-                    lastMapOrientationAtMillis = { mapViewModel.lastOrientationAtMillis },
+                    mapReferenceFrame = { map.referenceFrame.value },
+                    lastMapOrientationAtMillis = { map.lastOrientationAtMillis },
                     processLifecycleState = {
                         // Runs off the main thread; currentState's getter doesn't check.
                         ProcessLifecycleOwner.get().lifecycle.currentState
@@ -414,16 +422,18 @@ class MainActivity : ComponentActivity() {
     private val announcementViewModel: AnnouncementViewModel by viewModels {
         viewModelFactory {
             initializer {
+                val appContext = applicationContext
+                val locales = localeSource
                 AnnouncementViewModel(
                     source = announcementSource,
                     state = announcementState,
                     settings = settings,
                     experimentConfig = experimentConfig,
-                    locale = { localeSource.current },
+                    locale = { locales.current },
                     appVersion =
                         packageManager.getPackageInfo(packageName, 0).longVersionCode,
                     analytics = analytics,
-                    onDismissed = { runCatching { TonightWidget().updateAll(applicationContext) } },
+                    onDismissed = { runCatching { TonightWidget().updateAll(appContext) } },
                 )
             }
         }
@@ -674,7 +684,11 @@ class MainActivity : ComponentActivity() {
                     AnnouncementDialog(
                         announcement = pending,
                         onOpen = {
-                            (pending.action as? AnnouncementAction.Search)?.let { runSearch(it.query) }
+                            (pending.action as? AnnouncementAction.Search)?.let {
+                                runSearch(
+                                    it.query,
+                                )
+                            }
                             announcementViewModel.close()
                         },
                         onDismiss = announcementViewModel::dismiss,

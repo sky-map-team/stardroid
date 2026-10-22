@@ -183,7 +183,9 @@ fun DiagnosticsScreen(
                         onClick = {
                             scope.launch {
                                 experimentFetchResult =
-                                    when (val result = viewModel.fetchExperiments(experimentConfig)) {
+                                    when (
+                                        val result = viewModel.fetchExperiments(experimentConfig)
+                                    ) {
                                         FetchResult.Unsupported -> "Not supported in this build"
                                         is FetchResult.Success ->
                                             if (result.updated) {
@@ -391,13 +393,7 @@ private fun orientationSettingsSection(
             ),
             DiagnosticsRow(
                 stringResource(R.string.diagnostics_calibration_dialog),
-                stringResource(
-                    if (snapshot.dontShowCalibrationDialog) {
-                        R.string.diagnostics_calibration_dialog_suppressed
-                    } else {
-                        R.string.diagnostics_calibration_dialog_shown
-                    },
-                ),
+                onOffText(!snapshot.dontShowCalibrationDialog),
             ),
             DiagnosticsRow(
                 stringResource(R.string.diagnostics_jitter_raw),
@@ -457,6 +453,13 @@ private fun mapSection(
                     value = snapshot.rejectedSensorSamples.toString(),
                     valueColor =
                         if (snapshot.rejectedSensorSamples > 0) colors.bad else Color.Unspecified,
+                ),
+            )
+            add(
+                DiagnosticsRow(
+                    label = stringResource(R.string.diagnostics_smoother_heals),
+                    value = snapshot.smootherHeals.toString(),
+                    valueColor = if (snapshot.smootherHeals > 0) colors.bad else Color.Unspecified,
                 ),
             )
             snapshot.processLifecycleState?.let {
@@ -642,9 +645,18 @@ private fun experimentsSection(
     val rows =
         buildList {
             if (config.canFetch) {
-                add(DiagnosticsRow(stringResource(R.string.diagnostics_experiments_last_fetched), lastFetched))
+                add(
+                    DiagnosticsRow(
+                        stringResource(R.string.diagnostics_experiments_last_fetched),
+                        lastFetched,
+                    ),
+                )
             }
-            Experiment.entries.forEach { add(DiagnosticsRow(it.key, config.isEnabled(it).toString())) }
+            Experiment.entries.forEach {
+                add(
+                    DiagnosticsRow(it.key, config.isEnabled(it).toString()),
+                )
+            }
         }
     return DiagnosticsSection(stringResource(R.string.diagnostics_section_experiments), rows)
 }

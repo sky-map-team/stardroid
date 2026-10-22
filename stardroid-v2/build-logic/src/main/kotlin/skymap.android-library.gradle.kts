@@ -5,6 +5,7 @@ import com.android.build.api.dsl.LibraryExtension
 plugins {
     id("com.android.library")
     id("org.jlleitschuh.gradle.ktlint")
+    id("skymap.ktlint-android-sources")
 }
 
 extensions.configure<LibraryExtension> {

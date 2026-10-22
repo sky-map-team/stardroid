@@ -14,7 +14,6 @@ import android.hardware.SensorEvent
 import android.hardware.SensorEventListener
 import android.hardware.SensorManager
 import android.view.Surface
-import com.google.android.stardroid.astronomy.orientationFromSensors
 import com.google.android.stardroid.math.Matrix3
 import com.google.android.stardroid.math.Vector3
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -62,20 +61,52 @@ class SensorOrientationSource(
     override val rejectedSampleCount: Int
         get() = rejectedSamples.get()
 
-    /** Whether [quaternion] is fit to emit; a sample that isn't is dropped and counted. */
-    private fun accept(quaternion: FloatArray): Boolean =
-        quaternion.isUsableQuaternion().also { if (!it) rejectedSamples.incrementAndGet() }
+    private val smootherHeals = AtomicInteger()
+
+    override val smootherHealCount: Int
+        get() = smootherHeals.get()
+
+    /** Counts a sample dropped for not being a rotation; call on every `null` step result. */
+    private fun reject() {
+        rejectedSamples.incrementAndGet()
+    }
+
+    /** Which sensors, if any, an orientation stream runs on. The one place that decides. */
+    private sealed interface Route {
+        data object None : Route
+
+        class Fused(val manager: SensorManager, val sensor: Sensor) : Route
+
+        class Legacy(
+            val manager: SensorManager,
+            val accelerometer: Sensor,
+            val magnetometer: Sensor,
+        ) : Route
+    }
+
+    private fun route(disableGyro: Boolean): Route =
+        when {
+            sensorManager == null -> Route.None
+            rotationSensor != null && !disableGyro -> Route.Fused(sensorManager, rotationSensor)
+            accelerometer != null && magnetometer != null ->
+                Route.Legacy(sensorManager, accelerometer, magnetometer)
+            else -> Route.None
+        }
 
     @OptIn(ExperimentalCoroutinesApi::class)
     override fun orientations(): Flow<Matrix3> =
         configChanges().flatMapLatest { current ->
-            when {
-                sensorManager == null -> emptyFlow()
-                rotationSensor != null && !current.disableGyro ->
-                    rotationVectorOrientations(sensorManager, rotationSensor, current)
-                accelerometer != null && magnetometer != null ->
-                    legacyOrientations(sensorManager, accelerometer, magnetometer, current)
-                else -> emptyFlow()
+            when (val route = route(current.disableGyro)) {
+                Route.None -> emptyFlow()
+                is Route.Fused ->
+                    rotationVectorOrientations(route.manager, route.sensor, current)
+                is Route.Legacy ->
+                    legacyOrientations(
+                        route.manager,
+                        route.accelerometer,
+                        route.magnetometer,
+                        current,
+                    )
             }
         }
 
@@ -88,13 +119,17 @@ class SensorOrientationSource(
     @OptIn(ExperimentalCoroutinesApi::class)
     override fun orientationSamples(): Flow<OrientationSample> =
         configChanges().flatMapLatest { current ->
-            when {
-                sensorManager == null -> emptyFlow()
-                rotationSensor != null && !current.disableGyro ->
-                    rotationVectorOrientationSamples(sensorManager, rotationSensor, current)
-                accelerometer != null && magnetometer != null ->
-                    legacyOrientationSamples(sensorManager, accelerometer, magnetometer, current)
-                else -> emptyFlow()
+            when (val route = route(current.disableGyro)) {
+                Route.None -> emptyFlow()
+                is Route.Fused ->
+                    rotationVectorOrientationSamples(route.manager, route.sensor, current)
+                is Route.Legacy ->
+                    legacyOrientationSamples(
+                        route.manager,
+                        route.accelerometer,
+                        route.magnetometer,
+                        current,
+                    )
             }
         }
 
@@ -110,16 +145,13 @@ class SensorOrientationSource(
         }
 
     /** Whether [config] selects the fused rotation-vector path over the legacy one. */
-    private fun usesFusedPath(config: SensorConfig) =
-        rotationSensor != null && !config.disableGyro
+    private fun usesFusedPath(config: SensorConfig) = route(config.disableGyro) is Route.Fused
 
-    // Must match the routing in orientations() and orientationSamples().
     override fun sensorPath(disableGyro: Boolean): SensorPath =
-        when {
-            sensorManager == null -> SensorPath.NONE
-            rotationSensor != null && !disableGyro -> SensorPath.FUSED
-            accelerometer != null && magnetometer != null -> SensorPath.ACCELEROMETER_COMPASS
-            else -> SensorPath.NONE
+        when (route(disableGyro)) {
+            Route.None -> SensorPath.NONE
+            is Route.Fused -> SensorPath.FUSED
+            is Route.Legacy -> SensorPath.ACCELEROMETER_COMPASS
         }
 
     private fun rotationVectorOrientations(
@@ -128,9 +160,6 @@ class SensorOrientationSource(
         config: SensorConfig,
     ): Flow<Matrix3> =
         callbackFlow {
-            // Some devices (e.g. Galaxy S4) report more than four values, others only three
-            // (no scalar component); toQuaternion normalizes both into this buffer, deriving
-            // the scalar where it's missing.
             val quaternion = FloatArray(4)
             val rotationMatrix = FloatArray(9)
             val remappedMatrix = FloatArray(9)
@@ -138,8 +167,9 @@ class SensorOrientationSource(
             val listener =
                 object : SensorEventListener {
                     override fun onSensorChanged(event: SensorEvent) {
-                        val raw = toQuaternion(event.values, quaternion)
-                        if (!accept(raw)) return
+                        val raw =
+                            rotationVectorQuaternion(event.values, quaternion)
+                                ?: return reject()
                         val vector = smoother?.update(raw, event.timestamp) ?: raw
                         SensorManager.getRotationMatrixFromVector(rotationMatrix, vector)
                         val remapped = remapToDisplayFrame(rotationMatrix, remappedMatrix)
@@ -171,8 +201,9 @@ class SensorOrientationSource(
             val listener =
                 object : SensorEventListener {
                     override fun onSensorChanged(event: SensorEvent) {
-                        val raw = toQuaternion(event.values, quaternion)
-                        if (!accept(raw)) return
+                        val raw =
+                            rotationVectorQuaternion(event.values, quaternion)
+                                ?: return reject()
                         SensorManager.getRotationMatrixFromVector(rawMatrix, raw)
                         val rawResult = remapToDisplayFrame(rawMatrix, rawRemapped).toMatrix3()
                         val smoothed = smoother?.update(raw, event.timestamp)
@@ -194,24 +225,6 @@ class SensorOrientationSource(
             manager.registerListener(listener, sensor, SensorManager.SENSOR_DELAY_GAME)
             awaitClose { manager.unregisterListener(listener) }
         }.conflate()
-
-    /** Fills [out] with the sample's quaternion `(x, y, z, w)`, deriving `w` if absent. */
-    private fun toQuaternion(
-        values: FloatArray,
-        out: FloatArray,
-    ): FloatArray {
-        out[0] = values[0]
-        out[1] = values[1]
-        out[2] = values[2]
-        out[3] =
-            if (values.size >= 4) {
-                values[3]
-            } else {
-                val sumSquares = out[0] * out[0] + out[1] * out[1] + out[2] * out[2]
-                kotlin.math.sqrt(kotlin.math.max(0f, 1f - sumSquares))
-            }
-        return out
-    }
 
     private fun legacyOrientations(
         manager: SensorManager,
@@ -246,9 +259,8 @@ class SensorOrientationSource(
                         acceleration = event.values.toVector3()
                         val accel = acceleration ?: return
                         val mag = magneticField ?: return
-                        val fused = orientationFromSensors(accel, mag) ?: return
-                        val fusedQuaternion = fused.writeQuaternion(quaternion)
-                        if (!accept(fusedQuaternion)) return
+                        val fused =
+                            accelMagOrientation(accel, mag, quaternion) ?: return reject()
                         // Smoothing happens here, on the fused orientation in the natural
                         // frame, rather than on the two raw vectors feeding
                         // orientationFromSensors. v1's per-axis smoothers ran the
@@ -260,7 +272,7 @@ class SensorOrientationSource(
                         // rotation from being smoothed through as though it were movement.
                         val smoothed =
                             smoother
-                                ?.update(fusedQuaternion, event.timestamp)
+                                ?.update(quaternion, event.timestamp)
                                 ?.toRotationMatrix3()
                                 ?: fused
                         // ROTATION_0 needs no remap; skip the FloatArray round-trip (two
@@ -315,12 +327,11 @@ class SensorOrientationSource(
                         acceleration = event.values.toVector3()
                         val accel = acceleration ?: return
                         val mag = magneticField ?: return
-                        val fused = orientationFromSensors(accel, mag) ?: return
-                        val fusedQuaternion = fused.writeQuaternion(quaternion)
-                        if (!accept(fusedQuaternion)) return
+                        val fused =
+                            accelMagOrientation(accel, mag, quaternion) ?: return reject()
                         val smoothed =
                             smoother
-                                ?.update(fusedQuaternion, event.timestamp)
+                                ?.update(quaternion, event.timestamp)
                                 ?.toRotationMatrix3()
                                 ?: fused
                         val remappedFused =
@@ -412,7 +423,7 @@ class SensorOrientationSource(
                 minCutoff = OneEuroQuaternionSmoother.minCutoffFor(config.steadiness, legacyPath),
                 beta = OneEuroQuaternionSmoother.betaFor(config.easeOff, legacyPath),
                 speedFloor = OneEuroQuaternionSmoother.speedFloorFor(legacyPath),
+                onHeal = { smootherHeals.incrementAndGet() },
             )
         }
-
 }

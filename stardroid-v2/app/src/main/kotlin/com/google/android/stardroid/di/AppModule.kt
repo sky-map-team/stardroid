@@ -234,6 +234,9 @@ object AppModule {
             override val rejectedSampleCount: Int
                 get() = delegate.rejectedSampleCount
 
+            override val smootherHealCount: Int
+                get() = delegate.smootherHealCount
+
             override fun sensorPath(disableGyro: Boolean) = delegate.sensorPath(disableGyro)
 
             override fun orientations(): Flow<Matrix3> =
