@@ -61,33 +61,6 @@ sealed interface PointAppearance {
 data class LinePrimitive(val vertices: List<Vector3>, val color: Rgba, val widthDp: Double)
 
 /**
- * A filled, additively-blended gradient mesh described by concentric vertex rings (the horizon
- * glow; ports v1's `HorizonGlowPrimitive`). Ring 0 is the outermost loop; each subsequent ring
- * carries its own color, and the backend fills the bands between consecutive rings, interpolating
- * color — including alpha — across each band, so the result is one smooth gradient rather than a
- * stack of discrete translucent strips.
- *
- * Drawn **additively** (the glow adds light to whatever is behind it, black sky or twilight
- * gradient alike, instead of blending toward it) and **before** the scene's lines, so a crisp
- * line can be drawn along the mesh's leading edge.
- *
- * The backend indexes every ring by the first ring's vertex count, so all rings must be the same
- * length; a mesh needs at least two rings of at least two vertices each to form a band, and the
- * backend skips anything smaller. Ring vertices are used as given — no great-circle subdivision.
- */
-data class GlowPrimitive(val rings: List<GlowRing>) {
-    init {
-        val ringLength = rings.firstOrNull()?.vertices?.size ?: 0
-        require(rings.all { it.vertices.size == ringLength }) {
-            "All rings must have the same vertex count"
-        }
-    }
-}
-
-/** One loop of a [GlowPrimitive]: its vertices and the color the band interpolates from. */
-data class GlowRing(val vertices: List<Vector3>, val color: Rgba)
-
-/**
  * A world-anchored image (planet disc, nebula photo). [angularSizeDeg] is its **true** diameter on
  * the sky, so it scales with zoom; [image] is an opaque [ImageRef] the backend resolves.
  *
@@ -166,6 +139,14 @@ data class EclipseShadow(
  * entirely. It is deliberately *not* the object's true magnitude: producers bias it (deep-sky
  * objects subtract a bonus so famous-but-faint targets still label) or drop it altogether (the
  * planets, so Neptune and Pluto stay named), while [priority] keeps the honest brightness order.
+ *
+ * [hasDetail] says the named thing has something to show if tapped — an info card. Tapping only
+ * identifies objects that have one, so today most star labels are silently untappable (see
+ * `docs/info-card-coverage.md`); a backend that can afford it draws carded labels at full
+ * strength and underlines them, dimming the rest, which turns that invisible distinction into
+ * something you can see before you tap. Backends that cannot ignore it — `:render:gles1` does —
+ * so this is additive. Producers naming directions rather than objects (the grid, the horizon,
+ * the ecliptic) leave it false.
  */
 data class LabelPrimitive(
     val pos: Vector3,
@@ -173,6 +154,7 @@ data class LabelPrimitive(
     val style: LabelStyle,
     val priority: Int,
     val magnitudeForThresholding: Double? = null,
+    val hasDetail: Boolean = false,
 )
 
 /**

@@ -272,8 +272,11 @@ associated image's drawn diameter, or the label drawer reads the floored size fr
 computation. Otherwise names sit inside a true-scale Moon.
 
 **Sun corona.** A true-scale Sun with a hard limb reads as a flat sticker. Give it an additive
-corona/glare halo through the existing `GlowPrimitive` mesh (added for the horizon glow, D40) at
-about 2.5× the drawn disc. It also keeps the Sun findable when it is a floored speck.
+corona/glare halo at about 2.5× the drawn disc. It also keeps the Sun findable when it is a
+floored speck. Note this can no longer lean on `GlowPrimitive`, which was removed along with the
+horizon glow it was built for: on `:render:gles3` a corona is a few lines of fragment shader on
+the Sun's own quad, which is cheaper than the mesh ever was, and on `:render:gles1` it would need
+the ring mesh reintroducing — an argument for doing it after GLES1 retires rather than before.
 
 ### 3.4 The layer parameter
 

@@ -120,6 +120,7 @@ dependencies {
     implementation(project(":core:events"))
     implementation(project(":render:api"))
     implementation(project(":render:gles1"))
+    implementation(project(":render:gles3"))
     implementation(project(":data"))
     implementation(libs.kotlinx.coroutines.android)
     // Parses the Remote Config announcements payload (JsonElement API only; no plugin).

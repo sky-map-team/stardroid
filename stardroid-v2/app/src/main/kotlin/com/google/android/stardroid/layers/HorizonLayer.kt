@@ -10,11 +10,8 @@
 package com.google.android.stardroid.layers
 
 import com.google.android.stardroid.astronomy.SkyModel
-import com.google.android.stardroid.math.DEGREES_TO_RADIANS
 import com.google.android.stardroid.math.LatLong
 import com.google.android.stardroid.math.Vector3
-import com.google.android.stardroid.render.api.GlowPrimitive
-import com.google.android.stardroid.render.api.GlowRing
 import com.google.android.stardroid.render.api.LabelPrimitive
 import com.google.android.stardroid.render.api.LabelSize
 import com.google.android.stardroid.render.api.LabelStyle
@@ -29,15 +26,21 @@ import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.flow.map
 import kotlinx.datetime.Instant
 import kotlin.coroutines.CoroutineContext
-import kotlin.math.cos
-import kotlin.math.exp
-import kotlin.math.sin
 
 /**
- * The local horizon, ported from v1's `HorizonLayer` (after upstream #924): the great circle
- * through the cardinal points, a soft additive glow just below it, plus cardinal-direction
- * labels, all derived from [SkyModel.localFrame] (true north — magnetic declination plays no
- * part here).
+ * The local horizon, ported from v1's `HorizonLayer`: the great circle through the cardinal
+ * points plus cardinal-direction labels, all derived from [SkyModel.localFrame] (true north —
+ * magnetic declination plays no part here).
+ *
+ * It used to also submit a soft additive glow just below the line (upstream #924). That glow was
+ * doing two jobs — marking the horizon and suggesting depth below it — and its eight rings existed
+ * only to trace an exponential falloff with the per-vertex colour a fixed pipeline offers. Both
+ * jobs now belong to `Ground`, a render-state block each backend shades for itself, which leaves
+ * this layer with nothing but reference geometry: where the horizon is, and which way is north.
+ *
+ * That split is also why the two are separate preferences. The line and the letters answer "where
+ * am I pointing", and someone looking through the Earth to find the Sun still wants them; the
+ * ground answers "what is below me" and is the thing they need out of the way.
  *
  * Zenith/nadir labels moved to [AltAzGridLayer] (#1022): they are that layer's coordinate-system
  * poles, not part of the horizon itself, and only show when the (off-by-default) alt/az grid is
@@ -73,7 +76,6 @@ class HorizonLayer(
         val south = -frame.trueNorth
         val east = frame.trueEast
         val west = -frame.trueEast
-        val nadir = -frame.up
 
         val horizon =
             LinePrimitive(
@@ -92,55 +94,7 @@ class HorizonLayer(
             depth = depth,
             lines = listOf(horizon),
             labels = labels,
-            glows = listOf(glowMesh(north, east, nadir)),
         )
-    }
-
-    /**
-     * The glow gradient mesh (upstream #924): ring 0 is the horizon circle
-     * `p(θ) = north·cos θ + east·sin θ`; each further ring is the circle tilted toward the nadir
-     * (`p·cos t + nadir·sin t`) at [GLOW_RING_SPACING_DEG] steps, so the glow reaches
-     * `NUM_GLOW_RINGS × spacing` below the horizon and never above it. Each ring is painted in
-     * the horizon color with an exponentially decaying alpha; the renderer interpolates these
-     * across the bands for a smooth, additively-blended glow. The deepest ring is fully
-     * transparent so the gradient fades out instead of ending in a hard edge.
-     *
-     * Why several rings even though the GPU interpolates color across the bands? The
-     * interpolation is what makes the gradient smooth, so it is NOT the reason for the ring
-     * count: even two rings (peak at the horizon, zero at the bottom) would give a seam-free
-     * gradient. But fixed-function (Gouraud) shading interpolates alpha *linearly*, so two stops
-     * can only produce a straight ramp. We want the *exponential* falloff below (bright at the
-     * horizon with a long soft tail), so we give the curve multiple stops and let the per-band
-     * linear interpolation trace it piecewise. More rings = finer approximation of the curve;
-     * 8 is enough that the corners are imperceptible. Drop to 2 if a plain linear fade is ever
-     * wanted.
-     */
-    private fun glowMesh(
-        north: Vector3,
-        east: Vector3,
-        nadir: Vector3,
-    ): GlowPrimitive {
-        val rings =
-            (0..NUM_GLOW_RINGS).map { ringIdx ->
-                val cosTilt = COS_TILTS[ringIdx]
-                val sinTilt = SIN_TILTS[ringIdx]
-                val vertices =
-                    // NUM_SEGMENTS+1 vertices: the modulo makes the closing vertex bitwise
-                    // equal to the first (sin(2π) isn't exactly 0 in floating point).
-                    (0..NUM_SEGMENTS).map { i ->
-                        val cosA = COS_ANGLES[i]
-                        val sinA = SIN_ANGLES[i]
-                        val factorNorth = cosA * cosTilt
-                        val factorEast = sinA * cosTilt
-                        Vector3(
-                            north.x * factorNorth + east.x * factorEast + nadir.x * sinTilt,
-                            north.y * factorNorth + east.y * factorEast + nadir.y * sinTilt,
-                            north.z * factorNorth + east.z * factorEast + nadir.z * sinTilt,
-                        )
-                    }
-                GlowRing(vertices, SkyColors.HORIZON_LINE.copy(a = ALPHAS[ringIdx]))
-            }
-        return GlowPrimitive(rings)
     }
 
     private fun label(
@@ -157,58 +111,18 @@ class HorizonLayer(
     companion object {
         val LAYER_ID = LayerId("computed/horizon")
 
-        /** v1 depth table: the horizon draws in front of everything. */
+        /**
+         * v1 depth table: the horizon draws in front of everything.
+         *
+         * It must also stay greater than [LayerScene.GROUND_DEPTH], or the ground would wash over
+         * the line and the cardinal labels instead of stopping beneath them. `HorizonLayerTest`
+         * asserts that, because nothing about a bare integer says so.
+         */
         private const val DEPTH = 90
 
         private const val LINE_WIDTH_DP = 2.5
 
         /** Above the catalog mid-band: orientation cues should survive decluttering. */
         private const val LABEL_PRIORITY = 70
-
-        /**
-         * 180 segments around each glow ring: visually smooth. The horizon *line* stays a
-         * 5-vertex loop (the backend's great-circle subdivision smooths it), but the glow mesh
-         * carries explicit ring vertices — no subdivision applies to [GlowPrimitive]s. Mesh
-         * vertex count is (NUM_GLOW_RINGS + 1) × (NUM_SEGMENTS + 1), well under the backend's
-         * signed-short index limit.
-         */
-        private const val NUM_SEGMENTS = 180
-        private const val NUM_GLOW_RINGS = 8
-        private const val GLOW_RING_SPACING_DEG = 1.0
-
-        /**
-         * Additive glow intensity at the horizon, with an exponential falloff (per ring index,
-         * natural units) toward the deepest ring, which is forced fully transparent.
-         */
-        private const val GLOW_PEAK_ALPHA = 0.7
-        private const val GLOW_ALPHA_DECAY = 0.55
-
-        // The mesh's per-vertex angle/tilt trig and per-ring alpha depend only on these
-        // constants, not on the local frame — precomputed once rather than recomputed on every
-        // buildScene (up to per-frame during time travel).
-        private val COS_ANGLES =
-            DoubleArray(
-                NUM_SEGMENTS + 1,
-            ) { i -> cos(2.0 * Math.PI * (i % NUM_SEGMENTS) / NUM_SEGMENTS) }
-        private val SIN_ANGLES =
-            DoubleArray(
-                NUM_SEGMENTS + 1,
-            ) { i -> sin(2.0 * Math.PI * (i % NUM_SEGMENTS) / NUM_SEGMENTS) }
-        private val COS_TILTS =
-            DoubleArray(
-                NUM_GLOW_RINGS + 1,
-            ) { ringIdx -> cos(ringIdx * GLOW_RING_SPACING_DEG * DEGREES_TO_RADIANS) }
-        private val SIN_TILTS =
-            DoubleArray(
-                NUM_GLOW_RINGS + 1,
-            ) { ringIdx -> sin(ringIdx * GLOW_RING_SPACING_DEG * DEGREES_TO_RADIANS) }
-        private val ALPHAS =
-            FloatArray(NUM_GLOW_RINGS + 1) { ringIdx ->
-                if (ringIdx == NUM_GLOW_RINGS) {
-                    0f
-                } else {
-                    (GLOW_PEAK_ALPHA * exp(-ringIdx * GLOW_ALPHA_DECAY)).toFloat()
-                }
-            }
     }
 }
