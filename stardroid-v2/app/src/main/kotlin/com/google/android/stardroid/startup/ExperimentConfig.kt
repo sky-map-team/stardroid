@@ -84,7 +84,7 @@ fun interface ExperimentConfig {
                 when (it) {
                     Experiment.MOON_WIDGET -> true
                     Experiment.TONIGHT_WIDGET -> true
-                    Experiment.NOTIFICATIONS -> false
+                    Experiment.NOTIFICATIONS -> true
                     Experiment.CAMERA_AR -> false
                     Experiment.SHARE_SKY -> false
                     Experiment.SATELLITES -> false
