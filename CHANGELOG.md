@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## [2.2.0:Buran] (v2) - 2026-10-21
 
+<img src="stardroid-v2/assets/release-icons/2.2.0_buran_icon.png" width="80" alt="Buran" />
+
 ### Added
 - Sky alerts, on by default: meteor shower peak alerts and a nightly "Tonight's sky" digest,
   configurable under Settings → Notifications or from the Meteor showers layer. (#1084, #1092)
