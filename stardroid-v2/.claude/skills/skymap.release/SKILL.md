@@ -158,7 +158,7 @@ Step 1 (e.g. `2.0.0` and `Jupiter`).
    **If Step 1.4 produced an icon**, the `<img>` tag's path is relative to the repo root
    (`stardroid-v2/assets/release-icons/...`), which does not resolve inside a standalone GitHub
    release description. Rewrite it to an absolute `raw.githubusercontent.com` URL pinned to the
-   commit just pushed in step 2, so the icon keeps rendering even if the file is later renamed or
+   commit just pushed in step 3, so the icon keeps rendering even if the file is later renamed or
    moved — run this *before* `gh release create`:
    ```bash
    commit=$(git rev-parse HEAD)
