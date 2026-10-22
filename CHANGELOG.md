@@ -23,11 +23,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## [2.1.4:Artemis] (v2) - 2026-10-13
 
+<img src="stardroid-v2/assets/release-icons/2.1.0_artemis_icon.png" width="80" alt="Artemis" />
+
 ### Fixed
 - The terms screen no longer clips the Accept button at large font or display sizes; the bottom
   bar now grows with its content. (#1101)
 
 ## [2.1.3:Artemis] (v2) - 2026-10-12
+
+<img src="stardroid-v2/assets/release-icons/2.1.0_artemis_icon.png" width="80" alt="Artemis" />
 
 ### Fixed
 - The map could stop following the phone after a single invalid reading from the orientation
@@ -57,6 +61,8 @@ This is the first stable release since 2.0.8 and includes everything from 2.1.0 
 ---
 
 ## [2.1.1:Artemis] (v2) - 2026-09-21
+
+<img src="stardroid-v2/assets/release-icons/2.1.0_artemis_icon.png" width="80" alt="Artemis" />
 
 ### Fixed
 - Location now works properly on devices without Google Play services (de-Googled ROMs such as
