@@ -14,7 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 - The Moon phase widget now shows the Moon's age. (#1124)
 
 ### Fixed
-- Moon, widget and notification fixes, including stable notification ids and tap targets. (#1147)
+- Notifications no longer overwrite each other or open the wrong screen when tapped. (#1147)
 - The CAMERA permission no longer hides the app from Chromebooks. (#1116)
 - Persian star names and lost inline markup in translated help strings. (#1126, #1134, #1137)
 - Assorted small fixes. (#1097, #1098, #1099, #1103, #1108, #1111)
