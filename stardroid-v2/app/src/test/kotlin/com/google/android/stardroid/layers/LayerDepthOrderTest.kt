@@ -16,7 +16,6 @@ import com.google.android.stardroid.data.satellites.SatelliteElements
 import com.google.android.stardroid.math.LatLong
 import com.google.android.stardroid.render.api.LayerScene
 import com.google.android.stardroid.settings.FakeSettings
-
 import com.google.common.truth.Truth.assertThat
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.MutableStateFlow

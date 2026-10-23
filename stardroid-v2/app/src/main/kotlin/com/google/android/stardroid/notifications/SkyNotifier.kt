@@ -23,6 +23,8 @@ import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import androidx.core.content.ContextCompat
 import com.google.android.stardroid.R
+import com.google.android.stardroid.announcements.AnnouncementAction
+import com.google.android.stardroid.announcements.AnnouncementText
 import com.google.android.stardroid.astronomy.azimuthDeg
 import com.google.android.stardroid.events.DARK_MOON_FRACTION
 import com.google.android.stardroid.events.SkyEvent
@@ -42,9 +44,7 @@ import kotlin.math.roundToInt
 object SkyNotifier {
     const val CHANNEL_SHOWERS = "meteor_showers"
     const val CHANNEL_DIGEST = "tonight_digest"
-
-    // One id: tonight's notification, whichever kind it is — a repost replaces, never stacks.
-    private const val NOTIFICATION_ID = 71
+    const val CHANNEL_ANNOUNCEMENTS = "announcements"
 
     /** Channels are cheap to re-create (no-op if present) and map 1:1 to the settings rows. */
     fun ensureChannels(context: Context) {
@@ -62,6 +62,13 @@ object SkyNotifier {
                 context.getString(R.string.channel_digest_name),
                 NotificationManager.IMPORTANCE_DEFAULT,
             ).apply { description = context.getString(R.string.channel_digest_description) },
+        )
+        manager.createNotificationChannel(
+            NotificationChannel(
+                CHANNEL_ANNOUNCEMENTS,
+                context.getString(R.string.channel_announcements_name),
+                NotificationManager.IMPORTANCE_DEFAULT,
+            ).apply { description = context.getString(R.string.channel_announcements_description) },
         )
     }
 
@@ -121,12 +128,12 @@ object SkyNotifier {
                     context.getString(R.string.notif_action_mute_showers),
                     PendingIntent.getActivity(
                         context,
-                        1,
+                        SkyNotification.TONIGHT.id,
                         muteIntent,
                         PendingIntent.FLAG_IMMUTABLE or PendingIntent.FLAG_UPDATE_CURRENT,
                     ),
                 ).build()
-        post(context, notification)
+        post(context, notification, SkyNotification.TONIGHT)
     }
 
     /** The tonight digest (mockup notification 3): the widget's highlight lines, verbatim. */
@@ -145,26 +152,67 @@ object SkyNotifier {
                 .setStyle(
                     NotificationCompat.BigTextStyle().bigText(lines.joinToString("\n")),
                 ).build()
-        post(context, notification)
+        post(context, notification, SkyNotification.TONIGHT)
+    }
+
+    /**
+     * A remote announcement (docs/design/remote-announcements.md). Returns whether it was
+     * actually posted, so the caller records it as shown only when the user could have seen it
+     * — a blocked channel leaves the interstitial free to take over.
+     */
+    fun postAnnouncement(
+        context: Context,
+        text: AnnouncementText,
+        action: AnnouncementAction,
+    ): Boolean {
+        if (!canPost(context, CHANNEL_ANNOUNCEMENTS)) return false
+        ensureChannels(context)
+        val contentIntent =
+            Intent(context, MainActivity::class.java).apply {
+                if (action is AnnouncementAction.Search) {
+                    putExtra(AnnouncementAction.EXTRA_SEARCH_QUERY, action.query)
+                }
+            }
+        val notification =
+            NotificationCompat
+                .Builder(context, CHANNEL_ANNOUNCEMENTS)
+                .setSmallIcon(R.drawable.ic_stat_skymap)
+                .setColor(0xFFFFC107.toInt())
+                .setAutoCancel(true)
+                .setContentTitle(text.title)
+                .setContentText(text.body)
+                .setStyle(NotificationCompat.BigTextStyle().bigText(text.body))
+                .setContentIntent(
+                    PendingIntent.getActivity(
+                        context,
+                        SkyNotification.ANNOUNCEMENT.id,
+                        contentIntent,
+                        PendingIntent.FLAG_IMMUTABLE or PendingIntent.FLAG_UPDATE_CURRENT,
+                    ),
+                ).build()
+        return post(context, notification, SkyNotification.ANNOUNCEMENT)
     }
 
     /** The one guarded `notify` call: permission re-checked at the moment of posting. */
     private fun post(
         context: Context,
         notification: Notification,
-    ) {
+        which: SkyNotification,
+    ): Boolean {
         if (Build.VERSION.SDK_INT >= 33 &&
             ContextCompat.checkSelfPermission(
                 context,
                 Manifest.permission.POST_NOTIFICATIONS,
             ) != PackageManager.PERMISSION_GRANTED
         ) {
-            return
+            return false
         }
-        try {
-            NotificationManagerCompat.from(context).notify(NOTIFICATION_ID, notification)
+        return try {
+            NotificationManagerCompat.from(context).notify(which.id, notification)
+            true
         } catch (e: SecurityException) {
-            // Permission revoked between the check and the post; tonight stays silent.
+            // Permission revoked between the check and the post; stay silent.
+            false
         }
     }
 
@@ -186,7 +234,7 @@ object SkyNotifier {
             .setContentIntent(
                 PendingIntent.getActivity(
                     context,
-                    0,
+                    SkyNotification.TONIGHT.id,
                     contentIntent,
                     PendingIntent.FLAG_IMMUTABLE or PendingIntent.FLAG_UPDATE_CURRENT,
                 ),

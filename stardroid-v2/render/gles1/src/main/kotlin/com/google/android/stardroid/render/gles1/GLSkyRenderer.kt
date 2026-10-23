@@ -86,6 +86,7 @@ class GLSkyRenderer(
     // buffer — a 100k-vertex re-style and re-sort — when, say, only labelScaleFactor changed.
     private val pointCache = HashMap<LayerId, BuildCache<PointBuffers>>()
     private val lineCache = HashMap<LayerId, BuildCache<LineBuffers>>()
+
     // The ground is one mesh for the whole frame rather than per layer, so it gets a plain field
     // instead of a BuildCache keyed by LayerId.
     // Kept as three fields rather than a composite key: a Triple here would allocate on every

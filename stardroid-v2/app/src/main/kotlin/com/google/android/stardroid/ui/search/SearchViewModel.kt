@@ -26,11 +26,14 @@ import com.google.android.stardroid.catalog.ObjectInfo
 import com.google.android.stardroid.catalog.SearchHit
 import com.google.android.stardroid.layers.CatalogLayers
 import com.google.android.stardroid.layers.MeteorShowerLayer
+import com.google.android.stardroid.layers.SatelliteLayer
 import com.google.android.stardroid.layers.SolarSystemLayer
 import com.google.android.stardroid.math.LatLong
 import com.google.android.stardroid.math.RaDec
 import com.google.android.stardroid.math.Vector3
 import com.google.android.stardroid.render.api.LayerId
+import com.google.android.stardroid.satellites.SatelliteIds
+import com.google.android.stardroid.satellites.TrackedSatellite
 import com.google.android.stardroid.settings.Settings
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -83,6 +86,18 @@ class SearchViewModel(
     private val analytics: Analytics = NoOpAnalytics,
     private val isManualMode: () -> Boolean = { false },
     private val location: () -> LatLong = { LatLong(0.0, 0.0) },
+    /**
+     * The satellites that can be searched, with their current sky positions. Satellites are not
+     * in the bundled catalog (see [SatelliteIds]), so the catalog's FTS query can never find
+     * them; they are matched here instead. Empty when the feature is off or nothing is cached.
+     */
+    private val satellites: suspend () -> List<TrackedSatellite> = { emptyList() },
+    /**
+     * Localized names to search a satellite by, beyond its element-set name (`ISS (ZARYA)`).
+     * A function rather than a map because the view model outlives a language switch: it is
+     * read on every search, so the names follow the current locale.
+     */
+    private val satelliteAliases: (noradId: Int) -> List<String> = { emptyList() },
 ) : ViewModel() {
     private val _query = MutableStateFlow("")
     val query: StateFlow<String> = _query.asStateFlow()
@@ -146,8 +161,17 @@ class SearchViewModel(
     }
 
     /** The user picked a hit from the list (v1's single-result / "Did you mean?" selection). */
-    fun select(hit: SearchHit) {
+    fun select(picked: SearchHit) {
         viewModelScope.launch {
+            // A satellite moves ~1° every few seconds, so the position the list was built with
+            // may be stale by now: take a fresh one.
+            val hit =
+                if (SatelliteIds.noradIdFor(picked.id) != null) {
+                    satellitesSafely().firstOrNull { it.info.id == picked.id }
+                        ?.let { picked.copy(position = it.position) } ?: picked
+                } else {
+                    picked
+                }
             val info = catalog().objectInfo(hit.id, locale.value)
             val direction = resolveDirection(hit, info)
             if (direction != null) {
@@ -229,7 +253,7 @@ class SearchViewModel(
         spec: LocaleSpec,
     ): List<SearchHit> =
         try {
-            catalog().searchByPrefix(query, spec, SUGGESTION_LIMIT)
+            satelliteHits(query) + catalog().searchByPrefix(query, spec, SUGGESTION_LIMIT)
         } catch (e: CancellationException) {
             throw e
         } catch (e: Exception) {
@@ -242,6 +266,44 @@ class SearchViewModel(
                 AnalyticsEvents.SEARCH_QUERY_ERROR_EVENT,
                 mapOf(AnalyticsEvents.SEARCH_QUERY_ERROR_TYPE to errorType),
             )
+            emptyList()
+        }
+
+    /**
+     * Satellites whose name (or well-known alias) has a word starting with [query] — "iss",
+     * "zarya" and "international space" all find the ISS. Listed ahead of catalog hits: there
+     * are only ever a couple, and a user typing "iss" is not after anything else.
+     */
+    private suspend fun satelliteHits(query: String): List<SearchHit> {
+        val q = query.trim()
+        if (q.isEmpty()) return emptyList()
+        return satellitesSafely()
+            .filter { sat ->
+                (listOf(sat.info.name) + satelliteAliases(sat.tle.noradId)).any {
+                    matchesWordPrefix(it, q)
+                }
+            }.map { sat ->
+                SearchHit(
+                    id = sat.info.id,
+                    name = sat.info.name,
+                    subtext = null,
+                    position = sat.position,
+                    searchFovDeg = null,
+                )
+            }
+    }
+
+    /**
+     * Satellites are an optional extra: a failed lookup (entry point, repository I/O, SGP4)
+     * must not blank the catalog results or crash [select], so it degrades to "none".
+     */
+    private suspend fun satellitesSafely(): List<TrackedSatellite> =
+        try {
+            satellites()
+        } catch (e: CancellationException) {
+            throw e
+        } catch (e: Exception) {
+            Log.w(TAG, "Satellite lookup failed", e)
             emptyList()
         }
 
@@ -277,6 +339,7 @@ class SearchViewModel(
         info: ObjectInfo?,
     ): LayerId? =
         when {
+            SatelliteIds.noradIdFor(hit.id) != null -> SatelliteLayer.LAYER_ID
             SolarSystemIds.bodyFor(hit.id) != null -> SolarSystemLayer.LAYER_ID
             info?.parent?.let(SolarSystemIds::bodyFor) != null -> SolarSystemLayer.LAYER_ID
             else ->
@@ -294,6 +357,26 @@ class SearchViewModel(
 
     companion object {
         private const val TAG = "SearchViewModel"
+
+        private fun words(text: String): List<String> =
+            text.split(' ', '(', ')', '-').filter { it.isNotEmpty() }
+
+        /**
+         * True when every word of [q] is the start of some word of [name] ("zarya" finds
+         * "ISS (ZARYA)", "space station" finds "International Space Station").
+         */
+        internal fun matchesWordPrefix(
+            name: String,
+            q: String,
+        ): Boolean {
+            val tokens = words(q)
+            // A separator-only query ("(", "-") has no tokens; `all` would match everything.
+            if (tokens.isEmpty()) return false
+            val nameWords = words(name)
+            return tokens.all { token ->
+                nameWords.any { it.startsWith(token, ignoreCase = true) }
+            }
+        }
 
         /** Ranked-list length; v1's suggestion cursor was unbounded, the FTS query is not. */
         private const val SUGGESTION_LIMIT = 20

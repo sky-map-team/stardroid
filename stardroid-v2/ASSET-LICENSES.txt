@@ -68,16 +68,19 @@ assets/calibration/calib.gif
 
 
 [third-party]
-# Scientific imagery under its own terms — public domain (NASA/ESA/JPL) or CC BY 4.0
-# (ESO, IAU, IAU/Sky & Telescope, EHT). Attribution is carried in res/values/credits.xml.
+# Scientific imagery under its own terms — public domain (NASA/ESA/JPL), CC BY 4.0
+# (ESO, IAU, IAU/Sky & Telescope, EHT) or CC BY-SA 4.0 (individual Commons contributors,
+# credited on the card). Attribution is carried in res/values/credits.xml.
 # Explicitly NOT covered by the reserved-rights notice, per assets/planets/SOURCES.md.
 assets/celestial_images/**
 assets/planets/*.webp
 
 # Version-banner portrait: the current release's circular portrait, overwritten each release by
 # `skymap.release-splashscreen`'s Step 4 from `assets/release-icons/` (at the stardroid-v2/
-# module root, not shipped). Must always be public-domain/CC-BY celestial imagery consistent
-# with the info-card imagery above — confirm the source before replacing this file.
+# module root, not shipped). Must always be public-domain/CC-BY imagery — usually celestial,
+# consistent with the info-card imagery above — confirm the source before replacing this file.
+# 2.2.0 Buran: US DoD photo (M.Sgt Dave Casey, Le Bourget 1989, public domain as a work of a
+# US federal employee) — Commons File:Buran_on_An-225_(Le_Bourget_1989)_1.JPEG.
 assets/splash/splash.png
 
 

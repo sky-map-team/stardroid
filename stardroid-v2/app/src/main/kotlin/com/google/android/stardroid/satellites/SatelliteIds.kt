@@ -18,15 +18,14 @@ import com.google.android.stardroid.math.RaDec
 /**
  * The `satellite/<noradId>` id namespace, mirroring `SolarSystemIds`' `planet/<body>`.
  *
- * **Unlike every other tappable object, a satellite has no catalog row.** Stars, deep-sky objects
- * and even the position-less planets all ship an info card in the bundled database; a satellite
- * cannot, because it arrives from the network and may not exist next year. So its card is
- * synthesized here from the element set plus a short static description.
+ * A satellite's position and name come from its live element set, which arrives from the
+ * network and may not exist next year, so its card is synthesized here. Satellites we ship
+ * editorial content for (ISS, Tiangong) also have a catalog row carrying the prose, facts and
+ * image; [withCatalogContent] overlays it. Any other satellite gets the generic description and
+ * no image.
  *
- * The consequence is deliberate and worth knowing: satellite cards have no imagery, no "see also"
- * links and no localized prose beyond the two strings below. Giving them the full treatment would
- * mean adding rows to `source-data/` and regenerating the bundled DB — reasonable, and a bigger
- * change than this one; see D101.
+ * Catalog rows have no names, so they never appear in catalog search; satellite search is
+ * answered by the live list.
  */
 object SatelliteIds {
     private const val SATELLITE_ID_PREFIX = "satellite/"
@@ -39,6 +38,25 @@ object SatelliteIds {
     fun noradIdFor(id: CelestialObjectId): Int? =
         id.value.removePrefix(SATELLITE_ID_PREFIX).toIntOrNull()?.takeIf {
             id.value.startsWith(SATELLITE_ID_PREFIX)
+        }
+
+    /** [live] with the static content of [catalog], its row in the bundled catalog, if any. */
+    fun withCatalogContent(
+        live: ObjectInfo,
+        catalog: ObjectInfo?,
+    ): ObjectInfo =
+        if (catalog == null) {
+            live
+        } else {
+            live.copy(
+                description = catalog.description ?: live.description,
+                funFact = catalog.funFact ?: live.funFact,
+                distance = catalog.distance ?: live.distance,
+                size = catalog.size ?: live.size,
+                mass = catalog.mass ?: live.mass,
+                imageRef = catalog.imageRef ?: live.imageRef,
+                imageCredit = catalog.imageCredit ?: live.imageCredit,
+            )
         }
 
     /**

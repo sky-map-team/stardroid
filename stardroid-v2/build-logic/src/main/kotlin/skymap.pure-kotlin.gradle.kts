@@ -11,6 +11,8 @@ plugins {
 
 val libs = extensions.getByType<VersionCatalogsExtension>().named("libs")
 
+ktlint { version.set(libs.findVersion("ktlint").get().requiredVersion) }
+
 kotlin {
     jvmToolchain(17)
 }
