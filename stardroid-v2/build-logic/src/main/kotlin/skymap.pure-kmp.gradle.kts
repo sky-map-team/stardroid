@@ -4,14 +4,10 @@ import org.gradle.kotlin.dsl.getByType
 import org.jetbrains.kotlin.gradle.targets.native.tasks.KotlinNativeTest
 import org.jetbrains.kotlin.gradle.tasks.KotlinNativeLink
 
-// Convention for the PURE modules shared with the iOS port: Kotlin Multiplatform with a JVM
-// target (what the Android modules and the JVM build tools consume, unchanged) plus the iOS
-// targets. commonMain has neither the Android SDK nor the JDK on its classpath, so both
-// `import android.*` and `import java.*` are compile errors there — D20's structural boundary,
-// now doubling as the KMP-readiness check build-and-tooling.md deferred as "layer 3".
-//
-// Plain `kotlin("jvm")` modules that are JVM tools rather than shared code (:data:generator,
-// :konsist) stay on skymap.pure-kotlin.
+// Convention for the PURE modules shared with the iOS port: KMP with a JVM target plus iOS.
+// commonMain has neither the Android SDK nor the JDK on its classpath, so `import android.*` and
+// `import java.*` are compile errors there (D20). JVM tools (:data:generator, :konsist) stay on
+// skymap.pure-kotlin.
 plugins {
     id("org.jetbrains.kotlin.multiplatform")
     id("org.jlleitschuh.gradle.ktlint")
@@ -23,17 +19,13 @@ kotlin {
     jvmToolchain(17)
 
     jvm()
-    // Devices, and the simulator on Apple-silicon Macs (including CI's macOS runners).
     iosArm64()
     iosSimulatorArm64()
-    // The simulator on Intel Macs. Kotlin is phasing out the x86_64 Apple targets; drop this
-    // with them.
+    // Intel-Mac simulator; drop when Kotlin drops the x86_64 Apple targets.
     iosX64()
 
     sourceSets {
-        // Tests live in commonTest so the same suites run on every target — for the goldens that
-        // is the whole point of sharing the core. They use kotlin.test plus :core:testing's
-        // Truth-shaped assertions, since Truth itself is JVM-only.
+        // Truth is JVM-only, so common tests use kotlin.test plus :core:testing's assertions.
         commonTest.dependencies {
             implementation(kotlin("test"))
             if (project.path != ":core:testing") implementation(project(":core:testing"))
@@ -49,11 +41,8 @@ tasks.withType<Test>().configureEach {
     useJUnitPlatform()
 }
 
-// Compiling iOS klibs needs only the Kotlin/Native toolchain, but linking and running a test
-// binary needs a full Xcode — the Command Line Tools alone fail in `xcrun xcodebuild`. So on a
-// Mac without Xcode, `check` skips the iOS test binaries (loudly) instead of failing: a machine
-// set up only for Android work must still be able to run `check`. CI's macOS job always has
-// Xcode and runs them. (Off macOS, the Kotlin plugin disables the Apple targets by itself.)
+// Linking and running iOS test binaries needs a full Xcode (Command Line Tools alone fail), so a
+// Mac without it skips them loudly rather than failing `check` for Android-only setups.
 if (System.getProperty("os.name").startsWith("Mac")) {
     val xcodeInstalled =
         providers
