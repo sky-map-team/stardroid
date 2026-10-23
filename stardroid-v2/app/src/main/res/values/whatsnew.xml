@@ -33,9 +33,19 @@
     ]]></string>
     <string name="beta_user_help_text" translation_description="Usually-empty HTML content shown to beta testers asking for feedback, appended in the What's new dialog and the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[
 <h2>Thank you for beta testing</h2>
-<p>This beta includes two features we are not releasing to everyone yet. We would love your help testing them, and any feedback — even "it worked fine" — is useful.</p>
-<p><b>Notifications</b> (Settings → Notifications, or Layers → Meteor showers → <b>Peak alerts</b>): turn on <b>Meteor shower peaks</b> and <b>Tonight\'s sky digest</b>. There is a new Notifications section in Help, too. Do you get the alerts at sensible times? Are they too frequent, or missing when they should appear? Does tapping one open the right place?</p>
-<p><b>Satellites</b> (Layers → Satellites): look for the Space Station and Tiangong on the map, tap one for its next visible pass, and try <b>Pass alerts</b>. Do the positions look right when you go outside? Did the orbit data download? (Diagnostics shows its age.) Did the pass alert arrive before the pass?</p>
+<p>This beta has two things we would love your help with. Any feedback is useful, even "it worked fine."</p>
+<p><b>1. A brand-new graphics engine (the big one!)</b></p>
+<p>We have built an entirely new engine for drawing the sky. It is a ground-up rewrite, not a tweak to the old one, and it lets us do things the old engine could not.</p>
+<ul>
+<li><b>Twilight and daytime skies:</b> the sky now shifts smoothly from daytime blue through sunset glow and twilight to full night, with a realistic glow along the horizon and no visible banding. This is the headline feature, so please spend some time watching dusk and dawn.</li>
+<li><b>Underlined labels:</b> labels for objects that have an info card are now underlined, and the others are dimmed. You can see at a glance what is worth tapping.</li>
+<li>A cleaner, sharper horizon and clearer, easier-to-read labels.</li>
+<li>A foundation for future features, like better planet imagery.</li>
+</ul>
+<p>It is <b>off by default</b>, so you will need to switch it on. Go to <b>Settings → Advanced → Graphics engine</b> and choose <b>Enhanced</b>. The map restarts when you change it. You can switch back to <b>Classic</b> at any time.</p>
+<p>Please try it in different conditions: daytime, twilight (especially!), and a dark sky at night, in both auto and manual mode. Does the twilight sky look right to you? Are the underlined labels helpful, or distracting? Does anything look wrong or feel slow? Is battery drain or smoothness different from Classic? If you can, tell us your phone model, since graphics behave differently on different hardware.</p>
+<p><b>2. Satellites</b> (Layers → Satellites)</p>
+<p>Look for the Space Station and Tiangong on the map, then tap one for its next visible pass and try <b>Pass alerts</b>. The orbit data can take a few minutes to download the first time, because we stagger downloads so we do not overload the server. Please give it a little while before deciding it is not working. Do the positions look right when you go outside? Did the orbit data arrive? (Diagnostics shows its age.) Did the pass alert arrive before the pass?</p>
 <p>If something looks wrong, please email us the report from the <b>Diagnostics</b> screen and tell us what you expected.</p>
     ]]></string>
 </resources>
