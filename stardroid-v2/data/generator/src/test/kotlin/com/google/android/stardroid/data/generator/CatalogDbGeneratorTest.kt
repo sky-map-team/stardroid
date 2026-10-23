@@ -261,10 +261,23 @@ class CatalogDbGeneratorTest {
     fun `info cards cover english plus translations`() {
         assertThat(
             queryInt("SELECT COUNT(*) FROM info_card WHERE locale='en'"),
-        ).isEqualTo(339)
+        ).isEqualTo(341)
         assertThat(
             queryInt("SELECT COUNT(DISTINCT locale) FROM info_card"),
         ).isAtLeast(25)
+    }
+
+    @Test
+    fun `satellite cards carry an image but no names, so catalog search never finds them`() {
+        assertThat(
+            queryStrings(
+                "SELECT id FROM celestial_object WHERE type='satellite' " +
+                    "AND image_ref IS NOT NULL ORDER BY id",
+            ),
+        ).containsExactly("satellite/25544", "satellite/48274").inOrder()
+        assertThat(
+            queryInt("SELECT COUNT(*) FROM object_name WHERE object_id LIKE 'satellite/%'"),
+        ).isEqualTo(0)
     }
 
     @Test

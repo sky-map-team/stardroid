@@ -77,6 +77,7 @@ private const val TOUR_STEP_MS = 1500L
 internal fun ChromeTourDemo(
     active: Boolean,
     nightMode: Boolean,
+    satellitesEnabled: Boolean,
     modifier: Modifier = Modifier,
 ) {
     var rootCoordinates by remember { mutableStateOf<LayoutCoordinates?>(null) }
@@ -121,7 +122,7 @@ internal fun ChromeTourDemo(
                 .clearAndSetSemantics {},
         ) {
             MapChrome(
-                toggles = remember { demoChromeToggles() },
+                toggles = remember(satellitesEnabled) { demoChromeToggles(satellitesEnabled) },
                 nightMode = nightMode,
                 referenceFrame = ReferenceFrame.SENSOR,
                 sensorsAvailable = true,
@@ -131,6 +132,7 @@ internal fun ChromeTourDemo(
                 onOpenSearch = {},
                 onOpenTimeTravel = {},
                 onOpenLayersSheet = {},
+                onCustomizeLayer = {},
                 onOpenOverflow = {},
                 tourTargetModifier = { target ->
                     Modifier.onGloballyPositioned { targetCoordinates[target] = it }

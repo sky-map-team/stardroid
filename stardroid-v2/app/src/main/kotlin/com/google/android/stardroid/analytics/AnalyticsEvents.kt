@@ -16,7 +16,7 @@ package com.google.android.stardroid.analytics
  * [LAYER_TOGGLED_EVENT]) and the `MAP_LOAD_*` set (no Geoapify map preview in v2).
  */
 object AnalyticsEvents {
-    // User properties.
+    // User properties. Firebase rejects names over 24 characters.
     const val NEW_USER = "new_user_prop"
     const val DEVICE_SENSORS = "device_sensors_prop"
     const val DEVICE_SENSORS_NONE = "none"
@@ -26,9 +26,9 @@ object AnalyticsEvents {
     const val DEVICE_SENSORS_ROTATION = "rot"
     const val HAS_GYRO = "has_gyro_prop"
     const val HAS_ROTATION_VECTOR = "has_rotation_vector_prop"
-    const val FIRST_INSTALL_VERSION = "first_install_version_prop"
+    const val FIRST_INSTALL_VERSION = "first_install_ver_prop"
     const val USER_LOCALE = "user_locale_prop"
-    const val COMPLETED_WARM_WELCOME = "completed_warm_welcome_prop"
+    const val COMPLETED_WARM_WELCOME = "warm_welcome_done_prop"
 
     // Startup gates.
     const val TOS_ACCEPTED_EVENT = "TOS_accepted_ev"
@@ -76,6 +76,43 @@ object AnalyticsEvents {
     const val MANUAL_MODE_ENABLED = "enabled"
     const val HORIZON_LEVEL_TOGGLED_EVENT = "horizon_level_toggled_ev"
     const val HORIZON_LEVEL_TOGGLED_VALUE = "enabled"
+
+    // Home-screen widgets (D75). Added/removed fire from the receivers' onEnabled/onDisabled, so
+    // they count the first instance of a type being placed and the last being removed — however
+    // it got there, including the launcher's own picker — not every instance. Pin-requested
+    // fires from the in-app Add widget button and says nothing about whether the user confirmed
+    // the system dialog. Comparing it against widget_added gives a request-to-placement rate
+    // that reads low for users who already have that widget, since their second instance
+    // never raises widget_added. The param is pin_source, not source, to stay clear of GA4's
+    // built-in traffic-source name.
+    const val WIDGET_ADDED_EVENT = "widget_added_ev"
+    const val WIDGET_REMOVED_EVENT = "widget_removed_ev"
+    const val WIDGET_PIN_REQUESTED_EVENT = "widget_pin_requested_ev"
+    const val WIDGET_TYPE = "widget"
+
+    // Diagnostics "Fetch experiment flags now" button (Remote Config, gms only). Outcome is
+    // updated / unchanged / failed, so a rise in failures shows up in the aggregate.
+    const val EXPERIMENT_FETCH_REQUESTED_EVENT = "experiment_fetch_requested_ev"
+    const val EXPERIMENT_FETCH_OUTCOME = "fetch_outcome"
+    const val EXPERIMENT_FETCH_OUTCOME_UPDATED = "updated"
+    const val EXPERIMENT_FETCH_OUTCOME_UNCHANGED = "unchanged"
+    const val EXPERIMENT_FETCH_OUTCOME_FAILED = "failed"
+
+    // Remote announcements: shown fires once per message per interruptive surface.
+    const val ANNOUNCEMENT_SHOWN_EVENT = "announcement_shown_ev"
+    const val ANNOUNCEMENT_DISMISSED_EVENT = "announcement_dismissed_ev"
+    const val ANNOUNCEMENT_ID = "announcement_id"
+    const val ANNOUNCEMENT_SURFACE = "announcement_surface"
+    const val WIDGET_TYPE_MOON = "moon"
+    const val WIDGET_TYPE_TONIGHT = "tonight"
+    const val WIDGET_TYPE_COUNTDOWN = "countdown"
+    const val WIDGET_TYPE_UNKNOWN = "unknown"
+    const val WIDGET_PIN_SOURCE = "pin_source"
+    const val WIDGET_PIN_SOURCE_MOON_CARD = "moon_card"
+    const val WIDGET_PIN_SOURCE_WIDGETS_SHEET = "widgets_sheet"
+    const val WIDGET_PIN_OUTCOME = "pin_outcome"
+    const val WIDGET_PIN_DIALOG_SHOWN = "dialog_shown"
+    const val WIDGET_PIN_UNSUPPORTED = "unsupported"
 
     // Satellite element fetches (D92). These two are not telemetry for its own sake: CelesTrak's
     // usage policy requires clients to report non-200 responses to a human, and we cannot see

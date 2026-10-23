@@ -264,7 +264,7 @@ class ObjectInfoViewModel(
                         .minByOrNull { (_, separation) -> separation }
                         ?.first
                 } ?: return@launch
-            catalog().objectInfo(hit.id, locale.value)?.let { openCard(it) }
+            cardFor(hit.id)?.let { openCard(it) }
         }
     }
 
@@ -288,6 +288,9 @@ class ObjectInfoViewModel(
      * neither event converges, the current altitude tells circumpolar from never-up.
      */
     private fun riseSetFor(info: ObjectInfo): RiseSetState? {
+        // A satellite's position is a snapshot, not fixed: it crosses the sky in minutes, so
+        // solving rise/set from it is meaningless. The pass row says when to look instead.
+        if (SatelliteIds.noradIdFor(info.id) != null) return null
         val after = now()
         val observer = location()
         val body =
@@ -405,14 +408,14 @@ class ObjectInfoViewModel(
         }
 
     /**
-     * [id]'s card content in the current locale. Satellites are not in the bundled catalog —
-     * they arrive from the network — so their card is synthesized rather than looked up. See
-     * [SatelliteIds].
+     * [id]'s card content in the current locale. A satellite's card is synthesized from its live
+     * element set, with any catalog row for it supplying the prose and image. See [SatelliteIds].
      */
-    private suspend fun cardFor(id: CelestialObjectId): ObjectInfo? =
-        SatelliteIds.noradIdFor(id)?.let { norad ->
-            satellites().firstOrNull { it.info.id == id }?.info
-        } ?: catalog().objectInfo(id, locale.value)
+    private suspend fun cardFor(id: CelestialObjectId): ObjectInfo? {
+        if (SatelliteIds.noradIdFor(id) == null) return catalog().objectInfo(id, locale.value)
+        val live = satellites().firstOrNull { it.info.id == id }?.info ?: return null
+        return SatelliteIds.withCatalogContent(live, catalog().objectInfo(id, locale.value))
+    }
 
     // A language switch recreates the activity but not this view model, so a card left open
     // across one would keep the language it was opened in: look it up again in the new locale.

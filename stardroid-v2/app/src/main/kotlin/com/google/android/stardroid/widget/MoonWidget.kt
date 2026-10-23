@@ -146,6 +146,11 @@ private fun MoonWidgetContent(
                 ),
             maxLines = 1,
         )
+        Text(
+            text = context.getString(R.string.moon_widget_age, model.ageDays.toInt() + 1),
+            style = TextStyle(color = ColorProvider(MUTED), fontSize = 12.sp),
+            maxLines = 1,
+        )
         // One row per crossing (they don't fit side by side in 2 cells); either alone when
         // only one converged (D51), neither without a location. riseTime and setTime are each
         // independently "next after now" (issue #1067), so whichever comes first chronologically

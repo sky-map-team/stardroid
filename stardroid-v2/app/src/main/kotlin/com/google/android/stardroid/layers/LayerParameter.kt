@@ -124,6 +124,20 @@ sealed interface LayerParameter {
                 requiresNotificationPermission = true,
             )
 
+        /** The meteor-shower layer's peak-night alert opt-in. */
+        const val SHOWER_ALERTS = "shower_alerts"
+
+        /**
+         * Off by default, same reasoning as [PASS_ALERTS_PARAMETER]. This is the single source of
+         * truth for the alert: the Settings → Notifications row reads and writes the same value.
+         */
+        val SHOWER_ALERTS_PARAMETER =
+            Toggle(
+                key = SHOWER_ALERTS,
+                defaultOn = false,
+                requiresNotificationPermission = true,
+            )
+
         /** The alt/az grid's line-count choice (#1022). */
         const val ALTAZ_GRID_DENSITY = "altaz_grid_density"
 
@@ -146,6 +160,30 @@ sealed interface LayerParameter {
                         ALTAZ_GRID_DENSITY_FINE,
                     ),
                 defaultOption = ALTAZ_GRID_DENSITY_MEDIUM,
+            )
+
+        /** The RA/Dec grid's line-count choice. */
+        const val RADEC_GRID_DENSITY = "radec_grid_density"
+
+        /** A meridian every 3 hours, a declination circle every 30°. */
+        const val RADEC_GRID_DENSITY_COARSE = "coarse"
+
+        /** A meridian every 2 hours, a declination circle every 15°. */
+        const val RADEC_GRID_DENSITY_MEDIUM = "medium"
+
+        /** A meridian every hour, a circle every 10°: v1's grid, and the default. */
+        const val RADEC_GRID_DENSITY_FINE = "fine"
+
+        val RADEC_GRID_DENSITY_PARAMETER =
+            Choice(
+                key = RADEC_GRID_DENSITY,
+                options =
+                    listOf(
+                        RADEC_GRID_DENSITY_COARSE,
+                        RADEC_GRID_DENSITY_MEDIUM,
+                        RADEC_GRID_DENSITY_FINE,
+                    ),
+                defaultOption = RADEC_GRID_DENSITY_FINE,
             )
     }
 }

@@ -5,7 +5,53 @@ All notable changes to Sky Map are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
-## [2.1.2:Artemis] (v2) - 2026-09-24
+## [2.2.0:Buran] (v2) - 2026-10-21
+
+<img src="stardroid-v2/assets/release-icons/2.2.0_buran_icon.png" width="80" alt="Buran" />
+
+### Added
+- Sky alerts, on by default: meteor shower peak alerts and a nightly "Tonight's sky" digest,
+  configurable under Settings → Notifications or from the Meteor showers layer. (#1084, #1092)
+- Help popups for each layer, and a customizable RA/Dec grid. (#1082, #1086)
+- The Moon phase widget now shows the Moon's age. (#1124)
+
+### Fixed
+- Notifications no longer overwrite each other or open the wrong screen when tapped. (#1147)
+- The CAMERA permission no longer hides the app from Chromebooks. (#1116)
+- Persian star names and lost inline markup in translated help strings. (#1126, #1134, #1137)
+- Assorted small fixes. (#1097, #1098, #1099, #1103, #1108, #1111)
+
+## [2.1.4:Artemis] (v2) - 2026-10-13
+
+<img src="stardroid-v2/assets/release-icons/2.1.0_artemis_icon.png" width="80" alt="Artemis" />
+
+### Fixed
+- The terms screen no longer clips the Accept button at large font or display sizes; the bottom
+  bar now grows with its content. (#1101)
+
+## [2.1.3:Artemis] (v2) - 2026-10-12
+
+<img src="stardroid-v2/assets/release-icons/2.1.0_artemis_icon.png" width="80" alt="Artemis" />
+
+### Fixed
+- The map could stop following the phone after a single invalid reading from the orientation
+  sensors, staying frozen until the app was sent to the background. Invalid readings are now
+  dropped before smoothing, and the smoothing filter restarts if its output ever goes bad.
+  Refs #1109. (#1110)
+
+### Added
+- A **Map** section in Diagnostics showing whether the map is following the sensors or in manual
+  mode, how long ago it last received an orientation, how many sensor readings were rejected, and
+  the app's lifecycle state. The Gyro row now shows which sensors are actually in use rather than
+  the setting, and reads "None" on devices with no usable orientation sensors. (#1110)
+
+---
+
+## [2.1.2:Artemis] (v2) - 2026-09-30
+
+<img src="stardroid-v2/assets/release-icons/2.1.0_artemis_icon.png" width="80" alt="Artemis" />
+
+This is the first stable release since 2.0.8 and includes everything from 2.1.0 and 2.1.1 below.
 
 ### Added
 - Searchable Help page, with results that jump straight to the relevant part of the app. (#1068)
@@ -15,6 +61,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 ---
 
 ## [2.1.1:Artemis] (v2) - 2026-09-21
+
+<img src="stardroid-v2/assets/release-icons/2.1.0_artemis_icon.png" width="80" alt="Artemis" />
 
 ### Fixed
 - Location now works properly on devices without Google Play services (de-Googled ROMs such as

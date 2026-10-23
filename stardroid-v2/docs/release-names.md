@@ -8,7 +8,7 @@ Names already used: see the "Used names" table below, or `CHANGELOG.md` for the 
 history.
 
 - **A** — Apollo / Artemis
-- **B** — Beresheet / Buran
+- **B** — Buran
 - **C** — Cassini / Curiosity
 - **D** — Dawn / Discovery
 - **E** — Explorer / Euclid
@@ -38,6 +38,9 @@ recent one.
 
 | Icon | Name | First released | Mission |
 |---|---|---|---|
+| <img src="../assets/release-icons/2.3.0_cassini_icon.png" width="40" alt="Cassini" /> | **Cassini** | _unreleased (2.3.0 beta)_ | [Cassini–Huygens](https://en.wikipedia.org/wiki/Cassini%E2%80%93Huygens) — the NASA/ESA/ASI spacecraft that orbited Saturn from 2004 to 2017, studying its rings and moons and delivering the Huygens probe to Titan. |
+| <img src="../assets/release-icons/2.2.0_buran_icon.png" width="40" alt="Buran" /> | **Buran** | 2026-10-21 (2.2.0) | [Buran](https://en.wikipedia.org/wiki/Buran_(spacecraft)) — the Soviet Union's reusable orbital spacecraft, which flew its only, uncrewed, orbital mission in 1988. |
+| <img src="../assets/release-icons/2.1.0_artemis_icon.png" width="40" alt="Artemis" /> | **Artemis** | 2026-09-30 (2.1.2) | [Artemis program](https://en.wikipedia.org/wiki/Artemis_program) — NASA's program to return humans to the Moon and establish a sustained lunar presence. |
 | <img src="../assets/release-icons/2.0.3_apollo_icon.png" width="40" alt="Apollo" /> | **Apollo** | 2026-09-02 (2.0.0) | [Apollo program](https://en.wikipedia.org/wiki/Apollo_program) — NASA's 1961–1972 program that landed the first crewed missions on the Moon. |
 
 Hannah and Louise (the earliest 2.0.0 pre-release betas, before the mission-name convention was

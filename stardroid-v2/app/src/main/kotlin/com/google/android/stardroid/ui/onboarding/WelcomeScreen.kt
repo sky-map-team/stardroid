@@ -126,6 +126,7 @@ fun WelcomeScreen(
     hasAccelerometer: Boolean,
     hasGyroscope: Boolean,
     nightMode: Boolean,
+    satellitesEnabled: Boolean,
     onFinished: () -> Unit,
     onSkip: () -> Unit = onFinished,
     onStarted: () -> Unit = {},
@@ -150,6 +151,7 @@ fun WelcomeScreen(
                         ChromeTourSlide(
                             active = pagerState.settledPage == page,
                             nightMode = nightMode,
+                            satellitesEnabled = satellitesEnabled,
                         )
                     1 -> InfoCardSlide(nightMode = nightMode)
                     else ->
@@ -280,6 +282,7 @@ private fun isLandscape(): Boolean =
 private fun ChromeTourSlide(
     active: Boolean,
     nightMode: Boolean,
+    satellitesEnabled: Boolean,
 ) {
     SlideLayout(
         backdrop = {
@@ -292,7 +295,12 @@ private fun ChromeTourSlide(
             )
         },
         illustration = { modifier ->
-            ChromeTourDemo(active = active, nightMode = nightMode, modifier = modifier)
+            ChromeTourDemo(
+                active = active,
+                nightMode = nightMode,
+                satellitesEnabled = satellitesEnabled,
+                modifier = modifier,
+            )
         },
         panel = { modifier ->
             TextPanel(

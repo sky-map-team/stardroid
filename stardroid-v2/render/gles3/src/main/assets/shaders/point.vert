@@ -13,7 +13,7 @@ layout(location = 3) in float aMagnitude;
 uniform mat4 uViewProj;
 uniform float uDensity;
 uniform float uMagnitudeLimit;
-uniform float uNightMode;
+uniform bool uNightMode;
 
 out vec4 vColor;
 

@@ -84,6 +84,13 @@ class LayersViewModel(
     // the feature with nothing failing to say so — which is exactly what happened first time.
     satellitesEnabled: Boolean,
     /**
+     * Whether the notifications experiment is on. Parameters that exist only to opt in to a
+     * notification are withheld from [parameters] when it is off: nothing would ever be sent, so
+     * offering the switch — and asking for POST_NOTIFICATIONS to back it — is a silent failure.
+     * No default, for the same reason as [satellitesEnabled].
+     */
+    notificationsEnabled: Boolean,
+    /**
      * Freshness of the cached satellite element sets, or null where there is no satellite feature
      * to report on (the tour's canned chrome, and tests that do not care).
      */
@@ -178,16 +185,23 @@ class LayersViewModel(
         viewModelScope.launch { settings.setShowHud(enabled) }
     }
 
+    // Registry parameters minus notification opt-ins while the experiment is off.
+    private val offeredParameters =
+        LayerRegistry.PARAMETERS.filter { (_, parameter) ->
+            notificationsEnabled ||
+                !(parameter is LayerParameter.Toggle && parameter.requiresNotificationPermission)
+        }
+
     /**
      * The parameters every layer declares, with their current selections — one entry per
      * (layer, parameter). Empty for every layer but the solar system so far.
      */
     val parameters: StateFlow<List<LayerParameterState>> =
-        if (LayerRegistry.PARAMETERS.isEmpty()) {
+        if (offeredParameters.isEmpty()) {
             MutableStateFlow(emptyList<LayerParameterState>()).asStateFlow()
         } else {
             combine(
-                LayerRegistry.PARAMETERS.map { (id, parameter) ->
+                offeredParameters.map { (id, parameter) ->
                     settings
                         .layerParameter(id, parameter.key, parameter.defaultValue)
                         .map { LayerParameterState(id, parameter, it) }
@@ -196,7 +210,7 @@ class LayersViewModel(
                 .stateIn(
                     viewModelScope,
                     SharingStarted.Eagerly,
-                    LayerRegistry.PARAMETERS.map { (id, p) ->
+                    offeredParameters.map { (id, p) ->
                         LayerParameterState(id, p, p.defaultValue)
                     },
                 )

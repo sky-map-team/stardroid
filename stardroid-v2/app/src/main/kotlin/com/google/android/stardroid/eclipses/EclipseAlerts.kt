@@ -37,6 +37,7 @@ import com.google.android.stardroid.events.moonAboveHorizonBetween
 import com.google.android.stardroid.layers.LayerParameter
 import com.google.android.stardroid.layers.SolarSystemLayer
 import com.google.android.stardroid.math.LatLong
+import com.google.android.stardroid.notifications.SkyNotification
 import com.google.android.stardroid.notifications.SkyNotifier
 import com.google.android.stardroid.startup.Experiment
 import com.google.android.stardroid.ui.MainActivity
@@ -246,7 +247,6 @@ private fun visibleFrom(
 /** The lunar-eclipse notification, on its own channel (D106). */
 object EclipseNotifier {
     const val CHANNEL_ECLIPSES = "lunar_eclipses"
-    private const val NOTIFICATION_ID = 73
 
     fun ensureChannel(context: Context) {
         context.getSystemService(NotificationManager::class.java)?.createNotificationChannel(
@@ -292,7 +292,7 @@ object EclipseNotifier {
                 .setContentIntent(
                     PendingIntent.getActivity(
                         context,
-                        2,
+                        SkyNotification.LUNAR_ECLIPSE.id,
                         contentIntent,
                         PendingIntent.FLAG_IMMUTABLE or PendingIntent.FLAG_UPDATE_CURRENT,
                     ),
@@ -306,7 +306,9 @@ object EclipseNotifier {
             return
         }
         try {
-            NotificationManagerCompat.from(context).notify(NOTIFICATION_ID, notification)
+            NotificationManagerCompat
+                .from(context)
+                .notify(SkyNotification.LUNAR_ECLIPSE.id, notification)
         } catch (e: SecurityException) {
             // Permission revoked between the check and the post; the alert stays silent.
         }

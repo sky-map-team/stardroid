@@ -23,14 +23,14 @@ jobs:
         working-directory: ./stardroid-v2
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - name: Set up JDK
-        uses: actions/setup-java@v4
+        uses: actions/setup-java@v6
         with:
           distribution: 'zulu'
           java-version: '17'
       - name: Gradle cache
-        uses: gradle/actions/setup-gradle@v4
+        uses: gradle/actions/setup-gradle@v6
         continue-on-error: true
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
@@ -47,7 +47,7 @@ jobs:
           ORG_GRADLE_PROJECT_org_gradle_java_home: ${{ env.JAVA_HOME }}
       - name: Upload test results
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: unit-test-results
           path: 'stardroid-v2/**/build/reports/tests/'
@@ -98,11 +98,20 @@ jobs:
   connected_test:
     needs: build_and_unit_test
     runs-on: ubuntu-latest
-    timeout-minutes: 50
+    timeout-minutes: 70
     defaults:
       run:
         working-directory: ./stardroid-v2
+    env:
+      # Emulator 37.2.12, pinned rather than "latest", so a new release can't change results
+      # between runs.
+      EMULATOR_BUILD: '16428233'
+      # ANGLE over SwiftShader. On Linux, swiftshader_indirect gets the legacy SwiftShader GLES
+      # translator, and the emulator died tearing down RendererPerfTest's GL surface (D140).
+      EMULATOR_GPU: swangle
     strategy:
+      # One API level losing its emulator shouldn't cancel the others.
+      fail-fast: false
       matrix:
         api-level: [ 34, 35 ] # 35 is the highest API with a google_atd image; 34 pre-dates edge to edge.
         target: [ google_atd ]
@@ -115,12 +124,22 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
+
+      # Hosted runners mix CPU models. Annotated so emulator losses can be checked against the
+      # hardware they ran on (D140).
+      - name: Runner hardware
+        working-directory: ./
+        run: |
+          cpu=$(grep -m1 'model name' /proc/cpuinfo | cut -d: -f2 | xargs)
+          avx512=$(grep -qw avx512f /proc/cpuinfo && echo yes || echo no)
+          mem=$(free -g | awk '/^Mem:/ {print $2}')
+          echo "::notice title=Runner hardware::$cpu; $(nproc) vCPUs; ${mem} GB; avx512f=$avx512"
 
       # The emulator refuses to start with `FATAL | Your device does not have enough
       # disk space to run avd: `test`` when the runner is tight, and the action then
       # polls a device that never appears until the step times out. Reclaiming the
-      # toolchains this job never uses keeps the AVD build (and its snapshot) in space.
+      # toolchains this job never uses keeps the AVD build in space.
       # Runs before Setup Java, which installs into the hosted tool cache.
       - name: Free disk space
         working-directory: ./ # Not repo-specific
@@ -145,74 +164,81 @@ jobs:
           sudo udevadm trigger --name-match=kvm
 
       - name: Setup Java
-        uses: actions/setup-java@v4
+        uses: actions/setup-java@v6
         with:
           distribution: 'zulu'
           java-version: '17'
 
       - name: Gradle cache
-        uses: gradle/actions/setup-gradle@v4
+        uses: gradle/actions/setup-gradle@v6
         continue-on-error: true
 
-      - name: AVD cache
-        uses: actions/cache@v4
-        id: avd-cache
-        with:
-          path: |
-            ~/.android/avd/*
-            ~/.android/adb*
-          key: avd-${{ matrix.api-level }}-${{ matrix.target }}-x86_64
-
-      - name: Create AVD and generate snapshot for caching
-        if: steps.avd-cache.outputs.cache-hit != 'true'
-        uses: reactivecircus/android-emulator-runner@v2
-        with:
-          api-level: ${{ matrix.api-level }}
-          target: ${{ matrix.target }}
-          arch: x86_64
-          force-avd-creation: false
-          emulator-boot-timeout: 1200
-          emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none -memory 2048 -partition-size 512
-          disable-animations: false
-          profile: Nexus 6
-          working-directory: ./stardroid-v2
-          script: echo "Generated AVD snapshot for caching."
-
+      # A lost emulator gets up to two retries on a fresh one; a test failure doesn't.
+      # run_connected_tests.sh records which it was (D140).
       - name: Run connected tests
-        uses: reactivecircus/android-emulator-runner@v2
+        id: attempt1
+        continue-on-error: true
+        uses: ./.github/actions/emulator-run
         with:
           api-level: ${{ matrix.api-level }}
           target: ${{ matrix.target }}
-          arch: x86_64
-          force-avd-creation: false
-          emulator-boot-timeout: 1200
-          emulator-options: -no-snapshot-save -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none -memory 2048 -partition-size 512
-          disable-animations: true
-          profile: Nexus 6
-          working-directory: ./stardroid-v2
-          script: |
-            adb wait-for-device
-            adb shell settings put global window_animation_scale 0
-            adb shell settings put global transition_animation_scale 0
-            adb logcat -c
-            adb logcat -G 16M
-            adb logcat > logcat.log 2>&1 &
-            LOGCAT_PID=$!
-            # :app is flavored (D49): its instrumented tests run as the fdroid variant
-            # (no Play Services needed on the CI emulator); the library modules still
-            # answer to the unflavored task name.
-            # The D19 GL benchmark gate (and its D67 AR variant) is skipped here: the
-            # 100k-point continuous scene kills the hosted runner's emulator ~1s after
-            # the activity resumes, which fails the whole run. Verified locally instead —
-            # the test logs a loud banner when this flag disables it. See D95.
-            timeout 1200 ./gradlew connectedFdroidDebugAndroidTest connectedDebugAndroidTest -PskipGlBenchmarks=true -x lint --stacktrace
-            kill $LOGCAT_PID 2>/dev/null || true
-            wait $LOGCAT_PID 2>/dev/null || true
+          emulator-build: ${{ env.EMULATOR_BUILD }}
+          gpu: ${{ env.EMULATOR_GPU }}
+          script: bash tools/run_connected_tests.sh 1
+
+      # No outcome file means the emulator never came up (or the SDK download died, as it
+      # does when dl.google.com has a bad spell), which is worth a retry too. The pause gives
+      # such an outage time to pass; the action re-downloads the SDK on every invocation, so
+      # caching it wouldn't help.
+      - name: Fail on test failures, retry on a lost emulator
+        if: steps.attempt1.outcome == 'failure'
+        run: |
+          outcome=$(cat build/ci/attempt-1/outcome 2>/dev/null || echo emulator-lost)
+          if [ "$outcome" = tests-failed ]; then
+            echo "::error::Connected tests failed; not retrying."
+            exit 1
+          fi
+          echo "::warning::Attempt 1 ended without a test failure ($outcome), so retrying on a fresh emulator in 90s."
+          sleep 90
+
+      - name: Retry connected tests
+        id: attempt2
+        if: steps.attempt1.outcome == 'failure'
+        continue-on-error: true
+        uses: ./.github/actions/emulator-run
+        with:
+          api-level: ${{ matrix.api-level }}
+          target: ${{ matrix.target }}
+          emulator-build: ${{ env.EMULATOR_BUILD }}
+          gpu: ${{ env.EMULATOR_GPU }}
+          script: bash tools/run_connected_tests.sh 2
+
+      - name: Fail on test failures, retry once more on a lost emulator
+        if: steps.attempt2.outcome == 'failure'
+        run: |
+          outcome=$(cat build/ci/attempt-2/outcome 2>/dev/null || echo emulator-lost)
+          if [ "$outcome" = tests-failed ]; then
+            echo "::error::Connected tests failed; not retrying."
+            exit 1
+          fi
+          echo "::warning::Attempt 2 ended without a test failure ($outcome), so retrying on a fresh emulator in 240s."
+          sleep 240
+
+      # No status function in `if`: the implicit success() is what skips this after the gate
+      # above exits 1 on a test failure. Don't add always() here.
+      - name: Retry connected tests again
+        if: steps.attempt2.outcome == 'failure'
+        uses: ./.github/actions/emulator-run
+        with:
+          api-level: ${{ matrix.api-level }}
+          target: ${{ matrix.target }}
+          emulator-build: ${{ env.EMULATOR_BUILD }}
+          gpu: ${{ env.EMULATOR_GPU }}
+          script: bash tools/run_connected_tests.sh 3
+
       - name: Upload connected test results
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: connected-test-results-${{ matrix.api-level }}
-          path: |
-            stardroid-v2/**/build/reports/androidTests/
-            stardroid-v2/logcat.log
+          path: stardroid-v2/build/ci/

@@ -29,6 +29,22 @@ class DiagnosticsReportTest {
         )
 
     @Test
+    fun `keeps a value that wraps on screen on one line`() {
+        val report =
+            DiagnosticsReport.format(
+                "h",
+                listOf(
+                    DiagnosticsSection(
+                        "Sensors",
+                        listOf(DiagnosticsRow("Accelerometer", "0.1,9.8,0.0\n(52 Hz, 0.1s ago)")),
+                    ),
+                ),
+            )
+
+        assertThat(report).contains("Accelerometer: 0.1,9.8,0.0 (52 Hz, 0.1s ago)\n")
+    }
+
+    @Test
     fun `opens with blank lines so the composer cursor sits above the data`() {
         val report = DiagnosticsReport.format("--- header ---", sections)
 

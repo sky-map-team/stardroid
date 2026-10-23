@@ -59,7 +59,7 @@ Toca a pantalla para que aparezan os controis e a pantalla frontal (arriba á de
 <br/>
 <p><b>Como se debuxan os planetas</b></p>
 <p>Toca a frecha xunto a <b>Sistema solar</b> na folla Capas para escoller o tamaño do Sol, a Lúa e os planetas:</p>
-<p>• <b>Glifos</b> (predeterminado): O suficientemente grandes como para ser vistos en calquera nivel de zoom e dimensionados segundo o tamaño real de cada corpo en lugar de como se ve desde aquí:un modelo do sistema solar en lugar dunha vista a través dun telescopio. Saturno e os seus aneis son os máis anchos de todos, despois o Sol, despois Xúpiter e ata Plutón. As diferenzas están comprimidas para axustarse á pantalla: o Sol en realidade ten 586 veces o ancho de Plutón, non sete. A Lúa é a excepción, debuxada do mesmo tamaño que o Sol, porque así é como se ven ambos desde aquí.<br/>
+<p>• <b>Glifos</b> (predeterminado): O suficientemente grandes como para ser vistos en calquera nivel de zoom e dimensionados segundo o tamaño <i>real</i> de cada corpo en lugar de como se ve desde aquí: un modelo do sistema solar en lugar dunha vista a través dun telescopio. Saturno e os seus aneis son os máis anchos de todos, despois o Sol, despois Xúpiter e ata Plutón. As diferenzas están comprimidas para axustarse á pantalla: o Sol en realidade ten 586 veces o ancho de Plutón, non sete. A Lúa é a excepción, debuxada do mesmo tamaño que o Sol, porque así é como se ven ambos desde aquí.<br/>
 • <b>Escala real:</b> Cada corpo móstrase no seu tamaño real no ceo. O Sol e a Lúa teñen aproximadamente medio grao de diámetro (aproximadamente unha goma de borrar co brazo estendido) e os planetas son manchas ata que se achega a imaxe. Se se achega a imaxe por completo, Xúpiter mostrará as súas bandas, os aneis de Saturno separaranse do planeta e unha eclipse aliñarase exactamente como o fai no ceo.<br/>
 • <b>Fixado:</b> mantén cada corpo nun tamaño fixo na pantalla mentres se achega, cambiándoo ao seu tamaño real unha vez que se achegue o suficiente para que sexa o máis grande dos dous.</p>
 <blockquote>Os dous modos indican cousas diferentes. Os <b>Glifos</b> indican que Xúpiter é xigante e Plutón é pequeno. A <b>Escala real</b> indica que o Sol e a Lúa parecen case exactamente do mesmo tamaño desde a Terra; por iso funciona unha eclipse solar total e podes vela ocorrer.</blockquote>
@@ -117,7 +117,7 @@ e <b>Definir hora</b> ou toca \"Comezar agora\" se simplemente queres avanzar ou
 <p>Se estás a observar de verdade, o modo de visión nocturna axuda a preservar a túa visión adaptada á escuridade. Actívao usando o botón <b>Modo nocturno</b> na parte inferior.</p>
 <br/>
 <p>No modo de visión nocturna, o mapa do ceo cambia a pantalla a tons vermellos escuros e a atenúa.
-A opción <b>Atenuación automática da pantalla</b> en <b>Configuración</b> ofréceche un control adicional sobre o escurecemento da pantalla.</p>
+A opción <b>Atenuación automática da pantalla</b> en <a href="skymap://settings"><b>Configuración</b></a> ofréceche un control adicional sobre o escurecemento da pantalla.</p>
     ]]></string>
 
     <string name="help_other" translation_description="Help section: other options"><![CDATA[
@@ -127,7 +127,7 @@ A opción <b>Atenuación automática da pantalla</b> en <b>Configuración</b> of
 
     <string name="help_gallery" translation_description="Help section: the image gallery. Please do not change the markup"><![CDATA[
 <h2>Galería</h2>
-<p>A Galería contén unha colección coidadosamente seleccionada de fermosas imaxes do ceo nocturno, incluíndo algunhas do telescopio espacial Hubble.</p>
+<p>A <a href="skymap://gallery">Galería</a> contén unha colección coidadosamente seleccionada de fermosas imaxes do ceo nocturno, incluíndo algunhas do telescopio espacial Hubble.</p>
  <br/>
 <p>Explora as miniaturas desprazándote e toca unha para ver os detalles.
 Usa o botón <b>Buscar</b> para localizar ese obxecto no ceo.</p>
@@ -139,24 +139,24 @@ Usa o botón <b>Buscar</b> para localizar ese obxecto no ceo.</p>
 <br/>
 <p>Se o acceso á localización non está dispoñible ou prefires configuralo manualmente, toca o botón <b>Introducir a localización manualmente</b> e introduce un <b>nome de lugar</b> ou unha <b>latitude e lonxitude</b> en graos.</p>
 <blockquote>É necesario acceso a Internet para descodificar os nomes dos lugares.</blockquote>
-<p>Se previamente denegaches o permiso de localización de Sky Map, pode que teñas que volvelo activar en <b>Configuración da aplicación → Permisos</b> no teu dispositivo.</p>
+<p>Se previamente denegaches o permiso de localización de Sky Map, pode que teñas que volvelo activar en <a href="skymap://app-settings"><b>Configuración da aplicación → Permisos</b></a> no teu dispositivo.</p>
 <blockquote>Se non concedes acceso, Sky Map asumirá que estás en (0, 90): o Polo Norte!</blockquote>
     ]]></string>
 
     <string name="help_diagnostics" translation_description="Help section: the diagnostics page. Please do not change the markup"><![CDATA[
     <h2>Diagnóstico</h2>
-    <p>Esta páxina enumera varios datos sobre o teu teléfono e Sky Map que poden ser útiles para a resolución de problemas. Atopao en <b>Configuración → Diagnóstico</b>.</p>
+    <p>Esta páxina enumera varios datos sobre o teu teléfono e Sky Map que poden ser útiles para a resolución de problemas. Atopao en <a href="skymap://diagnostics"><b>Configuración → Diagnóstico</b></a>.</p>
     <br/>
     <p>Ao informar dun problema, toca o botón de compartir na parte superior da páxina para enviarnos estes detalles por correo electrónico a <a href="mailto:skymapdevs@gmail.com">skymapdevs@gmail.com</a>. Podes ler e editar o informe antes de envialo.</p>
     ]]></string>
 
     <string name="help_calibrate" translation_description="Help section: the calibrate page. Please do not change the markup"><![CDATA[
     <h2>Calibrar</h2>
-    De cando en vez, debes calibrar a brúxula do teu teléfono; esta páxina móstrache como. Sky Map tamén che notificará se a túa brúxula precisa calibración.
+    De cando en vez, debes calibrar a brúxula do teu teléfono; <a href="skymap://calibrate">esta páxina</a> móstrache como. Sky Map tamén che notificará se a túa brúxula precisa calibración.
     <blockquote><b>IMPORTANTE:</b> Un compás calibrado NON significa un compás <b>preciso</b>.
     Todo o que fai a calibración é restablecer o compás internamente. Pode seguir sendo imprecisa debido a interferencias magnéticas próximas ou simplemente a soporte físico defectuoso. Case todos os problemas de precisión débense ao soporte físico do teléfono e <b>non teñen nada que ver con Sky Map</b>. Todo o que fai Sky Map é dicirche o que lle está a dicir o teu teléfono.</blockquote>
     <br/>
-    <p>Consulta a sección de resolución de problemas a continuación para obter máis axuda.</p>
+    <p>Consulta a <a href="skymap://help#troubleshooting">sección de resolución de problemas</a> a continuación para obter máis axuda.</p>
     ]]></string>
 
     <string name="help_misc" translation_description="Help section: miscellaneous"><![CDATA[
@@ -175,7 +175,7 @@ Usa o botón <b>Buscar</b> para localizar ese obxecto no ceo.</p>
 <blockquote><b>Os compás dos teléfonos son notoriamente pouco fiables.</b>
 Se o mapa do ceo ten un aspecto incorrecto, case sempre é un problema de hardware co compás do teu teléfono, non un erro en Sky Map. Sky Map le exactamente o que informa o sensor do teu teléfono; non ten forma de corrixir automaticamente unha lectura incorrecta ou distorsionada. Consulta a solución de problemas a continuación.</blockquote>
 <h3>Como sei que sensores ten o meu teléfono?</h3>
-<p>Abrir <b>Configuración → Diagnóstico</b> — calquera sensor que o teu teléfono non teña marcarase como faltante. Tamén te informarían durante o titorial.</p>
+<p>Abrir <a href="skymap://diagnostics"><b>Configuración → Diagnóstico</b></a> — calquera sensor que o teu teléfono non teña marcarase como faltante. Tamén te informarían durante <a href="skymap://tutorial">o titorial</a>.</p>
 <h3>Que pasa se o meu dispositivo non ten os sensores precisos?</h3>
 <p>Sky Map volverá ao modo manual. Aínda podes explorar o ceo, pero sen os sensores, ningunha aplicación pode mostrarche a túa dirección.</p>
     ]]></string>
@@ -184,13 +184,13 @@ Se o mapa do ceo ten un aspecto incorrecto, case sempre é un problema de hardwa
 <h2>Solución de problemas</h2>
 <h3>O mapa non se move</h3>
 <p>• Comproba que estás en modo automático (non manual)<br/>
-• Consulta a páxina de diagnóstico (<b>Configuración → Diagnóstico</b>) para confirmar que o teu dispositivo ten compás e acelerómetro<br/>
+• Consulta a <a href="skymap://diagnostics">páxina de diagnóstico</a> para confirmar que o teu dispositivo ten compás e acelerómetro<br/>
 • Proba o xesto de calibración en forma de oito: move lentamente o teléfono facendo un oito grande e suave</p>
 <h3>O mapa apunta na dirección incorrecta ou é impreciso</h3>
 <p>Sky Map necesita tres cousas para mostrar o ceo correctamente: a dirección á que apunta o teléfono, a túa localización e a hora actual. Se o mapa parece incorrecto, é probable que un destes elementos sexa incorrecto.</p>
 <p>• <b>Compás (causa máis común):</b> Este é un problema de soporte físico do teu teléfono — non un erro do Sky Map. O xesto de calibración en forma de oito indica ao teu teléfono que restableza o sensor do compás internamente, pero <i>un compás calibrado non é necesariamente preciso</i>. Se estás preto dun obxecto metálico, do taboleiro dun coche ou dunha funda magnética para teléfono, o mapa pode ser incorrecto mesmo despois da calibración. Móvete a unha zona aberta e repite o xesto en forma de oito.<br/>
-• <b>Localización:</b> Concede permiso de localización a través da <b>Configuración da aplicación → Permisos</b>. Consulta a páxina de Diagnóstico (<b>Configuración → Diagnóstico</b>) para confirmar as túas coordenadas. Un sinal revelador dunha localización incorrecta é que Polaris apareza directamente enriba.<br/>
-• <b>Hora:</b> Menos común, pero un fuso horario incorrecto despraza todo o ceo. Consulta a páxina de Diagnóstico (<b>SConfiguración → Diagnóstico</b>) para confirmar que a hora e o fuso horario do teu dispositivo sexan correctos.</p>
+• <b>Localización:</b> Concede permiso de localización a través da <a href="skymap://app-settings"><b>Configuración da aplicación → Permisos</b></a>. Consulta a páxina de Diagnóstico (<b>Configuración → Diagnóstico</b>) para confirmar as túas coordenadas. Un sinal revelador dunha localización incorrecta é que Polaris apareza directamente enriba.<br/>
+• <b>Hora:</b> Menos común, pero un fuso horario incorrecto despraza todo o ceo. Consulta a páxina de Diagnóstico (<b>Configuración → Diagnóstico</b>) para confirmar que a hora e o fuso horario do teu dispositivo sexan correctos.</p>
 <h3>O mapa treme</h3>
 <p>
 • Se o teu teléfono non ten xiroscopio, activa <b>Usar sensores herdados</b> na configuración do sensor<br/>
@@ -202,7 +202,7 @@ Se o mapa do ceo ten un aspecto incorrecto, case sempre é un problema de hardwa
 
     <string name="help_pointer_mode" translation_description="Help section: pointer mode for telescope users. Please do not change the markup"><![CDATA[
 <h2>Usuarios de telescopios — Modo de punteiro</h2>
-<p>en <b>Configuración → Configuración do sensor</b>, cambie a <b>Dirección de vista</b> a <b>Modo de punteiro</b>. Neste modo, o mapa do ceo mostra cara a onde apunta o <i>bordo longo</i> do seu teléfono, en lugar de cara a onde mira a pantalla.</p>
+<p>en <a href="skymap://settings"><b>Configuración → Configuración do sensor</b></a>, cambie a <b>Dirección de vista</b> a <b>Modo de punteiro</b>. Neste modo, o mapa do ceo mostra cara a onde apunta o <i>bordo longo</i> do seu teléfono, en lugar de cara a onde mira a pantalla.</p>
 <p>Isto permítelle montar o teléfono ao longo do tubo dun telescopio para que a pantalla sexa perpendicular ao tubo mentres que o mapa aínda mostra cara a onde apunta o telescopio.</p>
     ]]></string>
 </resources>

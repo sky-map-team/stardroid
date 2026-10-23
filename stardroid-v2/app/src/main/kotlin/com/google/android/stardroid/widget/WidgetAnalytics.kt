@@ -1,0 +1,123 @@
+/*
+ * Copyright (c) 2026 Penterakt LLC.
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ */
+
+package com.google.android.stardroid.widget
+
+import android.content.BroadcastReceiver
+import android.content.Context
+import android.util.Log
+import com.google.android.stardroid.analytics.Analytics
+import com.google.android.stardroid.analytics.AnalyticsEvents
+import com.google.android.stardroid.settings.Settings
+import kotlinx.coroutines.CoroutineExceptionHandler
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.SupervisorJob
+import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withTimeoutOrNull
+
+/**
+ * How long a widget event waits for the opt-out preference to load from DataStore. Well inside
+ * the ~10s a `goAsync()` receiver gets; on a timeout the event is dropped rather than risk
+ * logging for an opted-out user.
+ */
+private const val OPT_OUT_LOOKUP_TIMEOUT_MS = 5_000L
+
+private const val TAG = "WidgetAnalytics"
+
+/** Analytics must never crash the app, least of all from a receiver with no UI: log and go on. */
+private val trackingScope =
+    CoroutineScope(
+        SupervisorJob() +
+            Dispatchers.Default +
+            CoroutineExceptionHandler { _, e -> Log.w(TAG, "Widget analytics event failed", e) },
+    )
+
+/** The event params: [extras] plus the `widget` type, which an extra can never overwrite. */
+internal fun widgetEventParams(
+    widget: String,
+    extras: Map<String, Any> = emptyMap(),
+): Map<String, Any> = extras + (AnalyticsEvents.WIDGET_TYPE to widget)
+
+/**
+ * Logs a widget [event] for [widget] (an `AnalyticsEvents.WIDGET_TYPE_*` value), but only once
+ * the `enable_analytics` preference has loaded and says yes. `AppModule` applies that preference
+ * to the analytics edge asynchronously, so in a cold process — a widget placed while the app
+ * isn't running — logging straight away could beat the opt-out; awaiting the preference is the
+ * same guard `MainActivity.logStartupSnapshot` uses.
+ */
+internal suspend fun logWidgetEvent(
+    analytics: Analytics,
+    settings: Settings,
+    event: String,
+    widget: String,
+    extras: Map<String, Any> = emptyMap(),
+) {
+    if (!settings.enableAnalytics.first()) return
+    analytics.trackEvent(event, widgetEventParams(widget, extras))
+}
+
+/** [logWidgetEvent] through the app singletons (D75). */
+private suspend fun trackWidgetEvent(
+    context: Context,
+    event: String,
+    widget: String,
+    extras: Map<String, Any> = emptyMap(),
+) {
+    val entryPoint = widgetEntryPoint(context)
+    logWidgetEvent(entryPoint.analytics(), entryPoint.settings(), event, widget, extras)
+}
+
+/**
+ * Logs a widget event on an application-wide scope, so the lookup outlives whatever composition
+ * or receiver call asked for it. [onDone] runs once the event is logged, dropped or has failed.
+ */
+internal fun trackWidgetEventInBackground(
+    context: Context,
+    event: String,
+    widget: String,
+    extras: Map<String, Any> = emptyMap(),
+    onDone: () -> Unit = {},
+) {
+    // The coroutine can outlive the caller, so never hold an Activity's context.
+    val appContext = context.applicationContext
+    trackingScope.launch {
+        try {
+            withTimeoutOrNull(OPT_OUT_LOOKUP_TIMEOUT_MS) {
+                trackWidgetEvent(appContext, event, widget, extras)
+            }
+        } finally {
+            onDone()
+        }
+    }
+}
+
+/**
+ * Logs a widget lifecycle event from a receiver callback. The opt-out lookup is asynchronous,
+ * so this holds the broadcast open with `goAsync()` until the event is logged or dropped.
+ * `goAsync()` returns null if it was already taken during this broadcast, hence the `?.`.
+ */
+internal fun BroadcastReceiver.trackWidgetEventAsync(
+    context: Context,
+    event: String,
+    widget: String,
+) {
+    val pending = goAsync()
+    trackWidgetEventInBackground(context, event, widget) { pending?.finish() }
+}
+
+/** The `AnalyticsEvents.WIDGET_TYPE_*` value for a widget's [receiver] class. */
+internal fun widgetTypeOf(receiver: Class<*>): String =
+    when (receiver) {
+        MoonWidgetReceiver::class.java -> AnalyticsEvents.WIDGET_TYPE_MOON
+        TonightWidgetReceiver::class.java -> AnalyticsEvents.WIDGET_TYPE_TONIGHT
+        CountdownWidgetReceiver::class.java -> AnalyticsEvents.WIDGET_TYPE_COUNTDOWN
+        else -> AnalyticsEvents.WIDGET_TYPE_UNKNOWN
+    }

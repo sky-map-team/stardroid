@@ -91,17 +91,26 @@ data class TrackedSatellite(
  *
  * Positions are **J2000 topocentric**, matching where [SatelliteLayer] actually draws them, so a
  * tap lands on the thing the user is pointing at rather than a few degrees off it.
+ *
+ * Tapping needs the layer on (a hidden layer draws nothing to tap); search passes
+ * `requireLayerEnabled = false` because search spans hidden layers and re-enables the layer
+ * for the hit it selects.
  */
 suspend fun trackedSatellites(
     context: Context,
     location: LatLong?,
     description: String?,
     at: Instant = Clock.System.now(),
+    requireLayerEnabled: Boolean = true,
 ): List<TrackedSatellite> {
     if (location == null) return emptyList()
     val entryPoint = satelliteEntryPoint(context)
     if (!entryPoint.experimentConfig().isEnabled(Experiment.SATELLITES)) return emptyList()
-    if (!entryPoint.settings().layerEnabled(SatelliteLayer.LAYER_ID).first()) return emptyList()
+    if (requireLayerEnabled &&
+        !entryPoint.settings().layerEnabled(SatelliteLayer.LAYER_ID).first()
+    ) {
+        return emptyList()
+    }
 
     val elements =
         withContext(Dispatchers.IO) { entryPoint.satelliteElementsRepository().current() }
