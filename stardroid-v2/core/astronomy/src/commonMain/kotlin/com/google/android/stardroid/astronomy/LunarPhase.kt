@@ -80,6 +80,12 @@ fun nextLunarPhaseEvent(
     return time
 }
 
+/** Approximate days since the last new moon at [time] (mean-rate, good to ~0.7 d), in `[0, SYNODIC_MONTH_DAYS)`. */
+fun moonAgeDays(
+    time: Instant,
+    ephemeris: Ephemeris = KeplerianEphemeris,
+): Double = elongationDeg(time, ephemeris) / 360.0 * SYNODIC_MONTH_DAYS
+
 /** Moon–Sun elongation (Moon RA minus Sun RA), normalized to `[0, 360)`. */
 private fun elongationDeg(
     time: Instant,

@@ -55,10 +55,12 @@ import com.google.android.stardroid.satellites.forceSatelliteFetchForDebugging
 import com.google.android.stardroid.satellites.readSatelliteDiagnostics
 import com.google.android.stardroid.sensors.SensorAccuracy
 import com.google.android.stardroid.sensors.SensorKind
+import com.google.android.stardroid.sensors.SensorPath
 import com.google.android.stardroid.startup.Experiment
 import com.google.android.stardroid.startup.ExperimentConfig
 import com.google.android.stardroid.startup.FetchResult
 import com.google.android.stardroid.ui.common.topBarWindowInsets
+import com.google.android.stardroid.ui.map.ReferenceFrame
 import com.google.android.stardroid.ui.theme.StatusColors
 import com.google.android.stardroid.ui.theme.statusColors
 import kotlinx.coroutines.Dispatchers
@@ -108,6 +110,7 @@ fun DiagnosticsScreen(
             add(graphicsSection(snapshot.rendererInfo))
             add(sensorsSection(viewModel, colors))
             add(orientationSettingsSection(snapshot, jitter))
+            add(mapSection(snapshot, colors))
             add(locationAndTimeSection(snapshot, colors))
             add(networkSection(snapshot))
             satelliteState?.let { add(satelliteSection(it)) }
@@ -356,10 +359,10 @@ private fun orientationSettingsSection(
             DiagnosticsRow(
                 stringResource(R.string.diagnostics_gyro_mode),
                 stringResource(
-                    if (snapshot.disableGyro) {
-                        R.string.diagnostics_gyro_disabled
-                    } else {
-                        R.string.diagnostics_gyro_fused
+                    when (snapshot.sensorPath) {
+                        SensorPath.FUSED -> R.string.diagnostics_gyro_fused
+                        SensorPath.ACCELEROMETER_COMPASS -> R.string.diagnostics_gyro_disabled
+                        SensorPath.NONE -> R.string.diagnostics_gyro_none
                     },
                 ),
             ),
@@ -389,13 +392,7 @@ private fun orientationSettingsSection(
             ),
             DiagnosticsRow(
                 stringResource(R.string.diagnostics_calibration_dialog),
-                stringResource(
-                    if (snapshot.dontShowCalibrationDialog) {
-                        R.string.diagnostics_calibration_dialog_suppressed
-                    } else {
-                        R.string.diagnostics_calibration_dialog_shown
-                    },
-                ),
+                onOffText(!snapshot.dontShowCalibrationDialog),
             ),
             DiagnosticsRow(
                 stringResource(R.string.diagnostics_jitter_raw),
@@ -407,6 +404,77 @@ private fun orientationSettingsSection(
             ),
         ),
     )
+
+/**
+ * What the map itself is doing with the sensor pipeline above (issue #1109): whether it is
+ * listening at all, whether orientations are still arriving, and whether any were thrown away.
+ */
+@Composable
+private fun mapSection(
+    snapshot: DiagnosticsSnapshot,
+    colors: StatusColors,
+): DiagnosticsSection {
+    val sensorMode = snapshot.mapReferenceFrame == ReferenceFrame.SENSOR
+    val age = snapshot.mapOrientationAgeSeconds
+    val rows =
+        buildList {
+            add(
+                DiagnosticsRow(
+                    stringResource(R.string.diagnostics_map_mode),
+                    stringResource(
+                        if (sensorMode) {
+                            R.string.diagnostics_map_mode_auto
+                        } else {
+                            R.string.diagnostics_map_mode_manual
+                        },
+                    ),
+                ),
+            )
+            add(
+                DiagnosticsRow(
+                    label = stringResource(R.string.diagnostics_map_orientation),
+                    value =
+                        age?.let {
+                            stringResource(R.string.diagnostics_map_orientation_format, it)
+                        } ?: stringResource(R.string.diagnostics_map_orientation_none),
+                    // Only a fault in auto mode: manual mode doesn't listen to the sensors.
+                    valueColor =
+                        if (sensorMode && (age == null || age > MAP_ORIENTATION_STALE_SECONDS)) {
+                            colors.bad
+                        } else {
+                            Color.Unspecified
+                        },
+                ),
+            )
+            add(
+                DiagnosticsRow(
+                    label = stringResource(R.string.diagnostics_rejected_samples),
+                    value = snapshot.rejectedSensorSamples.toString(),
+                    valueColor =
+                        if (snapshot.rejectedSensorSamples > 0) colors.bad else Color.Unspecified,
+                ),
+            )
+            add(
+                DiagnosticsRow(
+                    label = stringResource(R.string.diagnostics_smoother_heals),
+                    value = snapshot.smootherHeals.toString(),
+                    valueColor = if (snapshot.smootherHeals > 0) colors.bad else Color.Unspecified,
+                ),
+            )
+            snapshot.processLifecycleState?.let {
+                add(
+                    DiagnosticsRow(
+                        stringResource(R.string.diagnostics_app_lifecycle),
+                        enumDisplayName(it),
+                    ),
+                )
+            }
+        }
+    return DiagnosticsSection(stringResource(R.string.diagnostics_section_map), rows)
+}
+
+/** Sensors report at ~50 Hz, so this long without one in auto mode means they've stopped. */
+private const val MAP_ORIENTATION_STALE_SECONDS = 2.0
 
 @Composable
 private fun onOffText(enabled: Boolean): String =
@@ -612,7 +680,7 @@ private fun DiagnosticRow(
         Text(
             label,
             style = MaterialTheme.typography.bodyMedium,
-            modifier = Modifier.weight(0.4f),
+            modifier = Modifier.weight(0.4f).padding(end = 12.dp),
         )
         Text(
             value,
@@ -638,8 +706,9 @@ private fun sensorText(row: SensorRow): String =
     }
 
 /**
- * " (52 Hz, 0.1s ago)" for a present, reporting sensor — nothing for an absent one or one that
- * hasn't delivered a first event yet, since [sensorText] already says so.
+ * "\n(52 Hz, 0.1s ago)" for a present, reporting sensor — nothing for an absent one or one that
+ * hasn't delivered a first event yet, since [sensorText] already says so. Always on its own
+ * line so the row height doesn't change with the width of the values.
  */
 @Composable
 private fun rateSuffix(
@@ -648,7 +717,7 @@ private fun rateSuffix(
 ): String {
     if (row !is SensorRow.Present || rate == null) return ""
     val staleForMillis = rate.staleForMillis ?: return ""
-    return " " +
+    return "\n" +
         stringResource(
             R.string.diagnostics_sensor_rate_format,
             rate.hz,

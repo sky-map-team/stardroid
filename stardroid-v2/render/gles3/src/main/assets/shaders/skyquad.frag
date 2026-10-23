@@ -4,16 +4,16 @@ in vec2 vUv;
 in vec2 vDisc;
 
 uniform sampler2D uTexture;
-uniform float uNightMode;
-// Phase. uHasTerminator is 0 for anything not catching sunlight, and for the outer planets,
+uniform bool uNightMode;
+// Phase. uHasTerminator is false for anything not catching sunlight, and for the outer planets,
 // which never drop below full illumination seen from Earth.
-uniform float uHasTerminator;
+uniform bool uHasTerminator;
 uniform float uIlluminatedFraction;
 // The lit limb's direction in texture space: (-sin, cos) of the position angle east of north.
 uniform vec2 uLitDirection;
 // Earth's shadow, when the Moon is in it: (umbraRadius, penumbraRadius) and the shadow centre,
-// all in Moon radii. uHasEclipse is 0 on the ~360 nights a year when there is no eclipse.
-uniform float uHasEclipse;
+// all in Moon radii. uHasEclipse is false on the ~360 nights a year when there is no eclipse.
+uniform bool uHasEclipse;
 uniform vec2 uShadowRadii;
 uniform vec2 uShadowCenter;
 
@@ -34,7 +34,7 @@ void main() {
     if (texel.a <= 0.0) discard;
     vec3 rgb = texel.rgb;
 
-    if (uHasTerminator > 0.5) {
+    if (uHasTerminator) {
         // Rotate into the frame where the lit limb faces +u.
         float u = dot(vDisc, uLitDirection);
         float v = vDisc.x * uLitDirection.y - vDisc.y * uLitDirection.x;
@@ -58,7 +58,7 @@ void main() {
         rgb *= scale;
     }
 
-    if (uHasEclipse > 0.5) {
+    if (uHasEclipse) {
         rgb *= eclipseTint(vDisc, uShadowRadii.x, uShadowRadii.y, uShadowCenter);
     }
 

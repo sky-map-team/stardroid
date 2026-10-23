@@ -223,12 +223,45 @@ still actively supported.
 
 ---
 
+## Permissions: what Sky Map asks for, and why
+
+Sky Map asks for very little, and **every permission is optional** — the app opens and shows the
+sky whatever you choose. Permissions are only requested at the moment you use the feature that
+needs them (never all at once at launch), and you can change your mind at any time in
+**Settings → Apps → Sky Map → Permissions**.
+
+| Permission | When it's asked | What it's for | If you don't grant it |
+|---|---|---|---|
+| **Location** (approximate) | The first time you choose automatic location (the welcome tour or the **Location** screen) | Works out where you are so the sky is drawn for your spot on Earth | The sky is drawn for a default position (v2: Greenwich, UK; v1: 0°/0°), so it will look wrong anywhere else. Fix it by [entering your location by hand](#location) — nothing else is lost |
+| **Camera** (v2) | When you first turn on the camera (AR) overlay | Shows the live camera picture behind the sky | The overlay stays off. The normal sky map is unaffected |
+| **Notifications** (v2, Android 13+) | When you switch on your first alert (meteor showers, eclipses, satellite passes, tonight's sky) | Lets Sky Map post those alerts | The alert switch flips back off and no notifications arrive. Everything else works as normal. Alerts are off until you turn them on |
+
+A few other things Sky Map uses don't show a permission prompt: it can vibrate during the sensor
+check, check whether you're online (for the Diagnostics page and map images), and re-arm satellite
+pass alerts after a reboot. None of these access your personal data.
+
+**If you tapped "Don't allow":** Android will usually ask again the next time you use the feature.
+After two refusals it stops asking, and you must turn the permission on yourself in
+**Settings → Apps → Sky Map → Permissions**. Sky Map points you to this screen when it happens.
+
+**Sky Map never needs** your contacts, photos, microphone, files or precise (GPS) location.
+Approximate location is plenty for a planetarium.
+
+---
+
 ## Do I need an internet connection?
 
-No. Sky Map works fully offline. An internet connection is only needed to:
+No. The sky, star catalogue, planets, constellations, Hubble Gallery images and object
+descriptions are all built into the app, so Sky Map works fully offline. An internet connection is
+only used for a few extras (v2):
 
-- Look up a location by place name (you can enter lat/long directly instead)
-- Load Hubble Gallery images (previously cached images may still be available offline)
+- **Satellite tracking** — orbit data is downloaded from CelesTrak and kept on your device. Without
+  a connection, satellites are shown from the last data downloaded (or not at all if none has been
+  yet). On the F-Droid build, satellite downloads are off until you turn them on.
+- **Looking up a place by name** on the Location screen (you can enter latitude/longitude directly
+  instead). Automatic location uses GPS/network location and doesn't need Sky Map to be online.
+- **The small map picture** on the Location screen.
+- **Announcements** and anonymous usage statistics (Google Play build only).
 
 ---
 

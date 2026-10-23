@@ -27,9 +27,10 @@ import kotlin.random.Random
  *
  *  - **A network constraint.** Nothing else in the repo sets constraints, and this job must, so it
  *    waits for connectivity rather than failing and burning a scheduled run.
- *  - **Up to an hour of random initial delay.** Installs are already scattered by install time,
- *    but a staged Play rollout reaching millions of devices in a coordinated window is a real herd
- *    source. The jitter costs nothing — the data is re-issued daily and we poll twice a day.
+ *  - **Up to five minutes of random initial delay.** Installs are already scattered by install
+ *    time, but a staged Play rollout or a Remote Config flip reaching many devices in a coordinated
+ *    window is a real herd source. Five minutes spreads that without leaving a new user staring at
+ *    an empty layer for an hour; the delay also fixes the device's phase for the 12-hour period.
  *  - **Scheduled only while the feature is on and consented to.** Cancelled otherwise, so a user
  *    who turns satellites off stops making requests immediately rather than at the next flag read.
  *
@@ -45,7 +46,7 @@ object SatelliteScheduler {
     private const val PERIOD_HOURS = 12L
 
     /** Upper bound on the random initial delay. */
-    private const val MAX_JITTER_MINUTES = 60L
+    private const val MAX_JITTER_MINUTES = 5L
 
     /**
      * Ensures the periodic fetch is scheduled.

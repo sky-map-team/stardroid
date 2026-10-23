@@ -32,8 +32,14 @@ import kotlin.math.floor
 import kotlin.math.max
 import kotlin.math.min
 
-/** Rasterized glyph data (atlas cell + semantic info) for one label. */
-data class LabelGlyph(
+/**
+ * Rasterized glyph data (atlas cell + semantic info) for one label.
+ *
+ * Not a data class: the `FloatArray` UVs would make its generated `equals` compare them by
+ * identity, which misleads, and nothing compares glyphs. Wrapping the UVs in objects would
+ * allocate two per label in the catalog.
+ */
+class LabelGlyph(
     val text: String,
     val widthPx: Int,
     val heightPx: Int,
@@ -51,13 +57,7 @@ data class LabelGlyph(
     val clearanceDeg: Double,
     val clearanceMinScreenFraction: Double,
     val clearanceMinSizeDp: Double,
-) {
-    // Arrays make the generated equals/hashCode identity-based; nothing compares glyphs, and
-    // the alternative is copying two floats into objects for every label in the catalog.
-    override fun equals(other: Any?): Boolean = this === other
-
-    override fun hashCode(): Int = System.identityHashCode(this)
-}
+)
 
 /** R8 atlas page textures, their pixel sizes, and per-glyph data for one layer's labels. */
 class LabelGpuData(

@@ -67,10 +67,12 @@ object DiagnosticsReport {
                 appendLine(section.title)
                 appendLine("-".repeat(section.title.length))
                 for (row in section.rows) {
+                    // The screen breaks a value onto two lines; the report stays one per row.
+                    val value = row.value.replace('\n', ' ')
                     if (row.label.isEmpty()) {
-                        appendLine("  ${row.value}")
+                        appendLine("  $value")
                     } else {
-                        appendLine("${row.label}: ${row.value}")
+                        appendLine("${row.label}: $value")
                     }
                 }
             }

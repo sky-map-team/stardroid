@@ -35,9 +35,10 @@ Follow the [Google Kotlin Style Guide](https://developer.android.com/kotlin/styl
   Java-style translations
 
 **Linting:** `./gradlew ktlintCheck` enforces the 100-character limit and Google Kotlin Style
-Guide across all v2 modules. Run `./gradlew ktlintFormat` to auto-fix most violations before
-committing. Inline trailing comments (`foo, // note`) inside argument/parameter lists are not
-allowed by ktlint — place comments on their own line above the element instead.
+Guide across all v2 modules (ktlint-gradle 14.2 also lints the Android modules that use AGP's
+built-in Kotlin). Run `./gradlew ktlintFormat` to auto-fix most violations before committing.
+Inline trailing comments (`foo, // note`) inside argument/parameter lists are not allowed by ktlint —
+place comments on their own line above the element instead.
 
 ## Licensing
 

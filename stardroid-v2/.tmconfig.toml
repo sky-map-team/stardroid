@@ -40,7 +40,8 @@ Japanese, Chinese, etc.).
 The help document is split one string per section (help_intro, help_search, ...). \
 Each is a self-contained section of one manual — keep terminology consistent across \
 them, and keep the HTML markup (<h2>, <h3>, <p>, <b>, <i>, <br/>) exactly as it \
-appears in the source.
+appears in the source. The one exception is <i> in the locales whose \
+locale_context says not to use italics: omit <i> and </i> there and keep the text.
 
 Some help links use the private scheme skymap:// — these are in-app navigation \
 targets, not web addresses or prose. Reproduce every href value byte for byte, \
@@ -80,6 +81,10 @@ da = "Use the informal 'du/din' register throughout — never the formal 'De/Dem
 sv = "Use the informal 'du/din' register throughout."
 nb = "Use the informal 'du/din' register throughout."
 en-GB = "The asterism within Ursa Major that American English calls \"The Big Dipper\" is called \"The Plough\" in British English. Use \"The Plough\", never \"The Big Dipper\"."
+# No italic tradition in these scripts; synthetic slant renders poorly (and distorts joined Persian).
+ko = "Do not use italics: omit the <i> and </i> tags from the source and keep the enclosed text unchanged."
+th = "Do not use italics: omit the <i> and </i> tags from the source and keep the enclosed text unchanged."
+fa = "Do not use italics: omit the <i> and </i> tags from the source and keep the enclosed text unchanged."
 
 # Android UI strings. Every string carries a translation_description
 # attribute with translator-facing context — preserved automatically.
