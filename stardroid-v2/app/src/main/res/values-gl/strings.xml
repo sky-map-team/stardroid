@@ -42,7 +42,6 @@
     <string name="satellite_name_tiangong" translation_description="Display name for the Chinese space station Tiangong.">Tiangong</string>
     <string name="satellite_description" translation_description="Short description shown on the info card for an artificial satellite.">Un satélite artificial en órbita terrestre baixa, iluminado polo sol contra un ceo escuro. Cruza de horizonte a horizonte en poucos minutos, movéndose de forma constante e sen pestanexar.</string>
     <string name="tonight_satellite_pass" translation_description="Tonight-widget row announcing a visible satellite pass. %1$s is the satellite name, %2$s is a time of day.">%1$s pasa por riba ás %2$s</string>
-    <string name="tonight_trailing_pass" translation_description="Small trailing note on a satellite pass row. %1$s is a compass direction, %2$d is an angle in degrees, %3$.1f is a brightness magnitude.">Saíndo %1$s, %2$d°, mag %3$.1f</string>
 
     <!-- Map screen controls. -->
 

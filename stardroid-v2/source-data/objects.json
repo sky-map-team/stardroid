@@ -727,6 +727,14 @@
    "type": "planet",
    "image_ref": "planets/nasa_venus.webp"
   },
+  "satellite/25544": {
+   "type": "satellite",
+   "image_ref": "spacecraft/nasa_iss.webp"
+  },
+  "satellite/48274": {
+   "type": "satellite",
+   "image_ref": "spacecraft/wikimedia_tiangong.webp"
+  },
   "shower/aquariids": {
    "type": "meteor_shower",
    "ra": 338.0,

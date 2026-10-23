@@ -40,8 +40,6 @@
     <string name="satellite_name_iss" translation_description="Display name for the International Space Station.">국제 우주 정거장</string>
     <string name="satellite_name_tiangong" translation_description="Display name for the Chinese space station Tiangong.">톈궁</string>
     <string name="satellite_description" translation_description="Short description shown on the info card for an artificial satellite.">저궤도 인공위성으로, 어두운 하늘에서 햇빛을 받아 빛납니다. 몇 분 안에 지평선에서 지평선까지 꾸준히 깜빡임 없이 이동합니다.</string>
-    <string name="tonight_satellite_pass" translation_description="Tonight-widget row announcing a visible satellite pass. %1$s is the satellite name, %2$s is a time of day.">%1$s이(가) %2$s에 통과합니다</string>
-    <string name="tonight_trailing_pass" translation_description="Small trailing note on a satellite pass row. %1$s is a compass direction, %2$d is an angle in degrees, %3$.1f is a brightness magnitude.">%1$s에서 떠올라, %2$d°, 밝기 %3$.1f등급</string>
 
     <!-- Map screen controls. -->
 
@@ -50,8 +48,8 @@
 
     <!-- Through-camera (AR) mode (camera-ar-mode.md, D64). -->
     <string name="share_chooser_title" translation_description="Title of the system share sheet when sharing a captured sky image.">이 하늘 공유</string>
-    <string name="share_invitation" translation_description="Short invitation stamped on the footer of shared sky images, above the store link.">보고 있는 것을 확인하세요 — Sky Map을 무료로 받으세요</string>
-    <string name="share_text" translation_description="Text accompanying a shared sky image in apps that accept both an image and text. %1$s is the app-store link.">보고 있는 것을 확인하세요 — Sky Map을 무료로 받으세요: %1$s</string>
+    <string name="share_invitation" translation_description="Short invitation stamped on the footer of shared sky images, above the store link.">주머니 속의 우주 — 무료 Sky Map 받기</string>
+    <string name="share_text" translation_description="Text accompanying a shared sky image in apps that accept both an image and text. %1$s is the app-store link.">주머니 속의 우주 — 무료 Sky Map 받기: %1$s</string>
     <!-- tm:omitted name="share_store_link" reason="identical_to_source" -->
     <string name="share_layout_overlay" translation_description="Caption of the share-layout choice that draws the star map over the camera photo, as seen on screen.">오버레이</string>
     <string name="share_layout_side_by_side" translation_description="Caption of the share-layout choice that puts the camera photo and the star map next to each other.">나란히</string>
@@ -162,4 +160,13 @@
     <string name="notif_digest_title" translation_description="Title of the tonight\'s-sky digest notification">오늘 밤 볼 가치가 있습니다</string>
     <string name="notif_action_mute_showers" translation_description="Notification action button that opens the system toggle for the meteor-shower channel">유성우 알림 끄기</string>
     <!-- Layers sheet: per-layer parameters (D87). -->
+    <string name="satellite_search_name_iss" translation_description="Common name of the International Space Station, matched when the user types it in search. Use the name people in this language actually type.">국제 우주 정거장</string>
+    <string name="satellite_search_name_tiangong" translation_description="Common name of the Chinese Tiangong space station, matched when the user types it in search. Use the name people in this language actually type.">톈궁 우주 정거장</string>
+    <string name="tonight_trailing_pass_peak" translation_description="Small trailing note on a satellite pass row. %1$d is the peak altitude in degrees, %2$.1f is a brightness magnitude.">최고 %1$d°, 등급 %2$.1f</string>
+    <string name="moon_widget_age" translation_description="Widget line giving the Moon\'s age as the day of the lunar cycle, counting the day of new moon as day 1; %1$d is a number from 1 to 30">%1$d일째</string>
+    <string name="channel_announcements_name" translation_description="Notification channel name for occasional messages from the Sky Map team">Sky Map 팀의 메시지</string>
+    <string name="channel_announcements_description" translation_description="Notification channel description for occasional messages from the Sky Map team">주요 천문 현상에 대한 사전 안내</string>
+    <string name="announcement_dialog_dismiss" translation_description="Button that closes an announcement dialog and hides that message everywhere">닫기</string>
+    <string name="announcement_dialog_open" translation_description="Button on an announcement dialog that jumps to the sky object the message is about">살펴보기</string>
+    <string name="announcement_dialog_continue" translation_description="Button on an announcement dialog that closes it and continues to the sky map">계속</string>
 </resources>

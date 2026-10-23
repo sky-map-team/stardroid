@@ -428,4 +428,11 @@
     <!-- tm:omitted name="label_size_hint_action" reason="identical_to_source" -->
     <!-- tm:omitted name="auto_level_on_toast" reason="identical_to_source" -->
     <!-- tm:omitted name="auto_level_off_toast" reason="identical_to_source" -->
+    <string name="layer_help_customizable" translation_description="Heading in the layer help popup above the list of customizable options.">What you can customise</string>
+    <string name="layer_help_customize" translation_description="Button in the layer help popup that opens the Layers sheet on that layer's options.">Customise</string>
+    <string name="layer_help_sky_gradient" translation_description="Long-press explanation of the sky coloring toggle.">
+    Shades the sky to match the time of day, bright by day and dark at night, and colours the ground.
+    </string>
+    <string name="layer_help_stars" translation_description="Long-press explanation of the stars layer.">The stars, sized by brightness and tinted by colour. Tap any star for details.</string>
+    <string name="layer_sky_gradient" translation_description="Toggle label for the daytime sky-brightness gradient and the ground coloring.">Sky colouring</string>
 </resources>

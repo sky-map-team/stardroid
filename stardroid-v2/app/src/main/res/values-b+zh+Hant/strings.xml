@@ -40,8 +40,6 @@
     <string name="satellite_name_iss" translation_description="Display name for the International Space Station.">國際太空站</string>
     <string name="satellite_name_tiangong" translation_description="Display name for the Chinese space station Tiangong.">天宮</string>
     <string name="satellite_description" translation_description="Short description shown on the info card for an artificial satellite.">一顆位於低地球軌道的人造衛星，在漆黑天空中被陽光照亮。它在幾分鐘內穩定地橫越地平線，且不會閃爍。</string>
-    <string name="tonight_satellite_pass" translation_description="Tonight-widget row announcing a visible satellite pass. %1$s is the satellite name, %2$s is a time of day.">%1$s 在 %2$s 凌空</string>
-    <string name="tonight_trailing_pass" translation_description="Small trailing note on a satellite pass row. %1$s is a compass direction, %2$d is an angle in degrees, %3$.1f is a brightness magnitude.">從 %1$s 方向升起，%2$d°，亮度 %3$.1f</string>
 
     <!-- Map screen controls. -->
 
@@ -50,8 +48,8 @@
 
     <!-- Through-camera (AR) mode (camera-ar-mode.md, D64). -->
     <string name="share_chooser_title" translation_description="Title of the system share sheet when sharing a captured sky image.">分享這個天空</string>
-    <string name="share_invitation" translation_description="Short invitation stamped on the footer of shared sky images, above the store link.">看看你正在看什麼 — 免費取得 Sky Map</string>
-    <string name="share_text" translation_description="Text accompanying a shared sky image in apps that accept both an image and text. %1$s is the app-store link.">看看你正在看什麼 — 免費取得 Sky Map：%1$s</string>
+    <string name="share_invitation" translation_description="Short invitation stamped on the footer of shared sky images, above the store link.">將宇宙裝入口袋 — 免費取得 Sky Map</string>
+    <string name="share_text" translation_description="Text accompanying a shared sky image in apps that accept both an image and text. %1$s is the app-store link.">將宇宙裝入口袋 — 免費取得 Sky Map：%1$s</string>
     <!-- tm:omitted name="share_store_link" reason="identical_to_source" -->
     <string name="share_layout_overlay" translation_description="Caption of the share-layout choice that draws the star map over the camera photo, as seen on screen.">疊加</string>
     <string name="share_layout_side_by_side" translation_description="Caption of the share-layout choice that puts the camera photo and the star map next to each other.">並排</string>
@@ -162,4 +160,13 @@
     <string name="notif_digest_title" translation_description="Title of the tonight\'s-sky digest notification">今晚值得一看</string>
     <string name="notif_action_mute_showers" translation_description="Notification action button that opens the system toggle for the meteor-shower channel">靜音流星雨</string>
     <!-- Layers sheet: per-layer parameters (D87). -->
+    <string name="satellite_search_name_iss" translation_description="Common name of the International Space Station, matched when the user types it in search. Use the name people in this language actually type.">國際太空站</string>
+    <string name="satellite_search_name_tiangong" translation_description="Common name of the Chinese Tiangong space station, matched when the user types it in search. Use the name people in this language actually type.">天宮太空站</string>
+    <string name="tonight_trailing_pass_peak" translation_description="Small trailing note on a satellite pass row. %1$d is the peak altitude in degrees, %2$.1f is a brightness magnitude.">最高 %1$d°，星等 %2$.1f</string>
+    <string name="moon_widget_age" translation_description="Widget line giving the Moon\'s age as the day of the lunar cycle, counting the day of new moon as day 1; %1$d is a number from 1 to 30">第 %1$d 天</string>
+    <string name="channel_announcements_name" translation_description="Notification channel name for occasional messages from the Sky Map team">來自 Sky Map 的訊息</string>
+    <string name="channel_announcements_description" translation_description="Notification channel description for occasional messages from the Sky Map team">關於重要天文事件的罕見預先通知</string>
+    <string name="announcement_dialog_dismiss" translation_description="Button that closes an announcement dialog and hides that message everywhere">關閉</string>
+    <string name="announcement_dialog_open" translation_description="Button on an announcement dialog that jumps to the sky object the message is about">查看詳情</string>
+    <string name="announcement_dialog_continue" translation_description="Button on an announcement dialog that closes it and continues to the sky map">繼續</string>
 </resources>

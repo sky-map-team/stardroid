@@ -618,6 +618,7 @@ fun LocationStateDialogs(
 ) {
     var rationaleDismissed by rememberSaveable { mutableStateOf(false) }
     var permanentlyDeniedDismissed by rememberSaveable { mutableStateOf(false) }
+    var manualRefusalPending by rememberSaveable { mutableStateOf(false) }
     var timeoutDismissed by rememberSaveable { mutableStateOf(false) }
     // The state this composition last saw, so only a change *into* a refusal re-arms its dialog:
     // a new composition (a rotation, say) starts from the current state and re-arms nothing.
@@ -652,19 +653,28 @@ fun LocationStateDialogs(
         )
     }
 
-    if (locationState is LocationState.PermissionPermanentlyDenied &&
-        !permanentlyDeniedDismissed
-    ) {
+    LaunchedEffect(locationViewModel) {
+        locationViewModel.manualRefusals.collect { manualRefusalPending = true }
+    }
+
+    val permanentlyDenied =
+        locationState is LocationState.PermissionPermanentlyDenied && !permanentlyDeniedDismissed
+    if (permanentlyDenied || manualRefusalPending) {
         LocationPermanentlyDeniedDialog(
             onOpenSettings = {
                 permanentlyDeniedDismissed = true
+                manualRefusalPending = false
                 onOpenAppSettings()
             },
             onEnterManually = {
                 permanentlyDeniedDismissed = true
+                manualRefusalPending = false
                 onEnterManually()
             },
-            onDismiss = { permanentlyDeniedDismissed = true },
+            onDismiss = {
+                permanentlyDeniedDismissed = true
+                manualRefusalPending = false
+            },
         )
     }
 

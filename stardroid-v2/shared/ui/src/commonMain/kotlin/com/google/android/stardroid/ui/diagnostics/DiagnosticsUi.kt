@@ -44,20 +44,21 @@ import com.google.android.stardroid.location.LocationState
 import com.google.android.stardroid.render.api.RendererInfo
 import com.google.android.stardroid.sensors.SensorAccuracy
 import com.google.android.stardroid.sensors.SensorKind
+import com.google.android.stardroid.sensors.SensorPath
 import com.google.android.stardroid.startup.Experiment
 import com.google.android.stardroid.startup.ExperimentConfig
 import com.google.android.stardroid.startup.FetchResult
 import com.google.android.stardroid.ui.common.formatAndroidStyle
 import com.google.android.stardroid.ui.common.formattedStringResource
 import com.google.android.stardroid.ui.common.topBarWindowInsets
+import com.google.android.stardroid.ui.map.ReferenceFrame
 import com.google.android.stardroid.ui.resources.Res
 import com.google.android.stardroid.ui.resources.calibration_button
 import com.google.android.stardroid.ui.resources.diagnostics_accelerometer
 import com.google.android.stardroid.ui.resources.diagnostics_alignment_adjustment
 import com.google.android.stardroid.ui.resources.diagnostics_alignment_format
+import com.google.android.stardroid.ui.resources.diagnostics_app_lifecycle
 import com.google.android.stardroid.ui.resources.diagnostics_calibration_dialog
-import com.google.android.stardroid.ui.resources.diagnostics_calibration_dialog_shown
-import com.google.android.stardroid.ui.resources.diagnostics_calibration_dialog_suppressed
 import com.google.android.stardroid.ui.resources.diagnostics_cell
 import com.google.android.stardroid.ui.resources.diagnostics_compass
 import com.google.android.stardroid.ui.resources.diagnostics_connected
@@ -80,6 +81,7 @@ import com.google.android.stardroid.ui.resources.diagnostics_gps
 import com.google.android.stardroid.ui.resources.diagnostics_gyro_disabled
 import com.google.android.stardroid.ui.resources.diagnostics_gyro_fused
 import com.google.android.stardroid.ui.resources.diagnostics_gyro_mode
+import com.google.android.stardroid.ui.resources.diagnostics_gyro_none
 import com.google.android.stardroid.ui.resources.diagnostics_gyroscope
 import com.google.android.stardroid.ui.resources.diagnostics_jitter_format
 import com.google.android.stardroid.ui.resources.diagnostics_jitter_pending
@@ -95,12 +97,19 @@ import com.google.android.stardroid.ui.resources.diagnostics_location_permission
 import com.google.android.stardroid.ui.resources.diagnostics_location_unset
 import com.google.android.stardroid.ui.resources.diagnostics_magnetic_correction
 import com.google.android.stardroid.ui.resources.diagnostics_magnetic_correction_format
+import com.google.android.stardroid.ui.resources.diagnostics_map_mode
+import com.google.android.stardroid.ui.resources.diagnostics_map_mode_auto
+import com.google.android.stardroid.ui.resources.diagnostics_map_mode_manual
+import com.google.android.stardroid.ui.resources.diagnostics_map_orientation
+import com.google.android.stardroid.ui.resources.diagnostics_map_orientation_format
+import com.google.android.stardroid.ui.resources.diagnostics_map_orientation_none
 import com.google.android.stardroid.ui.resources.diagnostics_no_gps
 import com.google.android.stardroid.ui.resources.diagnostics_permission_denied
 import com.google.android.stardroid.ui.resources.diagnostics_permission_disabled
 import com.google.android.stardroid.ui.resources.diagnostics_permission_granted
 import com.google.android.stardroid.ui.resources.diagnostics_phone_format
 import com.google.android.stardroid.ui.resources.diagnostics_pointing
+import com.google.android.stardroid.ui.resources.diagnostics_rejected_samples
 import com.google.android.stardroid.ui.resources.diagnostics_report_header
 import com.google.android.stardroid.ui.resources.diagnostics_reverse_magnetic_z
 import com.google.android.stardroid.ui.resources.diagnostics_rotation
@@ -110,6 +119,7 @@ import com.google.android.stardroid.ui.resources.diagnostics_section_experiments
 import com.google.android.stardroid.ui.resources.diagnostics_section_general
 import com.google.android.stardroid.ui.resources.diagnostics_section_graphics
 import com.google.android.stardroid.ui.resources.diagnostics_section_location_time
+import com.google.android.stardroid.ui.resources.diagnostics_section_map
 import com.google.android.stardroid.ui.resources.diagnostics_section_network
 import com.google.android.stardroid.ui.resources.diagnostics_section_orientation_settings
 import com.google.android.stardroid.ui.resources.diagnostics_section_recent_log
@@ -120,6 +130,7 @@ import com.google.android.stardroid.ui.resources.diagnostics_share
 import com.google.android.stardroid.ui.resources.diagnostics_share_subject
 import com.google.android.stardroid.ui.resources.diagnostics_sky_map_version
 import com.google.android.stardroid.ui.resources.diagnostics_sky_map_version_format
+import com.google.android.stardroid.ui.resources.diagnostics_smoother_heals
 import com.google.android.stardroid.ui.resources.diagnostics_smoothing
 import com.google.android.stardroid.ui.resources.diagnostics_steadiness
 import com.google.android.stardroid.ui.resources.diagnostics_title
@@ -207,6 +218,7 @@ fun DiagnosticsScreen(
             add(graphicsSection(platform, snapshot.rendererInfo))
             add(sensors)
             add(orientationSettingsSection(snapshot, jitter))
+            add(mapSection(snapshot, colors))
             add(locationAndTimeSection(snapshot, colors))
             add(networkSection(snapshot))
             satelliteSection?.let { add(it) }
@@ -449,10 +461,10 @@ private fun orientationSettingsSection(
             DiagnosticsRow(
                 stringResource(Res.string.diagnostics_gyro_mode),
                 stringResource(
-                    if (snapshot.disableGyro) {
-                        Res.string.diagnostics_gyro_disabled
-                    } else {
-                        Res.string.diagnostics_gyro_fused
+                    when (snapshot.sensorPath) {
+                        SensorPath.FUSED -> Res.string.diagnostics_gyro_fused
+                        SensorPath.ACCELEROMETER_COMPASS -> Res.string.diagnostics_gyro_disabled
+                        SensorPath.NONE -> Res.string.diagnostics_gyro_none
                     },
                 ),
             ),
@@ -482,13 +494,7 @@ private fun orientationSettingsSection(
             ),
             DiagnosticsRow(
                 stringResource(Res.string.diagnostics_calibration_dialog),
-                stringResource(
-                    if (snapshot.dontShowCalibrationDialog) {
-                        Res.string.diagnostics_calibration_dialog_suppressed
-                    } else {
-                        Res.string.diagnostics_calibration_dialog_shown
-                    },
-                ),
+                onOffText(!snapshot.dontShowCalibrationDialog),
             ),
             DiagnosticsRow(
                 stringResource(Res.string.diagnostics_jitter_raw),
@@ -500,6 +506,80 @@ private fun orientationSettingsSection(
             ),
         ),
     )
+
+/**
+ * What the map itself is doing with the sensor pipeline above (issue #1109): whether it is
+ * listening at all, whether orientations are still arriving, and whether any were thrown away.
+ */
+@Composable
+private fun mapSection(
+    snapshot: DiagnosticsSnapshot,
+    colors: StatusColors,
+): DiagnosticsSection {
+    val sensorMode = snapshot.mapReferenceFrame == ReferenceFrame.SENSOR
+    val age = snapshot.mapOrientationAgeSeconds
+    val rows =
+        buildList {
+            add(
+                DiagnosticsRow(
+                    stringResource(Res.string.diagnostics_map_mode),
+                    stringResource(
+                        if (sensorMode) {
+                            Res.string.diagnostics_map_mode_auto
+                        } else {
+                            Res.string.diagnostics_map_mode_manual
+                        },
+                    ),
+                ),
+            )
+            add(
+                DiagnosticsRow(
+                    label = stringResource(Res.string.diagnostics_map_orientation),
+                    value =
+                        age?.let {
+                            formattedStringResource(
+                                Res.string.diagnostics_map_orientation_format,
+                                it,
+                            )
+                        } ?: stringResource(Res.string.diagnostics_map_orientation_none),
+                    // Only a fault in auto mode: manual mode doesn't listen to the sensors.
+                    valueColor =
+                        if (sensorMode && (age == null || age > MAP_ORIENTATION_STALE_SECONDS)) {
+                            colors.bad
+                        } else {
+                            Color.Unspecified
+                        },
+                ),
+            )
+            add(
+                DiagnosticsRow(
+                    label = stringResource(Res.string.diagnostics_rejected_samples),
+                    value = snapshot.rejectedSensorSamples.toString(),
+                    valueColor =
+                        if (snapshot.rejectedSensorSamples > 0) colors.bad else Color.Unspecified,
+                ),
+            )
+            add(
+                DiagnosticsRow(
+                    label = stringResource(Res.string.diagnostics_smoother_heals),
+                    value = snapshot.smootherHeals.toString(),
+                    valueColor = if (snapshot.smootherHeals > 0) colors.bad else Color.Unspecified,
+                ),
+            )
+            snapshot.processLifecycleState?.let {
+                add(
+                    DiagnosticsRow(
+                        stringResource(Res.string.diagnostics_app_lifecycle),
+                        enumDisplayName(it),
+                    ),
+                )
+            }
+        }
+    return DiagnosticsSection(stringResource(Res.string.diagnostics_section_map), rows)
+}
+
+/** Sensors report at ~50 Hz, so this long without one in auto mode means they've stopped. */
+private const val MAP_ORIENTATION_STALE_SECONDS = 2.0
 
 @Composable
 private fun onOffText(enabled: Boolean): String =
@@ -669,7 +749,7 @@ private fun DiagnosticRow(
         Text(
             label,
             style = MaterialTheme.typography.bodyMedium,
-            modifier = Modifier.weight(0.4f),
+            modifier = Modifier.weight(0.4f).padding(end = 12.dp),
         )
         Text(
             value,
@@ -697,8 +777,9 @@ private fun sensorText(row: SensorRow): String =
     }
 
 /**
- * " (52 Hz, 0.1s ago)" for a present, reporting sensor — nothing for an absent one or one that
- * hasn't delivered a first event yet, since [sensorText] already says so.
+ * "\n(52 Hz, 0.1s ago)" for a present, reporting sensor — nothing for an absent one or one that
+ * hasn't delivered a first event yet, since [sensorText] already says so. Always on its own
+ * line so the row height doesn't change with the width of the values.
  */
 @Composable
 private fun rateSuffix(
@@ -707,7 +788,7 @@ private fun rateSuffix(
 ): String {
     if (row !is SensorRow.Present || rate == null) return ""
     val staleForMillis = rate.staleForMillis ?: return ""
-    return " " +
+    return "\n" +
         formattedStringResource(
             Res.string.diagnostics_sensor_rate_format,
             rate.hz,

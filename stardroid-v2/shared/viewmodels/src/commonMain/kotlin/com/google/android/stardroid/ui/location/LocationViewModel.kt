@@ -200,6 +200,9 @@ class LocationViewModel(
 
     // ---- Controller delegates (one surface for the UI) -----------------------------------
 
+    /** Permanent permission refusals that left a manual location in place. */
+    val manualRefusals = controller.manualRefusals
+
     fun switchToAuto() = controller.switchToAuto()
 
     fun switchToManual() = controller.switchToManual()

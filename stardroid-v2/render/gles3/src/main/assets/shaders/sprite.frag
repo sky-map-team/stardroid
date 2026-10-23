@@ -7,7 +7,7 @@ flat in int vMode;
 
 uniform sampler2D uTexture;
 uniform vec2 uTexelSize;
-uniform float uNightMode;
+uniform bool uNightMode;
 // Outline colour and width in texels. A halo is what finally makes a label legible against
 // whatever it happens to sit on — issue #1014 was a green horizon label on a green horizon glow,
 // and the stopgap was to repaint the label. On GLES1 an outline means rasterising and drawing a

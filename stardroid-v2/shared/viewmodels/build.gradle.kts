@@ -23,6 +23,7 @@ kotlin {
             api(project(":shared:layers"))
             api(project(":shared:model"))
             api(project(":data"))
+            api(libs.androidx.lifecycle.common)
             api(libs.androidx.lifecycle.viewmodel)
             api(libs.kotlinx.coroutines.core)
         }

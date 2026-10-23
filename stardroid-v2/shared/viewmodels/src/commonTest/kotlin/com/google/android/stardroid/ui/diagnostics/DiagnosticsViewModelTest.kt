@@ -9,6 +9,7 @@
 
 package com.google.android.stardroid.ui.diagnostics
 
+import androidx.lifecycle.Lifecycle
 import com.google.android.stardroid.analytics.AnalyticsEvents
 import com.google.android.stardroid.analytics.FakeAnalytics
 import com.google.android.stardroid.astronomy.LocalFrame
@@ -26,6 +27,7 @@ import com.google.android.stardroid.sensors.OrientationSample
 import com.google.android.stardroid.sensors.OrientationSource
 import com.google.android.stardroid.sensors.SensorAccuracy
 import com.google.android.stardroid.sensors.SensorKind
+import com.google.android.stardroid.sensors.SensorPath
 import com.google.android.stardroid.sensors.SensorReading
 import com.google.android.stardroid.settings.FakeSettings
 import com.google.android.stardroid.settings.OneEuroEaseOff
@@ -34,6 +36,7 @@ import com.google.android.stardroid.startup.Experiment
 import com.google.android.stardroid.startup.ExperimentConfig
 import com.google.android.stardroid.startup.FetchResult
 import com.google.android.stardroid.testing.assertThat
+import com.google.android.stardroid.ui.map.ReferenceFrame
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.Flow
@@ -47,6 +50,7 @@ import kotlinx.coroutines.test.resetMain
 import kotlinx.coroutines.test.runCurrent
 import kotlinx.coroutines.test.runTest
 import kotlinx.coroutines.test.setMain
+import kotlinx.datetime.Clock
 import kotlinx.datetime.Instant
 import kotlin.test.AfterTest
 import kotlin.test.BeforeTest
@@ -80,6 +84,8 @@ class DiagnosticsViewModelTest {
         )
     private val orientationSamples = MutableSharedFlow<OrientationSample>(replay = 1)
     private val orientationSource = FakeOrientationSource(orientationSamples)
+    private var mapReferenceFrame = ReferenceFrame.SENSOR
+    private var lastMapOrientationAtMillis: Long? = null
 
     private val viewModel by lazy {
         DiagnosticsViewModel(
@@ -102,6 +108,9 @@ class DiagnosticsViewModelTest {
             localFrame = localFrame,
             ioContext = dispatcher,
             analytics = analytics,
+            mapReferenceFrame = { mapReferenceFrame },
+            lastMapOrientationAtMillis = { lastMapOrientationAtMillis },
+            processLifecycleState = { Lifecycle.State.RESUMED },
         )
     }
 
@@ -111,6 +120,11 @@ class DiagnosticsViewModelTest {
         private val samples: Flow<OrientationSample>,
     ) : OrientationSource {
         override val available = true
+
+        override var rejectedSampleCount = 0
+
+        // No fused sensor, so the Gyro setting can't select that path.
+        override fun sensorPath(disableGyro: Boolean) = SensorPath.ACCELEROMETER_COMPASS
 
         override fun orientations(): Flow<Matrix3> = throw NotImplementedError("unused in tests")
 
@@ -215,6 +229,50 @@ class DiagnosticsViewModelTest {
             assertThat(snapshot.useMagneticCorrection).isTrue()
             assertThat(snapshot.viewDirectionMode).isEqualTo(ViewDirectionMode.TELESCOPE)
             assertThat(snapshot.dontShowCalibrationDialog).isTrue()
+            collector.cancel()
+        }
+
+    @Test
+    fun `the gyro row reports the legacy path on a device without a fused sensor`() =
+        testScope.runTest {
+            // This fixture has no rotation-vector sensor, so the setting can't select it.
+            settings.disableGyroState.value = false
+            val collector = launch { viewModel.snapshots.collect {} }
+            runCurrent()
+            assertThat(viewModel.snapshots.value.sensorPath)
+                .isEqualTo(SensorPath.ACCELEROMETER_COMPASS)
+            collector.cancel()
+        }
+
+    @Test
+    fun `snapshot reports what the map is doing with the sensors`() =
+        testScope.runTest {
+            val collector = launch { viewModel.snapshots.collect {} }
+            runCurrent()
+            assertThat(viewModel.snapshots.value.mapReferenceFrame).isEqualTo(ReferenceFrame.SENSOR)
+            assertThat(viewModel.snapshots.value.mapOrientationAgeSeconds).isNull()
+            assertThat(viewModel.snapshots.value.rejectedSensorSamples).isEqualTo(0)
+            assertThat(viewModel.snapshots.value.processLifecycleState)
+                .isEqualTo(Lifecycle.State.RESUMED)
+
+            mapReferenceFrame = ReferenceFrame.MANUAL
+            lastMapOrientationAtMillis = Clock.System.now().toEpochMilliseconds() - 3_000
+            orientationSource.rejectedSampleCount = 4
+            advanceTimeBy(DiagnosticsViewModel.UPDATE_PERIOD_MILLIS + 1)
+            runCurrent()
+            assertThat(viewModel.snapshots.value.mapReferenceFrame).isEqualTo(ReferenceFrame.MANUAL)
+            assertThat(viewModel.snapshots.value.mapOrientationAgeSeconds).isWithin(1.0).of(3.0)
+            assertThat(viewModel.snapshots.value.rejectedSensorSamples).isEqualTo(4)
+            collector.cancel()
+        }
+
+    @Test
+    fun `orientation age never goes negative when the wall clock steps back`() =
+        testScope.runTest {
+            lastMapOrientationAtMillis = Clock.System.now().toEpochMilliseconds() + 60_000
+            val collector = launch { viewModel.snapshots.collect {} }
+            runCurrent()
+            assertThat(viewModel.snapshots.value.mapOrientationAgeSeconds).isEqualTo(0.0)
             collector.cancel()
         }
 

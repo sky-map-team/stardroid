@@ -70,8 +70,9 @@ assets/calibration/calib.gif
 
 
 [third-party]
-# Scientific imagery under its own terms — public domain (NASA/ESA/JPL) or CC BY 4.0
-# (ESO, IAU, IAU/Sky & Telescope, EHT). Attribution is carried in res/values/credits.xml.
+# Scientific imagery under its own terms — public domain (NASA/ESA/JPL), CC BY 4.0
+# (ESO, IAU, IAU/Sky & Telescope, EHT) or CC BY-SA 4.0 (individual Commons contributors,
+# credited on the card). Attribution is carried in res/values/credits.xml.
 # Explicitly NOT covered by the reserved-rights notice, per assets/planets/SOURCES.md.
 assets/celestial_images/**
 assets/planets/*.webp

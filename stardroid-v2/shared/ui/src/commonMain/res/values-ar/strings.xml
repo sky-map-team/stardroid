@@ -65,7 +65,7 @@
     <string name="layer_horizon">الأفق</string>
     <string name="layer_ecliptic">مسير الشمس</string>
     <string name="layer_altaz_grid" translation_description="Toggle label for the layer showing the altitude/azimuth (horizontal) coordinate grid, for naked-eye or manual alt-az mount observers.">شبكة الارتفاع والسمت</string>
-    <string name="layer_sky_gradient">تدرج السماء</string>
+    <string name="layer_sky_gradient" translation_description="Toggle label for the daytime sky-brightness gradient and the ground coloring.">ألوان السماء</string>
     <string name="layers_sheet_title" translation_description="Title of the bottom sheet listing sky map layers the user can show or hide.">الطبقات</string>
     <string name="layers_group_objects" translation_description="Layers-sheet group header for layers that draw sky objects (stars, planets, deep-sky objects).">الأجرام</string>
     <string name="layers_group_reference" translation_description="Layers-sheet group header for reference elements drawn over the sky (coordinate grid, horizon, ecliptic).">المراجع</string>
@@ -400,9 +400,7 @@
     <string name="diagnostics_reverse_magnetic_z" translation_description="Row label in the diagnostics screen for whether the magnetometer's Z axis is reversed">عكس المحور المغناطيسي Z</string>
     <string name="diagnostics_use_magnetic_correction_setting" translation_description="Row label in the diagnostics screen for whether magnetic declination correction is applied">التصحيح المغناطيسي</string>
     <string name="diagnostics_view_direction_mode" translation_description="Row label in the diagnostics screen for which phone axis is treated as pointing at the sky">اتجاه العرض</string>
-    <string name="diagnostics_calibration_dialog" translation_description="Row label in the diagnostics screen for whether the automatic compass-calibration dialog is suppressed">نافذة المعايرة</string>
-    <string name="diagnostics_calibration_dialog_suppressed" translation_description="Value shown for the calibration dialog row when the automatic dialog is suppressed">مكتم</string>
-    <string name="diagnostics_calibration_dialog_shown" translation_description="Value shown for the calibration dialog row when the automatic dialog is not suppressed">معروضة</string>
+    <string name="diagnostics_calibration_dialog" translation_description="Row label in the diagnostics screen for whether the compass-calibration screen may open automatically; value is On or Off">مطالبة المعايرة التلقائية</string>
     <string name="diagnostics_jitter_raw" translation_description="Row label in the diagnostics screen for how much the sensor-derived pointing wobbles before smoothing is applied">الاهتزاز (خام)</string>
     <string name="diagnostics_jitter_smoothed" translation_description="Row label in the diagnostics screen for how much the sensor-derived pointing wobbles after smoothing is applied">الاهتزاز (ممنّع)</string>
     <string name="diagnostics_jitter_format" translation_description="Row value in the diagnostics screen showing the standard deviation of azimuth and altitude over a trailing window, in degrees. \'az\' abbreviates azimuth, \'alt\' abbreviates altitude, the sigma character denotes standard deviation. %1$.2f is the azimuth standard deviation in degrees, %2$.2f is the altitude standard deviation in degrees.">السمت σ%1$.2f°، الارتفاع σ%2$.2f°</string>
@@ -473,4 +471,73 @@
     <string name="label_size_hint_action" translation_description="Action button on the label size snackbar; opens the app\'s Settings screen, where the user can change how large the sky labels are">الإعدادات</string>
     <string name="auto_level_on_toast" translation_description="Brief confirmation shown when a double tap turns horizon auto-leveling on in manual mode">الموازنة التلقائية للأفق قيد التشغيل</string>
     <string name="auto_level_off_toast" translation_description="Brief confirmation shown when a double tap turns horizon auto-leveling off in manual mode">الموازنة التلقائية للأفق متوقفة</string>
+    <string name="diagnostics_app_lifecycle" translation_description="Row label in the diagnostics screen for the app\'s technical lifecycle state (for example Started or Resumed), which controls whether sensors are listened to">دورة حياة التطبيق</string>
+    <string name="diagnostics_experiments_fetch_now" translation_description="Label on a button in the diagnostics screen that downloads the feature-flag config from the server immediately">جلب علامات التجارب الآن</string>
+    <string name="diagnostics_experiments_last_fetched" translation_description="Row label in the diagnostics experiment flags section: when the feature-flag config was last downloaded from the server">آخر جلب</string>
+    <string name="diagnostics_experiments_never_fetched" translation_description="Row value in the diagnostics experiment flags section when the feature-flag config has never been downloaded">أبداً</string>
+    <string name="diagnostics_gyro_none" translation_description="Value shown for the gyro row when the device has no sensors that can supply orientation">لا شيء</string>
+    <string name="diagnostics_map_mode" translation_description="Row label in the diagnostics screen for whether the map follows the phone\'s sensors or is moved by dragging">الوضع</string>
+    <string name="diagnostics_map_mode_auto" translation_description="Value shown for the map mode row when the map follows the phone\'s sensors (the app calls this auto mode)">تلقائي (مستشعرات)</string>
+    <string name="diagnostics_map_mode_manual" translation_description="Value shown for the map mode row when the map is moved by dragging (the app calls this manual mode)">يدوي</string>
+    <string name="diagnostics_map_orientation" translation_description="Row label in the diagnostics screen for how long ago the map last received the phone\'s orientation from its sensors">آخر تحديث للاتجاه</string>
+    <string name="diagnostics_map_orientation_format" translation_description="Row value in the diagnostics screen giving how long ago the map last received the phone\'s orientation. %1$.1f is a number of seconds.">قبل %1$.1f ثانية</string>
+    <string name="diagnostics_map_orientation_none" translation_description="Value shown for the last orientation update row when the map has not received any orientation from the sensors">لم يتم استلام أي شيء</string>
+    <string name="diagnostics_rejected_samples" translation_description="Row label in the diagnostics screen for how many sensor readings have been thrown away as invalid since the app started">عينات المستشعر المرفوضة (منذ البدء)</string>
+    <string name="diagnostics_section_experiments" translation_description="Section heading in the diagnostics screen listing the current feature-flag (experiment) values">علامات التجارب</string>
+    <string name="diagnostics_section_map" translation_description="Section heading in the diagnostics screen for what the sky map itself is doing with the sensor readings">الخريطة</string>
+    <string name="diagnostics_smoother_heals" translation_description="Row label in the diagnostics screen for how many times the orientation smoother had to reset itself after producing an invalid value since the app started">إعادة ضبط المُنعِّم (منذ البدء)</string>
+    <string name="layer_help_altaz_grid" translation_description="Long-press explanation of the alt/az grid layer.">
+    شبكة من الارتفاع (الارتفاع فوق الأفق) والسمت (اتجاه البوصلة). على عكس الشبكة السماوية، فهي ثابتة على أفقك وليست على النجوم.
+    </string>
+    <string name="layer_help_camera" translation_description="Long-press explanation of the through-camera toggle.">
+    يعرض الكاميرا الحية خلف خريطة النصف الكري لتتراكب السماء المرسومة مع السماء الحقيقية. يتطلب حساسات الحركة.
+    </string>
+    <string name="layer_help_close" translation_description="Button that dismisses the layer help popup.">فهمت</string>
+    <string name="layer_help_constellations" translation_description="Long-press explanation of the constellations layer.">خطوط وأسماء الأبراج لمساعدتك على استكشاف أنماط النجوم بسهولة.</string>
+    <string name="layer_help_customizable" translation_description="Heading in the layer help popup above the list of customizable options.">ما يمكنك تخصيصه</string>
+    <string name="layer_help_customize" translation_description="Button in the layer help popup that opens the Layers sheet on that layer's options.">تخصيص</string>
+    <string name="layer_help_deep_sky" translation_description="Long-press explanation of the deep-sky layer.">
+    المجرات والسدم وتجمعات النجوم: أجسام تقع بعيداً جداً عن نظامنا الشمسي. يحتاج الكثير منها إلى مناظير ثنائية العينية أو تلسكوب لرؤيتها حقاً.
+    </string>
+    <string name="layer_help_ecliptic" translation_description="Long-press explanation of the ecliptic layer.">
+    المسار الذي تتبعه الشمس عبر السماء خلال العام. يظل القمر والكواكب قريبين منه دائمًا.
+    </string>
+    <string name="layer_help_expand_hint" translation_description="Hint in the layer help popup for layers with options, pointing to the arrow button on the row.">انقر على السهم الموجود في الصف لتغيير هذه الإعدادات.</string>
+    <string name="layer_help_grid" translation_description="Long-press explanation of the celestial grid layer.">
+    شبكة الإحداثيات السماوية للمطلع المستقيم والميل: ما يعادل خطوط العرض والطول في السماء. وهي ثابتة بالنسبة للنجوم.
+    </string>
+    <string name="layer_help_horizon" translation_description="Long-press explanation of the horizon layer.">خط الأفق ونقاط البوصلة، لتتمكن من معرفة اتجاه الشمال وموقع الأرض.</string>
+    <string name="layer_help_hud" translation_description="Long-press explanation of the pointing readout toggle.">عرض توضيحي لاتجاه هاتفك: اتجاه البوصلة والارتفاع.</string>
+    <string name="layer_help_long_click_label" translation_description="Accessibility label for the long-press action on a layer row, which shows an explanation of the layer.">إظهار وظيفة هذا العنصر</string>
+    <string name="layer_help_meteor_showers" translation_description="Long-press explanation of the meteor showers layer.">نقطة إشعاع كل زخة شهب سنوية: النقطة في السماء التي يبدو أن الشهب تنطلق منها.</string>
+    <string name="layer_help_options_altaz_grid" translation_description="Long-press note listing what can be customized on the alt/az grid layer.">عدد الخطوط: 8 أو 12 أو 24 خط اتجاه.</string>
+    <string name="layer_help_options_grid" translation_description="Long-press note listing what can be customized on the celestial grid layer.">عدد الخطوط: خط كل 3 أو 2 أو 1 ساعة وكل 30° أو 15° أو 10°.</string>
+    <string name="layer_help_options_meteor_showers" translation_description="Long-press note listing what can be customized on the meteor showers layer.">تنبيهات الذروة: إشعار في مساء اليوم الذي تبلغ فيه الزخة ذروتها السنوية.</string>
+    <string name="layer_help_options_satellites" translation_description="Long-press note listing what can be customized on the satellites layer.">تنبيهات المرور: إشعار قبل أفضل مرور مرئي كل ليلة.</string>
+    <string name="layer_help_options_solar_system" translation_description="Long-press note listing what can be customized on the solar system layer.">
+    حجم القرص: حجم رسم الشمس والقمر والكواكب.
+تنبيهات الخسوف: إشعار قبل حدوث خسوف القمر.
+    </string>
+    <string name="layer_help_satellites" translation_description="Long-press explanation of the satellites layer.">
+    الأقمار الصناعية مثل محطة الفضاء الدولية وتيانغونغ، تظهر في مواقعها الحالية. تتطلب بيانات مدارية مُحَمَّلة مؤخراً.
+    </string>
+    <string name="layer_help_sky_gradient" translation_description="Long-press explanation of the sky coloring toggle.">يظلل السماء لتناسب وقت اليوم، ساطعة نهارًا ومظلمة ليلاً، مع تلوين الأرض.</string>
+    <string name="layer_help_solar_system" translation_description="Long-press explanation of the solar system layer.">الشمس، والقمر (مع أطواره الحالية)، والكواكب.</string>
+    <string name="layer_help_stars" translation_description="Long-press explanation of the stars layer.">
+    النجوم، محددة الأحجام حسب السطوع والألوان حسب الصنف. انقر على أي نجمة لمعرفة التفاصيل.
+    </string>
+    <string name="layer_param_radec_grid_density" translation_description="Label for the celestial (RA/Dec) grid's line-count setting.">عدد الخطوط</string>
+    <string name="layer_param_radec_grid_density_coarse_desc" translation_description="Explains the coarse celestial grid density: a meridian every 3 hours of right ascension and a circle every 30 degrees of declination.">خطوط الطول كل 3 ساعات، والدوائر كل 30 درجة</string>
+    <string name="layer_param_radec_grid_density_fine_desc" translation_description="Explains the fine celestial grid density: a meridian every hour of right ascension and a circle every 10 degrees of declination.">خطوط الطول كل ساعة، والدوائر كل 10 درجات</string>
+    <string name="layer_param_radec_grid_density_medium_desc" translation_description="Explains the medium celestial grid density: a meridian every 2 hours of right ascension and a circle every 15 degrees of declination.">خطوط الطول كل ساعتين، والدوائر كل 15 درجة</string>
+    <string name="layer_param_shower_alerts" translation_description="Label for the setting that turns on a notification on the evening a meteor shower peaks.">تنبيهات الذروة</string>
+    <string name="layer_param_shower_alerts_description" translation_description="Explains what the meteor-shower alert setting does: a notification on the evening a shower reaches its annual peak.">إشعاري في مساء ذروة الشهب</string>
+    <string name="settings_announcements" translation_description="Preference title: occasional messages from the Sky Map team about rare sky events, shown as a notification, in the widget and when the app opens">رسائل من Sky Map</string>
+    <string name="settings_announcements_summary" translation_description="Explanation of the announcements preference">
+    تنبيهات نادرة مثل الشفق القطبى القوى أو كوكب لامع. تظهر كإشعار، فى ويدجت "السماء الليلة"، أو عند فتح التطبيق.
+    </string>
+    <string name="settings_eclipse_alerts" translation_description="Preference title: notify shortly before a lunar eclipse begins">خسوف القمر</string>
+    <string name="settings_eclipse_alerts_summary" translation_description="Explanation of the lunar-eclipse notification preference">تنبيه واحد قبل بدء خسوف القمر</string>
+    <string name="settings_pass_alerts" translation_description="Preference title: notify shortly before a satellite passes overhead">مرور الأقمار الصناعية</string>
+    <string name="settings_pass_alerts_summary" translation_description="Explanation of the satellite-pass notification preference">تنبيه واحد قبل أفضل مرور مرئي في الليل</string>
 </resources>

@@ -83,11 +83,15 @@ class Mesh(
             buffer: Int,
             data: FloatBuffer,
             floats: Int,
-            usage: Int = GLES30.GL_STATIC_DRAW,
         ) {
             data.position(0)
             GLES30.glBindBuffer(GLES30.GL_ARRAY_BUFFER, buffer)
-            GLES30.glBufferData(GLES30.GL_ARRAY_BUFFER, floats * FLOAT_BYTES, data, usage)
+            GLES30.glBufferData(
+                GLES30.GL_ARRAY_BUFFER,
+                floats * FLOAT_BYTES,
+                data,
+                GLES30.GL_STATIC_DRAW,
+            )
         }
 
         /** Uploads [data]'s first [shorts] shorts into [buffer] as a static element buffer. */

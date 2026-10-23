@@ -66,7 +66,7 @@
     <string name="layer_horizon">افق</string>
     <string name="layer_ecliptic">دایرة البروج</string>
     <string name="layer_altaz_grid" translation_description="Toggle label for the layer showing the altitude/azimuth (horizontal) coordinate grid, for naked-eye or manual alt-az mount observers.">شبکه ارتفاع/سمت</string>
-    <string name="layer_sky_gradient">گرادیان آسمان</string>
+    <string name="layer_sky_gradient" translation_description="Toggle label for the daytime sky-brightness gradient and the ground coloring.">رنگ‌آمیزی آسمان</string>
     <string name="layers_sheet_title" translation_description="Title of the bottom sheet listing sky map layers the user can show or hide.">لایه‌ها</string>
     <string name="layers_group_objects" translation_description="Layers-sheet group header for layers that draw sky objects (stars, planets, deep-sky objects).">اجرام</string>
     <string name="layers_group_reference" translation_description="Layers-sheet group header for reference elements drawn over the sky (coordinate grid, horizon, ecliptic).">مرجع</string>
@@ -414,9 +414,7 @@
     <string name="diagnostics_reverse_magnetic_z" translation_description="Row label in the diagnostics screen for whether the magnetometer's Z axis is reversed">معکوس کردن محور Z مغناطیسی</string>
     <string name="diagnostics_use_magnetic_correction_setting" translation_description="Row label in the diagnostics screen for whether magnetic declination correction is applied">تصحیح مغناطیسی</string>
     <string name="diagnostics_view_direction_mode" translation_description="Row label in the diagnostics screen for which phone axis is treated as pointing at the sky">جهت دید</string>
-    <string name="diagnostics_calibration_dialog" translation_description="Row label in the diagnostics screen for whether the automatic compass-calibration dialog is suppressed">کادر محاوره‌ای کالیبراسیون</string>
-    <string name="diagnostics_calibration_dialog_suppressed" translation_description="Value shown for the calibration dialog row when the automatic dialog is suppressed">سرکوب‌شده</string>
-    <string name="diagnostics_calibration_dialog_shown" translation_description="Value shown for the calibration dialog row when the automatic dialog is not suppressed">نمایش داده شده</string>
+    <string name="diagnostics_calibration_dialog" translation_description="Row label in the diagnostics screen for whether the compass-calibration screen may open automatically; value is On or Off">اعلان کالیبراسیون خودکار</string>
     <string name="diagnostics_jitter_raw" translation_description="Row label in the diagnostics screen for how much the sensor-derived pointing wobbles before smoothing is applied">لرزش (خام)</string>
     <string name="diagnostics_jitter_smoothed" translation_description="Row label in the diagnostics screen for how much the sensor-derived pointing wobbles after smoothing is applied">لرزش (هموارشده)</string>
     <string name="diagnostics_jitter_format" translation_description="Row value in the diagnostics screen showing the standard deviation of azimuth and altitude over a trailing window, in degrees. \'az\' abbreviates azimuth, \'alt\' abbreviates altitude, the sigma character denotes standard deviation. %1$.2f is the azimuth standard deviation in degrees, %2$.2f is the altitude standard deviation in degrees.">سمت σ%1$.2f°، ارتفاع σ%2$.2f°</string>
@@ -489,4 +487,76 @@
     <string name="label_size_hint_action" translation_description="Action button on the label size snackbar; opens the app\'s Settings screen, where the user can change how large the sky labels are">تنظیمات</string>
     <string name="auto_level_on_toast" translation_description="Brief confirmation shown when a double tap turns horizon auto-leveling on in manual mode">تراز خودکار افق روشن شد</string>
     <string name="auto_level_off_toast" translation_description="Brief confirmation shown when a double tap turns horizon auto-leveling off in manual mode">تراز خودکار افق خاموش شد</string>
+    <string name="diagnostics_app_lifecycle" translation_description="Row label in the diagnostics screen for the app\'s technical lifecycle state (for example Started or Resumed), which controls whether sensors are listened to">چرخه عمر برنامه</string>
+    <string name="diagnostics_experiments_fetch_now" translation_description="Label on a button in the diagnostics screen that downloads the feature-flag config from the server immediately">دریافت پرچم‌های آزمایشی هم‌اکنون</string>
+    <string name="diagnostics_experiments_last_fetched" translation_description="Row label in the diagnostics experiment flags section: when the feature-flag config was last downloaded from the server">آخرین دریافت</string>
+    <string name="diagnostics_experiments_never_fetched" translation_description="Row value in the diagnostics experiment flags section when the feature-flag config has never been downloaded">هرگز</string>
+    <string name="diagnostics_gyro_none" translation_description="Value shown for the gyro row when the device has no sensors that can supply orientation">هیچ</string>
+    <string name="diagnostics_map_mode" translation_description="Row label in the diagnostics screen for whether the map follows the phone\'s sensors or is moved by dragging">حالت</string>
+    <string name="diagnostics_map_mode_auto" translation_description="Value shown for the map mode row when the map follows the phone\'s sensors (the app calls this auto mode)">خودکار (حسگرها)</string>
+    <string name="diagnostics_map_mode_manual" translation_description="Value shown for the map mode row when the map is moved by dragging (the app calls this manual mode)">دستی</string>
+    <string name="diagnostics_map_orientation" translation_description="Row label in the diagnostics screen for how long ago the map last received the phone\'s orientation from its sensors">آخرین به‌روزرسانی جهت‌گیری</string>
+    <string name="diagnostics_map_orientation_format" translation_description="Row value in the diagnostics screen giving how long ago the map last received the phone\'s orientation. %1$.1f is a number of seconds.">%1$.1f ثانیه پیش</string>
+    <string name="diagnostics_map_orientation_none" translation_description="Value shown for the last orientation update row when the map has not received any orientation from the sensors">دریافت نشده</string>
+    <string name="diagnostics_rejected_samples" translation_description="Row label in the diagnostics screen for how many sensor readings have been thrown away as invalid since the app started">نمونه‌های حسگر رد شده (از زمان شروع)</string>
+    <string name="diagnostics_section_experiments" translation_description="Section heading in the diagnostics screen listing the current feature-flag (experiment) values">پرچم‌های آزمایشی</string>
+    <string name="diagnostics_section_map" translation_description="Section heading in the diagnostics screen for what the sky map itself is doing with the sensor readings">نقشه</string>
+    <string name="diagnostics_smoother_heals" translation_description="Row label in the diagnostics screen for how many times the orientation smoother had to reset itself after producing an invalid value since the app started">بازنشانی‌های هموارکننده (از زمان شروع)</string>
+    <string name="layer_help_altaz_grid" translation_description="Long-press explanation of the alt/az grid layer.">
+    یک شبکه از ارتفاع (ارتفاع از افق) و سمت (جهت قطب‌نما). برخلاف شبکه سماوی، این شبکه به افق شما ثابت است، نه به ستارگان.
+    </string>
+    <string name="layer_help_camera" translation_description="Long-press explanation of the through-camera toggle.">
+    نمایش تصویر زنده دوربین در پشت نقشه آسمان به طوری که آسمان ترسیم‌شده روی آسمان واقعی منطبق شود. نیاز به حسگرهای حرکتی دارد.
+    </string>
+    <string name="layer_help_close" translation_description="Button that dismisses the layer help popup.">متوجه شدم</string>
+    <string name="layer_help_constellations" translation_description="Long-press explanation of the constellations layer.">خطوط و نام‌های صورت‌های فلکی برای کمک به یافتن مسیر در میان الگوهای ستاره‌ای.</string>
+    <string name="layer_help_customizable" translation_description="Heading in the layer help popup above the list of customizable options.">موارد قابل سفارشی‌سازی</string>
+    <string name="layer_help_customize" translation_description="Button in the layer help popup that opens the Layers sheet on that layer's options.">سفارشی‌سازی</string>
+    <string name="layer_help_deep_sky" translation_description="Long-press explanation of the deep-sky layer.">
+    کهکشان‌ها، سحابی‌ها و خوشه‌های ستاره‌ای: اجرام بسیار دورتر از منظومه شمسی ما. بسیاری از آن‌ها برای دیدن واقعی به دوربین دوچشمی یا تلسکوپ نیاز دارند.
+    </string>
+    <string name="layer_help_ecliptic" translation_description="Long-press explanation of the ecliptic layer.">
+    مسیری که خورشید در طول یک سال در آسمان طی می‌کند. ماه و سیارات همیشه به آن نزدیک می‌مانند.
+    </string>
+    <string name="layer_help_expand_hint" translation_description="Hint in the layer help popup for layers with options, pointing to the arrow button on the row.">برای تغییر این موارد روی فلش روی سطر ضربه بزنید.</string>
+    <string name="layer_help_grid" translation_description="Long-press explanation of the celestial grid layer.">
+    سیستم مختصات سماوی بعد و میل: معادل عرض و طول جغرافیایی در آسمان. این سیستم به ستاره‌ها ثابت است.
+    </string>
+    <string name="layer_help_horizon" translation_description="Long-press explanation of the horizon layer.">خط افق و جهات قطب‌نما تا بدانید کدام سمت شمال است و زمین کجاست.</string>
+    <string name="layer_help_hud" translation_description="Long-press explanation of the pointing readout toggle.">نمایشگر موقعیت اشاره گوشی شما: جهت قطب‌نما و ارتفاع آن.</string>
+    <string name="layer_help_long_click_label" translation_description="Accessibility label for the long-press action on a layer row, which shows an explanation of the layer.">نمایش عملکرد این مورد</string>
+    <string name="layer_help_meteor_showers" translation_description="Long-press explanation of the meteor showers layer.">
+    کانون هر بارش شهابی سالانه: نقطه‌ای در آسمان که به نظر می‌رسد شهاب‌ها از آنجا ساطع می‌شوند.
+    </string>
+    <string name="layer_help_options_altaz_grid" translation_description="Long-press note listing what can be customized on the alt/az grid layer.">تعداد خطوط: ۸، ۱۲ یا ۲۴ خط جهت‌دهی.</string>
+    <string name="layer_help_options_grid" translation_description="Long-press note listing what can be customized on the celestial grid layer.">تعداد خطوط: یک خط هر ۳، ۲ یا ۱ ساعت و هر ۳۰، ۱۵ یا ۱۰ درجه.</string>
+    <string name="layer_help_options_meteor_showers" translation_description="Long-press note listing what can be customized on the meteor showers layer.">هشدارهای اوج: یک اعلان در شب رسیدن بارش به اوج سالانه خود.</string>
+    <string name="layer_help_options_satellites" translation_description="Long-press note listing what can be customized on the satellites layer.">هشدارهای گذر: یک اعلان پیش از بهترین گذر قابل‌مشاهده در هر شب.</string>
+    <string name="layer_help_options_solar_system" translation_description="Long-press note listing what can be customized on the solar system layer.">
+    اندازه قرص: اندازه رسم خورشید، ماه و سیارات.\nهشدارهای خورشیدگرفتگی/ماه‌گرفتگی: یک اعلان قبل از ماه‌گرفتگی.
+    </string>
+    <string name="layer_help_satellites" translation_description="Long-press explanation of the satellites layer.">
+    ماهواره‌هایی مانند ایستگاه فضایی و تیانگونگ، در موقعیت فعلی‌شان نشان داده می‌شوند. نیاز به اطلاعات مداری به‌تازگی دانلودشده دارد.
+    </string>
+    <string name="layer_help_sky_gradient" translation_description="Long-press explanation of the sky coloring toggle.">
+    آسمان را متناسب با زمان روز رنگ‌آمیزی می‌کند (روز روشن و شب تاریک) و زمین را رنگ می‌دهد.
+    </string>
+    <string name="layer_help_solar_system" translation_description="Long-press explanation of the solar system layer.">خورشید، ماه (همراه با فاز فعلی‌اش) و سیارات.</string>
+    <string name="layer_help_stars" translation_description="Long-press explanation of the stars layer.">
+    ستاره‌ها بر اساس روشنایی اندازه‌گذاری و با رنگ رنگ‌آمیزی شده‌اند. برای جزئیات روی هر ستاره ضربه بزنید.
+    </string>
+    <string name="layer_param_radec_grid_density" translation_description="Label for the celestial (RA/Dec) grid's line-count setting.">تعداد خطوط</string>
+    <string name="layer_param_radec_grid_density_coarse_desc" translation_description="Explains the coarse celestial grid density: a meridian every 3 hours of right ascension and a circle every 30 degrees of declination.">نصف‌النهارها هر ۳ ساعت، دایره‌ها هر ۳۰ درجه</string>
+    <string name="layer_param_radec_grid_density_fine_desc" translation_description="Explains the fine celestial grid density: a meridian every hour of right ascension and a circle every 10 degrees of declination.">نصف‌النهارها هر ساعت، دایره‌ها هر ۱۰ درجه</string>
+    <string name="layer_param_radec_grid_density_medium_desc" translation_description="Explains the medium celestial grid density: a meridian every 2 hours of right ascension and a circle every 15 degrees of declination.">نصف‌النهارها هر ۲ ساعت، دایره‌ها هر ۱۵ درجه</string>
+    <string name="layer_param_shower_alerts" translation_description="Label for the setting that turns on a notification on the evening a meteor shower peaks.">هشدار اوج بارش</string>
+    <string name="layer_param_shower_alerts_description" translation_description="Explains what the meteor-shower alert setting does: a notification on the evening a shower reaches its annual peak.">ارسال اعلان در شب اوج بارش شهابی</string>
+    <string name="settings_announcements" translation_description="Preference title: occasional messages from the Sky Map team about rare sky events, shown as a notification, in the widget and when the app opens">پیام‌هایی از Sky Map</string>
+    <string name="settings_announcements_summary" translation_description="Explanation of the announcements preference">
+    هشدارهای نادر مانند شفق قطبی قوی یا یک سیاره پرنور. به صورت اعلان، در ویجت آسمان امشب، یا هنگام باز کردن برنامه نمایش داده می‌شود.
+    </string>
+    <string name="settings_eclipse_alerts" translation_description="Preference title: notify shortly before a lunar eclipse begins">ماه‌گرفتگی‌ها</string>
+    <string name="settings_eclipse_alerts_summary" translation_description="Explanation of the lunar-eclipse notification preference">یک هشدار واحد پیش از شروع ماه‌گرفتگی</string>
+    <string name="settings_pass_alerts" translation_description="Preference title: notify shortly before a satellite passes overhead">گذرهای ماهواره‌ای</string>
+    <string name="settings_pass_alerts_summary" translation_description="Explanation of the satellite-pass notification preference">یک هشدار واحد پیش از بهترین گذر قابل‌مشاهده در شب</string>
 </resources>

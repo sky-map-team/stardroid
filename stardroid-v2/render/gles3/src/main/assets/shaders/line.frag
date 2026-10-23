@@ -1,7 +1,7 @@
 precision mediump float;
 
 uniform vec4 uColor;
-uniform float uNightMode;
+uniform bool uNightMode;
 
 out vec4 fragColor;
 

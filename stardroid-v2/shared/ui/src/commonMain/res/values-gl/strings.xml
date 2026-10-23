@@ -384,7 +384,8 @@ Móvete a unha área aberta lonxe de obxectos metálicos e téntao de novo.
         translation_description="Information for the user on how to calibrate the compass when they open the calibration screen. Placeholder is the video URL. Please do not change the &lt; and &gt; markup - the &lt;blockquote&gt; renders as a highlighted callout"><![CDATA[
 O teu teléfono está informando do seu estado de calibración do compás como se amosa arriba.<br/><br/>
 Se é necesario, realiza o movemento en forma de oito (<a href="%s">ver unha demostración</a>) para co soporte físico do teu teléfono recalibre o seu sensor de compás.<br/><br/>
-<blockquote><b>Importante:</b> a calibración axuda ao sensor a reiniciarse internamente. Non significa co compás sexa necesariamente preciso!<br/>A interferencia magnética local (obxectos metálicos, salpicadeiros de coches, fundas de teléfono) aínda pode facer co compás do teu teléfono envíe lecturas imprecisas a Sky Map.</blockquote>
+<blockquote><b>Importante:</b> a calibración axuda ao sensor a reiniciarse internamente. Non significa co compás sexa necesariamente preciso!
+A interferencia magnética local (obxectos metálicos, salpicadeiros de coches, fundas de teléfono) aínda pode facer co compás do teu teléfono envíe lecturas imprecisas a Sky Map.</blockquote>
 <b>Se o mapa non mostra as posicións correctamente, o problema é probablemente o teu teléfono, non Sky Map!</b>
     ]]></string>
     <string name="calibration_low_accuracy_toast" translation_description="Brief toast shown when compass accuracy is low and the user has disabled the calibration screen">O compás do teu teléfono está reportando baixa precisión</string>

@@ -12,10 +12,12 @@ package com.google.android.stardroid.ui.map
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.IntrinsicSize
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
@@ -27,6 +29,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
+import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.google.android.stardroid.ui.resources.Res
 import com.google.android.stardroid.ui.resources.ar_dimmer_slider
@@ -45,10 +48,10 @@ import kotlin.math.roundToInt
 
 /**
  * The in-AR exposure and dimmer controls (camera-ar-mode.md/D64, exposure levers 1 + 2):
- * shown only while the camera layer is on, riding the chrome show/hide like everything
- * else. The dimmer is the GL scrim ("how bright is the video"); exposure is AE
- * compensation ("what did the sensor capture") — the row hides when the camera doesn't
- * support compensation.
+ * shown only while the camera layer is on, in the HUD's top-right slot, riding the chrome
+ * show/hide like everything else. The dimmer is the GL scrim ("how bright is the video");
+ * exposure is AE compensation ("what did the sensor capture") — the row hides when the camera
+ * doesn't support compensation.
  */
 @Composable
 fun ArControls(
@@ -59,11 +62,15 @@ fun ArControls(
     onIsoFractionChange: (Double) -> Unit,
     onShutterFractionChange: (Double) -> Unit,
     modifier: Modifier = Modifier,
+    hudState: HudState? = null,
+    onResetAlignment: () -> Unit = {},
 ) {
     val shape = RoundedCornerShape(14.dp)
     Column(
         modifier =
             modifier
+                .widthIn(min = AR_PANEL_MIN_WIDTH)
+                .width(IntrinsicSize.Max)
                 .clip(shape)
                 .background(MaterialTheme.colorScheme.surface.copy(alpha = 0.62f))
                 .border(1.dp, MaterialTheme.colorScheme.outline.copy(alpha = 0.3f), shape)
@@ -124,6 +131,13 @@ fun ArControls(
                     },
                 onChange = onShutterFractionChange,
             )
+        }
+        // The HUD this panel replaces owns the drag-to-align readout and its reset, which
+        // are most needed here, so the correction row travels with the panel.
+        if (hudState != null &&
+            HudFormats.correctionActive(hudState.correctionAzDeg, hudState.correctionAltDeg)
+        ) {
+            CorrectionRow(hudState, onResetAlignment)
         }
     }
 }
@@ -189,3 +203,6 @@ private fun ArSliderRow(
         )
     }
 }
+
+/** Wide enough for the correction row, so the panel doesn't resize when it appears. */
+private val AR_PANEL_MIN_WIDTH: Dp = 208.dp

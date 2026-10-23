@@ -15,9 +15,21 @@
     <!-- Re-arms the pass alert (D92 phase 4c) after a reboot, which otherwise silently drops
          any AlarmManager alarm armed before the device restarted. -->
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <!-- CAMERA implies a *rear* camera and autofocus as required, which hides the app from
+         Chromebooks (front camera only). AR mode needs neither. -->
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera.autofocus"
+        android:required="false" />
     <uses-feature
         android:name="android.hardware.camera.any"
         android:required="false" />
+    <!-- Zoom is pinch-only for now, so a pointer-only device can't use the map. -->
+    <uses-feature
+        android:name="android.hardware.touchscreen"
+        android:required="true" />
 
     <application
         android:name=".SkyMapApplication"
@@ -31,6 +43,7 @@
         <activity
             android:name=".ui.MainActivity"
             android:exported="true"
+            android:launchMode="singleTop"
             android:theme="@style/Theme.SkyMap.Starting">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
