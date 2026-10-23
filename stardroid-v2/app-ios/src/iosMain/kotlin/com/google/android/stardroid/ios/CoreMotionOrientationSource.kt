@@ -14,6 +14,7 @@ import com.google.android.stardroid.sensors.OneEuroQuaternionSmoother
 import com.google.android.stardroid.sensors.OrientationSample
 import com.google.android.stardroid.sensors.OrientationSource
 import com.google.android.stardroid.sensors.SensorConfig
+import com.google.android.stardroid.sensors.SensorPath
 import com.google.android.stardroid.sensors.toRotationMatrix3
 import com.google.android.stardroid.sensors.writeQuaternion
 import kotlinx.cinterop.ExperimentalForeignApi
@@ -78,6 +79,11 @@ class CoreMotionOrientationSource(
 
     override val available: Boolean
         get() = motionManager.deviceMotionAvailable
+
+    // CoreMotion's attitude is already fused and there is no legacy path, so the Gyro setting
+    // changes nothing here.
+    override fun sensorPath(disableGyro: Boolean): SensorPath =
+        if (available) SensorPath.FUSED else SensorPath.NONE
 
     private val attitudes: Flow<Attitude> =
         combine(active, trueNorthAllowed) { isActive, trueNorth ->
