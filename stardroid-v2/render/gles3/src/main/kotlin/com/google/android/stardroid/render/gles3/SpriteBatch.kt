@@ -115,7 +115,7 @@ class SpriteBatch(private val program: ShaderProgram) {
         gl.blend(GlState.BlendMode.ALPHA)
         GLES30.glUniform2f(program.uniform("uViewportPx"), viewportWidthPx, viewportHeightPx)
         GLES30.glUniform2f(program.uniform("uTexelSize"), texelSize[0], texelSize[1])
-        GLES30.glUniform1f(program.uniform("uNightMode"), if (nightMode) 1f else 0f)
+        GLES30.glUniform1i(program.uniform("uNightMode"), if (nightMode) 1 else 0)
         GLES30.glUniform4f(
             program.uniform("uHaloColor"),
             haloColor.r,
@@ -142,9 +142,8 @@ class SpriteBatch(private val program: ShaderProgram) {
         clear()
     }
 
-    // Binds through gl rather than raw GL calls — see PointDrawer.upload's KDoc for why a
-    // freed-and-regenerated VAO id makes that matter. The window here is narrower (this runs
-    // once ever, guarded by `vao != 0`, not once per scene change), but it is the same hazard.
+    // Binds through gl rather than raw GL calls — see PointDrawer.upload's KDoc for why. This
+    // runs once ever (guarded by `vao != 0`) but still mid-frame, so the same hazard applies.
     private fun ensureVao(gl: GlState) {
         if (vao != 0) return
         vao = Mesh.genVertexArray()

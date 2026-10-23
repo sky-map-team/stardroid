@@ -85,14 +85,10 @@ object PointDrawer {
     /**
      * Uploads [buffers] into a VAO. Must be called on the GL thread.
      *
-     * Binds through [gl] rather than raw `GLES30.glBindVertexArray` calls, even though this
-     * runs once per scene change rather than once per frame. [GlState] caches the last name it
-     * bound so [draw] can skip a redundant bind — but this method deletes the layer's previous
-     * VAO (via the caller's `Mesh.release()`) immediately before generating this one, and
-     * drivers commonly hand back a just-freed name. An unbind here that [gl] doesn't observe
-     * would leave its cache holding a name that now happens to match the new VAO, so the next
-     * [draw] call's bind-if-changed check would wrongly no-op against whatever is *actually*
-     * bound (0, from this method's own cleanup) instead of the mesh just uploaded.
+     * Binds through [gl], not raw `GLES30` calls. This runs mid-frame (from `cachedMesh`, between
+     * other layers' draws) and leaves VAO 0 bound. [gl] skips a bind it believes is redundant, so
+     * a raw bind here would leave it believing a previous layer's VAO is still bound, and that
+     * layer's next draw would skip its bind and draw against the wrong state.
      */
     fun upload(
         gl: GlState,
@@ -130,7 +126,7 @@ object PointDrawer {
             program.uniform("uMagnitudeLimit"),
             magnitudeLimit?.toFloat() ?: NO_MAGNITUDE_LIMIT,
         )
-        GLES30.glUniform1f(program.uniform("uNightMode"), if (nightMode) 1f else 0f)
+        GLES30.glUniform1i(program.uniform("uNightMode"), if (nightMode) 1 else 0)
         gl.bindVertexArray(mesh.vao)
         GLES30.glDrawArrays(GLES30.GL_POINTS, 0, mesh.count)
     }

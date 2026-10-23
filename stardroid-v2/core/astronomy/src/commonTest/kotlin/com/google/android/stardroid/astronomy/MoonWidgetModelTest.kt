@@ -12,6 +12,7 @@ package com.google.android.stardroid.astronomy
 import com.google.android.stardroid.math.LatLong
 import com.google.android.stardroid.testing.assertThat
 import kotlin.test.Test
+import kotlin.time.Duration.Companion.hours
 
 /**
  * The moon widget's display model (D75). Reference values from published almanacs
@@ -41,6 +42,23 @@ class MoonWidgetModelTest {
         assertThat(moonWidgetModel(utc(2024, 1, 18, 12), LONDON).waxing).isTrue()
         // 2024-01-30: waning gibbous (after the full moon).
         assertThat(moonWidgetModel(utc(2024, 1, 30, 12), LONDON).waxing).isFalse()
+    }
+
+    @Test
+    fun age_countsDaysSinceNewMoon() {
+        // 2024-01-11 11:57 UTC new moon -> 2024-01-25 17:54 UTC full moon is ~14.25 days later.
+        assertThat(moonWidgetModel(utc(2024, 1, 25, 17, 54), LONDON).ageDays)
+            .isWithin(1.0).of(14.25)
+        assertThat(moonWidgetModel(utc(2024, 1, 18, 12), LONDON).ageDays).isWithin(1.0).of(7.0)
+    }
+
+    @Test
+    fun age_wrapsAroundNewMoon() {
+        // 2024-01-11 11:57 UTC new moon: age is near 0 or just under a full month, never outside.
+        for (hour in 0..24 step 6) {
+            val age = moonWidgetModel(utc(2024, 1, 11, 0).plus(hour.hours), LONDON).ageDays
+            assertThat(age < 1.0 || age > 28.5).isTrue()
+        }
     }
 
     @Test

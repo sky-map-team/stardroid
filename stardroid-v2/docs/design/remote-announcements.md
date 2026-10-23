@@ -55,7 +55,7 @@ One RC string parameter, `announcements`:
 
 ## Surfaces
 
-- **Notification**: channel `announcements`, id 72 (never replaces a shower alert or digest).
+- **Notification**: channel `announcements`, id 45, from `SkyNotification` (never replaces a shower alert, digest, pass or eclipse alert).
   Held back 22:00–08:00 local and re-run at 08:00.
 - **Widget**: banner row under the Sky Tonight header; refreshed by the worker.
 - **Interstitial**: after the EULA / welcome / What's New gates clear, once per process.
@@ -64,6 +64,23 @@ One RC string parameter, `announcements`:
 
 - `Experiment.ANNOUNCEMENTS` is the remote kill switch.
 - `Settings.announcementsEnabled` (default on) is the user's opt-out, in Settings → Other.
+
+## Publishing
+
+Use the `skymap.push-announcement` skill (`.claude/skills/skymap.push-announcement/`, script
+`scripts/push_announcement.py`). It edits the `announcements` parameter in the Remote Config
+template of Firebase project `sky-map-1286`; gms only.
+
+- `add <message.json>`, `remove <id>`, `prune`, `enable`, `disable`, `list`. Everything is a
+  dry run unless `--publish` is passed.
+- Messages are validated with the app parser's rules before anything is written. The script
+  refuses a message the app would drop, and refuses to go past 3 live messages.
+- Auth is `gcloud auth print-access-token`; the account needs Remote Config write access.
+  The PUT is unconditional, so the script re-checks the template version just before it.
+- Devices fetch about every 12 h and can't be recalled, so set `start` a day ahead and use a
+  new `id` for any corrected text. `disable` is the emergency stop.
+- There is no targeting in the app. Region-specific messages need a Remote Config condition
+  added by hand in the console.
 
 ## Not built
 

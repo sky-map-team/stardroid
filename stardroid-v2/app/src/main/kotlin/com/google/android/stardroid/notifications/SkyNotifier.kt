@@ -46,14 +46,6 @@ object SkyNotifier {
     const val CHANNEL_DIGEST = "tonight_digest"
     const val CHANNEL_ANNOUNCEMENTS = "announcements"
 
-    // One id: tonight's notification, whichever kind it is — a repost replaces, never stacks.
-    private const val NOTIFICATION_ID = 71
-
-    // Announcements get their own id so one never replaces a shower alert or digest, and their
-    // own PendingIntent request code so FLAG_UPDATE_CURRENT can't overwrite another's extras.
-    private const val ANNOUNCEMENT_NOTIFICATION_ID = 72
-    private const val ANNOUNCEMENT_REQUEST_CODE = 2
-
     /** Channels are cheap to re-create (no-op if present) and map 1:1 to the settings rows. */
     fun ensureChannels(context: Context) {
         val manager = context.getSystemService(NotificationManager::class.java)
@@ -136,12 +128,12 @@ object SkyNotifier {
                     context.getString(R.string.notif_action_mute_showers),
                     PendingIntent.getActivity(
                         context,
-                        1,
+                        SkyNotification.TONIGHT.id,
                         muteIntent,
                         PendingIntent.FLAG_IMMUTABLE or PendingIntent.FLAG_UPDATE_CURRENT,
                     ),
                 ).build()
-        post(context, notification)
+        post(context, notification, SkyNotification.TONIGHT)
     }
 
     /** The tonight digest (mockup notification 3): the widget's highlight lines, verbatim. */
@@ -160,7 +152,7 @@ object SkyNotifier {
                 .setStyle(
                     NotificationCompat.BigTextStyle().bigText(lines.joinToString("\n")),
                 ).build()
-        post(context, notification)
+        post(context, notification, SkyNotification.TONIGHT)
     }
 
     /**
@@ -193,19 +185,19 @@ object SkyNotifier {
                 .setContentIntent(
                     PendingIntent.getActivity(
                         context,
-                        ANNOUNCEMENT_REQUEST_CODE,
+                        SkyNotification.ANNOUNCEMENT.id,
                         contentIntent,
                         PendingIntent.FLAG_IMMUTABLE or PendingIntent.FLAG_UPDATE_CURRENT,
                     ),
                 ).build()
-        return post(context, notification, ANNOUNCEMENT_NOTIFICATION_ID)
+        return post(context, notification, SkyNotification.ANNOUNCEMENT)
     }
 
     /** The one guarded `notify` call: permission re-checked at the moment of posting. */
     private fun post(
         context: Context,
         notification: Notification,
-        id: Int = NOTIFICATION_ID,
+        which: SkyNotification,
     ): Boolean {
         if (Build.VERSION.SDK_INT >= 33 &&
             ContextCompat.checkSelfPermission(
@@ -216,7 +208,7 @@ object SkyNotifier {
             return false
         }
         return try {
-            NotificationManagerCompat.from(context).notify(id, notification)
+            NotificationManagerCompat.from(context).notify(which.id, notification)
             true
         } catch (e: SecurityException) {
             // Permission revoked between the check and the post; stay silent.
@@ -242,7 +234,7 @@ object SkyNotifier {
             .setContentIntent(
                 PendingIntent.getActivity(
                     context,
-                    0,
+                    SkyNotification.TONIGHT.id,
                     contentIntent,
                     PendingIntent.FLAG_IMMUTABLE or PendingIntent.FLAG_UPDATE_CURRENT,
                 ),

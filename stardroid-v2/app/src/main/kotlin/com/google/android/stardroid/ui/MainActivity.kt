@@ -43,11 +43,13 @@ import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.core.view.WindowCompat
 import androidx.glance.appwidget.updateAll
 import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.ProcessLifecycleOwner
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
+import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.google.android.stardroid.CatalogAccess
 import com.google.android.stardroid.R
@@ -62,6 +64,7 @@ import com.google.android.stardroid.camera.SkyCameraPreview
 import com.google.android.stardroid.catalog.CelestialObjectId
 import com.google.android.stardroid.data.satellites.RefreshResult
 import com.google.android.stardroid.layers.LayerRegistry
+import com.google.android.stardroid.layers.SatelliteLayer
 import com.google.android.stardroid.locale.LocaleSource
 import com.google.android.stardroid.location.AndroidGeocoding
 import com.google.android.stardroid.location.LocationController
@@ -116,7 +119,9 @@ import com.google.android.stardroid.widget.TonightWidget
 import com.google.android.stardroid.widget.WidgetScheduler
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.combine
+import kotlinx.coroutines.flow.filterNotNull
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
@@ -135,9 +140,6 @@ import com.google.android.stardroid.settings.Settings as SkyMapSettings
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     private lateinit var glSurfaceView: GLSurfaceView
-
-    /** Filled in by the GL backend once its surface exists; read by the diagnostics screen. */
-    private val rendererInfoStore = RendererInfoStore()
 
     /**
      * The backend this activity's surface was built for. The EGL context version is fixed when
@@ -176,8 +178,14 @@ class MainActivity : ComponentActivity() {
 
     @Inject lateinit var catalogAccess: CatalogAccess
 
+    /** Filled in by the GL backend once its surface exists; read by the diagnostics screen. */
+    @Inject lateinit var rendererInfoStore: RendererInfoStore
+
     /** v1's session anchor: foreground time between onStart and onStop. */
     private var sessionStartTimeMillis = 0L
+
+    /** A launch or [onNewIntent] intent, held until the nav graph exists to act on it. */
+    private val pendingDeepLink = MutableStateFlow<Intent?>(null)
 
     private val mapViewModel: MapViewModel by viewModels {
         viewModelFactory {
@@ -200,6 +208,7 @@ class MainActivity : ComponentActivity() {
     private val layersViewModel: LayersViewModel by viewModels {
         viewModelFactory {
             initializer {
+                val appContext = applicationContext
                 LayersViewModel(
                     settings,
                     analytics,
@@ -208,7 +217,7 @@ class MainActivity : ComponentActivity() {
                         experimentConfig.isEnabled(Experiment.NOTIFICATIONS),
                     satelliteStatus =
                         satelliteUiStatusFlow(
-                            satelliteEntryPoint(this@MainActivity)
+                            satelliteEntryPoint(appContext)
                                 .satelliteElementsRepository(),
                         ),
                     // The ordinary policy-respecting refresh, never the debug force path.
@@ -216,7 +225,7 @@ class MainActivity : ComponentActivity() {
                     onRefreshSatellites = {
                         withContext(Dispatchers.IO) {
                             val repository =
-                                satelliteEntryPoint(this@MainActivity)
+                                satelliteEntryPoint(appContext)
                                     .satelliteElementsRepository()
                             when (val result = repository.refresh()) {
                                 is RefreshResult.Skipped -> result.retryAfter
@@ -232,11 +241,12 @@ class MainActivity : ComponentActivity() {
     private val timeTravelViewModel: TimeTravelViewModel by viewModels {
         viewModelFactory {
             initializer {
+                val locations = locationController.locations
                 TimeTravelViewModel(
                     timeController = timeController,
                     ephemeris = MeeusEphemeris,
                     analytics = analytics,
-                    location = { locationController.locations.value },
+                    location = { locations.value },
                 )
             }
         }
@@ -245,6 +255,10 @@ class MainActivity : ComponentActivity() {
     private val searchViewModel: SearchViewModel by viewModels {
         viewModelFactory {
             initializer {
+                val appContext = applicationContext
+                val locations = locationController.locations
+                val time = timeController
+                val map = mapViewModel
                 SearchViewModel(
                     catalog = catalogAccess::repository,
                     locale = localeSource.specs,
@@ -253,10 +267,31 @@ class MainActivity : ComponentActivity() {
                     settings = settings,
                     logError = { message, cause -> Log.e("SearchViewModel", message, cause) },
                     analytics = analytics,
-                    isManualMode = {
-                        mapViewModel.referenceFrame.value == ReferenceFrame.MANUAL
+                    isManualMode = { map.referenceFrame.value == ReferenceFrame.MANUAL },
+                    location = { locations.value },
+                    satellites = {
+                        trackedSatellites(
+                            appContext,
+                            locations.value,
+                            appContext.getString(R.string.satellite_description),
+                            time.now(),
+                            requireLayerEnabled = false,
+                        )
                     },
-                    location = { locationController.locations.value },
+                    // Application resources follow the live locale; this activity's would be
+                    // frozen at the language it was created in, and the view model outlives it.
+                    satelliteAliases = { norad ->
+                        when (norad) {
+                            SatelliteLayer.ISS_NORAD_ID ->
+                                listOf(appContext.getString(R.string.satellite_search_name_iss))
+                            SatelliteLayer.TIANGONG_NORAD_ID ->
+                                listOf(
+                                    appContext.getString(R.string.satellite_search_name_tiangong),
+                                    "CSS",
+                                )
+                            else -> emptyList()
+                        }
+                    },
                 )
             }
         }
@@ -265,6 +300,9 @@ class MainActivity : ComponentActivity() {
     private val objectInfoViewModel: ObjectInfoViewModel by viewModels {
         viewModelFactory {
             initializer {
+                val appContext = applicationContext
+                val locations = locationController.locations
+                val time = timeController
                 ObjectInfoViewModel(
                     catalog = catalogAccess::repository,
                     locale = localeSource.specs,
@@ -272,34 +310,34 @@ class MainActivity : ComponentActivity() {
                     now = timeController::now,
                     settings = settings,
                     analytics = analytics,
-                    location = { locationController.locations.value },
+                    location = { locations.value },
                     experimentConfig = experimentConfig,
                     moonWidgetPlaced = {
                         WidgetScheduler.hasInstances(
-                            this@MainActivity,
+                            appContext,
                             MoonWidgetReceiver::class.java,
                         )
                     },
                     satellites = {
                         trackedSatellites(
-                            this@MainActivity,
-                            locationController.locations.value,
-                            getString(R.string.satellite_description),
-                            timeController.now(),
+                            appContext,
+                            locations.value,
+                            appContext.getString(R.string.satellite_description),
+                            time.now(),
                         )
                     },
                     passTimesReliable = {
-                        satelliteEntryPoint(this@MainActivity)
+                        satelliteEntryPoint(appContext)
                             .satelliteElementsRepository()
                             .current()
                             .mayShowPassTimes
                     },
                     nextPass = { norad ->
                         nextVisiblePass(
-                            this@MainActivity,
+                            appContext,
                             norad,
-                            locationController.locations.value,
-                            timeController.now(),
+                            locations.value,
+                            time.now(),
                         )
                     },
                 )
@@ -335,10 +373,11 @@ class MainActivity : ComponentActivity() {
         viewModelFactory {
             initializer {
                 val appContext = applicationContext
+                val map = mapViewModel
                 DiagnosticsViewModel(
                     sensorStatus = sensorStatusSource,
                     locationStates = locationController.state,
-                    camera = mapViewModel.camera,
+                    camera = map.camera,
                     settings = settings,
                     declinationSource = declinationSource,
                     now = timeController::now,
@@ -350,9 +389,15 @@ class MainActivity : ComponentActivity() {
                     gpsStatus = { gpsStatus(appContext) },
                     networkStatus = { networkStatus(appContext) },
                     orientationSource = orientationSource,
-                    localFrame = mapViewModel.localFrame,
+                    localFrame = map.localFrame,
                     rendererInfo = rendererInfoStore::get,
                     analytics = analytics,
+                    mapReferenceFrame = { map.referenceFrame.value },
+                    lastMapOrientationAtMillis = { map.lastOrientationAtMillis },
+                    processLifecycleState = {
+                        // Runs off the main thread; currentState's getter doesn't check.
+                        ProcessLifecycleOwner.get().lifecycle.currentState
+                    },
                 )
             }
         }
@@ -382,16 +427,18 @@ class MainActivity : ComponentActivity() {
     private val announcementViewModel: AnnouncementViewModel by viewModels {
         viewModelFactory {
             initializer {
+                val appContext = applicationContext
+                val locales = localeSource
                 AnnouncementViewModel(
                     source = announcementSource,
                     state = announcementState,
                     settings = settings,
                     experimentConfig = experimentConfig,
-                    locale = { localeSource.current },
+                    locale = { locales.current },
                     appVersion =
                         packageManager.getPackageInfo(packageName, 0).longVersionCode,
                     analytics = analytics,
-                    onDismissed = { runCatching { TonightWidget().updateAll(applicationContext) } },
+                    onDismissed = { runCatching { TonightWidget().updateAll(appContext) } },
                 )
             }
         }
@@ -461,16 +508,7 @@ class MainActivity : ComponentActivity() {
         // activity, so only the first creation logs.
         if (savedInstanceState == null) {
             logStartupSnapshot()
-            // A widget tap (D75) lands on the tapped object's info card once the map is up;
-            // the card state waits out any startup gates in ObjectInfoViewModel.
-            intent.getStringExtra(MoonWidget.EXTRA_SHOW_OBJECT_ID)?.let {
-                objectInfoViewModel.show(CelestialObjectId(it))
-            }
-            // An announcement notification or widget banner whose action is a search.
-            intent.getStringExtra(AnnouncementAction.EXTRA_SEARCH_QUERY)?.let {
-                runSearch(it)
-                intent.removeExtra(AnnouncementAction.EXTRA_SEARCH_QUERY)
-            }
+            pendingDeepLink.value = intent
         } else {
             sessionStartTimeMillis = savedInstanceState.getLong(SAVED_SESSION_START_TIME_KEY, 0L)
         }
@@ -573,8 +611,9 @@ class MainActivity : ComponentActivity() {
                 // The start destination is decided once; the gates keep flowing after.
                 val startOnWelcome = remember { gates.needsWarmWelcome }
                 val sensorPresence = remember { sensorPresence() }
+                val navController = rememberNavController()
                 SkyMapNavHost(
-                    navController = rememberNavController(),
+                    navController = navController,
                     startOnWelcome = startOnWelcome,
                     glSurfaceView = glSurfaceView,
                     mapViewModel = mapViewModel,
@@ -606,6 +645,16 @@ class MainActivity : ComponentActivity() {
                     },
                     experimentConfig = experimentConfig,
                 )
+                // The info card is a dialog window and would float above the EULA, so links
+                // wait for acceptance; the pending intent is kept until then.
+                if (!gates.needsEula) {
+                    LaunchedEffect(navController) {
+                        pendingDeepLink.filterNotNull().collect {
+                            pendingDeepLink.value = null
+                            handleDeepLink(it, navController)
+                        }
+                    }
+                }
                 // v1 SplashScreenActivity's gating order: the EULA blocks everything until
                 // accepted (declining exits); What's New then shows on upgrades only. A true
                 // fresh install never gets it (nothing to report); anyone with real
@@ -664,6 +713,37 @@ class MainActivity : ComponentActivity() {
                     )
                 }
             }
+        }
+    }
+
+    // singleTop: a widget or notification tap while the app is open arrives here instead of
+    // stacking a fresh copy of the app on top of the running one (#1105).
+    override fun onNewIntent(intent: Intent) {
+        super.onNewIntent(intent)
+        setIntent(intent)
+        pendingDeepLink.value = intent
+    }
+
+    private fun handleDeepLink(
+        intent: Intent,
+        navController: NavController,
+    ) {
+        // A widget tap (D75) lands on the tapped object's info card. Cards show on the map and
+        // over the gallery, and leaving the gallery dismisses its card, so only other screens
+        // return to the map. During the first-run tour there is no map yet; the card appears
+        // when the tour ends and the map is composed.
+        intent.getStringExtra(MoonWidget.EXTRA_SHOW_OBJECT_ID)?.let {
+            if (navController.currentDestination?.route != Routes.GALLERY) {
+                navController.popBackStack(Routes.MAP, inclusive = false)
+            }
+            objectInfoViewModel.show(CelestialObjectId(it))
+            intent.removeExtra(MoonWidget.EXTRA_SHOW_OBJECT_ID)
+        }
+        // An announcement notification or widget banner whose action is a search.
+        intent.getStringExtra(AnnouncementAction.EXTRA_SEARCH_QUERY)?.let {
+            navController.popBackStack(Routes.MAP, inclusive = false)
+            runSearch(it)
+            intent.removeExtra(AnnouncementAction.EXTRA_SEARCH_QUERY)
         }
     }
 

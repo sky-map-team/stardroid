@@ -232,6 +232,14 @@ object AppModule {
         return object : OrientationSource {
             override val available = delegate.available
 
+            override val rejectedSampleCount: Int
+                get() = delegate.rejectedSampleCount
+
+            override val smootherHealCount: Int
+                get() = delegate.smootherHealCount
+
+            override fun sensorPath(disableGyro: Boolean) = delegate.sensorPath(disableGyro)
+
             override fun orientations(): Flow<Matrix3> =
                 delegate.orientations().flowWithLifecycle(
                     ProcessLifecycleOwner.get().lifecycle,
