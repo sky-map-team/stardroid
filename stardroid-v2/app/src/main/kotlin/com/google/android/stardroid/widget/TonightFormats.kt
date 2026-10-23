@@ -17,7 +17,7 @@ import com.google.android.stardroid.events.CountdownTarget
 import com.google.android.stardroid.events.DARK_MOON_FRACTION
 import com.google.android.stardroid.events.SkyEvent
 import com.google.android.stardroid.layers.ResourceLayerStrings
-import com.google.android.stardroid.layers.SatelliteLayer
+import com.google.android.stardroid.satellites.SatelliteIds
 import com.google.android.stardroid.ui.map.HudFormats
 import com.google.android.stardroid.ui.search.SolarSystemIds
 import kotlinx.datetime.Instant
@@ -61,16 +61,15 @@ internal fun highlightLine(
                     event.pass.satelliteName,
                     formatTime(context, event.pass.start),
                 ),
-                // Direction and peak altitude, the two things you need to point yourself; the
+                // Direction lives on the satellite card; the row is too narrow for it. The
                 // magnitude is shown to one decimal and no more, because the model is only good
                 // to about half a magnitude (D94).
                 context.getString(
-                    R.string.tonight_trailing_pass,
-                    cardinal(context, event.pass.startAzimuthDeg),
+                    R.string.tonight_trailing_pass_peak,
                     event.pass.maxAltitudeDeg.roundToInt(),
                     event.pass.peakMagnitude,
                 ),
-                SatelliteLayer.LAYER_ID.id,
+                SatelliteIds.idFor(event.pass.noradId).value,
             )
         is SkyEvent.ShowerPeak ->
             HighlightLine(

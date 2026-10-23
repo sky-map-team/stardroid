@@ -40,12 +40,18 @@ import androidx.glance.text.TextStyle
 import androidx.glance.unit.ColorProvider
 import com.google.android.stardroid.R
 import com.google.android.stardroid.analytics.AnalyticsEvents
+import com.google.android.stardroid.announcements.AnnouncementAction
+import com.google.android.stardroid.announcements.AnnouncementPolicy
+import com.google.android.stardroid.announcements.Surface
+import com.google.android.stardroid.announcements.appVersionCode
 import com.google.android.stardroid.events.CountdownTarget
 import com.google.android.stardroid.events.SkyEvent
 import com.google.android.stardroid.events.TonightSky
 import com.google.android.stardroid.events.tonightSky
 import com.google.android.stardroid.satellites.tonightSatellitePasses
+import com.google.android.stardroid.startup.Experiment
 import com.google.android.stardroid.ui.MainActivity
+import kotlinx.coroutines.flow.first
 import kotlinx.datetime.Clock
 import kotlinx.datetime.TimeZone
 import kotlinx.datetime.daysUntil
@@ -77,8 +83,9 @@ class TonightWidget : GlanceAppWidget() {
                         .meteorShowers(entryPoint.localeSource().current)
                 },
             ) { location -> tonightSatellitePasses(context, location) }
+        val banner = announcementBanner(entryPoint, context)
         provideContent {
-            TonightContent(sky, context)
+            TonightContent(sky, context, banner)
         }
     }
 }
@@ -118,6 +125,7 @@ class TonightWidgetReceiver : GlanceAppWidgetReceiver() {
 private fun TonightContent(
     sky: TonightSky?,
     context: Context,
+    banner: WidgetBanner?,
 ) {
     Column(
         modifier =
@@ -132,6 +140,7 @@ private fun TonightContent(
     ) {
         if (sky == null) return@Column
         HeaderRow(sky, context)
+        banner?.let { AnnouncementRow(it) }
         if (sky.highlights.isEmpty()) {
             QuietNight(sky.countdown, context)
         } else {
@@ -254,5 +263,74 @@ private fun QuietNight(
             style = TextStyle(color = ColorProvider(MUTED), fontSize = 12.sp),
             modifier = GlanceModifier.padding(top = 2.dp),
         )
+    }
+}
+
+/** The widget's slice of an announcement: localized text plus an optional search query. */
+internal data class WidgetBanner(
+    val title: String,
+    val body: String,
+    val searchQuery: String?,
+)
+
+/** The message the widget should carry right now, or null (flag off, opted out, none due). */
+private suspend fun announcementBanner(
+    entryPoint: WidgetEntryPoint,
+    context: Context,
+): WidgetBanner? {
+    if (!entryPoint.experimentConfig().isEnabled(Experiment.ANNOUNCEMENTS) ||
+        !entryPoint.settings().announcementsEnabled.first()
+    ) {
+        return null
+    }
+    val message =
+        AnnouncementPolicy.next(
+            Surface.WIDGET,
+            Clock.System.now(),
+            entryPoint.announcementSource().current(),
+            entryPoint.announcementState().seen.first(),
+            appVersionCode(context),
+        ) ?: return null
+    val text = message.localized(entryPoint.localeSource().current) ?: return null
+    return WidgetBanner(
+        text.title,
+        text.body,
+        (message.action as? AnnouncementAction.Search)?.query,
+    )
+}
+
+@Composable
+private fun AnnouncementRow(banner: WidgetBanner) {
+    val open =
+        if (banner.searchQuery != null) {
+            actionStartActivity<MainActivity>(
+                actionParametersOf(
+                    ActionParameters.Key<String>(AnnouncementAction.EXTRA_SEARCH_QUERY) to
+                        banner.searchQuery,
+                ),
+            )
+        } else {
+            actionStartActivity<MainActivity>()
+        }
+    Column(
+        modifier = GlanceModifier.fillMaxWidth().padding(top = 7.dp).clickable(open),
+    ) {
+        Text(
+            text = banner.title,
+            style =
+                TextStyle(
+                    color = ColorProvider(STARLIGHT),
+                    fontSize = 13.sp,
+                    fontWeight = FontWeight.Bold,
+                ),
+            maxLines = 1,
+        )
+        if (banner.body.isNotBlank()) {
+            Text(
+                text = banner.body,
+                style = TextStyle(color = ColorProvider(MUTED), fontSize = 11.sp),
+                maxLines = 2,
+            )
+        }
     }
 }

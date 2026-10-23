@@ -2,7 +2,9 @@
 
 **Status: PART A BUILT** — `:render:gles3` exists and draws the whole scene. Both backends
 ship: `:render:gles1` ([render-api.md](render-api.md)) remains the **default**, and a settings
-row (Advanced → Graphics engine) picks between them. Part B is still design only.
+row (Advanced → Graphics engine) picks between them. Part B is partly built: the analytic
+sky, the ground, the GLES3 eclipse shader and label halos shipped with Part A, and the rest
+of §7–§8 is still design only (see the status table at the head of Part B).
 
 **Two things below are now superseded by what shipped, and are kept for their reasoning:**
 
@@ -348,6 +350,19 @@ Only then does Part B begin.
 Everything below is *enabled by* phase 1 and *sequenced after* it. Each item notes the API
 extension it needs, because those are the changes that make retiring GLES1 (§6) worthwhile.
 
+**Status at a glance.** Some of Part B shipped inside the Part A PR, because a few of these
+could not wait for a separate slice.
+
+| Item | Status | Notes |
+| --- | --- | --- |
+| §7.1 Sky gradient | Mostly built | Preetham per pixel, twilight (warm band, Earth's shadow, Belt of Venus), linear-space tone map and dither: §10.1. **Not built:** moonlight, light pollution, and driving `magnitudeLimit` from sky brightness (§10.2). |
+| §7.2 Horizon and ground | Partly built | A translucent ground with a depth cue (§10.3), which also subsumes "the glow, properly". **Not built:** the horizon profile, extinction and refraction. |
+| §7.3 Constellation art | Not built | Needs the spherical patch primitive; this is where the unused indexed-mesh helpers in `Mesh` would be used. |
+| §7.4 Lunar eclipses | Built | The CPU version on GLES1 (D106) and a per-pixel version on GLES3 (`eclipseTint` in `common.glsl`, used by `skyquad.frag`). |
+| §8.14 Night mode | Built, but as a uniform | Not a post-process: `applyNightMode` is one function and one `bool` uniform, and each image keeps a single texture. |
+| §8.15 Label halos | Built | §10.1 item 2. |
+| The rest of §8 | Not built | |
+
 ## 7. The four asked-for features
 
 ### 7.1 A truer sky gradient
@@ -601,17 +616,26 @@ commitment.
 2. Does real hardware clamp `glLineWidth`? (§3.1) Cheap to answer and worth answering
    independently of this port — it is a live question about the *shipping* app, not the new one.
 3. Do the `google_atd` CI emulator images support GLES 3.0 under SwiftShader? If not, what does
-   the CI renderer gate become? (§4.3)
+   the CI renderer gate become? (§4.3) *Partly answered:* the instrumented shader tests pass
+   on SwiftShader emulators (API 35 and 36) and on a Pixel 9 Pro. Whether the CI images do
+   has not been checked.
 4. Golden-image tolerance and storage: perceptual metric, threshold, and whether goldens are
    checked in or generated. (§4.2)
 5. Is the ground opaque, translucent, or user-controlled — and does "look through the Earth"
    survive? (§7.2) A product question, needed before the ground shader is written.
+   *Partly answered:* a translucent ground shipped and look-through survives (§10.3). How
+   looking through the Earth should read — for example the bright strip just below the
+   horizon — is still a product call.
 6. Constellation art: derive from public-domain plates, or commission? Sets both the schedule and
    the licence. (§7.3)
 7. Does Part B's API growth stay additive on `:render:api`, or does the spherical patch justify a
-   contract revision? (§7.3)
+   contract revision? (§7.3) *So far additive:* `SkyGradient` gained `zenithDirection`,
+   `turbidity` and `Ground`, and the glow primitive was removed outright (§10.3). The
+   spherical patch is still undecided.
 8. Should the sky model be Preetham (cheaper, well-trodden) or Hošek–Wilkie (better, especially at
-   twilight)? A spike, not a debate. (§7.1)
+   twilight)? A spike, not a debate. (§7.1) *Preetham shipped* (§10.1). PR #1058 noted that the
+   daytime horizon reads mauve rather than pale blue and that the cause is undiagnosed, so
+   Hošek–Wilkie stays an option.
 
 ---
 

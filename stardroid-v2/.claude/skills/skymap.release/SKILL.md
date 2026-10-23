@@ -24,13 +24,28 @@ this gap has since been closed.
    ```
    This writes to `app/build.gradle.kts` (Kotlin DSL) — see `skymap.deploy-play-store` for the
    `fastlane-plugin-versioning_android` caveat.
-3. Ask the user for an appropriate portrait image for the release (mirroring v1's step). Use the
+3. **If the release name is new** (minor bump), record it in two places — skip for point releases
+   that keep the name:
+   - `docs/release-names.md`: add a row at the top of the v2 "Used names" table (icon, name,
+     Wikipedia link and a one-line description of the mission). Put `_unreleased (<version> beta)_`
+     in "First released" for now.
+   - `whats_new_content` in `app/src/main/res/values/whatsnew.xml`: replace the closing
+     `<h2>About the release name</h2>` section with one or two sentences on the new namesake (same
+     spirit as the table's description). Keep it the last item in the string.
+4. Ask the user for an appropriate portrait image for the release (mirroring v1's step; the icon is also used in the `release-names.md` row above). Use the
    `skymap.release-splashscreen` skill for this — it produces the small circular icon for
    `CHANGELOG.md`/the GitHub release *and* overwrites the app's in-app launch splash portrait
    (`app/src/main/assets/splash/splash.png`, shown briefly in `VersionBanner.kt` on launch, distinct
    from the OS-level `installSplashScreen()` splash in `MainActivity.kt`). If the user has no image
    handy, it's fine to skip — the app just keeps showing the previous release's portrait, and the
    changelog/GitHub release ships without an icon.
+
+**Beta-only builds (`:Beta` suffix).** A build that turns on features not yet launched (e.g. 2.2.0
+Buran's satellites) is named `<version>:<ReleaseName>:Beta`, e.g. `2.2.0:Buran:Beta`. The gms
+Remote Config rules match on `Version contains :Beta` to enable those experiments; the launch
+build drops the suffix (`2.2.0:Buran`) so the flags fall back to their off defaults. Never promote a
+`:Beta` build to production, and fill `beta_user_help_text` (`whatsnew.xml`) only in Beta builds —
+clear it for launch. Tag Beta builds `v<version>-betaN` so they never clash with the launch tag.
 
 ### Step 2. Bring the metadata up to date
 
@@ -97,10 +112,15 @@ Step 1 (e.g. `2.0.0` and `Jupiter`).
    Use today's date. Follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Since
    both v1 and v2 share this changelog, make the entry heading clearly identify it as a v2
    release (e.g. include "(v2)" or similar) to avoid confusing it with v1 tags. Include the
-   `<img>` tag only if Step 1.3 produced an icon for this release — omit it entirely otherwise,
+   `<img>` tag only if Step 1.4 produced an icon for this release — omit it entirely otherwise,
    same as v1.
 
-2. Commit all changes from Steps 1–5 (version bump, whatsnew content, translations if any,
+2. **Launch (non-Beta) builds only:** in `docs/release-names.md`, replace the name's
+   `_unreleased (<version> beta)_` placeholder with `YYYY-MM-DD (<version>)` — the first *public*
+   (stable) release date. Do this for the first launch under a new name; point releases leave it
+   alone.
+
+3. Commit all changes from Steps 1–5 (version bump, whatsnew content, translations if any,
    CHANGELOG) in a single commit to `master`:
    ```bash
    git add -A
@@ -108,7 +128,7 @@ Step 1 (e.g. `2.0.0` and `Jupiter`).
    git push origin master
    ```
 
-3. Tag the commit — the established convention (already used for `v2.0.0`, `v2.0.7`, and
+4. Tag the commit — the established convention (already used for `v2.0.0`, `v2.0.7`, and
    `v2.0.0-betaXX`) is `v<version>`, where `<version>` is the full version number *without*
    the release name, e.g. `v2.0.8`. The `v2` is simply the leading digit of the version
    (2.x.y), not a separate prefix — do **not** write `v2.<version>`, which would give
@@ -118,7 +138,7 @@ Step 1 (e.g. `2.0.0` and `Jupiter`).
    git push origin v<version>
    ```
 
-4. Build the signed release APK for direct download (the `internal` fastlane lane builds an AAB
+5. Build the signed release APK for direct download (the `internal` fastlane lane builds an AAB
    for Play Store, not an installable APK):
    ```bash
    ./gradlew :app:assembleGmsRelease
@@ -127,7 +147,7 @@ Step 1 (e.g. `2.0.0` and `Jupiter`).
    `app/no-checkin.properties` to be present and correctly configured for release signing —
    if this fails, stop and check signing config with the user rather than working around it.
 
-5. Extract the release notes for this version from `../CHANGELOG.md` and upload the GitHub release:
+6. Extract the release notes for this version from `../CHANGELOG.md` and upload the GitHub release:
    ```bash
    # Substitute the actual version number in the awk pattern
    awk '/^## \[<version>\]/{flag=1; next} /^## \[/{flag=0} flag' ../CHANGELOG.md \
@@ -135,10 +155,10 @@ Step 1 (e.g. `2.0.0` and `Jupiter`).
      > /tmp/release_notes.md
    ```
 
-   **If Step 1.3 produced an icon**, the `<img>` tag's path is relative to the repo root
+   **If Step 1.4 produced an icon**, the `<img>` tag's path is relative to the repo root
    (`stardroid-v2/assets/release-icons/...`), which does not resolve inside a standalone GitHub
    release description. Rewrite it to an absolute `raw.githubusercontent.com` URL pinned to the
-   commit just pushed in step 2, so the icon keeps rendering even if the file is later renamed or
+   commit just pushed in step 3, so the icon keeps rendering even if the file is later renamed or
    moved — run this *before* `gh release create`:
    ```bash
    commit=$(git rev-parse HEAD)

@@ -124,6 +124,20 @@ sealed interface LayerParameter {
                 requiresNotificationPermission = true,
             )
 
+        /** The meteor-shower layer's peak-night alert opt-in. */
+        const val SHOWER_ALERTS = "shower_alerts"
+
+        /**
+         * Off by default, same reasoning as [PASS_ALERTS_PARAMETER]. This is the single source of
+         * truth for the alert: the Settings → Notifications row reads and writes the same value.
+         */
+        val SHOWER_ALERTS_PARAMETER =
+            Toggle(
+                key = SHOWER_ALERTS,
+                defaultOn = false,
+                requiresNotificationPermission = true,
+            )
+
         /** The alt/az grid's line-count choice (#1022). */
         const val ALTAZ_GRID_DENSITY = "altaz_grid_density"
 

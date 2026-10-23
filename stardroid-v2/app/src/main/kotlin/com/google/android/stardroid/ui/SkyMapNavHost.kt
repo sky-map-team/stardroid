@@ -331,6 +331,7 @@ fun SkyMapNavHost(
                 diagnosticsViewModel,
                 nightMode = nightMode,
                 satellitesEnabled = experimentConfig.isEnabled(Experiment.SATELLITES),
+                experimentConfig = experimentConfig,
                 onBack = { navController.popBackStack() },
             )
         }

@@ -969,6 +969,7 @@ private fun LocationStateDialogs(
 ) {
     var rationaleDismissed by rememberSaveable { mutableStateOf(false) }
     var permanentlyDeniedDismissed by rememberSaveable { mutableStateOf(false) }
+    var manualRefusalPending by rememberSaveable { mutableStateOf(false) }
     var timeoutDismissed by rememberSaveable { mutableStateOf(false) }
     LaunchedEffect(locationState) {
         if (locationState is LocationState.Acquiring) timeoutDismissed = false
@@ -990,19 +991,28 @@ private fun LocationStateDialogs(
         )
     }
 
-    if (locationState is LocationState.PermissionPermanentlyDenied &&
-        !permanentlyDeniedDismissed
-    ) {
+    LaunchedEffect(locationViewModel) {
+        locationViewModel.manualRefusals.collect { manualRefusalPending = true }
+    }
+
+    val permanentlyDenied =
+        locationState is LocationState.PermissionPermanentlyDenied && !permanentlyDeniedDismissed
+    if (permanentlyDenied || manualRefusalPending) {
         LocationPermanentlyDeniedDialog(
             onOpenSettings = {
                 permanentlyDeniedDismissed = true
+                manualRefusalPending = false
                 onOpenAppSettings()
             },
             onEnterManually = {
                 permanentlyDeniedDismissed = true
+                manualRefusalPending = false
                 onEnterManually()
             },
-            onDismiss = { permanentlyDeniedDismissed = true },
+            onDismiss = {
+                permanentlyDeniedDismissed = true
+                manualRefusalPending = false
+            },
         )
     }
 

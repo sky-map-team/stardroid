@@ -110,7 +110,7 @@ object ImageDrawer {
         // within the layer is guaranteed by D18's distance sort in SolarSystemLayer.
         gl.blend(GlState.BlendMode.ALPHA)
         GLES30.glUniformMatrix4fv(program.uniform("uViewProj"), 1, false, viewProj, 0)
-        GLES30.glUniform1f(program.uniform("uNightMode"), if (nightMode) 1f else 0f)
+        GLES30.glUniform1i(program.uniform("uNightMode"), if (nightMode) 1 else 0)
         GLES30.glUniform1i(program.uniform("uTexture"), 0)
         // Quads come from gl_VertexID, so no vertex array is needed at all — but GL ES 3.0
         // still requires *some* vertex array object to be bound for the draw to be valid.
@@ -170,11 +170,11 @@ object ImageDrawer {
     ) {
         val terminator = image.terminator
         if (terminator == null) {
-            GLES30.glUniform1f(program.uniform("uHasTerminator"), 0f)
-            GLES30.glUniform1f(program.uniform("uHasEclipse"), 0f)
+            GLES30.glUniform1i(program.uniform("uHasTerminator"), 0)
+            GLES30.glUniform1i(program.uniform("uHasEclipse"), 0)
             return
         }
-        GLES30.glUniform1f(program.uniform("uHasTerminator"), 1f)
+        GLES30.glUniform1i(program.uniform("uHasTerminator"), 1)
         GLES30.glUniform1f(
             program.uniform("uIlluminatedFraction"),
             terminator.illuminatedFraction.toFloat(),
@@ -191,10 +191,10 @@ object ImageDrawer {
 
         val eclipse = terminator.eclipse
         if (eclipse == null) {
-            GLES30.glUniform1f(program.uniform("uHasEclipse"), 0f)
+            GLES30.glUniform1i(program.uniform("uHasEclipse"), 0)
             return
         }
-        GLES30.glUniform1f(program.uniform("uHasEclipse"), 1f)
+        GLES30.glUniform1i(program.uniform("uHasEclipse"), 1)
         GLES30.glUniform2f(
             program.uniform("uShadowRadii"),
             eclipse.umbraRadius.toFloat(),

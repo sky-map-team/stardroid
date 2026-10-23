@@ -103,7 +103,11 @@ class GroundDrawerTest {
     fun `the shell is built from any zenith, needing no frame from the producer`() {
         // A full circle is the same set of points whichever perpendicular basis traces it, which
         // is why the ground needs nothing SkyGradient was not already carrying.
-        for (up in listOf(Vector3(0.0, 0.0, 1.0), Vector3(1.0, 0.0, 0.0), Vector3(0.3, -0.7, 0.6))) {
+        for (up in listOf(
+            Vector3(0.0, 0.0, 1.0),
+            Vector3(1.0, 0.0, 0.0),
+            Vector3(0.3, -0.7, 0.6),
+        )) {
             val buffers = GroundDrawer.build(ground, sunUp, up)
             assertThat(buffers.indexCount).isGreaterThan(0)
             val verts = buffers.vertices.duplicate()

@@ -172,6 +172,16 @@ Use the <b>Find</b> button to locate that object in the sky.</p>
 on your home screen, choose <b>Widgets</b>, then find <b>Sky Map</b>.</p>
     ]]></string>
 
+    <string name="help_notifications" translation_description="Help section: the optional sky-event notifications. Please do not change the markup"><![CDATA[
+<h2>Notifications</h2>
+<p>Sky Map can notify you about rare sky events — at most once a day, and never unless you turn it on:</p>
+<p>• <b>Meteor shower peaks:</b> an evening alert when a shower reaches its annual peak, with where to look and how much the Moon will interfere<br/>
+• <b>Tonight\'s sky digest:</b> one summary after sunset, skipped on quiet nights<br/>
+• <b>Lunar eclipses:</b> an alert before an eclipse begins</p>
+<p>Open <a href="skymap://settings"><b>Settings</b></a> to turn these alerts on or off. The shower and eclipse alerts can also be switched on from their layer\'s options in the Layers sheet.</p>
+<p>If you turned an alert on but nothing arrives, check that notifications are allowed for Sky Map in your <a href="skymap://app-settings">system settings</a>.</p>
+    ]]></string>
+
     <string name="help_location" translation_description="Help section: setting your observing location. Please do not change the markup"><![CDATA[
 <h2>Setting Your Location</h2>
 <p>Sky Map needs your approximate location to draw the correct sky. By default it uses your device\'s location
