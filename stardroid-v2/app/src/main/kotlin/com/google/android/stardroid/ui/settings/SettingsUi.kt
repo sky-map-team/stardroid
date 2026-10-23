@@ -144,12 +144,6 @@ fun SettingsScreen(
                     label = { autoDimnessLabel(it) },
                     onSelect = viewModel::setAutoDimness,
                 )
-                SwitchRow(
-                    title = stringResource(R.string.settings_sky_gradient),
-                    summary = stringResource(R.string.settings_sky_gradient_summary),
-                    checked = state.showSkyGradient,
-                    onCheckedChange = viewModel::setShowSkyGradient,
-                )
 
                 SectionHeader(R.string.settings_section_sensors)
                 SwitchRow(
@@ -226,6 +220,14 @@ fun SettingsScreen(
                     checked = state.enableAnalytics,
                     onCheckedChange = viewModel::setEnableAnalytics,
                 )
+                if (viewModel.announcementsAvailable) {
+                    SwitchRow(
+                        title = stringResource(R.string.settings_announcements),
+                        summary = stringResource(R.string.settings_announcements_summary),
+                        checked = state.announcements,
+                        onCheckedChange = viewModel::setAnnouncements,
+                    )
+                }
                 // Relocated from the ⋮ overflow sheet: a sensor/location readout is a
                 // support tool, not something most people need most of the time, and it
                 // was crowding out Help there (Hannah's feedback, 2026-08). "Settings →
@@ -297,6 +299,8 @@ private fun NotificationsSection(
         }
     }
 
+    val anyAlertOn =
+        state.showerAlerts || state.eclipseAlerts || state.passAlerts || state.tonightDigest
     SectionHeader(R.string.settings_section_notifications)
     Text(
         stringResource(R.string.settings_notifications_intro),
@@ -311,12 +315,26 @@ private fun NotificationsSection(
         onCheckedChange = { toggle(viewModel::setShowerAlerts, it) },
     )
     SwitchRow(
+        title = stringResource(R.string.settings_eclipse_alerts),
+        summary = stringResource(R.string.settings_eclipse_alerts_summary),
+        checked = state.eclipseAlerts,
+        onCheckedChange = { toggle(viewModel::setEclipseAlerts, it) },
+    )
+    if (viewModel.satelliteAlertsAvailable) {
+        SwitchRow(
+            title = stringResource(R.string.settings_pass_alerts),
+            summary = stringResource(R.string.settings_pass_alerts_summary),
+            checked = state.passAlerts,
+            onCheckedChange = { toggle(viewModel::setPassAlerts, it) },
+        )
+    }
+    SwitchRow(
         title = stringResource(R.string.settings_tonight_digest),
         summary = stringResource(R.string.settings_tonight_digest_summary),
         checked = state.tonightDigest,
         onCheckedChange = { toggle(viewModel::setTonightDigest, it) },
     )
-    if ((state.showerAlerts || state.tonightDigest) &&
+    if (anyAlertOn &&
         !NotificationManagerCompat.from(context).areNotificationsEnabled()
     ) {
         Row(

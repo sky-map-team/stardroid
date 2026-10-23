@@ -19,15 +19,22 @@ android {
     namespace = "com.google.android.stardroid"
     defaultConfig {
         applicationId = "com.google.android.stardroid"
-        versionCode = 1752
-        versionName = "2.1.2:Artemis"
+        versionCode = 1770
+        versionName = "2.3.0:Cassini:Beta"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        // D95: CI passes -PskipGlBenchmarks=true, which the D19 perf gate reads to skip
+        // D105: CI passes -PskipGlBenchmarks=true, which the D19 perf gate reads to skip
         // itself. Set through the DSL rather than
         // -Pandroid.testInstrumentationRunnerArguments.*, which AGP warns is incompatible
         // with configuration caching.
         providers.gradleProperty("skipGlBenchmarks").orNull?.let {
             testInstrumentationRunnerArguments["skipGlBenchmarks"] = it
+        }
+        // D140: CI runs RendererPerfTest in a pass of its own, selected the same way.
+        providers.gradleProperty("testClass").orNull?.let {
+            testInstrumentationRunnerArguments["class"] = it
+        }
+        providers.gradleProperty("testNotClass").orNull?.let {
+            testInstrumentationRunnerArguments["notClass"] = it
         }
         resValue(
             "string",
@@ -119,6 +126,8 @@ dependencies {
     implementation(project(":shared:layers"))
     implementation(project(":shared:viewmodels"))
     implementation(libs.kotlinx.coroutines.android)
+    // Parses the Remote Config announcements payload (JsonElement API only; no plugin).
+    implementation(libs.kotlinx.serialization.json)
     implementation(libs.androidx.core.ktx)
 
     implementation(platform(libs.androidx.compose.bom))
@@ -152,6 +161,7 @@ dependencies {
 
     testImplementation(libs.junit.jupiter)
     testImplementation(libs.truth)
+    testImplementation(libs.mockito.core)
     testImplementation(libs.kotlinx.coroutines.test)
     testImplementation(project(":shared:testing"))
     testRuntimeOnly(libs.junit.platform.launcher)

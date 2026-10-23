@@ -244,20 +244,20 @@ class FakeSettings : Settings {
         enableAnalyticsState.value = enabled
     }
 
-    val showerAlertsEnabledState = MutableStateFlow(false)
-
-    override val showerAlertsEnabled: Flow<Boolean> = showerAlertsEnabledState
-
-    override suspend fun setShowerAlertsEnabled(enabled: Boolean) {
-        showerAlertsEnabledState.value = enabled
-    }
-
     val tonightDigestEnabledState = MutableStateFlow(false)
 
     override val tonightDigestEnabled: Flow<Boolean> = tonightDigestEnabledState
 
     override suspend fun setTonightDigestEnabled(enabled: Boolean) {
         tonightDigestEnabledState.value = enabled
+    }
+
+    val announcementsEnabledState = MutableStateFlow(true)
+
+    override val announcementsEnabled: Flow<Boolean> = announcementsEnabledState
+
+    override suspend fun setAnnouncementsEnabled(enabled: Boolean) {
+        announcementsEnabledState.value = enabled
     }
 
     val satelliteDataEnabledState = MutableStateFlow(false)

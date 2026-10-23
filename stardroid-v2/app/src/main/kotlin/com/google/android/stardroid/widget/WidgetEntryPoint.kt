@@ -12,6 +12,8 @@ package com.google.android.stardroid.widget
 import android.content.Context
 import com.google.android.stardroid.CatalogAccess
 import com.google.android.stardroid.analytics.Analytics
+import com.google.android.stardroid.announcements.AnnouncementSource
+import com.google.android.stardroid.announcements.AnnouncementState
 import com.google.android.stardroid.locale.LocaleSource
 import com.google.android.stardroid.settings.Settings
 import com.google.android.stardroid.startup.ExperimentConfig
@@ -36,6 +38,10 @@ interface WidgetEntryPoint {
     fun localeSource(): LocaleSource
 
     fun analytics(): Analytics
+
+    fun announcementSource(): AnnouncementSource
+
+    fun announcementState(): AnnouncementState
 }
 
 fun widgetEntryPoint(context: Context): WidgetEntryPoint =

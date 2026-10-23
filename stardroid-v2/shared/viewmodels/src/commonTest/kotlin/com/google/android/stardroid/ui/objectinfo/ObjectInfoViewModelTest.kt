@@ -12,6 +12,7 @@ package com.google.android.stardroid.ui.objectinfo
 import androidx.lifecycle.viewModelScope
 import com.google.android.stardroid.astronomy.KeplerianEphemeris
 import com.google.android.stardroid.astronomy.SolarSystemBody
+import com.google.android.stardroid.astronomy.Tle
 import com.google.android.stardroid.catalog.CatalogObject
 import com.google.android.stardroid.catalog.CatalogRepository
 import com.google.android.stardroid.catalog.CelestialObjectId
@@ -31,6 +32,8 @@ import com.google.android.stardroid.math.LatLong
 import com.google.android.stardroid.math.RaDec
 import com.google.android.stardroid.math.Vector3
 import com.google.android.stardroid.render.api.SkyCamera
+import com.google.android.stardroid.satellites.SatelliteIds
+import com.google.android.stardroid.satellites.TrackedSatellite
 import com.google.android.stardroid.settings.FakeSettings
 import com.google.android.stardroid.startup.Experiment
 import com.google.android.stardroid.startup.ExperimentConfig
@@ -121,6 +124,7 @@ class ObjectInfoViewModelTest {
     private fun viewModel(
         experimentConfig: ExperimentConfig = ExperimentConfig.Static,
         moonWidgetPlaced: () -> Boolean = { false },
+        satellites: List<TrackedSatellite> = emptyList(),
     ): ObjectInfoViewModel =
         ObjectInfoViewModel(
             catalog = { repository },
@@ -132,6 +136,7 @@ class ObjectInfoViewModelTest {
             computeContext = UnconfinedTestDispatcher(dispatcher.scheduler),
             experimentConfig = experimentConfig,
             moonWidgetPlaced = moonWidgetPlaced,
+            satellites = { satellites },
         ).also { createdViewModels += it }
 
     @Test
@@ -432,6 +437,70 @@ class ObjectInfoViewModelTest {
         }
 
     @Test
+    fun `a satellite is tappable and opens its synthesized card`() =
+        testScope.runCurrentTest {
+            // No catalog row: the card exists only as the tracked satellite's own.
+            val vm = viewModel(satellites = listOf(issAt(RaDec(LOOK_RA, LOOK_DEC))))
+
+            vm.tapAtCenter()
+            runCurrent()
+            assertThat(vm.card.value?.id).isEqualTo(ISS_ID)
+        }
+
+    @Test
+    fun `a satellite card takes its prose and image from its catalog row`() =
+        testScope.runCurrentTest {
+            repository.infos[ISS_ID] =
+                objectInfo(ISS_ID, "").copy(
+                    description = "The station",
+                    imageRef = "spacecraft/nasa_iss.webp",
+                )
+            val vm = viewModel(satellites = listOf(issAt(RaDec(LOOK_RA, LOOK_DEC))))
+
+            vm.show(ISS_ID)
+            runCurrent()
+
+            assertThat(vm.card.value?.name).isEqualTo("ISS (ZARYA)")
+            assertThat(vm.card.value?.description).isEqualTo("The station")
+            assertThat(vm.card.value?.imageRef).isEqualTo("spacecraft/nasa_iss.webp")
+        }
+
+    @Test
+    fun `a satellite that is not currently tracked has no card despite its catalog row`() =
+        testScope.runCurrentTest {
+            repository.infos[ISS_ID] = objectInfo(ISS_ID, "")
+            val vm = viewModel()
+
+            vm.show(ISS_ID)
+            runCurrent()
+
+            assertThat(vm.card.value).isNull()
+        }
+
+    @Test
+    fun `show opens a satellite card by its id as a widget pass row does`() =
+        testScope.runCurrentTest {
+            val vm = viewModel(satellites = listOf(issAt(RaDec(LOOK_RA, LOOK_DEC))))
+
+            vm.show(ISS_ID)
+            runCurrent()
+            assertThat(vm.card.value?.name).isEqualTo("ISS (ZARYA)")
+        }
+
+    @Test
+    fun `a satellite card has no rise-set line`() =
+        testScope.runCurrentTest {
+            // Its position is a moment's snapshot; solved as a fixed point it would give
+            // confident nonsense times.
+            val vm = viewModel(satellites = listOf(issAt(SIRIUS_POSITION)))
+
+            vm.show(ISS_ID)
+            runCurrent()
+            assertThat(vm.card.value?.id).isEqualTo(ISS_ID)
+            assertThat(vm.riseSet.value).isNull()
+        }
+
+    @Test
     fun `a fixed-position card carries the next rise and set after now`() =
         testScope.runCurrentTest {
             // Sirius from London crosses the horizon twice a day; both events land in the
@@ -643,6 +712,21 @@ class ObjectInfoViewModelTest {
         val SIRIUS_POSITION = RaDec(101.287, -16.716)
 
         val PERSEIDS_ID = CelestialObjectId("shower/perseids")
+
+        val ISS_ID = SatelliteIds.idFor(25544)
+        val ISS_TLE =
+            Tle.parse(
+                line1 = "1 25544U 98067A   26227.08368470  .00004985  00000+0  97076-4 0  9993",
+                line2 = "2 25544  51.6331   8.6030 0007568  47.4901 312.6726 15.49446860580882",
+                name = "ISS (ZARYA)",
+            )
+
+        fun issAt(position: RaDec) =
+            TrackedSatellite(
+                tle = ISS_TLE,
+                info = SatelliteIds.cardFor(ISS_TLE, position, null),
+                position = position,
+            )
 
         /** A shower radiating from the look direction, active on [NOW] (2026-07-03). */
         fun activeShower() =

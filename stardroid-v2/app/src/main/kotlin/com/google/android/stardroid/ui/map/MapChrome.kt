@@ -69,20 +69,24 @@ import androidx.compose.material3.ModalBottomSheet
 import androidx.compose.material3.PlainTooltip
 import androidx.compose.material3.SegmentedButton
 import androidx.compose.material3.SegmentedButtonDefaults
+import androidx.compose.material3.SheetValue
 import androidx.compose.material3.SingleChoiceSegmentedButtonRow
 import androidx.compose.material3.Switch
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.material3.TooltipBox
 import androidx.compose.material3.TooltipDefaults
+import androidx.compose.material3.rememberModalBottomSheetState
 import androidx.compose.material3.rememberTooltipState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
+import androidx.compose.runtime.snapshotFlow
 import androidx.compose.runtime.withFrameNanos
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -124,6 +128,9 @@ import com.google.android.stardroid.ui.layers.LayerParameterState
 import com.google.android.stardroid.ui.layers.LayerToggle
 import com.google.android.stardroid.ui.layers.LayersViewModel
 import com.google.android.stardroid.ui.theme.statusColors
+import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withTimeoutOrNull
 import kotlin.time.Duration
 import kotlin.time.Duration.Companion.hours
 import kotlin.time.Duration.Companion.minutes
@@ -213,7 +220,28 @@ fun MapChrome(
     ) {
         // Top-right (D65): top-centre belongs to the time-travel player, the rail owns the
         // left edge in landscape, and the action cluster owns the bottom/right-edge corner.
-        if (hudState != null) {
+        // While the camera layer is on, the AR panel takes the HUD's slot (the HUD's alignment
+        // correction rides along inside it); in landscape it steps left of the action column,
+        // which is tall enough to reach it.
+        if (arUi != null) {
+            ChromeZone(visible, ChromeEdge.TOP, Modifier.align(Alignment.TopEnd)) {
+                ArControls(
+                    state = arUi,
+                    specs = arSpecs,
+                    onScrimChange = onArScrimChange,
+                    onExposureChange = onArExposureChange,
+                    onIsoFractionChange = onArIsoFractionChange,
+                    onShutterFractionChange = onArShutterFractionChange,
+                    hudState = hudState,
+                    onResetAlignment = onResetAlignment,
+                    modifier =
+                        Modifier.padding(
+                            top = 8.dp + hudTopClearance,
+                            end = if (landscape) ACTION_COLUMN_CLEARANCE else 8.dp,
+                        ),
+                )
+            }
+        } else if (hudState != null) {
             ChromeZone(visible, ChromeEdge.TOP, Modifier.align(Alignment.TopEnd)) {
                 MapHud(
                     state = hudState,
@@ -238,28 +266,10 @@ fun MapChrome(
                 modifier = Modifier.fillMaxHeight().padding(start = 8.dp),
             )
         }
-        // Bottom-left, lifted clear of the portrait action row (Zone B), whose buttons reach
-        // far enough left to collide with the dimmer slider; in landscape the actions are a
-        // right-edge column, so the corner itself is free.
         if (arUi != null) {
-            ChromeZone(visible, ChromeEdge.BOTTOM, Modifier.align(Alignment.BottomStart)) {
-                ArControls(
-                    state = arUi,
-                    specs = arSpecs,
-                    onScrimChange = onArScrimChange,
-                    onExposureChange = onArExposureChange,
-                    onIsoFractionChange = onArIsoFractionChange,
-                    onShutterFractionChange = onArShutterFractionChange,
-                    modifier =
-                        Modifier.padding(
-                            start = 8.dp,
-                            bottom = if (landscape) 8.dp else 68.dp,
-                        ),
-                )
-            }
             // "Photograph the moment" is most compelling while the camera is live
             // (camera-ar-mode.md slice 4): a transient shutter, lifted clear of the
-            // portrait action row like the controls panel.
+            // portrait action row.
             if (shareEnabled) {
                 ChromeZone(visible, ChromeEdge.BOTTOM, Modifier.align(Alignment.BottomCenter)) {
                     ShareShutter(
@@ -342,6 +352,9 @@ private fun ChromeZone(
 
 /** Quick enough to feel like a direct response to the tap that asked for the chrome. */
 private const val CHROME_ENTER_MS = 220
+
+/** How long after a row toggle to watch for the layers sheet retreating from full height. */
+private const val SHEET_RETREAT_WINDOW_MS = 500L
 
 /**
  * Slow enough that the eye can follow each zone to the edge it parks at. `MapScreen` holds the
@@ -945,10 +958,34 @@ fun LayersSheet(
     // Reference elements are a fixed set; anything else (all object layers, and whatever
     // future layers land) stays in the object group in registry order.
     val (reference, objects) = toggles.partition { it.id in REFERENCE_LAYER_IDS }
-    ModalBottomSheet(onDismissRequest = onDismiss) {
-        // Scrollable: in landscape the rows are taller than the sheet.
+    val sheetState = rememberModalBottomSheetState()
+    val scope = rememberCoroutineScope()
+    // Material re-targets a fully expanded sheet to half height whenever its content resizes,
+    // so opening a section would undo the user's drag to full screen (#1122). Put it back.
+    val keepExpanded: () -> Unit =
+        remember(sheetState, scope) {
+            {
+                if (sheetState.targetValue == SheetValue.Expanded) {
+                    scope.launch {
+                        val retreated =
+                            withTimeoutOrNull(SHEET_RETREAT_WINDOW_MS) {
+                                snapshotFlow { sheetState.targetValue }
+                                    .first { it != SheetValue.Expanded }
+                            }
+                        if (retreated != null && retreated != SheetValue.Hidden) {
+                            sheetState.expand()
+                        }
+                    }
+                }
+            }
+        }
+    ModalBottomSheet(onDismissRequest = onDismiss, sheetState = sheetState) {
+        // Scrollable: in landscape the rows are taller than the sheet. Always full height, so
+        // opening a section never resizes the sheet — a resize makes Material drop an expanded
+        // sheet back to half height (#1122), and the restore below shows as a visible dip.
         Column(
             Modifier
+                .fillMaxHeight()
                 .verticalScroll(rememberScrollState())
                 .padding(horizontal = 24.dp, vertical = 8.dp),
         ) {
@@ -972,6 +1009,7 @@ fun LayersSheet(
                     },
                     help = layerHelp(toggle.id),
                     initiallyExpanded = toggle.id == expandLayer,
+                    onExpandToggled = keepExpanded,
                 )
                 if (toggle.id == SatelliteLayer.LAYER_ID && satelliteDataMissing) {
                     SatelliteEmptyStateCard(
@@ -993,6 +1031,7 @@ fun LayersSheet(
                     },
                     help = layerHelp(toggle.id),
                     initiallyExpanded = toggle.id == expandLayer,
+                    onExpandToggled = keepExpanded,
                 )
             }
             LayerGroupHeader(R.string.layers_group_display)
@@ -1050,6 +1089,7 @@ private fun LayerRow(
     onParameterChange: (String, String) -> Unit = { _, _ -> },
     help: LayerHelp,
     initiallyExpanded: Boolean = false,
+    onExpandToggled: () -> Unit = {},
 ) {
     var expanded by rememberSaveable(label) { mutableStateOf(initiallyExpanded) }
     var showHelp by rememberSaveable(label) { mutableStateOf(false) }
@@ -1066,7 +1106,10 @@ private fun LayerRow(
             subtitle = subtitle,
             expandable = parameters.isNotEmpty(),
             expanded = expanded,
-            onExpandToggle = { expanded = !expanded },
+            onExpandToggle = {
+                onExpandToggled()
+                expanded = !expanded
+            },
             onLongClick = { showHelp = true },
         )
         if (expanded) {
@@ -1099,11 +1142,16 @@ private fun LayerParameterChooser(
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                     modifier = Modifier.padding(bottom = 6.dp),
                 )
-                SingleChoiceSegmentedButtonRow(Modifier.fillMaxWidth()) {
+                // Equal-height segments: a label that wraps at a large font scale must not make
+                // its segment taller than its neighbours.
+                SingleChoiceSegmentedButtonRow(
+                    Modifier.fillMaxWidth().height(IntrinsicSize.Min),
+                ) {
                     parameter.options.forEachIndexed { index, option ->
                         SegmentedButton(
                             selected = option == state.selected,
                             onClick = { onSelect(option) },
+                            modifier = Modifier.fillMaxHeight(),
                             shape =
                                 SegmentedButtonDefaults.itemShape(
                                     index = index,
@@ -1269,6 +1317,7 @@ private fun parameterLabel(key: String): Int =
         LayerParameter.DISC_SIZE -> R.string.layer_param_disc_size
         LayerParameter.PASS_ALERTS -> R.string.layer_param_pass_alerts
         LayerParameter.ECLIPSE_ALERTS -> R.string.layer_param_eclipse_alerts
+        LayerParameter.SHOWER_ALERTS -> R.string.layer_param_shower_alerts
         LayerParameter.ALTAZ_GRID_DENSITY -> R.string.layer_param_altaz_grid_density
         LayerParameter.RADEC_GRID_DENSITY -> R.string.layer_param_radec_grid_density
         else -> R.string.layer_param_disc_size
@@ -1280,6 +1329,7 @@ private fun parameterDescription(key: String): Int =
     when (key) {
         LayerParameter.PASS_ALERTS -> R.string.layer_param_pass_alerts_description
         LayerParameter.ECLIPSE_ALERTS -> R.string.layer_param_eclipse_alerts_description
+        LayerParameter.SHOWER_ALERTS -> R.string.layer_param_shower_alerts_description
         else -> R.string.layer_param_pass_alerts_description
     }
 
@@ -1332,7 +1382,11 @@ private fun layerHelp(id: LayerId): LayerHelp =
         CatalogLayers.DEEP_SKY_LAYER_ID -> LayerHelp(R.string.layer_help_deep_sky)
         SolarSystemLayer.LAYER_ID ->
             LayerHelp(R.string.layer_help_solar_system, R.string.layer_help_options_solar_system)
-        MeteorShowerLayer.LAYER_ID -> LayerHelp(R.string.layer_help_meteor_showers)
+        MeteorShowerLayer.LAYER_ID ->
+            LayerHelp(
+                R.string.layer_help_meteor_showers,
+                R.string.layer_help_options_meteor_showers,
+            )
         SatelliteLayer.LAYER_ID ->
             LayerHelp(R.string.layer_help_satellites, R.string.layer_help_options_satellites)
         GridLayer.LAYER_ID ->
@@ -1588,3 +1642,6 @@ private fun retryWaitText(wait: Duration): Int =
         wait <= 36.hours -> R.string.satellites_retry_tomorrow
         else -> R.string.satellites_retry_days
     }
+
+/** Landscape right inset that clears the action column: 8 dp edge + 48 dp button + 8 dp gap. */
+private val ACTION_COLUMN_CLEARANCE: Dp = 64.dp

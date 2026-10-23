@@ -296,15 +296,18 @@ interface Settings {
 
     suspend fun setLastCalibrationWarningMillis(timeMillis: Long)
 
-    /** Meteor-shower peak notifications (D77). Off until the user opts in — quiet by default. */
-    val showerAlertsEnabled: Flow<Boolean>
-
-    suspend fun setShowerAlertsEnabled(enabled: Boolean)
-
     /** The tonight's-sky digest notification (D77). Off until the user opts in. */
     val tonightDigestEnabled: Flow<Boolean>
 
     suspend fun setTonightDigestEnabled(enabled: Boolean)
+
+    /**
+     * Messages from the Sky Map team (remote announcements) on every surface — notification,
+     * widget banner and launch dialog. On by default, since they are rare; this is the opt-out.
+     */
+    val announcementsEnabled: Flow<Boolean>
+
+    suspend fun setAnnouncementsEnabled(enabled: Boolean)
 
     /**
      * Consent to fetch satellite element sets from CelesTrak (D92).

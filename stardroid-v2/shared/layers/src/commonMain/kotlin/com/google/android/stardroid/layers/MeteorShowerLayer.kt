@@ -64,6 +64,7 @@ class MeteorShowerLayer(
 ) : SkyLayer {
     override val id = LAYER_ID
     override val depth = DEPTH
+    override val parameters = PARAMETERS
 
     @OptIn(ExperimentalCoroutinesApi::class)
     override fun scenes(): Flow<LayerScene> =
@@ -149,6 +150,9 @@ class MeteorShowerLayer(
 
     companion object {
         val LAYER_ID = LayerId("catalog/meteor_showers")
+
+        /** Peak-night alerts; also the entry [LayerRegistry.PARAMETERS] lists for the sheet. */
+        val PARAMETERS = listOf(LayerParameter.SHOWER_ALERTS_PARAMETER)
 
         /** v1 depth table: in front of the solar system (60), behind the horizon (90). */
         private const val DEPTH = 80
