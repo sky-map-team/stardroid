@@ -11,7 +11,8 @@ package com.google.android.stardroid.time
 
 /**
  * What `@Synchronized` gave the clocks on the JVM, which Kotlin/Native lacks. Reentrant because
- * the clocks call one another ([TimeTravelClock.setTimeTravelDate] pauses).
+ * the clocks call one another ([TimeTravelClock.setTimeTravelDate] pauses). Reads take it too:
+ * they can write (re-anchor).
  */
 internal expect class ReentrantLock() {
     inline fun <T> withLock(block: () -> T): T
