@@ -105,6 +105,8 @@ class LineStrips private constructor(
 
         /** A zero-length segment has no direction to miter against. */
         private fun List<Vector3>.dropConsecutiveDuplicates(): List<Vector3> =
-            filterIndexed { i, p -> i == 0 || (p - this[i - 1]).length2 > MIN_SEGMENT_LENGTH_SQUARED }
+            filterIndexed { i, p ->
+                i == 0 || (p - this[i - 1]).length2 > MIN_SEGMENT_LENGTH_SQUARED
+            }
     }
 }
