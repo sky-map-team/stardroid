@@ -100,8 +100,13 @@ class LineStrips private constructor(
             return at + 3
         }
 
+        /** Squared length below which two points count as one. */
+        private const val MIN_SEGMENT_LENGTH_SQUARED = 1e-24
+
         /** A zero-length segment has no direction to miter against. */
         private fun List<Vector3>.dropConsecutiveDuplicates(): List<Vector3> =
-            filterIndexed { i, p -> i == 0 || (p - this[i - 1]).length2 > 1e-24 }
+            filterIndexed { i, p ->
+                i == 0 || (p - this[i - 1]).length2 > MIN_SEGMENT_LENGTH_SQUARED
+            }
     }
 }
