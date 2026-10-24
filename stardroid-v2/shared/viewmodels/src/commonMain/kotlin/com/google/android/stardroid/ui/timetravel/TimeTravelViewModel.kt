@@ -93,11 +93,11 @@ class TimeTravelViewModel(
     fun pickerSeed(): Instant = timeController.now()
 
     /**
-     * Resolves a picker event (its [type], and its [timestamp] if fixed) to its target instant. Relative events ("next full moon") resolve
-     * from the app clock's now, so while travelling they look forward from the visited time
-     * rather than snapping back to the present. Null only for the sunrise/sunset presets when
-     * the sun doesn't rise or set within a day at the observer's [location] (v1's "sun will
-     * not set" toast).
+     * Resolves a picker event (its [type], and its [timestamp] if fixed) to its target instant.
+     * Relative events ("next full moon") resolve from the app clock's now, so while travelling
+     * they look forward from the visited time rather than snapping back to the present. Null
+     * only for the sunrise/sunset presets when the sun doesn't rise or set within a day at the
+     * observer's [location] (v1's "sun will not set" toast).
      */
     fun resolve(
         type: TimeTravelEventType,
@@ -111,7 +111,7 @@ class TimeTravelViewModel(
                 nextLunarPhaseEvent(LunarPhase.FULL, timeController.now(), ephemeris)
             TimeTravelEventType.NEXT_NEW_MOON ->
                 nextLunarPhaseEvent(LunarPhase.NEW, timeController.now(), ephemeris)
-            TimeTravelEventType.FIXED -> timestamp!!
+            TimeTravelEventType.FIXED -> requireNotNull(timestamp) { "FIXED needs a timestamp" }
         }
 
     private fun nextSunEvent(indicator: RiseSetIndicator): Instant? =

@@ -17,9 +17,8 @@ package com.google.android.stardroid.catalog
  * applies it to queries, and the `:data:generator` build-time DB generator applies it at
  * generation — living here lets all three share one implementation (D33).
  *
- * Only the canonical decomposition is platform code ([decomposeCanonically]). The rest is
- * common Kotlin, but `Regex` and `lowercase` still run on each platform's own Unicode tables —
- * which is why this object's tests have to pass on every target, not just the JVM.
+ * NFD is platform code ([decomposeCanonically]), and `Regex` and `lowercase` run on each
+ * platform's own Unicode tables, so the tests must pass on every target, not just the JVM.
  */
 object NameNormalizer {
     private val combiningMarks = Regex("\\p{Mn}+")
