@@ -17,8 +17,8 @@ package com.google.android.stardroid.catalog
  * applies it to queries, and the `:data:generator` build-time DB generator applies it at
  * generation — living here lets all three share one implementation (D33).
  *
- * `Regex` and `lowercase` run on each platform's own Unicode tables, so the tests must pass on
- * every target, not just the JVM.
+ * NFD is platform code ([decomposeCanonically]), and `Regex` and `lowercase` run on each
+ * platform's own Unicode tables, so the tests must pass on every target, not just the JVM.
  */
 object NameNormalizer {
     private val combiningMarks = Regex("\\p{Mn}+")

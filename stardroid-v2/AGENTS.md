@@ -93,9 +93,13 @@ Do not add a third notice — per-directory notices are what let the old claim d
   from the APK asset, the satellite fetcher) is in `src/androidMain`. Never add a SQLite driver
   to `commonMain` — Android must keep the platform SQLite (D127). Catalog tests in
   `src/commonTest` run as Android instrumented tests and on the iOS simulator.
-- `render/api` — pure renderer contract + shared projection; `render/gles1` — a GLES1
-  backend written to match v1's rendering behaviour (an independent implementation, not a
-  port; see `NOTICE.md`).
+- `render/api` — pure renderer contract + shared projection and vertex builders;
+  `render/gles1` — a GLES1 backend written to match v1's rendering behaviour (an independent
+  implementation, not a port; see `NOTICE.md`); `render/metal` — the iOS backend, Kotlin/Native
+  calling Metal, with its shaders in `render/metal/shaders/*.metal` (render-metal.md).
+  **The `.metal` shaders are hand-transcribed from `render/gles3`'s GLSL, not generated: a change
+  to either must be mirrored in the other** (including constants — `MetalShaderConstantParityTest`
+  catches only some drift). The Kotlin in `render/api` is the golden reference for shared maths.
 - `app/` — the Android app shell (currently the dev test-scene activity and perf gate).
 - `konsist/` — architecture-gate tests enforcing the pure/Android module boundary (D20).
 - `build-logic/` — Gradle convention plugins (`skymap.pure-kmp`, `skymap.pure-kotlin`,
