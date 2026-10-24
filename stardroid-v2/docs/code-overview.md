@@ -59,7 +59,7 @@ no longer applies.
 
 ## 2. Module graph and build structure
 
-Sixteen Gradle modules (`settings.gradle.kts`), split hard into **pure Kotlin** (no Android SDK
+Nineteen Gradle modules (`settings.gradle.kts`), split hard into **pure Kotlin** (no Android SDK
 on the classpath — `import android.*` is a compile error) and **Android**. The pure modules
 other than the JVM tools are Kotlin Multiplatform (JVM + iOS), shared with the iOS port, as are
 `:data` and the `:shared:*` modules — the app's middle layer, moving out of `:app` in iOS port
@@ -76,6 +76,8 @@ phase 3:
 | `:data:generator` | pure (build-time JVM tool) | 807 / 429 | Deterministic catalog-DB generator over `source-data/` |
 | `:render:gles1` | Android lib | 2,292 / 1,021 | OpenGL ES 1.0 backend implementing `:render:api` |
 | `:render:gles3` | Android lib | 2,837 / 458 | OpenGL ES 3.0 backend implementing `:render:api` (render-gles3.md) |
+| `:render:testscene` | pure | 195 / — | The seeded synthetic scene every renderer harness draws |
+| `:render:metal` | iOS lib | 467 + 427 MSL / 364 | Metal backend implementing `:render:api`, Kotlin/Native (render-metal.md, D128) |
 | `:data` | KMP (Android + iOS) | 1,943 / 1,936 | Room catalog store implementing `:core:catalog`, and the satellite elements fetcher; both shared with iOS (the iOS HTTP client is still to come) |
 | `:shared:model` | pure | 2,410 / 1,505 | The app's state contracts (`Settings`, `StartupState`, `ExperimentConfig`, `Analytics`, `LocationProvider`, `Geocoding`, the sensor sources) and the controllers over them (`TimeController` + clocks, `LocationController`, `StartupRouter`), plus the orientation smoothing (1€ filter, quaternions) every sensor source shares |
 | `:shared:layers` | KMP (Android + iOS) | 2,521 / 2,291 | The sky layers and `LayerRegistry`: catalog, ephemeris, clock and settings → `LayerScene`s (layers-and-app.md) |
@@ -94,11 +96,14 @@ one `expect`/`actual`, for `NameNormalizer`'s use of `java.text.Normalizer`.
 
 ### Convention plugins (`build-logic/`)
 
-Six plugins carry all shared build config (see build-and-tooling.md for rationale):
+Seven plugins carry all shared build config (see build-and-tooling.md for rationale):
 
-- `skymap.pure-kmp` — `kotlin("multiplatform")` with `jvm` + iOS targets, ktlint, and a
-  `commonTest` stack of kotlin.test + `:core:testing`. Used by `:core:*` and `:render:api`.
+- `skymap.kmp-base` — `kotlin("multiplatform")` with the iOS targets, ktlint, a `commonTest`
+  stack of kotlin.test + `:core:testing`, and the no-Xcode rule. Applied by the next two only.
+- `skymap.pure-kmp` — `skymap.kmp-base` plus a `jvm` target. Used by `:core:*`, `:render:api`
+  and `:render:testscene`.
   Applying it *is* the purity enforcement: no Android SDK anywhere, no JDK in `commonMain`.
+- `skymap.ios-library` — `skymap.kmp-base` alone, for iOS-only platform code (`:render:metal`).
 - `skymap.pure-kotlin` — `kotlin("jvm")` + ktlint + JUnit 5/Truth test stack, toolchain 17, for
   the JVM tools (`:data:generator`, `:konsist`). No Android SDK on the classpath.
 - `skymap.kmp-android-library` — multiplatform with AGP's Android target

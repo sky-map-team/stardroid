@@ -30,18 +30,21 @@ import kotlin.math.sqrt
 import kotlin.random.Random
 
 /**
- * The porting-order step-2 hardcoded test scene (D28/D29): drives [GLSkyRenderer] with a
+ * The porting-order step-2 hardcoded test scene (D28/D29): drives `GLSkyRenderer` with a
  * synthetic sky — stars, a grid, a planet image, and labels — without the data layer being
  * in place.
  *
  * Star count is set high enough (~100k) to exercise the D13/D19 "no CPU point culling"
  * assumption (points GPU-resident, vertex stage discards offscreen geometry). If the
- * [RendererTestActivity] perf gate (D19) fails at this count, the escape hatch is a backend
+ * `RendererTestActivity` perf gate (D19) fails at this count, the escape hatch is a backend
  * region index — API-compatible and invisible to producers.
  *
  * Fixed random seed so the generated scene is deterministic (reproducible screenshot comparisons).
+ * Shared (`:render:testscene`) so every backend — GLES1 and GLES3 via `RendererTestActivity`,
+ * Metal via its offscreen tests and harness — draws the identical scene: `kotlin.random` is pure
+ * Kotlin, so seed 42 yields the same sky on every platform.
  */
-internal object TestScene {
+object TestScene {
     val STARS_LAYER = LayerId("test/stars")
     val GRID_LAYER = LayerId("test/grid")
     val IMAGES_LAYER = LayerId("test/images")
@@ -108,7 +111,7 @@ internal object TestScene {
     /**
      * Returns a scene with a single synthetic planet placed at RA ≈ 6 h, Dec +20°
      * (within the test camera FOV). The key [TestImageRef.PLANET] is resolved by
-     * [RendererTestActivity]'s image loader.
+     * `RendererTestActivity`'s image loader.
      */
     fun buildImagesScene(): LayerScene {
         val ra = PI / 2.0
@@ -186,7 +189,7 @@ internal object TestScene {
     }
 }
 
-/** [ImageRef] keys used by the test scene; resolved by [RendererTestActivity]'s image loader. */
-internal object TestImageRef {
+/** [ImageRef] keys used by the test scene; each backend's harness resolves them. */
+object TestImageRef {
     val PLANET = ImageRef("test/planet")
 }
