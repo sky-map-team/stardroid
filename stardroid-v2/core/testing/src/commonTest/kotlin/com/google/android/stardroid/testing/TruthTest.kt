@@ -112,6 +112,8 @@ class TruthTest {
         fails { assertThat(listOf(1, 2)).hasSize(3) }
         assertThat(listOf(1, 2)).contains(2)
         fails { assertThat(listOf(1, 2)).contains(3) }
+        assertThat(listOf(1, 2)).doesNotContain(3)
+        fails { assertThat(listOf(1, 2)).doesNotContain(2) }
         assertThat(listOf(1, 2, 2)).isInOrder()
         fails { assertThat(listOf(2, 1)).isInOrder() }
         assertThat(listOf(1, 2, 3)).isInStrictOrder()
