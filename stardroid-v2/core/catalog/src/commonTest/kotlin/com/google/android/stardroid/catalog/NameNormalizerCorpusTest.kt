@@ -16,10 +16,17 @@ import kotlin.test.Test
 import kotlin.test.fail
 
 /**
- * Every catalog name must normalize on this platform exactly as it did on the JVM (D126): the
- * catalog DB stores JVM-normalized names, so a name that differs here can never be found by
- * search. On the JVM this is a self-check; on iOS it is the real one. Gradle exports the corpus
- * (`:data:generator:exportNameCorpus`) and passes its path in [CORPUS_PATH_ENV].
+ * Every catalog name must normalize on this platform exactly as it did on the JVM (D126).
+ *
+ * The bundled catalog DB stores names normalized by the JVM, at generation time; a search
+ * normalizes the query with *this* platform's [NameNormalizer] and matches it against them. The
+ * code is common, but NFD, `Regex` and `lowercase` all run on per-platform Unicode tables, so a
+ * name that normalizes differently here is one this platform's search can never find. On the
+ * JVM this re-checks the JVM against itself; on iOS it is the real check.
+ *
+ * The corpus is every distinct name in `source-data/` with its JVM form, exported by
+ * `:data:generator:exportNameCorpus`; Gradle runs that first and passes the path in
+ * [CORPUS_PATH_ENV].
  */
 class NameNormalizerCorpusTest {
     @Test
@@ -41,17 +48,17 @@ class NameNormalizerCorpusTest {
                 "${mismatches.size} of ${corpus.size} catalog names normalize differently " +
                     "from the JVM:\n" +
                     mismatches.take(20).joinToString("\n") { (name, jvm) ->
-                        // Show UTF-16 units: the forms often render identically (e.g. Hangul
+                        // Code points too: the two forms often render identically (e.g. Hangul
                         // syllables vs. their decomposed jamo).
                         val here = NameNormalizer.normalize(name)
-                        "  $name\n    JVM:  \"$jvm\" [${jvm.utf16Units()}]\n" +
-                            "    here: \"$here\" [${here.utf16Units()}]"
+                        "  $name\n    JVM:  \"$jvm\" [${jvm.codePoints()}]\n" +
+                            "    here: \"$here\" [${here.codePoints()}]"
                     },
             )
         }
     }
 
-    private fun String.utf16Units(): String =
+    private fun String.codePoints(): String =
         map { it.code.toString(16).uppercase().padStart(4, '0') }.joinToString(" ")
 
     private companion object {

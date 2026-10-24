@@ -20,23 +20,28 @@ import kotlinx.coroutines.withContext
 import platform.Foundation.NSFileManager
 import platform.Foundation.NSLog
 import platform.Foundation.NSString
-import platform.Foundation.NSURL
-import platform.Foundation.NSURLIsExcludedFromBackupKey
 import platform.Foundation.stringByDeletingLastPathComponent
 
 /**
- * Builds the on-device catalog from the bundled `skymap.db`. Room's `createFromAsset` is
- * Android-only, so this follows its rule by hand: copy when there is no copy or its schema
- * version is not this build's. The catalog holds no user state, so replacing it loses nothing.
- * Opens with Room's bundled SQLite, not the system one (catalog-and-schema.md).
+ * Builds the on-device catalog database from the bundled `skymap.db` — the iOS counterpart of
+ * the Android factory of the same name. Room's prepackaged-database support (`createFromAsset`)
+ * is Android-only, so the copy happens here, by the rule Room follows there: copy when there is
+ * no on-device copy, or when the copy's schema version is not this build's. The catalog holds no
+ * user state, so replacing it loses nothing.
  *
- * Not synchronised: call once, from a singleton.
+ * As on Android, an app update that changes catalog content but not the schema keeps the old
+ * copy. Refreshing it is the core-pack refresh of data-packs.md, for both platforms at once.
+ *
+ * The database opens with Room's bundled SQLite, not the system one (catalog-and-schema.md).
  */
 @OptIn(ExperimentalForeignApi::class)
 object SkyMapDatabaseFactory {
     const val DATABASE_NAME = "skymap.db"
 
-    /** Opens the catalog at [databasePath], first copying [bundledPath] there if needed. Blocking. */
+    /**
+     * Opens the catalog at [databasePath] (in Application Support, say), first copying
+     * [bundledPath] (the app bundle's `skymap.db`) there if needed. Blocking file I/O.
+     */
     fun create(
         bundledPath: String,
         databasePath: String,
@@ -51,9 +56,10 @@ object SkyMapDatabaseFactory {
     }
 
     /**
-     * [create] plus D24/G11 recovery, as on Android: probe, and on any failure delete and re-copy
-     * once. Deliberately broad — the catalog holds no user state, so a wrongful delete costs only
-     * a copy. A failure of the retry propagates. Main-safe.
+     * [create] plus the D24/G11 failure recovery, as on Android: Room opens lazily, so this probes
+     * with a trivial query; if the on-device copy is unusable it is deleted and re-copied from
+     * the bundle once. A failure of the *retry* is a real bug or a full disk — that one
+     * propagates. Main-safe.
      */
     suspend fun createWithRecovery(
         bundledPath: String,
@@ -91,7 +97,11 @@ object SkyMapDatabaseFactory {
         }
     }
 
-    /** Copies beside the target and moves into place, so an interrupted copy is never opened. */
+    /**
+     * Replaces whatever is at [databasePath] with a copy of [bundledPath]. The copy is written
+     * beside it and moved into place, so an interrupted copy never leaves a half-written catalog
+     * where the next launch would open it.
+     */
     private fun copyBundled(
         bundledPath: String,
         databasePath: String,
@@ -111,12 +121,12 @@ object SkyMapDatabaseFactory {
         check(files.moveItemAtPath(partial, databasePath, null)) {
             "Could not move the catalog copy into place at $databasePath"
         }
-        // Regenerable from the bundle, so keep it out of iCloud backups.
-        NSURL.fileURLWithPath(databasePath)
-            .setResourceValue(true, NSURLIsExcludedFromBackupKey, null)
     }
 
-    // NSLog's C varargs crash (SIGSEGV) on a Kotlin String for `%@`: pass it as the escaped format.
+    /**
+     * The message goes to NSLog as the format string, `%` escaped, with no arguments: a Kotlin
+     * String passed through NSLog's C varargs for a `%@` crashes (SIGSEGV).
+     */
     private fun log(message: String) {
         NSLog("[SkyMapDatabaseFactory] " + message.replace("%", "%%"))
     }

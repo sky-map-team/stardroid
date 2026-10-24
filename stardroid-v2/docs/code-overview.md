@@ -59,9 +59,11 @@ no longer applies.
 
 ## 2. Module graph and build structure
 
-Fourteen Gradle modules (`settings.gradle.kts`), split hard into **pure Kotlin** (no Android SDK
+Nineteen Gradle modules (`settings.gradle.kts`), split hard into **pure Kotlin** (no Android SDK
 on the classpath — `import android.*` is a compile error) and **Android**. The pure modules
-other than the JVM tools are Kotlin Multiplatform (JVM + iOS), shared with the iOS port:
+other than the JVM tools are Kotlin Multiplatform (JVM + iOS), shared with the iOS port, as are
+`:data` and the `:shared:*` modules — the app's middle layer, moving out of `:app` in iOS port
+phase 3:
 
 | Module | Type | Main / test LOC | Purpose |
 |---|---|---|---|
@@ -77,10 +79,16 @@ other than the JVM tools are Kotlin Multiplatform (JVM + iOS), shared with the i
 | `:render:testscene` | pure | 195 / — | The seeded synthetic scene every renderer harness draws |
 | `:render:metal` | iOS lib | 467 + 427 MSL / 364 | Metal backend implementing `:render:api`, Kotlin/Native (render-metal.md, D128) |
 | `:data` | KMP (Android + iOS) | 1,943 / 1,936 | Room catalog store implementing `:core:catalog`, and the satellite elements fetcher; both shared with iOS (the iOS HTTP client is still to come) |
-| `:app` | Android app | 19,572 / 6,583 | Compose UI, ViewModels, Hilt, sensors, location, widgets, notifications |
+| `:shared:model` | pure | 2,410 / 1,505 | The app's state contracts (`Settings`, `StartupState`, `ExperimentConfig`, `Analytics`, `LocationProvider`, `Geocoding`, the sensor sources) and the controllers over them (`TimeController` + clocks, `LocationController`, `StartupRouter`), plus the orientation smoothing (1€ filter, quaternions) every sensor source shares |
+| `:shared:layers` | KMP (Android + iOS) | 2,521 / 2,291 | The sky layers and `LayerRegistry`: catalog, ephemeris, clock and settings → `LayerScene`s (layers-and-app.md) |
+| `:shared:testing` | pure (test support) | 541 / — | Fakes of the shared interfaces (`FakeSettings`, `FakeStartupState`, `FakeAnalytics`, `FakeLocationProvider`, `FakeSensorStatusSource`, `FakeCatalogRepository`) for `:shared` and `:app` tests |
+| `:shared:viewmodels` | KMP (Android + iOS) | 4,208 / 4,820 | The screens' ViewModels (map, search, time travel, layers, location, object info, settings, startup, calibration, diagnostics) on androidx.lifecycle's multiplatform `ViewModel`, with the state and geometry they compute |
+| `:app` | Android app | 18,001 / 1,717 | The Compose UI over `:shared:viewmodels`, and the Android edges: Hilt wiring, sensors, location, DataStore, Firebase, widgets, notifications |
 | `:konsist` | test-only | — | Architecture gate (D20) |
 
-Dependency arrows point inward only: `:app → {:render:*, :data, :core:*}`,
+Dependency arrows point inward only: `:app → {:render:*, :data, :shared:*, :core:*}`,
+`:shared:viewmodels → {:shared:layers, :shared:model, :data}`,
+`:shared:layers → {:shared:model, :data, :render:api, :core:*}`,
 `:render:gles1 → :render:api → :core:math`, `:data → :core:*`. Pure modules use constructor
 injection only (no Hilt/Koin) so a KMP conversion is a build-file change — this was a stated
 design goal (high-level-architecture.md) and it held: the conversion (iOS port phase 0) needed

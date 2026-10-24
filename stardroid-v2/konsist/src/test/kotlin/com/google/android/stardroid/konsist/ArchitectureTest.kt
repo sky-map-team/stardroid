@@ -33,7 +33,7 @@ class ArchitectureTest {
         // repo-relative paths.
         Regex(
             """(?:.*/)?(core/(math|astronomy|catalog|events|testing)|render/(api|testscene)""" +
-                """|data/generator)/src/.*\.kt$""",
+                """|data/generator|shared/(model|testing))/src/.*\.kt$""",
         )
 
     private fun pureModuleFiles() =
@@ -80,6 +80,13 @@ class ArchitectureTest {
                 "com.google.android.stardroid.catalog.",
                 "com.google.android.stardroid.events.",
                 "com.google.android.stardroid.render.api.",
+                // :shared:model, the app's state contracts and controllers shared with iOS.
+                "com.google.android.stardroid.settings.",
+                "com.google.android.stardroid.startup.",
+                "com.google.android.stardroid.time.",
+                "com.google.android.stardroid.location.",
+                "com.google.android.stardroid.analytics.",
+                "com.google.android.stardroid.sensors.",
                 "com.google.android.stardroid.testscene.",
                 // :core:testing's assertions, for the pure modules' test sources.
                 "com.google.android.stardroid.testing.",
@@ -94,11 +101,11 @@ class ArchitectureTest {
 
     // Every source set of the multiplatform modules except the JVM-only ones: jvmMain and jvmTest
     // in the pure modules, and the Android ones (androidMain, androidHostTest, androidDeviceTest)
-    // in :data.
+    // in :data and the :shared modules with an Android target.
     private val sharedModuleCommonSource =
         Regex(
-            """(?:.*/)?((core/[a-z]+|render/(api|testscene))/src/(?!jvm)|data/src/(?!android))""" +
-                """[A-Za-z]+/.*\.kt$""",
+            """(?:.*/)?((core/[a-z]+|render/(api|testscene))/src/(?!jvm)|data/src/(?!android)|""" +
+                """shared/[a-z]+/src/(?!jvm|android))[A-Za-z]+/.*\.kt$""",
         )
 
     private fun sharedModuleCommonFiles() =

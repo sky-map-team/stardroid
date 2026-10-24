@@ -25,6 +25,7 @@ import android.os.Build
 import android.os.Bundle
 import android.os.SystemClock
 import android.provider.Settings
+import android.util.Log
 import android.view.Surface
 import android.view.WindowManager
 import androidx.activity.ComponentActivity
@@ -97,6 +98,7 @@ import com.google.android.stardroid.ui.diagnostics.NetworkStatus
 import com.google.android.stardroid.ui.gallery.GalleryViewModel
 import com.google.android.stardroid.ui.layers.LayersViewModel
 import com.google.android.stardroid.ui.location.LocationViewModel
+import com.google.android.stardroid.ui.map.ChoreographerFrameTicker
 import com.google.android.stardroid.ui.map.MapViewModel
 import com.google.android.stardroid.ui.map.ReferenceFrame
 import com.google.android.stardroid.ui.objectinfo.ObjectInfoViewModel
@@ -196,6 +198,7 @@ class MainActivity : ComponentActivity() {
                     timeFlow = timeController.times,
                     now = timeController::now,
                     analytics = analytics,
+                    frameTicker = ChoreographerFrameTicker,
                 )
             }
         }
@@ -261,6 +264,7 @@ class MainActivity : ComponentActivity() {
                     ephemeris = MeeusEphemeris,
                     now = timeController::now,
                     settings = settings,
+                    logError = { message, cause -> Log.e("SearchViewModel", message, cause) },
                     analytics = analytics,
                     isManualMode = { map.referenceFrame.value == ReferenceFrame.MANUAL },
                     location = { locations.value },

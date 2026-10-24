@@ -11,7 +11,9 @@ package com.google.android.stardroid.time
 
 import com.google.android.stardroid.R
 import com.google.common.truth.Truth.assertThat
+import kotlinx.datetime.Instant
 import org.junit.jupiter.api.Test
+import kotlin.time.Duration.Companion.days
 
 class TimeTravelEventsTest {
     private val showerEvents =
@@ -48,5 +50,14 @@ class TimeTravelEventsTest {
         ).containsExactly("planet/moon", "planet/moon")
         val timestamps = eclipses.map { it.timestamp }
         assertThat(timestamps).isEqualTo(timestamps.sortedBy { it })
+    }
+
+    @Test
+    fun `past fixed events know they are past`() {
+        val now = Instant.fromEpochMilliseconds(1_780_000_000_000L)
+        val past = TimeTravelEvent(0, TimeTravelEventType.FIXED, Instant.fromEpochMilliseconds(0))
+        val future = TimeTravelEvent(0, TimeTravelEventType.FIXED, now + 3650.days)
+        assertThat(past.isPastAt(now)).isTrue()
+        assertThat(future.isPastAt(now)).isFalse()
     }
 }

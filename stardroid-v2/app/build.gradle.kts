@@ -122,6 +122,9 @@ dependencies {
     implementation(project(":render:gles1"))
     implementation(project(":render:gles3"))
     implementation(project(":data"))
+    implementation(project(":shared:model"))
+    implementation(project(":shared:layers"))
+    implementation(project(":shared:viewmodels"))
     implementation(libs.kotlinx.coroutines.android)
     // Parses the Remote Config announcements payload (JsonElement API only; no plugin).
     implementation(libs.kotlinx.serialization.json)
@@ -162,6 +165,7 @@ dependencies {
     testImplementation(libs.truth)
     testImplementation(libs.mockito.core)
     testImplementation(libs.kotlinx.coroutines.test)
+    testImplementation(project(":shared:testing"))
     testRuntimeOnly(libs.junit.platform.launcher)
 
     androidTestImplementation(libs.androidx.test.runner)
