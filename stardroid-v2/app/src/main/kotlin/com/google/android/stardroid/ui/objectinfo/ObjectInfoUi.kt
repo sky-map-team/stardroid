@@ -9,7 +9,6 @@
 
 package com.google.android.stardroid.ui.objectinfo
 
-import android.graphics.BitmapFactory
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
@@ -36,7 +35,6 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.BlendMode
 import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.graphics.ImageBitmap
-import androidx.compose.ui.graphics.asImageBitmap
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.platform.LocalContext
@@ -49,9 +47,9 @@ import com.google.android.stardroid.astronomy.LunarEclipseType
 import com.google.android.stardroid.astronomy.SatellitePass
 import com.google.android.stardroid.catalog.ObjectInfo
 import com.google.android.stardroid.catalog.SearchHit
+import com.google.android.stardroid.ui.common.decodeAssetBitmap
 import com.google.android.stardroid.ui.theme.NightPhotoTint
 import com.google.android.stardroid.widget.cardinal
-import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import java.text.DateFormat
@@ -330,15 +328,7 @@ private fun CelestialImage(
         value = null
         value =
             withContext(Dispatchers.IO) {
-                try {
-                    assets.open("celestial_images/$imageRef").use { stream ->
-                        BitmapFactory.decodeStream(stream)?.asImageBitmap()
-                    }
-                } catch (e: CancellationException) {
-                    throw e
-                } catch (e: Exception) {
-                    null
-                }
+                decodeAssetBitmap(assets, "celestial_images/$imageRef", 1080)
             }
     }
     bitmap?.let { image ->
