@@ -86,6 +86,7 @@ class ArchitectureTest {
                 "com.google.android.stardroid.time.",
                 "com.google.android.stardroid.location.",
                 "com.google.android.stardroid.analytics.",
+                "com.google.android.stardroid.sensors.",
                 // :core:testing's assertions, for the pure modules' test sources.
                 "com.google.android.stardroid.testing.",
             )
