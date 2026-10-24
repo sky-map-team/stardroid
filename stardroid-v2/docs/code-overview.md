@@ -76,7 +76,7 @@ other than the JVM tools are Kotlin Multiplatform (JVM + iOS), shared with the i
 | `:render:gles3` | Android lib | 2,837 / 458 | OpenGL ES 3.0 backend implementing `:render:api` (render-gles3.md) |
 | `:render:testscene` | pure | 195 / — | The seeded synthetic scene every renderer harness draws |
 | `:render:metal` | iOS lib | 467 + 427 MSL / 364 | Metal backend implementing `:render:api`, Kotlin/Native (render-metal.md, D128) |
-| `:data` | Android lib | 1,058 / 1,035 | Room catalog store implementing `:core:catalog` |
+| `:data` | KMP (Android + iOS) | 1,943 / 1,936 | Room catalog store implementing `:core:catalog`, and the satellite elements fetcher; both shared with iOS (the iOS HTTP client is still to come) |
 | `:app` | Android app | 19,572 / 6,583 | Compose UI, ViewModels, Hilt, sensors, location, widgets, notifications |
 | `:konsist` | test-only | — | Architecture gate (D20) |
 
@@ -98,10 +98,15 @@ Seven plugins carry all shared build config (see build-and-tooling.md for ration
 - `skymap.ios-library` — `skymap.kmp-base` alone, for iOS-only platform code (`:render:metal`).
 - `skymap.pure-kotlin` — `kotlin("jvm")` + ktlint + JUnit 5/Truth test stack, toolchain 17, for
   the JVM tools (`:data:generator`, `:konsist`). No Android SDK on the classpath.
+- `skymap.kmp-android-library` — multiplatform with AGP's Android target
+  (`com.android.kotlin.multiplatform.library`) in place of `jvm`, plus the iOS targets. Used by
+  `:data`, whose `androidMain` needs the Android SDK; its `commonMain` is held to the pure
+  modules' rules. Shares `skymap.kmp-base` with `skymap.pure-kmp`.
 - `skymap.android-library` / `skymap.android-app` — AGP config (compileSdk 36, minSdk 28),
   the app variant adds Compose, KSP, Hilt (wired automatically), ktlint.
-- `skymap.android-room` — KSP + Room, checked-in schema JSON at `data/schemas/` (the exported
-  schema's identity hash must match the generated DB for `createFromAsset` validation).
+- `skymap.kmp-room` — KSP + Room for every target, via Room's Gradle plugin; checked-in schema
+  JSON at `data/schemas/` (the exported schema's identity hash must match the generated DB, or
+  opening the bundled copy fails).
 
 ### Flavors and the platform seam
 
@@ -135,7 +140,8 @@ generator and app via `:core:catalog` so normalized names cannot drift (D33).
 - **Generator reproducibility gate** (`data/generator/src/test/.../CatalogDbGeneratorTest.kt`):
   runs against the real schema + source-data; asserts byte-identical output across runs,
   identity-hash match, FTS diacritic folding, plus content spot checks.
-- **Instrumented**: `:data` androidTest against real SQLite (FTS4 + Room invalidation);
+- **Instrumented**: `:data`'s device tests against real SQLite (FTS4 + Room invalidation;
+  `connectedAndroidDeviceTest`, and its `commonTest` suites also run on the iOS simulator);
   `:app`'s `RendererPerfTest` — currently a smoke gate (5 frames on the CI emulator); the real
   D19 target (30 fps at 100k points on a Pixel 3a) is verified manually at release time.
 - **CI** lives at the *monorepo root*: `.github/workflows/android.yml` runs `check` plus
@@ -220,15 +226,16 @@ or a seeded 100k-star synthetic scene; `app/src/debug/`, never in a release buil
 Authoritative design: [design/catalog-and-schema.md](design/catalog-and-schema.md) and
 [design/data-layer.md](design/data-layer.md). Key facts:
 
-- **Room catalog** (`data/src/main/kotlin/.../data/`): pack-based provenance (bundled pack
+- **Room catalog** (`data/src/commonMain/kotlin/.../data/`, shared with iOS): pack-based provenance (bundled pack
   `"core"`; `PackDao.applyPack/removePack` is the future download path), hierarchical object
   types as *data* (`galaxy.spiral` inherits rendering from `galaxy`), deliberately no foreign
   keys (cross-pack references must dangle gracefully), FTS4 external-content name search with
   diacritic folding, year-agnostic meteor-shower activity windows, constellation figures as
   vertex rows. Locale fallback is whole-object via `LocaleSpec.fallbackChain`, resolved
   Kotlin-side in `RoomCatalogRepository`.
-- **Bundled DB**: `createFromAsset("skymap.db")` with D24 recovery (probe; on failure delete
-  and re-copy once). The DB holds **no user state** — that invariant is what makes wholesale
+- **Bundled DB**: on Android, `createFromAsset("skymap.db")` with D24 recovery (probe; on
+  failure delete and re-copy once). iOS opens a copy with Room's bundled-SQLite driver; Android
+  sets no driver and keeps the platform SQLite (D127). The DB holds **no user state** — that invariant is what makes wholesale
   replacement and recovery safe.
 - **Search**: word-prefix FTS with operator-injection-proof tokenization; ranked by
   whole-name-prefix, primary-ness, brightness; moons resolve to their parent's position;
