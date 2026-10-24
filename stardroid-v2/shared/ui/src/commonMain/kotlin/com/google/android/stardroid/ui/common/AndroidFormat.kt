@@ -38,8 +38,8 @@ fun formatAndroidStyle(
     var next = 0
     var index = 0
     while (index < template.length) {
-        val match = SPECIFIER.matchAt(template, index)
-        if (template[index] != '%' || match == null) {
+        val match = if (template[index] == '%') SPECIFIER.matchAt(template, index) else null
+        if (match == null) {
             out.append(template[index++])
             continue
         }

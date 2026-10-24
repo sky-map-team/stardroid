@@ -78,11 +78,8 @@ import kotlin.math.sin
  * crosshair on the target, and — until the target centers — the guide circle with the
  * directional arrow, morphing into an expanding "found" circle over v1's one-second fade.
  *
- * Everything projects through the same pure [SkyProjection] the GL backend loads (D21), so the
- * crosshair pins to the drawn sky pixel-for-pixel. The crosshair therefore lives here rather
- * than as the sky-anchored icon scene layers-and-app.md sketched: v1's 1 Hz pulse would need
- * ~30 Hz scene resubmission and an icon tint the render API deliberately lacks, while one
- * Canvas already redraws with every camera frame (D43).
+ * Projects through the same [SkyProjection] as the GL backend (D21); why this is a Canvas
+ * rather than a scene layer is in D43.
  */
 @Composable
 fun SearchOverlay(

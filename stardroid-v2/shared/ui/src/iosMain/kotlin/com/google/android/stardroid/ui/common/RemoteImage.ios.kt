@@ -24,7 +24,6 @@ import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.suspendCancellableCoroutine
 import kotlinx.coroutines.withContext
-import org.jetbrains.skia.Image
 import platform.Foundation.NSData
 import platform.Foundation.NSHTTPURLResponse
 import platform.Foundation.NSURL
@@ -32,6 +31,7 @@ import platform.Foundation.NSURLSession
 import platform.Foundation.dataTaskWithURL
 import kotlin.coroutines.resume
 import kotlin.coroutines.resumeWithException
+import org.jetbrains.skia.Image as SkiaImage
 
 @Composable
 internal actual fun RemoteImage(
@@ -83,7 +83,7 @@ private sealed interface Fetched {
 private suspend fun fetchImage(url: String): ImageBitmap {
     val data = fetch(url)
     return withContext(Dispatchers.Default) {
-        Image.makeFromEncoded(data.toByteArray()).toComposeImageBitmap()
+        SkiaImage.makeFromEncoded(data.toByteArray()).toComposeImageBitmap()
     }
 }
 

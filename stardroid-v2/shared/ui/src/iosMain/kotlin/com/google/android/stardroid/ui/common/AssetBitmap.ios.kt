@@ -45,13 +45,12 @@ internal fun decodeBundleImage(
     maxShortSidePx: Int? = null,
 ): ImageBitmap? =
     try {
-        NSData.dataWithContentsOfFile("${NSBundle.mainBundle.resourcePath}/$path")?.let {
-            val image = Image.makeFromEncoded(it.toByteArray())
-            val scale =
-                maxShortSidePx?.let {
-                        side ->
-                    side.toFloat() / minOf(image.width, image.height)
-                }
+        val root = NSBundle.mainBundle.resourcePath
+        val data = root?.let { NSData.dataWithContentsOfFile("$it/$path") }
+        data?.let { bytes ->
+            val image = Image.makeFromEncoded(bytes.toByteArray())
+            val shortSide = minOf(image.width, image.height)
+            val scale = maxShortSidePx?.let { it.toFloat() / shortSide }
             if (scale == null || scale >= 1f) image.toComposeImageBitmap() else scaled(image, scale)
         }
     } catch (e: CancellationException) {
