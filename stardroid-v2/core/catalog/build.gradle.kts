@@ -22,18 +22,19 @@ kotlin {
 val nameCorpus =
     rootProject.layout.projectDirectory.file("data/generator/build/name-corpus/names.tsv")
 
-tasks.withType<Test>().configureEach {
+fun Task.useNameCorpus() {
     dependsOn(":data:generator:exportNameCorpus")
     inputs.file(nameCorpus).withPropertyName("nameCorpus")
         .withPathSensitivity(PathSensitivity.NONE)
+}
+
+tasks.withType<Test>().configureEach {
+    useNameCorpus()
     environment("SKYMAP_NAME_CORPUS", nameCorpus.asFile.absolutePath)
 }
 
 tasks.withType<KotlinNativeTest>().configureEach {
-    dependsOn(":data:generator:exportNameCorpus")
-    inputs.file(nameCorpus).withPropertyName("nameCorpus")
-        .withPathSensitivity(PathSensitivity.NONE)
-    // The iOS test tasks run the test binary through `xcrun simctl spawn`, which forwards only
-    // SIMCTL_CHILD_-prefixed variables (prefix stripped) into the simulated process.
+    useNameCorpus()
+    // `xcrun simctl spawn` forwards only SIMCTL_CHILD_-prefixed variables (prefix stripped).
     environment("SIMCTL_CHILD_SKYMAP_NAME_CORPUS", nameCorpus.asFile.absolutePath)
 }

@@ -18,10 +18,7 @@ import kotlin.io.path.writeText
  * Entry point for the `:data:generator:exportNameCorpus` Gradle task: writes every distinct
  * catalog name with its JVM [NameNormalizer] form, one `name<TAB>normalized` line each, sorted.
  *
- * The catalog DB is normalized here, on the JVM, but searched on every platform, where the
- * query goes through that platform's own [NameNormalizer]. `:core:catalog`'s
- * `NameNormalizerCorpusTest` re-normalizes this corpus on each target and fails on any
- * disagreement, since a disagreement is a name that platform's search can never find (D126).
+ * Consumed by `:core:catalog`'s `NameNormalizerCorpusTest` on every target (D126).
  */
 object NameCorpusExport {
     @JvmStatic
