@@ -97,6 +97,9 @@ Do not add a third notice — per-directory notices are what let the old claim d
   `render/gles1` — a GLES1 backend written to match v1's rendering behaviour (an independent
   implementation, not a port; see `NOTICE.md`); `render/metal` — the iOS backend, Kotlin/Native
   calling Metal, with its shaders in `render/metal/shaders/*.metal` (render-metal.md).
+  **The `.metal` shaders are hand-transcribed from `render/gles3`'s GLSL, not generated: a change
+  to either must be mirrored in the other** (including constants — `MetalShaderConstantParityTest`
+  catches only some drift). The Kotlin in `render/api` is the golden reference for shared maths.
 - `app/` — the Android app shell (currently the dev test-scene activity and perf gate).
 - `konsist/` — architecture-gate tests enforcing the pure/Android module boundary (D20).
 - `build-logic/` — Gradle convention plugins (`skymap.pure-kmp`, `skymap.pure-kotlin`,
