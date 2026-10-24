@@ -93,10 +93,8 @@ class ImageCache<T : Any>(
 
     companion object {
         /**
-         * 16 MB, as in `:render:gles3`. What has to fit, at four bytes per texel: a 1024² Moon
-         * (4 MB), a 512² Sun, Jupiter and Saturn (1 MB each), five 256² bodies, a 128² Pluto and
-         * the ten deep-sky icons — about 9 MB in steady state, so nothing is evicted in normal
-         * use. Revisit whenever an asset's resolution changes.
+         * 16 MB, as in `:render:gles3`: about 9 MB is resident in steady state, so nothing is
+         * evicted in normal use. Revisit whenever an asset's resolution changes.
          */
         const val DEFAULT_BYTE_BUDGET = 16L * 1024 * 1024
     }
