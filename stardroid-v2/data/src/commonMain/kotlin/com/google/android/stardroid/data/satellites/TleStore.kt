@@ -12,51 +12,24 @@ package com.google.android.stardroid.data.satellites
 import kotlinx.datetime.Instant
 
 /**
- * On-disk home for the element sets and for the fetch state that guards them.
- *
- * **Durable storage, never a cache directory** (`filesDir` on Android, not `cacheDir`). The OS may
- * evict a cache at any moment, and losing the TLE silently kills the feature for anyone offline —
- * the exact users who most need a cached copy. This is small, durable, user-owned data.
- *
- * The element sets are stored **as received, verbatim**. The two-line format is already compact
- * and line-oriented, so re-serialising to JSON or Room would gain nothing and would mean the
- * network and cache paths exercise two parsers instead of one.
+ * On-disk home for the element sets and the fetch state that guards them. Durable storage, never
+ * a cache the OS may evict: losing the TLE silently kills the feature for offline users.
+ * Element sets are stored verbatim, so the network and cache paths share one parser.
  */
 class TleStore(
     private val files: TextFiles,
 ) {
-    /**
-     * The cached element-set text, or null if there is none **or it cannot be read**.
-     *
-     * Deliberately total: this is reached from [SatelliteElementsRepository.current], which UI code
-     * calls on any thread, so an unreadable file has to degrade to "we have nothing" rather than
-     * throw. The empty state already exists and says something honest; a crash while opening the
-     * sky map would not be an improvement on it.
-     */
+    /** The cached element text, or null if absent or unreadable — never throws (UI threads call this). */
     fun readElements(): String? = runCatching { files.read(ELEMENTS_FILE) }.getOrNull()
 
     /**
-     * Replaces the cached element sets.
-     *
-     * Atomically ([TextFiles.replace]), so a kill mid-write cannot leave a truncated element set
-     * behind — half a TLE parses as garbage or, worse, as a plausible wrong orbit. A failed
-     * replace therefore leaves the *previous* good copy in place, which is the right outcome.
-     *
-     * Throws if the elements could not be persisted — a full or failing filesystem, not a
-     * programming error (an `IOException` on Android). Callers run in a background worker and
-     * must handle it rather than let it escape; the repository turns it into
-     * [FetchOutcome.StorageFailure].
+     * Replaces the cached element sets atomically, so a failed write keeps the previous good copy
+     * (half a TLE can parse as a plausible wrong orbit). Throws if they could not be persisted;
+     * the repository turns that into [FetchOutcome.StorageFailure].
      */
     fun writeElements(text: String) = files.replace(ELEMENTS_FILE, text)
 
-    /**
-     * The persisted fetch state, or a fresh one if there is none or it cannot be read.
-     *
-     * A corrupt state file degrades to "never fetched" rather than throwing. That is the
-     * conservative direction: the worst case is one extra request after the minimum interval, and
-     * an app that cannot start because its backoff bookkeeping is unparseable would be worse than
-     * the problem it is guarding against.
-     */
+    /** The persisted fetch state; a missing or corrupt file reads as "never fetched". */
     fun readState(): SatelliteFetchState =
         runCatching {
             val fields =
@@ -80,12 +53,8 @@ class TleStore(
         }.getOrElse { SatelliteFetchState() }
 
     /**
-     * Persists [state].
-     *
-     * A hand-rolled `key=value` format rather than JSON: `:data` carries no JSON library on its
-     * runtime classpath (`kotlinx-serialization-json` is a build-time tool for `:data:generator`
-     * only), and six scalar fields do not justify adding one. `Last-Modified` is an HTTP date and
-     * contains no newlines or `=`, so the format is unambiguous for every value stored here.
+     * Hand-rolled `key=value`: `:data` has no JSON library at runtime, and `Last-Modified` never
+     * contains a newline or `=`.
      */
     fun writeState(state: SatelliteFetchState) {
         val text =
@@ -123,8 +92,8 @@ class TleStore(
  */
 interface TextFiles {
     /**
-     * The named file's text, or null if there is no such file. May throw if it exists but cannot
-     * be read; [TleStore] treats that as absent.
+     * The named file's text, or null if there is no such file. An unreadable file may throw or
+     * read as null; [TleStore] treats both as absent.
      */
     fun read(name: String): String?
 

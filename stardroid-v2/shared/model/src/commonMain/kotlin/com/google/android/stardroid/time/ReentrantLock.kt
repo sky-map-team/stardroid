@@ -10,11 +10,8 @@
 package com.google.android.stardroid.time
 
 /**
- * A reentrant mutual-exclusion lock: what `@Synchronized` gave the clocks on the JVM, which
- * Kotlin/Native lacks. The clocks' few fields are written from the UI thread and read on the
- * render and background threads, and a read can write them too ([TimeTravelClock] re-anchors as
- * it answers), so each locked method still has to run whole. Reentrant because they call one
- * another ([TimeTravelClock.setTimeTravelDate] pauses).
+ * What `@Synchronized` gave the clocks on the JVM, which Kotlin/Native lacks. Reentrant because
+ * the clocks call one another ([TimeTravelClock.setTimeTravelDate] pauses).
  */
 internal expect class ReentrantLock() {
     inline fun <T> withLock(block: () -> T): T
