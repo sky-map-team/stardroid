@@ -93,7 +93,7 @@ Five plugins carry all shared build config (see build-and-tooling.md for rationa
   Applying it *is* the purity enforcement: no Android SDK anywhere, no JDK in `commonMain`.
 - `skymap.pure-kotlin` — `kotlin("jvm")` + ktlint + JUnit 5/Truth test stack, toolchain 17, for
   the JVM tools (`:data:generator`, `:konsist`). No Android SDK on the classpath.
-- `skymap.android-library` / `skymap.android-app` — AGP config (compileSdk 36, minSdk 28),
+- `skymap.android-library` / `skymap.android-app` — AGP config (SDK levels from `libs.versions.toml`),
   the app variant adds Compose, KSP, Hilt (wired automatically), ktlint.
 - `skymap.android-room` — KSP + Room, checked-in schema JSON at `data/schemas/` (the exported
   schema's identity hash must match the generated DB for `createFromAsset` validation).

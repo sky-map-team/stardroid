@@ -16,7 +16,7 @@ plugins {
 val libs = extensions.getByType<VersionCatalogsExtension>().named("libs")
 
 kotlin {
-    jvmToolchain(17)
+    jvmToolchain(jdkVersion)
 
     jvm()
     iosArm64()

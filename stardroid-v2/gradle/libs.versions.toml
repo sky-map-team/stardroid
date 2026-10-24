@@ -1,4 +1,10 @@
 [versions]
+# SDK levels and JDK, read by build-logic's convention plugins (D9: minSdk is a policy knob).
+androidCompileSdk = "36"
+androidMinSdk = "28"
+androidTargetSdk = "36"
+jdk = "17"
+
 agp = "9.0.1"
 kotlin = "2.2.10"
 ktlint-gradle = "12.1.2"

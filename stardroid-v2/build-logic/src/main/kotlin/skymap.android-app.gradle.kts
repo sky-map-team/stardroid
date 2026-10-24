@@ -27,13 +27,13 @@ dependencies {
 }
 
 extensions.configure<ApplicationExtension> {
-    compileSdk = 36
+    compileSdk = compileSdkLevel
     defaultConfig {
         // 28 (Android 9) is best-effort only, not a supported floor (D9, revised) — see
         // docs/design/build-and-tooling.md. Code is written assuming API 29+ is available;
         // bump this back to 29 the moment a change actually needs a Q+ API.
-        minSdk = 28
-        targetSdk = 36
+        minSdk = minSdkLevel
+        targetSdk = targetSdkLevel
     }
     buildFeatures {
         compose = true
@@ -47,7 +47,7 @@ extensions.configure<ApplicationExtension> {
         buildConfig = true
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_17
-        targetCompatibility = JavaVersion.VERSION_17
+        sourceCompatibility = javaVersion
+        targetCompatibility = javaVersion
     }
 }

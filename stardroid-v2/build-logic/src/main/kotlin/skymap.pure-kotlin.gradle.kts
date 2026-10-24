@@ -14,7 +14,7 @@ val libs = extensions.getByType<VersionCatalogsExtension>().named("libs")
 ktlint { version.set(libs.findVersion("ktlint").get().requiredVersion) }
 
 kotlin {
-    jvmToolchain(17)
+    jvmToolchain(jdkVersion)
 }
 
 // Pure-module test stack lives here so every module gets it consistently with no per-module

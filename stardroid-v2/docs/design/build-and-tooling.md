@@ -56,8 +56,8 @@ kotlinx-datetime/serialization/coroutines, Coil, Konsist, Truth, Turbine (Flow t
 (Robolectric and androidx-benchmark, listed in earlier drafts, are not in use — see the
 performance-gate note below.)
 
-**SDK levels.** v2 uses `minSdk 28`, `compileSdk 36`, `targetSdk 36`, set once in the
-`android-library` / `android-app` convention plugins. v1's "SDK 26–36" range does not apply to
+**SDK levels.** v2 uses `minSdk 28`, `compileSdk 36`, `targetSdk 36`, set once in
+`gradle/libs.versions.toml` (`androidMinSdk` etc., plus `jdk`) and read by the convention plugins. v1's "SDK 26–36" range does not apply to
 v2 — see the note in the repo-root `AGENTS.md`.
 
 D9 was originally decided as a deliberate raise to `minSdk 29` over v1's `minSdk 26`:
