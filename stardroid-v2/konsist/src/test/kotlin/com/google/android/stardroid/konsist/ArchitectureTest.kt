@@ -32,8 +32,8 @@ class ArchitectureTest {
         // Leading `(?:.*/)?` (not `.*/`) so the gate matches whether Konsist yields absolute or
         // repo-relative paths.
         Regex(
-            """(?:.*/)?(core/(math|astronomy|catalog|events|testing)|render/api|data/generator|""" +
-                """shared/(model|testing))/src/.*\.kt$""",
+            """(?:.*/)?(core/(math|astronomy|catalog|events|testing)|render/(api|testscene)""" +
+                """|data/generator|shared/(model|testing))/src/.*\.kt$""",
         )
 
     private fun pureModuleFiles() =
@@ -50,12 +50,25 @@ class ArchitectureTest {
         }
     }
 
+    // AndroidX libraries that are Kotlin Multiplatform — JVM and iOS builds, no Android SDK —
+    // despite the name, so a pure module may use them. Each must also compile for the pure
+    // modules' JVM and iOS targets, which the build itself checks.
+    private val multiplatformAndroidx =
+        listOf(
+            // DataStoreSettings / DataStoreStartupState in :shared:model (iOS port phase 4).
+            "androidx.datastore.core.",
+            "androidx.datastore.preferences.core.",
+        )
+
     @Test
     fun `pure modules do not import the Android framework`() {
         pureModuleFiles().assertFalse { file ->
             file.hasImport { import ->
                 import.name.startsWith("android.") ||
-                    import.name.startsWith("androidx.") ||
+                    (
+                        import.name.startsWith("androidx.") &&
+                            multiplatformAndroidx.none { import.name.startsWith(it) }
+                    ) ||
                     // Catch any Android-only library — Google (Play Services, Material) and
                     // third-party Android variants (kotlinx.coroutines.android, rxandroid, …) —
                     // while still allowing our own `com.google.android.stardroid.*` packages.
@@ -86,6 +99,7 @@ class ArchitectureTest {
                 "com.google.android.stardroid.time.",
                 "com.google.android.stardroid.location.",
                 "com.google.android.stardroid.analytics.",
+                "com.google.android.stardroid.testscene.",
                 // :core:testing's assertions, for the pure modules' test sources.
                 "com.google.android.stardroid.testing.",
             )
@@ -102,7 +116,7 @@ class ArchitectureTest {
     // in :data and the :shared modules with an Android target.
     private val sharedModuleCommonSource =
         Regex(
-            """(?:.*/)?((core/[a-z]+|render/api)/src/(?!jvm)|data/src/(?!android)|""" +
+            """(?:.*/)?((core/[a-z]+|render/(api|testscene))/src/(?!jvm)|data/src/(?!android)|""" +
                 """shared/[a-z]+/src/(?!jvm|android))[A-Za-z]+/.*\.kt$""",
         )
 
@@ -207,6 +221,28 @@ class ArchitectureTest {
         nonGles3AppFiles().assertFalse { file ->
             file.hasImport { import ->
                 import.name.startsWith("com.google.android.stardroid.render.gles3.")
+            }
+        }
+    }
+
+    // :render:metal itself; its harness, as RendererTestActivity is for the GL backends; and the
+    // iOS app (:app-ios), which chooses its renderer as :app chooses between the GL backends.
+    private val metalModuleSource =
+        Regex("""(?:.*/)?(render/metal(-harness)?|app-ios)/src/.*\.kt$""")
+
+    @Test
+    fun `nothing in the Gradle tree depends on render metal`() {
+        // D128: :render:metal is the iOS backend, chosen by the iOS app alone (:app-ios, and
+        // exercised by its harness), as :app alone chooses between the GL backends. No shared or
+        // Android module may reach into it.
+        val others =
+            Konsist.scopeFromProject().files.filterNot {
+                metalModuleSource.matches(it.path.replace('\\', '/'))
+            }
+        assertTrue(others.isNotEmpty()) { "metal boundary gate found nothing to scan" }
+        others.assertFalse { file ->
+            file.hasImport { import ->
+                import.name.startsWith("com.google.android.stardroid.render.metal.")
             }
         }
     }

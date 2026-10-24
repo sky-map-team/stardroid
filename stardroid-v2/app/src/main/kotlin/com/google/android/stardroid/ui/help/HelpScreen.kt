@@ -177,7 +177,7 @@ fun HelpScreen(
                                     SymbolKeySection(nightMode, query, onLink)
                                 is HelpItem.Prose ->
                                     StyledHtml(
-                                        stringResource(row.section.item.html),
+                                        row.section.item.html.text(),
                                         nightMode = nightMode,
                                         highlight = query,
                                         onInternalLink = onLink,
@@ -312,7 +312,7 @@ private fun rememberHelpSections(experimentConfig: ExperimentConfig): List<HelpS
 @Composable
 private fun searchableTextOf(item: HelpItem): String =
     when (item) {
-        is HelpItem.Prose -> AnnotatedString.fromHtml(stringResource(item.html)).text
+        is HelpItem.Prose -> AnnotatedString.fromHtml(item.html.text()).text
         is HelpItem.SymbolKey ->
             buildString {
                 appendLine(stringResource(R.string.help_symbol_key_title))

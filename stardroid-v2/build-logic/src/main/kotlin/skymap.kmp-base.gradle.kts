@@ -3,8 +3,8 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinNativeLink
 
 // What every Kotlin Multiplatform module shares, whichever targets it adds on top: the iOS
 // targets, the commonTest stack, and the rule for Macs without Xcode. Not applied directly —
-// modules use skymap.pure-kmp (shared code, plus a JVM target) or skymap.kmp-android-library
-// (shared code whose Android side needs the Android SDK).
+// modules use skymap.pure-kmp (shared code, plus a JVM target), skymap.kmp-android-library
+// (shared code whose Android side needs the Android SDK) or skymap.ios-library (iOS only).
 plugins {
     id("org.jetbrains.kotlin.multiplatform")
     id("skymap.ktlint")
