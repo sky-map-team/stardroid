@@ -15,10 +15,8 @@ import com.google.android.stardroid.catalog.decomposeCanonically
  * A searchable projection of some prose: lower-cased and stripped of diacritics, keeping a map
  * back to the offsets in the text it came from so a match can still be highlighted in place.
  *
- * The fold matters because the help document is translated into 32 locales: a French reader who
- * types "etoile" expects to find "étoile", and one who types "Étoile" expects the same. Folding
- * changes the length of the string — "é" folds to one character, "ﬁ" would not fold at all — so
- * the offsets cannot simply be reused, hence [origin].
+ * Translated help is searched diacritic-insensitively ("etoile" finds "étoile"). Folding can
+ * change the string's length, so [origin] maps folded offsets back to the text.
  */
 class FoldedText private constructor(
     val text: String,

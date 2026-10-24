@@ -82,6 +82,25 @@ class SimpleHtmlTest {
     }
 
     @Test
+    fun `numeric entities above the BMP become surrogate pairs`() {
+        assertEquals("\uD83D\uDE00", parse("&#x1F600;").text)
+        assertEquals("\uD83D\uDE00", parse("&#128512;").text)
+    }
+
+    @Test
+    fun `entities that are not characters stay as text`() {
+        assertEquals("&#0; &#xD800; &#x110000;", parse("&#0; &#xD800; &#x110000;").text)
+    }
+
+    @Test
+    fun `a link with an unlisted scheme is plain text`() {
+        val parsed = parse("<a href=\"javascript:run()\">bad</a>")
+
+        assertEquals("bad", parsed.text)
+        assertEquals(0, parsed.getLinkAnnotations(0, parsed.length).size)
+    }
+
+    @Test
     fun `list items are bullet lines`() {
         assertEquals("• One\n• Two\n", parse("<ul><li>One</li><li>Two</li></ul>").text)
     }

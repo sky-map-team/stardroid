@@ -20,20 +20,10 @@ import androidx.compose.ui.text.style.TextDecoration
 
 /**
  * The strings' HTML as an [AnnotatedString] where Compose Multiplatform 1.9 has no
- * `AnnotatedString.fromHtml` (iOS). It reads the subset the strings use and lays it out as
- * Android's `Html.fromHtml` does in the compact mode Compose's Android version asks for:
- *
- * - Block elements (`p`, `div`, `ul`, `ol`, `li`, `blockquote`, `h1`–`h6`) start and end on a
- *   line of their own: one newline between blocks, none at the very start, and the text keeps
- *   the newline that ends its last block.
- * - `br` is a newline. Spaces and newlines in the text collapse to one space, and a space at the
- *   start of a line is dropped.
- * - `b`/`strong` are bold, `i`/`em`/`cite`/`dfn` italic, `u` underlined, `a href` a link with
- *   [linkStyles] and [linkInteractionListener]. A list item is a "• " line, where Android draws
- *   a bullet.
- * - Other tags keep their text and lose their markup; entities decode.
- *
- * Headings and callouts rarely reach this: [splitHtmlBlocks] takes them out first.
+ * `AnnotatedString.fromHtml` (iOS). It lays out the subset the strings use as Android's
+ * `Html.fromHtml` does in compact mode: blocks start and end on their own line, `li` is a "• "
+ * line, whitespace collapses, other tags keep their text, and only [ALLOWED_SCHEMES] links
+ * survive. Headings and callouts rarely reach this: [splitHtmlBlocks] takes them out first.
  */
 internal fun simpleHtmlToAnnotatedString(
     html: String,
@@ -135,7 +125,7 @@ private class SpannedText(
                 )
             name == "u" ->
                 builder.addStyle(SpanStyle(textDecoration = TextDecoration.Underline), start, end)
-            name == "a" && tag.href != null ->
+            name == "a" && tag.href != null && hasAllowedScheme(tag.href) ->
                 builder.addLink(
                     LinkAnnotation.Url(tag.href, linkStyles, linkInteractionListener),
                     start,
@@ -173,6 +163,12 @@ private class SpannedText(
     }
 }
 
+// Bundled, translated strings only, but a bad translation must not launch an arbitrary scheme.
+private val ALLOWED_SCHEMES = listOf("https:", "http:", "mailto:", "skymap:")
+
+private fun hasAllowedScheme(href: String): Boolean =
+    ALLOWED_SCHEMES.any { href.startsWith(it, ignoreCase = true) }
+
 private val ENTITY = Regex("&(#[0-9]+|#[xX][0-9a-fA-F]+|[a-zA-Z]+);")
 private val NAMED_ENTITIES =
     mapOf(
@@ -195,7 +191,15 @@ private fun decodeEntities(text: String): String =
             }
         when {
             codePoint == null -> NAMED_ENTITIES[body] ?: match.value
+            codePoint == 0 || codePoint !in 1..0x10FFFF || codePoint in 0xD800..0xDFFF ->
+                match.value
             codePoint <= 0xFFFF -> codePoint.toChar().toString()
-            else -> match.value
+            else -> {
+                val offset = codePoint - 0x10000
+                buildString {
+                    append((0xD800 + (offset shr 10)).toChar())
+                    append((0xDC00 + (offset and 0x3FF)).toChar())
+                }
+            }
         }
     }
