@@ -10,7 +10,6 @@
 package com.google.android.stardroid.ui.gallery
 
 import android.content.res.AssetManager
-import android.graphics.BitmapFactory
 import androidx.activity.compose.BackHandler
 import androidx.collection.LruCache
 import androidx.compose.foundation.Image
@@ -46,7 +45,6 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.BlendMode
 import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.graphics.ImageBitmap
-import androidx.compose.ui.graphics.asImageBitmap
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
@@ -56,9 +54,9 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.google.android.stardroid.R
 import com.google.android.stardroid.catalog.GalleryItem
+import com.google.android.stardroid.ui.common.decodeAssetBitmap
 import com.google.android.stardroid.ui.common.topBarWindowInsets
 import com.google.android.stardroid.ui.theme.NightPhotoTint
-import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
@@ -180,25 +178,6 @@ private fun GalleryTile(
 private fun decodeThumbnail(
     assets: AssetManager,
     imageRef: String,
-): ImageBitmap? =
-    try {
-        val path = "celestial_images/$imageRef"
-        val bounds = BitmapFactory.Options().apply { inJustDecodeBounds = true }
-        assets.open(path).use { BitmapFactory.decodeStream(it, null, bounds) }
-        var sampleSize = 1
-        while (bounds.outWidth / (sampleSize * 2) >= TARGET_THUMBNAIL_PX &&
-            bounds.outHeight / (sampleSize * 2) >= TARGET_THUMBNAIL_PX
-        ) {
-            sampleSize *= 2
-        }
-        val options = BitmapFactory.Options().apply { inSampleSize = sampleSize }
-        assets.open(path).use {
-            BitmapFactory.decodeStream(it, null, options)?.asImageBitmap()
-        }
-    } catch (e: CancellationException) {
-        throw e
-    } catch (e: Exception) {
-        null
-    }
+): ImageBitmap? = decodeAssetBitmap(assets, "celestial_images/$imageRef", TARGET_THUMBNAIL_PX)
 
 private const val TARGET_THUMBNAIL_PX = 256

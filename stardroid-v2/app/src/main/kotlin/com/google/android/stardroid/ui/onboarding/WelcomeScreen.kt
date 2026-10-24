@@ -10,7 +10,6 @@
 package com.google.android.stardroid.ui.onboarding
 
 import android.content.res.Configuration
-import android.graphics.BitmapFactory
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -55,7 +54,6 @@ import androidx.compose.ui.graphics.BlendMode
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.graphics.ImageBitmap
-import androidx.compose.ui.graphics.asImageBitmap
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.platform.LocalContext
@@ -69,10 +67,10 @@ import com.google.android.stardroid.R
 import com.google.android.stardroid.catalog.CelestialObjectId
 import com.google.android.stardroid.catalog.ObjectInfo
 import com.google.android.stardroid.catalog.TypeCode
+import com.google.android.stardroid.ui.common.decodeAssetBitmap
 import com.google.android.stardroid.ui.objectinfo.ObjectInfoBody
 import com.google.android.stardroid.ui.theme.NightPhotoTint
 import com.google.android.stardroid.ui.theme.statusColors
-import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -485,15 +483,7 @@ private fun AssetBackdrop(
     val bitmap by produceState<ImageBitmap?>(initialValue = null, assetPath) {
         value =
             withContext(Dispatchers.IO) {
-                try {
-                    assets.open(assetPath).use { stream ->
-                        BitmapFactory.decodeStream(stream)?.asImageBitmap()
-                    }
-                } catch (e: CancellationException) {
-                    throw e
-                } catch (e: Exception) {
-                    null
-                }
+                decodeAssetBitmap(assets, assetPath, 1080)
             }
     }
     bitmap?.let {

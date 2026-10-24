@@ -9,7 +9,6 @@
 
 package com.google.android.stardroid.ui.objectinfo
 
-import android.graphics.BitmapFactory
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.core.tween
 import androidx.compose.animation.fadeOut
@@ -42,7 +41,6 @@ import androidx.compose.ui.graphics.BlendMode
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.graphics.ImageBitmap
-import androidx.compose.ui.graphics.asImageBitmap
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.input.pointer.PointerInputChange
 import androidx.compose.ui.input.pointer.changedToUp
@@ -57,8 +55,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Dialog
 import androidx.compose.ui.window.DialogProperties
 import com.google.android.stardroid.R
+import com.google.android.stardroid.ui.common.decodeAssetBitmap
 import com.google.android.stardroid.ui.theme.NightPhotoTint
-import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.withContext
@@ -90,15 +88,7 @@ fun ImageExpandOverlay(
             value = null
             value =
                 withContext(Dispatchers.IO) {
-                    try {
-                        assets.open("celestial_images/$imageRef").use { stream ->
-                            BitmapFactory.decodeStream(stream)?.asImageBitmap()
-                        }
-                    } catch (e: CancellationException) {
-                        throw e
-                    } catch (e: Exception) {
-                        null
-                    }
+                    decodeAssetBitmap(assets, "celestial_images/$imageRef", 2048)
                 }
         }
         var scale by remember(imageRef) { mutableFloatStateOf(1f) }

@@ -9,6 +9,7 @@
 
 package com.google.android.stardroid.ui.common
 
+import android.content.res.AssetManager
 import android.graphics.BitmapFactory
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -27,21 +28,45 @@ import kotlinx.coroutines.withContext
  * compose nothing.
  */
 @Composable
-fun rememberAssetBitmap(path: String): ImageBitmap? {
+fun rememberAssetBitmap(
+    path: String,
+    minSidePx: Int = DEFAULT_MIN_SIDE_PX,
+): ImageBitmap? {
     val assets = LocalContext.current.assets
     val bitmap by produceState<ImageBitmap?>(initialValue = null, path) {
         value =
             withContext(Dispatchers.IO) {
-                try {
-                    assets.open(path).use { stream ->
-                        BitmapFactory.decodeStream(stream)?.asImageBitmap()
-                    }
-                } catch (e: CancellationException) {
-                    throw e
-                } catch (e: Exception) {
-                    null
-                }
+                decodeAssetBitmap(assets, path, minSidePx)
             }
     }
     return bitmap
 }
+
+/**
+ * Decodes [path] with a power-of-two `inSampleSize` so neither side drops below [minSidePx]
+ * (the decoded bitmap stays at least that big, never holding more resolution than the UI
+ * can show). Null for a missing or corrupt asset.
+ */
+fun decodeAssetBitmap(
+    assets: AssetManager,
+    path: String,
+    minSidePx: Int,
+): ImageBitmap? =
+    try {
+        val bounds = BitmapFactory.Options().apply { inJustDecodeBounds = true }
+        assets.open(path).use { BitmapFactory.decodeStream(it, null, bounds) }
+        var sampleSize = 1
+        while (bounds.outWidth / (sampleSize * 2) >= minSidePx &&
+            bounds.outHeight / (sampleSize * 2) >= minSidePx
+        ) {
+            sampleSize *= 2
+        }
+        val options = BitmapFactory.Options().apply { inSampleSize = sampleSize }
+        assets.open(path).use { BitmapFactory.decodeStream(it, null, options)?.asImageBitmap() }
+    } catch (e: CancellationException) {
+        throw e
+    } catch (e: Exception) {
+        null
+    }
+
+private const val DEFAULT_MIN_SIDE_PX = 1080
