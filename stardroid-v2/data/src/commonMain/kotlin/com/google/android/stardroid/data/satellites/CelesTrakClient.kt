@@ -30,7 +30,7 @@ enum class SatelliteGroup(
  * fake without a socket. That testability is the whole reason a real HTTP client library was not
  * worth adding for a single ~1 KB GET every 12 hours.
  *
- * Each platform implements it over its own HTTP stack — [HttpUrlConnectionCelesTrakClient] on
+ * Each platform implements it over its own HTTP stack — `HttpUrlConnectionCelesTrakClient` on
  * Android; on iOS, URLSession once satellites ship there — rather than sharing a multiplatform
  * HTTP library that Android would then carry too (D127).
  */
