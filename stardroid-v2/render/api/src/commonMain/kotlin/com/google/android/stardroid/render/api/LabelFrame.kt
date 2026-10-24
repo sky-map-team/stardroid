@@ -147,10 +147,7 @@ class LabelFrame {
         max(1f, glyph.heightPx * UNDERLINE_THICKNESS_FRACTION)
 
     private fun underlineGap(glyph: LabelGlyph): Float =
-        max(
-            1f,
-            glyph.heightPx * UNDERLINE_GAP_FRACTION,
-        )
+        max(1f, glyph.heightPx * UNDERLINE_GAP_FRACTION)
 
     /** Room the rule needs below the cell, which the declutterer keeps clear. */
     private fun underlineAllowance(glyph: LabelGlyph): Int =
@@ -181,7 +178,7 @@ class LabelFrame {
         /** How much of the label's width the rule spans, centred: a tick, not a full rule. */
         const val UNDERLINE_WIDTH_FRACTION = 0.6f
 
-        /** Opacity of the rule relative to its label: a hint, not a second piece of text. */
+        /** Opacity of the rule relative to its label. */
         const val UNDERLINE_ALPHA = 0.45f
     }
 }

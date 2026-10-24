@@ -56,7 +56,7 @@ without Xcode), which no module applies directly; every plugin lints through `sk
 |---|---|---|
 | `skymap.pure-kmp` | `kotlin("multiplatform")` — JVM + iOS targets, kotlin.test + `:core:testing`, **no Android plugin** | `:core:*`, `:render:api`, `:render:testscene`, `:shared:model`, `:shared:testing` |
 | `skymap.kmp-android-library` | `kotlin("multiplatform")` — AGP's multiplatform Android target (`com.android.kotlin.multiplatform.library`) + iOS targets | `:data`, `:shared:layers`, `:shared:viewmodels` |
-| `skymap.ios-library` | `skymap.kmp-base` alone: iOS-only platform code | `:render:metal`, `:render:metal-harness` |
+| `skymap.ios-library` | `kotlin("multiplatform")` — the iOS targets only, kotlin.test + `:core:testing`: iOS-only platform code | `:render:metal`, `:render:metal-harness` |
 | `skymap.pure-kotlin` | `kotlin("jvm")`, JUnit5/Truth, **no Android plugin** | `:data:generator`, `:konsist` |
 | `skymap.android-library` | `com.android.library` + Kotlin, common Android config | `:render:gles1`, `:render:gles3` |
 | `skymap.android-app` | `com.android.application` + Kotlin + Compose + Hilt + flavors | `:app` |
