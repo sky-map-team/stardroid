@@ -124,7 +124,7 @@ class AltAzGridLayer(
             val altDeg = d * 90.0 / altLineCount
             lines += altitudeLine(frame, altDeg, circleVertexCount, lineColor)
             lines += altitudeLine(frame, -altDeg, circleVertexCount, lineColor)
-            // Repeated at each compass point so a height label is on screen wherever you look.
+            // Repeated every 45° of azimuth so a height label is on screen wherever you look.
             for (azDeg in ALT_LABEL_AZIMUTHS) {
                 labels += label(altAzToVector(altDeg, azDeg, frame), "${altDeg.toInt()}°")
                 labels += label(altAzToVector(-altDeg, azDeg, frame), "-${altDeg.toInt()}°")
@@ -201,7 +201,7 @@ class AltAzGridLayer(
 
         private const val LINE_WIDTH_DP = 1.5
 
-        private val ALT_LABEL_AZIMUTHS = listOf(0.0, 90.0, 180.0, 270.0)
+        private val ALT_LABEL_AZIMUTHS = (0 until 8).map { it * 45.0 }
 
         private const val AZ_LABEL_HIGH_ALT_DEG = 45.0
 
