@@ -57,10 +57,9 @@ import kotlin.time.Duration.Companion.seconds
 
 /**
  * The active search target: a **static celestial snapshot**, exactly as v1's `SearchHelper`
- * copied the target on activation — a planet found under time travel does not drift within the
- * search session. The exception is a satellite ([trackedId]): it crosses the sky in minutes, so
- * its [direction] is refreshed while the search lasts. [fovDeg] is the catalog's `search_level`,
- * `null` for coordinates and objects without one.
+ * copied the target on activation, except a satellite ([trackedId]) whose [direction] is
+ * refreshed while the search lasts. [fovDeg] is the catalog's `search_level`, `null` for
+ * coordinates and objects without one.
  */
 data class SearchTarget(
     val name: String,
@@ -114,8 +113,8 @@ class SearchViewModel(
 
     /** Non-null while search mode is engaged (the overlay and control bar show). */
     private val _target = MutableStateFlow<SearchTarget?>(null)
-    private var trackingJob: Job? = null
     val target: StateFlow<SearchTarget?> = _target.asStateFlow()
+    private var trackingJob: Job? = null
 
     /**
      * Ranked as-you-type hits, one query per typing pause rather than one per keystroke.
@@ -172,10 +171,10 @@ class SearchViewModel(
         viewModelScope.launch {
             // A satellite moves ~1° every few seconds, so the position the list was built with
             // may be stale by now: take a fresh one.
+            val isSatellite = SatelliteIds.noradIdFor(picked.id) != null
             val hit =
-                if (SatelliteIds.noradIdFor(picked.id) != null) {
-                    satellitesSafely().firstOrNull { it.info.id == picked.id }
-                        ?.let { picked.copy(position = it.position) } ?: picked
+                if (isSatellite) {
+                    satellitePosition(picked.id)?.let { picked.copy(position = it) } ?: picked
                 } else {
                     picked
                 }
@@ -185,7 +184,7 @@ class SearchViewModel(
                 // Search spans hidden layers (D43); re-enable the hit's layer so the arrow
                 // never guides the user to empty sky (PR #23 review).
                 layerIdFor(hit, info)?.let { settings.setLayerEnabled(it, enabled = true) }
-                val trackedId = hit.id.takeIf { SatelliteIds.noradIdFor(it) != null }
+                val trackedId = hit.id.takeIf { isSatellite }
                 activate(SearchTarget(hit.name, direction, hit.searchFovDeg, trackedId))
             } else {
                 searchFailed(hit.name)
@@ -251,14 +250,12 @@ class SearchViewModel(
         setQuery("")
     }
 
-    /** Re-resolves a moving target's position until the search ends or another target replaces it. */
     private suspend fun track(id: CelestialObjectId) {
         while (true) {
             delay(TRACK_INTERVAL)
-            val position = satellitesSafely().firstOrNull { it.info.id == id }?.position ?: continue
-            _target.update { current ->
-                current?.takeIf { it.trackedId == id }
-                    ?.copy(direction = position.toGeocentricVector()) ?: current
+            val position = satellitePosition(id) ?: continue
+            _target.update {
+                if (it?.trackedId == id) it.copy(direction = position.toGeocentricVector()) else it
             }
         }
     }
@@ -320,6 +317,9 @@ class SearchViewModel(
      * Satellites are an optional extra: a failed lookup (entry point, repository I/O, SGP4)
      * must not blank the catalog results or crash [select], so it degrades to "none".
      */
+    private suspend fun satellitePosition(id: CelestialObjectId): RaDec? =
+        satellitesSafely().firstOrNull { it.info.id == id }?.position
+
     private suspend fun satellitesSafely(): List<TrackedSatellite> =
         try {
             satellites()

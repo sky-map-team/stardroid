@@ -283,9 +283,27 @@ class SearchViewModelTest {
             ).isLessThan(TOL)
 
             vm.cancelSearch()
-            trackedSatellites = listOf(ISS)
+            vm.select(SIRIUS_HIT)
+            runCurrent()
+            val sirius = vm.target.value
             advanceTimeBy(2_000)
-            assertThat(vm.target.value).isNull()
+            assertThat(vm.target.value).isEqualTo(sirius)
+        }
+
+    @Test
+    fun `replacing a satellite target with a star stops tracking`() =
+        testScope.runCurrentTest {
+            trackedSatellites = listOf(ISS)
+            val vm = viewModel()
+            vm.select(ISS_HIT)
+            runCurrent()
+            vm.select(SIRIUS_HIT)
+            runCurrent()
+            val sirius = vm.target.value
+
+            trackedSatellites = listOf(ISS.copy(position = RaDec(250.0, 10.0)))
+            advanceTimeBy(2_000)
+            assertThat(vm.target.value).isEqualTo(sirius)
         }
 
     @Test
