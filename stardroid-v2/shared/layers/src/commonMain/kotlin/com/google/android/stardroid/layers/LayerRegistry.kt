@@ -17,6 +17,7 @@ import com.google.android.stardroid.math.LatLong
 import com.google.android.stardroid.render.api.LayerId
 import com.google.android.stardroid.settings.Settings
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.flowOf
 import kotlinx.datetime.Instant
 
 /**
@@ -115,13 +116,14 @@ class LayerRegistry(
             settings: Settings,
             satelliteElements: Flow<SatelliteElements>,
             satellitesEnabled: Boolean,
+            realTime: Flow<Boolean> = flowOf(false),
         ): LayerRegistry =
             LayerRegistry(
                 CatalogLayers.create(catalog, locale) +
                     listOfNotNull(
                         // Not registered at all when the experiment is off, so the feature is
                         // absent rather than present-but-inert.
-                        SatelliteLayer(satelliteElements, clock, location)
+                        SatelliteLayer(satelliteElements, clock, location, realTime)
                             .takeIf { satellitesEnabled },
                         MeteorShowerLayer(catalog, locale, clock),
                         GridLayer.create(strings, settings),
