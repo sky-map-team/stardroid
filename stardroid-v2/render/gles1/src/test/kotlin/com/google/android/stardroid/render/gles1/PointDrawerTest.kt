@@ -76,4 +76,40 @@ class PointDrawerTest {
         val buffers = PointDrawer.build(emptyList(), RenderState(), density = 1f)
         assertThat(buffers.sizeRuns).isEmpty()
     }
+
+    @Test
+    fun `smoothing is kept when the driver supports the size`() {
+        val style = PointDrawer.styleFor(3f, PointLimits(smoothMax = 8f, aliasedMax = 64f))
+        assertThat(style).isEqualTo(PointStyle(smooth = true, sizePx = 3f))
+    }
+
+    @Test
+    fun `a 1px smooth range falls back to aliased points`() {
+        val style = PointDrawer.styleFor(3f, PointLimits(smoothMax = 1f, aliasedMax = 64f))
+        assertThat(style).isEqualTo(PointStyle(smooth = false, sizePx = 3f))
+    }
+
+    @Test
+    fun `aliased size is clamped to the aliased maximum`() {
+        val style = PointDrawer.styleFor(6f, PointLimits(smoothMax = 1f, aliasedMax = 4f))
+        assertThat(style).isEqualTo(PointStyle(smooth = false, sizePx = 4f))
+    }
+
+    @Test
+    fun `unknown limits leave behaviour unchanged`() {
+        val style = PointDrawer.styleFor(3f, PointLimits(smoothMax = null, aliasedMax = null))
+        assertThat(style).isEqualTo(PointStyle(smooth = true, sizePx = 3f))
+    }
+
+    @Test
+    fun `a wide smooth range clamps rather than switching to aliased`() {
+        val style = PointDrawer.styleFor(6f, PointLimits(smoothMax = 4f, aliasedMax = 64f))
+        assertThat(style).isEqualTo(PointStyle(smooth = true, sizePx = 4f))
+    }
+
+    @Test
+    fun `a 1px smooth range with unknown aliased max is not clamped`() {
+        val style = PointDrawer.styleFor(6f, PointLimits(smoothMax = 1f, aliasedMax = null))
+        assertThat(style).isEqualTo(PointStyle(smooth = false, sizePx = 6f))
+    }
 }

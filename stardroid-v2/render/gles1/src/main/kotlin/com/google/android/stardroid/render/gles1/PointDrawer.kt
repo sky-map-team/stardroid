@@ -25,6 +25,12 @@ internal class PointBuffers(
     data class SizeRun(val sizePx: Float, val offset: Int, val count: Int)
 }
 
+/** Max point sizes (px) the driver supports; null if the query failed. */
+internal data class PointLimits(val smoothMax: Float?, val aliasedMax: Float?)
+
+/** How one size run is rasterised: smoothed (round) or aliased (square), at [sizePx]. */
+internal data class PointStyle(val smooth: Boolean, val sizePx: Float)
+
 /**
  * Builds and draws [PointPrimitive]s as `GL_POINTS`. Brightness is conveyed by vertex color
  * ([StellarStyler]); size is near-constant in screen pixels (D12) and GLES1's fixed pipeline only
@@ -65,24 +71,34 @@ internal object PointDrawer {
         return PointBuffers(vertices, colors, runs)
     }
 
+    /**
+     * Drivers reporting a 1..1 smooth range render stars as faint 1px specks, so fall back to
+     * aliased points there. Any wider range is left to the driver, which clamps the size itself.
+     */
+    internal fun styleFor(
+        sizePx: Float,
+        limits: PointLimits,
+    ): PointStyle {
+        val smoothMax = limits.smoothMax ?: return PointStyle(smooth = true, sizePx = sizePx)
+        if (smoothMax > 1f) return PointStyle(smooth = true, sizePx = minOf(sizePx, smoothMax))
+        return PointStyle(smooth = false, sizePx = minOf(sizePx, limits.aliasedMax ?: sizePx))
+    }
+
     fun draw(
         gl: GL10,
         buffers: PointBuffers,
+        limits: PointLimits,
     ) {
         if (buffers.sizeRuns.isEmpty()) return
         gl.glEnableClientState(GL10.GL_VERTEX_ARRAY)
         gl.glEnableClientState(GL10.GL_COLOR_ARRAY)
         gl.glVertexPointer(3, GL10.GL_FLOAT, 0, buffers.vertices)
         gl.glColorPointer(4, GL10.GL_FLOAT, 0, buffers.colors)
-        // TODO(device verification, D31): GLES1 permits GL_SMOOTH_POINT_SIZE_RANGE to be [1, 1],
-        //   which would collapse every smoothed star to 1px on such hardware (the emulator won't
-        //   show it). Query the range and skip GL_POINT_SMOOTH for runs above the supported max.
-        //   Field report 2026-09-18: a real Samsung device (One UI, non-emulator) showed stars
-        //   as hard-edged squares rather than smoothed dots, consistent with GL_POINT_SMOOTH
-        //   being ignored/unsupported on that driver.
-        gl.glEnable(GL10.GL_POINT_SMOOTH)
         for (run in buffers.sizeRuns) {
-            gl.glPointSize(run.sizePx)
+            val style = styleFor(run.sizePx, limits)
+            val smoothCap = GL10.GL_POINT_SMOOTH
+            if (style.smooth) gl.glEnable(smoothCap) else gl.glDisable(smoothCap)
+            gl.glPointSize(style.sizePx)
             gl.glDrawArrays(GL10.GL_POINTS, run.offset, run.count)
         }
         gl.glDisable(GL10.GL_POINT_SMOOTH)
