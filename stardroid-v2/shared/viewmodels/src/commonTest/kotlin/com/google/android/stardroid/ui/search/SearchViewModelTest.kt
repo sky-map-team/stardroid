@@ -268,6 +268,39 @@ class SearchViewModelTest {
         }
 
     @Test
+    fun `a selected satellite target follows the satellite until the search is cancelled`() =
+        testScope.runCurrentTest {
+            trackedSatellites = listOf(ISS)
+            val vm = viewModel()
+            vm.select(ISS_HIT)
+            runCurrent()
+
+            val moved = RaDec(250.0, 10.0)
+            trackedSatellites = listOf(ISS.copy(position = moved))
+            advanceTimeBy(2_000)
+            assertThat(
+                vm.target.value!!.direction.distanceTo(moved.toGeocentricVector()),
+            ).isLessThan(TOL)
+
+            vm.cancelSearch()
+            trackedSatellites = listOf(ISS)
+            advanceTimeBy(2_000)
+            assertThat(vm.target.value).isNull()
+        }
+
+    @Test
+    fun `a star target stays a static snapshot`() =
+        testScope.runCurrentTest {
+            val vm = viewModel()
+            vm.select(SIRIUS_HIT)
+            runCurrent()
+            val before = vm.target.value
+            advanceTimeBy(5_000)
+            assertThat(vm.target.value).isEqualTo(before)
+            assertThat(before!!.trackedId).isNull()
+        }
+
+    @Test
     fun `selecting a satellite that is no longer tracked falls back to the hit position`() =
         testScope.runCurrentTest {
             val vm = viewModel()
