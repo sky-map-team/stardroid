@@ -91,9 +91,10 @@ class AltAzGridLayerTest {
 
             val texts = scene.labels.map { it.text }
             // 12 azimuth lines minus the 4 that fall on N/E/S/W (already labeled by
-            // HorizonLayer), each at the horizon and at 45° altitude, + 5 altitude labels each
-            // side of the horizon (15° steps) at each of 8 azimuths (45° apart) + zenith + nadir.
-            assertThat(scene.labels).hasSize((12 - 4) * 2 + 10 * 8 + 2)
+            // HorizonLayer) at the horizon, + 5 altitude labels each side of the horizon (15°
+            // steps) at each of 8 azimuths (45° apart) + zenith + nadir. No azimuth labels at 45°
+            // altitude: that is a ring here, and its labels would sit on top of them.
+            assertThat(scene.labels).hasSize((12 - 4) + 10 * 8 + 2)
             assertThat(texts).doesNotContain("0°")
             assertThat(texts).doesNotContain("90°")
             assertThat(texts).doesNotContain("180°")

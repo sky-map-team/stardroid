@@ -165,7 +165,7 @@ sealed interface LayerParameter {
         /** Line brightness for both grids (#1176); labels are always opaque. */
         const val GRID_BRIGHTNESS = "grid_brightness"
 
-        /** The grid colors as designed — subtle, for a dark-adapted eye at the eyepiece. */
+        /** The grid colors as designed — subtle, for dark-adapted eyes. */
         const val GRID_BRIGHTNESS_NORMAL = "normal"
 
         const val GRID_BRIGHTNESS_BRIGHT = "bright"

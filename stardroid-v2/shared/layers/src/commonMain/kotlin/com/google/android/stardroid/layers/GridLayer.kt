@@ -90,7 +90,7 @@ class GridLayer(
         }
         for (d in 1 until numDecLines) {
             val dec = d * 90 / numDecLines
-            // Repeated every 6h of RA so a degree label is on screen wherever you look.
+            // Repeated around the sky so a degree label is on screen wherever you look.
             for (raDeg in DEC_LABEL_RA_DEGREES) {
                 labels += label(raDeg, dec.toDouble(), "$dec°")
                 labels += label(raDeg, -dec.toDouble(), "-$dec°")

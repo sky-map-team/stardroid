@@ -109,15 +109,19 @@ class AltAzGridLayer(
         val lines = ArrayList<LinePrimitive>(azCount + 2 * (altLineCount - 1))
         val labels = ArrayList<LabelPrimitive>(azCount + 2 * (altLineCount - 1) + 2)
 
+        val highAltIsRing = AZ_LABEL_HIGH_ALT_DEG % (90.0 / altLineCount) == 0.0
         for (i in 0 until azCount) {
             val azDeg = i * 360.0 / azCount
             lines += azimuthLine(frame, azDeg, lineColor)
             if (i % cardinalStride != 0) {
                 // HorizonLayer already labels the cardinal directions at these same points.
                 labels += label(altAzToVector(0.0, azDeg, frame), "${azDeg.toInt()}°")
-                // And higher up, so the bearing is readable without looking down at the horizon.
-                labels +=
-                    label(altAzToVector(AZ_LABEL_HIGH_ALT_DEG, azDeg, frame), "${azDeg.toInt()}°")
+                // Also higher up so the bearing is readable without looking down, unless a ring
+                // there already carries its own labels.
+                if (!highAltIsRing) {
+                    val high = altAzToVector(AZ_LABEL_HIGH_ALT_DEG, azDeg, frame)
+                    labels += label(high, "${azDeg.toInt()}°")
+                }
             }
         }
         for (d in 1 until altLineCount) {
