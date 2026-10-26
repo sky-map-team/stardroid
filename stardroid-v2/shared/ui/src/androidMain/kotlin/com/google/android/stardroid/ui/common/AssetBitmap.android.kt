@@ -23,7 +23,7 @@ actual fun rememberAssetBitmap(path: String): ImageBitmap? {
     val bitmap by produceState<ImageBitmap?>(initialValue = null, path) {
         value =
             withContext(Dispatchers.IO) {
-                decodeAssetSampled(assets, path, MAX_DISPLAY_SIDE_PX)
+                decodeAssetSampled(assets, path, FULL_SIZE_MIN_SIDE_PX)
             }
     }
     return bitmap

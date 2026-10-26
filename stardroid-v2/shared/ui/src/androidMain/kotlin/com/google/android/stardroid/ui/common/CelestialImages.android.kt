@@ -30,7 +30,7 @@ internal actual fun rememberCelestialImage(imageRef: String): ImageBitmap? {
         value = null
         value =
             withContext(Dispatchers.IO) {
-                decodeAssetSampled(assets, "celestial_images/$imageRef", MAX_DISPLAY_SIDE_PX)
+                decodeAssetSampled(assets, "celestial_images/$imageRef", FULL_SIZE_MIN_SIDE_PX)
             }
     }
     return bitmap
@@ -84,7 +84,7 @@ internal fun decodeAssetSampled(
     }
 
 /** Minimum side kept for full-size decodes; above every bundled asset today. */
-internal const val MAX_DISPLAY_SIDE_PX = 2048
+internal const val FULL_SIZE_MIN_SIDE_PX = 2048
 
 internal actual fun fullScreenDialogProperties() =
     DialogProperties(usePlatformDefaultWidth = false, decorFitsSystemWindows = false)
