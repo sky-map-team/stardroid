@@ -100,4 +100,16 @@ class PointDrawerTest {
         val style = PointDrawer.styleFor(3f, PointLimits(smoothMax = null, aliasedMax = null))
         assertThat(style).isEqualTo(PointStyle(smooth = true, sizePx = 3f))
     }
+
+    @Test
+    fun `a wide smooth range clamps rather than switching to aliased`() {
+        val style = PointDrawer.styleFor(6f, PointLimits(smoothMax = 4f, aliasedMax = 64f))
+        assertThat(style).isEqualTo(PointStyle(smooth = true, sizePx = 4f))
+    }
+
+    @Test
+    fun `a 1px smooth range with unknown aliased max is not clamped`() {
+        val style = PointDrawer.styleFor(6f, PointLimits(smoothMax = 1f, aliasedMax = null))
+        assertThat(style).isEqualTo(PointStyle(smooth = false, sizePx = 6f))
+    }
 }

@@ -28,7 +28,7 @@ internal class PointBuffers(
 /** Max point sizes (px) the driver supports; null if the query failed. */
 internal data class PointLimits(val smoothMax: Float?, val aliasedMax: Float?)
 
-/** How one size run is rasterised: smoothed (round, antialiased) or aliased (square), at [sizePx]. */
+/** How one size run is rasterised: smoothed (round) or aliased (square), at [sizePx]. */
 internal data class PointStyle(val smooth: Boolean, val sizePx: Float)
 
 /**
@@ -72,17 +72,15 @@ internal object PointDrawer {
     }
 
     /**
-     * Some GLES1 drivers report a smooth point range of 1..1, which collapses every star to a
-     * faint 1px antialiased speck. Smoothing is used only where the driver can honour the size;
-     * otherwise fall back to aliased (square) points, clamped to the aliased maximum.
+     * Drivers reporting a 1..1 smooth range render stars as faint 1px specks, so fall back to
+     * aliased points there. Any wider range is left to the driver, which clamps the size itself.
      */
     internal fun styleFor(
         sizePx: Float,
         limits: PointLimits,
     ): PointStyle {
         val smoothMax = limits.smoothMax ?: return PointStyle(smooth = true, sizePx = sizePx)
-        // A 1px smoothed point is mostly transparent, so a 1..1 range is no better than none.
-        if (smoothMax > 1f && sizePx <= smoothMax) return PointStyle(smooth = true, sizePx = sizePx)
+        if (smoothMax > 1f) return PointStyle(smooth = true, sizePx = minOf(sizePx, smoothMax))
         return PointStyle(smooth = false, sizePx = minOf(sizePx, limits.aliasedMax ?: sizePx))
     }
 
@@ -98,13 +96,8 @@ internal object PointDrawer {
         gl.glColorPointer(4, GL10.GL_FLOAT, 0, buffers.colors)
         for (run in buffers.sizeRuns) {
             val style = styleFor(run.sizePx, limits)
-            if (style.smooth) {
-                gl.glEnable(
-                    GL10.GL_POINT_SMOOTH,
-                )
-            } else {
-                gl.glDisable(GL10.GL_POINT_SMOOTH)
-            }
+            val smoothCap = GL10.GL_POINT_SMOOTH
+            if (style.smooth) gl.glEnable(smoothCap) else gl.glDisable(smoothCap)
             gl.glPointSize(style.sizePx)
             gl.glDrawArrays(GL10.GL_POINTS, run.offset, run.count)
         }

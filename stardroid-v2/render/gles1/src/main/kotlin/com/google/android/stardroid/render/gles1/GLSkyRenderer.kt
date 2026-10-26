@@ -63,8 +63,8 @@ class GLSkyRenderer(
     @Volatile private var renderState: RenderState = RenderState()
 
     @Volatile private var viewport: Viewport? = null
-    private var pointLimits = PointLimits(smoothMax = null, aliasedMax = null)
 
+    private var pointLimits = PointLimits(smoothMax = null, aliasedMax = null)
     private val scenes = ConcurrentHashMap<LayerId, LayerScene>()
 
     /** Bumped after every [scenes] mutation so the GL thread knows to rebuild [drawOrder]. */
@@ -171,10 +171,11 @@ class GLSkyRenderer(
         gl.glBlendFunc(GL10.GL_SRC_ALPHA, GL10.GL_ONE_MINUS_SRC_ALPHA)
         gl.glClearColor(0f, 0f, 0f, 1f)
 
-        onRendererInfo(queryRendererInfo(gl))
+        val info = queryRendererInfo(gl)
+        onRendererInfo(info)
         pointLimits =
             PointLimits(
-                smoothMax = queryRange(gl, GL10.GL_SMOOTH_POINT_SIZE_RANGE)?.max,
+                smoothMax = info.pointSizeRange?.max,
                 aliasedMax = queryRange(gl, GL10.GL_ALIASED_POINT_SIZE_RANGE)?.max,
             )
     }
