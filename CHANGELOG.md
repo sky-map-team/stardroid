@@ -5,6 +5,12 @@ All notable changes to Sky Map are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [2.2.1:Buran] (v2) - 2026-10-25
+
+### Fixed
+- Stars are now visible on devices whose OpenGL ES 1 driver limits smoothed points to 1px
+  (seen on PowerVR GPUs); they fall back to unsmoothed points. (#1167, #1169)
+
 ## [2.2.0:Buran] (v2) - 2026-10-21
 
 ### Added
