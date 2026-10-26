@@ -30,15 +30,7 @@ internal actual fun rememberCelestialImage(imageRef: String): ImageBitmap? {
         value = null
         value =
             withContext(Dispatchers.IO) {
-                try {
-                    assets.open("celestial_images/$imageRef").use { stream ->
-                        BitmapFactory.decodeStream(stream)?.asImageBitmap()
-                    }
-                } catch (e: CancellationException) {
-                    throw e
-                } catch (e: Exception) {
-                    null
-                }
+                decodeAssetSampled(assets, "celestial_images/$imageRef", MAX_DISPLAY_SIDE_PX)
             }
     }
     return bitmap
@@ -57,22 +49,27 @@ internal actual fun rememberCelestialThumbnailDecoder(
     }
 }
 
-/**
- * Power-of-two downsample toward [targetPx] on the short side (v1 delegated this to Coil). A
- * missing or corrupt asset is an empty tile; the name below it is the content of record.
- */
 private fun decodeThumbnail(
     assets: AssetManager,
     imageRef: String,
     targetPx: Int,
+): ImageBitmap? = decodeAssetSampled(assets, "celestial_images/$imageRef", targetPx)
+
+/**
+ * Power-of-two downsample so neither side drops below [minSidePx] (v1 delegated this to Coil).
+ * Null for a missing or corrupt asset; callers show nothing.
+ */
+internal fun decodeAssetSampled(
+    assets: AssetManager,
+    path: String,
+    minSidePx: Int,
 ): ImageBitmap? =
     try {
-        val path = "celestial_images/$imageRef"
         val bounds = BitmapFactory.Options().apply { inJustDecodeBounds = true }
         assets.open(path).use { BitmapFactory.decodeStream(it, null, bounds) }
         var sampleSize = 1
-        while (bounds.outWidth / (sampleSize * 2) >= targetPx &&
-            bounds.outHeight / (sampleSize * 2) >= targetPx
+        while (bounds.outWidth / (sampleSize * 2) >= minSidePx &&
+            bounds.outHeight / (sampleSize * 2) >= minSidePx
         ) {
             sampleSize *= 2
         }
@@ -85,6 +82,9 @@ private fun decodeThumbnail(
     } catch (e: Exception) {
         null
     }
+
+/** Minimum side kept for full-size decodes; above every bundled asset today. */
+internal const val MAX_DISPLAY_SIDE_PX = 2048
 
 internal actual fun fullScreenDialogProperties() =
     DialogProperties(usePlatformDefaultWidth = false, decorFitsSystemWindows = false)

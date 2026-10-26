@@ -9,14 +9,11 @@
 
 package com.google.android.stardroid.ui.common
 
-import android.graphics.BitmapFactory
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.produceState
 import androidx.compose.ui.graphics.ImageBitmap
-import androidx.compose.ui.graphics.asImageBitmap
 import androidx.compose.ui.platform.LocalContext
-import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
@@ -26,15 +23,7 @@ actual fun rememberAssetBitmap(path: String): ImageBitmap? {
     val bitmap by produceState<ImageBitmap?>(initialValue = null, path) {
         value =
             withContext(Dispatchers.IO) {
-                try {
-                    assets.open(path).use { stream ->
-                        BitmapFactory.decodeStream(stream)?.asImageBitmap()
-                    }
-                } catch (e: CancellationException) {
-                    throw e
-                } catch (e: Exception) {
-                    null
-                }
+                decodeAssetSampled(assets, path, MAX_DISPLAY_SIDE_PX)
             }
     }
     return bitmap
