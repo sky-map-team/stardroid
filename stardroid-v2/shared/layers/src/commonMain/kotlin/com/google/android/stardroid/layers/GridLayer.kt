@@ -16,6 +16,7 @@ import com.google.android.stardroid.render.api.LabelStyle
 import com.google.android.stardroid.render.api.LayerId
 import com.google.android.stardroid.render.api.LayerScene
 import com.google.android.stardroid.render.api.LinePrimitive
+import com.google.android.stardroid.render.api.Rgba
 import com.google.android.stardroid.settings.Settings
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
@@ -40,6 +41,8 @@ class GridLayer(
     private val strings: Flow<LayerStrings>,
     private val density: Flow<String> =
         flowOf(LayerParameter.RADEC_GRID_DENSITY_PARAMETER.defaultOption),
+    private val brightness: Flow<String> =
+        flowOf(LayerParameter.GRID_BRIGHTNESS_PARAMETER.defaultOption),
     private val mapContext: CoroutineContext = Dispatchers.Default,
 ) : SkyLayer {
     override val id = LAYER_ID
@@ -47,28 +50,33 @@ class GridLayer(
     override val parameters = PARAMETERS
 
     override fun scenes(): Flow<LayerScene> =
-        combine(strings, density) { str, dens -> str to dens }
+        combine(strings, density, brightness, ::Triple)
             .distinctUntilChanged()
-            .map { (str, dens) -> buildScene(str, dens) }
+            .map { (str, dens, bright) -> buildScene(str, dens, bright) }
             .flowOn(mapContext)
 
     internal fun buildScene(
         strings: LayerStrings,
         density: String = DEFAULT_DENSITY,
+        brightness: String = LayerParameter.GRID_BRIGHTNESS_NORMAL,
     ): LayerScene {
+        val lineColor =
+            with(SkyColors) {
+                GRID_LINE.withAlphaScaled(LayerParameter.gridAlphaScale(brightness))
+            }
         val numRaLines = RA_LINE_COUNTS[density] ?: RA_LINE_COUNTS.getValue(DEFAULT_DENSITY)
         val numDecLines = DEC_LINE_COUNTS[density] ?: DEC_LINE_COUNTS.getValue(DEFAULT_DENSITY)
         // Exact only while every meridian count divides 24, so each label lands on a meridian.
         val hourLabelStride = 24 / numRaLines.coerceAtMost(HOUR_LABEL_MAX_COUNT)
         val lines = ArrayList<LinePrimitive>(numRaLines + 2 * (numDecLines - 1) + 1)
         for (i in 0 until numRaLines) {
-            lines += raLine(i * 360.0 / numRaLines)
+            lines += raLine(i * 360.0 / numRaLines, lineColor)
         }
         // Equator plus evenly spaced circles on each side; none at the poles themselves.
-        lines += decLine(0.0)
+        lines += decLine(0.0, lineColor)
         for (d in 1 until numDecLines) {
-            lines += decLine(d * 90.0 / numDecLines)
-            lines += decLine(-d * 90.0 / numDecLines)
+            lines += decLine(d * 90.0 / numDecLines, lineColor)
+            lines += decLine(-d * 90.0 / numDecLines, lineColor)
         }
 
         val labels = ArrayList<LabelPrimitive>()
@@ -82,21 +90,27 @@ class GridLayer(
         }
         for (d in 1 until numDecLines) {
             val dec = d * 90 / numDecLines
-            labels += label(0.0, dec.toDouble(), "$dec°")
-            labels += label(0.0, -dec.toDouble(), "-$dec°")
+            // Repeated every 6h of RA so a degree label is on screen wherever you look.
+            for (raDeg in DEC_LABEL_RA_DEGREES) {
+                labels += label(raDeg, dec.toDouble(), "$dec°")
+                labels += label(raDeg, -dec.toDouble(), "-$dec°")
+            }
         }
         return LayerScene(depth = depth, lines = lines, labels = labels)
     }
 
     /** A meridian of constant [raDeg]: pole to pole. The backend subdivides the long arcs. */
-    private fun raLine(raDeg: Double): LinePrimitive =
+    private fun raLine(
+        raDeg: Double,
+        color: Rgba,
+    ): LinePrimitive =
         LinePrimitive(
             listOf(
                 RaDec(raDeg, 90.0).toGeocentricVector(),
                 RaDec(raDeg, 0.0).toGeocentricVector(),
                 RaDec(raDeg, -90.0).toGeocentricVector(),
             ),
-            SkyColors.GRID_LINE,
+            color,
             LINE_WIDTH_DP,
         )
 
@@ -105,13 +119,16 @@ class GridLayer(
      * small circles, so the 10° sampling (not the backend's great-circle subdivision) is what
      * bounds the chord error — the same trade v1 made.
      */
-    private fun decLine(decDeg: Double): LinePrimitive {
+    private fun decLine(
+        decDeg: Double,
+        color: Rgba,
+    ): LinePrimitive {
         val vertices =
             (0..NUM_RA_VERTICES).map { i ->
                 RaDec((i % NUM_RA_VERTICES) * 360.0 / NUM_RA_VERTICES, decDeg)
                     .toGeocentricVector()
             }
-        return LinePrimitive(vertices, SkyColors.GRID_LINE, LINE_WIDTH_DP)
+        return LinePrimitive(vertices, color, LINE_WIDTH_DP)
     }
 
     private fun label(
@@ -159,7 +176,13 @@ class GridLayer(
 
         private const val HOUR_LABEL_MAX_COUNT = 12
 
-        val PARAMETERS = listOf(LayerParameter.RADEC_GRID_DENSITY_PARAMETER)
+        private val DEC_LABEL_RA_DEGREES = listOf(0.0, 90.0, 180.0, 270.0)
+
+        val PARAMETERS =
+            listOf(
+                LayerParameter.RADEC_GRID_DENSITY_PARAMETER,
+                LayerParameter.GRID_BRIGHTNESS_PARAMETER,
+            )
 
         /** The registry's entry point (D91), as [AltAzGridLayer.create]. */
         fun create(
@@ -172,6 +195,11 @@ class GridLayer(
                     LAYER_ID,
                     LayerParameter.RADEC_GRID_DENSITY_PARAMETER.key,
                     LayerParameter.RADEC_GRID_DENSITY_PARAMETER.defaultOption,
+                ),
+                settings.layerParameter(
+                    LAYER_ID,
+                    LayerParameter.GRID_BRIGHTNESS_PARAMETER.key,
+                    LayerParameter.GRID_BRIGHTNESS_PARAMETER.defaultOption,
                 ),
             )
 

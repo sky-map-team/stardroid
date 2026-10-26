@@ -69,6 +69,21 @@ class AltAzGridLayerTest {
         }
 
     @Test
+    fun `brightness scales line alpha`() =
+        runTest {
+            val scene =
+                layer().buildScene(
+                    time,
+                    greenwich,
+                    FakeLayerStrings(),
+                    "12",
+                    LayerParameter.GRID_BRIGHTNESS_BRIGHT,
+                )
+
+            assertThat(scene.lines.first().color.a).isEqualTo(SkyColors.ALTAZ_GRID_LINE.a * 3f)
+        }
+
+    @Test
     fun `labels skip the cardinal directions and carry zenith and nadir`() =
         runTest {
             val scene = layer().buildScene(time, greenwich, FakeLayerStrings(), "12")
@@ -76,9 +91,9 @@ class AltAzGridLayerTest {
 
             val texts = scene.labels.map { it.text }
             // 12 azimuth lines minus the 4 that fall on N/E/S/W (already labeled by
-            // HorizonLayer) + 5 altitude labels each side of the horizon (15° steps) + zenith
-            // + nadir.
-            assertThat(scene.labels).hasSize((12 - 4) + 10 + 2)
+            // HorizonLayer), each at the horizon and at 45° altitude, + 5 altitude labels each
+            // side of the horizon (15° steps) at each of 4 compass points + zenith + nadir.
+            assertThat(scene.labels).hasSize((12 - 4) * 2 + 10 * 4 + 2)
             assertThat(texts).doesNotContain("0°")
             assertThat(texts).doesNotContain("90°")
             assertThat(texts).doesNotContain("180°")

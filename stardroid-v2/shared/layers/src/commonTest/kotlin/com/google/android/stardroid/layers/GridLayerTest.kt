@@ -47,13 +47,29 @@ class GridLayerTest {
         }
 
     @Test
+    fun `brightness scales line alpha and leaves labels alone`() =
+        runTest {
+            val normal = layer().buildScene(FakeLayerStrings())
+            val brightest =
+                layer().buildScene(
+                    FakeLayerStrings(),
+                    brightness = LayerParameter.GRID_BRIGHTNESS_BRIGHTEST,
+                )
+
+            assertThat(brightest.lines.first().color.a)
+                .isEqualTo(SkyColors.GRID_LINE.a * 6f)
+            assertThat(normal.lines.first().color).isEqualTo(SkyColors.GRID_LINE)
+            assertThat(brightest.labels.map { it.style }).isEqualTo(normal.labels.map { it.style })
+        }
+
+    @Test
     fun `labels cover poles - hours - and declinations`() =
         runTest {
             val scene = layer().buildScene(FakeLayerStrings())
 
             val texts = scene.labels.map { it.text }
-            // 2 poles + 12 hour markers + 8 declinations each side.
-            assertThat(scene.labels).hasSize(2 + 12 + 16)
+            // 2 poles + 12 hour markers + 8 declinations each side, repeated at 4 RAs.
+            assertThat(scene.labels).hasSize(2 + 12 + 16 * 4)
             // "0", not "0h": RA 0h is also the ecliptic's vernal equinox, and the single shared
             // label serves both layers (upstream #923).
             assertThat(texts).containsAtLeast("NP", "SP", "0", "22h", "10°", "-80°")

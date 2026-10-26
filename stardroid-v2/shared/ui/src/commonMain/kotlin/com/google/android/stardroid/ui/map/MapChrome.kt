@@ -201,6 +201,13 @@ import com.google.android.stardroid.ui.resources.layer_param_disc_size_true_desc
 import com.google.android.stardroid.ui.resources.layer_param_eclipse_alerts
 import com.google.android.stardroid.ui.resources.layer_param_eclipse_alerts_description
 import com.google.android.stardroid.ui.resources.layer_param_expand
+import com.google.android.stardroid.ui.resources.layer_param_grid_brightness
+import com.google.android.stardroid.ui.resources.layer_param_grid_brightness_bright
+import com.google.android.stardroid.ui.resources.layer_param_grid_brightness_bright_desc
+import com.google.android.stardroid.ui.resources.layer_param_grid_brightness_brightest
+import com.google.android.stardroid.ui.resources.layer_param_grid_brightness_brightest_desc
+import com.google.android.stardroid.ui.resources.layer_param_grid_brightness_normal
+import com.google.android.stardroid.ui.resources.layer_param_grid_brightness_normal_desc
 import com.google.android.stardroid.ui.resources.layer_param_pass_alerts
 import com.google.android.stardroid.ui.resources.layer_param_pass_alerts_description
 import com.google.android.stardroid.ui.resources.layer_param_radec_grid_density
@@ -1416,6 +1423,7 @@ private fun parameterLabel(key: String): StringResource =
         LayerParameter.SHOWER_ALERTS -> Res.string.layer_param_shower_alerts
         LayerParameter.ALTAZ_GRID_DENSITY -> Res.string.layer_param_altaz_grid_density
         LayerParameter.RADEC_GRID_DENSITY -> Res.string.layer_param_radec_grid_density
+        LayerParameter.GRID_BRIGHTNESS -> Res.string.layer_param_grid_brightness
         else -> Res.string.layer_param_disc_size
     }
 
@@ -1433,6 +1441,10 @@ private fun parameterOptionLabel(option: String): StringResource =
         LayerParameter.DISC_SIZE_TRUE -> Res.string.layer_param_disc_size_true
         LayerParameter.DISC_SIZE_GLYPHS -> Res.string.layer_param_disc_size_glyphs
         LayerParameter.DISC_SIZE_AUTO -> Res.string.layer_param_disc_size_auto
+        LayerParameter.GRID_BRIGHTNESS_NORMAL -> Res.string.layer_param_grid_brightness_normal
+        LayerParameter.GRID_BRIGHTNESS_BRIGHT -> Res.string.layer_param_grid_brightness_bright
+        LayerParameter.GRID_BRIGHTNESS_BRIGHTEST ->
+            Res.string.layer_param_grid_brightness_brightest
         LayerParameter.ALTAZ_GRID_DENSITY_COARSE,
         LayerParameter.RADEC_GRID_DENSITY_COARSE,
         -> Res.string.layer_param_altaz_grid_density_coarse
@@ -1447,6 +1459,12 @@ private fun parameterOptionDescription(option: String): StringResource =
         LayerParameter.DISC_SIZE_TRUE -> Res.string.layer_param_disc_size_true_desc
         LayerParameter.DISC_SIZE_GLYPHS -> Res.string.layer_param_disc_size_glyphs_desc
         LayerParameter.DISC_SIZE_AUTO -> Res.string.layer_param_disc_size_auto_desc
+        LayerParameter.GRID_BRIGHTNESS_NORMAL ->
+            Res.string.layer_param_grid_brightness_normal_desc
+        LayerParameter.GRID_BRIGHTNESS_BRIGHT ->
+            Res.string.layer_param_grid_brightness_bright_desc
+        LayerParameter.GRID_BRIGHTNESS_BRIGHTEST ->
+            Res.string.layer_param_grid_brightness_brightest_desc
         LayerParameter.ALTAZ_GRID_DENSITY_COARSE ->
             Res.string.layer_param_altaz_grid_density_coarse_desc
         LayerParameter.ALTAZ_GRID_DENSITY_MEDIUM ->
