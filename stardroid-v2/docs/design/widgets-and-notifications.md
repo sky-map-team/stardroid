@@ -101,8 +101,8 @@ hemispheres for `mirrored`, null-location degradation.
 - Manifest: receiver + `appwidget-provider` metadata — `targetCellWidth/Height 2×2`,
   `previewLayout` (API 31+ live preview), `description`, `widgetCategory home_screen`,
   resizable both axes down to 1×1 (`minResize` 40 dp; 2×2 stays the default).
-- **Sizes (#1153).** `SizeMode.Responsive(setOf(40×40, 110×110 dp))`: at 2×2 or larger the
-  full layout above, unchanged; below that (1×1, 2×1, 1×2) a compact layout — 34 dp disc plus
+- **Sizes (#1153).** `SizeMode.Responsive(setOf(40×40, 100×100 dp))`: at 2×2 or larger the
+  full layout above, unchanged; below that (1×1, 2×1, 1×2) a compact layout — 30 dp disc plus
   the bare illumination % (`moon_widget_illumination_short`), no phase name, age or rise/set.
   The choice is the pure `moonWidgetLayoutFor(DpSize)`. The XML `initialLayout` can't switch
   by size, so its disc is weighted and shrinks to fit a 1×1 cell; the picker preview stays 2×2.

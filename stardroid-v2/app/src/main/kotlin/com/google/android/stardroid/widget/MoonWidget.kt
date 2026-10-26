@@ -10,6 +10,7 @@
 package com.google.android.stardroid.widget
 
 import android.content.Context
+import android.graphics.Bitmap
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.DpSize
@@ -84,7 +85,7 @@ class MoonWidget : GlanceAppWidget() {
 
         // Responsive picks the largest listed size that fits the placed widget.
         internal val COMPACT_SIZE = DpSize(40.dp, 40.dp)
-        internal val FULL_SIZE = DpSize(110.dp, 110.dp)
+        internal val FULL_SIZE = DpSize(100.dp, 100.dp)
     }
 }
 
@@ -113,7 +114,7 @@ private fun CompactMoonWidget(
     context: Context,
 ) {
     Column(
-        modifier = moonWidgetModifier().padding(6.dp),
+        modifier = moonWidgetModifier().padding(4.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalAlignment = Alignment.CenterVertically,
     ) {
@@ -157,12 +158,13 @@ private fun moonWidgetModifier(): GlanceModifier =
 private fun moonDisc(
     model: MoonWidgetModel,
     sizePx: Int,
-) = MoonDiscRenderer.render(
-    sizePx = sizePx,
-    illuminatedFraction = model.illuminatedFraction,
-    waxing = model.waxing,
-    mirrored = model.mirrored,
-)
+): Bitmap =
+    MoonDiscRenderer.render(
+        sizePx = sizePx,
+        illuminatedFraction = model.illuminatedFraction,
+        waxing = model.waxing,
+        mirrored = model.mirrored,
+    )
 
 @Composable
 private fun FullMoonWidget(
@@ -179,7 +181,7 @@ private fun FullMoonWidget(
         Image(
             provider = ImageProvider(moonDisc(model, DISC_SIZE_PX)),
             contentDescription = context.getString(phaseNameRes(model.phase)),
-            modifier = GlanceModifier.size(64.dp),
+            modifier = GlanceModifier.size(DISC_DP),
         )
         Text(
             text = context.getString(phaseNameRes(model.phase)),
@@ -289,7 +291,8 @@ private fun phaseNameRes(phase: LunarPhase): Int =
         LunarPhase.WANING_CRESCENT -> R.string.moon_phase_waning_crescent
     }
 
-// 64 dp at xxhdpi; Glance scales the bitmap to the Image's dp size.
+// Disc bitmaps are 3x their dp size (xxhdpi); Glance scales them to the Image's dp size.
+private val DISC_DP = 64.dp
 private const val DISC_SIZE_PX = 192
-private val COMPACT_DISC_DP = 34.dp
-private const val COMPACT_DISC_SIZE_PX = 102
+private val COMPACT_DISC_DP = 30.dp
+private const val COMPACT_DISC_SIZE_PX = 90
