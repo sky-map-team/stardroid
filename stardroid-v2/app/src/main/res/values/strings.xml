@@ -34,6 +34,10 @@
     <string name="channel_passes_description" translation_description="Description of the satellite-pass notification channel.">A single alert shortly before the best visible pass of the night</string>
     <string name="notif_pass_title" translation_description="Title of the notification sent shortly before a satellite passes overhead. %1$s is the satellite name.">%1$s passes overhead soon</string>
     <string name="notif_pass_text" translation_description="Body of the satellite pass notification, telling the user when to go outside. %1$s is a time.">Visible from about %1$s — head outside and let your eyes adjust</string>
+    <string name="channel_passes_now_name" translation_description="Name of the notification channel for the alert sent the moment a satellite rises.">Satellite rising now</string>
+    <string name="channel_passes_now_description" translation_description="Description of the notification channel for the alert sent the moment a satellite pass begins.">An alert, with vibration, as the best visible pass of the night begins</string>
+    <string name="notif_pass_now_title" translation_description="Title of the notification sent the moment a satellite pass begins. %1$s is the satellite name.">%1$s is rising now</string>
+    <string name="notif_pass_now_text" translation_description="Body of the notification sent the moment a satellite pass begins.">Look up — it is crossing the sky right now</string>
     <string name="channel_eclipses_name" translation_description="Name of the notification channel for alerts before a lunar eclipse starts.">Lunar eclipses</string>
     <string name="channel_eclipses_description" translation_description="Description of the lunar-eclipse notification channel.">A single alert before a lunar eclipse begins</string>
     <string name="notif_eclipse_title" translation_description="Title of the notification sent before a lunar eclipse starts. %1$s is a localized eclipse type like \'Total lunar eclipse\'.">%1$s starting soon</string>
