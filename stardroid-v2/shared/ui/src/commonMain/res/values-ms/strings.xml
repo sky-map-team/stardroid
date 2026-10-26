@@ -169,8 +169,6 @@
     <string name="time_travel_start_message" translation_description="Toast message when time travel starts toward a chosen destination. %1$s is the formatted destination date and time.">Mengembara melalui masa ke %1$s ...</string>
     <string name="time_travel_close_message">Kembali ke masa kini ...</string>
     <string name="satellite_next_pass" translation_description="Heading above the next visible pass details on a satellite\'s info card.">Lintasan jelas seterusnya</string>
-    <string name="satellite_pass_when" translation_description="When and how high the next satellite pass will be. %1$s is a time, %2$s is a compass direction, %3$d is an angle in degrees.">%1$s, terbit %2$s, mencapai %3$d°</string>
-    <string name="satellite_pass_magnitude" translation_description="How bright the satellite will be at its peak. %1$.1f is a brightness magnitude.">Magnitud %1$.1f pada paling terang</string>
     <string name="satellite_pass_shadow" translation_description="Tells the user the satellite will fade out mid-pass when it enters the Earth\'s shadow. %1$s is a time.">Pudar ke dalam bayang-bayang Bumi pada %1$s</string>
     <string name="satellite_no_pass" translation_description="Shown on a satellite info card when no visible pass is coming up in the next two days.">Tiada lintasan jelas dalam beberapa hari akan datang</string>
     <string name="satellite_pass_unknown" translation_description="Shown on a satellite info card when the downloaded orbit data is too old to predict pass times reliably.">Data orbit terlalu lama untuk meramal lintasan</string>

@@ -80,10 +80,10 @@ import com.google.android.stardroid.render.RenderConnector
 import com.google.android.stardroid.render.RendererInfoStore
 import com.google.android.stardroid.render.createRendererBackend
 import com.google.android.stardroid.render.supportsGles3
-import com.google.android.stardroid.satellites.nextVisiblePass
 import com.google.android.stardroid.satellites.satelliteEntryPoint
 import com.google.android.stardroid.satellites.satelliteUiStatusFlow
 import com.google.android.stardroid.satellites.trackedSatellites
+import com.google.android.stardroid.satellites.upcomingVisiblePasses
 import com.google.android.stardroid.sensors.DisplayRotationBus
 import com.google.android.stardroid.sensors.MagneticDeclinationSource
 import com.google.android.stardroid.sensors.OrientationSource
@@ -336,8 +336,8 @@ class MainActivity : ComponentActivity() {
                             .current()
                             .mayShowPassTimes
                     },
-                    nextPass = { norad ->
-                        nextVisiblePass(
+                    upcomingPasses = { norad ->
+                        upcomingVisiblePasses(
                             appContext,
                             norad,
                             locations.value,

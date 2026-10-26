@@ -116,12 +116,12 @@ class ObjectInfoViewModel(
      * of the synthesized card. Empty when the feature is off or nothing is cached.
      */
     private val satellites: suspend () -> List<TrackedSatellite> = { emptyList() },
-    /** Next visible pass for a tapped satellite, or null. */
-    private val nextPass: suspend (Int) -> SatellitePass? = { null },
+    /** The next good visible passes for a tapped satellite, soonest first. */
+    private val upcomingPasses: suspend (Int) -> List<SatellitePass> = { emptyList() },
     /**
      * Whether the cached element sets are fresh enough to time a pass honestly.
      *
-     * Separate from [nextPass] because a null pass means two different things: "nothing is coming,
+     * Separate from [upcomingPasses] because an empty list means two different things: "nothing is coming,
      * which is normal" versus "we could tell you, but it would be wrong". The card says which.
      */
     private val passTimesReliable: suspend () -> Boolean = { true },
@@ -154,18 +154,18 @@ class ObjectInfoViewModel(
             }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), MoonWidgetPromo.HIDDEN)
 
     /**
-     * The next visible pass for the shown satellite card, or null.
+     * The upcoming good passes for the shown satellite card, soonest first.
      *
-     * Null covers three different situations that all render the same: the card is not a
+     * Empty covers three different situations that all render the same: the card is not a
      * satellite; the element sets are too stale to time a pass honestly; or the satellite simply
      * has no visible pass coming. The last is a real answer — visible passes cluster into
      * multi-day seasons separated by multi-week gaps — so the row says so rather than vanishing.
      */
-    val nextSatellitePass: StateFlow<SatellitePass?> =
+    val upcomingSatellitePasses: StateFlow<List<SatellitePass>> =
         _card
             .map { card ->
-                card?.id?.let(SatelliteIds::noradIdFor)?.let { nextPass(it) }
-            }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), null)
+                card?.id?.let(SatelliteIds::noradIdFor)?.let { upcomingPasses(it) }.orEmpty()
+            }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), emptyList())
 
     /** See [passTimesReliable] — drives which empty message the pass row shows. */
     val satellitePassTimesReliable: StateFlow<Boolean> =
@@ -188,7 +188,7 @@ class ObjectInfoViewModel(
 
     /**
      * The next lunar eclipse from the map's current time, or null if none is found — computed
-     * only while the Moon's card is showing (D106), the same lazy shape [nextSatellitePass] uses.
+     * only while the Moon's card is showing (D106), the same lazy shape [upcomingSatellitePasses] uses.
      *
      * Always [MeeusEphemeris], regardless of [ephemeris]: eclipse timing needs the accurate,
      * precession-consistent Sun/Moon frame (D84) rather than whatever cheaper baseline this view
