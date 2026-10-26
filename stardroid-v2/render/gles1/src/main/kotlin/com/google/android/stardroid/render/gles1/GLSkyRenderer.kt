@@ -63,6 +63,8 @@ class GLSkyRenderer(
     @Volatile private var renderState: RenderState = RenderState()
 
     @Volatile private var viewport: Viewport? = null
+    private var pointLimits = PointLimits(smoothMax = null, aliasedMax = null)
+
     private val scenes = ConcurrentHashMap<LayerId, LayerScene>()
 
     /** Bumped after every [scenes] mutation so the GL thread knows to rebuild [drawOrder]. */
@@ -170,6 +172,11 @@ class GLSkyRenderer(
         gl.glClearColor(0f, 0f, 0f, 1f)
 
         onRendererInfo(queryRendererInfo(gl))
+        pointLimits =
+            PointLimits(
+                smoothMax = queryRange(gl, GL10.GL_SMOOTH_POINT_SIZE_RANGE)?.max,
+                aliasedMax = queryRange(gl, GL10.GL_ALIASED_POINT_SIZE_RANGE)?.max,
+            )
     }
 
     /**
@@ -300,7 +307,7 @@ class GLSkyRenderer(
                 cachedCpu(pointCache, layerId, scene, pointKey, viewport.density) {
                     PointDrawer.build(scene.points, state, viewport.density)
                 }
-            PointDrawer.draw(gl, pointBuffers)
+            PointDrawer.draw(gl, pointBuffers, pointLimits)
 
             // 3b. Icon points: screen-space textured quads, drawn above the plain dots.
             val iconGpu = cachedIcon(gl, layerId, scene, viewport.density)
