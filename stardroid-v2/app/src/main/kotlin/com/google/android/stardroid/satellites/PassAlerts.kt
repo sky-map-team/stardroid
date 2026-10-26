@@ -100,8 +100,6 @@ object PassAlerts {
             fireAt.toEpochMilliseconds(),
             pendingIntent(context, best),
         )
-        // The "happening now" alert fires as the satellite clears the horizon. Its inexact
-        // delivery is tolerated: the receiver drops it only once the pass is over.
         alarmManager.setAndAllowWhileIdle(
             AlarmManager.RTC_WAKEUP,
             best.start.toEpochMilliseconds(),

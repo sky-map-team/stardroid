@@ -10,6 +10,7 @@
 package com.google.android.stardroid.satellites
 
 import android.Manifest
+import android.app.Notification
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.app.PendingIntent
@@ -54,7 +55,8 @@ object SatellitePassNotifier {
     const val CHANNEL_PASSES_NOW = "satellite_passes_now"
 
     fun ensureChannel(context: Context) {
-        context.getSystemService(NotificationManager::class.java)?.createNotificationChannel(
+        val manager = context.getSystemService(NotificationManager::class.java) ?: return
+        manager.createNotificationChannel(
             NotificationChannel(
                 CHANNEL_PASSES,
                 context.getString(R.string.channel_passes_name),
@@ -63,10 +65,7 @@ object SatellitePassNotifier {
                 NotificationManager.IMPORTANCE_HIGH,
             ).apply { description = context.getString(R.string.channel_passes_description) },
         )
-    }
-
-    private fun ensureRisingChannel(context: Context) {
-        context.getSystemService(NotificationManager::class.java)?.createNotificationChannel(
+        manager.createNotificationChannel(
             NotificationChannel(
                 CHANNEL_PASSES_NOW,
                 context.getString(R.string.channel_passes_now_name),
@@ -88,13 +87,36 @@ object SatellitePassNotifier {
             context.getString(R.string.satellite_name_iss)
         }
 
+    fun post(
+        context: Context,
+        noradId: Int,
+        passStart: Instant,
+    ) {
+        if (!SkyNotifier.canPost(context, CHANNEL_PASSES)) return
+        ensureChannel(context)
+        val name = satelliteName(context, noradId)
+        val time =
+            DateFormat
+                .getTimeInstance(DateFormat.SHORT)
+                .format(Date(passStart.toEpochMilliseconds()))
+        val notification =
+            baseBuilder(context, CHANNEL_PASSES, noradId, SkyNotification.SATELLITE_PASS)
+                .setContentTitle(context.getString(R.string.notif_pass_title, name))
+                .setContentText(context.getString(R.string.notif_pass_text, time))
+                .build()
+        notify(context, SkyNotification.SATELLITE_PASS, notification)
+    }
+
     /** The at-rise alert: the satellite is clearing the horizon now. Replaces the advance alert. */
     fun postRising(
         context: Context,
         noradId: Int,
     ) {
+        // The "soon" alert is now wrong, so it goes rather than lingering beside this one — even
+        // if the user has muted this channel.
+        NotificationManagerCompat.from(context).cancel(SkyNotification.SATELLITE_PASS.id)
         if (!SkyNotifier.canPost(context, CHANNEL_PASSES_NOW)) return
-        ensureRisingChannel(context)
+        ensureChannel(context)
         val notification =
             baseBuilder(context, CHANNEL_PASSES_NOW, noradId, SkyNotification.SATELLITE_PASS_NOW)
                 .setContentTitle(
@@ -105,8 +127,6 @@ object SatellitePassNotifier {
                 ).setContentText(context.getString(R.string.notif_pass_now_text))
                 .setCategory(NotificationCompat.CATEGORY_EVENT)
                 .build()
-        // The "soon" alert is now wrong, so it goes rather than lingering beside this one.
-        NotificationManagerCompat.from(context).cancel(SkyNotification.SATELLITE_PASS.id)
         notify(context, SkyNotification.SATELLITE_PASS_NOW, notification)
     }
 
@@ -138,7 +158,7 @@ object SatellitePassNotifier {
     private fun notify(
         context: Context,
         id: SkyNotification,
-        notification: android.app.Notification,
+        notification: Notification,
     ) {
         if (Build.VERSION.SDK_INT >= 33 &&
             ContextCompat.checkSelfPermission(
@@ -153,26 +173,6 @@ object SatellitePassNotifier {
         } catch (e: SecurityException) {
             // Permission revoked between the check and the post; the alert stays silent.
         }
-    }
-
-    fun post(
-        context: Context,
-        noradId: Int,
-        passStart: Instant,
-    ) {
-        if (!SkyNotifier.canPost(context, CHANNEL_PASSES)) return
-        ensureChannel(context)
-        val name = satelliteName(context, noradId)
-        val time =
-            DateFormat
-                .getTimeInstance(DateFormat.SHORT)
-                .format(Date(passStart.toEpochMilliseconds()))
-        val notification =
-            baseBuilder(context, CHANNEL_PASSES, noradId, SkyNotification.SATELLITE_PASS)
-                .setContentTitle(context.getString(R.string.notif_pass_title, name))
-                .setContentText(context.getString(R.string.notif_pass_text, time))
-                .build()
-        notify(context, SkyNotification.SATELLITE_PASS, notification)
     }
 }
 
