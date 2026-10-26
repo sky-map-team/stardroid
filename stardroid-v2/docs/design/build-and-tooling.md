@@ -7,7 +7,7 @@ architecture (D20) and performance (D19).
 
 ## Module graph
 
-Nineteen Gradle modules, following the dependency rule (arrows inward only; see
+Twenty Gradle modules, following the dependency rule (arrows inward only; see
 [high-level-architecture.md](high-level-architecture.md)):
 
 ```
@@ -26,6 +26,9 @@ Nineteen Gradle modules, following the dependency rule (arrows inward only; see
 :render:metal   ios-library    → :render:api (the iOS Metal backend, D128; render-metal.md)
 :render:metal-harness ios-library → :render:metal, :render:testscene (the iOS harness's
                                  framework; ios/RendererHarness hosts it)
+:app-ios        ios-compose    → :shared:viewmodels, :shared:layers, :shared:model, :data,
+                                 :render:metal (the iOS app's framework, SkyMapKit; ios/SkyMap
+                                 hosts it; Compose Multiplatform, D134)
 :data           kmp-android-library → :core:catalog, :core:astronomy, :core:math
 :data:generator pure-kotlin    → :core:catalog (build-time JVM tool; sqlite-jdbc,
                                  kotlinx-serialization)
@@ -45,9 +48,9 @@ generator originally sketched here as `:tools:catalog-gen` landed as `:data:gene
 ## Convention plugins (`build-logic/`)
 
 Seven plugins keep module build scripts to a few lines and make module *kind* a declaration,
-not a copy-paste of config. They are the structural half of D20. The two multiplatform ones
+not a copy-paste of config. They are the structural half of D20. The three multiplatform ones
 share `skymap.kmp-base` (the iOS targets, the `commonTest` stack, and the skip rule for Macs
-without Xcode), which no module applies directly.
+without Xcode), which no module applies directly; every plugin lints through `skymap.ktlint`.
 
 | Plugin | Applies | Used by |
 |---|---|---|

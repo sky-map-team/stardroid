@@ -17,8 +17,10 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.map
 
-// The alert toggles are backed by layer parameters so the Layers sheet and Settings agree. They
-// live here rather than on [Settings] because the layers depend on :shared:model, not the reverse.
+// The alert settings are layer parameters (#1092), so the Layers sheet and Settings agree. They
+// are extensions on [Settings] here rather than its members, as they are on master's single
+// module, because :shared:layers depends on :shared:model and not the reverse. The package is
+// Settings' own, so callers there need no import.
 
 /** Meteor-shower peak notifications (D77). Off until the user opts in — quiet by default. */
 val Settings.showerAlertsEnabled: Flow<Boolean>
@@ -36,7 +38,10 @@ suspend fun Settings.setShowerAlertsEnabled(enabled: Boolean) =
         enabled.toString(),
     )
 
-/** The lunar-eclipse reminder (D106), backed by the Solar System layer's alert toggle. */
+/**
+ * The lunar-eclipse reminder (D106), backed by the Solar System layer's alert toggle so the
+ * Layers sheet and Settings agree. Off until the user opts in.
+ */
 val Settings.eclipseAlertsEnabled: Flow<Boolean>
     get() =
         layerParameter(
@@ -52,7 +57,10 @@ suspend fun Settings.setEclipseAlertsEnabled(enabled: Boolean) =
         enabled.toString(),
     )
 
-/** Satellite pass alerts (D92), backed by the Satellites layer's alert toggle. */
+/**
+ * Satellite pass alerts (D92), backed by the Satellites layer's alert toggle so the Layers
+ * sheet and Settings agree. Off until the user opts in.
+ */
 val Settings.passAlertsEnabled: Flow<Boolean>
     get() =
         // Mirrors the runtime gate (`passAlertsEnabled(context)`): with the Satellites layer

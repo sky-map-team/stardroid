@@ -182,10 +182,9 @@ fun DiagnosticsScreen(
                     Button(
                         onClick = {
                             scope.launch {
+                                val result = viewModel.fetchExperiments(experimentConfig)
                                 experimentFetchResult =
-                                    when (
-                                        val result = viewModel.fetchExperiments(experimentConfig)
-                                    ) {
+                                    when (result) {
                                         FetchResult.Unsupported -> "Not supported in this build"
                                         is FetchResult.Success ->
                                             if (result.updated) {

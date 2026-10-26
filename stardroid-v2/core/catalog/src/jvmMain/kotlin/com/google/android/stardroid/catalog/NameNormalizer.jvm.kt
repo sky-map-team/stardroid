@@ -11,5 +11,5 @@ package com.google.android.stardroid.catalog
 
 import java.text.Normalizer
 
-internal actual fun decomposeCanonically(text: String): String =
+actual fun decomposeCanonically(text: String): String =
     Normalizer.normalize(text, Normalizer.Form.NFD)

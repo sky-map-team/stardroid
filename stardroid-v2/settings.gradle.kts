@@ -38,10 +38,14 @@ include(":shared:model")
 include(":shared:layers")
 include(":shared:viewmodels")
 include(":shared:testing")
+include(":shared:ui")
 
 // iOS-only modules (D128)
 include(":render:metal")
 include(":render:metal-harness")
+
+// The iOS app's Kotlin side (iOS port phase 4): its framework, its platform edges and its UI root.
+if (file("app-ios").exists()) include(":app-ios")
 
 // Android modules (:data is Android + iOS)
 include(":render:gles1")
