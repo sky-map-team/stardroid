@@ -527,11 +527,6 @@ private fun LayerRail(
         }
         val shownIfroom = ifroom.take(ifroomShown)
         val outline = MaterialTheme.colorScheme.outline
-        // While the teaching labels are up the expand button joins them in primary, then
-        // settles back to outline grey on the labels' own fade curve. Grey is this rail's
-        // "layer off" tint (see RailItem), so on the runs that teach the rail it miscodes the
-        // one item that isn't a toggle as a switched-off one — exactly when a newcomer is
-        // reading the column to learn what the tints mean.
         // The expand button borrows the action cluster's glyph colour (D90): it opens a sheet
         // rather than switching a layer, so it wears neither the rail's amber "on" nor its grey
         // "off". Both of those are toggle states, and this is not a toggle.

@@ -116,7 +116,8 @@ private val ExpandedImageSaver =
         save = { it?.let { image -> listOf(image.imageRef, image.name, image.credit) } },
         restore = { saved ->
             val imageRef = saved.getOrNull(0) ?: return@Saver null
-            ExpandedImage(imageRef, requireNotNull(saved.getOrNull(1)), saved.getOrNull(2))
+            val name = saved.getOrNull(1) ?: return@Saver null
+            ExpandedImage(imageRef, name, saved.getOrNull(2))
         },
     )
 
@@ -186,9 +187,7 @@ fun MapScreen(
     val locationState by locationViewModel.state.collectAsStateWithLifecycle()
     val manualLocationMode by locationViewModel.manualMode.collectAsStateWithLifecycle()
     // Saveable so the sheet/dialogs survive rotation — otherwise the dialog dismisses and the
-    // rememberSaveable date/time inside it is thrown away with it. Settings, gallery,
-    // diagnostics, and calibration are no longer local booleans here — they're the host's
-    // destinations (D48), reached through the onOpenX callbacks below.
+    // rememberSaveable date/time inside it is thrown away with it.
     var showLayersSheet by rememberSaveable { mutableStateOf(false) }
     // The layer whose options the sheet opens expanded, from the rail's help popup.
     var layersSheetFocus by rememberSaveable { mutableStateOf<String?>(null) }
