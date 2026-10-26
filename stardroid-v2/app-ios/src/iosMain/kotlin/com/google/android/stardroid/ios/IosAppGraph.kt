@@ -41,7 +41,11 @@ import com.google.android.stardroid.ui.settings.SettingsViewModel
 import com.google.android.stardroid.ui.startup.StartupViewModel
 import com.google.android.stardroid.ui.timetravel.TimeTravelViewModel
 import kotlinx.cinterop.ExperimentalForeignApi
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.IO
 import kotlinx.coroutines.MainScope
+import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.collectLatest
@@ -88,7 +92,12 @@ class IosAppGraph {
 
     private val scope = MainScope()
 
-    private val settingsStore = settingsDataStore("$supportDirectory/settings.preferences_pb")
+    // DataStore does its file I/O on this scope, which lives as long as the process.
+    private val settingsStore =
+        settingsDataStore(
+            "$supportDirectory/settings.preferences_pb",
+            CoroutineScope(SupervisorJob() + Dispatchers.IO),
+        )
 
     // Smoothing defaults on, as on Android while the 1€ filter is in beta (issue #1007): the
     // settings row says so, and Core Motion goes through the same filter.
