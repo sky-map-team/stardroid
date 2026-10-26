@@ -317,9 +317,6 @@ class SearchViewModel(
      * Satellites are an optional extra: a failed lookup (entry point, repository I/O, SGP4)
      * must not blank the catalog results or crash [select], so it degrades to "none".
      */
-    private suspend fun satellitePosition(id: CelestialObjectId): RaDec? =
-        satellitesSafely().firstOrNull { it.info.id == id }?.position
-
     private suspend fun satellitesSafely(): List<TrackedSatellite> =
         try {
             satellites()
@@ -329,6 +326,9 @@ class SearchViewModel(
             logError("Satellite lookup failed", e)
             emptyList()
         }
+
+    private suspend fun satellitePosition(id: CelestialObjectId): RaDec? =
+        satellitesSafely().firstOrNull { it.info.id == id }?.position
 
     private fun searchFailed(term: String) {
         analytics.trackEvent(

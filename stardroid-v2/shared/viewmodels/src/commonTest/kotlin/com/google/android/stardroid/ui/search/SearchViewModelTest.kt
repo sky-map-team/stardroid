@@ -124,6 +124,7 @@ class SearchViewModelTest {
     private var manualMode = false
 
     private var trackedSatellites = listOf<TrackedSatellite>()
+    private var satelliteLookups = 0
 
     private var aliases = mapOf(25544 to listOf("International Space Station"))
 
@@ -143,6 +144,7 @@ class SearchViewModelTest {
             isManualMode = { manualMode },
             satelliteAliases = { aliases[it].orEmpty() },
             satellites = {
+                satelliteLookups++
                 satelliteFailure?.let { throw it() }
                 trackedSatellites
             },
@@ -283,11 +285,10 @@ class SearchViewModelTest {
             ).isLessThan(TOL)
 
             vm.cancelSearch()
-            vm.select(SIRIUS_HIT)
-            runCurrent()
-            val sirius = vm.target.value
-            advanceTimeBy(2_000)
-            assertThat(vm.target.value).isEqualTo(sirius)
+            val lookups = satelliteLookups
+            advanceTimeBy(5_000)
+            assertThat(satelliteLookups).isEqualTo(lookups)
+            assertThat(vm.target.value).isNull()
         }
 
     @Test
@@ -299,11 +300,10 @@ class SearchViewModelTest {
             runCurrent()
             vm.select(SIRIUS_HIT)
             runCurrent()
-            val sirius = vm.target.value
-
-            trackedSatellites = listOf(ISS.copy(position = RaDec(250.0, 10.0)))
-            advanceTimeBy(2_000)
-            assertThat(vm.target.value).isEqualTo(sirius)
+            val lookups = satelliteLookups
+            advanceTimeBy(5_000)
+            assertThat(satelliteLookups).isEqualTo(lookups)
+            assertThat(vm.target.value!!.trackedId).isNull()
         }
 
     @Test
