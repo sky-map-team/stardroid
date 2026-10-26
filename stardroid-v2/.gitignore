@@ -32,5 +32,5 @@ tools/planets/.cache/
 ios/**/*.xcodeproj/
 # ...and their Xcode build output (-derivedDataPath build, build-sim, build-device, ...)
 ios/**/build*/
-# ...and xcodebuild test result bundles (-resultBundlePath)
-ios/**/*.xcresult/
+# ...and test result bundles (-resultBundlePath), which belong in a scratch directory
+*.xcresult/

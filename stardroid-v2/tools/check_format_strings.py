@@ -33,10 +33,14 @@ from pathlib import Path
 from xml.etree import ElementTree
 
 MODULE_ROOT = Path(__file__).resolve().parent.parent
-RES_DIR = MODULE_ROOT / "app" / "src" / "main" / "res"
-BASE_DIR = RES_DIR / "values"
+# Both resource trees tm translates: :app's, and :shared:ui's (the screens shared with the iOS
+# app, D134), which the shared screens' strings move into as each screen moves.
+RES_DIRS = [
+    MODULE_ROOT / "app" / "src" / "main" / "res",
+    MODULE_ROOT / "shared" / "ui" / "src" / "commonMain" / "res",
+]
 
-# Mirrors the `[[sources]] type = "android"` entry's `files` list in .tmconfig.toml — the
+# Mirrors the `[[sources]] type = "android"` entries' `files` lists in .tmconfig.toml — the
 # set of resource files `tm` treats as translatable. Keep the two in sync.
 TRANSLATABLE_FILES = ["strings.xml", "credits.xml", "help.xml", "whatsnew.xml", "eula.xml"]
 
@@ -169,15 +173,17 @@ def load_locale(res_dir: Path) -> dict[str, str]:
     return strings
 
 
-def main() -> int:
-    if not BASE_DIR.exists():
-        print(f"error: base resource directory not found: {BASE_DIR}", file=sys.stderr)
-        return 1
+def check_tree(res_dir: Path) -> tuple[int, int, int] | None:
+    """Checks one resource tree: (failures, checked strings, locales), or None if unusable."""
+    base_dir = res_dir / "values"
+    if not base_dir.exists():
+        print(f"error: base resource directory not found: {base_dir}", file=sys.stderr)
+        return None
 
-    base_strings = load_locale(BASE_DIR)
+    base_strings = load_locale(base_dir)
     if not base_strings:
-        print(f"error: no translatable strings found under {BASE_DIR}", file=sys.stderr)
-        return 1
+        print(f"error: no translatable strings found under {base_dir}", file=sys.stderr)
+        return None
 
     # Only validate strings the English source actually uses as format strings — see
     # is_formatted's docstring. Everything else (including any stray '%' it contains) is
@@ -186,10 +192,11 @@ def main() -> int:
     base_scans = {name: scan_format_string(base_strings[name]) for name in formatted_names}
     for name, (_, errors) in base_scans.items():
         for error in errors:
-            print(f"FAIL values/ [{name}]: {error}", file=sys.stderr)
+            print(f"FAIL {res_dir.relative_to(MODULE_ROOT)}/values/ [{name}]: {error}",
+                  file=sys.stderr)
 
     locale_dirs = sorted(
-        p for p in RES_DIR.iterdir() if p.is_dir() and LOCALE_DIR_RE.match(p.name)
+        p for p in res_dir.iterdir() if p.is_dir() and LOCALE_DIR_RE.match(p.name)
     )
 
     failures = sum(len(errors) for _, errors in base_scans.values())
@@ -219,16 +226,30 @@ def main() -> int:
                 )
                 failures += 1
 
+    return failures, checked_strings, len(locale_dirs)
+
+
+def main() -> int:
+    failures = checked_strings = locales = 0
+    for res_dir in RES_DIRS:
+        result = check_tree(res_dir)
+        if result is None:
+            return 1
+        failures += result[0]
+        checked_strings += result[1]
+        locales = max(locales, result[2])
+
     if failures:
         print(
-            f"\n{failures} format-string issue(s) found across {len(locale_dirs)} locales.\n"
+            f"\n{failures} format-string issue(s) found across {locales} locales.\n"
             "Each would throw at String.format/stringResource time on a device using that "
             "locale — see java.util.Formatter's grammar for valid conversion characters.",
             file=sys.stderr,
         )
         return 1
 
-    print(f"OK: {checked_strings} translated strings across {len(locale_dirs)} locales, 0 issues")
+    print(f"OK: {checked_strings} translated strings across {locales} locales "
+          f"in {len(RES_DIRS)} resource trees, 0 issues")
     return 0
 
 

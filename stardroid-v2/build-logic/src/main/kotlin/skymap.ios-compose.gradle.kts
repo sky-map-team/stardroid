@@ -1,3 +1,5 @@
+import skymap.useDatetimeCompat
+
 // skymap.ios-library plus the Compose compiler, for iOS-only modules written in Compose
 // Multiplatform, the iOS app's UI layer (D134): :app-ios. The compiler
 // plugin rides build-logic's classpath (as for skymap.android-app), so modules cannot request
@@ -8,3 +10,6 @@ plugins {
     id("org.jetbrains.kotlin.plugin.compose")
     id("org.jetbrains.compose")
 }
+
+// Every configuration here is Kotlin/Native's (see skymap.DatetimeCompat).
+useDatetimeCompat { true }

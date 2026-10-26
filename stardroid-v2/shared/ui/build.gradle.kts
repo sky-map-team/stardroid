@@ -15,8 +15,24 @@ kotlin {
     sourceSets {
         commonMain.dependencies {
             api(project(":render:api"))
+            // The ViewModels' state types the screens draw (D133).
+            api(project(":shared:viewmodels"))
             // NFD for the help search's accent folding (the catalog's name search uses it too).
             implementation(project(":core:catalog"))
+            implementation(libs.cmp.lifecycle.runtime.compose)
+            implementation(libs.cmp.material.icons.core)
+        }
+        androidMain.dependencies {
+            // The notification-permission ask (rememberNotificationPermissionRequest) and system
+            // back (SystemBackHandler).
+            implementation(libs.androidx.activity.compose)
+            implementation(libs.androidx.core.ktx)
+            // The location sheet's map (RemoteImage), through the app's ImageLoader.
+            implementation(libs.coil.compose)
+        }
+        iosMain.dependencies {
+            // iOS's edge swipe as back (SystemBackHandler), as Android's system back.
+            implementation(libs.cmp.ui.backhandler)
         }
         commonTest.dependencies {
             implementation(kotlin("test"))
