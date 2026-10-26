@@ -25,18 +25,24 @@ import android.os.Build
 import android.os.Bundle
 import android.os.SystemClock
 import android.provider.Settings
+import android.util.Log
 import android.view.Surface
 import android.view.WindowManager
 import androidx.activity.ComponentActivity
+import androidx.activity.compose.BackHandler
 import androidx.activity.compose.setContent
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.painterResource
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.core.view.WindowCompat
 import androidx.glance.appwidget.updateAll
@@ -97,6 +103,7 @@ import com.google.android.stardroid.ui.diagnostics.NetworkStatus
 import com.google.android.stardroid.ui.gallery.GalleryViewModel
 import com.google.android.stardroid.ui.layers.LayersViewModel
 import com.google.android.stardroid.ui.location.LocationViewModel
+import com.google.android.stardroid.ui.map.ChoreographerFrameTicker
 import com.google.android.stardroid.ui.map.MapViewModel
 import com.google.android.stardroid.ui.map.ReferenceFrame
 import com.google.android.stardroid.ui.objectinfo.ObjectInfoViewModel
@@ -196,6 +203,7 @@ class MainActivity : ComponentActivity() {
                     timeFlow = timeController.times,
                     now = timeController::now,
                     analytics = analytics,
+                    frameTicker = ChoreographerFrameTicker,
                 )
             }
         }
@@ -261,6 +269,7 @@ class MainActivity : ComponentActivity() {
                     ephemeris = MeeusEphemeris,
                     now = timeController::now,
                     settings = settings,
+                    logError = { message, cause -> Log.e("SearchViewModel", message, cause) },
                     analytics = analytics,
                     isManualMode = { map.referenceFrame.value == ReferenceFrame.MANUAL },
                     location = { locations.value },
@@ -657,13 +666,16 @@ class MainActivity : ComponentActivity() {
                 // as an overlay ahead of the still-pending tour underneath
                 // (needsWhatsNewDuringWarmWelcome).
                 if (gates.needsEula) {
+                    val declineEula = {
+                        startupViewModel.rejectEula()
+                        finish()
+                    }
+                    // BACK declines, as v1 routed cancel to reject.
+                    BackHandler(onBack = declineEula)
                     EulaScreen(
                         nightMode = nightMode,
                         onAccept = startupViewModel::acceptEula,
-                        onDecline = {
-                            startupViewModel.rejectEula()
-                            finish()
-                        },
+                        onDecline = declineEula,
                     )
                 } else if (gates.needsWhatsNew &&
                     (!gates.needsWarmWelcome || gates.needsWhatsNewDuringWarmWelcome)
@@ -702,6 +714,13 @@ class MainActivity : ComponentActivity() {
                     VersionBanner(
                         versionName = appVersionName,
                         onFinished = { showBanner = false },
+                        fallbackLogo = {
+                            Image(
+                                painter = painterResource(R.drawable.ic_launcher_foreground),
+                                contentDescription = null,
+                                modifier = Modifier.fillMaxSize(),
+                            )
+                        },
                     )
                 }
             }

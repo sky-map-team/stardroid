@@ -10,6 +10,7 @@
 package com.google.android.stardroid.satellites
 
 import com.google.android.stardroid.data.satellites.CelesTrakClient
+import com.google.android.stardroid.data.satellites.DirectoryTextFiles
 import com.google.android.stardroid.data.satellites.ElementFreshness
 import com.google.android.stardroid.data.satellites.FetchOutcome
 import com.google.android.stardroid.data.satellites.SatelliteElementsRepository
@@ -50,7 +51,11 @@ class SatelliteElementsFlowTest {
         }
 
     private fun repository() =
-        SatelliteElementsRepository(TleStore(tempDir), client, SatelliteGroup.STATIONS)
+        SatelliteElementsRepository(
+            TleStore(DirectoryTextFiles(tempDir)),
+            client,
+            SatelliteGroup.STATIONS,
+        )
 
     @Test
     fun `the status flow reports a completed fetch, not waiting on the poll`() =

@@ -14,12 +14,9 @@ import com.google.android.stardroid.astronomy.PassSearch
 import com.google.android.stardroid.astronomy.SatelliteEphemeris
 import com.google.android.stardroid.astronomy.SatellitePass
 import com.google.android.stardroid.astronomy.Sgp4
-import com.google.android.stardroid.astronomy.Tle
-import com.google.android.stardroid.catalog.ObjectInfo
 import com.google.android.stardroid.data.satellites.ElementFreshness
 import com.google.android.stardroid.layers.SatelliteLayer
 import com.google.android.stardroid.math.LatLong
-import com.google.android.stardroid.math.RaDec
 import com.google.android.stardroid.startup.Experiment
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.first
@@ -78,13 +75,6 @@ suspend fun tonightSatellitePasses(
  * going outside for tonight", and a pass 40 hours away is not tonight's business.
  */
 val TONIGHT_HORIZON: Duration = 16.hours
-
-/** A satellite currently drawn: its synthesized card and where it is right now. */
-data class TrackedSatellite(
-    val tle: Tle,
-    val info: ObjectInfo,
-    val position: RaDec,
-)
 
 /**
  * The satellites the map is drawing, as tap targets with cards attached.

@@ -32,8 +32,8 @@ class ArchitectureTest {
         // Leading `(?:.*/)?` (not `.*/`) so the gate matches whether Konsist yields absolute or
         // repo-relative paths.
         Regex(
-            """(?:.*/)?(core/(math|astronomy|catalog|events|testing)|render/api|data/generator)""" +
-                """/src/.*\.kt$""",
+            """(?:.*/)?(core/(math|astronomy|catalog|events|testing)|render/(api|testscene)""" +
+                """|data/generator|shared/(model|testing))/src/.*\.kt$""",
         )
 
     private fun pureModuleFiles() =
@@ -50,12 +50,25 @@ class ArchitectureTest {
         }
     }
 
+    // AndroidX libraries that are Kotlin Multiplatform — JVM and iOS builds, no Android SDK —
+    // despite the name, so a pure module may use them. Each must also compile for the pure
+    // modules' JVM and iOS targets, which the build itself checks.
+    private val multiplatformAndroidx =
+        listOf(
+            // DataStoreSettings / DataStoreStartupState in :shared:model (iOS port phase 4).
+            "androidx.datastore.core.",
+            "androidx.datastore.preferences.core.",
+        )
+
     @Test
     fun `pure modules do not import the Android framework`() {
         pureModuleFiles().assertFalse { file ->
             file.hasImport { import ->
                 import.name.startsWith("android.") ||
-                    import.name.startsWith("androidx.") ||
+                    (
+                        import.name.startsWith("androidx.") &&
+                            multiplatformAndroidx.none { import.name.startsWith(it) }
+                    ) ||
                     // Catch any Android-only library — Google (Play Services, Material) and
                     // third-party Android variants (kotlinx.coroutines.android, rxandroid, …) —
                     // while still allowing our own `com.google.android.stardroid.*` packages.
@@ -80,6 +93,14 @@ class ArchitectureTest {
                 "com.google.android.stardroid.catalog.",
                 "com.google.android.stardroid.events.",
                 "com.google.android.stardroid.render.api.",
+                // :shared:model, the app's state contracts and controllers shared with iOS.
+                "com.google.android.stardroid.settings.",
+                "com.google.android.stardroid.startup.",
+                "com.google.android.stardroid.time.",
+                "com.google.android.stardroid.location.",
+                "com.google.android.stardroid.analytics.",
+                "com.google.android.stardroid.sensors.",
+                "com.google.android.stardroid.testscene.",
                 // :core:testing's assertions, for the pure modules' test sources.
                 "com.google.android.stardroid.testing.",
             )
@@ -91,9 +112,14 @@ class ArchitectureTest {
         }
     }
 
-    // Every source set of the multiplatform modules except the JVM-only ones (jvmMain, jvmTest).
+    // Every source set of the multiplatform modules except the JVM-only ones: jvmMain and jvmTest
+    // in the pure modules, and the Android ones (androidMain, androidHostTest, androidDeviceTest)
+    // in :data and the :shared modules with an Android target.
     private val sharedModuleCommonSource =
-        Regex("""(?:.*/)?(core/[a-z]+|render/api)/src/(?!jvm)[A-Za-z]+/.*\.kt$""")
+        Regex(
+            """(?:.*/)?((core/[a-z]+|render/(api|testscene))/src/(?!jvm)|data/src/(?!android)|""" +
+                """shared/[a-z]+/src/(?!jvm|android))[A-Za-z]+/.*\.kt$""",
+        )
 
     private fun sharedModuleCommonFiles() =
         Konsist.scopeFromProject().files.filter {
@@ -198,5 +224,78 @@ class ArchitectureTest {
                 import.name.startsWith("com.google.android.stardroid.render.gles3.")
             }
         }
+    }
+
+    // :render:metal itself; its harness, as RendererTestActivity is for the GL backends; and the
+    // iOS app (:app-ios), which chooses its renderer as :app chooses between the GL backends.
+    private val metalModuleSource =
+        Regex("""(?:.*/)?(render/metal(-harness)?|app-ios)/src/.*\.kt$""")
+
+    @Test
+    fun `nothing in the Gradle tree depends on render metal`() {
+        // D128: :render:metal is the iOS backend, chosen by the iOS app alone (:app-ios, and
+        // exercised by its harness), as :app alone chooses between the GL backends. No shared or
+        // Android module may reach into it.
+        val others =
+            Konsist.scopeFromProject().files.filterNot {
+                metalModuleSource.matches(it.path.replace('\\', '/'))
+            }
+        assertTrue(others.isNotEmpty()) { "metal boundary gate found nothing to scan" }
+        others.assertFalse { file ->
+            file.hasImport { import ->
+                import.name.startsWith("com.google.android.stardroid.render.metal.")
+            }
+        }
+    }
+
+    // Every source set of the shared UI module.
+    private val sharedUiSource = Regex("""(?:.*/)?shared/ui/src/[A-Za-z]+/.*\.kt$""")
+
+    @Test
+    fun `shared UI formats strings as Android does`() {
+        // Compose resources' stringResource(resource, *args) replaces only %1$s and %1$d, and the
+        // strings also use %.1f, %+.1f, %02d and %%, which it would leave in the text. Shared
+        // screens format through formattedStringResource (D137); this catches a call that a
+        // screen's move left behind — a rewrite by pattern misses the ones that pick their
+        // resource with an expression.
+        val files =
+            Konsist.scopeFromProject().files.filter {
+                sharedUiSource.matches(it.path.replace('\\', '/'))
+            }
+        assertTrue(files.isNotEmpty()) { "Shared UI gate found no files - check sharedUiSource." }
+        val offenders =
+            files.flatMap { file ->
+                stringResourceCallsWithArguments(file.text).map { "${file.name}: $it" }
+            }
+        assertTrue(offenders.isEmpty()) {
+            "Format these through formattedStringResource:\n" + offenders.joinToString("\n")
+        }
+    }
+
+    /** The `stringResource(...)` calls in [source] that pass anything after the resource. */
+    private fun stringResourceCallsWithArguments(source: String): List<String> {
+        // Comments name the call too; whole-line ones only, so "skymap://" in a string survives.
+        val text =
+            source
+                .replace(Regex("""/\*.*?\*/""", RegexOption.DOT_MATCHES_ALL), "")
+                .replace(Regex("""(?m)^\s*//.*$"""), "")
+        val call = Regex("""(?<![A-Za-z0-9_.])stringResource\(""")
+        return call.findAll(text).mapNotNull { match ->
+            val open = match.range.last
+            var depth = 0
+            var topLevelComma = -1
+            var index = open
+            while (index < text.length) {
+                when (text[index]) {
+                    '(', '[', '{' -> depth++
+                    ')', ']', '}' -> if (--depth == 0) break
+                    ',' -> if (depth == 1 && topLevelComma < 0) topLevelComma = index
+                    '"' -> index = text.indexOf('"', index + 1).coerceAtLeast(index)
+                }
+                index++
+            }
+            val rest = if (topLevelComma < 0) "" else text.substring(topLevelComma + 1, index)
+            if (rest.isBlank()) null else text.substring(match.range.first, index + 1).take(80)
+        }.toList()
     }
 }

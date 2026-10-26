@@ -18,9 +18,12 @@ the ten active layers, `touch/`, `views/`, and the dialog fragments.
 
 ## The layer system
 
-Layers live in `:app` initially (per the high-level design) as plain classes — no Android
-types in their constructors beyond what interfaces hide — so they unit-test against fake
-contexts and could move to a shared module later.
+Layers are plain classes — no Android types in their constructors beyond what interfaces
+hide — so they unit-test against fake contexts. They started in `:app` (per the high-level
+design); in iOS port phase 3 they moved to `:shared:layers`, a multiplatform module, with no
+code changes beyond two visibilities. The one Android piece, `ResourceLayerStrings` (the
+`LayerStrings` the layers label with, read from `R.string`), stays in `:app`. Their tests run on
+the JVM and the iOS simulator.
 
 ```kotlin
 interface SkyLayer {
@@ -109,7 +112,11 @@ frame.
 ## `:app` decomposition
 
 v1's `DynamicStarMapActivity` mixes ~16 responsibilities. v2 is a single-activity Compose
-app; the map screen splits into focused ViewModels (Hilt-injected, no GL/sensor types):
+app; the map screen splits into focused ViewModels (constructed by hand, no GL/sensor types).
+Since iOS port phase 3 they live in `:shared:viewmodels` on androidx.lifecycle's multiplatform
+`ViewModel`, so the iOS app can hold the same classes; the platform edges they need arrive as
+constructor parameters (Android's `Choreographer` frame ticker, its `Log`), and the Compose
+screens stay in `:app`. `GalleryViewModel` stays in `:app` too: it holds Compose `ImageBitmap`s.
 
 | ViewModel | Owns | v1 origin |
 |---|---|---|

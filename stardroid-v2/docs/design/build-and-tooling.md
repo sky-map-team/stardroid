@@ -7,15 +7,29 @@ architecture (D20) and performance (D19).
 
 ## Module graph
 
-Twelve Gradle modules, following the dependency rule (arrows inward only; see
+Twenty Gradle modules, following the dependency rule (arrows inward only; see
 [high-level-architecture.md](high-level-architecture.md)):
 
 ```
-:app            android-app    → :render:api, :render:gles1, :render:gles3, :data, :core:*
+:app            android-app    → :render:api, :render:gles1, :render:gles3, :data, :shared:*,
+                                 :core:*
+:shared:viewmodels kmp-android-library → :shared:layers, :shared:model, :data
+                                 (+ androidx.lifecycle's multiplatform ViewModel)
+:shared:layers  kmp-android-library → :shared:model, :data, :render:api, :core:*
+:shared:model   pure-kmp       → :render:api, :core:astronomy, :core:math
+:shared:testing pure-kmp       → :shared:model, :core:catalog (test support: fakes of the
+                                 shared interfaces, for :shared and :app tests)
 :render:gles1   android-library→ :render:api
 :render:gles3   android-library→ :render:api
 :render:api     pure-kmp       → :core:math
-:data           android-library→ :core:catalog, :core:astronomy, :core:math
+:render:testscene pure-kmp     → :render:api (the seeded scene every renderer harness draws)
+:render:metal   ios-library    → :render:api (the iOS Metal backend, D128; render-metal.md)
+:render:metal-harness ios-library → :render:metal, :render:testscene (the iOS harness's
+                                 framework; ios/RendererHarness hosts it)
+:app-ios        ios-compose    → :shared:viewmodels, :shared:layers, :shared:model, :data,
+                                 :render:metal (the iOS app's framework, SkyMapKit; ios/SkyMap
+                                 hosts it; Compose Multiplatform, D134)
+:data           kmp-android-library → :core:catalog, :core:astronomy, :core:math
 :data:generator pure-kotlin    → :core:catalog (build-time JVM tool; sqlite-jdbc,
                                  kotlinx-serialization)
 :core:events    pure-kmp       → :core:catalog, :core:astronomy, :core:math
@@ -33,22 +47,28 @@ generator originally sketched here as `:tools:catalog-gen` landed as `:data:gene
 
 ## Convention plugins (`build-logic/`)
 
-Five plugins keep module build scripts to a few lines and make module *kind* a declaration,
-not a copy-paste of config. They are the structural half of D20.
+Seven plugins keep module build scripts to a few lines and make module *kind* a declaration,
+not a copy-paste of config. They are the structural half of D20. The three multiplatform ones
+share `skymap.kmp-base` (the iOS targets, the `commonTest` stack, and the skip rule for Macs
+without Xcode), which no module applies directly; every plugin lints through `skymap.ktlint`.
 
 | Plugin | Applies | Used by |
 |---|---|---|
-| `skymap.pure-kmp` | `kotlin("multiplatform")` — JVM + iOS targets, kotlin.test + `:core:testing`, **no Android plugin** | `:core:*`, `:render:api` |
+| `skymap.pure-kmp` | `kotlin("multiplatform")` — JVM + iOS targets, kotlin.test + `:core:testing`, **no Android plugin** | `:core:*`, `:render:api`, `:render:testscene`, `:shared:model`, `:shared:testing` |
+| `skymap.kmp-android-library` | `kotlin("multiplatform")` — AGP's multiplatform Android target (`com.android.kotlin.multiplatform.library`) + iOS targets | `:data`, `:shared:layers`, `:shared:viewmodels` |
+| `skymap.ios-library` | `kotlin("multiplatform")` — the iOS targets only, kotlin.test + `:core:testing`: iOS-only platform code | `:render:metal`, `:render:metal-harness` |
 | `skymap.pure-kotlin` | `kotlin("jvm")`, JUnit5/Truth, **no Android plugin** | `:data:generator`, `:konsist` |
-| `skymap.android-library` | `com.android.library` + Kotlin, common Android config | `:render:gles1`, `:data` |
+| `skymap.android-library` | `com.android.library` + Kotlin, common Android config | `:render:gles1`, `:render:gles3` |
 | `skymap.android-app` | `com.android.application` + Kotlin + Compose + Hilt + flavors | `:app` |
-| `skymap.android-room` | KSP + Room, checked-in exported schema (`data/schemas/`) | `:data` |
+| `skymap.kmp-room` | KSP + Room for every target, Room's Gradle plugin, checked-in exported schema (`data/schemas/`) | `:data` |
 
 Because neither pure plugin ever puts the Android SDK on the classpath, `import android.*` in
 a pure module is a **compile error** — the primary, structural guarantee that the pure/Android
 boundary holds (D20 layer 1). A pure module that needs Android has applied the wrong plugin,
 which is the visible mistake. Under `skymap.pure-kmp` the same holds for the JDK: `commonMain`
-is also compiled for iOS, so `import java.*` there is a compile error too.
+is also compiled for iOS, so `import java.*` there is a compile error too. `:data`
+(`skymap.kmp-android-library`) is not a pure module — its `androidMain` sees the Android SDK —
+but its `commonMain` is held to the same two rules by the same compiler.
 
 Shared versions live in a Gradle **version catalog** (`gradle/libs.versions.toml`): Kotlin,
 AGP, Compose BOM, Hilt, Room, DataStore, Glance + WorkManager (widgets, D69),
@@ -57,7 +77,7 @@ kotlinx-datetime/serialization/coroutines, Coil, Konsist, Truth, Turbine (Flow t
 performance-gate note below.)
 
 **SDK levels.** v2 uses `minSdk 28`, `compileSdk 36`, `targetSdk 36`, set once in the
-`android-library` / `android-app` convention plugins. v1's "SDK 26–36" range does not apply to
+`android-library` / `android-app` / `kmp-android-library` convention plugins. v1's "SDK 26–36" range does not apply to
 v2 — see the note in the repo-root `AGENTS.md`.
 
 D9 was originally decided as a deliberate raise to `minSdk 29` over v1's `minSdk 26`:
@@ -137,7 +157,8 @@ compiler alone can't fully cover:
 - the module dependency arrows point inward only, via an in-project import **allow-list**
   (`math`/`astronomy`/`catalog`/`events`/`render.api`, plus `testing` for test sources),
   because `:app`'s namespace is the package root and a denylist would miss it.
-- no common (non-`jvm*`) source set of a `pure-kmp` module imports `java.*` / `javax.*`.
+- no common source set of a multiplatform module imports `java.*` / `javax.*` — every source
+  set of a `pure-kmp` module except `jvm*`, and of `:data` except `android*`.
 
 The `:konsist` build file registers every `**/*.kt` as a task input because Konsist scans the
 filesystem and would otherwise sit UP-TO-DATE and silently skip. (The 2026-08-02 gap — the gate
@@ -147,8 +168,8 @@ Layer 3 — a KMP-readiness denylist of JVM-only packages inside core logic — 
 KMP work began (D20). It began, and the layer turned out to be structural rather than a list:
 `commonMain` compiles for iOS, so the compiler rejects JDK APIs there, and Konsist carries the
 import rule above as the executable spec. JVM-only code goes in `jvmMain` behind an
-`expect`/`actual`. `java.nio.FloatBuffer` legitimately lives in `:data` and the GL backends
-(the GL upload boundary), not in pure modules.
+`expect`/`actual`. `java.nio.FloatBuffer` legitimately lives in the GL backends (the GL upload
+boundary), not in pure modules.
 
 ### Reproducible catalog DB (D3, [catalog-and-schema.md](catalog-and-schema.md))
 
@@ -190,7 +211,7 @@ targets, so it covers them on the JVM only).
 |---|---|
 | Pure modules (`:core:*`, `:render:api`) | kotlin.test + `:core:testing`'s Truth-shaped assertions in `commonTest`, run on the JVM (JUnit 5) and the iOS simulator; kotlin property tests; golden fixtures vs. v1 (D6) |
 | Flow behavior | Turbine |
-| `:data` (Room) | **instrumented** tests against real SQLite (FTS4 + Room invalidation need it) + fixture pack; generator golden test on the JVM |
+| `:data` (Room) | tests against real SQLite (FTS4 + Room invalidation need it), so on Android they are **instrumented** (`connectedAndroidDeviceTest`); the ones in `commonTest` also run on the iOS simulator. Fixture pack; generator golden test on the JVM; satellite logic as JVM host tests |
 | `:app` ViewModels | pure JVM with fakes (the point of the decomposition) |
 | Compose screens | not yet built — coverage is at the ViewModel layer; Compose UI tests remain the plan for critical paths |
 | Architecture | Konsist (D20) |

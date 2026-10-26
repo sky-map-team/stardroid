@@ -29,9 +29,25 @@ include(":core:catalog")
 include(":core:events")
 include(":core:testing")
 include(":render:api")
+include(":render:testscene")
 include(":data:generator")
 
-// Android modules
+// The app's middle layer, shared with the iOS app (iOS port phase 3): Kotlin Multiplatform, with
+// no Android SDK in common code. :shared:layers has an Android target rather than JVM, for :data.
+include(":shared:model")
+include(":shared:layers")
+include(":shared:viewmodels")
+include(":shared:testing")
+include(":shared:ui")
+
+// iOS-only modules (D128)
+include(":render:metal")
+include(":render:metal-harness")
+
+// The iOS app's Kotlin side (iOS port phase 4): its framework, its platform edges and its UI root.
+if (file("app-ios").exists()) include(":app-ios")
+
+// Android modules (:data is Android + iOS)
 include(":render:gles1")
 include(":render:gles3")
 include(":data")

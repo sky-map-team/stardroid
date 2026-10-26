@@ -9,8 +9,15 @@
 
 package com.google.android.stardroid.testing
 
-// Lets a common test read a fixture a Gradle task produced: the path arrives in an environment
-// variable (on iOS, SIMCTL_CHILD_-prefixed; see :core:catalog's build script).
+/*
+ * How a common test reads a fixture that a Gradle task produced for it: Gradle passes the file's
+ * path in an environment variable, and the test reads the file directly. On the iOS simulator
+ * the process reads host files as-is, but only sees variables its test task sets with a
+ * `SIMCTL_CHILD_` prefix, which `xcrun simctl` strips as it forwards them.
+ */
+
+/** The environment variable [name] of the test process, or null if it is not set. */
 expect fun environmentVariable(name: String): String?
 
+/** The whole UTF-8 text file at the absolute [path]. */
 expect fun readTextFile(path: String): String

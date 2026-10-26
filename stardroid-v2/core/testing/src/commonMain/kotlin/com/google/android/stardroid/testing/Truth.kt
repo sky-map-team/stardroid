@@ -119,6 +119,16 @@ open class ComparableSubject<T : Comparable<T>> internal constructor(
         if (nonNull() < other) failExpected("expected to be at least", other)
     }
 
+    /** Truth's `isIn(Range)`, over Kotlin's closed range: `0.0..1.0`. */
+    fun isIn(range: ClosedRange<T>) {
+        if (nonNull() !in range) failExpected("expected to be in range", range)
+    }
+
+    /** Truth's `isIn(Range.closedOpen(…))`, over Kotlin's open-ended range: `0.0..<360.0`. */
+    fun isIn(range: OpenEndRange<T>) {
+        if (nonNull() !in range) failExpected("expected to be in range", range)
+    }
+
     protected fun nonNull(): T = actual ?: failWith("expected a non-null value")
 }
 
@@ -135,6 +145,11 @@ class DoubleSubject internal constructor(
                 failWith("expected: $expected (within $tolerance)")
             }
         }
+    }
+
+    /** Not 0.0 or -0.0 (NaN passes), as in Truth. */
+    fun isNonZero() {
+        if (nonNull() == 0.0) failWith("expected not to be zero")
     }
 
     fun interface TolerantComparison {
@@ -189,6 +204,14 @@ class StringSubject internal constructor(
     fun contains(sequence: CharSequence) {
         if (!nonNull().contains(sequence)) failExpected("expected to contain", sequence)
     }
+
+    fun startsWith(prefix: String) {
+        if (!nonNull().startsWith(prefix)) failExpected("expected to start with", prefix)
+    }
+
+    fun endsWith(suffix: String) {
+        if (!nonNull().endsWith(suffix)) failExpected("expected to end with", suffix)
+    }
 }
 
 class IterableSubject internal constructor(
@@ -210,6 +233,27 @@ class IterableSubject internal constructor(
     fun contains(element: Any?) {
         if (nonNull().none { valuesEqual(it, element) }) {
             failExpected("expected to contain", element)
+        }
+    }
+
+    fun doesNotContain(element: Any?) {
+        if (nonNull().any { valuesEqual(it, element) }) {
+            failExpected("expected not to contain", element)
+        }
+    }
+
+    /** Every one of [expected], in any order, among possibly others (multiplicities count). */
+    fun containsAtLeast(vararg expected: Any?) = containsAtLeastElementsIn(expected.asList())
+
+    fun containsAtLeastElementsIn(expected: Iterable<*>) {
+        val unmatched = nonNull().toMutableList()
+        val missing = expected.filter { e -> !unmatched.removeFirstMatch(e) }
+        if (missing.isNotEmpty()) {
+            failWith(
+                "expected to contain at least: ${show(
+                    expected.toList(),
+                )}\nmissing: ${show(missing)}",
+            )
         }
     }
 
@@ -286,6 +330,37 @@ class MapSubject internal constructor(
 
     fun doesNotContainKey(key: Any?) {
         if (nonNull().containsKey(key)) failExpected("expected not to contain key", key)
+    }
+
+    fun containsEntry(
+        key: Any?,
+        value: Any?,
+    ) {
+        val map = nonNull()
+        if (!map.containsKey(key) || !valuesEqual(map[key], value)) {
+            failExpected("expected to contain entry", "$key=$value")
+        }
+    }
+
+    /**
+     * Truth's alternating `containsExactly(k0, v0, k1, v1, …)`: exactly these entries, in any
+     * order unless [IterableSubject.Ordered.inOrder] (iteration order, for an ordered map).
+     */
+    fun containsExactly(vararg keysAndValues: Any?): IterableSubject.Ordered {
+        require(keysAndValues.size % 2 == 0) { "containsExactly takes alternating keys and values" }
+        val expected = keysAndValues.toList().chunked(2) { (k, v) -> k to v }
+        val actualEntries = nonNull().entries.map { it.key to it.value }
+        val unmatched: MutableList<Any?> = actualEntries.toMutableList()
+        val missing = expected.filter { e -> !unmatched.removeFirstMatch(e) }
+        if (missing.isNotEmpty() || unmatched.isNotEmpty()) {
+            failWith(
+                "expected exactly: ${show(expected)}\nmissing: ${show(missing)}" +
+                    "\nunexpected: ${show(unmatched)}",
+            )
+        }
+        return IterableSubject.Ordered {
+            if (actualEntries != expected) failWith("expected in order: ${show(expected)}")
+        }
     }
 
     private fun nonNull(): Map<*, *> = actual ?: failWith("expected a non-null map")
