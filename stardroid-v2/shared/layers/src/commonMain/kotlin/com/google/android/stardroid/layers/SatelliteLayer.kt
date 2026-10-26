@@ -163,6 +163,8 @@ class SatelliteLayer(
         time: Instant,
         observer: LatLong,
     ): Track? {
+        // Follow-up (#1171): rebuilt every REFRESH_INTERVAL; cache per element set if profiling
+        // shows it matters.
         val sgp4 = runCatching { Sgp4(tle) }.getOrNull() ?: return null
         val head = positionAt(sgp4, time, observer) ?: return null
         val trail =
