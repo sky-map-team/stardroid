@@ -15,7 +15,10 @@ import com.google.android.stardroid.data.satellites.SatelliteElements
 import com.google.android.stardroid.math.LatLong
 import com.google.android.stardroid.render.api.PointAppearance
 import com.google.android.stardroid.testing.assertThat
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.flowOf
+import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.flow.take
 import kotlinx.coroutines.flow.toList
 import kotlinx.coroutines.test.runTest
@@ -201,6 +204,30 @@ class SatelliteLayerTest {
 
             val expected =
                 frozen.buildScene(elements(listOf(issTle), ElementFreshness.FRESH), time, london)
+            assertThat(head).isEqualTo(expected.points.last().pos)
+        }
+
+    @Test
+    fun `leaving real time switches from the wall clock to the shared clock`() =
+        runTest {
+            val live = MutableStateFlow(true)
+            val layer =
+                SatelliteLayer(
+                    elements = flowOf(elements(listOf(issTle), ElementFreshness.FRESH)),
+                    clock = flowOf(time),
+                    location = flowOf(london),
+                    realTime = live,
+                    wallNow = { time + 1000.seconds },
+                )
+            val expected =
+                layer.buildScene(elements(listOf(issTle), ElementFreshness.FRESH), time, london)
+
+            val head =
+                layer.scenes()
+                    .onEach { live.value = false }
+                    .first { it.points.last().pos == expected.points.last().pos }
+                    .points.last().pos
+
             assertThat(head).isEqualTo(expected.points.last().pos)
         }
 }

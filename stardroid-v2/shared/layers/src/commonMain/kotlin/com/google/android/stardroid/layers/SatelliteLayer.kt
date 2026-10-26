@@ -54,15 +54,9 @@ import kotlin.time.Duration.Companion.seconds
  * `RESUBMIT_THRESHOLD_DEG = 0.01`, which against the Moon's ~15°/day means about a minute. At the
  * ISS's ~4° per *minute* that same threshold would fire roughly every 150 ms — several rebuilds a
  * second. This layer instead samples on its own fixed [REFRESH_INTERVAL] of the wall clock,
- * independent of how often `elements`, the shared app clock, or `location` actually emit. That
- * independence matters in both directions: the shared clock (`TimeController.times`) only ticks
- * once a minute in real time, which alone would make the ISS visibly jump ~4° at a time (so in
- * real time the layer reads the wall clock itself, see [realTime]), and it ticks every 32 ms
- * during time travel, which alone would rebuild the scene ~30 times a second for no visible
- * benefit. Sampling gives ~0.013° of ISS motion per rebuild in real time — sub-pixel even when
- * zoomed in — while still tracking accelerated time during travel, just without paying for a
- * rebuild on every one of its ticks. Recorded as a deliberate divergence rather than
- * left to look like an oversight.
+ * independent of how often `elements`, the shared app clock, or `location` emit. The shared clock
+ * ticks once a minute in real time (the ISS would hop ~4°), so then the layer reads the wall clock
+ * itself, see [realTime]; during time travel it ticks every 32 ms, far more rebuilds than needed.
  *
  * **Depth 55** — in front of the solar system (60), behind the horizon. D18's occlusion sort by
  * descending distance naturally puts a satellite nearest the viewer, which is correct: it really
@@ -87,8 +81,6 @@ class SatelliteLayer(
     override val depth = DEPTH
     override val parameters = PARAMETERS
 
-    // The shared clock only ticks once a minute in real time, so outside time travel the time
-    // comes from the wall clock instead, giving the sampler fresh values every interval.
     private fun times(): Flow<Instant> =
         realTime.distinctUntilChanged().flatMapLatest { live ->
             if (live) {
