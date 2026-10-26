@@ -110,6 +110,7 @@
     <!-- Moon-phase home-screen widget (D69). -->
     <string name="moon_widget_label" translation_description="Name of the moon-phase home-screen widget, shown in the launcher\'s widget picker">Moon phase</string>
     <string name="moon_widget_description" translation_description="Description of the moon-phase widget, shown under its preview in the launcher\'s widget picker">The Moon\'s phase, illumination and rise and set times, updated daily.</string>
+    <string name="moon_widget_illumination_short" translation_description="Compact widget line showing the percentage of the Moon\'s disc that is lit; %1$d is a percentage number">%1$d%%</string>
     <string name="moon_widget_illumination" translation_description="Widget line showing how much of the Moon\'s disc is lit; %1$d is a percentage number">%1$d%% illuminated</string>
     <string name="moon_widget_rise_time" translation_description="Widget fragment showing the next moonrise time, which may be tomorrow\'s; %1$s is a clock time like 17:42">rises %1$s</string>
     <string name="moon_widget_set_time" translation_description="Widget fragment showing the next moonset time, which may be tomorrow\'s; %1$s is a clock time like 03:12">sets %1$s</string>
