@@ -399,7 +399,7 @@ class SearchViewModel(
             }
         }
 
-        /** How often a tracked satellite's position is refreshed (it moves ~1° every few seconds). */
+        /** How often a tracked satellite is re-resolved (it moves ~1° every few seconds). */
         private val TRACK_INTERVAL = 1.seconds
 
         /** Ranked-list length; v1's suggestion cursor was unbounded, the FTS query is not. */
