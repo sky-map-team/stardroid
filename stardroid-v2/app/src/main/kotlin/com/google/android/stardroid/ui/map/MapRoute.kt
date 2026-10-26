@@ -9,6 +9,7 @@
 
 package com.google.android.stardroid.ui.map
 
+import android.graphics.Bitmap
 import android.opengl.GLSurfaceView
 import androidx.camera.view.PreviewView
 import androidx.compose.foundation.gestures.awaitEachGesture
@@ -117,20 +118,22 @@ fun MapRoute(
         mapViewModel.logMenuItem(AnalyticsEvents.SHARE_SKY_LABEL)
         scope.launch {
             val map = if (arModeOn) SkyShare.captureMap(glSurfaceView) else null
-            val still = if (map != null) arCamera.takeStill() else null
-            if (map != null && still != null) {
-                // The composites use the scrim exactly as rendered (night floor included).
-                val scrim = mapViewModel.renderState.first().cameraScrim
-                shareLayouts = SkyShare.arShareLayouts(context, map, still, scrim)
-            } else if (!SkyShare.shareSky(context, glSurfaceView)) {
-                snackbarHostState.showSnackbar(shareFailedMessage)
+            var still: Bitmap? = null
+            try {
+                still = if (map != null) arCamera.takeStill() else null
+                if (map != null && still != null) {
+                    // The composites use the scrim exactly as rendered (night floor included).
+                    val scrim = mapViewModel.renderState.first().cameraScrim
+                    shareLayouts = SkyShare.arShareLayouts(context, map, still, scrim)
+                } else if (!SkyShare.shareSky(context, glSurfaceView)) {
+                    snackbarHostState.showSnackbar(shareFailedMessage)
+                }
+            } finally {
+                // We own both captures (SkyShare never recycles what it is handed), and the
+                // null-still path falls back to shareSky, which takes its own capture.
+                map?.recycle()
+                still?.recycle()
             }
-            // We own both captures (SkyShare never recycles what it is handed) and nothing
-            // reads them after the composites are built. The null-still path matters too:
-            // it falls back to shareSky, which takes its own capture, so this map would
-            // otherwise be leaked outright.
-            map?.recycle()
-            still?.recycle()
         }
     }
 
