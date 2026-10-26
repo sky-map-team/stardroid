@@ -56,7 +56,8 @@ class DataStoreSettingsTest {
 
             // A fresh store on the same file, once the first is gone, sees what was written.
             firstJob.cancelAndJoin()
-            val reopened = DataStoreSettings(settingsDataStore(path))
+            val reopened =
+                DataStoreSettings(settingsDataStore(path, CoroutineScope(Dispatchers.IO)))
             assertThat(reopened.nightMode.first()).isTrue()
             assertThat(reopened.fontSize.first()).isEqualTo(FontSize.LARGE)
         }
@@ -64,7 +65,7 @@ class DataStoreSettingsTest {
     @Test
     fun startupStateSharesTheFile() =
         runTest {
-            val store = settingsDataStore(path)
+            val store = settingsDataStore(path, CoroutineScope(Dispatchers.IO))
             val startup = DataStoreStartupState(store)
             val settings = DataStoreSettings(store)
 
