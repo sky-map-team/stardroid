@@ -64,7 +64,10 @@ targets:
       base:
         # .dev: development builds register their bundle ID to the signing team, and bundle IDs
         # are unique across Apple, so a dev build must never claim the App Store app's ID.
+        # Release builds (archives) use the App Store ID; see configs below.
         PRODUCT_BUNDLE_IDENTIFIER: io.penterakt.skymap.dev
+        DEVELOPMENT_TEAM: F98KUL97FJ
+        CODE_SIGN_STYLE: Automatic
         MARKETING_VERSION: "0.1"
         CURRENT_PROJECT_VERSION: "1"
         GENERATE_INFOPLIST_FILE: YES
@@ -77,6 +80,9 @@ targets:
         OTHER_LDFLAGS: -framework SkyMapKit -framework Metal -framework MetalKit
         ENABLE_USER_SCRIPT_SANDBOXING: NO
         SWIFT_VERSION: "5.0"
+      configs:
+        Release:
+          PRODUCT_BUNDLE_IDENTIFIER: io.penterakt.skymap
   SkyMapUITests:
     type: bundle.ui-testing
     platform: iOS
@@ -88,6 +94,8 @@ targets:
       base:
         GENERATE_INFOPLIST_FILE: YES
         PRODUCT_BUNDLE_IDENTIFIER: io.penterakt.skymap.dev.uitests
+        DEVELOPMENT_TEAM: F98KUL97FJ
+        CODE_SIGN_STYLE: Automatic
         SWIFT_VERSION: "5.0"
 schemes:
   SkyMap:

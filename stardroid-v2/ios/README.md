@@ -16,10 +16,11 @@ xcodebuild -project ios/SkyMap/SkyMap.xcodeproj -scheme SkyMap \
   -destination 'platform=iOS Simulator,name=iPhone 17 Pro' -derivedDataPath ios/SkyMap/build build
 ```
 
-On a device, add `DEVELOPMENT_TEAM=<team> CODE_SIGN_STYLE=Automatic -allowProvisioningUpdates`
-(the phone unlocked, so Xcode can mount its developer disk image). The bundle ID is
-`io.penterakt.skymap.dev`: a development build registers its bundle ID to the signing team,
-and bundle IDs are unique across Apple, so a dev build must never claim the App Store app's.
+On a device, add `-allowProvisioningUpdates` (the phone unlocked, so Xcode can mount its
+developer disk image). Signing is automatic under the Penterakt team (`DEVELOPMENT_TEAM` in
+`project.yml`). Debug builds use the bundle ID `io.penterakt.skymap.dev`: a development build
+registers its bundle ID to the signing team, and bundle IDs are unique across Apple, so a dev
+build must never claim the App Store app's. Release builds (archives) use `io.penterakt.skymap`.
 
 `MapGestureTests` (the scheme's `test`) drags, flings and pinches the map, capturing the sky
 after each as attachments (`xcrun xcresulttool export attachments --path <result bundle>`).
