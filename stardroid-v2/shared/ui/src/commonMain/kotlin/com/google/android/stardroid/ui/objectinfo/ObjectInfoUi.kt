@@ -384,6 +384,7 @@ fun SatellitePassRow(
     passTimesReliable: Boolean,
 ) {
     val formatter = rememberDateTimeFormatter()
+    val timeFormatter = rememberTimeFormatter()
     Text(
         stringResource(Res.string.satellite_next_pass),
         style = MaterialTheme.typography.titleSmall,
@@ -419,12 +420,10 @@ fun SatellitePassRow(
                     MaterialTheme.typography.bodySmall,
                 )
                 pass.shadowEntry?.let { shadow ->
-                    // The most memorable thing the app can say: a satellite that fades out
-                    // mid-sky is the single most-asked question after someone watches it happen.
                     Text(
                         formattedStringResource(
                             Res.string.satellite_pass_shadow,
-                            rememberTimeFormatter()(shadow),
+                            timeFormatter(shadow),
                         ),
                         style = MaterialTheme.typography.labelSmall,
                         color = MaterialTheme.colorScheme.onSurfaceVariant,

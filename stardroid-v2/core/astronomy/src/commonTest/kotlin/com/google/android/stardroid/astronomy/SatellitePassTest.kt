@@ -221,4 +221,17 @@ class GoodPassesTest {
         assertThat(good.size).isEqualTo(3)
         assertThat(good.first().start).isEqualTo(t0 + 24.hours)
     }
+
+    @Test
+    fun `empty stays empty and a lone low pass is kept`() {
+        assertThat(emptyList<SatellitePass>().goodPasses()).isEqualTo(emptyList<SatellitePass>())
+        val low = pass(1, 12.0)
+        assertThat(listOf(low).goodPasses()).isEqualTo(listOf(low))
+    }
+
+    @Test
+    fun `a later pass at exactly 30 degrees is kept`() {
+        val passes = listOf(pass(1, 50.0), pass(25, 30.0))
+        assertThat(passes.goodPasses().size).isEqualTo(2)
+    }
 }

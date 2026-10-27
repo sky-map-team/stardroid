@@ -126,6 +126,9 @@ suspend fun trackedSatellites(
     }
 }
 
+/** Tighter than the ten-day staleness gate: a list of times promises more than one time does. */
+private val CARD_PASS_WINDOW: Duration = 5.days
+
 /**
  * The next good visible passes for one satellite, for the info card's pass table.
  *
@@ -154,5 +157,3 @@ suspend fun upcomingVisiblePasses(
             }.orEmpty()
     }
 }
-
-private val CARD_PASS_WINDOW: Duration = 5.days

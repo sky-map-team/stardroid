@@ -57,6 +57,7 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.drop
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.flow.mapLatest
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -163,7 +164,7 @@ class ObjectInfoViewModel(
      */
     val upcomingSatellitePasses: StateFlow<List<SatellitePass>> =
         _card
-            .map { card ->
+            .mapLatest { card ->
                 card?.id?.let(SatelliteIds::noradIdFor)?.let { upcomingPasses(it) }.orEmpty()
             }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), emptyList())
 

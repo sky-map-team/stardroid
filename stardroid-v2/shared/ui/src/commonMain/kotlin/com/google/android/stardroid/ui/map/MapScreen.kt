@@ -722,9 +722,7 @@ fun MapScreen(
                         {
                             SatellitePassRow(
                                 passes = upcomingSatellitePasses,
-                                // Null with reliable data means "nothing is coming", which is a
-                                // real answer; null because the data is stale means something
-                                // else entirely, and the row says so.
+                                // Empty with reliable data means "nothing is coming"; stale data is a different message.
                                 passTimesReliable = satellitePassTimesReliable,
                             )
                         }
