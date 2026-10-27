@@ -162,6 +162,7 @@ fun ObjectInfoBody(
     onSeeAlso: (SearchHit) -> Unit,
     onImageTap: (ObjectInfo) -> Unit,
     modifier: Modifier = Modifier,
+    // Per-type slots: before adding another, see D107 (design/lunar-eclipse.md) and #1181.
     promoRow: (@Composable () -> Unit)? = null,
     /**
      * The next-visible-pass block, for satellite cards only.
