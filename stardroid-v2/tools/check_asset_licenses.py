@@ -25,6 +25,8 @@ ASSET_ROOT = MODULE_ROOT / "app" / "src" / "main"
 # The shared UI's resources (D136), in the Android layout too. Scanned with the same prefixes,
 # but listed by their path from stardroid-v2/ so their rules cannot be mistaken for the app's.
 SHARED_RES_ROOT = MODULE_ROOT / "shared" / "ui" / "src" / "commonMain" / "res"
+# The iOS app's image assets (the app icon), listed by their path from stardroid-v2/.
+IOS_ASSET_ROOT = MODULE_ROOT / "ios" / "SkyMap" / "Sources" / "Assets.xcassets"
 
 # Directories holding licensable artwork. Selected by directory rather than by file
 # extension because the launcher icon and every UI glyph are `.xml` vector drawables — an
@@ -100,6 +102,15 @@ def discover_shared_assets(root: Path) -> list[str]:
     return sorted(found)
 
 
+def discover_ios_assets(root: Path) -> list[str]:
+    """Every image in the iOS asset catalog, as posix paths relative to stardroid-v2/."""
+    if not root.exists():
+        return []
+    return sorted(
+        p.relative_to(MODULE_ROOT).as_posix() for p in root.rglob("*.png") if p.is_file()
+    )
+
+
 def classify(asset: str, rules: list[tuple[str, str]]) -> tuple[str, int] | None:
     """First matching rule wins. Returns (section, rule index), or None if unclassified."""
     for i, (section, pattern) in enumerate(rules):
@@ -138,6 +149,7 @@ def find_dead_rules(
 def main() -> int:
     rules = load_rules(MANIFEST)
     assets = discover_assets(ASSET_ROOT) + discover_shared_assets(SHARED_RES_ROOT)
+    assets += discover_ios_assets(IOS_ASSET_ROOT)
 
     if not assets:
         print(f"error: no assets discovered under {ASSET_ROOT}", file=sys.stderr)

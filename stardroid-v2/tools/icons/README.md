@@ -17,3 +17,9 @@ Licensing: the script is GPLv3 like the rest of the repository's code; the icon 
 defines (geometry, SVG masters, webps) is All Rights Reserved, Penterakt LLC — see
 `dso/LICENSE.md` for the masters, and the `[arr]` section of `ASSET-LICENSES.txt` for the
 shipped webps.
+
+## render_ios_icon.py
+
+Renders the 1024×1024 iOS app icon (`ios/SkyMap/Sources/Assets.xcassets/AppIcon.appiconset/`)
+straight from the launcher vector drawables, so the icon follows them. macOS only (Quick Look
+and `sips`). Run `python3 tools/icons/render_ios_icon.py` and commit the PNG.

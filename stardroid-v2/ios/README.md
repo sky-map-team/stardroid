@@ -18,7 +18,7 @@ xcodebuild -project ios/SkyMap/SkyMap.xcodeproj -scheme SkyMap \
 
 On a device, add `DEVELOPMENT_TEAM=<team> CODE_SIGN_STYLE=Automatic -allowProvisioningUpdates`
 (the phone unlocked, so Xcode can mount its developer disk image). The bundle ID is
-`com.penterakt.skymap.dev`: a development build registers its bundle ID to the signing team,
+`io.penterakt.skymap.dev`: a development build registers its bundle ID to the signing team,
 and bundle IDs are unique across Apple, so a dev build must never claim the App Store app's.
 
 `MapGestureTests` (the scheme's `test`) drags, flings and pinches the map, capturing the sky

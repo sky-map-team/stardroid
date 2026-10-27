@@ -426,8 +426,8 @@ private enum class Page {
     CALIBRATION_PROMPT,
 }
 
-/** Android's figure-eight video for now; an iPhone one is to replace it. */
-private const val CALIBRATION_VIDEO_URL = "https://www.youtube.com/watch?v=-Uq7AmSAjt8"
+/** A third-party iPhone compass calibration video; to be replaced by our own. */
+private const val CALIBRATION_VIDEO_URL = "https://www.youtube.com/watch?v=vpGCe2gUvsM"
 
 /** What the welcome's sensor check reports, from Core Motion. */
 private data class MotionHardware(

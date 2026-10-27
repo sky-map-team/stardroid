@@ -13,8 +13,8 @@
 #
 # FORMAT
 #   [section]     one of: arr, gpl, apache-v1, third-party
-#   one glob per line, relative to app/src/main/ — or, for the shared UI's resources (D136),
-#   to stardroid-v2/ (shared/ui/src/commonMain/res/...)
+#   one glob per line, relative to app/src/main/ — or, for the shared UI's resources (D136)
+#   and the iOS app icon, to stardroid-v2/ (shared/ui/src/commonMain/res/..., ios/SkyMap/...)
 #   '#' starts a comment; blank lines ignored
 #   First matching rule wins, so order matters within and between sections.
 #
@@ -37,6 +37,9 @@ res/drawable/ic_launcher_foreground.xml
 res/drawable/ic_launcher_monochrome.xml
 res/mipmap-anydpi-v26/ic_launcher.xml
 res/mipmap-anydpi-v26/ic_launcher_round.xml
+
+# The iOS app icon: the same launcher artwork, flattened to an opaque 1024x1024 PNG.
+ios/SkyMap/Sources/Assets.xcassets/AppIcon.appiconset/AppIcon.png
 
 # Notification status icon — the launcher mark reduced to a monochrome glyph.
 res/drawable/ic_stat_skymap.xml
