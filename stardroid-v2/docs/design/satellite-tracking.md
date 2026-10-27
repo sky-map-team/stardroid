@@ -660,6 +660,8 @@ Two details this forces:
 **Deferred: a "more passes" list screen.** §"Pass prediction" already parameterizes the horizon
 so such a screen could ask for a longer one. The sheet answers the common case ("when next?"),
 and a dedicated list is worth building only once passes prove popular — not at launch.
+**Superseded by [info-card-live-content.md](info-card-live-content.md) (proposed, D141):** #1142
+asks for the list on the card itself, as that doc's "Upcoming" section, with no new screen.
 
 ## Pass alerts: a separate, time-critical notification
 
