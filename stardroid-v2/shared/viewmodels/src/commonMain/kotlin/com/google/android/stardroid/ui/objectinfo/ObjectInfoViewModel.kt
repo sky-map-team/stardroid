@@ -46,6 +46,7 @@ import com.google.android.stardroid.startup.Experiment
 import com.google.android.stardroid.startup.ExperimentConfig
 import com.google.android.stardroid.ui.search.SolarSystemIds
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.async
 import kotlinx.coroutines.awaitAll
@@ -162,6 +163,7 @@ class ObjectInfoViewModel(
      * has no visible pass coming. The last is a real answer — visible passes cluster into
      * multi-day seasons separated by multi-week gaps — so the row says so rather than vanishing.
      */
+    @OptIn(ExperimentalCoroutinesApi::class)
     val upcomingSatellitePasses: StateFlow<List<SatellitePass>> =
         _card
             .mapLatest { card ->
