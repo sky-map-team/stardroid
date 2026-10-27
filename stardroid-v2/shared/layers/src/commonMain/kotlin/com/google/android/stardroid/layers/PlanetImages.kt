@@ -11,11 +11,9 @@ package com.google.android.stardroid.layers
 
 import com.google.android.stardroid.astronomy.SolarSystemBody
 import com.google.android.stardroid.render.api.ImageRef
-import kotlinx.datetime.Instant
 
 /**
- * The default [BodyImageMapper]: every body gets its bundled image (v1's
- * `show_planetary_images=true` behavior). Keys are in the `planet/` namespace, resolved by
+ * Every body's bundled image. Keys are in the `planet/` namespace, resolved by
  * `AssetImageLoader` against `assets/planets/` — NASA imagery, which is scientific data, not
  * branding.
  *
@@ -23,13 +21,6 @@ import kotlinx.datetime.Instant
  * the terminator from [ImagePrimitive.terminator][com.google.android.stardroid.render.api
  * .ImagePrimitive.terminator], so the bitmap is the plain fully-lit disc like every other body's.
  */
-class PlanetImages : BodyImageMapper {
-    override fun imageFor(
-        body: SolarSystemBody,
-        time: Instant,
-    ): ImageRef? =
-        when (body) {
-            SolarSystemBody.EARTH -> null
-            else -> ImageRef("planet/${body.name.lowercase()}")
-        }
+object PlanetImages {
+    fun imageFor(body: SolarSystemBody): ImageRef = ImageRef("planet/${body.name.lowercase()}")
 }

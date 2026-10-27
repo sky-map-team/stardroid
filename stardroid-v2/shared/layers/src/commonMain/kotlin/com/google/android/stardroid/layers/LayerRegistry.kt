@@ -134,9 +134,7 @@ class LayerRegistry(
                             ephemeris,
                             clock,
                             strings,
-                            location,
-                            PlanetImages(),
-                            settings,
+                            location,                            settings,
                         ),
                     ),
             )
