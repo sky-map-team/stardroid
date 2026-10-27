@@ -272,8 +272,11 @@ associated image's drawn diameter, or the label drawer reads the floored size fr
 computation. Otherwise names sit inside a true-scale Moon.
 
 **Sun corona.** A true-scale Sun with a hard limb reads as a flat sticker. Give it an additive
-corona/glare halo through the existing `GlowPrimitive` mesh (added for the horizon glow, D40) at
-about 2.5× the drawn disc. It also keeps the Sun findable when it is a floored speck.
+corona/glare halo at about 2.5× the drawn disc. It also keeps the Sun findable when it is a
+floored speck. Note this can no longer lean on `GlowPrimitive`, which was removed along with the
+horizon glow it was built for: on `:render:gles3` a corona is a few lines of fragment shader on
+the Sun's own quad, which is cheaper than the mesh ever was, and on `:render:gles1` it would need
+the ring mesh reintroducing — an argument for doing it after GLES1 retires rather than before.
 
 ### 3.4 The layer parameter
 
@@ -482,6 +485,9 @@ Not part of the staged work, but recorded because this design makes each of them
   extent.
 - **`BodyImageMapper`'s dot fallback** is largely redundant once discs are floored and
   true-scale; the "Glyphs" parameter supersedes its intent. Decide whether it stays.
+  **Update:** in production it is already unreachable. `PlanetImages` returns `null` only for
+  Earth, which `SolarSystemLayer.BODIES` excludes, so every body is drawn as a disc and the
+  planet-as-dot branch never runs. Removal is tracked in #1140.
 - **`AssetImageLoader` needs a generated-bitmap path.** It resolves `planet/*` to a fixed `.webp`
   filename today. The compositor sits in front of it: the loader fetches the base disc, the
   compositor applies the terminator, the §2 cache stores the result. Under GLES3 the compositor

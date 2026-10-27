@@ -10,7 +10,7 @@ Same idea as v1's `skymap.whatsnew` skill (same `generate_changelog.py` tool, co
 into v2's `tools/` — the underlying repo and tags are shared across `stardroid-v1/` and
 `stardroid-v2/`), but the **output targets differ**: v2 mirrors v1's split of large HTML string
 content into per-topic files (see `AGENTS.md`), so What's New content lives in
-`app/src/main/res/values/whatsnew.xml`, not `strings.xml`.
+`shared/ui/src/commonMain/res/values/whatsnew.xml`, not `strings.xml`.
 
 ## Procedures
 
@@ -24,7 +24,7 @@ content into per-topic files (see `AGENTS.md`), so What's New content lives in
 ### 2. Pre-flight: Read Existing Output Files
 
 Before drafting, read both output files if they exist:
-- `app/src/main/res/values/whatsnew.xml` — look for the `whats_new_content` string
+- `shared/ui/src/commonMain/res/values/whatsnew.xml` — look for the `whats_new_content` string
 - `fastlane/metadata/android/en-US/changelogs/default.txt`
 
 This skill may be run multiple times before a release. Treat the existing `whats_new_content`
@@ -44,7 +44,7 @@ not yet covered.
 
 ### 4. Output Generation
 
-#### Target A: `whats_new_content` string in `app/src/main/res/values/whatsnew.xml`
+#### Target A: `whats_new_content` string in `shared/ui/src/commonMain/res/values/whatsnew.xml`
 
 Edit the existing `<string name="whats_new_content" ...>` entry (a `CDATA` HTML block just above
 `whats_new_support` in the same file — see the string's `translation_description` for markup
@@ -53,6 +53,8 @@ separate `whatsnew_content.xml`, that's a v1-only split v2 doesn't mirror at tha
 
 - Use `<h2>` for each feature heading followed by a short descriptive paragraph.
 - Only use `<ul><li>` to group multiple minor items under a single heading.
+- Keep the closing `<h2>About the release name</h2>` section (one or two sentences on the
+  release's namesake, owned by `skymap.release`) as the last item — don't drop or rewrite it.
 - Keep it concise. This content is shown both in the What's New dialog
   (`StartupDialogs.kt` → `WhatsNewDialog`) and appended to the Help screen — don't let it grow
   so long it dominates either.

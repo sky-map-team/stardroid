@@ -9,6 +9,8 @@
 
 package com.google.android.stardroid.widget
 
+import androidx.compose.ui.unit.DpSize
+import androidx.compose.ui.unit.dp
 import com.google.common.truth.Truth.assertThat
 import kotlinx.datetime.Instant
 import kotlinx.datetime.TimeZone
@@ -47,5 +49,18 @@ class MoonWidgetTest {
         val now = Instant.parse("2026-09-22T22:59:00Z")
         val time = Instant.parse("2026-09-22T23:01:00Z")
         assertThat(dayOffset(now, time, london)).isEqualTo(1)
+    }
+
+    @Test
+    fun `1x1 and 2x1 footprints use the compact layout`() {
+        assertThat(moonWidgetLayoutFor(MoonWidget.COMPACT_SIZE)).isEqualTo(MoonWidgetLayout.COMPACT)
+        assertThat(moonWidgetLayoutFor(DpSize(250.dp, 57.dp))).isEqualTo(MoonWidgetLayout.COMPACT)
+        assertThat(moonWidgetLayoutFor(DpSize(57.dp, 250.dp))).isEqualTo(MoonWidgetLayout.COMPACT)
+    }
+
+    @Test
+    fun `2x2 and larger use the full layout`() {
+        assertThat(moonWidgetLayoutFor(MoonWidget.FULL_SIZE)).isEqualTo(MoonWidgetLayout.FULL)
+        assertThat(moonWidgetLayoutFor(DpSize(250.dp, 250.dp))).isEqualTo(MoonWidgetLayout.FULL)
     }
 }

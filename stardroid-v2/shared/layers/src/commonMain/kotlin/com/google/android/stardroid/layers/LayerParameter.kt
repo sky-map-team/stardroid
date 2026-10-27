@@ -1,0 +1,220 @@
+/*
+ * Copyright (c) 2026 Penterakt LLC.
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ */
+
+package com.google.android.stardroid.layers
+
+/**
+ * A choice a layer exposes to the user, shown as an inline expander under its row in the Layers
+ * sheet (D87). The first is the solar system's disc size; grid density, magnitude limit and
+ * shower selection are the obvious later customers.
+ *
+ * Keys, not string resources: a layer says *what* it offers and the sheet decides how to name it,
+ * the same split the existing `layerName`/`layerIcon` mapping already uses. Keys are persisted,
+ * so they are API — renaming one silently resets everybody's preference.
+ *
+ * Sealed because a parameter is not always a choice. [Toggle] arrived with satellite pass alerts
+ * (D92 phase 4c), which are boolean: encoding them as a two-option `on`/`off` [Choice] would
+ * render as a radio expander where a switch is meant. Made sealed at the *second* parameter rather
+ * than the fifth, on the grounds that more toggles are coming — meteor-shower alerts are the same
+ * shape and are expected to gain the same in-layer control.
+ */
+sealed interface LayerParameter {
+    /**
+     * The persisted preference key. **API**: renaming one silently resets everybody's setting.
+     */
+    val key: String
+
+    /** The value in force when the user has never touched it. */
+    val defaultValue: String
+
+    /** An enumerated choice, rendered as a segmented row. */
+    data class Choice(
+        override val key: String,
+        val options: List<String>,
+        val defaultOption: String,
+    ) : LayerParameter {
+        override val defaultValue: String get() = defaultOption
+
+        init {
+            require(defaultOption in options) { "default $defaultOption is not one of $options" }
+        }
+    }
+
+    /**
+     * A boolean, rendered as a switch.
+     *
+     * Persisted as `"true"`/`"false"` strings rather than a new storage type, so it rides the
+     * existing `layerParameter(id, key, default)` path unchanged — the D87/D91 wiring keeps
+     * working and nothing new has to learn about booleans.
+     */
+    data class Toggle(
+        override val key: String,
+        val defaultOn: Boolean = false,
+        /**
+         * True when switching this on leads to a notification, so the UI must request
+         * `POST_NOTIFICATIONS` (Android 13+) at the moment of opting in.
+         *
+         * Declared on the parameter rather than special-cased in the sheet because the next
+         * toggle of this kind is already expected — shower alerts are the same shape — and a
+         * switch that silently never notifies is the worst possible failure: it looks on, and the
+         * user has no way to work out why nothing arrives.
+         */
+        val requiresNotificationPermission: Boolean = false,
+    ) : LayerParameter {
+        override val defaultValue: String get() = defaultOn.toString()
+    }
+
+    companion object {
+        /** The Solar System layer's disc-size choice. */
+        const val DISC_SIZE = "disc_size"
+
+        /** True apparent size at every zoom, floored only so nothing vanishes. */
+        const val DISC_SIZE_TRUE = "true"
+
+        /**
+         * v1's fixed angular sizes: legible at any zoom, never honest — and, because the size is
+         * angular rather than a screen fraction, the mode that responds most to zooming. The
+         * default, so the map opens looking as it always has and true scale is opt-in.
+         */
+        const val DISC_SIZE_GLYPHS = "glyphs"
+
+        /** D86's floor: a constant share of the screen, handing off to true size when zoomed. */
+        const val DISC_SIZE_AUTO = "auto"
+
+        val DISC_SIZE_PARAMETER =
+            Choice(
+                key = DISC_SIZE,
+                options = listOf(DISC_SIZE_TRUE, DISC_SIZE_GLYPHS, DISC_SIZE_AUTO),
+                defaultOption = DISC_SIZE_GLYPHS,
+            )
+
+        /** The satellite layer's pass-alert opt-in (D92 phase 4c). */
+        const val PASS_ALERTS = "pass_alerts"
+
+        /**
+         * Off by default, and deliberately separate from the layer's own on/off state: turning the
+         * layer on to *look* at satellites is not the same act as asking to be interrupted about
+         * them.
+         */
+        val PASS_ALERTS_PARAMETER =
+            Toggle(
+                key = PASS_ALERTS,
+                defaultOn = false,
+                requiresNotificationPermission = true,
+            )
+
+        /** The Solar System layer's lunar-eclipse reminder opt-in (D106). */
+        const val ECLIPSE_ALERTS = "eclipse_alerts"
+
+        /**
+         * Off by default, same reasoning as [PASS_ALERTS_PARAMETER]: having the Solar System
+         * layer on to see the planets is not the same act as asking to be reminded of an
+         * eclipse.
+         */
+        val ECLIPSE_ALERTS_PARAMETER =
+            Toggle(
+                key = ECLIPSE_ALERTS,
+                defaultOn = false,
+                requiresNotificationPermission = true,
+            )
+
+        /** The meteor-shower layer's peak-night alert opt-in. */
+        const val SHOWER_ALERTS = "shower_alerts"
+
+        /**
+         * Off by default, same reasoning as [PASS_ALERTS_PARAMETER]. This is the single source of
+         * truth for the alert: the Settings → Notifications row reads and writes the same value.
+         */
+        val SHOWER_ALERTS_PARAMETER =
+            Toggle(
+                key = SHOWER_ALERTS,
+                defaultOn = false,
+                requiresNotificationPermission = true,
+            )
+
+        /** The alt/az grid's line-count choice (#1022). */
+        const val ALTAZ_GRID_DENSITY = "altaz_grid_density"
+
+        /** 8 azimuth lines, 45° apart — the compass-rose spacing. */
+        const val ALTAZ_GRID_DENSITY_COARSE = "8"
+
+        /** 12 azimuth lines, 30° apart — the default. */
+        const val ALTAZ_GRID_DENSITY_MEDIUM = "12"
+
+        /** 24 azimuth lines, 15° apart — matching the RA/Dec grid's meridian count. */
+        const val ALTAZ_GRID_DENSITY_FINE = "24"
+
+        val ALTAZ_GRID_DENSITY_PARAMETER =
+            Choice(
+                key = ALTAZ_GRID_DENSITY,
+                options =
+                    listOf(
+                        ALTAZ_GRID_DENSITY_COARSE,
+                        ALTAZ_GRID_DENSITY_MEDIUM,
+                        ALTAZ_GRID_DENSITY_FINE,
+                    ),
+                defaultOption = ALTAZ_GRID_DENSITY_MEDIUM,
+            )
+
+        /** Line brightness for both grids (#1176); labels are always opaque. */
+        const val GRID_BRIGHTNESS = "grid_brightness"
+
+        /** The grid colors as designed — subtle, for dark-adapted eyes. */
+        const val GRID_BRIGHTNESS_NORMAL = "normal"
+
+        const val GRID_BRIGHTNESS_BRIGHT = "bright"
+
+        /** For daylight, twilight and light-polluted skies, where the normal lines vanish. */
+        const val GRID_BRIGHTNESS_BRIGHTEST = "brightest"
+
+        val GRID_BRIGHTNESS_PARAMETER =
+            Choice(
+                key = GRID_BRIGHTNESS,
+                options =
+                    listOf(
+                        GRID_BRIGHTNESS_NORMAL,
+                        GRID_BRIGHTNESS_BRIGHT,
+                        GRID_BRIGHTNESS_BRIGHTEST,
+                    ),
+                defaultOption = GRID_BRIGHTNESS_NORMAL,
+            )
+
+        /** Multiplier on a grid line's alpha for a [GRID_BRIGHTNESS] option. */
+        fun gridAlphaScale(option: String): Float =
+            when (option) {
+                GRID_BRIGHTNESS_BRIGHT -> 3f
+                GRID_BRIGHTNESS_BRIGHTEST -> 6f
+                else -> 1f
+            }
+
+        /** The RA/Dec grid's line-count choice. */
+        const val RADEC_GRID_DENSITY = "radec_grid_density"
+
+        /** A meridian every 3 hours, a declination circle every 30°. */
+        const val RADEC_GRID_DENSITY_COARSE = "coarse"
+
+        /** A meridian every 2 hours, a declination circle every 15°. */
+        const val RADEC_GRID_DENSITY_MEDIUM = "medium"
+
+        /** A meridian every hour, a circle every 10°: v1's grid, and the default. */
+        const val RADEC_GRID_DENSITY_FINE = "fine"
+
+        val RADEC_GRID_DENSITY_PARAMETER =
+            Choice(
+                key = RADEC_GRID_DENSITY,
+                options =
+                    listOf(
+                        RADEC_GRID_DENSITY_COARSE,
+                        RADEC_GRID_DENSITY_MEDIUM,
+                        RADEC_GRID_DENSITY_FINE,
+                    ),
+                defaultOption = RADEC_GRID_DENSITY_FINE,
+            )
+    }
+}

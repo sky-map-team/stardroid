@@ -258,8 +258,10 @@ re-aims the search arrow if the target moved. Links ship in packs like everythin
 
 Notes:
 
-- **Search is word-prefix matching via SQLite FTS** (Room `@Fts4`/`@Fts5` over `object_name`,
-  unicode tokenizer with diacritic removal): the query "gal" matches "Andromeda **Gal**axy",
+- **Search is word-prefix matching via SQLite FTS** (Room `@Fts4` over
+  `object_name.name_normalized` with the `simple` tokenizer; case and diacritic folding for
+  every script happens in `NameNormalizer`, not SQLite — D127): the query "gal" matches
+  "Andromeda **Gal**axy",
   and multi-word queries ("andr gal" → `andr* gal*`) work for free. This is what users
   actually want from mid-name terms — arbitrary-substring `%term%` matching adds little
   beyond it and can't use an index. Ranking: whole-name-prefix matches first, then word-
@@ -287,6 +289,41 @@ Notes:
   catalog state intact (extends the graceful-degradation principle in
   [data-layer.md](data-layer.md)). A texture/image decode failure skips that image and renders
   the rest of the scene.
+
+### On iOS (iOS port phase 1)
+
+`:data` is Kotlin Multiplatform. The entities, DAOs, `SkyMapDatabase` and
+`RoomCatalogRepository` are common code, and Room generates each target's implementation
+(`@ConstructedBy(SkyMapDatabaseConstructor::class)`, so iOS finds it without reflection). iOS
+opens the same generated `skymap.db` and validates the same schema identity hash. Search
+behaves identically because the folding is all in `NameNormalizer` and the tokenizer is
+`simple` (D127).
+
+- **Driver.** Android sets none, so Room keeps the platform SQLite (`sqlite-framework`) and the
+  APK is unchanged. iOS uses `BundledSQLiteDriver` from the iOS source set — never
+  `commonMain`, or Android would ship a native SQLite. D127 prefers iOS's system SQLite, but
+  androidx.sqlite 2.6's `NativeSQLiteDriver` cannot open a database on it. Each open enables
+  extension loading, which iOS's SQLite is built without, and the open fails with
+  `SQLITE_MISUSE`. 2.7 fixes this but drops `iosX64`, the simulator an Intel Mac runs. Switch
+  when that target goes.
+- **Opening the bundled copy.** Each platform has its own `SkyMapDatabaseFactory`. On Android,
+  `createFromAsset` copies the asset. On iOS (`iosMain`) the factory copies the bundle's file
+  itself, by Room's rule: when there is no copy, or the copy's `user_version` is not
+  `CATALOG_SCHEMA_VERSION`. It writes beside the target and moves into place, so an
+  interrupted copy is never opened. Both run the same D24/G11 recovery: probe; on failure
+  close, delete and re-copy once. Neither refreshes a copy whose *content* is stale after an
+  app update — that is the core-pack refresh in data-packs.md.
+- **Satellite elements** (`data.satellites`): the fetch policy, repository and `TleStore` are
+  common code. The platform edges sit behind two small interfaces, with no multiplatform HTTP or
+  I/O library that Android would then carry (D127). `TextFiles` has a `DirectoryTextFiles` on
+  each platform. `CelesTrakClient` is `HttpURLConnection` on Android; the iOS URLSession client
+  waits for satellites to ship on iOS. The policy and repository tests stay JVM host tests,
+  which are fast and need no device. `TleStore`'s file behaviour is tested on both platforms.
+- **Tests.** Every catalog test is in `commonTest` and runs twice: as an Android instrumented
+  test (`connectedAndroidDeviceTest`) and on the iOS simulator. So both platforms' SQLite must
+  give the same answers to the repository, search, pack-replacement and bundled-catalog suites.
+  `androidDeviceTest` and `iosTest` only say how to open a database (`TestCatalogs`). Host
+  (JVM) tests are a separate tree, since a JVM unit test has no SQLite.
 
 ## Build-time generation (replaces v1 `tools/`)
 

@@ -10,9 +10,12 @@
 package com.google.android.stardroid.satellites
 
 import android.Manifest
+import android.app.Notification
 import android.app.NotificationChannel
 import android.app.NotificationManager
+import android.app.PendingIntent
 import android.content.Context
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Build
 import androidx.core.app.NotificationCompat
@@ -20,8 +23,11 @@ import androidx.core.app.NotificationManagerCompat
 import androidx.core.content.ContextCompat
 import com.google.android.stardroid.R
 import com.google.android.stardroid.layers.SatelliteLayer
+import com.google.android.stardroid.notifications.SkyNotification
 import com.google.android.stardroid.notifications.SkyNotifier
 import com.google.android.stardroid.settings.Settings
+import com.google.android.stardroid.ui.MainActivity
+import com.google.android.stardroid.widget.MoonWidget
 import kotlinx.coroutines.flow.first
 import kotlinx.datetime.Instant
 import java.text.DateFormat
@@ -44,11 +50,13 @@ import java.util.Date
 object SatellitePassNotifier {
     const val CHANNEL_PASSES = "satellite_passes"
 
-    /** Its own id, so a pass alert never replaces tonight's digest or a shower alert. */
-    private const val NOTIFICATION_ID = 72
+    // Separate from CHANNEL_PASSES so the "happening now" ping (and its vibration) can be muted
+    // or tuned on its own in system settings, without a setting of our own.
+    const val CHANNEL_PASSES_NOW = "satellite_passes_now"
 
     fun ensureChannel(context: Context) {
-        context.getSystemService(NotificationManager::class.java)?.createNotificationChannel(
+        val manager = context.getSystemService(NotificationManager::class.java) ?: return
+        manager.createNotificationChannel(
             NotificationChannel(
                 CHANNEL_PASSES,
                 context.getString(R.string.channel_passes_name),
@@ -57,7 +65,27 @@ object SatellitePassNotifier {
                 NotificationManager.IMPORTANCE_HIGH,
             ).apply { description = context.getString(R.string.channel_passes_description) },
         )
+        manager.createNotificationChannel(
+            NotificationChannel(
+                CHANNEL_PASSES_NOW,
+                context.getString(R.string.channel_passes_now_name),
+                NotificationManager.IMPORTANCE_HIGH,
+            ).apply {
+                description = context.getString(R.string.channel_passes_now_description)
+                enableVibration(true)
+            },
+        )
     }
+
+    private fun satelliteName(
+        context: Context,
+        noradId: Int,
+    ): String =
+        if (noradId == SatelliteLayer.TIANGONG_NORAD_ID) {
+            context.getString(R.string.satellite_name_tiangong)
+        } else {
+            context.getString(R.string.satellite_name_iss)
+        }
 
     fun post(
         context: Context,
@@ -66,26 +94,72 @@ object SatellitePassNotifier {
     ) {
         if (!SkyNotifier.canPost(context, CHANNEL_PASSES)) return
         ensureChannel(context)
-        val name =
-            if (noradId == SatelliteLayer.TIANGONG_NORAD_ID) {
-                context.getString(R.string.satellite_name_tiangong)
-            } else {
-                context.getString(R.string.satellite_name_iss)
-            }
+        val name = satelliteName(context, noradId)
         val time =
             DateFormat
                 .getTimeInstance(DateFormat.SHORT)
                 .format(Date(passStart.toEpochMilliseconds()))
-
         val notification =
-            NotificationCompat
-                .Builder(context, CHANNEL_PASSES)
-                .setSmallIcon(R.drawable.ic_layer_satellites)
+            baseBuilder(context, CHANNEL_PASSES, noradId, SkyNotification.SATELLITE_PASS)
                 .setContentTitle(context.getString(R.string.notif_pass_title, name))
                 .setContentText(context.getString(R.string.notif_pass_text, time))
-                .setPriority(NotificationCompat.PRIORITY_HIGH)
-                .setAutoCancel(true)
                 .build()
+        notify(context, SkyNotification.SATELLITE_PASS, notification)
+    }
+
+    /** The at-rise alert: the satellite is clearing the horizon now. Replaces the advance alert. */
+    fun postRising(
+        context: Context,
+        noradId: Int,
+    ) {
+        // The "soon" alert is now wrong, so it goes rather than lingering beside this one — even
+        // if the user has muted this channel.
+        NotificationManagerCompat.from(context).cancel(SkyNotification.SATELLITE_PASS.id)
+        if (!SkyNotifier.canPost(context, CHANNEL_PASSES_NOW)) return
+        ensureChannel(context)
+        val notification =
+            baseBuilder(context, CHANNEL_PASSES_NOW, noradId, SkyNotification.SATELLITE_PASS_NOW)
+                .setContentTitle(
+                    context.getString(
+                        R.string.notif_pass_now_title,
+                        satelliteName(context, noradId),
+                    ),
+                ).setContentText(context.getString(R.string.notif_pass_now_text))
+                .setCategory(NotificationCompat.CATEGORY_EVENT)
+                .build()
+        notify(context, SkyNotification.SATELLITE_PASS_NOW, notification)
+    }
+
+    private fun baseBuilder(
+        context: Context,
+        channel: String,
+        noradId: Int,
+        id: SkyNotification,
+    ): NotificationCompat.Builder {
+        val contentIntent =
+            Intent(context, MainActivity::class.java).apply {
+                putExtra(MoonWidget.EXTRA_SHOW_OBJECT_ID, SatelliteIds.idFor(noradId).value)
+            }
+        return NotificationCompat
+            .Builder(context, channel)
+            .setSmallIcon(R.drawable.ic_layer_satellites)
+            .setPriority(NotificationCompat.PRIORITY_HIGH)
+            .setAutoCancel(true)
+            .setContentIntent(
+                PendingIntent.getActivity(
+                    context,
+                    id.id,
+                    contentIntent,
+                    PendingIntent.FLAG_IMMUTABLE or PendingIntent.FLAG_UPDATE_CURRENT,
+                ),
+            )
+    }
+
+    private fun notify(
+        context: Context,
+        id: SkyNotification,
+        notification: Notification,
+    ) {
         if (Build.VERSION.SDK_INT >= 33 &&
             ContextCompat.checkSelfPermission(
                 context,
@@ -95,7 +169,7 @@ object SatellitePassNotifier {
             return
         }
         try {
-            NotificationManagerCompat.from(context).notify(NOTIFICATION_ID, notification)
+            NotificationManagerCompat.from(context).notify(id.id, notification)
         } catch (e: SecurityException) {
             // Permission revoked between the check and the post; the alert stays silent.
         }

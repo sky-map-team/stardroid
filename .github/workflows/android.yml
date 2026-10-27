@@ -55,6 +55,46 @@ jobs:
         uses: asadmansr/android-test-report-action@v1.2.0
         if: always()
 
+  # The shared (Kotlin Multiplatform) core's commonTest suites on the iOS simulator. The Linux
+  # job above cannot build Apple targets, so without this the golden tests would only ever run on
+  # the JVM — and running them on iOS is the point of sharing the core. See
+  # stardroid-v2/docs/design/build-and-tooling.md.
+  shared_core_ios:
+    runs-on: macos-15
+    timeout-minutes: 30
+    defaults:
+      run:
+        working-directory: ./stardroid-v2
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up JDK
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'zulu'
+          java-version: '17'
+      - name: Gradle cache
+        uses: gradle/actions/setup-gradle@v4
+        continue-on-error: true
+      # The Kotlin/Native toolchain and its LLVM (~1 GB) download on first use otherwise.
+      - name: Kotlin/Native cache
+        uses: actions/cache@v4
+        with:
+          path: ~/.konan
+          key: konan-${{ runner.os }}-${{ runner.arch }}-${{ hashFiles('stardroid-v2/gradle/libs.versions.toml') }}
+      - name: Grant execute permission for gradlew
+        run: chmod +x gradlew
+      - name: Shared core tests on the iOS simulator
+        run: ./gradlew iosSimulatorArm64Test --no-daemon
+        env:
+          ORG_GRADLE_PROJECT_org_gradle_java_home: ${{ env.JAVA_HOME }}
+      - name: Upload test results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ios-simulator-test-results
+          path: 'stardroid-v2/**/build/reports/tests/'
+
   connected_test:
     needs: build_and_unit_test
     runs-on: ubuntu-latest

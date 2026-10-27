@@ -191,6 +191,25 @@ accessibility of the GL sky surface itself — TalkBack descriptions of celestia
 is a recorded scoping decision, not an oversight. No full RTL/screen-reader audit is part of the
 port beyond what Material 3 and `labelScaleFactor` provide.
 
+## Map screen follow-ups (noted during the phase 5 port)
+
+Behaviour changes found in review of the port, deliberately not made in it. None is a crash.
+
+- Search re-aims at its target each time `MapScreen` re-enters composition (rotation, return
+  from Settings); fire the aim as a one-shot event instead.
+- While a search is active `camera` is read in the `MapScreen` body, so the screen recomposes at
+  sensor rate; collect it inside the search overlay instead.
+- `onOpenSettings`, `onOpenAppSettings`, `onOpenCalibration` and the snackbar strings are
+  captured by long-lived effects; wrap in `rememberUpdatedState`. Decide which flows get
+  `flowWithLifecycle(STARTED)`: the AR and label-size collectors do not.
+- `NoSensorWarning` re-logs its analytics event when it re-enters composition.
+- `FlatSnackbar` lacks M3's polite live region and accessibility-extended durations.
+- The layer expand chevron's description omits the layer name and is the same expanded or
+  collapsed.
+- `MapRoute`'s `startShare` has no in-flight guard against a second tap.
+- Remote and bundled bitmaps are decoded on every composition entry; add a small LRU if the
+  gallery flickers on device.
+
 ## Testing
 
 Startup routing is the one genuinely fragile piece: `StartupRouterTest` ports with its cases

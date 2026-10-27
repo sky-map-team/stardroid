@@ -34,7 +34,9 @@ import com.google.android.stardroid.startup.Experiment
 import com.google.android.stardroid.startup.ExperimentConfig
 import com.google.android.stardroid.ui.calibration.CompassCalibrationScreen
 import com.google.android.stardroid.ui.calibration.CompassCalibrationViewModel
-import com.google.android.stardroid.ui.diagnostics.DiagnosticsScreen
+import com.google.android.stardroid.ui.common.WidgetsSheet
+import com.google.android.stardroid.ui.common.widgetOffers
+import com.google.android.stardroid.ui.diagnostics.DiagnosticsRoute
 import com.google.android.stardroid.ui.diagnostics.DiagnosticsViewModel
 import com.google.android.stardroid.ui.gallery.GalleryScreen
 import com.google.android.stardroid.ui.gallery.GalleryViewModel
@@ -43,7 +45,7 @@ import com.google.android.stardroid.ui.help.HelpScreen
 import com.google.android.stardroid.ui.help.WhatsNewScreen
 import com.google.android.stardroid.ui.layers.LayersViewModel
 import com.google.android.stardroid.ui.location.LocationViewModel
-import com.google.android.stardroid.ui.map.MapScreen
+import com.google.android.stardroid.ui.map.MapRoute
 import com.google.android.stardroid.ui.map.MapViewModel
 import com.google.android.stardroid.ui.objectinfo.ImageExpandOverlay
 import com.google.android.stardroid.ui.objectinfo.MoonWidgetPromo
@@ -137,7 +139,7 @@ fun SkyMapNavHost(
         startDestination = if (startOnWelcome) Routes.WELCOME else Routes.MAP,
     ) {
         composable(Routes.MAP) {
-            MapScreen(
+            MapRoute(
                 glSurfaceView,
                 snackbarHostState,
                 mapViewModel,
@@ -319,6 +321,11 @@ fun SkyMapNavHost(
                     }
                 },
                 experimentConfig = experimentConfig,
+                // No offers means the widgets are gated off: Help leaves its links inert.
+                widgetsSheet =
+                    widgetOffers(experimentConfig)
+                        .takeIf { it.isNotEmpty() }
+                        ?.let { offers -> { onDismiss -> WidgetsSheet(offers, onDismiss) } },
             )
         }
 
@@ -327,7 +334,7 @@ fun SkyMapNavHost(
         }
 
         composable(Routes.DIAGNOSTICS) {
-            DiagnosticsScreen(
+            DiagnosticsRoute(
                 diagnosticsViewModel,
                 nightMode = nightMode,
                 satellitesEnabled = experimentConfig.isEnabled(Experiment.SATELLITES),
@@ -349,6 +356,7 @@ fun SkyMapNavHost(
                 calibrationViewModel,
                 nightMode = nightMode,
                 userInitiated = userInitiated,
+                demoVideoUrl = CALIBRATION_VIDEO_URL,
                 onCalibrated = {
                     // v1 AUTO_DISMISSABLE: a compass back at HIGH closes the nudge itself;
                     // the notice queues on the shared host and shows once the map is back.
@@ -364,3 +372,6 @@ fun SkyMapNavHost(
         }
     }
 }
+
+/** v1's linked figure-eight demonstration video. */
+private const val CALIBRATION_VIDEO_URL = "https://www.youtube.com/watch?v=-Uq7AmSAjt8"

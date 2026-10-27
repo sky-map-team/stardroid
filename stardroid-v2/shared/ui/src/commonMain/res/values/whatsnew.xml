@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[
+<h1>Say hello to the new Sky Map</h1>
+<p>Sky Map has been completely rebuilt from scratch — a new rendering engine, a new astronomy engine and a new interface, made to be faster, more accurate and easier on the eyes. Versions 2.1 and 2.2 build on that with some of the most-requested features:</p>
+<h2>Sky alerts</h2>
+<p>Sky Map can now tell you when something is worth stepping outside for: <b>Meteor shower peaks</b> and a <b>Tonight\'s sky digest</b>. Choose which alerts you want under <b>Settings → Notifications</b>, or from the Meteor showers layer.</p>
+<h2>Layer help</h2>
+<p>Not sure what a layer shows? <b>Long-press</b> any layer in the layers menu, or on the left-hand side of the map, to see what it does and what you can customize. The right ascension and declination grid can also be customized, like the alt/az grid.</p>
+<h2>Sky Map on your home screen</h2>
+<p>Three new widgets put the sky in your launcher: <b>Moon phase</b> (the phase, how much is lit, and moonrise and moonset, plus the Moon\'s age), <b>Tonight\'s sky</b> (sunset, when it gets dark, and the best sights tonight) and <b>Sky countdown</b> (days until the next meteor shower peak or moon event). Add one from the new <b>Widgets</b> menu item, or from your launcher\'s widget picker.</p>
+<h2>Also new in version 2</h2>
+<ul>
+<li><b>Steadier view:</b> the picture shakes less and keeps up better when you move. Turn it off under <b>Settings → Sensors → Smooth sensor movement</b> if you prefer the raw sensor.</li>
+<li><b>Searchable Help:</b> results jump straight to the relevant part of the app.</li>
+<li><b>Alt/az grid:</b> overlay altitude and azimuth lines alongside the celestial grid. It\'s off by default — turn it on from the layers menu.</li>
+<li><b>A fresh look:</b> the new Deep Space / Star Gold color scheme and sharper Sun, Moon and planet artwork.</li>
+<li><b>More accurate Sun and Moon:</b> the Moon sits where <em>you</em> see it, and eclipses and conjunctions land at the right minute.</li>
+<li><b>A more realistic solar system:</b> the Moon\'s phase is calculated from its true geometry, Venus, Mercury and Mars show phases, and you can view planets at their real size.</li>
+<li><b>Lunar eclipses:</b> the Moon turns its copper-red tint on the map.</li>
+<li><b>Find more stars:</b> 268 new IAU star names, and search by Bayer or Flamsteed designation — "α Cyg" finds Deneb.</li>
+<li><b>Live readout:</b> right ascension and declination, altitude and azimuth, and field of view, right on the map.</li>
+<li><b>28 languages,</b> fully translated.</li>
+</ul>
+<h2>And this is just the start...</h2>
+<p>We have many long asked-for features coming very soon.</p>
+<h2>About the release name</h2>
+<p><b>Cassini</b> was the NASA/ESA/ASI spacecraft that orbited Saturn from 2004 to 2017, studying its rings and moons and delivering the Huygens probe to the surface of Titan.</p>
+    ]]></string>
+    <string name="whats_new_support" translation_description="HTML paragraph inviting users to support the project, shown in the What's new dialog and the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[
+<h1>Support Sky Map</h1>
+<p>Sky Map is free and open source. If you find it useful, please consider supporting development at our <a href="https://github.com/sky-map-team/stardroid/?tab=readme-ov-file#support-the-project">GitHub</a> page or <a href="https://buymeacoffee.com/skymapdevs?utm_source=skymap&amp;utm_medium=app&amp;utm_campaign=whatsnew">buying us a coffee</a>.</p>
+    ]]></string>
+    <string name="beta_user_help_text" translation_description="Usually-empty HTML content shown to beta testers asking for feedback, appended in the What's new dialog and the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[
+<h2>Thank you for beta testing</h2>
+<p>This beta has two things we would love your help with. Any feedback is useful, even "it worked fine."</p>
+<p><b>1. A brand-new graphics engine (the big one!)</b></p>
+<p>We have built an entirely new engine for drawing the sky. It is a ground-up rewrite, not a tweak to the old one, and it lets us do things the old engine could not.</p>
+<ul>
+<li><b>Twilight and daytime skies:</b> the sky now shifts smoothly from daytime blue through sunset glow and twilight to full night, with a realistic glow along the horizon and no visible banding. This is the headline feature, so please spend some time watching dusk and dawn.</li>
+<li><b>Underlined labels:</b> labels for objects that have an info card are now underlined, and the others are dimmed. You can see at a glance what is worth tapping.</li>
+<li>A cleaner, sharper horizon and clearer, easier-to-read labels.</li>
+<li>A foundation for future features, like better planet imagery.</li>
+</ul>
+<p>It is <b>off by default</b>, so you will need to switch it on. Go to <b>Settings → Advanced → Graphics engine</b> and choose <b>Enhanced</b>. The map restarts when you change it. You can switch back to <b>Classic</b> at any time.</p>
+<p>Please try it in different conditions: daytime, twilight (especially!), and a dark sky at night, in both auto and manual mode. Does the twilight sky look right to you? Are the underlined labels helpful, or distracting? Does anything look wrong or feel slow? Is battery drain or smoothness different from Classic? If you can, tell us your phone model, since graphics behave differently on different hardware.</p>
+<p><b>2. Satellites</b> (Layers → Satellites)</p>
+<p>Look for the Space Station and Tiangong on the map, then tap one for its next visible pass and try <b>Pass alerts</b>. The orbit data can take a few minutes to download the first time, because we stagger downloads so we do not overload the server. Please give it a little while before deciding it is not working. Do the positions look right when you go outside? Did the orbit data arrive? (Diagnostics shows its age.) Did the pass alert arrive before the pass?</p>
+<p>If something looks wrong, please email us the report from the <b>Diagnostics</b> screen and tell us what you expected.</p>
+    ]]></string>
+</resources>

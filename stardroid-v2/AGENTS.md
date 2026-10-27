@@ -35,10 +35,9 @@ Follow the [Google Kotlin Style Guide](https://developer.android.com/kotlin/styl
   Java-style translations
 
 **Linting:** `./gradlew ktlintCheck` enforces the 100-character limit and Google Kotlin Style
-Guide across all v2 modules (`:app` and `:render:gles1` via the
-`skymap.ktlint-android-sources` convention plugin, since ktlint-gradle skips AGP built-in
-Kotlin). Run `./gradlew ktlintFormat` to auto-fix most violations before committing. Inline
-trailing comments (`foo, // note`) inside argument/parameter lists are not allowed by ktlint —
+Guide across all v2 modules (ktlint-gradle 14.2 also lints the Android modules that use AGP's
+built-in Kotlin). Run `./gradlew ktlintFormat` to auto-fix most violations before committing.
+Inline trailing comments (`foo, // note`) inside argument/parameter lists are not allowed by ktlint —
 place comments on their own line above the element instead.
 
 ## Licensing
@@ -50,12 +49,17 @@ compatible while protecting branding assets from copycat clones.
 |---|---|---|
 | All `.kt` source code in this module | GPLv3 (+ a section 7 app-store permission) | Penterakt LLC and contributors |
 | Functional resources — strings, translations, themes, layouts, UI artwork | GPLv3 | Penterakt LLC and contributors |
+| GLSL shader sources (`render/gles3/src/main/assets/shaders/`) | GPLv3 | Penterakt LLC and contributors |
 | Brand assets enumerated in `ASSET-LICENSES.txt` `[arr]` | All Rights Reserved | Penterakt LLC |
 | Assets inherited from v1 (`[apache-v1]`) | Apache-2.0 | Varies — see `NOTICE.md` |
 | Scientific data and imagery (`[third-party]`) | Its own terms — public domain **or CC BY 4.0** | N/A |
 
 **Rules for new assets and code:**
 - Every new `.kt` file must carry the GPLv3 short header shown in the Code Style section above.
+- **Shaders are code, not assets.** They live under `assets/` only because that is how Android
+  ships a text file, and they are GPLv3 like the Kotlin beside them. `tools/check_asset_licenses.py`
+  scans `app/src/main` only, so they need no `ASSET-LICENSES.txt` entry — the row above is here
+  so "anything in assets/" is not read the other way.
 - **Every new asset must be classified in `ASSET-LICENSES.txt` before it can
   merge.** `tools/check_asset_licenses.py` runs in CI and fails on anything unclassified.
   Put the file wherever it belongs functionally, then add its path to the right section:
@@ -78,13 +82,37 @@ Do not add a third notice — per-directory notices are what let the old claim d
 ## Key Files
 
 - `docs/design/` — per-area design docs; `docs/README.md` tracks implementation status.
-- `core/math`, `core/astronomy` — pure Kotlin modules (no Android SDK on the classpath).
-- `render/api` — pure renderer contract + shared projection; `render/gles1` — a GLES1
-  backend written to match v1's rendering behaviour (an independent implementation, not a
-  port; see `NOTICE.md`).
+- `core/*`, `render/api` — pure Kotlin **Multiplatform** modules (JVM + iOS), shared with the
+  iOS port. No Android SDK anywhere, and no JDK in common code: production code goes in
+  `src/commonMain`, tests in `src/commonTest` using `kotlin.test` plus `:core:testing`'s
+  Truth-shaped `assertThat` (Truth itself is JVM-only). JVM-only code needs an
+  `expect`/`actual` with the JVM side in `src/jvmMain`.
+- `data/` — the Room catalog store, also **Multiplatform** (Android + iOS) but not pure: the
+  database, DAOs and repository are in `src/commonMain`, and Android-only code (building the DB
+  from the APK asset, the satellite fetcher) is in `src/androidMain`. Never add a SQLite driver
+  to `commonMain` — Android must keep the platform SQLite (D127). Catalog tests in
+  `src/commonTest` run as Android instrumented tests and on the iOS simulator.
+- `shared/` — the app's middle layer, moving out of `app/` for the iOS port (phase 3):
+  `shared/model` (the app's state contracts — `Settings`, `StartupState`, `Analytics`, the
+  location edges — and the controllers over them: time, location, startup routing),
+  `shared/layers` (the sky layers, Android + iOS like `data/`), `shared/viewmodels` (the
+  screens' ViewModels — androidx.lifecycle's multiplatform `ViewModel` — with the Compose screens
+  left in `app/`) and `shared/testing` (fakes for `:shared` and `:app` tests). The same rules as
+  `core/*`: no Android SDK and no JDK in common code, tests in `commonTest`.
+- `app-ios/` + `ios/SkyMap/` — the iOS app (phase 4 of the port): its Kotlin side (the
+  `SkyMapKit` framework, Compose Multiplatform per D134) and the XcodeGen Swift shell that hosts
+  it. See `ios/README.md` to build and run it.
+- `render/api` — pure renderer contract + shared projection and vertex builders;
+  `render/gles1` — a GLES1 backend written to match v1's rendering behaviour (an independent
+  implementation, not a port; see `NOTICE.md`); `render/metal` — the iOS backend, Kotlin/Native
+  calling Metal, with its shaders in `render/metal/shaders/*.metal` (render-metal.md).
+  **The `.metal` shaders are hand-transcribed from `render/gles3`'s GLSL, not generated: a change
+  to either must be mirrored in the other** (including constants — `MetalShaderConstantParityTest`
+  catches only some drift). The Kotlin in `render/api` is the golden reference for shared maths.
 - `app/` — the Android app shell (currently the dev test-scene activity and perf gate).
 - `konsist/` — architecture-gate tests enforcing the pure/Android module boundary (D20).
-- `build-logic/` — Gradle convention plugins (`skymap.pure-kotlin`, `skymap.android-*`).
+- `build-logic/` — Gradle convention plugins (`skymap.pure-kmp`, `skymap.pure-kotlin`,
+  `skymap.kmp-android-library`, `skymap.kmp-room`, `skymap.android-*`).
 
 ## Translations
 
@@ -119,7 +147,10 @@ pipeline; that note was written before this was wired up.
 ## Testing
 
 `./gradlew check` from the module root runs unit tests (JUnit 5 + Truth), ktlint, and the
-Konsist architecture gate — it must pass before any commit. Instrumented tests
-(`./gradlew connectedDebugAndroidTest`, including the D19 renderer perf smoke gate) need an
-emulator or device; CI runs both suites on every PR (`.github/workflows/android.yml`). Pure
+Konsist architecture gate — it must pass before any commit. The shared modules' tests run on
+the JVM and, on a Mac with Xcode installed, on the iOS simulator too; without Xcode the iOS
+test tasks are skipped with a warning. Instrumented tests
+(`./gradlew connectedDebugAndroidTest connectedAndroidDeviceTest`, including the D19 renderer
+perf smoke gate; the second name is `:data`'s, as a multiplatform module) need an emulator or
+device; CI runs both suites on every PR (`.github/workflows/android.yml`). Pure
 modules must stay testable without Android.

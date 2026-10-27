@@ -1,12 +1,66 @@
+import org.jetbrains.kotlin.gradle.targets.native.tasks.KotlinNativeTest
+
 plugins {
-    id("skymap.android-library")
-    id("skymap.android-room")
+    id("skymap.kmp-android-library")
+    id("skymap.kmp-room")
 }
 
-android {
-    namespace = "com.google.android.stardroid.data"
-    defaultConfig {
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+// Multiplatform since phase 1 of the iOS port: the Room database, its DAOs and the repository are
+// common code, which iOS opens too. What stays Android-only is in androidMain:
+// building the database from the APK asset, and the satellite fetcher (for now).
+kotlin {
+    android {
+        namespace = "com.google.android.stardroid.data"
+        // Assets (the bundled catalog, below) are part of Android resource processing, which a
+        // multiplatform library leaves off unless asked.
+        androidResources { enable = true }
+        // Host (JVM) tests are their own tree, apart from commonTest: the common catalog tests need
+        // a real SQLite, which a JVM unit test does not have.
+        withHostTestBuilder { sourceSetTreeName = "unitTest" }
+        // Device tests share the "test" tree, so they run commonTest on Android.
+        withDeviceTestBuilder { sourceSetTreeName = "test" }.configure {
+            instrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        }
+    }
+
+    sourceSets {
+        commonMain.dependencies {
+            api(project(":core:catalog"))
+            api(project(":core:astronomy"))
+            api(project(":core:math"))
+            implementation(libs.kotlinx.coroutines.core)
+        }
+        iosMain.dependencies {
+            // iOS opens the catalog with a bundled SQLite, not the system one. D127 prefers the
+            // system SQLite, but androidx.sqlite 2.6's NativeSQLiteDriver cannot open any
+            // database with it: every open enables extension loading, which iOS's SQLite is
+            // built without, and fails with SQLITE_MISUSE. 2.7 fixes that, but it also drops
+            // iosX64, the only simulator an Intel Mac runs. Revisit with the upgrade — the
+            // driver is one line in the platform code. Never in commonMain: Android keeps the
+            // platform SQLite, and the APK stays as it was (D127).
+            implementation(libs.androidx.sqlite.bundled)
+        }
+        // The catalog tests are common, so the same suites run against Android's SQLite (as
+        // instrumented tests, androidDeviceTest) and iOS's (on the simulator).
+        commonTest.dependencies {
+            implementation(libs.kotlinx.coroutines.test)
+            implementation(libs.turbine)
+        }
+        // The satellite fetch policy, cache and repository are plain JVM logic - no Room, no
+        // SQLite - so they are unit-testable without a device, unlike the catalog below.
+        getByName("androidHostTest").dependencies {
+            implementation(libs.junit.jupiter)
+            implementation(libs.truth)
+            runtimeOnly(libs.junit.platform.launcher)
+        }
+        // The catalog tests need a real SQLite (FTS4, Room invalidation), so on Android they run
+        // as instrumented tests rather than JVM unit tests — catalog-and-schema.md. All of them
+        // are in commonTest; this source set holds only the Android way to open a database.
+        getByName("androidDeviceTest").dependencies {
+            implementation(kotlin("test-junit"))
+            implementation(libs.androidx.test.runner)
+            implementation(libs.androidx.test.ext.junit)
+        }
     }
 }
 
@@ -66,31 +120,20 @@ androidComponents {
 }
 
 dependencies {
-    api(project(":core:catalog"))
-    // The convention plugin wires room-runtime as `implementation`; consumers of this module
-    // hold and close the returned SkyMapDatabase (a RoomDatabase), so its supertype must be
-    // on their compile classpath.
-    api(libs.room.runtime)
-    api(project(":core:astronomy"))
-    api(project(":core:math"))
-
     catalogGenerator(project(":data:generator"))
-
-    // Repository tests need a real SQLite (FTS4, Room invalidation), so they are instrumented
-    // (androidTest) against an in-memory DB rather than JVM unit tests — catalog-and-schema.md.
-    // The satellite fetch policy, cache and repository are plain JVM logic - no Room, no SQLite -
-    // so they are unit-testable without a device, unlike the catalog repository below.
-    testImplementation(libs.junit.jupiter)
-    testImplementation(libs.truth)
-    testRuntimeOnly(libs.junit.platform.launcher)
-
-    androidTestImplementation(libs.androidx.test.runner)
-    androidTestImplementation(libs.androidx.test.ext.junit)
-    androidTestImplementation(libs.truth)
-    androidTestImplementation(libs.kotlinx.coroutines.test)
-    androidTestImplementation(libs.turbine)
 }
 
 tasks.withType<Test>().configureEach {
     useJUnitPlatform()
+}
+
+// The iOS catalog tests open the generated catalog, found through the environment. The test binary
+// runs under `xcrun simctl spawn`, which forwards only SIMCTL_CHILD_-prefixed variables (prefix
+// stripped) into the simulated process.
+tasks.withType<KotlinNativeTest>().configureEach {
+    val catalogDb = generateCatalogDb.flatMap { it.outputDir.file("skymap.db") }
+    inputs.file(catalogDb).withPropertyName("catalogDb").withPathSensitivity(PathSensitivity.NONE)
+    doFirst {
+        environment("SIMCTL_CHILD_SKYMAP_CATALOG_DB", catalogDb.get().asFile.absolutePath)
+    }
 }

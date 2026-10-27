@@ -6,15 +6,13 @@ import org.gradle.kotlin.dsl.getByType
 // is a compile error (D20, the structural half of the pure/Android boundary).
 plugins {
     id("org.jetbrains.kotlin.jvm")
-    id("org.jlleitschuh.gradle.ktlint")
+    id("skymap.ktlint")
 }
 
 val libs = extensions.getByType<VersionCatalogsExtension>().named("libs")
 
-ktlint { version.set(libs.findVersion("ktlint").get().requiredVersion) }
-
 kotlin {
-    jvmToolchain(17)
+    jvmToolchain(jdkVersion)
 }
 
 // Pure-module test stack lives here so every module gets it consistently with no per-module

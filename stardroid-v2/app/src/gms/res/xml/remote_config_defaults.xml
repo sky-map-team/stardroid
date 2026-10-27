@@ -12,7 +12,7 @@
     </entry>
     <entry>
         <key>notifications_enabled</key>
-        <value>false</value>
+        <value>true</value>
     </entry>
     <entry>
         <key>camera_ar_enabled</key>
@@ -24,6 +24,10 @@
     </entry>
     <entry>
         <key>satellites_enabled</key>
+        <value>false</value>
+    </entry>
+    <entry>
+        <key>gles3_renderer_enabled</key>
         <value>false</value>
     </entry>
     <entry>
