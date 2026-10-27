@@ -20,6 +20,7 @@ import com.google.android.stardroid.render.api.LabelStyle
 import com.google.android.stardroid.render.api.LayerId
 import com.google.android.stardroid.render.api.LayerScene
 import com.google.android.stardroid.render.api.LinePrimitive
+import com.google.android.stardroid.render.api.Rgba
 import com.google.android.stardroid.settings.Settings
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
@@ -59,6 +60,8 @@ class AltAzGridLayer(
     private val strings: Flow<LayerStrings>,
     private val density: Flow<String> =
         flowOf(LayerParameter.ALTAZ_GRID_DENSITY_PARAMETER.defaultOption),
+    private val brightness: Flow<String> =
+        flowOf(LayerParameter.GRID_BRIGHTNESS_PARAMETER.defaultOption),
     private val mapContext: CoroutineContext = Dispatchers.Default,
 ) : SkyLayer {
     override val id = LAYER_ID
@@ -66,9 +69,9 @@ class AltAzGridLayer(
     override val parameters = PARAMETERS
 
     override fun scenes(): Flow<LayerScene> =
-        combine(clock, location, strings, density, ::Inputs)
+        combine(clock, location, strings, density, brightness, ::Inputs)
             .distinctUntilChanged()
-            .map { (time, loc, str, dens) -> buildScene(time, loc, str, dens) }
+            .map { (time, loc, str, dens, bright) -> buildScene(time, loc, str, dens, bright) }
             .flowOn(mapContext)
 
     private data class Inputs(
@@ -76,6 +79,7 @@ class AltAzGridLayer(
         val location: LatLong,
         val strings: LayerStrings,
         val density: String,
+        val brightness: String,
     )
 
     internal fun buildScene(
@@ -83,7 +87,12 @@ class AltAzGridLayer(
         location: LatLong,
         strings: LayerStrings,
         density: String,
+        brightness: String = LayerParameter.GRID_BRIGHTNESS_NORMAL,
     ): LayerScene {
+        val lineColor =
+            with(SkyColors) {
+                ALTAZ_GRID_LINE.withAlphaScaled(LayerParameter.gridAlphaScale(brightness))
+            }
         val frame = SkyModel.localFrame(time, location)
         val azCount = AZ_COUNTS[density] ?: AZ_COUNTS.getValue(DEFAULT_DENSITY)
         val altLineCount = ALT_LINE_COUNTS[density] ?: ALT_LINE_COUNTS.getValue(DEFAULT_DENSITY)
@@ -100,20 +109,30 @@ class AltAzGridLayer(
         val lines = ArrayList<LinePrimitive>(azCount + 2 * (altLineCount - 1))
         val labels = ArrayList<LabelPrimitive>(azCount + 2 * (altLineCount - 1) + 2)
 
+        val highAltIsRing = AZ_LABEL_HIGH_ALT_DEG % (90.0 / altLineCount) == 0.0
         for (i in 0 until azCount) {
             val azDeg = i * 360.0 / azCount
-            lines += azimuthLine(frame, azDeg)
+            lines += azimuthLine(frame, azDeg, lineColor)
             if (i % cardinalStride != 0) {
                 // HorizonLayer already labels the cardinal directions at these same points.
                 labels += label(altAzToVector(0.0, azDeg, frame), "${azDeg.toInt()}°")
+                // Also higher up so the bearing is readable without looking down, unless a ring
+                // there already carries its own labels.
+                if (!highAltIsRing) {
+                    val high = altAzToVector(AZ_LABEL_HIGH_ALT_DEG, azDeg, frame)
+                    labels += label(high, "${azDeg.toInt()}°")
+                }
             }
         }
         for (d in 1 until altLineCount) {
             val altDeg = d * 90.0 / altLineCount
-            lines += altitudeLine(frame, altDeg, circleVertexCount)
-            lines += altitudeLine(frame, -altDeg, circleVertexCount)
-            labels += label(altAzToVector(altDeg, 0.0, frame), "${altDeg.toInt()}°")
-            labels += label(altAzToVector(-altDeg, 0.0, frame), "-${altDeg.toInt()}°")
+            lines += altitudeLine(frame, altDeg, circleVertexCount, lineColor)
+            lines += altitudeLine(frame, -altDeg, circleVertexCount, lineColor)
+            // Repeated every 45° of azimuth so a height label is on screen wherever you look.
+            for (azDeg in ALT_LABEL_AZIMUTHS) {
+                labels += label(altAzToVector(altDeg, azDeg, frame), "${altDeg.toInt()}°")
+                labels += label(altAzToVector(-altDeg, azDeg, frame), "-${altDeg.toInt()}°")
+            }
         }
 
         labels += poleLabel(frame.up, strings.zenith)
@@ -127,10 +146,11 @@ class AltAzGridLayer(
     private fun azimuthLine(
         frame: LocalFrame,
         azDeg: Double,
+        color: Rgba,
     ): LinePrimitive =
         LinePrimitive(
             listOf(frame.up, altAzToVector(0.0, azDeg, frame), -frame.up),
-            SkyColors.ALTAZ_GRID_LINE,
+            color,
             LINE_WIDTH_DP,
         )
 
@@ -146,12 +166,13 @@ class AltAzGridLayer(
         frame: LocalFrame,
         altDeg: Double,
         vertexCount: Int,
+        color: Rgba,
     ): LinePrimitive {
         val vertices =
             (0..vertexCount).map { i ->
                 altAzToVector(altDeg, (i % vertexCount) * 360.0 / vertexCount, frame)
             }
-        return LinePrimitive(vertices, SkyColors.ALTAZ_GRID_LINE, LINE_WIDTH_DP)
+        return LinePrimitive(vertices, color, LINE_WIDTH_DP)
     }
 
     private fun label(
@@ -183,6 +204,10 @@ class AltAzGridLayer(
         private const val DEPTH = 80
 
         private const val LINE_WIDTH_DP = 1.5
+
+        private val ALT_LABEL_AZIMUTHS = (0 until 8).map { it * 45.0 }
+
+        private const val AZ_LABEL_HIGH_ALT_DEG = 45.0
 
         /** Below every named object — the same band [GridLayer] uses for its own labels. */
         private const val LABEL_PRIORITY = 40
@@ -229,7 +254,11 @@ class AltAzGridLayer(
                 LayerParameter.ALTAZ_GRID_DENSITY_FINE to 90,
             )
 
-        val PARAMETERS = listOf(LayerParameter.ALTAZ_GRID_DENSITY_PARAMETER)
+        val PARAMETERS =
+            listOf(
+                LayerParameter.ALTAZ_GRID_DENSITY_PARAMETER,
+                LayerParameter.GRID_BRIGHTNESS_PARAMETER,
+            )
 
         /**
          * The registry's entry point (D91): the layer reads its own density parameter out of
@@ -250,6 +279,11 @@ class AltAzGridLayer(
                     LAYER_ID,
                     LayerParameter.ALTAZ_GRID_DENSITY_PARAMETER.key,
                     LayerParameter.ALTAZ_GRID_DENSITY_PARAMETER.defaultOption,
+                ),
+                settings.layerParameter(
+                    LAYER_ID,
+                    LayerParameter.GRID_BRIGHTNESS_PARAMETER.key,
+                    LayerParameter.GRID_BRIGHTNESS_PARAMETER.defaultOption,
                 ),
             )
 

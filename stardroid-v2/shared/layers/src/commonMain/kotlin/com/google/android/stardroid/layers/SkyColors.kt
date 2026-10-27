@@ -114,4 +114,6 @@ object SkyColors {
 
     /** Alt/az grid azimuth/altitude labels: the grid color at full opacity. */
     val ALTAZ_GRID_LABEL = Rgba(0x8f / 255f, 0xa0 / 255f, 0xb3 / 255f, 1f)
+
+    fun Rgba.withAlphaScaled(scale: Float): Rgba = copy(a = (a * scale).coerceAtMost(1f))
 }

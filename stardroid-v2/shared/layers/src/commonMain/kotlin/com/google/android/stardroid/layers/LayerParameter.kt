@@ -162,6 +162,37 @@ sealed interface LayerParameter {
                 defaultOption = ALTAZ_GRID_DENSITY_MEDIUM,
             )
 
+        /** Line brightness for both grids (#1176); labels are always opaque. */
+        const val GRID_BRIGHTNESS = "grid_brightness"
+
+        /** The grid colors as designed — subtle, for dark-adapted eyes. */
+        const val GRID_BRIGHTNESS_NORMAL = "normal"
+
+        const val GRID_BRIGHTNESS_BRIGHT = "bright"
+
+        /** For daylight, twilight and light-polluted skies, where the normal lines vanish. */
+        const val GRID_BRIGHTNESS_BRIGHTEST = "brightest"
+
+        val GRID_BRIGHTNESS_PARAMETER =
+            Choice(
+                key = GRID_BRIGHTNESS,
+                options =
+                    listOf(
+                        GRID_BRIGHTNESS_NORMAL,
+                        GRID_BRIGHTNESS_BRIGHT,
+                        GRID_BRIGHTNESS_BRIGHTEST,
+                    ),
+                defaultOption = GRID_BRIGHTNESS_NORMAL,
+            )
+
+        /** Multiplier on a grid line's alpha for a [GRID_BRIGHTNESS] option. */
+        fun gridAlphaScale(option: String): Float =
+            when (option) {
+                GRID_BRIGHTNESS_BRIGHT -> 3f
+                GRID_BRIGHTNESS_BRIGHTEST -> 6f
+                else -> 1f
+            }
+
         /** The RA/Dec grid's line-count choice. */
         const val RADEC_GRID_DENSITY = "radec_grid_density"
 
