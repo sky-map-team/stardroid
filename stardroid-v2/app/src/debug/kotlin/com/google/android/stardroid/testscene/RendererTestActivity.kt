@@ -532,7 +532,8 @@ class RendererTestActivity : Activity() {
                     KeplerianEphemeris,
                     clock,
                     strings,
-                    location,                ),
+                    location,
+                ),
             )
         scope.launch {
             for (layer in layers) {
