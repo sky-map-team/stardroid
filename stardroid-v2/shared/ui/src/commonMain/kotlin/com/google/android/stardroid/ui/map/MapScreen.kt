@@ -689,8 +689,8 @@ fun MapScreen(
 
         val showingSatellite by
             objectInfoViewModel.showingSatellite.collectAsStateWithLifecycle()
-        val nextSatellitePass by
-            objectInfoViewModel.nextSatellitePass.collectAsStateWithLifecycle()
+        val upcomingSatellitePasses by
+            objectInfoViewModel.upcomingSatellitePasses.collectAsStateWithLifecycle()
         val satellitePassTimesReliable by
             objectInfoViewModel.satellitePassTimesReliable.collectAsStateWithLifecycle()
         val showingMoon by objectInfoViewModel.showingMoon.collectAsStateWithLifecycle()
@@ -721,10 +721,8 @@ fun MapScreen(
                     if (showingSatellite) {
                         {
                             SatellitePassRow(
-                                pass = nextSatellitePass,
-                                // Null with reliable data means "nothing is coming", which is a
-                                // real answer; null because the data is stale means something
-                                // else entirely, and the row says so.
+                                passes = upcomingSatellitePasses,
+                                // Empty + reliable = "nothing coming"; stale data gets its own message.
                                 passTimesReliable = satellitePassTimesReliable,
                             )
                         }

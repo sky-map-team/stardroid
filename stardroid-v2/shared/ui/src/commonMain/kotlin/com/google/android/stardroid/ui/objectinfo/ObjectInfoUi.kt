@@ -33,6 +33,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.BlendMode
 import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.dp
 import com.google.android.stardroid.astronomy.LunarEclipseCircumstances
 import com.google.android.stardroid.astronomy.LunarEclipseType
@@ -43,6 +44,7 @@ import com.google.android.stardroid.ui.common.formatForLocale
 import com.google.android.stardroid.ui.common.formattedStringResource
 import com.google.android.stardroid.ui.common.rememberCelestialImage
 import com.google.android.stardroid.ui.common.rememberDateFormatter
+import com.google.android.stardroid.ui.common.rememberDateTimeFormatter
 import com.google.android.stardroid.ui.common.rememberTimeFormatter
 import com.google.android.stardroid.ui.map.HudFormats
 import com.google.android.stardroid.ui.resources.Res
@@ -68,10 +70,12 @@ import com.google.android.stardroid.ui.resources.object_info_size
 import com.google.android.stardroid.ui.resources.object_info_spectral_class
 import com.google.android.stardroid.ui.resources.satellite_next_pass
 import com.google.android.stardroid.ui.resources.satellite_no_pass
-import com.google.android.stardroid.ui.resources.satellite_pass_magnitude
+import com.google.android.stardroid.ui.resources.satellite_pass_col_magnitude
+import com.google.android.stardroid.ui.resources.satellite_pass_col_peak
+import com.google.android.stardroid.ui.resources.satellite_pass_col_rises
+import com.google.android.stardroid.ui.resources.satellite_pass_col_when
 import com.google.android.stardroid.ui.resources.satellite_pass_shadow
 import com.google.android.stardroid.ui.resources.satellite_pass_unknown
-import com.google.android.stardroid.ui.resources.satellite_pass_when
 import com.google.android.stardroid.ui.resources.tonight_lunar_eclipse_partial
 import com.google.android.stardroid.ui.resources.tonight_lunar_eclipse_penumbral
 import com.google.android.stardroid.ui.resources.tonight_lunar_eclipse_total
@@ -158,6 +162,7 @@ fun ObjectInfoBody(
     onSeeAlso: (SearchHit) -> Unit,
     onImageTap: (ObjectInfo) -> Unit,
     modifier: Modifier = Modifier,
+    // Per-type slots: before adding another, see D107 (design/lunar-eclipse.md) and #1181.
     promoRow: (@Composable () -> Unit)? = null,
     /**
      * The next-visible-pass block, for satellite cards only.
@@ -363,23 +368,24 @@ private fun CelestialImage(
 }
 
 /**
- * The next visible pass, on a satellite's info card (D92 phase 4b).
+ * The upcoming good passes, as a table on a satellite's info card (D92 phase 4b).
  *
  * This is the answer the design argues is the whole point of the feature: for a satellite,
  * "what is that?" is mostly *"and here is when to look again"*. Tapping it is where someone
  * already is when they want to know.
  *
- * All three empty cases render explicitly rather than collapsing the section, because they mean
- * different things: [pass] null with fresh data is "nothing is coming, which is normal" — visible
- * passes cluster into multi-day seasons separated by multi-week gaps — while stale data means "we
- * could tell you, but the answer would be wrong".
+ * Both empty cases render explicitly rather than collapsing the section, because they mean
+ * different things: [passes] empty with fresh data is "nothing is coming, which is normal" —
+ * visible passes cluster into multi-day seasons separated by multi-week gaps — while stale data
+ * means "we could tell you, but the answer would be wrong".
  */
 @Composable
 fun SatellitePassRow(
-    pass: SatellitePass?,
+    passes: List<SatellitePass>,
     passTimesReliable: Boolean,
 ) {
-    val formatter = rememberTimeFormatter()
+    val formatter = rememberDateTimeFormatter()
+    val timeFormatter = rememberTimeFormatter()
     Text(
         stringResource(Res.string.satellite_next_pass),
         style = MaterialTheme.typography.titleSmall,
@@ -391,39 +397,57 @@ fun SatellitePassRow(
                 stringResource(Res.string.satellite_pass_unknown),
                 style = MaterialTheme.typography.bodySmall,
             )
-        pass == null ->
+        passes.isEmpty() ->
             Text(
                 stringResource(Res.string.satellite_no_pass),
                 style = MaterialTheme.typography.bodySmall,
             )
         else -> {
             val cardinals = stringArrayResource(Res.array.hud_cardinal_directions)
-            Text(
-                formattedStringResource(
-                    Res.string.satellite_pass_when,
+            PassTableRow(
+                stringResource(Res.string.satellite_pass_col_when),
+                stringResource(Res.string.satellite_pass_col_rises),
+                stringResource(Res.string.satellite_pass_col_peak),
+                stringResource(Res.string.satellite_pass_col_magnitude),
+                MaterialTheme.typography.labelSmall,
+            )
+            passes.forEach { pass ->
+                PassTableRow(
                     formatter(pass.start),
                     cardinals[HudFormats.cardinalIndex(pass.startAzimuthDeg)],
-                    pass.maxAltitudeDeg.roundToInt(),
-                ),
-                style = MaterialTheme.typography.bodyMedium,
-            )
-            Text(
-                // One decimal and no more: the model is only good to about half a magnitude.
-                formattedStringResource(Res.string.satellite_pass_magnitude, pass.peakMagnitude),
-                style = MaterialTheme.typography.bodySmall,
-            )
-            pass.shadowEntry?.let { shadow ->
-                // The most memorable thing the app can say: a satellite that fades out mid-sky is
-                // the single most-asked question after someone watches it happen.
-                Text(
-                    formattedStringResource(
-                        Res.string.satellite_pass_shadow,
-                        formatter(shadow),
-                    ),
-                    style = MaterialTheme.typography.bodySmall,
+                    "${pass.maxAltitudeDeg.roundToInt()}°",
+                    // One decimal and no more: the model is only good to about half a magnitude.
+                    formatForLocale("%.1f", arrayOf(pass.peakMagnitude)),
+                    MaterialTheme.typography.bodySmall,
                 )
+                pass.shadowEntry?.let { shadow ->
+                    Text(
+                        formattedStringResource(
+                            Res.string.satellite_pass_shadow,
+                            timeFormatter(shadow),
+                        ),
+                        style = MaterialTheme.typography.labelSmall,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant,
+                    )
+                }
             }
         }
+    }
+}
+
+@Composable
+private fun PassTableRow(
+    whenText: String,
+    rises: String,
+    peak: String,
+    magnitude: String,
+    style: TextStyle,
+) {
+    Row(Modifier.fillMaxWidth().padding(top = 4.dp)) {
+        Text(whenText, style = style, modifier = Modifier.weight(3f))
+        Text(rises, style = style, modifier = Modifier.weight(1f))
+        Text(peak, style = style, modifier = Modifier.weight(1f))
+        Text(magnitude, style = style, modifier = Modifier.weight(1f))
     }
 }
 

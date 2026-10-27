@@ -169,8 +169,6 @@
     <string name="time_travel_start_message" translation_description="Toast message when time travel starts toward a chosen destination. %1$s is the formatted destination date and time.">समय में %1$s तक यात्रा कर रहे हैं ...</string>
     <string name="time_travel_close_message">वर्तमान में वापस ...</string>
     <string name="satellite_next_pass" translation_description="Heading above the next visible pass details on a satellite\'s info card.">अगला दृश्यमान पारगमन</string>
-    <string name="satellite_pass_when" translation_description="When and how high the next satellite pass will be. %1$s is a time, %2$s is a compass direction, %3$d is an angle in degrees.">%1$s, %2$s से उदय, %3$d° तक पहुँचेगा</string>
-    <string name="satellite_pass_magnitude" translation_description="How bright the satellite will be at its peak. %1$.1f is a brightness magnitude.">सबसे चमकीला होने पर परिमाण %1$.1f</string>
     <string name="satellite_pass_shadow" translation_description="Tells the user the satellite will fade out mid-pass when it enters the Earth\'s shadow. %1$s is a time.">पृथ्वी की छाया में %1$s पर फीका पड़ जाएगा</string>
     <string name="satellite_no_pass" translation_description="Shown on a satellite info card when no visible pass is coming up in the next two days.">अगले कुछ दिनों में कोई दृश्यमान पारगमन नहीं</string>
     <string name="satellite_pass_unknown" translation_description="Shown on a satellite info card when the downloaded orbit data is too old to predict pass times reliably.">पारगमन की भविष्यवाणी करने के लिए कक्षा का डेटा बहुत पुराना है</string>

@@ -186,3 +186,52 @@ class SatellitePassTest {
         const val TIME_TOLERANCE_SECONDS = 5.0
     }
 }
+
+class GoodPassesTest {
+    private val t0 = Instant.parse("2026-08-15T20:00:00Z")
+
+    private fun pass(
+        hoursOut: Int,
+        maxAltitudeDeg: Double,
+    ) = SatellitePass(
+        satelliteName = "ISS",
+        noradId = 25544,
+        start = t0 + hoursOut.hours,
+        culmination = t0 + hoursOut.hours,
+        end = t0 + hoursOut.hours,
+        maxAltitudeDeg = maxAltitudeDeg,
+        startAzimuthDeg = 0.0,
+        endAzimuthDeg = 0.0,
+        peakMagnitude = -2.0,
+        shadowEntry = null,
+    )
+
+    @Test
+    fun `always keeps the first pass but drops later low ones`() {
+        val passes = listOf(pass(1, 15.0), pass(25, 20.0), pass(49, 60.0))
+        assertThat(passes.goodPasses().map { it.start }).isEqualTo(
+            listOf(passes[0].start, passes[2].start),
+        )
+    }
+
+    @Test
+    fun `sorts by start and caps at the limit`() {
+        val passes = (1..10).map { pass(it * 24, 70.0) }.reversed()
+        val good = passes.goodPasses(limit = 3)
+        assertThat(good.size).isEqualTo(3)
+        assertThat(good.first().start).isEqualTo(t0 + 24.hours)
+    }
+
+    @Test
+    fun `empty stays empty and a lone low pass is kept`() {
+        assertThat(emptyList<SatellitePass>().goodPasses()).isEqualTo(emptyList<SatellitePass>())
+        val low = pass(1, 12.0)
+        assertThat(listOf(low).goodPasses()).isEqualTo(listOf(low))
+    }
+
+    @Test
+    fun `a later pass at exactly 30 degrees is kept`() {
+        val passes = listOf(pass(1, 50.0), pass(25, 30.0))
+        assertThat(passes.goodPasses().size).isEqualTo(2)
+    }
+}
