@@ -25,16 +25,24 @@ import com.google.android.stardroid.render.api.PointAppearance
 import com.google.android.stardroid.render.api.PointPrimitive
 import com.google.android.stardroid.render.api.Rgba
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.FlowPreview
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.combine
+import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.flow.flatMapLatest
+import kotlinx.coroutines.flow.flow
+import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.flow.sample
+import kotlinx.datetime.Clock
 import kotlinx.datetime.Instant
 import kotlin.coroutines.CoroutineContext
+import kotlin.time.Duration.Companion.milliseconds
 import kotlin.time.Duration.Companion.seconds
 
 /**
@@ -46,14 +54,9 @@ import kotlin.time.Duration.Companion.seconds
  * `RESUBMIT_THRESHOLD_DEG = 0.01`, which against the Moon's ~15°/day means about a minute. At the
  * ISS's ~4° per *minute* that same threshold would fire roughly every 150 ms — several rebuilds a
  * second. This layer instead samples on its own fixed [REFRESH_INTERVAL] of the wall clock,
- * independent of how often `elements`, the shared app clock, or `location` actually emit. That
- * independence matters in both directions: the shared clock (`TimeController.times`) only ticks
- * once a minute in real time, which alone would make the ISS visibly jump ~4° at a time, and it
- * ticks every 32 ms during time travel, which alone would rebuild the scene ~30 times a second for
- * no visible benefit. Sampling gives ~0.25° of ISS motion per rebuild in real time — sub-pixel at
- * typical fields of view — while still tracking accelerated time during travel, just without
- * paying for a rebuild on every one of its ticks. Recorded as a deliberate divergence rather than
- * left to look like an oversight.
+ * independent of how often `elements`, the shared app clock, or `location` emit. The shared clock
+ * ticks once a minute in real time (the ISS would hop ~4°), so then the layer reads the wall clock
+ * itself, see [realTime]; during time travel it ticks every 32 ms, far more rebuilds than needed.
  *
  * **Depth 55** — in front of the solar system (60), behind the horizon. D18's occlusion sort by
  * descending distance naturally puts a satellite nearest the viewer, which is correct: it really
@@ -70,15 +73,31 @@ class SatelliteLayer(
     private val elements: Flow<SatelliteElements>,
     private val clock: Flow<Instant>,
     private val location: Flow<LatLong>,
+    private val realTime: Flow<Boolean> = flowOf(false),
+    private val wallNow: () -> Instant = { Clock.System.now() },
     private val mapContext: CoroutineContext = Dispatchers.Default,
 ) : SkyLayer {
     override val id = LAYER_ID
     override val depth = DEPTH
     override val parameters = PARAMETERS
 
-    @OptIn(FlowPreview::class)
+    private fun times(): Flow<Instant> =
+        realTime.distinctUntilChanged().flatMapLatest { live ->
+            if (live) {
+                flow {
+                    while (true) {
+                        emit(wallNow())
+                        delay(REFRESH_INTERVAL)
+                    }
+                }
+            } else {
+                clock
+            }
+        }
+
+    @OptIn(FlowPreview::class, ExperimentalCoroutinesApi::class)
     override fun scenes(): Flow<LayerScene> {
-        val data = combine(elements, clock, location, ::Triple)
+        val data = combine(elements, times(), location, ::Triple)
         return data
             .sample(REFRESH_INTERVAL)
             .onStart { emit(data.first()) }
@@ -136,6 +155,8 @@ class SatelliteLayer(
         time: Instant,
         observer: LatLong,
     ): Track? {
+        // Follow-up (#1171): rebuilt every REFRESH_INTERVAL; cache per element set if profiling
+        // shows it matters.
         val sgp4 = runCatching { Sgp4(tle) }.getOrNull() ?: return null
         val head = positionAt(sgp4, time, observer) ?: return null
         val trail =
@@ -201,7 +222,7 @@ class SatelliteLayer(
         private const val DEPTH = 55
 
         /** The scene rebuild cadence — see the class doc's resubmit-gate note. */
-        private val REFRESH_INTERVAL = 1.seconds
+        private val REFRESH_INTERVAL = 200.milliseconds
 
         /** Star-white: the ISS looks like a fast steady star; motion is the distinguishing cue. */
         private val MARKER_COLOR = Rgba.WHITE
