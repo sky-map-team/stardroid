@@ -9,6 +9,16 @@
 
 package com.google.android.stardroid.layers
 
+import com.google.android.stardroid.render.api.LayerId
+import com.google.android.stardroid.settings.Settings
+import kotlinx.coroutines.flow.Flow
+
+/** [layerId]'s chosen option for [param], so a key can't be paired with the wrong default. */
+fun Settings.choiceFlow(
+    layerId: LayerId,
+    param: LayerParameter.Choice,
+): Flow<String> = layerParameter(layerId, param.key, param.defaultOption)
+
 /**
  * A choice a layer exposes to the user, shown as an inline expander under its row in the Layers
  * sheet (D87). The first is the solar system's disc size; grid density, magnitude limit and
