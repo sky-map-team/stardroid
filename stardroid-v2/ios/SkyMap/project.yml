@@ -50,6 +50,9 @@ targets:
         # Android's navy OS splash, which the version banner continues from without a seam.
         UILaunchScreen:
           UIColorName: LaunchNavy
+        # The version with its release name ("2.0.0:GDC"), as Android's versionName has it; the
+        # short version itself must stay numeric.
+        SkyMapVersionName: $(MARKETING_VERSION):$(SKYMAP_RELEASE_NAME)
         # The system location prompt's text. Localized with the app's strings in phase 5.
         NSLocationWhenInUseUsageDescription: >-
           Sky Map uses your location to show the sky as it looks from where you are.
@@ -68,7 +71,8 @@ targets:
         PRODUCT_BUNDLE_IDENTIFIER: io.penterakt.skymap.dev
         DEVELOPMENT_TEAM: F98KUL97FJ
         CODE_SIGN_STYLE: Automatic
-        MARKETING_VERSION: "0.1"
+        MARKETING_VERSION: "2.0.0"
+        SKYMAP_RELEASE_NAME: GDC
         CURRENT_PROJECT_VERSION: "1"
         GENERATE_INFOPLIST_FILE: YES
         INFOPLIST_KEY_CFBundleDisplayName: Sky Map

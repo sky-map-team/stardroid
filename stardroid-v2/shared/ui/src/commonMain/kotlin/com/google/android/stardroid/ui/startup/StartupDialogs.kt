@@ -32,7 +32,7 @@ import org.jetbrains.compose.resources.stringResource
 
 /**
  * The app's version name, for the What's New and Help headings (v1 `getVersionName`): the
- * manifest's on Android, the bundle's short version on iOS.
+ * manifest's on Android, the bundle's version and release name on iOS.
  */
 @Composable
 expect fun appVersionName(): String

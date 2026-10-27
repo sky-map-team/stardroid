@@ -46,6 +46,22 @@ recent one.
 Hannah and Louise (the earliest 2.0.0 pre-release betas, before the mission-name convention was
 adopted) are omitted here — they were pre-release names, not a shipped release identity.
 
+### iOS
+
+iOS has its own version line, starting at 2.0.0 because it trails the latest Android release in
+features. It uses the same naming convention, but its names are independent of Android's for the
+first two releases; after those we will try to align them with Android's.
+
+The version shown in the app is "`<version>:<name>`" (e.g. `2.0.0:GDC`), like Android's
+`versionName`. Apple limits `CFBundleShortVersionString` to digits and periods, so the name lives
+in the `SkyMapVersionName` Info.plist key, built from `MARKETING_VERSION` and `SKYMAP_RELEASE_NAME`
+in `ios/SkyMap/project.yml`.
+
+| Icon | Name | First released | Subject |
+|---|---|---|---|
+| — | **Izzie** | _planned (second iOS release)_ | _To be written._ |
+| — | **GDC** | _unreleased (2.0.0)_ | _To be written._ |
+
 ### v1
 
 v1 predates the mission-name convention entirely — its names are mostly solar-system bodies

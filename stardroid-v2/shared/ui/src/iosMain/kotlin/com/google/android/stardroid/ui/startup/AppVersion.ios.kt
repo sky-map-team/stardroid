@@ -12,7 +12,16 @@ package com.google.android.stardroid.ui.startup
 import androidx.compose.runtime.Composable
 import platform.Foundation.NSBundle
 
-// The bundle's marketing version, the counterpart of Android's versionName.
+/**
+ * The version with its release name ("2.0.0:GDC"), as Android's versionName carries it. The
+ * name is not part of CFBundleShortVersionString, which Apple limits to digits and periods.
+ */
+fun iosAppVersionName(): String {
+    val info = NSBundle.mainBundle
+    return info.objectForInfoDictionaryKey("SkyMapVersionName") as? String
+        ?: info.objectForInfoDictionaryKey("CFBundleShortVersionString") as? String
+        ?: ""
+}
+
 @Composable
-actual fun appVersionName(): String =
-    NSBundle.mainBundle.objectForInfoDictionaryKey("CFBundleShortVersionString") as? String ?: ""
+actual fun appVersionName(): String = iosAppVersionName()

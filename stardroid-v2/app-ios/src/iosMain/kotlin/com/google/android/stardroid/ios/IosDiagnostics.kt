@@ -17,6 +17,7 @@ import com.google.android.stardroid.ui.resources.Res
 import com.google.android.stardroid.ui.resources.diagnostics_ios_version
 import com.google.android.stardroid.ui.resources.diagnostics_metal_limits
 import com.google.android.stardroid.ui.resources.diagnostics_metal_version
+import com.google.android.stardroid.ui.startup.iosAppVersionName
 import kotlinx.cinterop.ExperimentalForeignApi
 import kotlinx.cinterop.alloc
 import kotlinx.cinterop.memScoped
@@ -65,8 +66,7 @@ fun iosDiagnosticsPlatform(): DiagnosticsPlatform {
         hardware = machine,
         osVersionLabel = Res.string.diagnostics_ios_version,
         osVersion = UIDevice.currentDevice.systemVersion,
-        appVersionName =
-            bundle.objectForInfoDictionaryKey("CFBundleShortVersionString") as? String ?: "",
+        appVersionName = iosAppVersionName(),
         appVersionCode =
             (bundle.objectForInfoDictionaryKey("CFBundleVersion") as? String)?.toLongOrNull()
                 ?: 0L,
