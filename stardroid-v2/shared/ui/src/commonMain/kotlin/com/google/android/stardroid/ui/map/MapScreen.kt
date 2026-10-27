@@ -222,8 +222,9 @@ fun MapScreen(
     // Identify needs px-per-dp to size its label-inclusive tap tolerance.
     val tapDensity = LocalDensity.current.density
 
-    // Activating a target closes the dialog and, in manual mode, teleports to it (v1).
-    LaunchedEffect(searchTarget) {
+    // Activating a target closes the dialog and, in manual mode, teleports to it (v1). Keyed on
+    // identity, not the target, so a tracked satellite's position updates don't re-aim the map.
+    LaunchedEffect(searchTarget?.name, searchTarget?.fovDeg) {
         searchTarget?.let { target ->
             showSearchDialog = false
             mapViewModel.aimAt(target.direction, target.fovDeg)

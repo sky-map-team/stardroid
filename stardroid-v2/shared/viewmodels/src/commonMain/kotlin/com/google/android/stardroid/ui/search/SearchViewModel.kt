@@ -37,6 +37,8 @@ import com.google.android.stardroid.settings.Settings
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.FlowPreview
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
@@ -45,22 +47,25 @@ import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.debounce
 import kotlinx.coroutines.flow.mapLatest
 import kotlinx.coroutines.flow.stateIn
+import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import kotlinx.datetime.Instant
 import kotlin.math.roundToInt
 import kotlin.time.Duration
 import kotlin.time.Duration.Companion.milliseconds
+import kotlin.time.Duration.Companion.seconds
 
 /**
  * The active search target: a **static celestial snapshot**, exactly as v1's `SearchHelper`
- * copied the target on activation — a planet found under time travel does not drift within the
- * search session. [fovDeg] is the catalog's `search_level`, `null` for coordinates and objects
- * without one.
+ * copied the target on activation, except a satellite ([trackedId]) whose [direction] is
+ * refreshed while the search lasts. [fovDeg] is the catalog's `search_level`, `null` for
+ * coordinates and objects without one.
  */
 data class SearchTarget(
     val name: String,
     val direction: Vector3,
     val fovDeg: Double?,
+    val trackedId: CelestialObjectId? = null,
 )
 
 /**
@@ -109,6 +114,7 @@ class SearchViewModel(
     /** Non-null while search mode is engaged (the overlay and control bar show). */
     private val _target = MutableStateFlow<SearchTarget?>(null)
     val target: StateFlow<SearchTarget?> = _target.asStateFlow()
+    private var trackingJob: Job? = null
 
     /**
      * Ranked as-you-type hits, one query per typing pause rather than one per keystroke.
@@ -165,10 +171,10 @@ class SearchViewModel(
         viewModelScope.launch {
             // A satellite moves ~1° every few seconds, so the position the list was built with
             // may be stale by now: take a fresh one.
+            val isSatellite = SatelliteIds.noradIdFor(picked.id) != null
             val hit =
-                if (SatelliteIds.noradIdFor(picked.id) != null) {
-                    satellitesSafely().firstOrNull { it.info.id == picked.id }
-                        ?.let { picked.copy(position = it.position) } ?: picked
+                if (isSatellite) {
+                    satellitePosition(picked.id)?.let { picked.copy(position = it) } ?: picked
                 } else {
                     picked
                 }
@@ -178,7 +184,8 @@ class SearchViewModel(
                 // Search spans hidden layers (D43); re-enable the hit's layer so the arrow
                 // never guides the user to empty sky (PR #23 review).
                 layerIdFor(hit, info)?.let { settings.setLayerEnabled(it, enabled = true) }
-                activate(SearchTarget(hit.name, direction, hit.searchFovDeg))
+                val trackedId = hit.id.takeIf { isSatellite }
+                activate(SearchTarget(hit.name, direction, hit.searchFovDeg, trackedId))
             } else {
                 searchFailed(hit.name)
             }
@@ -211,6 +218,7 @@ class SearchViewModel(
 
     /** v1 `cancelSearch`: fired by the cancel button or BACK. */
     fun cancelSearch() {
+        trackingJob?.cancel()
         _target.value = null
     }
 
@@ -236,8 +244,20 @@ class SearchViewModel(
                     },
             ),
         )
+        trackingJob?.cancel()
         _target.value = target
+        target.trackedId?.let { trackingJob = viewModelScope.launch { track(it) } }
         setQuery("")
+    }
+
+    private suspend fun track(id: CelestialObjectId) {
+        while (true) {
+            delay(TRACK_INTERVAL)
+            val position = satellitePosition(id) ?: continue
+            _target.update {
+                if (it?.trackedId == id) it.copy(direction = position.toGeocentricVector()) else it
+            }
+        }
     }
 
     /**
@@ -307,6 +327,9 @@ class SearchViewModel(
             emptyList()
         }
 
+    private suspend fun satellitePosition(id: CelestialObjectId): RaDec? =
+        satellitesSafely().firstOrNull { it.info.id == id }?.position
+
     private fun searchFailed(term: String) {
         analytics.trackEvent(
             AnalyticsEvents.SEARCH_FAILED_EVENT,
@@ -375,6 +398,9 @@ class SearchViewModel(
                 nameWords.any { it.startsWith(token, ignoreCase = true) }
             }
         }
+
+        /** How often a tracked satellite is re-resolved (it moves ~1° every few seconds). */
+        private val TRACK_INTERVAL = 1.seconds
 
         /** Ranked-list length; v1's suggestion cursor was unbounded, the FTS query is not. */
         private const val SUGGESTION_LIMIT = 20
