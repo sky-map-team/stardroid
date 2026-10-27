@@ -50,10 +50,16 @@ class GridLayer(
     override val parameters = PARAMETERS
 
     override fun scenes(): Flow<LayerScene> =
-        combine(strings, density, brightness, ::Triple)
+        combine(strings, density, brightness, ::Inputs)
             .distinctUntilChanged()
             .map { (str, dens, bright) -> buildScene(str, dens, bright) }
             .flowOn(mapContext)
+
+    private data class Inputs(
+        val strings: LayerStrings,
+        val density: String,
+        val brightness: String,
+    )
 
     internal fun buildScene(
         strings: LayerStrings,
@@ -191,16 +197,8 @@ class GridLayer(
         ): GridLayer =
             GridLayer(
                 strings,
-                settings.layerParameter(
-                    LAYER_ID,
-                    LayerParameter.RADEC_GRID_DENSITY_PARAMETER.key,
-                    LayerParameter.RADEC_GRID_DENSITY_PARAMETER.defaultOption,
-                ),
-                settings.layerParameter(
-                    LAYER_ID,
-                    LayerParameter.GRID_BRIGHTNESS_PARAMETER.key,
-                    LayerParameter.GRID_BRIGHTNESS_PARAMETER.defaultOption,
-                ),
+                settings.choiceFlow(LAYER_ID, LayerParameter.RADEC_GRID_DENSITY_PARAMETER),
+                settings.choiceFlow(LAYER_ID, LayerParameter.GRID_BRIGHTNESS_PARAMETER),
             )
 
         /** Vertices per declination circle — every 10°, as in v1. */

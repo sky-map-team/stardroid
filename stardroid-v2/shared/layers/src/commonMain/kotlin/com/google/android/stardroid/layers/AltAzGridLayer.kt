@@ -275,16 +275,8 @@ class AltAzGridLayer(
                 clock,
                 location,
                 strings,
-                settings.layerParameter(
-                    LAYER_ID,
-                    LayerParameter.ALTAZ_GRID_DENSITY_PARAMETER.key,
-                    LayerParameter.ALTAZ_GRID_DENSITY_PARAMETER.defaultOption,
-                ),
-                settings.layerParameter(
-                    LAYER_ID,
-                    LayerParameter.GRID_BRIGHTNESS_PARAMETER.key,
-                    LayerParameter.GRID_BRIGHTNESS_PARAMETER.defaultOption,
-                ),
+                settings.choiceFlow(LAYER_ID, LayerParameter.ALTAZ_GRID_DENSITY_PARAMETER),
+                settings.choiceFlow(LAYER_ID, LayerParameter.GRID_BRIGHTNESS_PARAMETER),
             )
 
         /**
