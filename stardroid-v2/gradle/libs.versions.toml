@@ -7,8 +7,7 @@ jdk = "17"
 
 agp = "9.0.1"
 kotlin = "2.2.10"
-ktlint-gradle = "12.1.2"
-ktlint = "1.0.1"
+ktlint-gradle = "14.2.0"
 junit5 = "5.11.0"
 junitPlatform = "1.11.0"
 truth = "1.4.4"
@@ -16,14 +15,16 @@ mockito = "5.14.2"
 konsist = "0.16.1"
 sqliteJdbc = "3.46.1.3"
 
-ksp = "2.2.10-2.0.2"
+ksp = "2.3.12"
 room = "2.8.5"
+# The SQLite driver API Room 2.7+ is built on; 2.6.2 is what room-runtime 2.8.5 already pulls in.
+androidxSqlite = "2.6.2"
 coroutines = "1.9.0"
 turbine = "1.1.0"
 androidxTestRunner = "1.6.2"
 androidxTestExtJunit = "1.2.1"
 
-composeBom = "2024.09.03"
+composeBom = "2025.10.01"
 firebaseBom = "33.7.0"
 playServicesLocation = "21.3.0"
 activityCompose = "1.9.2"
@@ -37,6 +38,14 @@ glance = "1.1.1"
 workManager = "2.10.0"
 camerax = "1.4.1"
 
+# Compose Multiplatform: the iOS app's UI layer (D134). 1.9.x is the last line built with a Kotlin
+# compiler this build can read (2.1.21; 1.10 needs Kotlin 2.2.20).
+composeMultiplatform = "1.9.3"
+composeMultiplatformMaterial3 = "1.9.0"
+# The lifecycle and icons Compose Multiplatform 1.9 builds on, for the shared UI.
+cmpLifecycle = "2.9.6"
+cmpMaterialIcons = "1.7.3"
+
 kotlinxDatetime = "0.6.1"
 kotlinxSerialization = "1.7.3"
 hilt = "2.60.1"
@@ -45,11 +54,12 @@ hilt = "2.60.1"
 # Gradle plugin artifacts, used on the build-logic classpath for convention plugins.
 android-gradlePlugin = { group = "com.android.tools.build", name = "gradle", version.ref = "agp" }
 kotlin-gradlePlugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
-ktlint-cli = { group = "com.pinterest.ktlint", name = "ktlint-cli", version.ref = "ktlint" }
 ktlint-gradlePlugin = { group = "org.jlleitschuh.gradle", name = "ktlint-gradle", version.ref = "ktlint-gradle" }
 ksp-gradlePlugin = { group = "com.google.devtools.ksp", name = "com.google.devtools.ksp.gradle.plugin", version.ref = "ksp" }
 compose-compiler-gradlePlugin = { group = "org.jetbrains.kotlin", name = "compose-compiler-gradle-plugin", version.ref = "kotlin" }
+compose-multiplatform-gradlePlugin = { group = "org.jetbrains.compose", name = "compose-gradle-plugin", version.ref = "composeMultiplatform" }
 hilt-gradlePlugin = { group = "com.google.dagger", name = "hilt-android-gradle-plugin", version.ref = "hilt" }
+room-gradlePlugin = { group = "androidx.room", name = "room-gradle-plugin", version.ref = "room" }
 
 # Core libraries
 kotlinx-datetime = { group = "org.jetbrains.kotlinx", name = "kotlinx-datetime", version.ref = "kotlinxDatetime" }
@@ -58,22 +68,39 @@ kotlinx-coroutines-android = { group = "org.jetbrains.kotlinx", name = "kotlinx-
 kotlinx-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlinxSerialization" }
 sqlite-jdbc = { group = "org.xerial", name = "sqlite-jdbc", version.ref = "sqliteJdbc" }
 room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "room" }
-room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "room" }
 room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room" }
+androidx-sqlite-bundled = { group = "androidx.sqlite", name = "sqlite-bundled", version.ref = "androidxSqlite" }
 hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
 hilt-compiler = { group = "com.google.dagger", name = "hilt-android-compiler", version.ref = "hilt" }
+
+# Compose Multiplatform (the iOS app's UI)
+cmp-runtime = { group = "org.jetbrains.compose.runtime", name = "runtime", version.ref = "composeMultiplatform" }
+cmp-foundation = { group = "org.jetbrains.compose.foundation", name = "foundation", version.ref = "composeMultiplatform" }
+cmp-ui = { group = "org.jetbrains.compose.ui", name = "ui", version.ref = "composeMultiplatform" }
+cmp-ui-backhandler = { group = "org.jetbrains.compose.ui", name = "ui-backhandler", version.ref = "composeMultiplatform" }
+cmp-material3 = { group = "org.jetbrains.compose.material3", name = "material3", version.ref = "composeMultiplatformMaterial3" }
+cmp-lifecycle-runtime-compose = { group = "org.jetbrains.androidx.lifecycle", name = "lifecycle-runtime-compose", version.ref = "cmpLifecycle" }
+cmp-material-icons-core = { group = "org.jetbrains.compose.material", name = "material-icons-core", version.ref = "cmpMaterialIcons" }
+cmp-components-resources = { group = "org.jetbrains.compose.components", name = "components-resources", version.ref = "composeMultiplatform" }
 
 # Compose + app UI (versions beyond the BOM's control are pinned above)
 androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" }
 androidx-compose-material3 = { group = "androidx.compose.material3", name = "material3" }
+# Material3 stopped depending on the icons in 1.4; the app uses only the core set.
+androidx-compose-material-icons-core = { group = "androidx.compose.material", name = "material-icons-core" }
 androidx-compose-ui = { group = "androidx.compose.ui", name = "ui" }
 androidx-compose-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
 androidx-compose-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
 androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activityCompose" }
+# The multiplatform ViewModel the shared screen logic extends (:shared:viewmodels); Android already
+# ships it under lifecycle-viewmodel-compose.
+androidx-lifecycle-common = { group = "androidx.lifecycle", name = "lifecycle-common", version.ref = "lifecycle" }
+androidx-lifecycle-viewmodel = { group = "androidx.lifecycle", name = "lifecycle-viewmodel", version.ref = "lifecycle" }
 androidx-lifecycle-viewmodel-compose = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-compose", version.ref = "lifecycle" }
 androidx-lifecycle-runtime-compose = { group = "androidx.lifecycle", name = "lifecycle-runtime-compose", version.ref = "lifecycle" }
 androidx-lifecycle-process = { group = "androidx.lifecycle", name = "lifecycle-process", version.ref = "lifecycle" }
 androidx-datastore-preferences = { group = "androidx.datastore", name = "datastore-preferences", version.ref = "datastore" }
+androidx-datastore-preferences-core = { group = "androidx.datastore", name = "datastore-preferences-core", version.ref = "datastore" }
 androidx-navigation-compose = { group = "androidx.navigation", name = "navigation-compose", version.ref = "navigationCompose" }
 androidx-core-splashscreen = { group = "androidx.core", name = "core-splashscreen", version.ref = "coreSplashscreen" }
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }

@@ -49,6 +49,20 @@ data class SatellitePass(
 }
 
 /**
+ * The passes worth listing on a satellite's card: the first one always (so the card never
+ * disagrees with the tonight widget about what is coming), then only those climbing at least
+ * [GOOD_PASS_MIN_ALTITUDE_DEG] — a low pass is easily lost to trees and haze. At most [limit].
+ */
+fun List<SatellitePass>.goodPasses(limit: Int = GOOD_PASS_LIMIT): List<SatellitePass> {
+    val byStart = sortedBy { it.start }
+    val rest = byStart.drop(1).filter { it.maxAltitudeDeg >= GOOD_PASS_MIN_ALTITUDE_DEG }
+    return (byStart.take(1) + rest).take(limit)
+}
+
+private const val GOOD_PASS_MIN_ALTITUDE_DEG: Double = 30.0
+private const val GOOD_PASS_LIMIT: Int = 5
+
+/**
  * Finds visible satellite passes by scanning forward in time.
  *
  * **Why a bespoke search rather than [nextRiseSetTime].** That solver iterates on hour angle with

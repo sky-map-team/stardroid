@@ -112,6 +112,12 @@ class TruthTest {
         fails { assertThat(listOf(1, 2)).hasSize(3) }
         assertThat(listOf(1, 2)).contains(2)
         fails { assertThat(listOf(1, 2)).contains(3) }
+        assertThat(listOf(1, 2)).doesNotContain(3)
+        fails { assertThat(listOf(1, 2)).doesNotContain(2) }
+        assertThat(listOf(1, 2, 3)).containsAtLeast(3, 1)
+        fails { assertThat(listOf(1, 2)).containsAtLeast(1, 4) }
+        fails { assertThat(listOf(1, 2)).containsAtLeast(1, 1) }
+        assertThat(listOf(1, 2, 2)).containsAtLeastElementsIn(listOf(2, 2))
         assertThat(listOf(1, 2, 2)).isInOrder()
         fails { assertThat(listOf(2, 1)).isInOrder() }
         assertThat(listOf(1, 2, 3)).isInStrictOrder()
@@ -139,6 +145,10 @@ class TruthTest {
         fails { assertThat("x").isEmpty() }
         assertThat("hello").contains("ell")
         fails { assertThat("hello").contains("xyz") }
+        assertThat("hello").startsWith("he")
+        fails { assertThat("hello").startsWith("lo") }
+        assertThat("hello").endsWith("lo")
+        fails { assertThat("hello").endsWith("he") }
         assertThat("x").isNotEmpty()
         fails { assertThat("").isNotEmpty() }
     }
@@ -151,5 +161,34 @@ class TruthTest {
             }
         assertEquals("star x", error.message!!.lineSequence().first())
         assertTrue(error.message!!.contains("but was: 1.0"))
+    }
+
+    @Test
+    fun isIn_checksKotlinRanges() {
+        assertThat(0.5).isIn(0.0..1.0)
+        assertThat(1.0).isIn(0.0..1.0)
+        fails { assertThat(1.5).isIn(0.0..1.0) }
+        assertThat(0.0).isIn(0.0..<360.0)
+        fails { assertThat(360.0).isIn(0.0..<360.0) }
+    }
+
+    @Test
+    fun mapEntries_checkKeysAndValues() {
+        val map = linkedMapOf("a" to 1, "b" to 2)
+        assertThat(map).containsEntry("a", 1)
+        fails { assertThat(map).containsEntry("a", 2) }
+        fails { assertThat(map).containsEntry("c", 1) }
+        assertThat(map).containsExactly("b", 2, "a", 1)
+        assertThat(map).containsExactly("a", 1, "b", 2).inOrder()
+        fails { assertThat(map).containsExactly("b", 2, "a", 1).inOrder() }
+        fails { assertThat(map).containsExactly("a", 1) }
+    }
+
+    @Test
+    fun isNonZero_rejectsBothZeros() {
+        assertThat(0.5).isNonZero()
+        assertThat(Double.NaN).isNonZero()
+        fails { assertThat(0.0).isNonZero() }
+        fails { assertThat(-0.0).isNonZero() }
     }
 }

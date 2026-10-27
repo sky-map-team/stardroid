@@ -74,8 +74,10 @@ logcat_pid=$!
 trap 'kill "$logcat_pid" 2>/dev/null' EXIT
 
 # :app is flavored (D49): its instrumented tests run as the fdroid variant (no Play Services
-# needed on the CI emulator); the library modules still answer to the unflavored task name.
-run_pass main connectedFdroidDebugAndroidTest connectedDebugAndroidTest \
+# needed on the CI emulator); the library modules still answer to the unflavored task name,
+# except :data, which is multiplatform and names its device tests connectedAndroidDeviceTest
+# (without it the catalog tests would be silently skipped).
+run_pass main connectedFdroidDebugAndroidTest connectedDebugAndroidTest connectedAndroidDeviceTest \
   -PtestNotClass="$renderer_test"
 # skipGlBenchmarks skips the D19 GL benchmark gate and its D67 AR variant: the hosted emulator
 # couldn't survive the 100k-point continuous scene on the legacy SwiftShader translator, and

@@ -17,9 +17,14 @@ val secrets =
 
 android {
     namespace = "com.google.android.stardroid"
+
+    // The shared screens' strings (D136) are Android resources too, so Android-only code — the
+    // widgets, notifications — reads the ones it shares with them through R, from the one copy.
+    // A name defined in both places fails the resource merge, which keeps that copy single.
+    sourceSets.getByName("main").res.directories.add("../shared/ui/src/commonMain/res")
     defaultConfig {
         applicationId = "com.google.android.stardroid"
-        versionCode = 1770
+        versionCode = 1777
         versionName = "2.3.0:Cassini:Beta"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         // D105: CI passes -PskipGlBenchmarks=true, which the D19 perf gate reads to skip
@@ -122,6 +127,10 @@ dependencies {
     implementation(project(":render:gles1"))
     implementation(project(":render:gles3"))
     implementation(project(":data"))
+    implementation(project(":shared:model"))
+    implementation(project(":shared:layers"))
+    implementation(project(":shared:viewmodels"))
+    implementation(project(":shared:ui"))
     implementation(libs.kotlinx.coroutines.android)
     // Parses the Remote Config announcements payload (JsonElement API only; no plugin).
     implementation(libs.kotlinx.serialization.json)
@@ -129,9 +138,12 @@ dependencies {
 
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.compose.material3)
+    implementation(libs.androidx.compose.material.icons.core)
     implementation(libs.androidx.compose.ui)
     implementation(libs.androidx.compose.ui.tooling.preview)
     debugImplementation(libs.androidx.compose.ui.tooling)
+    // The seeded synthetic scene RendererTestActivity draws, shared with the iOS Metal harness.
+    debugImplementation(project(":render:testscene"))
     implementation(libs.androidx.activity.compose)
     implementation(libs.androidx.lifecycle.viewmodel.compose)
     implementation(libs.androidx.lifecycle.runtime.compose)
@@ -160,6 +172,7 @@ dependencies {
     testImplementation(libs.truth)
     testImplementation(libs.mockito.core)
     testImplementation(libs.kotlinx.coroutines.test)
+    testImplementation(project(":shared:testing"))
     testRuntimeOnly(libs.junit.platform.launcher)
 
     androidTestImplementation(libs.androidx.test.runner)

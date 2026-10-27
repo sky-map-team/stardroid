@@ -280,6 +280,13 @@ place name populated only via the Resolve button. Added a suspend `confirmManual
 it geocodes first, applies the result, then dismisses; a failed lookup leaves the dialog open
 with the error. Already-resolved places skip the redundant lookup (`resolvedQuery`).
 
+**Idea (not built): let the user pick among ambiguous places.** Both geocoders are asked for one
+result, and they rank differently: Apple's `CLGeocoder` favours places near the device's region,
+Google's (Android) the most prominent. "Chester" typed in the US is Chester, PA on iOS and
+Chester, England on Android (found on the iOS port, 2026-10-07). Asking for the top few results
+and offering a short list when they disagree would serve both; until then, "Chester, England"
+disambiguates on either.
+
 ## R2.6 Help text out of date
 
 > The Help text needs editing to match the new version.

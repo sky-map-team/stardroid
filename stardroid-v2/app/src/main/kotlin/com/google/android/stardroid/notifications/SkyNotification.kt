@@ -23,4 +23,7 @@ enum class SkyNotification(
     SATELLITE_PASS(43),
     LUNAR_ECLIPSE(44),
     ANNOUNCEMENT(45),
+
+    /** The at-rise "happening now" pass alert; separate from [SATELLITE_PASS] so both can show. */
+    SATELLITE_PASS_NOW(46),
 }

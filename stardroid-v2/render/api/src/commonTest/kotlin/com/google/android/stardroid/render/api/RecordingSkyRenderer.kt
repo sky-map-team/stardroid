@@ -17,6 +17,10 @@ import kotlin.concurrent.atomics.ExperimentalAtomicApi
  * An in-memory [SkyRenderer] that records the latest submission per [LayerId] plus the latest
  * camera and render state, with no GL. Lets future layer/ViewModel tests assert things like "the
  * stars layer submitted N points with magnitude data".
+ *
+ * Lives in this module's test source set for now; when `:data`/`:app` tests need it, promote it to
+ * a shared test-support module (as `:core:testing` is for assertions) so they can consume it —
+ * `java-test-fixtures` does not apply to a multiplatform module. Deferred until there is a consumer.
  */
 @OptIn(ExperimentalAtomicApi::class)
 class RecordingSkyRenderer : SkyRenderer {

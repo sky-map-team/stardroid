@@ -12,17 +12,20 @@ package com.google.android.stardroid.widget
 import android.content.Context
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.unit.Dp
+import androidx.compose.ui.unit.DpSize
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.glance.GlanceId
 import androidx.glance.GlanceModifier
 import androidx.glance.Image
 import androidx.glance.ImageProvider
+import androidx.glance.LocalSize
 import androidx.glance.action.ActionParameters
 import androidx.glance.action.actionParametersOf
 import androidx.glance.action.actionStartActivity
 import androidx.glance.action.clickable
 import androidx.glance.appwidget.GlanceAppWidget
+import androidx.glance.appwidget.SizeMode
 import androidx.glance.appwidget.provideContent
 import androidx.glance.background
 import androidx.glance.layout.Alignment
@@ -53,6 +56,8 @@ import kotlin.math.roundToInt
  * is just [androidx.glance.appwidget.updateAll] from [MoonWidgetRefreshWorker].
  */
 class MoonWidget : GlanceAppWidget() {
+    override val sizeMode = SizeMode.Responsive(setOf(COMPACT_SIZE, FULL_SIZE))
+
     override suspend fun provideGlance(
         context: Context,
         id: GlanceId,
@@ -76,6 +81,10 @@ class MoonWidget : GlanceAppWidget() {
         /** Intent extra: the catalog id whose info card the app opens on widget tap. */
         const val EXTRA_SHOW_OBJECT_ID = "extra_show_object_id"
         const val MOON_OBJECT_ID = "planet/moon"
+
+        // Responsive picks the largest listed size that fits the placed widget.
+        internal val COMPACT_SIZE = DpSize(40.dp, 40.dp)
+        internal val FULL_SIZE = DpSize(110.dp, 110.dp)
     }
 }
 
@@ -83,7 +92,8 @@ class MoonWidget : GlanceAppWidget() {
  * IFTTT: if you change the visuals here, update `res/layout/moon_widget_initial.xml` to match.
  * That layout is the widget's `initialLayout` and picker `previewLayout` — the launcher inflates
  * it in its own process before ours runs, so Glance cannot supply it and the two are kept in
- * sync by hand. Padding, colors, text sizes and the 64dp disc are duplicated there.
+ * sync by hand. Padding, colors, text sizes and the 64dp disc are duplicated there; the
+ * layout shrinks its disc to fit when the initial frame lands in a 1x1 cell.
  */
 @Composable
 private fun MoonWidgetContent(
@@ -91,33 +101,83 @@ private fun MoonWidgetContent(
     now: Instant,
     context: Context,
 ) {
+    when (moonWidgetLayoutFor(LocalSize.current)) {
+        MoonWidgetLayout.COMPACT -> CompactMoonWidget(model, context)
+        MoonWidgetLayout.FULL -> FullMoonWidget(model, now, context)
+    }
+}
+
+@Composable
+private fun CompactMoonWidget(
+    model: MoonWidgetModel?,
+    context: Context,
+) {
     Column(
-        modifier =
-            GlanceModifier
-                .fillMaxSize()
-                .background(ImageProvider(R.drawable.widget_background))
-                .clickable(
-                    actionStartActivity<MainActivity>(
-                        actionParametersOf(
-                            ActionParameters.Key<String>(MoonWidget.EXTRA_SHOW_OBJECT_ID) to
-                                MoonWidget.MOON_OBJECT_ID,
-                        ),
-                    ),
-                ).padding(12.dp),
+        modifier = moonWidgetModifier().padding(6.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalAlignment = Alignment.CenterVertically,
     ) {
         if (model == null) return@Column
         Image(
-            provider =
-                ImageProvider(
-                    MoonDiscRenderer.render(
-                        sizePx = DISC_SIZE_PX,
-                        illuminatedFraction = model.illuminatedFraction,
-                        waxing = model.waxing,
-                        mirrored = model.mirrored,
-                    ),
+            provider = ImageProvider(moonDisc(model, COMPACT_DISC_SIZE_PX)),
+            contentDescription = context.getString(phaseNameRes(model.phase)),
+            modifier = GlanceModifier.size(COMPACT_DISC_DP),
+        )
+        Text(
+            text =
+                context.getString(
+                    R.string.moon_widget_illumination_short,
+                    (model.illuminatedFraction * 100).roundToInt(),
                 ),
+            style =
+                TextStyle(
+                    color = ColorProvider(STAR_GOLD),
+                    fontSize = 11.sp,
+                    fontWeight = FontWeight.Bold,
+                ),
+            maxLines = 1,
+            modifier = GlanceModifier.padding(top = 2.dp),
+        )
+    }
+}
+
+private fun moonWidgetModifier(): GlanceModifier =
+    GlanceModifier
+        .fillMaxSize()
+        .background(ImageProvider(R.drawable.widget_background))
+        .clickable(
+            actionStartActivity<MainActivity>(
+                actionParametersOf(
+                    ActionParameters.Key<String>(MoonWidget.EXTRA_SHOW_OBJECT_ID) to
+                        MoonWidget.MOON_OBJECT_ID,
+                ),
+            ),
+        )
+
+private fun moonDisc(
+    model: MoonWidgetModel,
+    sizePx: Int,
+) = MoonDiscRenderer.render(
+    sizePx = sizePx,
+    illuminatedFraction = model.illuminatedFraction,
+    waxing = model.waxing,
+    mirrored = model.mirrored,
+)
+
+@Composable
+private fun FullMoonWidget(
+    model: MoonWidgetModel?,
+    now: Instant,
+    context: Context,
+) {
+    Column(
+        modifier = moonWidgetModifier().padding(12.dp),
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalAlignment = Alignment.CenterVertically,
+    ) {
+        if (model == null) return@Column
+        Image(
+            provider = ImageProvider(moonDisc(model, DISC_SIZE_PX)),
             contentDescription = context.getString(phaseNameRes(model.phase)),
             modifier = GlanceModifier.size(64.dp),
         )
@@ -196,6 +256,16 @@ private fun TimeRow(
     )
 }
 
+internal enum class MoonWidgetLayout { COMPACT, FULL }
+
+/** The full layout needs a 2x2 footprint; anything narrower or shorter gets the compact one. */
+internal fun moonWidgetLayoutFor(size: DpSize): MoonWidgetLayout =
+    if (size.width >= MoonWidget.FULL_SIZE.width && size.height >= MoonWidget.FULL_SIZE.height) {
+        MoonWidgetLayout.FULL
+    } else {
+        MoonWidgetLayout.COMPACT
+    }
+
 /** How many local calendar days after [now]'s day [time] falls on; negative if before. */
 internal fun dayOffset(
     now: Instant,
@@ -221,3 +291,5 @@ private fun phaseNameRes(phase: LunarPhase): Int =
 
 // 64 dp at xxhdpi; Glance scales the bitmap to the Image's dp size.
 private const val DISC_SIZE_PX = 192
+private val COMPACT_DISC_DP = 34.dp
+private const val COMPACT_DISC_SIZE_PX = 102

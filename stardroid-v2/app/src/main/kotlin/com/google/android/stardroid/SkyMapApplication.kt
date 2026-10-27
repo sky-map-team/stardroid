@@ -23,6 +23,8 @@ import com.google.android.stardroid.satellites.SatellitePassNotifier
 import com.google.android.stardroid.satellites.SatelliteScheduler
 import com.google.android.stardroid.satellites.tonightSatellitePasses
 import com.google.android.stardroid.settings.Settings
+import com.google.android.stardroid.settings.passAlertsEnabled
+import com.google.android.stardroid.settings.showerAlertsEnabled
 import com.google.android.stardroid.startup.Experiment
 import com.google.android.stardroid.startup.ExperimentConfig
 import com.google.android.stardroid.widget.CountdownWidgetReceiver
