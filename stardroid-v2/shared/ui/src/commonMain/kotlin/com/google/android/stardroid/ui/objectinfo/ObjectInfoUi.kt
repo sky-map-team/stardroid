@@ -33,16 +33,19 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.BlendMode
 import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.dp
 import com.google.android.stardroid.astronomy.LunarEclipseCircumstances
 import com.google.android.stardroid.astronomy.LunarEclipseType
 import com.google.android.stardroid.astronomy.SatellitePass
 import com.google.android.stardroid.catalog.ObjectInfo
 import com.google.android.stardroid.catalog.SearchHit
+import com.google.android.stardroid.events.SkyEvent
 import com.google.android.stardroid.ui.common.formatForLocale
 import com.google.android.stardroid.ui.common.formattedStringResource
 import com.google.android.stardroid.ui.common.rememberCelestialImage
 import com.google.android.stardroid.ui.common.rememberDateFormatter
+import com.google.android.stardroid.ui.common.rememberDateTimeFormatter
 import com.google.android.stardroid.ui.common.rememberTimeFormatter
 import com.google.android.stardroid.ui.map.HudFormats
 import com.google.android.stardroid.ui.resources.Res
@@ -68,10 +71,12 @@ import com.google.android.stardroid.ui.resources.object_info_size
 import com.google.android.stardroid.ui.resources.object_info_spectral_class
 import com.google.android.stardroid.ui.resources.satellite_next_pass
 import com.google.android.stardroid.ui.resources.satellite_no_pass
-import com.google.android.stardroid.ui.resources.satellite_pass_magnitude
+import com.google.android.stardroid.ui.resources.satellite_pass_col_magnitude
+import com.google.android.stardroid.ui.resources.satellite_pass_col_peak
+import com.google.android.stardroid.ui.resources.satellite_pass_col_rises
+import com.google.android.stardroid.ui.resources.satellite_pass_col_when
 import com.google.android.stardroid.ui.resources.satellite_pass_shadow
 import com.google.android.stardroid.ui.resources.satellite_pass_unknown
-import com.google.android.stardroid.ui.resources.satellite_pass_when
 import com.google.android.stardroid.ui.resources.tonight_lunar_eclipse_partial
 import com.google.android.stardroid.ui.resources.tonight_lunar_eclipse_penumbral
 import com.google.android.stardroid.ui.resources.tonight_lunar_eclipse_total
@@ -87,22 +92,20 @@ import kotlin.math.roundToInt
  * is non-null only when the object's direction is resolvable — it re-aims the search overlay
  * exactly like a search (D33/D45); v1's map dialog had no Find, so this is the v2 upgrade that
  * makes see-also browsing navigable. Tapping the photo expands it full-screen
- * ([ImageExpandOverlay], v1's `onImageClicked`). [riseSet] adds the next rise/set at the
- * observer's location (D51) — null when the object has no position to rise or set.
+ * ([ImageExpandOverlay], v1's `onImageClicked`). [live] carries the object-specific facts and
+ * upcoming events (D141), such as the next rise/set at the observer's location (D51).
  */
 @OptIn(ExperimentalLayoutApi::class)
 @Composable
 fun ObjectInfoCard(
     info: ObjectInfo,
-    riseSet: RiseSetState?,
+    live: CardLive?,
     nightMode: Boolean,
     onSeeAlso: (SearchHit) -> Unit,
     onFind: ((ObjectInfo) -> Unit)?,
     onImageTap: (ObjectInfo) -> Unit,
     onDismiss: () -> Unit,
     promoRow: (@Composable () -> Unit)? = null,
-    satellitePassRow: (@Composable () -> Unit)? = null,
-    eclipseRow: (@Composable () -> Unit)? = null,
 ) {
     AlertDialog(
         onDismissRequest = onDismiss,
@@ -110,14 +113,12 @@ fun ObjectInfoCard(
         text = {
             ObjectInfoBody(
                 info = info,
-                riseSet = riseSet,
+                live = live,
                 nightMode = nightMode,
                 onSeeAlso = onSeeAlso,
                 onImageTap = onImageTap,
                 modifier = Modifier.verticalScroll(rememberScrollState()),
                 promoRow = promoRow,
-                satellitePassRow = satellitePassRow,
-                eclipseRow = eclipseRow,
             )
         },
         confirmButton = {
@@ -153,26 +154,13 @@ fun ObjectInfoCard(
 @Composable
 fun ObjectInfoBody(
     info: ObjectInfo,
-    riseSet: RiseSetState?,
+    live: CardLive?,
     nightMode: Boolean,
     onSeeAlso: (SearchHit) -> Unit,
     onImageTap: (ObjectInfo) -> Unit,
     modifier: Modifier = Modifier,
+    // An action, not a fact about the object, so it fits neither of [live]'s sections (D141).
     promoRow: (@Composable () -> Unit)? = null,
-    /**
-     * The next-visible-pass block, for satellite cards only.
-     *
-     * A slot rather than a parameter bundle, so this composable stays ignorant of satellites —
-     * the same shape [promoRow] already uses for the moon-widget offer.
-     */
-    satellitePassRow: (@Composable () -> Unit)? = null,
-    /**
-     * The next-lunar-eclipse block, for the Moon's card only (D106).
-     *
-     * A slot, exactly like [satellitePassRow] and [promoRow], so this composable stays ignorant
-     * of eclipses too.
-     */
-    eclipseRow: (@Composable () -> Unit)? = null,
 ) {
     Column(modifier) {
         info.imageRef?.let {
@@ -203,9 +191,8 @@ fun ObjectInfoBody(
             )
         }
         OtherNames(info)
-        DataRows(info, riseSet)
-        satellitePassRow?.invoke()
-        eclipseRow?.invoke()
+        DataRows(info, live?.now.orEmpty())
+        live?.upcoming?.let { UpcomingSection(it) }
         promoRow?.invoke()
         if (info.links.isNotEmpty()) {
             Text(
@@ -252,7 +239,7 @@ private fun OtherNames(info: ObjectInfo) {
 @Composable
 private fun DataRows(
     info: ObjectInfo,
-    riseSet: RiseSetState?,
+    facts: List<CardFact>,
 ) {
     Column(Modifier.padding(top = 8.dp)) {
         DataRow(Res.string.object_info_distance, info.distance)
@@ -263,7 +250,11 @@ private fun DataRows(
             Res.string.object_info_magnitude,
             info.magnitude?.let { formatForLocale("%.1f", arrayOf(it)) },
         )
-        RiseSetRows(riseSet)
+        facts.forEach { fact ->
+            when (fact) {
+                is CardFact.RiseSet -> RiseSetRows(fact.state)
+            }
+        }
     }
 }
 
@@ -273,9 +264,8 @@ private fun DataRows(
  * doesn't cross the horizon at the observer's location.
  */
 @Composable
-private fun RiseSetRows(riseSet: RiseSetState?) {
+private fun RiseSetRows(riseSet: RiseSetState) {
     when (riseSet) {
-        null -> {}
         is RiseSetState.Times -> {
             val formatter = rememberTimeFormatter()
             DataRow(
@@ -363,23 +353,49 @@ private fun CelestialImage(
 }
 
 /**
- * The next visible pass, on a satellite's info card (D92 phase 4b).
+ * The card's "when to look" section (D141): one exhaustive rendering of [Upcoming], so a new
+ * kind of object adds a case here rather than a parameter to the card.
+ */
+@Composable
+private fun UpcomingSection(upcoming: Upcoming) {
+    when (upcoming) {
+        is Upcoming.Events -> {
+            val passes =
+                upcoming.events.filterIsInstance<SkyEvent.SatellitePassTonight>().map { it.pass }
+            val eclipse =
+                upcoming.events.filterIsInstance<SkyEvent.LunarEclipseUpcoming>().firstOrNull()
+            if (passes.isNotEmpty()) SatellitePassRow(passes, passTimesReliable = true)
+            eclipse?.let { EclipseRow(it.circumstances) }
+        }
+        is Upcoming.NothingComing ->
+            when (upcoming.kind) {
+                UpcomingKind.SATELLITE_PASSES ->
+                    SatellitePassRow(emptyList(), passTimesReliable = true)
+                UpcomingKind.LUNAR_ECLIPSE -> EclipseRow(null)
+            }
+        Upcoming.DataTooOld -> SatellitePassRow(emptyList(), passTimesReliable = false)
+    }
+}
+
+/**
+ * The upcoming good passes, as a table on a satellite's info card (D92 phase 4b).
  *
  * This is the answer the design argues is the whole point of the feature: for a satellite,
  * "what is that?" is mostly *"and here is when to look again"*. Tapping it is where someone
  * already is when they want to know.
  *
- * All three empty cases render explicitly rather than collapsing the section, because they mean
- * different things: [pass] null with fresh data is "nothing is coming, which is normal" — visible
- * passes cluster into multi-day seasons separated by multi-week gaps — while stale data means "we
- * could tell you, but the answer would be wrong".
+ * Both empty cases render explicitly rather than collapsing the section, because they mean
+ * different things: [passes] empty with fresh data is "nothing is coming, which is normal" —
+ * visible passes cluster into multi-day seasons separated by multi-week gaps — while stale data
+ * means "we could tell you, but the answer would be wrong".
  */
 @Composable
-fun SatellitePassRow(
-    pass: SatellitePass?,
+private fun SatellitePassRow(
+    passes: List<SatellitePass>,
     passTimesReliable: Boolean,
 ) {
-    val formatter = rememberTimeFormatter()
+    val formatter = rememberDateTimeFormatter()
+    val timeFormatter = rememberTimeFormatter()
     Text(
         stringResource(Res.string.satellite_next_pass),
         style = MaterialTheme.typography.titleSmall,
@@ -391,39 +407,57 @@ fun SatellitePassRow(
                 stringResource(Res.string.satellite_pass_unknown),
                 style = MaterialTheme.typography.bodySmall,
             )
-        pass == null ->
+        passes.isEmpty() ->
             Text(
                 stringResource(Res.string.satellite_no_pass),
                 style = MaterialTheme.typography.bodySmall,
             )
         else -> {
             val cardinals = stringArrayResource(Res.array.hud_cardinal_directions)
-            Text(
-                formattedStringResource(
-                    Res.string.satellite_pass_when,
+            PassTableRow(
+                stringResource(Res.string.satellite_pass_col_when),
+                stringResource(Res.string.satellite_pass_col_rises),
+                stringResource(Res.string.satellite_pass_col_peak),
+                stringResource(Res.string.satellite_pass_col_magnitude),
+                MaterialTheme.typography.labelSmall,
+            )
+            passes.forEach { pass ->
+                PassTableRow(
                     formatter(pass.start),
                     cardinals[HudFormats.cardinalIndex(pass.startAzimuthDeg)],
-                    pass.maxAltitudeDeg.roundToInt(),
-                ),
-                style = MaterialTheme.typography.bodyMedium,
-            )
-            Text(
-                // One decimal and no more: the model is only good to about half a magnitude.
-                formattedStringResource(Res.string.satellite_pass_magnitude, pass.peakMagnitude),
-                style = MaterialTheme.typography.bodySmall,
-            )
-            pass.shadowEntry?.let { shadow ->
-                // The most memorable thing the app can say: a satellite that fades out mid-sky is
-                // the single most-asked question after someone watches it happen.
-                Text(
-                    formattedStringResource(
-                        Res.string.satellite_pass_shadow,
-                        formatter(shadow),
-                    ),
-                    style = MaterialTheme.typography.bodySmall,
+                    "${pass.maxAltitudeDeg.roundToInt()}°",
+                    // One decimal and no more: the model is only good to about half a magnitude.
+                    formatForLocale("%.1f", arrayOf(pass.peakMagnitude)),
+                    MaterialTheme.typography.bodySmall,
                 )
+                pass.shadowEntry?.let { shadow ->
+                    Text(
+                        formattedStringResource(
+                            Res.string.satellite_pass_shadow,
+                            timeFormatter(shadow),
+                        ),
+                        style = MaterialTheme.typography.labelSmall,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant,
+                    )
+                }
             }
         }
+    }
+}
+
+@Composable
+private fun PassTableRow(
+    whenText: String,
+    rises: String,
+    peak: String,
+    magnitude: String,
+    style: TextStyle,
+) {
+    Row(Modifier.fillMaxWidth().padding(top = 4.dp)) {
+        Text(whenText, style = style, modifier = Modifier.weight(3f))
+        Text(rises, style = style, modifier = Modifier.weight(1f))
+        Text(peak, style = style, modifier = Modifier.weight(1f))
+        Text(magnitude, style = style, modifier = Modifier.weight(1f))
     }
 }
 
@@ -434,7 +468,7 @@ fun SatellitePassRow(
  * genuinely isn't one".
  */
 @Composable
-fun EclipseRow(circumstances: LunarEclipseCircumstances?) {
+private fun EclipseRow(circumstances: LunarEclipseCircumstances?) {
     Text(
         stringResource(Res.string.object_info_eclipse_title),
         style = MaterialTheme.typography.titleSmall,

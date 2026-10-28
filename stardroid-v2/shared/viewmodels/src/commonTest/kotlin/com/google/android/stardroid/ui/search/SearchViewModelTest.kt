@@ -124,6 +124,7 @@ class SearchViewModelTest {
     private var manualMode = false
 
     private var trackedSatellites = listOf<TrackedSatellite>()
+    private var satelliteLookups = 0
 
     private var aliases = mapOf(25544 to listOf("International Space Station"))
 
@@ -143,6 +144,7 @@ class SearchViewModelTest {
             isManualMode = { manualMode },
             satelliteAliases = { aliases[it].orEmpty() },
             satellites = {
+                satelliteLookups++
                 satelliteFailure?.let { throw it() }
                 trackedSatellites
             },
@@ -265,6 +267,55 @@ class SearchViewModelTest {
                 target.direction.distanceTo(ISS_POSITION.toGeocentricVector()),
             ).isLessThan(TOL)
             assertThat(settings.layerEnabled(SatelliteLayer.LAYER_ID).first()).isTrue()
+        }
+
+    @Test
+    fun `a selected satellite target follows the satellite until the search is cancelled`() =
+        testScope.runCurrentTest {
+            trackedSatellites = listOf(ISS)
+            val vm = viewModel()
+            vm.select(ISS_HIT)
+            runCurrent()
+
+            val moved = RaDec(250.0, 10.0)
+            trackedSatellites = listOf(ISS.copy(position = moved))
+            advanceTimeBy(2_000)
+            assertThat(
+                vm.target.value!!.direction.distanceTo(moved.toGeocentricVector()),
+            ).isLessThan(TOL)
+
+            vm.cancelSearch()
+            val lookups = satelliteLookups
+            advanceTimeBy(5_000)
+            assertThat(satelliteLookups).isEqualTo(lookups)
+            assertThat(vm.target.value).isNull()
+        }
+
+    @Test
+    fun `replacing a satellite target with a star stops tracking`() =
+        testScope.runCurrentTest {
+            trackedSatellites = listOf(ISS)
+            val vm = viewModel()
+            vm.select(ISS_HIT)
+            runCurrent()
+            vm.select(SIRIUS_HIT)
+            runCurrent()
+            val lookups = satelliteLookups
+            advanceTimeBy(5_000)
+            assertThat(satelliteLookups).isEqualTo(lookups)
+            assertThat(vm.target.value!!.trackedId).isNull()
+        }
+
+    @Test
+    fun `a star target stays a static snapshot`() =
+        testScope.runCurrentTest {
+            val vm = viewModel()
+            vm.select(SIRIUS_HIT)
+            runCurrent()
+            val before = vm.target.value
+            advanceTimeBy(5_000)
+            assertThat(vm.target.value).isEqualTo(before)
+            assertThat(before!!.trackedId).isNull()
         }
 
     @Test

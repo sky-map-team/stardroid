@@ -73,7 +73,9 @@ doesn't know", not "there genuinely isn't one").
 
 **A PR review raised whether the info card should generalize this slot-per-parameter shape**
 (`promoRow`, `satellitePassRow`, `eclipseRow`) into something more abstract rather than adding a
-new boolean parameter each time. Deliberately not changed here — see D107.
+new boolean parameter each time. Deliberately not changed here — see D107. **Revisited in
+[info-card-live-content.md](info-card-live-content.md) (proposed, D141)**, which moves this row
+into a generic "Upcoming" section.
 
 ## 4. Map rendering — GLES1 copper tint, not the deferred GLES3 shader
 

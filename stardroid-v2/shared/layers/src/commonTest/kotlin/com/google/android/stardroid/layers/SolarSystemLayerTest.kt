@@ -43,13 +43,12 @@ class SolarSystemLayerTest {
     private val location = MutableStateFlow(LONDON)
     private val ephemeris = KeplerianEphemeris
 
-    private fun TestScope.layer(images: BodyImageMapper = PlanetImages()) =
+    private fun TestScope.layer() =
         SolarSystemLayer(
             ephemeris,
             clock,
             strings,
             location,
-            images,
             mapContext = UnconfinedTestDispatcher(testScheduler),
         )
 
@@ -64,22 +63,12 @@ class SolarSystemLayerTest {
             assertThat(scene.points).isEmpty()
 
             // D18: nearer bodies draw later. The Moon is always nearest, so always last.
-            val moonRef = PlanetImages().imageFor(SolarSystemBody.MOON, time)
+            val moonRef = PlanetImages.imageFor(SolarSystemBody.MOON)
             assertThat(scene.images.last().image).isEqualTo(moonRef)
             // Every image ref resolves through the planet namespace.
             for (image in scene.images) {
                 assertThat(image.image.key).startsWith("planet/")
             }
-        }
-
-    @Test
-    fun `bodies without an image fall back to a fixed point`() =
-        runTest {
-            val pointsOnly = BodyImageMapper { _, _ -> null }
-            val scene = layer(pointsOnly).buildScene(time, FakeLayerStrings(), LONDON)
-
-            assertThat(scene.images).isEmpty()
-            assertThat(scene.points).hasSize(SolarSystemLayer.BODIES.size)
         }
 
     @Test
@@ -291,7 +280,6 @@ class SolarSystemLayerTest {
         clock,
         strings,
         location,
-        BodyImageMapper { _, _ -> ImageRef("planet/x") },
         mapContext = UnconfinedTestDispatcher(testScheduler),
     ).buildScene(time, FakeLayerStrings(), LONDON)
 

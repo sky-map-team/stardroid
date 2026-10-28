@@ -44,7 +44,7 @@ modules follow. Instead each layer takes exactly what it consumes:
 class CatalogLayer(id, depth, kind: LayerKind, catalog: CatalogRepository,
                    locale: Flow<LocaleSpec>, mapping: PrimitiveMapping) : SkyLayer
 class SolarSystemLayer(ephemeris: Ephemeris, clock: Flow<Instant>,
-                       locale: Flow<LocaleSpec>, images: BodyImageMapper) : SkyLayer
+                       locale: Flow<LocaleSpec>) : SkyLayer
 class GridLayer(strings: LayerStrings) : SkyLayer
 class HorizonLayer(clock: Flow<Instant>, location: Flow<LatLong>,
                    strings: LayerStrings) : SkyLayer

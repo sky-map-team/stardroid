@@ -43,4 +43,18 @@ class PassAlertsTest {
     fun `an alert delivered hours late is stale`() {
         assertThat(PassAlerts.isStale(passStart, passStart + 3.hours)).isTrue()
     }
+
+    @Test
+    fun `a rise alert is not over before the pass ends`() {
+        val end = passStart + 6.minutes
+        assertThat(PassAlerts.isOver(end, passStart)).isFalse()
+        assertThat(PassAlerts.isOver(end, end - 1.milliseconds)).isFalse()
+    }
+
+    @Test
+    fun `a rise alert is over once the pass has ended`() {
+        val end = passStart + 6.minutes
+        assertThat(PassAlerts.isOver(end, end)).isTrue()
+        assertThat(PassAlerts.isOver(end, end + 1.hours)).isTrue()
+    }
 }

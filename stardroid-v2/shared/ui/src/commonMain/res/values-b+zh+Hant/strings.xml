@@ -163,8 +163,6 @@
     <string name="time_travel_start_message" translation_description="Toast message when time travel starts toward a chosen destination. %1$s is the formatted destination date and time.">正在時光旅行至 %1$s ...</string>
     <string name="time_travel_close_message">回到現在...</string>
     <string name="satellite_next_pass" translation_description="Heading above the next visible pass details on a satellite\'s info card.">下次可見凌空</string>
-    <string name="satellite_pass_when" translation_description="When and how high the next satellite pass will be. %1$s is a time, %2$s is a compass direction, %3$d is an angle in degrees.">%1$s，從 %2$s 方向升起，達到 %3$d° 高度</string>
-    <string name="satellite_pass_magnitude" translation_description="How bright the satellite will be at its peak. %1$.1f is a brightness magnitude.">最亮時亮度為 %1$.1f</string>
     <string name="satellite_pass_shadow" translation_description="Tells the user the satellite will fade out mid-pass when it enters the Earth\'s shadow. %1$s is a time.">在 %1$s 於地球陰影中消失</string>
     <string name="satellite_no_pass" translation_description="Shown on a satellite info card when no visible pass is coming up in the next two days.">接下來幾天內沒有可見凌空</string>
     <string name="satellite_pass_unknown" translation_description="Shown on a satellite info card when the downloaded orbit data is too old to predict pass times reliably.">軌道資料過舊，無法預測凌空時間</string>

@@ -12,7 +12,7 @@ plugins {
 val libs = extensions.getByType<VersionCatalogsExtension>().named("libs")
 
 kotlin {
-    jvmToolchain(17)
+    jvmToolchain(jdkVersion)
 }
 
 // Pure-module test stack lives here so every module gets it consistently with no per-module

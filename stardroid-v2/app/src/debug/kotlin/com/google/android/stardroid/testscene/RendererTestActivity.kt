@@ -42,7 +42,6 @@ import com.google.android.stardroid.layers.EclipticLayer
 import com.google.android.stardroid.layers.GridLayer
 import com.google.android.stardroid.layers.HorizonLayer
 import com.google.android.stardroid.layers.LayerStrings
-import com.google.android.stardroid.layers.PlanetImages
 import com.google.android.stardroid.layers.SkyLayer
 import com.google.android.stardroid.layers.SolarSystemLayer
 import com.google.android.stardroid.location.LocationController
@@ -534,7 +533,6 @@ class RendererTestActivity : Activity() {
                     clock,
                     strings,
                     location,
-                    PlanetImages(),
                 ),
             )
         scope.launch {

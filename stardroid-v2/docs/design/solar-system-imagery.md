@@ -483,11 +483,10 @@ Not part of the staged work, but recorded because this design makes each of them
   independent of image size, which is what we want; verify a true-scale Neptune at 2″ is still
   tappable, and consider floor-aware hit-testing so tapping a floored glyph hits its visible
   extent.
-- **`BodyImageMapper`'s dot fallback** is largely redundant once discs are floored and
-  true-scale; the "Glyphs" parameter supersedes its intent. Decide whether it stays.
-  **Update:** in production it is already unreachable. `PlanetImages` returns `null` only for
-  Earth, which `SolarSystemLayer.BODIES` excludes, so every body is drawn as a disc and the
-  planet-as-dot branch never runs. Removal is tracked in #1140.
+- **`BodyImageMapper`'s dot fallback** was redundant once discs were floored and true-scale
+  (and unreachable in production, since `PlanetImages` returned `null` only for Earth, which
+  `SolarSystemLayer.BODIES` excludes). Removed in #1140: `BodyImageMapper` is gone and the layer
+  looks images up directly via `PlanetImages.imageFor(body)`.
 - **`AssetImageLoader` needs a generated-bitmap path.** It resolves `planet/*` to a fixed `.webp`
   filename today. The compositor sits in front of it: the loader fetches the base disc, the
   compositor applies the terminator, the §2 cache stores the result. Under GLES3 the compositor

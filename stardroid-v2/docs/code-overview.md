@@ -111,7 +111,7 @@ Seven plugins carry all shared build config (see build-and-tooling.md for ration
   (`com.android.kotlin.multiplatform.library`) in place of `jvm`, plus the iOS targets. Used by
   `:data`, whose `androidMain` needs the Android SDK; its `commonMain` is held to the pure
   modules' rules. Shares `skymap.kmp-base` with `skymap.pure-kmp`.
-- `skymap.android-library` / `skymap.android-app` — AGP config (compileSdk 36, minSdk 28),
+- `skymap.android-library` / `skymap.android-app` — AGP config (SDK levels from `libs.versions.toml`),
   the app variant adds Compose, KSP, Hilt (wired automatically), ktlint.
 - `skymap.kmp-room` — KSP + Room for every target, via Room's Gradle plugin; checked-in schema
   JSON at `data/schemas/` (the exported schema's identity hash must match the generated DB, or

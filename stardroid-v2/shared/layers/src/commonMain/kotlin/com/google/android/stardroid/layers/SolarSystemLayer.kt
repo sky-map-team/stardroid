@@ -22,14 +22,11 @@ import com.google.android.stardroid.math.RaDec
 import com.google.android.stardroid.math.Vector3
 import com.google.android.stardroid.render.api.EclipseShadow
 import com.google.android.stardroid.render.api.ImagePrimitive
-import com.google.android.stardroid.render.api.ImageRef
 import com.google.android.stardroid.render.api.LabelPrimitive
 import com.google.android.stardroid.render.api.LabelSize
 import com.google.android.stardroid.render.api.LabelStyle
 import com.google.android.stardroid.render.api.LayerId
 import com.google.android.stardroid.render.api.LayerScene
-import com.google.android.stardroid.render.api.PointAppearance
-import com.google.android.stardroid.render.api.PointPrimitive
 import com.google.android.stardroid.render.api.Terminator
 import com.google.android.stardroid.settings.Settings
 import kotlinx.coroutines.Dispatchers
@@ -46,22 +43,8 @@ import kotlin.math.pow
 import kotlin.time.DurationUnit
 
 /**
- * Maps a body at an instant to its image, or `null` for a plain dot — the app-side imagery
- * policy the layer stays agnostic of (layers-and-app.md's `BodyImageMapper`): [PlanetImages]
- * gives every body its disc; a future "show planetary images" preference swaps in a mapper that
- * returns `null` for everything but the Sun and Moon, as v1's did.
- */
-fun interface BodyImageMapper {
-    fun imageFor(
-        body: SolarSystemBody,
-        time: Instant,
-    ): ImageRef?
-}
-
-/**
  * The Sun, Moon, and planets, ported from v1's `SolarSystemLayer`/`SolarSystemRenderable`:
- * per-body positions from [ephemeris], drawn as world-anchored images (or dots where [images]
- * declines) with a name label.
+ * per-body positions from [ephemeris], drawn as world-anchored images with a name label.
  *
  * Positions are topocentric for the observer at [location] (D54): the Moon's diurnal parallax
  * moves it by up to ~1° depending on where on Earth you stand — v1 drew it geocentrically,
@@ -81,7 +64,6 @@ class SolarSystemLayer(
     private val clock: Flow<Instant>,
     private val strings: Flow<LayerStrings>,
     private val location: Flow<LatLong>,
-    private val images: BodyImageMapper,
     private val discSize: Flow<String> =
         flowOf(LayerParameter.DISC_SIZE_PARAMETER.defaultOption),
     private val mapContext: CoroutineContext = Dispatchers.Default,
@@ -147,35 +129,25 @@ class SolarSystemLayer(
         // full solar series (and a precession matrix build) ten times per scene (audit-2026-08
         // M1).
         val sunPosition = ephemeris.geocentricPosition(SolarSystemBody.SUN, time)
-        val points = ArrayList<PointPrimitive>()
         val imagePrimitives = ArrayList<ImagePrimitive>()
         val labels = ArrayList<LabelPrimitive>()
         for (body in byDistance) {
             val pos = ephemeris.topocentricPosition(body, time, observer).toGeocentricVector()
-            val image = images.imageFor(body, time)
-            if (image != null) {
-                imagePrimitives +=
-                    ImagePrimitive(
-                        center = pos,
-                        angularSizeDeg = drawnSizeDeg(body, time, discSize),
-                        rotationDeg = northPoleAngleDeg(pos),
-                        image = image,
-                        terminator = terminatorFor(body, time, sunPosition),
-                        minScreenFraction = minScreenFraction(body, time, discSize),
-                        minSizeDp = MIN_BODY_SIZE_DP,
-                    )
-            } else {
-                points += PointPrimitive(pos, PointAppearance.Fixed(POINT_COLOR, POINT_SIZE_DP))
-            }
+            imagePrimitives +=
+                ImagePrimitive(
+                    center = pos,
+                    angularSizeDeg = drawnSizeDeg(body, time, discSize),
+                    rotationDeg = northPoleAngleDeg(pos),
+                    image = PlanetImages.imageFor(body),
+                    terminator = terminatorFor(body, time, sunPosition),
+                    minScreenFraction = minScreenFraction(body, time, discSize),
+                    minSizeDp = MIN_BODY_SIZE_DP,
+                )
             val magnitude = ephemeris.magnitude(body, time)
-            // Bodies drawn as images are angularly sized, so their labels carry an angular
-            // clearance floor (past the disc's edge); point-drawn bodies use the standard
-            // screen-space gap.
             // Clearance follows the *drawn* size, which only the backend knows, so the label
             // carries the same floors and the label drawer applies the same formula. Otherwise a
             // name would sit inside a floored — or a true-scale — Moon (D86).
-            val clearanceDeg =
-                if (image != null) drawnSizeDeg(body, time, discSize) * LABEL_CLEARANCE else 0.0
+            val clearanceDeg = drawnSizeDeg(body, time, discSize) * LABEL_CLEARANCE
             labels +=
                 LabelPrimitive(
                     pos = pos,
@@ -186,13 +158,8 @@ class SolarSystemLayer(
                             LABEL_COLOR,
                             clearanceDeg = clearanceDeg,
                             clearanceMinScreenFraction =
-                                if (image != null) {
-                                    minScreenFraction(body, time, discSize) * LABEL_CLEARANCE
-                                } else {
-                                    0.0
-                                },
-                            clearanceMinSizeDp =
-                                if (image != null) MIN_BODY_SIZE_DP * LABEL_CLEARANCE else 0.0,
+                                minScreenFraction(body, time, discSize) * LABEL_CLEARANCE,
+                            clearanceMinSizeDp = MIN_BODY_SIZE_DP * LABEL_CLEARANCE,
                         ),
                     priority = CatalogLayers.labelPriority(magnitude),
                     // Exempt from the FOV→magnitude gate, the way named deep-sky objects
@@ -207,7 +174,7 @@ class SolarSystemLayer(
                     hasDetail = true,
                 )
         }
-        return LayerScene(depth = depth, points = points, images = imagePrimitives, labels = labels)
+        return LayerScene(depth = depth, images = imagePrimitives, labels = labels)
     }
 
     /**
@@ -402,7 +369,6 @@ class SolarSystemLayer(
             clock: Flow<Instant>,
             strings: Flow<LayerStrings>,
             location: Flow<LatLong>,
-            images: BodyImageMapper,
             settings: Settings,
         ): SolarSystemLayer =
             SolarSystemLayer(
@@ -410,7 +376,6 @@ class SolarSystemLayer(
                 clock,
                 strings,
                 location,
-                images,
                 settings.layerParameter(
                     LAYER_ID,
                     LayerParameter.DISC_SIZE_PARAMETER.key,
@@ -484,9 +449,5 @@ class SolarSystemLayer(
 
         /** Upstream `sky_label` Planet Red (D40). */
         private val LABEL_COLOR = SkyColors.SKY_LABEL
-
-        /** Upstream `planet_body` dot fallback at point size 3 (D40). */
-        private val POINT_COLOR = SkyColors.PLANET_BODY
-        private const val POINT_SIZE_DP = 3.0
     }
 }

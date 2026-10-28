@@ -71,12 +71,10 @@ import com.google.android.stardroid.ui.location.LocationStateDialogs
 import com.google.android.stardroid.ui.location.LocationViewModel
 import com.google.android.stardroid.ui.location.ManualLocationEntryDialog
 import com.google.android.stardroid.ui.location.rememberLocationSetMessage
-import com.google.android.stardroid.ui.objectinfo.EclipseRow
 import com.google.android.stardroid.ui.objectinfo.ImageExpandOverlay
 import com.google.android.stardroid.ui.objectinfo.MoonWidgetPromo
 import com.google.android.stardroid.ui.objectinfo.ObjectInfoCard
 import com.google.android.stardroid.ui.objectinfo.ObjectInfoViewModel
-import com.google.android.stardroid.ui.objectinfo.SatellitePassRow
 import com.google.android.stardroid.ui.resources.Res
 import com.google.android.stardroid.ui.resources.ar_alignment_adjusted_message
 import com.google.android.stardroid.ui.resources.ar_auto_mode_snackbar
@@ -182,7 +180,7 @@ fun MapScreen(
     val camera by mapViewModel.camera.collectAsStateWithLifecycle()
     val searchTarget by searchViewModel.target.collectAsStateWithLifecycle()
     val objectInfoCard by objectInfoViewModel.card.collectAsStateWithLifecycle()
-    val objectRiseSet by objectInfoViewModel.riseSet.collectAsStateWithLifecycle()
+    val objectLive by objectInfoViewModel.live.collectAsStateWithLifecycle()
     val moonWidgetPromo by objectInfoViewModel.moonWidgetPromo.collectAsStateWithLifecycle()
     val locationState by locationViewModel.state.collectAsStateWithLifecycle()
     val manualLocationMode by locationViewModel.manualMode.collectAsStateWithLifecycle()
@@ -222,8 +220,9 @@ fun MapScreen(
     // Identify needs px-per-dp to size its label-inclusive tap tolerance.
     val tapDensity = LocalDensity.current.density
 
-    // Activating a target closes the dialog and, in manual mode, teleports to it (v1).
-    LaunchedEffect(searchTarget) {
+    // Activating a target closes the dialog and, in manual mode, teleports to it (v1). Keyed on
+    // identity, not the target, so a tracked satellite's position updates don't re-aim the map.
+    LaunchedEffect(searchTarget?.name, searchTarget?.fovDeg) {
         searchTarget?.let { target ->
             showSearchDialog = false
             mapViewModel.aimAt(target.direction, target.fovDeg)
@@ -687,21 +686,12 @@ fun MapScreen(
             )
         }
 
-        val showingSatellite by
-            objectInfoViewModel.showingSatellite.collectAsStateWithLifecycle()
-        val nextSatellitePass by
-            objectInfoViewModel.nextSatellitePass.collectAsStateWithLifecycle()
-        val satellitePassTimesReliable by
-            objectInfoViewModel.satellitePassTimesReliable.collectAsStateWithLifecycle()
-        val showingMoon by objectInfoViewModel.showingMoon.collectAsStateWithLifecycle()
-        val lunarEclipse by objectInfoViewModel.lunarEclipse.collectAsStateWithLifecycle()
-
         // Covered, the card is the host's: iOS's gallery page shows its own, as Android's
         // gallery destination does.
         objectInfoCard?.takeUnless { covered }?.let { info ->
             ObjectInfoCard(
                 info = info,
-                riseSet = objectRiseSet,
+                live = objectLive,
                 nightMode = nightMode,
                 onSeeAlso = { link -> objectInfoViewModel.show(link.id) },
                 // No Find here: a card opened by tapping the sky is an object the user has
@@ -717,26 +707,6 @@ fun MapScreen(
                     moonWidgetPromoRow
                         ?.takeIf { moonWidgetPromo != MoonWidgetPromo.HIDDEN }
                         ?.let { row -> { row(moonWidgetPromo == MoonWidgetPromo.PLACED) } },
-                satellitePassRow =
-                    if (showingSatellite) {
-                        {
-                            SatellitePassRow(
-                                pass = nextSatellitePass,
-                                // Null with reliable data means "nothing is coming", which is a
-                                // real answer; null because the data is stale means something
-                                // else entirely, and the row says so.
-                                passTimesReliable = satellitePassTimesReliable,
-                            )
-                        }
-                    } else {
-                        null
-                    },
-                eclipseRow =
-                    if (showingMoon) {
-                        { EclipseRow(circumstances = lunarEclipse) }
-                    } else {
-                        null
-                    },
             )
         }
 

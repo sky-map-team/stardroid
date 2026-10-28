@@ -12,33 +12,18 @@ package com.google.android.stardroid.layers
 import com.google.android.stardroid.astronomy.SolarSystemBody
 import com.google.android.stardroid.render.api.ImageRef
 import com.google.android.stardroid.testing.assertThat
-import kotlinx.datetime.Instant
 import kotlin.test.Test
 
 class PlanetImagesTest {
-    private val images = PlanetImages()
-
     @Test
-    fun `planets map to their named image`() {
-        val time = Instant.parse("2026-07-03T22:00:00Z")
-
-        assertThat(images.imageFor(SolarSystemBody.JUPITER, time))
+    fun `bodies map to their named image`() {
+        assertThat(PlanetImages.imageFor(SolarSystemBody.JUPITER))
             .isEqualTo(ImageRef("planet/jupiter"))
-        assertThat(images.imageFor(SolarSystemBody.SUN, time))
+        assertThat(PlanetImages.imageFor(SolarSystemBody.SUN))
             .isEqualTo(ImageRef("planet/sun"))
-        assertThat(images.imageFor(SolarSystemBody.EARTH, time)).isNull()
-    }
-
-    @Test
-    fun `the moon has one image at every phase`() {
         // D88 collapsed v1's moon0-moon7 into a single fully-lit disc: the terminator is painted
-        // by the renderer, so the bitmap no longer depends on the date at all.
-        val fullMoon = Instant.parse("2024-01-25T17:54:00Z")
-        val newMoon = Instant.parse("2024-02-09T22:59:00Z")
-
-        assertThat(images.imageFor(SolarSystemBody.MOON, fullMoon))
-            .isEqualTo(ImageRef("planet/moon"))
-        assertThat(images.imageFor(SolarSystemBody.MOON, newMoon))
+        // by the renderer, so the bitmap doesn't depend on the date.
+        assertThat(PlanetImages.imageFor(SolarSystemBody.MOON))
             .isEqualTo(ImageRef("planet/moon"))
     }
 }

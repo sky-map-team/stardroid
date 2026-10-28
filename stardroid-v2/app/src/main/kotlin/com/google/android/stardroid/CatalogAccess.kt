@@ -24,6 +24,7 @@ import com.google.android.stardroid.settings.Settings
 import com.google.android.stardroid.startup.Experiment
 import com.google.android.stardroid.startup.ExperimentConfig
 import com.google.android.stardroid.time.TimeController
+import com.google.android.stardroid.time.TimeTravelState
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.sync.Mutex
@@ -95,6 +96,8 @@ class CatalogAccess
                                 ),
                             satellitesEnabled =
                                 experimentConfig.isEnabled(Experiment.SATELLITES),
+                            realTime =
+                                timeController.state.map { it == TimeTravelState.REAL_TIME },
                         ).also { registry = it }
                 }
             }

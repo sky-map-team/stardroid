@@ -9,12 +9,12 @@ plugins {
 }
 
 kotlin {
-    jvmToolchain(17)
+    jvmToolchain(jdkVersion)
 
     android {
-        compileSdk = 36
+        compileSdk = compileSdkLevel
         // See skymap.android-app.gradle.kts: 28 is best-effort (D9, revised), not a supported
         // floor. Code may assume API 29+ without guards.
-        minSdk = 28
+        minSdk = minSdkLevel
     }
 }

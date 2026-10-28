@@ -20,6 +20,7 @@ kotlin {
 
     sourceSets {
         commonMain.dependencies {
+            api(project(":core:events"))
             api(project(":shared:layers"))
             api(project(":shared:model"))
             api(project(":data"))

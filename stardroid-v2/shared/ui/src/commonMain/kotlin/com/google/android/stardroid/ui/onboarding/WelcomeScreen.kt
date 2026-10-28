@@ -397,7 +397,7 @@ private fun SampleInfoCard(nightMode: Boolean) {
             )
             ObjectInfoBody(
                 info = info,
-                riseSet = null,
+                live = null,
                 nightMode = nightMode,
                 onSeeAlso = {},
                 onImageTap = {},
