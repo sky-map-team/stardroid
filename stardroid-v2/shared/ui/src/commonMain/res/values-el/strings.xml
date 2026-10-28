@@ -565,4 +565,14 @@
     <string name="settings_eclipse_alerts_summary" translation_description="Explanation of the lunar-eclipse notification preference">Μία μόνο ειδοποίηση πριν ξεκινήσει μια σεληνιακή έκλειψη</string>
     <string name="settings_pass_alerts" translation_description="Preference title: notify shortly before a satellite passes overhead">Περάσματα δορυφόρων</string>
     <string name="settings_pass_alerts_summary" translation_description="Explanation of the satellite-pass notification preference">Μία μόνο ειδοποίηση πριν από το καλύτερο ορατό πέρασμα της νύχτας</string>
+    <string name="moon_widget_illumination" translation_description="Widget line showing how much of the Moon\'s disc is lit; %1$d is a percentage number">%1$d%% φωτισμένο</string>
+    <string name="moon_phase_new" translation_description="Name of the lunar phase when the Moon is fully dark">Νέα Σελήνη</string>
+    <string name="moon_phase_waxing_crescent" translation_description="Name of the lunar phase between new moon and first quarter">Αύξων Μηνίσκος</string>
+    <string name="moon_phase_first_quarter" translation_description="Name of the lunar phase when half the disc is lit and growing">Πρώτο Τέταρτο</string>
+    <string name="moon_phase_waxing_gibbous" translation_description="Name of the lunar phase between first quarter and full moon">Αύξουσα Αμφίκυρτος</string>
+    <string name="moon_phase_full" translation_description="Name of the lunar phase when the disc is fully lit">Πανσέληνος</string>
+    <string name="moon_phase_waning_gibbous" translation_description="Name of the lunar phase between full moon and last quarter">Φθίνουσα Αμφίκυρτος</string>
+    <string name="moon_phase_last_quarter" translation_description="Name of the lunar phase when half the disc is lit and shrinking">Τελευταίο Τέταρτο</string>
+    <string name="moon_phase_waning_crescent" translation_description="Name of the lunar phase between last quarter and new moon">Φθίνων Μηνίσκος</string>
+    <string name="moon_widget_age" translation_description="Widget line giving the Moon\'s age as the day of the lunar cycle, counting the day of new moon as day 1; %1$d is a number from 1 to 30">Ημέρα %1$d</string>
 </resources>

@@ -554,4 +554,14 @@ Rhybuddion eclips: hysbysiad cyn eclips lleuad.
     <string name="settings_eclipse_alerts_summary" translation_description="Explanation of the lunar-eclipse notification preference">Un rhybudd sengl cyn i eclips lleuad ddechrau</string>
     <string name="settings_pass_alerts" translation_description="Preference title: notify shortly before a satellite passes overhead">Pasiau lloerennau</string>
     <string name="settings_pass_alerts_summary" translation_description="Explanation of the satellite-pass notification preference">Un rhybudd sengl cyn y pas gorau y gellir ei weld o\'r noson</string>
+    <string name="moon_widget_illumination" translation_description="Widget line showing how much of the Moon\'s disc is lit; %1$d is a percentage number">%1$d%% wedi\'i oleuo</string>
+    <string name="moon_phase_new" translation_description="Name of the lunar phase when the Moon is fully dark">Lleuad Newydd</string>
+    <string name="moon_phase_waxing_crescent" translation_description="Name of the lunar phase between new moon and first quarter">Cilgant Cynyddol</string>
+    <string name="moon_phase_first_quarter" translation_description="Name of the lunar phase when half the disc is lit and growing">Chwarter Cyntaf</string>
+    <string name="moon_phase_waxing_gibbous" translation_description="Name of the lunar phase between first quarter and full moon">Gibbous Cynyddol</string>
+    <string name="moon_phase_full" translation_description="Name of the lunar phase when the disc is fully lit">Lleuad Llawn</string>
+    <string name="moon_phase_waning_gibbous" translation_description="Name of the lunar phase between full moon and last quarter">Gibbous Cilio</string>
+    <string name="moon_phase_last_quarter" translation_description="Name of the lunar phase when half the disc is lit and shrinking">Chwarter Olaf</string>
+    <string name="moon_phase_waning_crescent" translation_description="Name of the lunar phase between last quarter and new moon">Cilgant Cilio</string>
+    <string name="moon_widget_age" translation_description="Widget line giving the Moon\'s age as the day of the lunar cycle, counting the day of new moon as day 1; %1$d is a number from 1 to 30">Diwrnod %1$d</string>
 </resources>

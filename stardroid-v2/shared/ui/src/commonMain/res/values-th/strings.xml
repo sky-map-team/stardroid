@@ -522,4 +522,14 @@
     <string name="settings_eclipse_alerts_summary" translation_description="Explanation of the lunar-eclipse notification preference">แจ้งเตือนครั้งเดียวก่อนเกิดจันทรุปราคา</string>
     <string name="settings_pass_alerts" translation_description="Preference title: notify shortly before a satellite passes overhead">ดาวเทียมโคจรผ่าน</string>
     <string name="settings_pass_alerts_summary" translation_description="Explanation of the satellite-pass notification preference">แจ้งเตือนครั้งเดียวก่อนรอบการผ่านที่มองเห็นได้ดีที่สุดของคืน</string>
+    <string name="moon_widget_illumination" translation_description="Widget line showing how much of the Moon\'s disc is lit; %1$d is a percentage number">สว่าง %1$d%%</string>
+    <string name="moon_phase_new" translation_description="Name of the lunar phase when the Moon is fully dark">จันทร์ดับ</string>
+    <string name="moon_phase_waxing_crescent" translation_description="Name of the lunar phase between new moon and first quarter">จันทร์เสี้ยวข้างขึ้น</string>
+    <string name="moon_phase_first_quarter" translation_description="Name of the lunar phase when half the disc is lit and growing">จันทร์ครึ่งดวงข้างขึ้น</string>
+    <string name="moon_phase_waxing_gibbous" translation_description="Name of the lunar phase between first quarter and full moon">ดวงจันทร์ค่อนดวงข้างขึ้น</string>
+    <string name="moon_phase_full" translation_description="Name of the lunar phase when the disc is fully lit">จันทร์เพ็ญ</string>
+    <string name="moon_phase_waning_gibbous" translation_description="Name of the lunar phase between full moon and last quarter">ดวงจันทร์ค่อนดวงข้างแรม</string>
+    <string name="moon_phase_last_quarter" translation_description="Name of the lunar phase when half the disc is lit and shrinking">จันทร์ครึ่งดวงข้างแรม</string>
+    <string name="moon_phase_waning_crescent" translation_description="Name of the lunar phase between last quarter and new moon">จันทร์เสี้ยวข้างแรม</string>
+    <string name="moon_widget_age" translation_description="Widget line giving the Moon\'s age as the day of the lunar cycle, counting the day of new moon as day 1; %1$d is a number from 1 to 30">วันที่ %1$d</string>
 </resources>

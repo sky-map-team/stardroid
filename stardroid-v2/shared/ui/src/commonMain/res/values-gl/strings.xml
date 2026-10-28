@@ -400,4 +400,13 @@ A interferencia magnética local (obxectos metálicos, salpicadeiros de coches, 
     <string name="label_size_hint_action" translation_description="Action button on the label size snackbar; opens the app\'s Settings screen, where the user can change how large the sky labels are">Configuración</string>
     <string name="auto_level_on_toast" translation_description="Brief confirmation shown when a double tap turns horizon auto-leveling on in manual mode">Nivelación automática do horizonte activada</string>
     <string name="auto_level_off_toast" translation_description="Brief confirmation shown when a double tap turns horizon auto-leveling off in manual mode">Nivelación automática do horizonte desactivada</string>
+    <string name="moon_widget_illumination" translation_description="Widget line showing how much of the Moon\'s disc is lit; %1$d is a percentage number">%1$d%% iluminada</string>
+    <string name="moon_phase_new" translation_description="Name of the lunar phase when the Moon is fully dark">Lúa Nova</string>
+    <string name="moon_phase_waxing_crescent" translation_description="Name of the lunar phase between new moon and first quarter">Lúa Crecente</string>
+    <string name="moon_phase_first_quarter" translation_description="Name of the lunar phase when half the disc is lit and growing">Cuarto Crecente</string>
+    <string name="moon_phase_waxing_gibbous" translation_description="Name of the lunar phase between first quarter and full moon">Lúa Xibosa Crecente</string>
+    <string name="moon_phase_full" translation_description="Name of the lunar phase when the disc is fully lit">Lúa Chea</string>
+    <string name="moon_phase_waning_gibbous" translation_description="Name of the lunar phase between full moon and last quarter">Lúa Xibosa Minguante</string>
+    <string name="moon_phase_last_quarter" translation_description="Name of the lunar phase when half the disc is lit and shrinking">Cuarto Minguante</string>
+    <string name="moon_phase_waning_crescent" translation_description="Name of the lunar phase between last quarter and new moon">Lúa Minguante</string>
 </resources>

@@ -20,7 +20,10 @@ import com.google.android.stardroid.astronomy.RiseSetIndicator
 import com.google.android.stardroid.astronomy.SatellitePass
 import com.google.android.stardroid.astronomy.SolarSystemBody
 import com.google.android.stardroid.astronomy.altitudeDeg
+import com.google.android.stardroid.astronomy.dayOfCycle
 import com.google.android.stardroid.astronomy.horizonAltitudeDeg
+import com.google.android.stardroid.astronomy.illuminationPercent
+import com.google.android.stardroid.astronomy.moonWidgetModel
 import com.google.android.stardroid.astronomy.nextLunarEclipse
 import com.google.android.stardroid.astronomy.nextRiseSetTime
 import com.google.android.stardroid.catalog.CatalogRepository
@@ -228,10 +231,7 @@ class ObjectInfoViewModel(
         liveJob =
             viewModelScope.launch {
                 // Now facts first: the upcoming search can take a moment.
-                val now =
-                    withContext(computeContext) { riseSetFor(info) }
-                        ?.let { listOf(CardFact.RiseSet(it)) }
-                        .orEmpty()
+                val now = withContext(computeContext) { nowFactsFor(info) }
                 _live.value = CardLive(now)
                 upcomingFor(info)?.let { upcoming ->
                     // The pass lambdas are caller-supplied and may not check for cancellation, so
@@ -241,6 +241,17 @@ class ObjectInfoViewModel(
                 }
             }
     }
+
+    private fun nowFactsFor(info: ObjectInfo): List<CardFact> =
+        buildList {
+            riseSetFor(info)?.let { add(CardFact.RiseSet(it)) }
+            if (info.id == MOON_ID) {
+                // The widget's own model, so the card and the widget cannot disagree.
+                val moon = moonWidgetModel(now(), location = null)
+                add(CardFact.MoonPhase(moon.phase, moon.illuminationPercent))
+                add(CardFact.MoonAge(moon.dayOfCycle))
+            }
+        }
 
     /** The card's upcoming section, `null` for objects with no source of one (D141 §3.2). */
     private suspend fun upcomingFor(info: ObjectInfo): Upcoming? {

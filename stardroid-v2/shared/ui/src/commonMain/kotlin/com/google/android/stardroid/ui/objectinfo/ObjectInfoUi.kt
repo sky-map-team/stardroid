@@ -37,6 +37,7 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.dp
 import com.google.android.stardroid.astronomy.LunarEclipseCircumstances
 import com.google.android.stardroid.astronomy.LunarEclipseType
+import com.google.android.stardroid.astronomy.LunarPhase
 import com.google.android.stardroid.astronomy.SatellitePass
 import com.google.android.stardroid.catalog.ObjectInfo
 import com.google.android.stardroid.catalog.SearchHit
@@ -50,6 +51,16 @@ import com.google.android.stardroid.ui.common.rememberTimeFormatter
 import com.google.android.stardroid.ui.map.HudFormats
 import com.google.android.stardroid.ui.resources.Res
 import com.google.android.stardroid.ui.resources.hud_cardinal_directions
+import com.google.android.stardroid.ui.resources.moon_phase_first_quarter
+import com.google.android.stardroid.ui.resources.moon_phase_full
+import com.google.android.stardroid.ui.resources.moon_phase_last_quarter
+import com.google.android.stardroid.ui.resources.moon_phase_new
+import com.google.android.stardroid.ui.resources.moon_phase_waning_crescent
+import com.google.android.stardroid.ui.resources.moon_phase_waning_gibbous
+import com.google.android.stardroid.ui.resources.moon_phase_waxing_crescent
+import com.google.android.stardroid.ui.resources.moon_phase_waxing_gibbous
+import com.google.android.stardroid.ui.resources.moon_widget_age
+import com.google.android.stardroid.ui.resources.moon_widget_illumination
 import com.google.android.stardroid.ui.resources.object_info_also_known_as
 import com.google.android.stardroid.ui.resources.object_info_always_above_horizon
 import com.google.android.stardroid.ui.resources.object_info_always_below_horizon
@@ -253,6 +264,12 @@ private fun DataRows(
         facts.forEach { fact ->
             when (fact) {
                 is CardFact.RiseSet -> RiseSetRows(fact.state)
+                is CardFact.MoonPhase -> MoonPhaseRows(fact)
+                is CardFact.MoonAge ->
+                    Text(
+                        formattedStringResource(Res.string.moon_widget_age, fact.dayOfCycle),
+                        style = MaterialTheme.typography.bodySmall,
+                    )
             }
         }
     }
@@ -289,6 +306,30 @@ private fun RiseSetRows(riseSet: RiseSetState) {
             )
     }
 }
+
+@Composable
+private fun MoonPhaseRows(fact: CardFact.MoonPhase) {
+    Text(stringResource(fact.phase.nameRes()), style = MaterialTheme.typography.bodySmall)
+    Text(
+        formattedStringResource(
+            Res.string.moon_widget_illumination,
+            fact.illuminationPercent,
+        ),
+        style = MaterialTheme.typography.bodySmall,
+    )
+}
+
+private fun LunarPhase.nameRes(): StringResource =
+    when (this) {
+        LunarPhase.NEW -> Res.string.moon_phase_new
+        LunarPhase.WAXING_CRESCENT -> Res.string.moon_phase_waxing_crescent
+        LunarPhase.FIRST_QUARTER -> Res.string.moon_phase_first_quarter
+        LunarPhase.WAXING_GIBBOUS -> Res.string.moon_phase_waxing_gibbous
+        LunarPhase.FULL -> Res.string.moon_phase_full
+        LunarPhase.WANING_GIBBOUS -> Res.string.moon_phase_waning_gibbous
+        LunarPhase.LAST_QUARTER -> Res.string.moon_phase_last_quarter
+        LunarPhase.WANING_CRESCENT -> Res.string.moon_phase_waning_crescent
+    }
 
 @Composable
 private fun DataRow(

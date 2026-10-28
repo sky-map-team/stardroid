@@ -14,6 +14,9 @@ import com.google.android.stardroid.astronomy.KeplerianEphemeris
 import com.google.android.stardroid.astronomy.SatellitePass
 import com.google.android.stardroid.astronomy.SolarSystemBody
 import com.google.android.stardroid.astronomy.Tle
+import com.google.android.stardroid.astronomy.dayOfCycle
+import com.google.android.stardroid.astronomy.illuminationPercent
+import com.google.android.stardroid.astronomy.moonWidgetModel
 import com.google.android.stardroid.catalog.CatalogObject
 import com.google.android.stardroid.catalog.CatalogRepository
 import com.google.android.stardroid.catalog.CelestialObjectId
@@ -712,6 +715,38 @@ class ObjectInfoViewModelTest {
 
             assertThat(vm.card.value?.id).isEqualTo(SIRIUS_ID)
             assertThat(vm.live.value?.upcoming).isNull()
+        }
+
+    @Test
+    fun `the Moon card carries phase and illumination and age beside rise and set`() =
+        testScope.runCurrentTest {
+            val moonId = SolarSystemIds.idFor(SolarSystemBody.MOON)
+            repository.infos[moonId] = objectInfo(moonId, "Moon")
+            val vm = viewModel()
+
+            vm.show(moonId)
+            runCurrent()
+            val expected = moonWidgetModel(NOW, location = null)
+            val now = vm.live.value?.now.orEmpty()
+            assertThat(now.filterIsInstance<CardFact.RiseSet>()).isNotEmpty()
+            assertThat(now.filterIsInstance<CardFact.MoonPhase>())
+                .isEqualTo(listOf(CardFact.MoonPhase(expected.phase, expected.illuminationPercent)))
+            assertThat(now.filterIsInstance<CardFact.MoonAge>())
+                .isEqualTo(listOf(CardFact.MoonAge(expected.dayOfCycle)))
+        }
+
+    @Test
+    fun `only the Moon card carries Moon facts`() =
+        testScope.runCurrentTest {
+            repository.infos[SIRIUS_ID] =
+                objectInfo(SIRIUS_ID, "Sirius").copy(position = SIRIUS_POSITION)
+            val vm = viewModel()
+
+            vm.show(SIRIUS_ID)
+            runCurrent()
+            val now = vm.live.value?.now.orEmpty()
+            assertThat(now.filterIsInstance<CardFact.MoonAge>()).isEmpty()
+            assertThat(now.filterIsInstance<CardFact.MoonPhase>()).isEmpty()
         }
 
     @Test

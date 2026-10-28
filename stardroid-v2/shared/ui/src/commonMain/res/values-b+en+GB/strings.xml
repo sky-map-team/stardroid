@@ -435,4 +435,13 @@
     </string>
     <string name="layer_help_stars" translation_description="Long-press explanation of the stars layer.">The stars, sized by brightness and tinted by colour. Tap any star for details.</string>
     <string name="layer_sky_gradient" translation_description="Toggle label for the daytime sky-brightness gradient and the ground coloring.">Sky colouring</string>
+    <!-- tm:omitted name="moon_widget_illumination" reason="identical_to_source" -->
+    <!-- tm:omitted name="moon_phase_new" reason="identical_to_source" -->
+    <!-- tm:omitted name="moon_phase_waxing_crescent" reason="identical_to_source" -->
+    <!-- tm:omitted name="moon_phase_first_quarter" reason="identical_to_source" -->
+    <!-- tm:omitted name="moon_phase_waxing_gibbous" reason="identical_to_source" -->
+    <!-- tm:omitted name="moon_phase_full" reason="identical_to_source" -->
+    <!-- tm:omitted name="moon_phase_waning_gibbous" reason="identical_to_source" -->
+    <!-- tm:omitted name="moon_phase_last_quarter" reason="identical_to_source" -->
+    <!-- tm:omitted name="moon_phase_waning_crescent" reason="identical_to_source" -->
 </resources>
