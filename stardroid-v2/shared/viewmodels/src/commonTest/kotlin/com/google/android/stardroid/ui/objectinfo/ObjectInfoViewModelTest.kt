@@ -44,6 +44,7 @@ import com.google.android.stardroid.ui.search.SolarSystemIds
 import kotlinx.coroutines.CompletableDeferred
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.NonCancellable
 import kotlinx.coroutines.cancel
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -56,6 +57,7 @@ import kotlinx.coroutines.test.resetMain
 import kotlinx.coroutines.test.runCurrent
 import kotlinx.coroutines.test.runTest
 import kotlinx.coroutines.test.setMain
+import kotlinx.coroutines.withContext
 import kotlinx.datetime.Instant
 import kotlin.test.AfterTest
 import kotlin.test.BeforeTest
@@ -130,6 +132,7 @@ class ObjectInfoViewModelTest {
         satellites: List<TrackedSatellite> = emptyList(),
         upcomingPasses: List<SatellitePass> = emptyList(),
         passTimesReliable: Boolean = true,
+        passSearch: (suspend (Int) -> List<SatellitePass>)? = null,
     ): ObjectInfoViewModel =
         ObjectInfoViewModel(
             catalog = { repository },
@@ -142,7 +145,7 @@ class ObjectInfoViewModelTest {
             experimentConfig = experimentConfig,
             moonWidgetPlaced = moonWidgetPlaced,
             satellites = { satellites },
-            upcomingPasses = { upcomingPasses },
+            upcomingPasses = passSearch ?: { upcomingPasses },
             passTimesReliable = { passTimesReliable },
         ).also { createdViewModels += it }
 
@@ -666,6 +669,49 @@ class ObjectInfoViewModelTest {
             val upcoming = vm.live.value?.upcoming as Upcoming.Events
             assertThat(upcoming.events.single())
                 .isInstanceOf(SkyEvent.LunarEclipseUpcoming::class)
+        }
+
+    @Test
+    fun `now facts are published before the upcoming search finishes`() =
+        testScope.runCurrentTest {
+            val gate = CompletableDeferred<List<SatellitePass>>()
+            val vm =
+                viewModel(
+                    satellites = listOf(issAt(SIRIUS_POSITION)),
+                    passSearch = { gate.await() },
+                )
+
+            vm.show(ISS_ID)
+            runCurrent()
+            assertThat(vm.live.value).isEqualTo(CardLive())
+
+            gate.complete(listOf(pass()))
+            runCurrent()
+            assertThat(vm.live.value?.upcoming).isInstanceOf(Upcoming.Events::class)
+        }
+
+    @Test
+    fun `a pass search finishing after a card switch does not write under the new card`() =
+        testScope.runCurrentTest {
+            val gate = CompletableDeferred<List<SatellitePass>>()
+            repository.infos[SIRIUS_ID] =
+                objectInfo(SIRIUS_ID, "Sirius").copy(position = SIRIUS_POSITION)
+            // Ignores cancellation, as a non-suspending caller-supplied lambda would.
+            val vm =
+                viewModel(
+                    satellites = listOf(issAt(SIRIUS_POSITION)),
+                    passSearch = { withContext(NonCancellable) { gate.await() } },
+                )
+
+            vm.show(ISS_ID)
+            runCurrent()
+            vm.show(SIRIUS_ID)
+            runCurrent()
+            gate.complete(listOf(pass()))
+            runCurrent()
+
+            assertThat(vm.card.value?.id).isEqualTo(SIRIUS_ID)
+            assertThat(vm.live.value?.upcoming).isNull()
         }
 
     @Test

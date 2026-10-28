@@ -50,6 +50,7 @@ import kotlinx.coroutines.Job
 import kotlinx.coroutines.async
 import kotlinx.coroutines.awaitAll
 import kotlinx.coroutines.coroutineScope
+import kotlinx.coroutines.ensureActive
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
@@ -58,6 +59,7 @@ import kotlinx.coroutines.flow.drop
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.stateIn
+import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import kotlinx.datetime.Instant
@@ -231,7 +233,12 @@ class ObjectInfoViewModel(
                         ?.let { listOf(CardFact.RiseSet(it)) }
                         .orEmpty()
                 _live.value = CardLive(now)
-                upcomingFor(info)?.let { _live.value = CardLive(now, it) }
+                upcomingFor(info)?.let { upcoming ->
+                    // The pass lambdas are caller-supplied and may not check for cancellation, so
+                    // a card switched away from mid-search must not write under the new card.
+                    ensureActive()
+                    _live.update { it?.copy(upcoming = upcoming) }
+                }
             }
     }
 
@@ -416,7 +423,7 @@ class ObjectInfoViewModel(
     }
 
     private companion object {
-        // The card lists a section's events in time order, not by the widget's ranking.
+        // The card keeps its sources' order (soonest first) rather than the widget's ranking.
         const val UNRANKED = 0.0
         val MOON_ID: CelestialObjectId = SolarSystemIds.idFor(SolarSystemBody.MOON)
         val CATALOG_LAYER_KINDS: List<Pair<LayerId, LayerKind>> =

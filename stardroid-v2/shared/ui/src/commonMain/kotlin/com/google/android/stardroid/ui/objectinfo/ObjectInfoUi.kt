@@ -360,18 +360,12 @@ private fun CelestialImage(
 private fun UpcomingSection(upcoming: Upcoming) {
     when (upcoming) {
         is Upcoming.Events -> {
-            val passes = mutableListOf<SatellitePass>()
-            var eclipse: LunarEclipseCircumstances? = null
-            upcoming.events.forEach { event ->
-                when (event) {
-                    is SkyEvent.SatellitePassTonight -> passes += event.pass
-                    is SkyEvent.LunarEclipseUpcoming -> eclipse = event.circumstances
-                    // Not yet offered on the card.
-                    else -> Unit
-                }
-            }
+            val passes =
+                upcoming.events.filterIsInstance<SkyEvent.SatellitePassTonight>().map { it.pass }
+            val eclipse =
+                upcoming.events.filterIsInstance<SkyEvent.LunarEclipseUpcoming>().firstOrNull()
             if (passes.isNotEmpty()) SatellitePassRow(passes, passTimesReliable = true)
-            eclipse?.let { EclipseRow(it) }
+            eclipse?.let { EclipseRow(it.circumstances) }
         }
         is Upcoming.NothingComing ->
             when (upcoming.kind) {
