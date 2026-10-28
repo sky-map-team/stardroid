@@ -15,7 +15,6 @@ import com.google.android.stardroid.analytics.Analytics
 import com.google.android.stardroid.analytics.AnalyticsEvents
 import com.google.android.stardroid.analytics.NoOpAnalytics
 import com.google.android.stardroid.astronomy.Ephemeris
-import com.google.android.stardroid.astronomy.LunarEclipseCircumstances
 import com.google.android.stardroid.astronomy.MeeusEphemeris
 import com.google.android.stardroid.astronomy.RiseSetIndicator
 import com.google.android.stardroid.astronomy.SatellitePass
@@ -30,6 +29,7 @@ import com.google.android.stardroid.catalog.LayerKind
 import com.google.android.stardroid.catalog.LocaleSpec
 import com.google.android.stardroid.catalog.ObjectInfo
 import com.google.android.stardroid.catalog.SearchHit
+import com.google.android.stardroid.events.SkyEvent
 import com.google.android.stardroid.layers.CatalogLayers
 import com.google.android.stardroid.layers.MeteorShowerLayer
 import com.google.android.stardroid.layers.SolarSystemLayer
@@ -46,11 +46,11 @@ import com.google.android.stardroid.startup.Experiment
 import com.google.android.stardroid.startup.ExperimentConfig
 import com.google.android.stardroid.ui.search.SolarSystemIds
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.async
 import kotlinx.coroutines.awaitAll
 import kotlinx.coroutines.coroutineScope
+import kotlinx.coroutines.ensureActive
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
@@ -58,8 +58,8 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.drop
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.map
-import kotlinx.coroutines.flow.mapLatest
 import kotlinx.coroutines.flow.stateIn
+import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import kotlinx.datetime.Instant
@@ -132,9 +132,9 @@ class ObjectInfoViewModel(
     private val _card = MutableStateFlow<ObjectInfo?>(null)
     val card: StateFlow<ObjectInfo?> = _card.asStateFlow()
 
-    /** Rise/set for the shown card; `null` when no card is up or the object has no position. */
-    private val _riseSet = MutableStateFlow<RiseSetState?>(null)
-    val riseSet: StateFlow<RiseSetState?> = _riseSet.asStateFlow()
+    /** Live facts and upcoming events for the shown card; `null` when no card is up. */
+    private val _live = MutableStateFlow<CardLive?>(null)
+    val live: StateFlow<CardLive?> = _live.asStateFlow()
 
     /**
      * How the Moon card shows its add-a-widget row (D75 discovery): only on the Moon and only
@@ -155,58 +155,6 @@ class ObjectInfoViewModel(
                 }
             }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), MoonWidgetPromo.HIDDEN)
 
-    /**
-     * The upcoming good passes for the shown satellite card, soonest first.
-     *
-     * Empty covers three different situations that all render the same: the card is not a
-     * satellite; the element sets are too stale to time a pass honestly; or the satellite simply
-     * has no visible pass coming. The last is a real answer — visible passes cluster into
-     * multi-day seasons separated by multi-week gaps — so the row says so rather than vanishing.
-     */
-    @OptIn(ExperimentalCoroutinesApi::class)
-    val upcomingSatellitePasses: StateFlow<List<SatellitePass>> =
-        _card
-            .mapLatest { card ->
-                card?.id?.let(SatelliteIds::noradIdFor)?.let { upcomingPasses(it) }.orEmpty()
-            }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), emptyList())
-
-    /** See [passTimesReliable] — drives which empty message the pass row shows. */
-    val satellitePassTimesReliable: StateFlow<Boolean> =
-        _card
-            .map { card ->
-                card?.id?.let(SatelliteIds::noradIdFor)?.let { passTimesReliable() } ?: true
-            }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), true)
-
-    /** True while the shown card is a satellite, so the sheet knows to render the pass row. */
-    val showingSatellite: StateFlow<Boolean> =
-        _card
-            .map { it?.id?.let(SatelliteIds::noradIdFor) != null }
-            .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), false)
-
-    /** True while the shown card is the Moon, so the sheet knows to render the eclipse row. */
-    val showingMoon: StateFlow<Boolean> =
-        _card
-            .map { it?.id == MOON_ID }
-            .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), false)
-
-    /**
-     * The next lunar eclipse from the map's current time, or null if none is found — computed
-     * only while the Moon's card is showing (D106), the same lazy shape [upcomingSatellitePasses] uses.
-     *
-     * Always [MeeusEphemeris], regardless of [ephemeris]: eclipse timing needs the accurate,
-     * precession-consistent Sun/Moon frame (D84) rather than whatever cheaper baseline this view
-     * model was constructed with for less timing-sensitive things like tap identification.
-     */
-    val lunarEclipse: StateFlow<LunarEclipseCircumstances?> =
-        _card
-            .map { card ->
-                if (card?.id != MOON_ID) {
-                    null
-                } else {
-                    withContext(computeContext) { nextLunarEclipse(now(), MeeusEphemeris) }
-                }
-            }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), null)
-
     /** Opens [id]'s card — a see-also chip tap, v1's `onSeeAlsoClicked`. */
     fun show(id: CelestialObjectId) {
         viewModelScope.launch {
@@ -221,9 +169,9 @@ class ObjectInfoViewModel(
     }
 
     fun dismiss() {
-        riseSetJob?.cancel()
+        liveJob?.cancel()
         _card.value = null
-        _riseSet.value = null
+        _live.value = null
     }
 
     /**
@@ -271,16 +219,56 @@ class ObjectInfoViewModel(
         }
     }
 
-    private var riseSetJob: Job? = null
+    private var liveJob: Job? = null
 
     private fun openCard(info: ObjectInfo) {
-        riseSetJob?.cancel()
-        _riseSet.value = null
+        liveJob?.cancel()
+        _live.value = null
         _card.value = info
-        riseSetJob =
+        liveJob =
             viewModelScope.launch {
-                _riseSet.value = withContext(computeContext) { riseSetFor(info) }
+                // Now facts first: the upcoming search can take a moment.
+                val now =
+                    withContext(computeContext) { riseSetFor(info) }
+                        ?.let { listOf(CardFact.RiseSet(it)) }
+                        .orEmpty()
+                _live.value = CardLive(now)
+                upcomingFor(info)?.let { upcoming ->
+                    // The pass lambdas are caller-supplied and may not check for cancellation, so
+                    // a card switched away from mid-search must not write under the new card.
+                    ensureActive()
+                    _live.update { it?.copy(upcoming = upcoming) }
+                }
             }
+    }
+
+    /** The card's upcoming section, `null` for objects with no source of one (D141 §3.2). */
+    private suspend fun upcomingFor(info: ObjectInfo): Upcoming? {
+        val noradId = SatelliteIds.noradIdFor(info.id)
+        return when {
+            noradId != null -> upcomingPassesFor(noradId)
+            info.id == MOON_ID -> nextEclipse()
+            else -> null
+        }
+    }
+
+    // An empty pass list means "nothing coming" or "too stale to say", and the card says which.
+    private suspend fun upcomingPassesFor(noradId: Int): Upcoming {
+        if (!passTimesReliable()) return Upcoming.DataTooOld
+        val passes = upcomingPasses(noradId)
+        if (passes.isEmpty()) return Upcoming.NothingComing(UpcomingKind.SATELLITE_PASSES)
+        return Upcoming.Events(passes.map { SkyEvent.SatellitePassTonight(it, UNRANKED) })
+    }
+
+    // Always MeeusEphemeris, not [ephemeris]: eclipse timing needs the accurate,
+    // precession-consistent Sun/Moon frame (D84).
+    private suspend fun nextEclipse(): Upcoming {
+        val eclipse = withContext(computeContext) { nextLunarEclipse(now(), MeeusEphemeris) }
+        return if (eclipse == null) {
+            Upcoming.NothingComing(UpcomingKind.LUNAR_ECLIPSE)
+        } else {
+            Upcoming.Events(listOf(SkyEvent.LunarEclipseUpcoming(eclipse, UNRANKED)))
+        }
     }
 
     /**
@@ -435,6 +423,8 @@ class ObjectInfoViewModel(
     }
 
     private companion object {
+        // The card keeps its sources' order (soonest first) rather than the widget's ranking.
+        const val UNRANKED = 0.0
         val MOON_ID: CelestialObjectId = SolarSystemIds.idFor(SolarSystemBody.MOON)
         val CATALOG_LAYER_KINDS: List<Pair<LayerId, LayerKind>> =
             listOf(

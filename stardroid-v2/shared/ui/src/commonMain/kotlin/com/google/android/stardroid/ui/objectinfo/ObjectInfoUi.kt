@@ -40,6 +40,7 @@ import com.google.android.stardroid.astronomy.LunarEclipseType
 import com.google.android.stardroid.astronomy.SatellitePass
 import com.google.android.stardroid.catalog.ObjectInfo
 import com.google.android.stardroid.catalog.SearchHit
+import com.google.android.stardroid.events.SkyEvent
 import com.google.android.stardroid.ui.common.formatForLocale
 import com.google.android.stardroid.ui.common.formattedStringResource
 import com.google.android.stardroid.ui.common.rememberCelestialImage
@@ -91,22 +92,20 @@ import kotlin.math.roundToInt
  * is non-null only when the object's direction is resolvable — it re-aims the search overlay
  * exactly like a search (D33/D45); v1's map dialog had no Find, so this is the v2 upgrade that
  * makes see-also browsing navigable. Tapping the photo expands it full-screen
- * ([ImageExpandOverlay], v1's `onImageClicked`). [riseSet] adds the next rise/set at the
- * observer's location (D51) — null when the object has no position to rise or set.
+ * ([ImageExpandOverlay], v1's `onImageClicked`). [live] carries the object-specific facts and
+ * upcoming events (D141), such as the next rise/set at the observer's location (D51).
  */
 @OptIn(ExperimentalLayoutApi::class)
 @Composable
 fun ObjectInfoCard(
     info: ObjectInfo,
-    riseSet: RiseSetState?,
+    live: CardLive?,
     nightMode: Boolean,
     onSeeAlso: (SearchHit) -> Unit,
     onFind: ((ObjectInfo) -> Unit)?,
     onImageTap: (ObjectInfo) -> Unit,
     onDismiss: () -> Unit,
     promoRow: (@Composable () -> Unit)? = null,
-    satellitePassRow: (@Composable () -> Unit)? = null,
-    eclipseRow: (@Composable () -> Unit)? = null,
 ) {
     AlertDialog(
         onDismissRequest = onDismiss,
@@ -114,14 +113,12 @@ fun ObjectInfoCard(
         text = {
             ObjectInfoBody(
                 info = info,
-                riseSet = riseSet,
+                live = live,
                 nightMode = nightMode,
                 onSeeAlso = onSeeAlso,
                 onImageTap = onImageTap,
                 modifier = Modifier.verticalScroll(rememberScrollState()),
                 promoRow = promoRow,
-                satellitePassRow = satellitePassRow,
-                eclipseRow = eclipseRow,
             )
         },
         confirmButton = {
@@ -157,27 +154,13 @@ fun ObjectInfoCard(
 @Composable
 fun ObjectInfoBody(
     info: ObjectInfo,
-    riseSet: RiseSetState?,
+    live: CardLive?,
     nightMode: Boolean,
     onSeeAlso: (SearchHit) -> Unit,
     onImageTap: (ObjectInfo) -> Unit,
     modifier: Modifier = Modifier,
-    // Per-type slots: before adding another, see D107 (design/lunar-eclipse.md) and #1181.
+    // An action, not a fact about the object, so it fits neither of [live]'s sections (D141).
     promoRow: (@Composable () -> Unit)? = null,
-    /**
-     * The next-visible-pass block, for satellite cards only.
-     *
-     * A slot rather than a parameter bundle, so this composable stays ignorant of satellites —
-     * the same shape [promoRow] already uses for the moon-widget offer.
-     */
-    satellitePassRow: (@Composable () -> Unit)? = null,
-    /**
-     * The next-lunar-eclipse block, for the Moon's card only (D106).
-     *
-     * A slot, exactly like [satellitePassRow] and [promoRow], so this composable stays ignorant
-     * of eclipses too.
-     */
-    eclipseRow: (@Composable () -> Unit)? = null,
 ) {
     Column(modifier) {
         info.imageRef?.let {
@@ -208,9 +191,8 @@ fun ObjectInfoBody(
             )
         }
         OtherNames(info)
-        DataRows(info, riseSet)
-        satellitePassRow?.invoke()
-        eclipseRow?.invoke()
+        DataRows(info, live?.now.orEmpty())
+        live?.upcoming?.let { UpcomingSection(it) }
         promoRow?.invoke()
         if (info.links.isNotEmpty()) {
             Text(
@@ -257,7 +239,7 @@ private fun OtherNames(info: ObjectInfo) {
 @Composable
 private fun DataRows(
     info: ObjectInfo,
-    riseSet: RiseSetState?,
+    facts: List<CardFact>,
 ) {
     Column(Modifier.padding(top = 8.dp)) {
         DataRow(Res.string.object_info_distance, info.distance)
@@ -268,7 +250,11 @@ private fun DataRows(
             Res.string.object_info_magnitude,
             info.magnitude?.let { formatForLocale("%.1f", arrayOf(it)) },
         )
-        RiseSetRows(riseSet)
+        facts.forEach { fact ->
+            when (fact) {
+                is CardFact.RiseSet -> RiseSetRows(fact.state)
+            }
+        }
     }
 }
 
@@ -278,9 +264,8 @@ private fun DataRows(
  * doesn't cross the horizon at the observer's location.
  */
 @Composable
-private fun RiseSetRows(riseSet: RiseSetState?) {
+private fun RiseSetRows(riseSet: RiseSetState) {
     when (riseSet) {
-        null -> {}
         is RiseSetState.Times -> {
             val formatter = rememberTimeFormatter()
             DataRow(
@@ -368,6 +353,31 @@ private fun CelestialImage(
 }
 
 /**
+ * The card's "when to look" section (D141): one exhaustive rendering of [Upcoming], so a new
+ * kind of object adds a case here rather than a parameter to the card.
+ */
+@Composable
+private fun UpcomingSection(upcoming: Upcoming) {
+    when (upcoming) {
+        is Upcoming.Events -> {
+            val passes =
+                upcoming.events.filterIsInstance<SkyEvent.SatellitePassTonight>().map { it.pass }
+            val eclipse =
+                upcoming.events.filterIsInstance<SkyEvent.LunarEclipseUpcoming>().firstOrNull()
+            if (passes.isNotEmpty()) SatellitePassRow(passes, passTimesReliable = true)
+            eclipse?.let { EclipseRow(it.circumstances) }
+        }
+        is Upcoming.NothingComing ->
+            when (upcoming.kind) {
+                UpcomingKind.SATELLITE_PASSES ->
+                    SatellitePassRow(emptyList(), passTimesReliable = true)
+                UpcomingKind.LUNAR_ECLIPSE -> EclipseRow(null)
+            }
+        Upcoming.DataTooOld -> SatellitePassRow(emptyList(), passTimesReliable = false)
+    }
+}
+
+/**
  * The upcoming good passes, as a table on a satellite's info card (D92 phase 4b).
  *
  * This is the answer the design argues is the whole point of the feature: for a satellite,
@@ -380,7 +390,7 @@ private fun CelestialImage(
  * means "we could tell you, but the answer would be wrong".
  */
 @Composable
-fun SatellitePassRow(
+private fun SatellitePassRow(
     passes: List<SatellitePass>,
     passTimesReliable: Boolean,
 ) {
@@ -458,7 +468,7 @@ private fun PassTableRow(
  * genuinely isn't one".
  */
 @Composable
-fun EclipseRow(circumstances: LunarEclipseCircumstances?) {
+private fun EclipseRow(circumstances: LunarEclipseCircumstances?) {
     Text(
         stringResource(Res.string.object_info_eclipse_title),
         style = MaterialTheme.typography.titleSmall,
