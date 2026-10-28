@@ -123,7 +123,8 @@ class DiscSizeParameterTest {
                     MeeusEphemeris,
                     MutableStateFlow(time),
                     MutableStateFlow(FakeLayerStrings()),
-                    MutableStateFlow(london),                    MutableStateFlow(mode),
+                    MutableStateFlow(london),
+                    MutableStateFlow(mode),
                 ).buildScene(time, FakeLayerStrings(), london, mode)
                     .images
                     .single { it.image == ImageRef("planet/neptune") }
@@ -143,7 +144,8 @@ class DiscSizeParameterTest {
                     MeeusEphemeris,
                     MutableStateFlow(time),
                     MutableStateFlow(FakeLayerStrings()),
-                    MutableStateFlow(london),                    MutableStateFlow(mode),
+                    MutableStateFlow(london),
+                    MutableStateFlow(mode),
                 ).buildScene(time, FakeLayerStrings(), london, mode)
                     .images
                     .single { it.image == ImageRef("planet/moon") }
@@ -160,7 +162,8 @@ class DiscSizeParameterTest {
                     MeeusEphemeris,
                     MutableStateFlow(time),
                     MutableStateFlow(FakeLayerStrings()),
-                    MutableStateFlow(london),                    MutableStateFlow(mode),
+                    MutableStateFlow(london),
+                    MutableStateFlow(mode),
                 ).buildScene(time, FakeLayerStrings(), london, mode)
                     .images
                     .single { it.image == ImageRef("planet/venus") }
@@ -176,7 +179,8 @@ class DiscSizeParameterTest {
                 MeeusEphemeris,
                 MutableStateFlow(time),
                 MutableStateFlow(FakeLayerStrings()),
-                MutableStateFlow(london),                MutableStateFlow(LayerParameter.DISC_SIZE_TRUE),
+                MutableStateFlow(london),
+                MutableStateFlow(LayerParameter.DISC_SIZE_TRUE),
             ).buildScene(time, FakeLayerStrings(), london, LayerParameter.DISC_SIZE_TRUE)
                 .images
                 .single { it.image == ImageRef("planet/saturn") }
@@ -193,7 +197,8 @@ class DiscSizeParameterTest {
                 MeeusEphemeris,
                 MutableStateFlow(time),
                 MutableStateFlow(FakeLayerStrings()),
-                MutableStateFlow(london),                MutableStateFlow(LayerParameter.DISC_SIZE_GLYPHS),
+                MutableStateFlow(london),
+                MutableStateFlow(LayerParameter.DISC_SIZE_GLYPHS),
             ).buildScene(time, FakeLayerStrings(), london, LayerParameter.DISC_SIZE_GLYPHS)
                 .images
                 .associate { it.image to it.angularSizeDeg }
@@ -223,7 +228,8 @@ class DiscSizeParameterTest {
                 MeeusEphemeris,
                 MutableStateFlow(time),
                 MutableStateFlow(FakeLayerStrings()),
-                MutableStateFlow(london),                MutableStateFlow(mode),
+                MutableStateFlow(london),
+                MutableStateFlow(mode),
             ).buildScene(time, FakeLayerStrings(), london, mode)
                 .images
                 .associate { it.image to it.angularSizeDeg }
@@ -237,7 +243,8 @@ class DiscSizeParameterTest {
                 MeeusEphemeris,
                 MutableStateFlow(time),
                 MutableStateFlow(FakeLayerStrings()),
-                MutableStateFlow(london),                MutableStateFlow(LayerParameter.DISC_SIZE_GLYPHS),
+                MutableStateFlow(london),
+                MutableStateFlow(LayerParameter.DISC_SIZE_GLYPHS),
             ).buildScene(
                 time.plus(kotlin.time.Duration.parse("180d")),
                 FakeLayerStrings(),
@@ -256,7 +263,8 @@ class DiscSizeParameterTest {
                 MeeusEphemeris,
                 MutableStateFlow(time),
                 MutableStateFlow(FakeLayerStrings()),
-                MutableStateFlow(london),                MutableStateFlow(LayerParameter.DISC_SIZE_GLYPHS),
+                MutableStateFlow(london),
+                MutableStateFlow(LayerParameter.DISC_SIZE_GLYPHS),
             ).buildScene(time, FakeLayerStrings(), london, LayerParameter.DISC_SIZE_GLYPHS)
                 .images
 
@@ -281,7 +289,8 @@ class DiscSizeParameterTest {
                 MeeusEphemeris,
                 MutableStateFlow(time),
                 MutableStateFlow(FakeLayerStrings()),
-                MutableStateFlow(london),                MutableStateFlow(LayerParameter.DISC_SIZE_GLYPHS),
+                MutableStateFlow(london),
+                MutableStateFlow(LayerParameter.DISC_SIZE_GLYPHS),
             ).buildScene(time, FakeLayerStrings(), london, LayerParameter.DISC_SIZE_GLYPHS)
                 .images
                 .associate { it.image to it.angularSizeDeg }

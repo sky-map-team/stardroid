@@ -134,7 +134,8 @@ class LayerRegistry(
                             ephemeris,
                             clock,
                             strings,
-                            location,                            settings,
+                            location,
+                            settings,
                         ),
                     ),
             )
