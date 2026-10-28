@@ -82,9 +82,6 @@ object SkyColors {
     /** Planet/comet/meteor-shower labels: brand Planet Red (upstream `sky_label` `#FFE05C34`). */
     val SKY_LABEL = Rgba(0xe0 / 255f, 0x5c / 255f, 0x34 / 255f, 1f)
 
-    /** Planet dot fallback when no image renders (upstream `planet_body` `#14F67E81`). */
-    val PLANET_BODY = Rgba(0xf6 / 255f, 0x7e / 255f, 0x81 / 255f, 0x14 / 255f)
-
     /** Star labels (v1 `StellarAsciiProtoWriter.STAR_COLOR` `0xCFCCCF` — R=B symmetric). */
     val STAR_LABEL = Rgba(0xcf / 255f, 0xcc / 255f, 0xcf / 255f, 1f)
 

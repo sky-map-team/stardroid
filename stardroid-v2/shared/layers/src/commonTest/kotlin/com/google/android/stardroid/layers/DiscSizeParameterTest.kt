@@ -36,7 +36,6 @@ class DiscSizeParameterTest {
             MutableStateFlow(time),
             MutableStateFlow(FakeLayerStrings()),
             MutableStateFlow(london),
-            PlanetImages(),
             MutableStateFlow(mode),
         ).buildScene(time, FakeLayerStrings(), london, mode)
             .images
@@ -125,7 +124,6 @@ class DiscSizeParameterTest {
                     MutableStateFlow(time),
                     MutableStateFlow(FakeLayerStrings()),
                     MutableStateFlow(london),
-                    PlanetImages(),
                     MutableStateFlow(mode),
                 ).buildScene(time, FakeLayerStrings(), london, mode)
                     .images
@@ -147,7 +145,6 @@ class DiscSizeParameterTest {
                     MutableStateFlow(time),
                     MutableStateFlow(FakeLayerStrings()),
                     MutableStateFlow(london),
-                    PlanetImages(),
                     MutableStateFlow(mode),
                 ).buildScene(time, FakeLayerStrings(), london, mode)
                     .images
@@ -166,7 +163,6 @@ class DiscSizeParameterTest {
                     MutableStateFlow(time),
                     MutableStateFlow(FakeLayerStrings()),
                     MutableStateFlow(london),
-                    PlanetImages(),
                     MutableStateFlow(mode),
                 ).buildScene(time, FakeLayerStrings(), london, mode)
                     .images
@@ -184,7 +180,6 @@ class DiscSizeParameterTest {
                 MutableStateFlow(time),
                 MutableStateFlow(FakeLayerStrings()),
                 MutableStateFlow(london),
-                PlanetImages(),
                 MutableStateFlow(LayerParameter.DISC_SIZE_TRUE),
             ).buildScene(time, FakeLayerStrings(), london, LayerParameter.DISC_SIZE_TRUE)
                 .images
@@ -203,7 +198,6 @@ class DiscSizeParameterTest {
                 MutableStateFlow(time),
                 MutableStateFlow(FakeLayerStrings()),
                 MutableStateFlow(london),
-                PlanetImages(),
                 MutableStateFlow(LayerParameter.DISC_SIZE_GLYPHS),
             ).buildScene(time, FakeLayerStrings(), london, LayerParameter.DISC_SIZE_GLYPHS)
                 .images
@@ -235,7 +229,6 @@ class DiscSizeParameterTest {
                 MutableStateFlow(time),
                 MutableStateFlow(FakeLayerStrings()),
                 MutableStateFlow(london),
-                PlanetImages(),
                 MutableStateFlow(mode),
             ).buildScene(time, FakeLayerStrings(), london, mode)
                 .images
@@ -251,7 +244,6 @@ class DiscSizeParameterTest {
                 MutableStateFlow(time),
                 MutableStateFlow(FakeLayerStrings()),
                 MutableStateFlow(london),
-                PlanetImages(),
                 MutableStateFlow(LayerParameter.DISC_SIZE_GLYPHS),
             ).buildScene(
                 time.plus(kotlin.time.Duration.parse("180d")),
@@ -272,7 +264,6 @@ class DiscSizeParameterTest {
                 MutableStateFlow(time),
                 MutableStateFlow(FakeLayerStrings()),
                 MutableStateFlow(london),
-                PlanetImages(),
                 MutableStateFlow(LayerParameter.DISC_SIZE_GLYPHS),
             ).buildScene(time, FakeLayerStrings(), london, LayerParameter.DISC_SIZE_GLYPHS)
                 .images
@@ -299,7 +290,6 @@ class DiscSizeParameterTest {
                 MutableStateFlow(time),
                 MutableStateFlow(FakeLayerStrings()),
                 MutableStateFlow(london),
-                PlanetImages(),
                 MutableStateFlow(LayerParameter.DISC_SIZE_GLYPHS),
             ).buildScene(time, FakeLayerStrings(), london, LayerParameter.DISC_SIZE_GLYPHS)
                 .images

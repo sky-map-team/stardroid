@@ -135,7 +135,6 @@ class LayerRegistry(
                             clock,
                             strings,
                             location,
-                            PlanetImages(),
                             settings,
                         ),
                     ),
