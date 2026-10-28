@@ -1,13 +1,14 @@
 # Info Card Live Content: "Now" facts and "Upcoming" events
 
-**Status: PROPOSED.** The sections and the shared model are not built, and the decisions entry is
-reserved as **D141**. This is the follow-up that D107 asked for. D107 recorded the card's
+**Status: IN PROGRESS.** Phases 1 (#1187) and 2 are built; phases 3 and 4 are not. The decisions
+entry is reserved as **D141**. This is the follow-up that D107 asked for. D107 recorded the card's
 one-slot-per-object-type shape and decided to wait for a fourth slot that repeated a pattern
 before generalizing it. #1131 and #1142 are the fourth and fifth requests, and they share a
 pattern. #1181 is the pointer issue for this work.
 
 Driving issues:
-- #1131: Moon age on the Moon's card. Still open.
+- #1131: Moon age on the Moon's card. The card half shipped in phase 2; the widget-picker
+  preview and the device checks on the widget remain.
 - #1142: a table of good satellite passes on the satellite card. **Shipped as a stopgap** in #1179
   (see §1.1); this design replaces the stopgap.
 - #1143: the card half of it. The widget row can stay short because the card carries the
@@ -200,14 +201,14 @@ The strings involved are:
 | Moon | Rise/set, phase, % illuminated, age (#1131) | Next full moon, next new moon, next lunar eclipse (moved from the eclipse row) |
 | ISS, Tiangong | — | Qualifying passes over ~5 days, at most ~6 rows (#1142) |
 | Planets | Rise/set | Well placed tonight |
-| Meteor showers | — | Upcoming peak, with moonlight |
+| Meteor showers | Rise/set of the radiant (any shower with a catalog position) | Upcoming peak, with moonlight |
 | Stars, deep-sky objects, Sun | Rise/set | No section |
 
 ## 7. Phasing
 
 0. ~~**Wait for `feature/ios-screens` to merge.**~~ **Done** (#1160). `ObjectInfoUi` is in
    `shared/ui` and `ObjectInfoViewModel` in `shared/viewmodels`.
-1. **Change the structure, not the behaviour.**
+1. **Change the structure, not the behaviour.** **Done** (#1187).
    - Add the model and the two sections.
    - Move rise/set, the eclipse and the #1179 pass table into them, unchanged.
    - Delete `satellitePassRow`, `eclipseRow` and their flows.
@@ -215,7 +216,12 @@ The strings involved are:
    The only visible change is that the gallery gains the eclipse line and the pass table.
    `ObjectInfoViewModelTest` is the guard. The pass table keeps its 30° rule for now, as a
    `SkyEvent`-shaped list or a temporary adapter, so this phase changes no behaviour.
-2. **Moon Now facts** (#1131, the card half).
+2. **Moon Now facts** (#1131, the card half). **Done.** `CardFact.MoonPhase` and `MoonAge` come
+   from `moonWidgetModel()`, the widget's own function, and render as three plain lines under
+   the data rows (phase name, "N% illuminated", "Day N"). The ten strings they use
+   (`moon_phase_*`, `moon_widget_age`, `moon_widget_illumination`) moved from `app` to
+   `shared/ui` with `tools/move_strings.py`, so the widget and the card share keys and
+   `tm languages` is unchanged.
 3. **One quality bar for passes**, replacing the #1179 stopgap. Remove `goodPasses()`. The bar
    applies across the card, widget, digest and alerts in the same change, so they cannot disagree
    even briefly.

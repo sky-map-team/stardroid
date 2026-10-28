@@ -21,6 +21,7 @@ import com.google.android.stardroid.astronomy.SatellitePass
 import com.google.android.stardroid.astronomy.SolarSystemBody
 import com.google.android.stardroid.astronomy.altitudeDeg
 import com.google.android.stardroid.astronomy.horizonAltitudeDeg
+import com.google.android.stardroid.astronomy.moonWidgetModel
 import com.google.android.stardroid.astronomy.nextLunarEclipse
 import com.google.android.stardroid.astronomy.nextRiseSetTime
 import com.google.android.stardroid.catalog.CatalogRepository
@@ -228,10 +229,7 @@ class ObjectInfoViewModel(
         liveJob =
             viewModelScope.launch {
                 // Now facts first: the upcoming search can take a moment.
-                val now =
-                    withContext(computeContext) { riseSetFor(info) }
-                        ?.let { listOf(CardFact.RiseSet(it)) }
-                        .orEmpty()
+                val now = withContext(computeContext) { nowFactsFor(info) }
                 _live.value = CardLive(now)
                 upcomingFor(info)?.let { upcoming ->
                     // The pass lambdas are caller-supplied and may not check for cancellation, so
@@ -240,6 +238,18 @@ class ObjectInfoViewModel(
                     _live.update { it?.copy(upcoming = upcoming) }
                 }
             }
+    }
+
+    private fun nowFactsFor(info: ObjectInfo): List<CardFact> {
+        val facts = mutableListOf<CardFact>()
+        riseSetFor(info)?.let { facts += CardFact.RiseSet(it) }
+        if (info.id == MOON_ID) {
+            // The widget's own model, so the card and the widget cannot disagree.
+            val moon = moonWidgetModel(now(), location = null)
+            facts += CardFact.MoonPhase(moon.phase, moon.illuminatedFraction)
+            facts += CardFact.MoonAge(moon.ageDays)
+        }
+        return facts
     }
 
     /** The card's upcoming section, `null` for objects with no source of one (D141 §3.2). */

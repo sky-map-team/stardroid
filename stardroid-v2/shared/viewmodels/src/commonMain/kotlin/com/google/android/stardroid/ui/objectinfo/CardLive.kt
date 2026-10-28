@@ -9,11 +9,17 @@
 
 package com.google.android.stardroid.ui.objectinfo
 
+import com.google.android.stardroid.astronomy.LunarPhase
 import com.google.android.stardroid.events.SkyEvent
 
 /** A live fact about the shown object at the map's time: one label/value row (D141 §3.1). */
 sealed interface CardFact {
     data class RiseSet(val state: RiseSetState) : CardFact
+
+    data class MoonPhase(val phase: LunarPhase, val illuminatedFraction: Double) : CardFact
+
+    /** Days since the last new moon, in `[0, 29.53)`; the card counts new moon as day 1. */
+    data class MoonAge(val ageDays: Double) : CardFact
 }
 
 /** What an [Upcoming] section is about; picks its heading and empty-state wording. */
