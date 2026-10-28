@@ -28,7 +28,9 @@ import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.unit.dp
 import com.google.android.stardroid.ui.common.StyledHtml
 import com.google.android.stardroid.ui.common.formattedStringResource
+import com.google.android.stardroid.ui.common.supportHtml
 import com.google.android.stardroid.ui.common.topBarWindowInsets
+import com.google.android.stardroid.ui.common.withDonationLinks
 import com.google.android.stardroid.ui.resources.Res
 import com.google.android.stardroid.ui.resources.beta_user_help_text
 import com.google.android.stardroid.ui.resources.contributors_text
@@ -87,8 +89,8 @@ fun WhatsNewScreen(
         val html =
             stringResource(Res.string.beta_user_help_text) +
                 stringResource(Res.string.whats_new_content) +
-                stringResource(Res.string.whats_new_support) +
-                creditsText
+                supportHtml(stringResource(Res.string.whats_new_support)) +
+                withDonationLinks(creditsText)
         StyledHtml(
             html,
             nightMode = nightMode,
