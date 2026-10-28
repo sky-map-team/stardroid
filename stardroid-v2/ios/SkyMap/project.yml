@@ -53,6 +53,8 @@ targets:
         # The version with its release name ("2.0.0:GDC"), as Android's versionName has it; the
         # short version itself must stay numeric.
         SkyMapVersionName: $(MARKETING_VERSION):$(SKYMAP_RELEASE_NAME)
+        # Only HTTPS through the system, which is exempt from export-compliance documentation.
+        ITSAppUsesNonExemptEncryption: false
         # The system location prompt's text. Localized with the app's strings in phase 5.
         NSLocationWhenInUseUsageDescription: >-
           Sky Map uses your location to show the sky as it looks from where you are.
