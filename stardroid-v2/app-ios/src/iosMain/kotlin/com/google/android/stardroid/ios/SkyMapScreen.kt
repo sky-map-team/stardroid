@@ -368,12 +368,12 @@ private fun GalleryPage(
         onBack = onBack,
     )
     val card by objectInfoViewModel.card.collectAsState()
-    val riseSet by objectInfoViewModel.riseSet.collectAsState()
+    val live by objectInfoViewModel.live.collectAsState()
     var expandedImage by remember { mutableStateOf<ObjectInfo?>(null) }
     card?.let { info ->
         ObjectInfoCard(
             info = info,
-            riseSet = riseSet,
+            live = live,
             nightMode = nightMode,
             onSeeAlso = { link -> objectInfoViewModel.show(link.id) },
             onFind =
