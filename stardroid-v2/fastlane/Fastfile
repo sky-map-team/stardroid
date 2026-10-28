@@ -268,6 +268,29 @@ platform :ios do
     )
   end
 
+  desc "Install the Release build on a connected iPhone, development-signed, without uploading " \
+       "(device:<CoreDevice id> or IOS_DEVICE_ID). Needs the device registered on the team."
+  lane :device do |options|
+    options ||= {}
+    asc_api_key
+    sh("cd #{IOS_DIR} && xcodegen")
+    build_app(
+      project: IOS_PROJECT,
+      scheme: "SkyMap",
+      configuration: "Release",
+      export_method: "development",
+      output_directory: File.join(IOS_DIR, "build", "ipa-dev"),
+      output_name: "SkyMap.ipa",
+      xcargs: "-allowProvisioningUpdates " \
+              "-authenticationKeyPath #{ASC_KEY_PATH} -authenticationKeyID #{ASC_KEY_ID} " \
+              "-authenticationKeyIssuerID #{ASC_ISSUER_ID}"
+    )
+    device = options[:device] || ENV["IOS_DEVICE_ID"]
+    UI.user_error!("Pass device:<CoreDevice id> (see `xcrun devicectl list devices`)") unless device
+    sh("xcrun", "devicectl", "device", "install", "app", "--device", device,
+       File.join(IOS_DIR, "build", "ipa-dev", "SkyMap.ipa"))
+  end
+
   desc "Build and upload to TestFlight (internal testers). Pass changelog:\"...\" for What to Test."
   lane :beta do |options|
     options ||= {}
