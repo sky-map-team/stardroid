@@ -16,10 +16,9 @@ import com.google.android.stardroid.events.SkyEvent
 sealed interface CardFact {
     data class RiseSet(val state: RiseSetState) : CardFact
 
-    data class MoonPhase(val phase: LunarPhase, val illuminatedFraction: Double) : CardFact
+    data class MoonPhase(val phase: LunarPhase, val illuminationPercent: Int) : CardFact
 
-    /** Days since the last new moon, in `[0, 29.53)`; the card counts new moon as day 1. */
-    data class MoonAge(val ageDays: Double) : CardFact
+    data class MoonAge(val dayOfCycle: Int) : CardFact
 }
 
 /** What an [Upcoming] section is about; picks its heading and empty-state wording. */

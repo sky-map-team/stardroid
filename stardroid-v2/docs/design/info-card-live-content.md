@@ -86,8 +86,8 @@ These are appended to the existing `DataRows` and computed at the map's current 
 sealed interface CardFact {
     /** Today's `RiseSetState`, moved here unchanged (D51). */
     data class RiseSet(val state: RiseSetState) : CardFact
-    data class MoonPhase(val phase: LunarPhase, val illuminatedFraction: Double) : CardFact
-    data class MoonAge(val ageDays: Double) : CardFact
+    data class MoonPhase(val phase: LunarPhase, val illuminationPercent: Int) : CardFact
+    data class MoonAge(val dayOfCycle: Int) : CardFact
 }
 ```
 

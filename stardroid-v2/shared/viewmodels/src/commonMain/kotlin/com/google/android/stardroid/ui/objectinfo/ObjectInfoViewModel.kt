@@ -20,7 +20,9 @@ import com.google.android.stardroid.astronomy.RiseSetIndicator
 import com.google.android.stardroid.astronomy.SatellitePass
 import com.google.android.stardroid.astronomy.SolarSystemBody
 import com.google.android.stardroid.astronomy.altitudeDeg
+import com.google.android.stardroid.astronomy.dayOfCycle
 import com.google.android.stardroid.astronomy.horizonAltitudeDeg
+import com.google.android.stardroid.astronomy.illuminationPercent
 import com.google.android.stardroid.astronomy.moonWidgetModel
 import com.google.android.stardroid.astronomy.nextLunarEclipse
 import com.google.android.stardroid.astronomy.nextRiseSetTime
@@ -240,17 +242,16 @@ class ObjectInfoViewModel(
             }
     }
 
-    private fun nowFactsFor(info: ObjectInfo): List<CardFact> {
-        val facts = mutableListOf<CardFact>()
-        riseSetFor(info)?.let { facts += CardFact.RiseSet(it) }
-        if (info.id == MOON_ID) {
-            // The widget's own model, so the card and the widget cannot disagree.
-            val moon = moonWidgetModel(now(), location = null)
-            facts += CardFact.MoonPhase(moon.phase, moon.illuminatedFraction)
-            facts += CardFact.MoonAge(moon.ageDays)
+    private fun nowFactsFor(info: ObjectInfo): List<CardFact> =
+        buildList {
+            riseSetFor(info)?.let { add(CardFact.RiseSet(it)) }
+            if (info.id == MOON_ID) {
+                // The widget's own model, so the card and the widget cannot disagree.
+                val moon = moonWidgetModel(now(), location = null)
+                add(CardFact.MoonPhase(moon.phase, moon.illuminationPercent))
+                add(CardFact.MoonAge(moon.dayOfCycle))
+            }
         }
-        return facts
-    }
 
     /** The card's upcoming section, `null` for objects with no source of one (D141 §3.2). */
     private suspend fun upcomingFor(info: ObjectInfo): Upcoming? {

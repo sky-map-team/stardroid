@@ -88,6 +88,20 @@ class MoonWidgetModelTest {
         assertThat(model.setTime).isNull()
     }
 
+    @Test
+    fun dayOfCycleCountsNewMoonAsDayOne() {
+        val model = moonWidgetModel(utc(2024, 1, 11, 12), LONDON)
+        assertThat(model.dayOfCycle).isEqualTo(model.ageDays.toInt() + 1)
+        assertThat(model.dayOfCycle).isAtLeast(1)
+    }
+
+    @Test
+    fun illuminationPercentRoundsTheFraction() {
+        val model = moonWidgetModel(utc(2024, 1, 25, 17, 54), LONDON)
+        val exact = model.illuminatedFraction * 100
+        assertThat(model.illuminationPercent.toDouble()).isWithin(0.5).of(exact)
+    }
+
     private companion object {
         val LONDON = LatLong(51.51, -0.13)
         val SYDNEY = LatLong(-33.87, 151.21)

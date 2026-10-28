@@ -14,6 +14,8 @@ import com.google.android.stardroid.astronomy.KeplerianEphemeris
 import com.google.android.stardroid.astronomy.SatellitePass
 import com.google.android.stardroid.astronomy.SolarSystemBody
 import com.google.android.stardroid.astronomy.Tle
+import com.google.android.stardroid.astronomy.dayOfCycle
+import com.google.android.stardroid.astronomy.illuminationPercent
 import com.google.android.stardroid.astronomy.moonWidgetModel
 import com.google.android.stardroid.catalog.CatalogObject
 import com.google.android.stardroid.catalog.CatalogRepository
@@ -728,11 +730,9 @@ class ObjectInfoViewModelTest {
             val now = vm.live.value?.now.orEmpty()
             assertThat(now.filterIsInstance<CardFact.RiseSet>()).isNotEmpty()
             assertThat(now.filterIsInstance<CardFact.MoonPhase>())
-                .isEqualTo(
-                    listOf(CardFact.MoonPhase(expected.phase, expected.illuminatedFraction)),
-                )
+                .isEqualTo(listOf(CardFact.MoonPhase(expected.phase, expected.illuminationPercent)))
             assertThat(now.filterIsInstance<CardFact.MoonAge>())
-                .isEqualTo(listOf(CardFact.MoonAge(expected.ageDays)))
+                .isEqualTo(listOf(CardFact.MoonAge(expected.dayOfCycle)))
         }
 
     @Test
@@ -744,8 +744,9 @@ class ObjectInfoViewModelTest {
 
             vm.show(SIRIUS_ID)
             runCurrent()
-            assertThat(vm.live.value?.now.orEmpty().filterIsInstance<CardFact.MoonAge>())
-                .isEmpty()
+            val now = vm.live.value?.now.orEmpty()
+            assertThat(now.filterIsInstance<CardFact.MoonAge>()).isEmpty()
+            assertThat(now.filterIsInstance<CardFact.MoonPhase>()).isEmpty()
         }
 
     @Test

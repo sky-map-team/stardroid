@@ -267,11 +267,7 @@ private fun DataRows(
                 is CardFact.MoonPhase -> MoonPhaseRows(fact)
                 is CardFact.MoonAge ->
                     Text(
-                        // New moon is day 1, as on the Moon widget.
-                        formattedStringResource(
-                            Res.string.moon_widget_age,
-                            fact.ageDays.toInt() + 1,
-                        ),
+                        formattedStringResource(Res.string.moon_widget_age, fact.dayOfCycle),
                         style = MaterialTheme.typography.bodySmall,
                     )
             }
@@ -317,7 +313,7 @@ private fun MoonPhaseRows(fact: CardFact.MoonPhase) {
     Text(
         formattedStringResource(
             Res.string.moon_widget_illumination,
-            (fact.illuminatedFraction * PERCENT).roundToInt(),
+            fact.illuminationPercent,
         ),
         style = MaterialTheme.typography.bodySmall,
     )
@@ -562,4 +558,3 @@ private fun EclipseRow(circumstances: LunarEclipseCircumstances?) {
 
 /** The fun fact's emphasis against the description above it (Material's medium emphasis). */
 private const val FUN_FACT_ALPHA = 0.74f
-private const val PERCENT = 100
