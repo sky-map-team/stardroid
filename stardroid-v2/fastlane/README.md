@@ -140,6 +140,14 @@ Upload metadata. Options (defaults after the colon): whatsnew:true (include chan
 
 Archive the Release build and export a signed App Store .ipa (build number: latest TestFlight build + 1)
 
+### ios device
+
+```sh
+[bundle exec] fastlane ios device
+```
+
+Install the Release build on a connected iPhone, development-signed, without uploading (device:<CoreDevice id> or IOS_DEVICE_ID). Needs the device registered on the team.
+
 ### ios beta
 
 ```sh

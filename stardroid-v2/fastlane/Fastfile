@@ -262,9 +262,10 @@ platform :ios do
       export_method: "app-store",
       output_directory: File.join(IOS_DIR, "build", "ipa"),
       output_name: "SkyMap.ipa",
-      xcargs: "CURRENT_PROJECT_VERSION=#{build_number} -allowProvisioningUpdates " \
-              "-authenticationKeyPath #{ASC_KEY_PATH} -authenticationKeyID #{ASC_KEY_ID} " \
-              "-authenticationKeyIssuerID #{ASC_ISSUER_ID}"
+      # No API-key flags here: exporting for the App Store needs cloud-signed distribution
+      # certificates, which an App Manager key cannot create. Xcode must be signed in to the
+      # Penterakt team (Settings > Accounts); the key is used only for TestFlight.
+      xcargs: "CURRENT_PROJECT_VERSION=#{build_number} -allowProvisioningUpdates"
     )
   end
 
