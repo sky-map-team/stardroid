@@ -71,12 +71,10 @@ import com.google.android.stardroid.ui.location.LocationStateDialogs
 import com.google.android.stardroid.ui.location.LocationViewModel
 import com.google.android.stardroid.ui.location.ManualLocationEntryDialog
 import com.google.android.stardroid.ui.location.rememberLocationSetMessage
-import com.google.android.stardroid.ui.objectinfo.EclipseRow
 import com.google.android.stardroid.ui.objectinfo.ImageExpandOverlay
 import com.google.android.stardroid.ui.objectinfo.MoonWidgetPromo
 import com.google.android.stardroid.ui.objectinfo.ObjectInfoCard
 import com.google.android.stardroid.ui.objectinfo.ObjectInfoViewModel
-import com.google.android.stardroid.ui.objectinfo.SatellitePassRow
 import com.google.android.stardroid.ui.resources.Res
 import com.google.android.stardroid.ui.resources.ar_alignment_adjusted_message
 import com.google.android.stardroid.ui.resources.ar_auto_mode_snackbar
@@ -182,7 +180,7 @@ fun MapScreen(
     val camera by mapViewModel.camera.collectAsStateWithLifecycle()
     val searchTarget by searchViewModel.target.collectAsStateWithLifecycle()
     val objectInfoCard by objectInfoViewModel.card.collectAsStateWithLifecycle()
-    val objectRiseSet by objectInfoViewModel.riseSet.collectAsStateWithLifecycle()
+    val objectLive by objectInfoViewModel.live.collectAsStateWithLifecycle()
     val moonWidgetPromo by objectInfoViewModel.moonWidgetPromo.collectAsStateWithLifecycle()
     val locationState by locationViewModel.state.collectAsStateWithLifecycle()
     val manualLocationMode by locationViewModel.manualMode.collectAsStateWithLifecycle()
@@ -688,21 +686,12 @@ fun MapScreen(
             )
         }
 
-        val showingSatellite by
-            objectInfoViewModel.showingSatellite.collectAsStateWithLifecycle()
-        val upcomingSatellitePasses by
-            objectInfoViewModel.upcomingSatellitePasses.collectAsStateWithLifecycle()
-        val satellitePassTimesReliable by
-            objectInfoViewModel.satellitePassTimesReliable.collectAsStateWithLifecycle()
-        val showingMoon by objectInfoViewModel.showingMoon.collectAsStateWithLifecycle()
-        val lunarEclipse by objectInfoViewModel.lunarEclipse.collectAsStateWithLifecycle()
-
         // Covered, the card is the host's: iOS's gallery page shows its own, as Android's
         // gallery destination does.
         objectInfoCard?.takeUnless { covered }?.let { info ->
             ObjectInfoCard(
                 info = info,
-                riseSet = objectRiseSet,
+                live = objectLive,
                 nightMode = nightMode,
                 onSeeAlso = { link -> objectInfoViewModel.show(link.id) },
                 // No Find here: a card opened by tapping the sky is an object the user has
@@ -718,24 +707,6 @@ fun MapScreen(
                     moonWidgetPromoRow
                         ?.takeIf { moonWidgetPromo != MoonWidgetPromo.HIDDEN }
                         ?.let { row -> { row(moonWidgetPromo == MoonWidgetPromo.PLACED) } },
-                satellitePassRow =
-                    if (showingSatellite) {
-                        {
-                            SatellitePassRow(
-                                passes = upcomingSatellitePasses,
-                                // Empty + reliable = "nothing coming"; stale data gets its own message.
-                                passTimesReliable = satellitePassTimesReliable,
-                            )
-                        }
-                    } else {
-                        null
-                    },
-                eclipseRow =
-                    if (showingMoon) {
-                        { EclipseRow(circumstances = lunarEclipse) }
-                    } else {
-                        null
-                    },
             )
         }
 

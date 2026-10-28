@@ -11,6 +11,7 @@ package com.google.android.stardroid.ui.objectinfo
 
 import androidx.lifecycle.viewModelScope
 import com.google.android.stardroid.astronomy.KeplerianEphemeris
+import com.google.android.stardroid.astronomy.SatellitePass
 import com.google.android.stardroid.astronomy.SolarSystemBody
 import com.google.android.stardroid.astronomy.Tle
 import com.google.android.stardroid.catalog.CatalogObject
@@ -25,6 +26,7 @@ import com.google.android.stardroid.catalog.MonthDay
 import com.google.android.stardroid.catalog.ObjectInfo
 import com.google.android.stardroid.catalog.SearchHit
 import com.google.android.stardroid.catalog.TypeCode
+import com.google.android.stardroid.events.SkyEvent
 import com.google.android.stardroid.layers.CatalogLayers
 import com.google.android.stardroid.layers.MeteorShowerLayer
 import com.google.android.stardroid.layers.SolarSystemLayer
@@ -38,6 +40,7 @@ import com.google.android.stardroid.settings.FakeSettings
 import com.google.android.stardroid.startup.Experiment
 import com.google.android.stardroid.startup.ExperimentConfig
 import com.google.android.stardroid.testing.assertThat
+import com.google.android.stardroid.ui.search.SolarSystemIds
 import kotlinx.coroutines.CompletableDeferred
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -125,6 +128,8 @@ class ObjectInfoViewModelTest {
         experimentConfig: ExperimentConfig = ExperimentConfig.Static,
         moonWidgetPlaced: () -> Boolean = { false },
         satellites: List<TrackedSatellite> = emptyList(),
+        upcomingPasses: List<SatellitePass> = emptyList(),
+        passTimesReliable: Boolean = true,
     ): ObjectInfoViewModel =
         ObjectInfoViewModel(
             catalog = { repository },
@@ -137,7 +142,26 @@ class ObjectInfoViewModelTest {
             experimentConfig = experimentConfig,
             moonWidgetPlaced = moonWidgetPlaced,
             satellites = { satellites },
+            upcomingPasses = { upcomingPasses },
+            passTimesReliable = { passTimesReliable },
         ).also { createdViewModels += it }
+
+    private fun ObjectInfoViewModel.riseSetState(): RiseSetState? =
+        live.value?.now?.filterIsInstance<CardFact.RiseSet>()?.firstOrNull()?.state
+
+    private fun pass() =
+        SatellitePass(
+            satelliteName = "ISS",
+            noradId = 25544,
+            start = NOW,
+            culmination = NOW,
+            end = NOW,
+            maxAltitudeDeg = 60.0,
+            startAzimuthDeg = 0.0,
+            endAzimuthDeg = 0.0,
+            peakMagnitude = -2.0,
+            shadowEntry = null,
+        )
 
     @Test
     fun `show opens the card for an id and dismiss closes it`() =
@@ -497,7 +521,7 @@ class ObjectInfoViewModelTest {
             vm.show(ISS_ID)
             runCurrent()
             assertThat(vm.card.value?.id).isEqualTo(ISS_ID)
-            assertThat(vm.riseSet.value).isNull()
+            assertThat(vm.riseSetState()).isNull()
         }
 
     @Test
@@ -511,7 +535,7 @@ class ObjectInfoViewModelTest {
 
             vm.show(SIRIUS_ID)
             runCurrent()
-            val times = vm.riseSet.value as RiseSetState.Times
+            val times = vm.riseSetState() as RiseSetState.Times
             assertThat(times.rise).isNotNull()
             assertThat(times.set).isNotNull()
             assertThat(times.rise).isGreaterThan(NOW)
@@ -528,7 +552,7 @@ class ObjectInfoViewModelTest {
 
             vm.show(jupiterId)
             runCurrent()
-            val times = vm.riseSet.value as RiseSetState.Times
+            val times = vm.riseSetState() as RiseSetState.Times
             assertThat(times.rise).isNotNull()
             assertThat(times.set).isNotNull()
         }
@@ -543,7 +567,7 @@ class ObjectInfoViewModelTest {
 
             vm.show(ioId)
             runCurrent()
-            assertThat(vm.riseSet.value).isInstanceOf(RiseSetState.Times::class)
+            assertThat(vm.riseSetState()).isInstanceOf(RiseSetState.Times::class)
         }
 
     @Test
@@ -560,11 +584,11 @@ class ObjectInfoViewModelTest {
             // From London: Polaris never sets, Acrux never rises.
             vm.show(polarisId)
             runCurrent()
-            assertThat(vm.riseSet.value).isEqualTo(RiseSetState.AlwaysAbove)
+            assertThat(vm.riseSetState()).isEqualTo(RiseSetState.AlwaysAbove)
 
             vm.show(acruxId)
             runCurrent()
-            assertThat(vm.riseSet.value).isEqualTo(RiseSetState.AlwaysBelow)
+            assertThat(vm.riseSetState()).isEqualTo(RiseSetState.AlwaysBelow)
         }
 
     @Test
@@ -578,16 +602,82 @@ class ObjectInfoViewModelTest {
 
             vm.show(SIRIUS_ID)
             runCurrent()
-            assertThat(vm.riseSet.value).isNotNull()
+            assertThat(vm.riseSetState()).isNotNull()
 
             vm.show(shower)
             runCurrent()
-            assertThat(vm.riseSet.value).isNull()
+            assertThat(vm.riseSetState()).isNull()
 
             vm.show(SIRIUS_ID)
             runCurrent()
             vm.dismiss()
-            assertThat(vm.riseSet.value).isNull()
+            assertThat(vm.riseSetState()).isNull()
+        }
+
+    @Test
+    fun `a satellite card lists its upcoming passes`() =
+        testScope.runCurrentTest {
+            val passes = listOf(pass())
+            val vm =
+                viewModel(satellites = listOf(issAt(SIRIUS_POSITION)), upcomingPasses = passes)
+
+            vm.show(ISS_ID)
+            runCurrent()
+            val upcoming = vm.live.value?.upcoming as Upcoming.Events
+            assertThat(upcoming.events.map { (it as SkyEvent.SatellitePassTonight).pass })
+                .isEqualTo(passes)
+        }
+
+    @Test
+    fun `a satellite card with no passes says nothing is coming`() =
+        testScope.runCurrentTest {
+            val vm = viewModel(satellites = listOf(issAt(SIRIUS_POSITION)))
+
+            vm.show(ISS_ID)
+            runCurrent()
+            assertThat(vm.live.value?.upcoming)
+                .isEqualTo(Upcoming.NothingComing(UpcomingKind.SATELLITE_PASSES))
+        }
+
+    @Test
+    fun `a satellite card with stale elements says the data is too old`() =
+        testScope.runCurrentTest {
+            val vm =
+                viewModel(
+                    satellites = listOf(issAt(SIRIUS_POSITION)),
+                    upcomingPasses = listOf(pass()),
+                    passTimesReliable = false,
+                )
+
+            vm.show(ISS_ID)
+            runCurrent()
+            assertThat(vm.live.value?.upcoming).isEqualTo(Upcoming.DataTooOld)
+        }
+
+    @Test
+    fun `the Moon card carries the next lunar eclipse`() =
+        testScope.runCurrentTest {
+            val moonId = SolarSystemIds.idFor(SolarSystemBody.MOON)
+            repository.infos[moonId] = objectInfo(moonId, "Moon")
+            val vm = viewModel()
+
+            vm.show(moonId)
+            runCurrent()
+            val upcoming = vm.live.value?.upcoming as Upcoming.Events
+            assertThat(upcoming.events.single())
+                .isInstanceOf(SkyEvent.LunarEclipseUpcoming::class)
+        }
+
+    @Test
+    fun `an ordinary card has no upcoming section`() =
+        testScope.runCurrentTest {
+            repository.infos[SIRIUS_ID] =
+                objectInfo(SIRIUS_ID, "Sirius").copy(position = SIRIUS_POSITION)
+            val vm = viewModel()
+
+            vm.show(SIRIUS_ID)
+            runCurrent()
+            assertThat(vm.live.value?.upcoming).isNull()
         }
 
     @Test
@@ -707,7 +797,7 @@ class ObjectInfoViewModelTest {
         const val LOOK_RA = 30.0
         const val LOOK_DEC = 10.0
 
-        val MOON_ID = CelestialObjectId("planet/moon")
+        val MOON_ID = SolarSystemIds.idFor(SolarSystemBody.MOON)
         val SIRIUS_ID = CelestialObjectId("star/sirius")
         val SIRIUS_POSITION = RaDec(101.287, -16.716)
 

@@ -230,7 +230,7 @@ fun SkyMapNavHost(
             // grid; Find lands on the map with the search engaged (v1's gallery→search
             // intent, D46).
             val card by objectInfoViewModel.card.collectAsStateWithLifecycle()
-            val riseSet by objectInfoViewModel.riseSet.collectAsStateWithLifecycle()
+            val live by objectInfoViewModel.live.collectAsStateWithLifecycle()
             val moonWidgetPromo by objectInfoViewModel.moonWidgetPromo.collectAsStateWithLifecycle()
             var expandedImage by
                 rememberSaveable(stateSaver = ExpandedGalleryImageSaver) {
@@ -239,7 +239,7 @@ fun SkyMapNavHost(
             card?.let { info ->
                 ObjectInfoCard(
                     info = info,
-                    riseSet = riseSet,
+                    live = live,
                     nightMode = nightMode,
                     onSeeAlso = { link -> objectInfoViewModel.show(link.id) },
                     onFind =
