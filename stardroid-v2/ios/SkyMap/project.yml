@@ -87,6 +87,9 @@ targets:
         ENABLE_USER_SCRIPT_SANDBOXING: NO
         SWIFT_VERSION: "5.0"
       configs:
+        # Debug installs beside the App Store/TestFlight build, so it needs its own name.
+        Debug:
+          INFOPLIST_KEY_CFBundleDisplayName: Sky Map Dev
         Release:
           PRODUCT_BUNDLE_IDENTIFIER: io.penterakt.skymap
   SkyMapUITests:
