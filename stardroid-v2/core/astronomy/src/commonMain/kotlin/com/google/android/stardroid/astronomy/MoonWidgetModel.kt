@@ -11,6 +11,7 @@ package com.google.android.stardroid.astronomy
 
 import com.google.android.stardroid.math.LatLong
 import kotlinx.datetime.Instant
+import kotlin.math.roundToInt
 import kotlin.time.Duration.Companion.days
 
 /**
@@ -36,6 +37,11 @@ data class MoonWidgetModel(
     /** Next moonset after the model's time, or null without a location or crossing (D51). */
     val setTime: Instant?,
 )
+
+/** The day of the lunar cycle, counting the day of new moon as day 1. */
+val MoonWidgetModel.dayOfCycle: Int get() = ageDays.toInt() + 1
+
+val MoonWidgetModel.illuminationPercent: Int get() = (illuminatedFraction * 100).roundToInt()
 
 /**
  * The widget model at [time] for an observer at [location] — null when no location has ever

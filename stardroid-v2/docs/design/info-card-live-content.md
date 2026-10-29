@@ -1,13 +1,14 @@
 # Info Card Live Content: "Now" facts and "Upcoming" events
 
-**Status: PROPOSED.** The sections and the shared model are not built, and the decisions entry is
-reserved as **D141**. This is the follow-up that D107 asked for. D107 recorded the card's
+**Status: IN PROGRESS.** Phases 1 (#1187), 2 (#1189), 3 (#1193) and 4a (the Moon) are built; 4b (showers and planets) is not. The decisions
+entry is reserved as **D141**. This is the follow-up that D107 asked for. D107 recorded the card's
 one-slot-per-object-type shape and decided to wait for a fourth slot that repeated a pattern
 before generalizing it. #1131 and #1142 are the fourth and fifth requests, and they share a
 pattern. #1181 is the pointer issue for this work.
 
 Driving issues:
-- #1131: Moon age on the Moon's card. Still open.
+- #1131: Moon age on the Moon's card. The card half shipped in phase 2; the widget-picker
+  preview and the device checks on the widget remain.
 - #1142: a table of good satellite passes on the satellite card. **Shipped as a stopgap** in #1179
   (see §1.1); this design replaces the stopgap.
 - #1143: the card half of it. The widget row can stay short because the card carries the
@@ -48,7 +49,7 @@ gallery instead of the map. Adding #1131 the same way would mean more of these g
 #1179 deliberately extended an existing slot instead of waiting for this design:
 - `satellitePassRow` is now a table of up to **5** passes over **5 days**, with date, rise
   direction, peak altitude, magnitude and the shadow fade-out.
-- The app-side caller is `upcomingVisiblePasses(context, norad, location, from)` in
+- The app-side caller is `upcomingGoodPasses(context, norad, location, from)` in
   `TonightPasses.kt`, which replaced `nextVisiblePass`. `MainActivity` injects it into the view
   model as the `upcomingPasses` lambda. `passTimesReliable` stays a second lambda.
 - The view model gained a second per-type flow beside `showingSatellite`/`showingMoon`:
@@ -56,11 +57,10 @@ gallery instead of the map. Adding #1131 the same way would mean more of these g
 - The selection rule is `List<SatellitePass>.goodPasses()` in `core/astronomy`: the first pass
   always, then only passes peaking at **30° or higher**.
 
-**This breaks §2.** The tonight widget and digest rank passes by peak *magnitude* (`passQuality`
-in `TonightSky.kt`, with −0.5 as the "ordinary" boundary). The card now filters by *altitude*.
-A dim, high pass appears on the card but not in the widget, and a bright, low pass the other
-way round, except for the first pass, which is always listed. Phase 3 removes `goodPasses()`
-and puts both on the one bar.
+**This broke §2, until phase 3.** The tonight widget and digest ranked passes by peak
+*magnitude* (`passQuality` in `TonightSky.kt`), while the card filtered by *altitude* and always
+listed the first pass, so a dim, high pass appeared on the card but not in the widget, and the
+other way round. Phase 3 put every surface on one bar (§7).
 
 ## 2. The principle
 
@@ -85,8 +85,8 @@ These are appended to the existing `DataRows` and computed at the map's current 
 sealed interface CardFact {
     /** Today's `RiseSetState`, moved here unchanged (D51). */
     data class RiseSet(val state: RiseSetState) : CardFact
-    data class MoonPhase(val phase: LunarPhase, val illuminatedFraction: Double) : CardFact
-    data class MoonAge(val ageDays: Double) : CardFact
+    data class MoonPhase(val phase: LunarPhase, val illuminationPercent: Int) : CardFact
+    data class MoonAge(val dayOfCycle: Int) : CardFact
 }
 ```
 
@@ -152,7 +152,7 @@ and a "happening now" alert on its own channel; both follow whichever pass is ch
 needs applying once.
 
 Satellite passes still arrive as a parameter, for the D92 reason: the element sets come from the
-network. The app-side caller, `upcomingVisiblePasses(...)`, already exists (#1179). It returns
+network. The app-side caller, `upcomingGoodPasses(...)`, already exists (#1179). It returns
 unfiltered visible passes and lets `upcomingEvents()` apply the bar, instead of calling
 `goodPasses()` itself.
 
@@ -198,16 +198,16 @@ The strings involved are:
 | Object | Now | Upcoming |
 |---|---|---|
 | Moon | Rise/set, phase, % illuminated, age (#1131) | Next full moon, next new moon, next lunar eclipse (moved from the eclipse row) |
-| ISS, Tiangong | — | Qualifying passes over ~5 days, at most ~6 rows (#1142) |
+| ISS, Tiangong | — | Good passes (§7, phase 3) over 5 days, at most 5 rows (#1142) |
 | Planets | Rise/set | Well placed tonight |
-| Meteor showers | — | Upcoming peak, with moonlight |
+| Meteor showers | Rise/set of the radiant (any shower with a catalog position) | Upcoming peak, with moonlight |
 | Stars, deep-sky objects, Sun | Rise/set | No section |
 
 ## 7. Phasing
 
 0. ~~**Wait for `feature/ios-screens` to merge.**~~ **Done** (#1160). `ObjectInfoUi` is in
    `shared/ui` and `ObjectInfoViewModel` in `shared/viewmodels`.
-1. **Change the structure, not the behaviour.**
+1. **Change the structure, not the behaviour.** **Done** (#1187).
    - Add the model and the two sections.
    - Move rise/set, the eclipse and the #1179 pass table into them, unchanged.
    - Delete `satellitePassRow`, `eclipseRow` and their flows.
@@ -215,11 +215,29 @@ The strings involved are:
    The only visible change is that the gallery gains the eclipse line and the pass table.
    `ObjectInfoViewModelTest` is the guard. The pass table keeps its 30° rule for now, as a
    `SkyEvent`-shaped list or a temporary adapter, so this phase changes no behaviour.
-2. **Moon Now facts** (#1131, the card half).
-3. **One quality bar for passes**, replacing the #1179 stopgap. Remove `goodPasses()`. The bar
-   applies across the card, widget, digest and alerts in the same change, so they cannot disagree
-   even briefly.
-4. **Showers and planets** in Upcoming.
+2. **Moon Now facts** (#1131, the card half). **Done.** `CardFact.MoonPhase` and `MoonAge` come
+   from `moonWidgetModel()`, the widget's own function, and render as three plain lines under
+   the data rows (phase name, "N% illuminated", "Day N"). The ten strings they use
+   (`moon_phase_*`, `moon_widget_age`, `moon_widget_illumination`) moved from `app` to
+   `shared/ui` with `tools/move_strings.py`, so the widget and the card share keys and
+   `tm languages` is unchanged.
+3. **One quality bar for passes**, replacing the #1179 stopgap. **Done.** A pass is *good* if its
+   peak magnitude is ≤ −0.5 **and** its peak altitude is ≥ 30° (`SatellitePass.isGood`). The card,
+   widget, digest and alerts all filter through it, so they cannot disagree. The card's
+   "always show the first pass" exception is gone: with nothing good it says so, and no alert is
+   armed. Its heading and empty state say "good" rather than "visible", since a visible pass can
+   still fail the bar.
+4. **Upcoming for more objects**, in two PRs:
+   - **4a, the Moon. Done.** The Moon's Upcoming list is the next full moon, the next new moon
+     and the next lunar eclipse, soonest first, as `SkyEvent`s (`MoonPhaseTonight`,
+     `LunarEclipseUpcoming`). The section now has one generic heading, "Upcoming"
+     (`object_info_upcoming`), above every kind of content, so the satellite table and the
+     eclipse lose their own headings. The eclipse's "none expected" line is gone: the list always holds
+     the next full and new moon, so the section is never empty, and silence about an eclipse no
+     longer reads as "the card doesn't know". `satellite_next_pass`, `object_info_eclipse_title`
+     and `object_info_no_eclipse` are now unused and can be removed with a translation run.
+   - **4b, showers and planets.** Not built. It needs the per-object events query in
+     `:core:events` (§4).
 
 ## 8. Ideas, not scope
 
@@ -233,16 +251,14 @@ The strings involved are:
 
 ## 9. Open questions
 
-1. **The quality bar for passes.** Peak magnitude ≤ −0.5 is the events engine's existing
-   "ordinary pass" boundary. The shipped card instead uses a 30° peak-altitude floor plus "always
-   the first pass" (#1179). Magnitude already accounts for range and altitude. A combined rule is
-   possible, but it must be the one rule every surface uses. Whether to keep "always show the
-   first pass" is part of this question: it stops the card disagreeing with the widget, but it
-   admits a faint pass.
-2. **Satellite range and row cap.** #1179 shipped **5 days and 5 rows**, with a comment that TLE
-   drift makes later times dishonest. Keep those values, or move to the 6 rows first proposed?
-3. **Section heading.** "Upcoming", or "When to look"?
-4. **Moon list length.** One of each phase, or every phase inside a fixed range?
+1. ~~**The quality bar for passes.**~~ **Decided:** both bars, magnitude ≤ −0.5 and altitude
+   ≥ 30°, no first-pass exception (§7, phase 3).
+2. ~~**Satellite range and row cap.**~~ Kept at the **5 days and 5 rows** that #1179 shipped, since
+   TLE drift makes later times dishonest. Revisit only if the stricter bar leaves the table
+   too often empty.
+3. ~~**Section heading.**~~ **Decided:** "Upcoming".
+4. ~~**Moon list length.**~~ **Decided:** the next full moon, the next new moon and the next
+   eclipse (three rows at most).
 
 ## 10. Carried over from the #1179 review
 

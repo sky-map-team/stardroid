@@ -11,6 +11,7 @@ package com.google.android.stardroid.events
 
 import com.google.android.stardroid.astronomy.CIVIL_TWILIGHT_SUN_ALT_DEG
 import com.google.android.stardroid.astronomy.Ephemeris
+import com.google.android.stardroid.astronomy.GOOD_PASS_MAX_MAGNITUDE
 import com.google.android.stardroid.astronomy.KeplerianEphemeris
 import com.google.android.stardroid.astronomy.LunarEclipseCircumstances
 import com.google.android.stardroid.astronomy.LunarEclipseType
@@ -72,7 +73,10 @@ sealed interface SkyEvent {
         override val quality: Double,
     ) : SkyEvent
 
-    /** A full or new moon within the next 24 hours (new = darkest skies of the month). */
+    /**
+     * A full or new moon (new = darkest skies of the month). [tonightSky] only emits one within
+     * the next 24 hours; the info card also uses it for the next occurrence, however far off.
+     */
     data class MoonPhaseTonight(
         val phase: LunarPhase,
         val time: Instant,
@@ -200,7 +204,7 @@ private const val BRILLIANT_PASS_MAGNITUDE = -3.0
 private const val BRIGHT_PASS_MAGNITUDE = -2.0
 
 /** Still an easy naked-eye sight, but not one to reorder the evening around. */
-private const val ORDINARY_PASS_MAGNITUDE = -0.5
+private const val ORDINARY_PASS_MAGNITUDE = GOOD_PASS_MAX_MAGNITUDE
 
 private const val WELL_PLACED_MIN_ALT_DEG = 25.0
 private const val BRIGHT_MOON_FRACTION = 0.6

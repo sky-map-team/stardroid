@@ -99,18 +99,9 @@
     <!-- Moon-phase home-screen widget (D69). -->
     <string name="moon_widget_label" translation_description="Name of the moon-phase home-screen widget, shown in the launcher\'s widget picker">ข้างขึ้นข้างแรม</string>
     <string name="moon_widget_description" translation_description="Description of the moon-phase widget, shown under its preview in the launcher\'s widget picker">เฟสของดวงจันทร์ การส่องสว่าง รวมถึงเวลาดวงจันทร์ขึ้นและตก อัปเดตทุกวัน</string>
-    <string name="moon_widget_illumination" translation_description="Widget line showing how much of the Moon\'s disc is lit; %1$d is a percentage number">สว่าง %1$d%%</string>
     <string name="moon_widget_rise_time" translation_description="Widget fragment showing today\'s moonrise time; %1$s is a clock time like 17:42">ขึ้น %1$s</string>
     <string name="moon_widget_set_time" translation_description="Widget fragment showing today\'s moonset time; %1$s is a clock time like 03:12">ตก %1$s</string>
     <string name="moon_widget_time_day_offset" translation_description="Compact suffix appended after a widget rise/set time that falls on a later day than today, so a reader doesn\'t mistake it for today\'s crossing; %1$d is the number of days ahead (almost always 1). Keep it short — the widget is very narrow. Note the leading space.">+%1$d</string>
-    <string name="moon_phase_new" translation_description="Name of the lunar phase when the Moon is fully dark">จันทร์ดับ</string>
-    <string name="moon_phase_waxing_crescent" translation_description="Name of the lunar phase between new moon and first quarter">จันทร์เสี้ยวข้างขึ้น</string>
-    <string name="moon_phase_first_quarter" translation_description="Name of the lunar phase when half the disc is lit and growing">จันทร์ครึ่งดวงข้างขึ้น</string>
-    <string name="moon_phase_waxing_gibbous" translation_description="Name of the lunar phase between first quarter and full moon">ดวงจันทร์ค่อนดวงข้างขึ้น</string>
-    <string name="moon_phase_full" translation_description="Name of the lunar phase when the disc is fully lit">จันทร์เพ็ญ</string>
-    <string name="moon_phase_waning_gibbous" translation_description="Name of the lunar phase between full moon and last quarter">ดวงจันทร์ค่อนดวงข้างแรม</string>
-    <string name="moon_phase_last_quarter" translation_description="Name of the lunar phase when half the disc is lit and shrinking">จันทร์ครึ่งดวงข้างแรม</string>
-    <string name="moon_phase_waning_crescent" translation_description="Name of the lunar phase between last quarter and new moon">จันทร์เสี้ยวข้างแรม</string>
     <string name="moon_widget_promo_title" translation_description="Title of the row on the Moon\'s info card offering to add the moon-phase widget to the home screen">เพิ่มวิดเจ็ตดวงจันทร์ไว้ที่หน้าจอหลัก</string>
     <string name="moon_widget_promo_subtitle" translation_description="Subtitle of the row offering the moon-phase widget, summarizing what the widget shows">ข้างขึ้นข้างแรม การส่องสว่าง และเวลาดวงจันทร์ขึ้น อัปเดตทุกวัน</string>
     <string name="moon_widget_promo_add" translation_description="Button that adds the moon-phase widget to the home screen via the system dialog">เพิ่มวิดเจ็ต</string>
@@ -171,7 +162,6 @@
     <string name="satellite_search_name_iss" translation_description="Common name of the International Space Station, matched when the user types it in search. Use the name people in this language actually type.">สถานีอวกาศนานาชาติ</string>
     <string name="satellite_search_name_tiangong" translation_description="Common name of the Chinese Tiangong space station, matched when the user types it in search. Use the name people in this language actually type.">สถานีอวกาศเทียนกง</string>
     <string name="tonight_trailing_pass_peak" translation_description="Small trailing note on a satellite pass row. %1$d is the peak altitude in degrees, %2$.1f is a brightness magnitude.">สูงสุด %1$d°, แมก %2$.1f</string>
-    <string name="moon_widget_age" translation_description="Widget line giving the Moon\'s age as the day of the lunar cycle, counting the day of new moon as day 1; %1$d is a number from 1 to 30">วันที่ %1$d</string>
     <string name="channel_announcements_name" translation_description="Notification channel name for occasional messages from the Sky Map team">ข้อความจาก Sky Map</string>
     <string name="channel_announcements_description" translation_description="Notification channel description for occasional messages from the Sky Map team">การแจ้งเตือนล่วงหน้าเกี่ยวกับปรากฏการณ์บนท้องฟ้าที่น่าสนใจ</string>
     <string name="announcement_dialog_dismiss" translation_description="Button that closes an announcement dialog and hides that message everywhere">ปิด</string>

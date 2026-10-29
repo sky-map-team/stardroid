@@ -573,4 +573,14 @@ Alertes d’éclipse : une notification avant une éclipse lunaire.
     <string name="settings_eclipse_alerts_summary" translation_description="Explanation of the lunar-eclipse notification preference">Une seule alerte avant le début d\'une éclipse lunaire</string>
     <string name="settings_pass_alerts" translation_description="Preference title: notify shortly before a satellite passes overhead">Passages de satellites</string>
     <string name="settings_pass_alerts_summary" translation_description="Explanation of the satellite-pass notification preference">Une seule alerte avant le meilleur passage visible de la nuit</string>
+    <string name="moon_widget_illumination" tm_human="true" translation_description="Widget line showing how much of the Moon\'s disc is lit; %1$d is a percentage number">%1$d%% illuminée</string>
+    <string name="moon_phase_new" translation_description="Name of the lunar phase when the Moon is fully dark">Nouvelle Lune</string>
+    <string name="moon_phase_waxing_crescent" translation_description="Name of the lunar phase between new moon and first quarter">Premier croissant</string>
+    <string name="moon_phase_first_quarter" translation_description="Name of the lunar phase when half the disc is lit and growing">Premier quartier</string>
+    <string name="moon_phase_waxing_gibbous" translation_description="Name of the lunar phase between first quarter and full moon">Lune gibbeuse croissante</string>
+    <string name="moon_phase_full" translation_description="Name of the lunar phase when the disc is fully lit">Pleine Lune</string>
+    <string name="moon_phase_waning_gibbous" translation_description="Name of the lunar phase between full moon and last quarter">Lune gibbeuse décroissante</string>
+    <string name="moon_phase_last_quarter" translation_description="Name of the lunar phase when half the disc is lit and shrinking">Dernier quartier</string>
+    <string name="moon_phase_waning_crescent" translation_description="Name of the lunar phase between last quarter and new moon">Dernier croissant</string>
+    <string name="moon_widget_age" translation_description="Widget line giving the Moon\'s age as the day of the lunar cycle, counting the day of new moon as day 1; %1$d is a number from 1 to 30">Jour %1$d</string>
 </resources>

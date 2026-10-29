@@ -550,4 +550,14 @@
     <string name="settings_eclipse_alerts_summary" translation_description="Explanation of the lunar-eclipse notification preference">चन्द्र ग्रहण शुरू होने से पहले एक एकल चेतावनी</string>
     <string name="settings_pass_alerts" translation_description="Preference title: notify shortly before a satellite passes overhead">उपग्रह का गुजरना</string>
     <string name="settings_pass_alerts_summary" translation_description="Explanation of the satellite-pass notification preference">रात के सबसे अच्छे दिखने वाले गुजरने से पहले एक एकल चेतावनी</string>
+    <string name="moon_widget_illumination" translation_description="Widget line showing how much of the Moon\'s disc is lit; %1$d is a percentage number">%1$d%% प्रकाशित</string>
+    <string name="moon_phase_new" translation_description="Name of the lunar phase when the Moon is fully dark">अमावस्या</string>
+    <string name="moon_phase_waxing_crescent" translation_description="Name of the lunar phase between new moon and first quarter">वर्धमान अर्धचन्द्र</string>
+    <string name="moon_phase_first_quarter" translation_description="Name of the lunar phase when half the disc is lit and growing">प्रथम चतुर्थांश</string>
+    <string name="moon_phase_waxing_gibbous" translation_description="Name of the lunar phase between first quarter and full moon">वर्धमान गिबस</string>
+    <string name="moon_phase_full" translation_description="Name of the lunar phase when the disc is fully lit">पूर्णिमा</string>
+    <string name="moon_phase_waning_gibbous" translation_description="Name of the lunar phase between full moon and last quarter">क्षीण गिबस</string>
+    <string name="moon_phase_last_quarter" translation_description="Name of the lunar phase when half the disc is lit and shrinking">अंतिम चतुर्थांश</string>
+    <string name="moon_phase_waning_crescent" translation_description="Name of the lunar phase between last quarter and new moon">क्षीण अर्धचन्द्र</string>
+    <string name="moon_widget_age" translation_description="Widget line giving the Moon\'s age as the day of the lunar cycle, counting the day of new moon as day 1; %1$d is a number from 1 to 30">दिन %1$d</string>
 </resources>

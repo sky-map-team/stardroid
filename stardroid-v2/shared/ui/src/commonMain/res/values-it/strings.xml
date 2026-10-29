@@ -562,4 +562,14 @@ Avvisi di eclissi: una notifica prima di un\'eclissi lunare.
     <string name="settings_eclipse_alerts_summary" translation_description="Explanation of the lunar-eclipse notification preference">Un singolo avviso prima che inizi un\'eclissi lunare</string>
     <string name="settings_pass_alerts" translation_description="Preference title: notify shortly before a satellite passes overhead">Passaggi di satelliti</string>
     <string name="settings_pass_alerts_summary" translation_description="Explanation of the satellite-pass notification preference">Un singolo avviso prima del miglior passaggio visibile della notte</string>
+    <string name="moon_widget_illumination" translation_description="Widget line showing how much of the Moon\'s disc is lit; %1$d is a percentage number">%1$d%% illuminata</string>
+    <string name="moon_phase_new" tm_human="true" translation_description="Name of the lunar phase when the Moon is fully dark">Luna nuova</string>
+    <string name="moon_phase_waxing_crescent" tm_human="true" translation_description="Name of the lunar phase between new moon and first quarter">Luna crescente</string>
+    <string name="moon_phase_first_quarter" tm_human="true" translation_description="Name of the lunar phase when half the disc is lit and growing">Primo quarto</string>
+    <string name="moon_phase_waxing_gibbous" tm_human="true" translation_description="Name of the lunar phase between first quarter and full moon">Gibbosa crescente</string>
+    <string name="moon_phase_full" tm_human="true" translation_description="Name of the lunar phase when the disc is fully lit">Luna piena</string>
+    <string name="moon_phase_waning_gibbous" tm_human="true" translation_description="Name of the lunar phase between full moon and last quarter">Gibbosa calante</string>
+    <string name="moon_phase_last_quarter" tm_human="true" translation_description="Name of the lunar phase when half the disc is lit and shrinking">Ultimo quarto</string>
+    <string name="moon_phase_waning_crescent" tm_human="true" translation_description="Name of the lunar phase between last quarter and new moon">Luna calante</string>
+    <string name="moon_widget_age" translation_description="Widget line giving the Moon\'s age as the day of the lunar cycle, counting the day of new moon as day 1; %1$d is a number from 1 to 30">Giorno %1$d</string>
 </resources>

@@ -502,4 +502,14 @@
     <string name="settings_eclipse_alerts_summary" translation_description="Explanation of the lunar-eclipse notification preference">월식 시작 직전 단일 알림</string>
     <string name="settings_pass_alerts" translation_description="Preference title: notify shortly before a satellite passes overhead">인공위성 통과</string>
     <string name="settings_pass_alerts_summary" translation_description="Explanation of the satellite-pass notification preference">오늘 밤 가장 잘 보이는 통과 직전 단일 알림</string>
+    <string name="moon_widget_illumination" translation_description="Widget line showing how much of the Moon\'s disc is lit; %1$d is a percentage number">%1$d%% 밝음</string>
+    <string name="moon_phase_new" translation_description="Name of the lunar phase when the Moon is fully dark">신월</string>
+    <string name="moon_phase_waxing_crescent" translation_description="Name of the lunar phase between new moon and first quarter">초승달</string>
+    <string name="moon_phase_first_quarter" translation_description="Name of the lunar phase when half the disc is lit and growing">상현달</string>
+    <string name="moon_phase_waxing_gibbous" translation_description="Name of the lunar phase between first quarter and full moon">상현망</string>
+    <string name="moon_phase_full" translation_description="Name of the lunar phase when the disc is fully lit">보름달</string>
+    <string name="moon_phase_waning_gibbous" translation_description="Name of the lunar phase between full moon and last quarter">하현망</string>
+    <string name="moon_phase_last_quarter" translation_description="Name of the lunar phase when half the disc is lit and shrinking">하현달</string>
+    <string name="moon_phase_waning_crescent" translation_description="Name of the lunar phase between last quarter and new moon">그믐달</string>
+    <string name="moon_widget_age" translation_description="Widget line giving the Moon\'s age as the day of the lunar cycle, counting the day of new moon as day 1; %1$d is a number from 1 to 30">%1$d일째</string>
 </resources>

@@ -553,4 +553,14 @@
     <string name="settings_eclipse_alerts_summary" translation_description="Explanation of the lunar-eclipse notification preference">Jednorázové upozornění před začátkem zatmění Měsíce</string>
     <string name="settings_pass_alerts" translation_description="Preference title: notify shortly before a satellite passes overhead">Přelety družic</string>
     <string name="settings_pass_alerts_summary" translation_description="Explanation of the satellite-pass notification preference">Jednorázové upozornění před nejlépe viditelným přeletem této noci</string>
+    <string name="moon_widget_illumination" translation_description="Widget line showing how much of the Moon\'s disc is lit; %1$d is a percentage number">%1$d%% osvětleno</string>
+    <string name="moon_phase_new" translation_description="Name of the lunar phase when the Moon is fully dark">Nov</string>
+    <string name="moon_phase_waxing_crescent" translation_description="Name of the lunar phase between new moon and first quarter">Dorůstající srpek</string>
+    <string name="moon_phase_first_quarter" translation_description="Name of the lunar phase when half the disc is lit and growing">První čtvrť</string>
+    <string name="moon_phase_waxing_gibbous" translation_description="Name of the lunar phase between first quarter and full moon">Dorůstající Měsíc</string>
+    <string name="moon_phase_full" translation_description="Name of the lunar phase when the disc is fully lit">Úplněk</string>
+    <string name="moon_phase_waning_gibbous" translation_description="Name of the lunar phase between full moon and last quarter">Ubývající Měsíc</string>
+    <string name="moon_phase_last_quarter" translation_description="Name of the lunar phase when half the disc is lit and shrinking">Poslední čtvrť</string>
+    <string name="moon_phase_waning_crescent" translation_description="Name of the lunar phase between last quarter and new moon">Ubývající srpek</string>
+    <string name="moon_widget_age" translation_description="Widget line giving the Moon\'s age as the day of the lunar cycle, counting the day of new moon as day 1; %1$d is a number from 1 to 30">Den %1$d</string>
 </resources>

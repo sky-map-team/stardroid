@@ -192,7 +192,8 @@ class GoodPassesTest {
 
     private fun pass(
         hoursOut: Int,
-        maxAltitudeDeg: Double,
+        maxAltitudeDeg: Double = 60.0,
+        peakMagnitude: Double = -2.0,
     ) = SatellitePass(
         satelliteName = "ISS",
         noradId = 25544,
@@ -202,36 +203,43 @@ class GoodPassesTest {
         maxAltitudeDeg = maxAltitudeDeg,
         startAzimuthDeg = 0.0,
         endAzimuthDeg = 0.0,
-        peakMagnitude = -2.0,
+        peakMagnitude = peakMagnitude,
         shadowEntry = null,
     )
 
     @Test
-    fun `always keeps the first pass but drops later low ones`() {
-        val passes = listOf(pass(1, 15.0), pass(25, 20.0), pass(49, 60.0))
+    fun `a pass must be both bright enough and high enough`() {
+        assertThat(pass(1).isGood).isTrue()
+        assertThat(pass(1, maxAltitudeDeg = 15.0).isGood).isFalse()
+        assertThat(pass(1, peakMagnitude = 0.5).isGood).isFalse()
+        assertThat(pass(1, maxAltitudeDeg = 15.0, peakMagnitude = 0.5).isGood).isFalse()
+    }
+
+    @Test
+    fun `the bars are inclusive at exactly 30 degrees and half a magnitude below zero`() {
+        assertThat(pass(1, maxAltitudeDeg = 30.0, peakMagnitude = -0.5).isGood).isTrue()
+    }
+
+    @Test
+    fun `the first pass gets no exemption`() {
+        val passes = listOf(pass(1, maxAltitudeDeg = 15.0), pass(25), pass(49))
         assertThat(passes.goodPasses().map { it.start }).isEqualTo(
-            listOf(passes[0].start, passes[2].start),
+            listOf(passes[1].start, passes[2].start),
         )
     }
 
     @Test
     fun `sorts by start and caps at the limit`() {
-        val passes = (1..10).map { pass(it * 24, 70.0) }.reversed()
+        val passes = (1..10).map { pass(it * 24) }.reversed()
         val good = passes.goodPasses(limit = 3)
         assertThat(good.size).isEqualTo(3)
         assertThat(good.first().start).isEqualTo(t0 + 24.hours)
     }
 
     @Test
-    fun `empty stays empty and a lone low pass is kept`() {
+    fun `empty stays empty and a lone poor pass is dropped`() {
         assertThat(emptyList<SatellitePass>().goodPasses()).isEqualTo(emptyList<SatellitePass>())
-        val low = pass(1, 12.0)
-        assertThat(listOf(low).goodPasses()).isEqualTo(listOf(low))
-    }
-
-    @Test
-    fun `a later pass at exactly 30 degrees is kept`() {
-        val passes = listOf(pass(1, 50.0), pass(25, 30.0))
-        assertThat(passes.goodPasses().size).isEqualTo(2)
+        assertThat(listOf(pass(1, maxAltitudeDeg = 12.0)).goodPasses())
+            .isEqualTo(emptyList<SatellitePass>())
     }
 }

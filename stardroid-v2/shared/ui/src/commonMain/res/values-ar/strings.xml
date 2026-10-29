@@ -538,4 +538,14 @@
     <string name="settings_eclipse_alerts_summary" translation_description="Explanation of the lunar-eclipse notification preference">تنبيه واحد قبل بدء خسوف القمر</string>
     <string name="settings_pass_alerts" translation_description="Preference title: notify shortly before a satellite passes overhead">مرور الأقمار الصناعية</string>
     <string name="settings_pass_alerts_summary" translation_description="Explanation of the satellite-pass notification preference">تنبيه واحد قبل أفضل مرور مرئي في الليل</string>
+    <string name="moon_widget_illumination" translation_description="Widget line showing how much of the Moon\'s disc is lit; %1$d is a percentage number">%1$d%% مضاء</string>
+    <string name="moon_phase_new" translation_description="Name of the lunar phase when the Moon is fully dark">المحاق</string>
+    <string name="moon_phase_waxing_crescent" translation_description="Name of the lunar phase between new moon and first quarter">الهلال المتزايد</string>
+    <string name="moon_phase_first_quarter" translation_description="Name of the lunar phase when half the disc is lit and growing">التربيع الأول</string>
+    <string name="moon_phase_waxing_gibbous" translation_description="Name of the lunar phase between first quarter and full moon">الأحدب المتزايد</string>
+    <string name="moon_phase_full" translation_description="Name of the lunar phase when the disc is fully lit">البدر</string>
+    <string name="moon_phase_waning_gibbous" translation_description="Name of the lunar phase between full moon and last quarter">الأحدب المتناقص</string>
+    <string name="moon_phase_last_quarter" translation_description="Name of the lunar phase when half the disc is lit and shrinking">التربيع الأخير</string>
+    <string name="moon_phase_waning_crescent" translation_description="Name of the lunar phase between last quarter and new moon">الهلال المتناقص</string>
+    <string name="moon_widget_age" translation_description="Widget line giving the Moon\'s age as the day of the lunar cycle, counting the day of new moon as day 1; %1$d is a number from 1 to 30">يوم %1$d</string>
 </resources>

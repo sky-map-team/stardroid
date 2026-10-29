@@ -219,17 +219,18 @@
     <string name="sun_wont_set_message" translation_description="Message shown when the sun will not set (or rise) during the next 24 hours at the user\'s location (polar day or polar night).">The sun will not set during the next 24 hours at your current location.</string>
     <string name="time_travel_start_message" translation_description="Toast message when time travel starts toward a chosen destination. %1$s is the formatted destination date and time.">Traveling through time to %1$s ...</string>
     <string name="time_travel_close_message" translation_description="Toast message shown when the user exits time travel and returns to the present.">Back to the present ...</string>
-    <string name="satellite_next_pass" translation_description="Heading above the table of upcoming visible passes on a satellite\'s info card.">Upcoming visible passes</string>
+    <string name="satellite_next_pass" translation_description="Heading above the table of upcoming good passes on a satellite\'s info card.">Upcoming good passes</string>
     <string name="satellite_pass_col_when" translation_description="Column heading in the satellite pass table: the date and time the pass starts.">When</string>
     <string name="satellite_pass_col_rises" translation_description="Column heading in the satellite pass table: the compass direction where the satellite rises. Keep it short.">Rises</string>
     <string name="satellite_pass_col_peak" translation_description="Column heading in the satellite pass table: the highest angle above the horizon the satellite reaches. Keep it short.">Peak</string>
     <string name="satellite_pass_col_magnitude" translation_description="Column heading in the satellite pass table: the satellite\'s brightness magnitude at its brightest. Keep it short.">Mag</string>
     <string name="satellite_pass_shadow" translation_description="Tells the user the satellite will fade out mid-pass when it enters the Earth\'s shadow. %1$s is a time.">Fades into Earth\'s shadow at %1$s</string>
-    <string name="satellite_no_pass" translation_description="Shown on a satellite info card when no visible pass is coming up in the next few days.">No visible passes in the next few days</string>
+    <string name="satellite_no_pass" translation_description="Shown on a satellite info card when no bright, high pass is coming up in the next few days.">No good passes in the next few days</string>
     <string name="satellite_pass_unknown" translation_description="Shown on a satellite info card when the downloaded orbit data is too old to predict pass times reliably.">Orbit data is too old to predict passes</string>
+    <string name="object_info_upcoming" translation_description="Heading above the list of upcoming events (passes, eclipses, moon phases) on an object\'s info card.">Upcoming</string>
     <string name="object_info_eclipse_title" translation_description="Heading above the next lunar eclipse details on the Moon\'s info card.">Lunar eclipse</string>
     <string name="object_info_no_eclipse" translation_description="Shown on the Moon\'s info card when no lunar eclipse is coming up in the searched time range.">No lunar eclipse expected soon</string>
-    <string name="object_info_eclipse_greatest" translation_description="The next lunar eclipse\'s type and greatest-eclipse date/time. %1$s is a localized eclipse type like \'Total lunar eclipse\', %2$s a date, %3$s a time.">%1$s — greatest eclipse %2$s at %3$s</string>
+    <string name="object_info_eclipse_greatest" translation_description="The next lunar eclipse\'s type and the date and time of maximum eclipse (when it peaks). %1$s is a localized eclipse type like \'Total lunar eclipse\', %2$s a date, %3$s a time.">%1$s — peaks %2$s at %3$s</string>
     <string name="object_info_eclipse_totality" translation_description="The start and end time of totality during a total lunar eclipse. %1$s and %2$s are times.">Totality %1$s – %2$s</string>
     <string name="object_info_image_credit" translation_description="Attribution line under the object\'s photo; %1$s is the credited source, e.g. NASA/ESA">Image: %1$s</string>
     <string name="object_info_fun_fact" translation_description="An interesting trivia line on the object info card; %1$s is the fact text">Fun fact: %1$s</string>
@@ -544,4 +545,14 @@ readings to Sky Map.</blockquote>
     <string name="diagnostics_rejected_samples" translation_description="Row label in the diagnostics screen for how many sensor readings have been thrown away as invalid since the app started">Rejected sensor samples (since start)</string>
     <string name="diagnostics_section_map" translation_description="Section heading in the diagnostics screen for what the sky map itself is doing with the sensor readings">Map</string>
     <string name="diagnostics_smoother_heals" translation_description="Row label in the diagnostics screen for how many times the orientation smoother had to reset itself after producing an invalid value since the app started">Smoother resets (since start)</string>
+    <string name="moon_widget_illumination" translation_description="Widget line showing how much of the Moon\'s disc is lit; %1$d is a percentage number">%1$d%% illuminated</string>
+    <string name="moon_phase_new" translation_description="Name of the lunar phase when the Moon is fully dark">New Moon</string>
+    <string name="moon_phase_waxing_crescent" translation_description="Name of the lunar phase between new moon and first quarter">Waxing Crescent</string>
+    <string name="moon_phase_first_quarter" translation_description="Name of the lunar phase when half the disc is lit and growing">First Quarter</string>
+    <string name="moon_phase_waxing_gibbous" translation_description="Name of the lunar phase between first quarter and full moon">Waxing Gibbous</string>
+    <string name="moon_phase_full" translation_description="Name of the lunar phase when the disc is fully lit">Full Moon</string>
+    <string name="moon_phase_waning_gibbous" translation_description="Name of the lunar phase between full moon and last quarter">Waning Gibbous</string>
+    <string name="moon_phase_last_quarter" translation_description="Name of the lunar phase when half the disc is lit and shrinking">Last Quarter</string>
+    <string name="moon_phase_waning_crescent" translation_description="Name of the lunar phase between last quarter and new moon">Waning Crescent</string>
+    <string name="moon_widget_age" translation_description="Widget line giving the Moon\'s age as the day of the lunar cycle, counting the day of new moon as day 1; %1$d is a number from 1 to 30">Day %1$d</string>
 </resources>

@@ -17,17 +17,22 @@ import androidx.compose.foundation.layout.BoxWithConstraints
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.WindowInsets
+import androidx.compose.foundation.layout.WindowInsetsSides
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.navigationBarsPadding
+import androidx.compose.foundation.layout.only
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.safeDrawing
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.widthIn
+import androidx.compose.foundation.layout.windowInsetsPadding
 import androidx.compose.foundation.pager.HorizontalPager
 import androidx.compose.foundation.pager.rememberPagerState
 import androidx.compose.foundation.rememberScrollState
@@ -268,11 +273,20 @@ private fun SlideLayout(
 ) {
     BoxWithConstraints(Modifier.fillMaxSize()) {
         backdrop()
-        // The backdrop is full bleed; the content keeps clear of the status bar, which iOS
-        // shows (Android's fullscreen theme hides it, so the inset is zero there).
+        // The backdrop is full bleed; the content keeps clear of the system bars and cutout (iOS
+        // shows the status bar; Android's fullscreen theme zeroes it). In landscape the notch is
+        // at a side, so the horizontal insets apply too.
         if (isLandscape()) {
             val panelWidth = minOf(PANEL_MAX_WIDTH, maxWidth * PANEL_MAX_FRACTION)
-            Row(Modifier.fillMaxSize().statusBarsPadding()) {
+            Row(
+                Modifier
+                    .fillMaxSize()
+                    .windowInsetsPadding(
+                        WindowInsets.safeDrawing.only(
+                            WindowInsetsSides.Horizontal + WindowInsetsSides.Top,
+                        ),
+                    ),
+            ) {
                 illustration(
                     Modifier
                         .weight(1f)

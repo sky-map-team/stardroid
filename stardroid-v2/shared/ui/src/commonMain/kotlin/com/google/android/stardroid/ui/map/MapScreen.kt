@@ -51,7 +51,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.layout.onSizeChanged
 import androidx.compose.ui.platform.LocalDensity
-import androidx.compose.ui.platform.LocalWindowInfo
 import androidx.compose.ui.unit.IntSize
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.Lifecycle
@@ -472,12 +471,11 @@ fun MapScreen(
             val hudEnabled by layersViewModel.hudEnabled.collectAsStateWithLifecycle()
             val arUi by mapViewModel.arUi.collectAsStateWithLifecycle()
             val arSpecs by mapViewModel.arCameraSpecs.collectAsStateWithLifecycle()
-            // In portrait the near-screen-wide time-travel player reaches into the HUD's
-            // top-right corner, so the HUD steps down below it while travel is engaged.
-            // Portrait as MapChrome reads it: a window that fills the screen, taller than wide.
-            val portrait = LocalWindowInfo.current.containerSize.let { it.width <= it.height }
+            // The time-travel player can reach into the HUD's top-right corner (always in
+            // portrait; in landscape once the HUD steps left of the action column), so the HUD
+            // steps down below it while travel is engaged, whatever the width.
             val hudTopClearance =
-                if (portrait && timeTravelState != TimeTravelState.REAL_TIME) {
+                if (timeTravelState != TimeTravelState.REAL_TIME) {
                     with(LocalDensity.current) { timeTravelPlayerHeightPx.toDp() } + 8.dp
                 } else {
                     0.dp
@@ -570,7 +568,7 @@ fun MapScreen(
                     .displayCutoutPadding()
                     .padding(8.dp)
                     // Measured after the padding, so this is the player itself; the HUD uses
-                    // it to step out of the way in portrait.
+                    // it to step out of the way.
                     .onSizeChanged { timeTravelPlayerHeightPx = it.height },
             ) {
                 TimeTravelPlayer(timeTravelViewModel)
