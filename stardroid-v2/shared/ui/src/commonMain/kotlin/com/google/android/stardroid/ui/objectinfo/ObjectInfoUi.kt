@@ -420,7 +420,7 @@ private fun UpcomingSection(upcoming: Upcoming) {
                     is SkyEvent.LunarEclipseUpcoming -> EclipseRow(event.circumstances)
                     is SkyEvent.ShowerPeak -> ShowerPeakRow(event)
                     is SkyEvent.WellPlacedPlanet -> WellPlacedPlanetRow(event)
-                    // Passes are the table above; the rest are not yet offered on the card.
+                    // Passes are the table above; other events have no card row.
                     else -> Unit
                 }
             }
@@ -434,7 +434,6 @@ private fun UpcomingSection(upcoming: Upcoming) {
     }
 }
 
-/** A shower's next peak, with the Moon's glare at that time. */
 @Composable
 private fun ShowerPeakRow(event: SkyEvent.ShowerPeak) {
     val formatter = rememberDateFormatter()
@@ -453,7 +452,6 @@ private fun ShowerPeakRow(event: SkyEvent.ShowerPeak) {
     )
 }
 
-/** A planet that is well placed tonight: from when, and which way to look. */
 @Composable
 private fun WellPlacedPlanetRow(event: SkyEvent.WellPlacedPlanet) {
     val timeFormatter = rememberTimeFormatter()

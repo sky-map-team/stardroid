@@ -263,6 +263,7 @@ class ObjectInfoViewModel(
         val noradId = SatelliteIds.noradIdFor(info.id)
         return when {
             noradId != null -> upcomingPassesFor(noradId)
+            // Before the target lookup, which would treat the Moon as a body with nothing to say.
             info.id == MOON_ID -> moonUpcoming()
             else -> eventTargetFor(info)?.let { upcomingForTarget(it) }
         }
@@ -270,6 +271,7 @@ class ObjectInfoViewModel(
 
     private suspend fun eventTargetFor(info: ObjectInfo): EventTarget? {
         SolarSystemIds.bodyFor(info.id)?.let { return EventTarget.Body(it) }
+        // Cheap guard: saves a catalog read on every star and deep-sky card.
         if (!info.id.value.startsWith(SHOWER_ID_PREFIX)) return null
         return catalog()
             .meteorShowers(locale.value)

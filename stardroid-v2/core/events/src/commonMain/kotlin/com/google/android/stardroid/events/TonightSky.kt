@@ -290,12 +290,10 @@ fun tonightSky(
     )
 }
 
-/** What [upcomingEvents] is asked about: one object, not the whole sky. */
 sealed interface EventTarget {
-    /** A planet: well placed tonight, or nothing. */
+    /** Any solar-system body; only the planets in [PLANET_QUALITY] ever yield an event. */
     data class Body(val body: SolarSystemBody) : EventTarget
 
-    /** A meteor shower: its next annual peak, however far off. */
     data class Shower(val shower: MeteorShower) : EventTarget
 }
 
@@ -304,8 +302,9 @@ sealed interface EventTarget {
  * every object, ranked". Both call the same finders and the same quality figures, so a card and a
  * widget row for the same event are the same event (D141 §3.2).
  *
- * Planets are only ever tonight's evening window, so [location] is required and without one the
- * answer is empty.
+ * Planets are only ever tonight's evening window, derived from [from] (pass "now"), so
+ * [location] is required and without one the answer is empty. A shower's peak can be any distance
+ * off.
  */
 fun upcomingEvents(
     target: EventTarget,
@@ -329,8 +328,7 @@ fun upcomingEvents(
                         RiseSetIndicator.SET,
                         ephemeris,
                     )
-                planetEvents(from, sunset ?: from, location, ephemeris)
-                    .filter { it.body == target.body }
+                planetEvents(from, sunset ?: from, location, ephemeris, setOf(target.body))
             }
         }
     }
@@ -369,6 +367,7 @@ private fun planetEvents(
     eveningStart: Instant,
     location: LatLong,
     ephemeris: Ephemeris,
+    bodies: Set<SolarSystemBody> = PLANET_QUALITY.keys,
 ): List<SkyEvent.WellPlacedPlanet> {
     // The sample grid and the Sun's altitude on it are planet-independent, so they are built once
     // rather than recomputed inside every candidate's loop (audit-2026-08 M1).
@@ -385,7 +384,7 @@ private fun planetEvents(
                 ) <= CIVIL_TWILIGHT_SUN_ALT_DEG
             }.toList()
 
-    return PLANET_QUALITY.mapNotNull { (body, baseQuality) ->
+    return PLANET_QUALITY.filterKeys { it in bodies }.mapNotNull { (body, baseQuality) ->
         var from: Instant? = null
         var bestAlt = 0.0
         for (sample in darkSamples) {

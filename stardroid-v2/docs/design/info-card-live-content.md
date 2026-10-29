@@ -1,6 +1,6 @@
 # Info Card Live Content: "Now" facts and "Upcoming" events
 
-**Status: BUILT** (phases 1 to 3 and 4a merged; 4b in review). What remains is the follow-up list in §8 and §10. The decisions
+**Status: BUILT.** What remains is the follow-up list in §8 and §10. The decisions
 entry is reserved as **D141**. This is the follow-up that D107 asked for. D107 recorded the card's
 one-slot-per-object-type shape and decided to wait for a fourth slot that repeated a pattern
 before generalizing it. #1131 and #1142 are the fourth and fifth requests, and they share a
