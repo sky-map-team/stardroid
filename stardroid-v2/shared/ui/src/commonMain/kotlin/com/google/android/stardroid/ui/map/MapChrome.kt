@@ -335,6 +335,7 @@ fun MapChrome(
 ) {
     // Android's ORIENTATION_LANDSCAPE, for a window that fills the screen: wider than tall.
     val landscape = LocalWindowInfo.current.containerSize.let { it.width > it.height }
+    val topEndMargin = if (landscape) ACTION_COLUMN_CLEARANCE else 8.dp
     Box(
         modifier
             .fillMaxSize()
@@ -343,8 +344,8 @@ fun MapChrome(
         // Top-right (D65): top-centre belongs to the time-travel player, the rail owns the
         // left edge in landscape, and the action cluster owns the bottom/right-edge corner.
         // While the camera layer is on, the AR panel takes the HUD's slot (the HUD's alignment
-        // correction rides along inside it); in landscape it steps left of the action column,
-        // which is tall enough to reach it.
+        // correction rides along inside it); in landscape both step left of the action column,
+        // which is tall enough to reach them.
         if (arUi != null) {
             ChromeZone(visible, ChromeEdge.TOP, Modifier.align(Alignment.TopEnd)) {
                 ArControls(
@@ -356,11 +357,7 @@ fun MapChrome(
                     onShutterFractionChange = onArShutterFractionChange,
                     hudState = hudState,
                     onResetAlignment = onResetAlignment,
-                    modifier =
-                        Modifier.padding(
-                            top = 8.dp + hudTopClearance,
-                            end = if (landscape) ACTION_COLUMN_CLEARANCE else 8.dp,
-                        ),
+                    modifier = Modifier.padding(top = 8.dp + hudTopClearance, end = topEndMargin),
                 )
             }
         } else if (hudState != null) {
@@ -368,11 +365,7 @@ fun MapChrome(
                 MapHud(
                     state = hudState,
                     onResetAlignment = onResetAlignment,
-                    modifier =
-                        Modifier.padding(
-                            top = 8.dp + hudTopClearance,
-                            end = if (landscape) ACTION_COLUMN_CLEARANCE else 8.dp,
-                        ),
+                    modifier = Modifier.padding(top = 8.dp + hudTopClearance, end = topEndMargin),
                 )
             }
         }

@@ -273,11 +273,11 @@ private fun SlideLayout(
 ) {
     BoxWithConstraints(Modifier.fillMaxSize()) {
         backdrop()
-        // The backdrop is full bleed; the content keeps clear of the status bar, which iOS
-        // shows (Android's fullscreen theme hides it, so the inset is zero there).
+        // The backdrop is full bleed; the content keeps clear of the system bars and cutout (iOS
+        // shows the status bar; Android's fullscreen theme zeroes it). In landscape the notch is
+        // at a side, so the horizontal insets apply too.
         if (isLandscape()) {
             val panelWidth = minOf(PANEL_MAX_WIDTH, maxWidth * PANEL_MAX_FRACTION)
-            // The notch sits at a side in landscape, so the sides need the inset too.
             Row(
                 Modifier
                     .fillMaxSize()
