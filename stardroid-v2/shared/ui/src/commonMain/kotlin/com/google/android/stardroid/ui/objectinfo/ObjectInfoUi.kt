@@ -540,7 +540,7 @@ private fun EclipseRow(circumstances: LunarEclipseCircumstances) {
             dateFormatter(greatest),
             timeFormatter(greatest),
         ),
-        style = MaterialTheme.typography.bodyMedium,
+        style = MaterialTheme.typography.bodySmall,
     )
     val totalityBegin = circumstances.totalityBegin
     val totalityEnd = circumstances.totalityEnd
