@@ -278,3 +278,16 @@ Deferred when the stopgap shipped. They belong in this work and are not yet sche
 - **Result caching** for repeated opens of the same card.
 - **TalkBack semantics** for the pass table rows. They are three loose `Text` cells today.
 - **Narrow-screen date column width.** The 3:1:1:1 weighting can truncate long date formats.
+
+## 11. Carried over from the phase 1 to 4 reviews
+
+Small items deferred while the phases shipped:
+- **One formatter for the moon note and the direction note.** "dark skies" / "moon N%" and
+  "direction · altitude" are written out for the card, the Tonight widget and the notification
+  digest. The thresholds share `DARK_MOON_FRACTION`, but the rounding does not.
+- **A "now" label** for a planet row whose evening window is already open (it reads "Well placed
+  from <current time>").
+- **A negative test** that a planet which is not well placed tonight gets no Upcoming section.
+- **The Moon on `EventTarget`.** Its list is still built in `ObjectInfoViewModel`.
+- **A card left open overnight** keeps the row it opened with; check on a device that the
+  live-content refresh covers it.
