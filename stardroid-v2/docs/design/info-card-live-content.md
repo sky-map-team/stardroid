@@ -1,6 +1,6 @@
 # Info Card Live Content: "Now" facts and "Upcoming" events
 
-**Status: IN PROGRESS.** Phases 1 (#1187) and 2 are built; phases 3 and 4 are not. The decisions
+**Status: IN PROGRESS.** Phases 1 (#1187), 2 (#1189) and 3 are built; phase 4 is not. The decisions
 entry is reserved as **D141**. This is the follow-up that D107 asked for. D107 recorded the card's
 one-slot-per-object-type shape and decided to wait for a fourth slot that repeated a pattern
 before generalizing it. #1131 and #1142 are the fourth and fifth requests, and they share a
@@ -57,11 +57,10 @@ gallery instead of the map. Adding #1131 the same way would mean more of these g
 - The selection rule is `List<SatellitePass>.goodPasses()` in `core/astronomy`: the first pass
   always, then only passes peaking at **30° or higher**.
 
-**This breaks §2.** The tonight widget and digest rank passes by peak *magnitude* (`passQuality`
-in `TonightSky.kt`, with −0.5 as the "ordinary" boundary). The card now filters by *altitude*.
-A dim, high pass appears on the card but not in the widget, and a bright, low pass the other
-way round, except for the first pass, which is always listed. Phase 3 removes `goodPasses()`
-and puts both on the one bar.
+**This broke §2, until phase 3.** The tonight widget and digest ranked passes by peak
+*magnitude* (`passQuality` in `TonightSky.kt`), while the card filtered by *altitude* and always
+listed the first pass, so a dim, high pass appeared on the card but not in the widget, and the
+other way round. Phase 3 put every surface on one bar (§7).
 
 ## 2. The principle
 
@@ -199,7 +198,7 @@ The strings involved are:
 | Object | Now | Upcoming |
 |---|---|---|
 | Moon | Rise/set, phase, % illuminated, age (#1131) | Next full moon, next new moon, next lunar eclipse (moved from the eclipse row) |
-| ISS, Tiangong | — | Qualifying passes over ~5 days, at most ~6 rows (#1142) |
+| ISS, Tiangong | — | Good passes (§7, phase 3) over 5 days, at most 5 rows (#1142) |
 | Planets | Rise/set | Well placed tonight |
 | Meteor showers | Rise/set of the radiant (any shower with a catalog position) | Upcoming peak, with moonlight |
 | Stars, deep-sky objects, Sun | Rise/set | No section |
@@ -222,9 +221,15 @@ The strings involved are:
    (`moon_phase_*`, `moon_widget_age`, `moon_widget_illumination`) moved from `app` to
    `shared/ui` with `tools/move_strings.py`, so the widget and the card share keys and
    `tm languages` is unchanged.
-3. **One quality bar for passes**, replacing the #1179 stopgap. Remove `goodPasses()`. The bar
-   applies across the card, widget, digest and alerts in the same change, so they cannot disagree
-   even briefly.
+3. **One quality bar for passes**, replacing the #1179 stopgap. **Done.** A pass is *good* if
+   its peak magnitude is ≤ −0.5 **and** its peak altitude is ≥ 30° (`SatellitePass.isGood` in
+   `core/astronomy`). `tonightSatellitePasses` (widget, digest, pass alerts) and
+   `upcomingVisiblePasses` (card) both go through `goodPasses()`, so they cannot disagree. The
+   card's "always show the first pass" exception is gone: when nothing is good the card says so,
+   and the alert is not armed. Both bars are inclusive. The card's empty-state text and heading now
+   say "good" rather than "visible" (`satellite_no_pass`, `satellite_next_pass`), since a visible
+   pass can still fail the bar. `passQuality` still ranks good passes by magnitude for the
+   widget's list.
 4. **Showers and planets** in Upcoming.
 
 ## 8. Ideas, not scope
@@ -239,14 +244,11 @@ The strings involved are:
 
 ## 9. Open questions
 
-1. **The quality bar for passes.** Peak magnitude ≤ −0.5 is the events engine's existing
-   "ordinary pass" boundary. The shipped card instead uses a 30° peak-altitude floor plus "always
-   the first pass" (#1179). Magnitude already accounts for range and altitude. A combined rule is
-   possible, but it must be the one rule every surface uses. Whether to keep "always show the
-   first pass" is part of this question: it stops the card disagreeing with the widget, but it
-   admits a faint pass.
-2. **Satellite range and row cap.** #1179 shipped **5 days and 5 rows**, with a comment that TLE
-   drift makes later times dishonest. Keep those values, or move to the 6 rows first proposed?
+1. ~~**The quality bar for passes.**~~ **Decided:** both bars, magnitude ≤ −0.5 and altitude
+   ≥ 30°, no first-pass exception (§7, phase 3).
+2. ~~**Satellite range and row cap.**~~ Kept at the **5 days and 5 rows** that #1179 shipped, since
+   TLE drift makes later times dishonest. Revisit only if the stricter bar leaves the table
+   too often empty.
 3. **Section heading.** "Upcoming", or "When to look"?
 4. **Moon list length.** One of each phase, or every phase inside a fixed range?
 

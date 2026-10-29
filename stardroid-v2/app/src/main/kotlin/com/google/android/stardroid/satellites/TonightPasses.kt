@@ -29,7 +29,7 @@ import kotlin.time.Duration.Companion.days
 import kotlin.time.Duration.Companion.hours
 
 /**
- * Tonight's visible satellite passes, for the surfaces that render [SkyEvent]s (D92 phase 4b).
+ * Tonight's good satellite passes (`isGood`), for the surfaces that render [SkyEvent]s (D92).
  *
  * **This is the gate.** `:core:events` is pure and cannot read a DataStore preference, so it takes
  * passes as a parameter and this function decides whether there are any to give it. One gate
@@ -66,7 +66,7 @@ suspend fun tonightSatellitePasses(
                 runCatching {
                     PassSearch(tle, location).visiblePasses(from, within)
                 }.getOrDefault(emptyList())
-            }.sortedBy { it.start }
+            }.goodPasses()
     }
 }
 
@@ -129,6 +129,8 @@ suspend fun trackedSatellites(
 /** Tighter than the ten-day staleness gate: a list of times promises more than one time does. */
 private val CARD_PASS_WINDOW: Duration = 5.days
 
+private const val CARD_PASS_LIMIT = 5
+
 /**
  * The next good visible passes for one satellite, for the info card's pass table.
  *
@@ -153,7 +155,7 @@ suspend fun upcomingVisiblePasses(
             ?.let { tle ->
                 runCatching { PassSearch(tle, location).visiblePasses(from, CARD_PASS_WINDOW) }
                     .getOrDefault(emptyList())
-                    .goodPasses()
+                    .goodPasses(CARD_PASS_LIMIT)
             }.orEmpty()
     }
 }

@@ -49,18 +49,19 @@ data class SatellitePass(
 }
 
 /**
- * The passes worth listing on a satellite's card: the first one always (so the card never
- * disagrees with the tonight widget about what is coming), then only those climbing at least
- * [GOOD_PASS_MIN_ALTITUDE_DEG] — a low pass is easily lost to trees and haze. At most [limit].
+ * The one quality bar for a pass (D141): bright enough to see easily *and* high enough not to be
+ * lost to trees and haze. The card, widget, digest and alerts all use it, so they cannot disagree.
  */
-fun List<SatellitePass>.goodPasses(limit: Int = GOOD_PASS_LIMIT): List<SatellitePass> {
-    val byStart = sortedBy { it.start }
-    val rest = byStart.drop(1).filter { it.maxAltitudeDeg >= GOOD_PASS_MIN_ALTITUDE_DEG }
-    return (byStart.take(1) + rest).take(limit)
-}
+val SatellitePass.isGood: Boolean
+    get() =
+        peakMagnitude <= GOOD_PASS_MAX_MAGNITUDE && maxAltitudeDeg >= GOOD_PASS_MIN_ALTITUDE_DEG
 
+/** The passes that clear [isGood], soonest first, at most [limit]. */
+fun List<SatellitePass>.goodPasses(limit: Int = Int.MAX_VALUE): List<SatellitePass> =
+    filter { it.isGood }.sortedBy { it.start }.take(limit)
+
+private const val GOOD_PASS_MAX_MAGNITUDE: Double = -0.5
 private const val GOOD_PASS_MIN_ALTITUDE_DEG: Double = 30.0
-private const val GOOD_PASS_LIMIT: Int = 5
 
 /**
  * Finds visible satellite passes by scanning forward in time.
