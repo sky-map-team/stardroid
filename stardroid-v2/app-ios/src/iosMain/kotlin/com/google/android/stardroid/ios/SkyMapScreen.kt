@@ -64,6 +64,7 @@ import com.google.android.stardroid.ui.startup.StartupViewModel
 import com.google.android.stardroid.ui.startup.VersionBanner
 import com.google.android.stardroid.ui.startup.WhatsNewDialog
 import com.google.android.stardroid.ui.startup.appVersionName
+import com.google.android.stardroid.ui.support.SupportScreen
 import com.google.android.stardroid.ui.theme.SkyMapTheme
 import com.google.android.stardroid.ui.timetravel.TimeTravelViewModel
 import kotlinx.coroutines.launch
@@ -178,6 +179,7 @@ private fun SkyMapScreen(
                 onOpenTutorial = { open(Page.TUTORIAL) },
                 onOpenHelp = { open(Page.HELP) },
                 onOpenWhatsNew = { open(Page.WHATS_NEW) },
+                onOpenSupport = { open(Page.SUPPORT) },
                 onOpenCalibration = { userInitiated ->
                     open(if (userInitiated) Page.CALIBRATION else Page.CALIBRATION_PROMPT)
                 },
@@ -211,6 +213,14 @@ private fun SkyMapScreen(
                         },
                     )
                 Page.WHATS_NEW -> WhatsNewScreen(nightMode = nightMode, onBack = ::back)
+                Page.SUPPORT ->
+                    SupportScreen(
+                        nightMode = nightMode,
+                        onBack = ::back,
+                        onAction = mapViewModel::logSupportAction,
+                        // No App Store URL to share until the listing exists.
+                        onShareApp = null,
+                    )
                 Page.SETTINGS ->
                     SettingsScreen(
                         settingsViewModel,
@@ -298,7 +308,11 @@ private fun SkyMapScreen(
                     if (current.needsWhatsNew &&
                         (!current.needsWarmWelcome || current.needsWhatsNewDuringWarmWelcome)
                     ) {
-                        WhatsNewDialog(nightMode = nightMode, onDismiss = startup::dismissWhatsNew)
+                        WhatsNewDialog(
+                            nightMode = nightMode,
+                            onDismiss = startup::dismissWhatsNew,
+                            onOpenSupport = { open(Page.SUPPORT) },
+                        )
                     }
                 }
             }
@@ -407,6 +421,7 @@ private fun GalleryPage(
 private enum class Page {
     HELP,
     WHATS_NEW,
+    SUPPORT,
     SETTINGS,
 
     /** Reached from Settings, as on Android. */
