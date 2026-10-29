@@ -74,6 +74,7 @@ import androidx.compose.material3.rememberTooltipState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
@@ -86,6 +87,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.graphicsLayer
+import androidx.compose.ui.layout.onSizeChanged
+import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.platform.LocalLayoutDirection
 import androidx.compose.ui.platform.LocalWindowInfo
 import androidx.compose.ui.semantics.Role
@@ -335,16 +338,27 @@ fun MapChrome(
 ) {
     // Android's ORIENTATION_LANDSCAPE, for a window that fills the screen: wider than tall.
     val landscape = LocalWindowInfo.current.containerSize.let { it.width > it.height }
+    // Sizes in px, each 0 until first measured, which reads as "doesn't fit".
+    var chromeHeightPx by remember { mutableIntStateOf(0) }
+    var topEndHeightPx by remember { mutableIntStateOf(0) }
+    var actionColumnHeightPx by remember { mutableIntStateOf(0) }
+    val gapPx = with(LocalDensity.current) { 8.dp.roundToPx() }
+    val fitsAboveActionColumn =
+        topEndHeightPx > 0 &&
+            actionColumnHeightPx > 0 &&
+            topEndHeightPx + gapPx + actionColumnHeightPx <= chromeHeightPx
+    val topEndMargin = if (landscape && !fitsAboveActionColumn) ACTION_COLUMN_CLEARANCE else 8.dp
     Box(
         modifier
             .fillMaxSize()
-            .windowInsetsPadding(WindowInsets.safeDrawing),
+            .windowInsetsPadding(WindowInsets.safeDrawing)
+            .onSizeChanged { chromeHeightPx = it.height },
     ) {
         // Top-right (D65): top-centre belongs to the time-travel player, the rail owns the
         // left edge in landscape, and the action cluster owns the bottom/right-edge corner.
         // While the camera layer is on, the AR panel takes the HUD's slot (the HUD's alignment
-        // correction rides along inside it); in landscape it steps left of the action column,
-        // which is tall enough to reach it.
+        // correction rides along inside it). In landscape both sit above the action column
+        // when the screen is tall enough for the two, and step left of it when not.
         if (arUi != null) {
             ChromeZone(visible, ChromeEdge.TOP, Modifier.align(Alignment.TopEnd)) {
                 ArControls(
@@ -357,10 +371,9 @@ fun MapChrome(
                     hudState = hudState,
                     onResetAlignment = onResetAlignment,
                     modifier =
-                        Modifier.padding(
-                            top = 8.dp + hudTopClearance,
-                            end = if (landscape) ACTION_COLUMN_CLEARANCE else 8.dp,
-                        ),
+                        Modifier
+                            .onSizeChanged { topEndHeightPx = it.height }
+                            .padding(top = 8.dp + hudTopClearance, end = topEndMargin),
                 )
             }
         } else if (hudState != null) {
@@ -368,7 +381,10 @@ fun MapChrome(
                 MapHud(
                     state = hudState,
                     onResetAlignment = onResetAlignment,
-                    modifier = Modifier.padding(top = 8.dp + hudTopClearance, end = 8.dp),
+                    modifier =
+                        Modifier
+                            .onSizeChanged { topEndHeightPx = it.height }
+                            .padding(top = 8.dp + hudTopClearance, end = topEndMargin),
                 )
             }
         }
@@ -419,7 +435,10 @@ fun MapChrome(
                 onOpenTimeTravel = onOpenTimeTravel,
                 onOpenOverflow = onOpenOverflow,
                 tourTargetModifier = tourTargetModifier,
-                modifier = Modifier.padding(end = 8.dp, bottom = 8.dp),
+                modifier =
+                    Modifier
+                        .onSizeChanged { actionColumnHeightPx = it.height }
+                        .padding(end = 8.dp, bottom = 8.dp),
             )
         }
     }
