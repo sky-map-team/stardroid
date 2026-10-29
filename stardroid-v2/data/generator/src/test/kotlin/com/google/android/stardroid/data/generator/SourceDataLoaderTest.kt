@@ -170,6 +170,9 @@ class SourceDataLoaderTest {
         assertThat(loaded.hasName("constellation/ursa_minor", "en", "Little Dipper")).isTrue()
         assertThat(loaded.hasName("constellation/crux", "en", "Southern Cross")).isTrue()
         assertThat(loaded.hasName("constellation/ursa_major", "zh-hans", "北斗七星")).isTrue()
+        assertThat(loaded.hasName("constellation/orion", "en", "Orion's Belt")).isTrue()
+        assertThat(loaded.hasName("constellation/sagittarius", "en", "The Teapot")).isTrue()
+        assertThat(loaded.hasName("constellation/leo", "en", "The Sickle")).isTrue()
     }
 
     /** Earth is a card-only entry so searching for it has an answer in the locales users type in. */
