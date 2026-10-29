@@ -993,8 +993,8 @@ fun OverflowSheet(
     onOpenHelp: (() -> Unit)?,
     onOpenWhatsNew: (() -> Unit)?,
     onOpenSettings: (() -> Unit)?,
+    onOpenSupport: (() -> Unit)?,
     onDismiss: () -> Unit,
-    onOpenSupport: (() -> Unit)? = null,
 ) {
     ModalBottomSheet(onDismissRequest = onDismiss) {
         Column(

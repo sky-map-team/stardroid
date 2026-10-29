@@ -70,7 +70,7 @@ fun WhatsNewDialog(
                 html,
                 nightMode = nightMode,
                 onInternalLink = { url ->
-                    if (url == "${APP_LINK_SCHEME}support") {
+                    if (url == SUPPORT_LINK) {
                         onDismiss()
                         onOpenSupport()
                     }
@@ -89,3 +89,6 @@ fun WhatsNewDialog(
         },
     )
 }
+
+// Must match the href in whats_new_support_link.
+private const val SUPPORT_LINK = "${APP_LINK_SCHEME}support"

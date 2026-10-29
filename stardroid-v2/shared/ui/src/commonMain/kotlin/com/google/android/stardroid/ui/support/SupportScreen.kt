@@ -58,12 +58,9 @@ private const val BMAC_URL =
     "https://buymeacoffee.com/skymapdevs?utm_source=skymap&utm_medium=app&utm_campaign=support"
 
 /**
- * The ways to help Sky Map. Each tap reports a `SUPPORT_ACTION_*` through [onAction] so the
- * host can log it.
- *
- * [onShareApp] is null where the host has no share sheet to offer. [sponsorRow] is the host's
- * own sponsoring row (iOS's tip jar, which must be in-app purchase); without one, a Buy Me a
- * Coffee link is shown wherever [donationLinksAllowed].
+ * [onShareApp] is null where the host has no share sheet. [sponsorRow] is the host's own
+ * sponsoring row (iOS's tip jar, which must be in-app purchase) and is shown regardless of
+ * [donationLinksAllowed]; without one, a Buy Me a Coffee link shows only where that is true.
  */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -153,7 +150,7 @@ fun SupportScreen(
     }
 }
 
-/** A tappable row. Public so a host's [SupportScreen] `sponsorRow` matches the others. */
+/** Public so a host's `sponsorRow` matches the other rows. */
 @Composable
 fun SupportRow(
     title: String,
