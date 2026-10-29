@@ -15,6 +15,7 @@ import com.google.android.stardroid.analytics.Analytics
 import com.google.android.stardroid.analytics.AnalyticsEvents
 import com.google.android.stardroid.analytics.NoOpAnalytics
 import com.google.android.stardroid.astronomy.Ephemeris
+import com.google.android.stardroid.astronomy.LunarPhase
 import com.google.android.stardroid.astronomy.MeeusEphemeris
 import com.google.android.stardroid.astronomy.RiseSetIndicator
 import com.google.android.stardroid.astronomy.SatellitePass
@@ -25,6 +26,7 @@ import com.google.android.stardroid.astronomy.horizonAltitudeDeg
 import com.google.android.stardroid.astronomy.illuminationPercent
 import com.google.android.stardroid.astronomy.moonWidgetModel
 import com.google.android.stardroid.astronomy.nextLunarEclipse
+import com.google.android.stardroid.astronomy.nextLunarPhaseEvent
 import com.google.android.stardroid.astronomy.nextRiseSetTime
 import com.google.android.stardroid.catalog.CatalogRepository
 import com.google.android.stardroid.catalog.CelestialObjectId
@@ -258,7 +260,7 @@ class ObjectInfoViewModel(
         val noradId = SatelliteIds.noradIdFor(info.id)
         return when {
             noradId != null -> upcomingPassesFor(noradId)
-            info.id == MOON_ID -> nextEclipse()
+            info.id == MOON_ID -> moonUpcoming()
             else -> null
         }
     }
@@ -271,16 +273,23 @@ class ObjectInfoViewModel(
         return Upcoming.Events(passes.map { SkyEvent.SatellitePassTonight(it, UNRANKED) })
     }
 
-    // Always MeeusEphemeris, not [ephemeris]: eclipse timing needs the accurate,
-    // precession-consistent Sun/Moon frame (D84).
-    private suspend fun nextEclipse(): Upcoming {
-        val eclipse = withContext(computeContext) { nextLunarEclipse(now(), MeeusEphemeris) }
-        return if (eclipse == null) {
-            Upcoming.NothingComing(UpcomingKind.LUNAR_ECLIPSE)
-        } else {
-            Upcoming.Events(listOf(SkyEvent.LunarEclipseUpcoming(eclipse, UNRANKED)))
+    // The eclipse uses MeeusEphemeris, not [ephemeris]: its timing needs the accurate,
+    // precession-consistent Sun/Moon frame (D84). The phases use the widget's ephemeris.
+    private suspend fun moonUpcoming(): Upcoming =
+        withContext(computeContext) {
+            val time = now()
+            val phases =
+                listOf(LunarPhase.FULL, LunarPhase.NEW).map { phase ->
+                    val at = nextLunarPhaseEvent(phase, time, ephemeris)
+                    at to SkyEvent.MoonPhaseTonight(phase, at, UNRANKED)
+                }
+            val eclipse =
+                nextLunarEclipse(time, MeeusEphemeris)?.let {
+                    it.greatestEclipse to SkyEvent.LunarEclipseUpcoming(it, UNRANKED)
+                }
+            val soonestFirst = (phases + listOfNotNull(eclipse)).sortedBy { (at, _) -> at }
+            Upcoming.Events(soonestFirst.map { (_, event) -> event })
         }
-    }
 
     /**
      * Rise/set for [info] after the map's current time at the observer's location (D51):
