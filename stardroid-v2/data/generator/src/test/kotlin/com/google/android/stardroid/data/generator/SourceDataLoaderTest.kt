@@ -155,4 +155,31 @@ class SourceDataLoaderTest {
             dir.toFile().deleteRecursively()
         }
     }
+
+    private fun CatalogData.hasName(
+        id: String,
+        locale: String,
+        name: String,
+    ) = names.any { it.objectId == id && it.locale == locale && it.name == name }
+
+    /** Well-known asterisms resolve to the constellation that contains them (issue #1199). */
+    @Test
+    fun `asterism nicknames are searchable aliases of their constellation`() {
+        val loaded = SourceDataLoader.load(sourceData)
+        assertThat(loaded.hasName("constellation/ursa_major", "en", "Big Dipper")).isTrue()
+        assertThat(loaded.hasName("constellation/ursa_minor", "en", "Little Dipper")).isTrue()
+        assertThat(loaded.hasName("constellation/crux", "en", "Southern Cross")).isTrue()
+        assertThat(loaded.hasName("constellation/ursa_major", "zh-hans", "北斗七星")).isTrue()
+    }
+
+    /** Earth is a card-only entry so searching for it has an answer in the locales users type in. */
+    @Test
+    fun `earth is searchable in its common names`() {
+        val loaded = SourceDataLoader.load(sourceData)
+        assertThat(loaded.objects.single { it.id == "planet/earth" }.ra).isNull()
+        listOf("en" to "Earth", "id" to "Bumi", "es" to "Tierra", "it" to "Terra", "tr" to "Dünya")
+            .forEach { (locale, name) ->
+                assertThat(loaded.hasName("planet/earth", locale, name)).isTrue()
+            }
+    }
 }

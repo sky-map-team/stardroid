@@ -670,6 +670,9 @@
     "moon/callisto"
    ]
   },
+  "planet/earth": {
+   "type": "planet"
+  },
   "planet/mars": {
    "type": "planet",
    "image_ref": "planets/hubble_mars.webp",

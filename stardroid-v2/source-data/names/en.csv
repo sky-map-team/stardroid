@@ -29,6 +29,7 @@ constellation/corona_borealis,Corona Borealis,1
 constellation/corvus,Corvus,1
 constellation/crater,Crater,1
 constellation/crux,Crux,1
+constellation/crux,Southern Cross,0
 constellation/cygnus,Cygnus,1
 constellation/delphinus,Delphinus,1
 constellation/dorado,Dorado,1
@@ -83,7 +84,12 @@ constellation/triangulum,Triangulum,1
 constellation/triangulum_australe,Triangulum Australe,1
 constellation/tucana,Tucana,1
 constellation/ursa_major,Ursa Major,1
+constellation/ursa_major,Big Dipper,0
+constellation/ursa_major,Plough,0
+constellation/ursa_major,Great Bear,0
 constellation/ursa_minor,Ursa Minor,1
+constellation/ursa_minor,Little Dipper,0
+constellation/ursa_minor,Little Bear,0
 constellation/vela,Vela,1
 constellation/virgo,Virgo,1
 constellation/volans,Volans,1
@@ -184,6 +190,7 @@ moon/titan,Titan,1
 moon/titania,Titania,1
 moon/triton,Triton,1
 moon/umbriel,Umbriel,1
+planet/earth,Earth,1
 planet/jupiter,Jupiter,1
 planet/mars,Mars,1
 planet/mercury,Mercury,1

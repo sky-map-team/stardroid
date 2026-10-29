@@ -111,6 +111,10 @@ class SearchViewModel(
     private val _noResults = MutableStateFlow(false)
     val noResults: StateFlow<Boolean> = _noResults.asStateFlow()
 
+    /** True after Earth is picked: there is nothing to point at, the observer stands on it. */
+    private val _standingOnEarth = MutableStateFlow(false)
+    val standingOnEarth: StateFlow<Boolean> = _standingOnEarth.asStateFlow()
+
     /** Non-null while search mode is engaged (the overlay and control bar show). */
     private val _target = MutableStateFlow<SearchTarget?>(null)
     val target: StateFlow<SearchTarget?> = _target.asStateFlow()
@@ -144,6 +148,7 @@ class SearchViewModel(
     fun setQuery(text: String) {
         _query.value = text
         _noResults.value = false
+        _standingOnEarth.value = false
     }
 
     /**
@@ -168,6 +173,10 @@ class SearchViewModel(
 
     /** The user picked a hit from the list (v1's single-result / "Did you mean?" selection). */
     fun select(picked: SearchHit) {
+        if (picked.id == SolarSystemIds.EARTH_ID) {
+            _standingOnEarth.value = true
+            return
+        }
         viewModelScope.launch {
             // A satellite moves ~1° every few seconds, so the position the list was built with
             // may be stale by now: take a fresh one.
