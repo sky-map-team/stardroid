@@ -368,7 +368,11 @@ fun MapChrome(
                 MapHud(
                     state = hudState,
                     onResetAlignment = onResetAlignment,
-                    modifier = Modifier.padding(top = 8.dp + hudTopClearance, end = 8.dp),
+                    modifier =
+                        Modifier.padding(
+                            top = 8.dp + hudTopClearance,
+                            end = if (landscape) ACTION_COLUMN_CLEARANCE else 8.dp,
+                        ),
                 )
             }
         }
