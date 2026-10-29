@@ -76,6 +76,7 @@ class CoreMotionOrientationSource(
     private val config: Flow<SensorConfig>,
     trueNorthAllowed: Flow<Boolean>,
     active: Flow<Boolean>,
+    private val displayRotation: DisplayRotationHolder = DisplayRotationHolder(),
 ) : OrientationSource {
     init {
         motionManager.deviceMotionUpdateInterval = UPDATE_INTERVAL_SECONDS
@@ -148,7 +149,10 @@ class CoreMotionOrientationSource(
                 motionQueue,
             ) { motion, _ ->
                 if (motion != null) {
-                    val matrix = motion.attitude.rotationMatrix.useContents { toPhoneToWorld() }
+                    val matrix =
+                        motion.attitude.rotationMatrix
+                            .useContents { toPhoneToWorld() }
+                            .inDisplayFrame(displayRotation.rotation)
                     val field =
                         motion.magneticField.useContents {
                             SensorReading(

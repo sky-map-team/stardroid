@@ -157,6 +157,9 @@ class IosAppGraph {
             hasLocationPermission = { coreLocation.isAuthorized },
         )
 
+    /** Kept current by the map's view controller; the sensors remap into this frame. */
+    val displayRotation = DisplayRotationHolder()
+
     private val orientationSource =
         CoreMotionOrientationSource(
             motionManager = motionManager,
@@ -176,6 +179,7 @@ class IosAppGraph {
                     allowed && use
                 },
             active = foreground.isForeground,
+            displayRotation = displayRotation,
         )
 
     /** The app's language, as the catalog reads it; iOS restarts an app whose language changes. */

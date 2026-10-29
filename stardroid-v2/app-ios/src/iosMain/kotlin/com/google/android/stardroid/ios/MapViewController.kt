@@ -32,6 +32,8 @@ import kotlinx.coroutines.launch
 import platform.CoreGraphics.CGPointZero
 import platform.CoreGraphics.CGRectZero
 import platform.CoreGraphics.CGSize
+import platform.Foundation.NSNotificationCenter
+import platform.Foundation.NSOperationQueue
 import platform.Foundation.NSProcessInfo
 import platform.Foundation.NSRunLoop
 import platform.Foundation.NSRunLoopCommonModes
@@ -48,6 +50,8 @@ import platform.Metal.MTLPixelFormatBGRA8Unorm
 import platform.MetalKit.MTKView
 import platform.MetalKit.MTKViewDelegateProtocol
 import platform.QuartzCore.CADisplayLink
+import platform.UIKit.UIDevice
+import platform.UIKit.UIDeviceOrientationDidChangeNotification
 import platform.UIKit.UIGestureRecognizer
 import platform.UIKit.UIGestureRecognizerDelegateProtocol
 import platform.UIKit.UIGestureRecognizerStateBegan
@@ -60,6 +64,8 @@ import platform.UIKit.UIScreen
 import platform.UIKit.UITapGestureRecognizer
 import platform.UIKit.UIViewController
 import platform.darwin.NSObject
+import platform.darwin.dispatch_async
+import platform.darwin.dispatch_get_main_queue
 import kotlin.math.PI
 import kotlin.math.hypot
 import kotlin.math.min
@@ -87,12 +93,34 @@ class MapViewController(
             imageLoader = BundleImageLoader::load,
             onAnimating = { requestFrame() },
         )
-    private val drawLoop = DrawLoop(renderer, device.newCommandQueue() ?: error("no command queue"))
+    private val drawLoop =
+        DrawLoop(
+            renderer,
+            device.newCommandQueue() ?: error("no command queue"),
+            onResize = { requestFrame() },
+        )
     private val gestures = Gestures()
     private val frames = FrameRequests()
     private val scope = CoroutineScope(SupervisorJob() + Dispatchers.Main)
 
-    val viewController: UIViewController = UIViewController()
+    val viewController: UIViewController = HostViewController()
+
+    /**
+     * Keeps [IosAppGraph.displayRotation] current. A 180° turn between the two landscapes keeps
+     * the view's size, so layout alone can miss it; the device-orientation notification is
+     * re-read after UIKit has updated the scene.
+     */
+    private inner class HostViewController : UIViewController(nibName = null, bundle = null) {
+        override fun viewDidLayoutSubviews() {
+            super.viewDidLayoutSubviews()
+            refreshDisplayRotation()
+        }
+    }
+
+    private fun refreshDisplayRotation() {
+        val scene = view.window?.windowScene ?: return
+        graph.displayRotation.rotation = DisplayRotation.from(scene.interfaceOrientation)
+    }
 
     /**
      * The GPU drawing the sky, for the diagnostics screen's Graphics rows (Android reads its own
@@ -136,6 +164,14 @@ class MapViewController(
         view.paused = true
         view.enableSetNeedsDisplay = false
         view.delegate = drawLoop
+        UIDevice.currentDevice.beginGeneratingDeviceOrientationNotifications()
+        NSNotificationCenter.defaultCenter.addObserverForName(
+            UIDeviceOrientationDidChangeNotification,
+            null,
+            NSOperationQueue.mainQueue,
+        ) {
+            dispatch_async(dispatch_get_main_queue()) { refreshDisplayRotation() }
+        }
         listOf(
             UIPanGestureRecognizer(gestures, NSSelectorFromString("pan:")),
             UIPinchGestureRecognizer(gestures, NSSelectorFromString("pinch:")),
@@ -219,11 +255,13 @@ class MapViewController(
     private class DrawLoop(
         private val renderer: MetalSkyRenderer,
         private val queue: MTLCommandQueueProtocol,
+        private val onResize: () -> Unit,
     ) : NSObject(), MTKViewDelegateProtocol {
+        // The view is paused, so a rotation would otherwise show the old frame stretched.
         override fun mtkView(
             view: MTKView,
             drawableSizeWillChange: CValue<CGSize>,
-        ) = Unit
+        ) = onResize()
 
         override fun drawInMTKView(view: MTKView) {
             val pass = view.currentRenderPassDescriptor ?: return
