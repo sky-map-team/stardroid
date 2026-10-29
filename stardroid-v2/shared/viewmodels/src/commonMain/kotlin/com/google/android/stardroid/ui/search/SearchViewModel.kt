@@ -227,8 +227,8 @@ class SearchViewModel(
         analytics.trackEvent(
             AnalyticsEvents.SEARCH_EVENT,
             mapOf(
-                // The query when typed; the target name for a tap-through (gallery Find).
-                AnalyticsEvents.SEARCH_TERM to _query.value.trim().ifEmpty { target.name },
+                AnalyticsEvents.SEARCH_TERM to normalizeTerm(target.name),
+                AnalyticsEvents.SEARCH_QUERY to normalizeTerm(_query.value),
                 AnalyticsEvents.SEARCH_SUCCESS to "true",
             ),
         )
@@ -330,10 +330,14 @@ class SearchViewModel(
     private suspend fun satellitePosition(id: CelestialObjectId): RaDec? =
         satellitesSafely().firstOrNull { it.info.id == id }?.position
 
+    // Trim, collapse whitespace and lower-case so "Moon " and "moon" count as one GA4 term.
+    private fun normalizeTerm(term: String): String =
+        term.trim().replace(WHITESPACE, " ").lowercase()
+
     private fun searchFailed(term: String) {
         analytics.trackEvent(
             AnalyticsEvents.SEARCH_FAILED_EVENT,
-            mapOf(AnalyticsEvents.SEARCH_TERM to term),
+            mapOf(AnalyticsEvents.SEARCH_TERM to normalizeTerm(term)),
         )
         _noResults.value = true
     }
@@ -379,6 +383,8 @@ class SearchViewModel(
         ephemeris.topocentricPosition(body, now(), location()).toGeocentricVector()
 
     companion object {
+        private val WHITESPACE = Regex("\\s+")
+
         private fun words(text: String): List<String> =
             text.split(' ', '(', ')', '-').filter { it.isNotEmpty() }
 

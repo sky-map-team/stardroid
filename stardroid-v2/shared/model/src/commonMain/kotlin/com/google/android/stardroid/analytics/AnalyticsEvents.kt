@@ -129,6 +129,7 @@ object AnalyticsEvents {
     // Search (SEARCH_EVENT/SEARCH_TERM mirror Firebase's built-in names).
     const val SEARCH_EVENT = "search"
     const val SEARCH_TERM = "search_term"
+    const val SEARCH_QUERY = "search_query"
     const val SEARCH_SUCCESS = "search_success"
     const val SEARCH_FAILED_EVENT = "search_failed_ev"
 
