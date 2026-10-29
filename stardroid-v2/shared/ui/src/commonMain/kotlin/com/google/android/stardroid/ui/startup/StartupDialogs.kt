@@ -31,6 +31,9 @@ import com.google.android.stardroid.ui.resources.whats_new_dialog_title
 import com.google.android.stardroid.ui.resources.whats_new_support_link
 import org.jetbrains.compose.resources.stringResource
 
+// Must match the href in whats_new_support_link.
+private const val SUPPORT_LINK = "${APP_LINK_SCHEME}support"
+
 /**
  * The app's version name, for the What's New and Help headings (v1 `getVersionName`): the
  * manifest's on Android, the bundle's short version on iOS.
@@ -89,6 +92,3 @@ fun WhatsNewDialog(
         },
     )
 }
-
-// Must match the href in whats_new_support_link.
-private const val SUPPORT_LINK = "${APP_LINK_SCHEME}support"

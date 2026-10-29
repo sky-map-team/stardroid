@@ -60,7 +60,7 @@ private const val BMAC_URL =
 /**
  * [onShareApp] is null where the host has no share sheet. [sponsorRow] is the host's own
  * sponsoring row (iOS's tip jar, which must be in-app purchase) and is shown regardless of
- * [donationLinksAllowed]; without one, a Buy Me a Coffee link shows only where that is true.
+ * [donationLinksAllowed]; without one, a Buy Me a Coffee link shows only where [donationLinksAllowed] is true.
  */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
