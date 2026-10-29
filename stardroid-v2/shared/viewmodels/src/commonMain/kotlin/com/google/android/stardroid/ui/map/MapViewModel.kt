@@ -653,6 +653,14 @@ class MapViewModel(
         )
     }
 
+    /** One of the Support screen's ways to help was tapped; [action] is a `SUPPORT_ACTION_*`. */
+    fun logSupportAction(action: String) {
+        analytics.trackEvent(
+            AnalyticsEvents.SUPPORT_ACTION_EVENT,
+            mapOf(AnalyticsEvents.SUPPORT_ACTION_VALUE to action),
+        )
+    }
+
     /** The no-usable-sensors dialog came up (v1 logged the same on its warning toast). */
     fun logNoSensorsWarning() {
         analytics.trackEvent(AnalyticsEvents.NO_SENSORS_WARNING_EVENT)

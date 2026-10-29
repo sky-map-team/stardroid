@@ -27,26 +27,20 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.unit.dp
 import com.google.android.stardroid.ui.common.StyledHtml
-import com.google.android.stardroid.ui.common.formattedStringResource
-import com.google.android.stardroid.ui.common.supportHtml
 import com.google.android.stardroid.ui.common.topBarWindowInsets
-import com.google.android.stardroid.ui.common.withDonationLinks
 import com.google.android.stardroid.ui.resources.Res
 import com.google.android.stardroid.ui.resources.beta_user_help_text
-import com.google.android.stardroid.ui.resources.contributors_text
-import com.google.android.stardroid.ui.resources.credits_text
+import com.google.android.stardroid.ui.resources.credits_body
 import com.google.android.stardroid.ui.resources.settings_back
-import com.google.android.stardroid.ui.resources.sponsors_text
 import com.google.android.stardroid.ui.resources.whats_new_content
 import com.google.android.stardroid.ui.resources.whats_new_screen_title
-import com.google.android.stardroid.ui.resources.whats_new_support
 import org.jetbrains.compose.resources.stringResource
 
 /**
- * The What's New & Credits destination (D74): the release notes, the support pitch, and the
- * credits that used to be appended to the bottom of the Help document, now first-class and
- * reachable from the overflow sheet. The startup `WhatsNewDialog` still shows the short
- * release notes once per upgrade; this screen is where they stay findable afterwards.
+ * The What's New & Credits destination (D74): the release notes and the credits that used
+ * to be appended to the bottom of the Help document, now first-class and reachable from the
+ * overflow sheet. The startup `WhatsNewDialog` still shows the short release notes once per
+ * upgrade; this screen is where they stay findable afterwards.
  */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -74,23 +68,15 @@ fun WhatsNewScreen(
             )
         },
     ) { padding ->
-        val sponsors = stringResource(Res.string.sponsors_text)
-        val contributors = stringResource(Res.string.contributors_text)
-        val creditsText = formattedStringResource(Res.string.credits_text, sponsors, contributors)
-        // The parse is remembered inside StyledHtml; the concat here is cheap.
         // The "New in version X" heading is dropped for the 2.0 launch copy, which opens with
         // its own splash line instead — restore it for later point releases once the launch
         // announcement has aged out.
         // beta_user_help_text leads for the same reason as WhatsNewDialog: it shouldn't get
-        // buried below a long feature list. Unlike the dialog, whats_new_support stays after
-        // whats_new_content here rather than also leading — this screen scrolls freely (no
-        // fixed-height AlertDialog to hide behind), and the support pitch reads naturally next
-        // to the credits/sponsor list it's adjacent to.
+        // buried below a long feature list.
         val html =
             stringResource(Res.string.beta_user_help_text) +
                 stringResource(Res.string.whats_new_content) +
-                supportHtml(stringResource(Res.string.whats_new_support)) +
-                withDonationLinks(creditsText)
+                stringResource(Res.string.credits_body)
         StyledHtml(
             html,
             nightMode = nightMode,

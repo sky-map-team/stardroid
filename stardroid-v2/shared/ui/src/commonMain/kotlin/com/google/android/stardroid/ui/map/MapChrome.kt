@@ -147,6 +147,7 @@ import com.google.android.stardroid.ui.resources.ic_search
 import com.google.android.stardroid.ui.resources.ic_settings
 import com.google.android.stardroid.ui.resources.ic_share
 import com.google.android.stardroid.ui.resources.ic_sun
+import com.google.android.stardroid.ui.resources.ic_support
 import com.google.android.stardroid.ui.resources.ic_time_travel
 import com.google.android.stardroid.ui.resources.ic_tutorial
 import com.google.android.stardroid.ui.resources.ic_whats_new
@@ -239,6 +240,7 @@ import com.google.android.stardroid.ui.resources.settings_button
 import com.google.android.stardroid.ui.resources.share_button
 import com.google.android.stardroid.ui.resources.share_shutter_button
 import com.google.android.stardroid.ui.resources.show_layers
+import com.google.android.stardroid.ui.resources.support_button
 import com.google.android.stardroid.ui.resources.switch_to_auto
 import com.google.android.stardroid.ui.resources.switch_to_manual
 import com.google.android.stardroid.ui.resources.time_travel_button
@@ -992,6 +994,7 @@ fun OverflowSheet(
     onOpenWhatsNew: (() -> Unit)?,
     onOpenSettings: (() -> Unit)?,
     onDismiss: () -> Unit,
+    onOpenSupport: (() -> Unit)? = null,
 ) {
     ModalBottomSheet(onDismissRequest = onDismiss) {
         Column(
@@ -1015,6 +1018,7 @@ fun OverflowSheet(
                 OverflowRow(Res.drawable.ic_share, Res.string.share_button, onShareSky)
             }
             OverflowRow(Res.drawable.ic_whats_new, Res.string.whats_new_button, onOpenWhatsNew)
+            OverflowRow(Res.drawable.ic_support, Res.string.support_button, onOpenSupport)
             OverflowRow(Res.drawable.ic_calibrate, Res.string.calibration_button, onOpenCalibration)
         }
     }

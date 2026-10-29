@@ -21,14 +21,14 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.platform.LocalWindowInfo
 import androidx.compose.ui.unit.dp
+import com.google.android.stardroid.ui.common.APP_LINK_SCHEME
 import com.google.android.stardroid.ui.common.StyledHtml
-import com.google.android.stardroid.ui.common.supportHtml
 import com.google.android.stardroid.ui.resources.Res
 import com.google.android.stardroid.ui.resources.beta_user_help_text
 import com.google.android.stardroid.ui.resources.dialog_ok_button
 import com.google.android.stardroid.ui.resources.whats_new_content
 import com.google.android.stardroid.ui.resources.whats_new_dialog_title
-import com.google.android.stardroid.ui.resources.whats_new_support
+import com.google.android.stardroid.ui.resources.whats_new_support_link
 import org.jetbrains.compose.resources.stringResource
 
 /**
@@ -48,6 +48,7 @@ expect fun appVersionName(): String
 fun WhatsNewDialog(
     nightMode: Boolean,
     onDismiss: () -> Unit,
+    onOpenSupport: () -> Unit,
 ) {
     // The default AlertDialog wraps its content width, so a release with a lot of text ends up
     // tall and narrow. Pin a fixed width and cap the height to a fraction of the screen so the
@@ -62,12 +63,18 @@ fun WhatsNewDialog(
             // with its own splash line instead — restore it for later point releases once the
             // launch announcement has aged out.
             val html =
-                supportHtml(stringResource(Res.string.whats_new_support)) +
+                stringResource(Res.string.whats_new_support_link) +
                     stringResource(Res.string.beta_user_help_text) +
                     stringResource(Res.string.whats_new_content)
             StyledHtml(
                 html,
                 nightMode = nightMode,
+                onInternalLink = { url ->
+                    if (url == "${APP_LINK_SCHEME}support") {
+                        onDismiss()
+                        onOpenSupport()
+                    }
+                },
                 modifier =
                     Modifier
                         .width(320.dp)

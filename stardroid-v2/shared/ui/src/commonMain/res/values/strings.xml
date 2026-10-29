@@ -133,6 +133,26 @@
     <string name="tutorial_button" translation_description="Map-screen menu item that replays the warm welcome tutorial">Tutorial</string>
     <string name="whats_new_button" translation_description="Map-screen menu item that opens the What's New and Credits screen">What\'s new</string>
     <string name="widgets_button" translation_description="Map-screen menu item that opens the list of home-screen widgets the app offers">Widgets</string>
+    <string name="support_button" translation_description="Map-screen menu item that opens the screen listing ways to support Sky Map">Support</string>
+    <string name="support_screen_title" translation_description="Title of the screen listing ways to support Sky Map">Support Sky Map</string>
+    <string name="support_intro" translation_description="Opening paragraph of the Support screen. Sky Map is a free, open-source app.">Sky Map is free and open source, and it will stay that way. If you enjoy it, here are some ways to help.</string>
+    <string name="support_star_title" translation_description="Support screen row: star the project's page on GitHub">Star Sky Map on GitHub</string>
+    <string name="support_star_desc" translation_description="Support screen row description: starring helps other people find the app">It helps other people find the app.</string>
+    <string name="support_issues_title" translation_description="Support screen row: report a problem or suggest an idea on GitHub">Report a problem or suggest an idea</string>
+    <string name="support_issues_desc" translation_description="Support screen row description: opens the issue tracker on GitHub">Open an issue on GitHub.</string>
+    <string name="support_share_title" translation_description="Support screen row: share the app with a friend">Tell a friend</string>
+    <string name="support_share_desc" translation_description="Support screen row description: share the app with someone who likes the night sky">Share Sky Map with someone who loves the night sky.</string>
+    <string name="support_bmac_title" translation_description="Support screen row: make a small voluntary donation on the Buy Me a Coffee website">Buy us a coffee</string>
+    <string name="support_bmac_desc" translation_description="Support screen row description: donations are optional">A small, optional tip toward the cost of development.</string>
+    <string name="support_share_message" translation_description="Message sent when the user shares the app with a friend. %1$s is the web link to the app's store page. Keep the %1$s placeholder.">Have you tried Sky Map? It\'s a free, open-source planetarium for your phone: %1$s</string>
+    <string name="support_thanks_html" translation_description="HTML section at the bottom of the Support screen thanking donors and open-source contributors. %1$s is a list of donor names and %2$s a list of contributor names. Please do not change the &lt; and &gt; markup or the placeholders."><![CDATA[
+<h2>Thank you</h2>
+<h3>Supporters</h3>
+<p>%1$s</p>
+<h3>Open source contributors</h3>
+<p>%2$s</p>
+<p>See the latest contributors on <a href="https://github.com/sky-map-team/stardroid/graphs/contributors">GitHub</a>.</p>
+    ]]></string>
     <string name="layer_param_disc_size">Disc size</string>
     <string name="layer_param_disc_size_true">True scale</string>
     <string name="layer_param_disc_size_true_desc">Real size in the sky at every zoom. Planets are specks until you zoom right in.</string>
