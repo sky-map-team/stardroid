@@ -182,4 +182,16 @@ class SourceDataLoaderTest {
                 assertThat(loaded.hasName("planet/earth", locale, name)).isTrue()
             }
     }
+
+    /** A search-only asterism: centred on the triangle, with no layer so nothing is drawn. */
+    @Test
+    fun `summer triangle is a positioned object with no layer`() {
+        val loaded = SourceDataLoader.load(sourceData)
+        val triangle = loaded.objects.single { it.id == "asterism/summer_triangle" }
+        assertThat(triangle.layerKind).isNull()
+        assertThat(triangle.ra).isWithin(1.0).of(295.5)
+        assertThat(triangle.dec).isWithin(1.0).of(31.7)
+        assertThat(triangle.searchFov).isEqualTo(45.0)
+        assertThat(loaded.hasName("asterism/summer_triangle", "en", "Summer Triangle")).isTrue()
+    }
 }
