@@ -290,6 +290,51 @@ fun tonightSky(
     )
 }
 
+/** What [upcomingEvents] is asked about: one object, not the whole sky. */
+sealed interface EventTarget {
+    /** A planet: well placed tonight, or nothing. */
+    data class Body(val body: SolarSystemBody) : EventTarget
+
+    /** A meteor shower: its next annual peak, however far off. */
+    data class Shower(val shower: MeteorShower) : EventTarget
+}
+
+/**
+ * "This object, from [from] on": the per-object counterpart of [tonightSky], which answers "tonight,
+ * every object, ranked". Both call the same finders and the same quality figures, so a card and a
+ * widget row for the same event are the same event (D141 §3.2).
+ *
+ * Planets are only ever tonight's evening window, so [location] is required and without one the
+ * answer is empty.
+ */
+fun upcomingEvents(
+    target: EventTarget,
+    from: Instant,
+    location: LatLong?,
+    zone: TimeZone = TimeZone.currentSystemDefault(),
+    ephemeris: Ephemeris = KeplerianEphemeris,
+): List<SkyEvent> =
+    when (target) {
+        is EventTarget.Shower ->
+            showerEvents(from, listOf(target.shower), zone, ephemeris, highlightsOnly = false)
+        is EventTarget.Body -> {
+            if (location == null) {
+                emptyList()
+            } else {
+                val sunset =
+                    nextRiseSetTime(
+                        SolarSystemBody.SUN,
+                        from,
+                        location,
+                        RiseSetIndicator.SET,
+                        ephemeris,
+                    )
+                planetEvents(from, sunset ?: from, location, ephemeris)
+                    .filter { it.body == target.body }
+            }
+        }
+    }
+
 /**
  * Shower highlights: quality peaks on the night itself (with a dark-sky bonus) and tapers
  * across the last three approach days; anything further out is countdown material only.

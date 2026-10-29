@@ -122,11 +122,8 @@
     <string name="tonight_widget_sun_times" translation_description="Header line on the tonight widget; %1$s is the sunset time, %2$s the time the sky becomes fully dark">sonce zahaja %1$s · tema %2$s</string>
     <string name="tonight_widget_sunset_only" translation_description="Header fragment when only the sunset time is known; %1$s is the sunset time">sonce zahaja %1$s</string>
     <string name="tonight_well_placed" translation_description="Tonight-widget row: a planet is high in the sky and easy to observe; %1$s is the planet name, %2$s the time from which it is well placed">%1$s dobro viden od %2$s</string>
-    <!-- tm:omitted name="tonight_trailing_direction" reason="identical_to_source" -->
     <string name="tonight_shower_peak" translation_description="Tonight-widget row: a meteor shower reaches its annual peak tonight; %1$s is the shower name">%1$s vrhunec nocoj</string>
     <string name="tonight_shower_days" translation_description="Tonight-widget row: a meteor shower peaks within a few days; %1$s is the shower name, %2$d the number of days">%1$s vrhunec čez %2$d dni</string>
-    <string name="tonight_dark_skies" translation_description="Small trailing note: the moon is dark, so viewing conditions are ideal">temno nebo</string>
-    <string name="tonight_trailing_moon" translation_description="Small trailing note: how much of the moon is lit; %1$d is a percentage">luna %1$d%%</string>
     <string name="tonight_new_moon" translation_description="Tonight-widget row shown at new moon">Mlaj — najtemnejše nebo v mesecu</string>
     <string name="tonight_full_moon" translation_description="Tonight-widget row shown at full moon">Ščip nocoj</string>
     <string name="tonight_bright_moon" translation_description="Tonight-widget row warning that a bright moon washes out faint objects">Svetla luna zasenči šibke objekte</string>

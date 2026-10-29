@@ -117,11 +117,8 @@
     <string name="tonight_widget_sun_times" translation_description="Header line on the tonight widget; %1$s is the sunset time, %2$s the time the sky becomes fully dark">해넘이 %1$s · 어둠 %2$s</string>
     <string name="tonight_widget_sunset_only" translation_description="Header fragment when only the sunset time is known; %1$s is the sunset time">해넘이 %1$s</string>
     <string name="tonight_well_placed" translation_description="Tonight-widget row: a planet is high in the sky and easy to observe; %1$s is the planet name, %2$s the time from which it is well placed">%1$s %2$s부터 잘 보임</string>
-    <!-- tm:omitted name="tonight_trailing_direction" reason="identical_to_source" -->
     <string name="tonight_shower_peak" translation_description="Tonight-widget row: a meteor shower reaches its annual peak tonight; %1$s is the shower name">%1$s 오늘 밤 극대</string>
     <string name="tonight_shower_days" translation_description="Tonight-widget row: a meteor shower peaks within a few days; %1$s is the shower name, %2$d the number of days">%1$s %2$d일 후 극대</string>
-    <string name="tonight_dark_skies" translation_description="Small trailing note: the moon is dark, so viewing conditions are ideal">어두운 하늘</string>
-    <string name="tonight_trailing_moon" translation_description="Small trailing note: how much of the moon is lit; %1$d is a percentage">달 %1$d%%</string>
     <string name="tonight_new_moon" translation_description="Tonight-widget row shown at new moon">신월 — 한 달 중 가장 어두운 밤하늘</string>
     <string name="tonight_full_moon" translation_description="Tonight-widget row shown at full moon">오늘 밤 보름달</string>
     <string name="tonight_bright_moon" translation_description="Tonight-widget row warning that a bright moon washes out faint objects">밝은 달이 희미한 물체를 가립니다</string>

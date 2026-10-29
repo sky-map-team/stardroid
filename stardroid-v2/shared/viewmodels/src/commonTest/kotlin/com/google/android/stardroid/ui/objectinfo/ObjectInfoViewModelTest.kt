@@ -779,6 +779,44 @@ class ObjectInfoViewModelTest {
         }
 
     @Test
+    fun `a meteor shower card lists its next peak`() =
+        testScope.runCurrentTest {
+            repository.infos[PERSEIDS_ID] = objectInfo(PERSEIDS_ID, "Perseids")
+            repository.showers.value = listOf(activeShower())
+            val vm = viewModel()
+
+            vm.show(PERSEIDS_ID)
+            runCurrent()
+            val events = (vm.live.value?.upcoming as Upcoming.Events).events
+            assertThat((events.single() as SkyEvent.ShowerPeak).shower.id).isEqualTo(PERSEIDS_ID)
+        }
+
+    @Test
+    fun `a planet card only has an upcoming section when it is well placed`() =
+        testScope.runCurrentTest {
+            val jupiter = SolarSystemIds.idFor(SolarSystemBody.JUPITER)
+            repository.infos[jupiter] = objectInfo(jupiter, "Jupiter")
+            val vm = viewModel()
+
+            vm.show(jupiter)
+            runCurrent()
+            val events = (vm.live.value?.upcoming as Upcoming.Events?)?.events.orEmpty()
+            events.forEach { assertThat(it).isInstanceOf(SkyEvent.WellPlacedPlanet::class) }
+        }
+
+    @Test
+    fun `the Sun card has no upcoming section`() =
+        testScope.runCurrentTest {
+            val sun = SolarSystemIds.idFor(SolarSystemBody.SUN)
+            repository.infos[sun] = objectInfo(sun, "Sun")
+            val vm = viewModel()
+
+            vm.show(sun)
+            runCurrent()
+            assertThat(vm.live.value?.upcoming).isNull()
+        }
+
+    @Test
     fun `an ordinary card has no upcoming section`() =
         testScope.runCurrentTest {
             repository.infos[SIRIUS_ID] =

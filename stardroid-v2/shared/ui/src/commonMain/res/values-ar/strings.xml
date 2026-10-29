@@ -548,4 +548,7 @@
     <string name="moon_phase_last_quarter" translation_description="Name of the lunar phase when half the disc is lit and shrinking">التربيع الأخير</string>
     <string name="moon_phase_waning_crescent" translation_description="Name of the lunar phase between last quarter and new moon">الهلال المتناقص</string>
     <string name="moon_widget_age" translation_description="Widget line giving the Moon\'s age as the day of the lunar cycle, counting the day of new moon as day 1; %1$d is a number from 1 to 30">يوم %1$d</string>
+    <!-- tm:omitted name="tonight_trailing_direction" reason="identical_to_source" -->
+    <string name="tonight_dark_skies" translation_description="Small trailing note: the moon is dark, so viewing conditions are ideal">سماء مظلمة</string>
+    <string name="tonight_trailing_moon" translation_description="Small trailing note: how much of the moon is lit; %1$d is a percentage">القمر %1$d%%</string>
 </resources>

@@ -41,6 +41,7 @@ import com.google.android.stardroid.astronomy.LunarPhase
 import com.google.android.stardroid.astronomy.SatellitePass
 import com.google.android.stardroid.catalog.ObjectInfo
 import com.google.android.stardroid.catalog.SearchHit
+import com.google.android.stardroid.events.DARK_MOON_FRACTION
 import com.google.android.stardroid.events.SkyEvent
 import com.google.android.stardroid.ui.common.formatForLocale
 import com.google.android.stardroid.ui.common.formattedStringResource
@@ -86,9 +87,14 @@ import com.google.android.stardroid.ui.resources.satellite_pass_col_rises
 import com.google.android.stardroid.ui.resources.satellite_pass_col_when
 import com.google.android.stardroid.ui.resources.satellite_pass_shadow
 import com.google.android.stardroid.ui.resources.satellite_pass_unknown
+import com.google.android.stardroid.ui.resources.tonight_dark_skies
 import com.google.android.stardroid.ui.resources.tonight_lunar_eclipse_partial
 import com.google.android.stardroid.ui.resources.tonight_lunar_eclipse_penumbral
 import com.google.android.stardroid.ui.resources.tonight_lunar_eclipse_total
+import com.google.android.stardroid.ui.resources.tonight_trailing_direction
+import com.google.android.stardroid.ui.resources.tonight_trailing_moon
+import com.google.android.stardroid.ui.resources.upcoming_shower_peak
+import com.google.android.stardroid.ui.resources.upcoming_well_placed
 import com.google.android.stardroid.ui.theme.NightPhotoTint
 import org.jetbrains.compose.resources.StringResource
 import org.jetbrains.compose.resources.stringArrayResource
@@ -412,6 +418,8 @@ private fun UpcomingSection(upcoming: Upcoming) {
                 when (event) {
                     is SkyEvent.MoonPhaseTonight -> MoonPhaseRow(event)
                     is SkyEvent.LunarEclipseUpcoming -> EclipseRow(event.circumstances)
+                    is SkyEvent.ShowerPeak -> ShowerPeakRow(event)
+                    is SkyEvent.WellPlacedPlanet -> WellPlacedPlanetRow(event)
                     // Passes are the table above; the rest are not yet offered on the card.
                     else -> Unit
                 }
@@ -423,6 +431,51 @@ private fun UpcomingSection(upcoming: Upcoming) {
                     SatellitePassRow(emptyList(), passTimesReliable = true)
             }
         Upcoming.DataTooOld -> SatellitePassRow(emptyList(), passTimesReliable = false)
+    }
+}
+
+/** A shower's next peak, with the Moon's glare at that time. */
+@Composable
+private fun ShowerPeakRow(event: SkyEvent.ShowerPeak) {
+    val formatter = rememberDateFormatter()
+    val moonNote =
+        if (event.moonIllumination < DARK_MOON_FRACTION) {
+            stringResource(Res.string.tonight_dark_skies)
+        } else {
+            formattedStringResource(
+                Res.string.tonight_trailing_moon,
+                (event.moonIllumination * PERCENT).roundToInt(),
+            )
+        }
+    UpcomingRow(
+        formattedStringResource(Res.string.upcoming_shower_peak, formatter(event.peakTime)),
+        moonNote,
+    )
+}
+
+/** A planet that is well placed tonight: from when, and which way to look. */
+@Composable
+private fun WellPlacedPlanetRow(event: SkyEvent.WellPlacedPlanet) {
+    val timeFormatter = rememberTimeFormatter()
+    val cardinals = stringArrayResource(Res.array.hud_cardinal_directions)
+    UpcomingRow(
+        formattedStringResource(Res.string.upcoming_well_placed, timeFormatter(event.from)),
+        formattedStringResource(
+            Res.string.tonight_trailing_direction,
+            cardinals[HudFormats.cardinalIndex(event.azimuthDeg)],
+            event.bestAltitudeDeg.roundToInt(),
+        ),
+    )
+}
+
+@Composable
+private fun UpcomingRow(
+    text: String,
+    trailing: String,
+) {
+    Row(Modifier.fillMaxWidth().padding(top = 4.dp)) {
+        Text(text, style = MaterialTheme.typography.bodySmall, modifier = Modifier.weight(1f))
+        Text(trailing, style = MaterialTheme.typography.bodySmall)
     }
 }
 
@@ -558,3 +611,4 @@ private fun EclipseRow(circumstances: LunarEclipseCircumstances) {
 
 /** The fun fact's emphasis against the description above it (Material's medium emphasis). */
 private const val FUN_FACT_ALPHA = 0.74f
+private const val PERCENT = 100

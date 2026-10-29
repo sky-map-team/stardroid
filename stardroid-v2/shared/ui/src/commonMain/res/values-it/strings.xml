@@ -572,4 +572,7 @@ Avvisi di eclissi: una notifica prima di un\'eclissi lunare.
     <string name="moon_phase_last_quarter" tm_human="true" translation_description="Name of the lunar phase when half the disc is lit and shrinking">Ultimo quarto</string>
     <string name="moon_phase_waning_crescent" tm_human="true" translation_description="Name of the lunar phase between last quarter and new moon">Luna calante</string>
     <string name="moon_widget_age" translation_description="Widget line giving the Moon\'s age as the day of the lunar cycle, counting the day of new moon as day 1; %1$d is a number from 1 to 30">Giorno %1$d</string>
+    <!-- tm:omitted name="tonight_trailing_direction" reason="identical_to_source" -->
+    <string name="tonight_dark_skies" translation_description="Small trailing note: the moon is dark, so viewing conditions are ideal">cieli bui</string>
+    <string name="tonight_trailing_moon" translation_description="Small trailing note: how much of the moon is lit; %1$d is a percentage">luna %1$d%%</string>
 </resources>

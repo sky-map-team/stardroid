@@ -1,6 +1,6 @@
 # Info Card Live Content: "Now" facts and "Upcoming" events
 
-**Status: IN PROGRESS.** Phases 1 (#1187), 2 (#1189), 3 (#1193) and 4a (the Moon) are built; 4b (showers and planets) is not. The decisions
+**Status: BUILT** (phases 1 to 3 and 4a merged; 4b in review). What remains is the follow-up list in §8 and §10. The decisions
 entry is reserved as **D141**. This is the follow-up that D107 asked for. D107 recorded the card's
 one-slot-per-object-type shape and decided to wait for a fourth slot that repeated a pattern
 before generalizing it. #1131 and #1142 are the fourth and fifth requests, and they share a
@@ -199,7 +199,7 @@ The strings involved are:
 |---|---|---|
 | Moon | Rise/set, phase, % illuminated, age (#1131) | Next full moon, next new moon, next lunar eclipse (moved from the eclipse row) |
 | ISS, Tiangong | — | Good passes (§7, phase 3) over 5 days, at most 5 rows (#1142) |
-| Planets | Rise/set | Well placed tonight |
+| Planets | Rise/set | Well placed tonight (a section only when it is) |
 | Meteor showers | Rise/set of the radiant (any shower with a catalog position) | Upcoming peak, with moonlight |
 | Stars, deep-sky objects, Sun | Rise/set | No section |
 
@@ -236,8 +236,16 @@ The strings involved are:
      the next full and new moon, so the section is never empty, and silence about an eclipse no
      longer reads as "the card doesn't know". `satellite_next_pass`, `object_info_eclipse_title`
      and `object_info_no_eclipse` are now unused and can be removed with a translation run.
-   - **4b, showers and planets.** Not built. It needs the per-object events query in
-     `:core:events` (§4).
+   - **4b, showers and planets. Done.** `upcomingEvents(EventTarget, from, location, …)` in
+     `:core:events` is the per-object counterpart of `tonightSky()`, built on the same finders:
+     a shower returns its next peak at any distance, a planet returns tonight's "well placed"
+     event. A planet card gets an Upcoming section only when it is well placed tonight, since
+     "not well placed" on every other planet would be noise. A shower row shows the peak date and
+     the Moon's glare ("dark skies" or "moon N%"); a planet row shows when and which way to look.
+     `tonight_trailing_direction`, `tonight_dark_skies` and `tonight_trailing_moon` moved to
+     `shared/ui` so the widget and card share keys; `upcoming_well_placed` and
+     `upcoming_shower_peak` are new. The Moon still builds its list in the view model; moving it
+     onto `EventTarget` is a possible cleanup.
 
 ## 8. Ideas, not scope
 
