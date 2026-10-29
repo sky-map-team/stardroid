@@ -60,7 +60,8 @@ val SatellitePass.isGood: Boolean
 fun List<SatellitePass>.goodPasses(limit: Int = Int.MAX_VALUE): List<SatellitePass> =
     filter { it.isGood }.sortedBy { it.start }.take(limit)
 
-private const val GOOD_PASS_MAX_MAGNITUDE: Double = -0.5
+/** The faintest peak magnitude [isGood] accepts; the events engine bands pass quality from it. */
+const val GOOD_PASS_MAX_MAGNITUDE: Double = -0.5
 private const val GOOD_PASS_MIN_ALTITUDE_DEG: Double = 30.0
 
 /**

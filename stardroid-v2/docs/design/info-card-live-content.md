@@ -49,7 +49,7 @@ gallery instead of the map. Adding #1131 the same way would mean more of these g
 #1179 deliberately extended an existing slot instead of waiting for this design:
 - `satellitePassRow` is now a table of up to **5** passes over **5 days**, with date, rise
   direction, peak altitude, magnitude and the shadow fade-out.
-- The app-side caller is `upcomingVisiblePasses(context, norad, location, from)` in
+- The app-side caller is `upcomingGoodPasses(context, norad, location, from)` in
   `TonightPasses.kt`, which replaced `nextVisiblePass`. `MainActivity` injects it into the view
   model as the `upcomingPasses` lambda. `passTimesReliable` stays a second lambda.
 - The view model gained a second per-type flow beside `showingSatellite`/`showingMoon`:
@@ -152,7 +152,7 @@ and a "happening now" alert on its own channel; both follow whichever pass is ch
 needs applying once.
 
 Satellite passes still arrive as a parameter, for the D92 reason: the element sets come from the
-network. The app-side caller, `upcomingVisiblePasses(...)`, already exists (#1179). It returns
+network. The app-side caller, `upcomingGoodPasses(...)`, already exists (#1179). It returns
 unfiltered visible passes and lets `upcomingEvents()` apply the bar, instead of calling
 `goodPasses()` itself.
 
@@ -221,15 +221,12 @@ The strings involved are:
    (`moon_phase_*`, `moon_widget_age`, `moon_widget_illumination`) moved from `app` to
    `shared/ui` with `tools/move_strings.py`, so the widget and the card share keys and
    `tm languages` is unchanged.
-3. **One quality bar for passes**, replacing the #1179 stopgap. **Done.** A pass is *good* if
-   its peak magnitude is ≤ −0.5 **and** its peak altitude is ≥ 30° (`SatellitePass.isGood` in
-   `core/astronomy`). `tonightSatellitePasses` (widget, digest, pass alerts) and
-   `upcomingVisiblePasses` (card) both go through `goodPasses()`, so they cannot disagree. The
-   card's "always show the first pass" exception is gone: when nothing is good the card says so,
-   and the alert is not armed. Both bars are inclusive. The card's empty-state text and heading now
-   say "good" rather than "visible" (`satellite_no_pass`, `satellite_next_pass`), since a visible
-   pass can still fail the bar. `passQuality` still ranks good passes by magnitude for the
-   widget's list.
+3. **One quality bar for passes**, replacing the #1179 stopgap. **Done.** A pass is *good* if its
+   peak magnitude is ≤ −0.5 **and** its peak altitude is ≥ 30° (`SatellitePass.isGood`). The card,
+   widget, digest and alerts all filter through it, so they cannot disagree. The card's
+   "always show the first pass" exception is gone: with nothing good it says so, and no alert is
+   armed. Its heading and empty state say "good" rather than "visible", since a visible pass can
+   still fail the bar.
 4. **Showers and planets** in Upcoming.
 
 ## 8. Ideas, not scope

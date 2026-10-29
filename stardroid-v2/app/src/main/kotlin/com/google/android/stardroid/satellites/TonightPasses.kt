@@ -132,11 +132,11 @@ private val CARD_PASS_WINDOW: Duration = 5.days
 private const val CARD_PASS_LIMIT = 5
 
 /**
- * The next good visible passes for one satellite, for the info card's pass table.
+ * The next good passes for one satellite, for the info card's pass table.
  *
  * Looks [CARD_PASS_WINDOW] ahead — TLE drift makes times beyond about five days dishonest.
  */
-suspend fun upcomingVisiblePasses(
+suspend fun upcomingGoodPasses(
     context: Context,
     noradId: Int,
     location: LatLong?,
