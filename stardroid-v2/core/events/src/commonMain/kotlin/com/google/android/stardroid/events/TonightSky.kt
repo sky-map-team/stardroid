@@ -73,7 +73,10 @@ sealed interface SkyEvent {
         override val quality: Double,
     ) : SkyEvent
 
-    /** A full or new moon within the next 24 hours (new = darkest skies of the month). */
+    /**
+     * A full or new moon (new = darkest skies of the month). [tonightSky] only emits one within
+     * the next 24 hours; the info card also uses it for the next occurrence, however far off.
+     */
     data class MoonPhaseTonight(
         val phase: LunarPhase,
         val time: Instant,

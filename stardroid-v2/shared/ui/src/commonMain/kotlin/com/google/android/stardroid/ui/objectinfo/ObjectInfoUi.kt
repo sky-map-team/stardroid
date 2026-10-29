@@ -393,7 +393,8 @@ private fun CelestialImage(
 
 /**
  * The card's "when to look" section (D141): one exhaustive rendering of [Upcoming], so a new
- * kind of object adds a case here rather than a parameter to the card.
+ * kind of object adds a case here rather than a parameter to the card. Pass events render as one
+ * table ahead of the other events, which is only right while a card never mixes the two.
  */
 @Composable
 private fun UpcomingSection(upcoming: Upcoming) {
@@ -425,7 +426,7 @@ private fun UpcomingSection(upcoming: Upcoming) {
     }
 }
 
-/** A full or new moon in the Moon's upcoming list: the phase name and when it falls. */
+/** A full or new moon in the Moon's upcoming list. */
 @Composable
 private fun MoonPhaseRow(event: SkyEvent.MoonPhaseTonight) {
     val formatter = rememberDateTimeFormatter()

@@ -232,8 +232,9 @@ The strings involved are:
      and the next lunar eclipse, soonest first, as `SkyEvent`s (`MoonPhaseTonight`,
      `LunarEclipseUpcoming`). The section now has one generic heading, "Upcoming"
      (`object_info_upcoming`), above every kind of content, so the satellite table and the
-     eclipse lose their own headings. The eclipse's "none expected" line is gone, since the row is
-     simply absent when no eclipse is found. `satellite_next_pass`, `object_info_eclipse_title`
+     eclipse lose their own headings. The eclipse's "none expected" line is gone: the list always holds
+     the next full and new moon, so the section is never empty, and silence about an eclipse no
+     longer reads as "the card doesn't know". `satellite_next_pass`, `object_info_eclipse_title`
      and `object_info_no_eclipse` are now unused and can be removed with a translation run.
    - **4b, showers and planets.** Not built. It needs the per-object events query in
      `:core:events` (§4).

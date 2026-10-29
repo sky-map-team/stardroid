@@ -694,10 +694,10 @@ class ObjectInfoViewModelTest {
             runCurrent()
             val times =
                 (vm.live.value?.upcoming as Upcoming.Events).events.map {
-                    when (it) {
-                        is SkyEvent.MoonPhaseTonight -> it.time
-                        is SkyEvent.LunarEclipseUpcoming -> it.circumstances.greatestEclipse
-                        else -> error("unexpected $it")
+                    if (it is SkyEvent.MoonPhaseTonight) {
+                        it.time
+                    } else {
+                        (it as SkyEvent.LunarEclipseUpcoming).circumstances.greatestEclipse
                     }
                 }
             assertThat(times).isEqualTo(times.sorted())

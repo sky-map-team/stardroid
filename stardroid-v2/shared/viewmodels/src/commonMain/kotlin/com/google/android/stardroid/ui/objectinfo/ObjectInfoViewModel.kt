@@ -279,24 +279,16 @@ class ObjectInfoViewModel(
         withContext(computeContext) {
             val time = now()
             val phases =
-                listOf(LunarPhase.FULL, LunarPhase.NEW).map {
-                    SkyEvent.MoonPhaseTonight(
-                        it,
-                        nextLunarPhaseEvent(it, time, ephemeris),
-                        UNRANKED,
-                    )
+                listOf(LunarPhase.FULL, LunarPhase.NEW).map { phase ->
+                    val at = nextLunarPhaseEvent(phase, time, ephemeris)
+                    at to SkyEvent.MoonPhaseTonight(phase, at, UNRANKED)
                 }
             val eclipse =
-                nextLunarEclipse(time, MeeusEphemeris)
-                    ?.let { SkyEvent.LunarEclipseUpcoming(it, UNRANKED) }
-            Upcoming.Events((phases + listOfNotNull(eclipse)).sortedBy { it.startTime() })
-        }
-
-    private fun SkyEvent.startTime(): Instant =
-        when (this) {
-            is SkyEvent.MoonPhaseTonight -> time
-            is SkyEvent.LunarEclipseUpcoming -> circumstances.greatestEclipse
-            else -> error("Not a Moon upcoming event: $this")
+                nextLunarEclipse(time, MeeusEphemeris)?.let {
+                    it.greatestEclipse to SkyEvent.LunarEclipseUpcoming(it, UNRANKED)
+                }
+            val soonestFirst = (phases + listOfNotNull(eclipse)).sortedBy { (at, _) -> at }
+            Upcoming.Events(soonestFirst.map { (_, event) -> event })
         }
 
     /**
