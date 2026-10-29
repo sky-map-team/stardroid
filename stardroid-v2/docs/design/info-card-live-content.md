@@ -1,6 +1,6 @@
 # Info Card Live Content: "Now" facts and "Upcoming" events
 
-**Status: IN PROGRESS.** Phases 1 (#1187), 2 (#1189) and 3 are built; phase 4 is not. The decisions
+**Status: IN PROGRESS.** Phases 1 (#1187), 2 (#1189), 3 (#1193) and 4a (the Moon) are built; 4b (showers and planets) is not. The decisions
 entry is reserved as **D141**. This is the follow-up that D107 asked for. D107 recorded the card's
 one-slot-per-object-type shape and decided to wait for a fourth slot that repeated a pattern
 before generalizing it. #1131 and #1142 are the fourth and fifth requests, and they share a
@@ -227,7 +227,16 @@ The strings involved are:
    "always show the first pass" exception is gone: with nothing good it says so, and no alert is
    armed. Its heading and empty state say "good" rather than "visible", since a visible pass can
    still fail the bar.
-4. **Showers and planets** in Upcoming.
+4. **Upcoming for more objects**, in two PRs:
+   - **4a, the Moon. Done.** The Moon's Upcoming list is the next full moon, the next new moon
+     and the next lunar eclipse, soonest first, as `SkyEvent`s (`MoonPhaseTonight`,
+     `LunarEclipseUpcoming`). The section now has one generic heading, "Upcoming"
+     (`object_info_upcoming`), above every kind of content, so the satellite table and the
+     eclipse lose their own headings. The eclipse's "none expected" line is gone, since the row is
+     simply absent when no eclipse is found. `satellite_next_pass`, `object_info_eclipse_title`
+     and `object_info_no_eclipse` are now unused and can be removed with a translation run.
+   - **4b, showers and planets.** Not built. It needs the per-object events query in
+     `:core:events` (§4).
 
 ## 8. Ideas, not scope
 
@@ -246,8 +255,9 @@ The strings involved are:
 2. ~~**Satellite range and row cap.**~~ Kept at the **5 days and 5 rows** that #1179 shipped, since
    TLE drift makes later times dishonest. Revisit only if the stricter bar leaves the table
    too often empty.
-3. **Section heading.** "Upcoming", or "When to look"?
-4. **Moon list length.** One of each phase, or every phase inside a fixed range?
+3. ~~**Section heading.**~~ **Decided:** "Upcoming".
+4. ~~**Moon list length.**~~ **Decided:** the next full moon, the next new moon and the next
+   eclipse (three rows at most).
 
 ## 10. Carried over from the #1179 review
 

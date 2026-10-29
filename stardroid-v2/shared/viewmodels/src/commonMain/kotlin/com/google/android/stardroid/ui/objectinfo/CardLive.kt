@@ -24,7 +24,6 @@ sealed interface CardFact {
 /** What an [Upcoming] section is about; picks its heading and empty-state wording. */
 enum class UpcomingKind {
     SATELLITE_PASSES,
-    LUNAR_ECLIPSE,
 }
 
 /** The card's "when to look" section, always in exactly one state (D141 §3.2). */

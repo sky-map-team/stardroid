@@ -11,12 +11,14 @@ package com.google.android.stardroid.ui.objectinfo
 
 import androidx.lifecycle.viewModelScope
 import com.google.android.stardroid.astronomy.KeplerianEphemeris
+import com.google.android.stardroid.astronomy.LunarPhase
 import com.google.android.stardroid.astronomy.SatellitePass
 import com.google.android.stardroid.astronomy.SolarSystemBody
 import com.google.android.stardroid.astronomy.Tle
 import com.google.android.stardroid.astronomy.dayOfCycle
 import com.google.android.stardroid.astronomy.illuminationPercent
 import com.google.android.stardroid.astronomy.moonWidgetModel
+import com.google.android.stardroid.astronomy.nextLunarPhaseEvent
 import com.google.android.stardroid.catalog.CatalogObject
 import com.google.android.stardroid.catalog.CatalogRepository
 import com.google.android.stardroid.catalog.CelestialObjectId
@@ -661,7 +663,7 @@ class ObjectInfoViewModelTest {
         }
 
     @Test
-    fun `the Moon card carries the next lunar eclipse`() =
+    fun `the Moon card lists the next full moon and new moon and eclipse`() =
         testScope.runCurrentTest {
             val moonId = SolarSystemIds.idFor(SolarSystemBody.MOON)
             repository.infos[moonId] = objectInfo(moonId, "Moon")
@@ -669,9 +671,36 @@ class ObjectInfoViewModelTest {
 
             vm.show(moonId)
             runCurrent()
-            val upcoming = vm.live.value?.upcoming as Upcoming.Events
-            assertThat(upcoming.events.single())
-                .isInstanceOf(SkyEvent.LunarEclipseUpcoming::class)
+            val events = (vm.live.value?.upcoming as Upcoming.Events).events
+            val phases = events.filterIsInstance<SkyEvent.MoonPhaseTonight>()
+            assertThat(phases.map { it.phase }.toSet())
+                .isEqualTo(setOf(LunarPhase.FULL, LunarPhase.NEW))
+            phases.forEach {
+                assertThat(it.time)
+                    .isEqualTo(nextLunarPhaseEvent(it.phase, NOW, KeplerianEphemeris))
+            }
+            assertThat(events.filterIsInstance<SkyEvent.LunarEclipseUpcoming>().size)
+                .isEqualTo(1)
+        }
+
+    @Test
+    fun `the Moon card lists its upcoming events soonest first`() =
+        testScope.runCurrentTest {
+            val moonId = SolarSystemIds.idFor(SolarSystemBody.MOON)
+            repository.infos[moonId] = objectInfo(moonId, "Moon")
+            val vm = viewModel()
+
+            vm.show(moonId)
+            runCurrent()
+            val times =
+                (vm.live.value?.upcoming as Upcoming.Events).events.map {
+                    when (it) {
+                        is SkyEvent.MoonPhaseTonight -> it.time
+                        is SkyEvent.LunarEclipseUpcoming -> it.circumstances.greatestEclipse
+                        else -> error("unexpected $it")
+                    }
+                }
+            assertThat(times).isEqualTo(times.sorted())
         }
 
     @Test
