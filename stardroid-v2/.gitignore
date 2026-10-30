@@ -34,3 +34,6 @@ ios/**/*.xcodeproj/
 ios/**/build*/
 # ...and xcodebuild test result bundles (-resultBundlePath)
 ios/**/*.xcresult/
+
+# Firebase iOS config (from the console)
+GoogleService-Info*.plist

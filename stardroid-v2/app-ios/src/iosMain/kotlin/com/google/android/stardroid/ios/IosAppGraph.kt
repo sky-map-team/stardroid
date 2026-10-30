@@ -9,6 +9,9 @@
 
 package com.google.android.stardroid.ios
 
+import com.google.android.stardroid.analytics.Analytics
+import com.google.android.stardroid.analytics.AnalyticsEvents
+import com.google.android.stardroid.analytics.NoOpAnalytics
 import com.google.android.stardroid.astronomy.MeeusEphemeris
 import com.google.android.stardroid.catalog.CatalogRepository
 import com.google.android.stardroid.catalog.LocaleSpec
@@ -78,7 +81,9 @@ import platform.UIKit.UIApplicationOpenSettingsURLString
  * rationale dialog; a refusal brings the shared permanently-denied dialog, as on Android.
  */
 @OptIn(ExperimentalForeignApi::class)
-class IosAppGraph {
+class IosAppGraph(
+    private val analytics: Analytics = NoOpAnalytics,
+) {
     private val supportDirectory: String =
         checkNotNull(
             NSFileManager.defaultManager
@@ -186,6 +191,12 @@ class IosAppGraph {
     val locale: StateFlow<LocaleSpec> =
         MutableStateFlow(LocaleSpec(NSLocale.preferredLanguages.firstOrNull() as? String ?: "en"))
 
+    init {
+        // As on Android, the opt-out drives collection for the process lifetime.
+        scope.launch { settings.enableAnalytics.collect { analytics.setEnabled(it) } }
+        analytics.setUserProperty(AnalyticsEvents.USER_LOCALE, locale.value.tag)
+    }
+
     private val catalogMutex = Mutex()
     private var catalog: CatalogRepository? = null
 
@@ -285,14 +296,20 @@ class IosAppGraph {
     }
 
     /** The startup gates: the EULA, the warm welcome and What's New. */
-    fun startupViewModel(): StartupViewModel = StartupViewModel(startupRouter, startupState)
+    fun startupViewModel(): StartupViewModel =
+        StartupViewModel(startupRouter, startupState, analytics = analytics)
 
     /**
      * The layer rail and sheet. iOS has no satellite data and no notifications yet, so their
      * layer and alert rows stay hidden, as Android hides them with the experiments off.
      */
     fun layersViewModel(): LayersViewModel =
-        LayersViewModel(settings, satellitesEnabled = false, notificationsEnabled = false)
+        LayersViewModel(
+            settings,
+            satellitesEnabled = false,
+            notificationsEnabled = false,
+            analytics = analytics,
+        )
 
     /** Search over the catalog, aimed as Android's is: [map] answers whether it is in manual mode. */
     fun searchViewModel(map: MapViewModel): SearchViewModel =
@@ -306,6 +323,7 @@ class IosAppGraph {
             logError = { message, cause -> println("SearchViewModel: $message: $cause") },
             isManualMode = { map.referenceFrame.value == ReferenceFrame.MANUAL },
             location = { locationController.locations.value },
+            analytics = analytics,
         )
 
     /** Time travel over the app's one clock; computed events (sunset...) use the map's place. */
@@ -314,6 +332,7 @@ class IosAppGraph {
             timeController,
             MeeusEphemeris,
             location = { locationController.locations.value },
+            analytics = analytics,
         )
 
     /** The card for a tapped object; satellites and the Moon-widget promo are Android's only. */
@@ -325,17 +344,19 @@ class IosAppGraph {
             now = timeController::now,
             settings = settings,
             location = { locationController.locations.value },
+            analytics = analytics,
         )
 
     /**
      * The settings screen. Core Motion's fused attitude is iOS's only sensor path, so the classic
-     * path's switches stay hidden, and so does the analytics opt-out, as iOS collects nothing.
+     * path's switches stay hidden; the analytics opt-out shows, as on Android's gms flavor.
      */
     fun settingsViewModel(): SettingsViewModel =
         SettingsViewModel(
             settings,
             classicSensorsAvailable = false,
-            analyticsAvailable = false,
+            analyticsAvailable = true,
+            analytics = analytics,
         )
 
     private val networkMonitor by lazy { NetworkMonitor() }
@@ -366,6 +387,7 @@ class IosAppGraph {
             orientationSource = orientationSource,
             localFrame = map.localFrame,
             rendererInfo = { rendererInfo },
+            analytics = analytics,
         )
 
     /**
@@ -378,6 +400,7 @@ class IosAppGraph {
             sensorStatus = sensorStatus,
             settings = settings,
             nowMillis = { (NSDate().timeIntervalSince1970 * MILLIS_PER_SECOND).toLong() },
+            analytics = analytics,
         )
 
     /** The photo grid over the catalog, in the app's language. */
@@ -402,6 +425,7 @@ class IosAppGraph {
             timeFlow = timeController.times,
             now = timeController::now,
             frameTicker = DisplayLinkFrameTicker(),
+            analytics = analytics,
         )
 }
 

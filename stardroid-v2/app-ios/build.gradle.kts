@@ -48,6 +48,8 @@ kotlin {
         binaries.framework {
             baseName = "SkyMapKit"
             isStatic = true
+            // Swift implements Analytics (Firebase lives in the Xcode app, not in Kotlin).
+            export(project(":shared:model"))
         }
     }
     sourceSets {
@@ -58,7 +60,7 @@ kotlin {
             implementation(project(":shared:viewmodels"))
             implementation(project(":shared:ui"))
             implementation(project(":shared:layers"))
-            implementation(project(":shared:model"))
+            api(project(":shared:model"))
             implementation(project(":data"))
             implementation(project(":render:metal"))
             implementation(libs.cmp.runtime)

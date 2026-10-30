@@ -25,6 +25,16 @@ build must never claim the App Store app's. Release builds (archives) use `io.pe
 `MapGestureTests` (the scheme's `test`) drags, flings and pinches the map, capturing the sky
 after each as attachments (`xcrun xcresulttool export attachments --path <result bundle>`).
 
+### Analytics
+
+Usage analytics is Firebase (GA4, the same property as Android), behind the shared `Analytics`
+edge that `FirebaseAnalyticsAdapter.swift` implements. It is on by default with an opt-out in
+Settings, as on Android's gms flavor. Download `GoogleService-Info.plist` from the Firebase
+console and put it in `ios/SkyMap/` (gitignored); the build bundles it when present. Without it
+Firebase stays unconfigured and every call is a no-op. Register both bundle IDs (`.dev` and the
+App Store one) in the console, so development events don't land in the production stream. The
+`WithoutAdIdSupport` variant is linked, so the advertising ID is never read.
+
 ## RendererHarness
 
 The Metal backend (`:render:metal`, `docs/design/render-metal.md`) drawing the shared seeded test

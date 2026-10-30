@@ -6,10 +6,18 @@ options:
   bundleIdPrefix: io.penterakt.skymap
   deploymentTarget:
     iOS: "16.0"
+packages:
+  Firebase:
+    url: https://github.com/firebase/firebase-ios-sdk
+    from: 11.0.0
 targets:
   SkyMap:
     type: application
     platform: iOS
+    # The WithoutAdIdSupport variant never reads the advertising ID, so no tracking prompt.
+    dependencies:
+      - package: Firebase
+        product: FirebaseAnalyticsWithoutAdIdSupport
     sources:
       - Sources
       # The renderer's images, copied as Android packages them so the keys map to the same paths.
@@ -55,9 +63,21 @@ targets:
         SkyMapVersionName: $(MARKETING_VERSION):$(SKYMAP_RELEASE_NAME)
         # Only HTTPS through the system, which is exempt from export-compliance documentation.
         ITSAppUsesNonExemptEncryption: false
+        # Collection starts off, so an opted-out user's first events can't go before the opt-out
+        # does; the shared settings turn it on (opt-in default, as on Android).
+        FIREBASE_ANALYTICS_COLLECTION_ENABLED: false
         # The system location prompt's text. Localized with the app's strings in phase 5.
         NSLocationWhenInUseUsageDescription: >-
           Sky Map uses your location to show the sky as it looks from where you are.
+    postCompileScripts:
+      # The Firebase console's config, not checked in. Without it analytics stays off (see
+      # FirebaseAnalyticsAdapter); a missing file is not an error.
+      - name: Bundle GoogleService-Info.plist if present
+        basedOnDependencyAnalysis: false
+        script: |
+          if [ -f "$SRCROOT/GoogleService-Info.plist" ]; then
+            cp "$SRCROOT/GoogleService-Info.plist" "$TARGET_BUILD_DIR/$UNLOCALIZED_RESOURCES_FOLDER_PATH/"
+          fi
     preBuildScripts:
       - name: Build SkyMapKit and the catalog (Kotlin)
         basedOnDependencyAnalysis: false

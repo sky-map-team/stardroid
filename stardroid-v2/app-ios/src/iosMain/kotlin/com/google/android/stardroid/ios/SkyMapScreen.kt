@@ -33,6 +33,7 @@ import androidx.compose.ui.viewinterop.UIKitInteropInteractionMode
 import androidx.compose.ui.viewinterop.UIKitInteropProperties
 import androidx.compose.ui.viewinterop.UIKitViewController
 import androidx.compose.ui.window.ComposeUIViewController
+import com.google.android.stardroid.analytics.Analytics
 import com.google.android.stardroid.catalog.ObjectInfo
 import com.google.android.stardroid.catalog.SearchHit
 import com.google.android.stardroid.startup.ExperimentConfig
@@ -80,8 +81,8 @@ import platform.UIKit.UIViewController
  * What's New on upgrades) and the full-screen pages, which stand in for Android's navigation
  * destinations.
  */
-fun skyMapViewController(): UIViewController {
-    val graph = IosAppGraph()
+fun skyMapViewController(analytics: Analytics): UIViewController {
+    val graph = IosAppGraph(analytics)
     val mapViewModel = graph.mapViewModel()
     val map = MapViewController(graph, mapViewModel)
     val startup = graph.startupViewModel()

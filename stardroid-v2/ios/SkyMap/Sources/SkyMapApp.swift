@@ -14,16 +14,20 @@ import SwiftUI
 /// root view controller, edge to edge.
 @main
 struct SkyMapApp: App {
+    private let analytics = FirebaseAnalyticsAdapter()
+
     var body: some Scene {
         WindowGroup {
-            RootView().ignoresSafeArea()
+            RootView(analytics: analytics).ignoresSafeArea()
         }
     }
 }
 
 private struct RootView: UIViewControllerRepresentable {
+    let analytics: SkyMapKit.Analytics
+
     func makeUIViewController(context: Context) -> UIViewController {
-        SkyMapScreenKt.skyMapViewController()
+        SkyMapScreenKt.skyMapViewController(analytics: analytics)
     }
 
     func updateUIViewController(_ viewController: UIViewController, context: Context) {}
