@@ -56,7 +56,7 @@ data class SettingsUiState(
     val passAlerts: Boolean = false,
     val tonightDigest: Boolean = false,
     val satelliteData: Boolean = false,
-    val rendererBackend: RendererBackend = RendererBackend.GLES1,
+    val rendererBackend: RendererBackend = RendererBackend.GLES3,
     val announcements: Boolean = true,
 )
 
