@@ -548,7 +548,7 @@ private fun <T> ChoiceRow(
                                         selected = option == selected,
                                         role = Role.RadioButton,
                                     ) {
-                                        onSelect(option)
+                                        if (option != selected) onSelect(option)
                                         showDialog = false
                                     }
                                     .padding(vertical = 12.dp, horizontal = 16.dp),
