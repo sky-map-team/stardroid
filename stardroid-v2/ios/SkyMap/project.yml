@@ -131,6 +131,9 @@ targets:
         SWIFT_VERSION: "5.0"
 schemes:
   SkyMap:
+    run:
+      # Local tips for the simulator and Xcode runs, before App Store Connect has the products.
+      storeKitConfiguration: Products.storekit
     build:
       targets:
         SkyMap: all

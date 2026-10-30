@@ -81,7 +81,10 @@ import platform.UIKit.UIViewController
  * What's New on upgrades) and the full-screen pages, which stand in for Android's navigation
  * destinations.
  */
-fun skyMapViewController(analytics: Analytics): UIViewController {
+fun skyMapViewController(
+    analytics: Analytics,
+    tipStore: TipStore,
+): UIViewController {
     val graph = IosAppGraph(analytics)
     val mapViewModel = graph.mapViewModel()
     val map = MapViewController(graph, mapViewModel)
@@ -113,6 +116,7 @@ fun skyMapViewController(analytics: Analytics): UIViewController {
             onOpenAppSettings = graph::openAppSettings,
             motionHardware =
                 MotionHardware(graph.hasCompass, graph.hasAccelerometer, graph.hasGyroscope),
+            tipStore = tipStore,
         )
     }
 }
@@ -135,6 +139,7 @@ private fun SkyMapScreen(
     onRequestAutoLocation: () -> Unit,
     onOpenAppSettings: () -> Unit,
     motionHardware: MotionHardware,
+    tipStore: TipStore,
 ) {
     val nightMode by mapViewModel.nightMode.collectAsState()
     val gates by startup.state.collectAsState()
@@ -221,6 +226,7 @@ private fun SkyMapScreen(
                         onAction = mapViewModel::logSupportAction,
                         // No App Store URL to share until the listing exists.
                         onShareApp = null,
+                        sponsorRow = { TipJarRow(tipStore, mapViewModel::logSupportAction) },
                     )
                 Page.SETTINGS ->
                     SettingsScreen(

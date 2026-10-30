@@ -15,19 +15,21 @@ import SwiftUI
 @main
 struct SkyMapApp: App {
     private let analytics = FirebaseAnalyticsAdapter()
+    private let tipStore = StoreKitTipStore()
 
     var body: some Scene {
         WindowGroup {
-            RootView(analytics: analytics).ignoresSafeArea()
+            RootView(analytics: analytics, tipStore: tipStore).ignoresSafeArea()
         }
     }
 }
 
 private struct RootView: UIViewControllerRepresentable {
     let analytics: SkyMapKit.Analytics
+    let tipStore: TipStore
 
     func makeUIViewController(context: Context) -> UIViewController {
-        SkyMapScreenKt.skyMapViewController(analytics: analytics)
+        SkyMapScreenKt.skyMapViewController(analytics: analytics, tipStore: tipStore)
     }
 
     func updateUIViewController(_ viewController: UIViewController, context: Context) {}
