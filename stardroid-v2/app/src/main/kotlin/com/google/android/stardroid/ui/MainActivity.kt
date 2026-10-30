@@ -683,6 +683,7 @@ class MainActivity : ComponentActivity() {
                     WhatsNewDialog(
                         nightMode = nightMode,
                         onDismiss = startupViewModel::dismissWhatsNew,
+                        onOpenSupport = { navController.navigate(Routes.SUPPORT) },
                     )
                 }
                 // Remote announcement interstitial: only once every startup gate has cleared,

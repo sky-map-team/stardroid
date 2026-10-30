@@ -148,6 +148,7 @@ fun MapScreen(
     onOpenTutorial: () -> Unit,
     onOpenHelp: () -> Unit,
     onOpenWhatsNew: () -> Unit,
+    onOpenSupport: (() -> Unit)?,
     onOpenCalibration: (userInitiated: Boolean) -> Unit,
     // Null where the system's own prompt is the rationale (iOS).
     onRequestLocationPermission: (() -> Unit)?,
@@ -653,6 +654,14 @@ fun MapScreen(
                     mapViewModel.logMenuItem(AnalyticsEvents.WHATS_NEW_OPENED_LABEL)
                     onOpenWhatsNew()
                 },
+                onOpenSupport =
+                    onOpenSupport?.let { open ->
+                        {
+                            showOverflowSheet = false
+                            mapViewModel.logMenuItem(AnalyticsEvents.SUPPORT_OPENED_LABEL)
+                            open()
+                        }
+                    },
                 onOpenSettings = {
                     showOverflowSheet = false
                     mapViewModel.logMenuItem(AnalyticsEvents.SETTINGS_OPENED_LABEL)
