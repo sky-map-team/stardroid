@@ -416,6 +416,25 @@ class SearchViewModelTest {
         }
 
     @Test
+    fun `picking Earth says so instead of failing`() =
+        testScope.runCurrentTest {
+            val earth = SearchHit(SolarSystemIds.EARTH_ID, "Earth", null, null, null)
+            repository.hits = listOf(earth)
+            val vm = viewModel()
+            vm.setQuery("earth")
+            vm.submit()
+            runCurrent()
+
+            assertThat(vm.standingOnEarth.value).isTrue()
+            assertThat(vm.noResults.value).isFalse()
+            assertThat(vm.target.value).isNull()
+            assertThat(analytics.eventNames()).isEmpty()
+
+            vm.setQuery("mars")
+            assertThat(vm.standingOnEarth.value).isFalse()
+        }
+
+    @Test
     fun `a typed query is normalised in search query on success`() =
         testScope.runCurrentTest {
             repository.hits = listOf(SIRIUS_HIT)
