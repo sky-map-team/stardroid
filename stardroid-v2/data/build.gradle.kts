@@ -103,9 +103,21 @@ val generateCatalogDb =
     tasks.register<GenerateCatalogDbTask>("generateCatalogDb") {
         classpath = catalogGenerator
         mainClass.set("com.google.android.stardroid.data.generator.MainKt")
+        // The newest exported schema, so bumping CATALOG_SCHEMA_VERSION needs no edit here.
+        val schemaDir =
+            layout.projectDirectory.dir(
+                "schemas/com.google.android.stardroid.data.SkyMapDatabase",
+            )
         schemaFile.set(
-            layout.projectDirectory
-                .file("schemas/com.google.android.stardroid.data.SkyMapDatabase/2.json"),
+            schemaDir.file(
+                provider {
+                    val newest =
+                        schemaDir.asFile.listFiles().orEmpty()
+                            .mapNotNull { it.nameWithoutExtension.toIntOrNull() }
+                            .max()
+                    "$newest.json"
+                },
+            ),
         )
         sourceData.set(rootProject.layout.projectDirectory.dir("source-data"))
     }
