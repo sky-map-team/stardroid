@@ -207,6 +207,8 @@
     <string name="satellite_pass_shadow" translation_description="Tells the user the satellite will fade out mid-pass when it enters the Earth\'s shadow. %1$s is a time.">Fades into Earth\'s shadow at %1$s</string>
     <string name="satellite_no_pass" translation_description="Shown on a satellite info card when no bright, high pass is coming up in the next few days.">No good passes in the next few days</string>
     <string name="satellite_pass_unknown" translation_description="Shown on a satellite info card when the downloaded orbit data is too old to predict pass times reliably.">Orbit data is too old to predict passes</string>
+    <string name="upcoming_well_placed" translation_description="Row in an object\'s Upcoming list: the planet is high enough to observe tonight; %1$s is the time from which it is well placed">Well placed from %1$s</string>
+    <string name="upcoming_shower_peak" translation_description="Row in a meteor shower\'s Upcoming list: when the shower next peaks; %1$s is a date">Peaks %1$s</string>
     <string name="object_info_upcoming" translation_description="Heading above the list of upcoming events (passes, eclipses, moon phases) on an object\'s info card.">Upcoming</string>
     <string name="object_info_eclipse_title" translation_description="Heading above the next lunar eclipse details on the Moon\'s info card.">Lunar eclipse</string>
     <string name="object_info_no_eclipse" translation_description="Shown on the Moon\'s info card when no lunar eclipse is coming up in the searched time range.">No lunar eclipse expected soon</string>
@@ -535,4 +537,7 @@ readings to Sky Map.</blockquote>
     <string name="moon_phase_last_quarter" translation_description="Name of the lunar phase when half the disc is lit and shrinking">Last Quarter</string>
     <string name="moon_phase_waning_crescent" translation_description="Name of the lunar phase between last quarter and new moon">Waning Crescent</string>
     <string name="moon_widget_age" translation_description="Widget line giving the Moon\'s age as the day of the lunar cycle, counting the day of new moon as day 1; %1$d is a number from 1 to 30">Day %1$d</string>
+    <string name="tonight_trailing_direction" translation_description="Small trailing note on a tonight-widget row: compass direction and altitude in degrees; %1$s is a compass point like SE, %2$d the altitude">%1$s · %2$d°</string>
+    <string name="tonight_dark_skies" translation_description="Small trailing note: the moon is dark, so viewing conditions are ideal">dark skies</string>
+    <string name="tonight_trailing_moon" translation_description="Small trailing note: how much of the moon is lit; %1$d is a percentage">moon %1$d%%</string>
 </resources>

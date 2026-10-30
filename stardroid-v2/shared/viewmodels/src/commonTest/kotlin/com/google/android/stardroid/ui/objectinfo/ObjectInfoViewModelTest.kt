@@ -138,12 +138,13 @@ class ObjectInfoViewModelTest {
         upcomingPasses: List<SatellitePass> = emptyList(),
         passTimesReliable: Boolean = true,
         passSearch: (suspend (Int) -> List<SatellitePass>)? = null,
+        at: Instant = NOW,
     ): ObjectInfoViewModel =
         ObjectInfoViewModel(
             catalog = { repository },
             locale = locale,
             ephemeris = KeplerianEphemeris,
-            now = { NOW },
+            now = { at },
             settings = settings,
             location = { LONDON },
             computeContext = UnconfinedTestDispatcher(dispatcher.scheduler),
@@ -776,6 +777,46 @@ class ObjectInfoViewModelTest {
             val now = vm.live.value?.now.orEmpty()
             assertThat(now.filterIsInstance<CardFact.MoonAge>()).isEmpty()
             assertThat(now.filterIsInstance<CardFact.MoonPhase>()).isEmpty()
+        }
+
+    @Test
+    fun `a meteor shower card lists its next peak`() =
+        testScope.runCurrentTest {
+            repository.infos[PERSEIDS_ID] = objectInfo(PERSEIDS_ID, "Perseids")
+            repository.showers.value = listOf(activeShower())
+            val vm = viewModel()
+
+            vm.show(PERSEIDS_ID)
+            runCurrent()
+            val events = (vm.live.value?.upcoming as Upcoming.Events).events
+            assertThat((events.single() as SkyEvent.ShowerPeak).shower.id).isEqualTo(PERSEIDS_ID)
+        }
+
+    @Test
+    fun `a well placed planet card lists when and where to look`() =
+        testScope.runCurrentTest {
+            val jupiter = SolarSystemIds.idFor(SolarSystemBody.JUPITER)
+            repository.infos[jupiter] = objectInfo(jupiter, "Jupiter")
+            // Jupiter near its 2023-11-03 opposition: high all evening in London.
+            val vm = viewModel(at = Instant.parse("2023-11-10T17:00:00Z"))
+
+            vm.show(jupiter)
+            runCurrent()
+            val events = (vm.live.value?.upcoming as Upcoming.Events).events
+            assertThat((events.single() as SkyEvent.WellPlacedPlanet).body)
+                .isEqualTo(SolarSystemBody.JUPITER)
+        }
+
+    @Test
+    fun `the Sun card has no upcoming section`() =
+        testScope.runCurrentTest {
+            val sun = SolarSystemIds.idFor(SolarSystemBody.SUN)
+            repository.infos[sun] = objectInfo(sun, "Sun")
+            val vm = viewModel()
+
+            vm.show(sun)
+            runCurrent()
+            assertThat(vm.live.value?.upcoming).isNull()
         }
 
     @Test

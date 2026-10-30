@@ -133,11 +133,8 @@
     <string name="tonight_widget_sun_times" translation_description="Header line on the tonight widget; %1$s is the sunset time, %2$s the time the sky becomes fully dark">sun sets %1$s · dark %2$s</string>
     <string name="tonight_widget_sunset_only" translation_description="Header fragment when only the sunset time is known; %1$s is the sunset time">sun sets %1$s</string>
     <string name="tonight_well_placed" translation_description="Tonight-widget row: a planet is high in the sky and easy to observe; %1$s is the planet name, %2$s the time from which it is well placed">%1$s well placed from %2$s</string>
-    <string name="tonight_trailing_direction" translation_description="Small trailing note on a tonight-widget row: compass direction and altitude in degrees; %1$s is a compass point like SE, %2$d the altitude">%1$s · %2$d°</string>
     <string name="tonight_shower_peak" translation_description="Tonight-widget row: a meteor shower reaches its annual peak tonight; %1$s is the shower name">%1$s peak tonight</string>
     <string name="tonight_shower_days" translation_description="Tonight-widget row: a meteor shower peaks within a few days; %1$s is the shower name, %2$d the number of days">%1$s peak in %2$d days</string>
-    <string name="tonight_dark_skies" translation_description="Small trailing note: the moon is dark, so viewing conditions are ideal">dark skies</string>
-    <string name="tonight_trailing_moon" translation_description="Small trailing note: how much of the moon is lit; %1$d is a percentage">moon %1$d%%</string>
     <string name="tonight_new_moon" translation_description="Tonight-widget row shown at new moon">New Moon — darkest skies of the month</string>
     <string name="tonight_full_moon" translation_description="Tonight-widget row shown at full moon">Full Moon tonight</string>
     <string name="tonight_bright_moon" translation_description="Tonight-widget row warning that a bright moon washes out faint objects">Bright moon washes out faint objects</string>

@@ -120,11 +120,8 @@
     <string name="tonight_widget_sun_times" translation_description="Header line on the tonight widget; %1$s is the sunset time, %2$s the time the sky becomes fully dark">sol går ned %1$s · mørkt %2$s</string>
     <string name="tonight_widget_sunset_only" translation_description="Header fragment when only the sunset time is known; %1$s is the sunset time">sol går ned %1$s</string>
     <string name="tonight_well_placed" translation_description="Tonight-widget row: a planet is high in the sky and easy to observe; %1$s is the planet name, %2$s the time from which it is well placed">%1$s er godt placeret fra kl. %2$s</string>
-    <!-- tm:omitted name="tonight_trailing_direction" reason="identical_to_source" -->
     <string name="tonight_shower_peak" translation_description="Tonight-widget row: a meteor shower reaches its annual peak tonight; %1$s is the shower name">%1$s topper i aften</string>
     <string name="tonight_shower_days" translation_description="Tonight-widget row: a meteor shower peaks within a few days; %1$s is the shower name, %2$d the number of days">%1$s topper om %2$d dage</string>
-    <string name="tonight_dark_skies" translation_description="Small trailing note: the moon is dark, so viewing conditions are ideal">mørk himmel</string>
-    <string name="tonight_trailing_moon" translation_description="Small trailing note: how much of the moon is lit; %1$d is a percentage">måne %1$d%%</string>
     <string name="tonight_new_moon" translation_description="Tonight-widget row shown at new moon">Nymåne — månedens mørkeste himmel</string>
     <string name="tonight_full_moon" translation_description="Tonight-widget row shown at full moon">Fuldmåne i aften</string>
     <string name="tonight_bright_moon" translation_description="Tonight-widget row warning that a bright moon washes out faint objects">Lys måne udvisker svage objekter</string>

@@ -34,7 +34,9 @@ import com.google.android.stardroid.catalog.LayerKind
 import com.google.android.stardroid.catalog.LocaleSpec
 import com.google.android.stardroid.catalog.ObjectInfo
 import com.google.android.stardroid.catalog.SearchHit
+import com.google.android.stardroid.events.EventTarget
 import com.google.android.stardroid.events.SkyEvent
+import com.google.android.stardroid.events.upcomingEvents
 import com.google.android.stardroid.layers.CatalogLayers
 import com.google.android.stardroid.layers.MeteorShowerLayer
 import com.google.android.stardroid.layers.SolarSystemLayer
@@ -68,6 +70,7 @@ import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import kotlinx.datetime.Instant
+import kotlinx.datetime.TimeZone
 import kotlin.coroutines.CoroutineContext
 import kotlin.math.min
 
@@ -260,10 +263,29 @@ class ObjectInfoViewModel(
         val noradId = SatelliteIds.noradIdFor(info.id)
         return when {
             noradId != null -> upcomingPassesFor(noradId)
+            // Before the target lookup, which would treat the Moon as a body with nothing to say.
             info.id == MOON_ID -> moonUpcoming()
-            else -> null
+            else -> eventTargetFor(info)?.let { upcomingForTarget(it) }
         }
     }
+
+    private suspend fun eventTargetFor(info: ObjectInfo): EventTarget? {
+        SolarSystemIds.bodyFor(info.id)?.let { return EventTarget.Body(it) }
+        // Cheap guard: saves a catalog read on every star and deep-sky card.
+        if (!info.id.value.startsWith(SHOWER_ID_PREFIX)) return null
+        return catalog()
+            .meteorShowers(locale.value)
+            .first()
+            .firstOrNull { it.id == info.id }
+            ?.let { EventTarget.Shower(it) }
+    }
+
+    // Only a section when there is something to say: most planets are not well placed tonight,
+    // and "not well placed" on every one of them would be noise.
+    private suspend fun upcomingForTarget(target: EventTarget): Upcoming? =
+        withContext(computeContext) {
+            upcomingEvents(target, now(), location(), TimeZone.currentSystemDefault(), ephemeris)
+        }.takeIf { it.isNotEmpty() }?.let { Upcoming.Events(it) }
 
     // An empty pass list means "nothing coming" or "too stale to say", and the card says which.
     private suspend fun upcomingPassesFor(noradId: Int): Upcoming {
@@ -445,6 +467,7 @@ class ObjectInfoViewModel(
     private companion object {
         // The card keeps its sources' order (soonest first) rather than the widget's ranking.
         const val UNRANKED = 0.0
+        const val SHOWER_ID_PREFIX = "shower/"
         val MOON_ID: CelestialObjectId = SolarSystemIds.idFor(SolarSystemBody.MOON)
         val CATALOG_LAYER_KINDS: List<Pair<LayerId, LayerKind>> =
             listOf(
