@@ -128,7 +128,9 @@ object AnalyticsEvents {
 
     // Search (SEARCH_EVENT/SEARCH_TERM mirror Firebase's built-in names).
     const val SEARCH_EVENT = "search"
+    // On success the resolved target name; on failure the typed text. Both normalised.
     const val SEARCH_TERM = "search_term"
+    // The normalised typed query; success events only.
     const val SEARCH_QUERY = "search_query"
     const val SEARCH_SUCCESS = "search_success"
     const val SEARCH_FAILED_EVENT = "search_failed_ev"

@@ -416,6 +416,19 @@ class SearchViewModelTest {
         }
 
     @Test
+    fun `a typed query is normalised in search query on success`() =
+        testScope.runCurrentTest {
+            repository.hits = listOf(SIRIUS_HIT)
+            val vm = viewModel()
+            vm.setQuery("  SIR  ")
+            vm.select(SIRIUS_HIT)
+            runCurrent()
+
+            assertThat(analytics.events[0].params)
+                .containsEntry(AnalyticsEvents.SEARCH_QUERY, "sir")
+        }
+
+    @Test
     fun `a tap through with no typed query logs an empty search query`() =
         testScope.runCurrentTest {
             repository.hits = listOf(SIRIUS_HIT)
