@@ -9,17 +9,21 @@
 
 package com.google.android.stardroid.ui.objectinfo
 
+import com.google.android.stardroid.astronomy.LunarPhase
 import com.google.android.stardroid.events.SkyEvent
 
 /** A live fact about the shown object at the map's time: one label/value row (D141 §3.1). */
 sealed interface CardFact {
     data class RiseSet(val state: RiseSetState) : CardFact
+
+    data class MoonPhase(val phase: LunarPhase, val illuminationPercent: Int) : CardFact
+
+    data class MoonAge(val dayOfCycle: Int) : CardFact
 }
 
-/** What an [Upcoming] section is about; picks its heading and empty-state wording. */
+/** What an [Upcoming] section is about; picks its empty-state wording. */
 enum class UpcomingKind {
     SATELLITE_PASSES,
-    LUNAR_ECLIPSE,
 }
 
 /** The card's "when to look" section, always in exactly one state (D141 §3.2). */

@@ -133,6 +133,26 @@
     <string name="tutorial_button" translation_description="Map-screen menu item that replays the warm welcome tutorial">Tutorial</string>
     <string name="whats_new_button" translation_description="Map-screen menu item that opens the What's New and Credits screen">What\'s new</string>
     <string name="widgets_button" translation_description="Map-screen menu item that opens the list of home-screen widgets the app offers">Widgets</string>
+    <string name="support_button" translation_description="Map-screen menu item that opens the screen listing ways to support Sky Map">Support</string>
+    <string name="support_screen_title" translation_description="Title of the screen listing ways to support Sky Map">Support Sky Map</string>
+    <string name="support_intro" translation_description="Opening paragraph of the Support screen. Sky Map is a free, open-source app.">Sky Map is free and open source, and it will stay that way. If you enjoy it, here are some ways to help.</string>
+    <string name="support_star_title" translation_description="Support screen row: star the project's page on GitHub">Star Sky Map on GitHub</string>
+    <string name="support_star_desc" translation_description="Support screen row description: starring helps other people find the app">It helps other people find the app.</string>
+    <string name="support_issues_title" translation_description="Support screen row: report a problem or suggest an idea on GitHub">Report a problem or suggest an idea</string>
+    <string name="support_issues_desc" translation_description="Support screen row description: opens the issue tracker on GitHub">Open an issue on GitHub.</string>
+    <string name="support_share_title" translation_description="Support screen row: share the app with a friend">Tell a friend</string>
+    <string name="support_share_desc" translation_description="Support screen row description: share the app with someone who likes the night sky">Share Sky Map with someone who loves the night sky.</string>
+    <string name="support_bmac_title" translation_description="Support screen row: make a small voluntary donation on the Buy Me a Coffee website">Buy us a coffee</string>
+    <string name="support_bmac_desc" translation_description="Support screen row description: donations are optional">A small, optional tip toward the cost of development.</string>
+    <string name="support_share_message" translation_description="Message sent when the user shares the app with a friend. %1$s is the web link to the app's store page. Keep the %1$s placeholder.">Have you tried Sky Map? It\'s a free, open-source planetarium for your phone: %1$s</string>
+    <string name="support_thanks_html" translation_description="HTML section at the bottom of the Support screen thanking donors and open-source contributors. %1$s is a list of donor names and %2$s a list of contributor names. Please do not change the &lt; and &gt; markup or the placeholders."><![CDATA[
+<h2>Thank you</h2>
+<h3>Supporters</h3>
+<p>%1$s</p>
+<h3>Open source contributors</h3>
+<p>%2$s</p>
+<p>See the latest contributors on <a href="https://github.com/sky-map-team/stardroid/graphs/contributors">GitHub</a>.</p>
+    ]]></string>
     <string name="layer_param_disc_size">Disc size</string>
     <string name="layer_param_disc_size_true">True scale</string>
     <string name="layer_param_disc_size_true_desc">Real size in the sky at every zoom. Planets are specks until you zoom right in.</string>
@@ -147,6 +167,7 @@
     <string name="search_go" translation_description="Button that starts navigating the sky map toward the typed search target.">Go</string>
     <string name="search_cancel" translation_description="Button that dismisses the search dialog or ends the current search.">Cancel</string>
     <string name="search_no_results" translation_description="Message shown when a sky search returns no results, suggesting the object may not currently be visible.">No results were found. Perhaps the object is not visible at this time.</string>
+    <string name="search_standing_on_earth" translation_description="Friendly message shown when the user searches for Earth, which cannot be pointed at because they are standing on it.">You\'re standing on it!</string>
     <string name="search_target_looking_message" translation_description="Status shown while the user is being guided toward a search target. %1$s is the object name.">Looking for: %1$s</string>
     <string name="search_target_found_message" translation_description="Status shown when the search target has been found and is centered on screen. %1$s is the object name.">Found: %1$s</string>
     <string name="search_overlay_prompt" translation_description="Instruction telling the user to physically point their phone in the direction of the on-screen arrow to find the search target.">Point your phone toward the arrow</string>
@@ -199,17 +220,20 @@
     <string name="sun_wont_set_message" translation_description="Message shown when the sun will not set (or rise) during the next 24 hours at the user\'s location (polar day or polar night).">The sun will not set during the next 24 hours at your current location.</string>
     <string name="time_travel_start_message" translation_description="Toast message when time travel starts toward a chosen destination. %1$s is the formatted destination date and time.">Traveling through time to %1$s ...</string>
     <string name="time_travel_close_message" translation_description="Toast message shown when the user exits time travel and returns to the present.">Back to the present ...</string>
-    <string name="satellite_next_pass" translation_description="Heading above the table of upcoming visible passes on a satellite\'s info card.">Upcoming visible passes</string>
+    <string name="satellite_next_pass" translation_description="Heading above the table of upcoming good passes on a satellite\'s info card.">Upcoming good passes</string>
     <string name="satellite_pass_col_when" translation_description="Column heading in the satellite pass table: the date and time the pass starts.">When</string>
     <string name="satellite_pass_col_rises" translation_description="Column heading in the satellite pass table: the compass direction where the satellite rises. Keep it short.">Rises</string>
     <string name="satellite_pass_col_peak" translation_description="Column heading in the satellite pass table: the highest angle above the horizon the satellite reaches. Keep it short.">Peak</string>
     <string name="satellite_pass_col_magnitude" translation_description="Column heading in the satellite pass table: the satellite\'s brightness magnitude at its brightest. Keep it short.">Mag</string>
     <string name="satellite_pass_shadow" translation_description="Tells the user the satellite will fade out mid-pass when it enters the Earth\'s shadow. %1$s is a time.">Fades into Earth\'s shadow at %1$s</string>
-    <string name="satellite_no_pass" translation_description="Shown on a satellite info card when no visible pass is coming up in the next few days.">No visible passes in the next few days</string>
+    <string name="satellite_no_pass" translation_description="Shown on a satellite info card when no bright, high pass is coming up in the next few days.">No good passes in the next few days</string>
     <string name="satellite_pass_unknown" translation_description="Shown on a satellite info card when the downloaded orbit data is too old to predict pass times reliably.">Orbit data is too old to predict passes</string>
+    <string name="upcoming_well_placed" translation_description="Row in an object\'s Upcoming list: the planet is high enough to observe tonight; %1$s is the time from which it is well placed">Well placed from %1$s</string>
+    <string name="upcoming_shower_peak" translation_description="Row in a meteor shower\'s Upcoming list: when the shower next peaks; %1$s is a date">Peaks %1$s</string>
+    <string name="object_info_upcoming" translation_description="Heading above the list of upcoming events (passes, eclipses, moon phases) on an object\'s info card.">Upcoming</string>
     <string name="object_info_eclipse_title" translation_description="Heading above the next lunar eclipse details on the Moon\'s info card.">Lunar eclipse</string>
     <string name="object_info_no_eclipse" translation_description="Shown on the Moon\'s info card when no lunar eclipse is coming up in the searched time range.">No lunar eclipse expected soon</string>
-    <string name="object_info_eclipse_greatest" translation_description="The next lunar eclipse\'s type and greatest-eclipse date/time. %1$s is a localized eclipse type like \'Total lunar eclipse\', %2$s a date, %3$s a time.">%1$s — greatest eclipse %2$s at %3$s</string>
+    <string name="object_info_eclipse_greatest" translation_description="The next lunar eclipse\'s type and the date and time of maximum eclipse (when it peaks). %1$s is a localized eclipse type like \'Total lunar eclipse\', %2$s a date, %3$s a time.">%1$s — peaks %2$s at %3$s</string>
     <string name="object_info_eclipse_totality" translation_description="The start and end time of totality during a total lunar eclipse. %1$s and %2$s are times.">Totality %1$s – %2$s</string>
     <string name="object_info_image_credit" translation_description="Attribution line under the object\'s photo; %1$s is the credited source, e.g. NASA/ESA">Image: %1$s</string>
     <string name="object_info_fun_fact" translation_description="An interesting trivia line on the object info card; %1$s is the fact text">Fun fact: %1$s</string>
@@ -524,4 +548,17 @@ readings to Sky Map.</blockquote>
     <string name="diagnostics_rejected_samples" translation_description="Row label in the diagnostics screen for how many sensor readings have been thrown away as invalid since the app started">Rejected sensor samples (since start)</string>
     <string name="diagnostics_section_map" translation_description="Section heading in the diagnostics screen for what the sky map itself is doing with the sensor readings">Map</string>
     <string name="diagnostics_smoother_heals" translation_description="Row label in the diagnostics screen for how many times the orientation smoother had to reset itself after producing an invalid value since the app started">Smoother resets (since start)</string>
+    <string name="moon_widget_illumination" translation_description="Widget line showing how much of the Moon\'s disc is lit; %1$d is a percentage number">%1$d%% illuminated</string>
+    <string name="moon_phase_new" translation_description="Name of the lunar phase when the Moon is fully dark">New Moon</string>
+    <string name="moon_phase_waxing_crescent" translation_description="Name of the lunar phase between new moon and first quarter">Waxing Crescent</string>
+    <string name="moon_phase_first_quarter" translation_description="Name of the lunar phase when half the disc is lit and growing">First Quarter</string>
+    <string name="moon_phase_waxing_gibbous" translation_description="Name of the lunar phase between first quarter and full moon">Waxing Gibbous</string>
+    <string name="moon_phase_full" translation_description="Name of the lunar phase when the disc is fully lit">Full Moon</string>
+    <string name="moon_phase_waning_gibbous" translation_description="Name of the lunar phase between full moon and last quarter">Waning Gibbous</string>
+    <string name="moon_phase_last_quarter" translation_description="Name of the lunar phase when half the disc is lit and shrinking">Last Quarter</string>
+    <string name="moon_phase_waning_crescent" translation_description="Name of the lunar phase between last quarter and new moon">Waning Crescent</string>
+    <string name="moon_widget_age" translation_description="Widget line giving the Moon\'s age as the day of the lunar cycle, counting the day of new moon as day 1; %1$d is a number from 1 to 30">Day %1$d</string>
+    <string name="tonight_trailing_direction" translation_description="Small trailing note on a tonight-widget row: compass direction and altitude in degrees; %1$s is a compass point like SE, %2$d the altitude">%1$s · %2$d°</string>
+    <string name="tonight_dark_skies" translation_description="Small trailing note: the moon is dark, so viewing conditions are ideal">dark skies</string>
+    <string name="tonight_trailing_moon" translation_description="Small trailing note: how much of the moon is lit; %1$d is a percentage">moon %1$d%%</string>
 </resources>

@@ -11,6 +11,7 @@ package com.google.android.stardroid.events
 
 import com.google.android.stardroid.astronomy.CIVIL_TWILIGHT_SUN_ALT_DEG
 import com.google.android.stardroid.astronomy.Ephemeris
+import com.google.android.stardroid.astronomy.GOOD_PASS_MAX_MAGNITUDE
 import com.google.android.stardroid.astronomy.KeplerianEphemeris
 import com.google.android.stardroid.astronomy.LunarEclipseCircumstances
 import com.google.android.stardroid.astronomy.LunarEclipseType
@@ -72,7 +73,10 @@ sealed interface SkyEvent {
         override val quality: Double,
     ) : SkyEvent
 
-    /** A full or new moon within the next 24 hours (new = darkest skies of the month). */
+    /**
+     * A full or new moon (new = darkest skies of the month). [tonightSky] only emits one within
+     * the next 24 hours; the info card also uses it for the next occurrence, however far off.
+     */
     data class MoonPhaseTonight(
         val phase: LunarPhase,
         val time: Instant,
@@ -200,7 +204,7 @@ private const val BRILLIANT_PASS_MAGNITUDE = -3.0
 private const val BRIGHT_PASS_MAGNITUDE = -2.0
 
 /** Still an easy naked-eye sight, but not one to reorder the evening around. */
-private const val ORDINARY_PASS_MAGNITUDE = -0.5
+private const val ORDINARY_PASS_MAGNITUDE = GOOD_PASS_MAX_MAGNITUDE
 
 private const val WELL_PLACED_MIN_ALT_DEG = 25.0
 private const val BRIGHT_MOON_FRACTION = 0.6
@@ -286,6 +290,49 @@ fun tonightSky(
     )
 }
 
+sealed interface EventTarget {
+    /** Any solar-system body; only the planets in [PLANET_QUALITY] ever yield an event. */
+    data class Body(val body: SolarSystemBody) : EventTarget
+
+    data class Shower(val shower: MeteorShower) : EventTarget
+}
+
+/**
+ * "This object, from [from] on": the per-object counterpart of [tonightSky], which answers "tonight,
+ * every object, ranked". Both call the same finders and the same quality figures, so a card and a
+ * widget row for the same event are the same event (D141 §3.2).
+ *
+ * Planets are only ever tonight's evening window, derived from [from] (pass "now"), so
+ * [location] is required and without one the answer is empty. A shower's peak can be any distance
+ * off.
+ */
+fun upcomingEvents(
+    target: EventTarget,
+    from: Instant,
+    location: LatLong?,
+    zone: TimeZone = TimeZone.currentSystemDefault(),
+    ephemeris: Ephemeris = KeplerianEphemeris,
+): List<SkyEvent> =
+    when (target) {
+        is EventTarget.Shower ->
+            showerEvents(from, listOf(target.shower), zone, ephemeris, highlightsOnly = false)
+        is EventTarget.Body -> {
+            if (location == null) {
+                emptyList()
+            } else {
+                val sunset =
+                    nextRiseSetTime(
+                        SolarSystemBody.SUN,
+                        from,
+                        location,
+                        RiseSetIndicator.SET,
+                        ephemeris,
+                    )
+                planetEvents(from, sunset ?: from, location, ephemeris, setOf(target.body))
+            }
+        }
+    }
+
 /**
  * Shower highlights: quality peaks on the night itself (with a dark-sky bonus) and tapers
  * across the last three approach days; anything further out is countdown material only.
@@ -320,6 +367,7 @@ private fun planetEvents(
     eveningStart: Instant,
     location: LatLong,
     ephemeris: Ephemeris,
+    bodies: Set<SolarSystemBody> = PLANET_QUALITY.keys,
 ): List<SkyEvent.WellPlacedPlanet> {
     // The sample grid and the Sun's altitude on it are planet-independent, so they are built once
     // rather than recomputed inside every candidate's loop (audit-2026-08 M1).
@@ -336,7 +384,7 @@ private fun planetEvents(
                 ) <= CIVIL_TWILIGHT_SUN_ALT_DEG
             }.toList()
 
-    return PLANET_QUALITY.mapNotNull { (body, baseQuality) ->
+    return PLANET_QUALITY.filterKeys { it in bodies }.mapNotNull { (body, baseQuality) ->
         var from: Instant? = null
         var bestAlt = 0.0
         for (sample in darkSamples) {

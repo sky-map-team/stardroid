@@ -9,6 +9,7 @@
 
 package com.google.android.stardroid.ui
 
+import android.content.Intent
 import android.opengl.GLSurfaceView
 import androidx.compose.material3.SnackbarHostState
 import androidx.compose.runtime.Composable
@@ -56,6 +57,7 @@ import com.google.android.stardroid.ui.onboarding.WelcomeScreen
 import com.google.android.stardroid.ui.search.SearchViewModel
 import com.google.android.stardroid.ui.settings.SettingsScreen
 import com.google.android.stardroid.ui.settings.SettingsViewModel
+import com.google.android.stardroid.ui.support.SupportScreen
 import com.google.android.stardroid.ui.timetravel.TimeTravelViewModel
 import kotlinx.coroutines.launch
 
@@ -68,6 +70,7 @@ object Routes {
     const val DIAGNOSTICS = "diagnostics"
     const val HELP = "help"
     const val WHATS_NEW = "whatsnew"
+    const val SUPPORT = "support"
     const val CALIBRATION = "calibration/{userInitiated}"
 
     fun calibration(userInitiated: Boolean) = "calibration/$userInitiated"
@@ -157,6 +160,7 @@ fun SkyMapNavHost(
                 onOpenTutorial = { navController.navigate(Routes.welcomeReplay()) },
                 onOpenHelp = { navController.navigate(Routes.HELP) },
                 onOpenWhatsNew = { navController.navigate(Routes.WHATS_NEW) },
+                onOpenSupport = { navController.navigate(Routes.SUPPORT) },
                 onOpenCalibration = { userInitiated ->
                     navController.navigate(Routes.calibration(userInitiated))
                 },
@@ -333,6 +337,26 @@ fun SkyMapNavHost(
             WhatsNewScreen(nightMode = nightMode, onBack = { navController.popBackStack() })
         }
 
+        composable(Routes.SUPPORT) {
+            val context = LocalContext.current
+            SupportScreen(
+                nightMode = nightMode,
+                onBack = { navController.popBackStack() },
+                onAction = mapViewModel::logSupportAction,
+                onShareApp = {
+                    val send =
+                        Intent(Intent.ACTION_SEND).apply {
+                            type = "text/plain"
+                            putExtra(
+                                Intent.EXTRA_TEXT,
+                                context.getString(R.string.support_share_message, PLAY_STORE_URL),
+                            )
+                        }
+                    context.startActivity(Intent.createChooser(send, null))
+                },
+            )
+        }
+
         composable(Routes.DIAGNOSTICS) {
             DiagnosticsRoute(
                 diagnosticsViewModel,
@@ -375,3 +399,6 @@ fun SkyMapNavHost(
 
 /** v1's linked figure-eight demonstration video. */
 private const val CALIBRATION_VIDEO_URL = "https://www.youtube.com/watch?v=-Uq7AmSAjt8"
+
+private const val PLAY_STORE_URL =
+    "https://play.google.com/store/apps/details?id=com.google.android.stardroid"

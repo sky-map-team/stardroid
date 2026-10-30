@@ -65,6 +65,7 @@ import com.google.android.stardroid.ui.resources.search_hint
 import com.google.android.stardroid.ui.resources.search_label
 import com.google.android.stardroid.ui.resources.search_no_results
 import com.google.android.stardroid.ui.resources.search_overlay_prompt
+import com.google.android.stardroid.ui.resources.search_standing_on_earth
 import com.google.android.stardroid.ui.resources.search_target_found_message
 import com.google.android.stardroid.ui.resources.search_target_looking_message
 import org.jetbrains.compose.resources.stringResource
@@ -253,6 +254,7 @@ fun SearchDialog(
     var text by remember { mutableStateOf(viewModel.query.value) }
     val suggestions by viewModel.suggestions.collectAsStateWithLifecycle()
     val noResults by viewModel.noResults.collectAsStateWithLifecycle()
+    val standingOnEarth by viewModel.standingOnEarth.collectAsStateWithLifecycle()
     val focusRequester = remember { FocusRequester() }
     // Requesting focus from a LaunchedEffect keyed on SearchDialog itself can fire before the
     // AlertDialog's own subcomposition (it composes text into a separate Popup) has attached
@@ -295,6 +297,13 @@ fun SearchDialog(
                 if (noResults) {
                     Text(
                         stringResource(Res.string.search_no_results),
+                        style = MaterialTheme.typography.bodySmall,
+                        modifier = Modifier.padding(top = 8.dp),
+                    )
+                }
+                if (standingOnEarth) {
+                    Text(
+                        stringResource(Res.string.search_standing_on_earth),
                         style = MaterialTheme.typography.bodySmall,
                         modifier = Modifier.padding(top = 8.dp),
                     )

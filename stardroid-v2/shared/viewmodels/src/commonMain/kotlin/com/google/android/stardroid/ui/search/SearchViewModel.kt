@@ -111,6 +111,10 @@ class SearchViewModel(
     private val _noResults = MutableStateFlow(false)
     val noResults: StateFlow<Boolean> = _noResults.asStateFlow()
 
+    /** True after Earth is picked: there is nothing to point at, the observer stands on it. */
+    private val _standingOnEarth = MutableStateFlow(false)
+    val standingOnEarth: StateFlow<Boolean> = _standingOnEarth.asStateFlow()
+
     /** Non-null while search mode is engaged (the overlay and control bar show). */
     private val _target = MutableStateFlow<SearchTarget?>(null)
     val target: StateFlow<SearchTarget?> = _target.asStateFlow()
@@ -144,6 +148,7 @@ class SearchViewModel(
     fun setQuery(text: String) {
         _query.value = text
         _noResults.value = false
+        _standingOnEarth.value = false
     }
 
     /**
@@ -168,6 +173,10 @@ class SearchViewModel(
 
     /** The user picked a hit from the list (v1's single-result / "Did you mean?" selection). */
     fun select(picked: SearchHit) {
+        if (picked.id == SolarSystemIds.EARTH_ID) {
+            _standingOnEarth.value = true
+            return
+        }
         viewModelScope.launch {
             // A satellite moves ~1° every few seconds, so the position the list was built with
             // may be stale by now: take a fresh one.
@@ -227,8 +236,8 @@ class SearchViewModel(
         analytics.trackEvent(
             AnalyticsEvents.SEARCH_EVENT,
             mapOf(
-                // The query when typed; the target name for a tap-through (gallery Find).
-                AnalyticsEvents.SEARCH_TERM to _query.value.trim().ifEmpty { target.name },
+                AnalyticsEvents.SEARCH_TERM to normalizeTerm(target.name),
+                AnalyticsEvents.SEARCH_QUERY to normalizeTerm(_query.value),
                 AnalyticsEvents.SEARCH_SUCCESS to "true",
             ),
         )
@@ -330,10 +339,14 @@ class SearchViewModel(
     private suspend fun satellitePosition(id: CelestialObjectId): RaDec? =
         satellitesSafely().firstOrNull { it.info.id == id }?.position
 
+    // Trim, collapse whitespace and lower-case so "Moon " and "moon" count as one GA4 term.
+    private fun normalizeTerm(term: String): String =
+        term.trim().replace(WHITESPACE, " ").lowercase()
+
     private fun searchFailed(term: String) {
         analytics.trackEvent(
             AnalyticsEvents.SEARCH_FAILED_EVENT,
-            mapOf(AnalyticsEvents.SEARCH_TERM to term),
+            mapOf(AnalyticsEvents.SEARCH_TERM to normalizeTerm(term)),
         )
         _noResults.value = true
     }
@@ -379,6 +392,8 @@ class SearchViewModel(
         ephemeris.topocentricPosition(body, now(), location()).toGeocentricVector()
 
     companion object {
+        private val WHITESPACE = Regex("\\s+")
+
         private fun words(text: String): List<String> =
             text.split(' ', '(', ')', '-').filter { it.isNotEmpty() }
 

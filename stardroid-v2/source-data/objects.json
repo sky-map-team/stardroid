@@ -670,6 +670,15 @@
     "moon/callisto"
    ]
   },
+  "asterism/summer_triangle": {
+   "type": "asterism",
+   "ra": 295.5,
+   "dec": 31.7,
+   "search_fov": 45.0
+  },
+  "planet/earth": {
+   "type": "planet"
+  },
   "planet/mars": {
    "type": "planet",
    "image_ref": "planets/hubble_mars.webp",

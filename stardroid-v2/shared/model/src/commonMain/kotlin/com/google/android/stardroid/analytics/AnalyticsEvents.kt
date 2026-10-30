@@ -66,12 +66,21 @@ object AnalyticsEvents {
     const val SETTINGS_OPENED_LABEL = "settings_opened"
     const val HELP_OPENED_LABEL = "help_opened"
     const val WHATS_NEW_OPENED_LABEL = "whats_new_opened"
+    const val SUPPORT_OPENED_LABEL = "support_opened"
     const val TUTORIAL_OPENED_LABEL = "tutorial_opened"
     const val CALIBRATION_OPENED_LABEL = "calibration_opened"
     const val TIME_TRAVEL_OPENED_LABEL = "time_travel_opened"
     const val GALLERY_OPENED_LABEL = "gallery_opened"
     const val WIDGETS_OPENED_LABEL = "widgets_opened"
     const val DIAGNOSTICS_OPENED_LABEL = "diagnostics_opened"
+
+    // Support screen: which way of helping was tapped. Counts only, no identifiers.
+    const val SUPPORT_ACTION_EVENT = "support_action_ev"
+    const val SUPPORT_ACTION_VALUE = "support_action"
+    const val SUPPORT_ACTION_GITHUB_STAR = "github_star"
+    const val SUPPORT_ACTION_ISSUES = "issues"
+    const val SUPPORT_ACTION_SHARE = "share"
+    const val SUPPORT_ACTION_BMAC = "bmac"
     const val MANUAL_MODE_TOGGLED_EVENT = "manual_mode_toggled_ev"
     const val MANUAL_MODE_ENABLED = "enabled"
     const val HORIZON_LEVEL_TOGGLED_EVENT = "horizon_level_toggled_ev"
@@ -127,8 +136,11 @@ object AnalyticsEvents {
     const val SATELLITE_CIRCUIT_OPEN_HOURS = "open_hours"
 
     // Search (SEARCH_EVENT/SEARCH_TERM mirror Firebase's built-in names).
+    // SEARCH_TERM is the resolved target name on success, the typed text on failure.
+    // SEARCH_QUERY is the typed text, success events only. Both are normalised.
     const val SEARCH_EVENT = "search"
     const val SEARCH_TERM = "search_term"
+    const val SEARCH_QUERY = "search_query"
     const val SEARCH_SUCCESS = "search_success"
     const val SEARCH_FAILED_EVENT = "search_failed_ev"
 

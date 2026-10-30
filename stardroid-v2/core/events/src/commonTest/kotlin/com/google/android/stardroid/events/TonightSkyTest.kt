@@ -148,6 +148,55 @@ class TonightSkyTest {
         assertThat(sky.highlights).isEqualTo(sky.highlights.sortedByDescending { it.quality })
     }
 
+    @Test
+    fun upcomingShower_reportsTheNextPeakBeyondTheHighlightHorizon() {
+        val events =
+            upcomingEvents(EventTarget.Shower(PERSEIDS), utc(2024, 6, 1, 18), LONDON, UTC)
+        val peak = events.single() as SkyEvent.ShowerPeak
+        assertThat(peak.shower).isEqualTo(PERSEIDS)
+        assertThat(peak.daysUntilPeak).isGreaterThan(3)
+    }
+
+    @Test
+    fun upcomingShower_needsNoLocation() {
+        assertThat(
+            upcomingEvents(EventTarget.Shower(PERSEIDS), utc(2024, 6, 1, 18), null, UTC).size,
+        )
+            .isEqualTo(1)
+    }
+
+    @Test
+    fun upcomingBody_matchesTheSameEventTonightSkyReports() {
+        val at = utc(2023, 11, 10, 17)
+        val fromSky =
+            tonightSky(at, LONDON, emptyList(), UTC)
+                .highlights
+                .filterIsInstance<SkyEvent.WellPlacedPlanet>()
+                .single { it.body == SolarSystemBody.JUPITER }
+        val upcoming =
+            upcomingEvents(EventTarget.Body(SolarSystemBody.JUPITER), at, LONDON, UTC)
+        assertThat(upcoming).isEqualTo(listOf(fromSky))
+    }
+
+    @Test
+    fun upcomingBody_withoutALocationHasNothingToSay() {
+        val events =
+            upcomingEvents(EventTarget.Body(SolarSystemBody.JUPITER), utc(2023, 11, 10, 17), null)
+        assertThat(events).isEqualTo(emptyList<SkyEvent>())
+    }
+
+    @Test
+    fun upcomingBody_forAnObjectThatIsNotAPlanetIsEmpty() {
+        val events =
+            upcomingEvents(
+                EventTarget.Body(SolarSystemBody.SUN),
+                utc(2023, 11, 10, 17),
+                LONDON,
+                UTC,
+            )
+        assertThat(events).isEqualTo(emptyList<SkyEvent>())
+    }
+
     private companion object {
         val UTC = TimeZone.UTC
         val LONDON = LatLong(51.51, -0.13)

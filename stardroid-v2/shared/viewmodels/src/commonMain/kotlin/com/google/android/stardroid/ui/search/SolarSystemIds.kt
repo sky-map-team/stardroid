@@ -21,6 +21,9 @@ object SolarSystemIds {
     /** The catalog id namespace the ephemeris can resolve. */
     private const val PLANET_ID_PREFIX = "planet/"
 
+    /** Card-only catalog entry so that searching "earth" has an answer; it has no sky position. */
+    val EARTH_ID = CelestialObjectId(PLANET_ID_PREFIX + "earth")
+
     fun idFor(body: SolarSystemBody): CelestialObjectId =
         CelestialObjectId(PLANET_ID_PREFIX + body.name.lowercase())
 

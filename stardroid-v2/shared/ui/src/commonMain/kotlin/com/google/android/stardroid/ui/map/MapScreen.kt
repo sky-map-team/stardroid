@@ -148,6 +148,7 @@ fun MapScreen(
     onOpenTutorial: () -> Unit,
     onOpenHelp: () -> Unit,
     onOpenWhatsNew: () -> Unit,
+    onOpenSupport: (() -> Unit)?,
     onOpenCalibration: (userInitiated: Boolean) -> Unit,
     // Null where the system's own prompt is the rationale (iOS).
     onRequestLocationPermission: (() -> Unit)?,
@@ -470,9 +471,9 @@ fun MapScreen(
             val hudEnabled by layersViewModel.hudEnabled.collectAsStateWithLifecycle()
             val arUi by mapViewModel.arUi.collectAsStateWithLifecycle()
             val arSpecs by mapViewModel.arCameraSpecs.collectAsStateWithLifecycle()
-            // The time-travel player reaches into the HUD's top-right corner in portrait, and in
-            // landscape on a narrow screen once the HUD steps left of the action column, so the
-            // HUD steps down below it while travel is engaged.
+            // The time-travel player can reach into the HUD's top-right corner (always in
+            // portrait; in landscape once the HUD steps left of the action column), so the HUD
+            // steps down below it while travel is engaged, whatever the width.
             val hudTopClearance =
                 if (timeTravelState != TimeTravelState.REAL_TIME) {
                     with(LocalDensity.current) { timeTravelPlayerHeightPx.toDp() } + 8.dp
@@ -653,6 +654,14 @@ fun MapScreen(
                     mapViewModel.logMenuItem(AnalyticsEvents.WHATS_NEW_OPENED_LABEL)
                     onOpenWhatsNew()
                 },
+                onOpenSupport =
+                    onOpenSupport?.let { open ->
+                        {
+                            showOverflowSheet = false
+                            mapViewModel.logMenuItem(AnalyticsEvents.SUPPORT_OPENED_LABEL)
+                            open()
+                        }
+                    },
                 onOpenSettings = {
                     showOverflowSheet = false
                     mapViewModel.logMenuItem(AnalyticsEvents.SETTINGS_OPENED_LABEL)

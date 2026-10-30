@@ -37,9 +37,11 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.dp
 import com.google.android.stardroid.astronomy.LunarEclipseCircumstances
 import com.google.android.stardroid.astronomy.LunarEclipseType
+import com.google.android.stardroid.astronomy.LunarPhase
 import com.google.android.stardroid.astronomy.SatellitePass
 import com.google.android.stardroid.catalog.ObjectInfo
 import com.google.android.stardroid.catalog.SearchHit
+import com.google.android.stardroid.events.DARK_MOON_FRACTION
 import com.google.android.stardroid.events.SkyEvent
 import com.google.android.stardroid.ui.common.formatForLocale
 import com.google.android.stardroid.ui.common.formattedStringResource
@@ -50,26 +52,34 @@ import com.google.android.stardroid.ui.common.rememberTimeFormatter
 import com.google.android.stardroid.ui.map.HudFormats
 import com.google.android.stardroid.ui.resources.Res
 import com.google.android.stardroid.ui.resources.hud_cardinal_directions
+import com.google.android.stardroid.ui.resources.moon_phase_first_quarter
+import com.google.android.stardroid.ui.resources.moon_phase_full
+import com.google.android.stardroid.ui.resources.moon_phase_last_quarter
+import com.google.android.stardroid.ui.resources.moon_phase_new
+import com.google.android.stardroid.ui.resources.moon_phase_waning_crescent
+import com.google.android.stardroid.ui.resources.moon_phase_waning_gibbous
+import com.google.android.stardroid.ui.resources.moon_phase_waxing_crescent
+import com.google.android.stardroid.ui.resources.moon_phase_waxing_gibbous
+import com.google.android.stardroid.ui.resources.moon_widget_age
+import com.google.android.stardroid.ui.resources.moon_widget_illumination
 import com.google.android.stardroid.ui.resources.object_info_also_known_as
 import com.google.android.stardroid.ui.resources.object_info_always_above_horizon
 import com.google.android.stardroid.ui.resources.object_info_always_below_horizon
 import com.google.android.stardroid.ui.resources.object_info_close
 import com.google.android.stardroid.ui.resources.object_info_distance
 import com.google.android.stardroid.ui.resources.object_info_eclipse_greatest
-import com.google.android.stardroid.ui.resources.object_info_eclipse_title
 import com.google.android.stardroid.ui.resources.object_info_eclipse_totality
 import com.google.android.stardroid.ui.resources.object_info_find_in_sky
 import com.google.android.stardroid.ui.resources.object_info_fun_fact
 import com.google.android.stardroid.ui.resources.object_info_image_credit
 import com.google.android.stardroid.ui.resources.object_info_magnitude
 import com.google.android.stardroid.ui.resources.object_info_mass
-import com.google.android.stardroid.ui.resources.object_info_no_eclipse
 import com.google.android.stardroid.ui.resources.object_info_rises
 import com.google.android.stardroid.ui.resources.object_info_see_also
 import com.google.android.stardroid.ui.resources.object_info_sets
 import com.google.android.stardroid.ui.resources.object_info_size
 import com.google.android.stardroid.ui.resources.object_info_spectral_class
-import com.google.android.stardroid.ui.resources.satellite_next_pass
+import com.google.android.stardroid.ui.resources.object_info_upcoming
 import com.google.android.stardroid.ui.resources.satellite_no_pass
 import com.google.android.stardroid.ui.resources.satellite_pass_col_magnitude
 import com.google.android.stardroid.ui.resources.satellite_pass_col_peak
@@ -77,9 +87,14 @@ import com.google.android.stardroid.ui.resources.satellite_pass_col_rises
 import com.google.android.stardroid.ui.resources.satellite_pass_col_when
 import com.google.android.stardroid.ui.resources.satellite_pass_shadow
 import com.google.android.stardroid.ui.resources.satellite_pass_unknown
+import com.google.android.stardroid.ui.resources.tonight_dark_skies
 import com.google.android.stardroid.ui.resources.tonight_lunar_eclipse_partial
 import com.google.android.stardroid.ui.resources.tonight_lunar_eclipse_penumbral
 import com.google.android.stardroid.ui.resources.tonight_lunar_eclipse_total
+import com.google.android.stardroid.ui.resources.tonight_trailing_direction
+import com.google.android.stardroid.ui.resources.tonight_trailing_moon
+import com.google.android.stardroid.ui.resources.upcoming_shower_peak
+import com.google.android.stardroid.ui.resources.upcoming_well_placed
 import com.google.android.stardroid.ui.theme.NightPhotoTint
 import org.jetbrains.compose.resources.StringResource
 import org.jetbrains.compose.resources.stringArrayResource
@@ -253,6 +268,12 @@ private fun DataRows(
         facts.forEach { fact ->
             when (fact) {
                 is CardFact.RiseSet -> RiseSetRows(fact.state)
+                is CardFact.MoonPhase -> MoonPhaseRows(fact)
+                is CardFact.MoonAge ->
+                    Text(
+                        formattedStringResource(Res.string.moon_widget_age, fact.dayOfCycle),
+                        style = MaterialTheme.typography.bodySmall,
+                    )
             }
         }
     }
@@ -289,6 +310,30 @@ private fun RiseSetRows(riseSet: RiseSetState) {
             )
     }
 }
+
+@Composable
+private fun MoonPhaseRows(fact: CardFact.MoonPhase) {
+    Text(stringResource(fact.phase.nameRes()), style = MaterialTheme.typography.bodySmall)
+    Text(
+        formattedStringResource(
+            Res.string.moon_widget_illumination,
+            fact.illuminationPercent,
+        ),
+        style = MaterialTheme.typography.bodySmall,
+    )
+}
+
+private fun LunarPhase.nameRes(): StringResource =
+    when (this) {
+        LunarPhase.NEW -> Res.string.moon_phase_new
+        LunarPhase.WAXING_CRESCENT -> Res.string.moon_phase_waxing_crescent
+        LunarPhase.FIRST_QUARTER -> Res.string.moon_phase_first_quarter
+        LunarPhase.WAXING_GIBBOUS -> Res.string.moon_phase_waxing_gibbous
+        LunarPhase.FULL -> Res.string.moon_phase_full
+        LunarPhase.WANING_GIBBOUS -> Res.string.moon_phase_waning_gibbous
+        LunarPhase.LAST_QUARTER -> Res.string.moon_phase_last_quarter
+        LunarPhase.WANING_CRESCENT -> Res.string.moon_phase_waning_crescent
+    }
 
 @Composable
 private fun DataRow(
@@ -354,26 +399,95 @@ private fun CelestialImage(
 
 /**
  * The card's "when to look" section (D141): one exhaustive rendering of [Upcoming], so a new
- * kind of object adds a case here rather than a parameter to the card.
+ * kind of object adds a case here rather than a parameter to the card. Pass events render as one
+ * table ahead of the other events, which is only right while a card never mixes the two.
  */
 @Composable
 private fun UpcomingSection(upcoming: Upcoming) {
+    Text(
+        stringResource(Res.string.object_info_upcoming),
+        style = MaterialTheme.typography.titleSmall,
+        modifier = Modifier.padding(top = 12.dp),
+    )
     when (upcoming) {
         is Upcoming.Events -> {
             val passes =
                 upcoming.events.filterIsInstance<SkyEvent.SatellitePassTonight>().map { it.pass }
-            val eclipse =
-                upcoming.events.filterIsInstance<SkyEvent.LunarEclipseUpcoming>().firstOrNull()
             if (passes.isNotEmpty()) SatellitePassRow(passes, passTimesReliable = true)
-            eclipse?.let { EclipseRow(it.circumstances) }
+            upcoming.events.forEach { event ->
+                when (event) {
+                    is SkyEvent.MoonPhaseTonight -> MoonPhaseRow(event)
+                    is SkyEvent.LunarEclipseUpcoming -> EclipseRow(event.circumstances)
+                    is SkyEvent.ShowerPeak -> ShowerPeakRow(event)
+                    is SkyEvent.WellPlacedPlanet -> WellPlacedPlanetRow(event)
+                    // Passes are the table above; other events have no card row.
+                    else -> Unit
+                }
+            }
         }
         is Upcoming.NothingComing ->
             when (upcoming.kind) {
                 UpcomingKind.SATELLITE_PASSES ->
                     SatellitePassRow(emptyList(), passTimesReliable = true)
-                UpcomingKind.LUNAR_ECLIPSE -> EclipseRow(null)
             }
         Upcoming.DataTooOld -> SatellitePassRow(emptyList(), passTimesReliable = false)
+    }
+}
+
+@Composable
+private fun ShowerPeakRow(event: SkyEvent.ShowerPeak) {
+    val formatter = rememberDateFormatter()
+    val moonNote =
+        if (event.moonIllumination < DARK_MOON_FRACTION) {
+            stringResource(Res.string.tonight_dark_skies)
+        } else {
+            formattedStringResource(
+                Res.string.tonight_trailing_moon,
+                (event.moonIllumination * PERCENT).roundToInt(),
+            )
+        }
+    UpcomingRow(
+        formattedStringResource(Res.string.upcoming_shower_peak, formatter(event.peakTime)),
+        moonNote,
+    )
+}
+
+@Composable
+private fun WellPlacedPlanetRow(event: SkyEvent.WellPlacedPlanet) {
+    val timeFormatter = rememberTimeFormatter()
+    val cardinals = stringArrayResource(Res.array.hud_cardinal_directions)
+    UpcomingRow(
+        formattedStringResource(Res.string.upcoming_well_placed, timeFormatter(event.from)),
+        formattedStringResource(
+            Res.string.tonight_trailing_direction,
+            cardinals[HudFormats.cardinalIndex(event.azimuthDeg)],
+            event.bestAltitudeDeg.roundToInt(),
+        ),
+    )
+}
+
+@Composable
+private fun UpcomingRow(
+    text: String,
+    trailing: String,
+) {
+    Row(Modifier.fillMaxWidth().padding(top = 4.dp)) {
+        Text(text, style = MaterialTheme.typography.bodySmall, modifier = Modifier.weight(1f))
+        Text(trailing, style = MaterialTheme.typography.bodySmall)
+    }
+}
+
+/** A full or new moon in the Moon's upcoming list. */
+@Composable
+private fun MoonPhaseRow(event: SkyEvent.MoonPhaseTonight) {
+    val formatter = rememberDateTimeFormatter()
+    Row(Modifier.fillMaxWidth().padding(top = 4.dp)) {
+        Text(
+            stringResource(event.phase.nameRes()),
+            style = MaterialTheme.typography.bodySmall,
+            modifier = Modifier.weight(1f),
+        )
+        Text(formatter(event.time), style = MaterialTheme.typography.bodySmall)
     }
 }
 
@@ -396,11 +510,6 @@ private fun SatellitePassRow(
 ) {
     val formatter = rememberDateTimeFormatter()
     val timeFormatter = rememberTimeFormatter()
-    Text(
-        stringResource(Res.string.satellite_next_pass),
-        style = MaterialTheme.typography.titleSmall,
-        modifier = Modifier.padding(top = 12.dp),
-    )
     when {
         !passTimesReliable ->
             Text(
@@ -461,26 +570,9 @@ private fun PassTableRow(
     }
 }
 
-/**
- * The next lunar eclipse, on the Moon's info card (D106). [circumstances] null renders the
- * explicit "none coming up" line rather than hiding the section — same reasoning as
- * [SatellitePassRow]'s empty states: silence would read as "this card doesn't know", not "there
- * genuinely isn't one".
- */
+/** The next lunar eclipse, on the Moon's info card (D106). */
 @Composable
-private fun EclipseRow(circumstances: LunarEclipseCircumstances?) {
-    Text(
-        stringResource(Res.string.object_info_eclipse_title),
-        style = MaterialTheme.typography.titleSmall,
-        modifier = Modifier.padding(top = 12.dp),
-    )
-    if (circumstances == null) {
-        Text(
-            stringResource(Res.string.object_info_no_eclipse),
-            style = MaterialTheme.typography.bodySmall,
-        )
-        return
-    }
+private fun EclipseRow(circumstances: LunarEclipseCircumstances) {
     val typeRes =
         when (circumstances.type) {
             LunarEclipseType.TOTAL -> Res.string.tonight_lunar_eclipse_total
@@ -499,7 +591,7 @@ private fun EclipseRow(circumstances: LunarEclipseCircumstances?) {
             dateFormatter(greatest),
             timeFormatter(greatest),
         ),
-        style = MaterialTheme.typography.bodyMedium,
+        style = MaterialTheme.typography.bodySmall,
     )
     val totalityBegin = circumstances.totalityBegin
     val totalityEnd = circumstances.totalityEnd
@@ -517,3 +609,4 @@ private fun EclipseRow(circumstances: LunarEclipseCircumstances?) {
 
 /** The fun fact's emphasis against the description above it (Material's medium emphasis). */
 private const val FUN_FACT_ALPHA = 0.74f
+private const val PERCENT = 100

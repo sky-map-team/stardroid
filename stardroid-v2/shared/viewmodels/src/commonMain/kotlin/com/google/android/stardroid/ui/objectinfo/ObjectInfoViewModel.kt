@@ -15,13 +15,18 @@ import com.google.android.stardroid.analytics.Analytics
 import com.google.android.stardroid.analytics.AnalyticsEvents
 import com.google.android.stardroid.analytics.NoOpAnalytics
 import com.google.android.stardroid.astronomy.Ephemeris
+import com.google.android.stardroid.astronomy.LunarPhase
 import com.google.android.stardroid.astronomy.MeeusEphemeris
 import com.google.android.stardroid.astronomy.RiseSetIndicator
 import com.google.android.stardroid.astronomy.SatellitePass
 import com.google.android.stardroid.astronomy.SolarSystemBody
 import com.google.android.stardroid.astronomy.altitudeDeg
+import com.google.android.stardroid.astronomy.dayOfCycle
 import com.google.android.stardroid.astronomy.horizonAltitudeDeg
+import com.google.android.stardroid.astronomy.illuminationPercent
+import com.google.android.stardroid.astronomy.moonWidgetModel
 import com.google.android.stardroid.astronomy.nextLunarEclipse
+import com.google.android.stardroid.astronomy.nextLunarPhaseEvent
 import com.google.android.stardroid.astronomy.nextRiseSetTime
 import com.google.android.stardroid.catalog.CatalogRepository
 import com.google.android.stardroid.catalog.CelestialObjectId
@@ -29,7 +34,9 @@ import com.google.android.stardroid.catalog.LayerKind
 import com.google.android.stardroid.catalog.LocaleSpec
 import com.google.android.stardroid.catalog.ObjectInfo
 import com.google.android.stardroid.catalog.SearchHit
+import com.google.android.stardroid.events.EventTarget
 import com.google.android.stardroid.events.SkyEvent
+import com.google.android.stardroid.events.upcomingEvents
 import com.google.android.stardroid.layers.CatalogLayers
 import com.google.android.stardroid.layers.MeteorShowerLayer
 import com.google.android.stardroid.layers.SolarSystemLayer
@@ -63,6 +70,7 @@ import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import kotlinx.datetime.Instant
+import kotlinx.datetime.TimeZone
 import kotlin.coroutines.CoroutineContext
 import kotlin.math.min
 
@@ -228,10 +236,7 @@ class ObjectInfoViewModel(
         liveJob =
             viewModelScope.launch {
                 // Now facts first: the upcoming search can take a moment.
-                val now =
-                    withContext(computeContext) { riseSetFor(info) }
-                        ?.let { listOf(CardFact.RiseSet(it)) }
-                        .orEmpty()
+                val now = withContext(computeContext) { nowFactsFor(info) }
                 _live.value = CardLive(now)
                 upcomingFor(info)?.let { upcoming ->
                     // The pass lambdas are caller-supplied and may not check for cancellation, so
@@ -242,15 +247,45 @@ class ObjectInfoViewModel(
             }
     }
 
+    private fun nowFactsFor(info: ObjectInfo): List<CardFact> =
+        buildList {
+            riseSetFor(info)?.let { add(CardFact.RiseSet(it)) }
+            if (info.id == MOON_ID) {
+                // The widget's own model, so the card and the widget cannot disagree.
+                val moon = moonWidgetModel(now(), location = null)
+                add(CardFact.MoonPhase(moon.phase, moon.illuminationPercent))
+                add(CardFact.MoonAge(moon.dayOfCycle))
+            }
+        }
+
     /** The card's upcoming section, `null` for objects with no source of one (D141 §3.2). */
     private suspend fun upcomingFor(info: ObjectInfo): Upcoming? {
         val noradId = SatelliteIds.noradIdFor(info.id)
         return when {
             noradId != null -> upcomingPassesFor(noradId)
-            info.id == MOON_ID -> nextEclipse()
-            else -> null
+            // Before the target lookup, which would treat the Moon as a body with nothing to say.
+            info.id == MOON_ID -> moonUpcoming()
+            else -> eventTargetFor(info)?.let { upcomingForTarget(it) }
         }
     }
+
+    private suspend fun eventTargetFor(info: ObjectInfo): EventTarget? {
+        SolarSystemIds.bodyFor(info.id)?.let { return EventTarget.Body(it) }
+        // Cheap guard: saves a catalog read on every star and deep-sky card.
+        if (!info.id.value.startsWith(SHOWER_ID_PREFIX)) return null
+        return catalog()
+            .meteorShowers(locale.value)
+            .first()
+            .firstOrNull { it.id == info.id }
+            ?.let { EventTarget.Shower(it) }
+    }
+
+    // Only a section when there is something to say: most planets are not well placed tonight,
+    // and "not well placed" on every one of them would be noise.
+    private suspend fun upcomingForTarget(target: EventTarget): Upcoming? =
+        withContext(computeContext) {
+            upcomingEvents(target, now(), location(), TimeZone.currentSystemDefault(), ephemeris)
+        }.takeIf { it.isNotEmpty() }?.let { Upcoming.Events(it) }
 
     // An empty pass list means "nothing coming" or "too stale to say", and the card says which.
     private suspend fun upcomingPassesFor(noradId: Int): Upcoming {
@@ -260,16 +295,23 @@ class ObjectInfoViewModel(
         return Upcoming.Events(passes.map { SkyEvent.SatellitePassTonight(it, UNRANKED) })
     }
 
-    // Always MeeusEphemeris, not [ephemeris]: eclipse timing needs the accurate,
-    // precession-consistent Sun/Moon frame (D84).
-    private suspend fun nextEclipse(): Upcoming {
-        val eclipse = withContext(computeContext) { nextLunarEclipse(now(), MeeusEphemeris) }
-        return if (eclipse == null) {
-            Upcoming.NothingComing(UpcomingKind.LUNAR_ECLIPSE)
-        } else {
-            Upcoming.Events(listOf(SkyEvent.LunarEclipseUpcoming(eclipse, UNRANKED)))
+    // The eclipse uses MeeusEphemeris, not [ephemeris]: its timing needs the accurate,
+    // precession-consistent Sun/Moon frame (D84). The phases use the widget's ephemeris.
+    private suspend fun moonUpcoming(): Upcoming =
+        withContext(computeContext) {
+            val time = now()
+            val phases =
+                listOf(LunarPhase.FULL, LunarPhase.NEW).map { phase ->
+                    val at = nextLunarPhaseEvent(phase, time, ephemeris)
+                    at to SkyEvent.MoonPhaseTonight(phase, at, UNRANKED)
+                }
+            val eclipse =
+                nextLunarEclipse(time, MeeusEphemeris)?.let {
+                    it.greatestEclipse to SkyEvent.LunarEclipseUpcoming(it, UNRANKED)
+                }
+            val soonestFirst = (phases + listOfNotNull(eclipse)).sortedBy { (at, _) -> at }
+            Upcoming.Events(soonestFirst.map { (_, event) -> event })
         }
-    }
 
     /**
      * Rise/set for [info] after the map's current time at the observer's location (D51):
@@ -425,6 +467,7 @@ class ObjectInfoViewModel(
     private companion object {
         // The card keeps its sources' order (soonest first) rather than the widget's ranking.
         const val UNRANKED = 0.0
+        const val SHOWER_ID_PREFIX = "shower/"
         val MOON_ID: CelestialObjectId = SolarSystemIds.idFor(SolarSystemBody.MOON)
         val CATALOG_LAYER_KINDS: List<Pair<LayerId, LayerKind>> =
             listOf(

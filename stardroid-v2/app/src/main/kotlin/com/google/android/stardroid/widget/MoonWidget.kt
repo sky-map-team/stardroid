@@ -40,6 +40,8 @@ import androidx.glance.unit.ColorProvider
 import com.google.android.stardroid.R
 import com.google.android.stardroid.astronomy.LunarPhase
 import com.google.android.stardroid.astronomy.MoonWidgetModel
+import com.google.android.stardroid.astronomy.dayOfCycle
+import com.google.android.stardroid.astronomy.illuminationPercent
 import com.google.android.stardroid.astronomy.moonWidgetModel
 import com.google.android.stardroid.ui.MainActivity
 import kotlinx.datetime.Clock
@@ -47,7 +49,6 @@ import kotlinx.datetime.Instant
 import kotlinx.datetime.TimeZone
 import kotlinx.datetime.toLocalDateTime
 import java.util.Date
-import kotlin.math.roundToInt
 
 /**
  * The moon-phase home-screen widget (D75): drawn phase disc, phase name, illumination, and
@@ -127,7 +128,7 @@ private fun CompactMoonWidget(
             text =
                 context.getString(
                     R.string.moon_widget_illumination_short,
-                    (model.illuminatedFraction * 100).roundToInt(),
+                    model.illuminationPercent,
                 ),
             style =
                 TextStyle(
@@ -196,7 +197,7 @@ private fun FullMoonWidget(
             text =
                 context.getString(
                     R.string.moon_widget_illumination,
-                    (model.illuminatedFraction * 100).roundToInt(),
+                    model.illuminationPercent,
                 ),
             style =
                 TextStyle(
@@ -207,7 +208,7 @@ private fun FullMoonWidget(
             maxLines = 1,
         )
         Text(
-            text = context.getString(R.string.moon_widget_age, model.ageDays.toInt() + 1),
+            text = context.getString(R.string.moon_widget_age, model.dayOfCycle),
             style = TextStyle(color = ColorProvider(MUTED), fontSize = 12.sp),
             maxLines = 1,
         )

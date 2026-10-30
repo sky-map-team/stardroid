@@ -83,7 +83,7 @@ import com.google.android.stardroid.render.supportsGles3
 import com.google.android.stardroid.satellites.satelliteEntryPoint
 import com.google.android.stardroid.satellites.satelliteUiStatusFlow
 import com.google.android.stardroid.satellites.trackedSatellites
-import com.google.android.stardroid.satellites.upcomingVisiblePasses
+import com.google.android.stardroid.satellites.upcomingGoodPasses
 import com.google.android.stardroid.sensors.DisplayRotationBus
 import com.google.android.stardroid.sensors.MagneticDeclinationSource
 import com.google.android.stardroid.sensors.OrientationSource
@@ -337,7 +337,7 @@ class MainActivity : ComponentActivity() {
                             .mayShowPassTimes
                     },
                     upcomingPasses = { norad ->
-                        upcomingVisiblePasses(
+                        upcomingGoodPasses(
                             appContext,
                             norad,
                             locations.value,
@@ -683,6 +683,7 @@ class MainActivity : ComponentActivity() {
                     WhatsNewDialog(
                         nightMode = nightMode,
                         onDismiss = startupViewModel::dismissWhatsNew,
+                        onOpenSupport = { navController.navigate(Routes.SUPPORT) },
                     )
                 }
                 // Remote announcement interstitial: only once every startup gate has cleared,
