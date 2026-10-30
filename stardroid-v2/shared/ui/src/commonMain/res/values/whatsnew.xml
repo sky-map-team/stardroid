@@ -9,6 +9,8 @@
 <p>Not sure what a layer shows? <b>Long-press</b> any layer in the layers menu, or on the left-hand side of the map, to see what it does and what you can customize. The right ascension and declination grid can also be customized, like the alt/az grid.</p>
 <h2>Sky Map on your home screen</h2>
 <p>Three new widgets put the sky in your launcher: <b>Moon phase</b> (the phase, how much is lit, and moonrise and moonset, plus the Moon\'s age), <b>Tonight\'s sky</b> (sunset, when it gets dark, and the best sights tonight) and <b>Sky countdown</b> (days until the next meteor shower peak or moon event). Add one from the new <b>Widgets</b> menu item, or from your launcher\'s widget picker.</p>
+<h2>A new graphics engine</h2>
+<p>Sky Map now draws the sky with a new graphics engine, being switched on for supported phones: a more realistic daytime and twilight sky, and clearer labels, with a subtle underline on objects that have an info card. If you prefer the old look, choose <b>Classic</b> under <b>Settings → Advanced → Graphics engine</b>.</p>
 <h2>Also new in version 2</h2>
 <ul>
 <li><b>Steadier view:</b> the picture shakes less and keeps up better when you move. Turn it off under <b>Settings → Sensors → Smooth sensor movement</b> if you prefer the raw sensor.</li>
@@ -42,7 +44,7 @@
 <li>A cleaner, sharper horizon and clearer, easier-to-read labels.</li>
 <li>A foundation for future features, like better planet imagery.</li>
 </ul>
-<p>It is <b>off by default</b>, so you will need to switch it on. Go to <b>Settings → Advanced → Graphics engine</b> and choose <b>Enhanced</b>. The map restarts when you change it. You can switch back to <b>Classic</b> at any time.</p>
+<p>It is <b>on by default</b> for most phones. You can change it under <b>Settings → Advanced → Graphics engine</b>: choose <b>Enhanced</b> for the new engine or <b>Classic</b> for the old one. The map restarts when you change it.</p>
 <p>Please try it in different conditions: daytime, twilight (especially!), and a dark sky at night, in both auto and manual mode. Does the twilight sky look right to you? Are the underlined labels helpful, or distracting? Does anything look wrong or feel slow? Is battery drain or smoothness different from Classic? If you can, tell us your phone model, since graphics behave differently on different hardware.</p>
 <p><b>2. Satellites</b> (Layers → Satellites)</p>
 <p>Look for the Space Station and Tiangong on the map, then tap one for its next visible pass and try <b>Pass alerts</b>. The orbit data can take a few minutes to download the first time, because we stagger downloads so we do not overload the server. Please give it a little while before deciding it is not working. Do the positions look right when you go outside? Did the orbit data arrive? (Diagnostics shows its age.) Did the pass alert arrive before the pass?</p>

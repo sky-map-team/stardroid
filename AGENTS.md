@@ -39,7 +39,7 @@ Only commit to `master` when explicitly instructed to do so.
 
 ## Git Worktrees
 
-Twelve reusable worktrees live under `.worktrees/` in the repo root:
+Thirteen reusable worktrees live under `.worktrees/` in the repo root:
 
 | Worktree | Path | Placeholder branch |
 |---|---|---|
@@ -55,6 +55,7 @@ Twelve reusable worktrees live under `.worktrees/` in the repo root:
 | stardroid-lambda | `.worktrees/stardroid-lambda` | `worktree/stardroid-lambda` |
 | stardroid-mu | `.worktrees/stardroid-mu` | `worktree/stardroid-mu` |
 | stardroid-nu | `.worktrees/stardroid-nu` | `worktree/stardroid-nu` |
+| stardroid-theta | `.worktrees/stardroid-theta` | `worktree/stardroid-theta` |
 
 ### Default to a worktree for new features
 
@@ -82,10 +83,14 @@ After resetting all affected worktrees, run `/clean-branches` to delete the merg
 branches. That skill uses `git branch -d` (safe delete) and will skip any branch still checked
 out in a worktree.
 
-Each worktree already contains the build-critical files excluded from version control
-(`stardroid-v1/local.properties`, `stardroid-v1/app/local.properties`,
-`stardroid-v1/app/no-checkin.properties`, keystores, `stardroid-v1/fastlane/play-store-credentials.json`). If you add a new worktree, copy
-these files from the main worktree (`stardroid-v1/app/`) before building.
+Each worktree already contains the v2 build-critical files excluded from version control:
+`stardroid-v2/local.properties`, `stardroid-v2/app/no-checkin.properties`,
+`stardroid-v2/fastlane/play-store-credentials.json` and `stardroid-v2/.env`. v1 is deprecated, so
+worktrees don't need its equivalents.
+
+Signing keystores are not per-worktree: `no-checkin.properties` points at them by absolute path
+under `~/.android/`. If you add a new worktree, copy the files above from the main checkout
+before building.
 
 `.worktrees/` is listed in `.gitignore` so worktree directories are never accidentally committed.
 
