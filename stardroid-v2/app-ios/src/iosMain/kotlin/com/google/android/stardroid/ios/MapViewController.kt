@@ -124,7 +124,7 @@ class MapViewController(
 
     /**
      * The GPU drawing the sky, for the diagnostics screen's Graphics rows (Android reads its own
-     * from GL once its surface exists). The limits are Metal's, the same on every GPU iOS 16 runs
+     * from GL once its surface exists). The limits are Metal's, the same on every GPU iOS 15 runs
      * on (A11 and later): 16384 px textures and 511 px points. Lines are triangles here, so there
      * is no line width cap to report.
      */

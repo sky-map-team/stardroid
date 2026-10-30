@@ -5,7 +5,7 @@ name: SkyMap
 options:
   bundleIdPrefix: io.penterakt.skymap
   deploymentTarget:
-    iOS: "16.0"
+    iOS: "15.0"
 packages:
   Firebase:
     url: https://github.com/firebase/firebase-ios-sdk
