@@ -405,7 +405,9 @@ class SearchViewModelTest {
                     AnalyticsEvents.OBJECT_LOCKED_EVENT,
                 ).inOrder()
             assertThat(analytics.events[0].params)
-                .containsEntry(AnalyticsEvents.SEARCH_TERM, "sir")
+                .containsEntry(AnalyticsEvents.SEARCH_TERM, "sirius")
+            assertThat(analytics.events[0].params)
+                .containsEntry(AnalyticsEvents.SEARCH_QUERY, "sir")
             assertThat(analytics.events[1].params)
                 .containsEntry(
                     AnalyticsEvents.OBJECT_LOCKED_MODE,
@@ -430,6 +432,43 @@ class SearchViewModelTest {
 
             vm.setQuery("mars")
             assertThat(vm.standingOnEarth.value).isFalse()
+    fun `a typed query is normalised in search query on success`() =
+        testScope.runCurrentTest {
+            repository.hits = listOf(SIRIUS_HIT)
+            val vm = viewModel()
+            vm.setQuery("  SIR  ")
+            vm.select(SIRIUS_HIT)
+            runCurrent()
+
+            assertThat(analytics.events[0].params)
+                .containsEntry(AnalyticsEvents.SEARCH_QUERY, "sir")
+        }
+
+    @Test
+    fun `a tap through with no typed query logs an empty search query`() =
+        testScope.runCurrentTest {
+            repository.hits = listOf(SIRIUS_HIT)
+            val vm = viewModel()
+            vm.select(SIRIUS_HIT)
+            runCurrent()
+
+            assertThat(analytics.events[0].params)
+                .containsEntry(AnalyticsEvents.SEARCH_TERM, "sirius")
+            assertThat(analytics.events[0].params)
+                .containsEntry(AnalyticsEvents.SEARCH_QUERY, "")
+        }
+
+    @Test
+    fun `a failed search term is normalised before logging`() =
+        testScope.runCurrentTest {
+            repository.hits = emptyList()
+            val vm = viewModel()
+            vm.setQuery("  TON   618 ")
+            vm.submit()
+            runCurrent()
+
+            assertThat(analytics.events[0].params)
+                .containsEntry(AnalyticsEvents.SEARCH_TERM, "ton 618")
         }
 
     @Test

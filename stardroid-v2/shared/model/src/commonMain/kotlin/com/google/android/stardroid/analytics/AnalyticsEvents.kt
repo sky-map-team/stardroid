@@ -127,8 +127,11 @@ object AnalyticsEvents {
     const val SATELLITE_CIRCUIT_OPEN_HOURS = "open_hours"
 
     // Search (SEARCH_EVENT/SEARCH_TERM mirror Firebase's built-in names).
+    // SEARCH_TERM is the resolved target name on success, the typed text on failure.
+    // SEARCH_QUERY is the typed text, success events only. Both are normalised.
     const val SEARCH_EVENT = "search"
     const val SEARCH_TERM = "search_term"
+    const val SEARCH_QUERY = "search_query"
     const val SEARCH_SUCCESS = "search_success"
     const val SEARCH_FAILED_EVENT = "search_failed_ev"
 
