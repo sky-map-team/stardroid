@@ -432,6 +432,9 @@ class SearchViewModelTest {
 
             vm.setQuery("mars")
             assertThat(vm.standingOnEarth.value).isFalse()
+        }
+
+    @Test
     fun `a typed query is normalised in search query on success`() =
         testScope.runCurrentTest {
             repository.hits = listOf(SIRIUS_HIT)
