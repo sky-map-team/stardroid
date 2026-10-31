@@ -101,6 +101,41 @@ class SatelliteMagnitudeTest {
     }
 
     @Test
+    fun `ISS magnitude tracks Heavens-Above across the whole phase range`() {
+        // Range (km), phase (deg), Heavens-Above brightness: a subset of the 27-sample fit in
+        // satellite-tracking.md (37.29N 121.96W, 31 Oct - 9 Nov 2026).
+        val samples =
+            listOf(
+                Triple(430.0, 79.7, -3.7),
+                Triple(517.0, 93.6, -3.2),
+                Triple(920.0, 56.0, -2.3),
+                Triple(1509.0, 25.9, -1.5),
+                Triple(1500.0, 120.7, -0.5),
+                Triple(1502.0, 146.4, 0.2),
+                Triple(2372.0, 155.7, 1.5),
+            )
+        for ((rangeKm, phaseDeg, expected) in samples) {
+            val actual =
+                SatelliteMagnitude.apparentMagnitude(
+                    SatelliteMagnitude.ISS_STANDARD_MAGNITUDE,
+                    rangeKm,
+                    phaseDeg,
+                )
+            assertThat(actual).isWithin(0.2).of(expected)
+        }
+    }
+
+    @Test
+    fun `standard magnitude is per satellite, defaulting to the ISS`() {
+        assertThat(SatelliteMagnitude.standardMagnitudeFor(25544))
+            .isEqualTo(SatelliteMagnitude.ISS_STANDARD_MAGNITUDE)
+        assertThat(SatelliteMagnitude.standardMagnitudeFor(48274))
+            .isEqualTo(SatelliteMagnitude.TIANGONG_STANDARD_MAGNITUDE)
+        assertThat(SatelliteMagnitude.standardMagnitudeFor(1))
+            .isEqualTo(SatelliteMagnitude.ISS_STANDARD_MAGNITUDE)
+    }
+
+    @Test
     fun `closer is brighter - and fuller phase is brighter`() {
         val far =
             SatelliteMagnitude.apparentMagnitude(-1.3, rangeKm = 1500.0, phaseAngleDeg = 60.0)

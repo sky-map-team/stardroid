@@ -91,7 +91,7 @@ class PassSearch(
      */
     val minimumElevationDeg: Double = DEFAULT_MINIMUM_ELEVATION_DEG,
     /** The satellite's brightness at 1000 km and 90° phase. */
-    private val standardMagnitude: Double = SatelliteMagnitude.ISS_STANDARD_MAGNITUDE,
+    private val standardMagnitude: Double = SatelliteMagnitude.standardMagnitudeFor(tle.noradId),
 ) {
     private val sgp4 = Sgp4(tle)
 
@@ -186,7 +186,7 @@ class PassSearch(
     ): SatellitePass {
         var culmination = start
         var maxAltitude = Double.NEGATIVE_INFINITY
-        var peakMagnitude = UNLIT_MAGNITUDE
+        var brightest = UNLIT_MAGNITUDE
         var shadowEntry: Instant? = null
         var wasLitAndDark = false
 
@@ -211,12 +211,12 @@ class PassSearch(
                 culmination = time
             }
 
-            val skyIsDark =
-                altitudeDeg(sunPosition, time, observer) <= CIVIL_TWILIGHT_SUN_ALT_DEG
+            val sunAltitude = altitudeDeg(sunPosition, time, observer)
+            val skyIsDark = sunAltitude <= CIVIL_TWILIGHT_SUN_ALT_DEG
             val lit = SatelliteMagnitude.isSunlit(state.positionKm, sunDirection)
 
-            if (lit && skyIsDark) {
-                wasLitAndDark = true
+            if (lit && skyIsDark) wasLitAndDark = true
+            if (lit && sunAltitude <= PEAK_MAX_SUN_ALT_DEG) {
                 val magnitude =
                     SatelliteMagnitude.apparentMagnitude(
                         standardMagnitude = standardMagnitude,
@@ -228,13 +228,17 @@ class PassSearch(
                                 sunDirection,
                             ),
                     )
-                if (magnitude < peakMagnitude) peakMagnitude = magnitude
+                if (magnitude < brightest) brightest = magnitude
             } else if (wasLitAndDark && !lit && shadowEntry == null) {
                 // Lit, then not: the satellite has crossed into the Earth's shadow mid-pass, which
                 // is the fade-out a watcher actually sees. Only the first crossing is recorded.
                 shadowEntry = time
             }
         }
+
+        // Visibility needs a dark sky at some point, but the reported brightness is the pass's
+        // brightest sunlit moment: a -3.5 object is easily seen in twilight.
+        val peakMagnitude = if (wasLitAndDark) brightest else UNLIT_MAGNITUDE
 
         return SatellitePass(
             satelliteName = tle.name,
@@ -296,6 +300,9 @@ class PassSearch(
          * than anything nameable, so it sorts last and [visiblePasses] can filter on it.
          */
         const val UNLIT_MAGNITUDE: Double = 99.0
+
+        /** Highest Sun altitude at which a sunlit sample still counts towards the peak magnitude. */
+        private const val PEAK_MAX_SUN_ALT_DEG = 0.0
 
         private const val BELOW_HORIZON_SENTINEL = -90.0
     }

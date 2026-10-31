@@ -356,6 +356,10 @@ A pass is *visible*, rather than merely geometric, when all three hold:
    the same of-date frame; nothing is precessed to J2000 here, matching step 3's "only the map
    layer needs J2000" scope.
 
+Visibility uses the −6° test, but the *reported peak magnitude* covers every sunlit sample with the
+Sun below the horizon. A faint pass whose best moment falls in twilight can therefore look
+brighter than it would in a dark sky; accepted for now, revisit if "good pass" counts feel inflated.
+
 **Shadow entry inside a pass is worth capturing as a first-class field.** A satellite that fades
 out mid-sky is the single most-asked question after someone watches it happen, and
 *"fades into Earth's shadow at 21:51"* converts a confusing disappearance into the most memorable
@@ -365,18 +369,41 @@ thing the app can tell them.
 
 ```
 mag = stdMag − 15.75 + 2.5 · log10(rangeKm² / phaseFactor)
-phaseFactor = (1 + cos(phaseAngle)) / 2
+phaseFactor = 0.5 · ((1 + cos(phaseAngle)) / 2 + 0.14) / 0.64
 ```
 
-where `stdMag` is the satellite's brightness at 1000 km and 90° phase (ISS: about −1.3) and the
-phase angle is measured at the satellite between Sun and observer, using the same
-frame-consistent Sun direction as the shadow test above. This yields roughly −3.5 for a high ISS
-pass, matching observation.
+where `stdMag` is the satellite's brightness at 1000 km and 90° phase (ISS: −1.8) and the phase
+angle is measured at the satellite between Sun and observer, using the same frame-consistent Sun
+direction as the shadow test above.
 
-Accuracy is ±0.5 magnitude — real satellites are not Lambertian spheres, and the ISS's solar
-arrays swing its brightness by a magnitude either way as they rotate. **Display one decimal place
-and imply no more.** For ISS-only, hardcode `stdMag` with its citation; a fleet needs a small
-bundled table (a few KB, no concern against D19's budget).
+**Calibration (issue #1210).** The first version used a bare `(1 + cos θ)/2` and `stdMag = −1.3`,
+and showed −1.9 for a pass Heavens-Above gave as −3.7. Fitting 27 Heavens-Above pass-event
+brightnesses (phase 3°–156°, range 430–2400 km, ranges reproduced to 6 km) gave:
+
+| Phase law | Best stdMag | RMS vs Heavens-Above |
+|---|---|---|
+| `(1 + cos θ)/2`, stdMag −1.3 (old) | −1.3 | 0.95 mag |
+| `(1 + cos θ)/2`, refitted | −2.15 | 0.44 mag |
+| Lambertian sphere, `(sin θ + (π − θ) cos θ)/π` | −2.48 | 1.04 mag |
+| `(1 + cos θ)/2 + 0.14` (current) | −1.84 | 0.07 mag |
+
+The Lambertian sphere is *worse* than the old law: the ISS is mostly flat, specular panels and
+radiators, which keep reflecting at high phase where a sphere goes dark. The additive constant
+captures that. This matches Heavens-Above, not the sky: the real ISS strays from any smooth curve
+by a magnitude or more as its arrays and attitude change, so the model is good to roughly ±1 in
+practice even though it reproduces the predictor to ~0.1. **Do not display more precision than
+that** (see the UI follow-up, #1211). For ISS-only, hardcode `stdMag` with its citation; a fleet
+needs a small bundled table (a few KB, no concern against D19's budget).
+
+**Per satellite.** The same phase law fits Tiangong (CSS) to ~0.1 mag against 11 Heavens-Above
+samples; only the standard magnitude differs, at about 0.0 against the ISS's −1.8.
+`SatelliteMagnitude.standardMagnitudeFor(noradId)` supplies it, and `PassSearch` uses it by default.
+Before this, Tiangong inherited the ISS value and was shown ~1.8 mag too bright.
+
+**Peak brightness vs visibility.** A pass is *visible* only if it is sunlit while the Sun is at or
+below −6°, but its reported peak magnitude is the brightest sunlit sample with the Sun below the
+horizon. Gating the magnitude on the same −6° test dropped the near-zenith moment of the #1210 pass
+(Sun at −5.6°), turning −3.4 into −1.9.
 
 Note that `(1 + cos θ)/2` is the same general identity `core-math-astronomy.md` already flags as
 misplaced in `KeplerianEphemeris`. Implementing it here gives it a second call site, strengthening
