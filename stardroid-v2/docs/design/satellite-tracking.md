@@ -391,6 +391,11 @@ practice even though it reproduces the predictor to ~0.1. **Do not display more 
 that** (see the UI follow-up, #1211). For ISS-only, hardcode `stdMag` with its citation; a fleet
 needs a small bundled table (a few KB, no concern against D19's budget).
 
+**Peak brightness vs visibility.** A pass is *visible* only if it is sunlit while the Sun is at or
+below −6°, but its reported peak magnitude is the brightest sunlit sample with the Sun below the
+horizon. Gating the magnitude on the same −6° test dropped the near-zenith moment of the #1210 pass
+(Sun at −5.6°), turning −3.4 into −1.9.
+
 Note that `(1 + cos θ)/2` is the same general identity `core-math-astronomy.md` already flags as
 misplaced in `KeplerianEphemeris`. Implementing it here gives it a second call site, strengthening
 the case for lifting it to an `Ephemeris` default — but that refactor is not this feature's job.

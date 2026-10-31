@@ -90,9 +90,9 @@ object SatelliteMagnitude {
         // still (it falls off too steeply). Normalised to 0.5 at 90° so the standard magnitude
         // keeps its definition. Floored so a satellite seen almost exactly against the Sun does
         // not produce an infinite magnitude; that geometry is unobservable anyway.
+        val diffuse = (1.0 + cos(phaseAngleDeg / RADIANS_TO_DEGREES)) / 2.0
         val phaseFactor =
-            (0.5 * ((1.0 + cos(phaseAngleDeg / RADIANS_TO_DEGREES)) / 2.0 + SPECULAR_FLOOR) /
-                (0.5 + SPECULAR_FLOOR))
+            (0.5 * (diffuse + SPECULAR_FLOOR) / (0.5 + SPECULAR_FLOOR))
                 .coerceAtLeast(MIN_PHASE_FACTOR)
         return standardMagnitude - 15.75 +
             2.5 * log10(rangeKm * rangeKm / phaseFactor)
