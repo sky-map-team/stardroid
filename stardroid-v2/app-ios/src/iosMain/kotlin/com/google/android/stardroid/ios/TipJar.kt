@@ -9,11 +9,14 @@
 
 package com.google.android.stardroid.ios
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.ListItem
+import androidx.compose.material3.ListItemDefaults
 import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -81,32 +84,35 @@ fun TipJarRow(
     val offered = tips.orEmpty().filter { it.id in tipNames }
     if (offered.isEmpty()) return
 
-    ListItem(
-        headlineContent = { Text(stringResource(Res.string.support_tip_title)) },
-        supportingContent = { Text(stringResource(Res.string.support_tip_desc)) },
-    )
-    Row(
-        Modifier.fillMaxWidth().padding(horizontal = 16.dp),
-        horizontalArrangement = Arrangement.spacedBy(8.dp),
-    ) {
-        for (tip in offered) {
-            val name = stringResource(tipNames.getValue(tip.id))
-            OutlinedButton(
-                onClick = {
-                    onAction(AnalyticsEvents.SUPPORT_ACTION_TIP)
-                    store.purchase(tip.id) { result = it }
-                },
-                modifier = Modifier.weight(1f),
-            ) {
-                Text("$name ${tip.displayPrice}")
+    // One container, so the buttons sit on the same surface as their heading.
+    Column(Modifier.fillMaxWidth().background(ListItemDefaults.containerColor)) {
+        ListItem(
+            headlineContent = { Text(stringResource(Res.string.support_tip_title)) },
+            supportingContent = { Text(stringResource(Res.string.support_tip_desc)) },
+        )
+        Row(
+            Modifier.fillMaxWidth().padding(start = 16.dp, end = 16.dp, top = 4.dp, bottom = 12.dp),
+            horizontalArrangement = Arrangement.spacedBy(8.dp),
+        ) {
+            for (tip in offered) {
+                val name = stringResource(tipNames.getValue(tip.id))
+                OutlinedButton(
+                    onClick = {
+                        onAction(AnalyticsEvents.SUPPORT_ACTION_TIP)
+                        store.purchase(tip.id) { result = it }
+                    },
+                    modifier = Modifier.weight(1f),
+                ) {
+                    Text("$name ${tip.displayPrice}")
+                }
             }
         }
-    }
-    when (result) {
-        TipResult.THANKS -> TipMessage(stringResource(Res.string.support_tip_thanks))
-        TipResult.PENDING -> TipMessage(stringResource(Res.string.support_tip_pending))
-        TipResult.FAILED -> TipMessage(stringResource(Res.string.support_tip_failed))
-        TipResult.CANCELLED, null -> {}
+        when (result) {
+            TipResult.THANKS -> TipMessage(stringResource(Res.string.support_tip_thanks))
+            TipResult.PENDING -> TipMessage(stringResource(Res.string.support_tip_pending))
+            TipResult.FAILED -> TipMessage(stringResource(Res.string.support_tip_failed))
+            TipResult.CANCELLED, null -> {}
+        }
     }
 }
 
