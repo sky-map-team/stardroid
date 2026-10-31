@@ -149,7 +149,7 @@
     <string name="tip_mercury" translation_description="Name of the smallest tip amount, a planet name used as a button label next to the price. Mercury, the smallest planet">Mercury</string>
     <string name="tip_mars" translation_description="Name of the middle tip amount, a planet name used as a button label next to the price. Mars">Mars</string>
     <string name="tip_jupiter" translation_description="Name of the largest tip amount, a planet name used as a button label next to the price. Jupiter, the biggest planet">Jupiter</string>
-    <string name="support_tip_thanks" translation_description="Shown after a tip purchase succeeds">Thank you for the tip!</string>
+    <string name="support_tip_thanks" translation_description="Shown after a tip purchase succeeds">Thank you, and clear skies!</string>
     <string name="support_tip_pending" translation_description="Shown when a tip purchase is waiting for approval, for example from a family organizer">Your tip is waiting for approval. Thank you!</string>
     <string name="support_tip_failed" translation_description="Shown when a tip purchase did not go through">The purchase didn\'t go through. Please try again later.</string>
     <string name="support_share_message" translation_description="Message sent when the user shares the app with a friend. %1$s is the web link to the app's store page. Keep the %1$s placeholder.">Have you tried Sky Map? It\'s a free, open-source planetarium for your phone: %1$s</string>
