@@ -76,9 +76,9 @@ object SatelliteMagnitude {
      * with the Sun behind the observer, is far brighter than one seen as a crescent.
      *
      * Calibrated against Heavens-Above's ISS predictions (27 samples over several passes, phase
-     * 3°–156°, range 430–2400 km): within about 0.1 magnitude RMS of them. The real ISS strays from any
-     * such curve by a magnitude or more as its arrays and attitude change, so treat the result as
-     * an estimate and do not display more precision than that.
+     * 3°–156°, range 430–2400 km): within about 0.1 magnitude RMS of them. The real ISS strays
+     * from any such curve by a magnitude or more as its arrays and attitude change, so treat the
+     * result as an estimate and do not display more precision than that.
      */
     fun apparentMagnitude(
         standardMagnitude: Double,
