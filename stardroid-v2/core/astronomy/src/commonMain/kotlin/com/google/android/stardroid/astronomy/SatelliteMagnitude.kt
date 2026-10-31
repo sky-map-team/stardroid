@@ -75,20 +75,24 @@ object SatelliteMagnitude {
      * are the inverse-square fall-off with range and the phase function: a satellite near "full",
      * with the Sun behind the observer, is far brighter than one seen as a crescent.
      *
-     * **Accurate to about ±0.5 magnitude, and no better.** Real satellites are not Lambertian
-     * spheres; the ISS's solar arrays swing its brightness by a magnitude either way as they
-     * rotate to track the Sun. Display one decimal place and imply no more precision than that.
+     * Calibrated against Heavens-Above's ISS predictions (27 samples over several passes, phase
+     * 3°–156°, range 430–2400 km): within about 0.1 magnitude of them. The real ISS strays from any
+     * such curve by a magnitude or more as its arrays and attitude change, so treat the result as
+     * an estimate and do not display more precision than that.
      */
     fun apparentMagnitude(
         standardMagnitude: Double,
         rangeKm: Double,
         phaseAngleDeg: Double,
     ): Double {
-        // (1 + cos θ)/2 — the illuminated fraction of a sphere, the same identity the planetary
-        // phase uses. Floored so a satellite seen almost exactly against the Sun does not produce
-        // an infinite magnitude; that geometry is unobservable anyway.
+        // A diffuse sphere's (1 + cos θ)/2 plus a constant: the ISS's flat panels and radiators keep
+        // reflecting at high phase where a sphere goes dark. A Lambertian-sphere law fits worse
+        // still (it falls off too steeply). Normalised to 0.5 at 90° so the standard magnitude
+        // keeps its definition. Floored so a satellite seen almost exactly against the Sun does
+        // not produce an infinite magnitude; that geometry is unobservable anyway.
         val phaseFactor =
-            ((1.0 + cos(phaseAngleDeg / RADIANS_TO_DEGREES)) / 2.0)
+            (0.5 * ((1.0 + cos(phaseAngleDeg / RADIANS_TO_DEGREES)) / 2.0 + SPECULAR_FLOOR) /
+                (0.5 + SPECULAR_FLOOR))
                 .coerceAtLeast(MIN_PHASE_FACTOR)
         return standardMagnitude - 15.75 +
             2.5 * log10(rangeKm * rangeKm / phaseFactor)
@@ -113,7 +117,10 @@ object SatelliteMagnitude {
     }
 
     /** Standard magnitude of the ISS: its brightness at 1000 km range and 90° phase. */
-    const val ISS_STANDARD_MAGNITUDE: Double = -1.3
+    const val ISS_STANDARD_MAGNITUDE: Double = -1.8
+
+    /** Constant added to the diffuse phase law, fitted to Heavens-Above's ISS brightness. */
+    private const val SPECULAR_FLOOR = 0.14
 
     /** Mean Earth radius used for the shadow cylinder. */
     private const val MEAN_EARTH_RADIUS_KM = 6371.0
