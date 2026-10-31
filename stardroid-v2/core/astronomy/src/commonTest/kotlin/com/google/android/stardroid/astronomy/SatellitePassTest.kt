@@ -127,6 +127,25 @@ class SatellitePassTest {
     }
 
     @Test
+    fun `Tiangong is about two magnitudes fainter than the ISS on the same geometry`() {
+        // Heavens-Above, San Jose, 1 Nov 2026 18:42 PST: Tiangong at 69° peaks at -2.2. The ISS
+        // constant would have shown about -4.
+        val tle =
+            Tle.parse(
+                line1 = "1 48274U 21035A   26304.17399128  .00007237  00000+0  86755-4 0  9994",
+                line2 = "2 48274  41.4688 215.8160 0003952 238.3688 121.6765 15.61252649314409",
+                name = "CSS (TIANHE)",
+            )
+        val passes =
+            PassSearch(tle, LatLong(37.29, -121.96))
+                .visiblePasses(Instant.parse("2026-11-02T02:30:00Z"), 30.minutes)
+
+        val pass = passes.single()
+        assertThat(pass.maxAltitudeDeg).isWithin(1.0).of(69.0)
+        assertThat(pass.peakMagnitude).isWithin(0.4).of(-2.2)
+    }
+
+    @Test
     fun `an empty result is a real answer - not a failure`() {
         // Visible passes cluster into multi-day seasons separated by multi-week gaps, so "nothing
         // tonight" is the common case rather than a sign something broke. The predictor must say

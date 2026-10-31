@@ -119,6 +119,18 @@ object SatelliteMagnitude {
     /** Standard magnitude of the ISS: its brightness at 1000 km range and 90° phase. */
     const val ISS_STANDARD_MAGNITUDE: Double = -1.8
 
+    /** Standard magnitude of Tiangong (CSS): about 1.8 fainter than the ISS, fitted the same way. */
+    const val TIANGONG_STANDARD_MAGNITUDE: Double = 0.0
+
+    private const val TIANGONG_NORAD_ID = 48274
+
+    /** The standard magnitude for [noradId]; anything not listed is treated like the ISS. */
+    fun standardMagnitudeFor(noradId: Int): Double =
+        when (noradId) {
+            TIANGONG_NORAD_ID -> TIANGONG_STANDARD_MAGNITUDE
+            else -> ISS_STANDARD_MAGNITUDE
+        }
+
     /** Constant added to the diffuse phase law, fitted to Heavens-Above's ISS brightness. */
     private const val SPECULAR_FLOOR = 0.14
 

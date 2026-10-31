@@ -391,6 +391,11 @@ practice even though it reproduces the predictor to ~0.1. **Do not display more 
 that** (see the UI follow-up, #1211). For ISS-only, hardcode `stdMag` with its citation; a fleet
 needs a small bundled table (a few KB, no concern against D19's budget).
 
+**Per satellite.** The same phase law fits Tiangong (CSS) to ~0.1 mag against 11 Heavens-Above
+samples; only the standard magnitude differs, at about 0.0 against the ISS's −1.8.
+`SatelliteMagnitude.standardMagnitudeFor(noradId)` supplies it, and `PassSearch` uses it by default.
+Before this, Tiangong inherited the ISS value and was shown ~1.8 mag too bright.
+
 **Peak brightness vs visibility.** A pass is *visible* only if it is sunlit while the Sun is at or
 below −6°, but its reported peak magnitude is the brightest sunlit sample with the Sun below the
 horizon. Gating the magnitude on the same −6° test dropped the near-zenith moment of the #1210 pass

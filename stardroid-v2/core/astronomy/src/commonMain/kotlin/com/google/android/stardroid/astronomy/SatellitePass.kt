@@ -91,7 +91,7 @@ class PassSearch(
      */
     val minimumElevationDeg: Double = DEFAULT_MINIMUM_ELEVATION_DEG,
     /** The satellite's brightness at 1000 km and 90° phase. */
-    private val standardMagnitude: Double = SatelliteMagnitude.ISS_STANDARD_MAGNITUDE,
+    private val standardMagnitude: Double = SatelliteMagnitude.standardMagnitudeFor(tle.noradId),
 ) {
     private val sgp4 = Sgp4(tle)
 
