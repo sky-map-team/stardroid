@@ -12,6 +12,7 @@ package com.google.android.stardroid.ios
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -25,7 +26,10 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalDensity
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import com.google.android.stardroid.analytics.AnalyticsEvents
 import com.google.android.stardroid.ui.resources.Res
@@ -62,6 +66,8 @@ interface TipStore {
     )
 }
 
+private const val STACK_FONT_SCALE = 1.3f
+
 private val tipNames: Map<String, StringResource> =
     mapOf(
         "tip.mercury" to Res.string.tip_mercury,
@@ -90,21 +96,29 @@ fun TipJarRow(
             headlineContent = { Text(stringResource(Res.string.support_tip_title)) },
             supportingContent = { Text(stringResource(Res.string.support_tip_desc)) },
         )
-        Row(
-            Modifier.fillMaxWidth().padding(start = 16.dp, end = 16.dp, top = 4.dp, bottom = 12.dp),
-            horizontalArrangement = Arrangement.spacedBy(8.dp),
-        ) {
+        // Name over price, three across; at large text sizes (or on a 320 pt screen) the
+        // buttons would break words, so they stack instead.
+        val stacked = LocalDensity.current.fontScale > STACK_FONT_SCALE
+        val buttons: @Composable (Modifier) -> Unit = { modifier ->
             for (tip in offered) {
-                val name = stringResource(tipNames.getValue(tip.id))
-                OutlinedButton(
-                    onClick = {
-                        onAction(AnalyticsEvents.SUPPORT_ACTION_TIP)
-                        store.purchase(tip.id) { result = it }
-                    },
-                    modifier = Modifier.weight(1f),
+                TipButton(
+                    name = stringResource(tipNames.getValue(tip.id)),
+                    price = tip.displayPrice,
+                    modifier = modifier,
                 ) {
-                    Text("$name ${tip.displayPrice}")
+                    onAction(AnalyticsEvents.SUPPORT_ACTION_TIP)
+                    store.purchase(tip.id) { result = it }
                 }
+            }
+        }
+        val padding = Modifier.fillMaxWidth().padding(start = 16.dp, end = 16.dp, bottom = 12.dp)
+        if (stacked) {
+            Column(padding, verticalArrangement = Arrangement.spacedBy(8.dp)) {
+                buttons(Modifier.fillMaxWidth())
+            }
+        } else {
+            Row(padding, horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                buttons(Modifier.weight(1f))
             }
         }
         when (result) {
@@ -112,6 +126,25 @@ fun TipJarRow(
             TipResult.PENDING -> TipMessage(stringResource(Res.string.support_tip_pending))
             TipResult.FAILED -> TipMessage(stringResource(Res.string.support_tip_failed))
             TipResult.CANCELLED, null -> {}
+        }
+    }
+}
+
+@Composable
+private fun TipButton(
+    name: String,
+    price: String,
+    modifier: Modifier,
+    onClick: () -> Unit,
+) {
+    OutlinedButton(
+        onClick = onClick,
+        modifier = modifier,
+        contentPadding = PaddingValues(horizontal = 4.dp, vertical = 8.dp),
+    ) {
+        Column(horizontalAlignment = Alignment.CenterHorizontally) {
+            Text(name, maxLines = 1, overflow = TextOverflow.Ellipsis)
+            Text(price, maxLines = 1, overflow = TextOverflow.Ellipsis)
         }
     }
 }
