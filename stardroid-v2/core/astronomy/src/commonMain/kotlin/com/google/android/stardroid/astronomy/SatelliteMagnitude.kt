@@ -76,7 +76,7 @@ object SatelliteMagnitude {
      * with the Sun behind the observer, is far brighter than one seen as a crescent.
      *
      * Calibrated against Heavens-Above's ISS predictions (27 samples over several passes, phase
-     * 3°–156°, range 430–2400 km): within about 0.1 magnitude of them. The real ISS strays from any
+     * 3°–156°, range 430–2400 km): within about 0.1 magnitude RMS of them. The real ISS strays from any
      * such curve by a magnitude or more as its arrays and attitude change, so treat the result as
      * an estimate and do not display more precision than that.
      */
@@ -85,15 +85,11 @@ object SatelliteMagnitude {
         rangeKm: Double,
         phaseAngleDeg: Double,
     ): Double {
-        // A diffuse sphere's (1 + cos θ)/2 plus a constant: the ISS's flat panels and radiators keep
-        // reflecting at high phase where a sphere goes dark. A Lambertian-sphere law fits worse
-        // still (it falls off too steeply). Normalised to 0.5 at 90° so the standard magnitude
-        // keeps its definition. Floored so a satellite seen almost exactly against the Sun does
-        // not produce an infinite magnitude; that geometry is unobservable anyway.
+        // (1 + cos θ)/2 plus a constant, since flat panels keep reflecting at high phase (see
+        // satellite-tracking.md). Normalised to 0.5 at 90° so the standard magnitude keeps its
+        // definition; the constant also keeps the factor above ~0.1, so no floor is needed.
         val diffuse = (1.0 + cos(phaseAngleDeg / RADIANS_TO_DEGREES)) / 2.0
-        val phaseFactor =
-            (0.5 * (diffuse + SPECULAR_FLOOR) / (0.5 + SPECULAR_FLOOR))
-                .coerceAtLeast(MIN_PHASE_FACTOR)
+        val phaseFactor = 0.5 * (diffuse + SPECULAR_FLOOR) / (0.5 + SPECULAR_FLOOR)
         return standardMagnitude - 15.75 +
             2.5 * log10(rangeKm * rangeKm / phaseFactor)
     }
@@ -122,6 +118,7 @@ object SatelliteMagnitude {
     /** Standard magnitude of Tiangong (CSS): about 1.8 fainter than the ISS, fitted the same way. */
     const val TIANGONG_STANDARD_MAGNITUDE: Double = 0.0
 
+    // Keep in sync with SatelliteLayer.TIANGONG_NORAD_ID (shared/layers can't be depended on here).
     private const val TIANGONG_NORAD_ID = 48274
 
     /** The standard magnitude for [noradId]; anything not listed is treated like the ISS. */
@@ -142,7 +139,4 @@ object SatelliteMagnitude {
      * atmospheric refraction bending sunlight into the geometric shadow.
      */
     private const val SHADOW_MARGIN_KM = 30.0
-
-    /** Keeps a near-zero phase angle from driving the magnitude to negative infinity. */
-    private const val MIN_PHASE_FACTOR = 1.0e-4
 }

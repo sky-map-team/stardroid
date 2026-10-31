@@ -216,7 +216,7 @@ class PassSearch(
             val lit = SatelliteMagnitude.isSunlit(state.positionKm, sunDirection)
 
             if (lit && skyIsDark) wasLitAndDark = true
-            if (lit && sunAltitude <= SUN_BELOW_HORIZON_DEG) {
+            if (lit && sunAltitude <= PEAK_MAX_SUN_ALT_DEG) {
                 val magnitude =
                     SatelliteMagnitude.apparentMagnitude(
                         standardMagnitude = standardMagnitude,
@@ -236,9 +236,8 @@ class PassSearch(
             }
         }
 
-        // Visibility needs a dark sky at some point, but the brightness reported is the pass's
-        // brightest moment: the ISS is often at its best (near the zenith) a minute after the sky
-        // has gone too light to count, and a -3.5 object is easily seen in twilight.
+        // Visibility needs a dark sky at some point, but the reported brightness is the pass's
+        // brightest sunlit moment: a -3.5 object is easily seen in twilight.
         val peakMagnitude = if (wasLitAndDark) brightest else UNLIT_MAGNITUDE
 
         return SatellitePass(
@@ -302,8 +301,8 @@ class PassSearch(
          */
         const val UNLIT_MAGNITUDE: Double = 99.0
 
-        /** Samples with the Sun above this are too bright to count towards a pass's brightness. */
-        private const val SUN_BELOW_HORIZON_DEG = 0.0
+        /** Highest Sun altitude at which a sunlit sample still counts towards the peak magnitude. */
+        private const val PEAK_MAX_SUN_ALT_DEG = 0.0
 
         private const val BELOW_HORIZON_SENTINEL = -90.0
     }

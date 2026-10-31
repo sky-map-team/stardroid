@@ -102,10 +102,8 @@ class SatelliteMagnitudeTest {
 
     @Test
     fun `ISS magnitude tracks Heavens-Above across the whole phase range`() {
-        // Range (km), phase (deg), Heavens-Above brightness at pass events for 37.29N 121.96W,
-        // 31 Oct - 9 Nov 2026. Phase is from this code's own geometry, which matched Heavens-Above's
-        // ranges to 6 km. The old (1+cos)/2 law with -1.3 was 1.8 mag out at the top of the first
-        // pass; a Lambertian-sphere law fits worse than either.
+        // Range (km), phase (deg), Heavens-Above brightness: a subset of the 27-sample fit in
+        // satellite-tracking.md (37.29N 121.96W, 31 Oct - 9 Nov 2026).
         val samples =
             listOf(
                 Triple(430.0, 79.7, -3.7),
@@ -125,6 +123,16 @@ class SatelliteMagnitudeTest {
                 )
             assertThat(actual).isWithin(0.2).of(expected)
         }
+    }
+
+    @Test
+    fun `standard magnitude is per satellite, defaulting to the ISS`() {
+        assertThat(SatelliteMagnitude.standardMagnitudeFor(25544))
+            .isEqualTo(SatelliteMagnitude.ISS_STANDARD_MAGNITUDE)
+        assertThat(SatelliteMagnitude.standardMagnitudeFor(48274))
+            .isEqualTo(SatelliteMagnitude.TIANGONG_STANDARD_MAGNITUDE)
+        assertThat(SatelliteMagnitude.standardMagnitudeFor(1))
+            .isEqualTo(SatelliteMagnitude.ISS_STANDARD_MAGNITUDE)
     }
 
     @Test

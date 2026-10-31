@@ -349,6 +349,10 @@ A pass is *visible*, rather than merely geometric, when all three hold:
    `|r − (r·s)s| > R⊕ + 30 km`. The 30 km term stands in for atmospheric refraction and
    penumbra — a bare cylinder overestimates lit time by 10–20 s at shadow entry.
 
+Visibility uses the −6° test, but the *reported peak magnitude* covers every sunlit sample with the
+Sun below the horizon. A faint pass whose best moment falls in twilight can therefore look
+brighter than it would in a dark sky; accepted for now, revisit if "good pass" counts feel inflated.
+
    `r` is the satellite in TEME (SGP4's native output, undisturbed). `MeeusEphemeris` gives the
    Sun in J2000 (D84), so `s` must be `Precession.dateFromJ2000(time)` applied to that result
    before the dot product — otherwise the test carries a ~0.36° frame mismatch between the two
