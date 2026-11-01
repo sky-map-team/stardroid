@@ -40,13 +40,13 @@ import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.google.android.stardroid.ui.common.StyledHtml
+import com.google.android.stardroid.ui.common.permissionsNoticeResource
 import com.google.android.stardroid.ui.resources.Res
 import com.google.android.stardroid.ui.resources.dialog_accept
 import com.google.android.stardroid.ui.resources.dialog_decline
 import com.google.android.stardroid.ui.resources.eula_agree_line
 import com.google.android.stardroid.ui.resources.eula_text
 import com.google.android.stardroid.ui.resources.eula_title
-import com.google.android.stardroid.ui.resources.permissions_notice
 import org.jetbrains.compose.resources.stringResource
 
 /**
@@ -131,7 +131,7 @@ fun EulaScreen(
         ) {
             StyledHtml(
                 stringResource(Res.string.eula_text) +
-                    stringResource(Res.string.permissions_notice) +
+                    stringResource(permissionsNoticeResource) +
                     stringResource(Res.string.eula_agree_line),
                 nightMode = nightMode,
                 modifier =
