@@ -82,8 +82,8 @@ Google keeps this data for up to 14 months and then deletes it.
 If you do not wish to share analytics data, you can opt out at any time with **Settings → Send
 usage statistics**. Turning it off suppresses all data collection, including Firebase's own
 automatic events. The switch is in Settings, which you reach after the first screen asks you to
-accept Sky Map's terms. Before that, the app records only that it was opened and whether you
-accepted or declined the terms.
+accept Sky Map's terms. Before that, Firebase's automatic events (such as the first time the app is opened) and
+whether you accepted or declined the terms are recorded.
 
 For more information on Firebase Analytics see https://firebase.google.com/support/privacy.
 
