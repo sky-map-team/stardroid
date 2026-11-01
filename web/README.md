@@ -1,6 +1,7 @@
 # getskymap.app
 
-Static Astro site for Sky Map. Deployed on Cloudflare Pages (build `npm run build`, output `dist`,
+Static Astro site for Sky Map, served by Cloudflare (Workers static assets; see `wrangler.jsonc`;
+build `npm run build`, output `dist`,
 root `web/`).
 
 - `npm run dev` / `npm run build` / `npm run preview`
