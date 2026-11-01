@@ -144,6 +144,24 @@ pipeline; that note was written before this was wired up.
   leaves nothing to translate at all — coverage stays at 100% because there is no new
   English source — so check before assuming a run is needed.
 
+## Privacy
+
+[`PRIVACY_POLICY.md`](../PRIVACY_POLICY.md) says what the app collects and which services it
+talks to, and the stores' privacy forms must agree with it. **Update the policy in the same
+change** whenever you:
+
+- add, remove or repurpose an analytics event, parameter or user property
+  (`AnalyticsEvents.kt`), or log anything typed by the user;
+- add a network request to a host the policy doesn't name, or send new data to one it does
+  (Geoapify, CelesTrak, Firebase, Remote Config);
+- add an SDK that collects data, or request a new permission or a more precise location;
+- change what the Settings opt-out controls, or what is recorded before the terms are accepted.
+
+Also check what the change touches around it: the in-app terms text (`eula.xml`), `TERMS.md`
+section 3, the iOS privacy manifest (`PrivacyInfo.xcprivacy`) and the Play Data safety and App
+Store privacy answers. Say in the PR description that you checked. The policy's date line
+(`Last Updated`) changes with it.
+
 ## Testing
 
 `./gradlew check` from the module root runs unit tests (JUnit 5 + Truth), ktlint, and the
