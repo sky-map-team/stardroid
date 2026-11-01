@@ -15,7 +15,10 @@ import com.google.android.stardroid.ui.resources.beta_user_help_text
 import org.jetbrains.compose.resources.StringResource
 import org.jetbrains.compose.resources.stringResource
 
-/** The What's New body for this platform; iOS has its own because it missed the earlier releases. */
+/**
+ * The What's New body for this platform; iOS has its own because the Android notes describe
+ * features it lacks.
+ */
 internal expect val whatsNewContentResource: StringResource
 
 /** Whether the beta testers' note leads What's New. iOS has no beta track, so it never does. */
