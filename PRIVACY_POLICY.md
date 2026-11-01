@@ -35,11 +35,17 @@ processes it for us.
 Firebase Analytics collects the following about how the app is used. None of it includes your
 name, email address, or any account, because Sky Map has none.
 
+These are the categories of data collected. The exact events are defined in Sky Map's open-source
+code
+([`AnalyticsEvents.kt`](https://github.com/sky-map-team/stardroid/blob/master/stardroid-v2/shared/model/src/commonMain/kotlin/com/google/android/stardroid/analytics/AnalyticsEvents.kt)),
+which anyone can read. If the categories change, we will update this policy.
+
 - **Usage patterns**: when you launch the app (hour of day, day of week), how long each
   session lasts, and which features you open (gallery, time travel, settings, etc.)
 - **Search terms**: the text you type when you search, the name of the object you pick, and
-  whether the search succeeded. Searches are unlikely to contain personal information, but
-  whatever you type is logged.
+  whether the search succeeded. We use searches that find nothing to learn what people are
+  looking for, which is how we found out that Sky Map needed to understand "the big dipper".
+  Searches are unlikely to contain personal information, but whatever you type is logged.
 - **Feature interactions**: which sky layers you toggle, which time travel events you select,
   which gallery images you view, whether you use manual or automatic sensor mode, which
   announcements you see or dismiss, and which options you choose on the Support screen.
