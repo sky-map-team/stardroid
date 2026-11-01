@@ -1,5 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
+import quotes from '../data/quotes.json';
+const q = quotes.find((x) => x.placement === 'history')!;
 
 const timeline = [
   { year: '2009', title: 'The Google era', body: 'Born as a 20% project at Google, Sky Map showed what a phone’s sensors could do.' },
@@ -20,6 +22,8 @@ const videos = [
         <li><span class="year">{e.year}</span><div><h2>{e.title}</h2><p class="muted">{e.body}</p></div></li>
       ))}
     </ol>
+
+    <blockquote class="aside"><p>“{q.text}”</p><footer>{q.label}</footer></blockquote>
 
     <h2 class="vh">From the archive</h2>
     <ul class="videos">
@@ -50,4 +54,7 @@ const videos = [
   summary { cursor: pointer; list-style: none; }
   summary img { width: 100%; height: auto; border-radius: 12px; display: block; }
   summary span { display: block; margin-top: .5rem; font-weight: 600; }
+  .aside { margin: 0 0 3rem; padding: 1rem 1.25rem; border-left: 3px solid var(--star-gold); background: var(--surface); max-width: var(--measure); }
+  .aside p { margin: 0 0 .5rem; }
+  .aside footer { font: 500 .8rem var(--data); color: var(--muted); }
 </style>

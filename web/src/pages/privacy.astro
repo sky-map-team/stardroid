@@ -1,7 +1,16 @@
 ---
 import Base from '../layouts/Base.astro';
+import quotes from '../data/quotes.json';
 import { Content } from '../../../PRIVACY_POLICY.md';
+const q = quotes.find((x) => x.placement === 'privacy')!;
 ---
 <Base title="Privacy Policy — Sky Map" description="Privacy Policy for Sky Map.">
-  <article class="wrap prose"><Content /></article>
+  <article class="wrap prose"><blockquote class="aside"><p>“{q.text}”</p><footer>{q.label}</footer></blockquote>
+    <Content /></article>
 </Base>
+
+<style>
+  .aside { margin: 0 0 2rem; padding: 1rem 1.25rem; border-left: 3px solid var(--star-gold); background: var(--surface); }
+  .aside p { margin: 0 0 .5rem; }
+  .aside footer { font: 500 .8rem var(--data); color: var(--muted); }
+</style>

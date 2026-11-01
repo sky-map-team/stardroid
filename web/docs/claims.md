@@ -27,6 +27,7 @@ Status: `verified` (source checked on the date), `unverified` (do not publish), 
 | "Maintained as a passion project by those who created it" | story | owner-approved | Wording chosen by maintainer 2026-11-01 | 2026-11-01 |
 | Ten 5★ review quotes (verbatim, anonymous) | quotes | verified | Play Console 2026 review export; owner approved all ten 2026-11-01 | 2026-11-01 |
 | 2009 Google 20% project; 2012 open-sourced; 2026 v2 | history | verified (from the old site) | Text from skymapforandroid.com bundle; owner to add detail | 2026-11-01 |
+| Nine Buy Me a Coffee supporter notes (verbatim, anonymous, no PII) | quotes | verified | BMC `get-recent-supports` pages 1–5; owner approved 2026-11-01 | 2026-11-01 |
 | Team wording | about | rule | One maintainer. Never imply a team | |
 | Camera / AR mode | features | planned | Label "coming later" | |
 | iOS App Store | CTAs | planned | Show "coming soon" until live | |

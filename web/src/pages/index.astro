@@ -79,8 +79,8 @@ const v2 = [1, 2, 3, 4, 5, 6] as const;
 
   <section class="wrap quotes" aria-label="What people say">
     <ul class="qlist" id="qlist">
-      {quotes.map((q) => (
-        <li><blockquote><p>“{q.text}”</p><footer class="muted">★★★★★ Google Play review · v{q.version}</footer></blockquote></li>
+      {quotes.filter((q) => q.placement === 'carousel').map((q) => (
+        <li><blockquote><p>“{q.text}”</p><footer class="muted">{q.label}</footer></blockquote></li>
       ))}
     </ul>
   </section>
