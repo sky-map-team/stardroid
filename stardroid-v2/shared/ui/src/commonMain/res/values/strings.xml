@@ -152,6 +152,8 @@
     <string name="support_tip_thanks" translation_description="Shown after a tip purchase succeeds">Thank you, and clear skies!</string>
     <string name="support_tip_pending" translation_description="Shown when a tip purchase is waiting for approval, for example from a family organizer">Your tip is waiting for approval. Thank you!</string>
     <string name="support_tip_failed" translation_description="Shown when a tip purchase did not go through">The purchase didn\'t go through. Please try again later.</string>
+    <string name="support_privacy_title" translation_description="Support screen row title: opens the privacy policy web page">Privacy policy</string>
+    <string name="support_privacy_desc" translation_description="Support screen row description: the privacy policy explains what data Sky Map collects and how to opt out">What Sky Map collects, and how to opt out.</string>
     <string name="support_share_message" translation_description="Message sent when the user shares the app with a friend. %1$s is the web link to the app's store page. Keep the %1$s placeholder.">Have you tried Sky Map? It\'s a free, open-source planetarium for your phone: %1$s</string>
     <string name="support_thanks_html" translation_description="HTML section at the bottom of the Support screen thanking donors and open-source contributors. %1$s is a list of donor names and %2$s a list of contributor names. Please do not change the &lt; and &gt; markup or the placeholders."><![CDATA[
 <h2>Thank you</h2>

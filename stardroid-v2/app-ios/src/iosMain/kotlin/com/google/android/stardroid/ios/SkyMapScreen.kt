@@ -226,7 +226,10 @@ private fun SkyMapScreen(
                         onAction = mapViewModel::logSupportAction,
                         // No App Store URL to share until the listing exists.
                         onShareApp = null,
-                        sponsorRow = { TipJarRow(tipStore, mapViewModel::logSupportAction) },
+                        sponsorRow = {
+                            TipJarRow(tipStore, mapViewModel::logSupportAction)
+                            PrivacyRow()
+                        },
                     )
                 Page.SETTINGS ->
                     SettingsScreen(
