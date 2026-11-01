@@ -64,8 +64,11 @@ name, email address, or any account, because Sky Map has none.
 - **Your device's location**: your location (whether entered manually or from GPS) is never sent
   to analytics. Google derives an approximate country or city from your IP address, as
   described above.
-- **Your precise location, anywhere else**: Sky Map itself never sends it. Your phone's own
-  location service, including Google's on Android devices, works under its own privacy policy.
+- **Your precise location**: Sky Map only asks your phone for an approximate location (Android's
+  approximate-location permission; on iOS, accuracy of about a kilometre), so it never has your
+  precise position. If you type in a place yourself, the app has whatever you typed. Your
+  phone's own location service, including Google's on Android devices, works under its own
+  privacy policy.
 - **The advertising identifier**: Sky Map never reads the advertising ID (IDFA on iOS) and
   never asks permission to track you.
 - **Your name or contact details**: Sky Map has no accounts and never asks for them.
@@ -96,8 +99,9 @@ For more information on Firebase Analytics see https://firebase.google.com/suppo
 
 On the location screen, Sky Map shows a map picture of the place you have chosen or that your
 device found. To get it, the app requests an image from **Geoapify**, a mapping service, and the
-request contains your location rounded to three decimal places (about 100 metres). This applies
-to all three versions of the app. The request also reveals your IP address to Geoapify, as any
+request contains your location rounded to three decimal places (about 100 metres at the
+finest). The location Sky Map starts from is already approximate, as described above, unless
+you typed a place in yourself. This applies to all three versions of the app. The request also reveals your IP address to Geoapify, as any
 request over the internet does. No other personal data is sent, and we run no server that
 receives these requests. See Geoapify's privacy policy at
 https://www.geoapify.com/privacy-policy for how it handles them.
