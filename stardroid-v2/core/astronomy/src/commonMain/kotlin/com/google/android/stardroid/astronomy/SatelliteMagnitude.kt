@@ -118,12 +118,15 @@ object SatelliteMagnitude {
     /** Standard magnitude of Tiangong (CSS): about 1.8 fainter than the ISS, fitted the same way. */
     const val TIANGONG_STANDARD_MAGNITUDE: Double = 0.0
 
+    private const val ISS_NORAD_ID = 25544
+
     // Keep in sync with SatelliteLayer.TIANGONG_NORAD_ID (shared/layers can't be depended on here).
     private const val TIANGONG_NORAD_ID = 48274
 
     /** The standard magnitude for [noradId]; anything not listed is treated like the ISS. */
     fun standardMagnitudeFor(noradId: Int): Double =
         when (noradId) {
+            ISS_NORAD_ID -> ISS_STANDARD_MAGNITUDE
             TIANGONG_NORAD_ID -> TIANGONG_STANDARD_MAGNITUDE
             else -> ISS_STANDARD_MAGNITUDE
         }
