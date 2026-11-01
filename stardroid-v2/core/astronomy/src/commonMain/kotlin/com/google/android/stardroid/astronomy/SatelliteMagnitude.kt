@@ -123,12 +123,18 @@ object SatelliteMagnitude {
     // Keep in sync with SatelliteLayer.TIANGONG_NORAD_ID (shared/layers can't be depended on here).
     private const val TIANGONG_NORAD_ID = 48274
 
-    /** The standard magnitude for [noradId]; anything not listed is treated like the ISS. */
+    /**
+     * Deliberately absurd, for a satellite we have no calibration for: it is listed but can never
+     * clear the good-pass bar, so a missing entry shows up instead of passing as the ISS.
+     */
+    const val UNKNOWN_STANDARD_MAGNITUDE: Double = 30.0
+
+    /** The standard magnitude for [noradId], or [UNKNOWN_STANDARD_MAGNITUDE] if uncalibrated. */
     fun standardMagnitudeFor(noradId: Int): Double =
         when (noradId) {
             ISS_NORAD_ID -> ISS_STANDARD_MAGNITUDE
             TIANGONG_NORAD_ID -> TIANGONG_STANDARD_MAGNITUDE
-            else -> ISS_STANDARD_MAGNITUDE
+            else -> UNKNOWN_STANDARD_MAGNITUDE
         }
 
     /** Constant added to the diffuse phase law, fitted to Heavens-Above's ISS brightness. */
