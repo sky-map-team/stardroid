@@ -56,4 +56,20 @@ ask for those.</p>
 <p><b>If you refuse:</b> nothing else changes — these notifications stay off until you turn
 them on.</p>
     ]]></string>
+
+    <string name="permissions_notice_ios" translation_description="iOS version of the legally-required disclosure of the device permissions the app requests: only location, which is optional. Shown on the first-launch terms screen and in Help. Please do not change the markup"><![CDATA[
+<h2>Permissions</h2>
+<p><b>Sky Map has no required permissions.</b> The one permission below is optional — you may
+refuse it and still use the app. Sky Map never asks at startup: it is requested only when you first
+use the feature that needs it, and you can grant or withdraw it at any time under
+<b>Settings → Sky Map</b> on your device.</p>
+<h3>Location — optional</h3>
+<p><b>What is accessed:</b> your approximate location.</p>
+<p><b>Why:</b> which stars are above you depends on where you are, so Sky Map uses your approximate
+location to draw the correct sky.</p>
+<p><b>If you refuse:</b> you can type in a place name or coordinates instead, and the whole app
+keeps working.</p>
+<blockquote>Your location is used on your device to draw the sky. The location screen\'s map picture
+sends a rounded version of it to a map service (see the privacy policy).</blockquote>
+    ]]></string>
 </resources>
