@@ -2,7 +2,7 @@
 
 **Last Updated:** November 2026
 
-This policy covers Sky Map on Android (Google Play and F-Droid) and on iOS (the App Store).
+This policy covers Sky Map on Android (Google Play and F-Droid), on iOS (the App Store), and this website, getskymap.app.
 
 ## Who is responsible for your data
 
@@ -142,6 +142,20 @@ at https://www.geoapify.com/privacy-policy for how it handles them.
   with any app, from your device's system backup settings.
 - **iOS:** Sky Map's settings, including a saved location, are part of your normal iPhone
   backup (iCloud or a computer), which Apple handles. They are not available to Penterakt LLC.
+
+## This website
+
+The website at getskymap.app is hosted on **Cloudflare**. To serve pages, Cloudflare processes
+your IP address and browser details, as any web host does. We use **Cloudflare Web Analytics**
+to count visits and see which pages and referring sites they come from. It sets no cookies and
+does not track you across sites, and we see only aggregate counts, not individual visitors.
+
+- **Store links:** the Google Play button carries a campaign tag so Google can tell us how many
+  installs came from the website. The tag is not linked to you by us.
+- **Support link:** the Support link goes through a page on this site (so we can count how many
+  people use it) and then to Buy Me a Coffee, an external service with its own privacy policy.
+  Anything you give there is handled by that service, not by us.
+- **No accounts, no ads, no forms.** The website collects nothing else from you.
 
 ## Changes to this policy
 

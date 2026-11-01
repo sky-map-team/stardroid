@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- ===================================================================
+     STATIC HEAD TAGS — these must be server-rendered, not JS-injected.
+     Social unfurlers (Facebook, X, Slack, iMessage, Discord) do not
+     execute JavaScript.
+     =================================================================== -->
+<title>Sky Map — Point your phone at the sky</title>
+<meta name="description" content="Sky Map turns your phone into a window on the night sky. Free, open source, no ads, no tracking. 70 million downloads since 2009.">
+<link rel="canonical" href="https://stardroid.app/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Sky Map">
+<meta property="og:title" content="Sky Map — Point your phone at the sky">
+<meta property="og:description" content="Free, open source, no ads, no tracking. 70 million downloads since 2009.">
+<meta property="og:url" content="https://stardroid.app/">
+<meta property="og:image" content="https://stardroid.app/assets/og-card.png"><!-- TODO: 1200x630 -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@skymapdevs">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,400..800&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+/* ===================================================================
+   TOKENS
+   Values marked [D73] come straight from the v2 colour scheme.
+   Values marked [WEB] are proposals — the app palette has no
+   equivalent, so these need your sign-off.
+   =================================================================== */
+:root{
+  /* Surfaces [D73] */
+  --deep-space:        #080C1C;  /* background */
+  --surface:           #0E1428;  /* surface / surfaceContainerLow */
+  --surface-container: #141C36;
+  --surface-high:      #1B2340;  /* surfaceContainerHigh / surfaceVariant */
+  --surface-bright:    #232C4C;
+  --nebula:            #1A1F4E;  /* launcher gradient mid */
+  --indigo:            #3D2F74;  /* launcher gradient top, time-travel flash */
+
+  /* Accents [D73] */
+  --star-gold:   #FFC107;  /* primary */
+  --gold-ink:    #231A00;  /* onPrimary — text on gold fills */
+  --gold-soft:   #FFDF9C;  /* onPrimaryContainer */
+  --lens-blue:   #7EC8E3;  /* secondary */
+  --planet-green:#4DB848;
+  --planet-red:  #E05C34;
+
+  /* Text [D73] */
+  --starlight: #E0E1DD;  /* onSurface        13.9:1 */
+  --muted:     #A9B4D0;  /* onSurfaceVariant  8.8:1 */
+
+  /* Lines [D73] */
+  --outline:         #5A6486;  /* 3.1:1 — borders only, never text */
+  --outline-variant: #2A3355;
+
+  /* [WEB] Not in the app palette. Proposals: */
+  --focus-ring:   #7EC8E3;  /* Lens Blue — clears AA on every surface */
+  --link-hover:   #FFDF9C;  /* gold-soft, so hover lightens not darkens */
+  --selection-bg: #3D2F74;  /* icon indigo */
+
+  /* Type */
+  --display: "Archivo", system-ui, sans-serif;
+  --body:    "IBM Plex Sans", system-ui, sans-serif;
+  --data:    "IBM Plex Mono", ui-monospace, monospace;
+
+  /* Scale */
+  --nav-h: 64px;
+  --gutter: clamp(20px, 5vw, 64px);
+  --measure: 62ch;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+::selection{background:var(--selection-bg);color:var(--starlight)}
+
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{animation:none!important;transition:none!important}
+}
+
+body{
+  margin:0;
+  background:var(--deep-space);
+  color:var(--starlight);
+  font-family:var(--body);
+  font-size:17px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* Star field — CSS only, no JS, no images */
+body::before{
+  content:"";
+  position:fixed; inset:0; z-index:0; pointer-events:none;
+  background-image:
+    radial-gradient(1.5px 1.5px at 12% 18%, rgba(224,225,221,.55), transparent),
+    radial-gradient(1px 1px at 78% 8%,    rgba(224,225,221,.40), transparent),
+    radial-gradient(1.5px 1.5px at 43% 62%, rgba(224,225,221,.35), transparent),
+    radial-gradient(1px 1px at 91% 47%,   rgba(126,200,227,.40), transparent),
+    radial-gradient(1px 1px at 27% 88%,   rgba(224,225,221,.30), transparent),
+    radial-gradient(1.5px 1.5px at 63% 31%, rgba(224,225,221,.45), transparent),
+    radial-gradient(1px 1px at 5% 55%,    rgba(224,225,221,.28), transparent),
+    radial-gradient(1px 1px at 55% 95%,   rgba(255,193,7,.30),   transparent);
+  background-size:100% 100%;
+}
+main,header,footer{position:relative;z-index:1}
+
+/* Focus — visible everywhere */
+a:focus-visible,button:focus-visible,summary:focus-visible{
+  outline:2px solid var(--focus-ring);
+  outline-offset:3px;
+  border-radius:4px;
+}
+
+/* ---------- Type ---------- */
+.eyebrow{
+  font-family:var(--data);
+  font-size:12px; font-weight:500;
+  letter-spacing:.14em; text-transform:uppercase;
+  color:var(--lens-blue);
+  margin:0 0 18px;
+  display:flex; align-items:center; gap:10px;
+}
+.eyebrow::before{
+  content:""; width:22px; height:1px;
+  background:var(--lens-blue); opacity:.6; flex:none;
+}
+
+h1,h2,h3{
+  font-family:var(--display);
+  font-variation-settings:"wdth" 112;
+  font-weight:700;
+  line-height:1.02;
+  letter-spacing:-.015em;
+  margin:0;
+  text-wrap:balance;
+}
+h1{font-size:clamp(2.6rem,8.5vw,5.2rem);font-weight:800}
+h2{font-size:clamp(1.9rem,4.6vw,3rem)}
+h3{font-size:1.15rem;font-variation-settings:"wdth" 105;letter-spacing:0}
+
+p{margin:0 0 1em;max-width:var(--measure)}
+.lede{font-size:clamp(1.05rem,2.2vw,1.25rem);color:var(--muted)}
+.dim{color:var(--muted)}
+
+a{color:var(--star-gold);text-decoration-thickness:1px;text-underline-offset:3px}
+a:hover{color:var(--link-hover)}
+
+/* ---------- Layout ---------- */
+.wrap{max-width:1140px;margin:0 auto;padding-inline:var(--gutter)}
+section{padding-block:clamp(72px,10vw,128px)}
+section+section{border-top:1px solid var(--outline-variant)}
+:target,[id]{scroll-margin-top:calc(var(--nav-h) + 24px)}
+
+/* ---------- Nav ---------- */
+header{
+  position:sticky; top:0; z-index:50;
+  height:var(--nav-h);
+  display:flex; align-items:center;
+  background:rgba(8,12,28,.86);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--outline-variant);
+}
+header .wrap{display:flex;align-items:center;gap:28px;width:100%}
+.brand{
+  display:flex;align-items:center;gap:10px;
+  font-family:var(--display);font-variation-settings:"wdth" 108;
+  font-weight:700;font-size:1.05rem;letter-spacing:.01em;
+  color:var(--starlight);text-decoration:none;
+}
+.brand svg{flex:none}
+.brand .v2{
+  font-family:var(--data);font-size:10px;font-weight:600;
+  letter-spacing:.1em;
+  color:var(--gold-ink);background:var(--star-gold);
+  padding:2px 6px;border-radius:3px;
+}
+nav{margin-left:auto;display:flex;gap:26px;align-items:center}
+nav a{
+  font-size:14px;color:var(--muted);text-decoration:none;
+  font-weight:500;
+}
+nav a:hover{color:var(--starlight)}
+@media(max-width:820px){nav{display:none}}
+
+/* ---------- Hero ---------- */
+.hero{
+  padding-block:clamp(56px,9vw,110px) clamp(64px,9vw,120px);
+  background:
+    radial-gradient(120% 80% at 50% -10%, var(--nebula) 0%, transparent 62%),
+    radial-gradient(70% 50% at 82% 8%, rgba(61,47,116,.5) 0%, transparent 70%);
+}
+.hero-grid{display:grid;gap:clamp(40px,6vw,72px);align-items:center}
+@media(min-width:900px){.hero-grid{grid-template-columns:1.08fr .92fr}}
+
+h1 .accent{color:var(--star-gold);display:block}
+
+.hero .lede{margin-top:26px;max-width:46ch}
+
+/* Proof strip — the numbers, in the app's own HUD voice */
+.proof{
+  display:flex;flex-wrap:wrap;gap:0;
+  margin:30px 0 34px;
+  border:1px solid var(--outline-variant);
+  border-radius:10px;
+  overflow:hidden;
+  background:rgba(14,20,40,.6);
+  max-width:520px;
+}
+.proof div{
+  flex:1 1 33%;padding:14px 18px;
+  border-right:1px solid var(--outline-variant);
+}
+.proof div:last-child{border-right:0}
+.proof b{
+  display:block;
+  font-family:var(--data);font-weight:600;font-size:1.28rem;
+  color:var(--starlight);line-height:1.2;
+}
+.proof span{
+  font-family:var(--data);font-size:10.5px;letter-spacing:.11em;
+  text-transform:uppercase;color:var(--muted);
+}
+
+.ctas{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:22px}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  font-family:var(--body);font-weight:600;font-size:16px;
+  padding:15px 26px;border-radius:10px;
+  text-decoration:none;border:1px solid transparent;
+  transition:transform .12s ease, background .15s ease, border-color .15s ease;
+}
+.btn:active{transform:translateY(1px)}
+.btn-primary{background:var(--star-gold);color:var(--gold-ink)}
+.btn-primary:hover{background:var(--gold-soft);color:var(--gold-ink)}
+.btn-ghost{
+  background:transparent;color:var(--starlight);
+  border-color:var(--outline);
+}
+.btn-ghost:hover{border-color:var(--lens-blue);color:var(--lens-blue);background:rgba(126,200,227,.06)}
+
+.privacy-line{
+  display:flex;flex-wrap:wrap;gap:8px 20px;
+  font-family:var(--data);font-size:12.5px;letter-spacing:.03em;
+  color:var(--muted);margin:0;
+}
+.privacy-line span{display:flex;align-items:center;gap:7px}
+.tick{width:13px;height:13px;flex:none;color:var(--planet-green)}
+
+/* ---------- SIGNATURE: the reticle over a real star chart ----------
+   Star radii encode apparent magnitude. The reticle is the app's own
+   search target — the one visual nobody else in this category has. */
+.chart{
+  position:relative;width:100%;max-width:440px;margin-inline:auto;
+  aspect-ratio:400/520;
+}
+.chart svg{width:100%;height:100%;overflow:visible}
+.c-line{stroke:var(--lens-blue);stroke-opacity:.32;stroke-width:1.1}
+.c-star{fill:var(--starlight)}
+.c-label{
+  font-family:var(--data);font-size:9px;letter-spacing:.09em;
+  fill:var(--muted);text-transform:uppercase;
+}
+.reticle{stroke:var(--star-gold);fill:none;stroke-width:2.5}
+.reticle-arrow{fill:var(--star-gold)}
+@keyframes pulse{
+  0%,100%{opacity:1;transform:scale(1)}
+  50%    {opacity:.55;transform:scale(1.05)}
+}
+.reticle-g{transform-origin:200px 150px;animation:pulse 3.4s ease-in-out infinite}
+
+.hud{
+  position:absolute;left:0;right:0;top:0;
+  display:flex;justify-content:space-between;
+  font-family:var(--data);font-size:10.5px;letter-spacing:.1em;
+  color:var(--muted);text-transform:uppercase;
+  border-bottom:1px solid var(--outline-variant);
+  padding-bottom:8px;
+}
+.hud b{color:var(--star-gold);font-weight:500}
+
+/* ---------- Screenshot placeholders ---------- */
+.shot{
+  border:1px dashed var(--outline);
+  border-radius:22px;
+  background:var(--surface-container);
+  aspect-ratio:9/19.5;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;padding:24px;gap:8px;
+}
+.shot strong{
+  font-family:var(--data);font-size:11px;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--lens-blue);font-weight:500;
+}
+.shot em{font-style:normal;font-size:13px;color:var(--muted);max-width:26ch}
+.shot-row{
+  display:grid;gap:20px;margin-top:44px;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+}
+
+/* ---------- Layers (features) ----------
+   Structured as the app's layer rail, because that IS how the
+   features are organised in the product. */
+.layers{display:grid;gap:1px;background:var(--outline-variant);border:1px solid var(--outline-variant);border-radius:14px;overflow:hidden;margin-top:48px}
+@media(min-width:760px){.layers{grid-template-columns:repeat(2,1fr)}}
+.layer{
+  background:var(--surface);padding:30px 28px;
+  display:flex;gap:18px;align-items:flex-start;
+}
+.layer .ico{
+  width:36px;height:36px;flex:none;border-radius:9px;
+  display:grid;place-items:center;
+  background:var(--surface-high);
+}
+.layer .ico svg{width:19px;height:19px}
+.layer h3{margin-bottom:7px}
+.layer p{margin:0;font-size:15px;color:var(--muted)}
+
+/* ---------- What's new in v2 ---------- */
+.v2-list{list-style:none;padding:0;margin:44px 0 0;display:grid;gap:1px;background:var(--outline-variant);border-block:1px solid var(--outline-variant)}
+.v2-list li{
+  background:var(--deep-space);padding:22px 4px;
+  display:grid;gap:6px 26px;align-items:baseline;
+}
+@media(min-width:720px){.v2-list li{grid-template-columns:190px 1fr}}
+.v2-list .tag{
+  font-family:var(--data);font-size:11px;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--star-gold);
+}
+.v2-list .tag.soon{color:var(--lens-blue)}
+.v2-list p{margin:0;font-size:15.5px;color:var(--muted)}
+.v2-list strong{color:var(--starlight);font-weight:600;display:block;margin-bottom:3px;font-size:16px}
+
+/* ---------- Timeline ---------- */
+.timeline{margin-top:48px;display:grid;gap:0}
+.tl{
+  display:grid;gap:4px 28px;padding:24px 0;
+  border-top:1px solid var(--outline-variant);
+}
+@media(min-width:640px){.tl{grid-template-columns:110px 1fr}}
+.tl .yr{
+  font-family:var(--data);font-size:13px;font-weight:600;
+  letter-spacing:.08em;color:var(--star-gold);
+}
+.tl:nth-child(2) .yr{color:var(--lens-blue)}
+.tl:nth-child(3) .yr{color:var(--planet-green)}
+.tl h3{margin-bottom:5px}
+.tl p{margin:0;font-size:15.5px;color:var(--muted)}
+
+/* ---------- Support ---------- */
+.split{display:grid;gap:28px}
+@media(min-width:820px){.split{grid-template-columns:1fr 1fr;gap:40px}}
+.card{
+  background:var(--surface);border:1px solid var(--outline-variant);
+  border-radius:14px;padding:32px 30px;
+}
+.card h3{margin-bottom:10px}
+.card p{font-size:15.5px;color:var(--muted)}
+.card.gold{
+  background:linear-gradient(160deg,var(--surface-high),var(--surface));
+  border-color:rgba(255,193,7,.28);
+}
+
+/* ---------- Footer ---------- */
+footer{
+  border-top:1px solid var(--outline-variant);
+  padding-block:60px 40px;
+  background:var(--surface);
+}
+.foot-grid{display:grid;gap:36px}
+@media(min-width:760px){.foot-grid{grid-template-columns:1.6fr 1fr 1fr 1fr}}
+.foot-grid h4{
+  font-family:var(--data);font-size:11px;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--muted);
+  margin:0 0 14px;font-weight:500;
+}
+.foot-grid ul{list-style:none;margin:0;padding:0;display:grid;gap:9px}
+.foot-grid ul a{color:var(--starlight);text-decoration:none;font-size:14.5px}
+.foot-grid ul a:hover{color:var(--star-gold)}
+.colophon{
+  margin-top:44px;padding-top:24px;
+  border-top:1px solid var(--outline-variant);
+  display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-between;
+  font-size:13px;color:var(--muted);
+}
+.colophon p{margin:0;max-width:none}
+
+/* Annotation chips — REVIEW ONLY, delete before implementing */
+.note{
+  font-family:var(--data);font-size:11px;line-height:1.5;
+  color:var(--planet-red);border:1px dashed var(--planet-red);
+  border-radius:6px;padding:7px 10px;margin:14px 0 0;
+  max-width:62ch;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="brand" href="#top">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <circle cx="12" cy="12" r="10" stroke="#5A6486" stroke-width="1.2"/>
+        <path d="M12 3.6l1.9 5.9h6.2l-5 3.6 1.9 5.9-5-3.6-5 3.6 1.9-5.9-5-3.6h6.2z" fill="#FFC107"/>
+      </svg>
+      Sky Map <span class="v2">V2</span>
+    </a>
+    <nav>
+      <a href="#features">Features</a>
+      <a href="#new">What's new</a>
+      <a href="#history">History</a>
+      <a href="#help">Help</a>
+      <a href="#support">Support us</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ============================ HERO ============================ -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow">Version 2 · Out now</p>
+      <h1>Look up.<span class="accent">Know what you're seeing.</span></h1>
+
+      <p class="lede">Hold your phone toward the sky and Sky Map shows you what's
+      there — constellations, planets, satellites, deep-sky objects. Free since 2009,
+      open source, and rebuilt from the ground up.</p>
+
+      <div class="proof">
+        <div><b>70M+</b><span>Downloads</span></div>
+        <div><b>4.1★</b><span>470k ratings</span></div>
+        <div><b>2009</b><span>Still going</span></div>
+      </div>
+
+      <div class="ctas">
+        <a class="btn btn-primary" href="#">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3.6 2.1c-.3.3-.5.8-.5 1.4v17c0 .6.2 1.1.5 1.4l9-9.9-9-9.9zM14.1 12.8l2.6-2.9 3.3 1.9c.9.5.9 1.9 0 2.4l-3.3 1.9-2.6-3.3zM4.9 22.4l10.1-5.8-2.4-2.6-7.7 8.4zM12.6 10.4L15 7.8 4.9 2 12.6 10.4z"/></svg>
+          Get it on Google Play
+        </a>
+        <a class="btn btn-ghost" href="#">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm0 3.2a2.1 2.1 0 110 4.2 2.1 2.1 0 010-4.2zm-4.6 2.6a1.7 1.7 0 110 3.4 1.7 1.7 0 010-3.4zm9.2 0a1.7 1.7 0 110 3.4 1.7 1.7 0 010-3.4zM12 12.4c2.9 0 5.2 1.6 5.2 3.6v3.1H6.8V16c0-2 2.3-3.6 5.2-3.6z"/></svg>
+          Get it on F-Droid
+        </a>
+      </div>
+
+      <p class="privacy-line">
+        <span><svg class="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M4 12.5l5.5 5.5L20 6.5"/></svg>No ads</span>
+        <span><svg class="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M4 12.5l5.5 5.5L20 6.5"/></svg>No tracking</span>
+        <span><svg class="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M4 12.5l5.5 5.5L20 6.5"/></svg>Works offline</span>
+      </p>
+    </div>
+
+    <!-- SIGNATURE ELEMENT -->
+    <div class="chart">
+      <div class="hud"><span>Alt <b>41.2°</b></span><span>Az <b>168.7°</b></span><span>FOV <b>60°</b></span></div>
+      <svg viewBox="0 0 400 520" role="img" aria-label="Star chart of Orion with the search reticle locked on Betelgeuse">
+        <g class="c-line" stroke-linecap="round">
+          <path d="M200 150 L110 140"/>
+          <path d="M200 150 L215 255"/>
+          <path d="M110 140 L155 245"/>
+          <path d="M155 245 L185 250 L215 255"/>
+          <path d="M215 255 L230 360"/>
+          <path d="M155 245 L120 355"/>
+          <path d="M160 95 L200 150"/>
+          <path d="M160 95 L110 140"/>
+          <path d="M120 355 L230 360" stroke-dasharray="3 6"/>
+        </g>
+        <g class="c-star">
+          <circle cx="200" cy="150" r="6"/>
+          <circle cx="110" cy="140" r="4"/>
+          <circle cx="160" cy="95"  r="2.4"/>
+          <circle cx="215" cy="255" r="3.8"/>
+          <circle cx="185" cy="250" r="3.8"/>
+          <circle cx="155" cy="245" r="3.4"/>
+          <circle cx="230" cy="360" r="3.5"/>
+          <circle cx="120" cy="355" r="6.4"/>
+        </g>
+        <g class="c-label">
+          <text x="112" y="128">Bellatrix</text>
+          <text x="128" y="378">Rigel</text>
+          <text x="240" y="378">Saiph</text>
+          <text x="120" y="238">Orion's Belt</text>
+          <text x="168" y="86">Meissa</text>
+        </g>
+        <g class="reticle-g">
+          <circle class="reticle" cx="200" cy="150" r="34"/>
+          <path class="reticle-arrow" d="M200 196 l11 19 h-22 z"/>
+        </g>
+        <text x="200" y="105" class="c-label" text-anchor="middle" style="fill:#FFC107;font-size:11px">Betelgeuse · mag 0.5</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ HOW IT WORKS ============================ -->
+<section id="features">
+  <div class="wrap">
+    <p class="eyebrow">How it works</p>
+    <h2>Your phone already knows<br>which way it's pointing.</h2>
+    <p class="lede" style="margin-top:22px">Sky Map reads your compass, accelerometer and
+    location, works out exactly where you're aimed, and draws the sky onto your screen.
+    Move the phone and the chart moves with you. No internet needed — the whole catalogue
+    ships with the app.</p>
+
+    <p class="note">COPY NOTE: deliberately avoids "augmented reality". Camera mode is
+    behind an experiment flag, so nothing here promises a camera view yet. When it ships,
+    this paragraph and the "Camera mode" row below are the only two places to edit.</p>
+
+    <div class="layers">
+      <div class="layer">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#FFC107" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18"/></svg></div>
+        <div><h3>Search and point</h3><p>Type any object and follow the arrow until the target locks on. Works for planets, Messier objects, and 100,000+ stars.</p></div>
+      </div>
+      <div class="layer">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#7EC8E3" stroke-width="1.7"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M7 20h10"/></svg></div>
+        <div><h3>Layers you control</h3><p>Constellations, planets, deep-sky objects, meteor showers, the celestial grid — switch any of them on or off from the rail.</p></div>
+      </div>
+      <div class="layer">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#7EC8E3" stroke-width="1.7"><path d="M3 12a9 9 0 109-9"/><path d="M3 4v5h5"/><path d="M12 7v5l3.5 2"/></svg></div>
+        <div><h3>Time travel</h3><p>Wind the sky forward or back. Check where Jupiter will be on Saturday, or what the sky looked like the night you were born.</p></div>
+      </div>
+      <div class="layer">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#E05C34" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg></div>
+        <div><h3>Tap for detail</h3><p>Magnitude, distance, rise and set times, and the mythology — one tap on anything in view.</p></div>
+      </div>
+      <div class="layer">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#E05C34" stroke-width="1.7"><path d="M12 3a9 9 0 019 9 9 9 0 01-9 9 9 9 0 01-9-9 9 9 0 019-9z"/><path d="M12 3v18"/></svg></div>
+        <div><h3>Night mode</h3><p>The whole interface shifts to deep red so you keep your dark adaptation while you're actually outside.</p></div>
+      </div>
+      <div class="layer">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#4DB848" stroke-width="1.7"><path d="M4 16l5-6 4 4 3-4 4 6"/><path d="M3 20h18"/></svg></div>
+        <div><h3>Your horizon</h3><p>Sky Map knows the terrain around you, so it can tell you what's genuinely visible and what's behind a hill.</p></div>
+      </div>
+    </div>
+
+    <div class="shot-row">
+      <div class="shot"><strong>Slot 01</strong><em>Main sky view, night, constellations + planets on</em></div>
+      <div class="shot"><strong>Slot 02</strong><em>Search active, reticle and direction arrow visible</em></div>
+      <div class="shot"><strong>Slot 03</strong><em>Object info card open on a planet</em></div>
+      <div class="shot"><strong>Slot 04</strong><em>Night mode, red-shifted</em></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ WHAT'S NEW ============================ -->
+<section id="new">
+  <div class="wrap">
+    <p class="eyebrow">Version 2</p>
+    <h2>Rebuilt, not restyled.</h2>
+    <p class="lede" style="margin-top:22px">The original shipped on the first Android phone
+    in 2009. Version 2 keeps everything people stayed for and replaces everything underneath.</p>
+
+    <ul class="v2-list">
+      <li><span class="tag">New interface</span><div><strong>Built on modern Android</strong><p>A complete rewrite of the UI layer, so the app finally looks like it belongs on the phone you're holding.</p></div></li>
+      <li><span class="tag">New</span><div><strong>Terrain-aware horizon</strong><p>Sky Map now accounts for the landscape around you, not just a flat horizon line.</p></div></li>
+      <li><span class="tag">New</span><div><strong>Redesigned object cards</strong><p>More data, better typography, and a layout that works one-handed in the dark.</p></div></li>
+      <li><span class="tag">Improved</span><div><strong>Sensor smoothing</strong><p>Less jitter, faster settling, and clearer guidance when your compass genuinely needs help.</p></div></li>
+      <li><span class="tag soon">Coming later</span><div><strong>Camera mode</strong><p>Line the chart up against the real sky through your camera. In testing now — we'll announce it when it's ready.</p></div></li>
+    </ul>
+
+    <p class="note">Camera mode sits last and is labelled "coming later" in Lens Blue, not
+    gold — so it reads as a roadmap item rather than something you can open today. If it's
+    not ready at launch, delete the row; nothing else on the page depends on it.</p>
+  </div>
+</section>
+
+<!-- ============================ HISTORY ============================ -->
+<section id="history">
+  <div class="wrap">
+    <p class="eyebrow">Where this came from</p>
+    <h2>Sixteen years, three owners,<br>one app.</h2>
+
+    <div class="timeline">
+      <div class="tl">
+        <span class="yr">2009</span>
+        <div><h3>A 20% project at Google</h3><p>Built by a small team in Pittsburgh and launched on the very first Android phone at Searchology.</p></div>
+      </div>
+      <div class="tl">
+        <span class="yr">2012</span>
+        <div><h3>Open sourced</h3><p>Google stopped active development and released the code. The original engineers kept building it on their own time, with Google's blessing and without Google's resources.</p></div>
+      </div>
+      <div class="tl">
+        <span class="yr">Today</span>
+        <div><h3>Still the same people</h3><p>Maintained by two of the original developers, still in Pittsburgh, still free.</p></div>
+      </div>
+    </div>
+
+    <p style="margin-top:34px"><a href="/history/">Read the full story, including the 2009 launch videos →</a></p>
+
+    <p class="note">COPY NOTE: this replaces "a dedicated global community of volunteers
+    maintains the legacy". Two named people who never stopped is a far stronger donation
+    pitch than an anonymous community, and it's what's actually true. The archival videos
+    move to /history/ — keeping the Google-branded 2009 clip off the page that's selling
+    a modern rewrite. Use youtube-nocookie.com there.</p>
+  </div>
+</section>
+
+<!-- ============================ HELP + SUPPORT ============================ -->
+<section id="help">
+  <div class="wrap">
+    <p class="eyebrow">If something's wrong</p>
+    <h2>Most problems are the compass.</h2>
+    <div class="split" style="margin-top:40px">
+      <div class="card">
+        <h3>Troubleshooting</h3>
+        <p>Map pointing the wrong way, Polaris in the wrong place, jittery tracking, or the
+        chart not moving at all — start here. There's also a note on what "compass
+        calibration" does and doesn't fix.</p>
+        <p style="margin:0"><a href="/help/">Open the help pages →</a></p>
+      </div>
+      <div class="card">
+        <h3>Report a problem</h3>
+        <p>Bugs, wrong data, and translation fixes go to the issue tracker. Sky Map is
+        translated by volunteers into 30+ languages and corrections are always welcome.</p>
+        <p style="margin:0"><a href="#">File an issue on GitHub →</a></p>
+      </div>
+    </div>
+
+    <p class="note">The seven-item accordion moves off the landing page. On mobile it was
+    the single longest section, and it sat between the pitch and the donation ask.</p>
+  </div>
+</section>
+
+<section id="support">
+  <div class="wrap">
+    <div class="split">
+      <div>
+        <p class="eyebrow">Support the project</p>
+        <h2>Free forever.<br>Not free to run.</h2>
+        <p class="lede" style="margin-top:20px">Sky Map has no ads, no subscription, no
+        analytics and nothing to sell you. It's maintained in spare time by the people who
+        wrote it. If it's shown you something you wouldn't have found otherwise, you can
+        chip in toward the server bills.</p>
+        <div class="ctas" style="margin-top:28px">
+          <a class="btn btn-primary" href="#">Buy us a coffee</a>
+          <a class="btn btn-ghost" href="#">Star the repo</a>
+        </div>
+      </div>
+      <div class="card gold">
+        <h3>Other ways to help</h3>
+        <p style="margin-bottom:18px">None of these cost anything.</p>
+        <ul style="list-style:none;padding:0;margin:0;display:grid;gap:14px;font-size:15px;color:var(--muted)">
+          <li><strong style="color:var(--starlight);display:block">Join the beta</strong>Test what's coming and tell us what breaks.</li>
+          <li><strong style="color:var(--starlight);display:block">Translate</strong>Fix or add a language you speak.</li>
+          <li><strong style="color:var(--starlight);display:block">Leave a review</strong>It's how people find the app.</li>
+          <li><strong style="color:var(--starlight);display:block">Contribute code</strong>Email first for anything large.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="#top" style="margin-bottom:14px">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <circle cx="12" cy="12" r="10" stroke="#5A6486" stroke-width="1.2"/>
+            <path d="M12 3.6l1.9 5.9h6.2l-5 3.6 1.9 5.9-5-3.6-5 3.6 1.9-5.9-5-3.6h6.2z" fill="#FFC107"/>
+          </svg>
+          Sky Map
+        </a>
+        <p class="dim" style="font-size:14.5px;max-width:34ch">An open-source planetarium
+        for Android. Made in Pittsburgh, pointed at the sky since 2009.</p>
+      </div>
+      <div><h4>Get it</h4><ul><li><a href="#">Google Play</a></li><li><a href="#">F-Droid</a></li><li><a href="#">Beta programme</a></li></ul></div>
+      <div><h4>Project</h4><ul><li><a href="#">GitHub</a></li><li><a href="#">Licence</a></li><li><a href="#">Privacy</a></li><li><a href="/history/">History</a></li></ul></div>
+      <div><h4>Community</h4><ul><li><a href="#">Help</a></li><li><a href="#">Issues</a></li><li><a href="#">Donate</a></li><li><a href="#">Facebook</a></li><li><a href="#">X</a></li></ul></div>
+    </div>
+    <div class="colophon">
+      <p>© 2026 Penterakt LLC. Sky Map is a trademark of Penterakt LLC.</p>
+      <p>Code under GPLv3 and Apache 2.0. Branding and artwork all rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

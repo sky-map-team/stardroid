@@ -1,0 +1,16 @@
+---
+import Base from '../layouts/Base.astro';
+import links from '../data/links.json';
+---
+<Base title="Support Sky Map" description="Help keep Sky Map free and independent." noindex>
+  <article class="wrap prose">
+    <h1>Support Sky Map</h1>
+    <p>Sky Map is free, with no ads. If it's useful to you, you can help keep it going on Buy Me a Coffee.</p>
+    <p><a class="btn primary" id="go" href={links.supportExternal}>Continue to Buy Me a Coffee</a></p>
+    <p class="muted">You'll be taken there automatically in a moment.</p>
+  </article>
+  <!-- Visits to this page are the donation-intent count in Cloudflare Web Analytics. -->
+  <script is:inline>
+    setTimeout(function () { location.replace(document.getElementById('go').href); }, 1500);
+  </script>
+</Base>
