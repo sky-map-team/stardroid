@@ -11,6 +11,7 @@ Status: `verified` (source checked on the date), `unverified` (do not publish), 
 | Since 2009 | hero | verified | Confirm date of first public release | |
 | GitHub stars ≈ 1,900 | hero stats | verified | GitHub repo page | 2026-11-01 |
 | Play rating 4.2★ | hero stats | verified (owner-stated) | Play Console; v2-only rating wanted | 2026-11-01 |
+| v2 rating 4.6★ (n=244) | hero stats | verified | Play Console, versions 2.x with >10 ratings, 90 days to 2026-11-01; weighted by me | 2026-11-01 |
 | Monthly active users (~1M) | none | do not publish | Competitively sensitive | |
 | Downloads 104M+ | hero stats | verified (owner-stated) | Play Console; confirm before launch | 2026-11-01 |
 | Analytics are opt-out (Google Analytics / Firebase) | privacy line | verified | `PRIVACY_POLICY.md`, Settings opt-out | 2026-11-01 |

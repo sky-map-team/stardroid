@@ -12,7 +12,8 @@ import stats from '../data/stats.json';
 
 const t = useT('en');
 const shown = [
-  stats.rating.verified && { k: `${stats.rating.value}★`, v: 'on Google Play' },
+  stats.rating.verified && { k: `${stats.rating.value}★`, v: 'lifetime on Google Play' },
+  stats.v2Rating.verified && { k: `${stats.v2Rating.value}★`, v: 'on version 2' },
   stats.downloads.verified && { k: String(stats.downloads.value), v: 'downloads' },
   stats.githubStars.verified && { k: stats.githubStars.value.toLocaleString('en'), v: 'GitHub stars' },
 ].filter(Boolean) as { k: string; v: string }[];
