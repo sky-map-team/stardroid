@@ -1,6 +1,6 @@
 # Sky Map: Terms of Service & Privacy Policy
 
-**Last Updated:** August 2026  
+**Last Updated:** November 2026  
 **Project Site:** [stardroid.app](https://stardroid.app)  
 **Operator:** Penterakt LLC
 
@@ -31,13 +31,7 @@ Sky Map comes with **no warranties**. While we can think of no conceivable way i
 ---
 
 ## 3. Privacy Policy
-We respect your privacy and do not collect your personal information.
-
-* **Firebase Analytics:** The App uses Firebase Analytics to collect standard internet log and anonymous visitor behavior information.
-* **Anonymity:** No personally identifiable information is collected. Data is transmitted to Google, not to Penterakt LLC.
-* **Purpose:** This data helps us understand feature popularity, Android version usage, and hardware compatibility. This is essential for maintaining the app and dropping support for obsolete versions.
-* **Opt-Out:** If you do not wish to share this anonymous data, you can **opt out via the Settings menu** at any time.
-* **Further Info:** See [privacy](PRIVACY_POLICY.md).
+How Sky Map handles data is set out in the [Privacy Policy](PRIVACY_POLICY.md), which is part of these terms. In short, Sky Map has no accounts and does not ask for your name or contact details. The Google Play and iOS versions send usage statistics, not linked to your name or account, to Firebase Analytics (Google), and you can turn this off at any time in Settings. The F-Droid version sends none.
 
 ---
 

@@ -11,6 +11,7 @@ package com.google.android.stardroid.ui.help
 
 import com.google.android.stardroid.startup.Experiment
 import com.google.android.stardroid.startup.ExperimentConfig
+import com.google.android.stardroid.ui.common.permissionsNoticeResource
 import com.google.android.stardroid.ui.resources.Res
 import com.google.android.stardroid.ui.resources.help_calibrate
 import com.google.android.stardroid.ui.resources.help_diagnostics
@@ -31,7 +32,6 @@ import com.google.android.stardroid.ui.resources.help_search
 import com.google.android.stardroid.ui.resources.help_time_travel
 import com.google.android.stardroid.ui.resources.help_troubleshooting
 import com.google.android.stardroid.ui.resources.help_widgets
-import com.google.android.stardroid.ui.resources.permissions_notice
 import org.jetbrains.compose.resources.StringResource
 
 /**
@@ -99,9 +99,9 @@ internal val HELP_DOCUMENT =
             experiment = Experiment.NOTIFICATIONS,
         ),
         HelpItem.Prose("location", Res.string.help_location),
-        // Lives in eula.xml, not help.xml: the terms screen renders the same key, so the
-        // permission disclosure is written and translated exactly once (see eula.xml).
-        HelpItem.Prose("permissions", Res.string.permissions_notice),
+        // Lives in eula.xml, not help.xml: the terms screen renders the same per-platform key, so
+        // each platform's permission disclosure is written and translated once (see eula.xml).
+        HelpItem.Prose("permissions", permissionsNoticeResource),
         HelpItem.Prose("diagnostics", Res.string.help_diagnostics),
         HelpItem.Prose("calibrate", Res.string.help_calibrate),
         HelpItem.Prose("misc", Res.string.help_misc, divider = true),

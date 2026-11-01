@@ -18,7 +18,7 @@ import androidx.room.RoomDatabaseConstructor
  * The catalog's Room schema version. iOS checks an on-device copy against it, since Room's
  * prepackaged-database support (which does that check on Android) is Android-only.
  */
-internal const val CATALOG_SCHEMA_VERSION = 2
+internal const val CATALOG_SCHEMA_VERSION = 3
 
 /**
  * The catalog store (catalog-and-schema.md). Read-mostly and replaceable: user state never

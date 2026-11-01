@@ -10,6 +10,8 @@
 package com.google.android.stardroid.data
 
 import android.content.Context
+import android.database.sqlite.SQLiteDatabase
+import android.database.sqlite.SQLiteException
 import android.util.Log
 import androidx.room.Room
 import kotlinx.coroutines.Dispatchers
@@ -19,8 +21,9 @@ import kotlinx.coroutines.withContext
  * Builds the on-device catalog database from the bundled `skymap.db` asset (produced by
  * `:data:generateCatalogDb`). Room copies the asset on first open and validates it against the
  * schema identity hash, which is exactly what the generator wrote from the exported schema
- * JSON. Update-time re-copy of builtin packs is a future app-lifecycle concern (it needs the
- * pack-version plumbing of the download feature).
+ * JSON. A copy whose `user_version` differs from [CATALOG_SCHEMA_VERSION] is deleted first, so
+ * the next open re-copies the asset (as on iOS). Room's destructive fallback alone would leave
+ * empty tables.
  */
 object SkyMapDatabaseFactory {
     const val DATABASE_NAME = "skymap.db"
@@ -29,7 +32,7 @@ object SkyMapDatabaseFactory {
     fun create(context: Context): SkyMapDatabase =
         Room.databaseBuilder(context, SkyMapDatabase::class.java, DATABASE_NAME)
             .createFromAsset(DATABASE_NAME)
-            // The catalog holds no user state, so a schema bump just re-copies the bundled asset.
+            // Backstop only: [discardStaleCopy] normally removes a mismatched copy before this runs.
             .fallbackToDestructiveMigration(dropAllTables = true)
             .build()
 
@@ -44,6 +47,7 @@ object SkyMapDatabaseFactory {
      */
     suspend fun createWithRecovery(context: Context): SkyMapDatabase =
         withContext(Dispatchers.IO) {
+            discardStaleCopy(context)
             val db = create(context)
             try {
                 db.packDao().packs()
@@ -60,4 +64,21 @@ object SkyMapDatabaseFactory {
                 create(context).also { it.packDao().packs() }
             }
         }
+
+    private fun discardStaleCopy(context: Context) {
+        val file = context.getDatabasePath(DATABASE_NAME)
+        if (!file.exists()) return
+        val version =
+            try {
+                SQLiteDatabase.openDatabase(file.path, null, SQLiteDatabase.OPEN_READONLY).use {
+                    it.version
+                }
+            } catch (e: SQLiteException) {
+                null
+            }
+        if (version != CATALOG_SCHEMA_VERSION) {
+            Log.i(TAG, "Catalog DB version $version != $CATALOG_SCHEMA_VERSION; re-copying")
+            context.deleteDatabase(DATABASE_NAME)
+        }
+    }
 }
