@@ -1,0 +1,108 @@
+---
+import { Image } from 'astro:assets';
+import Base from '../layouts/Base.astro';
+import hero from '../assets/hero.png';
+import shotSearch from '../assets/shot-search.png';
+import shotInfo from '../assets/shot-info.png';
+import shotTime from '../assets/shot-time.png';
+import shotNight from '../assets/shot-night.png';
+import { useT } from '../i18n';
+import links from '../data/links.json';
+import stats from '../data/stats.json';
+
+const t = useT('en');
+const shown = [
+  stats.rating.verified && { k: `${stats.rating.value}★`, v: 'on Google Play' },
+  stats.downloads.verified && { k: String(stats.downloads.value), v: 'downloads' },
+  stats.githubStars.verified && { k: stats.githubStars.value.toLocaleString('en'), v: 'GitHub stars' },
+].filter(Boolean) as { k: string; v: string }[];
+const features = [
+  { id: 'search', img: shotSearch, alt: 'Search the sky with a direction arrow' },
+  { id: 'info', img: shotInfo, alt: 'An object info card for the Orion Nebula' },
+  { id: 'time', img: shotTime, alt: 'Time travel controls' },
+  { id: 'night', img: shotNight, alt: 'Sky Map in red night mode' },
+] as const;
+const v2 = [1, 2, 3, 4, 5, 6] as const;
+---
+<Base>
+  <section class="wrap hero">
+    <div class="copy">
+      <p class="eyebrow">{t('hero.eyebrow')}</p>
+      <h1>{t('hero.title.a')} <span>{t('hero.title.b')}</span></h1>
+      <p class="lede muted">{t('hero.lede')}</p>
+      {shown.length > 0 && (
+        <dl class="stats">
+          {shown.map((s) => <div><dt>{s.k}</dt><dd>{s.v}</dd></div>)}
+        </dl>
+      )}
+      <p class="ctas">
+        <a class="btn primary" href={links.play}>{t('cta.play')}</a>
+        <a class="btn" href={links.fdroid}>{t('cta.fdroid')}</a>
+        <a class="btn" aria-disabled="true">{t('cta.appstore')}</a>
+      </p>
+    </div>
+    <Image class="shot" src={hero} alt="Sky Map showing constellations and planets overhead at night" widths={[360, 540, 720]} sizes="(min-width: 900px) 360px, 70vw" loading="eager" />
+  </section>
+
+  <section class="wrap features" aria-labelledby="feat">
+    <h2 id="feat">{t('feat.title')}</h2>
+    <div class="grid">
+      {features.map((f) => (
+        <figure>
+          <Image src={f.img} alt={f.alt} widths={[240, 360, 480]} sizes="(min-width: 900px) 22vw, 45vw" />
+          <figcaption>
+            <h3>{t(`feat.${f.id}.t` as any)}</h3>
+            <p class="muted">{t(`feat.${f.id}.d` as any)}</p>
+          </figcaption>
+        </figure>
+      ))}
+    </div>
+  </section>
+
+  <section class="band" aria-labelledby="v2">
+    <div class="wrap">
+      <p class="eyebrow">{t('v2.eyebrow')}</p>
+      <h2 id="v2">{t('v2.title')}</h2>
+      <p class="muted lede2">{t('v2.lede')}</p>
+      <ul class="cards">
+        {v2.map((n) => (
+          <li><h3>{t(`v2.${n}.t` as any)}</h3><p class="muted">{t(`v2.${n}.d` as any)}</p></li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <section class="wrap story">
+    <h2>{t('story.title')}</h2>
+    <p class="prose">{t('story.d')}</p>
+    <p class="ctas">
+      <a class="btn" href="/history">{t('story.history')}</a>
+      <a class="btn" href={links.support}>{t('footer.support')}</a>
+    </p>
+  </section>
+</Base>
+
+<style>
+  .hero { display: grid; gap: 3rem; align-items: center; padding-block: 4rem; }
+  @media (min-width: 900px) { .hero { grid-template-columns: 1.2fr 1fr; } }
+  h1 span { display: block; color: var(--star-gold); }
+  .lede { max-width: var(--measure); font-size: 1.2rem; }
+  .stats { display: flex; gap: 2rem; margin: 2rem 0; }
+  .stats dt { font: 500 1.5rem var(--data); }
+  .stats dd { margin: 0; color: var(--muted); font-size: .9rem; }
+  .ctas { display: flex; flex-wrap: wrap; gap: .75rem; }
+  .shot { width: 100%; max-width: 360px; height: auto; justify-self: center; border-radius: 28px; border: 1px solid var(--outline-variant); }
+  .features { padding-block: 3rem; }
+  .grid { display: grid; gap: 2rem; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+  figure { margin: 0; }
+  figure img { width: 100%; height: auto; border-radius: 20px; border: 1px solid var(--outline-variant); }
+  figcaption h3 { margin: 1rem 0 .25rem; font-size: 1.15rem; }
+  figcaption p { margin: 0; font-size: .95rem; }
+  .band { background: var(--surface); border-block: 1px solid var(--outline-variant); padding-block: 4rem; margin-block: 3rem; }
+  .lede2 { max-width: var(--measure); }
+  .cards { list-style: none; padding: 0; margin: 2rem 0 0; display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+  .cards li { background: var(--surface-container); border: 1px solid var(--outline-variant); border-radius: 12px; padding: 1.25rem; }
+  .cards h3 { font-size: 1.1rem; margin-bottom: .4rem; }
+  .cards p { margin: 0; font-size: .95rem; }
+  .story { padding-block: 2rem; }
+</style>

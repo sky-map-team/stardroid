@@ -1,0 +1,72 @@
+---
+import '@fontsource-variable/archivo';
+import '@fontsource/ibm-plex-sans/400.css';
+import '@fontsource/ibm-plex-sans/600.css';
+import '@fontsource/ibm-plex-mono/500.css';
+import '../styles/global.css';
+import { useT } from '../i18n';
+import { Image } from 'astro:assets';
+import logo from '../assets/logo.png';
+import links from '../data/links.json';
+
+interface Props { title?: string; description?: string; noindex?: boolean }
+const t = useT('en');
+const { title = t('site.title'), description = t('site.description'), noindex = false } = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site).href;
+const ogImage = new URL('/og.png', Astro.site).href;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#080c1c" />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    {noindex && <meta name="robots" content="noindex" />}
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Sky Map" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta name="twitter:card" content="summary_large_image" />
+  </head>
+  <body>
+    <header class="top">
+      <div class="wrap bar">
+        <a class="brand" href="/"><Image src={logo} alt="" width={32} height={32} />{t('site.name')}</a>
+        <nav aria-label="Main">
+          <a href="/history">{t('nav.history')}</a>
+          <a href="/help">{t('nav.help')}</a>
+        </nav>
+      </div>
+    </header>
+    <main><slot /></main>
+    <footer>
+      <div class="wrap foot">
+        <nav aria-label="Footer">
+          <a href={links.github}>{t('footer.github')}</a>
+          <a href={links.support}>{t('footer.support')}</a>
+          <a href="/privacy">{t('nav.privacy')}</a>
+          <a href="/terms">{t('nav.terms')}</a>
+          <a class="muted" href={links.penterakt}>{t('footer.more')}</a>
+        </nav>
+        <p class="muted">© Penterakt LLC. Sky Map is open source.</p>
+      </div>
+    </footer>
+  </body>
+</html>
+
+<style>
+  .top { position: sticky; top: 0; z-index: 10; height: var(--nav-h); background: color-mix(in srgb, var(--deep-space) 88%, transparent); backdrop-filter: blur(8px); border-bottom: 1px solid var(--outline-variant); }
+  .bar { display: flex; align-items: center; justify-content: space-between; height: 100%; }
+  .brand { display: inline-flex; align-items: center; gap: .6rem; font: 700 1.25rem var(--display); color: var(--starlight); text-decoration: none; }
+  nav a { margin-left: 1.25rem; color: var(--muted); text-decoration: none; }
+  nav a:hover { color: var(--link-hover); }
+  footer { margin-top: 6rem; padding-block: 2.5rem; border-top: 1px solid var(--outline-variant); }
+  .foot nav { display: flex; flex-wrap: wrap; gap: .5rem 1.25rem; }
+  .foot nav a { margin: 0; }
+</style>

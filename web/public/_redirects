@@ -1,0 +1,4 @@
+# Cloudflare Pages redirects. Use 302 for anything a store or share link may need to retarget.
+/privacy.html /privacy 301
+/terms.html /terms 301
+/troubleshooting /help 301

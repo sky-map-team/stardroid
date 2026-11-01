@@ -1,0 +1,33 @@
+@import './tokens.css';
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-padding-top: var(--nav-h); }
+body {
+  margin: 0;
+  background: var(--deep-space);
+  color: var(--starlight);
+  font: 400 1.0625rem/1.6 var(--body);
+}
+::selection { background: var(--selection-bg); }
+a { color: var(--star-gold); }
+a:hover { color: var(--link-hover); }
+:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 3px; }
+h1, h2, h3 { font-family: var(--display); line-height: 1.1; margin: 0 0 .5em; }
+h1 { font-size: clamp(2.5rem, 7vw, 5rem); font-weight: 800; }
+h2 { font-size: clamp(1.75rem, 4vw, 2.5rem); font-weight: 700; }
+.wrap { padding-inline: var(--gutter); max-width: 1200px; margin-inline: auto; }
+.eyebrow { font: 500 .8rem var(--data); letter-spacing: .1em; text-transform: uppercase; color: var(--lens-blue); }
+.muted { color: var(--muted); }
+.btn {
+  display: inline-flex; align-items: center; gap: .5rem;
+  padding: .85rem 1.4rem; border-radius: 8px; font-weight: 600; text-decoration: none;
+  border: 1px solid var(--outline);
+  color: var(--starlight);
+}
+.btn.primary { background: var(--star-gold); color: var(--gold-ink); border-color: var(--star-gold); }
+.btn.primary:hover { background: var(--gold-soft); color: var(--gold-ink); }
+.btn[aria-disabled='true'] { opacity: .6; pointer-events: none; }
+.prose { max-width: var(--measure); }
+.prose h2 { margin-top: 2em; font-size: 1.5rem; }
+.prose h3 { margin-top: 1.5em; font-size: 1.2rem; }
+.prose h1 { font-size: clamp(1.75rem, 4vw, 2.5rem); margin-bottom: .75em; }
