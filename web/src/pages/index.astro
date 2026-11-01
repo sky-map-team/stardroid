@@ -1,6 +1,9 @@
 ---
 import { Image } from 'astro:assets';
 import Base from '../layouts/Base.astro';
+import playBadge from '../assets/play.png';
+import fdroidBadge from '../assets/fdroid.png';
+import appStoreBadge from '../assets/appstore.svg';
 import hero from '../assets/hero.png';
 import shotSearch from '../assets/shot-search.png';
 import shotInfo from '../assets/shot-info.png';
@@ -36,10 +39,10 @@ const v2 = [1, 2, 3, 4, 5, 6] as const;
           {shown.map((s) => <div><dt>{s.k}</dt><dd>{s.v}</dd></div>)}
         </dl>
       )}
-      <p class="ctas">
-        <a class="btn primary" href={links.play}>{t('cta.play')}</a>
-        <a class="btn" href={links.fdroid}>{t('cta.fdroid')}</a>
-        <a class="btn" aria-disabled="true">{t('cta.appstore')}</a>
+      <p class="ctas badges">
+        <a href={links.play} aria-label={t('cta.play')}><Image src={playBadge} alt="" height={64} /></a>
+        <a href={links.fdroid} aria-label={t('cta.fdroid')}><Image src={fdroidBadge} alt="" height={64} /></a>
+        <span class="soon" role="img" aria-label={t('cta.appstore')}><img src={appStoreBadge.src} alt="" height="43" /><small>Coming soon</small></span>
       </p>
     </div>
     <Image class="shot" src={hero} alt="Sky Map showing constellations and planets overhead at night" widths={[360, 540, 720]} sizes="(min-width: 900px) 360px, 70vw" loading="eager" />
@@ -106,4 +109,9 @@ const v2 = [1, 2, 3, 4, 5, 6] as const;
   .cards h3 { font-size: 1.1rem; margin-bottom: .4rem; }
   .cards p { margin: 0; font-size: .95rem; }
   .story { padding-block: 2rem; }
+  .badges { align-items: center; gap: .25rem .5rem; }
+  .badges a, .badges img { display: block; }
+  .soon { display: inline-flex; flex-direction: column; align-items: center; gap: .15rem; margin-left: .5rem; }
+  .soon img { opacity: .5; filter: grayscale(1); }
+  .soon small { font: 500 .7rem var(--data); color: var(--muted); }
 </style>
