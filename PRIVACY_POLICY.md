@@ -53,8 +53,9 @@ name, email address, or any account, because Sky Map has none.
   us understand user retention across releases.
 - **Device and install details**: the device and system model, the app version, and a random
   identifier that Firebase creates for each installation of the app. The identifier is not linked
-  to your name, your Apple or Google account, or other apps. Google also derives your approximate
-  country or city from your IP address, and does not keep the address itself in the reports.
+  to your name, your Apple or Google account, or other apps. Google also uses your IP address to
+  work out your approximate country or city. According to Google, it does not log or store the
+  address in its analytics data.
 
 ### What we do NOT collect
 
