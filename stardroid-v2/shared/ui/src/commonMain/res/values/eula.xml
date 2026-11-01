@@ -21,11 +21,14 @@
 
     <!--
       The access-permission notice (KISA / Korean Network Act art. 22-2, and good practice
-      everywhere). Rendered in two places from this one key so it is translated once: appended
-      to the first-launch EULA screen, and included in the help document as a permanent,
-      re-readable copy (HelpScreen.helpSections2). Every runtime permission Sky Map declares
-      must appear here, labelled required or optional, with its grounds and — for optional
-      ones — the user\'s right to refuse.
+      everywhere). Each platform has its own key, chosen by permissionsNoticeResource:
+      permissions_notice (Android) and permissions_notice_ios. Each is rendered in two places so
+      it is translated once: appended to the first-launch EULA screen, and included in the help
+      document as a permanent, re-readable copy (HelpScreen.helpSections2). Every runtime
+      permission a platform can ask for must appear in its own notice, labelled required or
+      optional, with its grounds and — for optional ones — the user\'s right to refuse. Keep
+      both in step with what each app really requests (iOS: Location only until it gains
+      notifications or a camera mode).
     -->
     <string name="permissions_notice" translation_description="Legally-required disclosure of the device permissions the app requests, why it requests them, and the user\'s right to refuse the optional ones. Shown on the first-launch terms screen and in Help. Please do not change the markup"><![CDATA[
 <h2>Permissions</h2>
@@ -60,8 +63,8 @@ them on.</p>
     <string name="permissions_notice_ios" translation_description="iOS version of the legally-required disclosure of the device permissions the app requests: only location, which is optional. Shown on the first-launch terms screen and in Help. Please do not change the markup"><![CDATA[
 <h2>Permissions</h2>
 <p><b>Sky Map has no required permissions.</b> The one permission below is optional — you may
-refuse it and still use the app. Sky Map never asks at startup: it is requested only when you first
-use the feature that needs it, and you can grant or withdraw it at any time under
+refuse it and still use the app. Sky Map asks for it once, after you have accepted these terms,
+because drawing the sky needs to know where you are. You can grant or withdraw it at any time under
 <b>Settings → Sky Map</b> on your device.</p>
 <h3>Location — optional</h3>
 <p><b>What is accessed:</b> your approximate location.</p>
@@ -70,6 +73,6 @@ location to draw the correct sky.</p>
 <p><b>If you refuse:</b> you can type in a place name or coordinates instead, and the whole app
 keeps working.</p>
 <blockquote>Your location is used on your device to draw the sky. The location screen\'s map picture
-sends a rounded version of it to a map service (see the privacy policy).</blockquote>
+sends a rounded version of it to Geoapify, a map service (see the privacy policy).</blockquote>
     ]]></string>
 </resources>

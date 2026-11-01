@@ -99,8 +99,8 @@ internal val HELP_DOCUMENT =
             experiment = Experiment.NOTIFICATIONS,
         ),
         HelpItem.Prose("location", Res.string.help_location),
-        // Lives in eula.xml, not help.xml: the terms screen renders the same key, so the
-        // permission disclosure is written and translated exactly once (see eula.xml).
+        // Lives in eula.xml, not help.xml: the terms screen renders the same per-platform key, so
+        // each platform's permission disclosure is written and translated once (see eula.xml).
         HelpItem.Prose("permissions", permissionsNoticeResource),
         HelpItem.Prose("diagnostics", Res.string.help_diagnostics),
         HelpItem.Prose("calibrate", Res.string.help_calibrate),
