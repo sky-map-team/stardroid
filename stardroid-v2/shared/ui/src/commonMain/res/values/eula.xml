@@ -22,7 +22,7 @@
     <!--
       The access-permission notice (KISA / Korean Network Act art. 22-2, and good practice
       everywhere). Each platform has its own key, chosen by permissionsNoticeResource:
-      permissions_notice (Android) and permissions_notice_ios. Each is rendered in two places so
+      permissions_notice (Android) and permissions_notice_ios. Each is rendered in two places, so
       it is translated once: appended to the first-launch EULA screen, and included in the help
       document as a permanent, re-readable copy (HelpScreen.helpSections2). Every runtime
       permission a platform can ask for must appear in its own notice, labelled required or
