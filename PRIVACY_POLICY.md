@@ -73,11 +73,17 @@ statistical reports that tell us things like which features are popular, which d
 capabilities are common, and how session length varies across users. This helps us decide which
 features to improve, which languages to support, and when to drop support for obsolete hardware.
 
+### How long it is kept
+
+Google keeps this data for up to 14 months and then deletes it.
+
 ### Opting out
 
 If you do not wish to share analytics data, you can opt out at any time with **Settings → Send
 usage statistics**. Turning it off suppresses all data collection, including Firebase's own
-automatic events. On iOS, Sky Map asks you to accept its terms before it collects anything.
+automatic events. The switch is in Settings, which you reach after the first screen asks you to
+accept Sky Map's terms. Before that, the app records only that it was opened and whether you
+accepted or declined the terms.
 
 For more information on Firebase Analytics see https://firebase.google.com/support/privacy.
 
