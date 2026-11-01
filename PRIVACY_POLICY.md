@@ -18,7 +18,7 @@ process your data; where this policy says "we", it means Penterakt LLC.
 - The F-Droid version sends no usage statistics. The Google Play and iOS versions send usage
   statistics, not linked to your name or account, to Firebase Analytics. You can turn this off
   in Settings.
-- Sky Map has no accounts, no ads, and no advertising identifier. It does not track you across
+- Sky Map has no accounts, no ads, and does not use the advertising identifier. It does not track you across
   other apps or websites.
 - Your location is used on your device to draw the sky. The one time it leaves your device is
   to fetch a map picture on the location screen (see **Map images**).
@@ -26,8 +26,8 @@ process your data; where this policy says "we", it means Penterakt LLC.
 ## Analytics
 
 Sky Map uses **Firebase Analytics** (provided by Google) to help us understand how people use
-the app. It is part of the Google Play and iOS versions. The F-Droid version collects no
-analytics data whatsoever. We use this information to improve the app and for no other purpose.
+the app. It is part of the Google Play and iOS versions, not F-Droid. We use this information
+to improve the app and for no other purpose.
 We share it with no one other than Google, which processes it for us.
 
 ### What we collect
@@ -83,12 +83,12 @@ support for obsolete hardware.
 
 ### How long it is kept
 
-Google keeps this data for 14 months, the longest period available to us, and then deletes it.
+Google keeps event-level data for 14 months, the maximum its settings allow, and then deletes it.
 
 ### Opting out
 
 You can turn this off at any time with **Settings → Send usage statistics**. Turning it off
-suppresses all data collection, including Firebase's own automatic events. Settings is
+suppresses all analytics collection, including Firebase's own automatic events. Settings is
 available once you have accepted the terms on first launch. Until then, Firebase's automatic
 events (such as the first time the app is opened) and whether you accepted or declined the
 terms are recorded.
@@ -110,7 +110,7 @@ https://www.geoapify.com/privacy-policy for how it handles them.
 
 - **Remote configuration (Google Play version):** about every 12 hours Sky Map fetches settings
   and announcements from Firebase Remote Config. That request goes to Google and carries the
-  app version, device details and the same per-install identifier as analytics. The usage
+  app version, device details and a Firebase installation identifier. The usage
   statistics switch does not turn it off.
 - **Satellite data (Android):** only if you turn on the satellite layer, Sky Map downloads orbit
   data from CelesTrak (celestrak.org). The request shows your IP address to that service and
