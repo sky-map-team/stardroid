@@ -130,15 +130,15 @@ class SettingsViewModel(
     val classicSensorChoiceAvailable: Boolean = classicSensorsAvailable
 
     /**
-     * Whether the analytics opt-out shows: a build that collects nothing (the fdroid flavor)
-     * has nothing to opt out of.
+     * Whether the analytics opt-out shows: a build that collects nothing has nothing to opt out
+     * of.
      */
     val analyticsChoiceAvailable: Boolean = analyticsAvailable
 
     /**
-     * Whether the magnetic-correction switch shows: a platform whose heading is already true
-     * north (iOS, where Core Motion applies the declination itself) would show a switch that
-     * does nothing.
+     * Whether the magnetic-correction switch shows. It only hides the switch: the stored value
+     * still defaults to on, so a platform that hides it must supply a zero declination (iOS,
+     * where Core Motion already reports true north) or the map would correct twice.
      */
     val magneticCorrectionChoiceAvailable: Boolean = magneticCorrectionAvailable
 
