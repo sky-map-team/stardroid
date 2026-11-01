@@ -23,10 +23,11 @@ import androidx.compose.ui.platform.LocalWindowInfo
 import androidx.compose.ui.unit.dp
 import com.google.android.stardroid.ui.common.APP_LINK_SCHEME
 import com.google.android.stardroid.ui.common.StyledHtml
+import com.google.android.stardroid.ui.common.betaHelpTextShown
+import com.google.android.stardroid.ui.common.whatsNewContentResource
 import com.google.android.stardroid.ui.resources.Res
 import com.google.android.stardroid.ui.resources.beta_user_help_text
 import com.google.android.stardroid.ui.resources.dialog_ok_button
-import com.google.android.stardroid.ui.resources.whats_new_content
 import com.google.android.stardroid.ui.resources.whats_new_dialog_title
 import com.google.android.stardroid.ui.resources.whats_new_support_link
 import org.jetbrains.compose.resources.stringResource
@@ -67,8 +68,8 @@ fun WhatsNewDialog(
             // launch announcement has aged out.
             val html =
                 stringResource(Res.string.whats_new_support_link) +
-                    stringResource(Res.string.beta_user_help_text) +
-                    stringResource(Res.string.whats_new_content)
+                    (if (betaHelpTextShown) stringResource(Res.string.beta_user_help_text) else "") +
+                    stringResource(whatsNewContentResource)
             StyledHtml(
                 html,
                 nightMode = nightMode,

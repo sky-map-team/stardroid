@@ -29,6 +29,21 @@
 <h2>About the release name</h2>
 <p><b>Cassini</b> was the NASA/ESA/ASI spacecraft that orbited Saturn from 2004 to 2017, studying its rings and moons and delivering the Huygens probe to the surface of Titan.</p>
     ]]></string>
+    <string name="whats_new_content_ios" translation_description="HTML content for the first iPhone release, shown in the What's new screen in place of the longer release notes of earlier versions. Please do not change the &lt; and &gt; markup."><![CDATA[
+<h1>Sky Map comes to iPhone</h1>
+<p>This is the first iPhone release of Sky Map. It began at Google in 2009 as Google Sky Map, and has been an independent open-source project for well over a decade. Hold your iPhone up and the sky follows your view.</p>
+<ul>
+<li><b>Point and find:</b> stars, planets, constellations and deep-sky objects, drawn for where you are and when.</li>
+<li><b>Search:</b> by name, or by Bayer or Flamsteed designation — "α Cyg" finds Deneb.</li>
+<li><b>Time travel:</b> see the sky at any date, or jump to sunset, a full moon, an eclipse or a conjunction.</li>
+<li><b>Info cards:</b> tap an object for its details and a photo.</li>
+<li><b>Night mode:</b> a red display that keeps your eyes adapted in the dark.</li>
+<li><b>Steadier view:</b> the picture shakes less and keeps up when you move. Turn it off under <b>Settings → Sensors → Smooth sensor movement</b> if you prefer the raw sensor.</li>
+<li><b>Portrait and landscape.</b></li>
+</ul>
+<h2>And this is just the start...</h2>
+<p>More is on the way. Tell us what you would like from the Support screen.</p>
+    ]]></string>
     <string name="whats_new_support_link" translation_description="HTML paragraph in the What's new dialog pointing to the Support screen. The link target skymap://support must not change. Please do not change the &lt; and &gt; markup."><![CDATA[
 <h1>Support Sky Map</h1>
 <p>Sky Map is free and open source. <a href="skymap://support">Find out how you can help.</a></p>
