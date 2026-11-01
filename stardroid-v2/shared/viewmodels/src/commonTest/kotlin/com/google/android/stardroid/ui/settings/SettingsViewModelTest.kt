@@ -84,6 +84,17 @@ class SettingsViewModelTest {
         ).isFalse()
     }
 
+    @Test
+    fun `the magnetic-correction switch is hidden where the heading is already true north`() {
+        assertThat(
+            SettingsViewModel(settings, analytics).magneticCorrectionChoiceAvailable,
+        ).isTrue()
+        assertThat(
+            SettingsViewModel(settings, analytics, magneticCorrectionAvailable = false)
+                .magneticCorrectionChoiceAvailable,
+        ).isFalse()
+    }
+
     @BeforeTest
     fun setUp() {
         Dispatchers.setMain(dispatcher)

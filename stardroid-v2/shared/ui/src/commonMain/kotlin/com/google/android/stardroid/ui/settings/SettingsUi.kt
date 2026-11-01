@@ -264,12 +264,14 @@ fun SettingsScreen(
                         onCheckedChange = viewModel::setReverseMagneticZ,
                     )
                 }
-                SwitchRow(
-                    title = stringResource(Res.string.settings_magnetic_correction),
-                    summary = stringResource(Res.string.settings_magnetic_correction_summary),
-                    checked = state.useMagneticCorrection,
-                    onCheckedChange = viewModel::setUseMagneticCorrection,
-                )
+                if (viewModel.magneticCorrectionChoiceAvailable) {
+                    SwitchRow(
+                        title = stringResource(Res.string.settings_magnetic_correction),
+                        summary = stringResource(Res.string.settings_magnetic_correction_summary),
+                        checked = state.useMagneticCorrection,
+                        onCheckedChange = viewModel::setUseMagneticCorrection,
+                    )
+                }
                 ChoiceRow(
                     title = stringResource(Res.string.settings_view_direction),
                     summary = stringResource(Res.string.settings_view_direction_summary),
