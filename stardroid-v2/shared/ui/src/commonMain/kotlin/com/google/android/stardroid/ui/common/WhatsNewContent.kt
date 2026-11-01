@@ -9,10 +9,19 @@
 
 package com.google.android.stardroid.ui.common
 
+import androidx.compose.runtime.Composable
+import com.google.android.stardroid.ui.resources.Res
+import com.google.android.stardroid.ui.resources.beta_user_help_text
 import org.jetbrains.compose.resources.StringResource
+import org.jetbrains.compose.resources.stringResource
 
-/** This platform's What's New text: iOS has its own, since it never had the earlier releases. */
+/** The What's New body for this platform; iOS has its own because it missed the earlier releases. */
 internal expect val whatsNewContentResource: StringResource
 
 /** Whether the beta testers' note leads What's New. iOS has no beta track, so it never does. */
 internal expect val betaHelpTextShown: Boolean
+
+/** The beta testers' note (Android only, while a beta runs), or nothing, to lead What's New. */
+@Composable
+internal fun betaHelpHtml(): String =
+    if (betaHelpTextShown) stringResource(Res.string.beta_user_help_text) else ""
