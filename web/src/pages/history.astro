@@ -1,9 +1,53 @@
 ---
 import Base from '../layouts/Base.astro';
+
+const timeline = [
+  { year: '2009', title: 'The Google era', body: 'Born as a 20% project at Google, Sky Map showed what a phone’s sensors could do.' },
+  { year: '2012', title: 'Open source', body: 'Sky Map was open-sourced and handed to the community.' },
+  { year: '2026', title: 'Version 2', body: 'A ground-up rebuild, with a new sky renderer and a new look.' },
+];
+const videos = [
+  { id: 'p6znyx0gjb4', title: 'Sky Map Introduction' },
+  { id: 'oD5lVvbvCUs', title: 'Sky Map Launch!' },
+  { id: 'F00nEiJ9wJs', title: 'Sky Map Droid Ad' },
+];
 ---
-<Base title="A short history of Sky Map" description="How Sky Map began as a Google 20% project and became a community-run open source app.">
-  <article class="wrap prose">
-    <h1>A short history</h1>
-    <p class="muted">Placeholder. Archive videos and the 2009–2012 story go here.</p>
+<Base title="A short history of Sky Map" description="Sky Map began as a Google 20% project in 2009, was open-sourced in 2012 and relaunched as version 2 in 2026.">
+  <article class="wrap">
+    <h1 class="h">A short history</h1>
+    <ol class="timeline">
+      {timeline.map((e) => (
+        <li><span class="year">{e.year}</span><div><h2>{e.title}</h2><p class="muted">{e.body}</p></div></li>
+      ))}
+    </ol>
+
+    <h2 class="vh">From the archive</h2>
+    <ul class="videos">
+      {videos.map((v) => (
+        <li>
+          <details>
+            <summary>
+              <img src={`https://i.ytimg.com/vi/${v.id}/hqdefault.jpg`} alt="" loading="lazy" width="480" height="360" />
+              <span>{v.title}</span>
+            </summary>
+            <p class="muted">Loading the video connects to YouTube. <a href={`https://www.youtube.com/watch?v=${v.id}`}>Watch on YouTube</a></p>
+          </details>
+        </li>
+      ))}
+    </ul>
   </article>
 </Base>
+
+<style>
+  .h { font-size: clamp(1.75rem, 4vw, 2.5rem); }
+  .timeline { list-style: none; padding: 0; margin: 2rem 0 4rem; display: grid; gap: 2rem; max-width: var(--measure); }
+  .timeline li { display: grid; grid-template-columns: 5rem 1fr; gap: 1rem; }
+  .year { font: 500 1.4rem var(--data); color: var(--star-gold); }
+  .timeline h2 { font-size: 1.25rem; margin-bottom: .25rem; }
+  .timeline p { margin: 0; }
+  .vh { font-size: 1.5rem; }
+  .videos { list-style: none; padding: 0; display: grid; gap: 1.5rem; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+  summary { cursor: pointer; list-style: none; }
+  summary img { width: 100%; height: auto; border-radius: 12px; display: block; }
+  summary span { display: block; margin-top: .5rem; font-weight: 600; }
+</style>
