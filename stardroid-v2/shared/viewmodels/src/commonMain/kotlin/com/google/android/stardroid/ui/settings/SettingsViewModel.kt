@@ -120,6 +120,7 @@ class SettingsViewModel(
     gles3Available: Boolean = false,
     private val classicSensorsAvailable: Boolean = true,
     analyticsAvailable: Boolean = true,
+    magneticCorrectionAvailable: Boolean = true,
 ) : ViewModel() {
     /**
      * Whether the "disable gyro" switch shows: it picks Android's classic accelerometer and
@@ -129,10 +130,17 @@ class SettingsViewModel(
     val classicSensorChoiceAvailable: Boolean = classicSensorsAvailable
 
     /**
-     * Whether the analytics opt-out shows: a build that collects nothing (iOS, so far) has
-     * nothing to opt out of.
+     * Whether the analytics opt-out shows: a build that collects nothing (the fdroid flavor)
+     * has nothing to opt out of.
      */
     val analyticsChoiceAvailable: Boolean = analyticsAvailable
+
+    /**
+     * Whether the magnetic-correction switch shows: a platform whose heading is already true
+     * north (iOS, where Core Motion applies the declination itself) would show a switch that
+     * does nothing.
+     */
+    val magneticCorrectionChoiceAvailable: Boolean = magneticCorrectionAvailable
 
     /** Whether the notifications section shows at all (D77 experiment gate). */
     val notificationsAvailable: Boolean =
