@@ -28,7 +28,7 @@
       permission a platform can ask for must appear in its own notice, labelled required or
       optional, with its grounds and — for optional ones — the user\'s right to refuse. Keep
       both in step with what each app really requests (iOS: Location only until it gains
-      notifications or a camera mode).
+      notifications or a camera mode). To be reconciled at feature parity: #1219.
     -->
     <string name="permissions_notice" translation_description="Legally-required disclosure of the device permissions the app requests, why it requests them, and the user\'s right to refuse the optional ones. Shown on the first-launch terms screen and in Help. Please do not change the markup"><![CDATA[
 <h2>Permissions</h2>
