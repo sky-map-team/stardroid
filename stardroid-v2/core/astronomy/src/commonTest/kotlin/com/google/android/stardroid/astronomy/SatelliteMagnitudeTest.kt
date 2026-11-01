@@ -126,7 +126,7 @@ class SatelliteMagnitudeTest {
     }
 
     @Test
-    fun `standard magnitude is per satellite, defaulting to the ISS`() {
+    fun `standard magnitude is per satellite and defaults to the ISS`() {
         assertThat(SatelliteMagnitude.standardMagnitudeFor(25544))
             .isEqualTo(SatelliteMagnitude.ISS_STANDARD_MAGNITUDE)
         assertThat(SatelliteMagnitude.standardMagnitudeFor(48274))
