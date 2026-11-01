@@ -27,6 +27,8 @@ Before drafting, read both output files if they exist:
 - `shared/ui/src/commonMain/res/values/whatsnew.xml` — look for the `whats_new_content` string
 - `fastlane/metadata/android/en-US/changelogs/default.txt`
 
+**iOS has its own text.** `whats_new_content` is the Android release notes. The iPhone app shows `whats_new_content_ios` instead (the same file, edited by hand, and this skill does not touch it). Update it when an iOS release ships, and drop its "first iPhone release" wording after that.
+
 This skill may be run multiple times before a release. Treat the existing `whats_new_content`
 value as cumulative output from previous runs — preserve all existing items and only add changes
 not yet covered.
