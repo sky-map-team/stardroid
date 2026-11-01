@@ -50,7 +50,7 @@ clear it for launch. Tag Beta builds `v<version>-betaN` so they never clash with
 ### Step 2. Bring the metadata up to date
 
 Regenerate the What's New text (`skymap.whatsnew` skill) for the app (`whats_new_content` string
-in `shared/ui/src/commonMain/res/values/whatsnew.xml`), the fastlane changelog, and the GitHub changelog.
+in `shared/ui/src/commonMain/res/values/whatsnew.xml`; iOS releases update `whats_new_content_ios` by hand), the fastlane changelog, and the GitHub changelog.
 
 v1's release process also syncs sponsors and contributors here (`skymap.sponsors`,
 `skymap.contributors` skills). v2 now mirrors this too: the Buy Me a Coffee supporter list and
