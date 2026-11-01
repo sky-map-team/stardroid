@@ -18,17 +18,17 @@ process your data; where this policy says "we", it means Penterakt LLC.
 - The F-Droid version sends no usage statistics. The Google Play and iOS versions send usage
   statistics, not linked to your name or account, to Firebase Analytics. You can turn this off
   in Settings.
-- Sky Map has no accounts, no ads, and does not use the advertising identifier. It does not track you across
-  other apps or websites.
-- Your location is used on your device to draw the sky. The one time it leaves your device is
+- Sky Map has no accounts, no ads, and does not use the advertising identifier. It does not
+  track you across other apps or websites.
+- Your location is used on your device to draw the sky. The only time it leaves your device is
   to fetch a map picture on the location screen (see **Map images**).
 
 ## Analytics
 
 Sky Map uses **Firebase Analytics** (provided by Google) to help us understand how people use
 the app. It is part of the Google Play and iOS versions, not F-Droid. We use this information
-to improve the app and for no other purpose.
-We share it with no one other than Google, which processes it for us.
+to improve the app and for no other purpose. We share it with no one other than Google, which
+processes it for us.
 
 ### What we collect
 
@@ -101,8 +101,8 @@ On the location screen, Sky Map shows a map picture of the place you have chosen
 device found. To get it, the app requests an image from **Geoapify**, a mapping service, and the
 request contains your location rounded to three decimal places (about 100 metres at the
 finest). The location Sky Map starts from is already approximate, as described above, unless
-you typed a place in yourself. This applies to all three versions of the app. The request also reveals your IP address to Geoapify, as any
-request over the internet does. No other personal data is sent, and we run no server that
+you typed a place in yourself. This applies to all three versions of the app. The request also
+reveals your IP address to Geoapify, as any request over the internet does. No other personal data is sent, and we run no server that
 receives these requests. See Geoapify's privacy policy at
 https://www.geoapify.com/privacy-policy for how it handles them.
 
