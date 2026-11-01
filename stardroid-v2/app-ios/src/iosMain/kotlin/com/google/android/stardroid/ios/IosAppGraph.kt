@@ -349,13 +349,16 @@ class IosAppGraph(
 
     /**
      * The settings screen. Core Motion's fused attitude is iOS's only sensor path, so the classic
-     * path's switches stay hidden; the analytics opt-out shows, as on Android's gms flavor.
+     * path's switches stay hidden, and so does magnetic correction: Core Motion already reports
+     * true north and the map applies a zero declination. The analytics opt-out shows, as on
+     * Android's gms flavor.
      */
     fun settingsViewModel(): SettingsViewModel =
         SettingsViewModel(
             settings,
             classicSensorsAvailable = false,
             analyticsAvailable = true,
+            magneticCorrectionAvailable = false,
             analytics = analytics,
             experimentConfig = IosExperiments,
         )
