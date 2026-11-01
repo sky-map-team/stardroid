@@ -36,7 +36,6 @@ import androidx.compose.ui.window.ComposeUIViewController
 import com.google.android.stardroid.analytics.Analytics
 import com.google.android.stardroid.catalog.ObjectInfo
 import com.google.android.stardroid.catalog.SearchHit
-import com.google.android.stardroid.startup.ExperimentConfig
 import com.google.android.stardroid.ui.calibration.CompassCalibrationScreen
 import com.google.android.stardroid.ui.calibration.CompassCalibrationViewModel
 import com.google.android.stardroid.ui.diagnostics.DiagnosticsScreen
@@ -206,6 +205,7 @@ private fun SkyMapScreen(
                 Page.HELP ->
                     HelpScreen(
                         nightMode = nightMode,
+                        experimentConfig = IosExperiments,
                         onBack = ::back,
                         onNavigate = { destination ->
                             when (destination) {
@@ -252,7 +252,7 @@ private fun SkyMapScreen(
                     DiagnosticsScreen(
                         diagnosticsViewModel,
                         nightMode = nightMode,
-                        experimentConfig = ExperimentConfig.Static,
+                        experimentConfig = IosExperiments,
                         platform = diagnosticsPlatform,
                         onBack = ::back,
                         onSendReport = { subject, body ->

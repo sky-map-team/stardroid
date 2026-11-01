@@ -357,6 +357,7 @@ class IosAppGraph(
             classicSensorsAvailable = false,
             analyticsAvailable = true,
             analytics = analytics,
+            experimentConfig = IosExperiments,
         )
 
     private val networkMonitor by lazy { NetworkMonitor() }
