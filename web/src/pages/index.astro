@@ -10,6 +10,7 @@ import shotInfo from '../assets/shot-info.png';
 import shotTime from '../assets/shot-time.png';
 import shotNight from '../assets/shot-night.png';
 import { useT } from '../i18n';
+import quotes from '../data/quotes.json';
 import links from '../data/links.json';
 import stats from '../data/stats.json';
 
@@ -76,6 +77,14 @@ const v2 = [1, 2, 3, 4, 5, 6] as const;
     </div>
   </section>
 
+  <section class="wrap quotes" aria-label="What people say">
+    <ul class="qlist" id="qlist">
+      {quotes.map((q) => (
+        <li><blockquote><p>“{q.text}”</p><footer class="muted">★★★★★ Google Play review · v{q.version}</footer></blockquote></li>
+      ))}
+    </ul>
+  </section>
+
   <section class="wrap story">
     <h2>{t('story.title')}</h2>
     <p class="prose">{t('story.d')}</p>
@@ -84,6 +93,19 @@ const v2 = [1, 2, 3, 4, 5, 6] as const;
       <a class="btn" href={links.support}>{t('footer.support')}</a>
     </p>
   </section>
+  <script is:inline>
+    (function () {
+      var l = document.getElementById('qlist');
+      if (!l || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      var paused = false, i = 0;
+      ['mouseenter', 'focusin', 'touchstart'].forEach(function (e) { l.addEventListener(e, function () { paused = true; }); });
+      setInterval(function () {
+        if (paused) return;
+        i = (i + 1) % l.children.length;
+        l.scrollTo({ left: l.children[i].offsetLeft - l.children[0].offsetLeft, behavior: 'smooth' });
+      }, 6000);
+    })();
+  </script>
 </Base>
 
 <style>
@@ -108,10 +130,16 @@ const v2 = [1, 2, 3, 4, 5, 6] as const;
   .cards li { background: var(--surface-container); border: 1px solid var(--outline-variant); border-radius: 12px; padding: 1.25rem; }
   .cards h3 { font-size: 1.1rem; margin-bottom: .4rem; }
   .cards p { margin: 0; font-size: .95rem; }
+  .quotes { padding-block: 1rem; }
+  .qlist { list-style: none; margin: 0; padding: 0; display: flex; gap: 1rem; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: thin; }
+  .qlist li { flex: 0 0 min(100%, 640px); scroll-snap-align: start; }
+  blockquote { margin: 0; height: 100%; background: var(--surface-container); border: 1px solid var(--outline-variant); border-radius: 12px; padding: 1.5rem; }
+  blockquote p { margin: 0 0 1rem; font-size: 1.15rem; }
+  blockquote footer { font: 500 .8rem var(--data); }
   .story { padding-block: 2rem; }
   .badges { align-items: center; gap: .25rem .5rem; }
   .badges a, .badges img { display: block; }
-  .soon { display: inline-flex; flex-direction: column; align-items: center; gap: .15rem; margin-left: .5rem; }
+  .soon { position: relative; display: block; margin-left: .5rem; }
   .soon img { opacity: .5; filter: grayscale(1); }
-  .soon small { font: 500 .7rem var(--data); color: var(--muted); }
+  .soon small { position: absolute; top: 100%; left: 0; right: 0; text-align: center; white-space: nowrap; font: 500 .7rem var(--data); color: var(--muted); }
 </style>

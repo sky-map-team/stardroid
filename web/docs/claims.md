@@ -25,6 +25,7 @@ Status: `verified` (source checked on the date), `unverified` (do not publish), 
 | 1600–3000 time travel, 8 layers | features | verified-in-doc | same file | 2026-11-01 |
 | Satellites, widgets, notifications, AR, share | any | **flagged off** | Do not mention until announced and enabled | |
 | "Maintained as a passion project by those who created it" | story | owner-approved | Wording chosen by maintainer 2026-11-01 | 2026-11-01 |
+| Ten 5★ review quotes (verbatim, anonymous) | quotes | verified | Play Console 2026 review export; owner approved all ten 2026-11-01 | 2026-11-01 |
 | Team wording | about | rule | One maintainer. Never imply a team | |
 | Camera / AR mode | features | planned | Label "coming later" | |
 | iOS App Store | CTAs | planned | Show "coming soon" until live | |
