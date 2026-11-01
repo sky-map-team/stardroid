@@ -102,9 +102,9 @@ device found. To get it, the app requests an image from **Geoapify**, a mapping 
 request contains your location rounded to three decimal places (about 100 metres at the
 finest). The location Sky Map starts from is already approximate, as described above, unless
 you typed a place in yourself. This applies to all three versions of the app. The request also
-reveals your IP address to Geoapify, as any request over the internet does. No other personal data is sent, and we run no server that
-receives these requests. See Geoapify's privacy policy at
-https://www.geoapify.com/privacy-policy for how it handles them.
+reveals your IP address to Geoapify, as any request over the internet does. No other personal
+data is sent, and we run no server that receives these requests. See Geoapify's privacy policy
+at https://www.geoapify.com/privacy-policy for how it handles them.
 
 ## Other requests the app makes
 
