@@ -12,7 +12,9 @@ import links from '../data/links.json';
 interface Props { title?: string; description?: string; noindex?: boolean }
 const t = useT('en');
 const { title = t('site.title'), description = t('site.description'), noindex = false } = Astro.props;
-const canonical = new URL(Astro.url.pathname, Astro.site).href;
+// build.format 'file' makes pathname end in .html; the served URL doesn't.
+const cleanPath = Astro.url.pathname.replace(/(^|\/)index\.html$/, '/').replace(/\.html$/, '');
+const canonical = new URL(cleanPath, Astro.site).href;
 const ogImage = new URL('/og.png', Astro.site).href;
 ---
 <!doctype html>

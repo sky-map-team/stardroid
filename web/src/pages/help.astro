@@ -1,7 +1,27 @@
 ---
 import Base from '../layouts/Base.astro';
+import links from '../data/links.json';
+import { useT } from '../i18n';
 import { Content } from '../../../troubleshooting.md';
+
+const t = useT('en');
 ---
-<Base title="Help and troubleshooting — Sky Map" description="Help and troubleshooting for Sky Map.">
-  <article class="wrap prose"><Content /></article>
+<Base title="Help and contact — Sky Map" description="Get help with Sky Map: email the developer, report a bug on GitHub, or work through the troubleshooting guide.">
+  <article class="wrap prose">
+    <aside class="contact" aria-label={t('help.contact.title')}>
+      <p class="lead"><strong>{t('help.contact.title')}</strong> {t('help.contact.lede')}</p>
+      <ul>
+        <li>{t('help.contact.email')} <a href={`mailto:${links.contactEmail}`}>{links.contactEmail}</a></li>
+        <li>{t('help.contact.issues')} <a href={links.issues}>{t('help.contact.issuesLink')}</a></li>
+      </ul>
+      <p class="hint">{t('help.contact.include')}</p>
+    </aside>
+    <Content />
+  </article>
 </Base>
+<style>
+  .contact { border: 1px solid var(--outline-variant); border-radius: 12px; padding: 1.25rem 1.5rem; margin-block: 0 2rem; }
+  .contact .lead { margin-top: 0; }
+  .contact ul { margin-block: 0.75rem; }
+  .contact .hint { margin-bottom: 0; opacity: 0.8; }
+</style>
