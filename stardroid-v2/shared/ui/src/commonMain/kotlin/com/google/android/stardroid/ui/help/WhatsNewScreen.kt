@@ -27,12 +27,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.unit.dp
 import com.google.android.stardroid.ui.common.StyledHtml
+import com.google.android.stardroid.ui.common.betaHelpHtml
 import com.google.android.stardroid.ui.common.topBarWindowInsets
+import com.google.android.stardroid.ui.common.whatsNewContentResource
 import com.google.android.stardroid.ui.resources.Res
-import com.google.android.stardroid.ui.resources.beta_user_help_text
 import com.google.android.stardroid.ui.resources.credits_body
 import com.google.android.stardroid.ui.resources.settings_back
-import com.google.android.stardroid.ui.resources.whats_new_content
 import com.google.android.stardroid.ui.resources.whats_new_screen_title
 import org.jetbrains.compose.resources.stringResource
 
@@ -71,11 +71,11 @@ fun WhatsNewScreen(
         // The "New in version X" heading is dropped for the 2.0 launch copy, which opens with
         // its own splash line instead — restore it for later point releases once the launch
         // announcement has aged out.
-        // beta_user_help_text leads for the same reason as WhatsNewDialog: it shouldn't get
+        // The beta note leads for the same reason as in WhatsNewDialog: it shouldn't get
         // buried below a long feature list.
         val html =
-            stringResource(Res.string.beta_user_help_text) +
-                stringResource(Res.string.whats_new_content) +
+            betaHelpHtml() +
+                stringResource(whatsNewContentResource) +
                 stringResource(Res.string.credits_body)
         StyledHtml(
             html,
