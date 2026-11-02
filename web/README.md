@@ -14,7 +14,9 @@ root `web/`).
   its copy contains claims that are false).
 
 ## Analytics
-Cloudflare Web Analytics (enable in the Pages project; the beacon is injected, no code here).
+Cloudflare Web Analytics, via the manual snippet at the end of `src/layouts/Base.astro` (automatic
+injection did not work for Worker static assets). Keep the dashboard on "JS Snippet installation",
+not automatic, or visits are counted twice.
 Donation intent = visits to `/support`, which then forwards to Buy Me a Coffee. The Play button
 carries a `referrer=utm_...` so Play Console reports installs from the site. Share links from the
 app should use `utm_source=skymap&utm_medium=app&utm_campaign=<flavor>`. Update

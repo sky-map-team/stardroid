@@ -59,6 +59,8 @@ const ogImage = new URL('/og.png', Astro.site).href;
         <p class="muted">© Penterakt LLC. Sky Map is open source.</p>
       </div>
     </footer>
+    <!-- Cloudflare Web Analytics: cookieless, aggregate. Token is a public site id. -->
+    <script is:inline type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "edd85e588c424e19bf642dfae1966ac1"}'></script>
   </body>
 </html>
 

@@ -15,6 +15,7 @@ Status: `verified` (source checked on the date), `unverified` (do not publish), 
 | Monthly active users (~1M) | none | do not publish | Competitively sensitive | |
 | Downloads 104M+ | hero stats | verified (owner-stated) | Play Console; confirm before launch | 2026-11-01 |
 | Analytics are opt-out (Google Analytics / Firebase) | privacy line | verified | `PRIVACY_POLICY.md`, Settings opt-out | 2026-11-01 |
+| Website uses cookieless aggregate analytics (Cloudflare Web Analytics) | privacy line | unverified | Snippet is live in `Base.astro`; confirm "cookieless / no personal data" wording in `PRIVACY_POLICY.md` "This website" against Cloudflare's docs | 2026-11-02 |
 | "No tracking" / "no analytics" | any | **false** | We use opt-out analytics | |
 | "Works offline" | any | unverified | True today (whole catalogue ships); will change with base-catalog-only packs | |
 | Terrain-aware horizon | any | **false** | Horizon is a flat line today; real horizon is a future feature | |
