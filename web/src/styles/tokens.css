@@ -1,0 +1,32 @@
+/* Ported from the app theme (see docs/design/landing-mockup.html).
+   [WEB] marks values the app does not define. */
+:root {
+  --deep-space: #080c1c;
+  --surface: #0e1428;
+  --surface-container: #141c36;
+  --surface-high: #1b2340;
+  --nebula: #1a1f4e;
+  --indigo: #3d2f74;
+
+  --star-gold: #ffc107;
+  --gold-ink: #231a00;
+  --gold-soft: #ffdf9c;
+  --lens-blue: #7ec8e3;
+
+  --starlight: #e0e1dd;
+  --muted: #a9b4d0;
+  --outline: #5a6486; /* borders only, never text */
+  --outline-variant: #2a3355;
+
+  --focus-ring: #7ec8e3; /* [WEB] */
+  --link-hover: #ffdf9c; /* [WEB] */
+  --selection-bg: #3d2f74; /* [WEB] */
+
+  --display: 'Archivo Variable', system-ui, sans-serif;
+  --body: 'IBM Plex Sans', system-ui, sans-serif;
+  --data: 'IBM Plex Mono', ui-monospace, monospace;
+
+  --nav-h: 64px;
+  --gutter: clamp(20px, 5vw, 64px);
+  --measure: 62ch;
+}

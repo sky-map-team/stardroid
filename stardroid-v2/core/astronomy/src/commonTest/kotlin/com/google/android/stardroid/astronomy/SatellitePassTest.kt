@@ -15,6 +15,7 @@ import kotlinx.datetime.Instant
 import kotlin.math.abs
 import kotlin.test.Test
 import kotlin.time.Duration.Companion.hours
+import kotlin.time.Duration.Companion.minutes
 
 /**
  * Pass prediction against Skyfield, which finds passes by its own independent search over the full
@@ -101,6 +102,47 @@ class SatellitePassTest {
         // Skyfield reports the ISS lit for every 5-second sample across this pass, so nothing
         // should be recorded as a shadow entry.
         assertThat(pass.shadowEntry).isNull()
+    }
+
+    @Test
+    fun `peak brightness counts the zenith even when the sky has gone too light by then`() {
+        // Issue #1210: San Jose, 31 Oct 2026. The Sun is below -6° only for the first ~70 s of the
+        // pass and the ISS passes almost overhead (83°) at -5.6°. Counting only dark-sky samples
+        // gave -1.9; Heavens-Above gives -3.7 for the pass. Visibility is still decided by the
+        // dark-sky test, only the reported brightness takes the whole sunlit pass.
+        val tle =
+            Tle.parse(
+                line1 = "1 25544U 98067A   26304.43448435  .00006019  00000+0  11679-3 0  9992",
+                line2 = "2 25544  51.6332 345.8716 0007003 330.9942  29.0657 15.49127263592876",
+                name = "ISS (ZARYA)",
+            )
+        val sanJose = LatLong(37.29, -121.96)
+        val passes =
+            PassSearch(tle, sanJose)
+                .visiblePasses(Instant.parse("2026-10-31T13:50:00Z"), 30.minutes)
+
+        val pass = passes.single()
+        assertThat(pass.maxAltitudeDeg).isWithin(0.5).of(83.0)
+        assertThat(pass.peakMagnitude).isWithin(0.3).of(-3.7)
+    }
+
+    @Test
+    fun `Tiangong is about two magnitudes fainter than the ISS on the same geometry`() {
+        // Heavens-Above, San Jose, 1 Nov 2026 18:42 PST: Tiangong at 69° peaks at -2.2. The ISS
+        // constant would have shown about -4.
+        val tle =
+            Tle.parse(
+                line1 = "1 48274U 21035A   26304.17399128  .00007237  00000+0  86755-4 0  9994",
+                line2 = "2 48274  41.4688 215.8160 0003952 238.3688 121.6765 15.61252649314409",
+                name = "CSS (TIANHE)",
+            )
+        val passes =
+            PassSearch(tle, LatLong(37.29, -121.96))
+                .visiblePasses(Instant.parse("2026-11-02T02:30:00Z"), 30.minutes)
+
+        val pass = passes.single()
+        assertThat(pass.maxAltitudeDeg).isWithin(1.0).of(69.0)
+        assertThat(pass.peakMagnitude).isWithin(0.4).of(-2.2)
     }
 
     @Test

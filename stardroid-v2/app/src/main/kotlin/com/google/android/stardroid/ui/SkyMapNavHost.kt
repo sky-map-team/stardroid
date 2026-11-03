@@ -349,7 +349,10 @@ fun SkyMapNavHost(
                             type = "text/plain"
                             putExtra(
                                 Intent.EXTRA_TEXT,
-                                context.getString(R.string.support_share_message, PLAY_STORE_URL),
+                                context.getString(
+                                    R.string.support_share_message,
+                                    context.getString(R.string.share_store_link),
+                                ),
                             )
                         }
                     context.startActivity(Intent.createChooser(send, null))
@@ -399,6 +402,3 @@ fun SkyMapNavHost(
 
 /** v1's linked figure-eight demonstration video. */
 private const val CALIBRATION_VIDEO_URL = "https://www.youtube.com/watch?v=-Uq7AmSAjt8"
-
-private const val PLAY_STORE_URL =
-    "https://play.google.com/store/apps/details?id=com.google.android.stardroid"
