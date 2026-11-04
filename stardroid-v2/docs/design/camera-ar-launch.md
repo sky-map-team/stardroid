@@ -245,6 +245,11 @@ Decided 2026-11-04:
 3. **iOS offers the ultra-wide in the first release**, through the virtual multi-lens device,
    and we revisit once there is feedback (§4.2, §4.3).
 
+4. **AR is a name-changing release**, so a minor version bump with a new release name and splash.
+   The release process runs `skymap.release-splashscreen` (the CHANGELOG icon, the GitHub
+   release and the in-app launch splash portrait), and the name goes in What's New and the
+   announcement (§5).
+
 Open:
 
-4. What is the first release's name and splash, if AR makes it a minor version bump?
+5. The release name, and the image for its splash.
