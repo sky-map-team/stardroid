@@ -212,10 +212,7 @@ fun SettingsScreen(
                     onSelect = viewModel::setAutoDimness,
                 )
 
-                // Only on devices that can actually run the new backend: offering a choice
-                // whose second option silently falls back to the first is worse than not
-                // offering it. Shown on release builds too, not only debug ones, because the
-                // point is to compare the two on real hardware.
+                // Hidden where GLES3 is unavailable: the choice would silently fall back.
                 if (viewModel.rendererChoiceAvailable) {
                     ChoiceRow(
                         title = stringResource(Res.string.settings_renderer),
@@ -223,9 +220,7 @@ fun SettingsScreen(
                         options = RendererBackend.entries,
                         selected = state.rendererBackend,
                         label = { rendererBackendLabel(it) },
-                        // The map restarts itself: MainActivity watches this preference and
-                        // recreates when it stops matching the backend its surface was built
-                        // for. Recreating from here instead would race the DataStore write.
+                        // MainActivity recreates the map on change; doing it here would race the write.
                         onSelect = viewModel::setRendererBackend,
                     )
                 }
