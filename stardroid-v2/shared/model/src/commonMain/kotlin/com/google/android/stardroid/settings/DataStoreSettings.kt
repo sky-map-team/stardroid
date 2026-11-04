@@ -259,7 +259,7 @@ class DataStoreSettings(
     }
 
     override val rendererBackend: Flow<RendererBackend> =
-        enum(RENDERER_BACKEND, RendererBackend.GLES3)
+        enum(RENDERER_BACKEND, RendererBackend.GLES1)
 
     override suspend fun setRendererBackend(backend: RendererBackend) {
         dataStore.edit { it[RENDERER_BACKEND] = backend.name }
