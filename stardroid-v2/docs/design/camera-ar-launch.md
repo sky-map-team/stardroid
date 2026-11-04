@@ -249,12 +249,12 @@ Decided 2026-11-04:
    The release process runs `skymap.release-splashscreen` (the CHANGELOG icon, the GitHub
    release and the in-app launch splash portrait), and the name goes in What's New and the
    announcement (§5).
-5. **The iOS 2.1.0 release is named "Izzie"** (after the maintainer's daughter). After that
-   release the intent is to unify the Android and iOS release numbering and names, so decide
-   how the AR release lines up across both before it ships (item 7).
+5. **The iOS 2.1.0 release is named "Izzie"** (after the maintainer's daughter). The iOS-only
+   names "GDC" and "Izzie" are personal commemorations, so Android never takes them and keeps
+   its own naming. After that release the intent is to unify the Android and iOS releases
+   (version numbers, and the way the AR launch lines up across both).
 
 Open:
 
 6. The image for the Izzie splash.
-7. Which Android version carries Izzie, given the unification plan, and whether Android adopts
-   the name at the same time.
+7. What Android's own release name is for the AR release, since it does not take "Izzie".
