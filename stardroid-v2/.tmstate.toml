@@ -7530,6 +7530,11 @@ keys = [
     "full_description.txt",
 ]
 
+[same_as_parent.playstore."changelogs/default.txt".en-GB]
+keys = [
+    "changelogs/default.txt",
+]
+
 [same_as_parent.info-cards.info_cards.fr]
 keys = [
     "moon/deimos:size",
@@ -66976,82 +66981,82 @@ widgets_button = "Widgets"
 "full_description.txt" = "Sky Map helps you identify stars, planets, nebulae, and constellations in real-time.\n\nOriginally developed as Google Sky Map, it is now open source.\n<h3>Find us online:</h3>\n⭐ <b>Official Website:</b> <u><a href=\"https://stardroid.app\">stardroid.app</a></u>\n⭐ <b>Open Source:</b> <u><a href=\"https://github.com/sky-map-team/stardroid\">Contribute on GitHub</a></u>\n⭐ <b>Join the Community:</b>\n&nbsp;&nbsp;&nbsp; • <u><a href=\"https://www.facebook.com/groups/stardroidapp/\">Facebook @stardroidapp</a></u>\n&nbsp;&nbsp;&nbsp; • <u><a href=\"http://x.com/skymapdevs\">X @skymapdevs</a></u>\n\n<h3>App permissions:</h3>\nSky Map has <b>no required permissions</b>. Each permission below is optional — you may refuse any of them and still use the app. Nothing is requested at startup; each is asked for only when you first use the feature that needs it, and each can be withdrawn separately in your device settings.\n⭐ <b>Location (optional)</b> — used to draw the sky for where you are. Refuse it and you can enter a place name or coordinates by hand instead. Your location never leaves your device.\n⭐ <b>Camera (optional)</b> — used only by through-camera mode, which overlays the sky on the live camera view. Refuse it and every other mode works as normal. The image is never recorded or transmitted.\n⭐ <b>Notifications (optional)</b> — used only to tell you about meteor-shower peaks and tonight's sky, if you ask for them. They stay off until you turn them on."
 
 [source_snapshot.playstore."changelogs/default.txt".fr]
-"changelogs/default.txt" = "<b><font color=\"#F67E81\">New in 2.2</font></b> Sky alerts: meteor shower peaks and a nightly Tonight's sky digest. Long-press a layer for help, Moon age in the Moon widget, and a customizable RA/Dec grid.\n\n<b><font color=\"#F67E81\">New in 2.1</font></b> Home-screen widgets, searchable Help and an alt/az grid."
+"changelogs/default.txt" = "<b><font color=\"#F67E81\">New in 2.3</font></b> Satellites (ISS, Tiangong) with pass alerts, live facts and upcoming events on info cards, and a new graphics engine beta in Settings.\n\n<b><font color=\"#F67E81\">New in 2.2</font></b> Sky alerts for meteor showers and a nightly Tonight's sky digest, plus layer help."
 
 [source_snapshot.playstore."changelogs/default.txt".en-GB]
-"changelogs/default.txt" = "<b><font color=\"#F67E81\">New in 2.2</font></b> Sky alerts: meteor shower peaks and a nightly Tonight's sky digest. Long-press a layer for help, Moon age in the Moon widget, and a customizable RA/Dec grid.\n\n<b><font color=\"#F67E81\">New in 2.1</font></b> Home-screen widgets, searchable Help and an alt/az grid."
+"changelogs/default.txt" = "<b><font color=\"#F67E81\">New in 2.3</font></b> Satellites (ISS, Tiangong) with pass alerts, live facts and upcoming events on info cards, and a new graphics engine beta in Settings.\n\n<b><font color=\"#F67E81\">New in 2.2</font></b> Sky alerts for meteor showers and a nightly Tonight's sky digest, plus layer help."
 
 [source_snapshot.playstore."changelogs/default.txt".pl]
-"changelogs/default.txt" = "<b><font color=\"#F67E81\">New in 2.2</font></b> Sky alerts: meteor shower peaks and a nightly Tonight's sky digest. Long-press a layer for help, Moon age in the Moon widget, and a customizable RA/Dec grid.\n\n<b><font color=\"#F67E81\">New in 2.1</font></b> Home-screen widgets, searchable Help and an alt/az grid."
+"changelogs/default.txt" = "<b><font color=\"#F67E81\">New in 2.3</font></b> Satellites (ISS, Tiangong) with pass alerts, live facts and upcoming events on info cards, and a new graphics engine beta in Settings.\n\n<b><font color=\"#F67E81\">New in 2.2</font></b> Sky alerts for meteor showers and a nightly Tonight's sky digest, plus layer help."
 
 [source_snapshot.playstore."changelogs/default.txt".es]
-"changelogs/default.txt" = "<b><font color=\"#F67E81\">New in 2.2</font></b> Sky alerts: meteor shower peaks and a nightly Tonight's sky digest. Long-press a layer for help, Moon age in the Moon widget, and a customizable RA/Dec grid.\n\n<b><font color=\"#F67E81\">New in 2.1</font></b> Home-screen widgets, searchable Help and an alt/az grid."
+"changelogs/default.txt" = "<b><font color=\"#F67E81\">New in 2.3</font></b> Satellites (ISS, Tiangong) with pass alerts, live facts and upcoming events on info cards, and a new graphics engine beta in Settings.\n\n<b><font color=\"#F67E81\">New in 2.2</font></b> Sky alerts for meteor showers and a nightly Tonight's sky digest, plus layer help."
 
 [source_snapshot.playstore."changelogs/default.txt".sk]
-"changelogs/default.txt" = "<b><font color=\"#F67E81\">New in 2.2</font></b> Sky alerts: meteor shower peaks and a nightly Tonight's sky digest. Long-press a layer for help, Moon age in the Moon widget, and a customizable RA/Dec grid.\n\n<b><font color=\"#F67E81\">New in 2.1</font></b> Home-screen widgets, searchable Help and an alt/az grid."
+"changelogs/default.txt" = "<b><font color=\"#F67E81\">New in 2.3</font></b> Satellites (ISS, Tiangong) with pass alerts, live facts and upcoming events on info cards, and a new graphics engine beta in Settings.\n\n<b><font color=\"#F67E81\">New in 2.2</font></b> Sky alerts for meteor showers and a nightly Tonight's sky digest, plus layer help."
 
 [source_snapshot.playstore."changelogs/default.txt".ar]
-"changelogs/default.txt" = "<b><font color=\"#F67E81\">New in 2.2</font></b> Sky alerts: meteor shower peaks and a nightly Tonight's sky digest. Long-press a layer for help, Moon age in the Moon widget, and a customizable RA/Dec grid.\n\n<b><font color=\"#F67E81\">New in 2.1</font></b> Home-screen widgets, searchable Help and an alt/az grid."
+"changelogs/default.txt" = "<b><font color=\"#F67E81\">New in 2.3</font></b> Satellites (ISS, Tiangong) with pass alerts, live facts and upcoming events on info cards, and a new graphics engine beta in Settings.\n\n<b><font color=\"#F67E81\">New in 2.2</font></b> Sky alerts for meteor showers and a nightly Tonight's sky digest, plus layer help."
 
 [source_snapshot.playstore."changelogs/default.txt".zh-Hant]
-"changelogs/default.txt" = "<b><font color=\"#F67E81\">New in 2.2</font></b> Sky alerts: meteor shower peaks and a nightly Tonight's sky digest. Long-press a layer for help, Moon age in the Moon widget, and a customizable RA/Dec grid.\n\n<b><font color=\"#F67E81\">New in 2.1</font></b> Home-screen widgets, searchable Help and an alt/az grid."
+"changelogs/default.txt" = "<b><font color=\"#F67E81\">New in 2.3</font></b> Satellites (ISS, Tiangong) with pass alerts, live facts and upcoming events on info cards, and a new graphics engine beta in Settings.\n\n<b><font color=\"#F67E81\">New in 2.2</font></b> Sky alerts for meteor showers and a nightly Tonight's sky digest, plus layer help."
 
 [source_snapshot.playstore."changelogs/default.txt".zh-Hans]
-"changelogs/default.txt" = "<b><font color=\"#F67E81\">New in 2.2</font></b> Sky alerts: meteor shower peaks and a nightly Tonight's sky digest. Long-press a layer for help, Moon age in the Moon widget, and a customizable RA/Dec grid.\n\n<b><font color=\"#F67E81\">New in 2.1</font></b> Home-screen widgets, searchable Help and an alt/az grid."
+"changelogs/default.txt" = "<b><font color=\"#F67E81\">New in 2.3</font></b> Satellites (ISS, Tiangong) with pass alerts, live facts and upcoming events on info cards, and a new graphics engine beta in Settings.\n\n<b><font color=\"#F67E81\">New in 2.2</font></b> Sky alerts for meteor showers and a nightly Tonight's sky digest, plus layer help."
 
 [source_snapshot.playstore."changelogs/default.txt".cs]
-"changelogs/default.txt" = "<b><font color=\"#F67E81\">New in 2.2</font></b> Sky alerts: meteor shower peaks and a nightly Tonight's sky digest. Long-press a layer for help, Moon age in the Moon widget, and a customizable RA/Dec grid.\n\n<b><font color=\"#F67E81\">New in 2.1</font></b> Home-screen widgets, searchable Help and an alt/az grid."
+"changelogs/default.txt" = "<b><font color=\"#F67E81\">New in 2.3</font></b> Satellites (ISS, Tiangong) with pass alerts, live facts and upcoming events on info cards, and a new graphics engine beta in Settings.\n\n<b><font color=\"#F67E81\">New in 2.2</font></b> Sky alerts for meteor showers and a nightly Tonight's sky digest, plus layer help."
 
 [source_snapshot.playstore."changelogs/default.txt".da]
-"changelogs/default.txt" = "<b><font color=\"#F67E81\">New in 2.2</font></b> Sky alerts: meteor shower peaks and a nightly Tonight's sky digest. Long-press a layer for help, Moon age in the Moon widget, and a customizable RA/Dec grid.\n\n<b><font color=\"#F67E81\">New in 2.1</font></b> Home-screen widgets, searchable Help and an alt/az grid."
+"changelogs/default.txt" = "<b><font color=\"#F67E81\">New in 2.3</font></b> Satellites (ISS, Tiangong) with pass alerts, live facts and upcoming events on info cards, and a new graphics engine beta in Settings.\n\n<b><font color=\"#F67E81\">New in 2.2</font></b> Sky alerts for meteor showers and a nightly Tonight's sky digest, plus layer help."
 
 [source_snapshot.playstore."changelogs/default.txt".de]
-"changelogs/default.txt" = "<b><font color=\"#F67E81\">New in 2.2</font></b> Sky alerts: meteor shower peaks and a nightly Tonight's sky digest. Long-press a layer for help, Moon age in the Moon widget, and a customizable RA/Dec grid.\n\n<b><font color=\"#F67E81\">New in 2.1</font></b> Home-screen widgets, searchable Help and an alt/az grid."
+"changelogs/default.txt" = "<b><font color=\"#F67E81\">New in 2.3</font></b> Satellites (ISS, Tiangong) with pass alerts, live facts and upcoming events on info cards, and a new graphics engine beta in Settings.\n\n<b><font color=\"#F67E81\">New in 2.2</font></b> Sky alerts for meteor showers and a nightly Tonight's sky digest, plus layer help."
 
 [source_snapshot.playstore."changelogs/default.txt".el]
-"changelogs/default.txt" = "<b><font color=\"#F67E81\">New in 2.2</font></b> Sky alerts: meteor shower peaks and a nightly Tonight's sky digest. Long-press a layer for help, Moon age in the Moon widget, and a customizable RA/Dec grid.\n\n<b><font color=\"#F67E81\">New in 2.1</font></b> Home-screen widgets, searchable Help and an alt/az grid."
+"changelogs/default.txt" = "<b><font color=\"#F67E81\">New in 2.3</font></b> Satellites (ISS, Tiangong) with pass alerts, live facts and upcoming events on info cards, and a new graphics engine beta in Settings.\n\n<b><font color=\"#F67E81\">New in 2.2</font></b> Sky alerts for meteor showers and a nightly Tonight's sky digest, plus layer help."
 
 [source_snapshot.playstore."changelogs/default.txt".fa]
-"changelogs/default.txt" = "<b><font color=\"#F67E81\">New in 2.2</font></b> Sky alerts: meteor shower peaks and a nightly Tonight's sky digest. Long-press a layer for help, Moon age in the Moon widget, and a customizable RA/Dec grid.\n\n<b><font color=\"#F67E81\">New in 2.1</font></b> Home-screen widgets, searchable Help and an alt/az grid."
+"changelogs/default.txt" = "<b><font color=\"#F67E81\">New in 2.3</font></b> Satellites (ISS, Tiangong) with pass alerts, live facts and upcoming events on info cards, and a new graphics engine beta in Settings.\n\n<b><font color=\"#F67E81\">New in 2.2</font></b> Sky alerts for meteor showers and a nightly Tonight's sky digest, plus layer help."
 
 [source_snapshot.playstore."changelogs/default.txt".hi]
-"changelogs/default.txt" = "<b><font color=\"#F67E81\">New in 2.2</font></b> Sky alerts: meteor shower peaks and a nightly Tonight's sky digest. Long-press a layer for help, Moon age in the Moon widget, and a customizable RA/Dec grid.\n\n<b><font color=\"#F67E81\">New in 2.1</font></b> Home-screen widgets, searchable Help and an alt/az grid."
+"changelogs/default.txt" = "<b><font color=\"#F67E81\">New in 2.3</font></b> Satellites (ISS, Tiangong) with pass alerts, live facts and upcoming events on info cards, and a new graphics engine beta in Settings.\n\n<b><font color=\"#F67E81\">New in 2.2</font></b> Sky alerts for meteor showers and a nightly Tonight's sky digest, plus layer help."
 
 [source_snapshot.playstore."changelogs/default.txt".id]
-"changelogs/default.txt" = "<b><font color=\"#F67E81\">New in 2.2</font></b> Sky alerts: meteor shower peaks and a nightly Tonight's sky digest. Long-press a layer for help, Moon age in the Moon widget, and a customizable RA/Dec grid.\n\n<b><font color=\"#F67E81\">New in 2.1</font></b> Home-screen widgets, searchable Help and an alt/az grid."
+"changelogs/default.txt" = "<b><font color=\"#F67E81\">New in 2.3</font></b> Satellites (ISS, Tiangong) with pass alerts, live facts and upcoming events on info cards, and a new graphics engine beta in Settings.\n\n<b><font color=\"#F67E81\">New in 2.2</font></b> Sky alerts for meteor showers and a nightly Tonight's sky digest, plus layer help."
 
 [source_snapshot.playstore."changelogs/default.txt".it]
-"changelogs/default.txt" = "<b><font color=\"#F67E81\">New in 2.2</font></b> Sky alerts: meteor shower peaks and a nightly Tonight's sky digest. Long-press a layer for help, Moon age in the Moon widget, and a customizable RA/Dec grid.\n\n<b><font color=\"#F67E81\">New in 2.1</font></b> Home-screen widgets, searchable Help and an alt/az grid."
+"changelogs/default.txt" = "<b><font color=\"#F67E81\">New in 2.3</font></b> Satellites (ISS, Tiangong) with pass alerts, live facts and upcoming events on info cards, and a new graphics engine beta in Settings.\n\n<b><font color=\"#F67E81\">New in 2.2</font></b> Sky alerts for meteor showers and a nightly Tonight's sky digest, plus layer help."
 
 [source_snapshot.playstore."changelogs/default.txt".ja]
-"changelogs/default.txt" = "<b><font color=\"#F67E81\">New in 2.2</font></b> Sky alerts: meteor shower peaks and a nightly Tonight's sky digest. Long-press a layer for help, Moon age in the Moon widget, and a customizable RA/Dec grid.\n\n<b><font color=\"#F67E81\">New in 2.1</font></b> Home-screen widgets, searchable Help and an alt/az grid."
+"changelogs/default.txt" = "<b><font color=\"#F67E81\">New in 2.3</font></b> Satellites (ISS, Tiangong) with pass alerts, live facts and upcoming events on info cards, and a new graphics engine beta in Settings.\n\n<b><font color=\"#F67E81\">New in 2.2</font></b> Sky alerts for meteor showers and a nightly Tonight's sky digest, plus layer help."
 
 [source_snapshot.playstore."changelogs/default.txt".ko]
-"changelogs/default.txt" = "<b><font color=\"#F67E81\">New in 2.2</font></b> Sky alerts: meteor shower peaks and a nightly Tonight's sky digest. Long-press a layer for help, Moon age in the Moon widget, and a customizable RA/Dec grid.\n\n<b><font color=\"#F67E81\">New in 2.1</font></b> Home-screen widgets, searchable Help and an alt/az grid."
+"changelogs/default.txt" = "<b><font color=\"#F67E81\">New in 2.3</font></b> Satellites (ISS, Tiangong) with pass alerts, live facts and upcoming events on info cards, and a new graphics engine beta in Settings.\n\n<b><font color=\"#F67E81\">New in 2.2</font></b> Sky alerts for meteor showers and a nightly Tonight's sky digest, plus layer help."
 
 [source_snapshot.playstore."changelogs/default.txt".ms]
-"changelogs/default.txt" = "<b><font color=\"#F67E81\">New in 2.2</font></b> Sky alerts: meteor shower peaks and a nightly Tonight's sky digest. Long-press a layer for help, Moon age in the Moon widget, and a customizable RA/Dec grid.\n\n<b><font color=\"#F67E81\">New in 2.1</font></b> Home-screen widgets, searchable Help and an alt/az grid."
+"changelogs/default.txt" = "<b><font color=\"#F67E81\">New in 2.3</font></b> Satellites (ISS, Tiangong) with pass alerts, live facts and upcoming events on info cards, and a new graphics engine beta in Settings.\n\n<b><font color=\"#F67E81\">New in 2.2</font></b> Sky alerts for meteor showers and a nightly Tonight's sky digest, plus layer help."
 
 [source_snapshot.playstore."changelogs/default.txt".nb]
-"changelogs/default.txt" = "<b><font color=\"#F67E81\">New in 2.2</font></b> Sky alerts: meteor shower peaks and a nightly Tonight's sky digest. Long-press a layer for help, Moon age in the Moon widget, and a customizable RA/Dec grid.\n\n<b><font color=\"#F67E81\">New in 2.1</font></b> Home-screen widgets, searchable Help and an alt/az grid."
+"changelogs/default.txt" = "<b><font color=\"#F67E81\">New in 2.3</font></b> Satellites (ISS, Tiangong) with pass alerts, live facts and upcoming events on info cards, and a new graphics engine beta in Settings.\n\n<b><font color=\"#F67E81\">New in 2.2</font></b> Sky alerts for meteor showers and a nightly Tonight's sky digest, plus layer help."
 
 [source_snapshot.playstore."changelogs/default.txt".nl]
-"changelogs/default.txt" = "<b><font color=\"#F67E81\">New in 2.2</font></b> Sky alerts: meteor shower peaks and a nightly Tonight's sky digest. Long-press a layer for help, Moon age in the Moon widget, and a customizable RA/Dec grid.\n\n<b><font color=\"#F67E81\">New in 2.1</font></b> Home-screen widgets, searchable Help and an alt/az grid."
+"changelogs/default.txt" = "<b><font color=\"#F67E81\">New in 2.3</font></b> Satellites (ISS, Tiangong) with pass alerts, live facts and upcoming events on info cards, and a new graphics engine beta in Settings.\n\n<b><font color=\"#F67E81\">New in 2.2</font></b> Sky alerts for meteor showers and a nightly Tonight's sky digest, plus layer help."
 
 [source_snapshot.playstore."changelogs/default.txt".sl]
-"changelogs/default.txt" = "<b><font color=\"#F67E81\">New in 2.2</font></b> Sky alerts: meteor shower peaks and a nightly Tonight's sky digest. Long-press a layer for help, Moon age in the Moon widget, and a customizable RA/Dec grid.\n\n<b><font color=\"#F67E81\">New in 2.1</font></b> Home-screen widgets, searchable Help and an alt/az grid."
+"changelogs/default.txt" = "<b><font color=\"#F67E81\">New in 2.3</font></b> Satellites (ISS, Tiangong) with pass alerts, live facts and upcoming events on info cards, and a new graphics engine beta in Settings.\n\n<b><font color=\"#F67E81\">New in 2.2</font></b> Sky alerts for meteor showers and a nightly Tonight's sky digest, plus layer help."
 
 [source_snapshot.playstore."changelogs/default.txt".sv]
-"changelogs/default.txt" = "<b><font color=\"#F67E81\">New in 2.2</font></b> Sky alerts: meteor shower peaks and a nightly Tonight's sky digest. Long-press a layer for help, Moon age in the Moon widget, and a customizable RA/Dec grid.\n\n<b><font color=\"#F67E81\">New in 2.1</font></b> Home-screen widgets, searchable Help and an alt/az grid."
+"changelogs/default.txt" = "<b><font color=\"#F67E81\">New in 2.3</font></b> Satellites (ISS, Tiangong) with pass alerts, live facts and upcoming events on info cards, and a new graphics engine beta in Settings.\n\n<b><font color=\"#F67E81\">New in 2.2</font></b> Sky alerts for meteor showers and a nightly Tonight's sky digest, plus layer help."
 
 [source_snapshot.playstore."changelogs/default.txt".th]
-"changelogs/default.txt" = "<b><font color=\"#F67E81\">New in 2.2</font></b> Sky alerts: meteor shower peaks and a nightly Tonight's sky digest. Long-press a layer for help, Moon age in the Moon widget, and a customizable RA/Dec grid.\n\n<b><font color=\"#F67E81\">New in 2.1</font></b> Home-screen widgets, searchable Help and an alt/az grid."
+"changelogs/default.txt" = "<b><font color=\"#F67E81\">New in 2.3</font></b> Satellites (ISS, Tiangong) with pass alerts, live facts and upcoming events on info cards, and a new graphics engine beta in Settings.\n\n<b><font color=\"#F67E81\">New in 2.2</font></b> Sky alerts for meteor showers and a nightly Tonight's sky digest, plus layer help."
 
 [source_snapshot.playstore."changelogs/default.txt".tr]
-"changelogs/default.txt" = "<b><font color=\"#F67E81\">New in 2.2</font></b> Sky alerts: meteor shower peaks and a nightly Tonight's sky digest. Long-press a layer for help, Moon age in the Moon widget, and a customizable RA/Dec grid.\n\n<b><font color=\"#F67E81\">New in 2.1</font></b> Home-screen widgets, searchable Help and an alt/az grid."
+"changelogs/default.txt" = "<b><font color=\"#F67E81\">New in 2.3</font></b> Satellites (ISS, Tiangong) with pass alerts, live facts and upcoming events on info cards, and a new graphics engine beta in Settings.\n\n<b><font color=\"#F67E81\">New in 2.2</font></b> Sky alerts for meteor showers and a nightly Tonight's sky digest, plus layer help."
 
 [source_snapshot.playstore."changelogs/default.txt".uk]
-"changelogs/default.txt" = "<b><font color=\"#F67E81\">New in 2.2</font></b> Sky alerts: meteor shower peaks and a nightly Tonight's sky digest. Long-press a layer for help, Moon age in the Moon widget, and a customizable RA/Dec grid.\n\n<b><font color=\"#F67E81\">New in 2.1</font></b> Home-screen widgets, searchable Help and an alt/az grid."
+"changelogs/default.txt" = "<b><font color=\"#F67E81\">New in 2.3</font></b> Satellites (ISS, Tiangong) with pass alerts, live facts and upcoming events on info cards, and a new graphics engine beta in Settings.\n\n<b><font color=\"#F67E81\">New in 2.2</font></b> Sky alerts for meteor showers and a nightly Tonight's sky digest, plus layer help."
 
 [source_snapshot.playstore."title.txt".en-GB]
 "title.txt" = "Sky Map"
