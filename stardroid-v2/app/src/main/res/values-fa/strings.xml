@@ -1,6 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
 
+    <!-- Launch splash banner. -->
 
     <!-- Sky-map labels drawn by the computed layers (LayerStrings). -->
     <string name="north_pole">شمال</string>
@@ -33,6 +34,10 @@
     <string name="channel_passes_description" translation_description="Description of the satellite-pass notification channel.">یک هشدار واحد کمی قبل از بهترین گذر قابل مشاهده شب</string>
     <string name="notif_pass_title" translation_description="Title of the notification sent shortly before a satellite passes overhead. %1$s is the satellite name.">%1$s به زودی از بالای سر عبور می‌کند</string>
     <string name="notif_pass_text" translation_description="Body of the satellite pass notification, telling the user when to go outside. %1$s is a time.">از حدود %1$s قابل مشاهده است — بیرون بروید و اجازه دهید چشمانتان عادت کند</string>
+    <string name="channel_passes_now_name" translation_description="Name of the notification channel for the alert sent the moment a satellite rises.">ماهواره هم‌اکنون در حال طلوع است</string>
+    <string name="channel_passes_now_description" translation_description="Description of the notification channel for the alert sent the moment a satellite pass begins.">یک هشدار به همراه لرزش، با شروع بهترین گذر قابل‌رؤیت در شب</string>
+    <string name="notif_pass_now_title" translation_description="Title of the notification sent the moment a satellite pass begins. %1$s is the satellite name.">%1$s هم‌اکنون در حال طلوع است</string>
+    <string name="notif_pass_now_text" translation_description="Body of the notification sent the moment a satellite pass begins.">به بالا نگاه کنید — هم‌اکنون در حال عبور از آسمان است</string>
     <string name="channel_eclipses_name" translation_description="Name of the notification channel for alerts before a lunar eclipse starts.">خسوف‌ها</string>
     <string name="channel_eclipses_description" translation_description="Description of the lunar-eclipse notification channel.">یک هشدار واحد قبل از شروع خسوف</string>
     <string name="notif_eclipse_title" translation_description="Title of the notification sent before a lunar eclipse starts. %1$s is a localized eclipse type like \'Total lunar eclipse\'.">%1$s به زودی شروع می‌شود</string>
@@ -42,6 +47,9 @@
     <string name="satellite_description" translation_description="Short description shown on the info card for an artificial satellite.">
     یک ماهواره مصنوعی در مدار نزدیک زمین، درخشان در برابر آسمان تاریک. این ماهواره در عرض چند دقیقه از افق تا افق عبور می‌کند و به طور پیوسته و بدون سوسو زدن حرکت می‌کند.
     </string>
+    <!-- tm:omitted name="tonight_satellite_pass" reason="identical_to_source" -->
+
+    <!-- Long-press help for layers in the layer-visibility sheet. -->
 
     <!-- Map screen controls. -->
 
@@ -71,6 +79,7 @@
 
     <!-- Settings screen (v1 wording where a v1 string existed) -->
 
+    <!-- Diagnostics screen (slice 15) -->
     <string name="diagnostics_section_satellites" translation_description="Section heading in the diagnostics screen for satellite orbital-data status">ماهواره
 ها</string>
     <string name="diagnostics_satellite_data" translation_description="Row label in the diagnostics screen for the age and count of cached satellite orbital data">داده
@@ -105,6 +114,7 @@
     <string name="moon_widget_description" translation_description="Description of the moon-phase widget, shown under its preview in the launcher\'s widget picker">فاز ماه، میزان روشنایی و زمان طلوع و غروب آن، روزانه به
 روز می
 شود.</string>
+    <!-- tm:omitted name="moon_widget_illumination_short" reason="identical_to_source" -->
     <string name="moon_widget_rise_time" translation_description="Widget fragment showing today\'s moonrise time; %1$s is a clock time like 17:42">طلوع %1$s</string>
     <string name="moon_widget_set_time" translation_description="Widget fragment showing today\'s moonset time; %1$s is a clock time like 03:12">غروب %1$s</string>
     <string name="moon_widget_time_day_offset" translation_description="Compact suffix appended after a widget rise/set time that falls on a later day than today, so a reader doesn\'t mistake it for today\'s crossing; %1$d is the number of days ahead (almost always 1). Keep it short — the widget is very narrow. Note the leading space.">+%1$d</string>
@@ -147,6 +157,11 @@
     <string name="countdown_widget_preview_name" translation_description="Representative event name shown in the widget picker\'s preview of the countdown widget">اوج برساوشی</string>
 
     <!-- Sky-event notifications (D77). -->
+    <string name="channel_announcements_name" translation_description="Notification channel name for occasional messages from the Sky Map team">پیام‌های Sky Map</string>
+    <string name="channel_announcements_description" translation_description="Notification channel description for occasional messages from the Sky Map team">اطلاع‌رسانی‌های نادر درباره رویدادهای مهم آسمانی</string>
+    <string name="announcement_dialog_dismiss" translation_description="Button that closes an announcement dialog and hides that message everywhere">بستن</string>
+    <string name="announcement_dialog_open" translation_description="Button on an announcement dialog that jumps to the sky object the message is about">نگاهی بیندازید</string>
+    <string name="announcement_dialog_continue" translation_description="Button on an announcement dialog that closes it and continues to the sky map">ادامه</string>
     <string name="channel_showers_name" translation_description="Name of the meteor-shower notification channel, shown in the system\'s notification settings">اوج بارش‌های شهابی</string>
     <string name="channel_showers_description" translation_description="Description of the meteor-shower notification channel in the system\'s notification settings">حدود دوازده مورد در سال، در غروب روز اوج</string>
     <string name="channel_digest_name" translation_description="Name of the tonight-digest notification channel, shown in the system\'s notification settings">خلاصه آسمان امشب</string>
@@ -164,10 +179,5 @@
     <!-- Layers sheet: per-layer parameters (D87). -->
     <string name="satellite_search_name_iss" translation_description="Common name of the International Space Station, matched when the user types it in search. Use the name people in this language actually type.">ایستگاه فضایی بین‌المللی</string>
     <string name="satellite_search_name_tiangong" translation_description="Common name of the Chinese Tiangong space station, matched when the user types it in search. Use the name people in this language actually type.">ایستگاه فضایی تیانگونگ</string>
-    <string name="tonight_trailing_pass_peak" translation_description="Small trailing note on a satellite pass row. %1$d is the peak altitude in degrees, %2$.1f is a brightness magnitude.">اوج %1$d درجه، قدر %2$.1f</string>
-    <string name="channel_announcements_name" translation_description="Notification channel name for occasional messages from the Sky Map team">پیام‌هایی از Sky Map</string>
-    <string name="channel_announcements_description" translation_description="Notification channel description for occasional messages from the Sky Map team">اطلاع‌رسانی‌های نادر درباره رویدادهای مهم آسمانی</string>
-    <string name="announcement_dialog_dismiss" translation_description="Button that closes an announcement dialog and hides that message everywhere">بستن</string>
-    <string name="announcement_dialog_open" translation_description="Button on an announcement dialog that jumps to the sky object the message is about">نگاهی بیندازید</string>
-    <string name="announcement_dialog_continue" translation_description="Button on an announcement dialog that closes it and continues to the sky map">ادامه</string>
+    <string name="tonight_trailing_pass_peak" translation_description="Small trailing note on a satellite pass row. %1$d is the peak altitude in degrees, %2$.1f is a brightness magnitude.">اوج %1$d°، قدر %2$.1f</string>
 </resources>

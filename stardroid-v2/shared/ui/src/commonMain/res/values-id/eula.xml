@@ -17,11 +17,14 @@
 
     <!--
       The access-permission notice (KISA / Korean Network Act art. 22-2, and good practice
-      everywhere). Rendered in two places from this one key so it is translated once: appended
-      to the first-launch EULA screen, and included in the help document as a permanent,
-      re-readable copy (HelpScreen.helpSections2). Every runtime permission Sky Map declares
-      must appear here, labelled required or optional, with its grounds and — for optional
-      ones — the user\'s right to refuse.
+      everywhere). Each platform has its own key, chosen by permissionsNoticeResource:
+      permissions_notice (Android) and permissions_notice_ios. Each is rendered in two places, so
+      it is translated once: appended to the first-launch EULA screen, and included in the help
+      document as a permanent, re-readable copy (HelpScreen.helpSections2). Every runtime
+      permission a platform can ask for must appear in its own notice, labelled required or
+      optional, with its grounds and — for optional ones — the user\'s right to refuse. Keep
+      both in step with what each app really requests (iOS: Location only until it gains
+      notifications or a camera mode).
     -->
     <string name="permissions_notice" translation_description="Legally-required disclosure of the device permissions the app requests, why it requests them, and the user\'s right to refuse the optional ones. Shown on the first-launch terms screen and in Help. Please do not change the markup"><![CDATA[<h2>Izin</h2>
 <p><b>Sky Map tidak memiliki izin yang wajib.</b> Setiap izin di bawah ini bersifat opsional — Anda dapat menolak salah satunya dan tetap menggunakan aplikasi. Sky Map tidak pernah meminta izin saat memulai: setiap izin hanya diminta saat Anda pertama kali menggunakan fitur yang membutuhkannya, dan Anda dapat memberikan atau menarik setiap izin secara terpisah kapan saja di bawah <b>Setelan → Aplikasi → Sky Map → Izin</b> di perangkat Anda.</p>
@@ -39,4 +42,6 @@
 <p><b>Apa yang diakses:</b> izin untuk menampilkan notifikasi.</p>
 <p><b>Mengapa:</b> untuk memberi tahu Anda tentang puncak hujan meteor dan apa yang layak dilihat malam ini, jika Anda memintanya.</p>
 <p><b>Jika Anda menolak:</b> tidak ada yang berubah — notifikasi ini tetap mati sampai Anda menyalakannya.</p>]]></string>
+
+    <string name="permissions_notice_ios" translation_description="iOS version of the legally-required disclosure of the device permissions the app requests: only location, which is optional. Shown on the first-launch terms screen and in Help. Please do not change the markup"><![CDATA[<h2>Izin</h2> <p><b>Sky Map tidak memiliki izin yang wajib.</b> Satu izin di bawah ini bersifat opsional — Anda dapat menolaknya dan tetap menggunakan aplikasi ini. Sky Map akan memintanya sekali, setelah Anda menerima ketentuan ini, karena untuk menggambar peta langit diperlukan informasi tentang lokasi Anda. Anda dapat memberikan atau mencabutnya kapan saja melalui <b>Pengaturan → Sky Map</b> di perangkat Anda.</p> <h3>Lokasi — opsional</h3> <p><b>Bagian yang diakses:</b> perkiraan lokasi Anda.</p> <p><b>Alasan:</b> bintang mana saja yang berada di atas Anda bergantung pada lokasi Anda, sehingga Sky Map menggunakan perkiraan lokasi Anda untuk menggambar langit yang benar.</p> <p><b>Jika Anda menolak:</b> Anda dapat mengetikkan nama tempat atau koordinat sebagai gantinya, dan seluruh aplikasi akan tetap berfungsi.</p> <blockquote>Lokasi Anda digunakan di perangkat Anda untuk menggambar langit. Gambar peta pada layar lokasi mengirimkan versi yang dibulatkan ke Geoapify, layanan peta (lihat kebijakan privasi).</blockquote>]]></string>
 </resources>

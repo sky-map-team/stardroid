@@ -102,8 +102,8 @@ fun interface ExperimentConfig {
                     Experiment.NOTIFICATIONS -> true
                     Experiment.CAMERA_AR -> false
                     Experiment.SHARE_SKY -> false
-                    Experiment.SATELLITES -> false
-                    Experiment.GLES3_RENDERER -> false
+                    Experiment.SATELLITES -> true
+                    Experiment.GLES3_RENDERER -> true
                     Experiment.ANNOUNCEMENTS -> false
                 }
             }

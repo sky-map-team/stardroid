@@ -276,7 +276,7 @@ class FakeSettings : Settings {
         labelSizeHintShownState.value = true
     }
 
-    val rendererBackendState = MutableStateFlow(RendererBackend.GLES3)
+    val rendererBackendState = MutableStateFlow(RendererBackend.GLES1)
 
     override val rendererBackend: Flow<RendererBackend> = rendererBackendState
 

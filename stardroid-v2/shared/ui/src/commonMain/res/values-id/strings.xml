@@ -1,5 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
+    <!-- The terms screen (EulaScreen), shared with the iOS app. -->
     <string name="eula_title">Syarat Layanan</string>
     <string name="dialog_accept">Terima</string>
     <string name="dialog_decline">Tidak, Terima Kasih</string>
@@ -43,6 +44,8 @@
     <string name="layer_solar_system">Sistem Surya</string>
     <string name="layer_meteor_showers">Hujan Meteor</string>
     <string name="layer_satellites" translation_description="Toggle label for the layer showing artificial satellites such as the International Space Station.">Satelit</string>
+    <string name="layer_param_shower_alerts" translation_description="Label for the setting that turns on a notification on the evening a meteor shower peaks.">Peringatan puncak</string>
+    <string name="layer_param_shower_alerts_description" translation_description="Explains what the meteor-shower alert setting does: a notification on the evening a shower reaches its annual peak.">Beri tahu saya pada malam puncak hujan meteor</string>
     <string name="layer_param_pass_alerts" translation_description="Label for the setting that turns on a notification shortly before a satellite passes overhead.">Peringatan lintasan</string>
     <string name="layer_param_pass_alerts_description" translation_description="Explains what the pass-alert setting does: a single notification before the best visible pass of the night.">Beri tahu saya sebelum lintasan terlihat terbaik setiap malam</string>
     <string name="layer_param_eclipse_alerts" translation_description="Label for the setting that turns on a notification before a lunar eclipse begins.">Peringatan gerhana</string>
@@ -54,6 +57,17 @@
     <string name="layer_param_altaz_grid_density_medium_desc" translation_description="Explains the medium alt/az grid density: 12 azimuth lines, 30 degrees apart.">12 garis arah, terpisah 30°</string>
     <string name="layer_param_altaz_grid_density_fine" translation_description="Option label for the alt/az grid's densest setting: 24 azimuth lines, 15 degrees apart.">Halus</string>
     <string name="layer_param_altaz_grid_density_fine_desc" translation_description="Explains the fine alt/az grid density: 24 azimuth lines, matching the celestial grid's meridian count.">24 garis arah, sesuai dengan grid langit</string>
+    <string name="layer_param_grid_brightness" translation_description="Label for the grid layers' line-brightness setting.">Kecerahan garis</string>
+    <!-- tm:omitted name="layer_param_grid_brightness_normal" reason="identical_to_source" -->
+    <string name="layer_param_grid_brightness_normal_desc" translation_description="Explains the normal grid line brightness: subtle, for a dark-adapted eye.">Garis tipis, nyaman untuk mata yang terbiasa gelap</string>
+    <string name="layer_param_grid_brightness_bright" translation_description="Option label for a brighter grid line setting.">Terang</string>
+    <string name="layer_param_grid_brightness_bright_desc" translation_description="Explains the bright grid line setting.">Garis lebih jelas untuk langit senja atau yang tercemar polusi cahaya</string>
+    <string name="layer_param_grid_brightness_brightest" translation_description="Option label for the brightest grid line setting.">Paling terang</string>
+    <string name="layer_param_grid_brightness_brightest_desc" translation_description="Explains the brightest grid line setting.">Garis paling kuat, untuk siang hari atau langit kota</string>
+    <string name="layer_param_radec_grid_density" translation_description="Label for the celestial (RA/Dec) grid's line-count setting.">Jumlah garis</string>
+    <string name="layer_param_radec_grid_density_coarse_desc" translation_description="Explains the coarse celestial grid density: a meridian every 3 hours of right ascension and a circle every 30 degrees of declination.">Meridian tiap 3 jam, lingkaran tiap 30°</string>
+    <string name="layer_param_radec_grid_density_medium_desc" translation_description="Explains the medium celestial grid density: a meridian every 2 hours of right ascension and a circle every 15 degrees of declination.">Meridian tiap 2 jam, lingkaran tiap 15°</string>
+    <string name="layer_param_radec_grid_density_fine_desc" translation_description="Explains the fine celestial grid density: a meridian every hour of right ascension and a circle every 10 degrees of declination.">Meridian tiap jam, lingkaran tiap 10°</string>
     <string name="satellites_no_data" translation_description="Explanation shown when satellite orbital data has not been downloaded yet and so no satellites can be drawn.">Posisi satelit membutuhkan koneksi internet untuk memperbarui.</string>
     <string name="satellites_refresh" translation_description="Button that tries to download satellite orbital data now.">Segarkan</string>
     <string name="satellites_retry_soon" translation_description="Shown instead of a Refresh button when satellite data was just requested and cannot be requested again for a few minutes.">Coba lagi dalam beberapa menit</string>
@@ -65,7 +79,61 @@
     <string name="layer_horizon">Cakrawala</string>
     <string name="layer_ecliptic">Ekliptika</string>
     <string name="layer_altaz_grid" translation_description="Toggle label for the layer showing the altitude/azimuth (horizontal) coordinate grid, for naked-eye or manual alt-az mount observers.">Grid Alt/Az</string>
-    <string name="layer_sky_gradient" translation_description="Toggle label for the daytime sky-brightness gradient and the ground coloring.">Warna langit</string>
+    <string name="layer_sky_gradient" translation_description="Toggle label for the daytime sky-brightness gradient and the ground coloring.">Pewarnaan langit</string>
+    <string name="layer_help_stars" translation_description="Long-press explanation of the stars layer.">
+    Bintang-bintang, dengan ukuran sesuai kecerahan dan rona sesuai warna. Ketuk bintang mana pun untuk detailnya.
+    </string>
+    <string name="layer_help_constellations" translation_description="Long-press explanation of the constellations layer.">Garis dan nama rasi bintang, untuk membantu Anda mengenali pola bintang.</string>
+    <string name="layer_help_deep_sky" translation_description="Long-press explanation of the deep-sky layer.">
+    Galaksi, nebula, dan gugus bintang: objek yang berada jauh di luar tata surya kita. Banyak di antaranya memerlukan teropong atau teleskop untuk dapat dilihat secara nyata.
+    </string>
+    <string name="layer_help_solar_system" translation_description="Long-press explanation of the solar system layer.">Matahari, Bulan (beserta fase saat ini), dan planet-planet.</string>
+    <string name="layer_help_meteor_showers" translation_description="Long-press explanation of the meteor showers layer.">
+    Titik radian setiap hujan meteor tahunan: titik di langit tempat meteor tampak bermunculan.
+    </string>
+    <string name="layer_help_satellites" translation_description="Long-press explanation of the satellites layer.">
+    Satelit seperti Stasiun Luar Angkasa Internasional (ISS) dan Tiangong (CSS), ditampilkan di posisi mereka saat ini. Memerlukan data orbit yang baru diunduh.
+    </string>
+    <string name="layer_help_grid" translation_description="Long-press explanation of the celestial grid layer.">
+    Kisi-kisi koordinat langit untuk asensio rekta dan deklinasi: ekuivalen langit untuk garis lintang dan bujur. Ini tetap terikat pada bintang-bintang.
+    </string>
+    <string name="layer_help_horizon" translation_description="Long-press explanation of the horizon layer.">Garis cakrawala dan arah kompas, agar Anda tahu arah utara dan letak tanah.</string>
+    <string name="layer_help_ecliptic" translation_description="Long-press explanation of the ecliptic layer.">
+    Lintasan Matahari melintasi langit sepanjang tahun. Bulan dan planet selalu berada dekat darinya.
+    </string>
+    <string name="layer_help_altaz_grid" translation_description="Long-press explanation of the alt/az grid layer.">
+    Kisi-kisi ketinggian (tinggi di atas cakrawala) dan azimut (arah kompas). Berbeda dengan kisi-kisi langit, kisi-kisi ini terikat pada cakrawala Anda, bukan pada bintang-bintang.
+    </string>
+    <string name="layer_help_sky_gradient" translation_description="Long-press explanation of the sky coloring toggle.">
+    Mengarsir langit agar sesuai dengan waktu, cerah di siang hari dan gelap di malam hari, serta mewarnai tanah.
+    </string>
+    <string name="layer_help_hud" translation_description="Long-press explanation of the pointing readout toggle.">Informasi arah penunjuk ponsel Anda: arah kompas dan ketinggiannya.</string>
+    <string name="layer_help_camera" translation_description="Long-press explanation of the through-camera toggle.">
+    Menampilkan kamera langsung di balik Sky Map sehingga langit yang digambarkan melapisi langit yang asli. Membutuhkan sensor gerak.
+    </string>
+    <string name="layer_help_options_solar_system" translation_description="Long-press note listing what can be customized on the solar system layer.">
+    Ukuran piringan: seberapa besar Matahari, Bulan, dan planet digambarkan.
+Pemberitahuan gerhana: notifikasi sebelum gerhana Bulan.
+    </string>
+    <string name="layer_help_options_satellites" translation_description="Long-press note listing what can be customized on the satellites layer.">
+    Peringatan lintasan: pemberitahuan sebelum lintasan terbaik yang terlihat setiap malam.
+    </string>
+    <string name="layer_help_options_meteor_showers" translation_description="Long-press note listing what can be customized on the meteor showers layer.">
+    Peringatan puncak: pemberitahuan pada malam saat hujan meteor mencapai puncak tahunannya.
+    </string>
+    <string name="layer_help_options_grid" translation_description="Long-press note listing what can be customized on the celestial grid layer.">
+    Jumlah garis: garis setiap 3, 2, atau 1 jam dan setiap 30°, 15°, atau 10°.
+Kecerahan garis: normal, terang, atau paling terang, untuk langit senja, siang hari, atau berpolusi cahaya.
+    </string>
+    <string name="layer_help_options_altaz_grid" translation_description="Long-press note listing what can be customized on the alt/az grid layer.">
+    Jumlah garis: 8, 12, atau 24 garis arah.
+Kecerahan garis: normal, terang, atau sangat terang, untuk langit senja, siang hari, atau langit dengan polusi cahaya.
+    </string>
+    <string name="layer_help_customizable" translation_description="Heading in the layer help popup above the list of customizable options.">Hal yang dapat Anda sesuaikan</string>
+    <string name="layer_help_expand_hint" translation_description="Hint in the layer help popup for layers with options, pointing to the arrow button on the row.">Ketuk panah pada baris untuk mengubahnya.</string>
+    <string name="layer_help_customize" translation_description="Button in the layer help popup that opens the Layers sheet on that layer's options.">Sesuaikan</string>
+    <string name="layer_help_close" translation_description="Button that dismisses the layer help popup.">Mengerti</string>
+    <string name="layer_help_long_click_label" translation_description="Accessibility label for the long-press action on a layer row, which shows an explanation of the layer.">Tampilkan fungsi ini</string>
     <string name="layers_sheet_title" translation_description="Title of the bottom sheet listing sky map layers the user can show or hide.">Lapisan</string>
     <string name="layers_group_objects" translation_description="Layers-sheet group header for layers that draw sky objects (stars, planets, deep-sky objects).">Objek</string>
     <string name="layers_group_reference" translation_description="Layers-sheet group header for reference elements drawn over the sky (coordinate grid, horizon, ecliptic).">Referensi</string>
@@ -96,6 +164,23 @@
     <!-- tm:omitted name="tutorial_button" reason="identical_to_source" -->
     <string name="whats_new_button" translation_description="Map-screen menu item that opens the What's New and Credits screen">Apa yang baru</string>
     <string name="widgets_button" translation_description="Map-screen menu item that opens the list of home-screen widgets the app offers">Widget</string>
+    <string name="support_button" translation_description="Map-screen menu item that opens the screen listing ways to support Sky Map">Dukungan</string>
+    <string name="support_screen_title" translation_description="Title of the screen listing ways to support Sky Map">Dukung Sky Map</string>
+    <string name="support_intro" translation_description="Opening paragraph of the Support screen. Sky Map is a free, open-source app.">
+    Sky Map bersifat gratis dan sumber terbuka, dan akan tetap seperti itu. Jika Anda menyukainya, berikut adalah beberapa cara untuk membantu.
+    </string>
+    <string name="support_star_title" translation_description="Support screen row: star the project's page on GitHub">Beri bintang Sky Map di GitHub</string>
+    <string name="support_star_desc" translation_description="Support screen row description: starring helps other people find the app">Ini membantu orang lain menemukan aplikasi ini.</string>
+    <string name="support_issues_title" translation_description="Support screen row: report a problem or suggest an idea on GitHub">Laporkan masalah atau sarankan ide</string>
+    <string name="support_issues_desc" translation_description="Support screen row description: opens the issue tracker on GitHub">Buka isu di GitHub.</string>
+    <string name="support_share_title" translation_description="Support screen row: share the app with a friend">Beritahu teman</string>
+    <string name="support_share_desc" translation_description="Support screen row description: share the app with someone who likes the night sky">Bagikan Sky Map dengan seseorang yang menyukai langit malam.</string>
+    <string name="support_bmac_title" translation_description="Support screen row: make a small voluntary donation on the Buy Me a Coffee website">Belikan kami kopi</string>
+    <string name="support_bmac_desc" translation_description="Support screen row description: donations are optional">Donasi opsional kecil untuk biaya pengembangan.</string>
+    <string name="support_share_message" translation_description="Message sent when the user shares the app with a friend. %1$s is the web link to the app's store page. Keep the %1$s placeholder.">
+    Pernah mencoba Sky Map? Aplikasi ini adalah planetarium sumber terbuka gratis untuk ponsel Anda: %1$s
+    </string>
+    <string name="support_thanks_html" translation_description="HTML section at the bottom of the Support screen thanking donors and open-source contributors. %1$s is a list of donor names and %2$s a list of contributor names. Please do not change the &lt; and &gt; markup or the placeholders."><![CDATA[<h2>Terima kasih</h2> <h3>Pendukung</h3> <p>%1$s</p> <h3>Kontributor sumber terbuka</h3> <p>%2$s</p> <p>Lihat kontributor terbaru di <a href="https://github.com/sky-map-team/stardroid/graphs/contributors">GitHub</a>.</p>]]></string>
     <string name="layer_param_disc_size">Ukuran cakram</string>
     <string name="layer_param_disc_size_true">Skala sebenarnya</string>
     <string name="layer_param_disc_size_true_desc">
@@ -116,6 +201,7 @@
     <string name="search_go" translation_description="Button that starts navigating the sky map toward the typed search target.">Cari</string>
     <string name="search_cancel">Batal</string>
     <string name="search_no_results">Tidak ada hasil yang ditemukan. Mungkin objek tidak terlihat pada saat ini.</string>
+    <string name="search_standing_on_earth" translation_description="Friendly message shown when the user searches for Earth, which cannot be pointed at because they are standing on it.">Anda sedang berdiri di atasnya!</string>
     <string name="search_target_looking_message" translation_description="Status shown while the user is being guided toward a search target. %1$s is the object name.">Mencari: %1$s</string>
     <string name="search_target_found_message" translation_description="Status shown when the search target has been found and is centered on screen. %1$s is the object name.">Ditemukan: %1$s</string>
     <string name="search_overlay_prompt">Arahkan ponsel Anda ke arah panah</string>
@@ -168,13 +254,20 @@
     <string name="sun_wont_set_message">Matahari tidak akan terbenam selama 24 jam ke depan di lokasi Anda saat ini.</string>
     <string name="time_travel_start_message" translation_description="Toast message when time travel starts toward a chosen destination. %1$s is the formatted destination date and time.">Melakukan perjalanan waktu ke %1$s ...</string>
     <string name="time_travel_close_message">Kembali ke masa kini ...</string>
-    <string name="satellite_next_pass" translation_description="Heading above the next visible pass details on a satellite\'s info card.">Lintasan terlihat berikutnya</string>
+    <string name="satellite_next_pass" translation_description="Heading above the table of upcoming good passes on a satellite\'s info card.">Lintasan bagus mendatang</string>
+    <string name="satellite_pass_col_when" translation_description="Column heading in the satellite pass table: the date and time the pass starts.">Waktu</string>
+    <string name="satellite_pass_col_rises" translation_description="Column heading in the satellite pass table: the compass direction where the satellite rises. Keep it short.">Terbit</string>
+    <string name="satellite_pass_col_peak" translation_description="Column heading in the satellite pass table: the highest angle above the horizon the satellite reaches. Keep it short.">Puncak</string>
+    <!-- tm:omitted name="satellite_pass_col_magnitude" reason="identical_to_source" -->
     <string name="satellite_pass_shadow" translation_description="Tells the user the satellite will fade out mid-pass when it enters the Earth\'s shadow. %1$s is a time.">Memudar ke bayangan Bumi pada %1$s</string>
-    <string name="satellite_no_pass" translation_description="Shown on a satellite info card when no visible pass is coming up in the next two days.">Tidak ada lintasan terlihat dalam beberapa hari ke depan</string>
+    <string name="satellite_no_pass" translation_description="Shown on a satellite info card when no bright, high pass is coming up in the next few days.">Tidak ada lintasan bagus dalam beberapa hari ke depan</string>
     <string name="satellite_pass_unknown" translation_description="Shown on a satellite info card when the downloaded orbit data is too old to predict pass times reliably.">Data orbit terlalu lama untuk memprediksi lintasan</string>
+    <string name="upcoming_well_placed" translation_description="Row in an object\'s Upcoming list: the planet is high enough to observe tonight; %1$s is the time from which it is well placed">Terlihat jelas dari %1$s</string>
+    <string name="upcoming_shower_peak" translation_description="Row in a meteor shower\'s Upcoming list: when the shower next peaks; %1$s is a date">Puncak %1$s</string>
+    <string name="object_info_upcoming" translation_description="Heading above the list of upcoming events (passes, eclipses, moon phases) on an object\'s info card.">Akan Datang</string>
     <string name="object_info_eclipse_title" translation_description="Heading above the next lunar eclipse details on the Moon\'s info card.">Gerhana bulan</string>
     <string name="object_info_no_eclipse" translation_description="Shown on the Moon\'s info card when no lunar eclipse is coming up in the searched time range.">Tidak ada gerhana bulan yang diperkirakan segera</string>
-    <string name="object_info_eclipse_greatest" translation_description="The next lunar eclipse\'s type and greatest-eclipse date/time. %1$s is a localized eclipse type like \'Total lunar eclipse\', %2$s a date, %3$s a time.">%1$s — puncak gerhana %2$s pada %3$s</string>
+    <string name="object_info_eclipse_greatest" translation_description="The next lunar eclipse\'s type and the date and time of maximum eclipse (when it peaks). %1$s is a localized eclipse type like \'Total lunar eclipse\', %2$s a date, %3$s a time.">%1$s — puncak %2$s pukul %3$s</string>
     <string name="object_info_eclipse_totality" translation_description="The start and end time of totality during a total lunar eclipse. %1$s and %2$s are times.">Totalitas %1$s – %2$s</string>
     <string name="object_info_image_credit" translation_description="Attribution line under the object\'s photo; %1$s is the credited source, e.g. NASA/ESA">Gambar: %1$s</string>
     <string name="object_info_fun_fact" translation_description="An interesting trivia line on the object info card; %1$s is the fact text">Fakta menarik: %1$s</string>
@@ -306,6 +399,13 @@
     <string name="enable_analytics">Kirim statistik penggunaan</string>
     <string name="enable_analytics_desc">Tingkatkan Sky Map dengan mengirim data anonim ke Google Analytics</string>
     <string name="settings_diagnostics_summary" translation_description="Summary for the settings row that opens the diagnostics screen, which shows technical sensor, location and performance readouts useful when reporting a problem">Detail sensor, lokasi, dan kinerja</string>
+    <string name="settings_section_advanced" translation_description="Preferences category heading for advanced or experimental settings that most people will not need to change">Lanjutan</string>
+    <string name="settings_renderer" translation_description="Preference title for choosing which graphics engine draws the sky map">Mesin grafis (beta)</string>
+    <string name="settings_renderer_summary" translation_description="Summary explaining the graphics engine preference: the newer engine draws a more realistic sky and clearer labels, and the map restarts when the setting is changed">
+    Mesin yang lebih baru menggambar langit siang dan senja yang lebih realistis, serta label yang lebih jelas. Peta akan dimulai ulang saat Anda mengubah pengaturan ini.
+    </string>
+    <string name="settings_renderer_gles1" translation_description="Name of the original, long-standing graphics engine option, shown in a list of two choices">Klasik</string>
+    <string name="settings_renderer_gles3" translation_description="Name of the newer graphics engine option, shown in a list of two choices">Ditingkatkan</string>
     <string name="settings_tap_to_identify">Tampilkan info saat diketuk</string>
     <string name="settings_tap_to_identify_summary">Ketuk objek langit untuk mempelajari tentang mereka</string>
     <string name="settings_tap_in_auto_mode">Kartu info dalam mode otomatis</string>
@@ -368,6 +468,14 @@
     </string>
     <string name="settings_shower_alerts" translation_description="Preference title: notify on the evening a meteor shower reaches its annual peak">Puncak hujan meteor</string>
     <string name="settings_shower_alerts_summary" translation_description="Explanation of the meteor-shower notification preference">Sekitar selusin setahun, pada malam puncak</string>
+    <string name="settings_eclipse_alerts" translation_description="Preference title: notify shortly before a lunar eclipse begins">Gerhana bulan</string>
+    <string name="settings_eclipse_alerts_summary" translation_description="Explanation of the lunar-eclipse notification preference">Satu peringatan sebelum gerhana bulan dimulai</string>
+    <string name="settings_pass_alerts" translation_description="Preference title: notify shortly before a satellite passes overhead">Lintasan satelit</string>
+    <string name="settings_pass_alerts_summary" translation_description="Explanation of the satellite-pass notification preference">Satu peringatan sebelum lintasan terbaik yang terlihat malam ini</string>
+    <string name="settings_announcements" translation_description="Preference title: occasional messages from the Sky Map team about rare sky events, shown as a notification, in the widget and when the app opens">Pesan dari Sky Map</string>
+    <string name="settings_announcements_summary" translation_description="Explanation of the announcements preference">
+    Pemberitahuan langka seperti kemunculan aurora kuat atau planet terang. Ditampilkan sebagai notifikasi, di widget Langit Malam Ini, atau saat Anda membuka aplikasi.
+    </string>
     <string name="settings_tonight_digest" translation_description="Preference title: a single evening notification summarizing what\'s visible tonight">Ringkasan langit malam ini</string>
     <string name="settings_tonight_digest_summary" translation_description="Explanation of the tonight-digest notification preference">Satu ringkasan setelah matahari terbenam, dilewati pada malam yang tenang</string>
     <string name="settings_notifications_blocked" translation_description="Warning row shown when the user enabled notifications in the app but blocked them at the system level">Notifikasi diblokir untuk Sky Map</string>
@@ -381,6 +489,7 @@
     <string name="diagnostics_device">Perangkat</string>
     <!-- tm:omitted name="diagnostics_phone_format" reason="identical_to_source" -->
     <string name="diagnostics_android_version">Versi Android</string>
+    <string name="diagnostics_ios_version" translation_description="Row label in the diagnostics screen for the iOS version on an iPhone. iOS is Apple\'s operating system name and stays as is">Versi iOS</string>
     <string name="diagnostics_sky_map_version">Versi Sky Map</string>
     <!-- tm:omitted name="diagnostics_sky_map_version_format" reason="identical_to_source" -->
     <string name="diagnostics_section_graphics" translation_description="Section heading in the diagnostics screen for graphics/GPU information">Grafis</string>
@@ -388,6 +497,7 @@
     <!-- tm:omitted name="diagnostics_gl_version" reason="identical_to_source" -->
     <!-- tm:omitted name="diagnostics_gl_version_format" reason="identical_to_source" -->
     <string name="diagnostics_gl_limits" translation_description="Row label in the diagnostics screen for graphics hardware limits (maximum texture size, supported line widths and point sizes)">Batas GL</string>
+    <string name="diagnostics_metal_limits" translation_description="Row label in the diagnostics screen on an iPhone for graphics hardware limits (maximum texture size, supported line widths and point sizes). Metal is Apple\'s graphics API name and stays as is">Batas Metal</string>
     <string name="diagnostics_gl_limits_format" translation_description="Format for the GL limits row: maximum texture size in pixels, then the supported line width and point size ranges. \'tex\' abbreviates texture. %1$d is texture size, %2$s is the line width range, %3$s is the point size range.">tekstur %1$d, garis %2$s, titik %3$s</string>
     <string name="diagnostics_gl_unavailable" translation_description="Value shown in the diagnostics Graphics rows before the sky map has drawn, when the graphics details are not known yet">Belum tersedia</string>
     <string name="diagnostics_section_sensors">Sensor</string>
@@ -406,7 +516,7 @@
     <string name="diagnostics_reverse_magnetic_z" translation_description="Row label in the diagnostics screen for whether the magnetometer's Z axis is reversed">Balikkan Z magnet</string>
     <string name="diagnostics_use_magnetic_correction_setting" translation_description="Row label in the diagnostics screen for whether magnetic declination correction is applied">Koreksi magnetis</string>
     <string name="diagnostics_view_direction_mode" translation_description="Row label in the diagnostics screen for which phone axis is treated as pointing at the sky">Arah tampilan</string>
-    <string name="diagnostics_calibration_dialog" translation_description="Row label in the diagnostics screen for whether the compass-calibration screen may open automatically; value is On or Off">Permintaan kalibrasi otomatis</string>
+    <string name="diagnostics_calibration_dialog" translation_description="Row label in the diagnostics screen for whether the compass-calibration screen may open automatically; value is On or Off">Prompt kalibrasi otomatis</string>
     <string name="diagnostics_jitter_raw" translation_description="Row label in the diagnostics screen for how much the sensor-derived pointing wobbles before smoothing is applied">Jitter (mentah)</string>
     <string name="diagnostics_jitter_smoothed" translation_description="Row label in the diagnostics screen for how much the sensor-derived pointing wobbles after smoothing is applied">Jitter (dihaluskan)</string>
     <!-- tm:omitted name="diagnostics_jitter_format" reason="identical_to_source" -->
@@ -437,6 +547,10 @@
     <string name="diagnostics_utc_datetime">Waktu universal</string>
     <string name="diagnostics_section_network">Jaringan</string>
     <string name="diagnostics_connection">Koneksi</string>
+    <string name="diagnostics_section_experiments" translation_description="Section heading in the diagnostics screen listing the current feature-flag (experiment) values">Bendera eksperimen</string>
+    <string name="diagnostics_experiments_last_fetched" translation_description="Row label in the diagnostics experiment flags section: when the feature-flag config was last downloaded from the server">Terakhir diambil</string>
+    <string name="diagnostics_experiments_never_fetched" translation_description="Row value in the diagnostics experiment flags section when the feature-flag config has never been downloaded">Belum pernah</string>
+    <string name="diagnostics_experiments_fetch_now" translation_description="Label on a button in the diagnostics screen that downloads the feature-flag config from the server immediately">Ambil bendera eksperimen sekarang</string>
     <string name="diagnostics_satellite_force_fetch" translation_description="Label on a debug-only button in the diagnostics screen that downloads satellite orbital data immediately">Ambil data satelit sekarang (debug)</string>
     <string name="diagnostics_connected">Terhubung</string>
     <string name="diagnostics_disconnected">Terputus</string>
@@ -478,79 +592,16 @@
     <string name="auto_level_on_toast" translation_description="Brief confirmation shown when a double tap turns horizon auto-leveling on in manual mode">Perataan otomatis cakrawala aktif</string>
     <string name="auto_level_off_toast" translation_description="Brief confirmation shown when a double tap turns horizon auto-leveling off in manual mode">Perataan otomatis cakrawala nonaktif</string>
     <string name="diagnostics_app_lifecycle" translation_description="Row label in the diagnostics screen for the app\'s technical lifecycle state (for example Started or Resumed), which controls whether sensors are listened to">Siklus hidup aplikasi</string>
-    <string name="diagnostics_experiments_fetch_now" translation_description="Label on a button in the diagnostics screen that downloads the feature-flag config from the server immediately">Ambil bendera eksperimen sekarang</string>
-    <string name="diagnostics_experiments_last_fetched" translation_description="Row label in the diagnostics experiment flags section: when the feature-flag config was last downloaded from the server">Terakhir diambil</string>
-    <string name="diagnostics_experiments_never_fetched" translation_description="Row value in the diagnostics experiment flags section when the feature-flag config has never been downloaded">Belum pernah</string>
     <string name="diagnostics_gyro_none" translation_description="Value shown for the gyro row when the device has no sensors that can supply orientation">Tidak ada</string>
+    <!-- tm:omitted name="diagnostics_map_mode" reason="identical_to_source" -->
     <string name="diagnostics_map_mode_auto" translation_description="Value shown for the map mode row when the map follows the phone\'s sensors (the app calls this auto mode)">Otomatis (sensor)</string>
+    <!-- tm:omitted name="diagnostics_map_mode_manual" reason="identical_to_source" -->
     <string name="diagnostics_map_orientation" translation_description="Row label in the diagnostics screen for how long ago the map last received the phone\'s orientation from its sensors">Pembaruan orientasi terakhir</string>
-    <string name="diagnostics_map_orientation_format" translation_description="Row value in the diagnostics screen giving how long ago the map last received the phone\'s orientation. %1$.1f is a number of seconds.">%1$.1f detik yang lalu</string>
+    <string name="diagnostics_map_orientation_format" translation_description="Row value in the diagnostics screen giving how long ago the map last received the phone\'s orientation. %1$.1f is a number of seconds.">%1$.1fdik lalu</string>
     <string name="diagnostics_map_orientation_none" translation_description="Value shown for the last orientation update row when the map has not received any orientation from the sensors">Tidak ada yang diterima</string>
-    <string name="diagnostics_rejected_samples" translation_description="Row label in the diagnostics screen for how many sensor readings have been thrown away as invalid since the app started">Sampel sensor ditolak (sejak awal)</string>
-    <string name="diagnostics_section_experiments" translation_description="Section heading in the diagnostics screen listing the current feature-flag (experiment) values">Bendera eksperimen</string>
+    <string name="diagnostics_rejected_samples" translation_description="Row label in the diagnostics screen for how many sensor readings have been thrown away as invalid since the app started">Sampel sensor ditolak (sejak mulai)</string>
     <string name="diagnostics_section_map" translation_description="Section heading in the diagnostics screen for what the sky map itself is doing with the sensor readings">Peta</string>
-    <string name="diagnostics_smoother_heals" translation_description="Row label in the diagnostics screen for how many times the orientation smoother had to reset itself after producing an invalid value since the app started">Reset penghalus (sejak mulai)</string>
-    <string name="layer_help_altaz_grid" translation_description="Long-press explanation of the alt/az grid layer.">
-    Kisi-kisi ketinggian (tinggi di atas cakrawala) dan azimut (arah kompas). Tidak seperti kisi-kisi selestial, kisi-kisi ini terpaku pada cakrawala Anda, bukan pada bintang.
-    </string>
-    <string name="layer_help_camera" translation_description="Long-press explanation of the through-camera toggle.">
-    Menampilkan kamera langsung di belakang Sky Map sehingga peta langit yang digambar melapisi langit asli. Memerlukan sensor gerak.
-    </string>
-    <string name="layer_help_close" translation_description="Button that dismisses the layer help popup.">Mengerti</string>
-    <string name="layer_help_constellations" translation_description="Long-press explanation of the constellations layer.">Garis dan nama rasi bintang, untuk membantu Anda mengenali pola bintang.</string>
-    <string name="layer_help_customizable" translation_description="Heading in the layer help popup above the list of customizable options.">Yang dapat Anda sesuaikan</string>
-    <string name="layer_help_customize" translation_description="Button in the layer help popup that opens the Layers sheet on that layer's options.">Sesuaikan</string>
-    <string name="layer_help_deep_sky" translation_description="Long-press explanation of the deep-sky layer.">
-    Galaksi, nebula, dan gugus bintang: objek yang berada jauh di luar tata surya kita. Banyak di antaranya memerlukan teropong atau teleskop untuk dapat dilihat secara nyata.
-    </string>
-    <string name="layer_help_ecliptic" translation_description="Long-press explanation of the ecliptic layer.">
-    Jalur yang dilalui Matahari di langit sepanjang tahun. Bulan dan planet selalu berada dekat dengannya.
-    </string>
-    <string name="layer_help_expand_hint" translation_description="Hint in the layer help popup for layers with options, pointing to the arrow button on the row.">Ketuk panah pada baris untuk mengubahnya.</string>
-    <string name="layer_help_grid" translation_description="Long-press explanation of the celestial grid layer.">
-    Kisi-kisi koordinat langit dari asensiorekta dan deklinasi: ekuivalen garis lintang dan bujur di langit. Ini tetap pada bintang-bintang.
-    </string>
-    <string name="layer_help_horizon" translation_description="Long-press explanation of the horizon layer.">Garis cakrawala dan titik kompas, agar Anda tahu arah utara dan letak tanah.</string>
-    <string name="layer_help_hud" translation_description="Long-press explanation of the pointing readout toggle.">Pembacaan arah ponsel Anda: arah kompas dan ketinggiannya.</string>
-    <string name="layer_help_long_click_label" translation_description="Accessibility label for the long-press action on a layer row, which shows an explanation of the layer.">Tampilkan fungsi fitur ini</string>
-    <string name="layer_help_meteor_showers" translation_description="Long-press explanation of the meteor showers layer.">
-    Titik radian dari setiap hujan meteor tahunan: titik di langit tempat meteor tampak bermunculan.
-    </string>
-    <string name="layer_help_options_altaz_grid" translation_description="Long-press note listing what can be customized on the alt/az grid layer.">Jumlah garis: 8, 12, atau 24 garis arah.</string>
-    <string name="layer_help_options_grid" translation_description="Long-press note listing what can be customized on the celestial grid layer.">Jumlah garis: garis setiap 3, 2, atau 1 jam dan setiap 30°, 15°, atau 10°.</string>
-    <string name="layer_help_options_meteor_showers" translation_description="Long-press note listing what can be customized on the meteor showers layer.">
-    Pemberitahuan puncak: notifikasi pada malam ketika hujan meteor mencapai puncak tahunannya.
-    </string>
-    <string name="layer_help_options_satellites" translation_description="Long-press note listing what can be customized on the satellites layer.">
-    Pemberitahuan lintasan: notifikasi sebelum lintasan terbaik yang terlihat setiap malam.
-    </string>
-    <string name="layer_help_options_solar_system" translation_description="Long-press note listing what can be customized on the solar system layer.">
-    Ukuran piringan: seberapa besar Matahari, Bulan, dan planet digambarkan.\nPemberitahuan gerhana: pemberitahuan sebelum gerhana Bulan.
-    </string>
-    <string name="layer_help_satellites" translation_description="Long-press explanation of the satellites layer.">
-    Satelit seperti Stasiun Luar Angkasa dan Tiangong, ditampilkan di posisi mereka saat ini. Memerlukan data orbit yang baru diunduh.
-    </string>
-    <string name="layer_help_sky_gradient" translation_description="Long-press explanation of the sky coloring toggle.">
-    Mewarnai langit sesuai waktu (terang pada siang hari dan gelap pada malam hari) serta mewarnai permukaan tanah.
-    </string>
-    <string name="layer_help_solar_system" translation_description="Long-press explanation of the solar system layer.">Matahari, Bulan (beserta fase saat ini), dan planet-planet.</string>
-    <string name="layer_help_stars" translation_description="Long-press explanation of the stars layer.">
-    Bintang-bintang, berukuran sesuai kecerahan dan berwarna sesuai rona. Ketuk bintang mana pun untuk detailnya.
-    </string>
-    <string name="layer_param_radec_grid_density" translation_description="Label for the celestial (RA/Dec) grid's line-count setting.">Jumlah garis</string>
-    <string name="layer_param_radec_grid_density_coarse_desc" translation_description="Explains the coarse celestial grid density: a meridian every 3 hours of right ascension and a circle every 30 degrees of declination.">Meridian setiap 3 jam, lingkaran setiap 30°</string>
-    <string name="layer_param_radec_grid_density_fine_desc" translation_description="Explains the fine celestial grid density: a meridian every hour of right ascension and a circle every 10 degrees of declination.">Meridian setiap jam, lingkaran setiap 10°</string>
-    <string name="layer_param_radec_grid_density_medium_desc" translation_description="Explains the medium celestial grid density: a meridian every 2 hours of right ascension and a circle every 15 degrees of declination.">Meridian setiap 2 jam, lingkaran setiap 15°</string>
-    <string name="layer_param_shower_alerts" translation_description="Label for the setting that turns on a notification on the evening a meteor shower peaks.">Pemberitahuan puncak</string>
-    <string name="layer_param_shower_alerts_description" translation_description="Explains what the meteor-shower alert setting does: a notification on the evening a shower reaches its annual peak.">Beri tahu saya pada malam puncak hujan meteor</string>
-    <string name="settings_announcements" translation_description="Preference title: occasional messages from the Sky Map team about rare sky events, shown as a notification, in the widget and when the app opens">Pesan dari Sky Map</string>
-    <string name="settings_announcements_summary" translation_description="Explanation of the announcements preference">
-    Pemberitahuan jarang seperti aurora kuat atau planet terang. Ditampilkan sebagai notifikasi, di widget Langit Malam Ini, atau saat Anda membuka aplikasi.
-    </string>
-    <string name="settings_eclipse_alerts" translation_description="Preference title: notify shortly before a lunar eclipse begins">Gerhana bulan</string>
-    <string name="settings_eclipse_alerts_summary" translation_description="Explanation of the lunar-eclipse notification preference">Satu pemberitahuan sebelum gerhana bulan dimulai</string>
-    <string name="settings_pass_alerts" translation_description="Preference title: notify shortly before a satellite passes overhead">Lintasan satelit</string>
-    <string name="settings_pass_alerts_summary" translation_description="Explanation of the satellite-pass notification preference">Satu pemberitahuan sebelum lintasan terbaik yang terlihat malam ini</string>
+    <string name="diagnostics_smoother_heals" translation_description="Row label in the diagnostics screen for how many times the orientation smoother had to reset itself after producing an invalid value since the app started">Penyetelan ulang penghalus (sejak mulai)</string>
     <string name="moon_widget_illumination" translation_description="Widget line showing how much of the Moon\'s disc is lit; %1$d is a percentage number">%1$d%% teriluminasi</string>
     <string name="moon_phase_new" translation_description="Name of the lunar phase when the Moon is fully dark">Bulan Baru</string>
     <string name="moon_phase_waxing_crescent" translation_description="Name of the lunar phase between new moon and first quarter">Sabit Awal</string>
@@ -560,7 +611,7 @@
     <string name="moon_phase_waning_gibbous" translation_description="Name of the lunar phase between full moon and last quarter">Cembung Akhir</string>
     <string name="moon_phase_last_quarter" translation_description="Name of the lunar phase when half the disc is lit and shrinking">Perempat Akhir</string>
     <string name="moon_phase_waning_crescent" translation_description="Name of the lunar phase between last quarter and new moon">Sabit Akhir</string>
-    <string name="moon_widget_age" translation_description="Widget line giving the Moon\'s age as the day of the lunar cycle, counting the day of new moon as day 1; %1$d is a number from 1 to 30">Hari %1$d</string>
+    <string name="moon_widget_age" translation_description="Widget line giving the Moon\'s age as the day of the lunar cycle, counting the day of new moon as day 1; %1$d is a number from 1 to 30">Hari ke-%1$d</string>
     <!-- tm:omitted name="tonight_trailing_direction" reason="identical_to_source" -->
     <string name="tonight_dark_skies" translation_description="Small trailing note: the moon is dark, so viewing conditions are ideal">langit gelap</string>
     <string name="tonight_trailing_moon" translation_description="Small trailing note: how much of the moon is lit; %1$d is a percentage">bulan %1$d%%</string>
