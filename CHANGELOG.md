@@ -5,6 +5,26 @@ All notable changes to Sky Map are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [2.3.0:Cassini] (v2) - 2026-11-04
+
+<img src="stardroid-v2/assets/release-icons/2.3.0_cassini_icon.png" width="80" alt="Cassini" />
+
+### Added
+- Satellites: the International Space Station (ISS) and Tiangong (CSS) on the map, with a table of
+  upcoming good passes and pass alerts. (#1142, #1174, #1175, #1178, #1179, #1193)
+- Info cards show live facts and an Upcoming section for the Moon (phase, illumination, age),
+  planets and meteor showers. (#1187, #1189, #1195, #1196)
+- A new graphics engine, opt-in as a beta under Settings → Appearance → Graphics engine: a more
+  realistic daytime and twilight sky and clearer labels. Off by default. (#1058, #1203)
+- Grid line brightness option and more grid labels. (#1177)
+- A compact 1x1 size for the Moon widget. (#1157)
+- Search finds asterisms and Earth. (#1201)
+- A Support screen. (#1197)
+
+### Changed
+- "Tell a friend" shares getskymap.app instead of the Play Store URL. (#1229)
+- Satellites and the new graphics engine are enabled by default in Remote Config.
+
 ## [2.2.0:Buran] (v2) - 2026-10-21
 
 <img src="stardroid-v2/assets/release-icons/2.2.0_buran_icon.png" width="80" alt="Buran" />
