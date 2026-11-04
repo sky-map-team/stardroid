@@ -28,6 +28,8 @@ the two ever drift.
 | [design/map-hud.md](design/map-hud.md) | The top-right map pointing readout — RA/Dec, Alt/Az, FOV, alignment correction | agreed D65, implemented D66 |
 | [design/camera-ar-mode.md](design/camera-ar-mode.md) | Through-camera (AR) mode, drag-to-align, share | D64, D67–D71 (flag-gated, D80) |
 | [design/share-object-card.md](design/share-object-card.md) | Info-card share, getskymap.app object pages, deep links | PROPOSED |
+| [design/camera-ar-launch.md](design/camera-ar-launch.md) | Launching AR mode on Android and iOS together: iOS camera edge and share, Android loose ends, coordinated flag flip | PROPOSED |
+| [design/ios-platform-surfaces.md](design/ios-platform-surfaces.md) | iOS parity: Remote Config flags, satellites, notifications, widgets | PROPOSED |
 | [design/color-scheme-proposal.md](design/color-scheme-proposal.md) | The "Deep Space / Star Gold" brand palette — rationale and before/after | accepted and implemented, D73 |
 | [design/widgets-and-notifications.md](design/widgets-and-notifications.md) | Home-screen widgets, notification channels, events engine | phases 1–3, D75–D77 (flag-gated, D80); **phase 4 unbuilt** |
 | [design/remote-announcements.md](design/remote-announcements.md) | Remote Config messages on notification, widget and launch-dialog surfaces | built, flag-gated (`ANNOUNCEMENTS`, default off) |
