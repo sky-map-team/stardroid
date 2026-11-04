@@ -9,11 +9,16 @@
 
     <!--
       The access-permission notice (KISA / Korean Network Act art. 22-2, and good practice
-      everywhere). Rendered in two places from this one key so it is translated once: appended
-      to the first-launch EULA screen, and included in the help document as a permanent,
-      re-readable copy (HelpScreen.helpSections2). Every runtime permission Sky Map declares
-      must appear here, labelled required or optional, with its grounds and — for optional
-      ones — the user\'s right to refuse.
+      everywhere). Each platform has its own key, chosen by permissionsNoticeResource:
+      permissions_notice (Android) and permissions_notice_ios. Each is rendered in two places, so
+      it is translated once: appended to the first-launch EULA screen, and included in the help
+      document as a permanent, re-readable copy (HelpScreen.helpSections2). Every runtime
+      permission a platform can ask for must appear in its own notice, labelled required or
+      optional, with its grounds and — for optional ones — the user\'s right to refuse. Keep
+      both in step with what each app really requests (iOS: Location only until it gains
+      notifications or a camera mode).
     -->
     <string name="permissions_notice" translation_description="Legally-required disclosure of the device permissions the app requests, why it requests them, and the user\'s right to refuse the optional ones. Shown on the first-launch terms screen and in Help. Please do not change the markup"><![CDATA[<h2>權限</h2><p><b>Sky Map 沒有任何必要權限。</b>以下所有權限皆為選用 — 您可以拒絕任何一項，仍可繼續使用應用程式。Sky Map 絕不會在啟動時要求權限：每個權限僅在您首次使用需要該功能時才會請求，您可以隨時在裝置上的 <b>設定 → 應用程式 → Sky Map → 權限</b> 中單獨授予或撤銷每個權限。</p><h3>位置 — 選用</h3><p><b>存取內容：</b>您的約略位置。</p><p><b>原因：</b>您上方的星星取決於您所在的位置，因此 Sky Map 會使用您的約略位置來繪製正確的星空。</p><p><b>如果您拒絕：</b>您可以改為輸入地點名稱或座標，整個應用程式仍可正常運作。</p><blockquote>您的位置僅用於您的裝置上繪製星空。我們絕不會接收您的位置資訊。</blockquote><h3>相機 — 選用</h3><p><b>存取內容：</b>相機預覽畫面。</p><p><b>原因：</b>透過相機模式會在即時相機畫面上繪製星空，以便您將地圖與您實際看到的內容進行比對。</p><p><b>如果您拒絕：</b>所有其他模式仍可正常運作。</p><blockquote>Sky Map 絕不會錄製相機畫面或將其傳送給我們。它會在螢幕上繪製，然後被丟棄 — 除非您分享圖片：從分享表單中選擇 AR 版面配置會將該圖片儲存到您的裝置上，並將其交給您選擇的應用程式。在您要求之前，不會分享任何內容。</blockquote><h3>通知 — 選用</h3><p><b>存取內容：</b>顯示通知的權限。</p><p><b>原因：</b>如果您要求，我們會通知您流星雨高峰期以及今晚值得觀看的內容。</p><p><b>如果您拒絕：</b>其他一切都不會改變 — 這些通知會保持關閉，直到您將其開啟。</p>]]></string>
+
+    <string name="permissions_notice_ios" translation_description="iOS version of the legally-required disclosure of the device permissions the app requests: only location, which is optional. Shown on the first-launch terms screen and in Help. Please do not change the markup"><![CDATA[<h2>權限</h2> <p><b>Sky Map 沒有強制要求的權限。</b> 下方的一項權限為選用項目 — 您可以拒絕授權並繼續使用本應用程式。Sky Map 會在您接受這些條款後詢問一次，因為繪製星空需要知道您的所在位置。您可以隨時在裝置的<b>「設定」→「Sky Map」</b>中授予或撤銷此權限。</p> <h3>位置 — 選用</h3> <p><b>存取內容：</b>您的大致位置。</p> <p><b>原因：</b>您頭頂上有哪些星星取決於您的位置，因此 Sky Map 會使用您的大致位置來繪製正確的星空。</p> <p><b>如果您拒絕：</b>您可以改為輸入地名或座標，應用程式的其餘功能將完全正常運作。</p> <blockquote>您的位置僅用於在您的裝置上繪製星空。位置畫面的地圖圖片會將其經四捨五入的概略版本傳送至地圖服務 Geoapify（請參閱隱私權政策）。</blockquote>]]></string>
 </resources>

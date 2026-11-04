@@ -17,11 +17,14 @@
 
     <!--
       The access-permission notice (KISA / Korean Network Act art. 22-2, and good practice
-      everywhere). Rendered in two places from this one key so it is translated once: appended
-      to the first-launch EULA screen, and included in the help document as a permanent,
-      re-readable copy (HelpScreen.helpSections2). Every runtime permission Sky Map declares
-      must appear here, labelled required or optional, with its grounds and — for optional
-      ones — the user\'s right to refuse.
+      everywhere). Each platform has its own key, chosen by permissionsNoticeResource:
+      permissions_notice (Android) and permissions_notice_ios. Each is rendered in two places, so
+      it is translated once: appended to the first-launch EULA screen, and included in the help
+      document as a permanent, re-readable copy (HelpScreen.helpSections2). Every runtime
+      permission a platform can ask for must appear in its own notice, labelled required or
+      optional, with its grounds and — for optional ones — the user\'s right to refuse. Keep
+      both in step with what each app really requests (iOS: Location only until it gains
+      notifications or a camera mode).
     -->
     <string name="permissions_notice" translation_description="Legally-required disclosure of the device permissions the app requests, why it requests them, and the user\'s right to refuse the optional ones. Shown on the first-launch terms screen and in Help. Please do not change the markup"><![CDATA[<h2>Behörigheter</h2>
 <p><b>Sky Map har inga obligatoriska behörigheter.</b> Varje behörighet nedan är valfri – du kan neka
@@ -49,4 +52,6 @@ bilden på din enhet och lämnas över till den app du väljer. Inget delas för
 bär om det.</p>
 <p><b>Om du nekar:</b> inget annat ändras – dessa aviseringar förblir avstängda tills du slår
 på dem.</p>]]></string>
+
+    <string name="permissions_notice_ios" translation_description="iOS version of the legally-required disclosure of the device permissions the app requests: only location, which is optional. Shown on the first-launch terms screen and in Help. Please do not change the markup"><![CDATA[<h2>Behör</h2> <p><b>Sky Map har inga obligatoriska behörigheter.</b> Behörigheten nedan är valfri – du kan avböja den och ändå använda appen. Sky Map frågar efter den en gång, efter att du har godkänt dessa villkor, eftersom appen behöver veta var du befinner dig för att kunna rita upp stjärnhimlen. Du kan när som helst ge eller återkalla den under <b>Inställningar → Sky Map</b> på din enhet.</p> <h3>Plats – valfritt</h3> <p><b>Vad som nås:</b> din ungefärliga plats.</p> <p><b>Varför:</b> vilka stjärnor som finns ovanför dig beror på var du är, så Sky Map använder din ungefärliga plats för att rita rätt stjärnhimmel.</p> <p><b>Om du avböjer:</b> du kan skriva in ett ortnamn eller koordinater i stället, och hela appen fungerar som vanligt.</p> <blockquote>Din plats används på din enhet för att rita stjärnhimlen. Kartbilden på platsskärmen skickar en avrundad version av den till Geoapify, en karttjänst (se integritetspolicyn).</blockquote>]]></string>
 </resources>

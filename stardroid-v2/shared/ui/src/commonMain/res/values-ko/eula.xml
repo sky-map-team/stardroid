@@ -17,11 +17,14 @@
 
     <!--
       The access-permission notice (KISA / Korean Network Act art. 22-2, and good practice
-      everywhere). Rendered in two places from this one key so it is translated once: appended
-      to the first-launch EULA screen, and included in the help document as a permanent,
-      re-readable copy (HelpScreen.helpSections2). Every runtime permission Sky Map declares
-      must appear here, labelled required or optional, with its grounds and — for optional
-      ones — the user\'s right to refuse.
+      everywhere). Each platform has its own key, chosen by permissionsNoticeResource:
+      permissions_notice (Android) and permissions_notice_ios. Each is rendered in two places, so
+      it is translated once: appended to the first-launch EULA screen, and included in the help
+      document as a permanent, re-readable copy (HelpScreen.helpSections2). Every runtime
+      permission a platform can ask for must appear in its own notice, labelled required or
+      optional, with its grounds and — for optional ones — the user\'s right to refuse. Keep
+      both in step with what each app really requests (iOS: Location only until it gains
+      notifications or a camera mode).
     -->
     <string name="permissions_notice" translation_description="Legally-required disclosure of the device permissions the app requests, why it requests them, and the user\'s right to refuse the optional ones. Shown on the first-launch terms screen and in Help. Please do not change the markup"><![CDATA[<h2>권한</h2>
 <p><b>Sky Map은 필수 권한이 없습니다.</b> 아래의 모든 권한은 선택 사항입니다. 어떤 권한이든 거부하더라도 앱을 계속 사용할 수 있습니다.
@@ -47,4 +50,6 @@ Sky Map은 시작 시 권한을 요청하지 않습니다. 각 권한은 해당 
 요청할 경우 알려주기 위함입니다.</p>
 <p><b>거부할 경우:</b> 다른 것은 아무것도 변경되지 않으며, 이 알림은 사용자가
 켤 때까지 꺼진 상태로 유지됩니다.</p>]]></string>
+
+    <string name="permissions_notice_ios" translation_description="iOS version of the legally-required disclosure of the device permissions the app requests: only location, which is optional. Shown on the first-launch terms screen and in Help. Please do not change the markup"><![CDATA[<h2>권한</h2> <p><b>Sky Map은 필수로 요구하는 권한이 없습니다.</b> 아래의 권한은 선택 사항이며, 거부하더라도 앱을 계속 사용할 수 있습니다. 밤하늘을 올바르게 그리려면 현재 위치를 알아야 하므로, Sky Map은 본 약관에 동의한 후 최초 1회 이 권한을 요청합니다. 기기의 <b>설정 → Sky Map</b>에서 언제든지 권한을 허용하거나 철회할 수 있습니다.</p> <h3>위치 — 선택 사항</h3> <p><b>접근하는 항목:</b> 대략적인 위치 정보.</p> <p><b>이유:</b> 어느 별이 보이는지는 사용자의 위치에 따라 달라지므로, Sky Map은 정확한 밤하늘을 그리기 위해 대략적인 위치를 사용합니다.</p> <p><b>거부할 경우:</b> 대신 지명이나 좌표를 직접 입력할 수 있으며, 앱의 모든 기능이 정상적으로 작동합니다.</p> <blockquote>위치 정보는 기기 내에서 밤하늘을 그리는 데 사용됩니다. 위치 화면의 지도 이미지는 대략적인 위치를 지도 서비스인 Geoapify로 전송합니다(개인정보 처리방침 참조).</blockquote>]]></string>
 </resources>
