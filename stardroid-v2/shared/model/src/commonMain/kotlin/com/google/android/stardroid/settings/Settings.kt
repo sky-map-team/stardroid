@@ -332,9 +332,10 @@ interface Settings {
     suspend fun setLabelSizeHintShown()
 
     /**
-     * Which rendering backend draws the map. See [RendererBackend]; the default is
-     * [RendererBackend.GLES1]. [RendererBackend.GLES3] is an opt-in beta that silently falls back
-     * to GLES1 wherever the remote flag is off or the device has no GL ES 3.0.
+     * Which rendering backend draws the map. See [RendererBackend]. An explicit choice always
+     * wins; otherwise the default is [RendererBackend.GLES1], or GLES3 where the
+     * `GLES3_DEFAULT` experiment (beta builds) is on. GLES3 silently falls back to GLES1
+     * wherever the remote flag is off or the device has no GL ES 3.0.
      */
     val rendererBackend: Flow<RendererBackend>
 

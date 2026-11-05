@@ -75,4 +75,26 @@ class DataStoreSettingsTest {
             assertThat(startup.eulaAcceptedVersion.first()).isEqualTo(3)
             assertThat(settings.nightMode.first()).isTrue()
         }
+
+    @Test
+    fun rendererBackendDefaultsToTheInjectedDefaultUntilChosen() =
+        runTest {
+            val settings =
+                DataStoreSettings(
+                    settingsDataStore(path, CoroutineScope(Dispatchers.IO)),
+                    rendererBackendDefault = { RendererBackend.GLES3 },
+                )
+            assertThat(settings.rendererBackend.first()).isEqualTo(RendererBackend.GLES3)
+
+            settings.setRendererBackend(RendererBackend.GLES1)
+            assertThat(settings.rendererBackend.first()).isEqualTo(RendererBackend.GLES1)
+        }
+
+    @Test
+    fun rendererBackendIsClassicByDefault() =
+        runTest {
+            val settings =
+                DataStoreSettings(settingsDataStore(path, CoroutineScope(Dispatchers.IO)))
+            assertThat(settings.rendererBackend.first()).isEqualTo(RendererBackend.GLES1)
+        }
 }

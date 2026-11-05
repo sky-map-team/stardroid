@@ -48,6 +48,17 @@ class ExperimentConfigTest {
             .hasSize(Experiment.entries.size)
     }
 
+    private fun configWith(vararg on: Experiment) = ExperimentConfig { it in on }
+
+    @Test
+    fun `gles3 is the default only when both flags are on`() {
+        assertThat(configWith(Experiment.GLES3_DEFAULT, Experiment.GLES3_RENDERER).gles3ByDefault())
+            .isTrue()
+        assertThat(configWith(Experiment.GLES3_RENDERER).gles3ByDefault()).isFalse()
+        assertThat(configWith(Experiment.GLES3_DEFAULT).gles3ByDefault()).isFalse()
+        assertThat(ExperimentConfig.Static.gles3ByDefault()).isFalse()
+    }
+
     private companion object {
         val ENTRY =
             Regex("<entry>\\s*<key>(.*?)</key>\\s*<value>(.*?)</value>\\s*</entry>")

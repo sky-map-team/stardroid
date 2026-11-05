@@ -52,6 +52,14 @@ enum class Experiment(val key: String) {
     GLES3_RENDERER("gles3_renderer_enabled"),
 
     /**
+     * Makes the GLES3 backend the *default* for users who have never picked one, so a `:Beta`
+     * Remote Config rule can put beta testers on Enhanced. An explicit choice in Settings always
+     * wins, and it has no effect while [GLES3_RENDERER] is off. Read once per process, so a
+     * fetched change applies from the next launch.
+     */
+    GLES3_DEFAULT("gles3_default_enabled"),
+
+    /**
      * Remotely authored announcements on the notification, widget and interstitial surfaces
      * (docs/design/remote-announcements.md). The kill switch for the whole feature.
      */
@@ -104,8 +112,13 @@ fun interface ExperimentConfig {
                     Experiment.SHARE_SKY -> false
                     Experiment.SATELLITES -> true
                     Experiment.GLES3_RENDERER -> true
+                    Experiment.GLES3_DEFAULT -> false
                     Experiment.ANNOUNCEMENTS -> false
                 }
             }
     }
 }
+
+/** Whether users who have not picked a graphics engine start on GLES3: both flags must be on. */
+fun ExperimentConfig.gles3ByDefault(): Boolean =
+    isEnabled(Experiment.GLES3_DEFAULT) && isEnabled(Experiment.GLES3_RENDERER)
