@@ -1,23 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[
-<h1>Cassini: more to discover on every card</h1>
-<h2>Plan your night</h2>
-<p>Info cards now show live facts and what\'s next. The <b>Moon</b> card shows its phase, how much is lit and its age, and the <b>Moon</b>, <b>planet</b> and <b>meteor shower</b> cards each have an <b>Upcoming</b> section so you know when to look.</p>
-<h2>Satellites</h2>
-<p>Look for the International Space Station (ISS) and Tiangong (CSS) on the map. Switch on the <b>Satellites</b> layer, then tap one to see its next visible passes. Turn on <b>Satellite passes</b> under <b>Settings → Notifications</b> to be told before a pass begins. The orbit data downloads the first time you use the layer, which can take a few minutes.</p>
-<h2>A new graphics engine (beta)</h2>
-<p>There is a new graphics engine, available as a beta: a more realistic daytime and twilight sky, and clearer labels, with a subtle underline on objects that have an info card. It is off by default. To try it, choose <b>Enhanced</b> under <b>Settings → Appearance → Graphics engine</b>, and switch back to <b>Classic</b> any time. We would love to hear how it works on your phone.</p>
-<h2>Also new</h2>
+<h1>Curiosity: a new look, and the sky through your camera</h1>
+<h2>Try the new graphics engine (beta)</h2>
+<p>A more realistic daytime and twilight sky, clearer labels, and a subtle underline on objects that have an info card. It is on by default in this beta. You can switch between <b>Enhanced</b> and <b>Classic</b> any time under <b>Settings → Appearance → Graphics engine</b>. We would love to hear how it works on your phone.</p>
+<h2>Through-camera mode (beta)</h2>
+<p>See the sky drawn over your phone\'s live camera image. Turn on <b>Through-camera mode</b> in the <b>Layers</b> sheet, or with the camera button on the layer rail. It is very experimental, and we are still deciding which exposure controls make sense, so tell us what you would want to adjust.</p>
+<h2>Share the sky</h2>
+<p>Share what you see from the overflow menu, or with the shutter button in through-camera mode.</p>
+<h2>Handier layer buttons</h2>
+<p>The sky colouring and through-camera buttons now sit on the layer rail. The grid and horizon have moved to the <b>Layers</b> sheet.</p>
+<h2>Recently, in Cassini</h2>
 <ul>
-<li><b>Brighter or dimmer grid:</b> choose how bright the grid lines are, and see more grid labels.</li>
-<li><b>Smaller Moon widget:</b> the Moon phase widget now comes in a compact 1x1 size.</li>
+<li><b>Satellites:</b> switch on the <b>Satellites</b> layer to find the ISS and Tiangong, and tap one for its next visible passes.</li>
+<li><b>Plan your night:</b> info cards show live facts and an <b>Upcoming</b> section for the Moon, planets and meteor showers.</li>
+<li><b>Grid and widget:</b> choose how bright the grid lines are, and use the new compact 1x1 Moon phase widget.</li>
 <li><b>Better search:</b> find asterisms such as the Big Dipper, and Earth.</li>
 </ul>
 <h2>And this is just the start...</h2>
 <p>We have many long asked-for features coming very soon.</p>
 <h2>About the release name</h2>
-<p><b>Cassini</b> was the NASA/ESA/ASI spacecraft that orbited Saturn from 2004 to 2017, studying its rings and moons and delivering the Huygens probe to the surface of Titan.</p>
+<p><b>Curiosity</b> is the NASA rover that has been exploring Gale crater on Mars since landing in 2012, studying whether the planet could once have supported microbial life.</p>
     ]]></string>
     <string name="whats_new_content_ios" translation_description="HTML content for the first iPhone release, shown in the What's new screen and the post-update dialog in place of the longer release notes of earlier versions. Please do not change the &lt; and &gt; markup."><![CDATA[
 <h1>Sky Map comes to iPhone</h1>
@@ -29,5 +32,11 @@
 <h1>Support Sky Map</h1>
 <p>Sky Map is free and open source. <a href="skymap://support">Find out how you can help.</a></p>
     ]]></string>
-    <string name="beta_user_help_text" translation_description="Usually-empty HTML content shown to beta testers asking for feedback, appended in the What's new dialog and the Help screen. Please do not change the &lt; and &gt; markup."></string>
+    <string name="beta_user_help_text" translation_description="Usually-empty HTML content shown to beta testers asking for feedback, appended in the What's new dialog and the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[
+<h2>Thanks for testing!</h2>
+<p><b>Please try the new Graphics engine.</b> It is on by default in this beta (<i>Enhanced</i> under Settings). It draws a more realistic daytime and twilight sky and clearer labels. Tell us if anything looks wrong, especially a black or garbled sky.</p>
+<p><b>Then try through-camera (AR) mode.</b> Turn on <i>Through-camera mode</i> in the Layers sheet to see the sky over the live camera image. It is still very experimental, and we are still deciding which exposure controls make sense, so we would love to hear what you would want to adjust.</p>
+<p>You can also share what you see from the overflow menu, or with the shutter in AR mode.</p>
+<p>Send feedback from the Support screen.</p>
+    ]]></string>
 </resources>

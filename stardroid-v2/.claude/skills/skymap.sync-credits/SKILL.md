@@ -106,6 +106,10 @@ and reports only the final list.
 
 ### Step 4 — Flag anomalies before writing anything
 
+**Diff against the existing `sponsors_text` first.** Names already in the file keep their
+earlier sanitized form (e.g. comma-containing names already cleaned) — don't re-ask about them.
+Append genuinely new names and drop from the end of the list; only ask about *new* anomalies.
+
 Don't silently "fix" surprising data. In particular:
 
 - A name containing a literal comma will visually blend into the

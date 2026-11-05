@@ -38,6 +38,7 @@ recent one.
 
 | Icon | Name | First released | Mission |
 |---|---|---|---|
+| <img src="../assets/release-icons/2.4.0_curiosity_icon.png" width="40" alt="Curiosity" /> | **Curiosity** | _unreleased (2.4.0 beta)_ | [Curiosity](https://en.wikipedia.org/wiki/Curiosity_(rover)) — the NASA rover that has explored Gale crater on Mars since landing in 2012, studying whether the planet could once have supported microbial life. |
 | <img src="../assets/release-icons/2.3.0_cassini_icon.png" width="40" alt="Cassini" /> | **Cassini** | 2026-11-04 (2.3.0) | [Cassini–Huygens](https://en.wikipedia.org/wiki/Cassini%E2%80%93Huygens) — the NASA/ESA/ASI spacecraft that orbited Saturn from 2004 to 2017, studying its rings and moons and delivering the Huygens probe to Titan. |
 | <img src="../assets/release-icons/2.2.0_buran_icon.png" width="40" alt="Buran" /> | **Buran** | 2026-10-21 (2.2.0) | [Buran](https://en.wikipedia.org/wiki/Buran_(spacecraft)) — the Soviet Union's reusable orbital spacecraft, which flew its only, uncrewed, orbital mission in 1988. |
 | <img src="../assets/release-icons/2.1.0_artemis_icon.png" width="40" alt="Artemis" /> | **Artemis** | 2026-09-30 (2.1.2) | [Artemis program](https://en.wikipedia.org/wiki/Artemis_program) — NASA's program to return humans to the Moon and establish a sustained lunar presence. |
