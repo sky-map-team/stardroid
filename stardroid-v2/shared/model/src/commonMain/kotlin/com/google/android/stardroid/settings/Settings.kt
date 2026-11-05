@@ -333,8 +333,8 @@ interface Settings {
 
     /**
      * Which rendering backend draws the map. See [RendererBackend]. An explicit choice wins;
-     * otherwise GLES1, or GLES3 where GLES3_DEFAULT is on. GLES3 silently falls back to GLES1
-     * wherever the remote flag is off or the device has no GL ES 3.0.
+     * otherwise GLES3 while the remote flag is on, else GLES1. GLES3 silently falls back to GLES1
+     * wherever the flag is off or the device has no GL ES 3.0.
      */
     val rendererBackend: Flow<RendererBackend>
 

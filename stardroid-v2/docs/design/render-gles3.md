@@ -1,8 +1,9 @@
 # Detailed Design: `:render:gles3` — the GL ES 3.0 backend
 
 **Status: PART A BUILT** — `:render:gles3` exists and draws the whole scene. Both backends
-ship: `:render:gles1` ([render-api.md](render-api.md)) remains the **default** (beta builds can
-default to GLES3 via the `gles3_default_enabled` flag; an explicit choice always wins), and a
+ship: `:render:gles3` is the **default** while the `gles3_renderer_enabled` flag is on (an explicit
+choice always wins, and turning the flag off puts everyone back on `:render:gles1`,
+[render-api.md](render-api.md)), and a
 settings row (Advanced → Graphics engine) picks between them. Part B is partly built: the analytic
 sky, the ground, the GLES3 eclipse shader and label halos shipped with Part A, and the rest
 of §7–§8 is still design only (see the status table at the head of Part B).

@@ -42,10 +42,10 @@ import com.google.android.stardroid.settings.DataStoreSettings
 import com.google.android.stardroid.settings.RendererBackend
 import com.google.android.stardroid.settings.Settings
 import com.google.android.stardroid.startup.DataStoreStartupState
+import com.google.android.stardroid.startup.Experiment
 import com.google.android.stardroid.startup.ExperimentConfig
 import com.google.android.stardroid.startup.StartupRouter
 import com.google.android.stardroid.startup.StartupState
-import com.google.android.stardroid.startup.gles3ByDefault
 import com.google.android.stardroid.time.TimeController
 import dagger.Module
 import dagger.Provides
@@ -85,7 +85,11 @@ object AppModule {
         // Read once: a fetched flag applies from the next launch, so the backend cannot flip
         // (and recreate the activity) under a running session.
         val defaultBackend by lazy {
-            if (experimentConfig.gles3ByDefault()) RendererBackend.GLES3 else RendererBackend.GLES1
+            if (experimentConfig.isEnabled(Experiment.GLES3_RENDERER)) {
+                RendererBackend.GLES3
+            } else {
+                RendererBackend.GLES1
+            }
         }
         return DataStoreSettings(
             application.settingsDataStore,

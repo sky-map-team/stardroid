@@ -47,15 +47,10 @@ enum class Experiment(val key: String) {
      * selected and any device that already chose it falls back to GLES1 on the next launch,
      * without shipping a release.
      *
-     * On by default, but only offers the choice: the stored backend still defaults to GLES1.
+     * On by default, and while on GLES3 is also the default for users who have not picked an
+     * engine; an explicit Settings choice always wins.
      */
     GLES3_RENDERER("gles3_renderer_enabled"),
-
-    /**
-     * Makes GLES3 the default for users who have not picked an engine (for a `:Beta` Remote
-     * Config rule). Needs GLES3_RENDERER on; an explicit Settings choice wins.
-     */
-    GLES3_DEFAULT("gles3_default_enabled"),
 
     /**
      * Remotely authored announcements on the notification, widget and interstitial surfaces
@@ -110,12 +105,8 @@ fun interface ExperimentConfig {
                     Experiment.SHARE_SKY -> false
                     Experiment.SATELLITES -> true
                     Experiment.GLES3_RENDERER -> true
-                    Experiment.GLES3_DEFAULT -> false
                     Experiment.ANNOUNCEMENTS -> false
                 }
             }
     }
 }
-
-fun ExperimentConfig.gles3ByDefault(): Boolean =
-    isEnabled(Experiment.GLES3_DEFAULT) && isEnabled(Experiment.GLES3_RENDERER)
