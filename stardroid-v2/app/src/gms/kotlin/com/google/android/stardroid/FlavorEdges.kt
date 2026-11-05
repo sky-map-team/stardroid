@@ -41,6 +41,9 @@ object FlavorEdges {
     /** Label shown on the Diagnostics screen to identify this build flavor. */
     const val FLAVOR_LABEL = "Gms"
 
+    /** Listed on Google Play, so Support can ask for a review. */
+    const val HAS_PLAY_LISTING = true
+
     fun analytics(application: Application): Analytics = FirebaseAnalyticsAdapter(application)
 
     fun experimentConfig(application: Application): ExperimentConfig =
