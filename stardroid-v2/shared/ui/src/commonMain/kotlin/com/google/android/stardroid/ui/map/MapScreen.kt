@@ -309,6 +309,19 @@ fun MapScreen(
     }
 
     val arModeOn by mapViewModel.arMode.collectAsStateWithLifecycle()
+    // Shared by the Layers-sheet row and the rail item.
+    val onSetArMode: (Boolean) -> Unit = { on ->
+        if (on && !hasCameraPermission()) {
+            // The host's grant path enables the layer; denial lands in arPermissionDenials
+            // above.
+            onRequestCameraPermission()
+        } else {
+            val wasManual = referenceFrame == ReferenceFrame.MANUAL
+            if (mapViewModel.setArMode(on) && on && wasManual) {
+                scope.launch { snackbarHostState.showSnackbar(arAutoModeMessage) }
+            }
+        }
+    }
     // Drag-to-align receipts (D64): every finished alignment gesture gets a visible
     // acknowledgement with a whole-gesture undo.
     LaunchedEffect(Unit) {
@@ -463,6 +476,7 @@ fun MapScreen(
             // on appear and slide out before this container drops them.
             val zonesVisible = transition.targetState == EnterExitState.Visible
             val layerToggles by layersViewModel.toggles.collectAsStateWithLifecycle()
+            val skyGradientOn by layersViewModel.skyGradientEnabled.collectAsStateWithLifecycle()
             // Collected here, not at screen level: when the chrome is hidden this content
             // leaves composition and the HUD flow goes cold (WhileSubscribed).
             val hudState by mapViewModel.hudState.collectAsStateWithLifecycle()
@@ -518,6 +532,10 @@ fun MapScreen(
                 onArShutterFractionChange = mapViewModel::setArShutterFraction,
                 onShareShutter = onShareSky ?: {},
                 shareEnabled = onShareSky != null,
+                skyGradientOn = skyGradientOn,
+                onSetSkyGradient = layersViewModel::setSkyGradientEnabled,
+                arModeOn = arModeOn.takeIf { hasArCamera },
+                onSetArMode = onSetArMode,
                 hudState = hudState.takeIf { hudEnabled },
                 onResetAlignment = {
                     mapViewModel.resetAlignment()
@@ -586,18 +604,7 @@ fun MapScreen(
                 arModeOn = arModeOn,
                 hasCamera = hasArCamera,
                 sensorsAvailable = mapViewModel.sensorsAvailable,
-                onSetArMode = { on ->
-                    if (on && !hasCameraPermission()) {
-                        // The host's grant path enables the layer; denial lands in
-                        // arPermissionDenials above.
-                        onRequestCameraPermission()
-                    } else {
-                        val wasManual = referenceFrame == ReferenceFrame.MANUAL
-                        if (mapViewModel.setArMode(on) && on && wasManual) {
-                            scope.launch { snackbarHostState.showSnackbar(arAutoModeMessage) }
-                        }
-                    }
-                },
+                onSetArMode = onSetArMode,
             )
         }
 
