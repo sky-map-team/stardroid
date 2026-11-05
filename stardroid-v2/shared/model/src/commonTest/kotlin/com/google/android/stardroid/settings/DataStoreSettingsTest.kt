@@ -75,4 +75,47 @@ class DataStoreSettingsTest {
             assertThat(startup.eulaAcceptedVersion.first()).isEqualTo(3)
             assertThat(settings.nightMode.first()).isTrue()
         }
+
+    @Test
+    fun rendererBackendDefaultsToTheInjectedDefaultUntilChosen() =
+        runTest {
+            val settings =
+                DataStoreSettings(
+                    settingsDataStore(path, CoroutineScope(Dispatchers.IO)),
+                    rendererBackendDefault = { RendererBackend.GLES3 },
+                )
+            assertThat(settings.rendererBackend.first()).isEqualTo(RendererBackend.GLES3)
+
+            settings.setRendererBackend(RendererBackend.GLES1)
+            assertThat(settings.rendererBackend.first()).isEqualTo(RendererBackend.GLES1)
+        }
+
+    @Test
+    fun storedRendererBackendIsReadBackWithoutAskingForTheDefault() =
+        runTest {
+            val firstJob = SupervisorJob()
+            DataStoreSettings(settingsDataStore(path, CoroutineScope(Dispatchers.IO + firstJob)))
+                .setRendererBackend(RendererBackend.GLES1)
+            firstJob.cancelAndJoin()
+
+            var defaultAsked = false
+            val reopened =
+                DataStoreSettings(
+                    settingsDataStore(path, CoroutineScope(Dispatchers.IO)),
+                    rendererBackendDefault = {
+                        defaultAsked = true
+                        RendererBackend.GLES3
+                    },
+                )
+            assertThat(reopened.rendererBackend.first()).isEqualTo(RendererBackend.GLES1)
+            assertThat(defaultAsked).isFalse()
+        }
+
+    @Test
+    fun rendererBackendIsClassicByDefault() =
+        runTest {
+            val settings =
+                DataStoreSettings(settingsDataStore(path, CoroutineScope(Dispatchers.IO)))
+            assertThat(settings.rendererBackend.first()).isEqualTo(RendererBackend.GLES1)
+        }
 }

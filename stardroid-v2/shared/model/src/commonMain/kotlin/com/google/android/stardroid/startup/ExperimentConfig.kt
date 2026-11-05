@@ -47,7 +47,7 @@ enum class Experiment(val key: String) {
      * selected and any device that already chose it falls back to GLES1 on the next launch,
      * without shipping a release.
      *
-     * On by default, but only offers the choice: the stored backend still defaults to GLES1.
+     * On by default; see `Settings.rendererBackend` for how it also sets the default engine.
      */
     GLES3_RENDERER("gles3_renderer_enabled"),
 

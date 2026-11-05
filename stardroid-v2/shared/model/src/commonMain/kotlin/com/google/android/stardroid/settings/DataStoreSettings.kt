@@ -33,6 +33,7 @@ class DataStoreSettings(
     enableAnalyticsDefault: Boolean = true,
     satelliteDataDefault: Boolean = true,
     smoothingEnabledDefault: Boolean = false,
+    private val rendererBackendDefault: () -> RendererBackend = { RendererBackend.GLES1 },
 ) : Settings {
     override fun layerEnabled(
         id: LayerId,
@@ -259,7 +260,7 @@ class DataStoreSettings(
     }
 
     override val rendererBackend: Flow<RendererBackend> =
-        enum(RENDERER_BACKEND, RendererBackend.GLES1)
+        enum(RENDERER_BACKEND) { rendererBackendDefault() }
 
     override suspend fun setRendererBackend(backend: RendererBackend) {
         dataStore.edit { it[RENDERER_BACKEND] = backend.name }
@@ -291,11 +292,17 @@ class DataStoreSettings(
     private inline fun <reified T : Enum<T>> enum(
         key: Preferences.Key<String>,
         default: T,
+    ): Flow<T> = enum(key) { default }
+
+    /** Lazy default, for values decided by a remote flag. */
+    private inline fun <reified T : Enum<T>> enum(
+        key: Preferences.Key<String>,
+        crossinline default: () -> T,
     ): Flow<T> =
         safeData()
             .map { prefs ->
                 prefs[key]?.let { name -> enumValues<T>().firstOrNull { it.name == name } }
-                    ?: default
+                    ?: default()
             }
             .distinctUntilChanged()
 
