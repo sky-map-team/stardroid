@@ -149,7 +149,6 @@ import com.google.android.stardroid.ui.resources.ic_moon
 import com.google.android.stardroid.ui.resources.ic_more_vert
 import com.google.android.stardroid.ui.resources.ic_search
 import com.google.android.stardroid.ui.resources.ic_settings
-import com.google.android.stardroid.ui.resources.ic_share
 import com.google.android.stardroid.ui.resources.ic_sun
 import com.google.android.stardroid.ui.resources.ic_support
 import com.google.android.stardroid.ui.resources.ic_time_travel
@@ -241,7 +240,6 @@ import com.google.android.stardroid.ui.resources.satellites_retry_tomorrow
 import com.google.android.stardroid.ui.resources.satellites_retry_within_hour
 import com.google.android.stardroid.ui.resources.search_button
 import com.google.android.stardroid.ui.resources.settings_button
-import com.google.android.stardroid.ui.resources.share_button
 import com.google.android.stardroid.ui.resources.share_shutter_button
 import com.google.android.stardroid.ui.resources.show_layers
 import com.google.android.stardroid.ui.resources.support_button
@@ -1078,9 +1076,6 @@ private fun ActionTooltip(
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun OverflowSheet(
-    onShareSky: (() -> Unit)?,
-    // Sharing is behind the SHARE_SKY experiment; off, the row simply isn't offered.
-    shareEnabled: Boolean = true,
     onOpenGallery: (() -> Unit)?,
     onOpenWidgets: (() -> Unit)?,
     // Hidden when no widget is offerable at all, rather than opening an empty sheet.
@@ -1111,9 +1106,6 @@ fun OverflowSheet(
             OverflowRow(Res.drawable.ic_gallery, Res.string.gallery_button, onOpenGallery)
             if (widgetsEnabled) {
                 OverflowRow(Res.drawable.ic_widgets, Res.string.widgets_button, onOpenWidgets)
-            }
-            if (shareEnabled) {
-                OverflowRow(Res.drawable.ic_share, Res.string.share_button, onShareSky)
             }
             OverflowRow(Res.drawable.ic_whats_new, Res.string.whats_new_button, onOpenWhatsNew)
             OverflowRow(Res.drawable.ic_support, Res.string.support_button, onOpenSupport)
