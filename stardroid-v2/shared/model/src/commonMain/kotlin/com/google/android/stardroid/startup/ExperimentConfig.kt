@@ -47,8 +47,7 @@ enum class Experiment(val key: String) {
      * selected and any device that already chose it falls back to GLES1 on the next launch,
      * without shipping a release.
      *
-     * On by default, and while on GLES3 is also the default for users who have not picked an
-     * engine; an explicit Settings choice always wins.
+     * On by default; see `Settings.rendererBackend` for how it also sets the default engine.
      */
     GLES3_RENDERER("gles3_renderer_enabled"),
 

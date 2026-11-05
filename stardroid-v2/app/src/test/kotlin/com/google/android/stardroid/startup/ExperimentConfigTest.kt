@@ -48,8 +48,6 @@ class ExperimentConfigTest {
             .hasSize(Experiment.entries.size)
     }
 
-    private fun configWith(vararg on: Experiment) = ExperimentConfig { it in on }
-
     private companion object {
         val ENTRY =
             Regex("<entry>\\s*<key>(.*?)</key>\\s*<value>(.*?)</value>\\s*</entry>")
