@@ -610,14 +610,6 @@ fun MapScreen(
 
         if (showOverflowSheet) {
             OverflowSheet(
-                onShareSky =
-                    onShareSky?.let { share ->
-                        {
-                            showOverflowSheet = false
-                            share()
-                        }
-                    },
-                shareEnabled = onShareSky != null,
                 onOpenGallery = {
                     showOverflowSheet = false
                     mapViewModel.logMenuItem(AnalyticsEvents.GALLERY_OPENED_LABEL)

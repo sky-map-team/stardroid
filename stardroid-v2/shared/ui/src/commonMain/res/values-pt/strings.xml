@@ -157,7 +157,6 @@ Brilho das linhas: normal, brilhante ou o mais brilhante, para céus crepuscular
     <string name="ar_iso_slider" translation_description="Accessibility label for the temporary developer slider setting the camera\'s manual ISO sensitivity in through-camera mode.">ISO da câmera</string>
     <string name="ar_shutter_slider_label" translation_description="Very short label for the temporary developer slider setting the camera\'s manual shutter (exposure) time in through-camera mode.">Obtur.</string>
     <string name="ar_shutter_slider" translation_description="Accessibility label for the temporary developer slider setting the camera\'s manual shutter (exposure) time in through-camera mode.">Tempo do obturador da câmera</string>
-    <string name="share_button" translation_description="Overflow-menu row that captures the current sky view as an image and opens the system share sheet.">Compartilhar o céu</string>
     <string name="share_shutter_button" translation_description="Accessibility label for the round shutter button that captures and shares the current through-camera view.">Compartilhar esta vista</string>
     <!-- tm:omitted name="ar_exposure_auto" reason="identical_to_source" -->
     <string name="time_travel_button">Viagem no tempo</string>
