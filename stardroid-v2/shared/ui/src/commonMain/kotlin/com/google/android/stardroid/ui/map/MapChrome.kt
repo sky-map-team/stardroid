@@ -334,8 +334,7 @@ fun MapChrome(
     // The in-AR shutter is a share entry point, so it follows the SHARE_SKY experiment
     // independently of the camera layer itself.
     shareEnabled: Boolean = true,
-    // The rail's Display group. Null hides the item: the tour has no camera, and a device
-    // without one (or with the CAMERA_AR experiment off) never offers AR.
+    // Rail Display group; null hides the item (no camera, or CAMERA_AR off).
     skyGradientOn: Boolean? = null,
     onSetSkyGradient: (Boolean) -> Unit = {},
     arModeOn: Boolean? = null,
@@ -420,7 +419,7 @@ fun MapChrome(
                             label = Res.string.layer_camera,
                             help = LayerHelp(Res.string.layer_help_camera),
                             checked = arModeOn && sensorsAvailable,
-                            // As in the sheet: needs the sensors, so it greys out without them.
+                            // Needs sensors, as in the sheet.
                             dimmed = !sensorsAvailable,
                             onClick = { if (sensorsAvailable) onSetArMode(!arModeOn) },
                         ),
@@ -554,7 +553,8 @@ const val CHROME_ZONE_EXIT_MS = 420
  * button are unconditional; `ifroom` items drop from the end of the rail — never from the
  * Layers sheet — when 48 dp slots run out (landscape height is the binding constraint).
  * Layers in neither list (grid, horizon and ecliptic today; new layers by default) are
- * sheet-only. The Display group (sky gradient, through-camera) sits below the object ifroom items.
+ * sheet-only. The Display group (sky gradient, through-camera) sits below the object ifroom
+ * items.
  */
 @Composable
 private fun LayerRail(
@@ -582,9 +582,9 @@ private fun LayerRail(
             },
         )
     }
-    var displayHelpFor by rememberSaveable { mutableStateOf<Int?>(null) }
-    displayHelpFor?.let { index ->
-        displayItems.getOrNull(index)?.let { item ->
+    var displayHelpFor by rememberSaveable { mutableStateOf<String?>(null) }
+    displayHelpFor?.let { key ->
+        displayItems.firstOrNull { it.label.key == key }?.let { item ->
             LayerHelpDialog(
                 icon = item.icon,
                 label = item.label,
@@ -602,18 +602,10 @@ private fun LayerRail(
         val fixed = RAIL_SLOT * (always.size + 1) + RAIL_DIVIDER_BLOCK + RAIL_CONTAINER_PAD
         // The Display group outranks the object ifroom items: it is claimed first, so a short
         // landscape screen sheds meteors and satellites before the sky gradient or AR.
-        var displayShown = 0
-        for (n in 1..displayItems.size) {
-            if (fixed + RAIL_DIVIDER_BLOCK + RAIL_SLOT * n <= maxHeight) displayShown = n
-        }
+        val displayShown = railSlotsThatFit(fixed, maxHeight, displayItems.size)
         val displayUsed =
             if (displayShown > 0) RAIL_DIVIDER_BLOCK + RAIL_SLOT * displayShown else 0.dp
-        var ifroomShown = 0
-        for (n in 1..ifroom.size) {
-            if (fixed + displayUsed + RAIL_DIVIDER_BLOCK + RAIL_SLOT * n <= maxHeight) {
-                ifroomShown = n
-            }
-        }
+        val ifroomShown = railSlotsThatFit(fixed + displayUsed, maxHeight, ifroom.size)
         val shownIfroom = ifroom.take(ifroomShown)
         val shownDisplay = displayItems.take(displayShown)
         val outline = MaterialTheme.colorScheme.outline
@@ -659,13 +651,13 @@ private fun LayerRail(
                 }
                 if (shownDisplay.isNotEmpty()) {
                     RailDivider()
-                    shownDisplay.forEachIndexed { index, item ->
+                    for (item in shownDisplay) {
                         RailItem(
                             icon = item.icon,
                             contentDescription = stringResource(item.label),
                             checked = item.checked,
                             onClick = item.onClick,
-                            onLongClick = { displayHelpFor = index },
+                            onLongClick = { displayHelpFor = item.label.key },
                             modifier = item.modifier,
                             dimmed = item.dimmed,
                         )
@@ -863,7 +855,7 @@ private fun RailItem(
         contentAlignment = Alignment.Center,
         modifier =
             modifier
-                .alpha(if (dimmed) 0.38f else 1f)
+                .then(if (dimmed) Modifier.alpha(0.38f) else Modifier)
                 .size(48.dp)
                 .clip(CircleShape)
                 .combinedClickable(
@@ -879,6 +871,7 @@ private fun RailItem(
                     } else {
                         role = Role.Button
                     }
+                    if (dimmed) disabled()
                 },
     ) {
         Box(
@@ -1778,6 +1771,17 @@ fun demoChromeToggles(satellitesEnabled: Boolean): List<LayerToggle> =
     (RAIL_ALWAYS_IDS + RAIL_IFROOM_IDS)
         .filter { satellitesEnabled || it != SatelliteLayer.LAYER_ID }
         .map { LayerToggle(it, enabled = true) }
+
+/**
+ * How many of [count] rail items (plus the divider that sets them off) fit in [maxHeight] after
+ * [used] is already spoken for.
+ */
+internal fun railSlotsThatFit(
+    used: Dp,
+    maxHeight: Dp,
+    count: Int,
+): Int =
+    (count downTo 1).firstOrNull { used + RAIL_DIVIDER_BLOCK + RAIL_SLOT * it <= maxHeight } ?: 0
 
 /** A non-layer Display control on the rail: the sky gradient or through-camera mode. */
 private class RailDisplayItem(
