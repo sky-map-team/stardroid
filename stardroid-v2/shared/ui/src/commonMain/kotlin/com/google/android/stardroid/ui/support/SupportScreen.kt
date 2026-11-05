@@ -18,11 +18,11 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.automirrored.filled.KeyboardArrowRight
-import androidx.compose.material.icons.filled.Create
 import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.Share
 import androidx.compose.material.icons.filled.Star
 import androidx.compose.material.icons.filled.ThumbUp
+import androidx.compose.material.icons.filled.Warning
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
@@ -39,6 +39,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.platform.LocalUriHandler
+import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.unit.dp
 import com.google.android.stardroid.analytics.AnalyticsEvents
 import com.google.android.stardroid.ui.common.StyledHtml
@@ -70,10 +71,10 @@ private const val BMAC_URL =
     "https://buymeacoffee.com/skymapdevs?utm_source=skymap&utm_medium=app&utm_campaign=support"
 
 /**
- * [onShareApp] is null where the host has no share sheet; [onRateApp] where there is no store
- * listing to review. [sponsorRow] is the host's own
- * sponsoring row (iOS's tip jar, which must be in-app purchase) and is always shown; without
- * one, a Buy Me a Coffee link shows only where [donationLinksAllowed].
+ * [onShareApp] is null where the host has no share sheet, [onRateApp] where there is no store
+ * listing to review. [sponsorRow] is the host's own sponsoring row (iOS's tip jar, which must be
+ * in-app purchase) and is always shown; without one, a Buy Me a Coffee link shows only where
+ * [donationLinksAllowed].
  */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -87,6 +88,7 @@ fun SupportScreen(
 ) {
     val scrollBehavior = TopAppBarDefaults.exitUntilCollapsedScrollBehavior()
     val uriHandler = LocalUriHandler.current
+    val showSponsor = sponsorRow != null || donationLinksAllowed
     Scaffold(
         modifier = Modifier.nestedScroll(scrollBehavior.nestedScrollConnection),
         topBar = {
@@ -148,12 +150,12 @@ fun SupportScreen(
             SupportRow(
                 stringResource(Res.string.support_issues_title),
                 stringResource(Res.string.support_issues_desc),
-                icon = Icons.Filled.Create,
+                icon = Icons.Filled.Warning,
             ) {
                 onAction(AnalyticsEvents.SUPPORT_ACTION_ISSUES)
                 uriHandler.openUri(ISSUES_URL)
             }
-            if (sponsorRow != null || donationLinksAllowed) {
+            if (showSponsor) {
                 HorizontalDivider(Modifier.padding(horizontal = 16.dp, vertical = 8.dp))
             }
             if (sponsorRow != null) {
@@ -196,12 +198,13 @@ fun SupportRow(
 ) {
     val colors =
         if (emphasized) {
+            val on = MaterialTheme.colorScheme.onPrimaryContainer
             ListItemDefaults.colors(
                 containerColor = MaterialTheme.colorScheme.primaryContainer,
-                headlineColor = MaterialTheme.colorScheme.onPrimaryContainer,
-                supportingColor = MaterialTheme.colorScheme.onPrimaryContainer,
-                leadingIconColor = MaterialTheme.colorScheme.onPrimaryContainer,
-                trailingIconColor = MaterialTheme.colorScheme.onPrimaryContainer,
+                headlineColor = on,
+                supportingColor = on,
+                leadingIconColor = on,
+                trailingIconColor = on,
             )
         } else {
             ListItemDefaults.colors(
@@ -216,6 +219,6 @@ fun SupportRow(
             Icon(Icons.AutoMirrored.Filled.KeyboardArrowRight, contentDescription = null)
         },
         colors = colors,
-        modifier = Modifier.clickable(onClick = onClick),
+        modifier = Modifier.clickable(role = Role.Button, onClick = onClick),
     )
 }

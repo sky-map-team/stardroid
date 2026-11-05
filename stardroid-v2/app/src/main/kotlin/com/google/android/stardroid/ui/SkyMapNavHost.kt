@@ -10,6 +10,7 @@
 package com.google.android.stardroid.ui
 
 import android.content.ActivityNotFoundException
+import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.opengl.GLSurfaceView
@@ -348,17 +349,7 @@ fun SkyMapNavHost(
                 onAction = mapViewModel::logSupportAction,
                 onRateApp =
                     if (FlavorEdges.HAS_PLAY_LISTING) {
-                        {
-                            val id = context.packageName
-                            val market =
-                                Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=$id"))
-                            try {
-                                context.startActivity(market)
-                            } catch (_: ActivityNotFoundException) {
-                                val web = "https://play.google.com/store/apps/details?id=$id"
-                                context.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(web)))
-                            }
-                        }
+                        { openPlayListing(context) }
                     } else {
                         null
                     },
@@ -421,3 +412,19 @@ fun SkyMapNavHost(
 
 /** v1's linked figure-eight demonstration video. */
 private const val CALIBRATION_VIDEO_URL = "https://www.youtube.com/watch?v=-Uq7AmSAjt8"
+
+private fun openPlayListing(context: Context) {
+    val id = context.packageName
+    val market = Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=$id"))
+    try {
+        context.startActivity(market)
+    } catch (_: ActivityNotFoundException) {
+        val web =
+            Intent(
+                Intent.ACTION_VIEW,
+                Uri.parse("https://play.google.com/store/apps/details?id=$id"),
+            )
+        // No Play app and no browser: nothing to open, and nothing worth crashing over.
+        runCatching { context.startActivity(web) }
+    }
+}
