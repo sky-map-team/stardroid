@@ -17,16 +17,26 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
+import androidx.compose.material.icons.automirrored.filled.KeyboardArrowRight
+import androidx.compose.material.icons.filled.Create
+import androidx.compose.material.icons.filled.Favorite
+import androidx.compose.material.icons.filled.Share
+import androidx.compose.material.icons.filled.Star
+import androidx.compose.material.icons.filled.ThumbUp
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.LargeTopAppBar
 import androidx.compose.material3.ListItem
+import androidx.compose.material3.ListItemDefaults
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.platform.LocalUriHandler
 import androidx.compose.ui.unit.dp
@@ -44,6 +54,8 @@ import com.google.android.stardroid.ui.resources.support_bmac_title
 import com.google.android.stardroid.ui.resources.support_intro
 import com.google.android.stardroid.ui.resources.support_issues_desc
 import com.google.android.stardroid.ui.resources.support_issues_title
+import com.google.android.stardroid.ui.resources.support_rate_desc
+import com.google.android.stardroid.ui.resources.support_rate_title
 import com.google.android.stardroid.ui.resources.support_screen_title
 import com.google.android.stardroid.ui.resources.support_share_desc
 import com.google.android.stardroid.ui.resources.support_share_title
@@ -58,7 +70,8 @@ private const val BMAC_URL =
     "https://buymeacoffee.com/skymapdevs?utm_source=skymap&utm_medium=app&utm_campaign=support"
 
 /**
- * [onShareApp] is null where the host has no share sheet. [sponsorRow] is the host's own
+ * [onShareApp] is null where the host has no share sheet; [onRateApp] where there is no store
+ * listing to review. [sponsorRow] is the host's own
  * sponsoring row (iOS's tip jar, which must be in-app purchase) and is always shown; without
  * one, a Buy Me a Coffee link shows only where [donationLinksAllowed].
  */
@@ -69,6 +82,7 @@ fun SupportScreen(
     onBack: () -> Unit,
     onAction: (String) -> Unit,
     onShareApp: (() -> Unit)?,
+    onRateApp: (() -> Unit)? = null,
     sponsorRow: (@Composable () -> Unit)? = null,
 ) {
     val scrollBehavior = TopAppBarDefaults.exitUntilCollapsedScrollBehavior()
@@ -103,9 +117,30 @@ fun SupportScreen(
                 stringResource(Res.string.support_intro),
                 modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp),
             )
+            if (onRateApp != null) {
+                SupportRow(
+                    stringResource(Res.string.support_rate_title),
+                    stringResource(Res.string.support_rate_desc),
+                    icon = Icons.Filled.ThumbUp,
+                ) {
+                    onAction(AnalyticsEvents.SUPPORT_ACTION_RATE)
+                    onRateApp()
+                }
+            }
+            if (onShareApp != null) {
+                SupportRow(
+                    stringResource(Res.string.support_share_title),
+                    stringResource(Res.string.support_share_desc),
+                    icon = Icons.Filled.Share,
+                ) {
+                    onAction(AnalyticsEvents.SUPPORT_ACTION_SHARE)
+                    onShareApp()
+                }
+            }
             SupportRow(
                 stringResource(Res.string.support_star_title),
                 stringResource(Res.string.support_star_desc),
+                icon = Icons.Filled.Star,
             ) {
                 onAction(AnalyticsEvents.SUPPORT_ACTION_GITHUB_STAR)
                 uriHandler.openUri(GITHUB_URL)
@@ -113,18 +148,13 @@ fun SupportScreen(
             SupportRow(
                 stringResource(Res.string.support_issues_title),
                 stringResource(Res.string.support_issues_desc),
+                icon = Icons.Filled.Create,
             ) {
                 onAction(AnalyticsEvents.SUPPORT_ACTION_ISSUES)
                 uriHandler.openUri(ISSUES_URL)
             }
-            if (onShareApp != null) {
-                SupportRow(
-                    stringResource(Res.string.support_share_title),
-                    stringResource(Res.string.support_share_desc),
-                ) {
-                    onAction(AnalyticsEvents.SUPPORT_ACTION_SHARE)
-                    onShareApp()
-                }
+            if (sponsorRow != null || donationLinksAllowed) {
+                HorizontalDivider(Modifier.padding(horizontal = 16.dp, vertical = 8.dp))
             }
             if (sponsorRow != null) {
                 sponsorRow()
@@ -132,6 +162,8 @@ fun SupportScreen(
                 SupportRow(
                     stringResource(Res.string.support_bmac_title),
                     stringResource(Res.string.support_bmac_desc),
+                    icon = Icons.Filled.Favorite,
+                    emphasized = true,
                 ) {
                     onAction(AnalyticsEvents.SUPPORT_ACTION_BMAC)
                     uriHandler.openUri(BMAC_URL)
@@ -150,16 +182,40 @@ fun SupportScreen(
     }
 }
 
-/** Public so a host's `sponsorRow` matches the other rows. */
+/**
+ * Public so a host's `sponsorRow` matches the other rows. The icon and chevron mark the row as
+ * tappable; [emphasized] tints it as the one monetary ask.
+ */
 @Composable
 fun SupportRow(
     title: String,
     description: String,
+    icon: ImageVector? = null,
+    emphasized: Boolean = false,
     onClick: () -> Unit,
 ) {
+    val colors =
+        if (emphasized) {
+            ListItemDefaults.colors(
+                containerColor = MaterialTheme.colorScheme.primaryContainer,
+                headlineColor = MaterialTheme.colorScheme.onPrimaryContainer,
+                supportingColor = MaterialTheme.colorScheme.onPrimaryContainer,
+                leadingIconColor = MaterialTheme.colorScheme.onPrimaryContainer,
+                trailingIconColor = MaterialTheme.colorScheme.onPrimaryContainer,
+            )
+        } else {
+            ListItemDefaults.colors(
+                leadingIconColor = MaterialTheme.colorScheme.primary,
+            )
+        }
     ListItem(
         headlineContent = { Text(title) },
         supportingContent = { Text(description) },
+        leadingContent = icon?.let { { Icon(it, contentDescription = null) } },
+        trailingContent = {
+            Icon(Icons.AutoMirrored.Filled.KeyboardArrowRight, contentDescription = null)
+        },
+        colors = colors,
         modifier = Modifier.clickable(onClick = onClick),
     )
 }
