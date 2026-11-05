@@ -84,6 +84,7 @@ import androidx.compose.runtime.snapshotFlow
 import androidx.compose.runtime.withFrameNanos
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.graphicsLayer
@@ -270,6 +271,8 @@ import kotlin.time.Duration.Companion.minutes
 sealed interface ChromeTourTarget {
     data class Layer(val id: LayerId) : ChromeTourTarget
 
+    data object SkyGradient : ChromeTourTarget
+
     data object LayersExpand : ChromeTourTarget
 
     data object Search : ChromeTourTarget
@@ -331,6 +334,12 @@ fun MapChrome(
     // The in-AR shutter is a share entry point, so it follows the SHARE_SKY experiment
     // independently of the camera layer itself.
     shareEnabled: Boolean = true,
+    // The rail's Display group. Null hides the item: the tour has no camera, and a device
+    // without one (or with the CAMERA_AR experiment off) never offers AR.
+    skyGradientOn: Boolean? = null,
+    onSetSkyGradient: (Boolean) -> Unit = {},
+    arModeOn: Boolean? = null,
+    onSetArMode: (Boolean) -> Unit = {},
     tourTargetModifier: (ChromeTourTarget) -> Modifier = { Modifier },
     // The rail's teaching labels (D83): shown for the first few reveals because the icons
     // alone read wrong to newcomers, then retired. Null means no labels at all — the tour,
@@ -390,6 +399,34 @@ fun MapChrome(
                 )
             }
         }
+        val displayItems =
+            buildList {
+                if (skyGradientOn != null) {
+                    add(
+                        RailDisplayItem(
+                            icon = Res.drawable.ic_layer_sky_gradient,
+                            label = Res.string.layer_sky_gradient,
+                            help = LayerHelp(Res.string.layer_help_sky_gradient),
+                            checked = skyGradientOn,
+                            onClick = { onSetSkyGradient(!skyGradientOn) },
+                            modifier = tourTargetModifier(ChromeTourTarget.SkyGradient),
+                        ),
+                    )
+                }
+                if (arModeOn != null) {
+                    add(
+                        RailDisplayItem(
+                            icon = Res.drawable.ic_layer_camera,
+                            label = Res.string.layer_camera,
+                            help = LayerHelp(Res.string.layer_help_camera),
+                            checked = arModeOn && sensorsAvailable,
+                            // As in the sheet: needs the sensors, so it greys out without them.
+                            dimmed = !sensorsAvailable,
+                            onClick = { if (sensorsAvailable) onSetArMode(!arModeOn) },
+                        ),
+                    )
+                }
+            }
         ChromeZone(
             visible,
             ChromeEdge.START,
@@ -397,6 +434,7 @@ fun MapChrome(
         ) {
             LayerRail(
                 toggles = toggles,
+                displayItems = displayItems,
                 nightMode = nightMode,
                 onToggleLayer = onToggleLayer,
                 onOpenLayersSheet = onOpenLayersSheet,
@@ -515,11 +553,13 @@ const val CHROME_ZONE_EXIT_MS = 420
  * Rail membership borrows the action-bar mechanism (D56): `always` items and the expand
  * button are unconditional; `ifroom` items drop from the end of the rail — never from the
  * Layers sheet — when 48 dp slots run out (landscape height is the binding constraint).
- * Layers in neither list (ecliptic today; new layers by default) are sheet-only.
+ * Layers in neither list (grid, horizon and ecliptic today; new layers by default) are
+ * sheet-only. The Display group (sky gradient, through-camera) sits below the object ifroom items.
  */
 @Composable
 private fun LayerRail(
     toggles: List<LayerToggle>,
+    displayItems: List<RailDisplayItem>,
     nightMode: Boolean,
     onToggleLayer: (LayerId, Boolean) -> Unit,
     onOpenLayersSheet: () -> Unit,
@@ -542,6 +582,17 @@ private fun LayerRail(
             },
         )
     }
+    var displayHelpFor by rememberSaveable { mutableStateOf<Int?>(null) }
+    displayHelpFor?.let { index ->
+        displayItems.getOrNull(index)?.let { item ->
+            LayerHelpDialog(
+                icon = item.icon,
+                label = item.label,
+                help = item.help,
+                onDismiss = { displayHelpFor = null },
+            )
+        }
+    }
     val byId = toggles.associateBy { it.id }
     val always = RAIL_ALWAYS_IDS.mapNotNull { byId[it] }
     val ifroom = RAIL_IFROOM_IDS.mapNotNull { byId[it] }
@@ -549,11 +600,22 @@ private fun LayerRail(
         // Slots: the always toggles + the expand button + the divider above it are fixed;
         // ifroom toggles (and the divider setting them off) take whatever height remains.
         val fixed = RAIL_SLOT * (always.size + 1) + RAIL_DIVIDER_BLOCK + RAIL_CONTAINER_PAD
+        // The Display group outranks the object ifroom items: it is claimed first, so a short
+        // landscape screen sheds meteors and satellites before the sky gradient or AR.
+        var displayShown = 0
+        for (n in 1..displayItems.size) {
+            if (fixed + RAIL_DIVIDER_BLOCK + RAIL_SLOT * n <= maxHeight) displayShown = n
+        }
+        val displayUsed =
+            if (displayShown > 0) RAIL_DIVIDER_BLOCK + RAIL_SLOT * displayShown else 0.dp
         var ifroomShown = 0
         for (n in 1..ifroom.size) {
-            if (fixed + RAIL_DIVIDER_BLOCK + RAIL_SLOT * n <= maxHeight) ifroomShown = n
+            if (fixed + displayUsed + RAIL_DIVIDER_BLOCK + RAIL_SLOT * n <= maxHeight) {
+                ifroomShown = n
+            }
         }
         val shownIfroom = ifroom.take(ifroomShown)
+        val shownDisplay = displayItems.take(displayShown)
         val outline = MaterialTheme.colorScheme.outline
         // The expand button borrows the action cluster's glyph colour (D90): it opens a sheet
         // rather than switching a layer, so it wears neither the rail's amber "on" nor its grey
@@ -595,6 +657,20 @@ private fun LayerRail(
                         ) { helpFor = toggle.id.id }
                     }
                 }
+                if (shownDisplay.isNotEmpty()) {
+                    RailDivider()
+                    shownDisplay.forEachIndexed { index, item ->
+                        RailItem(
+                            icon = item.icon,
+                            contentDescription = stringResource(item.label),
+                            checked = item.checked,
+                            onClick = item.onClick,
+                            onLongClick = { displayHelpFor = index },
+                            modifier = item.modifier,
+                            dimmed = item.dimmed,
+                        )
+                    }
+                }
                 RailDivider()
                 RailItem(
                     icon = Res.drawable.ic_layers,
@@ -610,6 +686,7 @@ private fun LayerRail(
                 RailLabels(
                     always = always,
                     ifroom = shownIfroom,
+                    display = shownDisplay,
                     fadingOut = railLabels.fadingOut,
                     modifier = Modifier.padding(start = 6.dp),
                 )
@@ -637,6 +714,7 @@ private fun LayerRail(
 private fun RailLabels(
     always: List<LayerToggle>,
     ifroom: List<LayerToggle>,
+    display: List<RailDisplayItem>,
     fadingOut: Boolean,
     modifier: Modifier = Modifier,
 ) {
@@ -652,6 +730,12 @@ private fun RailLabels(
             Spacer(Modifier.height(RAIL_DIVIDER_BLOCK))
             for (toggle in ifroom) {
                 RailLabel(layerName(toggle.id), toggle.enabled)
+            }
+        }
+        if (display.isNotEmpty()) {
+            Spacer(Modifier.height(RAIL_DIVIDER_BLOCK))
+            for (item in display) {
+                RailLabel(item.label, item.checked)
             }
         }
         Spacer(Modifier.height(RAIL_DIVIDER_BLOCK))
@@ -772,12 +856,14 @@ private fun RailItem(
     tint: Color? = null,
     dataStatus: LayerDataStatus? = null,
     nightMode: Boolean = false,
+    dimmed: Boolean = false,
 ) {
     val colors = MaterialTheme.colorScheme
     Box(
         contentAlignment = Alignment.Center,
         modifier =
             modifier
+                .alpha(if (dimmed) 0.38f else 1f)
                 .size(48.dp)
                 .clip(CircleShape)
                 .combinedClickable(
@@ -1606,8 +1692,6 @@ private val RAIL_IFROOM_IDS: List<LayerId> =
         // After meteor showers so an install without the satellite experiment loses nothing from
         // the rail's order, and before the reference layers because it is an object layer.
         SatelliteLayer.LAYER_ID,
-        GridLayer.LAYER_ID,
-        HorizonLayer.LAYER_ID,
     )
 
 /** The non-object reference elements: the Layers sheet's second group. */
@@ -1662,6 +1746,7 @@ private fun layerName(id: LayerId): StringResource =
 val CHROME_TOUR_STOPS: List<ChromeTourTarget> by lazy {
     (RAIL_ALWAYS_IDS + RAIL_IFROOM_IDS).map { ChromeTourTarget.Layer(it) } +
         listOf(
+            ChromeTourTarget.SkyGradient,
             ChromeTourTarget.LayersExpand,
             ChromeTourTarget.Search,
             ChromeTourTarget.TimeTravel,
@@ -1675,6 +1760,7 @@ val CHROME_TOUR_STOPS: List<ChromeTourTarget> by lazy {
 fun chromeTourLabel(target: ChromeTourTarget): StringResource =
     when (target) {
         is ChromeTourTarget.Layer -> layerName(target.id)
+        ChromeTourTarget.SkyGradient -> Res.string.layer_sky_gradient
         ChromeTourTarget.LayersExpand -> Res.string.show_layers
         ChromeTourTarget.Search -> Res.string.search_button
         ChromeTourTarget.TimeTravel -> Res.string.time_travel_button
@@ -1692,6 +1778,17 @@ fun demoChromeToggles(satellitesEnabled: Boolean): List<LayerToggle> =
     (RAIL_ALWAYS_IDS + RAIL_IFROOM_IDS)
         .filter { satellitesEnabled || it != SatelliteLayer.LAYER_ID }
         .map { LayerToggle(it, enabled = true) }
+
+/** A non-layer Display control on the rail: the sky gradient or through-camera mode. */
+private class RailDisplayItem(
+    val icon: DrawableResource,
+    val label: StringResource,
+    val help: LayerHelp,
+    val checked: Boolean,
+    val onClick: () -> Unit,
+    val modifier: Modifier = Modifier,
+    val dimmed: Boolean = false,
+)
 
 private fun layerIcon(id: LayerId): DrawableResource =
     when (id) {

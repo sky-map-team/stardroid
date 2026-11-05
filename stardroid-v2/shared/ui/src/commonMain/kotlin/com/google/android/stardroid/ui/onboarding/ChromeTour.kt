@@ -141,6 +141,7 @@ internal fun ChromeTourDemo(
                 // sit in the same space saying the same words twice. (Null is the default,
                 // but stated explicitly — this is a decision, not an omission.)
                 railLabels = null,
+                skyGradientOn = true,
             )
             Box(
                 Modifier
