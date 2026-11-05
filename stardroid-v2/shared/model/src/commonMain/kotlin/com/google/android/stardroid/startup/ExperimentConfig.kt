@@ -52,10 +52,8 @@ enum class Experiment(val key: String) {
     GLES3_RENDERER("gles3_renderer_enabled"),
 
     /**
-     * Makes the GLES3 backend the *default* for users who have never picked one, so a `:Beta`
-     * Remote Config rule can put beta testers on Enhanced. An explicit choice in Settings always
-     * wins, and it has no effect while [GLES3_RENDERER] is off. Read once per process, so a
-     * fetched change applies from the next launch.
+     * Makes GLES3 the default for users who have not picked an engine (for a `:Beta` Remote
+     * Config rule). Needs GLES3_RENDERER on; an explicit Settings choice wins.
      */
     GLES3_DEFAULT("gles3_default_enabled"),
 
@@ -119,6 +117,5 @@ fun interface ExperimentConfig {
     }
 }
 
-/** Whether users who have not picked a graphics engine start on GLES3: both flags must be on. */
 fun ExperimentConfig.gles3ByDefault(): Boolean =
     isEnabled(Experiment.GLES3_DEFAULT) && isEnabled(Experiment.GLES3_RENDERER)

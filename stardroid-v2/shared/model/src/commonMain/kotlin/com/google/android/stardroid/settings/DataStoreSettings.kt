@@ -294,7 +294,7 @@ class DataStoreSettings(
         default: T,
     ): Flow<T> = enum(key) { default }
 
-    /** As above, with the default read when it is needed — for defaults a remote flag decides. */
+    /** Lazy default, for values decided by a remote flag. */
     private inline fun <reified T : Enum<T>> enum(
         key: Preferences.Key<String>,
         crossinline default: () -> T,

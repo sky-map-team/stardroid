@@ -84,7 +84,9 @@ object AppModule {
     ): Settings {
         // Read once: a fetched flag applies from the next launch, so the backend cannot flip
         // (and recreate the activity) under a running session.
-        val gles3ByDefault by lazy { experimentConfig.gles3ByDefault() }
+        val defaultBackend by lazy {
+            if (experimentConfig.gles3ByDefault()) RendererBackend.GLES3 else RendererBackend.GLES1
+        }
         return DataStoreSettings(
             application.settingsDataStore,
             enableAnalyticsDefault = FlavorEdges.ENABLE_ANALYTICS_DEFAULT,
@@ -94,9 +96,7 @@ object AppModule {
             // it's validated, revisit whether a clean-fusing device still wants it on by default
             // (issue #1001).
             smoothingEnabledDefault = true,
-            rendererBackendDefault = {
-                if (gles3ByDefault) RendererBackend.GLES3 else RendererBackend.GLES1
-            },
+            rendererBackendDefault = { defaultBackend },
         )
     }
 

@@ -91,6 +91,27 @@ class DataStoreSettingsTest {
         }
 
     @Test
+    fun storedRendererBackendIsReadBackWithoutAskingForTheDefault() =
+        runTest {
+            val firstJob = SupervisorJob()
+            DataStoreSettings(settingsDataStore(path, CoroutineScope(Dispatchers.IO + firstJob)))
+                .setRendererBackend(RendererBackend.GLES1)
+            firstJob.cancelAndJoin()
+
+            var defaultAsked = false
+            val reopened =
+                DataStoreSettings(
+                    settingsDataStore(path, CoroutineScope(Dispatchers.IO)),
+                    rendererBackendDefault = {
+                        defaultAsked = true
+                        RendererBackend.GLES3
+                    },
+                )
+            assertThat(reopened.rendererBackend.first()).isEqualTo(RendererBackend.GLES1)
+            assertThat(defaultAsked).isFalse()
+        }
+
+    @Test
     fun rendererBackendIsClassicByDefault() =
         runTest {
             val settings =
