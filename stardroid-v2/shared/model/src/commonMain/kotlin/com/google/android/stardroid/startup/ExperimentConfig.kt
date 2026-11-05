@@ -47,7 +47,7 @@ enum class Experiment(val key: String) {
      * selected and any device that already chose it falls back to GLES1 on the next launch,
      * without shipping a release.
      *
-     * Off by default: GLES1 remains the shipping renderer until this has had real-device time.
+     * On by default, but only offers the choice: the stored backend still defaults to GLES1.
      */
     GLES3_RENDERER("gles3_renderer_enabled"),
 
