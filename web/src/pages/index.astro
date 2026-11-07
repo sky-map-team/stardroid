@@ -30,6 +30,9 @@ const features = [
 const v2 = [1, 2, 3, 4, 5, 6] as const;
 ---
 <Base>
+  {links.appstore && (
+    <a class="announce" href={links.appstore}>{t('banner.ios')} <span aria-hidden="true">→</span></a>
+  )}
   <section class="wrap hero">
     <div class="copy">
       <p class="eyebrow">{t('hero.eyebrow')}</p>
@@ -43,7 +46,9 @@ const v2 = [1, 2, 3, 4, 5, 6] as const;
       <p class="ctas badges">
         <a href={links.play} aria-label={t('cta.play')}><Image src={playBadge} alt="" height={64} /></a>
         <a href={links.fdroid} aria-label={t('cta.fdroid')}><Image src={fdroidBadge} alt="" height={64} /></a>
-        <span class="soon" role="img" aria-label={t('cta.appstore')}><img src={appStoreBadge.src} alt="" height="43" /><small>Coming soon</small></span>
+        {links.appstore
+          ? <a href={links.appstore} aria-label={t('cta.appstore.live')}><img src={appStoreBadge.src} alt="" height="43" /></a>
+          : <span class="soon" role="img" aria-label={t('cta.appstore')}><img src={appStoreBadge.src} alt="" height="43" /><small>Coming soon</small></span>}
       </p>
     </div>
     <Image class="shot" src={hero} alt="Sky Map showing constellations and planets overhead at night" widths={[360, 540, 720]} sizes="(min-width: 900px) 360px, 70vw" loading="eager" />
@@ -139,6 +144,8 @@ const v2 = [1, 2, 3, 4, 5, 6] as const;
   .story { padding-block: 2rem; }
   .badges { align-items: center; gap: .25rem .5rem; }
   .badges a, .badges img { display: block; }
+  .announce { display: block; padding: .6rem 1rem; text-align: center; background: var(--outline-variant); color: var(--starlight); text-decoration: none; font-weight: 600; }
+  .announce:hover { color: var(--link-hover); }
   .soon { position: relative; display: block; margin-left: .5rem; }
   .soon img { opacity: .5; filter: grayscale(1); }
   .soon small { position: absolute; top: 100%; left: 0; right: 0; text-align: center; white-space: nowrap; font: 500 .7rem var(--data); color: var(--muted); }
