@@ -28,6 +28,7 @@ import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.unit.dp
 import com.google.android.stardroid.ui.common.StyledHtml
 import com.google.android.stardroid.ui.common.betaHelpHtml
+import com.google.android.stardroid.ui.common.iosAnnouncementHtml
 import com.google.android.stardroid.ui.common.topBarWindowInsets
 import com.google.android.stardroid.ui.common.whatsNewContentResource
 import com.google.android.stardroid.ui.resources.Res
@@ -74,7 +75,8 @@ fun WhatsNewScreen(
         // The beta note leads for the same reason as in WhatsNewDialog: it shouldn't get
         // buried below a long feature list.
         val html =
-            betaHelpHtml() +
+            iosAnnouncementHtml() +
+                betaHelpHtml() +
                 stringResource(whatsNewContentResource) +
                 stringResource(Res.string.credits_body)
         StyledHtml(

@@ -16,3 +16,5 @@ import org.jetbrains.compose.resources.StringResource
 internal actual val whatsNewContentResource: StringResource = Res.string.whats_new_content_ios
 
 internal actual val betaHelpTextShown: Boolean = false
+
+internal actual val iosAnnouncementShown: Boolean = false

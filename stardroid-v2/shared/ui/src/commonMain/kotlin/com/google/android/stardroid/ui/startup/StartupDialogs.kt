@@ -24,6 +24,7 @@ import androidx.compose.ui.unit.dp
 import com.google.android.stardroid.ui.common.APP_LINK_SCHEME
 import com.google.android.stardroid.ui.common.StyledHtml
 import com.google.android.stardroid.ui.common.betaHelpHtml
+import com.google.android.stardroid.ui.common.iosAnnouncementHtml
 import com.google.android.stardroid.ui.common.whatsNewContentResource
 import com.google.android.stardroid.ui.resources.Res
 import com.google.android.stardroid.ui.resources.dialog_ok_button
@@ -66,7 +67,8 @@ fun WhatsNewDialog(
             // with its own splash line instead — restore it for later point releases once the
             // launch announcement has aged out.
             val html =
-                stringResource(Res.string.whats_new_support_link) +
+                iosAnnouncementHtml() +
+                    stringResource(Res.string.whats_new_support_link) +
                     betaHelpHtml() +
                     stringResource(whatsNewContentResource)
             StyledHtml(
