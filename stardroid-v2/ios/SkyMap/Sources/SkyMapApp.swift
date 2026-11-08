@@ -15,11 +15,28 @@ import SwiftUI
 @main
 struct SkyMapApp: App {
     private let analytics = FirebaseAnalyticsAdapter()
+    private let flags: FirebaseRemoteConfigAdapter
     private let tipStore = StoreKitTipStore()
+    @State private var flagsReady = false
+
+    init() {
+        // After the analytics adapter, which configures Firebase.
+        flags = FirebaseRemoteConfigAdapter()
+    }
 
     var body: some Scene {
         WindowGroup {
-            RootView(analytics: analytics, tipStore: tipStore).ignoresSafeArea()
+            Group {
+                if flagsReady {
+                    RootView(analytics: analytics, tipStore: tipStore, flags: flags)
+                } else {
+                    // The launch screen's navy, until the stored flags can be read.
+                    Color("LaunchNavy").onAppear {
+                        flags.prepare { flagsReady = true }
+                    }
+                }
+            }
+            .ignoresSafeArea()
         }
     }
 }
@@ -27,9 +44,14 @@ struct SkyMapApp: App {
 private struct RootView: UIViewControllerRepresentable {
     let analytics: SkyMapKit.Analytics
     let tipStore: TipStore
+    let flags: SkyMapKit.FlagSource
 
     func makeUIViewController(context: Context) -> UIViewController {
-        SkyMapScreenKt.skyMapViewController(analytics: analytics, tipStore: tipStore)
+        let controller = SkyMapScreenKt.skyMapViewController(
+            analytics: analytics, tipStore: tipStore, flags: flags)
+        // Only now that the app has read its flags: a fetch applies from the next launch.
+        flags.fetch(ignoreThrottle: false) { _, _ in }
+        return controller
     }
 
     func updateUIViewController(_ viewController: UIViewController, context: Context) {}

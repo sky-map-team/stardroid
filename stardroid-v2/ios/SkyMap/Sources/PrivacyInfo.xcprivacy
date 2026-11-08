@@ -35,7 +35,7 @@
 				<string>NSPrivacyCollectedDataTypePurposeAnalytics</string>
 			</array>
 		</dict>
-		<!-- Firebase's per-install app instance ID (not the advertising ID). Firebase Analytics, opt-out in Settings. -->
+		<!-- Firebase's per-install app instance ID (not the advertising ID). Analytics (opt-out in Settings) and Remote Config, which fetches the feature flags and cannot be turned off. -->
 		<dict>
 			<key>NSPrivacyCollectedDataType</key>
 			<string>NSPrivacyCollectedDataTypeDeviceID</string>
@@ -46,6 +46,7 @@
 			<key>NSPrivacyCollectedDataTypePurposes</key>
 			<array>
 				<string>NSPrivacyCollectedDataTypePurposeAnalytics</string>
+				<string>NSPrivacyCollectedDataTypePurposeAppFunctionality</string>
 			</array>
 		</dict>
 		<!-- Events beyond taps: layer and settings changes, the sensor path, the start-up funnel. Firebase Analytics, opt-out in Settings. -->

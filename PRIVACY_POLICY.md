@@ -114,10 +114,10 @@ at https://www.geoapify.com/privacy-policy for how it handles them.
 
 ## Other requests the app makes
 
-- **Remote configuration (Google Play version):** about every 12 hours Sky Map fetches settings
-  and announcements from Firebase Remote Config. That request goes to Google and carries the
-  app version, device details and a Firebase installation identifier. The usage
-  statistics switch does not turn it off.
+- **Remote configuration (Google Play and iOS versions):** about every 12 hours Sky Map fetches
+  settings and announcements from Firebase Remote Config (on iOS, when you open the app). That
+  request goes to Google and carries the app version, device details and a Firebase
+  installation identifier. The usage statistics switch does not turn it off.
 - **Satellite data (Android):** only if you turn on the satellite layer, Sky Map downloads orbit
   data from CelesTrak (celestrak.org). The request shows your IP address to that service and
   contains no location.
