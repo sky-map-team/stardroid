@@ -206,8 +206,6 @@ or [the full surface](#the-full-at-launch-feature-surface) above with a real
 |---|---|---|
 | Through-camera (AR) mode, with drag-to-align | `camera_ar_enabled` | D64, D67, D68 |
 | Share the sky (overflow row + in-AR shutter, camera composite layouts) | `share_sky_enabled` | D70, D71 |
-| Moon-phase home-screen widget | `moon_widget_enabled` | D75 |
-| Tonight's-Sky and Countdown widgets | `tonight_widget_enabled` | D76 |
 | Shower-peak and tonight-digest notifications | `notifications_enabled` | D77 |
 | Satellite tracking — layer, pass predictor, CelesTrak fetch | `satellites_enabled` | D92 |
 

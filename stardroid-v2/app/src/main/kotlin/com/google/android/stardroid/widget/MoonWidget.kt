@@ -44,6 +44,7 @@ import com.google.android.stardroid.astronomy.dayOfCycle
 import com.google.android.stardroid.astronomy.illuminationPercent
 import com.google.android.stardroid.astronomy.moonWidgetModel
 import com.google.android.stardroid.ui.MainActivity
+import kotlinx.coroutines.flow.first
 import kotlinx.datetime.Clock
 import kotlinx.datetime.Instant
 import kotlinx.datetime.TimeZone
@@ -65,14 +66,7 @@ class MoonWidget : GlanceAppWidget() {
     ) {
         val entryPoint = widgetEntryPoint(context)
         val now = Clock.System.now()
-        // Kill switch (D75): instances placed before a flag flip freeze as a quiet brand tile
-        // rather than continuing to update; the component gate stops new placements.
-        val model =
-            moonWidgetModelFor(
-                entryPoint.experimentConfig(),
-                now,
-                entryPoint.settings().savedLocation,
-            )
+        val model = moonWidgetModel(now, entryPoint.settings().savedLocation.first())
         provideContent {
             MoonWidgetContent(model, now, context)
         }
@@ -98,7 +92,7 @@ class MoonWidget : GlanceAppWidget() {
  */
 @Composable
 private fun MoonWidgetContent(
-    model: MoonWidgetModel?,
+    model: MoonWidgetModel,
     now: Instant,
     context: Context,
 ) {
@@ -110,7 +104,7 @@ private fun MoonWidgetContent(
 
 @Composable
 private fun CompactMoonWidget(
-    model: MoonWidgetModel?,
+    model: MoonWidgetModel,
     context: Context,
 ) {
     Column(
@@ -118,7 +112,6 @@ private fun CompactMoonWidget(
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalAlignment = Alignment.CenterVertically,
     ) {
-        if (model == null) return@Column
         Image(
             provider = ImageProvider(moonDisc(model, COMPACT_DISC_SIZE_PX)),
             contentDescription = context.getString(phaseNameRes(model.phase)),
@@ -167,7 +160,7 @@ private fun moonDisc(
 
 @Composable
 private fun FullMoonWidget(
-    model: MoonWidgetModel?,
+    model: MoonWidgetModel,
     now: Instant,
     context: Context,
 ) {
@@ -176,7 +169,6 @@ private fun FullMoonWidget(
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalAlignment = Alignment.CenterVertically,
     ) {
-        if (model == null) return@Column
         Image(
             provider = ImageProvider(moonDisc(model, DISC_SIZE_PX)),
             contentDescription = context.getString(phaseNameRes(model.phase)),

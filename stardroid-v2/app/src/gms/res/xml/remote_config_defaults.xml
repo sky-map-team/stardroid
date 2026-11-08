@@ -3,14 +3,6 @@
      the Experiment enum; kept in sync with ExperimentConfig.Static's fdroid default. -->
 <defaultsMap>
     <entry>
-        <key>moon_widget_enabled</key>
-        <value>true</value>
-    </entry>
-    <entry>
-        <key>tonight_widget_enabled</key>
-        <value>true</value>
-    </entry>
-    <entry>
         <key>notifications_enabled</key>
         <value>true</value>
     </entry>

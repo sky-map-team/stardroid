@@ -71,18 +71,21 @@ class TonightWidget : GlanceAppWidget() {
         id: GlanceId,
     ) {
         val entryPoint = widgetEntryPoint(context)
+        val now = Clock.System.now()
+        val location = entryPoint.settings().savedLocation.first()
+        val showers =
+            entryPoint
+                .catalogAccess()
+                .repository()
+                .meteorShowers(entryPoint.localeSource().current)
+                .first()
         val sky =
-            tonightSkyFor(
-                entryPoint.experimentConfig(),
-                Clock.System.now(),
-                entryPoint.settings().savedLocation,
-                {
-                    entryPoint
-                        .catalogAccess()
-                        .repository()
-                        .meteorShowers(entryPoint.localeSource().current)
-                },
-            ) { location -> tonightSatellitePasses(context, location) }
+            tonightSky(
+                now,
+                location,
+                showers,
+                passes = tonightSatellitePasses(context, location),
+            )
         val banner = announcementBanner(entryPoint, context)
         provideContent {
             TonightContent(sky, context, banner)
@@ -123,7 +126,7 @@ class TonightWidgetReceiver : GlanceAppWidgetReceiver() {
  */
 @Composable
 private fun TonightContent(
-    sky: TonightSky?,
+    sky: TonightSky,
     context: Context,
     banner: WidgetBanner?,
 ) {
@@ -138,7 +141,6 @@ private fun TonightContent(
         // half-empty box; the provider info lets users resize down to one row.
         verticalAlignment = Alignment.CenterVertically,
     ) {
-        if (sky == null) return@Column
         HeaderRow(sky, context)
         banner?.let { AnnouncementRow(it) }
         if (sky.highlights.isEmpty()) {

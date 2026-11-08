@@ -23,7 +23,7 @@ phases):
 
 | Phase | Surface | New infrastructure | Status |
 |---|---|---|---|
-| 1 · Moon widget | Glance widget + info-card promo row + pin dialog | Glance/WorkManager plumbing, `moon_widget_enabled` flag | **Built** (D75) |
+| 1 · Moon widget | Glance widget + info-card promo row + pin dialog | Glance/WorkManager plumbing | **Built** (D75) |
 | 2 · Tonight widget | Tonight digest widget (+ countdown as near-free sibling) | `:core:events` engine v1 — N-day scan → ranked (event, time, quality) | **Built** (D76) |
 | 3 · Notifications | Shower peak + tonight digest, settings screen, permission flow | Channels, digest scheduler, engine suppression threshold | **Built** (D77) |
 | 4 · If wanted | Conjunctions, moon phases, rise alerts, rise/set widget | Engine minima scan; per-object watch list | **Proposed** — not built |
@@ -114,26 +114,11 @@ hemispheres for `mirrored`, null-location degradation.
 New catalog entries: `androidx.glance:glance-appwidget` and
 `androidx.work:work-runtime-ktx`.
 
-### Experiment flag
+### Experiment flag (retired)
 
-`Experiment.MOON_WIDGET("moon_widget_enabled")`, **default true** everywhere:
-
-- `remote_config_defaults.xml` entry `true` (gms shipped default before first fetch).
-- `ExperimentConfig.Static` returns true for it (fdroid — no Remote Config there, so for
-  fdroid this is effectively a shipped constant, as with `WARM_WELCOME`).
-
-Gating mechanics (the flag is a kill switch, so it must bite everywhere the widget
-surfaces):
-
-1. **Picker/pin visibility** — on app start (and on each Remote Config activation),
-   `PackageManager.setComponentEnabledSetting` on `MoonWidgetReceiver`:
-   `COMPONENT_ENABLED_STATE_ENABLED/DISABLED`. Disabled removes it from the widget picker
-   and from `requestPinAppWidget`. Note the standard Remote Config caveat: a flag flip
-   reaches clients on their next fetch cycle (12 h throttle), not instantly.
-2. **Refresh path** — `WidgetRefreshWorker` exits without updating when the flag is off
-   (covers instances placed before a flip; they freeze rather than crash, and the
-   component disable prevents new ones).
-3. **Promo row** — the info-card row checks the flag before offering.
+The widgets shipped behind `moon_widget_enabled` / `tonight_widget_enabled` kill switches
+(a component-enabled gate, a refresh-worker bail-out and a promo-row check). Both flags, and
+`WidgetGate`, were removed once the widgets had launched; the receivers are always enabled.
 
 ### Discovery (ships with the widget, not after)
 

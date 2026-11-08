@@ -42,8 +42,6 @@ import com.google.android.stardroid.render.api.SkyCamera
 import com.google.android.stardroid.satellites.SatelliteIds
 import com.google.android.stardroid.satellites.TrackedSatellite
 import com.google.android.stardroid.settings.FakeSettings
-import com.google.android.stardroid.startup.Experiment
-import com.google.android.stardroid.startup.ExperimentConfig
 import com.google.android.stardroid.testing.assertThat
 import com.google.android.stardroid.ui.search.SolarSystemIds
 import kotlinx.coroutines.CompletableDeferred
@@ -132,7 +130,6 @@ class ObjectInfoViewModelTest {
     private val locale = MutableStateFlow(LocaleSpec("en"))
 
     private fun viewModel(
-        experimentConfig: ExperimentConfig = ExperimentConfig.Static,
         moonWidgetPlaced: () -> Boolean = { false },
         satellites: List<TrackedSatellite> = emptyList(),
         upcomingPasses: List<SatellitePass> = emptyList(),
@@ -148,7 +145,6 @@ class ObjectInfoViewModelTest {
             settings = settings,
             location = { LONDON },
             computeContext = UnconfinedTestDispatcher(dispatcher.scheduler),
-            experimentConfig = experimentConfig,
             moonWidgetPlaced = moonWidgetPlaced,
             satellites = { satellites },
             upcomingPasses = passSearch ?: { upcomingPasses },
@@ -908,22 +904,17 @@ class ObjectInfoViewModelTest {
         }
 
     @Test
-    fun `other cards and a disabled experiment show no widget row`() =
+    fun `other cards show no widget row`() =
         testScope.runCurrentTest {
             repository.infos[MOON_ID] = objectInfo(MOON_ID, "Moon")
             repository.infos[SIRIUS_ID] = objectInfo(SIRIUS_ID, "Sirius")
-            val flagOff = ExperimentConfig { it != Experiment.MOON_WIDGET }
-            val onMoon = viewModel()
-            val moonFlagOff = viewModel(experimentConfig = flagOff)
-            backgroundScope.launch { onMoon.moonWidgetPromo.collect {} }
-            backgroundScope.launch { moonFlagOff.moonWidgetPromo.collect {} }
+            val onSirius = viewModel()
+            backgroundScope.launch { onSirius.moonWidgetPromo.collect {} }
 
-            onMoon.show(SIRIUS_ID)
-            moonFlagOff.show(MOON_ID)
+            onSirius.show(SIRIUS_ID)
             runCurrent()
 
-            assertThat(onMoon.moonWidgetPromo.value).isEqualTo(MoonWidgetPromo.HIDDEN)
-            assertThat(moonFlagOff.moonWidgetPromo.value).isEqualTo(MoonWidgetPromo.HIDDEN)
+            assertThat(onSirius.moonWidgetPromo.value).isEqualTo(MoonWidgetPromo.HIDDEN)
         }
 
     private fun TestScope.runCurrentTest(body: suspend TestScope.() -> Unit) =
