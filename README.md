@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.org/sky-map-team/stardroid.svg?branch=master)](https://travis-ci.org/sky-map-team/stardroid)
 [![Buy Me A Coffee](https://img.shields.io/badge/Support-Buy%20Me%20A%20Coffee-orange?style=flat-square&logo=buy-me-a-coffee)](https://www.buymeacoffee.com/skymapdevs?utm_source=github&utm_medium=readme&utm_campaign=readme_badge)
 
-http://stardroid.app
+https://getskymap.app
 
 Sky Map is the open-source astronomy app for Android and iPhone, built for the community.
 
