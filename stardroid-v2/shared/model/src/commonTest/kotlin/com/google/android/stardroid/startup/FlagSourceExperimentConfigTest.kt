@@ -18,6 +18,8 @@ class FlagSourceExperimentConfigTest {
         private val server: MutableMap<String, Boolean> = mutableMapOf(),
         override var lastFetchTimeMillis: Long? = null,
         private val outcome: Pair<Boolean, String?> = false to null,
+        override val canFetch: Boolean = true,
+        private val callbackTwice: Boolean = false,
     ) : FlagSource {
         var ignoredThrottle: Boolean? = null
 
@@ -29,6 +31,7 @@ class FlagSourceExperimentConfigTest {
         ) {
             ignoredThrottle = ignoreThrottle
             onDone(outcome.first, outcome.second)
+            if (callbackTwice) onDone(outcome.first, outcome.second)
         }
     }
 
@@ -105,4 +108,17 @@ class FlagSourceExperimentConfigTest {
         assertThat(config.canFetch).isTrue()
         assertThat(config.lastFetchTimeMillis).isEqualTo(1234L)
     }
+
+    @Test
+    fun canFetchFollowsTheSource() {
+        assertThat(config(FakeSource(canFetch = false)).canFetch).isFalse()
+    }
+
+    @Test
+    fun aSourceThatCallsBackTwiceIsTolerated() =
+        runTest {
+            val result = config(FakeSource(outcome = true to null, callbackTwice = true)).fetchNow()
+
+            assertThat(result).isEqualTo(FetchResult.Success(updated = true))
+        }
 }

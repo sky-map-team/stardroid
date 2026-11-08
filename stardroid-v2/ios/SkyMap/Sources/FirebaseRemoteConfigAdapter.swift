@@ -13,31 +13,26 @@ import SkyMapKit
 
 /// The shared `FlagSource` over Firebase Remote Config, as Android's gms
 /// `RemoteConfigExperimentConfig` is over the same project and keys. The defaults and the list of
-/// flags live in Kotlin; this only reads what the server has set and fetches more. Without a
-/// Firebase configuration (no bundled GoogleService-Info.plist) it reads nothing and every flag
-/// keeps its shipped default.
+/// flags live in Kotlin. Without a Firebase configuration (no bundled GoogleService-Info.plist)
+/// it reads nothing and every flag keeps its shipped default.
 final class FirebaseRemoteConfigAdapter: NSObject, SkyMapKit.FlagSource {
     private static let fetchInterval: TimeInterval = 12 * 60 * 60
 
     private let remoteConfig: RemoteConfig?
+    private var preparing = false
 
-    /// Create after `FirebaseAnalyticsAdapter`, which configures Firebase.
+    var canFetch: Bool { remoteConfig != nil }
+
     override init() {
-        if FirebaseApp.app() != nil {
-            let config = RemoteConfig.remoteConfig()
-            let settings = RemoteConfigSettings()
-            settings.minimumFetchInterval = Self.fetchInterval
-            config.configSettings = settings
-            remoteConfig = config
-        } else {
-            remoteConfig = nil
-        }
+        remoteConfig = FirebaseApp.app() != nil ? RemoteConfig.remoteConfig() : nil
         super.init()
     }
 
     /// Calls `done` once the stored values are readable, or after a short wait if they are not,
     /// because the flags are read once at launch and must not see a half-loaded config.
     func prepare(done: @escaping () -> Void) {
+        guard !preparing else { return }
+        preparing = true
         var finished = false
         let finish = {
             if !finished {

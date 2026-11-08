@@ -18,6 +18,9 @@ import kotlin.coroutines.resume
  * the platform code that implements this.
  */
 interface FlagSource {
+    /** False when there is no server to ask (no Firebase configuration). */
+    val canFetch: Boolean
+
     /** The value the server has set for [key], or null if it has set none or it can't be read. */
     fun serverValue(key: String): Boolean?
 
@@ -25,9 +28,8 @@ interface FlagSource {
     val lastFetchTimeMillis: Long?
 
     /**
-     * Fetches new values and stores them for the next launch. The usual throttle applies unless
-     * [ignoreThrottle]. [onDone] gets whether the values changed, or an error message, exactly
-     * once, from any thread.
+     * The usual throttle applies unless [ignoreThrottle]. [onDone] gets whether the values
+     * changed, or an error message, exactly once, from any thread.
      */
     fun fetch(
         ignoreThrottle: Boolean,
@@ -52,29 +54,24 @@ class FlagSourceExperimentConfig(
 ) : ExperimentConfig {
     private val values: Map<Experiment, Boolean> =
         Experiment.entries.associateWith { experiment ->
-            val server =
-                if (experiment in serverControlled) {
-                    source.serverValue(
-                        experiment.key,
-                    )
-                } else {
-                    null
-                }
+            val controlled = experiment in serverControlled
+            val server = if (controlled) source.serverValue(experiment.key) else null
             server ?: defaults.isEnabled(experiment)
         }
 
     override fun isEnabled(experiment: Experiment): Boolean = values.getValue(experiment)
 
-    override val canFetch: Boolean = true
+    override val canFetch: Boolean get() = source.canFetch
 
     override val lastFetchTimeMillis: Long? get() = source.lastFetchTimeMillis
 
     override suspend fun fetchNow(): FetchResult =
         suspendCancellableCoroutine { continuation ->
             source.fetch(ignoreThrottle = true) { updated, error ->
-                continuation.resume(
-                    if (error == null) FetchResult.Success(updated) else FetchResult.Failure(error),
-                )
+                // A source that breaks the exactly-once contract must not crash the app.
+                if (!continuation.isActive) return@fetch
+                val result = error?.let { FetchResult.Failure(it) } ?: FetchResult.Success(updated)
+                continuation.resume(result)
             }
         }
 }

@@ -28,6 +28,8 @@ internal fun iosExperiments(source: FlagSource): ExperimentConfig =
 
 /** No server: the shipped defaults, for a build without a Firebase configuration. */
 internal object NoFlagSource : FlagSource {
+    override val canFetch: Boolean = false
+
     override fun serverValue(key: String): Boolean? = null
 
     override val lastFetchTimeMillis: Long? = null

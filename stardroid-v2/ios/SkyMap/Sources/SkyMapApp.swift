@@ -32,11 +32,7 @@ struct SkyMapApp: App {
                 } else {
                     // The launch screen's navy, until the stored flags can be read.
                     Color("LaunchNavy").onAppear {
-                        flags.prepare {
-                            flagsReady = true
-                            // Stored for the next launch: the flags are frozen for this one.
-                            flags.fetch(ignoreThrottle: false) { _, _ in }
-                        }
+                        flags.prepare { flagsReady = true }
                     }
                 }
             }
@@ -51,7 +47,11 @@ private struct RootView: UIViewControllerRepresentable {
     let flags: SkyMapKit.FlagSource
 
     func makeUIViewController(context: Context) -> UIViewController {
-        SkyMapScreenKt.skyMapViewController(analytics: analytics, tipStore: tipStore, flags: flags)
+        let controller = SkyMapScreenKt.skyMapViewController(
+            analytics: analytics, tipStore: tipStore, flags: flags)
+        // Only now that the app has read its flags: a fetch applies from the next launch.
+        flags.fetch(ignoreThrottle: false) { _, _ in }
+        return controller
     }
 
     func updateUIViewController(_ viewController: UIViewController, context: Context) {}
