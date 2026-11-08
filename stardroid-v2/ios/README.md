@@ -16,13 +16,24 @@ xcodebuild -project ios/SkyMap/SkyMap.xcodeproj -scheme SkyMap \
   -destination 'platform=iOS Simulator,name=iPhone 17 Pro' -derivedDataPath ios/SkyMap/build build
 ```
 
-On a device, add `DEVELOPMENT_TEAM=<team> CODE_SIGN_STYLE=Automatic -allowProvisioningUpdates`
-(the phone unlocked, so Xcode can mount its developer disk image). The bundle ID is
-`com.penterakt.skymap.dev`: a development build registers its bundle ID to the signing team,
-and bundle IDs are unique across Apple, so a dev build must never claim the App Store app's.
+On a device, add `-allowProvisioningUpdates` (the phone unlocked, so Xcode can mount its
+developer disk image). Signing is automatic under the Penterakt team (`DEVELOPMENT_TEAM` in
+`project.yml`). Debug builds use the bundle ID `io.penterakt.skymap.dev`: a development build
+registers its bundle ID to the signing team, and bundle IDs are unique across Apple, so a dev
+build must never claim the App Store app's. Release builds (archives) use `io.penterakt.skymap`.
 
 `MapGestureTests` (the scheme's `test`) drags, flings and pinches the map, capturing the sky
 after each as attachments (`xcrun xcresulttool export attachments --path <result bundle>`).
+
+### Analytics
+
+Usage analytics is Firebase (GA4, the same property as Android), behind the shared `Analytics`
+edge that `FirebaseAnalyticsAdapter.swift` implements. It is on by default with an opt-out in
+Settings, as on Android's gms flavor. Download `GoogleService-Info.plist` from the Firebase
+console and put it in `ios/SkyMap/` (gitignored); the build bundles it when present. Without it
+Firebase stays unconfigured and every call is a no-op. Register both bundle IDs (`.dev` and the
+App Store one) in the console, so development events don't land in the production stream. The
+`WithoutAdIdSupport` variant is linked, so the advertising ID is never read.
 
 ## RendererHarness
 

@@ -32,5 +32,8 @@ tools/planets/.cache/
 ios/**/*.xcodeproj/
 # ...and their Xcode build output (-derivedDataPath build, build-sim, build-device, ...)
 ios/**/build*/
-# ...and test result bundles (-resultBundlePath), which belong in a scratch directory
-*.xcresult/
+# ...and xcodebuild test result bundles (-resultBundlePath)
+ios/**/*.xcresult/
+
+# Firebase iOS config (from the console)
+GoogleService-Info*.plist

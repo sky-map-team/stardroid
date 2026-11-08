@@ -146,6 +146,16 @@
     <string name="support_share_desc" translation_description="Support screen row description: share the app with someone who likes the night sky">Share Sky Map with someone who loves the night sky.</string>
     <string name="support_bmac_title" translation_description="Support screen row: make a small voluntary donation on the Buy Me a Coffee website">Buy us a coffee</string>
     <string name="support_bmac_desc" translation_description="Support screen row description: donations are optional">A small, optional tip toward the cost of development.</string>
+    <string name="support_tip_title" translation_description="iOS Support screen row title: leave a one-time voluntary tip for the developer, paid through the App Store">Leave a tip</string>
+    <string name="support_tip_desc" translation_description="iOS Support screen row description: tips are optional one-time purchases and the app stays free">A one-time, optional thank-you toward the cost of development. Sky Map stays free either way.</string>
+    <string name="tip_mercury" translation_description="Name of the smallest tip amount, a planet name used as a button label next to the price. Mercury, the smallest planet">Mercury</string>
+    <string name="tip_mars" translation_description="Name of the middle tip amount, a planet name used as a button label next to the price. Mars">Mars</string>
+    <string name="tip_jupiter" translation_description="Name of the largest tip amount, a planet name used as a button label next to the price. Jupiter, the biggest planet">Jupiter</string>
+    <string name="support_tip_thanks" translation_description="Shown after a tip purchase succeeds">Thank you, and clear skies!</string>
+    <string name="support_tip_pending" translation_description="Shown when a tip purchase is waiting for approval, for example from a family organizer">Your tip is waiting for approval. Thank you!</string>
+    <string name="support_tip_failed" translation_description="Shown when a tip purchase did not go through">The purchase didn\'t go through. Please try again later.</string>
+    <string name="support_privacy_title" translation_description="Support screen row title: opens the privacy policy web page">Privacy policy</string>
+    <string name="support_privacy_desc" translation_description="Support screen row description: the privacy policy explains what data Sky Map collects and how to opt out">What Sky Map collects, and how to opt out.</string>
     <string name="support_share_message" translation_description="Message sent when the user shares the app with a friend. %1$s is the web link to the app's store page. Keep the %1$s placeholder.">Have you tried Sky Map? It\'s a free, open-source planetarium for your phone: %1$s</string>
     <string name="support_thanks_html" translation_description="HTML section at the bottom of the Support screen thanking donors and open-source contributors. %1$s is a list of donor names and %2$s a list of contributor names. Please do not change the &lt; and &gt; markup or the placeholders."><![CDATA[
 <h2>Thank you</h2>

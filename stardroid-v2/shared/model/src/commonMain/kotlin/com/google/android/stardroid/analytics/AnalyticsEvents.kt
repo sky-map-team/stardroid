@@ -81,6 +81,7 @@ object AnalyticsEvents {
     const val SUPPORT_ACTION_ISSUES = "issues"
     const val SUPPORT_ACTION_SHARE = "share"
     const val SUPPORT_ACTION_BMAC = "bmac"
+    const val SUPPORT_ACTION_TIP = "tip"
     const val SUPPORT_ACTION_RATE = "rate"
     const val MANUAL_MODE_TOGGLED_EVENT = "manual_mode_toggled_ev"
     const val MANUAL_MODE_ENABLED = "enabled"

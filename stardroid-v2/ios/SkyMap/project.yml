@@ -1,0 +1,144 @@
+# XcodeGen spec for the iOS app (iOS port phase 4). The .xcodeproj is generated, not checked in:
+#   (cd ios/SkyMap && xcodegen)
+# Everything but this shell is Kotlin: the app-ios framework (SkyMapKit) and the shared modules.
+name: SkyMap
+options:
+  bundleIdPrefix: io.penterakt.skymap
+  deploymentTarget:
+    iOS: "15.0"
+packages:
+  Firebase:
+    url: https://github.com/firebase/firebase-ios-sdk
+    from: 11.0.0
+targets:
+  SkyMap:
+    type: application
+    platform: iOS
+    # The WithoutAdIdSupport variant never reads the advertising ID, so no tracking prompt.
+    dependencies:
+      - package: Firebase
+        product: FirebaseAnalyticsWithoutAdIdSupport
+    sources:
+      - Sources
+      # The renderer's images, copied as Android packages them so the keys map to the same paths.
+      - path: ../../app/src/main/assets/planets
+        type: folder
+        buildPhase: resources
+      - path: ../../app/src/main/assets/catalog
+        type: folder
+        buildPhase: resources
+      # The object cards' photos, read by name (rememberCelestialImage).
+      - path: ../../app/src/main/assets/celestial_images
+        type: folder
+        buildPhase: resources
+      # The warm welcome's backdrop (rememberAssetBitmap).
+      - path: ../../app/src/main/assets/welcome
+        type: folder
+        buildPhase: resources
+      # The version banner's release portrait (rememberAssetBitmap). iOS's own, not Android's:
+      # the two platforms name their releases independently.
+      - path: Resources/splash
+        type: folder
+        buildPhase: resources
+      # The calibration screen's figure-eight animation (FigureEightAnimation).
+      - path: ../../app/src/main/assets/calibration
+        type: folder
+        buildPhase: resources
+      # The catalog, generated from source-data/ by the pre-build step (never checked in).
+      - path: ../../data/build/generated/assets/generateCatalogDb/skymap.db
+        buildPhase: resources
+        optional: true
+    info:
+      path: Info.plist
+      properties:
+        # Compose Multiplatform refuses to start without it (it needs 120 Hz on ProMotion).
+        CADisableMinimumFrameDurationOnPhone: true
+        # A night sky: light status bar text everywhere.
+        UIStatusBarStyle: UIStatusBarStyleLightContent
+        UIViewControllerBasedStatusBarAppearance: false
+        # Android's navy OS splash, which the version banner continues from without a seam.
+        UILaunchScreen:
+          UIColorName: LaunchNavy
+        # The version with its release name ("2.0.0:GDC"), as Android's versionName has it; the
+        # short version itself must stay numeric.
+        SkyMapVersionName: $(MARKETING_VERSION):$(SKYMAP_RELEASE_NAME)
+        # Only HTTPS through the system, which is exempt from export-compliance documentation.
+        ITSAppUsesNonExemptEncryption: false
+        # Collection starts off, so an opted-out user's first events can't go before the opt-out
+        # does; the shared settings turn it on (opt-in default, as on Android).
+        FIREBASE_ANALYTICS_COLLECTION_ENABLED: false
+        # The system location prompt's text. Localized with the app's strings in phase 5.
+        NSLocationWhenInUseUsageDescription: >-
+          Sky Map uses your location to show the sky as it looks from where you are.
+    postCompileScripts:
+      # The Firebase console's config, not checked in. Without it analytics stays off (see
+      # FirebaseAnalyticsAdapter); a missing file is not an error.
+      - name: Bundle GoogleService-Info.plist if present
+        basedOnDependencyAnalysis: false
+        script: |
+          if [ -f "$SRCROOT/GoogleService-Info.plist" ]; then
+            cp "$SRCROOT/GoogleService-Info.plist" "$TARGET_BUILD_DIR/$UNLOCALIZED_RESOURCES_FOLDER_PATH/"
+          fi
+    preBuildScripts:
+      - name: Build SkyMapKit and the catalog (Kotlin)
+        basedOnDependencyAnalysis: false
+        script: |
+          cd "$SRCROOT/../.."
+          export JAVA_HOME="${JAVA_HOME:-$(/usr/libexec/java_home -v 17)}"
+          ./gradlew :data:generateCatalogDb :app-ios:embedAndSignAppleFrameworkForXcode
+    settings:
+      base:
+        # .dev: development builds register their bundle ID to the signing team, and bundle IDs
+        # are unique across Apple, so a dev build must never claim the App Store app's ID.
+        # Release builds (archives) use the App Store ID; see configs below.
+        PRODUCT_BUNDLE_IDENTIFIER: io.penterakt.skymap.dev
+        DEVELOPMENT_TEAM: F98KUL97FJ
+        CODE_SIGN_STYLE: Automatic
+        MARKETING_VERSION: "2.0.0"
+        SKYMAP_RELEASE_NAME: GDC
+        CURRENT_PROJECT_VERSION: "1"
+        GENERATE_INFOPLIST_FILE: YES
+        INFOPLIST_KEY_CFBundleDisplayName: Sky Map
+        INFOPLIST_KEY_UIApplicationSceneManifest_Generation: YES
+        # The asset catalog holds the launch screen colour and the app icon.
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        INFOPLIST_KEY_UISupportedInterfaceOrientations: UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight
+        # iPhone only: an iPad build would have to support every orientation (App Store
+        # validation 90474), and iPad layouts are a non-goal for now.
+        TARGETED_DEVICE_FAMILY: "1"
+        FRAMEWORK_SEARCH_PATHS: $(SRCROOT)/../../app-ios/build/xcode-frameworks/$(CONFIGURATION)/$(SDK_NAME)
+        OTHER_LDFLAGS: -framework SkyMapKit -framework Metal -framework MetalKit
+        ENABLE_USER_SCRIPT_SANDBOXING: NO
+        SWIFT_VERSION: "5.0"
+      configs:
+        # Debug installs beside the App Store/TestFlight build, so it needs its own name.
+        Debug:
+          INFOPLIST_KEY_CFBundleDisplayName: Sky Map Dev
+        Release:
+          PRODUCT_BUNDLE_IDENTIFIER: io.penterakt.skymap
+  SkyMapUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources:
+      - UITests
+    dependencies:
+      - target: SkyMap
+    settings:
+      base:
+        GENERATE_INFOPLIST_FILE: YES
+        PRODUCT_BUNDLE_IDENTIFIER: io.penterakt.skymap.dev.uitests
+        DEVELOPMENT_TEAM: F98KUL97FJ
+        CODE_SIGN_STYLE: Automatic
+        SWIFT_VERSION: "5.0"
+schemes:
+  SkyMap:
+    run:
+      # Local tips for the simulator and Xcode runs, before App Store Connect has the products.
+      storeKitConfiguration: Products.storekit
+    build:
+      targets:
+        SkyMap: all
+        SkyMapUITests: [test]
+    test:
+      targets:
+        - SkyMapUITests

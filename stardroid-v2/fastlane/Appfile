@@ -1,2 +1,7 @@
 json_key_file("fastlane/play-store-credentials.json")
 package_name("com.google.android.stardroid")
+
+for_platform :ios do
+  app_identifier("io.penterakt.skymap")
+  team_id("F98KUL97FJ")
+end

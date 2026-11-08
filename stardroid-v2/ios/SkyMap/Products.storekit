@@ -1,0 +1,42 @@
+{
+  "identifier" : "6A1D3B7E",
+  "nonRenewingSubscriptions" : [],
+  "products" : [
+    {
+      "displayPrice" : "1.99",
+      "familyShareable" : false,
+      "internalID" : "6A1D3B01",
+      "localizations" : [
+        { "description" : "A small thank-you tip.", "displayName" : "Mercury", "locale" : "en_US" }
+      ],
+      "productID" : "tip.mercury",
+      "referenceName" : "Tip: Mercury",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "4.99",
+      "familyShareable" : false,
+      "internalID" : "6A1D3B02",
+      "localizations" : [
+        { "description" : "A medium thank-you tip.", "displayName" : "Mars", "locale" : "en_US" }
+      ],
+      "productID" : "tip.mars",
+      "referenceName" : "Tip: Mars",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "9.99",
+      "familyShareable" : false,
+      "internalID" : "6A1D3B03",
+      "localizations" : [
+        { "description" : "A generous thank-you tip.", "displayName" : "Jupiter", "locale" : "en_US" }
+      ],
+      "productID" : "tip.jupiter",
+      "referenceName" : "Tip: Jupiter",
+      "type" : "Consumable"
+    }
+  ],
+  "settings" : {},
+  "subscriptionGroups" : [],
+  "version" : { "major" : 3, "minor" : 0 }
+}

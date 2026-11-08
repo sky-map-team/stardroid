@@ -129,6 +129,35 @@ Upload metadata. Options (defaults after the colon): whatsnew:true (include chan
 
 ----
 
+
+## iOS
+
+### ios build
+
+```sh
+[bundle exec] fastlane ios build
+```
+
+Archive the Release build and export a signed App Store .ipa (build number: latest TestFlight build + 1)
+
+### ios device
+
+```sh
+[bundle exec] fastlane ios device
+```
+
+Install the Release build on a connected iPhone, development-signed, without uploading (device:<CoreDevice id> or IOS_DEVICE_ID). Needs the device registered on the team.
+
+### ios beta
+
+```sh
+[bundle exec] fastlane ios beta
+```
+
+Build and upload to TestFlight (internal testers). Pass changelog:"..." for What to Test.
+
+----
+
 This README.md is auto-generated and will be re-generated every time [_fastlane_](https://fastlane.tools) is run.
 
 More information about _fastlane_ can be found on [fastlane.tools](https://fastlane.tools).
