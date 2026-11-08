@@ -1,0 +1,78 @@
+name: iOS TestFlight
+
+# Archives the Release build, signs it for the App Store and uploads it to TestFlight
+# (`fastlane ios beta`). Manual only: run it from the Actions tab on any branch, e.g. to put an
+# iPad or foldable test build in front of a tester before merging.
+#
+# Setup (once): the `testflight` environment's secrets, listed in the comments below.
+on:
+  workflow_dispatch:
+    inputs:
+      xcode:
+        description: Xcode to build with
+        type: choice
+        options: ['26.6', '27.2']
+        default: '26.6'
+      changelog:
+        description: TestFlight "What to Test"
+        type: string
+        default: ''
+
+jobs:
+  testflight:
+    name: TestFlight (Xcode ${{ inputs.xcode }})
+    runs-on: ${{ inputs.xcode == '27.2' && 'xcode-27' || 'macos-26' }}
+    timeout-minutes: 90
+    # An environment, so its secrets can be gated behind a required reviewer.
+    environment: testflight
+    permissions:
+      contents: read
+    defaults:
+      run:
+        working-directory: ./stardroid-v2
+    env:
+      # A dedicated App Store Connect API key with the Admin role: cloud-managed distribution
+      # signing needs it, and the App Manager key used locally cannot create certificates.
+      ASC_KEY_ID: ${{ secrets.ASC_KEY_ID }}
+      ASC_ISSUER_ID: ${{ secrets.ASC_ISSUER_ID }}
+      APP_STORE_CONNECT_KEY_PATH: ${{ runner.temp }}/AuthKey.p8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: zulu
+          java-version: '17'
+      - uses: gradle/actions/setup-gradle@v4
+        continue-on-error: true
+      - name: Kotlin/Native cache
+        uses: actions/cache@v4
+        with:
+          path: ~/.konan
+          key: konan-${{ runner.os }}-${{ runner.arch }}-${{ hashFiles('stardroid-v2/gradle/libs.versions.toml') }}
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.3'
+          bundler-cache: true
+          working-directory: stardroid-v2
+      - name: Select Xcode ${{ inputs.xcode }}
+        run: |
+          sudo xcode-select -s /Applications/Xcode_${{ inputs.xcode }}.app/Contents/Developer
+          xcodebuild -version
+      - name: Install XcodeGen
+        run: brew install xcodegen
+      - name: Write the App Store Connect key (secret ASC_KEY_P8)
+        run: printf '%s' "$ASC_KEY_P8" > "$APP_STORE_CONNECT_KEY_PATH"
+        env:
+          ASC_KEY_P8: ${{ secrets.ASC_KEY_P8 }}
+      # Optional: without it the app builds with analytics off (see ios/README.md).
+      - name: Write GoogleService-Info.plist (secret GOOGLE_SERVICE_INFO_PLIST_B64)
+        run: |
+          if [ -n "$PLIST_B64" ]; then
+            printf '%s' "$PLIST_B64" | base64 --decode > ios/SkyMap/GoogleService-Info.plist
+          fi
+        env:
+          PLIST_B64: ${{ secrets.GOOGLE_SERVICE_INFO_PLIST_B64 }}
+      - name: Build, sign and upload to TestFlight
+        run: bundle exec fastlane ios beta changelog:"$CHANGELOG"
+        env:
+          CHANGELOG: ${{ inputs.changelog }}
