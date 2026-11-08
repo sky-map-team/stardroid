@@ -22,9 +22,6 @@ import kotlin.time.Duration.Companion.days
  * so fetching on every one would turn user behaviour straight into request volume against
  * CelesTrak. Staleness is the trigger here instead, and [offset] (chosen once per install, within
  * a day) scatters installs across the day rather than all going stale at the same hour.
- *
- * Always through [SatelliteElementsRepository.refresh], so the circuit breaker and the two-hour
- * minimum interval still apply.
  */
 class StaleSatelliteRefresh(
     private val repository: SatelliteElementsRepository,

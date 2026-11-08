@@ -19,16 +19,17 @@ import com.google.android.stardroid.data.satellites.TleStore
 import com.google.android.stardroid.data.satellites.UrlSessionCelesTrakClient
 import com.google.android.stardroid.satellites.StaleSatelliteRefresh
 import com.google.android.stardroid.satellites.trackSatelliteFetchResult
+import kotlinx.coroutines.sync.Mutex
+import kotlinx.coroutines.sync.withLock
 import kotlinx.datetime.Clock
 import kotlin.random.Random
 import kotlin.time.Duration
-import kotlin.time.Duration.Companion.hours
+import kotlin.time.Duration.Companion.minutes
 
 /**
- * The satellite element sets on iOS: the shared repository over a [UrlSessionCelesTrakClient],
- * refreshed on a user's Refresh tap and, when the cache has gone stale, on app open
- * ([StaleSatelliteRefresh]). iOS can't promise a 12-hour background job the way Android's
- * WorkManager does, so staleness is the trigger rather than a schedule.
+ * iOS can't promise a 12-hour background job the way Android's WorkManager does, so staleness on
+ * app open ([StaleSatelliteRefresh]) is the trigger rather than a schedule. Refreshes are
+ * serialised: WorkManager does that on Android, here a Refresh tap could overlap an app-open fetch.
  */
 internal class IosSatellites(
     directory: String,
@@ -41,21 +42,25 @@ internal class IosSatellites(
 
     private val staleRefresh = StaleSatelliteRefresh(repository, analytics, installOffset(files))
 
+    private val refreshLock = Mutex()
+
     /** Blocks on the network: call off the main thread. */
-    fun refreshIfStale() {
-        staleRefresh.refreshIfStale()
+    suspend fun refreshIfStale() {
+        refreshLock.withLock { staleRefresh.refreshIfStale() }
     }
 
     /**
      * The Refresh button: the ordinary policy-respecting refresh, never the debug force path.
      * Returns how long the user must wait when policy refused, or [Duration.ZERO] if it ran.
      */
-    fun refreshNow(): Duration =
-        when (val result = repository.refresh()) {
-            is RefreshResult.Skipped -> result.retryAfter
-            is RefreshResult.Completed -> {
-                trackSatelliteFetchResult(result, analytics, Clock.System.now())
-                Duration.ZERO
+    suspend fun refreshNow(): Duration =
+        refreshLock.withLock {
+            when (val result = repository.refresh()) {
+                is RefreshResult.Skipped -> result.retryAfter
+                is RefreshResult.Completed -> {
+                    trackSatelliteFetchResult(result, analytics, Clock.System.now())
+                    Duration.ZERO
+                }
             }
         }
 
@@ -66,11 +71,12 @@ internal class IosSatellites(
         /** Chosen once per install and kept, so it scatters installs without wandering. */
         fun installOffset(files: TextFiles): Duration {
             val saved = files.read(OFFSET_FILE)?.trim()?.toIntOrNull()
+            val valid = saved?.takeIf { it in 0 until MINUTES_PER_DAY }
             val minutes =
-                saved ?: Random.nextInt(MINUTES_PER_DAY).also {
+                valid ?: Random.nextInt(MINUTES_PER_DAY).also {
                     runCatching { files.replace(OFFSET_FILE, it.toString()) }
                 }
-            return (minutes / 60.0).hours
+            return minutes.minutes
         }
     }
 }

@@ -26,11 +26,12 @@ import platform.Foundation.NSUTF8StringEncoding
 import platform.Foundation.create
 import platform.Foundation.dataTaskWithRequest
 import platform.Foundation.setValue
-import platform.darwin.DISPATCH_TIME_FOREVER
+import platform.darwin.DISPATCH_TIME_NOW
 import platform.darwin.NSObject
 import platform.darwin.dispatch_semaphore_create
 import platform.darwin.dispatch_semaphore_signal
 import platform.darwin.dispatch_semaphore_wait
+import platform.darwin.dispatch_time
 
 /**
  * [CelesTrakClient] over `NSURLSession`, as [HttpUrlConnectionCelesTrakClient] is over the JDK's
@@ -54,7 +55,6 @@ class UrlSessionCelesTrakClient(
         val request =
             NSMutableURLRequest.requestWithURL(url).apply {
                 setCachePolicy(NSURLRequestReloadIgnoringLocalCacheData)
-                // Named, with a contact URL, as on Android.
                 setValue(userAgent, forHTTPHeaderField = "User-Agent")
                 ifModifiedSince?.let { setValue(it, forHTTPHeaderField = "If-Modified-Since") }
             }
@@ -81,8 +81,12 @@ class UrlSessionCelesTrakClient(
                 error = failure
                 dispatch_semaphore_signal(done)
             }.resume()
-        dispatch_semaphore_wait(done, DISPATCH_TIME_FOREVER)
+        // The resource timeout already ends the task; this is a backstop so a lost completion
+        // can never pin a thread forever.
+        val deadline = dispatch_time(DISPATCH_TIME_NOW, WAIT_BACKSTOP_NANOS)
+        val timedOut = dispatch_semaphore_wait(done, deadline) != 0L
         session.finishTasksAndInvalidate()
+        if (timedOut) return FetchOutcome.TransportFailure(Exception("timed out"))
 
         error?.let { return FetchOutcome.TransportFailure(Exception(it.localizedDescription)) }
         val http =
@@ -106,8 +110,9 @@ class UrlSessionCelesTrakClient(
     }
 
     private companion object {
-        private const val REQUEST_TIMEOUT_SECONDS = 20.0
-        private const val RESOURCE_TIMEOUT_SECONDS = 30.0
+        const val REQUEST_TIMEOUT_SECONDS = 20.0
+        const val RESOURCE_TIMEOUT_SECONDS = 30.0
+        const val WAIT_BACKSTOP_NANOS = 35_000_000_000L
     }
 }
 
@@ -136,7 +141,7 @@ private const val STATUS_NOT_MODIFIED = 304
 /** ~2000x the expected ~1 KB payload: generous headroom, still far from unbounded. */
 private const val MAX_BODY_BYTES = 2 * 1024 * 1024
 
-/** The bytes as UTF-8 text, or null if empty, past [MAX_BODY_BYTES], or not decodable. */
+/** UTF-8 text, or null if empty, oversized or undecodable. */
 @OptIn(ExperimentalForeignApi::class)
 private fun NSData.toBoundedString(): String? {
     val size = length.toInt()

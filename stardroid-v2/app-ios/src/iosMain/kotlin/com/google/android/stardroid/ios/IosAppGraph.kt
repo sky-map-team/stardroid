@@ -271,10 +271,8 @@ class IosAppGraph(
     }
 
     /**
-     * An app open refreshes the satellite elements only if they are stale and both gates are
-     * open: the flag, and the user's consent with the Satellites layer on, which is what the
-     * privacy policy promises. Through the repository, so the circuit breaker and the two-hour
-     * minimum still apply.
+     * Through the repository, so the circuit breaker and the two-hour minimum still apply; the
+     * consent and layer-on gates are what the privacy policy promises.
      */
     private suspend fun refreshSatellitesIfStale() {
         if (!satellitesEnabled) return

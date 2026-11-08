@@ -25,8 +25,8 @@ import kotlin.time.Duration.Companion.seconds
  * not have.
  */
 class HttpUrlConnectionCelesTrakClient(
-    private val baseUrl: String = CELESTRAK_GP_URL,
-    private val userAgent: String = DEFAULT_USER_AGENT,
+    private val baseUrl: String = CelesTrakEndpoint.GP_URL,
+    private val userAgent: String = CelesTrakEndpoint.USER_AGENT,
     private val openConnection: (
         URL,
     ) -> HttpURLConnection = { it.openConnection() as HttpURLConnection },
@@ -110,11 +110,6 @@ class HttpUrlConnectionCelesTrakClient(
         }
 
     companion object {
-        const val CELESTRAK_GP_URL = CelesTrakEndpoint.GP_URL
-
-        /** Descriptive and contactable, as the policy prefers. */
-        const val DEFAULT_USER_AGENT = CelesTrakEndpoint.USER_AGENT
-
         private val CONNECT_TIMEOUT = 15.seconds
         private val READ_TIMEOUT = 20.seconds
 
