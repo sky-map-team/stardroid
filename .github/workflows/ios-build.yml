@@ -41,7 +41,7 @@ jobs:
           key: konan-${{ runner.os }}-${{ runner.arch }}-${{ hashFiles('stardroid-v2/gradle/libs.versions.toml') }}
       - name: Select Xcode ${{ matrix.xcode }}
         run: |
-          sudo xcode-select -s /Applications/Xcode_${{ matrix.xcode }}*.app/Contents/Developer
+          sudo xcode-select -s /Applications/Xcode_${{ matrix.xcode }}.app/Contents/Developer
           xcodebuild -version
       - name: Install XcodeGen
         run: brew install xcodegen
