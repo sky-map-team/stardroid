@@ -12,6 +12,7 @@ package com.google.android.stardroid.ui.common
 import androidx.compose.runtime.Composable
 import com.google.android.stardroid.ui.resources.Res
 import com.google.android.stardroid.ui.resources.beta_user_help_text
+import com.google.android.stardroid.ui.resources.whats_new_ios_announcement
 import org.jetbrains.compose.resources.StringResource
 import org.jetbrains.compose.resources.stringResource
 
@@ -24,7 +25,13 @@ internal expect val whatsNewContentResource: StringResource
 /** Whether the beta testers' note leads What's New. iOS has no beta track, so it never does. */
 internal expect val betaHelpTextShown: Boolean
 
+internal expect val iosAnnouncementShown: Boolean
+
 /** The beta testers' note (Android only, while a beta runs), or nothing, to lead What's New. */
 @Composable
 internal fun betaHelpHtml(): String =
     if (betaHelpTextShown) stringResource(Res.string.beta_user_help_text) else ""
+
+@Composable
+internal fun iosAnnouncementHtml(): String =
+    if (iosAnnouncementShown) stringResource(Res.string.whats_new_ios_announcement) else ""
