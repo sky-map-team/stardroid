@@ -28,6 +28,9 @@ import com.google.android.stardroid.settings.DataStoreSettings
 import com.google.android.stardroid.settings.Settings
 import com.google.android.stardroid.settings.settingsDataStore
 import com.google.android.stardroid.startup.DataStoreStartupState
+import com.google.android.stardroid.startup.ExperimentConfig
+import com.google.android.stardroid.startup.FlagSource
+import com.google.android.stardroid.startup.FlagSourceExperimentConfig
 import com.google.android.stardroid.startup.StartupRouter
 import com.google.android.stardroid.startup.StartupState
 import com.google.android.stardroid.time.TimeController
@@ -83,7 +86,11 @@ import platform.UIKit.UIApplicationOpenSettingsURLString
 @OptIn(ExperimentalForeignApi::class)
 class IosAppGraph(
     private val analytics: Analytics = NoOpAnalytics,
+    flags: FlagSource = NoFlagSource,
 ) {
+    /** The experiment flags, frozen for this launch (see [FlagSourceExperimentConfig]). */
+    val experiments: ExperimentConfig = iosExperiments(flags)
+
     private val supportDirectory: String =
         checkNotNull(
             NSFileManager.defaultManager
@@ -360,7 +367,7 @@ class IosAppGraph(
             analyticsAvailable = true,
             magneticCorrectionAvailable = false,
             analytics = analytics,
-            experimentConfig = IosExperiments,
+            experimentConfig = experiments,
         )
 
     private val networkMonitor by lazy { NetworkMonitor() }

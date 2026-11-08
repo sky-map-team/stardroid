@@ -18,6 +18,8 @@ targets:
     dependencies:
       - package: Firebase
         product: FirebaseAnalyticsWithoutAdIdSupport
+      - package: Firebase
+        product: FirebaseRemoteConfig
     sources:
       - Sources
       # The renderer's images, copied as Android packages them so the keys map to the same paths.

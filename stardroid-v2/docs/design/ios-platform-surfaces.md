@@ -65,6 +65,23 @@ the Kotlin framework at startup, implementing a small `RemoteConfigSource` inter
 - **Failure:** any error leaves the shipped defaults in force. Nothing blocks startup.
 - **Kill switch behaviour** matches Android: a flip reaches clients on their next fetch.
 
+### As built (2.0.1)
+
+`FlagSource` and `FlagSourceExperimentConfig` are in `shared/model`; `FirebaseRemoteConfigAdapter`
+is the Swift side. Three choices beyond the design above:
+
+- **Frozen at launch.** Flags are read once when the app starts, and a fetch is activated and
+  stored for the next launch, so Diagnostics' "Fetch now" updates the fetch time but not the
+  values shown until a relaunch. The first frame waits (up to 1.5 s) for Firebase to load its
+  stored values.
+- **A server-controlled allow-list.** Only flags with an iOS surface (`ServerControlled` in
+  `IosExperiments.kt`) listen to the server. The key names are shared with Android, so
+  Android turning on camera AR or notifications must not turn them on here. Add a flag to the list
+  in the change that gives it an iOS surface.
+- **Same keys, so conditions matter.** `satellites_enabled` is already true for everyone, so a
+  build that honours it turns satellites on at its first fetch. To ship satellites dark, add a
+  Platform = iOS condition that is false first.
+
 ### Privacy
 
 Remote Config sends an installation ID and the usual request metadata to Google. The policy
