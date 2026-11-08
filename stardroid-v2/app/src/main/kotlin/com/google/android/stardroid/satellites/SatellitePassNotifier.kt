@@ -22,6 +22,7 @@ import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import androidx.core.content.ContextCompat
 import com.google.android.stardroid.R
+import com.google.android.stardroid.layers.LayerRegistry
 import com.google.android.stardroid.layers.SatelliteLayer
 import com.google.android.stardroid.notifications.SkyNotification
 import com.google.android.stardroid.notifications.SkyNotifier
@@ -180,7 +181,7 @@ object SatellitePassNotifier {
 suspend fun passAlertsEnabled(context: Context): Boolean {
     val entryPoint = satelliteEntryPoint(context)
     val settings: Settings = entryPoint.settings()
-    if (!settings.layerEnabled(SatelliteLayer.LAYER_ID).first()) return false
+    if (!LayerRegistry.layerEnabled(settings, SatelliteLayer.LAYER_ID).first()) return false
     return settings
         .layerParameter(
             SatelliteLayer.LAYER_ID,

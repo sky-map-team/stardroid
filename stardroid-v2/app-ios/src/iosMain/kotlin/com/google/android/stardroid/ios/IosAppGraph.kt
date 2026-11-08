@@ -60,6 +60,7 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.combine
+import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.emptyFlow
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.flowOf
@@ -266,18 +267,24 @@ class IosAppGraph(
             }
         }
         MainScope().launch {
-            foreground.isForeground.collect { if (it) refreshSatellitesIfStale() }
+            // Opening the app, and switching the layer on, both look for stale elements.
+            combine(
+                foreground.isForeground,
+                LayerRegistry.layerEnabled(settings, SatelliteLayer.LAYER_ID),
+            ) { inForeground, layerOn -> inForeground && layerOn }
+                .distinctUntilChanged()
+                .collect { if (it) refreshSatellitesIfStale() }
         }
     }
 
     /**
-     * Through the repository, so the circuit breaker and the two-hour minimum still apply; the
-     * consent and layer-on gates are what the privacy policy promises.
+     * Only for a user who switched the Satellites layer on (it starts off, so they choose to show
+     * their IP address to CelesTrak), with the flag on and consent given. Through the repository,
+     * so the circuit breaker and the two-hour minimum still apply.
      */
     private suspend fun refreshSatellitesIfStale() {
         if (!satellitesEnabled) return
         if (!settings.satelliteDataEnabled.first()) return
-        if (!settings.layerEnabled(SatelliteLayer.LAYER_ID).first()) return
         withContext(Dispatchers.IO) { satellites.refreshIfStale() }
     }
 

@@ -17,6 +17,8 @@ import com.google.android.stardroid.analytics.Analytics
 import com.google.android.stardroid.data.satellites.FetchOutcome
 import com.google.android.stardroid.data.satellites.RefreshResult
 import com.google.android.stardroid.data.satellites.SatelliteFetchPolicy
+import com.google.android.stardroid.layers.LayerRegistry
+import com.google.android.stardroid.layers.SatelliteLayer
 import com.google.android.stardroid.startup.Experiment
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.first
@@ -80,14 +82,18 @@ class SatelliteRefreshWorker(
 
     override suspend fun doWork(): Result =
         withContext(Dispatchers.IO) {
-            // Both gates re-checked at run time, not just at schedule time: a Remote Config
-            // flip or a withdrawn consent must stop traffic even if a job is already enqueued.
+            // The gates are re-checked at run time, not just at schedule time: a Remote Config
+            // flip, a withdrawn consent or the layer being switched off must stop traffic even if
+            // a job is already enqueued.
             if (!entryPoint.experimentConfig().isEnabled(Experiment.SATELLITES)) {
                 return@withContext Result.success()
             }
             if (!entryPoint.settings().satelliteDataEnabled.first()) {
                 return@withContext Result.success()
             }
+            val layerOn =
+                LayerRegistry.layerEnabled(entryPoint.settings(), SatelliteLayer.LAYER_ID).first()
+            if (!layerOn) return@withContext Result.success()
             val repository = entryPoint.satelliteElementsRepository()
             val analytics = entryPoint.analytics()
 

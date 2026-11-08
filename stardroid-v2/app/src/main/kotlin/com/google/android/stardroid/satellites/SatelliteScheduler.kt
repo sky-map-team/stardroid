@@ -76,20 +76,26 @@ object SatelliteScheduler {
         )
     }
 
-    /** Stops fetching — the experiment flag went off, or the user withdrew network consent. */
+    /** Stops fetching: the flag went off, or the user withdrew consent or switched the layer off. */
     fun cancel(context: Context) {
         WorkManager.getInstance(context).cancelUniqueWork(WORK_NAME)
     }
 
     /**
-     * Applies the two gates: the feature must be enabled *and* the user must have consented to
-     * the network request. Either off means no scheduled traffic at all.
+     * Applies the three gates: the feature must be enabled, the user must have consented to the
+     * network request, *and* the Satellites layer must be on, which is how a user chooses to show
+     * their IP address to CelesTrak. Any one off means no scheduled traffic at all.
      */
     fun syncSchedule(
         context: Context,
         featureEnabled: Boolean,
         dataConsented: Boolean,
+        layerEnabled: Boolean,
     ) {
-        if (featureEnabled && dataConsented) ensureScheduled(context) else cancel(context)
+        if (featureEnabled && dataConsented && layerEnabled) {
+            ensureScheduled(context)
+        } else {
+            cancel(context)
+        }
     }
 }

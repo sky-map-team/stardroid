@@ -118,10 +118,10 @@ at https://www.geoapify.com/privacy-policy for how it handles them.
   settings and announcements from Firebase Remote Config (on iOS, when you open the app). That
   request goes to Google and carries the app version, device details and a Firebase
   installation identifier. The usage statistics switch does not turn it off.
-- **Satellite data (Android and iOS):** only if you turn on the satellite layer, Sky Map downloads
-  orbit data from CelesTrak (celestrak.org). On iOS this happens when you open the app and the
-  data is several days old, or when you tap Refresh. The request shows your IP address to that
-  service and contains no location.
+- **Satellite data (Android and iOS):** only if you turn on the satellite layer, which starts off,
+  Sky Map downloads orbit data from CelesTrak (celestrak.org). On iOS this happens when you open
+  the app and the data is several days old, or when you tap Refresh. The request shows your IP
+  address to that service and contains no location.
 
 ## Tips and donations
 
