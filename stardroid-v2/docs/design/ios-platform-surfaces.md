@@ -43,8 +43,8 @@ hold up the other.
 ### What exists
 
 `ExperimentConfig` is already the shared contract (`shared/model`): `isEnabled`,
-`lastFetchTimeMillis`, `canFetch`, `fetchNow`. iOS binds `IosExperiments`, a static override of
-`ExperimentConfig.Static` that also hides `NOTIFICATIONS` because iOS delivers none.
+`lastFetchTimeMillis`, `canFetch`, `fetchNow`. iOS binds a `FlagSourceExperimentConfig` over
+`IosDefaults` (`ExperimentConfig.Static` minus `NOTIFICATIONS`, which iOS doesn't deliver).
 
 ### The change
 
@@ -55,7 +55,7 @@ the Kotlin framework at startup, implementing a small `RemoteConfigSource` inter
 
 - **SDK:** add the `FirebaseRemoteConfig` SPM product beside `FirebaseAnalyticsWithoutAdIdSupport`.
 - **Defaults:** shipped in code, not a plist. iOS defaults are *conservative*: a flag is `true`
-  only if the iOS surface exists. Today that is everything `IosExperiments` already enables.
+  only if the iOS surface exists. Today that is everything `IosDefaults` enables.
 - **Same project, per-platform values.** Use the existing Firebase project and the same keys.
   Remote Config conditions on **Platform = iOS** let a flag be on for Android and off for iOS
   (or the reverse) without forking keys. The `skymap.push-announcement` skill needs to learn
@@ -225,8 +225,8 @@ is already shared). The system setting is all-or-nothing per app.
   authorization is rejected:** it skips the prompt but delivers silently to Notification Centre
   only, which defeats a six-minute pass alert.
 - Use `threadIdentifier` per kind so they group sensibly.
-- Drop the `IosExperiments` `NOTIFICATIONS` override and add the notifications to
-  `permissions_notice_ios` when they ship (the comment in `IosExperiments.kt` says so).
+- Drop the `NOTIFICATIONS` exclusion from `IosDefaults` and add the notifications to
+  `permissions_notice_ios` when they ship.
 - **Interruption level:** `.active` by default. `.timeSensitive` for pass alerts needs the
   Time Sensitive Notifications capability and a justification; start without it.
 - **Deep links:** notifications carry a URL for the object or "tonight" view. Needs an iOS URL
