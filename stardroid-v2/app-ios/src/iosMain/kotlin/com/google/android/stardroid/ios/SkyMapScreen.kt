@@ -36,6 +36,8 @@ import androidx.compose.ui.window.ComposeUIViewController
 import com.google.android.stardroid.analytics.Analytics
 import com.google.android.stardroid.catalog.ObjectInfo
 import com.google.android.stardroid.catalog.SearchHit
+import com.google.android.stardroid.startup.ExperimentConfig
+import com.google.android.stardroid.startup.FlagSource
 import com.google.android.stardroid.ui.calibration.CompassCalibrationScreen
 import com.google.android.stardroid.ui.calibration.CompassCalibrationViewModel
 import com.google.android.stardroid.ui.common.formattedStringResource
@@ -85,8 +87,9 @@ import platform.UIKit.UIViewController
 fun skyMapViewController(
     analytics: Analytics,
     tipStore: TipStore,
+    flags: FlagSource,
 ): UIViewController {
-    val graph = IosAppGraph(analytics)
+    val graph = IosAppGraph(analytics, flags)
     val mapViewModel = graph.mapViewModel()
     val map = MapViewController(graph, mapViewModel)
     val startup = graph.startupViewModel()
@@ -118,6 +121,7 @@ fun skyMapViewController(
             motionHardware =
                 MotionHardware(graph.hasCompass, graph.hasAccelerometer, graph.hasGyroscope),
             tipStore = tipStore,
+            experiments = graph.experiments,
         )
     }
 }
@@ -141,6 +145,7 @@ private fun SkyMapScreen(
     onOpenAppSettings: () -> Unit,
     motionHardware: MotionHardware,
     tipStore: TipStore,
+    experiments: ExperimentConfig,
 ) {
     val nightMode by mapViewModel.nightMode.collectAsState()
     val gates by startup.state.collectAsState()
@@ -208,7 +213,7 @@ private fun SkyMapScreen(
                 Page.HELP ->
                     HelpScreen(
                         nightMode = nightMode,
-                        experimentConfig = IosExperiments,
+                        experimentConfig = experiments,
                         onBack = ::back,
                         onNavigate = { destination ->
                             when (destination) {
@@ -255,7 +260,7 @@ private fun SkyMapScreen(
                     DiagnosticsScreen(
                         diagnosticsViewModel,
                         nightMode = nightMode,
-                        experimentConfig = IosExperiments,
+                        experimentConfig = experiments,
                         platform = diagnosticsPlatform,
                         onBack = ::back,
                         onSendReport = { subject, body ->

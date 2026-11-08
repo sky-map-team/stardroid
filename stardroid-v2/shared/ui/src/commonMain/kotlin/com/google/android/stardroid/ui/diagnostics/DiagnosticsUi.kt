@@ -696,8 +696,8 @@ private fun networkSection(snapshot: DiagnosticsSnapshot): DiagnosticsSection =
     )
 
 /**
- * The current value of every [Experiment] flag as the app is reading it — Remote Config on gms,
- * the shipped defaults on fdroid and iOS. Re-read on every recomposition — cheap in-memory
+ * The current value of every [Experiment] flag as the app is reading it — Remote Config on gms
+ * and iOS, the shipped defaults on fdroid. Re-read on every recomposition — cheap in-memory
  * lookups — so a fetch that activates while the screen is open shows up with the next
  * recomposition.
  */
