@@ -133,7 +133,7 @@ fun sendDiagnosticsReport(
     }
 }
 
-private fun shareText(text: String) {
+internal fun shareText(text: String) {
     val top = topViewController() ?: return
     val sheet = UIActivityViewController(listOf(text), null)
     // An iPad shows the sheet as a popover, which needs an anchor.
