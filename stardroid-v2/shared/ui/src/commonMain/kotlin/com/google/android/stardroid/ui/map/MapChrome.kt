@@ -31,10 +31,12 @@ import androidx.compose.foundation.layout.IntrinsicSize
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.WindowInsets
+import androidx.compose.foundation.layout.exclude
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.ime
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.safeDrawing
 import androidx.compose.foundation.layout.size
@@ -359,7 +361,9 @@ fun MapChrome(
     Box(
         modifier
             .fillMaxSize()
-            .windowInsetsPadding(WindowInsets.safeDrawing)
+            // Not the keyboard: iOS can leave a stale IME inset behind after search, which
+            // shrank this box and floated the controls mid-screen.
+            .windowInsetsPadding(WindowInsets.safeDrawing.exclude(WindowInsets.ime))
             .onSizeChanged { chromeHeightPx = it.height },
     ) {
         // Top-right (D65): top-centre belongs to the time-travel player, the rail owns the
