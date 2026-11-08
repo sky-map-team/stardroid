@@ -103,9 +103,8 @@ targets:
         # The asset catalog holds the launch screen colour and the app icon.
         ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
         INFOPLIST_KEY_UISupportedInterfaceOrientations: UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight
-        # iPhone and iPad. iPad (and large foldables) must support every orientation (App Store
-        # validation 90474), hence the separate iPad key with upside-down portrait.
         TARGETED_DEVICE_FAMILY: "1,2"
+        # iPad must support every orientation (App Store validation 90474).
         INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad: UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight
         FRAMEWORK_SEARCH_PATHS: $(SRCROOT)/../../app-ios/build/xcode-frameworks/$(CONFIGURATION)/$(SDK_NAME)
         OTHER_LDFLAGS: -framework SkyMapKit -framework Metal -framework MetalKit
