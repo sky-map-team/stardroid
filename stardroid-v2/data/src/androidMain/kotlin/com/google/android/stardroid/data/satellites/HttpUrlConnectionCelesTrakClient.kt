@@ -110,10 +110,10 @@ class HttpUrlConnectionCelesTrakClient(
         }
 
     companion object {
-        const val CELESTRAK_GP_URL = "https://celestrak.org/NORAD/elements/gp.php"
+        const val CELESTRAK_GP_URL = CelesTrakEndpoint.GP_URL
 
         /** Descriptive and contactable, as the policy prefers. */
-        const val DEFAULT_USER_AGENT = "SkyMap/2.0 (+https://github.com/sky-map-team/stardroid)"
+        const val DEFAULT_USER_AGENT = CelesTrakEndpoint.USER_AGENT
 
         private val CONNECT_TIMEOUT = 15.seconds
         private val READ_TIMEOUT = 20.seconds

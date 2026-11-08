@@ -36,6 +36,7 @@ import androidx.compose.ui.window.ComposeUIViewController
 import com.google.android.stardroid.analytics.Analytics
 import com.google.android.stardroid.catalog.ObjectInfo
 import com.google.android.stardroid.catalog.SearchHit
+import com.google.android.stardroid.startup.Experiment
 import com.google.android.stardroid.startup.ExperimentConfig
 import com.google.android.stardroid.startup.FlagSource
 import com.google.android.stardroid.ui.calibration.CompassCalibrationScreen
@@ -289,7 +290,7 @@ private fun SkyMapScreen(
                         hasAccelerometer = motionHardware.hasAccelerometer,
                         hasGyroscope = motionHardware.hasGyroscope,
                         nightMode = nightMode,
-                        satellitesEnabled = false,
+                        satellitesEnabled = experiments.isEnabled(Experiment.SATELLITES),
                         onFinished = { pages = emptyList() },
                     )
                 null -> Unit
@@ -312,7 +313,7 @@ private fun SkyMapScreen(
                             hasAccelerometer = motionHardware.hasAccelerometer,
                             hasGyroscope = motionHardware.hasGyroscope,
                             nightMode = nightMode,
-                            satellitesEnabled = false,
+                            satellitesEnabled = experiments.isEnabled(Experiment.SATELLITES),
                             onFinished = startup::completeWarmWelcome,
                             onSkip = startup::skipWarmWelcome,
                             onStarted = startup::warmWelcomeStarted,

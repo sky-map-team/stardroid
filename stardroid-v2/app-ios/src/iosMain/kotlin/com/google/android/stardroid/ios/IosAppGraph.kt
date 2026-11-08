@@ -18,16 +18,20 @@ import com.google.android.stardroid.catalog.LocaleSpec
 import com.google.android.stardroid.data.RoomCatalogRepository
 import com.google.android.stardroid.data.SkyMapDatabaseFactory
 import com.google.android.stardroid.layers.LayerRegistry
+import com.google.android.stardroid.layers.SatelliteLayer
 import com.google.android.stardroid.location.LocationController
 import com.google.android.stardroid.location.LocationSource
 import com.google.android.stardroid.location.LocationState
 import com.google.android.stardroid.render.api.RendererInfo
+import com.google.android.stardroid.satellites.satelliteElementsFlow
+import com.google.android.stardroid.satellites.satelliteUiStatusFlow
 import com.google.android.stardroid.sensors.SensorConfig
 import com.google.android.stardroid.sensors.ZeroMagneticDeclinationSource
 import com.google.android.stardroid.settings.DataStoreSettings
 import com.google.android.stardroid.settings.Settings
 import com.google.android.stardroid.settings.settingsDataStore
 import com.google.android.stardroid.startup.DataStoreStartupState
+import com.google.android.stardroid.startup.Experiment
 import com.google.android.stardroid.startup.ExperimentConfig
 import com.google.android.stardroid.startup.FlagSource
 import com.google.android.stardroid.startup.FlagSourceExperimentConfig
@@ -62,6 +66,7 @@ import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock
+import kotlinx.coroutines.withContext
 import platform.CoreMotion.CMMotionManager
 import platform.Foundation.NSApplicationSupportDirectory
 import platform.Foundation.NSBundle
@@ -90,6 +95,8 @@ class IosAppGraph(
 ) {
     /** The experiment flags, frozen for this launch (see [FlagSourceExperimentConfig]). */
     val experiments: ExperimentConfig = iosExperiments(flags)
+
+    private val satellitesEnabled: Boolean = experiments.isEnabled(Experiment.SATELLITES)
 
     private val supportDirectory: String =
         checkNotNull(
@@ -120,6 +127,8 @@ class IosAppGraph(
     val timeController = TimeController()
 
     private val foreground = AppForeground()
+
+    private val satellites = IosSatellites("$supportDirectory/satellites", analytics)
 
     /**
      * The bundle's build number, which the startup gates compare as Android's versionCode. At
@@ -238,8 +247,13 @@ class IosAppGraph(
                     location = locationController.locations,
                     ephemeris = MeeusEphemeris,
                     settings = settings,
-                    satelliteElements = emptyFlow(),
-                    satellitesEnabled = false,
+                    satelliteElements =
+                        if (satellitesEnabled) {
+                            satelliteElementsFlow(satellites.repository)
+                        } else {
+                            emptyFlow()
+                        },
+                    satellitesEnabled = satellitesEnabled,
                 ).also { registry = it }
         }
     }
@@ -251,6 +265,22 @@ class IosAppGraph(
                 if (it) onStart() else locationController.stop()
             }
         }
+        MainScope().launch {
+            foreground.isForeground.collect { if (it) refreshSatellitesIfStale() }
+        }
+    }
+
+    /**
+     * An app open refreshes the satellite elements only if they are stale and both gates are
+     * open: the flag, and the user's consent with the Satellites layer on, which is what the
+     * privacy policy promises. Through the repository, so the circuit breaker and the two-hour
+     * minimum still apply.
+     */
+    private suspend fun refreshSatellitesIfStale() {
+        if (!satellitesEnabled) return
+        if (!settings.satelliteDataEnabled.first()) return
+        if (!settings.layerEnabled(SatelliteLayer.LAYER_ID).first()) return
+        withContext(Dispatchers.IO) { satellites.refreshIfStale() }
     }
 
     /**
@@ -307,14 +337,23 @@ class IosAppGraph(
         StartupViewModel(startupRouter, startupState, analytics = analytics)
 
     /**
-     * The layer rail and sheet. iOS has no satellite data and no notifications yet, so their
-     * layer and alert rows stay hidden, as Android hides them with the experiments off.
+     * The layer rail and sheet. iOS has no notifications yet, so their alert rows stay hidden, as
+     * Android hides them with the experiment off; satellites follow their flag.
      */
     fun layersViewModel(): LayersViewModel =
         LayersViewModel(
             settings,
-            satellitesEnabled = false,
+            satellitesEnabled = satellitesEnabled,
             notificationsEnabled = false,
+            satelliteStatus =
+                if (satellitesEnabled) {
+                    satelliteUiStatusFlow(
+                        satellites.repository,
+                    )
+                } else {
+                    flowOf(null)
+                },
+            onRefreshSatellites = { withContext(Dispatchers.IO) { satellites.refreshNow() } },
             analytics = analytics,
         )
 
