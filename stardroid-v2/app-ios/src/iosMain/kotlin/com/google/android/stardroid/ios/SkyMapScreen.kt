@@ -38,6 +38,7 @@ import com.google.android.stardroid.catalog.ObjectInfo
 import com.google.android.stardroid.catalog.SearchHit
 import com.google.android.stardroid.ui.calibration.CompassCalibrationScreen
 import com.google.android.stardroid.ui.calibration.CompassCalibrationViewModel
+import com.google.android.stardroid.ui.common.formattedStringResource
 import com.google.android.stardroid.ui.diagnostics.DiagnosticsScreen
 import com.google.android.stardroid.ui.diagnostics.DiagnosticsViewModel
 import com.google.android.stardroid.ui.gallery.GalleryScreen
@@ -56,6 +57,7 @@ import com.google.android.stardroid.ui.onboarding.WelcomeScreen
 import com.google.android.stardroid.ui.resources.Res
 import com.google.android.stardroid.ui.resources.calibration_complete_toast
 import com.google.android.stardroid.ui.resources.support_email
+import com.google.android.stardroid.ui.resources.support_share_message
 import com.google.android.stardroid.ui.search.SearchViewModel
 import com.google.android.stardroid.ui.settings.SettingsScreen
 import com.google.android.stardroid.ui.settings.SettingsViewModel
@@ -161,6 +163,7 @@ private fun SkyMapScreen(
     }
     val diagnosticsPlatform = remember { iosDiagnosticsPlatform() }
     val supportEmail = stringResource(Res.string.support_email)
+    val shareMessage = formattedStringResource(Res.string.support_share_message, SHARE_LINK)
     val scope = rememberCoroutineScope()
     SkyMapTheme(nightMode) {
         Box(Modifier.fillMaxSize()) {
@@ -224,8 +227,8 @@ private fun SkyMapScreen(
                         nightMode = nightMode,
                         onBack = ::back,
                         onAction = mapViewModel::logSupportAction,
-                        // No App Store URL to share until the listing exists.
-                        onShareApp = null,
+                        onShareApp = { shareText(shareMessage) },
+                        onRateApp = ::openReviewPage,
                         sponsorRow = {
                             TipJarRow(tipStore, mapViewModel::logSupportAction)
                             PrivacyRow()
