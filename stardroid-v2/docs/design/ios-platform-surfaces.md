@@ -124,6 +124,19 @@ iOS `DirectoryTextFiles` already exists in `data/src/iosMain`. The iOS graph cur
 4. **Strings:** remove "iOS has no satellite data" copy, and the Satellites and Pass/Peak
    alerts exclusions in iOS Help once the feature is live.
 
+### As built (2.0.1)
+
+`UrlSessionCelesTrakClient` (`data/iosMain`) with `fetchOutcomeFor` tested on the iOS target;
+`StaleSatelliteRefresh` and `trackSatelliteFetchResult` in `shared/viewmodels` (shared with
+Android's worker for the analytics events, so both report refusals the same way); `IosSatellites`
+in `app-ios` ties them to the graph. Differences from the design:
+
+- **No `BGAppRefreshTask` yet.** The foreground fetch alone keeps data fresh for anyone who opens
+  the app, and a background task needs the graph to be a process singleton first (#1243). Follow-up.
+- **The fetch needs the Satellites layer on** as well as the flag and consent, which is what the
+  privacy policy promises.
+- **No iOS Diagnostics satellite row yet** (Android's is in `DiagnosticsRoute`).
+
 ### 4.1 Refreshing the element sets
 
 Android uses a 12 h periodic job and **never fetches on app open**, so request volume stays

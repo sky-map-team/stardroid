@@ -16,6 +16,7 @@ import com.google.android.stardroid.astronomy.SatellitePass
 import com.google.android.stardroid.astronomy.Sgp4
 import com.google.android.stardroid.astronomy.goodPasses
 import com.google.android.stardroid.data.satellites.ElementFreshness
+import com.google.android.stardroid.layers.LayerRegistry
 import com.google.android.stardroid.layers.SatelliteLayer
 import com.google.android.stardroid.math.LatLong
 import com.google.android.stardroid.startup.Experiment
@@ -49,7 +50,13 @@ suspend fun tonightSatellitePasses(
     if (location == null) return emptyList()
     val entryPoint = satelliteEntryPoint(context)
     if (!entryPoint.experimentConfig().isEnabled(Experiment.SATELLITES)) return emptyList()
-    if (!entryPoint.settings().layerEnabled(SatelliteLayer.LAYER_ID).first()) return emptyList()
+    if (!LayerRegistry.layerEnabled(
+            entryPoint.settings(),
+            SatelliteLayer.LAYER_ID,
+        ).first()
+    ) {
+        return emptyList()
+    }
 
     val elements =
         withContext(Dispatchers.IO) { entryPoint.satelliteElementsRepository().current() }
@@ -99,7 +106,7 @@ suspend fun trackedSatellites(
     val entryPoint = satelliteEntryPoint(context)
     if (!entryPoint.experimentConfig().isEnabled(Experiment.SATELLITES)) return emptyList()
     if (requireLayerEnabled &&
-        !entryPoint.settings().layerEnabled(SatelliteLayer.LAYER_ID).first()
+        !LayerRegistry.layerEnabled(entryPoint.settings(), SatelliteLayer.LAYER_ID).first()
     ) {
         return emptyList()
     }

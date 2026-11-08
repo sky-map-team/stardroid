@@ -53,10 +53,13 @@ class LayerRegistry(
         /**
          * Layers that ship off until the user opts in, unlike every other layer's visible-by-
          * default (#1022): the alt/az grid is a niche aid for naked-eye/manual-mount observers,
-         * not something to surface unasked. [Settings.layerEnabled]'s own default stays `true`;
-         * callers resolve a layer's actual default through [defaultEnabled].
+         * not something to surface unasked. Satellites are off because turning them on is what
+         * lets the app download orbit data, which shows the user's IP address to CelesTrak, so
+         * the user decides. [Settings.layerEnabled]'s own default stays `true`; callers resolve
+         * a layer's actual default through [defaultEnabled].
          */
-        private val DEFAULT_DISABLED_IDS: Set<LayerId> = setOf(AltAzGridLayer.LAYER_ID)
+        private val DEFAULT_DISABLED_IDS: Set<LayerId> =
+            setOf(AltAzGridLayer.LAYER_ID, SatelliteLayer.LAYER_ID)
 
         /** Whether [id] should be visible the first time a user ever sees it. */
         fun defaultEnabled(id: LayerId): Boolean = id !in DEFAULT_DISABLED_IDS

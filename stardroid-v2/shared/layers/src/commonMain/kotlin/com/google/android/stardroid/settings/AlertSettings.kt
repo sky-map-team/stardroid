@@ -10,6 +10,7 @@
 package com.google.android.stardroid.settings
 
 import com.google.android.stardroid.layers.LayerParameter
+import com.google.android.stardroid.layers.LayerRegistry
 import com.google.android.stardroid.layers.MeteorShowerLayer
 import com.google.android.stardroid.layers.SatelliteLayer
 import com.google.android.stardroid.layers.SolarSystemLayer
@@ -66,7 +67,7 @@ val Settings.passAlertsEnabled: Flow<Boolean>
         // Mirrors the runtime gate (`passAlertsEnabled(context)`): with the Satellites layer
         // off no alert fires, so the row must not claim it is on.
         combine(
-            layerEnabled(SatelliteLayer.LAYER_ID),
+            LayerRegistry.layerEnabled(this, SatelliteLayer.LAYER_ID),
             layerParameter(
                 SatelliteLayer.LAYER_ID,
                 LayerParameter.PASS_ALERTS,

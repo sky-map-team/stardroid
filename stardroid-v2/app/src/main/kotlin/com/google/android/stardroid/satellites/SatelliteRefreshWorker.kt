@@ -14,10 +14,11 @@ import android.util.Log
 import androidx.work.CoroutineWorker
 import androidx.work.WorkerParameters
 import com.google.android.stardroid.analytics.Analytics
-import com.google.android.stardroid.analytics.AnalyticsEvents
 import com.google.android.stardroid.data.satellites.FetchOutcome
 import com.google.android.stardroid.data.satellites.RefreshResult
 import com.google.android.stardroid.data.satellites.SatelliteFetchPolicy
+import com.google.android.stardroid.layers.LayerRegistry
+import com.google.android.stardroid.layers.SatelliteLayer
 import com.google.android.stardroid.startup.Experiment
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.first
@@ -81,14 +82,18 @@ class SatelliteRefreshWorker(
 
     override suspend fun doWork(): Result =
         withContext(Dispatchers.IO) {
-            // Both gates re-checked at run time, not just at schedule time: a Remote Config
-            // flip or a withdrawn consent must stop traffic even if a job is already enqueued.
+            // The gates are re-checked at run time, not just at schedule time: a Remote Config
+            // flip, a withdrawn consent or the layer being switched off must stop traffic even if
+            // a job is already enqueued.
             if (!entryPoint.experimentConfig().isEnabled(Experiment.SATELLITES)) {
                 return@withContext Result.success()
             }
             if (!entryPoint.settings().satelliteDataEnabled.first()) {
                 return@withContext Result.success()
             }
+            val layerOn =
+                LayerRegistry.layerEnabled(entryPoint.settings(), SatelliteLayer.LAYER_ID).first()
+            if (!layerOn) return@withContext Result.success()
             val repository = entryPoint.satelliteElementsRepository()
             val analytics = entryPoint.analytics()
 
@@ -120,13 +125,8 @@ class SatelliteRefreshWorker(
         result: RefreshResult.Completed,
         analytics: Analytics,
     ): Result {
-        report(result, analytics)
-
-        if (result.outcome is FetchOutcome.Success ||
-            result.outcome is FetchOutcome.NotModified
-        ) {
-            reportCircuitClosedIfItWas(result, analytics)
-        }
+        logRefusal(result)
+        trackSatelliteFetchResult(result, analytics, Clock.System.now())
 
         return when (satelliteWorkAction(result.outcome)) {
             SatelliteWorkAction.SUCCEED -> Result.success()
@@ -137,14 +137,8 @@ class SatelliteRefreshWorker(
         }
     }
 
-    /**
-     * Reports a server refusal, as CelesTrak's policy requires — to the log for a developer,
-     * and to analytics for the aggregate signal that stands in for logs we cannot see.
-     */
-    private fun report(
-        result: RefreshResult.Completed,
-        analytics: Analytics,
-    ) {
+    /** A server refusal, to the log for a developer, as CelesTrak's policy requires. */
+    private fun logRefusal(result: RefreshResult.Completed) {
         val outcome = result.outcome
         if (!SatelliteFetchPolicy.warrantsReporting(outcome)) return
         val statusCode = (outcome as FetchOutcome.HttpError).statusCode
@@ -164,44 +158,6 @@ class SatelliteRefreshWorker(
                     "${result.state.circuitOpenUntil}",
             )
         }
-
-        analytics.trackEvent(
-            AnalyticsEvents.SATELLITE_FETCH_FAILED_EVENT,
-            mapOf(
-                AnalyticsEvents.SATELLITE_FETCH_HTTP_CODE to statusCode.toString(),
-                AnalyticsEvents.SATELLITE_FETCH_CIRCUIT_OPENED to
-                    result.state.circuitIsOpen.toString(),
-                AnalyticsEvents.SATELLITE_FETCH_CIRCUIT_OPEN_UNTIL to
-                    result.state.circuitOpenUntil.toString(),
-            ),
-        )
-    }
-
-    /**
-     * Reports recovery, if this success closed a circuit that had been open.
-     *
-     * Read from [RefreshResult.Completed.previousState], because the success has already
-     * cleared the circuit by the time this runs. Paired with the failure event, this is what
-     * would show — in aggregate, across an install base whose logs we cannot see — that a
-     * breaker opened in production and how long it held.
-     *
-     * "How long it was open" is measured from the attempt that opened it, which is the last
-     * attempt recorded before this one.
-     */
-    private fun reportCircuitClosedIfItWas(
-        result: RefreshResult.Completed,
-        analytics: Analytics,
-    ) {
-        val previous = result.previousState
-        if (!previous.circuitIsOpen) return
-        val openedAt = previous.lastAttempt ?: return
-        analytics.trackEvent(
-            AnalyticsEvents.SATELLITE_CIRCUIT_CLOSED_EVENT,
-            mapOf(
-                AnalyticsEvents.SATELLITE_CIRCUIT_OPEN_HOURS to
-                    (Clock.System.now() - openedAt).inWholeHours.toString(),
-            ),
-        )
     }
 
     private companion object {

@@ -138,7 +138,7 @@ class LayersViewModel(
      */
     val satelliteDataMissing: StateFlow<Boolean> =
         combine(
-            settings.layerEnabled(SatelliteLayer.LAYER_ID),
+            LayerRegistry.layerEnabled(settings, SatelliteLayer.LAYER_ID),
             satelliteStatus,
         ) { enabled, status ->
             satellitesEnabled && enabled && status?.freshness == ElementFreshness.ABSENT

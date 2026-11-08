@@ -612,6 +612,15 @@ Defaults for gate 2 still differ by flavor via `FlavorEdges`, unchanged from the
   audience expects opt-in. A first-run prompt when the layer is first enabled turns this into one
   tap rather than a hunt through settings.
 
+**Update (November 2026): a third gate, the layer itself.** The Satellites layer now starts off
+(`LayerRegistry.DEFAULT_DISABLED_IDS`, like the alt/az grid), and neither platform fetches until
+the user turns it on: Android's job is scheduled only while the layer is on, and iOS fetches on
+app open (if stale) or when the layer is switched on. That makes the privacy policy's "only if you
+turn on the satellite layer" true, lets the user decide whether to show their IP address to
+CelesTrak, and spreads first requests by when people choose to try it. The empty-state card says
+the first download can take a few minutes. Users who never touched the toggle see the layer go
+from on to off on update; those who set it keep their choice.
+
 One hazard to note for whoever implements it: `SettingsViewModel`'s `combine` unpacks its flows by
 **positional index** (`values[0]` … `values[15]`). Append only; inserting mid-list silently shifts
 every subsequent index.
