@@ -1,0 +1,56 @@
+name: iOS build
+
+# Compiles the iOS app for the simulator (unsigned) on Apple Silicon runners, with the stable
+# Xcode and the Xcode 27 preview. No signing or secrets: it proves the app builds.
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'stardroid-v2/ios/**'
+      - 'stardroid-v2/app-ios/**'
+      - '.github/workflows/ios-build.yml'
+
+jobs:
+  ios-app:
+    name: Xcode ${{ matrix.xcode }}
+    runs-on: ${{ matrix.runner }}
+    timeout-minutes: 60
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - runner: macos-26
+            xcode: '26.6'
+          - runner: xcode-27
+            xcode: '27.2'
+    defaults:
+      run:
+        working-directory: ./stardroid-v2
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: zulu
+          java-version: '17'
+      - uses: gradle/actions/setup-gradle@v4
+        continue-on-error: true
+      - name: Kotlin/Native cache
+        uses: actions/cache@v4
+        with:
+          path: ~/.konan
+          key: konan-${{ runner.os }}-${{ runner.arch }}-${{ hashFiles('stardroid-v2/gradle/libs.versions.toml') }}
+      - name: Select Xcode ${{ matrix.xcode }}
+        run: |
+          sudo xcode-select -s /Applications/Xcode_${{ matrix.xcode }}*.app/Contents/Developer
+          xcodebuild -version
+      - name: Install XcodeGen
+        run: brew install xcodegen
+      - name: Generate the Xcode project
+        run: cd ios/SkyMap && xcodegen
+      - name: Build for the iOS simulator
+        run: >
+          xcodebuild -project ios/SkyMap/SkyMap.xcodeproj -scheme SkyMap
+          -destination 'generic/platform=iOS Simulator'
+          -derivedDataPath ios/SkyMap/build
+          CODE_SIGNING_ALLOWED=NO
+          build
