@@ -61,9 +61,9 @@ import platform.Foundation.NSOperationQueue
  * The frame is true north whenever the app may use location, which Core Motion needs to correct
  * the compass, and the user hasn't turned the correction off; the graph pairs this source with
  * zero declination for that reason. Otherwise the frame is magnetic north, uncorrected, until a
- * shared geomagnetic model exists.
- * Android instead computes the declination itself, at the map's location, which is the wrong
- * place for the compass when that location was entered by hand.
+ * shared geomagnetic model exists. Android instead computes the declination itself, at the
+ * map's location, which is the wrong place for the compass when that location was entered by
+ * hand.
  *
  * Apple asks for one [CMMotionManager] per app, and a manager runs one device-motion handler, so
  * this source owns the app's device-motion stream: [deviceMotion] serves every collector, the

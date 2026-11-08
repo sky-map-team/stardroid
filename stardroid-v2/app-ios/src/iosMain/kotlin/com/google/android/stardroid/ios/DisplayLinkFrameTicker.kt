@@ -52,7 +52,7 @@ class DisplayLinkFrameTicker : FrameTicker {
             val ready = waiting.toList()
             waiting.clear()
             ready.forEach { it.resume(nanos) }
-            // A resumed animation usually asks for the next frame straight away.
+            // Pause until the next awaitFrame, so an idle map costs no wakeups.
             link.paused = waiting.isEmpty()
         }
     }
