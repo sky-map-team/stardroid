@@ -60,8 +60,7 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/share_paths" />
         </provider>
-        <!-- Home-screen widgets (D69); WidgetGate flips these components with their
-             experiment flags (moon_widget_enabled / tonight_widget_enabled) on app start. -->
+        <!-- Home-screen widgets (D69). -->
         <receiver
             android:name=".widget.MoonWidgetReceiver"
             android:exported="true"

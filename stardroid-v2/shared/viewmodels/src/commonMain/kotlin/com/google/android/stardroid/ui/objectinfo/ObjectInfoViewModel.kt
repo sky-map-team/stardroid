@@ -49,8 +49,6 @@ import com.google.android.stardroid.render.api.SkyCamera
 import com.google.android.stardroid.satellites.SatelliteIds
 import com.google.android.stardroid.satellites.TrackedSatellite
 import com.google.android.stardroid.settings.Settings
-import com.google.android.stardroid.startup.Experiment
-import com.google.android.stardroid.startup.ExperimentConfig
 import com.google.android.stardroid.ui.search.SolarSystemIds
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
@@ -119,7 +117,6 @@ class ObjectInfoViewModel(
     private val analytics: Analytics = NoOpAnalytics,
     private val location: () -> LatLong = { LatLong(0.0, 0.0) },
     private val computeContext: CoroutineContext = Dispatchers.Default,
-    private val experimentConfig: ExperimentConfig = ExperimentConfig.Static,
     private val moonWidgetPlaced: () -> Boolean = { false },
     /**
      * The satellites currently drawn, with their sky positions — the tap targets and the source
@@ -145,10 +142,9 @@ class ObjectInfoViewModel(
     val live: StateFlow<CardLive?> = _live.asStateFlow()
 
     /**
-     * How the Moon card shows its add-a-widget row (D75 discovery): only on the Moon and only
-     * while the experiment is on. The row is permanent — there is no dismissal — but it
-     * recedes to [MoonWidgetPromo.PLACED] once a moon widget exists, so it stops pitching
-     * to someone who already took the offer.
+     * How the Moon card shows its add-a-widget row (D75 discovery): only on the Moon. The row is permanent — there is no
+     * dismissal — but it recedes to [MoonWidgetPromo.PLACED] once a moon widget exists, so it
+     * stops pitching to someone who already took the offer.
      */
     val moonWidgetPromo: StateFlow<MoonWidgetPromo> =
         _card
@@ -156,7 +152,6 @@ class ObjectInfoViewModel(
                 when {
                     card?.id != SolarSystemIds.idFor(SolarSystemBody.MOON) ->
                         MoonWidgetPromo.HIDDEN
-                    !experimentConfig.isEnabled(Experiment.MOON_WIDGET) -> MoonWidgetPromo.HIDDEN
                     // A Binder call to system_server: keep it off the main thread.
                     withContext(computeContext) { moonWidgetPlaced() } -> MoonWidgetPromo.PLACED
                     else -> MoonWidgetPromo.OFFER

@@ -327,8 +327,9 @@ once-per-cold-start version banner.
 
 - **Analytics**: `AnalyticsEvents` keeps v1's event names verbatim; opt-in respected before
   the first event.
-- **Experiments**: `ExperimentConfig` (`MOON_WIDGET`, `TONIGHT_WIDGET`, `NOTIFICATIONS`,
-  `CAMERA_AR`, `SHARE_SKY` — `WARM_WELCOME` retired per D81, onboarding is unconditional now);
+- **Experiments**: `ExperimentConfig` (`NOTIFICATIONS`, `CAMERA_AR`,
+  `SHARE_SKY`, … — `WARM_WELCOME` retired per D81, onboarding is unconditional now, and
+  `MOON_WIDGET`/`TONIGHT_WIDGET` retired once the widgets launched);
   gms backs it with Remote Config including a static-source fallback that works around the
   `setDefaultsAsync` cold-start race (a real D69 bug). All five remaining flags default to
   `false` as of the "disable unreleased features" pass — the features are complete and
@@ -345,7 +346,7 @@ All five surfaces below are complete and merged but currently default-off via `E
 - **Widgets** (D75/D76, PR #72–73): three Glance widgets — moon phase (custom-drawn disc),
   tonight's sky, shower countdown — fed by the pure `TonightSky` engine;
   `WidgetScheduler` keeps WorkManager refresh jobs alive only while a widget is placed, with
-  an app-start catch-up sweep. Kill-switched via experiments (`WidgetGate`).
+  an app-start catch-up sweep.
 - **Notifications** (D77, PR #74): one slot per night — a planner worker arms a poster for
   sunset + 30 min; the poster recomputes at post time; two channels mapping 1:1 to settings
   rows, off by default (both the `NOTIFICATIONS` experiment and the per-channel settings rows).

@@ -43,8 +43,10 @@ import com.google.android.stardroid.R
 import com.google.android.stardroid.analytics.AnalyticsEvents
 import com.google.android.stardroid.astronomy.SolarSystemBody
 import com.google.android.stardroid.events.CountdownTarget
+import com.google.android.stardroid.events.tonightSky
 import com.google.android.stardroid.ui.MainActivity
 import com.google.android.stardroid.ui.search.SolarSystemIds
+import kotlinx.coroutines.flow.first
 import kotlinx.datetime.Clock
 import kotlinx.datetime.TimeZone
 import kotlinx.datetime.daysUntil
@@ -61,17 +63,14 @@ class CountdownWidget : GlanceAppWidget() {
         id: GlanceId,
     ) {
         val entryPoint = widgetEntryPoint(context)
-        val countdown =
-            countdownFor(
-                entryPoint.experimentConfig(),
-                Clock.System.now(),
-                {
-                    entryPoint
-                        .catalogAccess()
-                        .repository()
-                        .meteorShowers(entryPoint.localeSource().current)
-                },
-            )
+        val showers =
+            entryPoint
+                .catalogAccess()
+                .repository()
+                .meteorShowers(entryPoint.localeSource().current)
+                .first()
+        // Location-free: the countdown is about dates, not local geometry.
+        val countdown = tonightSky(Clock.System.now(), location = null, showers = showers).countdown
         provideContent {
             CountdownContent(countdown, context)
         }

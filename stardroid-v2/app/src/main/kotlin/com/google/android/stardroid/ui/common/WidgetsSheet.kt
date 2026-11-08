@@ -26,8 +26,6 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.google.android.stardroid.R
 import com.google.android.stardroid.analytics.AnalyticsEvents
-import com.google.android.stardroid.startup.Experiment
-import com.google.android.stardroid.startup.ExperimentConfig
 import com.google.android.stardroid.widget.CountdownWidgetReceiver
 import com.google.android.stardroid.widget.MoonWidgetReceiver
 import com.google.android.stardroid.widget.TonightWidgetReceiver
@@ -43,40 +41,25 @@ data class WidgetOffer(
     val receiver: Class<*>,
 )
 
-/**
- * The widgets currently on offer, in the order they were built. Gated like the components
- * themselves ([com.google.android.stardroid.widget.WidgetGate]): a disabled receiver can't be
- * pinned, so offering it would only lead to the manual-instructions dialog. An empty list means
- * nothing is offerable — callers hide their entry point rather than open an empty sheet.
- */
-fun widgetOffers(experimentConfig: ExperimentConfig): List<WidgetOffer> =
-    buildList {
-        if (experimentConfig.isEnabled(Experiment.MOON_WIDGET)) {
-            add(
-                WidgetOffer(
-                    R.string.moon_widget_label,
-                    R.string.moon_widget_description,
-                    MoonWidgetReceiver::class.java,
-                ),
-            )
-        }
-        if (experimentConfig.isEnabled(Experiment.TONIGHT_WIDGET)) {
-            add(
-                WidgetOffer(
-                    R.string.tonight_widget_label,
-                    R.string.tonight_widget_description,
-                    TonightWidgetReceiver::class.java,
-                ),
-            )
-            add(
-                WidgetOffer(
-                    R.string.countdown_widget_label,
-                    R.string.countdown_widget_description,
-                    CountdownWidgetReceiver::class.java,
-                ),
-            )
-        }
-    }
+/** The widgets on offer, in the order they were built. */
+val widgetOffers: List<WidgetOffer> =
+    listOf(
+        WidgetOffer(
+            R.string.moon_widget_label,
+            R.string.moon_widget_description,
+            MoonWidgetReceiver::class.java,
+        ),
+        WidgetOffer(
+            R.string.tonight_widget_label,
+            R.string.tonight_widget_description,
+            TonightWidgetReceiver::class.java,
+        ),
+        WidgetOffer(
+            R.string.countdown_widget_label,
+            R.string.countdown_widget_description,
+            CountdownWidgetReceiver::class.java,
+        ),
+    )
 
 /**
  * The widget catalogue: one add-row per [WidgetOffer]. The single rendering of the list, so a

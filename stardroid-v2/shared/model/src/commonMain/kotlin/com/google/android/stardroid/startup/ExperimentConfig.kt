@@ -11,12 +11,6 @@ package com.google.android.stardroid.startup
 
 /** Feature-flag experiments, keyed as v1's Remote Config parameters. */
 enum class Experiment(val key: String) {
-    /** The moon-phase home-screen widget and its info-card promo row (D75). */
-    MOON_WIDGET("moon_widget_enabled"),
-
-    /** The tonight's-sky and countdown widgets over the events engine (D75 phase 2). */
-    TONIGHT_WIDGET("tonight_widget_enabled"),
-
     /** Shower-peak and tonight-digest notifications and their settings section (D77). */
     NOTIFICATIONS("notifications_enabled"),
 
@@ -97,8 +91,6 @@ fun interface ExperimentConfig {
         val Static: ExperimentConfig =
             ExperimentConfig {
                 when (it) {
-                    Experiment.MOON_WIDGET -> true
-                    Experiment.TONIGHT_WIDGET -> true
                     Experiment.NOTIFICATIONS -> true
                     Experiment.CAMERA_AR -> false
                     Experiment.SHARE_SKY -> false

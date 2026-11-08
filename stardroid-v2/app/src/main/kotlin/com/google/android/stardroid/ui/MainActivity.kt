@@ -315,7 +315,6 @@ class MainActivity : ComponentActivity() {
                     settings = settings,
                     analytics = analytics,
                     location = { locations.value },
-                    experimentConfig = experimentConfig,
                     moonWidgetPlaced = {
                         WidgetScheduler.hasInstances(
                             appContext,

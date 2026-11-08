@@ -27,10 +27,6 @@ import com.google.android.stardroid.settings.passAlertsEnabled
 import com.google.android.stardroid.settings.showerAlertsEnabled
 import com.google.android.stardroid.startup.Experiment
 import com.google.android.stardroid.startup.ExperimentConfig
-import com.google.android.stardroid.widget.CountdownWidgetReceiver
-import com.google.android.stardroid.widget.MoonWidgetReceiver
-import com.google.android.stardroid.widget.TonightWidgetReceiver
-import com.google.android.stardroid.widget.WidgetGate
 import com.google.android.stardroid.widget.WidgetScheduler
 import dagger.hilt.android.HiltAndroidApp
 import kotlinx.coroutines.CoroutineScope
@@ -64,19 +60,6 @@ class SkyMapApplication : Application(), ImageLoaderFactory {
 
     override fun onCreate() {
         super.onCreate()
-        // The widget kill switches (D75): evaluated per app start from the current
-        // (defaults-or-fetched) config; a remote flip applies after the next fetch cycle.
-        WidgetGate.apply(
-            this,
-            experimentConfig.isEnabled(Experiment.MOON_WIDGET),
-            MoonWidgetReceiver::class.java,
-        )
-        WidgetGate.apply(
-            this,
-            experimentConfig.isEnabled(Experiment.TONIGHT_WIDGET),
-            TonightWidgetReceiver::class.java,
-            CountdownWidgetReceiver::class.java,
-        )
         WidgetScheduler.syncSchedule(this)
         // Every app start refreshes placed widgets: recent Android doesn't deliver
         // TIME_SET/DATE_CHANGED to dead apps at all, so a clock change made while the

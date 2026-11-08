@@ -105,7 +105,6 @@ fun MapRoute(
     // whose isEnabled() answer changes asynchronously once fetchAndActivate() completes,
     // so keying a cache on the instance itself would never invalidate. Read fresh every
     // recomposition, like the sibling flags above.
-    val widgetsOnOffer = widgetOffers(experimentConfig)
     var showWidgetsSheet by rememberSaveable { mutableStateOf(false) }
     val context = LocalContext.current
     val scope = rememberCoroutineScope()
@@ -164,7 +163,7 @@ fun MapRoute(
             stringResource(R.string.geoapify_maps_api_key)
                 .takeUnless { it == "unset" || it.isEmpty() },
         onShareSky = startShare.takeIf { shareEnabled },
-        onOpenWidgets = { showWidgetsSheet = true }.takeIf { widgetsOnOffer.isNotEmpty() },
+        onOpenWidgets = { showWidgetsSheet = true },
         moonWidgetPromoRow = { placed -> MoonWidgetPromoRow(placed = placed) },
         hasArCamera = arCamera.hasCamera && cameraArEnabled,
         hasCameraPermission = hasCameraPermission,
@@ -240,7 +239,7 @@ fun MapRoute(
     }
 
     if (showWidgetsSheet) {
-        WidgetsSheet(widgetsOnOffer, onDismiss = { showWidgetsSheet = false })
+        WidgetsSheet(widgetOffers, onDismiss = { showWidgetsSheet = false })
     }
 }
 

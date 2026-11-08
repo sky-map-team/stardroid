@@ -14,7 +14,6 @@ import android.content.BroadcastReceiver
 import android.content.ComponentName
 import android.content.Context
 import android.content.Intent
-import android.content.pm.PackageManager
 import androidx.glance.appwidget.updateAll
 import androidx.work.CoroutineWorker
 import androidx.work.ExistingPeriodicWorkPolicy
@@ -37,14 +36,14 @@ import java.util.concurrent.TimeUnit
  * One WorkManager job refreshes every Sky Map widget (D75): rise/set and "tonight" content
  * are per-day figures, so a 12-hour period keeps them fresh across midnight and the
  * tonight-rollover without exact alarms. Placement/removal drive scheduling from the
- * receivers; [WidgetGate] re-applies the experiment flags on app start.
+ * receivers.
  */
 object WidgetScheduler {
     internal const val PERIODIC_WORK_NAME = "widget_refresh"
     internal const val MIDNIGHT_WORK_NAME = "widget_midnight_refresh"
     internal const val REFRESH_ONCE_WORK_NAME = "widget_refresh_once"
 
-    /** All widget receivers, for instance counting; gating is per-flag in [SkyMapApplication]. */
+    /** All widget receivers, for instance counting. */
     private val RECEIVERS =
         listOf(
             MoonWidgetReceiver::class.java,
@@ -155,31 +154,5 @@ class WidgetRefreshWorker(
         TonightWidget().updateAll(applicationContext)
         CountdownWidget().updateAll(applicationContext)
         return Result.success()
-    }
-}
-
-/**
- * Applies a widget experiment flag at app start (D75): disabled removes the receiver from
- * the picker and from pin requests. Already-placed instances stay but render their quiet
- * empty state on the next update. A Remote Config flip lands on the next app start after
- * the fetch.
- */
-object WidgetGate {
-    fun apply(
-        context: Context,
-        enabled: Boolean,
-        vararg receivers: Class<*>,
-    ) {
-        for (receiver in receivers) {
-            context.packageManager.setComponentEnabledSetting(
-                ComponentName(context, receiver),
-                if (enabled) {
-                    PackageManager.COMPONENT_ENABLED_STATE_ENABLED
-                } else {
-                    PackageManager.COMPONENT_ENABLED_STATE_DISABLED
-                },
-                PackageManager.DONT_KILL_APP,
-            )
-        }
     }
 }

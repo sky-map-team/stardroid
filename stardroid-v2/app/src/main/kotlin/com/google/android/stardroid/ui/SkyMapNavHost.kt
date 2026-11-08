@@ -329,11 +329,7 @@ fun SkyMapNavHost(
                     }
                 },
                 experimentConfig = experimentConfig,
-                // No offers means the widgets are gated off: Help leaves its links inert.
-                widgetsSheet =
-                    widgetOffers(experimentConfig)
-                        .takeIf { it.isNotEmpty() }
-                        ?.let { offers -> { onDismiss -> WidgetsSheet(offers, onDismiss) } },
+                widgetsSheet = { onDismiss -> WidgetsSheet(widgetOffers, onDismiss) },
             )
         }
 
