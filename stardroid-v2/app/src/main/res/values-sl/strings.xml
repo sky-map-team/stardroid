@@ -1,6 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
 
+    <!-- Launch splash banner. -->
 
     <!-- Sky-map labels drawn by the computed layers (LayerStrings). -->
     <string name="north_pole">SN</string>
@@ -33,6 +34,10 @@
     <string name="channel_passes_description" translation_description="Description of the satellite-pass notification channel.">Eno opozorilo tik pred najboljšim vidnim preletom ponoči</string>
     <string name="notif_pass_title" translation_description="Title of the notification sent shortly before a satellite passes overhead. %1$s is the satellite name.">%1$s bo kmalu preletel</string>
     <string name="notif_pass_text" translation_description="Body of the satellite pass notification, telling the user when to go outside. %1$s is a time.">Vidno od približno %1$s — pojdite ven in pustite, da se vaše oči prilagodijo</string>
+    <string name="channel_passes_now_name" translation_description="Name of the notification channel for the alert sent the moment a satellite rises.">Satelit vzhaja</string>
+    <string name="channel_passes_now_description" translation_description="Description of the notification channel for the alert sent the moment a satellite pass begins.">Opozorilo z vibriranjem ob začetku najbolj vidnega prehoda noči</string>
+    <string name="notif_pass_now_title" translation_description="Title of the notification sent the moment a satellite pass begins. %1$s is the satellite name.">%1$s vzhaja</string>
+    <string name="notif_pass_now_text" translation_description="Body of the notification sent the moment a satellite pass begins.">Poglejte gor — pravkar prečka nebo</string>
     <string name="channel_eclipses_name" translation_description="Name of the notification channel for alerts before a lunar eclipse starts.">Lunini mrki</string>
     <string name="channel_eclipses_description" translation_description="Description of the lunar-eclipse notification channel.">Eno opozorilo pred začetkom luninega mrka</string>
     <string name="notif_eclipse_title" translation_description="Title of the notification sent before a lunar eclipse starts. %1$s is a localized eclipse type like \'Total lunar eclipse\'.">%1$s se kmalu začne</string>
@@ -42,15 +47,19 @@
     <string name="satellite_description" translation_description="Short description shown on the info card for an artificial satellite.">
     Umetni satelit v nizki zemeljski orbiti, osvetljen s soncem na temnem nebu. Prečka nebo od obzorja do obzorja v nekaj minutah, premika se enakomerno in brez utripanja.
     </string>
+    <!-- tm:omitted name="tonight_satellite_pass" reason="identical_to_source" -->
+
+    <!-- Long-press help for layers in the layer-visibility sheet. -->
 
     <!-- Map screen controls. -->
 
+    <!-- The map HUD (map-hud.md, D65): the top-right pointing readout shown with the chrome. -->
 
 
     <!-- Through-camera (AR) mode (camera-ar-mode.md, D64). -->
     <string name="share_chooser_title" translation_description="Title of the system share sheet when sharing a captured sky image.">Deli to nebo</string>
-    <string name="share_invitation" translation_description="Short invitation stamped on the footer of shared sky images, above the store link.">Vesolje v žepu — prenesite Sky Map brezplačno</string>
-    <string name="share_text" translation_description="Text accompanying a shared sky image in apps that accept both an image and text. %1$s is the app-store link.">Vesolje v žepu — prenesite Sky Map brezplačno: %1$s</string>
+    <string name="share_invitation" translation_description="Short invitation stamped on the footer of shared sky images, above the store link.">Vesolje v vašem žepu — prenesite Sky Map brezplačno</string>
+    <string name="share_text" translation_description="Text accompanying a shared sky image in apps that accept both an image and text. %1$s is the app-store link.">Vesolje v vašem žepu — prenesite Sky Map brezplačno: %1$s</string>
     <!-- tm:omitted name="share_store_link" reason="identical_to_source" -->
     <string name="share_layout_overlay" translation_description="Caption of the share-layout choice that draws the star map over the camera photo, as seen on screen.">Prekrivanje</string>
     <string name="share_layout_side_by_side" translation_description="Caption of the share-layout choice that puts the camera photo and the star map next to each other.">Drug ob drugem</string>
@@ -70,6 +79,7 @@
 
     <!-- Settings screen (v1 wording where a v1 string existed) -->
 
+    <!-- Diagnostics screen (slice 15) -->
     <string name="diagnostics_section_satellites" translation_description="Section heading in the diagnostics screen for satellite orbital-data status">Sateliti</string>
     <string name="diagnostics_satellite_data" translation_description="Row label in the diagnostics screen for the age and count of cached satellite orbital data">Podatki o orbiti</string>
     <string name="diagnostics_satellite_data_none" translation_description="Row value in the diagnostics screen when no satellite orbital data has been downloaded yet">Ni preneseno</string>
@@ -100,6 +110,7 @@
     <!-- Moon-phase home-screen widget (D69). -->
     <string name="moon_widget_label" translation_description="Name of the moon-phase home-screen widget, shown in the launcher\'s widget picker">Lunina faza</string>
     <string name="moon_widget_description" translation_description="Description of the moon-phase widget, shown under its preview in the launcher\'s widget picker">Lunina faza, osvetljenost ter časi vzhoda in zahoda, dnevno posodobljeno.</string>
+    <!-- tm:omitted name="moon_widget_illumination_short" reason="identical_to_source" -->
     <string name="moon_widget_rise_time" translation_description="Widget fragment showing today\'s moonrise time; %1$s is a clock time like 17:42">vzhaja %1$s</string>
     <string name="moon_widget_set_time" translation_description="Widget fragment showing today\'s moonset time; %1$s is a clock time like 03:12">zahaja %1$s</string>
     <string name="moon_widget_time_day_offset" translation_description="Compact suffix appended after a widget rise/set time that falls on a later day than today, so a reader doesn\'t mistake it for today\'s crossing; %1$d is the number of days ahead (almost always 1). Keep it short — the widget is very narrow. Note the leading space.">+%1$d</string>
@@ -142,6 +153,11 @@
     <string name="countdown_widget_preview_name" translation_description="Representative event name shown in the widget picker\'s preview of the countdown widget">Vrhunec Perzeidov</string>
 
     <!-- Sky-event notifications (D77). -->
+    <string name="channel_announcements_name" translation_description="Notification channel name for occasional messages from the Sky Map team">Sporočila ekipe Sky Map</string>
+    <string name="channel_announcements_description" translation_description="Notification channel description for occasional messages from the Sky Map team">Redka obvestila o pomembnih nebesnih dogodkih</string>
+    <string name="announcement_dialog_dismiss" translation_description="Button that closes an announcement dialog and hides that message everywhere">Opusti</string>
+    <string name="announcement_dialog_open" translation_description="Button on an announcement dialog that jumps to the sky object the message is about">Oglejte si</string>
+    <string name="announcement_dialog_continue" translation_description="Button on an announcement dialog that closes it and continues to the sky map">Nadaljuj</string>
     <string name="channel_showers_name" translation_description="Name of the meteor-shower notification channel, shown in the system\'s notification settings">Vrhunci meteorskih rojev</string>
     <string name="channel_showers_description" translation_description="Description of the meteor-shower notification channel in the system\'s notification settings">Približno ducat na leto, na večer vrhunca</string>
     <string name="channel_digest_name" translation_description="Name of the tonight-digest notification channel, shown in the system\'s notification settings">Povzetek današnjega neba</string>
@@ -159,10 +175,5 @@
     <!-- Layers sheet: per-layer parameters (D87). -->
     <string name="satellite_search_name_iss" translation_description="Common name of the International Space Station, matched when the user types it in search. Use the name people in this language actually type.">Mednarodna vesoljska postaja</string>
     <string name="satellite_search_name_tiangong" translation_description="Common name of the Chinese Tiangong space station, matched when the user types it in search. Use the name people in this language actually type.">Vesoljska postaja Tiangong</string>
-    <string name="tonight_trailing_pass_peak" translation_description="Small trailing note on a satellite pass row. %1$d is the peak altitude in degrees, %2$.1f is a brightness magnitude.">Vrh %1$d°, mag %2$.1f</string>
-    <string name="channel_announcements_name" translation_description="Notification channel name for occasional messages from the Sky Map team">Sporočila ekipe Sky Map</string>
-    <string name="channel_announcements_description" translation_description="Notification channel description for occasional messages from the Sky Map team">Redka obvestila o pomembnih nebesnih dogodkih</string>
-    <string name="announcement_dialog_dismiss" translation_description="Button that closes an announcement dialog and hides that message everywhere">Opusti</string>
-    <string name="announcement_dialog_open" translation_description="Button on an announcement dialog that jumps to the sky object the message is about">Ogled</string>
-    <string name="announcement_dialog_continue" translation_description="Button on an announcement dialog that closes it and continues to the sky map">Naprej</string>
+    <string name="tonight_trailing_pass_peak" translation_description="Small trailing note on a satellite pass row. %1$d is the peak altitude in degrees, %2$.1f is a brightness magnitude.">Najv. %1$d°, sij %2$.1f</string>
 </resources>

@@ -16,11 +16,14 @@
 
     <!--
       The access-permission notice (KISA / Korean Network Act art. 22-2, and good practice
-      everywhere). Rendered in two places from this one key so it is translated once: appended
-      to the first-launch EULA screen, and included in the help document as a permanent,
-      re-readable copy (HelpScreen.helpSections2). Every runtime permission Sky Map declares
-      must appear here, labelled required or optional, with its grounds and — for optional
-      ones — the user\'s right to refuse.
+      everywhere). Each platform has its own key, chosen by permissionsNoticeResource:
+      permissions_notice (Android) and permissions_notice_ios. Each is rendered in two places, so
+      it is translated once: appended to the first-launch EULA screen, and included in the help
+      document as a permanent, re-readable copy (HelpScreen.helpSections2). Every runtime
+      permission a platform can ask for must appear in its own notice, labelled required or
+      optional, with its grounds and — for optional ones — the user\'s right to refuse. Keep
+      both in step with what each app really requests (iOS: Location only until it gains
+      notifications or a camera mode).
     -->
     <string name="permissions_notice" translation_description="Legally-required disclosure of the device permissions the app requests, why it requests them, and the user\'s right to refuse the optional ones. Shown on the first-launch terms screen and in Help. Please do not change the markup"><![CDATA[<h2>Caniatâd</h2>
 <p><b>Nid oes gan Sky Map unrhyw ganiatâd gofynnol.</b> Mae pob caniatâd isod yn ddewisol — gallwch wrthod unrhyw un ohonynt a dal i ddefnyddio\'r ap. Nid yw Sky Map byth yn gofyn wrth gychwyn: dim ond pan fyddwch chi\'n defnyddio\'r nodwedd sydd ei hangen am y tro cyntaf y gofynnir am bob caniatâd, a gallwch roi neu dynnu pob un yn ôl ar wahân ar unrhyw adeg o dan <b>Gosodiadau → Apiau → Sky Map → Caniatâd</b> ar eich dyfais.</p>
@@ -38,4 +41,6 @@
 <p><b>Beth sy\'n cael ei gyrchu:</b> caniatâd i ddangos hysbysiadau.</p>
 <p><b>Pam:</b> i roi gwybod i chi am uchafbwyntiau cawodydd meteor a beth sy\'n werth ei weld heno, os gofynnwch am y rheini.</p>
 <p><b>Os gwrthodwch:</b> nid oes unrhyw beth arall yn newid — mae\'r hysbysiadau hyn yn aros i ffwrdd nes i chi eu troi ymlaen.</p>]]></string>
+
+    <string name="permissions_notice_ios" translation_description="iOS version of the legally-required disclosure of the device permissions the app requests: only location, which is optional. Shown on the first-launch terms screen and in Help. Please do not change the markup"><![CDATA[<h2>Caniatânau</h2> <p><b>Nid oes gan Sky Map unrhyw ganiatânau gofynnol.</b> Mae\'r un theitl isod yn ddewisol — gallwch ei theimlo a pharhau i ddefnyddio\'r ap. Mae Sky Map yn gofyn amdani unwaith, ar ôl i chi dderbyn y telerau hyn, oherwydd bod angen gwybod ble rydych chi i dynnu\'r awyr. Gallwch roi neu dynnu\'n ôl unrhyw bryd o dan <b>Gosodiadau → Sky Map</b> ar eich dyfais.</p> <h3>Lleoliad — dewisol</h3> <p><b>Yr hyn a gyrchir:</b> eich lleoliad bras.</p> <p><b>Pam:</b> mae\'r sêr sy\'n uwch eich pen yn dibynnu ar ble rydych chi, felly mae Sky Map yn defnyddio eich lleoliad bras i dynnu\'r awyr gywir.</p> <p><b>Os gwrthodwch:</b> gallwch deipio enw lle neu gydosodion yn lle hynny, a bydd yr ap i gyd yn parhau i weithio.</p> <blockquote>Defnyddir eich lleoliad ar eich dyfais i dynnu\'r awyr. Mae llun map y sgrin leoliad yn anfon fersiwn gron ohono i Geoapify, gwasanaeth map (gweler y polisi preifatrwydd).</blockquote>]]></string>
 </resources>

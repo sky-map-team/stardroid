@@ -16,11 +16,14 @@
 
     <!--
       The access-permission notice (KISA / Korean Network Act art. 22-2, and good practice
-      everywhere). Rendered in two places from this one key so it is translated once: appended
-      to the first-launch EULA screen, and included in the help document as a permanent,
-      re-readable copy (HelpScreen.helpSections2). Every runtime permission Sky Map declares
-      must appear here, labelled required or optional, with its grounds and — for optional
-      ones — the user\'s right to refuse.
+      everywhere). Each platform has its own key, chosen by permissionsNoticeResource:
+      permissions_notice (Android) and permissions_notice_ios. Each is rendered in two places, so
+      it is translated once: appended to the first-launch EULA screen, and included in the help
+      document as a permanent, re-readable copy (HelpScreen.helpSections2). Every runtime
+      permission a platform can ask for must appear in its own notice, labelled required or
+      optional, with its grounds and — for optional ones — the user\'s right to refuse. Keep
+      both in step with what each app really requests (iOS: Location only until it gains
+      notifications or a camera mode).
     -->
     <string name="permissions_notice" translation_description="Legally-required disclosure of the device permissions the app requests, why it requests them, and the user\'s right to refuse the optional ones. Shown on the first-launch terms screen and in Help. Please do not change the markup"><![CDATA[<h2>Povolenia</h2>
 <p><b>Sky Map nemá žiadne povinné povolenia.</b> Každé povolenie nižšie je voliteľné — môžete ktorékoľvek z nich odmietnuť a aplikáciu aj tak používať. Sky Map nikdy nežiada o povolenia pri spustení: každé povolenie sa vyžiada iba vtedy, keď prvýkrát použijete funkciu, ktorá ho potrebuje, a môžete ho udeliť alebo odobrať kedykoľvek samostatne v časti <b>Nastavenia → Aplikácie → Sky Map → Povolenia</b> na vašom zariadení.</p>
@@ -38,4 +41,6 @@
 <p><b>Čo sa sprístupňuje:</b> povolenie zobrazovať upozornenia.</p>
 <p><b>Prečo:</b> aby vás informoval o vrcholoch meteorických rojov a o tom, čo stojí za to vidieť dnes večer, ak o to požiadate.</p>
 <p><b>Ak odmietnete:</b> nič iné sa nezmení — tieto upozornenia zostanú vypnuté, kým ich nezapnete.</p>]]></string>
+
+    <string name="permissions_notice_ios" translation_description="iOS version of the legally-required disclosure of the device permissions the app requests: only location, which is optional. Shown on the first-launch terms screen and in Help. Please do not change the markup"><![CDATA[<h2>Oprávnenia</h2> <p><b>Sky Map nevyžaduje žiadne povinné oprávnenia.</b> Nižšie uvedené jediné oprávnenie je voliteľné – môžete ho odmietnuť a aplikáciu stále používať. Sky Map ho vyžiada raz, po prijatí týchto podmienok, pretože zobrazenie oblohy potrebuje poznať vašu polohu. Môžete ho kedykoľvek udeľovať alebo odvolávať v časti <b>Nastavenia → Sky Map</b> na vašom zariadení.</p> <h3>Poloha – voliteľné</h3> <p><b>K čomu sa pristupuje:</b> k vašej približnej polohe.</p> <p><b>Prečo:</b> to, ktoré hviezdy sú nad vami, závisí od toho, kde sa nachádzate, takže Sky Map používa vašu približnú polohu na vykreslenie správnej oblohy.</p> <p><b>Ak odmietnete:</b> namiesto toho môžete zadať názov miesta alebo súradnice a celá aplikácia bude fungovať ďalej.</p> <blockquote>Vaša poloha sa používa vo vašom zariadení na vykreslenie oblohy. Mapa na obrazovke polohy odosiela jej zaoblenú verziu službe Geoapify (pozrite si zásady ochrany osobných údajov).</blockquote>]]></string>
 </resources>

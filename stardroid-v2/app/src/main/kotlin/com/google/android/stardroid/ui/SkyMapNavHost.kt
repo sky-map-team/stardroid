@@ -9,7 +9,10 @@
 
 package com.google.android.stardroid.ui
 
+import android.content.ActivityNotFoundException
+import android.content.Context
 import android.content.Intent
+import android.net.Uri
 import android.opengl.GLSurfaceView
 import androidx.compose.material3.SnackbarHostState
 import androidx.compose.runtime.Composable
@@ -28,6 +31,7 @@ import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
+import com.google.android.stardroid.FlavorEdges
 import com.google.android.stardroid.R
 import com.google.android.stardroid.camera.SkyCameraPreview
 import com.google.android.stardroid.catalog.ObjectInfo
@@ -343,6 +347,12 @@ fun SkyMapNavHost(
                 nightMode = nightMode,
                 onBack = { navController.popBackStack() },
                 onAction = mapViewModel::logSupportAction,
+                onRateApp =
+                    if (FlavorEdges.HAS_PLAY_LISTING) {
+                        { openPlayListing(context) }
+                    } else {
+                        null
+                    },
                 onShareApp = {
                     val send =
                         Intent(Intent.ACTION_SEND).apply {
@@ -402,3 +412,19 @@ fun SkyMapNavHost(
 
 /** v1's linked figure-eight demonstration video. */
 private const val CALIBRATION_VIDEO_URL = "https://www.youtube.com/watch?v=-Uq7AmSAjt8"
+
+private fun openPlayListing(context: Context) {
+    val id = context.packageName
+    val market = Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=$id"))
+    try {
+        context.startActivity(market)
+    } catch (_: ActivityNotFoundException) {
+        val web =
+            Intent(
+                Intent.ACTION_VIEW,
+                Uri.parse("https://play.google.com/store/apps/details?id=$id"),
+            )
+        // No Play app and no browser: nothing to open, and nothing worth crashing over.
+        runCatching { context.startActivity(web) }
+    }
+}

@@ -943,7 +943,7 @@
    "image_credit": "NASA/ESA/Hubble"
   },
   "dso/m43": {
-   "description": "Mgławica De Mairана to oddzielona część wielkiego kompleksu Mgławicy Oriona, oddzielona od M42 ciemnym pasem pyłu, ale należąca do tej samej ogromnej chmury molekularnej. Nazwana na cześć francuskiego astronoma Jean-Jacques'a Dortous de Mairана, który zaobserwował ją w 1731 roku, jest mgławicą emisyjną jonizowaną przez gorącą młodą gwiazdę NU Orionis osadzoną w jej centrum.",
+   "description": "Mgławica De Mairana to oddzielona część wielkiego kompleksu Mgławicy Oriona, oddzielona od M42 ciemnym pasem pyłu, ale należąca do tej samej ogromnej chmury molekularnej. Nazwana na cześć francuskiego astronoma Jean-Jacques'a Dortous de Mairana, który zaobserwował ją w 1731 roku, jest mgławicą emisyjną jonizowaną przez gorącą młodą gwiazdę NU Orionis osadzoną w jej centrum.",
    "fun_fact": "Chociaż M43 wydaje się oddzielnym obiektem od M42, ciemna linia je dzieląca to chmura pyłu na pierwszym planie — część Obłoku Molekularnego Oriona — która po prostu blokuje nasz widok na fizyczne połączenie między dwoma świecącymi regionami. Razem stanowią one jedynie oświetloną wewnętrzną krawędź ogromnej ciemnej chmury rozciągającej się na znaczną część Oriona.",
    "distance": "1 350 lat świetlnych",
    "size": "~8 lat świetlnych średnicy"
@@ -1631,16 +1631,16 @@
    "image_credit": "NASA/JPL"
   },
   "satellite/25544": {
-   "description": "Międzynarodowa Stacja Kosmiczna to laboratorium badawcze wielkości boiska piłkarskiego, krążące około 420 km nad Ziemią. Zbudowało ją pięć agencji kosmicznych, a astronauci mieszkają i pracują na jej pokładzie. W najjaśniejszym momencie przewyższa blaskiem każdą gwiazdę i planetę, przemierzając niebo w zaledwie kilka minut.",
-   "fun_fact": "Ludzie mieszkają na pokładzie nieprzerwanie od 2 listopada 2000 roku. Załoga widzi około 16 wschodów i 16 zachodów słońca każdego dnia, ponieważ stacja okrąża Ziemię mniej więcej co 93 minuty.",
+   "description": "Międzynarodowa Stacja Kosmiczna to laboratorium badawcze wielkości boiska piłkarskiego, krążące na orbicie około 420 km nad Ziemią. Zbudowało ją pięć agencji kosmicznych, a astronauci mieszkają na niej i pracują. W swojej najjaśniejszej fazie przyćmiewa każdą gwiazdę i planetę, przelatując po niebie w zaledwie kilka minut.",
+   "fun_fact": "Ludzie żyją na jej pokładzie nieprzerwanie od 2 listopada 2000 roku. Załoga obserwuje około 16 wschodów i 16 zachodów słońca dziennie, ponieważ stacja okrąża Ziemię co około 93 minuty.",
    "distance": "Około 420 km nad Ziemią",
    "size": "109 m × 73 m",
    "mass": "Około 450 000 kg",
    "image_credit": "NASA/Crew of STS-132"
   },
   "satellite/48274": {
-   "description": "Tiangong („Niebiański Pałac”) to chińska stacja kosmiczna, zbudowana z trzech modułów w kształcie litery T: Tianhe, Wentian i Mengtian. Krąży około 390 km nad Ziemią i świeci jako jasna, stała gwiazda, która przemierza niebo w ciągu kilku minut.",
-   "fun_fact": "Kształt litery T został ukończony 3 listopada 2022 roku, kiedy zadokował moduł Mengtian, zaledwie 18 miesięcy po wystrzeleniu pierwszego modułu. Na pokładzie mieszka trzyosobowa załoga, która podczas przekazywania obowiązków powiększa się do sześciu osób.",
+   "description": "Tiangong („Niebiański Pałac”) to chińska stacja kosmiczna, zbudowana z trzech modułów w kształcie litery T: Tianhe, Wentian i Mengtian. Krąży około 390 km nad Ziemią i świeci jako jasna, stabilna Gwiazda, która przelatuje po niebie w ciągu kilku minut.",
+   "fun_fact": "Kształt litery T został ukończony 3 listopada 2022 roku, kiedy dokował moduł Mengtian, zaledwie 18 miesięcy po wystrzeleniu pierwszego modułu. Na pokładzie żyje załoga licząca trzy osoby, która wzrasta do sześciu podczas zmian.",
    "distance": "340–450 km nad Ziemią",
    "size": "Około 55 m długości",
    "mass": "Około 100 000 kg",
@@ -1651,7 +1651,7 @@
    "fun_fact": "Meteory Eta Aquariidy poruszają się z prędkością 66 km/s — wystarczająco szybko, aby jonizowane powietrze, które tworzą, mogło świecić się przez kilka sekund po zniknięciu meteoru. Możesz obserwować starożysty pył Halleya spalający się na Twoich oczach, wyrzucony podczas jednej z wielu wizyt komety sprzed tysięcy lat temu."
   },
   "shower/deltaaquariids": {
-   "description": "Południowe Delta Aquariidy osiągają maksimum w końcu lipca i są najlepiej widoczne z szerokości geograficznych tropikalnych i południowych, gdzie radiант w Wodnika wspina się wysoko przed świtem. Produkują stały strumień meteorów o średniej prędkości do 16 na godzinę, z kilkoma jasnymi kulami ognistymi.",
+   "description": "Południowe Delta Aquariidy osiągają maksimum w końcu lipca i są najlepiej widoczne z szerokości geograficznych tropikalnych i południowych, gdzie radiant w Wodnika wspina się wysoko przed świtem. Produkują stały strumień meteorów o średniej prędkości do 16 na godzinę, z kilkoma jasnymi kulami ognistymi.",
    "fun_fact": "Dokładne ciało macierzyste Delta Aquariidów pozostaje niepewne. Głównym kandydatem jest Kometa 96P/Machholz, niezwykła kometa o krótkim okresie orbitalnym z wysoce nachyloną orbitą, która zbliża się niezwykle blisko do Słońca — bliżej niż planeta Merkury."
   },
   "shower/geminids": {
@@ -2165,7 +2165,7 @@
    "image_credit": "ESO/Digitized Sky Survey 2"
   },
   "star/menkar": {
-   "description": "Menkar to czerwony olbrzym, który zaznacza nos Cetuса (Potwora Morskiego). Jego nazwa oznacza \"nozdrze\" w języku arabskim.",
+   "description": "Menkar to czerwony olbrzym, który zaznacza nos Cetusa (Potwora Morskiego). Jego nazwa oznacza \"nozdrze\" w języku arabskim.",
    "fun_fact": "Menkar zbliża się do końca swojego życia gwiezdnego. Ten starzejący się czerwony olbrzym fuzjonuje hel w swoim jądrze i ostatecznie zrzuci swoje zewnętrzne warstwy, aby stać się mgławicą planetarną!",
    "distance": "249 lat świetlnych",
    "size": "~89 promienia Słońca",

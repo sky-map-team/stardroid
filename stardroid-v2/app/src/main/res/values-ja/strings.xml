@@ -1,6 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
 
+    <!-- Launch splash banner. -->
 
     <!-- Sky-map labels drawn by the computed layers (LayerStrings). -->
     <string name="north_pole">北極点</string>
@@ -33,6 +34,10 @@
     <string name="channel_passes_description" translation_description="Description of the satellite-pass notification channel.">夜間の最もよく見える通過の直前に一度だけ通知</string>
     <string name="notif_pass_title" translation_description="Title of the notification sent shortly before a satellite passes overhead. %1$s is the satellite name.">%1$s がまもなく頭上を通過します</string>
     <string name="notif_pass_text" translation_description="Body of the satellite pass notification, telling the user when to go outside. %1$s is a time.">約%1$sから見えます — 外に出て目を慣らしましょう</string>
+    <string name="channel_passes_now_name" translation_description="Name of the notification channel for the alert sent the moment a satellite rises.">人工衛星がまもなく昇ります</string>
+    <string name="channel_passes_now_description" translation_description="Description of the notification channel for the alert sent the moment a satellite pass begins.">今夜最も見やすいパスが始まる時に、バイブレーション付きで通知します</string>
+    <string name="notif_pass_now_title" translation_description="Title of the notification sent the moment a satellite pass begins. %1$s is the satellite name.">%1$sが昇っています</string>
+    <string name="notif_pass_now_text" translation_description="Body of the notification sent the moment a satellite pass begins.">空を見上げてください。今ちょうど上空を通過中です</string>
     <string name="channel_eclipses_name" translation_description="Name of the notification channel for alerts before a lunar eclipse starts.">月食</string>
     <string name="channel_eclipses_description" translation_description="Description of the lunar-eclipse notification channel.">月食が始まる前に一度だけ通知</string>
     <string name="notif_eclipse_title" translation_description="Title of the notification sent before a lunar eclipse starts. %1$s is a localized eclipse type like \'Total lunar eclipse\'.">%1$s がまもなく始まります</string>
@@ -40,6 +45,9 @@
     <string name="satellite_name_iss" translation_description="Display name for the International Space Station.">宇宙ステーション</string>
     <string name="satellite_name_tiangong" translation_description="Display name for the Chinese space station Tiangong.">天宮</string>
     <string name="satellite_description" translation_description="Short description shown on the info card for an artificial satellite.">地球低軌道にある人工衛星で、暗い空に太陽光を浴びて輝いています。数分で地平線から地平線までを、安定して点滅することなく横切ります。</string>
+    <!-- tm:omitted name="tonight_satellite_pass" reason="identical_to_source" -->
+
+    <!-- Long-press help for layers in the layer-visibility sheet. -->
 
     <!-- Map screen controls. -->
 
@@ -48,8 +56,8 @@
 
     <!-- Through-camera (AR) mode (camera-ar-mode.md, D64). -->
     <string name="share_chooser_title" translation_description="Title of the system share sheet when sharing a captured sky image.">この空を共有</string>
-    <string name="share_invitation" translation_description="Short invitation stamped on the footer of shared sky images, above the store link.">ポケットの中の宇宙 — Sky Map を無料でダウンロード</string>
-    <string name="share_text" translation_description="Text accompanying a shared sky image in apps that accept both an image and text. %1$s is the app-store link.">ポケットの中の宇宙 — Sky Map を無料でダウンロード: %1$s</string>
+    <string name="share_invitation" translation_description="Short invitation stamped on the footer of shared sky images, above the store link.">あなたのポケットに宇宙を — Sky Mapを無料でダウンロード</string>
+    <string name="share_text" translation_description="Text accompanying a shared sky image in apps that accept both an image and text. %1$s is the app-store link.">あなたのポケットに宇宙を — Sky Mapを無料でダウンロード: %1$s</string>
     <!-- tm:omitted name="share_store_link" reason="identical_to_source" -->
     <string name="share_layout_overlay" translation_description="Caption of the share-layout choice that draws the star map over the camera photo, as seen on screen.">オーバーレイ</string>
     <string name="share_layout_side_by_side" translation_description="Caption of the share-layout choice that puts the camera photo and the star map next to each other.">並べて表示</string>
@@ -69,6 +77,7 @@
 
     <!-- Settings screen (v1 wording where a v1 string existed) -->
 
+    <!-- Diagnostics screen (slice 15) -->
     <string name="diagnostics_section_satellites" translation_description="Section heading in the diagnostics screen for satellite orbital-data status">衛星</string>
     <string name="diagnostics_satellite_data" translation_description="Row label in the diagnostics screen for the age and count of cached satellite orbital data">軌道データ</string>
     <string name="diagnostics_satellite_data_none" translation_description="Row value in the diagnostics screen when no satellite orbital data has been downloaded yet">未ダウンロード</string>
@@ -99,6 +108,7 @@
     <!-- Moon-phase home-screen widget (D69). -->
     <string name="moon_widget_label" translation_description="Name of the moon-phase home-screen widget, shown in the launcher\'s widget picker">月の満ち欠け</string>
     <string name="moon_widget_description" translation_description="Description of the moon-phase widget, shown under its preview in the launcher\'s widget picker">月の満ち欠け、輝面率、出没時間を毎日更新。</string>
+    <!-- tm:omitted name="moon_widget_illumination_short" reason="identical_to_source" -->
     <string name="moon_widget_rise_time" translation_description="Widget fragment showing today\'s moonrise time; %1$s is a clock time like 17:42">%1$s に昇る</string>
     <string name="moon_widget_set_time" translation_description="Widget fragment showing today\'s moonset time; %1$s is a clock time like 03:12">%1$s に沈む</string>
     <string name="moon_widget_time_day_offset" translation_description="Compact suffix appended after a widget rise/set time that falls on a later day than today, so a reader doesn\'t mistake it for today\'s crossing; %1$d is the number of days ahead (almost always 1). Keep it short — the widget is very narrow. Note the leading space.">+%1$d日</string>
@@ -137,6 +147,11 @@
     <string name="countdown_widget_preview_name" translation_description="Representative event name shown in the widget picker\'s preview of the countdown widget">ペルセウス座流星群のピーク</string>
 
     <!-- Sky-event notifications (D77). -->
+    <string name="channel_announcements_name" translation_description="Notification channel name for occasional messages from the Sky Map team">Sky Mapからのメッセージ</string>
+    <string name="channel_announcements_description" translation_description="Notification channel description for occasional messages from the Sky Map team">注目すべき天文現象に関する重要なお知らせ</string>
+    <string name="announcement_dialog_dismiss" translation_description="Button that closes an announcement dialog and hides that message everywhere">閉じる</string>
+    <string name="announcement_dialog_open" translation_description="Button on an announcement dialog that jumps to the sky object the message is about">見てみる</string>
+    <string name="announcement_dialog_continue" translation_description="Button on an announcement dialog that closes it and continues to the sky map">続ける</string>
     <string name="channel_showers_name" translation_description="Name of the meteor-shower notification channel, shown in the system\'s notification settings">流星群のピーク</string>
     <string name="channel_showers_description" translation_description="Description of the meteor-shower notification channel in the system\'s notification settings">年に約12回、ピークの夜に通知</string>
     <string name="channel_digest_name" translation_description="Name of the tonight-digest notification channel, shown in the system\'s notification settings">今夜の空の概要</string>
@@ -148,12 +163,7 @@
     <string name="notif_digest_title" translation_description="Title of the tonight\'s-sky digest notification">今夜は一見の価値あり</string>
     <string name="notif_action_mute_showers" translation_description="Notification action button that opens the system toggle for the meteor-shower channel">流星群の通知をオフにする</string>
     <!-- Layers sheet: per-layer parameters (D87). -->
-    <string name="satellite_search_name_iss" translation_description="Common name of the International Space Station, matched when the user types it in search. Use the name people in this language actually type.">国際宇宙ステーション</string>
-    <string name="satellite_search_name_tiangong" translation_description="Common name of the Chinese Tiangong space station, matched when the user types it in search. Use the name people in this language actually type.">天宮宇宙ステーション</string>
+    <string name="satellite_search_name_iss" translation_description="Common name of the International Space Station, matched when the user types it in search. Use the name people in this language actually type.">国際宇宙ステーション (ISS)</string>
+    <string name="satellite_search_name_tiangong" translation_description="Common name of the Chinese Tiangong space station, matched when the user types it in search. Use the name people in this language actually type.">天宮</string>
     <string name="tonight_trailing_pass_peak" translation_description="Small trailing note on a satellite pass row. %1$d is the peak altitude in degrees, %2$.1f is a brightness magnitude.">最高高度 %1$d°、等級 %2$.1f</string>
-    <string name="channel_announcements_name" translation_description="Notification channel name for occasional messages from the Sky Map team">Sky Map チームからのメッセージ</string>
-    <string name="channel_announcements_description" translation_description="Notification channel description for occasional messages from the Sky Map team">注目すべき天文現象に関するお知らせ</string>
-    <string name="announcement_dialog_dismiss" translation_description="Button that closes an announcement dialog and hides that message everywhere">閉じる</string>
-    <string name="announcement_dialog_open" translation_description="Button on an announcement dialog that jumps to the sky object the message is about">詳細を見る</string>
-    <string name="announcement_dialog_continue" translation_description="Button on an announcement dialog that closes it and continues to the sky map">続ける</string>
 </resources>

@@ -47,7 +47,7 @@ enum class Experiment(val key: String) {
      * selected and any device that already chose it falls back to GLES1 on the next launch,
      * without shipping a release.
      *
-     * Off by default: GLES1 remains the shipping renderer until this has had real-device time.
+     * On by default; see `Settings.rendererBackend` for how it also sets the default engine.
      */
     GLES3_RENDERER("gles3_renderer_enabled"),
 
@@ -102,8 +102,8 @@ fun interface ExperimentConfig {
                     Experiment.NOTIFICATIONS -> true
                     Experiment.CAMERA_AR -> false
                     Experiment.SHARE_SKY -> false
-                    Experiment.SATELLITES -> false
-                    Experiment.GLES3_RENDERER -> false
+                    Experiment.SATELLITES -> true
+                    Experiment.GLES3_RENDERER -> true
                     Experiment.ANNOUNCEMENTS -> false
                 }
             }

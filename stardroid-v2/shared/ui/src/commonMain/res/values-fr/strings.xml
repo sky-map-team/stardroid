@@ -1,5 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
+    <!-- The terms screen (EulaScreen), shared with the iOS app. -->
     <string name="eula_title">Conditions d\'utilisation</string>
     <string name="dialog_accept">Accepter</string>
     <string name="dialog_decline">Non, merci</string>
@@ -43,6 +44,8 @@
     <string name="layer_solar_system">Système solaire</string>
     <string name="layer_meteor_showers">Pluies de météores</string>
     <!-- tm:omitted name="layer_satellites" reason="identical_to_source" -->
+    <string name="layer_param_shower_alerts" translation_description="Label for the setting that turns on a notification on the evening a meteor shower peaks.">Alertes de maximum</string>
+    <string name="layer_param_shower_alerts_description" translation_description="Explains what the meteor-shower alert setting does: a notification on the evening a shower reaches its annual peak.">Me prévenir le soir du maximum d\'une essaim</string>
     <string name="layer_param_pass_alerts" translation_description="Label for the setting that turns on a notification shortly before a satellite passes overhead.">Alertes de passage</string>
     <string name="layer_param_pass_alerts_description" translation_description="Explains what the pass-alert setting does: a single notification before the best visible pass of the night.">Me notifier avant le meilleur passage visible chaque nuit</string>
     <string name="layer_param_eclipse_alerts" translation_description="Label for the setting that turns on a notification before a lunar eclipse begins.">Alertes d\'éclipse</string>
@@ -54,6 +57,17 @@
     <string name="layer_param_altaz_grid_density_medium_desc" translation_description="Explains the medium alt/az grid density: 12 azimuth lines, 30 degrees apart.">12 lignes de direction, espacées de 30°</string>
     <string name="layer_param_altaz_grid_density_fine" translation_description="Option label for the alt/az grid's densest setting: 24 azimuth lines, 15 degrees apart.">Fin</string>
     <string name="layer_param_altaz_grid_density_fine_desc" translation_description="Explains the fine alt/az grid density: 24 azimuth lines, matching the celestial grid's meridian count.">24 lignes de direction, correspondant à la grille céleste</string>
+    <string name="layer_param_grid_brightness" translation_description="Label for the grid layers' line-brightness setting.">Luminosité des lignes</string>
+    <string name="layer_param_grid_brightness_normal" translation_description="Option label for the grid's default line brightness.">Normale</string>
+    <string name="layer_param_grid_brightness_normal_desc" translation_description="Explains the normal grid line brightness: subtle, for a dark-adapted eye.">Lignes subtiles, reposantes pour les yeux adaptés à l\'obscurité</string>
+    <string name="layer_param_grid_brightness_bright" translation_description="Option label for a brighter grid line setting.">Brillante</string>
+    <string name="layer_param_grid_brightness_bright_desc" translation_description="Explains the bright grid line setting.">Lignes plus nettes pour le crépuscule ou les ciels pollués par la lumière</string>
+    <string name="layer_param_grid_brightness_brightest" translation_description="Option label for the brightest grid line setting.">Très brillante</string>
+    <string name="layer_param_grid_brightness_brightest_desc" translation_description="Explains the brightest grid line setting.">Lignes les plus fortes, pour le jour ou les ciels urbains</string>
+    <string name="layer_param_radec_grid_density" translation_description="Label for the celestial (RA/Dec) grid's line-count setting.">Nombre de lignes</string>
+    <string name="layer_param_radec_grid_density_coarse_desc" translation_description="Explains the coarse celestial grid density: a meridian every 3 hours of right ascension and a circle every 30 degrees of declination.">Méridiens toutes les 3 heures, cercles tous les 30°</string>
+    <string name="layer_param_radec_grid_density_medium_desc" translation_description="Explains the medium celestial grid density: a meridian every 2 hours of right ascension and a circle every 15 degrees of declination.">Méridiens toutes les 2 heures, cercles tous les 15°</string>
+    <string name="layer_param_radec_grid_density_fine_desc" translation_description="Explains the fine celestial grid density: a meridian every hour of right ascension and a circle every 10 degrees of declination.">Méridiens chaque heure, cercles tous les 10°</string>
     <string name="satellites_no_data" translation_description="Explanation shown when satellite orbital data has not been downloaded yet and so no satellites can be drawn.">
     Les positions des satellites nécessitent une connexion internet pour être mises à jour.
     </string>
@@ -68,6 +82,64 @@
     <string name="layer_ecliptic">Écliptique</string>
     <string name="layer_altaz_grid" translation_description="Toggle label for the layer showing the altitude/azimuth (horizontal) coordinate grid, for naked-eye or manual alt-az mount observers.">Grille Alt/Az</string>
     <string name="layer_sky_gradient" translation_description="Toggle label for the daytime sky-brightness gradient and the ground coloring.">Coloration du ciel</string>
+    <string name="layer_help_stars" translation_description="Long-press explanation of the stars layer.">
+    Les étoiles, dimensionnées selon leur éclat et teintées par leur couleur. Touchez une étoile pour plus de détails.
+    </string>
+    <string name="layer_help_constellations" translation_description="Long-press explanation of the constellations layer.">
+    Les lignes et les noms des constellations pour vous repérer parmi les configurations stellaires.
+    </string>
+    <string name="layer_help_deep_sky" translation_description="Long-press explanation of the deep-sky layer.">
+    Galaxies, nébuleuses et amas stellaires : objets situés bien au-delà de notre système solaire. Bon nombre d\'entre eux nécessitent des jumelles ou un télescope pour être observés réellement.
+    </string>
+    <string name="layer_help_solar_system" translation_description="Long-press explanation of the solar system layer.">Le Soleil, la Lune (avec sa phase actuelle) et les planètes.</string>
+    <string name="layer_help_meteor_showers" translation_description="Long-press explanation of the meteor showers layer.">
+    Le radiant de chaque essaim d\'étoiles filantes annuel : le point du ciel d\'où semblent provenir les météores.
+    </string>
+    <string name="layer_help_satellites" translation_description="Long-press explanation of the satellites layer.">
+    Les satellites tels que la Station spatiale internationale (ISS) et Tiangong (CSS), affichés à leur position actuelle. Nécessite des données d\'orbite récemment téléchargées.
+    </string>
+    <string name="layer_help_grid" translation_description="Long-press explanation of the celestial grid layer.">
+    La grille de coordonnées célestes d\'ascension droite et de déclinaison : l\'équivalent de la latitude et de la longitude pour le ciel. Elle est fixe par rapport aux étoiles.
+    </string>
+    <string name="layer_help_horizon" translation_description="Long-press explanation of the horizon layer.">
+    La ligne d\'horizon et les points cardinaux pour savoir où se trouve le nord et où se situe le sol.
+    </string>
+    <string name="layer_help_ecliptic" translation_description="Long-press explanation of the ecliptic layer.">
+    La trajectoire du Soleil à travers le ciel au cours de l\'année. La Lune et les planètes restent toujours à proximité.
+    </string>
+    <string name="layer_help_altaz_grid" translation_description="Long-press explanation of the alt/az grid layer.">
+    Une grille d\'altitude (hauteur au-dessus de l\'horizon) et d\'azimut (direction du compas). Contrairement à la grille céleste, elle est fixe par rapport à votre horizon, et non aux étoiles.
+    </string>
+    <string name="layer_help_sky_gradient" translation_description="Long-press explanation of the sky coloring toggle.">
+    Assombrit ou éclaire le ciel en fonction de l\'heure (lumineux le jour, sombre la nuit) et colorie le sol.
+    </string>
+    <string name="layer_help_hud" translation_description="Long-press explanation of the pointing readout toggle.">
+    Indication de l\'orientation de votre téléphone : direction du compas et altitude.
+    </string>
+    <string name="layer_help_camera" translation_description="Long-press explanation of the through-camera toggle.">
+    Affiche le flux vidéo en direct de la caméra derrière la carte du ciel pour que le ciel dessiné se superpose au vrai. Nécessite des capteurs de mouvement.
+    </string>
+    <string name="layer_help_options_solar_system" translation_description="Long-press note listing what can be customized on the solar system layer.">
+    Taille des disques : taille à laquelle le Soleil, la Lune et les planètes sont dessinés.\nAlertes d\'éclipse : notification avant une éclipse lunaire.
+    </string>
+    <string name="layer_help_options_satellites" translation_description="Long-press note listing what can be customized on the satellites layer.">
+    Alertes de passage : une notification avant le meilleur passage visible chaque nuit.
+    </string>
+    <string name="layer_help_options_meteor_showers" translation_description="Long-press note listing what can be customized on the meteor showers layer.">
+    Alertes de maximum : une notification le soir où un essaim atteint son pic annuel.
+    </string>
+    <string name="layer_help_options_grid" translation_description="Long-press note listing what can be customized on the celestial grid layer.">
+    Nombre de lignes : une ligne toutes les 3, 2 ou 1 heures et tous les 30°, 15° ou 10°.
+Luminosité des lignes : normale, brillante ou très brillante, pour le crépuscule, le jour ou les ciels pollués par la lumière.
+    </string>
+    <string name="layer_help_options_altaz_grid" translation_description="Long-press note listing what can be customized on the alt/az grid layer.">
+    Nombre de lignes : 8, 12 ou 24 lignes de direction.\nLuminosité des lignes : normale, lumineuse ou très lumineuse, pour les cieux au crépuscule, en plein jour ou pollués par la lumière.
+    </string>
+    <string name="layer_help_customizable" translation_description="Heading in the layer help popup above the list of customizable options.">Ce que vous pouvez personnaliser</string>
+    <string name="layer_help_expand_hint" translation_description="Hint in the layer help popup for layers with options, pointing to the arrow button on the row.">Appuyez sur la flèche de la ligne pour modifier ces paramètres.</string>
+    <string name="layer_help_customize" translation_description="Button in the layer help popup that opens the Layers sheet on that layer's options.">Personnaliser</string>
+    <string name="layer_help_close" translation_description="Button that dismisses the layer help popup.">Compris</string>
+    <string name="layer_help_long_click_label" translation_description="Accessibility label for the long-press action on a layer row, which shows an explanation of the layer.">Afficher la fonction de cet élément</string>
     <string name="layers_sheet_title" translation_description="Title of the bottom sheet listing sky map layers the user can show or hide.">Calques</string>
     <string name="layers_group_objects" translation_description="Layers-sheet group header for layers that draw sky objects (stars, planets, deep-sky objects).">Objets</string>
     <string name="layers_group_reference" translation_description="Layers-sheet group header for reference elements drawn over the sky (coordinate grid, horizon, ecliptic).">Référence</string>
@@ -98,6 +170,23 @@
     <string name="tutorial_button">Tutoriel</string>
     <string name="whats_new_button" translation_description="Map-screen menu item that opens the What's New and Credits screen">Nouveautés</string>
     <!-- tm:omitted name="widgets_button" reason="identical_to_source" -->
+    <string name="support_button" translation_description="Map-screen menu item that opens the screen listing ways to support Sky Map">Soutenir</string>
+    <string name="support_screen_title" translation_description="Title of the screen listing ways to support Sky Map">Soutenir Sky Map</string>
+    <string name="support_intro" translation_description="Opening paragraph of the Support screen. Sky Map is a free, open-source app.">
+    Sky Map est un logiciel libre et gratuit, et il le restera. Si vous l\'appréciez, voici quelques façons d\'aider.
+    </string>
+    <string name="support_star_title" translation_description="Support screen row: star the project's page on GitHub">Mettre une étoile à Sky Map sur GitHub</string>
+    <string name="support_star_desc" translation_description="Support screen row description: starring helps other people find the app">Cela aide d\'autres personnes à trouver l\'application.</string>
+    <string name="support_issues_title" translation_description="Support screen row: report a problem or suggest an idea on GitHub">Signaler un problème ou suggérer une idée</string>
+    <string name="support_issues_desc" translation_description="Support screen row description: opens the issue tracker on GitHub">Ouvrir un ticket sur GitHub.</string>
+    <string name="support_share_title" translation_description="Support screen row: share the app with a friend">En parler à un ami</string>
+    <string name="support_share_desc" translation_description="Support screen row description: share the app with someone who likes the night sky">Partager Sky Map avec quelqu\'un qui aime le ciel nocturne.</string>
+    <string name="support_bmac_title" translation_description="Support screen row: make a small voluntary donation on the Buy Me a Coffee website">Offrez-nous un café</string>
+    <string name="support_bmac_desc" translation_description="Support screen row description: donations are optional">Un petit pourboire facultatif pour contribuer aux frais de développement.</string>
+    <string name="support_share_message" translation_description="Message sent when the user shares the app with a friend. %1$s is the web link to the app's store page. Keep the %1$s placeholder.">
+    Avez-vous essayé Sky Map ? C\'est un planétarium gratuit et open source pour votre téléphone : %1$s
+    </string>
+    <string name="support_thanks_html" translation_description="HTML section at the bottom of the Support screen thanking donors and open-source contributors. %1$s is a list of donor names and %2$s a list of contributor names. Please do not change the &lt; and &gt; markup or the placeholders."><![CDATA[<h2>Merci</h2> <h3>Donateurs</h3> <p>%1$s</p> <h3>Contributeurs open source</h3> <p>%2$s</p> <p>Consultez la liste des derniers contributeurs sur <a href="https://github.com/sky-map-team/stardroid/graphs/contributors">GitHub</a>.</p>]]></string>
     <string name="layer_param_disc_size">Taille du disque</string>
     <string name="layer_param_disc_size_true">Échelle réelle</string>
     <string name="layer_param_disc_size_true_desc">
@@ -120,6 +209,7 @@
     <string name="search_no_results">
     Aucun résultat n\'a été trouvé. L\'objet n\'est peut-être pas visible en ce moment.
     </string>
+    <string name="search_standing_on_earth" translation_description="Friendly message shown when the user searches for Earth, which cannot be pointed at because they are standing on it.">Vous êtes dessus !</string>
     <string name="search_target_looking_message" translation_description="Status shown while the user is being guided toward a search target. %1$s is the object name.">Recherche de : %1$s</string>
     <string name="search_target_found_message" translation_description="Status shown when the search target has been found and is centered on screen. %1$s is the object name.">Trouvé : %1$s</string>
     <string name="search_overlay_prompt">Dirigez votre téléphone vers la flèche</string>
@@ -174,13 +264,20 @@
     </string>
     <string name="time_travel_start_message" translation_description="Toast message when time travel starts toward a chosen destination. %1$s is the formatted destination date and time.">Voyage dans le temps vers %1$s...</string>
     <string name="time_travel_close_message">Retour dans le présent...</string>
-    <string name="satellite_next_pass" translation_description="Heading above the next visible pass details on a satellite\'s info card.">Prochain passage visible</string>
+    <string name="satellite_next_pass" translation_description="Heading above the table of upcoming good passes on a satellite\'s info card.">Prochains bons passages</string>
+    <string name="satellite_pass_col_when" translation_description="Column heading in the satellite pass table: the date and time the pass starts.">Date</string>
+    <string name="satellite_pass_col_rises" translation_description="Column heading in the satellite pass table: the compass direction where the satellite rises. Keep it short.">Lever</string>
+    <string name="satellite_pass_col_peak" translation_description="Column heading in the satellite pass table: the highest angle above the horizon the satellite reaches. Keep it short.">Max</string>
+    <!-- tm:omitted name="satellite_pass_col_magnitude" reason="identical_to_source" -->
     <string name="satellite_pass_shadow" translation_description="Tells the user the satellite will fade out mid-pass when it enters the Earth\'s shadow. %1$s is a time.">S\'estompe dans l\'ombre de la Terre à %1$s</string>
-    <string name="satellite_no_pass" translation_description="Shown on a satellite info card when no visible pass is coming up in the next two days.">Aucun passage visible dans les deux prochains jours</string>
+    <string name="satellite_no_pass" translation_description="Shown on a satellite info card when no bright, high pass is coming up in the next few days.">Aucun bon passage dans les prochains jours</string>
     <string name="satellite_pass_unknown" translation_description="Shown on a satellite info card when the downloaded orbit data is too old to predict pass times reliably.">Les données d\'orbite sont trop anciennes pour prédire les passages</string>
+    <string name="upcoming_well_placed" translation_description="Row in an object\'s Upcoming list: the planet is high enough to observe tonight; %1$s is the time from which it is well placed">Bien visible à partir de %1$s</string>
+    <string name="upcoming_shower_peak" translation_description="Row in a meteor shower\'s Upcoming list: when the shower next peaks; %1$s is a date">Maximum le %1$s</string>
+    <string name="object_info_upcoming" translation_description="Heading above the list of upcoming events (passes, eclipses, moon phases) on an object\'s info card.">À venir</string>
     <string name="object_info_eclipse_title" translation_description="Heading above the next lunar eclipse details on the Moon\'s info card.">Éclipse lunaire</string>
     <string name="object_info_no_eclipse" translation_description="Shown on the Moon\'s info card when no lunar eclipse is coming up in the searched time range.">Aucune éclipse lunaire prévue prochainement</string>
-    <string name="object_info_eclipse_greatest" translation_description="The next lunar eclipse\'s type and greatest-eclipse date/time. %1$s is a localized eclipse type like \'Total lunar eclipse\', %2$s a date, %3$s a time.">%1$s — éclipse maximale le %2$s à %3$s</string>
+    <string name="object_info_eclipse_greatest" translation_description="The next lunar eclipse\'s type and the date and time of maximum eclipse (when it peaks). %1$s is a localized eclipse type like \'Total lunar eclipse\', %2$s a date, %3$s a time.">%1$s — maximum le %2$s à %3$s</string>
     <string name="object_info_eclipse_totality" translation_description="The start and end time of totality during a total lunar eclipse. %1$s and %2$s are times.">Totalité %1$s – %2$s</string>
     <string name="object_info_image_credit" translation_description="Attribution line under the object\'s photo; %1$s is the credited source, e.g. NASA/ESA">Image : %1$s</string>
     <string name="object_info_fun_fact" translation_description="An interesting trivia line on the object info card; %1$s is the fact text">Fait amusant : %1$s</string>
@@ -312,6 +409,13 @@
     <string name="enable_analytics">Envoyer des statistiques d\'utilisation</string>
     <string name="enable_analytics_desc">Améliorer Sky Map en envoyant des données anonymes à Google Analytics</string>
     <string name="settings_diagnostics_summary" translation_description="Summary for the settings row that opens the diagnostics screen, which shows technical sensor, location and performance readouts useful when reporting a problem">Détails du capteur, de la position et des performances</string>
+    <string name="settings_section_advanced" translation_description="Preferences category heading for advanced or experimental settings that most people will not need to change">Avancé</string>
+    <string name="settings_renderer" translation_description="Preference title for choosing which graphics engine draws the sky map">Moteur graphique (bêta)</string>
+    <string name="settings_renderer_summary" translation_description="Summary explaining the graphics engine preference: the newer engine draws a more realistic sky and clearer labels, and the map restarts when the setting is changed">
+    Le moteur plus récent affiche un ciel de jour et un crépuscule plus réalistes, ainsi que des étiquettes plus claires. La carte redémarre lorsque vous modifiez ce paramètre.
+    </string>
+    <string name="settings_renderer_gles1" translation_description="Name of the original, long-standing graphics engine option, shown in a list of two choices">Classique</string>
+    <string name="settings_renderer_gles3" translation_description="Name of the newer graphics engine option, shown in a list of two choices">Amélioré</string>
     <string name="settings_tap_to_identify">Afficher les infos au toucher</string>
     <string name="settings_tap_to_identify_summary">Touchez les objets célestes pour en savoir plus</string>
     <string name="settings_tap_in_auto_mode">Fiches info en mode automatique</string>
@@ -378,6 +482,14 @@
     </string>
     <string name="settings_shower_alerts" translation_description="Preference title: notify on the evening a meteor shower reaches its annual peak">Pics de pluies de météores</string>
     <string name="settings_shower_alerts_summary" translation_description="Explanation of the meteor-shower notification preference">Environ une douzaine par an, le soir du pic</string>
+    <string name="settings_eclipse_alerts" translation_description="Preference title: notify shortly before a lunar eclipse begins">Éclipses lunaires</string>
+    <string name="settings_eclipse_alerts_summary" translation_description="Explanation of the lunar-eclipse notification preference">Une seule alerte avant le début d\'une éclipse lunaire</string>
+    <string name="settings_pass_alerts" translation_description="Preference title: notify shortly before a satellite passes overhead">Passages de satellites</string>
+    <string name="settings_pass_alerts_summary" translation_description="Explanation of the satellite-pass notification preference">Une seule alerte avant le meilleur passage visible de la nuit</string>
+    <string name="settings_announcements" translation_description="Preference title: occasional messages from the Sky Map team about rare sky events, shown as a notification, in the widget and when the app opens">Messages de Sky Map</string>
+    <string name="settings_announcements_summary" translation_description="Explanation of the announcements preference">
+    Alertes rares telles qu\'une forte aurore ou une planète brillante. Affichées sous forme de notification, dans le widget Ciel ce soir ou lorsque vous ouvrez l\'application.
+    </string>
     <string name="settings_tonight_digest" translation_description="Preference title: a single evening notification summarizing what\'s visible tonight">Résumé du ciel de ce soir</string>
     <string name="settings_tonight_digest_summary" translation_description="Explanation of the tonight-digest notification preference">Un résumé après le coucher du soleil, ignoré les nuits calmes</string>
     <string name="settings_notifications_blocked" translation_description="Warning row shown when the user enabled notifications in the app but blocked them at the system level">Les notifications sont bloquées pour Sky Map</string>
@@ -393,6 +505,7 @@
     <string name="diagnostics_device">Appareil</string>
     <!-- tm:omitted name="diagnostics_phone_format" reason="identical_to_source" -->
     <string name="diagnostics_android_version">Version Android</string>
+    <string name="diagnostics_ios_version" translation_description="Row label in the diagnostics screen for the iOS version on an iPhone. iOS is Apple\'s operating system name and stays as is">Version iOS</string>
     <string name="diagnostics_sky_map_version">Version de Sky Map</string>
     <!-- tm:omitted name="diagnostics_sky_map_version_format" reason="identical_to_source" -->
     <string name="diagnostics_section_graphics" translation_description="Section heading in the diagnostics screen for graphics/GPU information">Graphiques</string>
@@ -400,6 +513,7 @@
     <!-- tm:omitted name="diagnostics_gl_version" reason="identical_to_source" -->
     <!-- tm:omitted name="diagnostics_gl_version_format" reason="identical_to_source" -->
     <string name="diagnostics_gl_limits" translation_description="Row label in the diagnostics screen for graphics hardware limits (maximum texture size, supported line widths and point sizes)">Limites GL</string>
+    <string name="diagnostics_metal_limits" translation_description="Row label in the diagnostics screen on an iPhone for graphics hardware limits (maximum texture size, supported line widths and point sizes). Metal is Apple\'s graphics API name and stays as is">Limites Metal</string>
     <string name="diagnostics_gl_limits_format" translation_description="Format for the GL limits row: maximum texture size in pixels, then the supported line width and point size ranges. \'tex\' abbreviates texture. %1$d is texture size, %2$s is the line width range, %3$s is the point size range.">tex %1$d, ligne %2$s, point %3$s</string>
     <string name="diagnostics_gl_unavailable" translation_description="Value shown in the diagnostics Graphics rows before the sky map has drawn, when the graphics details are not known yet">Pas encore disponible</string>
     <string name="diagnostics_section_sensors">Capteurs</string>
@@ -418,7 +532,7 @@
     <string name="diagnostics_reverse_magnetic_z" translation_description="Row label in the diagnostics screen for whether the magnetometer's Z axis is reversed">Inverser Z magnétique</string>
     <string name="diagnostics_use_magnetic_correction_setting" translation_description="Row label in the diagnostics screen for whether magnetic declination correction is applied">Correction magnétique</string>
     <string name="diagnostics_view_direction_mode" translation_description="Row label in the diagnostics screen for which phone axis is treated as pointing at the sky">Direction de vue</string>
-    <string name="diagnostics_calibration_dialog" translation_description="Row label in the diagnostics screen for whether the compass-calibration screen may open automatically; value is On or Off">Invite de calibrage automatique</string>
+    <string name="diagnostics_calibration_dialog" translation_description="Row label in the diagnostics screen for whether the compass-calibration screen may open automatically; value is On or Off">Invite d\'étalonnage auto</string>
     <string name="diagnostics_jitter_raw" translation_description="Row label in the diagnostics screen for how much the sensor-derived pointing wobbles before smoothing is applied">Gigue (brute)</string>
     <string name="diagnostics_jitter_smoothed" translation_description="Row label in the diagnostics screen for how much the sensor-derived pointing wobbles after smoothing is applied">Gigue (lissée)</string>
     <!-- tm:omitted name="diagnostics_jitter_format" reason="identical_to_source" -->
@@ -449,6 +563,10 @@
     <string name="diagnostics_utc_datetime">Date et heure universelles</string>
     <string name="diagnostics_section_network">Réseau</string>
     <string name="diagnostics_connection">Connexion</string>
+    <string name="diagnostics_section_experiments" translation_description="Section heading in the diagnostics screen listing the current feature-flag (experiment) values">Drapeaux d\'expérimentation</string>
+    <string name="diagnostics_experiments_last_fetched" translation_description="Row label in the diagnostics experiment flags section: when the feature-flag config was last downloaded from the server">Dernière récupération</string>
+    <string name="diagnostics_experiments_never_fetched" translation_description="Row value in the diagnostics experiment flags section when the feature-flag config has never been downloaded">Jamais</string>
+    <string name="diagnostics_experiments_fetch_now" translation_description="Label on a button in the diagnostics screen that downloads the feature-flag config from the server immediately">Récupérer les drapeaux d\'expérimentation maintenant</string>
     <string name="diagnostics_satellite_force_fetch" translation_description="Label on a debug-only button in the diagnostics screen that downloads satellite orbital data immediately">Récupérer les données satellites maintenant (débogage)</string>
     <string name="diagnostics_connected">Connecté</string>
     <string name="diagnostics_disconnected">Déconnecté</string>
@@ -492,87 +610,16 @@
     <string name="auto_level_on_toast" translation_description="Brief confirmation shown when a double tap turns horizon auto-leveling on in manual mode">Nivellement automatique de l\'horizon activé</string>
     <string name="auto_level_off_toast" translation_description="Brief confirmation shown when a double tap turns horizon auto-leveling off in manual mode">Nivellement automatique de l\'horizon désactivé</string>
     <string name="diagnostics_app_lifecycle" translation_description="Row label in the diagnostics screen for the app\'s technical lifecycle state (for example Started or Resumed), which controls whether sensors are listened to">Cycle de vie de l\'application</string>
-    <string name="diagnostics_experiments_fetch_now" translation_description="Label on a button in the diagnostics screen that downloads the feature-flag config from the server immediately">Récupérer les drapeaux d\'expérimentation maintenant</string>
-    <string name="diagnostics_experiments_last_fetched" translation_description="Row label in the diagnostics experiment flags section: when the feature-flag config was last downloaded from the server">Dernière récupération</string>
-    <string name="diagnostics_experiments_never_fetched" translation_description="Row value in the diagnostics experiment flags section when the feature-flag config has never been downloaded">Jamais</string>
     <string name="diagnostics_gyro_none" translation_description="Value shown for the gyro row when the device has no sensors that can supply orientation">Aucun</string>
+    <!-- tm:omitted name="diagnostics_map_mode" reason="identical_to_source" -->
     <string name="diagnostics_map_mode_auto" translation_description="Value shown for the map mode row when the map follows the phone\'s sensors (the app calls this auto mode)">Auto (capteurs)</string>
     <string name="diagnostics_map_mode_manual" translation_description="Value shown for the map mode row when the map is moved by dragging (the app calls this manual mode)">Manuel</string>
-    <string name="diagnostics_map_orientation" translation_description="Row label in the diagnostics screen for how long ago the map last received the phone\'s orientation from its sensors">Dernière mise à jour de l\'orientation</string>
-    <string name="diagnostics_map_orientation_format" translation_description="Row value in the diagnostics screen giving how long ago the map last received the phone\'s orientation. %1$.1f is a number of seconds.">Il y a %1$.1f s</string>
+    <string name="diagnostics_map_orientation" translation_description="Row label in the diagnostics screen for how long ago the map last received the phone\'s orientation from its sensors">Dernière mise à jour d\'orientation</string>
+    <string name="diagnostics_map_orientation_format" translation_description="Row value in the diagnostics screen giving how long ago the map last received the phone\'s orientation. %1$.1f is a number of seconds.">Il y a %1$.1fs</string>
     <string name="diagnostics_map_orientation_none" translation_description="Value shown for the last orientation update row when the map has not received any orientation from the sensors">Aucune reçue</string>
     <string name="diagnostics_rejected_samples" translation_description="Row label in the diagnostics screen for how many sensor readings have been thrown away as invalid since the app started">Échantillons de capteurs rejetés (depuis le démarrage)</string>
-    <string name="diagnostics_section_experiments" translation_description="Section heading in the diagnostics screen listing the current feature-flag (experiment) values">Drapeaux d\'expérimentation</string>
     <string name="diagnostics_section_map" translation_description="Section heading in the diagnostics screen for what the sky map itself is doing with the sensor readings">Carte</string>
-    <string name="diagnostics_smoother_heals" translation_description="Row label in the diagnostics screen for how many times the orientation smoother had to reset itself after producing an invalid value since the app started">Réinitialisations du stabilisateur (depuis le démarrage)</string>
-    <string name="layer_help_altaz_grid" translation_description="Long-press explanation of the alt/az grid layer.">
-    Une grille d\'altitude (hauteur au-dessus de l\'horizon) et d\'azimut (direction du compas). Contrairement à la grille céleste, elle est fixe par rapport à votre horizon et non aux étoiles.
-    </string>
-    <string name="layer_help_camera" translation_description="Long-press explanation of the through-camera toggle.">
-    Affiche la vue de la caméra en arrière-plan pour superposer la carte du ciel au monde réel. Nécessite des capteurs de mouvement.
-    </string>
-    <string name="layer_help_close" translation_description="Button that dismisses the layer help popup.">Compris</string>
-    <string name="layer_help_constellations" translation_description="Long-press explanation of the constellations layer.">
-    Les lignes et noms des constellations, pour vous repérer parmi les figures célestes.
-    </string>
-    <string name="layer_help_customizable" translation_description="Heading in the layer help popup above the list of customizable options.">Ce que vous pouvez personnaliser</string>
-    <string name="layer_help_customize" translation_description="Button in the layer help popup that opens the Layers sheet on that layer's options.">Personnaliser</string>
-    <string name="layer_help_deep_sky" translation_description="Long-press explanation of the deep-sky layer.">
-    Galaxies, nébuleuses et amas d\'étoiles : objets situés bien au-delà de notre système solaire. Beaucoup nécessitent des jumelles ou un télescope pour être observés réellement.
-    </string>
-    <string name="layer_help_ecliptic" translation_description="Long-press explanation of the ecliptic layer.">
-    La trajectoire du Soleil dans le ciel au fil de l\'année. La Lune et les planètes restent toujours à proximité.
-    </string>
-    <string name="layer_help_expand_hint" translation_description="Hint in the layer help popup for layers with options, pointing to the arrow button on the row.">Appuyez sur la Flèche de la ligne pour modifier ces paramètres.</string>
-    <string name="layer_help_grid" translation_description="Long-press explanation of the celestial grid layer.">
-    La grille de coordonnées célestes d\'ascension droite et de déclinaison : l\'équivalent de la latitude et de la longitude dans le ciel. Elle est fixe par rapport aux étoiles.
-    </string>
-    <string name="layer_help_horizon" translation_description="Long-press explanation of the horizon layer.">
-    La ligne d\'horizon et les points cardinaux, pour savoir où se trouve le nord et où est le sol.
-    </string>
-    <string name="layer_help_hud" translation_description="Long-press explanation of the pointing readout toggle.">
-    Un affichage indiquant où pointe votre téléphone : sa direction (Compas) et son altitude.
-    </string>
-    <string name="layer_help_long_click_label" translation_description="Accessibility label for the long-press action on a layer row, which shows an explanation of the layer.">Afficher l\'utilité</string>
-    <string name="layer_help_meteor_showers" translation_description="Long-press explanation of the meteor showers layer.">
-    Le radiant de chaque pluie d\'étoiles filantes annuelle : le point du ciel d\'où semblent provenir les météores.
-    </string>
-    <string name="layer_help_options_altaz_grid" translation_description="Long-press note listing what can be customized on the alt/az grid layer.">Nombre de lignes : 8, 12 ou 24 lignes de direction.</string>
-    <string name="layer_help_options_grid" translation_description="Long-press note listing what can be customized on the celestial grid layer.">
-    Nombre de lignes : une ligne toutes les 3, 2 ou 1 heures et tous les 30°, 15° ou 10°.
-    </string>
-    <string name="layer_help_options_meteor_showers" translation_description="Long-press note listing what can be customized on the meteor showers layer.">Alertes de pic : une notification le soir où une pluie atteint son pic annuel.</string>
-    <string name="layer_help_options_satellites" translation_description="Long-press note listing what can be customized on the satellites layer.">
-    Alertes de passage : une notification avant le meilleur passage visible chaque nuit.
-    </string>
-    <string name="layer_help_options_solar_system" translation_description="Long-press note listing what can be customized on the solar system layer.">
-    Taille des disques : la taille d’affichage du Soleil, de la Lune et des planètes.
-Alertes d’éclipse : une notification avant une éclipse lunaire.
-    </string>
-    <string name="layer_help_satellites" translation_description="Long-press explanation of the satellites layer.">
-    Satellites tels que la Station spatiale et Tiangong, affichés à leur position actuelle. Nécessite des données d\'orbite récemment téléchargées.
-    </string>
-    <string name="layer_help_sky_gradient" translation_description="Long-press explanation of the sky coloring toggle.">
-    Teinte le ciel en fonction de l\'heure de la journée (clair le jour, sombre la nuit) et colorie le sol.
-    </string>
-    <string name="layer_help_solar_system" translation_description="Long-press explanation of the solar system layer.">Le Soleil, la Lune (avec sa phase actuelle) et les planètes.</string>
-    <string name="layer_help_stars" translation_description="Long-press explanation of the stars layer.">
-    Les étoiles, dimensionnées selon leur luminosité et teintées par leur couleur. Appuyez sur une étoile pour plus de détails.
-    </string>
-    <string name="layer_param_radec_grid_density" translation_description="Label for the celestial (RA/Dec) grid's line-count setting.">Nombre de lignes</string>
-    <string name="layer_param_radec_grid_density_coarse_desc" translation_description="Explains the coarse celestial grid density: a meridian every 3 hours of right ascension and a circle every 30 degrees of declination.">Méridiens toutes les 3 heures, cercles tous les 30°</string>
-    <string name="layer_param_radec_grid_density_fine_desc" translation_description="Explains the fine celestial grid density: a meridian every hour of right ascension and a circle every 10 degrees of declination.">Méridiens chaque heure, cercles tous les 10°</string>
-    <string name="layer_param_radec_grid_density_medium_desc" translation_description="Explains the medium celestial grid density: a meridian every 2 hours of right ascension and a circle every 15 degrees of declination.">Méridiens toutes les 2 heures, cercles tous les 15°</string>
-    <string name="layer_param_shower_alerts" translation_description="Label for the setting that turns on a notification on the evening a meteor shower peaks.">Alertes de pic</string>
-    <string name="layer_param_shower_alerts_description" translation_description="Explains what the meteor-shower alert setting does: a notification on the evening a shower reaches its annual peak.">Me notifier le soir du pic d\'une pluie</string>
-    <string name="settings_announcements" translation_description="Preference title: occasional messages from the Sky Map team about rare sky events, shown as a notification, in the widget and when the app opens">Messages de Sky Map</string>
-    <string name="settings_announcements_summary" translation_description="Explanation of the announcements preference">
-    Avis rares concernant par exemple une forte aurore boréale ou une planète brillante. Affichés sous forme de notification, dans le widget Ciel ce soir ou lorsque vous ouvrez l\'application.
-    </string>
-    <string name="settings_eclipse_alerts" translation_description="Preference title: notify shortly before a lunar eclipse begins">Éclipses lunaires</string>
-    <string name="settings_eclipse_alerts_summary" translation_description="Explanation of the lunar-eclipse notification preference">Une seule alerte avant le début d\'une éclipse lunaire</string>
-    <string name="settings_pass_alerts" translation_description="Preference title: notify shortly before a satellite passes overhead">Passages de satellites</string>
-    <string name="settings_pass_alerts_summary" translation_description="Explanation of the satellite-pass notification preference">Une seule alerte avant le meilleur passage visible de la nuit</string>
+    <string name="diagnostics_smoother_heals" translation_description="Row label in the diagnostics screen for how many times the orientation smoother had to reset itself after producing an invalid value since the app started">Réinitialisations du lisseur (depuis le démarrage)</string>
     <string name="moon_widget_illumination" tm_human="true" translation_description="Widget line showing how much of the Moon\'s disc is lit; %1$d is a percentage number">%1$d%% illuminée</string>
     <string name="moon_phase_new" translation_description="Name of the lunar phase when the Moon is fully dark">Nouvelle Lune</string>
     <string name="moon_phase_waxing_crescent" translation_description="Name of the lunar phase between new moon and first quarter">Premier croissant</string>

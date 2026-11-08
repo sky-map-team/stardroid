@@ -39,8 +39,10 @@ import com.google.android.stardroid.sensors.SensorManagerStatusSource
 import com.google.android.stardroid.sensors.SensorOrientationSource
 import com.google.android.stardroid.sensors.SensorStatusSource
 import com.google.android.stardroid.settings.DataStoreSettings
+import com.google.android.stardroid.settings.RendererBackend
 import com.google.android.stardroid.settings.Settings
 import com.google.android.stardroid.startup.DataStoreStartupState
+import com.google.android.stardroid.startup.Experiment
 import com.google.android.stardroid.startup.ExperimentConfig
 import com.google.android.stardroid.startup.StartupRouter
 import com.google.android.stardroid.startup.StartupState
@@ -76,8 +78,20 @@ private const val V1_READ_TOS_PREF_KEY = "read_tos_version"
 object AppModule {
     @Provides
     @Singleton
-    fun settings(application: Application): Settings =
-        DataStoreSettings(
+    fun settings(
+        application: Application,
+        experimentConfig: ExperimentConfig,
+    ): Settings {
+        // Read once: a fetched flag applies from the next launch, so the backend cannot flip
+        // (and recreate the activity) under a running session.
+        val defaultBackend by lazy {
+            if (experimentConfig.isEnabled(Experiment.GLES3_RENDERER)) {
+                RendererBackend.GLES3
+            } else {
+                RendererBackend.GLES1
+            }
+        }
+        return DataStoreSettings(
             application.settingsDataStore,
             enableAnalyticsDefault = FlavorEdges.ENABLE_ANALYTICS_DEFAULT,
             satelliteDataDefault = FlavorEdges.SATELLITE_DATA_DEFAULT,
@@ -86,7 +100,9 @@ object AppModule {
             // it's validated, revisit whether a clean-fusing device still wants it on by default
             // (issue #1001).
             smoothingEnabledDefault = true,
+            rendererBackendDefault = { defaultBackend },
         )
+    }
 
     /**
      * The satellite element sets (D92/D95). The store lives under `filesDir`, not `cacheDir`:

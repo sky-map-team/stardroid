@@ -8,11 +8,16 @@
 
     <!--
       The access-permission notice (KISA / Korean Network Act art. 22-2, and good practice
-      everywhere). Rendered in two places from this one key so it is translated once: appended
-      to the first-launch EULA screen, and included in the help document as a permanent,
-      re-readable copy (HelpScreen.helpSections2). Every runtime permission Sky Map declares
-      must appear here, labelled required or optional, with its grounds and — for optional
-      ones — the user\'s right to refuse.
+      everywhere). Each platform has its own key, chosen by permissionsNoticeResource:
+      permissions_notice (Android) and permissions_notice_ios. Each is rendered in two places, so
+      it is translated once: appended to the first-launch EULA screen, and included in the help
+      document as a permanent, re-readable copy (HelpScreen.helpSections2). Every runtime
+      permission a platform can ask for must appear in its own notice, labelled required or
+      optional, with its grounds and — for optional ones — the user\'s right to refuse. Keep
+      both in step with what each app really requests (iOS: Location only until it gains
+      notifications or a camera mode).
     -->
     <string name="permissions_notice" translation_description="Legally-required disclosure of the device permissions the app requests, why it requests them, and the user\'s right to refuse the optional ones. Shown on the first-launch terms screen and in Help. Please do not change the markup"><![CDATA[<h2>الأذونات</h2><p><b>لا يتطلب Sky Map أي أذونات إلزامية.</b> كل إذن أدناه اختياري — يمكنك رفض أي منها والاستمرار في استخدام التطبيق. لا يطلب Sky Map أذونات عند بدء التشغيل أبدًا: يتم طلب كل إذن فقط عند استخدام الميزة التي تحتاجه لأول مرة، ويمكنك منح أو سحب كل إذن على حدة في أي وقت ضمن <b>الإعدادات ← التطبيقات ← Sky Map ← الأذونات</b> على جهازك.</p><h3>الموقع — اختياري</h3><p><b>ما يتم الوصول إليه:</b> موقعك التقريبي.</p><p><b>السبب:</b> تعتمد النجوم التي تعلوك على مكان وجودك، لذلك يستخدم Sky Map موقعك التقريبي لرسم السماء الصحيحة.</p><p><b>إذا رفضت:</b> يمكنك إدخال اسم مكان أو إحداثيات بدلاً من ذلك، وسيظل التطبيق بأكمله يعمل.</p><blockquote>يتم استخدام موقعك على جهازك لرسم السماء. لا يتم إرساله إلينا أبدًا.</blockquote><h3>الكاميرا — اختياري</h3><p><b>ما يتم الوصول إليه:</b> معاينة الكاميرا.</p><p><b>السبب:</b> يرسم وضع الكاميرا المباشرة السماء فوق عرض الكاميرا المباشر، حتى تتمكن من مطابقة الخريطة مع ما تنظر إليه بالفعل.</p><p><b>إذا رفضت:</b> تعمل جميع الأوضاع الأخرى بشكل طبيعي.</p><blockquote>لا يسجل Sky Map عرض الكاميرا أبدًا ولا يرسله إلينا. يتم رسمه على الشاشة ثم التخلص منه — إلا إذا قمت بمشاركة صورة: فإن اختيار تخطيط الواقع المعزز (AR) من ورقة المشاركة يحفظ تلك الصورة الواحدة على جهازك ويسلمها إلى التطبيق الذي تختاره. لا يتم مشاركة أي شيء حتى تطلبه.</blockquote><h3>الإشعارات — اختياري</h3><p><b>ما يتم الوصول إليه:</b> إذن عرض الإشعارات.</p><p><b>السبب:</b> لإعلامك بذروة زخات الشهب وما يستحق المشاهدة الليلة، إذا طلبت ذلك.</p><p><b>إذا رفضت:</b> لا يتغير أي شيء آخر — تظل هذه الإشعارات متوقفة حتى تقوم بتشغيلها.</p>]]></string>
+
+    <string name="permissions_notice_ios" translation_description="iOS version of the legally-required disclosure of the device permissions the app requests: only location, which is optional. Shown on the first-launch terms screen and in Help. Please do not change the markup"><![CDATA[<h2>الأذونات</h2> <p><b>لا يتطلب تطبيق Sky Map أي أذونات إجبارية.</b> الإذن الوحيد أدناه اختياري — يمكنك رفضه ولا يزال بإمكانك استخدام التطبيق. يطلب Sky Map هذا الإذن مرة واحدة، بعد قبولك لهذه الشروط، لأن رسم السماء يتطلب معرفة موقعك. يمكنك منح هذا الإذن أو سحبه في أي وقت ضمن <b>الإعدادات ← Sky Map</b> على جهازك.</p> <h3>الموقع — اختياري</h3> <p><b>ما يتم الوصول إليه:</b> موقعك التقريبي.</p> <p><b>السبب:</b> النجوم الموجودة فوقك تعتمد على مكانك، لذا يستخدم Sky Map موقعك التقريبي لرسم السماء الصحيحة.</p> <p><b>إذا قمت بالرفض:</b> يمكنك كتابة اسم مكان أو إحداثيات بدلاً من ذلك، وسيستمر التطبيق في العمل بالكامل.</p> <blockquote>يُستخدم موقعك على جهازك لرسم السماء. ترسل صورة الخريطة في شاشة الموقع نسخة مقربة منه إلى Geoapify، وهي خدمة خرائط (راجع سياسة الخصوصية).</blockquote>]]></string>
 </resources>

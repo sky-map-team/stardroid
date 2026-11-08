@@ -35,6 +35,9 @@ object FlavorEdges {
     /** Label shown on the Diagnostics screen to identify this build flavor. */
     const val FLAVOR_LABEL = "F-Droid"
 
+    /** No Play listing to review. */
+    const val HAS_PLAY_LISTING = false
+
     fun analytics(application: Application): Analytics = NoOpAnalytics
 
     fun experimentConfig(application: Application): ExperimentConfig = ExperimentConfig.Static

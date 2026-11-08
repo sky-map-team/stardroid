@@ -17,11 +17,14 @@
 
     <!--
       The access-permission notice (KISA / Korean Network Act art. 22-2, and good practice
-      everywhere). Rendered in two places from this one key so it is translated once: appended
-      to the first-launch EULA screen, and included in the help document as a permanent,
-      re-readable copy (HelpScreen.helpSections2). Every runtime permission Sky Map declares
-      must appear here, labelled required or optional, with its grounds and — for optional
-      ones — the user\'s right to refuse.
+      everywhere). Each platform has its own key, chosen by permissionsNoticeResource:
+      permissions_notice (Android) and permissions_notice_ios. Each is rendered in two places, so
+      it is translated once: appended to the first-launch EULA screen, and included in the help
+      document as a permanent, re-readable copy (HelpScreen.helpSections2). Every runtime
+      permission a platform can ask for must appear in its own notice, labelled required or
+      optional, with its grounds and — for optional ones — the user\'s right to refuse. Keep
+      both in step with what each app really requests (iOS: Location only until it gains
+      notifications or a camera mode).
     -->
     <string name="permissions_notice" translation_description="Legally-required disclosure of the device permissions the app requests, why it requests them, and the user\'s right to refuse the optional ones. Shown on the first-launch terms screen and in Help. Please do not change the markup"><![CDATA[<h2>Дозволи</h2>
 <p><b>Sky Map не вимагає жодних обов\'язкових дозволів.</b> Усі дозволи нижче є необов\'язковими — ви можете відмовитися від будь-якого з них і все одно користуватися додатком. Sky Map ніколи не запитує нічого під час запуску: кожен дозвіл запитується лише тоді, коли ви вперше використовуєте функцію, яка його потребує, і ви можете надати або скасувати кожен із них окремо в будь-який час у розділі <b>Налаштування → Додатки → Sky Map → Дозволи</b> на вашому пристрої.</p>
@@ -39,4 +42,6 @@
 <p><b>До чого надається доступ:</b> дозвіл показувати сповіщення.</p>
 <p><b>Чому:</b> щоб повідомляти вас про пікові періоди метеорних потоків та те, що варто побачити сьогодні ввечері, якщо ви попросите про це.</p>
 <p><b>Якщо ви відмовитесь:</b> нічого не зміниться — ці сповіщення залишатимуться вимкненими, доки ви їх не увімкнете.</p>]]></string>
+
+    <string name="permissions_notice_ios" translation_description="iOS version of the legally-required disclosure of the device permissions the app requests: only location, which is optional. Shown on the first-launch terms screen and in Help. Please do not change the markup"><![CDATA[<h2>Дозволи</h2> <p><b>Sky Map не вимагає жодних обов\'язкових дозволів.</b> Наведений нижче дозвіл є необов\'язковим — ви можете відмовитися від нього і все одно користуватися додатком. Sky Map запитує його один раз, після того як ви прийняли ці умови, оскільки для відтворення зоряного неба потрібно знати ваше місцезнаходження. Ви можете надати або скасувати його в будь-який час у розділі <b>Параметри → Sky Map</b> на вашому пристрої.</p> <h3>Місцезнаходження — необов\'язково</h3> <p><b>До чого надається доступ:</b> ваше приблизне місцезнаходження.</p> <p><b>Навіщо:</b> які зірки перебувають над вами, залежить від того, де ви знаєтеся, тому Sky Map використовує ваше приблизне місцезнаходження, щоб показати правильне небо.</p> <p><b>Якщо ви відмовитеся:</b> ви натомість зможете ввести назву місця чи координати, і весь додаток продовжить працювати.</p> <blockquote>Ваше місцезнаходження використовується на вашому пристрої для відображення неба. Зображення карти на екрані місцезнаходження надсилає його округлену версію на Geoapify, картографічний сервіс (дивіться політику конфіденційності).</blockquote>]]></string>
 </resources>

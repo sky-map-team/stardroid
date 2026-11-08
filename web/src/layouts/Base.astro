@@ -27,6 +27,7 @@ const ogImage = new URL('/og.png', Astro.site).href;
     <meta name="theme-color" content="#080c1c" />
     <link rel="canonical" href={canonical} />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    {links.appStoreId && <meta name="apple-itunes-app" content={`app-id=${links.appStoreId}`} />}
     {noindex && <meta name="robots" content="noindex" />}
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Sky Map" />

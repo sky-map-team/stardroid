@@ -1,6 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
 
+    <!-- Launch splash banner. -->
 
     <!-- Sky-map labels drawn by the computed layers (LayerStrings). -->
     <string name="north_pole">PN</string>
@@ -33,6 +34,10 @@
     <string name="channel_passes_description" translation_description="Description of the satellite-pass notification channel.">Una única alerta poco antes del mejor paso visible de la noche</string>
     <string name="notif_pass_title" translation_description="Title of the notification sent shortly before a satellite passes overhead. %1$s is the satellite name.">%1$s pasa por encima pronto</string>
     <string name="notif_pass_text" translation_description="Body of the satellite pass notification, telling the user when to go outside. %1$s is a time.">Visible desde aproximadamente las %1$s — sal y deja que tus ojos se adapten</string>
+    <string name="channel_passes_now_name" translation_description="Name of the notification channel for the alert sent the moment a satellite rises.">Satélite saliendo ahora</string>
+    <string name="channel_passes_now_description" translation_description="Description of the notification channel for the alert sent the moment a satellite pass begins.">Una alerta con vibración al comenzar el mejor paso visible de la noche</string>
+    <string name="notif_pass_now_title" translation_description="Title of the notification sent the moment a satellite pass begins. %1$s is the satellite name.">%1$s está saliendo ahora</string>
+    <string name="notif_pass_now_text" translation_description="Body of the notification sent the moment a satellite pass begins.">Mira hacia arriba: está cruzando el cielo ahora mismo</string>
     <string name="channel_eclipses_name" translation_description="Name of the notification channel for alerts before a lunar eclipse starts.">Eclipses lunares</string>
     <string name="channel_eclipses_description" translation_description="Description of the lunar-eclipse notification channel.">Una única alerta antes de que comience un eclipse lunar</string>
     <string name="notif_eclipse_title" translation_description="Title of the notification sent before a lunar eclipse starts. %1$s is a localized eclipse type like \'Total lunar eclipse\'.">%1$s comienza pronto</string>
@@ -42,6 +47,9 @@
     <string name="satellite_description" translation_description="Short description shown on the info card for an artificial satellite.">
     Un satélite artificial en órbita terrestre baja, iluminado por el sol contra un cielo oscuro. Cruza de horizonte a horizonte en unos pocos minutos, moviéndose de forma constante y sin parpadear.
     </string>
+    <!-- tm:omitted name="tonight_satellite_pass" reason="identical_to_source" -->
+
+    <!-- Long-press help for layers in the layer-visibility sheet. -->
 
     <!-- Map screen controls. -->
 
@@ -71,6 +79,7 @@
 
     <!-- Settings screen (v1 wording where a v1 string existed) -->
 
+    <!-- Diagnostics screen (slice 15) -->
     <string name="diagnostics_section_satellites" translation_description="Section heading in the diagnostics screen for satellite orbital-data status">Satélites</string>
     <string name="diagnostics_satellite_data" translation_description="Row label in the diagnostics screen for the age and count of cached satellite orbital data">Datos orbitales</string>
     <string name="diagnostics_satellite_data_none" translation_description="Row value in the diagnostics screen when no satellite orbital data has been downloaded yet">No descargado</string>
@@ -94,6 +103,7 @@
 
     <!-- The deep-sky symbol key at the foot of the Help screen. -->
 
+    <!-- The widgets catalogue reached from the map\'s overflow menu. -->
     <string name="widgets_sheet_title" translation_description="Title of the sheet listing the home-screen widgets the app offers">Widgets de la pantalla de inicio</string>
     <string name="widgets_sheet_subtitle" translation_description="Subtitle of the widgets sheet, explaining what the listed widgets are for">Mantén el cielo de esta noche en tu pantalla de inicio. Elige uno para añadir.</string>
 
@@ -102,6 +112,7 @@
     <string name="moon_widget_description" translation_description="Description of the moon-phase widget, shown under its preview in the launcher\'s widget picker">
     La fase, iluminación y horas de salida y puesta de la Luna, actualizadas diariamente.
     </string>
+    <!-- tm:omitted name="moon_widget_illumination_short" reason="identical_to_source" -->
     <string name="moon_widget_rise_time" translation_description="Widget fragment showing today\'s moonrise time; %1$s is a clock time like 17:42">sale %1$s</string>
     <string name="moon_widget_set_time" translation_description="Widget fragment showing today\'s moonset time; %1$s is a clock time like 03:12">se pone %1$s</string>
     <string name="moon_widget_time_day_offset" translation_description="Compact suffix appended after a widget rise/set time that falls on a later day than today, so a reader doesn\'t mistake it for today\'s crossing; %1$d is the number of days ahead (almost always 1). Keep it short — the widget is very narrow. Note the leading space.">+%1$d</string>
@@ -144,6 +155,11 @@
     <string name="countdown_widget_preview_name" translation_description="Representative event name shown in the widget picker\'s preview of the countdown widget">Pico de las Perseidas</string>
 
     <!-- Sky-event notifications (D77). -->
+    <string name="channel_announcements_name" translation_description="Notification channel name for occasional messages from the Sky Map team">Mensajes de Sky Map</string>
+    <string name="channel_announcements_description" translation_description="Notification channel description for occasional messages from the Sky Map team">Avisos poco frecuentes sobre eventos celestes destacados</string>
+    <string name="announcement_dialog_dismiss" translation_description="Button that closes an announcement dialog and hides that message everywhere">Descartar</string>
+    <string name="announcement_dialog_open" translation_description="Button on an announcement dialog that jumps to the sky object the message is about">Echar un vistazo</string>
+    <string name="announcement_dialog_continue" translation_description="Button on an announcement dialog that closes it and continues to the sky map">Continuar</string>
     <string name="channel_showers_name" translation_description="Name of the meteor-shower notification channel, shown in the system\'s notification settings">Picos de lluvia de meteoros</string>
     <string name="channel_showers_description" translation_description="Description of the meteor-shower notification channel in the system\'s notification settings">Aproximadamente una docena al año, en la noche del pico</string>
     <string name="channel_digest_name" translation_description="Name of the tonight-digest notification channel, shown in the system\'s notification settings">Resumen del cielo de esta noche</string>
@@ -161,10 +177,5 @@
     <!-- Layers sheet: per-layer parameters (D87). -->
     <string name="satellite_search_name_iss" translation_description="Common name of the International Space Station, matched when the user types it in search. Use the name people in this language actually type.">Estación Espacial Internacional</string>
     <string name="satellite_search_name_tiangong" translation_description="Common name of the Chinese Tiangong space station, matched when the user types it in search. Use the name people in this language actually type.">Estación Espacial Tiangong</string>
-    <string name="tonight_trailing_pass_peak" translation_description="Small trailing note on a satellite pass row. %1$d is the peak altitude in degrees, %2$.1f is a brightness magnitude.">Pico %1$d°, mag %2$.1f</string>
-    <string name="channel_announcements_name" translation_description="Notification channel name for occasional messages from the Sky Map team">Mensajes del equipo de Sky Map</string>
-    <string name="channel_announcements_description" translation_description="Notification channel description for occasional messages from the Sky Map team">Avisos importantes sobre eventos celestes destacados</string>
-    <string name="announcement_dialog_dismiss" translation_description="Button that closes an announcement dialog and hides that message everywhere">Descartar</string>
-    <string name="announcement_dialog_open" translation_description="Button on an announcement dialog that jumps to the sky object the message is about">Echar un vistazo</string>
-    <string name="announcement_dialog_continue" translation_description="Button on an announcement dialog that closes it and continues to the sky map">Continuar</string>
+    <string name="tonight_trailing_pass_peak" translation_description="Small trailing note on a satellite pass row. %1$d is the peak altitude in degrees, %2$.1f is a brightness magnitude.">Máx. %1$d°, mag. %2$.1f</string>
 </resources>

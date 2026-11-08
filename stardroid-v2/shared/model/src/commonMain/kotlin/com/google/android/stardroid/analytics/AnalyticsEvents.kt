@@ -82,6 +82,7 @@ object AnalyticsEvents {
     const val SUPPORT_ACTION_SHARE = "share"
     const val SUPPORT_ACTION_BMAC = "bmac"
     const val SUPPORT_ACTION_TIP = "tip"
+    const val SUPPORT_ACTION_RATE = "rate"
     const val MANUAL_MODE_TOGGLED_EVENT = "manual_mode_toggled_ev"
     const val MANUAL_MODE_ENABLED = "enabled"
     const val HORIZON_LEVEL_TOGGLED_EVENT = "horizon_level_toggled_ev"

@@ -1,5 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
+    <!-- The terms screen (EulaScreen), shared with the iOS app. -->
     <string name="eula_title">เงื่อนไขการให้บริการ</string>
     <string name="dialog_accept">ยอมรับ</string>
     <string name="dialog_decline">ไม่ขอบคุณ</string>
@@ -26,6 +27,8 @@
     <string name="layer_solar_system">ระบบสุริยะ</string>
     <string name="layer_meteor_showers">ฝนดาวตกแบบกระจาย</string>
     <string name="layer_satellites" translation_description="Toggle label for the layer showing artificial satellites such as the International Space Station.">ดาวเทียม</string>
+    <string name="layer_param_shower_alerts" translation_description="Label for the setting that turns on a notification on the evening a meteor shower peaks.">การแจ้งเตือนช่วงพีค</string>
+    <string name="layer_param_shower_alerts_description" translation_description="Explains what the meteor-shower alert setting does: a notification on the evening a shower reaches its annual peak.">แจ้งเตือนฉันในเย็นวันที่ฝนดาวตกถึงจุดสูงสุด</string>
     <string name="layer_param_pass_alerts" translation_description="Label for the setting that turns on a notification shortly before a satellite passes overhead.">แจ้งเตือนการผ่าน</string>
     <string name="layer_param_pass_alerts_description" translation_description="Explains what the pass-alert setting does: a single notification before the best visible pass of the night.">แจ้งเตือนฉันก่อนรอบการผ่านที่มองเห็นได้ดีที่สุดในแต่ละคืน</string>
     <string name="layer_param_eclipse_alerts" translation_description="Label for the setting that turns on a notification before a lunar eclipse begins.">แจ้งเตือนอุปราคา</string>
@@ -37,6 +40,17 @@
     <string name="layer_param_altaz_grid_density_medium_desc" translation_description="Explains the medium alt/az grid density: 12 azimuth lines, 30 degrees apart.">เส้นทิศทาง 12 เส้น ห่างกัน 30°</string>
     <string name="layer_param_altaz_grid_density_fine" translation_description="Option label for the alt/az grid's densest setting: 24 azimuth lines, 15 degrees apart.">ละเอียด</string>
     <string name="layer_param_altaz_grid_density_fine_desc" translation_description="Explains the fine alt/az grid density: 24 azimuth lines, matching the celestial grid's meridian count.">เส้นทิศทาง 24 เส้น ตรงกับตารางพิกัดทรงกลมฟ้า</string>
+    <string name="layer_param_grid_brightness" translation_description="Label for the grid layers' line-brightness setting.">ความสว่างของเส้น</string>
+    <string name="layer_param_grid_brightness_normal" translation_description="Option label for the grid's default line brightness.">ปกติ</string>
+    <string name="layer_param_grid_brightness_normal_desc" translation_description="Explains the normal grid line brightness: subtle, for a dark-adapted eye.">เส้นบาง สบายตาในที่มืด</string>
+    <string name="layer_param_grid_brightness_bright" translation_description="Option label for a brighter grid line setting.">สว่าง</string>
+    <string name="layer_param_grid_brightness_bright_desc" translation_description="Explains the bright grid line setting.">เส้นชัดเจนขึ้นสำหรับท้องฟ้าพลบค่ำหรือที่มีมลภาวะทางแสง</string>
+    <string name="layer_param_grid_brightness_brightest" translation_description="Option label for the brightest grid line setting.">สว่างที่สุด</string>
+    <string name="layer_param_grid_brightness_brightest_desc" translation_description="Explains the brightest grid line setting.">เส้นเด่นชัดที่สุด สำหรับเวลากลางวันหรือท้องฟ้าในเมือง</string>
+    <string name="layer_param_radec_grid_density" translation_description="Label for the celestial (RA/Dec) grid's line-count setting.">จำนวนเส้น</string>
+    <string name="layer_param_radec_grid_density_coarse_desc" translation_description="Explains the coarse celestial grid density: a meridian every 3 hours of right ascension and a circle every 30 degrees of declination.">เส้นเมริเดียนทุกๆ 3 ชั่วโมง วงกลมทุกๆ 30°</string>
+    <string name="layer_param_radec_grid_density_medium_desc" translation_description="Explains the medium celestial grid density: a meridian every 2 hours of right ascension and a circle every 15 degrees of declination.">เส้นเมริเดียนทุกๆ 2 ชั่วโมง วงกลมทุกๆ 15°</string>
+    <string name="layer_param_radec_grid_density_fine_desc" translation_description="Explains the fine celestial grid density: a meridian every hour of right ascension and a circle every 10 degrees of declination.">เส้นเมริเดียนทุกชั่วโมง วงกลมทุกๆ 10°</string>
     <string name="satellites_no_data" translation_description="Explanation shown when satellite orbital data has not been downloaded yet and so no satellites can be drawn.">ตำแหน่งดาวเทียมจำเป็นต้องเชื่อมต่ออินเทอร์เน็ตจึงจะอัปเดตได้</string>
     <string name="satellites_refresh" translation_description="Button that tries to download satellite orbital data now.">รีเฟรช</string>
     <string name="satellites_retry_soon" translation_description="Shown instead of a Refresh button when satellite data was just requested and cannot be requested again for a few minutes.">ลองอีกครั้งในอีกสักครู่</string>
@@ -49,6 +63,54 @@
     <string name="layer_ecliptic">สุริยวิถี</string>
     <string name="layer_altaz_grid" translation_description="Toggle label for the layer showing the altitude/azimuth (horizontal) coordinate grid, for naked-eye or manual alt-az mount observers.">ตารางพิกัด Alt/Az</string>
     <string name="layer_sky_gradient" translation_description="Toggle label for the daytime sky-brightness gradient and the ground coloring.">สีท้องฟ้า</string>
+    <string name="layer_help_stars" translation_description="Long-press explanation of the stars layer.">ดวงดาวปรับขนาดตามความสว่างและแต่งสีตามเฉดสี แตะดาวดวงใดก็ได้เพื่อดูรายละเอียด</string>
+    <string name="layer_help_constellations" translation_description="Long-press explanation of the constellations layer.">เส้นและชื่อของกลุ่มดาว เพื่อช่วยให้คุณหาทางไปรอบๆ รูปแบบกลุ่มดาวได้</string>
+    <string name="layer_help_deep_sky" translation_description="Long-press explanation of the deep-sky layer.">
+    กาแล็กซี เนบิวลา และกระจุกดาว: วัตถุที่อยู่ไกลออกไปนอกระบบสุริยะของเรา หลายวัตถุต้องใช้สองตาหรือกล้องโทรทรรศน์ถึงจะมองเห็นได้จริง
+    </string>
+    <string name="layer_help_solar_system" translation_description="Long-press explanation of the solar system layer.">ดวงอาทิตย์ ดวงจันทร์ (พร้อมข้างขึ้นข้างแรมปัจจุบัน) และดาวเคราะห์ต่างๆ</string>
+    <string name="layer_help_meteor_showers" translation_description="Long-press explanation of the meteor showers layer.">จุดกระจายตัวของฝนดาวตกแต่ละดวง: จุดบนท้องฟ้าที่ฝนดาวตกดูเหมือนจะพุ่งออกมา</string>
+    <string name="layer_help_satellites" translation_description="Long-press explanation of the satellites layer.">
+    ดาวเทียม เช่น สถานีอวกาศนานาชาติ (ISS) และสถานีอวกาศเทียนกง (CSS) แสดงตามตำแหน่งปัจจุบัน ต้องการข้อมูลวงโคจรที่ดาวน์โหลดล่าสุด
+    </string>
+    <string name="layer_help_grid" translation_description="Long-press explanation of the celestial grid layer.">
+    เส้นตารางพิกัดท้องฟ้าของไรต์อัชเซนชันและเดคลิเนชัน: ซึ่งเทียบได้กับละติจูดและลองจิจูดของท้องฟ้า ยึดติดอยู่กับดวงดาว
+    </string>
+    <string name="layer_help_horizon" translation_description="Long-press explanation of the horizon layer.">เส้นขอบฟ้าและจุดทิศ เพื่อให้คุณบอกได้ว่าทิศเหนือไปทางไหนและพื้นดินอยู่ตรงไหน</string>
+    <string name="layer_help_ecliptic" translation_description="Long-press explanation of the ecliptic layer.">
+    เส้นทางที่ดวงอาทิตย์โคจรผ่านท้องฟ้าตลอดหนึ่งปี ดวงจันทร์และดาวเคราะห์จะอยู่ใกล้เส้นนี้เสมอ
+    </string>
+    <string name="layer_help_altaz_grid" translation_description="Long-press explanation of the alt/az grid layer.">
+    ตารางเส้นศูนย์สูตรและเส้นขอบฟ้า (ความสูงเหนือขอบฟ้าและทิศทางเข็มขัดทิศ) ซึ่งต่างจากตารางเส้นพิกัดท้องฟ้า ตรงที่เส้นตารางนี้จะยึดติดกับขอบฟ้าของคุณ ไม่ใช่ดวงดาว
+    </string>
+    <string name="layer_help_sky_gradient" translation_description="Long-press explanation of the sky coloring toggle.">
+    เปลี่ยนสีท้องฟ้าตามเวลาในแต่ละวัน สว่างในเวลากลางวันและมืดในเวลากลางคืน พร้อมทั้งใส่สีให้พื้นดินด้วย
+    </string>
+    <string name="layer_help_hud" translation_description="Long-press explanation of the pointing readout toggle.">การแสดงผลตำแหน่งที่โทรศัพท์ของคุณหันไป: ทิศทางเข็มทิศและความสูงจากขอบฟ้า</string>
+    <string name="layer_help_camera" translation_description="Long-press explanation of the through-camera toggle.">
+    แสดงภาพจากกล้องถ่ายรูปจริงไว้ด้านหลังแผนที่ดาว เพื่อให้เส้นแผนที่ดาวทับซ้อนกับท้องฟ้าจริง ต้องใช้เซ็นเซอร์จับการเคลื่อนไหว
+    </string>
+    <string name="layer_help_options_solar_system" translation_description="Long-press note listing what can be customized on the solar system layer.">
+    ขนาดของแผ่นกลม: ขนาดที่ดวงอาทิตย์ ดวงจันทร์ และดาวเคราะห์ต่างๆ จะถูกวาดขึ้น
+การแจ้งเตือนอุปราคา: การแจ้งเตือนก่อนเกิดจันทรุปราคา
+    </string>
+    <string name="layer_help_options_satellites" translation_description="Long-press note listing what can be customized on the satellites layer.">
+    การแจ้งเตือนการโคจรผ่าน: การแจ้งเตือนก่อนการโคจรผ่านที่มองเห็นได้ดีที่สุดในแต่ละคืน
+    </string>
+    <string name="layer_help_options_meteor_showers" translation_description="Long-press note listing what can be customized on the meteor showers layer.">การแจ้งเตือนช่วงพีค: การแจ้งเตือนในเย็นวันที่ฝนดาวตกถึงจุดสูงสุดประจำปี</string>
+    <string name="layer_help_options_grid" translation_description="Long-press note listing what can be customized on the celestial grid layer.">
+    จำนวนเส้น: เส้นทุกๆ 3, 2 หรือ 1 ชั่วโมง และทุกๆ 30°, 15° หรือ 10°
+ความสว่างของเส้น: ปกติ, สว่าง หรือสว่างที่สุด สำหรับท้องฟ้าในเวลาพลบค่ำ, กลางวัน หรือมีมลภาวะทางแสง
+    </string>
+    <string name="layer_help_options_altaz_grid" translation_description="Long-press note listing what can be customized on the alt/az grid layer.">
+    จำนวนเส้น: 8, 12 หรือ 24 เส้นทิศทาง
+ความสว่างของเส้น: ปกติ สว่าง หรือสว่างที่สุด สำหรับท้องฟ้าช่วงพลบค่ำ กลางวัน หรือมีมลภาวะทางแสง
+    </string>
+    <string name="layer_help_customizable" translation_description="Heading in the layer help popup above the list of customizable options.">สิ่งที่คุณสามารถปรับแต่งได้</string>
+    <string name="layer_help_expand_hint" translation_description="Hint in the layer help popup for layers with options, pointing to the arrow button on the row.">แตะลูกศรบนแถวเพื่อเปลี่ยนการตั้งค่าเหล่านี้</string>
+    <string name="layer_help_customize" translation_description="Button in the layer help popup that opens the Layers sheet on that layer's options.">ปรับแต่ง</string>
+    <string name="layer_help_close" translation_description="Button that dismisses the layer help popup.">เข้าใจแล้ว</string>
+    <string name="layer_help_long_click_label" translation_description="Accessibility label for the long-press action on a layer row, which shows an explanation of the layer.">แสดงว่าสิ่งนี้ทำหน้าที่อะไร</string>
     <string name="layers_sheet_title" translation_description="Title of the bottom sheet listing sky map layers the user can show or hide.">เลเยอร์</string>
     <string name="layers_group_objects" translation_description="Layers-sheet group header for layers that draw sky objects (stars, planets, deep-sky objects).">วัตถุ</string>
     <string name="layers_group_reference" translation_description="Layers-sheet group header for reference elements drawn over the sky (coordinate grid, horizon, ecliptic).">อ้างอิง</string>
@@ -79,6 +141,23 @@
     <string name="tutorial_button">บทช่วยสอน</string>
     <string name="whats_new_button" translation_description="Map-screen menu item that opens the What's New and Credits screen">มีอะไรใหม่</string>
     <string name="widgets_button" translation_description="Map-screen menu item that opens the list of home-screen widgets the app offers">วิดเจ็ต</string>
+    <string name="support_button" translation_description="Map-screen menu item that opens the screen listing ways to support Sky Map">สนับสนุน</string>
+    <string name="support_screen_title" translation_description="Title of the screen listing ways to support Sky Map">สนับสนุน Sky Map</string>
+    <string name="support_intro" translation_description="Opening paragraph of the Support screen. Sky Map is a free, open-source app.">
+    Sky Map เป็นแอปพลิเคชันโอเพนซอร์สฟรีและจะคงอยู่เช่นนั้นต่อไป หากคุณชื่นชอบ นี่คือวิธีบางส่วนในการช่วยเหลือ
+    </string>
+    <string name="support_star_title" translation_description="Support screen row: star the project's page on GitHub">ให้ดาว Sky Map บน GitHub</string>
+    <string name="support_star_desc" translation_description="Support screen row description: starring helps other people find the app">ช่วยให้คนอื่นๆ ค้นพบแอปนี้ได้ง่ายขึ้น</string>
+    <string name="support_issues_title" translation_description="Support screen row: report a problem or suggest an idea on GitHub">รายงานปัญหาหรือเสนอแนะไอเดีย</string>
+    <string name="support_issues_desc" translation_description="Support screen row description: opens the issue tracker on GitHub">เปิดประเด็นปัญหา (Issue) บน GitHub</string>
+    <string name="support_share_title" translation_description="Support screen row: share the app with a friend">บอกต่อเพื่อน</string>
+    <string name="support_share_desc" translation_description="Support screen row description: share the app with someone who likes the night sky">แชร์ Sky Map ให้กับคนที่ชื่นชอบท้องฟ้ายามค่ำคืน</string>
+    <string name="support_bmac_title" translation_description="Support screen row: make a small voluntary donation on the Buy Me a Coffee website">เลี้ยงกาแฟพวกเรา</string>
+    <string name="support_bmac_desc" translation_description="Support screen row description: donations are optional">สนับสนุนเล็กๆ น้อยๆ ตามความสมัครใจเพื่อเป็นค่าใช้จ่ายในการพัฒนา</string>
+    <string name="support_share_message" translation_description="Message sent when the user shares the app with a friend. %1$s is the web link to the app's store page. Keep the %1$s placeholder.">
+    คุณเคยลองใช้ Sky Map หรือยัง? แอปท้องฟ้าจำลองฟรีแบบโอเพนซอร์สสำหรับโทรศัพท์ของคุณ: %1$s
+    </string>
+    <string name="support_thanks_html" translation_description="HTML section at the bottom of the Support screen thanking donors and open-source contributors. %1$s is a list of donor names and %2$s a list of contributor names. Please do not change the &lt; and &gt; markup or the placeholders."><![CDATA[<h2>ขอขอบคุณ</h2> <h3>ผู้สนับสนุน</h3> <p>%1$s</p> <h3>ผู้ร่วมพัฒนาโอเพนซอร์ส</h3> <p>%2$s</p> <p>ดูรายชื่อผู้ร่วมพัฒนารุ่นล่าสุดได้ที่ <a href="https://github.com/sky-map-team/stardroid/graphs/contributors">GitHub</a></p>]]></string>
     <string name="layer_param_disc_size">ขนาดดิสก์</string>
     <string name="layer_param_disc_size_true">สัดส่วนจริง</string>
     <string name="layer_param_disc_size_true_desc">
@@ -97,6 +176,7 @@
     <string name="search_go" translation_description="Button that starts navigating the sky map toward the typed search target.">ไป</string>
     <string name="search_cancel">ยกเลิก</string>
     <string name="search_no_results">ไม่พบผลลัพธ์ บางทีวัตถุอาจไม่มองเห็นได้ในขณะนี้</string>
+    <string name="search_standing_on_earth" translation_description="Friendly message shown when the user searches for Earth, which cannot be pointed at because they are standing on it.">คุณยืนอยู่บนนั้นต่างหากล่ะ!</string>
     <string name="search_target_looking_message" translation_description="Status shown while the user is being guided toward a search target. %1$s is the object name.">กำลังค้นหา: %1$s</string>
     <string name="search_target_found_message" translation_description="Status shown when the search target has been found and is centered on screen. %1$s is the object name.">พบแล้ว: %1$s</string>
     <string name="search_overlay_prompt">ชี้โทรศัพท์ของคุณไปยังลูกศร</string>
@@ -149,13 +229,20 @@
     <string name="sun_wont_set_message">ดวงอาทิตย์จะไม่ตกในช่วง 24 ชั่วโมงถัดไปที่ตำแหน่งปัจจุบันของคุณ</string>
     <string name="time_travel_start_message" translation_description="Toast message when time travel starts toward a chosen destination. %1$s is the formatted destination date and time.">กำลังเดินทางข้ามเวลาไปยัง %1$s ...</string>
     <string name="time_travel_close_message">กลับไปยังปัจจุบัน ...</string>
-    <string name="satellite_next_pass" translation_description="Heading above the next visible pass details on a satellite\'s info card.">รอบการผ่านที่มองเห็นได้ครั้งถัดไป</string>
+    <string name="satellite_next_pass" translation_description="Heading above the table of upcoming good passes on a satellite\'s info card.">การโคจรผ่านที่ดีที่จะเกิดขึ้น</string>
+    <string name="satellite_pass_col_when" translation_description="Column heading in the satellite pass table: the date and time the pass starts.">เวลา</string>
+    <string name="satellite_pass_col_rises" translation_description="Column heading in the satellite pass table: the compass direction where the satellite rises. Keep it short.">โผล่พ้นขอบฟ้า</string>
+    <string name="satellite_pass_col_peak" translation_description="Column heading in the satellite pass table: the highest angle above the horizon the satellite reaches. Keep it short.">สูงสุด</string>
+    <string name="satellite_pass_col_magnitude" translation_description="Column heading in the satellite pass table: the satellite\'s brightness magnitude at its brightest. Keep it short.">โชติมาตร</string>
     <string name="satellite_pass_shadow" translation_description="Tells the user the satellite will fade out mid-pass when it enters the Earth\'s shadow. %1$s is a time.">เข้าสู่เงาของโลกและจางหายไปตอน %1$s</string>
-    <string name="satellite_no_pass" translation_description="Shown on a satellite info card when no visible pass is coming up in the next two days.">ไม่มีรอบการผ่านที่มองเห็นได้ในอีกสองสามวันนี้</string>
+    <string name="satellite_no_pass" translation_description="Shown on a satellite info card when no bright, high pass is coming up in the next few days.">ไม่มีการโคจรผ่านที่ดีในอีกไม่กี่วันข้างหน้า</string>
     <string name="satellite_pass_unknown" translation_description="Shown on a satellite info card when the downloaded orbit data is too old to predict pass times reliably.">ข้อมูลวงโคจรเก่าเกินกว่าจะทำนายการผ่านได้</string>
+    <string name="upcoming_well_placed" translation_description="Row in an object\'s Upcoming list: the planet is high enough to observe tonight; %1$s is the time from which it is well placed">สังเกตการณ์ได้ดีตั้งแต่เวลา %1$s</string>
+    <string name="upcoming_shower_peak" translation_description="Row in a meteor shower\'s Upcoming list: when the shower next peaks; %1$s is a date">ถึงจุดสูงสุด %1$s</string>
+    <string name="object_info_upcoming" translation_description="Heading above the list of upcoming events (passes, eclipses, moon phases) on an object\'s info card.">กำลังจะมาถึง</string>
     <string name="object_info_eclipse_title" translation_description="Heading above the next lunar eclipse details on the Moon\'s info card.">จันทรุปราคา</string>
     <string name="object_info_no_eclipse" translation_description="Shown on the Moon\'s info card when no lunar eclipse is coming up in the searched time range.">ไม่มีจันทรุปราคาในเร็ว ๆ นี้</string>
-    <string name="object_info_eclipse_greatest" translation_description="The next lunar eclipse\'s type and greatest-eclipse date/time. %1$s is a localized eclipse type like \'Total lunar eclipse\', %2$s a date, %3$s a time.">%1$s — คราสเต็มดวง %2$s เวลา %3$s</string>
+    <string name="object_info_eclipse_greatest" translation_description="The next lunar eclipse\'s type and the date and time of maximum eclipse (when it peaks). %1$s is a localized eclipse type like \'Total lunar eclipse\', %2$s a date, %3$s a time.">%1$s — ถึงจุดสูงสุด %2$s เวลา %3$s</string>
     <string name="object_info_eclipse_totality" translation_description="The start and end time of totality during a total lunar eclipse. %1$s and %2$s are times.">ช่วงคราสเต็มดวง %1$s – %2$s</string>
     <string name="object_info_image_credit" translation_description="Attribution line under the object\'s photo; %1$s is the credited source, e.g. NASA/ESA">ภาพ: %1$s</string>
     <string name="object_info_fun_fact" translation_description="An interesting trivia line on the object info card; %1$s is the fact text">เกร็ดน่ารู้: %1$s</string>
@@ -281,6 +368,13 @@
     <string name="enable_analytics">ส่งสถิติการใช้งาน</string>
     <string name="enable_analytics_desc">ปรับปรุง Sky Map โดยการส่งข้อมูลที่ไม่ระบุตัวตนไปยัง Google Analytics</string>
     <string name="settings_diagnostics_summary" translation_description="Summary for the settings row that opens the diagnostics screen, which shows technical sensor, location and performance readouts useful when reporting a problem">รายละเอียดเซ็นเซอร์ ตำแหน่ง และประสิทธิภาพ</string>
+    <string name="settings_section_advanced" translation_description="Preferences category heading for advanced or experimental settings that most people will not need to change">ขั้นสูง</string>
+    <string name="settings_renderer" translation_description="Preference title for choosing which graphics engine draws the sky map">เอนจิ้นกราฟิก (เบต้า)</string>
+    <string name="settings_renderer_summary" translation_description="Summary explaining the graphics engine preference: the newer engine draws a more realistic sky and clearer labels, and the map restarts when the setting is changed">
+    เอนจินใหม่วาดท้องฟ้าเวลากลางวันและพลบค่ำได้สมจริงยิ่งขึ้น รวมถึงป้ายกำกับที่ชัดเจนขึ้น แผนที่ Rจะรีสตาร์ทเมื่อคุณเปลี่ยนการตั้งค่านี้
+    </string>
+    <string name="settings_renderer_gles1" translation_description="Name of the original, long-standing graphics engine option, shown in a list of two choices">คลาสสิก</string>
+    <string name="settings_renderer_gles3" translation_description="Name of the newer graphics engine option, shown in a list of two choices">ปรับปรุง</string>
     <string name="settings_tap_to_identify">แสดงข้อมูลเมื่อแตะ</string>
     <string name="settings_tap_to_identify_summary">แตะวัตถุท้องฟ้าเพื่อเรียนรู้เกี่ยวกับพวกมัน</string>
     <string name="settings_tap_in_auto_mode">การ์ดข้อมูลในโหมดอัตโนมัติ</string>
@@ -341,6 +435,14 @@
     </string>
     <string name="settings_shower_alerts" translation_description="Preference title: notify on the evening a meteor shower reaches its annual peak">จุดสูงสุดของฝนดาวตก</string>
     <string name="settings_shower_alerts_summary" translation_description="Explanation of the meteor-shower notification preference">ประมาณโหลครั้งต่อปี ในเย็นวันที่ถึงจุดสูงสุด</string>
+    <string name="settings_eclipse_alerts" translation_description="Preference title: notify shortly before a lunar eclipse begins">จันทรุปราคา</string>
+    <string name="settings_eclipse_alerts_summary" translation_description="Explanation of the lunar-eclipse notification preference">การแจ้งเตือนเดียวก่อนที่จันทรุปราคาจะเริ่มต้นขึ้น</string>
+    <string name="settings_pass_alerts" translation_description="Preference title: notify shortly before a satellite passes overhead">ดาวเทียมโคจรผ่าน</string>
+    <string name="settings_pass_alerts_summary" translation_description="Explanation of the satellite-pass notification preference">การแจ้งเตือนเดียวก่อนการโคจรผ่านที่มองเห็นได้ดีที่สุดของคืน</string>
+    <string name="settings_announcements" translation_description="Preference title: occasional messages from the Sky Map team about rare sky events, shown as a notification, in the widget and when the app opens">ข้อความจาก Sky Map</string>
+    <string name="settings_announcements_summary" translation_description="Explanation of the announcements preference">
+    การแจ้งเตือนที่นานๆ ครั้ง เช่น แสงออโรร่าที่สว่างมากหรือดาวเคราะห์สว่าง แสดงเป็นการแจ้งเตือน ในวิดเจ็ต Sky Tonight หรือเมื่อคุณเปิดแอป
+    </string>
     <string name="settings_tonight_digest" translation_description="Preference title: a single evening notification summarizing what\'s visible tonight">สรุปท้องฟ้าคืนนี้</string>
     <string name="settings_tonight_digest_summary" translation_description="Explanation of the tonight-digest notification preference">สรุปหนึ่งครั้งหลังพระอาทิตย์ตกดิน ข้ามไปในคืนที่ไม่มีเหตุการณ์</string>
     <string name="settings_notifications_blocked" translation_description="Warning row shown when the user enabled notifications in the app but blocked them at the system level">การแจ้งเตือนถูกบล็อกสำหรับ Sky Map</string>
@@ -354,6 +456,7 @@
     <string name="diagnostics_device">อุปกรณ์</string>
     <!-- tm:omitted name="diagnostics_phone_format" reason="identical_to_source" -->
     <string name="diagnostics_android_version">เวอร์ชัน Android</string>
+    <string name="diagnostics_ios_version" translation_description="Row label in the diagnostics screen for the iOS version on an iPhone. iOS is Apple\'s operating system name and stays as is">เวอร์ชัน iOS</string>
     <string name="diagnostics_sky_map_version">เวอร์ชัน Sky Map</string>
     <!-- tm:omitted name="diagnostics_sky_map_version_format" reason="identical_to_source" -->
     <string name="diagnostics_section_graphics" translation_description="Section heading in the diagnostics screen for graphics/GPU information">กราฟิก</string>
@@ -361,6 +464,7 @@
     <!-- tm:omitted name="diagnostics_gl_version" reason="identical_to_source" -->
     <!-- tm:omitted name="diagnostics_gl_version_format" reason="identical_to_source" -->
     <string name="diagnostics_gl_limits" translation_description="Row label in the diagnostics screen for graphics hardware limits (maximum texture size, supported line widths and point sizes)">ขีดจำกัด GL</string>
+    <string name="diagnostics_metal_limits" translation_description="Row label in the diagnostics screen on an iPhone for graphics hardware limits (maximum texture size, supported line widths and point sizes). Metal is Apple\'s graphics API name and stays as is">ขีดจำกัด Metal</string>
     <string name="diagnostics_gl_limits_format" translation_description="Format for the GL limits row: maximum texture size in pixels, then the supported line width and point size ranges. \'tex\' abbreviates texture. %1$d is texture size, %2$s is the line width range, %3$s is the point size range.">เท็กซ์ %1$d, เส้น %2$s, จุด %3$s</string>
     <string name="diagnostics_gl_unavailable" translation_description="Value shown in the diagnostics Graphics rows before the sky map has drawn, when the graphics details are not known yet">ยังไม่พร้อมใช้งาน</string>
     <string name="diagnostics_section_sensors">เซนเซอร์</string>
@@ -379,7 +483,7 @@
     <string name="diagnostics_reverse_magnetic_z" translation_description="Row label in the diagnostics screen for whether the magnetometer's Z axis is reversed">สลับแกน Z แม่เหล็ก</string>
     <string name="diagnostics_use_magnetic_correction_setting" translation_description="Row label in the diagnostics screen for whether magnetic declination correction is applied">การแก้ไขค่าแม่เหล็ก</string>
     <string name="diagnostics_view_direction_mode" translation_description="Row label in the diagnostics screen for which phone axis is treated as pointing at the sky">ทิศทางการมอง</string>
-    <string name="diagnostics_calibration_dialog" translation_description="Row label in the diagnostics screen for whether the compass-calibration screen may open automatically; value is On or Off">ข้อความแจ้งเตือนการปรับเทียบอัตโนมัติ</string>
+    <string name="diagnostics_calibration_dialog" translation_description="Row label in the diagnostics screen for whether the compass-calibration screen may open automatically; value is On or Off">แจ้งเตือนการปรับเทียบอัตโนมัติ</string>
     <string name="diagnostics_jitter_raw" translation_description="Row label in the diagnostics screen for how much the sensor-derived pointing wobbles before smoothing is applied">ความสั่น (ดิบ)</string>
     <string name="diagnostics_jitter_smoothed" translation_description="Row label in the diagnostics screen for how much the sensor-derived pointing wobbles after smoothing is applied">ความสั่น (ทำให้ราบรื่นแล้ว)</string>
     <!-- tm:omitted name="diagnostics_jitter_format" reason="identical_to_source" -->
@@ -410,6 +514,10 @@
     <string name="diagnostics_utc_datetime">วันที่และเวลา UTC</string>
     <string name="diagnostics_section_network">เครือข่าย</string>
     <string name="diagnostics_connection">การเชื่อมต่อ</string>
+    <string name="diagnostics_section_experiments" translation_description="Section heading in the diagnostics screen listing the current feature-flag (experiment) values">แฟล็กการทดลอง</string>
+    <string name="diagnostics_experiments_last_fetched" translation_description="Row label in the diagnostics experiment flags section: when the feature-flag config was last downloaded from the server">ดึงข้อมูลล่าสุด</string>
+    <string name="diagnostics_experiments_never_fetched" translation_description="Row value in the diagnostics experiment flags section when the feature-flag config has never been downloaded">ไม่เคย</string>
+    <string name="diagnostics_experiments_fetch_now" translation_description="Label on a button in the diagnostics screen that downloads the feature-flag config from the server immediately">ดึงแฟล็กการทดลองทันที</string>
     <string name="diagnostics_satellite_force_fetch" translation_description="Label on a debug-only button in the diagnostics screen that downloads satellite orbital data immediately">ดึงข้อมูลดาวเทียมตอนนี้ (ดีบั๊ก)</string>
     <string name="diagnostics_connected">เชื่อมต่อแล้ว</string>
     <string name="diagnostics_disconnected">ไม่เชื่อมต่อ</string>
@@ -450,78 +558,17 @@
     <string name="label_size_hint_action" translation_description="Action button on the label size snackbar; opens the app\'s Settings screen, where the user can change how large the sky labels are">การตั้งค่า</string>
     <string name="auto_level_on_toast" translation_description="Brief confirmation shown when a double tap turns horizon auto-leveling on in manual mode">เปิดปรับระดับขอบฟ้าอัตโนมัติแล้ว</string>
     <string name="auto_level_off_toast" translation_description="Brief confirmation shown when a double tap turns horizon auto-leveling off in manual mode">ปิดปรับระดับขอบฟ้าอัตโนมัติแล้ว</string>
-    <string name="diagnostics_app_lifecycle" translation_description="Row label in the diagnostics screen for the app\'s technical lifecycle state (for example Started or Resumed), which controls whether sensors are listened to">วงจรชีวิตของแอป</string>
-    <string name="diagnostics_experiments_fetch_now" translation_description="Label on a button in the diagnostics screen that downloads the feature-flag config from the server immediately">ดึงแฟล็กการทดลองเดี๋ยวนี้</string>
-    <string name="diagnostics_experiments_last_fetched" translation_description="Row label in the diagnostics experiment flags section: when the feature-flag config was last downloaded from the server">ดึงข้อมูลล่าสุดเมื่อ</string>
-    <string name="diagnostics_experiments_never_fetched" translation_description="Row value in the diagnostics experiment flags section when the feature-flag config has never been downloaded">ไม่เคย</string>
+    <string name="diagnostics_app_lifecycle" translation_description="Row label in the diagnostics screen for the app\'s technical lifecycle state (for example Started or Resumed), which controls whether sensors are listened to">วงจรชีวิตแอป</string>
     <string name="diagnostics_gyro_none" translation_description="Value shown for the gyro row when the device has no sensors that can supply orientation">ไม่มี</string>
     <string name="diagnostics_map_mode" translation_description="Row label in the diagnostics screen for whether the map follows the phone\'s sensors or is moved by dragging">โหมด</string>
-    <string name="diagnostics_map_mode_auto" translation_description="Value shown for the map mode row when the map follows the phone\'s sensors (the app calls this auto mode)">อัตโนมัติ (เซ็นเซอร์)</string>
+    <string name="diagnostics_map_mode_auto" translation_description="Value shown for the map mode row when the map follows the phone\'s sensors (the app calls this auto mode)">อัตโนมัติ (เซนเซอร์)</string>
     <string name="diagnostics_map_mode_manual" translation_description="Value shown for the map mode row when the map is moved by dragging (the app calls this manual mode)">กำหนดเอง</string>
     <string name="diagnostics_map_orientation" translation_description="Row label in the diagnostics screen for how long ago the map last received the phone\'s orientation from its sensors">อัปเดตการวางแนวล่าสุด</string>
-    <string name="diagnostics_map_orientation_format" translation_description="Row value in the diagnostics screen giving how long ago the map last received the phone\'s orientation. %1$.1f is a number of seconds.">เมื่อ %1$.1f วินาทีที่แล้ว</string>
-    <string name="diagnostics_map_orientation_none" translation_description="Value shown for the last orientation update row when the map has not received any orientation from the sensors">ไม่ได้รับ</string>
-    <string name="diagnostics_rejected_samples" translation_description="Row label in the diagnostics screen for how many sensor readings have been thrown away as invalid since the app started">ตัวอย่างเซ็นเซอร์ที่ถูกปฏิเสธ (ตั้งแต่เริ่มต้น)</string>
-    <string name="diagnostics_section_experiments" translation_description="Section heading in the diagnostics screen listing the current feature-flag (experiment) values">แฟล็กการทดลอง</string>
+    <string name="diagnostics_map_orientation_format" translation_description="Row value in the diagnostics screen giving how long ago the map last received the phone\'s orientation. %1$.1f is a number of seconds.">%1$.1f วินาทีที่แล้ว</string>
+    <string name="diagnostics_map_orientation_none" translation_description="Value shown for the last orientation update row when the map has not received any orientation from the sensors">ไม่ได้รับข้อมูล</string>
+    <string name="diagnostics_rejected_samples" translation_description="Row label in the diagnostics screen for how many sensor readings have been thrown away as invalid since the app started">ตัวอย่างเซนเซอร์ที่ปฏิเสธ (ตั้งแต่เริ่มต้น)</string>
     <string name="diagnostics_section_map" translation_description="Section heading in the diagnostics screen for what the sky map itself is doing with the sensor readings">แผนที่</string>
-    <string name="diagnostics_smoother_heals" translation_description="Row label in the diagnostics screen for how many times the orientation smoother had to reset itself after producing an invalid value since the app started">การรีเซ็ตตัวปรับให้เรียบ (ตั้งแต่เริ่มต้น)</string>
-    <string name="layer_help_altaz_grid" translation_description="Long-press explanation of the alt/az grid layer.">
-    เส้นตารางแสดงความสูง (ความสูงจากขอบฟ้า) และทิศทาง (ทิศทางเข็มทิศ) ซึ่งต่างจากเส้นตารางทรงกลมฟ้าตรงที่จะยึดติดกับขอบฟ้าของคุณ ไม่ใช่ดวงดาว
-    </string>
-    <string name="layer_help_camera" translation_description="Long-press explanation of the through-camera toggle.">
-    แสดงกล้องถ่ายรูปสดด้านหลังแผนที่ท้องฟ้า เพื่อให้แผนที่ท้องฟ้าที่วาดทับทับกับท้องฟ้าจริง จำเป็นต้องมีเซ็นเซอร์ตรวจจับการเคลื่อนไหว
-    </string>
-    <string name="layer_help_close" translation_description="Button that dismisses the layer help popup.">เข้าใจแล้ว</string>
-    <string name="layer_help_constellations" translation_description="Long-press explanation of the constellations layer.">เส้นและชื่อกลุ่มดาว เพื่อช่วยให้คุณสังเกตกลุ่มดาวต่างๆ บนท้องฟ้าได้ง่ายขึ้น</string>
-    <string name="layer_help_customizable" translation_description="Heading in the layer help popup above the list of customizable options.">สิ่งที่คุณปรับแต่งได้</string>
-    <string name="layer_help_customize" translation_description="Button in the layer help popup that opens the Layers sheet on that layer's options.">ปรับแต่ง</string>
-    <string name="layer_help_deep_sky" translation_description="Long-press explanation of the deep-sky layer.">
-    กาแล็กซี เนบิวลา และกระจุกดาว: วัตถุที่อยู่ไกลออกไปนอกระบบสุริยะของเรา หลายดวงต้องใช้กล้องสองตาหรือกล้องโทรסקทัศน์จึงจะมองเห็นได้จริง
-    </string>
-    <string name="layer_help_ecliptic" translation_description="Long-press explanation of the ecliptic layer.">
-    เส้นทางที่ดวงอาทิตย์เคลื่อนผ่านท้องฟ้าตลอดหนึ่งปี ดวงจันทร์และดาวเคราะห์จะอยู่ใกล้เส้นนี้เสมอ
-    </string>
-    <string name="layer_help_expand_hint" translation_description="Hint in the layer help popup for layers with options, pointing to the arrow button on the row.">แตะลูกศรบนแถวเพื่อเปลี่ยนการตั้งค่าเหล่านี้</string>
-    <string name="layer_help_grid" translation_description="Long-press explanation of the celestial grid layer.">
-    เส้นตารางพิกัดท้องฟ้าของไรต์แอสเซนชันและเดคคลิเนชัน ซึ่งเทียบเท่ากับเส้นรุ้งและเส้นแวงของท้องฟ้า โดยจะยึดติดอยู่กับดวงดาว
-    </string>
-    <string name="layer_help_horizon" translation_description="Long-press explanation of the horizon layer.">เส้นขอบฟ้าและทิศต่างๆ เพื่อให้คุณรู้ว่าทิศเหนืออยู่ทางไหนและพื้นดินอยู่ตรงไหน</string>
-    <string name="layer_help_hud" translation_description="Long-press explanation of the pointing readout toggle.">การแสดงผลว่าโทรศัพท์ของคุณหันไปทางไหน: ทิศทางเข็มทิศและความสูงจากขอบฟ้า</string>
-    <string name="layer_help_long_click_label" translation_description="Accessibility label for the long-press action on a layer row, which shows an explanation of the layer.">แสดงว่าฟีเจอร์นี้ทำอะไร</string>
-    <string name="layer_help_meteor_showers" translation_description="Long-press explanation of the meteor showers layer.">
-    จุดศูนย์กลางการกระจายตัวของฝนดาวตกแต่ละประจำปี: จุดบนท้องฟ้าที่ฝนดาวตกดูเหมือนจะพุ่งออกมา
-    </string>
-    <string name="layer_help_options_altaz_grid" translation_description="Long-press note listing what can be customized on the alt/az grid layer.">จำนวนเส้น: เส้นบอกทิศทาง 8, 12 หรือ 24 เส้น</string>
-    <string name="layer_help_options_grid" translation_description="Long-press note listing what can be customized on the celestial grid layer.">จำนวนเส้น: แสดงเส้นทุกๆ 3, 2 หรือ 1 ชั่วโมง และทุกๆ 30°, 15° หรือ 10°</string>
-    <string name="layer_help_options_meteor_showers" translation_description="Long-press note listing what can be customized on the meteor showers layer.">การแจ้งเตือนช่วงพีค: แจ้งเตือนในเย็นวันที่ฝนดาวตกถึงจุดสูงสุดประจำปี</string>
-    <string name="layer_help_options_satellites" translation_description="Long-press note listing what can be customized on the satellites layer.">การแจ้งเตือนการผ่าน: แจ้งเตือนก่อนการผ่านที่มองเห็นได้ดีที่สุดในแต่ละคืน</string>
-    <string name="layer_help_options_solar_system" translation_description="Long-press note listing what can be customized on the solar system layer.">
-    ขนาดแผ่นดิสก์: ขนาดการวาดดวงอาทิตย์ ดวงจันทร์ และดาวเคราะห์ต่างๆ\nการแจ้งเตือนอุปราคา: การแจ้งเตือนก่อนเกิดจันทรุปราคา
-    </string>
-    <string name="layer_help_satellites" translation_description="Long-press explanation of the satellites layer.">
-    ดาวเทียม เช่น สถานีอวกาศ และเทียนกง แสดงตำแหน่งตามเวลาจริง ต้องใช้ข้อมูลวงโคจรที่ดาวน์โหลดล่าสุด
-    </string>
-    <string name="layer_help_sky_gradient" translation_description="Long-press explanation of the sky coloring toggle.">
-    ปรับสีท้องฟ้าให้เข้ากับเวลาของวัน สว่างในเวลากลางวันและมืดในเวลากลางคืน พร้อมทั้งแสดงสีของพื้นดิน
-    </string>
-    <string name="layer_help_solar_system" translation_description="Long-press explanation of the solar system layer.">ดวงอาทิตย์, ดวงจันทร์ (พร้อมข้างขึ้นข้างแรมปัจจุบัน) และดาวเคราะห์ต่างๆ</string>
-    <string name="layer_help_stars" translation_description="Long-press explanation of the stars layer.">
-    ดวงดาวที่มีขนาดตามความสว่างและแต่งแต้มด้วยสีสัน แตะที่ดาวดวงใดก็ได้เพื่อดูรายละเอียด
-    </string>
-    <string name="layer_param_radec_grid_density" translation_description="Label for the celestial (RA/Dec) grid's line-count setting.">จำนวนเส้น</string>
-    <string name="layer_param_radec_grid_density_coarse_desc" translation_description="Explains the coarse celestial grid density: a meridian every 3 hours of right ascension and a circle every 30 degrees of declination.">เส้นเมริเดียนทุก 3 ชั่วโมง, วงกลมทุก 30°</string>
-    <string name="layer_param_radec_grid_density_fine_desc" translation_description="Explains the fine celestial grid density: a meridian every hour of right ascension and a circle every 10 degrees of declination.">เส้นเมริเดียนทุก 1 ชั่วโมง, วงกลมทุก 10°</string>
-    <string name="layer_param_radec_grid_density_medium_desc" translation_description="Explains the medium celestial grid density: a meridian every 2 hours of right ascension and a circle every 15 degrees of declination.">เส้นเมริเดียนทุก 2 ชั่วโมง, วงกลมทุก 15°</string>
-    <string name="layer_param_shower_alerts" translation_description="Label for the setting that turns on a notification on the evening a meteor shower peaks.">การแจ้งเตือนช่วงพีค</string>
-    <string name="layer_param_shower_alerts_description" translation_description="Explains what the meteor-shower alert setting does: a notification on the evening a shower reaches its annual peak.">แจ้งเตือนฉันในเย็นวันที่ฝนดาวตกถึงจุดสูงสุด</string>
-    <string name="settings_announcements" translation_description="Preference title: occasional messages from the Sky Map team about rare sky events, shown as a notification, in the widget and when the app opens">ข้อความจาก Sky Map</string>
-    <string name="settings_announcements_summary" translation_description="Explanation of the announcements preference">
-    การแจ้งเตือนเหตุการณ์สำคัญที่พบได้ยาก เช่น แสงออโรร่าที่สว่างจ้าหรือดาวเคราะห์ที่สว่างสุกใส แสดงเป็นการแจ้งเตือน ในวิดเจ็ต Sky Tonight หรือเมื่อคุณเปิดแอป
-    </string>
-    <string name="settings_eclipse_alerts" translation_description="Preference title: notify shortly before a lunar eclipse begins">จันทรุปราคา</string>
-    <string name="settings_eclipse_alerts_summary" translation_description="Explanation of the lunar-eclipse notification preference">แจ้งเตือนครั้งเดียวก่อนเกิดจันทรุปราคา</string>
-    <string name="settings_pass_alerts" translation_description="Preference title: notify shortly before a satellite passes overhead">ดาวเทียมโคจรผ่าน</string>
-    <string name="settings_pass_alerts_summary" translation_description="Explanation of the satellite-pass notification preference">แจ้งเตือนครั้งเดียวก่อนรอบการผ่านที่มองเห็นได้ดีที่สุดของคืน</string>
+    <string name="diagnostics_smoother_heals" translation_description="Row label in the diagnostics screen for how many times the orientation smoother had to reset itself after producing an invalid value since the app started">รีเซ็ตตัวปรับความราบรื่น (ตั้งแต่เริ่มต้น)</string>
     <string name="moon_widget_illumination" translation_description="Widget line showing how much of the Moon\'s disc is lit; %1$d is a percentage number">สว่าง %1$d%%</string>
     <string name="moon_phase_new" translation_description="Name of the lunar phase when the Moon is fully dark">จันทร์ดับ</string>
     <string name="moon_phase_waxing_crescent" translation_description="Name of the lunar phase between new moon and first quarter">จันทร์เสี้ยวข้างขึ้น</string>

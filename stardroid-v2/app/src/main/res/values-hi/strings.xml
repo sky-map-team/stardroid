@@ -1,6 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
 
+    <!-- Launch splash banner. -->
 
     <!-- Sky-map labels drawn by the computed layers (LayerStrings). -->
     <string name="north_pole">उ.ध्रुव</string>
@@ -33,6 +34,10 @@
     <string name="channel_passes_description" translation_description="Description of the satellite-pass notification channel.">रात के सबसे अच्छे दृश्यमान पारगमन से ठीक पहले एक एकल अलर्ट</string>
     <string name="notif_pass_title" translation_description="Title of the notification sent shortly before a satellite passes overhead. %1$s is the satellite name.">%1$s जल्द ही ऊपर से गुजरेगा</string>
     <string name="notif_pass_text" translation_description="Body of the satellite pass notification, telling the user when to go outside. %1$s is a time.">लगभग %1$s से दिखाई देगा — बाहर जाएँ और अपनी आँखों को समायोजित होने दें</string>
+    <string name="channel_passes_now_name" translation_description="Name of the notification channel for the alert sent the moment a satellite rises.">उपग्रह अभी उदय हो रहा है</string>
+    <string name="channel_passes_now_description" translation_description="Description of the notification channel for the alert sent the moment a satellite pass begins.">रात के सबसे अच्छे दृश्य पास की शुरुआत पर, कंपन के साथ एक चेतावनी</string>
+    <string name="notif_pass_now_title" translation_description="Title of the notification sent the moment a satellite pass begins. %1$s is the satellite name.">%1$s अब उदय हो रहा है</string>
+    <string name="notif_pass_now_text" translation_description="Body of the notification sent the moment a satellite pass begins.">ऊपर देखें — यह अभी आकाश को पार कर रहा है</string>
     <string name="channel_eclipses_name" translation_description="Name of the notification channel for alerts before a lunar eclipse starts.">चंद्र ग्रहण</string>
     <string name="channel_eclipses_description" translation_description="Description of the lunar-eclipse notification channel.">चंद्र ग्रहण शुरू होने से पहले एक एकल अलर्ट</string>
     <string name="notif_eclipse_title" translation_description="Title of the notification sent before a lunar eclipse starts. %1$s is a localized eclipse type like \'Total lunar eclipse\'.">%1$s जल्द ही शुरू हो रहा है</string>
@@ -42,15 +47,19 @@
     <string name="satellite_description" translation_description="Short description shown on the info card for an artificial satellite.">
     निचली पृथ्वी कक्षा में एक कृत्रिम उपग्रह, जो अँधेरे आकाश में सूर्य के प्रकाश से जगमगा रहा है। यह कुछ ही मिनटों में क्षितिज से क्षितिज तक लगातार और बिना टिमटिमाए गति करता हुआ पार करता है।
     </string>
+    <!-- tm:omitted name="tonight_satellite_pass" reason="identical_to_source" -->
+
+    <!-- Long-press help for layers in the layer-visibility sheet. -->
 
     <!-- Map screen controls. -->
 
+    <!-- The map HUD (map-hud.md, D65): the top-right pointing readout shown with the chrome. -->
 
 
     <!-- Through-camera (AR) mode (camera-ar-mode.md, D64). -->
     <string name="share_chooser_title" translation_description="Title of the system share sheet when sharing a captured sky image.">इस आकाश को साझा करें</string>
-    <string name="share_invitation" translation_description="Short invitation stamped on the footer of shared sky images, above the store link.">ब्रह्मांड आपकी जेब में — Sky Map मुफ्त में प्राप्त करें</string>
-    <string name="share_text" translation_description="Text accompanying a shared sky image in apps that accept both an image and text. %1$s is the app-store link.">ब्रह्मांड आपकी जेब में — Sky Map मुफ्त में प्राप्त करें: %1$s</string>
+    <string name="share_invitation" translation_description="Short invitation stamped on the footer of shared sky images, above the store link.">ब्रह्मांड आपकी जेब में — Sky Map मुफ़्त में प्राप्त करें</string>
+    <string name="share_text" translation_description="Text accompanying a shared sky image in apps that accept both an image and text. %1$s is the app-store link.">ब्रह्मांड आपकी जेब में — Sky Map मुफ़्त में प्राप्त करें: %1$s</string>
     <!-- tm:omitted name="share_store_link" reason="identical_to_source" -->
     <string name="share_layout_overlay" translation_description="Caption of the share-layout choice that draws the star map over the camera photo, as seen on screen.">ओवरले</string>
     <string name="share_layout_side_by_side" translation_description="Caption of the share-layout choice that puts the camera photo and the star map next to each other.">साथ-साथ</string>
@@ -70,6 +79,7 @@
 
     <!-- Settings screen (v1 wording where a v1 string existed) -->
 
+    <!-- Diagnostics screen (slice 15) -->
     <string name="diagnostics_section_satellites" translation_description="Section heading in the diagnostics screen for satellite orbital-data status">उपग्रह</string>
     <string name="diagnostics_satellite_data" translation_description="Row label in the diagnostics screen for the age and count of cached satellite orbital data">कक्षा डेटा</string>
     <string name="diagnostics_satellite_data_none" translation_description="Row value in the diagnostics screen when no satellite orbital data has been downloaded yet">डाउनलोड नहीं किया गया</string>
@@ -100,6 +110,7 @@
     <!-- Moon-phase home-screen widget (D69). -->
     <string name="moon_widget_label" translation_description="Name of the moon-phase home-screen widget, shown in the launcher\'s widget picker">चन्द्रमा की कला</string>
     <string name="moon_widget_description" translation_description="Description of the moon-phase widget, shown under its preview in the launcher\'s widget picker">चन्द्रमा की कला, प्रकाश और उदय व अस्त होने का समय, रोज़ाना अपडेट किया जाता है।</string>
+    <!-- tm:omitted name="moon_widget_illumination_short" reason="identical_to_source" -->
     <string name="moon_widget_rise_time" translation_description="Widget fragment showing today\'s moonrise time; %1$s is a clock time like 17:42">उदय होता है %1$s</string>
     <string name="moon_widget_set_time" translation_description="Widget fragment showing today\'s moonset time; %1$s is a clock time like 03:12">अस्त होता है %1$s</string>
     <string name="moon_widget_time_day_offset" translation_description="Compact suffix appended after a widget rise/set time that falls on a later day than today, so a reader doesn\'t mistake it for today\'s crossing; %1$d is the number of days ahead (almost always 1). Keep it short — the widget is very narrow. Note the leading space.">+%1$d</string>
@@ -142,6 +153,11 @@
     <string name="countdown_widget_preview_name" translation_description="Representative event name shown in the widget picker\'s preview of the countdown widget">पर्सीड्स चरम</string>
 
     <!-- Sky-event notifications (D77). -->
+    <string name="channel_announcements_name" translation_description="Notification channel name for occasional messages from the Sky Map team">Sky Map से संदेश</string>
+    <string name="channel_announcements_description" translation_description="Notification channel description for occasional messages from the Sky Map team">उल्लेखनीय खगोलीय घटनाओं के बारे में दुर्लभ पूर्वसूचना</string>
+    <string name="announcement_dialog_dismiss" translation_description="Button that closes an announcement dialog and hides that message everywhere">खारिज करें</string>
+    <string name="announcement_dialog_open" translation_description="Button on an announcement dialog that jumps to the sky object the message is about">एक नज़र डालें</string>
+    <string name="announcement_dialog_continue" translation_description="Button on an announcement dialog that closes it and continues to the sky map">जारी रखें</string>
     <string name="channel_showers_name" translation_description="Name of the meteor-shower notification channel, shown in the system\'s notification settings">उल्का वर्षा का चरम</string>
     <string name="channel_showers_description" translation_description="Description of the meteor-shower notification channel in the system\'s notification settings">साल में लगभग एक दर्जन, चरम की शाम को</string>
     <string name="channel_digest_name" translation_description="Name of the tonight-digest notification channel, shown in the system\'s notification settings">आज रात के आकाश का सार</string>
@@ -159,10 +175,5 @@
     <!-- Layers sheet: per-layer parameters (D87). -->
     <string name="satellite_search_name_iss" translation_description="Common name of the International Space Station, matched when the user types it in search. Use the name people in this language actually type.">अंतर्राष्ट्रीय अंतरिक्ष स्टेशन</string>
     <string name="satellite_search_name_tiangong" translation_description="Common name of the Chinese Tiangong space station, matched when the user types it in search. Use the name people in this language actually type.">तियांगोंग अंतरिक्ष स्टेशन</string>
-    <string name="tonight_trailing_pass_peak" translation_description="Small trailing note on a satellite pass row. %1$d is the peak altitude in degrees, %2$.1f is a brightness magnitude.">अधिकतम %1$d°, परिमाण %2$.1f</string>
-    <string name="channel_announcements_name" translation_description="Notification channel name for occasional messages from the Sky Map team">Sky Map से संदेश</string>
-    <string name="channel_announcements_description" translation_description="Notification channel description for occasional messages from the Sky Map team">उल्लेखनीय खगोलीय घटनाओं के बारे में दुर्लभ जानकारी</string>
-    <string name="announcement_dialog_dismiss" translation_description="Button that closes an announcement dialog and hides that message everywhere">खारिज करें</string>
-    <string name="announcement_dialog_open" translation_description="Button on an announcement dialog that jumps to the sky object the message is about">एक नज़र डालें</string>
-    <string name="announcement_dialog_continue" translation_description="Button on an announcement dialog that closes it and continues to the sky map">जारी रखें</string>
+    <string name="tonight_trailing_pass_peak" translation_description="Small trailing note on a satellite pass row. %1$d is the peak altitude in degrees, %2$.1f is a brightness magnitude.">शीर्ष %1$d°, चमक %2$.1f</string>
 </resources>

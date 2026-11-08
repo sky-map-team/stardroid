@@ -82,10 +82,10 @@ enum class OneEuroEaseOff {
  * next map launch, not immediately.
  */
 enum class RendererBackend {
-    /** The original backend: fixed-function, supported everywhere. */
+    /** The default: fixed-function, supported everywhere. */
     GLES1,
 
-    /** The default. Programmable pipeline; falls back to [GLES1] without GL ES 3.0. */
+    /** Opt-in beta. Programmable pipeline; falls back to [GLES1] without GL ES 3.0. */
     GLES3,
 }
 
@@ -332,9 +332,9 @@ interface Settings {
     suspend fun setLabelSizeHintShown()
 
     /**
-     * Which rendering backend draws the map. See [RendererBackend]; the default is
-     * [RendererBackend.GLES3], which silently falls back to [RendererBackend.GLES1] wherever the
-     * remote flag is off or the device has no GL ES 3.0.
+     * Which rendering backend draws the map. See [RendererBackend]. An explicit choice wins;
+     * otherwise GLES3 while the remote flag is on, else GLES1. GLES3 silently falls back to GLES1
+     * wherever the flag is off or the device has no GL ES 3.0.
      */
     val rendererBackend: Flow<RendererBackend>
 

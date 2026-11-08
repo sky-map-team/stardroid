@@ -8,11 +8,14 @@
 
     <!--
       The access-permission notice (KISA / Korean Network Act art. 22-2, and good practice
-      everywhere). Rendered in two places from this one key so it is translated once: appended
-      to the first-launch EULA screen, and included in the help document as a permanent,
-      re-readable copy (HelpScreen.helpSections2). Every runtime permission Sky Map declares
-      must appear here, labelled required or optional, with its grounds and — for optional
-      ones — the user\'s right to refuse.
+      everywhere). Each platform has its own key, chosen by permissionsNoticeResource:
+      permissions_notice (Android) and permissions_notice_ios. Each is rendered in two places, so
+      it is translated once: appended to the first-launch EULA screen, and included in the help
+      document as a permanent, re-readable copy (HelpScreen.helpSections2). Every runtime
+      permission a platform can ask for must appear in its own notice, labelled required or
+      optional, with its grounds and — for optional ones — the user\'s right to refuse. Keep
+      both in step with what each app really requests (iOS: Location only until it gains
+      notifications or a camera mode).
     -->
     <string name="permissions_notice" translation_description="Legally-required disclosure of the device permissions the app requests, why it requests them, and the user\'s right to refuse the optional ones. Shown on the first-launch terms screen and in Help. Please do not change the markup"><![CDATA[<h2>Permissões</h2>
 <p><b>O Sky Map não tem permissões obrigatórias.</b> Todas as permissões abaixo são opcionais — pode recusar qualquer uma delas e continuar a usar a aplicação. O Sky Map nunca pede permissões ao iniciar: cada permissão é solicitada apenas quando usa pela primeira vez a funcionalidade que a requer, e pode conceder ou retirar cada uma separadamente a qualquer momento em <b>Definições → Aplicações → Sky Map → Permissões</b> no seu dispositivo.</p>
@@ -30,4 +33,6 @@
 <p><b>O que é acedido:</b> permissão para mostrar notificações.</p>
 <p><b>Porquê:</b> para o informar sobre os picos de chuvas de meteoros e o que vale a pena ver esta noite, se o solicitar.</p>
 <p><b>Se recusar:</b> nada mais muda — estas notificações permanecem desativadas até as ativar.</p>]]></string>
+
+    <string name="permissions_notice_ios" translation_description="iOS version of the legally-required disclosure of the device permissions the app requests: only location, which is optional. Shown on the first-launch terms screen and in Help. Please do not change the markup"><![CDATA[<h2>Permissões</h2> <p><b>O Sky Map não tem permissões obrigatórias.</b> A única permissão abaixo é opcional — você pode recusá-la e ainda assim usar o aplicativo. O Sky Map a solicita uma vez, após você aceitar estes termos, porque desenhar o céu exige saber onde você está. Você pode concedê-la ou retirá-la a qualquer momento em <b>Ajustes → Sky Map</b> no seu dispositivo.</p> <h3>Localização — opcional</h3> <p><b>O que é acessado:</b> sua localização aproximada.</p> <p><b>Por quê:</b> quais estrelas estão acima de você dependem de onde você está, portanto o Sky Map usa sua localização aproximada para desenhar o céu correto.</p> <p><b>Se você recusar:</b> você pode digitar o nome de um lugar ou coordenadas em vez disso, e todo o aplicativo continua funcionando.</p> <blockquote>Sua localização é usada no seu dispositivo para desenhar o céu. A imagem do mapa na tela de localização envia uma versão arredondada dela para o Geoapify, um serviço de mapas (consulte a política de privacidade).</blockquote>]]></string>
 </resources>
