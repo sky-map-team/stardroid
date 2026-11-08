@@ -31,19 +31,33 @@ Apply any filters the user provides:
 - **Language** — pass as `language` (BCP-47 code)
 - **Date range** — pass as `startDate`/`endDate` for historical reviews; filter client-side by `review.lastModified` for live reviews
 
-### Historical reviews (CSV dumps)
+### Historical reviews (GCS bucket)
 
 If the user asks for reviews **older than what the Play API returns** (typically ~7 days), or
-explicitly references "historical" / "old" reviews, **read the CSV files directly** — this is
-faster and more flexible than the MCP server's `list_historical_reviews` (which is redundant).
+explicitly references "historical" / "old" reviews, fetch the monthly CSV exports from the Play
+Console bucket with `gsutil` (already authenticated on the maintainer's machine):
 
-CSV files live at `~/Code/production/stardroidreviews/reviews/` and are named
-`reviews_com.google.android.stardroid_YYYYMM.csv`. Use `grep`, `find`, or direct file reads to
-filter by date range, keyword, star rating, language, etc.
+```bash
+BUCKET=gs://pubsite_prod_rev_10977061519360116830/reviews
+gsutil ls $BUCKET/                       # one file per month, ..._YYYYMM.csv
+mkdir -p /tmp/skymap-reviews
+gsutil cp $BUCKET/reviews_com.google.android.stardroid_202610.csv /tmp/skymap-reviews/
+```
 
-**Caveat:** The CSV is a static snapshot. Reply status reflects the export time — replies posted
-after the CSV was generated will not appear, so some "unanswered" results may already have
-replies. Treat results as candidates and note this limitation to the user.
+- **When the user says "download" reviews**, copy the requested month(s) (or all, if asked) into
+  `/tmp/skymap-reviews/` and **reply with the downloaded file names/paths** — don't dump contents
+  unless asked. Use `gsutil -m cp` with a wildcard for ranges, e.g. `..._2026*.csv`.
+- To analyse, `grep`/read the downloaded CSVs to filter by date, keyword, star rating, language.
+  Check `file` first — Play exports can be UTF-16; convert with `iconv -f UTF-16 -t UTF-8` if so.
+- Columns of interest: `Review Text`, `Star Rating`, `Reviewer Language`, `Developer Reply Text`
+  (empty = unanswered) and `Review Link`, whose `reviewId=` query parameter is the ID
+  `reply_to_review` needs. Reviewer names are **not** in the CSV, so don't promise to thank by name.
+- This replaces the MCP `list_historical_reviews` and the old local
+  `~/Code/production/stardroidreviews/` copy.
+
+**Caveat:** Each CSV is a snapshot refreshed by Play (the current month changes). Reply status
+reflects the export time, so some "unanswered" results may already have replies. Treat results as
+candidates and note this limitation to the user.
 
 ---
 
