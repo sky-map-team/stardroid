@@ -92,7 +92,7 @@ class MoonWidget : GlanceAppWidget() {
  */
 @Composable
 private fun MoonWidgetContent(
-    model: MoonWidgetModel?,
+    model: MoonWidgetModel,
     now: Instant,
     context: Context,
 ) {
@@ -104,7 +104,7 @@ private fun MoonWidgetContent(
 
 @Composable
 private fun CompactMoonWidget(
-    model: MoonWidgetModel?,
+    model: MoonWidgetModel,
     context: Context,
 ) {
     Column(
@@ -112,7 +112,6 @@ private fun CompactMoonWidget(
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalAlignment = Alignment.CenterVertically,
     ) {
-        if (model == null) return@Column
         Image(
             provider = ImageProvider(moonDisc(model, COMPACT_DISC_SIZE_PX)),
             contentDescription = context.getString(phaseNameRes(model.phase)),
@@ -161,7 +160,7 @@ private fun moonDisc(
 
 @Composable
 private fun FullMoonWidget(
-    model: MoonWidgetModel?,
+    model: MoonWidgetModel,
     now: Instant,
     context: Context,
 ) {
@@ -170,7 +169,6 @@ private fun FullMoonWidget(
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalAlignment = Alignment.CenterVertically,
     ) {
-        if (model == null) return@Column
         Image(
             provider = ImageProvider(moonDisc(model, DISC_SIZE_PX)),
             contentDescription = context.getString(phaseNameRes(model.phase)),

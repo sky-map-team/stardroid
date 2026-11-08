@@ -100,8 +100,8 @@ import org.jetbrains.compose.resources.stringResource
  *
  * [onNavigate] handles the links that leave Help. The two that don't — the widget catalogue
  * and in-document anchors — are handled here. [widgetsSheet] is the catalogue, which only
- * Android has: null (iOS, or Android with the widgets gated off) leaves its links inert rather
- * than opening an empty sheet.
+ * Android has: null (iOS) leaves its links inert rather than opening an empty
+ * sheet.
  *
  * Shared by both apps (D134).
  */

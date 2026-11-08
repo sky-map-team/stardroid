@@ -101,10 +101,6 @@ fun MapRoute(
     // flips off mid-flight: the entry points simply stop being offered.
     val cameraArEnabled = experimentConfig.isEnabled(Experiment.CAMERA_AR)
     val shareEnabled = experimentConfig.isEnabled(Experiment.SHARE_SKY)
-    // Not remember()-cached: RemoteConfigExperimentConfig is one long-lived instance
-    // whose isEnabled() answer changes asynchronously once fetchAndActivate() completes,
-    // so keying a cache on the instance itself would never invalidate. Read fresh every
-    // recomposition, like the sibling flags above.
     var showWidgetsSheet by rememberSaveable { mutableStateOf(false) }
     val context = LocalContext.current
     val scope = rememberCoroutineScope()

@@ -142,9 +142,8 @@ class ObjectInfoViewModel(
     val live: StateFlow<CardLive?> = _live.asStateFlow()
 
     /**
-     * How the Moon card shows its add-a-widget row (D75 discovery): only on the Moon. The row is permanent — there is no
-     * dismissal — but it recedes to [MoonWidgetPromo.PLACED] once a moon widget exists, so it
-     * stops pitching to someone who already took the offer.
+     * The Moon card's add-a-widget row (D75 discovery): Moon only, never dismissed, but it
+     * recedes to [MoonWidgetPromo.PLACED] once a moon widget exists.
      */
     val moonWidgetPromo: StateFlow<MoonWidgetPromo> =
         _card

@@ -41,7 +41,7 @@ data class WidgetOffer(
     val receiver: Class<*>,
 )
 
-/** The widgets on offer, in the order they were built. */
+/** The widgets on offer, in display order. */
 val widgetOffers: List<WidgetOffer> =
     listOf(
         WidgetOffer(

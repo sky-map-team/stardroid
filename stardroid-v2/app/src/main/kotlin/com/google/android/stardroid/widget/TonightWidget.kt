@@ -126,7 +126,7 @@ class TonightWidgetReceiver : GlanceAppWidgetReceiver() {
  */
 @Composable
 private fun TonightContent(
-    sky: TonightSky?,
+    sky: TonightSky,
     context: Context,
     banner: WidgetBanner?,
 ) {
@@ -141,7 +141,6 @@ private fun TonightContent(
         // half-empty box; the provider info lets users resize down to one row.
         verticalAlignment = Alignment.CenterVertically,
     ) {
-        if (sky == null) return@Column
         HeaderRow(sky, context)
         banner?.let { AnnouncementRow(it) }
         if (sky.highlights.isEmpty()) {

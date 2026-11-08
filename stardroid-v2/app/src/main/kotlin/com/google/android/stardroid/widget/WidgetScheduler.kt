@@ -43,7 +43,6 @@ object WidgetScheduler {
     internal const val MIDNIGHT_WORK_NAME = "widget_midnight_refresh"
     internal const val REFRESH_ONCE_WORK_NAME = "widget_refresh_once"
 
-    /** All widget receivers, for instance counting. */
     private val RECEIVERS =
         listOf(
             MoonWidgetReceiver::class.java,
@@ -144,7 +143,7 @@ class WidgetClockChangeReceiver : BroadcastReceiver() {
     }
 }
 
-/** Recomputes and redraws every placed instance; the flag checks live in `provideGlance`. */
+/** Recomputes and redraws every placed instance. */
 class WidgetRefreshWorker(
     context: Context,
     parameters: WorkerParameters,
