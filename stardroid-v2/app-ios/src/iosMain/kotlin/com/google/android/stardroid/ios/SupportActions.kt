@@ -15,8 +15,7 @@ import platform.UIKit.UIApplication
 // The site, not a store page, as on Android: it links both stores.
 internal const val SHARE_LINK = "https://getskymap.app"
 
-// The App Store's own write-a-review page for Open Sky Map (Apple ID 6813336040). Opened only
-// on a tap, so nobody is screened by how they rate.
+// Apple's write-a-review page for Open Sky Map (App Store ID 6813336040).
 private const val WRITE_REVIEW_URL = "https://apps.apple.com/app/id6813336040?action=write-review"
 
 internal fun openReviewPage() {
