@@ -27,6 +27,8 @@ ASSET_ROOT = MODULE_ROOT / "app" / "src" / "main"
 SHARED_RES_ROOT = MODULE_ROOT / "shared" / "ui" / "src" / "commonMain" / "res"
 # The iOS app's image assets (the app icon), listed by their path from stardroid-v2/.
 IOS_ASSET_ROOT = MODULE_ROOT / "ios" / "SkyMap" / "Sources" / "Assets.xcassets"
+# iOS-only bundled images (the release splash portrait).
+IOS_RESOURCES_ROOT = MODULE_ROOT / "ios" / "SkyMap" / "Resources"
 
 # Directories holding licensable artwork. Selected by directory rather than by file
 # extension because the launcher icon and every UI glyph are `.xml` vector drawables — an
@@ -150,6 +152,7 @@ def main() -> int:
     rules = load_rules(MANIFEST)
     assets = discover_assets(ASSET_ROOT) + discover_shared_assets(SHARED_RES_ROOT)
     assets += discover_ios_assets(IOS_ASSET_ROOT)
+    assets += discover_ios_assets(IOS_RESOURCES_ROOT)
 
     if not assets:
         print(f"error: no assets discovered under {ASSET_ROOT}", file=sys.stderr)

@@ -52,6 +52,10 @@ assets/welcome/welcome_sky_bg.webp
 # the SVG masters in tools/icons/dso/ are reserved too and carry their own notice.
 assets/catalog/icons/*.webp
 
+# iOS version-banner portrait. iOS names its releases independently of Android, so it has its
+# own file, not assets/splash/splash.png. A personal photograph, copyright the maintainer
+# (GDC, 2.0.0); All Rights Reserved.
+ios/SkyMap/Resources/splash/splash.png
 
 [gpl]
 # Functional UI artwork drawn for Sky Map and released under GPLv3 with the source.
