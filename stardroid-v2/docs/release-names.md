@@ -61,7 +61,7 @@ in `ios/SkyMap/project.yml`.
 | Icon | Name | First released | Subject |
 |---|---|---|---|
 | — | **Izzie** | _planned (second iOS release)_ | _To be written._ |
-| — | **GDC** | _unreleased (2.0.0)_ | _To be written._ |
+| <img src="../assets/release-icons/2.0.0_gdc_icon.png" width="40" alt="GDC" /> | **GDC** | _unreleased (2.0.0)_ | _To be written._ |
 
 ### v1
 

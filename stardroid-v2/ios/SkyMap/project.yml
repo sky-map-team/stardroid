@@ -35,8 +35,9 @@ targets:
       - path: ../../app/src/main/assets/welcome
         type: folder
         buildPhase: resources
-      # The version banner's release portrait (rememberAssetBitmap).
-      - path: ../../app/src/main/assets/splash
+      # The version banner's release portrait (rememberAssetBitmap). iOS's own, not Android's:
+      # the two platforms name their releases independently.
+      - path: Resources/splash
         type: folder
         buildPhase: resources
       # The calibration screen's figure-eight animation (FigureEightAnimation).
