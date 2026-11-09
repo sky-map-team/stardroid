@@ -132,9 +132,12 @@ class CoreMotionOrientationSource(
                 }
             }.conflate()
 
+    private val trueNorthAvailable: Boolean by lazy {
+        CMMotionManager.availableAttitudeReferenceFrames() and
+            CMAttitudeReferenceFrameXTrueNorthZVertical != 0uL
+    }
+
     private fun referenceFrame(trueNorth: Boolean): CMAttitudeReferenceFrame {
-        val frames = CMMotionManager.availableAttitudeReferenceFrames()
-        val trueNorthAvailable = frames and CMAttitudeReferenceFrameXTrueNorthZVertical != 0uL
         return if (trueNorth && trueNorthAvailable) {
             CMAttitudeReferenceFrameXTrueNorthZVertical
         } else {
@@ -157,7 +160,12 @@ class CoreMotionOrientationSource(
                         motion.magneticField.useContents {
                             SensorReading(
                                 accuracy = calibration(accuracy),
-                                values = listOf(field.x, field.y, field.z).map { it.toFloat() },
+                                values =
+                                    listOf(
+                                        field.x.toFloat(),
+                                        field.y.toFloat(),
+                                        field.z.toFloat(),
+                                    ),
                             )
                         }
                     val nanos = (motion.timestamp * NANOS_PER_SECOND).toLong()

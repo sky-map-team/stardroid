@@ -16,6 +16,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.SnackbarHostState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -36,6 +37,7 @@ import androidx.compose.ui.window.ComposeUIViewController
 import com.google.android.stardroid.analytics.Analytics
 import com.google.android.stardroid.catalog.ObjectInfo
 import com.google.android.stardroid.catalog.SearchHit
+import com.google.android.stardroid.satellites.SatelliteDiagnosticsState
 import com.google.android.stardroid.startup.Experiment
 import com.google.android.stardroid.startup.ExperimentConfig
 import com.google.android.stardroid.startup.FlagSource
@@ -44,6 +46,7 @@ import com.google.android.stardroid.ui.calibration.CompassCalibrationViewModel
 import com.google.android.stardroid.ui.common.formattedStringResource
 import com.google.android.stardroid.ui.diagnostics.DiagnosticsScreen
 import com.google.android.stardroid.ui.diagnostics.DiagnosticsViewModel
+import com.google.android.stardroid.ui.diagnostics.satelliteDiagnosticsSection
 import com.google.android.stardroid.ui.gallery.GalleryScreen
 import com.google.android.stardroid.ui.gallery.GalleryViewModel
 import com.google.android.stardroid.ui.help.HelpLink
@@ -90,7 +93,7 @@ fun skyMapViewController(
     tipStore: TipStore,
     flags: FlagSource,
 ): UIViewController {
-    val graph = IosAppGraph(analytics, flags)
+    val graph = sharedAppGraph(analytics, flags)
     val mapViewModel = graph.mapViewModel()
     val map = MapViewController(graph, mapViewModel)
     val startup = graph.startupViewModel()
@@ -123,6 +126,7 @@ fun skyMapViewController(
                 MotionHardware(graph.hasCompass, graph.hasAccelerometer, graph.hasGyroscope),
             tipStore = tipStore,
             experiments = graph.experiments,
+            satelliteDiagnostics = graph::satelliteDiagnostics,
         )
     }
 }
@@ -147,6 +151,7 @@ private fun SkyMapScreen(
     motionHardware: MotionHardware,
     tipStore: TipStore,
     experiments: ExperimentConfig,
+    satelliteDiagnostics: suspend () -> SatelliteDiagnosticsState?,
 ) {
     val nightMode by mapViewModel.nightMode.collectAsState()
     val gates by startup.state.collectAsState()
@@ -257,7 +262,13 @@ private fun SkyMapScreen(
                         },
                         onBack = ::back,
                     )
-                Page.DIAGNOSTICS ->
+                Page.DIAGNOSTICS -> {
+                    var satelliteState by remember {
+                        mutableStateOf<SatelliteDiagnosticsState?>(
+                            null,
+                        )
+                    }
+                    LaunchedEffect(Unit) { satelliteState = satelliteDiagnostics() }
                     DiagnosticsScreen(
                         diagnosticsViewModel,
                         nightMode = nightMode,
@@ -267,8 +278,10 @@ private fun SkyMapScreen(
                         onSendReport = { subject, body ->
                             sendDiagnosticsReport(supportEmail, subject, body)
                         },
+                        satelliteSection = satelliteState?.let { satelliteDiagnosticsSection(it) },
                         onOpenCalibration = { open(Page.CALIBRATION) },
                     )
+                }
                 Page.CALIBRATION, Page.CALIBRATION_PROMPT -> {
                     val calibrated = stringResource(Res.string.calibration_complete_toast)
                     CompassCalibrationScreen(

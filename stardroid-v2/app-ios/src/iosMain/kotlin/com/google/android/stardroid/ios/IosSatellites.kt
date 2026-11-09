@@ -17,7 +17,9 @@ import com.google.android.stardroid.data.satellites.SatelliteElementsRepository
 import com.google.android.stardroid.data.satellites.TextFiles
 import com.google.android.stardroid.data.satellites.TleStore
 import com.google.android.stardroid.data.satellites.UrlSessionCelesTrakClient
+import com.google.android.stardroid.satellites.SatelliteDiagnosticsState
 import com.google.android.stardroid.satellites.StaleSatelliteRefresh
+import com.google.android.stardroid.satellites.diagnostics
 import com.google.android.stardroid.satellites.trackSatelliteFetchResult
 import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock
@@ -43,6 +45,9 @@ internal class IosSatellites(
     private val staleRefresh = StaleSatelliteRefresh(repository, analytics, installOffset(files))
 
     private val refreshLock = Mutex()
+
+    /** Reads disk: call off the main thread. */
+    fun diagnostics(): SatelliteDiagnosticsState = repository.diagnostics()
 
     /** Blocks on the network: call off the main thread. */
     suspend fun refreshIfStale() {

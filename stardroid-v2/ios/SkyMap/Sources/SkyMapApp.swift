@@ -18,10 +18,12 @@ struct SkyMapApp: App {
     private let flags: FirebaseRemoteConfigAdapter
     private let tipStore = StoreKitTipStore()
     @State private var flagsReady = false
+    @Environment(\.scenePhase) private var scenePhase
 
     init() {
         // After the analytics adapter, which configures Firebase.
         flags = FirebaseRemoteConfigAdapter()
+        SatelliteRefreshTask.register(analytics: analytics, flags: flags)
     }
 
     var body: some Scene {
@@ -37,6 +39,9 @@ struct SkyMapApp: App {
                 }
             }
             .ignoresSafeArea()
+            .onChange(of: scenePhase) { phase in
+                if phase == .background { SatelliteRefreshTask.schedule() }
+            }
         }
     }
 }

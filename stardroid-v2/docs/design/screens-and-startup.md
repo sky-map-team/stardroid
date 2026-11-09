@@ -210,6 +210,12 @@ Behaviour changes found in review of the port, deliberately not made in it. None
 - Remote and bundled bitmaps are decoded on every composition entry; add a small LRU if the
   gallery flickers on device.
 
+## iOS compass calibration (measured)
+
+On an iPhone 13, Core Motion's calibration level stayed High even with a magnet held to the
+phone, and its heading stayed steady regardless, so the low-accuracy prompts should be rare on
+iOS.
+
 ## Testing
 
 Startup routing is the one genuinely fragile piece: `StartupRouterTest` ports with its cases

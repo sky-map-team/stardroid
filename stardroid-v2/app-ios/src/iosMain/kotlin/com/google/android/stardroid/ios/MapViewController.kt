@@ -35,8 +35,6 @@ import platform.CoreGraphics.CGSize
 import platform.Foundation.NSNotificationCenter
 import platform.Foundation.NSOperationQueue
 import platform.Foundation.NSProcessInfo
-import platform.Foundation.NSRunLoop
-import platform.Foundation.NSRunLoopCommonModes
 import platform.Foundation.NSSelectorFromString
 import platform.Metal.MTLCommandQueueProtocol
 import platform.Metal.MTLCreateSystemDefaultDevice
@@ -71,13 +69,9 @@ import kotlin.math.hypot
 import kotlin.math.min
 
 /**
- * The map: a Metal view drawing [MapViewModel]'s camera and render state and every layer's
- * scenes (through the shared [RenderBinder]), with drag, pinch and twist going to the ViewModel —
- * what Android's `MainActivity` wires around its GLSurfaceView.
- *
- * It draws on demand, as Android's surface does (RENDERMODE_WHEN_DIRTY, D23): the view is paused,
- * and redraws only when a scene, the camera or the render state changes, or while a label is still
- * fading — at most once per display refresh. A still sky costs nothing.
+ * The map: a Metal view drawing [MapViewModel]'s camera and every layer's scenes (through the
+ * shared [RenderBinder]), with gestures going to the ViewModel. Draws on demand, at most once per
+ * display refresh, as Android's RENDERMODE_WHEN_DIRTY surface does (D23).
  */
 @OptIn(ExperimentalForeignApi::class, BetaInteropApi::class)
 class MapViewController(
@@ -105,11 +99,7 @@ class MapViewController(
 
     val viewController: UIViewController = HostViewController()
 
-    /**
-     * Keeps [IosAppGraph.displayRotation] current. A 180° turn between the two landscapes keeps
-     * the view's size, so layout alone can miss it; the device-orientation notification is
-     * re-read after UIKit has updated the scene.
-     */
+    /** Keeps [IosAppGraph.displayRotation] current (layout alone misses a 180° turn). */
     private inner class HostViewController : UIViewController(nibName = null, bundle = null) {
         override fun viewDidLayoutSubviews() {
             super.viewDidLayoutSubviews()
@@ -122,12 +112,7 @@ class MapViewController(
         graph.displayRotation.rotation = DisplayRotation.from(scene.interfaceOrientation)
     }
 
-    /**
-     * The GPU drawing the sky, for the diagnostics screen's Graphics rows (Android reads its own
-     * from GL once its surface exists). The limits are Metal's, the same on every GPU iOS 15 runs
-     * on (A11 and later): 16384 px textures and 511 px points. Lines are triangles here, so there
-     * is no line width cap to report.
-     */
+    /** For Diagnostics' Graphics rows; the limits hold on every GPU iOS 15 runs on (A11+). */
     val rendererInfo: RendererInfo =
         RendererInfo(
             backend = "metal",
@@ -205,21 +190,18 @@ class MapViewController(
      * lets a label fade request frames faster than the display shows them, and each extra frame
      * then blocks the main thread waiting for a free drawable — starving the sensors' updates.
      */
-    private inner class FrameRequests : NSObject() {
+    private inner class FrameRequests {
         private var requested = false
-        private val link =
-            CADisplayLink.displayLinkWithTarget(this, NSSelectorFromString("tick:")).also {
-                it.paused = true
-                it.addToRunLoop(NSRunLoop.mainRunLoop, NSRunLoopCommonModes)
-            }
+        private val link = PausedDisplayLink(::tick)
 
         fun request() {
             requested = true
             link.paused = false
         }
 
-        @ObjCAction
-        fun tick(displayLink: CADisplayLink) {
+        private fun tick(
+            @Suppress("UNUSED_PARAMETER") displayLink: CADisplayLink,
+        ) {
             if (!requested) {
                 link.paused = true
                 return

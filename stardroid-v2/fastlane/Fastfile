@@ -71,7 +71,6 @@ platform :android do
   desc "Deploy to internal testing track"
   lane :internal do
     sync_version_code_from_play_store
-    sync_version_code_from_play_store
     increment_version_code
     build
     v_code = android_get_version_code(gradle_file: GRADLE_FILE)
@@ -231,21 +230,27 @@ platform :ios do
   ASC_KEY_PATH = ENV["APP_STORE_CONNECT_KEY_PATH"] ||
     File.expand_path("~/.appstoreconnect/private_keys/AuthKey_#{ASC_KEY_ID}.p8")
 
-  def asc_api_key
-    UI.user_error!("App Store Connect key not found at #{ASC_KEY_PATH}") unless File.exist?(ASC_KEY_PATH)
-    app_store_connect_api_key(
-      key_id: ASC_KEY_ID,
-      issuer_id: ASC_ISSUER_ID,
-      key_filepath: ASC_KEY_PATH,
-      in_house: false
-    )
+  private_lane :asc_api_key do
+    @asc_api_key ||= begin
+      UI.user_error!("App Store Connect key not found at #{ASC_KEY_PATH}") unless File.exist?(ASC_KEY_PATH)
+      app_store_connect_api_key(
+        key_id: ASC_KEY_ID,
+        issuer_id: ASC_ISSUER_ID,
+        key_filepath: ASC_KEY_PATH,
+        in_house: false
+      )
+    end
+  end
+
+  # The .xcodeproj is generated from project.yml and is not checked in.
+  def generate_project
+    sh("cd #{IOS_DIR} && xcodegen")
   end
 
   desc "Archive the Release build and export a signed App Store .ipa (build number: latest TestFlight build + 1)"
   lane :build do
     api_key = asc_api_key
-    # The .xcodeproj is generated from project.yml and is not checked in.
-    sh("cd #{IOS_DIR} && xcodegen")
+    generate_project
     version = File.read(File.join(IOS_DIR, "project.yml"))[/MARKETING_VERSION:\s*"([^"]+)"/, 1]
     UI.user_error!("MARKETING_VERSION not found in project.yml") unless version
     build_number = latest_testflight_build_number(
@@ -273,8 +278,7 @@ platform :ios do
        "(device:<CoreDevice id> or IOS_DEVICE_ID). Needs the device registered on the team."
   lane :device do |options|
     options ||= {}
-    asc_api_key
-    sh("cd #{IOS_DIR} && xcodegen")
+    generate_project
     build_app(
       project: IOS_PROJECT,
       scheme: "SkyMap",

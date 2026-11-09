@@ -20,6 +20,8 @@ final class FirebaseRemoteConfigAdapter: NSObject, SkyMapKit.FlagSource {
 
     private let remoteConfig: RemoteConfig?
     private var preparing = false
+    private var ready = false
+    private var waiting: [() -> Void] = []
 
     var canFetch: Bool { remoteConfig != nil }
 
@@ -29,16 +31,23 @@ final class FirebaseRemoteConfigAdapter: NSObject, SkyMapKit.FlagSource {
     }
 
     /// Calls `done` once the stored values are readable, or after a short wait if they are not,
-    /// because the flags are read once at launch and must not see a half-loaded config.
+    /// because the flags are read once at launch and must not see a half-loaded config. Safe to
+    /// call again (the background refresh and the first scene both do): later callers wait for,
+    /// or get, the same answer.
     func prepare(done: @escaping () -> Void) {
+        if ready {
+            done()
+            return
+        }
+        waiting.append(done)
         guard !preparing else { return }
         preparing = true
-        var finished = false
-        let finish = {
-            if !finished {
-                finished = true
-                done()
-            }
+        let finish = { [self] in
+            guard !ready else { return }
+            ready = true
+            let callbacks = waiting
+            waiting = []
+            callbacks.forEach { $0() }
         }
         guard let remoteConfig else {
             finish()

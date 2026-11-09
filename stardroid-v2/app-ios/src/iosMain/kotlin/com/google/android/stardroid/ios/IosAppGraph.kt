@@ -23,6 +23,7 @@ import com.google.android.stardroid.location.LocationController
 import com.google.android.stardroid.location.LocationSource
 import com.google.android.stardroid.location.LocationState
 import com.google.android.stardroid.render.api.RendererInfo
+import com.google.android.stardroid.satellites.SatelliteDiagnosticsState
 import com.google.android.stardroid.satellites.satelliteElementsFlow
 import com.google.android.stardroid.satellites.satelliteUiStatusFlow
 import com.google.android.stardroid.sensors.SensorConfig
@@ -82,12 +83,9 @@ import platform.UIKit.UIApplication
 import platform.UIKit.UIApplicationOpenSettingsURLString
 
 /**
- * The iOS app's object graph: what Android's Hilt modules and `CatalogAccess` provide, built by
- * hand. Everything here is shared code; only the platform edges are iOS's.
- *
- * The app's foreground drives location the way Android's activity `onStart`/`onStop` do. The
- * system location prompt shows once the EULA and the warm welcome are done, in place of Android's
- * rationale dialog; a refusal brings the shared permanently-denied dialog, as on Android.
+ * The iOS app's object graph: what Android's Hilt modules provide, built by hand. The foreground
+ * drives location as Android's `onStart`/`onStop` do; the system location prompt waits for the
+ * EULA and warm welcome, in place of Android's rationale dialog.
  */
 @OptIn(ExperimentalForeignApi::class)
 class IosAppGraph(
@@ -131,20 +129,16 @@ class IosAppGraph(
 
     private val satellites = IosSatellites("$supportDirectory/satellites", analytics)
 
-    /**
-     * The bundle's build number, which the startup gates compare as Android's versionCode. At
-     * least 1, the warm-welcome floor below: a tour seen at this build must clear it.
-     */
+    // The build number stands in for Android's versionCode in the startup gates; at least 1, the
+    // warm-welcome floor below.
     private val appVersion: Long =
         (
             (NSBundle.mainBundle.objectForInfoDictionaryKey("CFBundleVersion") as? String)
                 ?.toLongOrNull() ?: 1L
         ).coerceAtLeast(1L)
 
-    // Android's warm-welcome reset floor is one of its own versionCodes (the 2.0 beta), which
-    // re-showed the tour to v1-era testers. iOS has no history before its first build, and its
-    // build numbers are its own: against Android's floor, a tour seen at build 1 would count as
-    // never seen, and show at every launch. A floor of 1 shows it once.
+    // Android's floor is one of its own versionCodes; against it a tour seen at an iOS build
+    // number would count as never seen. A floor of 1 shows it once.
     private val startupRouter =
         StartupRouter(startupState, appVersion, warmWelcomeResetVersionCode = 1L)
 
@@ -154,16 +148,12 @@ class IosAppGraph(
             settings.nightMode,
             settings.autoDimness,
             foreground.isForeground,
-            MainScope(),
+            scope,
         )
 
     private val coreLocation = CoreLocationProvider()
 
-    /**
-     * The app's one motion manager, as Apple asks: the map's attitude, the diagnostics and
-     * calibration screens' sensors, and the welcome's sensor check (Android asks its
-     * SensorManager).
-     */
+    // Apple asks for one CMMotionManager per app.
     private val motionManager = CMMotionManager()
 
     val hasCompass: Boolean get() = motionManager.magnetometerAvailable
@@ -260,13 +250,13 @@ class IosAppGraph(
     }
 
     init {
-        MainScope().launch {
+        scope.launch {
             // Latest: going to the background cancels a start still waiting on the EULA.
             foreground.isForeground.collectLatest {
                 if (it) onStart() else locationController.stop()
             }
         }
-        MainScope().launch {
+        scope.launch {
             // Opening the app, and switching the layer on, both look for stale elements.
             combine(
                 foreground.isForeground,
@@ -276,6 +266,23 @@ class IosAppGraph(
                 .collect { if (it) refreshSatellitesIfStale() }
         }
     }
+
+    /**
+     * The system's background refresh slot ([SatelliteBackgroundRefresh]): the same conditions and
+     * policy as the foreground fetch, minus the staleness test, since the system picks the time.
+     */
+    internal suspend fun refreshSatellitesInBackground() {
+        if (!satellitesEnabled) return
+        if (!settings.satelliteDataEnabled.first()) return
+        if (!LayerRegistry.layerEnabled(settings, SatelliteLayer.LAYER_ID).first()) return
+        withContext(Dispatchers.IO) { satellites.refreshNow() }
+    }
+
+    internal val backgroundScope: CoroutineScope get() = scope
+
+    /** Satellite data status for the Diagnostics screen; null with the flag off. */
+    suspend fun satelliteDiagnostics(): SatelliteDiagnosticsState? =
+        if (satellitesEnabled) withContext(Dispatchers.IO) { satellites.diagnostics() } else null
 
     /**
      * Only for a user who switched the Satellites layer on (it starts off, so they choose to show
@@ -341,10 +348,7 @@ class IosAppGraph(
     fun startupViewModel(): StartupViewModel =
         StartupViewModel(startupRouter, startupState, analytics = analytics)
 
-    /**
-     * The layer rail and sheet. iOS has no notifications yet, so their alert rows stay hidden, as
-     * Android hides them with the experiment off; satellites follow their flag.
-     */
+    /** The layer rail and sheet; alert rows stay hidden until iOS has notifications. */
     fun layersViewModel(): LayersViewModel =
         LayersViewModel(
             settings,
@@ -398,12 +402,7 @@ class IosAppGraph(
             analytics = analytics,
         )
 
-    /**
-     * The settings screen. Core Motion's fused attitude is iOS's only sensor path, so the classic
-     * path's switches stay hidden, and so does magnetic correction: Core Motion already reports
-     * true north and the map applies a zero declination. The analytics opt-out shows, as on
-     * Android's gms flavor.
-     */
+    /** Core Motion is the only sensor path and already reports true north, so those rows hide. */
     fun settingsViewModel(): SettingsViewModel =
         SettingsViewModel(
             settings,
@@ -420,11 +419,7 @@ class IosAppGraph(
         CoreMotionStatusSource(motionManager, orientationSource.deviceMotion)
     }
 
-    /**
-     * The diagnostics screen, over Core Motion's raw sensors and the [map]'s camera and frame.
-     * Its magnetic correction row reads zero: Core Motion turns to true north itself, so the map
-     * applies no declination of its own (see [CoreMotionOrientationSource]).
-     */
+    /** Over Core Motion's raw sensors; the magnetic correction row reads zero by design. */
     fun diagnosticsViewModel(
         map: MapViewModel,
         rendererInfo: RendererInfo,
@@ -445,11 +440,7 @@ class IosAppGraph(
             analytics = analytics,
         )
 
-    /**
-     * The compass-calibration screen and the map's low-accuracy prompts, from Core Motion's
-     * calibration level. On an iPhone 13 it stayed High even with a magnet held to the phone,
-     * whose heading Core Motion kept steady regardless, so the prompts should be rare.
-     */
+    /** From Core Motion's calibration level; see screens-and-startup.md for the iPhone 13 measurement. */
     fun calibrationViewModel(): CompassCalibrationViewModel =
         CompassCalibrationViewModel(
             sensorStatus = sensorStatus,
