@@ -22,6 +22,8 @@ import com.google.android.stardroid.events.tonightSky
 import com.google.android.stardroid.satellites.tonightSatellitePasses
 import com.google.android.stardroid.settings.showerAlertsEnabled
 import com.google.android.stardroid.startup.Experiment
+import com.google.android.stardroid.surfaces.NotificationKind
+import com.google.android.stardroid.surfaces.NotificationPlanner
 import com.google.android.stardroid.widget.widgetEntryPoint
 import kotlinx.coroutines.flow.first
 import kotlinx.datetime.Clock
@@ -33,7 +35,6 @@ import kotlinx.datetime.plus
 import kotlinx.datetime.toInstant
 import kotlinx.datetime.toLocalDateTime
 import java.util.concurrent.TimeUnit
-import kotlin.time.Duration.Companion.minutes
 
 /**
  * The D77 posting pipeline, enforcing the one-notification-per-day contract: a daily
@@ -121,13 +122,12 @@ class NotificationPlannerWorker(
                 showers,
                 passes = tonightSatellitePasses(applicationContext, location, from = now),
             )
-        val wanted =
-            (showerAlerts && sky.showerPeakTonight != null) || (digest && sky.worthAnnouncing)
-        if (!wanted) {
+        val planned = NotificationPlanner.plan(now, sky, showerAlerts, digest)
+        if (planned == null) {
             Log.i(NotificationScheduler.TAG, "Quiet night — nothing to post")
             return Result.success()
         }
-        val postAt = maxOf((sky.sunset ?: now) + 30.minutes, now + 1.minutes)
+        val postAt = planned.fireAt
         Log.i(NotificationScheduler.TAG, "Arming poster for $postAt")
         NotificationScheduler.armPoster(
             applicationContext,
@@ -163,13 +163,24 @@ class NotificationPosterWorker(
                 showers,
                 passes = tonightSatellitePasses(applicationContext, location, from = now),
             )
-        val peak = sky.showerPeakTonight
-        if (settings.showerAlertsEnabled.first() && peak != null) {
-            Log.i(NotificationScheduler.TAG, "Posting shower alert: ${peak.shower.name}")
-            SkyNotifier.postShowerPeak(applicationContext, peak, location)
-        } else if (settings.tonightDigestEnabled.first() && sky.worthAnnouncing) {
-            Log.i(NotificationScheduler.TAG, "Posting tonight digest")
-            SkyNotifier.postDigest(applicationContext, sky)
+        val planned =
+            NotificationPlanner.plan(
+                now,
+                sky,
+                showerAlerts = settings.showerAlertsEnabled.first(),
+                digest = settings.tonightDigestEnabled.first(),
+            )
+        when (planned?.kind) {
+            NotificationKind.SHOWER_PEAK -> {
+                val peak = checkNotNull(planned.showerPeak)
+                Log.i(NotificationScheduler.TAG, "Posting shower alert: ${peak.shower.name}")
+                SkyNotifier.postShowerPeak(applicationContext, peak, location)
+            }
+            NotificationKind.TONIGHT_DIGEST -> {
+                Log.i(NotificationScheduler.TAG, "Posting tonight digest")
+                SkyNotifier.postDigest(applicationContext, sky)
+            }
+            null -> Unit
         }
         return Result.success()
     }

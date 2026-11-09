@@ -39,6 +39,7 @@ include(":shared:layers")
 include(":shared:viewmodels")
 include(":shared:testing")
 include(":shared:ui")
+include(":shared:surfaces")
 
 // iOS-only modules (D128)
 include(":render:metal")

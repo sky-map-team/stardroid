@@ -226,6 +226,14 @@ The Android scheduler then consumes the same planner output, so both platforms a
 frequency rules. That is the largest Android-side cost of the whole project, and it needs its
 own slice-by-slice review.
 
+**Slice 1 (built, 2.1.0 branch):** `shared/surfaces` holds `NotificationPlanner`, the decision
+of which alert is due tonight (shower peak, else digest, else nothing) and when it fires (30
+minutes after sunset, at least a minute from now). Android's planner and poster workers now call
+it, with no behaviour change; golden tests are in `NotificationPlannerTest`. Still to build, in
+order: `TextSource` and the move of the `notif_*`/`channel_*` strings into `shared/ui`; text
+building in `shared/surfaces`; the iOS scheduler over `UNUserNotificationCenter` with the
+replan triggers; the Settings and layer-option toggles with the permission prompt; deep links.
+
 ### 5.3 Kinds, permission and settings
 
 Same kinds as Android, same defaults (all **off**): shower peak, tonight digest, satellite pass
