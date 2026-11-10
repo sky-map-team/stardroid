@@ -644,4 +644,5 @@ Luminosité des lignes : normale, brillante ou très brillante, pour le crépusc
     </string>
     <string name="satellite_search_name_iss" translation_description="Common name of the International Space Station, matched when the user types it in search. Use the name people in this language actually type.">Station spatiale internationale</string>
     <string name="satellite_search_name_tiangong" translation_description="Common name of the Chinese Tiangong space station, matched when the user types it in search. Use the name people in this language actually type.">Station spatiale Tiangong</string>
+    <!-- tm:omitted name="diagnostics_section_satellites" reason="identical_to_source" -->
 </resources>

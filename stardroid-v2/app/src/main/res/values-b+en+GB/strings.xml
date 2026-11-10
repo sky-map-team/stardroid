@@ -41,7 +41,6 @@
     <!-- tm:omitted name="notif_eclipse_text" reason="identical_to_source" -->
     <!-- tm:omitted name="satellite_name_iss" reason="identical_to_source" -->
     <!-- tm:omitted name="satellite_name_tiangong" reason="identical_to_source" -->
-    <!-- tm:omitted name="satellite_description" reason="identical_to_source" -->
     <!-- tm:omitted name="tonight_satellite_pass" reason="identical_to_source" -->
 
     <!-- Long-press help for layers in the layer-visibility sheet. -->
@@ -73,14 +72,6 @@
 
     <!-- Settings screen (v1 wording where a v1 string existed) -->
 
-    <!-- tm:omitted name="diagnostics_section_satellites" reason="identical_to_source" -->
-    <!-- tm:omitted name="diagnostics_satellite_data" reason="identical_to_source" -->
-    <!-- tm:omitted name="diagnostics_satellite_data_none" reason="identical_to_source" -->
-    <!-- tm:omitted name="diagnostics_satellite_data_format" reason="identical_to_source" -->
-    <!-- tm:omitted name="diagnostics_satellite_last_fetch" reason="identical_to_source" -->
-    <!-- tm:omitted name="diagnostics_satellite_never_fetched" reason="identical_to_source" -->
-    <!-- tm:omitted name="diagnostics_satellite_circuit_open" reason="identical_to_source" -->
-    <!-- tm:omitted name="diagnostics_satellite_circuit_open_format" reason="identical_to_source" -->
 
     <!-- Compass calibration screen (slice 15) -->
 
@@ -151,7 +142,5 @@
     <!-- tm:omitted name="notif_shower_bright_moon" reason="identical_to_source" -->
     <!-- tm:omitted name="notif_digest_title" reason="identical_to_source" -->
     <!-- tm:omitted name="notif_action_mute_showers" reason="identical_to_source" -->
-    <!-- tm:omitted name="satellite_search_name_iss" reason="identical_to_source" -->
-    <!-- tm:omitted name="satellite_search_name_tiangong" reason="identical_to_source" -->
     <!-- tm:omitted name="tonight_trailing_pass_peak" reason="identical_to_source" -->
 </resources>
