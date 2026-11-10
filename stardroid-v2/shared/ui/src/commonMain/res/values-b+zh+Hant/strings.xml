@@ -553,4 +553,28 @@
     <string name="satellite_description" translation_description="Short description shown on the info card for an artificial satellite.">一顆位於低地球軌道的人造衛星，在漆黑天空中被陽光照亮。它在幾分鐘內穩定地橫越地平線，且不會閃爍。</string>
     <string name="satellite_search_name_iss" translation_description="Common name of the International Space Station, matched when the user types it in search. Use the name people in this language actually type.">國際太空站</string>
     <string name="satellite_search_name_tiangong" translation_description="Common name of the Chinese Tiangong space station, matched when the user types it in search. Use the name people in this language actually type.">天宮太空站</string>
+    <string name="notif_shower_title" translation_description="Title of the meteor-shower notification; %1$s is the shower name">%1$s 今晚極大期</string>
+    <string name="notif_shower_direction" translation_description="Notification sentence telling the user where to look; %1$s is a compass point like NE">午夜後最佳，朝 %1$s 方向觀看。</string>
+    <string name="notif_shower_dark_moon" translation_description="Notification sentence when the moon is dark during a meteor shower peak; %1$d is the expected meteors per hour">黑暗無月的夜空 — 遠離城市燈光，每小時預計可見多達 %1$d 顆流星。</string>
+    <string name="notif_shower_bright_moon" translation_description="Notification sentence when a bright moon will interfere with a meteor shower; %1$d is the moon illumination percentage, %2$d the meteors per hour under ideal skies">%1$d%% 月光會沖淡較暗的流星 — 在理想天空下，每小時最多可見 %2$d 顆。</string>
+    <string name="notif_digest_title" translation_description="Title of the tonight\'s-sky digest notification">今晚值得一看</string>
+    <string name="tonight_well_placed" translation_description="Tonight-widget row: a planet is high in the sky and easy to observe; %1$s is the planet name, %2$s the time from which it is well placed">%1$s 從 %2$s 開始位置良好</string>
+    <string name="tonight_shower_peak" translation_description="Tonight-widget row: a meteor shower reaches its annual peak tonight; %1$s is the shower name">%1$s 今晚達到高峰</string>
+    <string name="tonight_shower_days" translation_description="Tonight-widget row: a meteor shower peaks within a few days; %1$s is the shower name, %2$d the number of days">%1$s 在 %2$d 天內達到高峰</string>
+    <string name="tonight_new_moon" translation_description="Tonight-widget row shown at new moon">新月 — 本月最暗星空</string>
+    <string name="tonight_full_moon" translation_description="Tonight-widget row shown at full moon">今晚滿月</string>
+    <string name="tonight_bright_moon" translation_description="Tonight-widget row warning that a bright moon washes out faint objects">明亮的月亮遮蔽微弱天體</string>
+    <string name="moon_widget_set_time" translation_description="Widget fragment showing today\'s moonset time; %1$s is a clock time like 03:12">落下 %1$s</string>
+    <string name="sun">太陽</string>
+    <string name="moon">月球</string>
+    <string name="mercury">水星</string>
+    <string name="venus">金星</string>
+    <string name="earth">地球</string>
+    <string name="mars">火星</string>
+    <string name="jupiter">木星</string>
+    <string name="saturn">土星</string>
+    <string name="uranus">天王星</string>
+    <string name="neptune">海王星</string>
+    <string name="pluto">冥王星</string>
+    <!-- tm:omitted name="tonight_satellite_pass" reason="identical_to_source" -->
 </resources>

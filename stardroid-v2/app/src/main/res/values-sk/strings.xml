@@ -15,17 +15,6 @@
     <string name="ecliptic">Ekliptika</string>
 
     <!-- Solar-system body names, drawn as labels next to each body. -->
-    <string name="sun">Slnko</string>
-    <string name="moon">Mesiac</string>
-    <string name="mercury">Merkúr</string>
-    <string name="venus">Venuša</string>
-    <string name="earth">Zem</string>
-    <!-- tm:omitted name="mars" reason="identical_to_source" -->
-    <!-- tm:omitted name="jupiter" reason="identical_to_source" -->
-    <!-- tm:omitted name="saturn" reason="identical_to_source" -->
-    <string name="uranus">Urán</string>
-    <string name="neptune">Neptún</string>
-    <!-- tm:omitted name="pluto" reason="identical_to_source" -->
 
     <!-- Search (map-screen search dialog and overlay). -->
 
@@ -44,7 +33,6 @@
     <string name="notif_eclipse_text" translation_description="Body of the lunar eclipse notification, telling the user when it begins. %1$s is a time.">Začína sa okolo %1$s – oplatí sa vyjsť von</string>
     <string name="satellite_name_iss" translation_description="Display name for the International Space Station.">Medzinárodná vesmírna stanica</string>
     <!-- tm:omitted name="satellite_name_tiangong" reason="identical_to_source" -->
-    <!-- tm:omitted name="tonight_satellite_pass" reason="identical_to_source" -->
 
     <!-- Long-press help for layers in the layer-visibility sheet. -->
 
@@ -101,7 +89,6 @@
     <string name="moon_widget_description" translation_description="Description of the moon-phase widget, shown under its preview in the launcher\'s widget picker">Fáza Mesiaca, osvetlenie a časy východu a západu, aktualizované denne.</string>
     <!-- tm:omitted name="moon_widget_illumination_short" reason="identical_to_source" -->
     <string name="moon_widget_rise_time" translation_description="Widget fragment showing today\'s moonrise time; %1$s is a clock time like 17:42">vychádza %1$s</string>
-    <string name="moon_widget_set_time" translation_description="Widget fragment showing today\'s moonset time; %1$s is a clock time like 03:12">zapadá %1$s</string>
     <string name="moon_widget_time_day_offset" translation_description="Compact suffix appended after a widget rise/set time that falls on a later day than today, so a reader doesn\'t mistake it for today\'s crossing; %1$d is the number of days ahead (almost always 1). Keep it short — the widget is very narrow. Note the leading space.">+%1$d</string>
     <string name="moon_widget_promo_title" translation_description="Title of the row on the Moon\'s info card offering to add the moon-phase widget to the home screen">Majte Mesiac na domovskej obrazovke</string>
     <string name="moon_widget_promo_subtitle" translation_description="Subtitle of the row offering the moon-phase widget, summarizing what the widget shows">Fáza, osvetlenie a časy východu, aktualizované denne</string>
@@ -121,12 +108,6 @@
     <string name="tonight_widget_header" translation_description="Small header label on the tonight widget; %1$s is a short date like \'Wed 30 Jul\'">Dnes · %1$s</string>
     <string name="tonight_widget_sun_times" translation_description="Header line on the tonight widget; %1$s is the sunset time, %2$s the time the sky becomes fully dark">západ slnka %1$s · tma %2$s</string>
     <string name="tonight_widget_sunset_only" translation_description="Header fragment when only the sunset time is known; %1$s is the sunset time">západ slnka %1$s</string>
-    <string name="tonight_well_placed" translation_description="Tonight-widget row: a planet is high in the sky and easy to observe; %1$s is the planet name, %2$s the time from which it is well placed">%1$s dobre pozorovateľný od %2$s</string>
-    <string name="tonight_shower_peak" translation_description="Tonight-widget row: a meteor shower reaches its annual peak tonight; %1$s is the shower name">%1$s maximum dnes</string>
-    <string name="tonight_shower_days" translation_description="Tonight-widget row: a meteor shower peaks within a few days; %1$s is the shower name, %2$d the number of days">%1$s maximum o %2$d dní</string>
-    <string name="tonight_new_moon" translation_description="Tonight-widget row shown at new moon">Nov – najtmavšia obloha mesiaca</string>
-    <string name="tonight_full_moon" translation_description="Tonight-widget row shown at full moon">Spln dnes večer</string>
-    <string name="tonight_bright_moon" translation_description="Tonight-widget row warning that a bright moon washes out faint objects">Jasný Mesiac prekrýva slabé objekty</string>
     <string name="tonight_quiet" translation_description="Tonight-widget line shown when nothing notable is visible tonight">Pokojná obloha dnes večer</string>
     <string name="tonight_quiet_next" translation_description="Tonight-widget line under the quiet-night message; %1$s is an event name, %2$d the days until it">Ďalej: %1$s o %2$d dní</string>
     <string name="countdown_widget_label" translation_description="Name of the countdown home-screen widget, shown in the launcher\'s widget picker">Odpočítavanie oblohy</string>
@@ -151,15 +132,6 @@
     <string name="channel_showers_description" translation_description="Description of the meteor-shower notification channel in the system\'s notification settings">Približne tucet ročne, večer v deň vrcholu</string>
     <string name="channel_digest_name" translation_description="Name of the tonight-digest notification channel, shown in the system\'s notification settings">Prehľad dnešnej oblohy</string>
     <string name="channel_digest_description" translation_description="Description of the tonight-digest notification channel in the system\'s notification settings">Jeden večerný súhrn, vynechaný počas pokojných nocí</string>
-    <string name="notif_shower_title" translation_description="Title of the meteor-shower notification; %1$s is the shower name">Vrchol %1$s dnes večer</string>
-    <string name="notif_shower_direction" translation_description="Notification sentence telling the user where to look; %1$s is a compass point like NE">Najlepšie po polnoci, pri pohľade na %1$s.</string>
-    <string name="notif_shower_dark_moon" translation_description="Notification sentence when the moon is dark during a meteor shower peak; %1$d is the expected meteors per hour">
-    Tmavá obloha bez Mesiaca — očakávajte až %1$d meteorov za hodinu ďaleko od mestského svetla.
-    </string>
-    <string name="notif_shower_bright_moon" translation_description="Notification sentence when a bright moon will interfere with a meteor shower; %1$d is the moon illumination percentage, %2$d the meteors per hour under ideal skies">
-    Mesiac osvetlený na %1$d %% prekryje slabšie meteory — až %2$d za hodinu za ideálnych podmienok.
-    </string>
-    <string name="notif_digest_title" translation_description="Title of the tonight\'s-sky digest notification">Oplatí sa pozrieť dnes večer</string>
     <string name="notif_action_mute_showers" translation_description="Notification action button that opens the system toggle for the meteor-shower channel">Stlmiť roje</string>
     <!-- Layers sheet: per-layer parameters (D87). -->
     <string name="tonight_trailing_pass_peak" translation_description="Small trailing note on a satellite pass row. %1$d is the peak altitude in degrees, %2$.1f is a brightness magnitude.">Max. %1$d°, mag %2$.1f</string>

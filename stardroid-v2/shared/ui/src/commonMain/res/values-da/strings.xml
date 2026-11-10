@@ -627,4 +627,30 @@ Linjelysstyrke: normal, lys eller kraftigste, til skumring, dagslys eller lysfor
     </string>
     <string name="satellite_search_name_iss" translation_description="Common name of the International Space Station, matched when the user types it in search. Use the name people in this language actually type.">Den Internationale Rumstation</string>
     <string name="satellite_search_name_tiangong" translation_description="Common name of the Chinese Tiangong space station, matched when the user types it in search. Use the name people in this language actually type.">Tiangong-rumstationen</string>
+    <string name="notif_shower_title" translation_description="Title of the meteor-shower notification; %1$s is the shower name">%1$s topper i aften</string>
+    <string name="notif_shower_direction" translation_description="Notification sentence telling the user where to look; %1$s is a compass point like NE">Bedst efter midnat, kig mod %1$s.</string>
+    <string name="notif_shower_dark_moon" translation_description="Notification sentence when the moon is dark during a meteor shower peak; %1$d is the expected meteors per hour">Mørk, måneløs himmel — forvent op til %1$d meteorer i timen væk fra byens lys.</string>
+    <string name="notif_shower_bright_moon" translation_description="Notification sentence when a bright moon will interfere with a meteor shower; %1$d is the moon illumination percentage, %2$d the meteors per hour under ideal skies">
+    Den %1$d%%-oplyste måne vil udviske svagere meteorer — op til %2$d i timen under ideelle forhold.
+    </string>
+    <string name="notif_digest_title" translation_description="Title of the tonight\'s-sky digest notification">Værd at se i aften</string>
+    <string name="tonight_well_placed" translation_description="Tonight-widget row: a planet is high in the sky and easy to observe; %1$s is the planet name, %2$s the time from which it is well placed">%1$s er godt placeret fra kl. %2$s</string>
+    <string name="tonight_shower_peak" translation_description="Tonight-widget row: a meteor shower reaches its annual peak tonight; %1$s is the shower name">%1$s topper i aften</string>
+    <string name="tonight_shower_days" translation_description="Tonight-widget row: a meteor shower peaks within a few days; %1$s is the shower name, %2$d the number of days">%1$s topper om %2$d dage</string>
+    <string name="tonight_new_moon" translation_description="Tonight-widget row shown at new moon">Nymåne — månedens mørkeste himmel</string>
+    <string name="tonight_full_moon" translation_description="Tonight-widget row shown at full moon">Fuldmåne i aften</string>
+    <string name="tonight_bright_moon" translation_description="Tonight-widget row warning that a bright moon washes out faint objects">Lys måne udvisker svage objekter</string>
+    <string name="moon_widget_set_time" translation_description="Widget fragment showing today\'s moonset time; %1$s is a clock time like 03:12">går ned %1$s</string>
+    <string name="sun">Solen</string>
+    <string name="moon">Månen</string>
+    <string name="mercury">Merkur</string>
+    <string name="earth">Jorden</string>
+    <string name="neptune">Neptun</string>
+    <!-- tm:omitted name="tonight_satellite_pass" reason="identical_to_source" -->
+    <!-- tm:omitted name="venus" reason="identical_to_source" -->
+    <!-- tm:omitted name="mars" reason="identical_to_source" -->
+    <!-- tm:omitted name="jupiter" reason="identical_to_source" -->
+    <!-- tm:omitted name="saturn" reason="identical_to_source" -->
+    <!-- tm:omitted name="uranus" reason="identical_to_source" -->
+    <!-- tm:omitted name="pluto" reason="identical_to_source" -->
 </resources>

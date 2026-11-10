@@ -15,17 +15,6 @@
     <string name="ecliptic">Εκλειπτική</string>
 
     <!-- Solar-system body names, drawn as labels next to each body. -->
-    <string name="sun">Ήλιος</string>
-    <string name="moon">Σελήνη</string>
-    <string name="mercury">Ερμής</string>
-    <string name="venus">Αφροδίτη</string>
-    <string name="earth">Γη</string>
-    <string name="mars">Άρης</string>
-    <string name="jupiter">Δίας</string>
-    <string name="saturn">Κρόνος</string>
-    <string name="uranus">Ουρανός</string>
-    <string name="neptune">Ποσειδώνας</string>
-    <string name="pluto">Πλούτωνας</string>
 
     <!-- Search (map-screen search dialog and overlay). -->
 
@@ -44,7 +33,6 @@
     <string name="notif_eclipse_text" translation_description="Body of the lunar eclipse notification, telling the user when it begins. %1$s is a time.">Ξεκινάει γύρω στις %1$s — αξίζει να βγείτε έξω</string>
     <string name="satellite_name_iss" translation_description="Display name for the International Space Station.">Ο Διαστημικός Σταθμός</string>
     <!-- tm:omitted name="satellite_name_tiangong" reason="identical_to_source" -->
-    <!-- tm:omitted name="tonight_satellite_pass" reason="identical_to_source" -->
 
     <!-- Long-press help for layers in the layer-visibility sheet. -->
 
@@ -103,7 +91,6 @@
     </string>
     <!-- tm:omitted name="moon_widget_illumination_short" reason="identical_to_source" -->
     <string name="moon_widget_rise_time" translation_description="Widget fragment showing today\'s moonrise time; %1$s is a clock time like 17:42">ανατέλλει %1$s</string>
-    <string name="moon_widget_set_time" translation_description="Widget fragment showing today\'s moonset time; %1$s is a clock time like 03:12">δύει %1$s</string>
     <string name="moon_widget_time_day_offset" translation_description="Compact suffix appended after a widget rise/set time that falls on a later day than today, so a reader doesn\'t mistake it for today\'s crossing; %1$d is the number of days ahead (almost always 1). Keep it short — the widget is very narrow. Note the leading space.">+%1$d</string>
     <string name="moon_widget_promo_title" translation_description="Title of the row on the Moon\'s info card offering to add the moon-phase widget to the home screen">Κρατήστε τη Σελήνη στην αρχική σας οθόνη</string>
     <string name="moon_widget_promo_subtitle" translation_description="Subtitle of the row offering the moon-phase widget, summarizing what the widget shows">Φάση, φωτισμός και ώρες ανατολής, ενημερώνονται καθημερινά</string>
@@ -123,12 +110,6 @@
     <string name="tonight_widget_header" translation_description="Small header label on the tonight widget; %1$s is a short date like \'Wed 30 Jul\'">Απόψε · %1$s</string>
     <string name="tonight_widget_sun_times" translation_description="Header line on the tonight widget; %1$s is the sunset time, %2$s the time the sky becomes fully dark">ο ήλιος δύει %1$s · σκοτάδι %2$s</string>
     <string name="tonight_widget_sunset_only" translation_description="Header fragment when only the sunset time is known; %1$s is the sunset time">ο ήλιος δύει %1$s</string>
-    <string name="tonight_well_placed" translation_description="Tonight-widget row: a planet is high in the sky and easy to observe; %1$s is the planet name, %2$s the time from which it is well placed">%1$s σε καλή θέση από %2$s</string>
-    <string name="tonight_shower_peak" translation_description="Tonight-widget row: a meteor shower reaches its annual peak tonight; %1$s is the shower name">κορύφωση %1$s απόψε</string>
-    <string name="tonight_shower_days" translation_description="Tonight-widget row: a meteor shower peaks within a few days; %1$s is the shower name, %2$d the number of days">κορύφωση %1$s σε %2$d ημέρες</string>
-    <string name="tonight_new_moon" translation_description="Tonight-widget row shown at new moon">Νέα Σελήνη — οι πιο σκοτεινοί ουρανοί του μήνα</string>
-    <string name="tonight_full_moon" translation_description="Tonight-widget row shown at full moon">Πανσέληνος απόψε</string>
-    <string name="tonight_bright_moon" translation_description="Tonight-widget row warning that a bright moon washes out faint objects">Η φωτεινή σελήνη επισκιάζει τα αμυδρά αντικείμενα</string>
     <string name="tonight_quiet" translation_description="Tonight-widget line shown when nothing notable is visible tonight">Ήσυχος ουρανός απόψε</string>
     <string name="tonight_quiet_next" translation_description="Tonight-widget line under the quiet-night message; %1$s is an event name, %2$d the days until it">Επόμενο: %1$s σε %2$d ημέρες</string>
     <string name="countdown_widget_label" translation_description="Name of the countdown home-screen widget, shown in the launcher\'s widget picker">Αντίστροφη μέτρηση ουρανού</string>
@@ -153,15 +134,6 @@
     <string name="channel_showers_description" translation_description="Description of the meteor-shower notification channel in the system\'s notification settings">Περίπου δώδεκα τον χρόνο, το βράδυ της κορύφωσης</string>
     <string name="channel_digest_name" translation_description="Name of the tonight-digest notification channel, shown in the system\'s notification settings">Περίληψη του ουρανού απόψε</string>
     <string name="channel_digest_description" translation_description="Description of the tonight-digest notification channel in the system\'s notification settings">Μία βραδινή περίληψη, παραλείπεται τις ήσυχες νύχτες</string>
-    <string name="notif_shower_title" translation_description="Title of the meteor-shower notification; %1$s is the shower name">Κορύφωση %1$s απόψε</string>
-    <string name="notif_shower_direction" translation_description="Notification sentence telling the user where to look; %1$s is a compass point like NE">Καλύτερα μετά τα μεσάνυχτα, κοιτάζοντας %1$s.</string>
-    <string name="notif_shower_dark_moon" translation_description="Notification sentence when the moon is dark during a meteor shower peak; %1$d is the expected meteors per hour">
-    Σκοτεινοί, χωρίς φεγγάρι ουρανοί — αναμένετε έως και %1$d μετέωρα την ώρα μακριά από τα φώτα της πόλης.
-    </string>
-    <string name="notif_shower_bright_moon" translation_description="Notification sentence when a bright moon will interfere with a meteor shower; %1$d is the moon illumination percentage, %2$d the meteors per hour under ideal skies">
-    Το %1$d%% φωτισμένο φεγγάρι θα επισκιάσει τα αμυδρότερα μετέωρα — έως και %2$d την ώρα υπό ιδανικούς ουρανούς.
-    </string>
-    <string name="notif_digest_title" translation_description="Title of the tonight\'s-sky digest notification">Αξίζει μια ματιά απόψε</string>
     <string name="notif_action_mute_showers" translation_description="Notification action button that opens the system toggle for the meteor-shower channel">Σίγαση βροχών</string>
     <!-- Layers sheet: per-layer parameters (D87). -->
     <string name="tonight_trailing_pass_peak" translation_description="Small trailing note on a satellite pass row. %1$d is the peak altitude in degrees, %2$.1f is a brightness magnitude.">Μέγ. %1$d°, μέγ. φωτ. %2$.1f</string>

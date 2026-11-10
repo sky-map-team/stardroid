@@ -15,17 +15,6 @@
     <string name="ecliptic">단주기 혜성</string>
 
     <!-- Solar-system body names, drawn as labels next to each body. -->
-    <string name="sun">태양</string>
-    <string name="moon">달</string>
-    <string name="mercury">수성</string>
-    <string name="venus">금성</string>
-    <string name="earth">지구</string>
-    <string name="mars">화성</string>
-    <string name="jupiter">목성</string>
-    <string name="saturn">토성</string>
-    <string name="uranus">천왕성</string>
-    <string name="neptune">해왕성</string>
-    <string name="pluto">명왕성</string>
 
     <!-- Search (map-screen search dialog and overlay). -->
 
@@ -44,7 +33,6 @@
     <string name="notif_eclipse_text" translation_description="Body of the lunar eclipse notification, telling the user when it begins. %1$s is a time.">약 %1$s에 시작됩니다 — 밖에 나가 볼 가치가 있습니다</string>
     <string name="satellite_name_iss" translation_description="Display name for the International Space Station.">국제 우주 정거장</string>
     <string name="satellite_name_tiangong" translation_description="Display name for the Chinese space station Tiangong.">톈궁</string>
-    <!-- tm:omitted name="tonight_satellite_pass" reason="identical_to_source" -->
 
     <!-- Long-press help for layers in the layer-visibility sheet. -->
 
@@ -101,7 +89,6 @@
     <string name="moon_widget_description" translation_description="Description of the moon-phase widget, shown under its preview in the launcher\'s widget picker">달의 위상, 밝기, 뜨고 지는 시간. 매일 업데이트됩니다.</string>
     <!-- tm:omitted name="moon_widget_illumination_short" reason="identical_to_source" -->
     <string name="moon_widget_rise_time" translation_description="Widget fragment showing today\'s moonrise time; %1$s is a clock time like 17:42">%1$s에 뜸</string>
-    <string name="moon_widget_set_time" translation_description="Widget fragment showing today\'s moonset time; %1$s is a clock time like 03:12">%1$s에 짐</string>
     <string name="moon_widget_time_day_offset" translation_description="Compact suffix appended after a widget rise/set time that falls on a later day than today, so a reader doesn\'t mistake it for today\'s crossing; %1$d is the number of days ahead (almost always 1). Keep it short — the widget is very narrow. Note the leading space.">+%1$d일</string>
     <string name="moon_widget_promo_title" translation_description="Title of the row on the Moon\'s info card offering to add the moon-phase widget to the home screen">홈 화면에 달을 유지하세요</string>
     <string name="moon_widget_promo_subtitle" translation_description="Subtitle of the row offering the moon-phase widget, summarizing what the widget shows">위상, 밝기, 뜨는 시간. 매일 업데이트됩니다</string>
@@ -117,12 +104,6 @@
     <string name="tonight_widget_header" translation_description="Small header label on the tonight widget; %1$s is a short date like \'Wed 30 Jul\'">오늘 밤 · %1$s</string>
     <string name="tonight_widget_sun_times" translation_description="Header line on the tonight widget; %1$s is the sunset time, %2$s the time the sky becomes fully dark">해넘이 %1$s · 어둠 %2$s</string>
     <string name="tonight_widget_sunset_only" translation_description="Header fragment when only the sunset time is known; %1$s is the sunset time">해넘이 %1$s</string>
-    <string name="tonight_well_placed" translation_description="Tonight-widget row: a planet is high in the sky and easy to observe; %1$s is the planet name, %2$s the time from which it is well placed">%1$s %2$s부터 잘 보임</string>
-    <string name="tonight_shower_peak" translation_description="Tonight-widget row: a meteor shower reaches its annual peak tonight; %1$s is the shower name">%1$s 오늘 밤 극대</string>
-    <string name="tonight_shower_days" translation_description="Tonight-widget row: a meteor shower peaks within a few days; %1$s is the shower name, %2$d the number of days">%1$s %2$d일 후 극대</string>
-    <string name="tonight_new_moon" translation_description="Tonight-widget row shown at new moon">신월 — 한 달 중 가장 어두운 밤하늘</string>
-    <string name="tonight_full_moon" translation_description="Tonight-widget row shown at full moon">오늘 밤 보름달</string>
-    <string name="tonight_bright_moon" translation_description="Tonight-widget row warning that a bright moon washes out faint objects">밝은 달이 희미한 물체를 가립니다</string>
     <string name="tonight_quiet" translation_description="Tonight-widget line shown when nothing notable is visible tonight">오늘 밤 조용한 하늘</string>
     <string name="tonight_quiet_next" translation_description="Tonight-widget line under the quiet-night message; %1$s is an event name, %2$d the days until it">다음: %2$d일 후 %1$s</string>
     <string name="countdown_widget_label" translation_description="Name of the countdown home-screen widget, shown in the launcher\'s widget picker">하늘 카운트다운</string>
@@ -147,11 +128,6 @@
     <string name="channel_showers_description" translation_description="Description of the meteor-shower notification channel in the system\'s notification settings">매년 약 12회, 극대기 저녁에 알림</string>
     <string name="channel_digest_name" translation_description="Name of the tonight-digest notification channel, shown in the system\'s notification settings">오늘 밤 하늘 요약</string>
     <string name="channel_digest_description" translation_description="Description of the tonight-digest notification channel in the system\'s notification settings">저녁 요약 1회, 조용한 밤에는 건너뜀</string>
-    <string name="notif_shower_title" translation_description="Title of the meteor-shower notification; %1$s is the shower name">오늘 밤 %1$s 극대기</string>
-    <string name="notif_shower_direction" translation_description="Notification sentence telling the user where to look; %1$s is a compass point like NE">자정 이후 %1$s 방향에서 가장 잘 보입니다.</string>
-    <string name="notif_shower_dark_moon" translation_description="Notification sentence when the moon is dark during a meteor shower peak; %1$d is the expected meteors per hour">어둡고 달 없는 하늘 — 도시 불빛에서 멀리 떨어진 곳에서는 시간당 최대 %1$d개의 유성을 기대할 수 있습니다.</string>
-    <string name="notif_shower_bright_moon" translation_description="Notification sentence when a bright moon will interfere with a meteor shower; %1$d is the moon illumination percentage, %2$d the meteors per hour under ideal skies">%1$d%% 밝기의 달이 희미한 유성을 가릴 것입니다 — 이상적인 하늘에서는 시간당 최대 %2$d개.</string>
-    <string name="notif_digest_title" translation_description="Title of the tonight\'s-sky digest notification">오늘 밤 볼 가치가 있습니다</string>
     <string name="notif_action_mute_showers" translation_description="Notification action button that opens the system toggle for the meteor-shower channel">유성우 알림 끄기</string>
     <!-- Layers sheet: per-layer parameters (D87). -->
     <string name="tonight_trailing_pass_peak" translation_description="Small trailing note on a satellite pass row. %1$d is the peak altitude in degrees, %2$.1f is a brightness magnitude.">최고 고도 %1$d°, 등급 %2$.1f</string>

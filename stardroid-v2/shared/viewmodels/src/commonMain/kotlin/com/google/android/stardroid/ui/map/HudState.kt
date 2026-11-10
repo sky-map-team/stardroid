@@ -9,6 +9,7 @@
 
 package com.google.android.stardroid.ui.map
 
+import com.google.android.stardroid.math.compassPointIndex
 import com.google.android.stardroid.math.normalizeDegrees
 import kotlin.math.floor
 import kotlin.math.hypot
@@ -62,8 +63,7 @@ object HudFormats {
      * Index into the 16-point compass rose (N at 0, then NNE… every 22.5°) for the cardinal
      * suffix on the azimuth row.
      */
-    fun cardinalIndex(azDeg: Double): Int =
-        (normalizeDegrees(azDeg) / DEGREES_PER_CARDINAL).roundToInt() % CARDINAL_COUNT
+    fun cardinalIndex(azDeg: Double): Int = compassPointIndex(azDeg)
 
     /**
      * Whether the correction row shows (D65: strictly hidden at zero). The threshold soaks
@@ -90,7 +90,6 @@ object HudFormats {
     private const val MINUTES_PER_HOUR = 60
     private const val HOURS_PER_DAY = 24
     private const val DEGREES_PER_TURN = 360
-    private const val DEGREES_PER_CARDINAL = 22.5
     const val CARDINAL_COUNT = 16
     private const val CORRECTION_VISIBLE_DEG = 0.05
     private const val FINE_FOV_THRESHOLD_DEG = 10.0

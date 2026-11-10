@@ -625,4 +625,32 @@
     </string>
     <string name="satellite_search_name_iss" translation_description="Common name of the International Space Station, matched when the user types it in search. Use the name people in this language actually type.">Міжнародна космічна станція</string>
     <string name="satellite_search_name_tiangong" translation_description="Common name of the Chinese Tiangong space station, matched when the user types it in search. Use the name people in this language actually type.">Космічна станція «Тяньгун»</string>
+    <string name="notif_shower_title" translation_description="Title of the meteor-shower notification; %1$s is the shower name">Пік %1$s сьогодні</string>
+    <string name="notif_shower_direction" translation_description="Notification sentence telling the user where to look; %1$s is a compass point like NE">Найкраще після опівночі, дивіться на %1$s.</string>
+    <string name="notif_shower_dark_moon" translation_description="Notification sentence when the moon is dark during a meteor shower peak; %1$d is the expected meteors per hour">
+    Темне небо без місяця — очікуйте до %1$d метеорів на годину подалі від міського світла.
+    </string>
+    <string name="notif_shower_bright_moon" translation_description="Notification sentence when a bright moon will interfere with a meteor shower; %1$d is the moon illumination percentage, %2$d the meteors per hour under ideal skies">
+    Місяць із підсвічуванням %1$d%% затьмарить слабкіші метеори — до %2$d на годину за ідеальних умов.
+    </string>
+    <string name="notif_digest_title" translation_description="Title of the tonight\'s-sky digest notification">Варто поглянути сьогодні ввечері</string>
+    <string name="tonight_well_placed" translation_description="Tonight-widget row: a planet is high in the sky and easy to observe; %1$s is the planet name, %2$s the time from which it is well placed">%1$s добре видно з %2$s</string>
+    <string name="tonight_shower_peak" translation_description="Tonight-widget row: a meteor shower reaches its annual peak tonight; %1$s is the shower name">пік %1$s сьогодні ввечері</string>
+    <string name="tonight_shower_days" translation_description="Tonight-widget row: a meteor shower peaks within a few days; %1$s is the shower name, %2$d the number of days">пік %1$s через %2$d дн.</string>
+    <string name="tonight_new_moon" translation_description="Tonight-widget row shown at new moon">Молодий Місяць — найтемніше небо місяця</string>
+    <string name="tonight_full_moon" translation_description="Tonight-widget row shown at full moon">Повний місяць сьогодні ввечері</string>
+    <string name="tonight_bright_moon" translation_description="Tonight-widget row warning that a bright moon washes out faint objects">Яскравий місяць затьмарює слабкі об\'єкти</string>
+    <string name="moon_widget_set_time" translation_description="Widget fragment showing today\'s moonset time; %1$s is a clock time like 03:12">захід о %1$s</string>
+    <string name="sun">Сонце</string>
+    <string name="moon">Місяць</string>
+    <string name="mercury">Меркурій</string>
+    <string name="venus">Венера</string>
+    <string name="earth">Земля</string>
+    <string name="mars">Марс</string>
+    <string name="jupiter">Юпітер</string>
+    <string name="saturn">Сатурн</string>
+    <string name="uranus">Уран</string>
+    <string name="neptune">Нептун</string>
+    <string name="pluto">Плутон</string>
+    <!-- tm:omitted name="tonight_satellite_pass" reason="identical_to_source" -->
 </resources>

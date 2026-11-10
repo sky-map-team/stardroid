@@ -627,4 +627,32 @@ Kecerahan garis: normal, terang, atau sangat terang, untuk langit senja, siang h
     </string>
     <string name="satellite_search_name_iss" translation_description="Common name of the International Space Station, matched when the user types it in search. Use the name people in this language actually type.">Stasiun Luar Angkasa Internasional</string>
     <string name="satellite_search_name_tiangong" translation_description="Common name of the Chinese Tiangong space station, matched when the user types it in search. Use the name people in this language actually type.">Stasiun Luar Angkasa Tiangong</string>
+    <string name="notif_shower_title" translation_description="Title of the meteor-shower notification; %1$s is the shower name">Puncak %1$s malam ini</string>
+    <string name="notif_shower_direction" translation_description="Notification sentence telling the user where to look; %1$s is a compass point like NE">Terbaik setelah tengah malam, melihat ke arah %1$s.</string>
+    <string name="notif_shower_dark_moon" translation_description="Notification sentence when the moon is dark during a meteor shower peak; %1$d is the expected meteors per hour">
+    Langit gelap, tanpa bulan — perkirakan hingga %1$d meteor per jam jauh dari cahaya kota.
+    </string>
+    <string name="notif_shower_bright_moon" translation_description="Notification sentence when a bright moon will interfere with a meteor shower; %1$d is the moon illumination percentage, %2$d the meteors per hour under ideal skies">
+    Bulan yang diterangi %1$d%% akan mengaburkan meteor yang lebih redup — hingga %2$d per jam di bawah langit ideal.
+    </string>
+    <string name="notif_digest_title" translation_description="Title of the tonight\'s-sky digest notification">Layak dilihat malam ini</string>
+    <string name="tonight_well_placed" translation_description="Tonight-widget row: a planet is high in the sky and easy to observe; %1$s is the planet name, %2$s the time from which it is well placed">%1$s berada di posisi baik mulai %2$s</string>
+    <string name="tonight_shower_peak" translation_description="Tonight-widget row: a meteor shower reaches its annual peak tonight; %1$s is the shower name">%1$s puncak malam ini</string>
+    <string name="tonight_shower_days" translation_description="Tonight-widget row: a meteor shower peaks within a few days; %1$s is the shower name, %2$d the number of days">Puncak %1$s dalam %2$d hari</string>
+    <string name="tonight_new_moon" translation_description="Tonight-widget row shown at new moon">Bulan Baru — langit tergelap bulan ini</string>
+    <string name="tonight_full_moon" translation_description="Tonight-widget row shown at full moon">Bulan Purnama malam ini</string>
+    <string name="tonight_bright_moon" translation_description="Tonight-widget row warning that a bright moon washes out faint objects">Bulan terang mengaburkan objek redup</string>
+    <string name="moon_widget_set_time" translation_description="Widget fragment showing today\'s moonset time; %1$s is a clock time like 03:12">terbenam %1$s</string>
+    <string name="sun">Matahari</string>
+    <string name="moon">Bulan</string>
+    <string name="mercury">Merkurius</string>
+    <string name="earth">Bumi</string>
+    <string name="saturn">Saturnus</string>
+    <string name="neptune">Neptunus</string>
+    <!-- tm:omitted name="tonight_satellite_pass" reason="identical_to_source" -->
+    <!-- tm:omitted name="venus" reason="identical_to_source" -->
+    <!-- tm:omitted name="mars" reason="identical_to_source" -->
+    <!-- tm:omitted name="jupiter" reason="identical_to_source" -->
+    <!-- tm:omitted name="uranus" reason="identical_to_source" -->
+    <!-- tm:omitted name="pluto" reason="identical_to_source" -->
 </resources>

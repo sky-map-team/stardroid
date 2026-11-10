@@ -645,4 +645,32 @@ Luminosité des lignes : normale, brillante ou très brillante, pour le crépusc
     <string name="satellite_search_name_iss" translation_description="Common name of the International Space Station, matched when the user types it in search. Use the name people in this language actually type.">Station spatiale internationale</string>
     <string name="satellite_search_name_tiangong" translation_description="Common name of the Chinese Tiangong space station, matched when the user types it in search. Use the name people in this language actually type.">Station spatiale Tiangong</string>
     <!-- tm:omitted name="diagnostics_section_satellites" reason="identical_to_source" -->
+    <string name="notif_shower_title" translation_description="Title of the meteor-shower notification; %1$s is the shower name">Pic des %1$s ce soir</string>
+    <string name="notif_shower_direction" translation_description="Notification sentence telling the user where to look; %1$s is a compass point like NE">Idéal après minuit, en regardant vers le %1$s.</string>
+    <string name="notif_shower_dark_moon" translation_description="Notification sentence when the moon is dark during a meteor shower peak; %1$d is the expected meteors per hour">
+    Ciel sombre et sans lune — attendez-vous à jusqu\'à %1$d météores par heure loin des lumières de la ville.
+    </string>
+    <string name="notif_shower_bright_moon" translation_description="Notification sentence when a bright moon will interfere with a meteor shower; %1$d is the moon illumination percentage, %2$d the meteors per hour under ideal skies">
+    La lune éclairée à %1$d%% masquera les météores plus faibles — jusqu\'à %2$d par heure sous un ciel idéal.
+    </string>
+    <string name="notif_digest_title" translation_description="Title of the tonight\'s-sky digest notification">À voir ce soir</string>
+    <string name="tonight_well_placed" translation_description="Tonight-widget row: a planet is high in the sky and easy to observe; %1$s is the planet name, %2$s the time from which it is well placed">%1$s bien placé à partir de %2$s</string>
+    <string name="tonight_shower_peak" translation_description="Tonight-widget row: a meteor shower reaches its annual peak tonight; %1$s is the shower name">Pic des %1$s ce soir</string>
+    <string name="tonight_shower_days" translation_description="Tonight-widget row: a meteor shower peaks within a few days; %1$s is the shower name, %2$d the number of days">Pic des %1$s dans %2$d jours</string>
+    <string name="tonight_new_moon" translation_description="Tonight-widget row shown at new moon">Nouvelle Lune — ciel le plus sombre du mois</string>
+    <string name="tonight_full_moon" translation_description="Tonight-widget row shown at full moon">Pleine Lune ce soir</string>
+    <string name="tonight_bright_moon" translation_description="Tonight-widget row warning that a bright moon washes out faint objects">La lune brillante masque les objets faibles</string>
+    <!-- tm:omitted name="tonight_satellite_pass" reason="identical_to_source" -->
+    <string name="moon_widget_set_time" translation_description="Widget fragment showing today\'s moonset time; %1$s is a clock time like 03:12">se couche %1$s</string>
+    <string name="sun">Soleil</string>
+    <string name="moon">Lune</string>
+    <string name="mercury">Mercure</string>
+    <string name="venus">Vénus</string>
+    <string name="earth">Terre</string>
+    <!-- tm:omitted name="mars" reason="identical_to_source" -->
+    <!-- tm:omitted name="jupiter" reason="identical_to_source" -->
+    <string name="saturn">Saturne</string>
+    <!-- tm:omitted name="uranus" reason="identical_to_source" -->
+    <!-- tm:omitted name="neptune" reason="identical_to_source" -->
+    <string name="pluto">Pluton</string>
 </resources>

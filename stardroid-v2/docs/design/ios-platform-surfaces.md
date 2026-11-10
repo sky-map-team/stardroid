@@ -229,10 +229,22 @@ own slice-by-slice review.
 **Slice 1 (built, 2.1.0 branch):** `shared/surfaces` holds `NotificationPlanner`, the decision
 of which alert is due tonight (shower peak, else digest, else nothing) and when it fires (30
 minutes after sunset, at least a minute from now). Android's planner and poster workers now call
-it, with no behaviour change; golden tests are in `NotificationPlannerTest`. Still to build, in
-order: `TextSource` and the move of the `notif_*`/`channel_*` strings into `shared/ui`; text
-building in `shared/surfaces`; the iOS scheduler over `UNUserNotificationCenter` with the
-replan triggers; the Settings and layer-option toggles with the permission prompt; deep links.
+it, with no behaviour change; golden tests are in `NotificationPlannerTest`.
+
+**Slice 2 (built):** `core/text` holds `TextSource` and `TextId`, and `shared/surfaces` holds
+`NotificationText`, which builds the shower title and body, the digest title and lines, and the
+tonight rows the widget shares. Android's `SkyNotifier` and `highlightLine` use it through
+`AndroidTextSource`, a `when` over `R.string`. The strings behind the ids moved from `app` to
+`shared/ui` with their translations and their `tm` baselines, so nothing needs translating
+again. `channel_*` and the "Mute showers" action stay in `app`: iOS has no channels. Clock
+format is a function passed in, because 12 or 24 hour follows the device.
+
+For iOS, Compose Resources' `getString` is `suspend`, and `TextSource.text` is not. The iOS
+implementation reads every `TextId` once when it plans (in the app's locale) and answers from
+that map. Planning runs on foreground and on a locale change, so the map is never stale.
+
+Still to build, in order: the iOS scheduler over `UNUserNotificationCenter` with the replan
+triggers; the Settings and layer-option toggles with the permission prompt; deep links.
 
 ### 5.3 Kinds, permission and settings
 

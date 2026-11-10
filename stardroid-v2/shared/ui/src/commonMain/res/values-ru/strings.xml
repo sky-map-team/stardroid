@@ -97,4 +97,15 @@
     <string name="calibration_accuracy_no_contact">Калибровка: нет данных</string>
     <string name="calibration_do_not_show_again">Не показывать это снова</string>
     <string name="ar_permission_settings_action">Настройки</string>
+    <string name="sun">Солнце</string>
+    <string name="moon">Луна</string>
+    <string name="mercury">Меркурий</string>
+    <string name="venus">Венера</string>
+    <string name="earth">Земля</string>
+    <string name="mars">Марс</string>
+    <string name="jupiter">Юпитер</string>
+    <string name="saturn">Сатурн</string>
+    <string name="uranus">Уран</string>
+    <string name="neptune">Нептун</string>
+    <string name="pluto">Плутон</string>
 </resources>

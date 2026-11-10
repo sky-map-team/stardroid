@@ -10,6 +10,7 @@ kotlin {
         commonMain.dependencies {
             // TonightSky and SkyEvent appear in the planner's signature.
             api(project(":core:events"))
+            api(project(":core:text"))
         }
         commonTest.dependencies {
             implementation(project(":core:testing"))
