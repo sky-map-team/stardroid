@@ -24,8 +24,10 @@ import com.google.android.stardroid.location.LocationSource
 import com.google.android.stardroid.location.LocationState
 import com.google.android.stardroid.render.api.RendererInfo
 import com.google.android.stardroid.satellites.SatelliteDiagnosticsState
+import com.google.android.stardroid.satellites.TrackedSatellite
 import com.google.android.stardroid.satellites.satelliteElementsFlow
 import com.google.android.stardroid.satellites.satelliteUiStatusFlow
+import com.google.android.stardroid.satellites.trackedSatellites
 import com.google.android.stardroid.sensors.SensorConfig
 import com.google.android.stardroid.sensors.ZeroMagneticDeclinationSource
 import com.google.android.stardroid.settings.DataStoreSettings
@@ -378,8 +380,30 @@ class IosAppGraph(
             logError = { message, cause -> println("SearchViewModel: $message: $cause") },
             isManualMode = { map.referenceFrame.value == ReferenceFrame.MANUAL },
             location = { locationController.locations.value },
+            satellites = ::searchableSatellites,
+            satelliteAliases = ::satelliteSearchAliases,
             analytics = analytics,
         )
+
+    /** Search spans a hidden Satellites layer (and re-enables it for the hit), so no layer gate. */
+    private suspend fun searchableSatellites(): List<TrackedSatellite> {
+        if (!satellitesEnabled) return emptyList()
+        val elements = withContext(Dispatchers.IO) { satellites.repository.current() }
+        return trackedSatellites(
+            elements,
+            locationController.locations.value,
+            description = null,
+            at = timeController.now(),
+        )
+    }
+
+    // English only for now: Android's are translated strings, not yet shared with iOS.
+    private fun satelliteSearchAliases(noradId: Int): List<String> =
+        when (noradId) {
+            SatelliteLayer.ISS_NORAD_ID -> listOf("International Space Station")
+            SatelliteLayer.TIANGONG_NORAD_ID -> listOf("Tiangong Space Station", "CSS")
+            else -> emptyList()
+        }
 
     /** Time travel over the app's one clock; computed events (sunset...) use the map's place. */
     fun timeTravelViewModel(): TimeTravelViewModel =

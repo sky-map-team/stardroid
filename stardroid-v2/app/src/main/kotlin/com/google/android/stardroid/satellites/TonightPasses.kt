@@ -11,9 +11,7 @@ package com.google.android.stardroid.satellites
 
 import android.content.Context
 import com.google.android.stardroid.astronomy.PassSearch
-import com.google.android.stardroid.astronomy.SatelliteEphemeris
 import com.google.android.stardroid.astronomy.SatellitePass
-import com.google.android.stardroid.astronomy.Sgp4
 import com.google.android.stardroid.astronomy.goodPasses
 import com.google.android.stardroid.data.satellites.ElementFreshness
 import com.google.android.stardroid.layers.LayerRegistry
@@ -114,22 +112,7 @@ suspend fun trackedSatellites(
     val elements =
         withContext(Dispatchers.IO) { entryPoint.satelliteElementsRepository().current() }
     return withContext(Dispatchers.Default) {
-        if (elements.freshness == ElementFreshness.ABSENT) return@withContext emptyList()
-
-        elements.tles
-            .filter { it.noradId in SatelliteLayer.TRACKED_NORAD_IDS }
-            .mapNotNull { tle ->
-                val state =
-                    runCatching { Sgp4(tle).propagateAt(at) }.getOrNull()
-                        ?: return@mapNotNull null
-                val position =
-                    SatelliteEphemeris.topocentricJ2000(state, at, location).raDec
-                TrackedSatellite(
-                    tle = tle,
-                    info = SatelliteIds.cardFor(tle, position, description),
-                    position = position,
-                )
-            }
+        trackedSatellites(elements, location, description, at)
     }
 }
 
