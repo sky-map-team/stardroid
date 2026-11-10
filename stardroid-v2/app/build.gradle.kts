@@ -24,7 +24,7 @@ android {
     sourceSets.getByName("main").res.directories.add("../shared/ui/src/commonMain/res")
     defaultConfig {
         applicationId = "com.google.android.stardroid"
-        versionCode = 1790
+        versionCode = 1793
         versionName = "2.4.0:Curiosity:Beta"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         // D105: CI passes -PskipGlBenchmarks=true, which the D19 perf gate reads to skip

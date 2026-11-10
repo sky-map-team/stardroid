@@ -20,9 +20,12 @@
 <h2>About the release name</h2>
 <p><b>Curiosity</b> is the NASA rover that has been exploring Gale crater on Mars since landing in 2012, studying whether the planet could once have supported microbial life.</p>
     ]]></string>
-    <string name="whats_new_content_ios" translation_description="HTML content for the first iPhone release, shown in the What's new screen and the post-update dialog in place of the longer release notes of earlier versions. Please do not change the &lt; and &gt; markup."><![CDATA[
-<h1>Sky Map comes to iPhone</h1>
-<p>This is the first iPhone release of Sky Map. It began at Google in 2009 as Google Sky Map, and has been an independent open-source project for well over a decade. Hold your iPhone up and the sky follows your view.</p>
+    <string name="whats_new_content_ios" translation_description="HTML content for the iPhone release, shown in the What's new screen and the post-update dialog in place of the longer release notes of earlier versions. Please do not change the &lt; and &gt; markup."><![CDATA[
+<h1>What\'s new on iPhone and iPad</h1>
+<ul>
+<li><b>iPad:</b> Sky Map now fills larger screens and works in every orientation.</li>
+<li><b>Satellites:</b> see the International Space Station and other satellites crossing the sky.</li>
+</ul>
 <h2>And this is just the start...</h2>
 <p>More is on the way. Tell us what you would like from the Support screen.</p>
     ]]></string>
