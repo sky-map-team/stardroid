@@ -1,17 +1,22 @@
-# <img src="https://raw.githubusercontent.com/sky-map-team/stardroid/refs/heads/master/stardroid-v1/assets/skymap-logo-large.png" width="45" height="45" align="center"> Sky Map
-[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
-[![Android build](https://github.com/sky-map-team/stardroid/actions/workflows/android.yml/badge.svg?branch=master)](https://github.com/sky-map-team/stardroid/actions/workflows/android.yml)
-[![iOS build](https://github.com/sky-map-team/stardroid/actions/workflows/ios-build.yml/badge.svg?branch=master)](https://github.com/sky-map-team/stardroid/actions/workflows/ios-build.yml)
-[![Buy Me A Coffee](https://img.shields.io/badge/Support-Buy%20Me%20A%20Coffee-orange?style=flat-square&logo=buy-me-a-coffee)](https://www.buymeacoffee.com/skymapdevs?utm_source=github&utm_medium=readme&utm_campaign=readme_badge)
+<h1 align="center"><img src="https://raw.githubusercontent.com/sky-map-team/stardroid/refs/heads/master/stardroid-v1/assets/skymap-logo-large.png" width="45" height="45" align="center"> Sky Map</h1>
 
-https://getskymap.app
+<p align="center">
+  <a href="https://www.gnu.org/licenses/gpl-3.0"><img src="https://img.shields.io/badge/License-GPLv3-blue.svg" alt="License: GPL v3"></a>
+  <a href="https://github.com/sky-map-team/stardroid/actions/workflows/android.yml"><img src="https://github.com/sky-map-team/stardroid/actions/workflows/android.yml/badge.svg?branch=master" alt="Android build"></a>
+  <a href="https://github.com/sky-map-team/stardroid/actions/workflows/ios-build.yml"><img src="https://github.com/sky-map-team/stardroid/actions/workflows/ios-build.yml/badge.svg?branch=master" alt="iOS build"></a>
+  <a href="https://www.buymeacoffee.com/skymapdevs?utm_source=github&utm_medium=readme&utm_campaign=readme_badge"><img src="https://img.shields.io/badge/Support-Buy%20Me%20A%20Coffee-orange?style=flat-square&logo=buy-me-a-coffee" alt="Buy Me A Coffee"></a>
+</p>
 
-Sky Map is the open-source astronomy app for Android and iPhone, built for the community.
+<p align="center">
+  <a href="https://getskymap.app">https://getskymap.app</a><br>
+  Sky Map is the open-source astronomy app for Android and iPhone, built for the community.
+</p>
 
-
-[<img src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png" alt="Get it on Google Play" height="60" align="middle">](https://play.google.com/store/apps/details?id=com.google.android.stardroid)
-[<img src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png" alt="Get it on F-Droid" height="60" align="middle">](https://f-droid.org/en/packages/com.google.android.stardroid/)
-&nbsp;[<img src="https://raw.githubusercontent.com/sky-map-team/stardroid/refs/heads/master/web/src/assets/appstore.svg" alt="Download on the App Store" height="60" align="middle">](https://apps.apple.com/app/id6813336040)
+<p align="center">
+  <a href="https://play.google.com/store/apps/details?id=com.google.android.stardroid"><img src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png" alt="Get it on Google Play" height="60" align="middle"></a>
+  <a href="https://f-droid.org/en/packages/com.google.android.stardroid/"><img src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png" alt="Get it on F-Droid" height="60" align="middle"></a>
+  &nbsp;<a href="https://apps.apple.com/app/id6813336040"><img src="https://raw.githubusercontent.com/sky-map-team/stardroid/refs/heads/master/web/src/assets/appstore.svg" alt="Download on the App Store" height="60" align="middle"></a>
+</p>
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/sky-map-team/stardroid/refs/heads/master/web/src/assets/hero.png" alt="Sky Map" width="190">
