@@ -148,6 +148,22 @@ Archive the Release build and export a signed App Store .ipa (build number: late
 
 Install the Release build on a connected iPhone, development-signed, without uploading (device:<CoreDevice id> or IOS_DEVICE_ID). Needs the device registered on the team.
 
+### ios metadata
+
+```sh
+[bundle exec] fastlane ios metadata
+```
+
+Upload App Store listing text from fastlane/metadata/ios to the editable version (no binary, no screenshots, no submission)
+
+### ios promo
+
+```sh
+[bundle exec] fastlane ios promo
+```
+
+Update only the promotional text on the live App Store version
+
 ### ios beta
 
 ```sh
