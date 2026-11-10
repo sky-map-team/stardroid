@@ -23,7 +23,10 @@ final class StoreKitTipStore: NSObject, TipStore {
         // one) arrives here; a consumable must be finished or StoreKit keeps redelivering it.
         updates = Task {
             for await update in Transaction.updates {
-                if case .verified(let transaction) = update {
+                // Unverified ones are finished too, unrewarded: tips grant nothing to unlock, and
+                // an unfinished transaction is redelivered at every launch.
+                switch update {
+                case .verified(let transaction), .unverified(let transaction, _):
                     await transaction.finish()
                 }
             }
@@ -55,7 +58,8 @@ final class StoreKitTipStore: NSObject, TipStore {
                 case .success(.verified(let transaction)):
                     await transaction.finish()
                     onResult(.thanks)
-                case .success(.unverified):
+                case .success(.unverified(let transaction, _)):
+                    await transaction.finish()
                     onResult(.failed)
                 case .pending:
                     onResult(.pending)

@@ -40,7 +40,6 @@
     <string name="notif_eclipse_text" translation_description="Body of the lunar eclipse notification, telling the user when it begins. %1$s is a time.">Comeza arredor das %1$s — paga a pena saír a velo</string>
     <string name="satellite_name_iss" translation_description="Display name for the International Space Station.">A Estación Espacial</string>
     <string name="satellite_name_tiangong" translation_description="Display name for the Chinese space station Tiangong.">Tiangong</string>
-    <string name="satellite_description" translation_description="Short description shown on the info card for an artificial satellite.">Un satélite artificial en órbita terrestre baixa, iluminado polo sol contra un ceo escuro. Cruza de horizonte a horizonte en poucos minutos, movéndose de forma constante e sen pestanexar.</string>
     <string name="tonight_satellite_pass" translation_description="Tonight-widget row announcing a visible satellite pass. %1$s is the satellite name, %2$s is a time of day.">%1$s pasa por riba ás %2$s</string>
 
     <!-- Map screen controls. -->
@@ -78,14 +77,6 @@
     <!-- Settings screen (v1 wording where a v1 string existed) -->
 
     <!-- Diagnostics screen (slice 15) -->
-    <string name="diagnostics_section_satellites" translation_description="Section heading in the diagnostics screen for satellite orbital-data status">Satélites</string>
-    <string name="diagnostics_satellite_data" translation_description="Row label in the diagnostics screen for the age and count of cached satellite orbital data">Datos orbitais</string>
-    <string name="diagnostics_satellite_data_none" translation_description="Row value in the diagnostics screen when no satellite orbital data has been downloaded yet">Non descargado</string>
-    <string name="diagnostics_satellite_data_format" translation_description="Row value in the diagnostics screen showing how many satellites are cached and how many days old the data is. %1$d is a count, %2$.1f is a number of days">%1$d satélites, %2$.1f días de antigüidade</string>
-    <string name="diagnostics_satellite_last_fetch" translation_description="Row label in the diagnostics screen for the result of the most recent attempt to download satellite orbital data">Derradeira descarga</string>
-    <string name="diagnostics_satellite_never_fetched" translation_description="Row value in the diagnostics screen when satellite orbital data has never been downloaded">Xamais</string>
-    <string name="diagnostics_satellite_circuit_open" translation_description="Row label in the diagnostics screen for when satellite downloads are paused after repeated server errors">Descargas en pausa</string>
-    <string name="diagnostics_satellite_circuit_open_format" translation_description="Row value in the diagnostics screen showing when paused satellite downloads will resume and how many failures caused the pause. %1$s is a date and time, %2$d is a count">Ata %1$s (%2$d fallos)</string>
 
     <!-- Compass calibration screen (slice 15) -->
 

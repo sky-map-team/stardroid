@@ -411,4 +411,13 @@ A interferencia magnética local (obxectos metálicos, salpicadeiros de coches, 
     <string name="tonight_trailing_direction" translation_description="Small trailing note on a tonight-widget row: compass direction and altitude in degrees; %1$s is a compass point like SE, %2$d the altitude">%1$s · %2$d°</string>
     <string name="tonight_dark_skies" translation_description="Small trailing note: the moon is dark, so viewing conditions are ideal">ceos escuros</string>
     <string name="tonight_trailing_moon" translation_description="Small trailing note: how much of the moon is lit; %1$d is a percentage">lúa %1$d%%</string>
+    <string name="diagnostics_section_satellites" translation_description="Section heading in the diagnostics screen for satellite orbital-data status">Satélites</string>
+    <string name="diagnostics_satellite_data" translation_description="Row label in the diagnostics screen for the age and count of cached satellite orbital data">Datos orbitais</string>
+    <string name="diagnostics_satellite_data_none" translation_description="Row value in the diagnostics screen when no satellite orbital data has been downloaded yet">Non descargado</string>
+    <string name="diagnostics_satellite_data_format" translation_description="Row value in the diagnostics screen showing how many satellites are cached and how many days old the data is. %1$d is a count, %2$.1f is a number of days">%1$d satélites, %2$.1f días de antigüidade</string>
+    <string name="diagnostics_satellite_last_fetch" translation_description="Row label in the diagnostics screen for the result of the most recent attempt to download satellite orbital data">Derradeira descarga</string>
+    <string name="diagnostics_satellite_never_fetched" translation_description="Row value in the diagnostics screen when satellite orbital data has never been downloaded">Xamais</string>
+    <string name="diagnostics_satellite_circuit_open" translation_description="Row label in the diagnostics screen for when satellite downloads are paused after repeated server errors">Descargas en pausa</string>
+    <string name="diagnostics_satellite_circuit_open_format" translation_description="Row value in the diagnostics screen showing when paused satellite downloads will resume and how many failures caused the pause. %1$s is a date and time, %2$d is a count">Ata %1$s (%2$d fallos)</string>
+    <string name="satellite_description" translation_description="Short description shown on the info card for an artificial satellite.">Un satélite artificial en órbita terrestre baixa, iluminado polo sol contra un ceo escuro. Cruza de horizonte a horizonte en poucos minutos, movéndose de forma constante e sen pestanexar.</string>
 </resources>

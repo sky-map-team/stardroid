@@ -12,6 +12,8 @@ package com.google.android.stardroid.ios
 import kotlinx.cinterop.BetaInteropApi
 import kotlinx.cinterop.ExperimentalForeignApi
 import platform.Foundation.NSString
+import platform.Foundation.NSURL
+import platform.Foundation.NSURLIsExcludedFromBackupKey
 import platform.Foundation.NSUTF8StringEncoding
 import platform.Foundation.writeToFile
 import kotlin.experimental.ExperimentalNativeApi
@@ -29,13 +31,17 @@ fun recordUncaughtExceptions(directory: String) {
     setUnhandledExceptionHook { throwable ->
         val trace = throwable.stackTraceToString()
         println("Uncaught: $trace")
+        val path = "$directory/last-crash.txt"
         @Suppress("CAST_NEVER_SUCCEEDS")
         (trace as NSString).writeToFile(
-            "$directory/last-crash.txt",
+            path,
             atomically = true,
             encoding = NSUTF8StringEncoding,
             error = null,
         )
+        // A debugging aid, not user data: keep it out of iCloud backups.
+        NSURL.fileURLWithPath(path)
+            .setResourceValue(true, forKey = NSURLIsExcludedFromBackupKey, error = null)
         previous?.invoke(throwable)
     }
 }

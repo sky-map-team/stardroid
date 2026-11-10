@@ -11,47 +11,16 @@ package com.google.android.stardroid.satellites
 
 import android.content.Context
 import android.util.Log
-import com.google.android.stardroid.data.satellites.ElementFreshness
 import com.google.android.stardroid.data.satellites.FetchOutcome
 import com.google.android.stardroid.data.satellites.RefreshResult
 import com.google.android.stardroid.data.satellites.SatelliteFetchPolicy
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
-import kotlinx.datetime.Instant
-
-/**
- * What the Diagnostics screen shows about satellite element sets.
- *
- * This exists because CelesTrak's usage policy requires clients to **report non-200 responses to
- * a human**, and this is the human-readable half of that obligation: a user who says "satellites
- * aren't updating" can read the status and code straight off the screen and hand them to us. The
- * analytics events (D96) are the aggregate half.
- */
-data class SatelliteDiagnosticsState(
-    val freshness: ElementFreshness,
-    val ageDays: Double?,
-    val satelliteCount: Int,
-    val lastStatusCode: Int?,
-    val lastSuccess: Instant?,
-    val circuitOpenUntil: Instant?,
-    val consecutiveFailures: Int,
-)
 
 /** Reads the current state. Touches disk, so callers should be off the main thread. */
 suspend fun readSatelliteDiagnostics(context: Context): SatelliteDiagnosticsState =
     withContext(Dispatchers.IO) {
-        val repository = satelliteEntryPoint(context).satelliteElementsRepository()
-        val elements = repository.current()
-        val state = repository.fetchState()
-        SatelliteDiagnosticsState(
-            freshness = elements.freshness,
-            ageDays = elements.ageDays,
-            satelliteCount = elements.tles.size,
-            lastStatusCode = state.lastStatusCode,
-            lastSuccess = state.lastSuccess,
-            circuitOpenUntil = state.circuitOpenUntil,
-            consecutiveFailures = state.consecutiveFailures,
-        )
+        satelliteEntryPoint(context).satelliteElementsRepository().diagnostics()
     }
 
 /**

@@ -534,4 +534,15 @@ Line brightness: normal, bright or brightest, for twilight, daylight or light-po
     <!-- tm:omitted name="tonight_trailing_direction" reason="identical_to_source" -->
     <!-- tm:omitted name="tonight_dark_skies" reason="identical_to_source" -->
     <!-- tm:omitted name="tonight_trailing_moon" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_satellite_circuit_open" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_satellite_circuit_open_format" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_satellite_data" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_satellite_data_format" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_satellite_data_none" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_satellite_last_fetch" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_satellite_never_fetched" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_section_satellites" reason="identical_to_source" -->
+    <!-- tm:omitted name="satellite_description" reason="identical_to_source" -->
+    <!-- tm:omitted name="satellite_search_name_iss" reason="identical_to_source" -->
+    <!-- tm:omitted name="satellite_search_name_tiangong" reason="identical_to_source" -->
 </resources>

@@ -44,9 +44,6 @@
     <string name="notif_eclipse_text" translation_description="Body of the lunar eclipse notification, telling the user when it begins. %1$s is a time.">Začína sa okolo %1$s – oplatí sa vyjsť von</string>
     <string name="satellite_name_iss" translation_description="Display name for the International Space Station.">Medzinárodná vesmírna stanica</string>
     <!-- tm:omitted name="satellite_name_tiangong" reason="identical_to_source" -->
-    <string name="satellite_description" translation_description="Short description shown on the info card for an artificial satellite.">
-    Umelá družica na nízkej obežnej dráhe Zeme, osvetlená Slnkom na tmavom nebi. Prechádza od obzoru k obzoru za niekoľko minút, pohybuje sa plynule a bez blikania.
-    </string>
     <!-- tm:omitted name="tonight_satellite_pass" reason="identical_to_source" -->
 
     <!-- Long-press help for layers in the layer-visibility sheet. -->
@@ -80,14 +77,6 @@
     <!-- Settings screen (v1 wording where a v1 string existed) -->
 
     <!-- Diagnostics screen (slice 15) -->
-    <string name="diagnostics_section_satellites" translation_description="Section heading in the diagnostics screen for satellite orbital-data status">Satelity</string>
-    <string name="diagnostics_satellite_data" translation_description="Row label in the diagnostics screen for the age and count of cached satellite orbital data">Údaje o obežnej dráhe</string>
-    <string name="diagnostics_satellite_data_none" translation_description="Row value in the diagnostics screen when no satellite orbital data has been downloaded yet">Nestiahnuté</string>
-    <string name="diagnostics_satellite_data_format" translation_description="Row value in the diagnostics screen showing how many satellites are cached and how many days old the data is. %1$d is a count, %2$.1f is a number of days">%1$d satelitov, %2$.1f dní staré</string>
-    <string name="diagnostics_satellite_last_fetch" translation_description="Row label in the diagnostics screen for the result of the most recent attempt to download satellite orbital data">Posledné stiahnutie</string>
-    <string name="diagnostics_satellite_never_fetched" translation_description="Row value in the diagnostics screen when satellite orbital data has never been downloaded">Nikdy</string>
-    <string name="diagnostics_satellite_circuit_open" translation_description="Row label in the diagnostics screen for when satellite downloads are paused after repeated server errors">Sťahovanie pozastavené</string>
-    <string name="diagnostics_satellite_circuit_open_format" translation_description="Row value in the diagnostics screen showing when paused satellite downloads will resume and how many failures caused the pause. %1$s is a date and time, %2$d is a count">Do %1$s (%2$d zlyhaní)</string>
 
     <!-- Compass calibration screen (slice 15) -->
 
@@ -173,7 +162,5 @@
     <string name="notif_digest_title" translation_description="Title of the tonight\'s-sky digest notification">Oplatí sa pozrieť dnes večer</string>
     <string name="notif_action_mute_showers" translation_description="Notification action button that opens the system toggle for the meteor-shower channel">Stlmiť roje</string>
     <!-- Layers sheet: per-layer parameters (D87). -->
-    <string name="satellite_search_name_iss" translation_description="Common name of the International Space Station, matched when the user types it in search. Use the name people in this language actually type.">Medzinárodná vesmírna stanica</string>
-    <string name="satellite_search_name_tiangong" translation_description="Common name of the Chinese Tiangong space station, matched when the user types it in search. Use the name people in this language actually type.">Vesmírna stanica Tchien-kung</string>
     <string name="tonight_trailing_pass_peak" translation_description="Small trailing note on a satellite pass row. %1$d is the peak altitude in degrees, %2$.1f is a brightness magnitude.">Max. %1$d°, mag %2$.1f</string>
 </resources>

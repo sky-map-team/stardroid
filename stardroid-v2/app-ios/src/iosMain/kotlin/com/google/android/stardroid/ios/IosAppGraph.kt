@@ -13,6 +13,7 @@ import com.google.android.stardroid.analytics.Analytics
 import com.google.android.stardroid.analytics.AnalyticsEvents
 import com.google.android.stardroid.analytics.NoOpAnalytics
 import com.google.android.stardroid.astronomy.MeeusEphemeris
+import com.google.android.stardroid.astronomy.SatellitePass
 import com.google.android.stardroid.catalog.CatalogRepository
 import com.google.android.stardroid.catalog.LocaleSpec
 import com.google.android.stardroid.data.RoomCatalogRepository
@@ -23,8 +24,12 @@ import com.google.android.stardroid.location.LocationController
 import com.google.android.stardroid.location.LocationSource
 import com.google.android.stardroid.location.LocationState
 import com.google.android.stardroid.render.api.RendererInfo
+import com.google.android.stardroid.satellites.SatelliteDiagnosticsState
+import com.google.android.stardroid.satellites.TrackedSatellite
 import com.google.android.stardroid.satellites.satelliteElementsFlow
 import com.google.android.stardroid.satellites.satelliteUiStatusFlow
+import com.google.android.stardroid.satellites.trackedSatellites
+import com.google.android.stardroid.satellites.upcomingGoodPasses
 import com.google.android.stardroid.sensors.SensorConfig
 import com.google.android.stardroid.sensors.ZeroMagneticDeclinationSource
 import com.google.android.stardroid.settings.DataStoreSettings
@@ -46,6 +51,10 @@ import com.google.android.stardroid.ui.location.LocationViewModel
 import com.google.android.stardroid.ui.map.MapViewModel
 import com.google.android.stardroid.ui.map.ReferenceFrame
 import com.google.android.stardroid.ui.objectinfo.ObjectInfoViewModel
+import com.google.android.stardroid.ui.resources.Res
+import com.google.android.stardroid.ui.resources.satellite_description
+import com.google.android.stardroid.ui.resources.satellite_search_name_iss
+import com.google.android.stardroid.ui.resources.satellite_search_name_tiangong
 import com.google.android.stardroid.ui.search.SearchViewModel
 import com.google.android.stardroid.ui.settings.SettingsViewModel
 import com.google.android.stardroid.ui.startup.StartupViewModel
@@ -54,6 +63,7 @@ import kotlinx.cinterop.ExperimentalForeignApi
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.IO
+import kotlinx.coroutines.Job
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -68,6 +78,7 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock
 import kotlinx.coroutines.withContext
+import org.jetbrains.compose.resources.getString
 import platform.CoreMotion.CMMotionManager
 import platform.Foundation.NSApplicationSupportDirectory
 import platform.Foundation.NSBundle
@@ -82,12 +93,9 @@ import platform.UIKit.UIApplication
 import platform.UIKit.UIApplicationOpenSettingsURLString
 
 /**
- * The iOS app's object graph: what Android's Hilt modules and `CatalogAccess` provide, built by
- * hand. Everything here is shared code; only the platform edges are iOS's.
- *
- * The app's foreground drives location the way Android's activity `onStart`/`onStop` do. The
- * system location prompt shows once the EULA and the warm welcome are done, in place of Android's
- * rationale dialog; a refusal brings the shared permanently-denied dialog, as on Android.
+ * The iOS app's object graph: what Android's Hilt modules provide, built by hand. The foreground
+ * drives location as Android's `onStart`/`onStop` do; the system location prompt waits for the
+ * EULA and warm welcome, in place of Android's rationale dialog.
  */
 @OptIn(ExperimentalForeignApi::class)
 class IosAppGraph(
@@ -131,20 +139,16 @@ class IosAppGraph(
 
     private val satellites = IosSatellites("$supportDirectory/satellites", analytics)
 
-    /**
-     * The bundle's build number, which the startup gates compare as Android's versionCode. At
-     * least 1, the warm-welcome floor below: a tour seen at this build must clear it.
-     */
+    // The build number stands in for Android's versionCode in the startup gates; at least 1, the
+    // warm-welcome floor below.
     private val appVersion: Long =
         (
             (NSBundle.mainBundle.objectForInfoDictionaryKey("CFBundleVersion") as? String)
                 ?.toLongOrNull() ?: 1L
         ).coerceAtLeast(1L)
 
-    // Android's warm-welcome reset floor is one of its own versionCodes (the 2.0 beta), which
-    // re-showed the tour to v1-era testers. iOS has no history before its first build, and its
-    // build numbers are its own: against Android's floor, a tour seen at build 1 would count as
-    // never seen, and show at every launch. A floor of 1 shows it once.
+    // Android's floor is one of its own versionCodes; against it a tour seen at an iOS build
+    // number would count as never seen. A floor of 1 shows it once.
     private val startupRouter =
         StartupRouter(startupState, appVersion, warmWelcomeResetVersionCode = 1L)
 
@@ -154,16 +158,12 @@ class IosAppGraph(
             settings.nightMode,
             settings.autoDimness,
             foreground.isForeground,
-            MainScope(),
+            scope,
         )
 
     private val coreLocation = CoreLocationProvider()
 
-    /**
-     * The app's one motion manager, as Apple asks: the map's attitude, the diagnostics and
-     * calibration screens' sensors, and the welcome's sensor check (Android asks its
-     * SensorManager).
-     */
+    // Apple asks for one CMMotionManager per app.
     private val motionManager = CMMotionManager()
 
     val hasCompass: Boolean get() = motionManager.magnetometerAvailable
@@ -260,13 +260,13 @@ class IosAppGraph(
     }
 
     init {
-        MainScope().launch {
+        scope.launch {
             // Latest: going to the background cancels a start still waiting on the EULA.
             foreground.isForeground.collectLatest {
                 if (it) onStart() else locationController.stop()
             }
         }
-        MainScope().launch {
+        scope.launch {
             // Opening the app, and switching the layer on, both look for stale elements.
             combine(
                 foreground.isForeground,
@@ -278,13 +278,32 @@ class IosAppGraph(
     }
 
     /**
+     * The system's background refresh slot ([SatelliteBackgroundRefresh]): the same conditions and
+     * policy as the foreground fetch, minus the staleness test, since the system picks the time.
+     */
+    internal suspend fun refreshSatellitesInBackground() {
+        if (!mayFetchSatellites()) return
+        if (!LayerRegistry.layerEnabled(settings, SatelliteLayer.LAYER_ID).first()) return
+        withContext(Dispatchers.IO) { satellites.refreshNow() }
+    }
+
+    internal fun startBackgroundRefresh(): Job = scope.launch { refreshSatellitesInBackground() }
+
+    /** Satellite data status for the Diagnostics screen; null with the flag off. */
+    suspend fun satelliteDiagnostics(): SatelliteDiagnosticsState? =
+        if (satellitesEnabled) withContext(Dispatchers.IO) { satellites.diagnostics() } else null
+
+    /** Flag on and consent given. */
+    private suspend fun mayFetchSatellites() =
+        satellitesEnabled && settings.satelliteDataEnabled.first()
+
+    /**
      * Only for a user who switched the Satellites layer on (it starts off, so they choose to show
      * their IP address to CelesTrak), with the flag on and consent given. Through the repository,
      * so the circuit breaker and the two-hour minimum still apply.
      */
     private suspend fun refreshSatellitesIfStale() {
-        if (!satellitesEnabled) return
-        if (!settings.satelliteDataEnabled.first()) return
+        if (!mayFetchSatellites()) return
         withContext(Dispatchers.IO) { satellites.refreshIfStale() }
     }
 
@@ -341,10 +360,7 @@ class IosAppGraph(
     fun startupViewModel(): StartupViewModel =
         StartupViewModel(startupRouter, startupState, analytics = analytics)
 
-    /**
-     * The layer rail and sheet. iOS has no notifications yet, so their alert rows stay hidden, as
-     * Android hides them with the experiment off; satellites follow their flag.
-     */
+    /** The layer rail and sheet; alert rows stay hidden until iOS has notifications. */
     fun layersViewModel(): LayersViewModel =
         LayersViewModel(
             settings,
@@ -362,7 +378,7 @@ class IosAppGraph(
             analytics = analytics,
         )
 
-    /** Search over the catalog, aimed as Android's is: [map] answers whether it is in manual mode. */
+    /** Search over the catalog; [map] answers whether it is in manual mode, as on Android. */
     fun searchViewModel(map: MapViewModel): SearchViewModel =
         SearchViewModel(
             catalog = ::catalog,
@@ -374,8 +390,59 @@ class IosAppGraph(
             logError = { message, cause -> println("SearchViewModel: $message: $cause") },
             isManualMode = { map.referenceFrame.value == ReferenceFrame.MANUAL },
             location = { locationController.locations.value },
+            satellites = ::searchableSatellites,
+            satelliteAliases = ::satelliteSearchAliases,
             analytics = analytics,
         )
+
+    /** Search spans a hidden Satellites layer (and re-enables it for the hit), so no layer gate. */
+    private suspend fun searchableSatellites() = satellitesFor(requireLayerEnabled = false)
+
+    /** A hidden layer draws nothing to tap, so taps need the layer on. */
+    private suspend fun tappableSatellites() = satellitesFor(requireLayerEnabled = true)
+
+    private suspend fun satellitesFor(requireLayerEnabled: Boolean): List<TrackedSatellite> {
+        if (!satellitesEnabled) return emptyList()
+        if (requireLayerEnabled &&
+            !LayerRegistry.layerEnabled(settings, SatelliteLayer.LAYER_ID).first()
+        ) {
+            return emptyList()
+        }
+        val elements = currentElements()
+        val description = getString(Res.string.satellite_description)
+        return withContext(Dispatchers.Default) {
+            trackedSatellites(
+                elements,
+                locationController.locations.value,
+                description,
+                timeController.now(),
+            )
+        }
+    }
+
+    private suspend fun satelliteSearchAliases(noradId: Int): List<String> =
+        when (noradId) {
+            SatelliteLayer.ISS_NORAD_ID -> listOf(getString(Res.string.satellite_search_name_iss))
+            SatelliteLayer.TIANGONG_NORAD_ID ->
+                // "CSS" is the Chinese Space Station's official abbreviation, so it isn't translated.
+                listOf(getString(Res.string.satellite_search_name_tiangong), "CSS")
+            else -> emptyList()
+        }
+
+    private suspend fun currentElements() =
+        withContext(Dispatchers.IO) { satellites.repository.current() }
+
+    private suspend fun upcomingSatellitePasses(noradId: Int): List<SatellitePass> {
+        val elements = currentElements()
+        return withContext(Dispatchers.Default) {
+            upcomingGoodPasses(
+                elements,
+                noradId,
+                locationController.locations.value,
+                timeController.now(),
+            )
+        }
+    }
 
     /** Time travel over the app's one clock; computed events (sunset...) use the map's place. */
     fun timeTravelViewModel(): TimeTravelViewModel =
@@ -386,7 +453,7 @@ class IosAppGraph(
             analytics = analytics,
         )
 
-    /** The card for a tapped object; satellites and the Moon-widget promo are Android's only. */
+    /** The card for a tapped object; the Moon-widget promo is Android's only. */
     fun objectInfoViewModel(): ObjectInfoViewModel =
         ObjectInfoViewModel(
             catalog = ::catalog,
@@ -395,15 +462,15 @@ class IosAppGraph(
             now = timeController::now,
             settings = settings,
             location = { locationController.locations.value },
+            satellites = ::tappableSatellites,
+            passTimesReliable = {
+                currentElements().mayShowPassTimes
+            },
+            upcomingPasses = ::upcomingSatellitePasses,
             analytics = analytics,
         )
 
-    /**
-     * The settings screen. Core Motion's fused attitude is iOS's only sensor path, so the classic
-     * path's switches stay hidden, and so does magnetic correction: Core Motion already reports
-     * true north and the map applies a zero declination. The analytics opt-out shows, as on
-     * Android's gms flavor.
-     */
+    /** Core Motion is the only sensor path and already reports true north, so those rows hide. */
     fun settingsViewModel(): SettingsViewModel =
         SettingsViewModel(
             settings,
@@ -420,11 +487,7 @@ class IosAppGraph(
         CoreMotionStatusSource(motionManager, orientationSource.deviceMotion)
     }
 
-    /**
-     * The diagnostics screen, over Core Motion's raw sensors and the [map]'s camera and frame.
-     * Its magnetic correction row reads zero: Core Motion turns to true north itself, so the map
-     * applies no declination of its own (see [CoreMotionOrientationSource]).
-     */
+    /** Over Core Motion's raw sensors; the magnetic correction row reads zero by design. */
     fun diagnosticsViewModel(
         map: MapViewModel,
         rendererInfo: RendererInfo,
@@ -445,11 +508,7 @@ class IosAppGraph(
             analytics = analytics,
         )
 
-    /**
-     * The compass-calibration screen and the map's low-accuracy prompts, from Core Motion's
-     * calibration level. On an iPhone 13 it stayed High even with a magnet held to the phone,
-     * whose heading Core Motion kept steady regardless, so the prompts should be rare.
-     */
+    /** From Core Motion's calibration level; iPhone 13 measurement in screens-and-startup.md. */
     fun calibrationViewModel(): CompassCalibrationViewModel =
         CompassCalibrationViewModel(
             sensorStatus = sensorStatus,

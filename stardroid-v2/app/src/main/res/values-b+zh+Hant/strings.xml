@@ -44,7 +44,6 @@
     <string name="notif_eclipse_text" translation_description="Body of the lunar eclipse notification, telling the user when it begins. %1$s is a time.">大約在 %1$s 開始 — 值得出門觀看</string>
     <string name="satellite_name_iss" translation_description="Display name for the International Space Station.">國際太空站</string>
     <string name="satellite_name_tiangong" translation_description="Display name for the Chinese space station Tiangong.">天宮</string>
-    <string name="satellite_description" translation_description="Short description shown on the info card for an artificial satellite.">一顆位於低地球軌道的人造衛星，在漆黑天空中被陽光照亮。它在幾分鐘內穩定地橫越地平線，且不會閃爍。</string>
     <!-- tm:omitted name="tonight_satellite_pass" reason="identical_to_source" -->
 
     <!-- Long-press help for layers in the layer-visibility sheet. -->
@@ -78,14 +77,6 @@
     <!-- Settings screen (v1 wording where a v1 string existed) -->
 
     <!-- Diagnostics screen (slice 15) -->
-    <string name="diagnostics_section_satellites" translation_description="Section heading in the diagnostics screen for satellite orbital-data status">衛星</string>
-    <string name="diagnostics_satellite_data" translation_description="Row label in the diagnostics screen for the age and count of cached satellite orbital data">軌道資料</string>
-    <string name="diagnostics_satellite_data_none" translation_description="Row value in the diagnostics screen when no satellite orbital data has been downloaded yet">未下載</string>
-    <string name="diagnostics_satellite_data_format" translation_description="Row value in the diagnostics screen showing how many satellites are cached and how many days old the data is. %1$d is a count, %2$.1f is a number of days">%1$d 顆衛星，%2$.1f 天前</string>
-    <string name="diagnostics_satellite_last_fetch" translation_description="Row label in the diagnostics screen for the result of the most recent attempt to download satellite orbital data">上次擷取</string>
-    <string name="diagnostics_satellite_never_fetched" translation_description="Row value in the diagnostics screen when satellite orbital data has never been downloaded">從未</string>
-    <string name="diagnostics_satellite_circuit_open" translation_description="Row label in the diagnostics screen for when satellite downloads are paused after repeated server errors">下載已暫停</string>
-    <string name="diagnostics_satellite_circuit_open_format" translation_description="Row value in the diagnostics screen showing when paused satellite downloads will resume and how many failures caused the pause. %1$s is a date and time, %2$d is a count">直到 %1$s (%2$d 次失敗)</string>
 
     <!-- Compass calibration screen (slice 15) -->
 
@@ -163,7 +154,5 @@
     <string name="notif_digest_title" translation_description="Title of the tonight\'s-sky digest notification">今晚值得一看</string>
     <string name="notif_action_mute_showers" translation_description="Notification action button that opens the system toggle for the meteor-shower channel">靜音流星雨</string>
     <!-- Layers sheet: per-layer parameters (D87). -->
-    <string name="satellite_search_name_iss" translation_description="Common name of the International Space Station, matched when the user types it in search. Use the name people in this language actually type.">國際太空站</string>
-    <string name="satellite_search_name_tiangong" translation_description="Common name of the Chinese Tiangong space station, matched when the user types it in search. Use the name people in this language actually type.">天宮太空站</string>
     <string name="tonight_trailing_pass_peak" translation_description="Small trailing note on a satellite pass row. %1$d is the peak altitude in degrees, %2$.1f is a brightness magnitude.">最高 %1$d°，視星等 %2$.1f</string>
 </resources>

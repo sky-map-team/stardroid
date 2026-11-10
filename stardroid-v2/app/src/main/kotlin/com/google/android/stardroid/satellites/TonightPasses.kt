@@ -11,9 +11,7 @@ package com.google.android.stardroid.satellites
 
 import android.content.Context
 import com.google.android.stardroid.astronomy.PassSearch
-import com.google.android.stardroid.astronomy.SatelliteEphemeris
 import com.google.android.stardroid.astronomy.SatellitePass
-import com.google.android.stardroid.astronomy.Sgp4
 import com.google.android.stardroid.astronomy.goodPasses
 import com.google.android.stardroid.data.satellites.ElementFreshness
 import com.google.android.stardroid.layers.LayerRegistry
@@ -26,7 +24,6 @@ import kotlinx.coroutines.withContext
 import kotlinx.datetime.Clock
 import kotlinx.datetime.Instant
 import kotlin.time.Duration
-import kotlin.time.Duration.Companion.days
 import kotlin.time.Duration.Companion.hours
 
 /**
@@ -114,35 +111,11 @@ suspend fun trackedSatellites(
     val elements =
         withContext(Dispatchers.IO) { entryPoint.satelliteElementsRepository().current() }
     return withContext(Dispatchers.Default) {
-        if (elements.freshness == ElementFreshness.ABSENT) return@withContext emptyList()
-
-        elements.tles
-            .filter { it.noradId in SatelliteLayer.TRACKED_NORAD_IDS }
-            .mapNotNull { tle ->
-                val state =
-                    runCatching { Sgp4(tle).propagateAt(at) }.getOrNull()
-                        ?: return@mapNotNull null
-                val position =
-                    SatelliteEphemeris.topocentricJ2000(state, at, location).raDec
-                TrackedSatellite(
-                    tle = tle,
-                    info = SatelliteIds.cardFor(tle, position, description),
-                    position = position,
-                )
-            }
+        trackedSatellites(elements, location, description, at)
     }
 }
 
-/** Tighter than the ten-day staleness gate: a list of times promises more than one time does. */
-private val CARD_PASS_WINDOW: Duration = 5.days
-
-private const val CARD_PASS_LIMIT = 5
-
-/**
- * The next good passes for one satellite, for the info card's pass table.
- *
- * Looks [CARD_PASS_WINDOW] ahead — TLE drift makes times beyond about five days dishonest.
- */
+/** The next good passes for one satellite, for the info card's pass table. */
 suspend fun upcomingGoodPasses(
     context: Context,
     noradId: Int,
@@ -155,14 +128,6 @@ suspend fun upcomingGoodPasses(
             satelliteEntryPoint(context).satelliteElementsRepository().current()
         }
     return withContext(Dispatchers.Default) {
-        // Past ten days the times would be confidently wrong, which is worse than absent.
-        if (!elements.mayShowPassTimes) return@withContext emptyList()
-        elements.tles
-            .firstOrNull { it.noradId == noradId }
-            ?.let { tle ->
-                runCatching { PassSearch(tle, location).visiblePasses(from, CARD_PASS_WINDOW) }
-                    .getOrDefault(emptyList())
-                    .goodPasses(CARD_PASS_LIMIT)
-            }.orEmpty()
+        upcomingGoodPasses(elements, noradId, location, from)
     }
 }

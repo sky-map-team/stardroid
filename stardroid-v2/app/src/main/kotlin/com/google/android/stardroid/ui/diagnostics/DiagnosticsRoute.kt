@@ -18,11 +18,8 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.res.stringResource
 import com.google.android.stardroid.BuildConfig
 import com.google.android.stardroid.FlavorEdges
-import com.google.android.stardroid.R
-import com.google.android.stardroid.data.satellites.ElementFreshness
 import com.google.android.stardroid.satellites.SatelliteDiagnosticsState
 import com.google.android.stardroid.satellites.forceSatelliteFetchForDebugging
 import com.google.android.stardroid.satellites.readSatelliteDiagnostics
@@ -61,7 +58,7 @@ fun DiagnosticsRoute(
         onBack = onBack,
         onSendReport = { subject, body -> DiagnosticsShare.send(context, subject, body) },
         recentLogLines = { withContext(Dispatchers.IO) { DiagnosticsLog.recentLines() } },
-        satelliteSection = satelliteState?.let { satelliteSection(it) },
+        satelliteSection = satelliteState?.let { satelliteDiagnosticsSection(it) },
         onForceSatelliteFetch =
             if (BuildConfig.DEBUG && satelliteState != null) {
                 {
@@ -88,46 +85,4 @@ private fun androidPlatform(context: Context): DiagnosticsPlatform {
         graphicsVersionLabel = Res.string.diagnostics_gl_version,
         graphicsLimitsLabel = Res.string.diagnostics_gl_limits,
     )
-}
-
-/**
- * Satellite orbital-data status — the read-only half of the reporting CelesTrak's usage policy
- * requires of us: someone who reports "satellites aren't updating" can read the status code and
- * the pause state straight off this screen (and off the shared report built from it).
- */
-@Composable
-private fun satelliteSection(state: SatelliteDiagnosticsState): DiagnosticsSection {
-    val rows = mutableListOf<DiagnosticsRow>()
-    rows +=
-        DiagnosticsRow(
-            stringResource(R.string.diagnostics_satellite_data),
-            if (state.freshness == ElementFreshness.ABSENT || state.ageDays == null) {
-                stringResource(R.string.diagnostics_satellite_data_none)
-            } else {
-                stringResource(
-                    R.string.diagnostics_satellite_data_format,
-                    state.satelliteCount,
-                    state.ageDays,
-                )
-            },
-        )
-    rows +=
-        DiagnosticsRow(
-            stringResource(R.string.diagnostics_satellite_last_fetch),
-            state.lastStatusCode?.let { code ->
-                state.lastSuccess?.let { "$code at $it" } ?: "$code"
-            } ?: stringResource(R.string.diagnostics_satellite_never_fetched),
-        )
-    state.circuitOpenUntil?.let { until ->
-        rows +=
-            DiagnosticsRow(
-                stringResource(R.string.diagnostics_satellite_circuit_open),
-                stringResource(
-                    R.string.diagnostics_satellite_circuit_open_format,
-                    until.toString(),
-                    state.consecutiveFailures,
-                ),
-            )
-    }
-    return DiagnosticsSection(stringResource(R.string.diagnostics_section_satellites), rows)
 }

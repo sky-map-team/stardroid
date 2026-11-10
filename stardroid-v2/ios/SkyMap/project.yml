@@ -69,6 +69,9 @@ targets:
         # Collection starts off, so an opted-out user's first events can't go before the opt-out
         # does; the shared settings turn it on (opt-in default, as on Android).
         FIREBASE_ANALYTICS_COLLECTION_ENABLED: false
+        # The satellite data refresh (SatelliteRefreshTask); the system decides when it runs.
+        UIBackgroundModes: [fetch]
+        BGTaskSchedulerPermittedIdentifiers: [io.penterakt.skymap.satellite-refresh]
         # The system location prompt's text. Localized with the app's strings in phase 5.
         NSLocationWhenInUseUsageDescription: >-
           Sky Map uses your location to show the sky as it looks from where you are.
@@ -96,7 +99,7 @@ targets:
         PRODUCT_BUNDLE_IDENTIFIER: io.penterakt.skymap.dev
         DEVELOPMENT_TEAM: F98KUL97FJ
         CODE_SIGN_STYLE: Automatic
-        MARKETING_VERSION: "2.0.0"
+        MARKETING_VERSION: "2.0.1"
         SKYMAP_RELEASE_NAME: GDC
         CURRENT_PROJECT_VERSION: "1"
         GENERATE_INFOPLIST_FILE: YES
