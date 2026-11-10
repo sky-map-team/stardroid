@@ -226,10 +226,20 @@ platform :ios do
   # Key and issuer IDs identify the App Store Connect API key (App Manager role); they are not
   # secret. The .p8 itself is, so it lives outside the repo: override its path with
   # APP_STORE_CONNECT_KEY_PATH.
-  ASC_KEY_ID = "8XZ54P8LKA"
-  ASC_ISSUER_ID = "5d668d96-b7d1-41e4-aacc-8fb07cc2aba3"
+  # CI uses its own Admin-role key (see .github/workflows/ios-testflight.yml), so both are
+  # overridable.
+  ASC_KEY_ID = ENV["ASC_KEY_ID"] || "8XZ54P8LKA"
+  ASC_ISSUER_ID = ENV["ASC_ISSUER_ID"] || "5d668d96-b7d1-41e4-aacc-8fb07cc2aba3"
   ASC_KEY_PATH = ENV["APP_STORE_CONNECT_KEY_PATH"] ||
     File.expand_path("~/.appstoreconnect/private_keys/AuthKey_#{ASC_KEY_ID}.p8")
+
+  # On CI there is no Xcode signed in to the team, so xcodebuild authenticates to Apple with the
+  # (Admin-role) API key to create the cloud-managed distribution signing.
+  def ci_signing_flags
+    return "" unless ENV["CI"]
+    " -allowProvisioningUpdates -authenticationKeyPath #{ASC_KEY_PATH}" \
+      " -authenticationKeyID #{ASC_KEY_ID} -authenticationKeyIssuerID #{ASC_ISSUER_ID}"
+  end
 
   def asc_api_key
     UI.user_error!("App Store Connect key not found at #{ASC_KEY_PATH}") unless File.exist?(ASC_KEY_PATH)
@@ -265,7 +275,8 @@ platform :ios do
       # No API-key flags here: exporting for the App Store needs cloud-signed distribution
       # certificates, which an App Manager key cannot create. Xcode must be signed in to the
       # Penterakt team (Settings > Accounts); the key is used only for TestFlight.
-      xcargs: "CURRENT_PROJECT_VERSION=#{build_number} -allowProvisioningUpdates"
+      xcargs: "CURRENT_PROJECT_VERSION=#{build_number} -allowProvisioningUpdates#{ci_signing_flags}",
+      export_xcargs: ci_signing_flags.strip
     )
   end
 
