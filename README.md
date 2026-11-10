@@ -1,4 +1,4 @@
-<h1 align="center"><img src="https://raw.githubusercontent.com/sky-map-team/stardroid/refs/heads/master/stardroid-v1/assets/skymap-logo-large.png" width="45" height="45" align="center"> Sky Map</h1>
+<h1 align="center"><img src="https://raw.githubusercontent.com/sky-map-team/stardroid/refs/heads/master/web/src/assets/logo.png" width="48" height="48" align="absmiddle"> Sky Map</h1>
 
 <p align="center">
   <a href="https://www.gnu.org/licenses/gpl-3.0"><img src="https://img.shields.io/badge/License-GPLv3-blue.svg" alt="License: GPL v3"></a>
@@ -7,10 +7,9 @@
   <a href="https://www.buymeacoffee.com/skymapdevs?utm_source=github&utm_medium=readme&utm_campaign=readme_badge"><img src="https://img.shields.io/badge/Support-Buy%20Me%20A%20Coffee-orange?style=flat-square&logo=buy-me-a-coffee" alt="Buy Me A Coffee"></a>
 </p>
 
-<p align="center">
-  <a href="https://getskymap.app">https://getskymap.app</a><br>
-  Sky Map is the open-source astronomy app for Android and iPhone, built for the community.
-</p>
+<p align="center"><a href="https://getskymap.app">https://getskymap.app</a></p>
+
+<p align="center">Sky Map is the open-source astronomy app for Android and iPhone, built for the community.</p>
 
 <p align="center">
   <a href="https://play.google.com/store/apps/details?id=com.google.android.stardroid"><img src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png" alt="Get it on Google Play" height="60" align="middle"></a>
