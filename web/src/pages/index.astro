@@ -9,6 +9,7 @@ import shotSearch from '../assets/shot-search.png';
 import shotInfo from '../assets/shot-info.png';
 import shotTime from '../assets/shot-time.png';
 import shotNight from '../assets/shot-night.png';
+import Campaign from '../components/Campaign.astro';
 import { useT } from '../i18n';
 import quotes from '../data/quotes.json';
 import links from '../data/links.json';
@@ -30,6 +31,7 @@ const features = [
 const v2 = [1, 2, 3, 4, 5, 6] as const;
 ---
 <Base>
+  <Campaign />
   {links.appstore && (
     <a class="announce" href={links.appstore}>{t('banner.ios')} <span aria-hidden="true">→</span></a>
   )}

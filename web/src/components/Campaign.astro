@@ -1,0 +1,23 @@
+---
+import campaign from '../data/campaign.json';
+import links from '../data/links.json';
+
+interface Props { cta?: boolean }
+const { cta = true } = Astro.props;
+---
+<aside class="campaign" id="campaign" hidden data-until={campaign.until}>
+  <p>
+    {campaign.text} <a href={campaign.schoolUrl}>{campaign.school}</a>{campaign.textEnd}
+    {cta && <> <a href={links.support}>Buy a coffee →</a></>}
+  </p>
+</aside>
+<script is:inline>
+  (function () {
+    var c = document.getElementById('campaign');
+    if (c && new Date() <= new Date(c.dataset.until + 'T23:59:59')) c.hidden = false;
+  })();
+</script>
+<style>
+  .campaign { padding: .75rem 1rem; text-align: center; background: var(--outline-variant); }
+  .campaign p { margin: 0 auto; max-width: 60rem; font-size: .95rem; }
+</style>

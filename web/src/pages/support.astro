@@ -1,16 +1,28 @@
 ---
 import Base from '../layouts/Base.astro';
+import Campaign from '../components/Campaign.astro';
 import links from '../data/links.json';
+import campaign from '../data/campaign.json';
 ---
 <Base title="Support Sky Map" description="Help keep Sky Map free and independent." noindex>
+  <Campaign cta={false} />
   <article class="wrap prose">
     <h1>Support Sky Map</h1>
     <p>Sky Map is free, with no ads. If it's useful to you, you can help keep it going on Buy Me a Coffee.</p>
+    <p class="muted" id="campaign-note" hidden data-until={campaign.until}>
+      Payments go through Buy Me a Coffee to me, and I'm passing the proceeds on. They aren't tax-deductible donations to the school.
+    </p>
     <p><a class="btn primary" id="go" href={links.supportExternal}>Continue to Buy Me a Coffee</a></p>
     <p class="muted">You'll be taken there automatically in a moment.</p>
   </article>
   <!-- Visits to this page are the donation-intent count in Cloudflare Web Analytics. -->
   <script is:inline>
-    setTimeout(function () { location.replace(document.getElementById('go').href); }, 1500);
+    (function () {
+      var note = document.getElementById('campaign-note');
+      var live = new Date() <= new Date(note.dataset.until + 'T23:59:59');
+      if (live) note.hidden = false;
+      // Longer delay during the campaign so the message can be read.
+      setTimeout(function () { location.replace(document.getElementById('go').href); }, live ? 6000 : 1500);
+    })();
   </script>
 </Base>
