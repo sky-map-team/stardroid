@@ -293,14 +293,15 @@ class IosAppGraph(
     suspend fun satelliteDiagnostics(): SatelliteDiagnosticsState? =
         if (satellitesEnabled) withContext(Dispatchers.IO) { satellites.diagnostics() } else null
 
+    /** Flag on and consent given. */
+    private suspend fun mayFetchSatellites() =
+        satellitesEnabled && settings.satelliteDataEnabled.first()
+
     /**
      * Only for a user who switched the Satellites layer on (it starts off, so they choose to show
      * their IP address to CelesTrak), with the flag on and consent given. Through the repository,
      * so the circuit breaker and the two-hour minimum still apply.
      */
-    private suspend fun mayFetchSatellites() =
-        satellitesEnabled && settings.satelliteDataEnabled.first()
-
     private suspend fun refreshSatellitesIfStale() {
         if (!mayFetchSatellites()) return
         withContext(Dispatchers.IO) { satellites.refreshIfStale() }
