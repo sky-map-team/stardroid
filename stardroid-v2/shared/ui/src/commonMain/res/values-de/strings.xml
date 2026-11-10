@@ -634,4 +634,9 @@ Linienhelligkeit: normal, hell oder am hellsten für Dämmerung, Tageslicht oder
     <string name="diagnostics_satellite_never_fetched" translation_description="Row value in the diagnostics screen when satellite orbital data has never been downloaded">Nie</string>
     <string name="diagnostics_satellite_circuit_open" translation_description="Row label in the diagnostics screen for when satellite downloads are paused after repeated server errors">Downloads pausiert</string>
     <string name="diagnostics_satellite_circuit_open_format" translation_description="Row value in the diagnostics screen showing when paused satellite downloads will resume and how many failures caused the pause. %1$s is a date and time, %2$d is a count">Bis %1$s (%2$d Fehler)</string>
+    <string name="satellite_description" translation_description="Short description shown on the info card for an artificial satellite.">
+    Ein künstlicher Satellit in einer niedrigen Erdumlaufbahn, sonnenbeschienen vor einem dunklen Himmel. Er überquert den Himmel von Horizont zu Horizont in wenigen Minuten, bewegt sich stetig und ohne zu blinken.
+    </string>
+    <string name="satellite_search_name_iss" translation_description="Common name of the International Space Station, matched when the user types it in search. Use the name people in this language actually type.">Internationale Raumstation</string>
+    <string name="satellite_search_name_tiangong" translation_description="Common name of the Chinese Tiangong space station, matched when the user types it in search. Use the name people in this language actually type.">Raumstation Tiangong</string>
 </resources>

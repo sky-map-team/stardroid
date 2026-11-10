@@ -44,7 +44,6 @@
     <string name="notif_eclipse_text" translation_description="Body of the lunar eclipse notification, telling the user when it begins. %1$s is a time.">약 %1$s에 시작됩니다 — 밖에 나가 볼 가치가 있습니다</string>
     <string name="satellite_name_iss" translation_description="Display name for the International Space Station.">국제 우주 정거장</string>
     <string name="satellite_name_tiangong" translation_description="Display name for the Chinese space station Tiangong.">톈궁</string>
-    <string name="satellite_description" translation_description="Short description shown on the info card for an artificial satellite.">저궤도 인공위성으로, 어두운 하늘에서 햇빛을 받아 빛납니다. 몇 분 안에 지평선에서 지평선까지 꾸준히 깜빡임 없이 이동합니다.</string>
     <!-- tm:omitted name="tonight_satellite_pass" reason="identical_to_source" -->
 
     <!-- Long-press help for layers in the layer-visibility sheet. -->
@@ -155,7 +154,5 @@
     <string name="notif_digest_title" translation_description="Title of the tonight\'s-sky digest notification">오늘 밤 볼 가치가 있습니다</string>
     <string name="notif_action_mute_showers" translation_description="Notification action button that opens the system toggle for the meteor-shower channel">유성우 알림 끄기</string>
     <!-- Layers sheet: per-layer parameters (D87). -->
-    <string name="satellite_search_name_iss" translation_description="Common name of the International Space Station, matched when the user types it in search. Use the name people in this language actually type.">국제우주정거장</string>
-    <string name="satellite_search_name_tiangong" translation_description="Common name of the Chinese Tiangong space station, matched when the user types it in search. Use the name people in this language actually type.">톈궁 우주정거장</string>
     <string name="tonight_trailing_pass_peak" translation_description="Small trailing note on a satellite pass row. %1$d is the peak altitude in degrees, %2$.1f is a brightness magnitude.">최고 고도 %1$d°, 등급 %2$.1f</string>
 </resources>

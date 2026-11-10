@@ -44,9 +44,6 @@
     <string name="notif_eclipse_text" translation_description="Body of the lunar eclipse notification, telling the user when it begins. %1$s is a time.">लगभग %1$s के आसपास शुरू होगा — बाहर निकलने लायक है</string>
     <string name="satellite_name_iss" translation_description="Display name for the International Space Station.">अंतरिक्ष स्टेशन</string>
     <string name="satellite_name_tiangong" translation_description="Display name for the Chinese space station Tiangong.">तियांगोंग</string>
-    <string name="satellite_description" translation_description="Short description shown on the info card for an artificial satellite.">
-    निचली पृथ्वी कक्षा में एक कृत्रिम उपग्रह, जो अँधेरे आकाश में सूर्य के प्रकाश से जगमगा रहा है। यह कुछ ही मिनटों में क्षितिज से क्षितिज तक लगातार और बिना टिमटिमाए गति करता हुआ पार करता है।
-    </string>
     <!-- tm:omitted name="tonight_satellite_pass" reason="identical_to_source" -->
 
     <!-- Long-press help for layers in the layer-visibility sheet. -->
@@ -165,7 +162,5 @@
     <string name="notif_digest_title" translation_description="Title of the tonight\'s-sky digest notification">आज रात देखने लायक</string>
     <string name="notif_action_mute_showers" translation_description="Notification action button that opens the system toggle for the meteor-shower channel">वर्षा को म्यूट करें</string>
     <!-- Layers sheet: per-layer parameters (D87). -->
-    <string name="satellite_search_name_iss" translation_description="Common name of the International Space Station, matched when the user types it in search. Use the name people in this language actually type.">अंतर्राष्ट्रीय अंतरिक्ष स्टेशन</string>
-    <string name="satellite_search_name_tiangong" translation_description="Common name of the Chinese Tiangong space station, matched when the user types it in search. Use the name people in this language actually type.">तियांगोंग अंतरिक्ष स्टेशन</string>
     <string name="tonight_trailing_pass_peak" translation_description="Small trailing note on a satellite pass row. %1$d is the peak altitude in degrees, %2$.1f is a brightness magnitude.">शीर्ष %1$d°, चमक %2$.1f</string>
 </resources>

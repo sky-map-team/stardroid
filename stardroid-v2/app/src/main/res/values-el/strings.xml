@@ -44,9 +44,6 @@
     <string name="notif_eclipse_text" translation_description="Body of the lunar eclipse notification, telling the user when it begins. %1$s is a time.">Ξεκινάει γύρω στις %1$s — αξίζει να βγείτε έξω</string>
     <string name="satellite_name_iss" translation_description="Display name for the International Space Station.">Ο Διαστημικός Σταθμός</string>
     <!-- tm:omitted name="satellite_name_tiangong" reason="identical_to_source" -->
-    <string name="satellite_description" translation_description="Short description shown on the info card for an artificial satellite.">
-    Ένας τεχνητός δορυφόρος σε χαμηλή γήινη τροχιά, φωτισμένος από τον ήλιο σε σκοτεινό ουρανό. Διασχίζει από ορίζοντα σε ορίζοντα σε λίγα λεπτά, κινούμενος σταθερά και χωρίς να αναβοσβήνει.
-    </string>
     <!-- tm:omitted name="tonight_satellite_pass" reason="identical_to_source" -->
 
     <!-- Long-press help for layers in the layer-visibility sheet. -->
@@ -167,7 +164,5 @@
     <string name="notif_digest_title" translation_description="Title of the tonight\'s-sky digest notification">Αξίζει μια ματιά απόψε</string>
     <string name="notif_action_mute_showers" translation_description="Notification action button that opens the system toggle for the meteor-shower channel">Σίγαση βροχών</string>
     <!-- Layers sheet: per-layer parameters (D87). -->
-    <string name="satellite_search_name_iss" translation_description="Common name of the International Space Station, matched when the user types it in search. Use the name people in this language actually type.">Διεθνής Διαστημικός Σταθμός</string>
-    <string name="satellite_search_name_tiangong" translation_description="Common name of the Chinese Tiangong space station, matched when the user types it in search. Use the name people in this language actually type.">Διαστητικός Σταθμός Tiangong</string>
     <string name="tonight_trailing_pass_peak" translation_description="Small trailing note on a satellite pass row. %1$d is the peak altitude in degrees, %2$.1f is a brightness magnitude.">Μέγ. %1$d°, μέγ. φωτ. %2$.1f</string>
 </resources>

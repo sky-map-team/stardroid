@@ -100,9 +100,10 @@ class SearchViewModel(
     /**
      * Localized names to search a satellite by, beyond its element-set name (`ISS (ZARYA)`).
      * A function rather than a map because the view model outlives a language switch: it is
-     * read on every search, so the names follow the current locale.
+     * read on every search, so the names follow the current locale. Suspend because resource
+     * lookups are.
      */
-    private val satelliteAliases: (noradId: Int) -> List<String> = { emptyList() },
+    private val satelliteAliases: suspend (noradId: Int) -> List<String> = { emptyList() },
 ) : ViewModel() {
     private val _query = MutableStateFlow("")
     val query: StateFlow<String> = _query.asStateFlow()

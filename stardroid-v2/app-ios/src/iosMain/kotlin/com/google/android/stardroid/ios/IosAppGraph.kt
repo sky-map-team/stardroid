@@ -13,6 +13,7 @@ import com.google.android.stardroid.analytics.Analytics
 import com.google.android.stardroid.analytics.AnalyticsEvents
 import com.google.android.stardroid.analytics.NoOpAnalytics
 import com.google.android.stardroid.astronomy.MeeusEphemeris
+import com.google.android.stardroid.astronomy.SatellitePass
 import com.google.android.stardroid.catalog.CatalogRepository
 import com.google.android.stardroid.catalog.LocaleSpec
 import com.google.android.stardroid.data.RoomCatalogRepository
@@ -28,6 +29,7 @@ import com.google.android.stardroid.satellites.TrackedSatellite
 import com.google.android.stardroid.satellites.satelliteElementsFlow
 import com.google.android.stardroid.satellites.satelliteUiStatusFlow
 import com.google.android.stardroid.satellites.trackedSatellites
+import com.google.android.stardroid.satellites.upcomingGoodPasses
 import com.google.android.stardroid.sensors.SensorConfig
 import com.google.android.stardroid.sensors.ZeroMagneticDeclinationSource
 import com.google.android.stardroid.settings.DataStoreSettings
@@ -49,6 +51,10 @@ import com.google.android.stardroid.ui.location.LocationViewModel
 import com.google.android.stardroid.ui.map.MapViewModel
 import com.google.android.stardroid.ui.map.ReferenceFrame
 import com.google.android.stardroid.ui.objectinfo.ObjectInfoViewModel
+import com.google.android.stardroid.ui.resources.Res
+import com.google.android.stardroid.ui.resources.satellite_description
+import com.google.android.stardroid.ui.resources.satellite_search_name_iss
+import com.google.android.stardroid.ui.resources.satellite_search_name_tiangong
 import com.google.android.stardroid.ui.search.SearchViewModel
 import com.google.android.stardroid.ui.settings.SettingsViewModel
 import com.google.android.stardroid.ui.startup.StartupViewModel
@@ -71,6 +77,7 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock
 import kotlinx.coroutines.withContext
+import org.jetbrains.compose.resources.getString
 import platform.CoreMotion.CMMotionManager
 import platform.Foundation.NSApplicationSupportDirectory
 import platform.Foundation.NSBundle
@@ -386,24 +393,50 @@ class IosAppGraph(
         )
 
     /** Search spans a hidden Satellites layer (and re-enables it for the hit), so no layer gate. */
-    private suspend fun searchableSatellites(): List<TrackedSatellite> {
+    private suspend fun searchableSatellites(): List<TrackedSatellite> =
+        satellitesFor(
+            requireLayerEnabled = false,
+        )
+
+    /** A hidden layer draws nothing to tap, so taps need the layer on. */
+    private suspend fun tappableSatellites(): List<TrackedSatellite> =
+        satellitesFor(
+            requireLayerEnabled = true,
+        )
+
+    private suspend fun satellitesFor(requireLayerEnabled: Boolean): List<TrackedSatellite> {
         if (!satellitesEnabled) return emptyList()
+        if (requireLayerEnabled &&
+            !LayerRegistry.layerEnabled(settings, SatelliteLayer.LAYER_ID).first()
+        ) {
+            return emptyList()
+        }
         val elements = withContext(Dispatchers.IO) { satellites.repository.current() }
         return trackedSatellites(
             elements,
             locationController.locations.value,
-            description = null,
-            at = timeController.now(),
+            getString(Res.string.satellite_description),
+            timeController.now(),
         )
     }
 
-    // English only for now: Android's are translated strings, not yet shared with iOS.
-    private fun satelliteSearchAliases(noradId: Int): List<String> =
+    private suspend fun satelliteSearchAliases(noradId: Int): List<String> =
         when (noradId) {
-            SatelliteLayer.ISS_NORAD_ID -> listOf("International Space Station")
-            SatelliteLayer.TIANGONG_NORAD_ID -> listOf("Tiangong Space Station", "CSS")
+            SatelliteLayer.ISS_NORAD_ID -> listOf(getString(Res.string.satellite_search_name_iss))
+            SatelliteLayer.TIANGONG_NORAD_ID ->
+                listOf(getString(Res.string.satellite_search_name_tiangong), "CSS")
             else -> emptyList()
         }
+
+    private suspend fun upcomingSatellitePasses(noradId: Int): List<SatellitePass> {
+        val elements = withContext(Dispatchers.IO) { satellites.repository.current() }
+        return upcomingGoodPasses(
+            elements,
+            noradId,
+            locationController.locations.value,
+            timeController.now(),
+        )
+    }
 
     /** Time travel over the app's one clock; computed events (sunset...) use the map's place. */
     fun timeTravelViewModel(): TimeTravelViewModel =
@@ -414,7 +447,7 @@ class IosAppGraph(
             analytics = analytics,
         )
 
-    /** The card for a tapped object; satellites and the Moon-widget promo are Android's only. */
+    /** The card for a tapped object; the Moon-widget promo is Android's only. */
     fun objectInfoViewModel(): ObjectInfoViewModel =
         ObjectInfoViewModel(
             catalog = ::catalog,
@@ -423,6 +456,11 @@ class IosAppGraph(
             now = timeController::now,
             settings = settings,
             location = { locationController.locations.value },
+            satellites = ::tappableSatellites,
+            passTimesReliable = {
+                withContext(Dispatchers.IO) { satellites.repository.current().mayShowPassTimes }
+            },
+            upcomingPasses = ::upcomingSatellitePasses,
             analytics = analytics,
         )
 

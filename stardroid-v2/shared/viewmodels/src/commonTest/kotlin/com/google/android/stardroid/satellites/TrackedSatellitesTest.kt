@@ -46,4 +46,30 @@ class TrackedSatellitesTest {
 
         assertThat(result).isEmpty()
     }
+
+    @Test
+    fun `pass times are withheld once the elements are too old to time a pass`() {
+        val result =
+            upcomingGoodPasses(
+                elements(ElementFreshness.STALE, iss),
+                noradId = 25544,
+                location = london,
+                from = at,
+            )
+
+        assertThat(result).isEmpty()
+    }
+
+    @Test
+    fun `an uncached satellite has no passes`() {
+        val result =
+            upcomingGoodPasses(
+                elements(ElementFreshness.FRESH),
+                noradId = 25544,
+                location = london,
+                from = at,
+            )
+
+        assertThat(result).isEmpty()
+    }
 }

@@ -632,4 +632,9 @@ Luminosità delle linee: normale, luminosa o luminosissima, per il crepuscolo, l
     <string name="diagnostics_satellite_never_fetched" translation_description="Row value in the diagnostics screen when satellite orbital data has never been downloaded">Mai</string>
     <string name="diagnostics_satellite_circuit_open" translation_description="Row label in the diagnostics screen for when satellite downloads are paused after repeated server errors">Download in pausa</string>
     <string name="diagnostics_satellite_circuit_open_format" translation_description="Row value in the diagnostics screen showing when paused satellite downloads will resume and how many failures caused the pause. %1$s is a date and time, %2$d is a count">Fino a %1$s (%2$d errori)</string>
+    <string name="satellite_description" translation_description="Short description shown on the info card for an artificial satellite.">
+    Un satellite artificiale in orbita terrestre bassa, illuminato dal sole contro un cielo scuro. Attraversa il cielo da orizzonte a orizzonte in pochi minuti, muovendosi costantemente e senza lampeggiare.
+    </string>
+    <string name="satellite_search_name_iss" translation_description="Common name of the International Space Station, matched when the user types it in search. Use the name people in this language actually type.">Stazione Spaziale Internazionale</string>
+    <string name="satellite_search_name_tiangong" translation_description="Common name of the Chinese Tiangong space station, matched when the user types it in search. Use the name people in this language actually type.">Stazione Spaziale Tiangong</string>
 </resources>

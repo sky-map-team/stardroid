@@ -45,9 +45,6 @@
     <string name="notif_eclipse_text" translation_description="Body of the lunar eclipse notification, telling the user when it begins. %1$s is a time.">เริ่มต้นประมาณ %1$s — น่าออกไปดูข้างนอก</string>
     <string name="satellite_name_iss" translation_description="Display name for the International Space Station.">สถานีอวกาศ</string>
     <string name="satellite_name_tiangong" translation_description="Display name for the Chinese space station Tiangong.">เทียนกง</string>
-    <string name="satellite_description" translation_description="Short description shown on the info card for an artificial satellite.">
-    ดาวเทียมประดิษฐ์ในวงโคจรโลกระดับต่ำ สะท้อนแสงอาทิตย์ตัดกับท้องฟ้ามืด มันเคลื่อนขอบฟ้าถึงขอบฟ้าภายในเวลาไม่กี่วินาที เคลื่อนที่อย่างมั่นคงและไม่มีการกะพริบ
-    </string>
     <!-- tm:omitted name="tonight_satellite_pass" reason="identical_to_source" -->
 
     <!-- Long-press help for layers in the layer-visibility sheet. -->
@@ -166,7 +163,5 @@
     <string name="notif_digest_title" translation_description="Title of the tonight\'s-sky digest notification">น่าดูในคืนนี้</string>
     <string name="notif_action_mute_showers" translation_description="Notification action button that opens the system toggle for the meteor-shower channel">ปิดเสียงฝนดาวตก</string>
     <!-- Layers sheet: per-layer parameters (D87). -->
-    <string name="satellite_search_name_iss" translation_description="Common name of the International Space Station, matched when the user types it in search. Use the name people in this language actually type.">สถานีอวกาศนานาชาติ</string>
-    <string name="satellite_search_name_tiangong" translation_description="Common name of the Chinese Tiangong space station, matched when the user types it in search. Use the name people in this language actually type.">สถานีอวกาศเทียนกง</string>
     <string name="tonight_trailing_pass_peak" translation_description="Small trailing note on a satellite pass row. %1$d is the peak altitude in degrees, %2$.1f is a brightness magnitude.">สูงสุด %1$d°, โชติมาตร %2$.1f</string>
 </resources>

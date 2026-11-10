@@ -633,4 +633,9 @@
     <string name="diagnostics_satellite_never_fetched" translation_description="Row value in the diagnostics screen when satellite orbital data has never been downloaded">Ποτέ</string>
     <string name="diagnostics_satellite_circuit_open" translation_description="Row label in the diagnostics screen for when satellite downloads are paused after repeated server errors">Οι λήψεις έχουν τεθεί σε παύση</string>
     <string name="diagnostics_satellite_circuit_open_format" translation_description="Row value in the diagnostics screen showing when paused satellite downloads will resume and how many failures caused the pause. %1$s is a date and time, %2$d is a count">Μέχρι %1$s (%2$d αποτυχίες)</string>
+    <string name="satellite_description" translation_description="Short description shown on the info card for an artificial satellite.">
+    Ένας τεχνητός δορυφόρος σε χαμηλή γήινη τροχιά, φωτισμένος από τον ήλιο σε σκοτεινό ουρανό. Διασχίζει από ορίζοντα σε ορίζοντα σε λίγα λεπτά, κινούμενος σταθερά και χωρίς να αναβοσβήνει.
+    </string>
+    <string name="satellite_search_name_iss" translation_description="Common name of the International Space Station, matched when the user types it in search. Use the name people in this language actually type.">Διεθνής Διαστημικός Σταθμός</string>
+    <string name="satellite_search_name_tiangong" translation_description="Common name of the Chinese Tiangong space station, matched when the user types it in search. Use the name people in this language actually type.">Διαστητικός Σταθμός Tiangong</string>
 </resources>

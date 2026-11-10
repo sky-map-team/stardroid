@@ -107,6 +107,10 @@ import com.google.android.stardroid.ui.map.ChoreographerFrameTicker
 import com.google.android.stardroid.ui.map.MapViewModel
 import com.google.android.stardroid.ui.map.ReferenceFrame
 import com.google.android.stardroid.ui.objectinfo.ObjectInfoViewModel
+import com.google.android.stardroid.ui.resources.Res
+import com.google.android.stardroid.ui.resources.satellite_description
+import com.google.android.stardroid.ui.resources.satellite_search_name_iss
+import com.google.android.stardroid.ui.resources.satellite_search_name_tiangong
 import com.google.android.stardroid.ui.search.SearchViewModel
 import com.google.android.stardroid.ui.settings.SettingsViewModel
 import com.google.android.stardroid.ui.startup.AnnouncementDialog
@@ -130,6 +134,7 @@ import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.withContext
+import org.jetbrains.compose.resources.getString
 import java.util.Calendar
 import javax.inject.Inject
 import kotlin.time.Duration
@@ -277,22 +282,19 @@ class MainActivity : ComponentActivity() {
                         trackedSatellites(
                             appContext,
                             locations.value,
-                            appContext.getString(R.string.satellite_description),
+                            getString(Res.string.satellite_description),
                             time.now(),
                             requireLayerEnabled = false,
                         )
                     },
-                    // Application resources follow the live locale; this activity's would be
-                    // frozen at the language it was created in, and the view model outlives it.
+                    // Read on every search so the names follow a language switch: the view model
+                    // outlives the activity whose context would be frozen at its creation locale.
                     satelliteAliases = { norad ->
                         when (norad) {
                             SatelliteLayer.ISS_NORAD_ID ->
-                                listOf(appContext.getString(R.string.satellite_search_name_iss))
+                                listOf(getString(Res.string.satellite_search_name_iss))
                             SatelliteLayer.TIANGONG_NORAD_ID ->
-                                listOf(
-                                    appContext.getString(R.string.satellite_search_name_tiangong),
-                                    "CSS",
-                                )
+                                listOf(getString(Res.string.satellite_search_name_tiangong), "CSS")
                             else -> emptyList()
                         }
                     },
@@ -325,7 +327,7 @@ class MainActivity : ComponentActivity() {
                         trackedSatellites(
                             appContext,
                             locations.value,
-                            appContext.getString(R.string.satellite_description),
+                            getString(Res.string.satellite_description),
                             time.now(),
                         )
                     },
