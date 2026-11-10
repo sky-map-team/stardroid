@@ -243,8 +243,8 @@ For iOS, Compose Resources' `getString` is `suspend`, and `TextSource.text` is n
 implementation reads every `TextId` once when it plans (in the app's locale) and answers from
 that map. Planning runs on foreground and on a locale change, so the map is never stale.
 
-Still to build, in order: the iOS scheduler over `UNUserNotificationCenter` with the replan
-triggers; the Settings and layer-option toggles with the permission prompt; deep links.
+Still to build, in order: the planner and text for eclipse and pass alerts; the iOS scheduler
+over `UNUserNotificationCenter` with the replan triggers; the Settings and layer-option toggles with the permission prompt; deep links.
 
 ### 5.3 Kinds, permission and settings
 
@@ -422,7 +422,9 @@ Decided 2026-11-03/04:
 
 Open:
 
-5. Eclipse alerts: in the first notifications release or later?
+5. ~~Eclipse alerts: in the first notifications release or later?~~ **Decided: eclipse alerts and
+   satellite pass alerts are both in the first notifications release (2.1.0).** Eclipse first, as
+   the cheaper; each kind has its own in-app toggle, default off.
 
 ## 11. Verification
 
