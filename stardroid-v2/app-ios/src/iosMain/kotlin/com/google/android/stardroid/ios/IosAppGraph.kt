@@ -63,6 +63,7 @@ import kotlinx.cinterop.ExperimentalForeignApi
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.IO
+import kotlinx.coroutines.Job
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -281,13 +282,12 @@ class IosAppGraph(
      * policy as the foreground fetch, minus the staleness test, since the system picks the time.
      */
     internal suspend fun refreshSatellitesInBackground() {
-        if (!satellitesEnabled) return
-        if (!settings.satelliteDataEnabled.first()) return
+        if (!mayFetchSatellites()) return
         if (!LayerRegistry.layerEnabled(settings, SatelliteLayer.LAYER_ID).first()) return
         withContext(Dispatchers.IO) { satellites.refreshNow() }
     }
 
-    internal val backgroundScope: CoroutineScope get() = scope
+    internal fun startBackgroundRefresh(): Job = scope.launch { refreshSatellitesInBackground() }
 
     /** Satellite data status for the Diagnostics screen; null with the flag off. */
     suspend fun satelliteDiagnostics(): SatelliteDiagnosticsState? =
@@ -298,9 +298,11 @@ class IosAppGraph(
      * their IP address to CelesTrak), with the flag on and consent given. Through the repository,
      * so the circuit breaker and the two-hour minimum still apply.
      */
+    private suspend fun mayFetchSatellites() =
+        satellitesEnabled && settings.satelliteDataEnabled.first()
+
     private suspend fun refreshSatellitesIfStale() {
-        if (!satellitesEnabled) return
-        if (!settings.satelliteDataEnabled.first()) return
+        if (!mayFetchSatellites()) return
         withContext(Dispatchers.IO) { satellites.refreshIfStale() }
     }
 
@@ -375,7 +377,7 @@ class IosAppGraph(
             analytics = analytics,
         )
 
-    /** Search over the catalog, aimed as Android's is: [map] answers whether it is in manual mode. */
+    /** Search over the catalog; [map] answers whether it is in manual mode, as on Android. */
     fun searchViewModel(map: MapViewModel): SearchViewModel =
         SearchViewModel(
             catalog = ::catalog,
@@ -393,16 +395,10 @@ class IosAppGraph(
         )
 
     /** Search spans a hidden Satellites layer (and re-enables it for the hit), so no layer gate. */
-    private suspend fun searchableSatellites(): List<TrackedSatellite> =
-        satellitesFor(
-            requireLayerEnabled = false,
-        )
+    private suspend fun searchableSatellites() = satellitesFor(requireLayerEnabled = false)
 
     /** A hidden layer draws nothing to tap, so taps need the layer on. */
-    private suspend fun tappableSatellites(): List<TrackedSatellite> =
-        satellitesFor(
-            requireLayerEnabled = true,
-        )
+    private suspend fun tappableSatellites() = satellitesFor(requireLayerEnabled = true)
 
     private suspend fun satellitesFor(requireLayerEnabled: Boolean): List<TrackedSatellite> {
         if (!satellitesEnabled) return emptyList()
@@ -411,31 +407,40 @@ class IosAppGraph(
         ) {
             return emptyList()
         }
-        val elements = withContext(Dispatchers.IO) { satellites.repository.current() }
-        return trackedSatellites(
-            elements,
-            locationController.locations.value,
-            getString(Res.string.satellite_description),
-            timeController.now(),
-        )
+        val elements = currentElements()
+        val description = getString(Res.string.satellite_description)
+        return withContext(Dispatchers.Default) {
+            trackedSatellites(
+                elements,
+                locationController.locations.value,
+                description,
+                timeController.now(),
+            )
+        }
     }
 
     private suspend fun satelliteSearchAliases(noradId: Int): List<String> =
         when (noradId) {
             SatelliteLayer.ISS_NORAD_ID -> listOf(getString(Res.string.satellite_search_name_iss))
             SatelliteLayer.TIANGONG_NORAD_ID ->
+                // "CSS" is the Chinese Space Station's official abbreviation, so it isn't translated.
                 listOf(getString(Res.string.satellite_search_name_tiangong), "CSS")
             else -> emptyList()
         }
 
+    private suspend fun currentElements() =
+        withContext(Dispatchers.IO) { satellites.repository.current() }
+
     private suspend fun upcomingSatellitePasses(noradId: Int): List<SatellitePass> {
-        val elements = withContext(Dispatchers.IO) { satellites.repository.current() }
-        return upcomingGoodPasses(
-            elements,
-            noradId,
-            locationController.locations.value,
-            timeController.now(),
-        )
+        val elements = currentElements()
+        return withContext(Dispatchers.Default) {
+            upcomingGoodPasses(
+                elements,
+                noradId,
+                locationController.locations.value,
+                timeController.now(),
+            )
+        }
     }
 
     /** Time travel over the app's one clock; computed events (sunset...) use the map's place. */
@@ -458,7 +463,7 @@ class IosAppGraph(
             location = { locationController.locations.value },
             satellites = ::tappableSatellites,
             passTimesReliable = {
-                withContext(Dispatchers.IO) { satellites.repository.current().mayShowPassTimes }
+                currentElements().mayShowPassTimes
             },
             upcomingPasses = ::upcomingSatellitePasses,
             analytics = analytics,
@@ -502,7 +507,7 @@ class IosAppGraph(
             analytics = analytics,
         )
 
-    /** From Core Motion's calibration level; see screens-and-startup.md for the iPhone 13 measurement. */
+    /** From Core Motion's calibration level; iPhone 13 measurement in screens-and-startup.md. */
     fun calibrationViewModel(): CompassCalibrationViewModel =
         CompassCalibrationViewModel(
             sensorStatus = sensorStatus,

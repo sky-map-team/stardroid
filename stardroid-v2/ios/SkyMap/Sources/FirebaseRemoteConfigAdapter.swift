@@ -33,7 +33,7 @@ final class FirebaseRemoteConfigAdapter: NSObject, SkyMapKit.FlagSource {
     /// Calls `done` once the stored values are readable, or after a short wait if they are not,
     /// because the flags are read once at launch and must not see a half-loaded config. Safe to
     /// call again (the background refresh and the first scene both do): later callers wait for,
-    /// or get, the same answer.
+    /// or get, the same answer. Main thread only, which is why the state needs no lock.
     func prepare(done: @escaping () -> Void) {
         if ready {
             done()

@@ -56,8 +56,8 @@ private const val CARD_PASS_LIMIT = 5
 /**
  * The next good passes for one satellite, for the info card's pass table.
  *
- * Looks five days ahead: TLE drift makes times beyond that dishonest, and past the staleness
- * gate ([SatelliteElements.mayShowPassTimes]) the times would be confidently wrong, so none.
+ * Past the staleness gate ([SatelliteElements.mayShowPassTimes]) the times would be
+ * confidently wrong, so none.
  */
 fun upcomingGoodPasses(
     elements: SatelliteElements,

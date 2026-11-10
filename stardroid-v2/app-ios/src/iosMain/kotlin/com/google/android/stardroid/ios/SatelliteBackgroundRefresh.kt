@@ -12,7 +12,6 @@ package com.google.android.stardroid.ios
 import com.google.android.stardroid.analytics.Analytics
 import com.google.android.stardroid.startup.FlagSource
 import kotlinx.coroutines.Job
-import kotlinx.coroutines.launch
 
 private var sharedGraph: IosAppGraph? = null
 
@@ -34,7 +33,8 @@ class SatelliteBackgroundRefresh internal constructor(
 
 /**
  * The body of the `BGAppRefreshTask` (Swift schedules it), run on the main thread once the flags
- * are readable. [onDone] gets true if the work ran to the end without being cancelled.
+ * are readable. [onDone] gets true if the work ran to the end without being cancelled, and may
+ * be called on any thread.
  */
 fun refreshSatellitesInBackground(
     analytics: Analytics,
@@ -42,10 +42,7 @@ fun refreshSatellitesInBackground(
     onDone: (completed: Boolean) -> Unit,
 ): SatelliteBackgroundRefresh {
     val graph = sharedAppGraph(analytics, flags)
-    val job =
-        graph.backgroundScope.launch {
-            graph.refreshSatellitesInBackground()
-        }
+    val job = graph.startBackgroundRefresh()
     job.invokeOnCompletion { onDone(it == null) }
     return SatelliteBackgroundRefresh(job)
 }
