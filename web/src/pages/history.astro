@@ -7,6 +7,7 @@ const timeline = [
   { year: '2009', title: 'The Google era', body: 'Born as a 20% project at Google, Sky Map showed what a phone’s sensors could do.' },
   { year: '2012', title: 'Open source', body: 'Sky Map was open-sourced and handed to the community.' },
   { year: '2026', title: 'Version 2', body: 'A ground-up rebuild, with a new sky renderer and a new look.' },
+  { year: '2026', date: '7 November', title: 'Sky Map on iPhone', body: 'Sky Map came to iPhone as Open Sky Map, built on the same version 2 engine.' },
 ];
 const videos = [
   { id: 'p6znyx0gjb4', title: 'Sky Map Introduction' },
@@ -19,7 +20,7 @@ const videos = [
     <h1 class="h">A short history</h1>
     <ol class="timeline">
       {timeline.map((e) => (
-        <li><span class="year">{e.year}</span><div><h2>{e.title}</h2><p class="muted">{e.body}</p></div></li>
+        <li><div><span class="year">{e.year}</span>{e.date && <span class="date">{e.date}</span>}</div><div><h2>{e.title}</h2><p class="muted">{e.body}</p></div></li>
       ))}
     </ol>
 
@@ -47,6 +48,7 @@ const videos = [
   .timeline { list-style: none; padding: 0; margin: 2rem 0 4rem; display: grid; gap: 2rem; max-width: var(--measure); }
   .timeline li { display: grid; grid-template-columns: 5rem 1fr; gap: 1rem; }
   .year { font: 500 1.4rem var(--data); color: var(--star-gold); }
+  .date { display: block; font: 500 .8rem var(--data); color: var(--muted); }
   .timeline h2 { font-size: 1.25rem; margin-bottom: .25rem; }
   .timeline p { margin: 0; }
   .vh { font-size: 1.5rem; }
