@@ -655,4 +655,10 @@ Kecerahan garis: normal, terang, atau sangat terang, untuk langit senja, siang h
     <!-- tm:omitted name="jupiter" reason="identical_to_source" -->
     <!-- tm:omitted name="uranus" reason="identical_to_source" -->
     <!-- tm:omitted name="pluto" reason="identical_to_source" -->
+    <string name="notif_pass_title" translation_description="Title of the notification sent shortly before a satellite passes overhead. %1$s is the satellite name.">%1$s akan melintas di atas segera</string>
+    <string name="notif_pass_text" translation_description="Body of the satellite pass notification, telling the user when to go outside. %1$s is a time.">Terlihat mulai sekitar %1$s — keluarlah dan biarkan mata Anda menyesuaikan</string>
+    <string name="notif_eclipse_title" translation_description="Title of the notification sent before a lunar eclipse starts. %1$s is a localized eclipse type like \'Total lunar eclipse\'.">%1$s akan segera dimulai</string>
+    <string name="notif_eclipse_text" translation_description="Body of the lunar eclipse notification, telling the user when it begins. %1$s is a time.">Dimulai sekitar %1$s — layak untuk keluar melihatnya</string>
+    <string name="satellite_name_iss" translation_description="Display name for the International Space Station.">Stasiun Luar Angkasa</string>
+    <!-- tm:omitted name="satellite_name_tiangong" reason="identical_to_source" -->
 </resources>

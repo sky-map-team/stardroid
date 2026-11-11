@@ -9,9 +9,18 @@
 
 package com.google.android.stardroid.surfaces
 
+import com.google.android.stardroid.astronomy.LunarEclipseCircumstances
+import com.google.android.stardroid.astronomy.SatellitePass
 import com.google.android.stardroid.events.SkyEvent
 import com.google.android.stardroid.events.TonightSky
+import com.google.android.stardroid.events.moonAboveHorizonBetween
+import com.google.android.stardroid.math.LatLong
 import kotlinx.datetime.Instant
+import kotlinx.datetime.TimeZone
+import kotlinx.datetime.minus
+import kotlinx.datetime.toLocalDateTime
+import kotlin.time.Duration
+import kotlin.time.Duration.Companion.hours
 import kotlin.time.Duration.Companion.minutes
 
 enum class NotificationKind { SHOWER_PEAK, TONIGHT_DIGEST }
@@ -57,4 +66,89 @@ object NotificationPlanner {
             sky = sky,
         )
     }
+
+    /** A pass closer than this to its alert time is not worth arming: it would fire too late. */
+    val PASS_MINIMUM_NOTICE = 2.minutes
+
+    /** How far ahead of a lunar eclipse's visible start to notify. */
+    val ECLIPSE_LEAD = 30.minutes
+
+    /**
+     * The pass worth an alert: the brightest of those that start far enough ahead for an alert
+     * [lead] before them to still land in the future. At most one, because the ISS can make two
+     * or three visible passes in an evening and alerting on each gets an app silenced.
+     */
+    fun alertablePass(
+        now: Instant,
+        passes: List<SatellitePass>,
+        lead: Duration,
+    ): SatellitePass? =
+        passes
+            .filter { it.start - now > lead + PASS_MINIMUM_NOTICE }
+            .minByOrNull { it.peakMagnitude }
+
+    /**
+     * One pass alert per night over the next [horizon], each for that night's brightest pass.
+     * A night runs noon to noon in [zone], so a pass just after midnight belongs to the evening
+     * before. The plan-ahead model for platforms that cannot run code when an alert fires.
+     */
+    fun planPassAlerts(
+        now: Instant,
+        passes: List<SatellitePass>,
+        zone: TimeZone,
+        lead: Duration,
+        horizon: Duration,
+    ): List<PlannedPassAlert> =
+        passes
+            .filter { it.start - now <= horizon }
+            .groupBy { (it.start - 12.hours).toLocalDateTime(zone).date }
+            .mapNotNull { (_, tonight) -> alertablePass(now, tonight, lead) }
+            .sortedBy { it.start }
+            .map { PlannedPassAlert(it, fireAt = it.start - lead) }
+
+    /**
+     * The alert for the next lunar [eclipse], or null when there is none worth sending: it is
+     * over, or the Moon is not above the horizon at [location] while it lasts. With no known
+     * location the alert is sent anyway. [horizon] limits how far ahead to plan, for platforms
+     * that arm a job near the time; null plans however far off it is.
+     */
+    fun planEclipseAlert(
+        now: Instant,
+        eclipse: LunarEclipseCircumstances?,
+        location: LatLong?,
+        horizon: Duration? = null,
+    ): PlannedEclipseAlert? {
+        if (eclipse == null) return null
+        val end = eclipse.penumbralEnd ?: eclipse.greatestEclipse
+        if (now >= end) return null
+        if (location != null &&
+            !moonAboveHorizonBetween(
+                eclipse.penumbralBegin ?: eclipse.greatestEclipse,
+                end,
+                location,
+            )
+        ) {
+            return null
+        }
+        // Under way already: still alert, a moment from now, as long as it has not ended.
+        val fireAt = maxOf(eclipseAlertPoint(eclipse) - ECLIPSE_LEAD, now + MINIMUM_LEAD)
+        if (horizon != null && fireAt - now > horizon) return null
+        return PlannedEclipseAlert(eclipse, fireAt)
+    }
+
+    /** The eclipse's visible start: the umbral contact for a partial or total one, else P1. */
+    fun eclipseAlertPoint(eclipse: LunarEclipseCircumstances): Instant =
+        eclipse.umbralBegin ?: eclipse.penumbralBegin ?: eclipse.greatestEclipse
 }
+
+/** A satellite pass alert to arm: fires [fireAt], before [pass] begins. */
+data class PlannedPassAlert(
+    val pass: SatellitePass,
+    val fireAt: Instant,
+)
+
+/** A lunar eclipse alert to arm. */
+data class PlannedEclipseAlert(
+    val eclipse: LunarEclipseCircumstances,
+    val fireAt: Instant,
+)

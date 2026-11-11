@@ -21,18 +21,12 @@
     <!-- Layer names in the layer-visibility sheet. -->
     <string name="channel_passes_name" translation_description="Name of the notification channel for alerts shortly before a satellite passes overhead.">گذر ماهواره‌ها</string>
     <string name="channel_passes_description" translation_description="Description of the satellite-pass notification channel.">یک هشدار واحد کمی قبل از بهترین گذر قابل مشاهده شب</string>
-    <string name="notif_pass_title" translation_description="Title of the notification sent shortly before a satellite passes overhead. %1$s is the satellite name.">%1$s به زودی از بالای سر عبور می‌کند</string>
-    <string name="notif_pass_text" translation_description="Body of the satellite pass notification, telling the user when to go outside. %1$s is a time.">از حدود %1$s قابل مشاهده است — بیرون بروید و اجازه دهید چشمانتان عادت کند</string>
     <string name="channel_passes_now_name" translation_description="Name of the notification channel for the alert sent the moment a satellite rises.">ماهواره هم‌اکنون در حال طلوع است</string>
     <string name="channel_passes_now_description" translation_description="Description of the notification channel for the alert sent the moment a satellite pass begins.">یک هشدار به همراه لرزش، با شروع بهترین گذر قابل‌رؤیت در شب</string>
     <string name="notif_pass_now_title" translation_description="Title of the notification sent the moment a satellite pass begins. %1$s is the satellite name.">%1$s هم‌اکنون در حال طلوع است</string>
     <string name="notif_pass_now_text" translation_description="Body of the notification sent the moment a satellite pass begins.">به بالا نگاه کنید — هم‌اکنون در حال عبور از آسمان است</string>
     <string name="channel_eclipses_name" translation_description="Name of the notification channel for alerts before a lunar eclipse starts.">خسوف‌ها</string>
     <string name="channel_eclipses_description" translation_description="Description of the lunar-eclipse notification channel.">یک هشدار واحد قبل از شروع خسوف</string>
-    <string name="notif_eclipse_title" translation_description="Title of the notification sent before a lunar eclipse starts. %1$s is a localized eclipse type like \'Total lunar eclipse\'.">%1$s به زودی شروع می‌شود</string>
-    <string name="notif_eclipse_text" translation_description="Body of the lunar eclipse notification, telling the user when it begins. %1$s is a time.">حدود %1$s شروع می‌شود — ارزش بیرون رفتن را دارد</string>
-    <string name="satellite_name_iss" translation_description="Display name for the International Space Station.">ایستگاه فضایی</string>
-    <string name="satellite_name_tiangong" translation_description="Display name for the Chinese space station Tiangong.">تیانگونگ</string>
 
     <!-- Long-press help for layers in the layer-visibility sheet. -->
 

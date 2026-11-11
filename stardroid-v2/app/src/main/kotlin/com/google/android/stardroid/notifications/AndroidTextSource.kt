@@ -39,6 +39,12 @@ class AndroidTextSource(
             TextId.NOTIF_SHOWER_DARK_MOON -> R.string.notif_shower_dark_moon
             TextId.NOTIF_SHOWER_BRIGHT_MOON -> R.string.notif_shower_bright_moon
             TextId.NOTIF_DIGEST_TITLE -> R.string.notif_digest_title
+            TextId.NOTIF_PASS_TITLE -> R.string.notif_pass_title
+            TextId.NOTIF_PASS_TEXT -> R.string.notif_pass_text
+            TextId.NOTIF_ECLIPSE_TITLE -> R.string.notif_eclipse_title
+            TextId.NOTIF_ECLIPSE_TEXT -> R.string.notif_eclipse_text
+            TextId.SATELLITE_NAME_ISS -> R.string.satellite_name_iss
+            TextId.SATELLITE_NAME_TIANGONG -> R.string.satellite_name_tiangong
             TextId.TONIGHT_WELL_PLACED -> R.string.tonight_well_placed
             TextId.TONIGHT_SHOWER_PEAK -> R.string.tonight_shower_peak
             TextId.TONIGHT_SHOWER_DAYS -> R.string.tonight_shower_days

@@ -10,6 +10,7 @@ package com.google.android.stardroid.surfaces
 
 import com.google.android.stardroid.astronomy.LunarPhase
 import com.google.android.stardroid.astronomy.SolarSystemBody
+import com.google.android.stardroid.astronomy.nextLunarEclipse
 import com.google.android.stardroid.catalog.CelestialObjectId
 import com.google.android.stardroid.catalog.MeteorShower
 import com.google.android.stardroid.catalog.MonthDay
@@ -80,6 +81,30 @@ class NotificationTextTest {
 
             assertThat(text.highlight(event).text.startsWith("TONIGHT_WELL_PLACED(BODY_")).isTrue()
         }
+    }
+
+    @Test
+    fun `a station is named by its translated name and another satellite by its element set`() {
+        assertThat(text.passTitle(25544, "ISS (ZARYA)"))
+            .isEqualTo("NOTIF_PASS_TITLE(SATELLITE_NAME_ISS())")
+        assertThat(text.passTitle(48274, "CSS (TIANHE)"))
+            .isEqualTo("NOTIF_PASS_TITLE(SATELLITE_NAME_TIANGONG())")
+        assertThat(text.passTitle(99999, "SOMETHING"))
+            .isEqualTo("NOTIF_PASS_TITLE(SOMETHING)")
+    }
+
+    @Test
+    fun `the pass body gives the start time`() {
+        assertThat(text.passBody(peakTime)).isEqualTo("NOTIF_PASS_TEXT(t)")
+    }
+
+    @Test
+    fun `an eclipse is named by its type and timed by its peak`() {
+        val eclipse = nextLunarEclipse(Instant.parse("2026-02-01T12:00:00Z"))!!
+
+        assertThat(text.eclipseTitle(eclipse))
+            .isEqualTo("NOTIF_ECLIPSE_TITLE(TONIGHT_LUNAR_ECLIPSE_TOTAL())")
+        assertThat(text.eclipseBody(eclipse)).isEqualTo("NOTIF_ECLIPSE_TEXT(t)")
     }
 
     private companion object {

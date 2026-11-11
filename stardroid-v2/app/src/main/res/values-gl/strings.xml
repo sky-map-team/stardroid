@@ -21,14 +21,8 @@
     <!-- Layer names in the layer-visibility sheet. -->
     <string name="channel_passes_name" translation_description="Name of the notification channel for alerts shortly before a satellite passes overhead.">Pasos de satélites</string>
     <string name="channel_passes_description" translation_description="Description of the satellite-pass notification channel.">Unha única alerta pouco antes do mellor paso visible da noite</string>
-    <string name="notif_pass_title" translation_description="Title of the notification sent shortly before a satellite passes overhead. %1$s is the satellite name.">%1$s pasa por riba pronto</string>
-    <string name="notif_pass_text" translation_description="Body of the satellite pass notification, telling the user when to go outside. %1$s is a time.">Visible desde aproximadamente as %1$s — sae e deixa que os teus ollos se adapten</string>
     <string name="channel_eclipses_name" translation_description="Name of the notification channel for alerts before a lunar eclipse starts.">Eclipses lunares</string>
     <string name="channel_eclipses_description" translation_description="Description of the lunar-eclipse notification channel.">Unha única alerta antes de que comece un eclipse lunar</string>
-    <string name="notif_eclipse_title" translation_description="Title of the notification sent before a lunar eclipse starts. %1$s is a localized eclipse type like \'Total lunar eclipse\'.">%1$s comeza pronto</string>
-    <string name="notif_eclipse_text" translation_description="Body of the lunar eclipse notification, telling the user when it begins. %1$s is a time.">Comeza arredor das %1$s — paga a pena saír a velo</string>
-    <string name="satellite_name_iss" translation_description="Display name for the International Space Station.">A Estación Espacial</string>
-    <string name="satellite_name_tiangong" translation_description="Display name for the Chinese space station Tiangong.">Tiangong</string>
 
     <!-- Map screen controls. -->
 

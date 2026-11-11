@@ -637,4 +637,10 @@ Jasność linii: normalna, jasna lub najjaśniejsza, odpowiednio do zmierzchu, d
     <!-- tm:omitted name="tonight_satellite_pass" reason="identical_to_source" -->
     <!-- tm:omitted name="mars" reason="identical_to_source" -->
     <!-- tm:omitted name="saturn" reason="identical_to_source" -->
+    <string name="notif_pass_title" translation_description="Title of the notification sent shortly before a satellite passes overhead. %1$s is the satellite name.">%1$s wkrótce przeleci nad głową</string>
+    <string name="notif_pass_text" translation_description="Body of the satellite pass notification, telling the user when to go outside. %1$s is a time.">Widoczny od około %1$s — wyjdź na zewnątrz i pozwól oczom się przyzwyczaić</string>
+    <string name="notif_eclipse_title" translation_description="Title of the notification sent before a lunar eclipse starts. %1$s is a localized eclipse type like \'Total lunar eclipse\'.">%1$s wkrótce się rozpocznie</string>
+    <string name="notif_eclipse_text" translation_description="Body of the lunar eclipse notification, telling the user when it begins. %1$s is a time.">Rozpoczyna się około %1$s — warto wyjść na zewnątrz</string>
+    <string name="satellite_name_iss" translation_description="Display name for the International Space Station.">Międzynarodowa Stacja Kosmiczna</string>
+    <!-- tm:omitted name="satellite_name_tiangong" reason="identical_to_source" -->
 </resources>

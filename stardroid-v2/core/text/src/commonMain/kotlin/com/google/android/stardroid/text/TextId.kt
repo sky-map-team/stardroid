@@ -16,6 +16,12 @@ enum class TextId {
     NOTIF_SHOWER_DARK_MOON,
     NOTIF_SHOWER_BRIGHT_MOON,
     NOTIF_DIGEST_TITLE,
+    NOTIF_PASS_TITLE,
+    NOTIF_PASS_TEXT,
+    NOTIF_ECLIPSE_TITLE,
+    NOTIF_ECLIPSE_TEXT,
+    SATELLITE_NAME_ISS,
+    SATELLITE_NAME_TIANGONG,
 
     // Tonight rows, shared by the digest and the widget.
     TONIGHT_WELL_PLACED,

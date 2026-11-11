@@ -21,18 +21,12 @@
     <!-- Layer names in the layer-visibility sheet. -->
     <string name="channel_passes_name" translation_description="Name of the notification channel for alerts shortly before a satellite passes overhead.">위성 통과</string>
     <string name="channel_passes_description" translation_description="Description of the satellite-pass notification channel.">밤에 가장 잘 보이는 위성 통과 직전 한 번 알림</string>
-    <string name="notif_pass_title" translation_description="Title of the notification sent shortly before a satellite passes overhead. %1$s is the satellite name.">%1$s이(가) 곧 머리 위를 통과합니다</string>
-    <string name="notif_pass_text" translation_description="Body of the satellite pass notification, telling the user when to go outside. %1$s is a time.">약 %1$s부터 보입니다 — 밖으로 나가 눈을 적응시키세요</string>
     <string name="channel_passes_now_name" translation_description="Name of the notification channel for the alert sent the moment a satellite rises.">인공위성이 떠오르는 중입니다</string>
     <string name="channel_passes_now_description" translation_description="Description of the notification channel for the alert sent the moment a satellite pass begins.">오늘 밤 가장 잘 보이는 인공위성 통과가 시작될 때 진동과 함께 울리는 알림입니다</string>
     <string name="notif_pass_now_title" translation_description="Title of the notification sent the moment a satellite pass begins. %1$s is the satellite name.">%1$s이(가) 떠오르는 중입니다</string>
     <string name="notif_pass_now_text" translation_description="Body of the notification sent the moment a satellite pass begins.">하늘을 올려다보세요 — 지금 하늘을 가로지르고 있습니다</string>
     <string name="channel_eclipses_name" translation_description="Name of the notification channel for alerts before a lunar eclipse starts.">월식</string>
     <string name="channel_eclipses_description" translation_description="Description of the lunar-eclipse notification channel.">월식 시작 전 한 번 알림</string>
-    <string name="notif_eclipse_title" translation_description="Title of the notification sent before a lunar eclipse starts. %1$s is a localized eclipse type like \'Total lunar eclipse\'.">%1$s이(가) 곧 시작됩니다</string>
-    <string name="notif_eclipse_text" translation_description="Body of the lunar eclipse notification, telling the user when it begins. %1$s is a time.">약 %1$s에 시작됩니다 — 밖에 나가 볼 가치가 있습니다</string>
-    <string name="satellite_name_iss" translation_description="Display name for the International Space Station.">국제 우주 정거장</string>
-    <string name="satellite_name_tiangong" translation_description="Display name for the Chinese space station Tiangong.">톈궁</string>
 
     <!-- Long-press help for layers in the layer-visibility sheet. -->
 

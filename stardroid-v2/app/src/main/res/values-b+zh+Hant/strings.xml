@@ -21,18 +21,12 @@
     <!-- Layer names in the layer-visibility sheet. -->
     <string name="channel_passes_name" translation_description="Name of the notification channel for alerts shortly before a satellite passes overhead.">衛星凌空</string>
     <string name="channel_passes_description" translation_description="Description of the satellite-pass notification channel.">在當晚最佳可見凌空之前不久發出單次提醒</string>
-    <string name="notif_pass_title" translation_description="Title of the notification sent shortly before a satellite passes overhead. %1$s is the satellite name.">%1$s 即將凌空</string>
-    <string name="notif_pass_text" translation_description="Body of the satellite pass notification, telling the user when to go outside. %1$s is a time.">大約從 %1$s 開始可見 — 到戶外讓眼睛適應黑暗</string>
     <string name="channel_passes_now_name" translation_description="Name of the notification channel for the alert sent the moment a satellite rises.">衛星正在升起</string>
     <string name="channel_passes_now_description" translation_description="Description of the notification channel for the alert sent the moment a satellite pass begins.">在夜間最佳可見衛星過境開始時發出帶震動的提醒</string>
     <string name="notif_pass_now_title" translation_description="Title of the notification sent the moment a satellite pass begins. %1$s is the satellite name.">%1$s正在升起</string>
     <string name="notif_pass_now_text" translation_description="Body of the notification sent the moment a satellite pass begins.">抬頭看 — 它正劃過夜空</string>
     <string name="channel_eclipses_name" translation_description="Name of the notification channel for alerts before a lunar eclipse starts.">月食</string>
     <string name="channel_eclipses_description" translation_description="Description of the lunar-eclipse notification channel.">在月食開始之前發出單次提醒</string>
-    <string name="notif_eclipse_title" translation_description="Title of the notification sent before a lunar eclipse starts. %1$s is a localized eclipse type like \'Total lunar eclipse\'.">%1$s 即將開始</string>
-    <string name="notif_eclipse_text" translation_description="Body of the lunar eclipse notification, telling the user when it begins. %1$s is a time.">大約在 %1$s 開始 — 值得出門觀看</string>
-    <string name="satellite_name_iss" translation_description="Display name for the International Space Station.">國際太空站</string>
-    <string name="satellite_name_tiangong" translation_description="Display name for the Chinese space station Tiangong.">天宮</string>
 
     <!-- Long-press help for layers in the layer-visibility sheet. -->
 

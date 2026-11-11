@@ -8,9 +8,11 @@
  */
 package com.google.android.stardroid.surfaces
 
+import com.google.android.stardroid.astronomy.LunarEclipseCircumstances
 import com.google.android.stardroid.astronomy.LunarEclipseType
 import com.google.android.stardroid.astronomy.LunarPhase
 import com.google.android.stardroid.astronomy.SolarSystemBody
+import com.google.android.stardroid.astronomy.SpaceStations
 import com.google.android.stardroid.astronomy.azimuthDeg
 import com.google.android.stardroid.events.DARK_MOON_FRACTION
 import com.google.android.stardroid.events.SkyEvent
@@ -139,17 +141,49 @@ class NotificationText(
                 )
             is SkyEvent.LunarEclipseUpcoming ->
                 HighlightText(
-                    texts.text(
-                        when (event.circumstances.type) {
-                            LunarEclipseType.TOTAL -> TextId.TONIGHT_LUNAR_ECLIPSE_TOTAL
-                            LunarEclipseType.PARTIAL -> TextId.TONIGHT_LUNAR_ECLIPSE_PARTIAL
-                            LunarEclipseType.PENUMBRAL -> TextId.TONIGHT_LUNAR_ECLIPSE_PENUMBRAL
-                            LunarEclipseType.NONE ->
-                                error("LunarEclipseUpcoming must carry a real eclipse type")
-                        },
-                    ),
+                    eclipseType(event.circumstances),
                     formatTime(event.circumstances.greatestEclipse),
                 )
+        }
+
+    /** [satelliteName] names a satellite that is not one of the stations. */
+    fun passTitle(
+        noradId: Int,
+        satelliteName: String,
+    ): String = texts.text(TextId.NOTIF_PASS_TITLE, stationName(noradId, satelliteName))
+
+    fun passBody(passStart: Instant): String =
+        texts.text(
+            TextId.NOTIF_PASS_TEXT,
+            formatTime(passStart),
+        )
+
+    fun eclipseTitle(eclipse: LunarEclipseCircumstances): String =
+        texts.text(TextId.NOTIF_ECLIPSE_TITLE, eclipseType(eclipse))
+
+    // The time shown is the eclipse's peak, as Android's alert has always shown it.
+    fun eclipseBody(eclipse: LunarEclipseCircumstances): String =
+        texts.text(TextId.NOTIF_ECLIPSE_TEXT, formatTime(eclipse.greatestEclipse))
+
+    private fun eclipseType(eclipse: LunarEclipseCircumstances): String =
+        texts.text(
+            when (eclipse.type) {
+                LunarEclipseType.TOTAL -> TextId.TONIGHT_LUNAR_ECLIPSE_TOTAL
+                LunarEclipseType.PARTIAL -> TextId.TONIGHT_LUNAR_ECLIPSE_PARTIAL
+                LunarEclipseType.PENUMBRAL -> TextId.TONIGHT_LUNAR_ECLIPSE_PENUMBRAL
+                LunarEclipseType.NONE -> error("An eclipse alert must carry a real eclipse type")
+            },
+        )
+
+    /** The stations have translated names; anything else is named by its element set. */
+    private fun stationName(
+        noradId: Int,
+        satelliteName: String,
+    ): String =
+        when (noradId) {
+            SpaceStations.ISS_NORAD_ID -> texts.text(TextId.SATELLITE_NAME_ISS)
+            SpaceStations.TIANGONG_NORAD_ID -> texts.text(TextId.SATELLITE_NAME_TIANGONG)
+            else -> satelliteName
         }
 
     private fun cardinal(azimuthDeg: Double): String =

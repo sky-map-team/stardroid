@@ -656,4 +656,10 @@ cael ei osod.
     <string name="neptune">Neifion</string>
     <string name="pluto">Plwton</string>
     <!-- tm:omitted name="tonight_satellite_pass" reason="identical_to_source" -->
+    <string name="notif_pass_title" translation_description="Title of the notification sent shortly before a satellite passes overhead. %1$s is the satellite name.">Mae %1$s yn tramwy uwchben yn fuan</string>
+    <string name="notif_pass_text" translation_description="Body of the satellite pass notification, telling the user when to go outside. %1$s is a time.">Gweladwy o tua %1$s — ewch allan a gadewch i\'ch llygaid addasu</string>
+    <string name="notif_eclipse_title" translation_description="Title of the notification sent before a lunar eclipse starts. %1$s is a localized eclipse type like \'Total lunar eclipse\'.">Mae %1$s yn dechrau cyn bo hir</string>
+    <string name="notif_eclipse_text" translation_description="Body of the lunar eclipse notification, telling the user when it begins. %1$s is a time.">Yn dechrau tua %1$s — werth camu allan amdano</string>
+    <string name="satellite_name_iss" translation_description="Display name for the International Space Station.">Yr Orsaf Ofod</string>
+    <!-- tm:omitted name="satellite_name_tiangong" reason="identical_to_source" -->
 </resources>

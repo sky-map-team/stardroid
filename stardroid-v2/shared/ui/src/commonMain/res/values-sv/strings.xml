@@ -651,4 +651,10 @@ Gå till en öppen plats utan metall och försök igen.]]></string>
     <!-- tm:omitted name="jupiter" reason="identical_to_source" -->
     <!-- tm:omitted name="uranus" reason="identical_to_source" -->
     <!-- tm:omitted name="pluto" reason="identical_to_source" -->
+    <string name="notif_pass_title" translation_description="Title of the notification sent shortly before a satellite passes overhead. %1$s is the satellite name.">%1$s passerar snart</string>
+    <string name="notif_pass_text" translation_description="Body of the satellite pass notification, telling the user when to go outside. %1$s is a time.">Synlig från ca %1$s — gå ut och låt ögonen vänja sig</string>
+    <string name="notif_eclipse_title" translation_description="Title of the notification sent before a lunar eclipse starts. %1$s is a localized eclipse type like \'Total lunar eclipse\'.">%1$s börjar snart</string>
+    <string name="notif_eclipse_text" translation_description="Body of the lunar eclipse notification, telling the user when it begins. %1$s is a time.">Börjar runt %1$s — värt att gå ut för att titta</string>
+    <string name="satellite_name_iss" translation_description="Display name for the International Space Station.">Rymdstationen</string>
+    <!-- tm:omitted name="satellite_name_tiangong" reason="identical_to_source" -->
 </resources>

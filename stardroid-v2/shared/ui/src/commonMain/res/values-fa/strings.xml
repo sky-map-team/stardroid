@@ -656,4 +656,10 @@
     <string name="neptune">نپتون</string>
     <string name="pluto">پلوتون</string>
     <!-- tm:omitted name="tonight_satellite_pass" reason="identical_to_source" -->
+    <string name="notif_pass_title" translation_description="Title of the notification sent shortly before a satellite passes overhead. %1$s is the satellite name.">%1$s به زودی از بالای سر عبور می‌کند</string>
+    <string name="notif_pass_text" translation_description="Body of the satellite pass notification, telling the user when to go outside. %1$s is a time.">از حدود %1$s قابل مشاهده است — بیرون بروید و اجازه دهید چشمانتان عادت کند</string>
+    <string name="notif_eclipse_title" translation_description="Title of the notification sent before a lunar eclipse starts. %1$s is a localized eclipse type like \'Total lunar eclipse\'.">%1$s به زودی شروع می‌شود</string>
+    <string name="notif_eclipse_text" translation_description="Body of the lunar eclipse notification, telling the user when it begins. %1$s is a time.">حدود %1$s شروع می‌شود — ارزش بیرون رفتن را دارد</string>
+    <string name="satellite_name_iss" translation_description="Display name for the International Space Station.">ایستگاه فضایی</string>
+    <string name="satellite_name_tiangong" translation_description="Display name for the Chinese space station Tiangong.">تیانگونگ</string>
 </resources>

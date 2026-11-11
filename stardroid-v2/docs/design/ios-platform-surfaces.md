@@ -243,8 +243,19 @@ For iOS, Compose Resources' `getString` is `suspend`, and `TextSource.text` is n
 implementation reads every `TextId` once when it plans (in the app's locale) and answers from
 that map. Planning runs on foreground and on a locale change, so the map is never stale.
 
-Still to build, in order: the planner and text for eclipse and pass alerts; the iOS scheduler
-over `UNUserNotificationCenter` with the replan triggers; the Settings and layer-option toggles with the permission prompt; deep links.
+**Slice 3 (built):** the planner and text for the two other kinds. `NotificationPlanner` gains
+`planPassAlerts` (one alert per night, the brightest pass, noon to noon in the user's zone, over
+a horizon the platform chooses), `alertablePass` (the selection Android's single alarm already
+used, now shared) and `planEclipseAlert` (next eclipse, not over, Moon up at the saved place,
+30 minutes before the visible start, or a minute from now if under way). `NotificationText`
+gains the pass and eclipse words. Android's eclipse planner and `PassAlerts.armBestPass` call
+the shared functions. The pass lead stays a parameter: Android passes 10 minutes for Doze, iOS
+passes 6. The two station ids moved to `core/astronomy` (`SpaceStations`) so the surfaces module
+need not depend on `shared/layers`. Android's eclipse text shows the eclipse's peak time after
+"Begins around"; that is kept as it was, and is worth a look.
+
+Still to build, in order: the iOS scheduler over `UNUserNotificationCenter` with the replan
+triggers; the Settings and layer-option toggles with the permission prompt; deep links.
 
 ### 5.3 Kinds, permission and settings
 

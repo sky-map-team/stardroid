@@ -21,18 +21,12 @@
     <!-- Layer names in the layer-visibility sheet. -->
     <string name="channel_passes_name" translation_description="Name of the notification channel for alerts shortly before a satellite passes overhead.">Διελεύσεις δορυφόρων</string>
     <string name="channel_passes_description" translation_description="Description of the satellite-pass notification channel.">Μία μόνο ειδοποίηση λίγο πριν την καλύτερη ορατή διέλευση της νύχτας</string>
-    <string name="notif_pass_title" translation_description="Title of the notification sent shortly before a satellite passes overhead. %1$s is the satellite name.">Ο/Η %1$s περνάει από πάνω σύντομα</string>
-    <string name="notif_pass_text" translation_description="Body of the satellite pass notification, telling the user when to go outside. %1$s is a time.">Ορατό από περίπου %1$s — βγείτε έξω και αφήστε τα μάτια σας να προσαρμοστούν</string>
     <string name="channel_passes_now_name" translation_description="Name of the notification channel for the alert sent the moment a satellite rises.">Ο δορυφόρος ανατέλλει τώρα</string>
     <string name="channel_passes_now_description" translation_description="Description of the notification channel for the alert sent the moment a satellite pass begins.">Μια ειδοποίηση, με δόνηση, καθώς ξεκινά η καλύτερη ορατή διέλευση της νύχτας</string>
     <string name="notif_pass_now_title" translation_description="Title of the notification sent the moment a satellite pass begins. %1$s is the satellite name.">Ο δορυφόρος %1$s ανατέλλει τώρα</string>
     <string name="notif_pass_now_text" translation_description="Body of the notification sent the moment a satellite pass begins.">Κοιτάξτε ψηλά — διασχίζει τον ουρανό αυτή τη στιγμή</string>
     <string name="channel_eclipses_name" translation_description="Name of the notification channel for alerts before a lunar eclipse starts.">Σεληνιακές εκλείψεις</string>
     <string name="channel_eclipses_description" translation_description="Description of the lunar-eclipse notification channel.">Μία μόνο ειδοποίηση πριν ξεκινήσει μια σεληνιακή έκλειψη</string>
-    <string name="notif_eclipse_title" translation_description="Title of the notification sent before a lunar eclipse starts. %1$s is a localized eclipse type like \'Total lunar eclipse\'.">Το/Η %1$s ξεκινάει σύντομα</string>
-    <string name="notif_eclipse_text" translation_description="Body of the lunar eclipse notification, telling the user when it begins. %1$s is a time.">Ξεκινάει γύρω στις %1$s — αξίζει να βγείτε έξω</string>
-    <string name="satellite_name_iss" translation_description="Display name for the International Space Station.">Ο Διαστημικός Σταθμός</string>
-    <!-- tm:omitted name="satellite_name_tiangong" reason="identical_to_source" -->
 
     <!-- Long-press help for layers in the layer-visibility sheet. -->
 

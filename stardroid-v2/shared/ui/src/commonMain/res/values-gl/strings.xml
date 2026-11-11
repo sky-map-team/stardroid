@@ -444,4 +444,10 @@ A interferencia magnética local (obxectos metálicos, salpicadeiros de coches, 
     <string name="uranus" translation_description="Name of the planet Uranus, drawn as a label on the sky map.">Urano</string>
     <string name="neptune" translation_description="Name of the planet Neptune, drawn as a label on the sky map.">Neptuno</string>
     <string name="pluto" translation_description="Name of the dwarf planet Pluto, drawn as a label on the sky map.">Plutón</string>
+    <string name="notif_pass_title" translation_description="Title of the notification sent shortly before a satellite passes overhead. %1$s is the satellite name.">%1$s pasa por riba pronto</string>
+    <string name="notif_pass_text" translation_description="Body of the satellite pass notification, telling the user when to go outside. %1$s is a time.">Visible desde aproximadamente as %1$s — sae e deixa que os teus ollos se adapten</string>
+    <string name="notif_eclipse_title" translation_description="Title of the notification sent before a lunar eclipse starts. %1$s is a localized eclipse type like \'Total lunar eclipse\'.">%1$s comeza pronto</string>
+    <string name="notif_eclipse_text" translation_description="Body of the lunar eclipse notification, telling the user when it begins. %1$s is a time.">Comeza arredor das %1$s — paga a pena saír a velo</string>
+    <string name="satellite_name_iss" translation_description="Display name for the International Space Station.">A Estación Espacial</string>
+    <string name="satellite_name_tiangong" translation_description="Display name for the Chinese space station Tiangong.">Tiangong</string>
 </resources>

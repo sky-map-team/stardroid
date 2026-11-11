@@ -673,4 +673,10 @@ Luminosité des lignes : normale, brillante ou très brillante, pour le crépusc
     <!-- tm:omitted name="uranus" reason="identical_to_source" -->
     <!-- tm:omitted name="neptune" reason="identical_to_source" -->
     <string name="pluto">Pluton</string>
+    <string name="notif_pass_title" tm_human="true" translation_description="Title of the notification sent shortly before a satellite passes overhead. %1$s is the satellite name.">%1$s passe bientôt au-dessus de vous</string>
+    <string name="notif_pass_text" translation_description="Body of the satellite pass notification, telling the user when to go outside. %1$s is a time.">Visible à partir d\'environ %1$s — sortez et laissez vos yeux s\'adapter</string>
+    <string name="notif_eclipse_title" translation_description="Title of the notification sent before a lunar eclipse starts. %1$s is a localized eclipse type like \'Total lunar eclipse\'.">%1$s commence bientôt</string>
+    <string name="notif_eclipse_text" translation_description="Body of the lunar eclipse notification, telling the user when it begins. %1$s is a time.">Commence vers %1$s — ça vaut le coup de sortir</string>
+    <string name="satellite_name_iss" translation_description="Display name for the International Space Station.">La Station Spatiale</string>
+    <!-- tm:omitted name="satellite_name_tiangong" reason="identical_to_source" -->
 </resources>

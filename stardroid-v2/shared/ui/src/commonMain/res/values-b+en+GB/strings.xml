@@ -569,4 +569,10 @@ Line brightness: normal, bright or brightest, for twilight, daylight or light-po
     <!-- tm:omitted name="uranus" reason="identical_to_source" -->
     <!-- tm:omitted name="neptune" reason="identical_to_source" -->
     <!-- tm:omitted name="pluto" reason="identical_to_source" -->
+    <!-- tm:omitted name="notif_pass_title" reason="identical_to_source" -->
+    <!-- tm:omitted name="notif_pass_text" reason="identical_to_source" -->
+    <!-- tm:omitted name="notif_eclipse_title" reason="identical_to_source" -->
+    <!-- tm:omitted name="notif_eclipse_text" reason="identical_to_source" -->
+    <!-- tm:omitted name="satellite_name_iss" reason="identical_to_source" -->
+    <!-- tm:omitted name="satellite_name_tiangong" reason="identical_to_source" -->
 </resources>

@@ -654,4 +654,10 @@
     <!-- tm:omitted name="jupiter" reason="identical_to_source" -->
     <!-- tm:omitted name="saturn" reason="identical_to_source" -->
     <!-- tm:omitted name="pluto" reason="identical_to_source" -->
+    <string name="notif_pass_title" translation_description="Title of the notification sent shortly before a satellite passes overhead. %1$s is the satellite name.">%1$s čoskoro preletí nad hlavou</string>
+    <string name="notif_pass_text" translation_description="Body of the satellite pass notification, telling the user when to go outside. %1$s is a time.">Viditeľné približne od %1$s – choďte von a nechajte si zvyknúť oči</string>
+    <string name="notif_eclipse_title" translation_description="Title of the notification sent before a lunar eclipse starts. %1$s is a localized eclipse type like \'Total lunar eclipse\'.">%1$s sa čoskoro začne</string>
+    <string name="notif_eclipse_text" translation_description="Body of the lunar eclipse notification, telling the user when it begins. %1$s is a time.">Začína sa okolo %1$s – oplatí sa vyjsť von</string>
+    <string name="satellite_name_iss" translation_description="Display name for the International Space Station.">Medzinárodná vesmírna stanica</string>
+    <!-- tm:omitted name="satellite_name_tiangong" reason="identical_to_source" -->
 </resources>
