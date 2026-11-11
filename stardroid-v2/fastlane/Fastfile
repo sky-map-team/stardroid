@@ -345,15 +345,17 @@ platform :ios do
 
   # A new App Store version inherits the previous version's screenshots, so this is only needed
   # when they change. Expects fastlane/screenshots/ios/<locale>/ (deliver sorts by image size).
-  desc "Replace the App Store screenshots on the editable version from fastlane/screenshots/ios"
-  lane :screenshots do
+  desc "Upload App Store screenshots from fastlane/screenshots/ios to the editable version " \
+       "(overwrite:true replaces what is already there)"
+  lane :screenshots do |options|
+    options ||= {}
     path = File.expand_path("screenshots/ios", __dir__)
     UI.user_error!("No screenshots at #{path}") unless Dir.exist?(path)
     deliver(
       api_key: asc_api_key,
       app_identifier: IOS_BUNDLE_ID,
       screenshots_path: path,
-      overwrite_screenshots: true,
+      overwrite_screenshots: options[:overwrite] == true,
       skip_metadata: true,
       skip_binary_upload: true,
       force: true,

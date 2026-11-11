@@ -179,7 +179,7 @@ Build and upload to TestFlight (internal testers). Pass changelog:"..." for What
 [bundle exec] fastlane ios screenshots
 ```
 
-Replace the App Store screenshots on the editable version from fastlane/screenshots/ios
+Upload App Store screenshots from fastlane/screenshots/ios to the editable version (overwrite:true replaces what is already there)
 
 ### ios external
 
