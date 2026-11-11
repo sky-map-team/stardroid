@@ -12,13 +12,19 @@ package com.google.android.stardroid.ui.map
 import android.graphics.Bitmap
 import android.opengl.GLSurfaceView
 import androidx.camera.view.PreviewView
+import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.gestures.awaitEachGesture
 import androidx.compose.foundation.gestures.awaitFirstDown
 import androidx.compose.foundation.gestures.calculatePan
 import androidx.compose.foundation.gestures.calculateRotation
 import androidx.compose.foundation.gestures.calculateZoom
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.SnackbarHostState
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.LaunchedEffect
@@ -30,8 +36,10 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.rememberUpdatedState
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.input.pointer.PointerInputChange
 import androidx.compose.ui.input.pointer.PointerInputScope
 import androidx.compose.ui.input.pointer.pointerInput
@@ -201,6 +209,10 @@ fun MapRoute(
             }
         }
         AndroidView(factory = { glSurfaceView }, modifier = Modifier.matchParentSize())
+        // TODO(night-still): remove before the AR launch; testers need it in release builds.
+        if (arModeOn) {
+            StillModeDebugChip(arCamera, Modifier.align(Alignment.BottomStart))
+        }
 
         // Transparent gesture layer above the GL surface. The detector outlives recompositions
         // (it restarts only when the screen's size does), so it calls through to the latest
@@ -237,6 +249,42 @@ fun MapRoute(
     if (showWidgetsSheet) {
         WidgetsSheet(widgetOffers, onDismiss = { showWidgetsSheet = false })
     }
+}
+
+/**
+ * Temporary, while the night still is tuned: flips the share still between auto
+ * exposure and the vendor night mode, and asks for stillness while a night capture runs.
+ */
+@Composable
+private fun StillModeDebugChip(
+    arCamera: SkyCameraPreview,
+    modifier: Modifier = Modifier,
+) {
+    val label =
+        when {
+            arCamera.capturingNight -> "Hold still…"
+            !arCamera.nightAvailable -> "Still: auto (no night mode here)"
+            arCamera.stillMode == SkyCameraPreview.StillMode.NIGHT -> "Still: night"
+            else -> "Still: auto"
+        }
+    Text(
+        label,
+        color = Color.White,
+        style = MaterialTheme.typography.labelMedium,
+        modifier =
+            modifier
+                .padding(start = 8.dp, bottom = 96.dp)
+                .background(Color.Black.copy(alpha = 0.6f), RoundedCornerShape(12.dp))
+                .clickable(enabled = arCamera.nightAvailable) {
+                    arCamera.stillMode =
+                        if (arCamera.stillMode == SkyCameraPreview.StillMode.AUTO) {
+                            SkyCameraPreview.StillMode.NIGHT
+                        } else {
+                            SkyCameraPreview.StillMode.AUTO
+                        }
+                }
+                .padding(horizontal = 12.dp, vertical = 6.dp),
+    )
 }
 
 /**

@@ -54,6 +54,9 @@ data class ArUiState(
     val manualExposureSupported: Boolean = false,
 ) {
     val exposureSupported: Boolean get() = exposureMin != 0 || exposureMax != 0
+
+    /** Manual ISO/shutter is in control: the camera's AE is off, so the exposure slider is inert. */
+    val manualActive: Boolean get() = isoFraction > 0.0 || shutterFraction > 0.0
 }
 
 /**

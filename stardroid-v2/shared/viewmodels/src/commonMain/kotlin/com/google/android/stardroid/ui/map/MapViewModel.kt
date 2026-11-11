@@ -627,9 +627,14 @@ class MapViewModel(
         arScrimSetting.value = value.coerceIn(0.0, MAX_AR_SCRIM)
     }
 
-    /** AE-compensation slider; clamped to the camera's reported range. */
+    /**
+     * AE-compensation slider; clamped to the camera's reported range. Touching it hands
+     * control back to auto exposure, so the manual sliders return to their auto stops.
+     */
     fun setArExposureIndex(index: Int) {
         val specs = arSpecs.value ?: return
+        arIsoFractionSetting.value = 0.0
+        arShutterFractionSetting.value = 0.0
         _arExposureIndex.value = index.coerceIn(specs.exposureMin, specs.exposureMax)
     }
 

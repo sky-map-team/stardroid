@@ -1200,6 +1200,28 @@ class MapViewModelTest {
             assertThat(values.last()).isNull()
         }
 
+    @Test
+    fun `touching the exposure slider hands control back from manual to auto`() =
+        testScope.runCurrentTest {
+            val vm = viewModel()
+            val ui = mutableListOf<ArUiState?>()
+            val manual = mutableListOf<ArManualExposure?>()
+            backgroundScope.launch { vm.arUi.collect { ui += it } }
+            backgroundScope.launch { vm.arManualExposure.collect { manual += it } }
+            vm.setArMode(true)
+            vm.onArCameraReady(AR_SPECS)
+            vm.setArShutterFraction(0.5)
+            runCurrent()
+            assertThat(ui.last()!!.manualActive).isTrue()
+            assertThat(manual.last()).isNotNull()
+
+            vm.setArExposureIndex(1)
+            runCurrent()
+            assertThat(ui.last()!!.manualActive).isFalse()
+            assertThat(ui.last()!!.exposureIndex).isEqualTo(1)
+            assertThat(manual.last()).isNull()
+        }
+
     /**
      * `runTest` on the shared scheduler, cancelling every created view model's scope before
      * `runTest`'s until-idle cleanup runs, so nothing the view model launched (a fling pump
