@@ -252,7 +252,7 @@ gains the pass and eclipse words. Android's eclipse planner and `PassAlerts.armB
 the shared functions. The pass lead stays a parameter: Android passes 10 minutes for Doze, iOS
 passes 6. The two station ids moved to `core/astronomy` (`SpaceStations`) so the surfaces module
 need not depend on `shared/layers`. Android's eclipse text shows the eclipse's peak time after
-"Begins around"; that is kept as it was, and is worth a look.
+"Begins around"; that is kept as it was and tracked in #1266.
 
 Still to build, in order: the iOS scheduler over `UNUserNotificationCenter` with the replan
 triggers; the Settings and layer-option toggles with the permission prompt; deep links.
