@@ -172,7 +172,6 @@ Update only the promotional text on the live App Store version
 
 Build and upload to TestFlight (internal testers). Pass changelog:"..." for What to Test.
 
-
 ### ios screenshots
 
 ```sh
