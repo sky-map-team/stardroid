@@ -263,9 +263,10 @@ private fun StillModeDebugChip(
     val label =
         when {
             arCamera.capturingNight -> "Hold still…"
-            !arCamera.nightAvailable -> "Still: auto (no night mode here)"
-            arCamera.stillMode == SkyCameraPreview.StillMode.NIGHT -> "Still: night"
-            else -> "Still: auto"
+            !arCamera.nightAvailable -> "Still: auto (no night: ${arCamera.extensionReport})"
+            arCamera.stillMode == SkyCameraPreview.StillMode.NIGHT ->
+                "Still: night (${arCamera.extensionReport})"
+            else -> "Still: auto (tap for night; ${arCamera.extensionReport})"
         }
     Text(
         label,

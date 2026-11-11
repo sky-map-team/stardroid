@@ -84,6 +84,13 @@ class SkyCameraPreview(
     var nightAvailable by mutableStateOf(false)
         private set
 
+    /** What the extension probe found, for the debug chip: modes offered, or why none. */
+    var extensionReport by mutableStateOf("probing")
+        private set
+
+    // NIGHT where offered, else the vendor's AUTO (which picks night itself in low light).
+    private var stillExtensionMode = ExtensionMode.NONE
+
     /** True while a night still is being taken: the UI should ask the user to hold still. */
     var capturingNight by mutableStateOf(false)
         private set
@@ -126,6 +133,7 @@ class SkyCameraPreview(
         lifecycleOwner = null
         onReady = null
         nightAvailable = false
+        extensionReport = "probing"
         provider?.unbindAll()
     }
 
@@ -143,7 +151,7 @@ class SkyCameraPreview(
                 if (night) {
                     extensions?.getExtensionEnabledCameraSelector(
                         CameraSelector.DEFAULT_BACK_CAMERA,
-                        ExtensionMode.NIGHT,
+                        stillExtensionMode,
                     ) ?: return null
                 } else {
                     CameraSelector.DEFAULT_BACK_CAMERA
@@ -168,14 +176,20 @@ class SkyCameraPreview(
             try {
                 val manager = future.get()
                 extensions = manager
-                nightAvailable =
-                    bound &&
-                    manager.isExtensionAvailable(
-                        CameraSelector.DEFAULT_BACK_CAMERA,
-                        ExtensionMode.NIGHT,
-                    )
+                val offered =
+                    EXTENSION_MODES.filter { (mode, _) ->
+                        manager.isExtensionAvailable(CameraSelector.DEFAULT_BACK_CAMERA, mode)
+                    }
+                stillExtensionMode =
+                    listOf(ExtensionMode.NIGHT, ExtensionMode.AUTO)
+                        .firstOrNull { mode -> offered.any { it.first == mode } }
+                        ?: ExtensionMode.NONE
+                nightAvailable = bound && stillExtensionMode != ExtensionMode.NONE
+                extensionReport = offered.joinToString { it.second }.ifEmpty { "none offered" }
+                Log.i(TAG, "Extensions offered: $extensionReport")
             } catch (e: Exception) {
                 Log.w(TAG, "Extensions probe failed", e)
+                extensionReport = "probe failed: ${e.javaClass.simpleName}"
             }
         }, ContextCompat.getMainExecutor(context))
     }
@@ -471,6 +485,15 @@ class SkyCameraPreview(
 
     companion object {
         private const val TAG = "SkyCameraPreview"
+
+        private val EXTENSION_MODES =
+            listOf(
+                ExtensionMode.NIGHT to "night",
+                ExtensionMode.AUTO to "auto",
+                ExtensionMode.HDR to "hdr",
+                ExtensionMode.BOKEH to "bokeh",
+                ExtensionMode.FACE_RETOUCH to "face",
+            )
 
         /** How long AE gets to converge after the manual options are dropped for a still. */
         private const val AE_SETTLE_MS = 600L
