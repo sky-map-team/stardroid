@@ -643,4 +643,5 @@ Jasność linii: normalna, jasna lub najjaśniejsza, odpowiednio do zmierzchu, d
     <string name="notif_eclipse_text" translation_description="Body of the lunar eclipse notification, telling the user when it begins. %1$s is a time.">Rozpoczyna się około %1$s — warto wyjść na zewnątrz</string>
     <string name="satellite_name_iss" translation_description="Display name for the International Space Station.">Międzynarodowa Stacja Kosmiczna</string>
     <!-- tm:omitted name="satellite_name_tiangong" reason="identical_to_source" -->
+    <string name="tonight_trailing_pass_peak" translation_description="Small trailing note on a satellite pass row. %1$d is the peak altitude in degrees, %2$.1f is a brightness magnitude.">Maks. %1$d°, jasn. %2$.1f</string>
 </resources>

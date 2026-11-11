@@ -132,5 +132,4 @@
     <string name="channel_digest_description" translation_description="Description of the tonight-digest notification channel in the system\'s notification settings">Jedno wieczorne podsumowanie, pomijane w spokojne noce</string>
     <string name="notif_action_mute_showers" translation_description="Notification action button that opens the system toggle for the meteor-shower channel">Wycisz roje</string>
     <!-- Layers sheet: per-layer parameters (D87). -->
-    <string name="tonight_trailing_pass_peak" translation_description="Small trailing note on a satellite pass row. %1$d is the peak altitude in degrees, %2$.1f is a brightness magnitude.">Maks. %1$d°, jasn. %2$.1f</string>
 </resources>

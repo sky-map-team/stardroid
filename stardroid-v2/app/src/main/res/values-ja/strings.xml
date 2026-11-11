@@ -124,5 +124,4 @@
     <string name="channel_digest_description" translation_description="Description of the tonight-digest notification channel in the system\'s notification settings">夕方に1回概要を通知、静かな夜はスキップ</string>
     <string name="notif_action_mute_showers" translation_description="Notification action button that opens the system toggle for the meteor-shower channel">流星群の通知をオフにする</string>
     <!-- Layers sheet: per-layer parameters (D87). -->
-    <string name="tonight_trailing_pass_peak" translation_description="Small trailing note on a satellite pass row. %1$d is the peak altitude in degrees, %2$.1f is a brightness magnitude.">最高高度 %1$d°、等級 %2$.1f</string>
 </resources>

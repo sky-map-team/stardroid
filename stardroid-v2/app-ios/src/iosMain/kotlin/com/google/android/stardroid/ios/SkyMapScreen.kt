@@ -92,8 +92,9 @@ fun skyMapViewController(
     analytics: Analytics,
     tipStore: TipStore,
     flags: FlagSource,
+    notificationCenter: LocalNotificationCenter,
 ): UIViewController {
-    val graph = sharedAppGraph(analytics, flags)
+    val graph = sharedAppGraph(analytics, flags, notificationCenter)
     val mapViewModel = graph.mapViewModel()
     val map = MapViewController(graph, mapViewModel)
     val startup = graph.startupViewModel()

@@ -254,8 +254,19 @@ passes 6. The two station ids moved to `core/astronomy` (`SpaceStations`) so the
 need not depend on `shared/layers`. Android's eclipse text shows the eclipse's peak time after
 "Begins around"; that is kept as it was and tracked in #1266.
 
-Still to build, in order: the iOS scheduler over `UNUserNotificationCenter` with the replan
-triggers; the Settings and layer-option toggles with the permission prompt; deep links.
+**Slice 4 (built):** the iOS scheduler. `NotificationPlanAhead` (in `shared/surfaces`) plans the
+next three nights, the passes over three days and the next eclipse within 60 days, and renders
+the words. It drops an alert whose time has gone, and one that would land on a different night,
+because a replan runs at every foreground and would otherwise announce tonight again after
+dark. `IosNotificationScheduler` gathers the inputs and hands the result to
+`LocalNotificationCenter`, which `UserNotificationCenterAdapter.swift` implements over
+`UNUserNotificationCenter`, replacing all pending requests. Replans on foreground, a setting,
+the saved location, the language, new element sets and each background refresh, after a two
+second settle. It schedules nothing unless the notifications flag is on, a kind is on and the
+system allows alerts, and it never shows the permission prompt. iOS fills the `%1$s`
+placeholders itself (`TextTemplate`), because the Compose lookup is `suspend`.
+
+Still to build, in order: the Settings and layer-option toggles with the permission prompt; deep links.
 
 ### 5.3 Kinds, permission and settings
 

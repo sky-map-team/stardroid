@@ -668,4 +668,5 @@ Brilho das linhas: normal, brilhante ou o mais brilhante, para céus crepuscular
     <string name="notif_eclipse_text" translation_description="Body of the lunar eclipse notification, telling the user when it begins. %1$s is a time.">Começa por volta de %1$s — vale a pena sair para ver</string>
     <string name="satellite_name_iss" translation_description="Display name for the International Space Station.">A Estação Espacial</string>
     <!-- tm:omitted name="satellite_name_tiangong" reason="identical_to_source" -->
+    <string name="tonight_trailing_pass_peak" translation_description="Small trailing note on a satellite pass row. %1$d is the peak altitude in degrees, %2$.1f is a brightness magnitude.">Máx. %1$d°, mag %2$.1f</string>
 </resources>

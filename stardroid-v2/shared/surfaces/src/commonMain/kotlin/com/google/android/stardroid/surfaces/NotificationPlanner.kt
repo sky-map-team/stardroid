@@ -16,6 +16,7 @@ import com.google.android.stardroid.events.TonightSky
 import com.google.android.stardroid.events.moonAboveHorizonBetween
 import com.google.android.stardroid.math.LatLong
 import kotlinx.datetime.Instant
+import kotlinx.datetime.LocalDate
 import kotlinx.datetime.TimeZone
 import kotlinx.datetime.minus
 import kotlinx.datetime.toLocalDateTime
@@ -101,10 +102,16 @@ object NotificationPlanner {
     ): List<PlannedPassAlert> =
         passes
             .filter { it.start - now <= horizon }
-            .groupBy { (it.start - 12.hours).toLocalDateTime(zone).date }
+            .groupBy { nightOf(it.start, zone) }
             .mapNotNull { (_, tonight) -> alertablePass(now, tonight, lead) }
             .sortedBy { it.start }
             .map { PlannedPassAlert(it, fireAt = it.start - lead) }
+
+    /** The local date of the evening a pass belongs to; a night runs noon to noon. */
+    fun nightOf(
+        time: Instant,
+        zone: TimeZone,
+    ): LocalDate = (time - 12.hours).toLocalDateTime(zone).date
 
     /**
      * The alert for the next lunar [eclipse], or null when there is none worth sending: it is

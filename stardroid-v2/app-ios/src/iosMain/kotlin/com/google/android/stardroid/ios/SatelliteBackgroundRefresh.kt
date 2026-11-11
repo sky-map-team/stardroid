@@ -22,7 +22,9 @@ private var sharedGraph: IosAppGraph? = null
 internal fun sharedAppGraph(
     analytics: Analytics,
     flags: FlagSource,
-): IosAppGraph = sharedGraph ?: IosAppGraph(analytics, flags).also { sharedGraph = it }
+    notificationCenter: LocalNotificationCenter,
+): IosAppGraph =
+    sharedGraph ?: IosAppGraph(analytics, flags, notificationCenter).also { sharedGraph = it }
 
 /** A running background refresh, for the system's expiration handler to cancel. */
 class SatelliteBackgroundRefresh internal constructor(
@@ -33,15 +35,16 @@ class SatelliteBackgroundRefresh internal constructor(
 
 /**
  * The body of the `BGAppRefreshTask` (Swift schedules it), run on the main thread once the flags
- * are readable. [onDone] gets true if the work ran to the end without being cancelled, and may
+ * are readable. It also plans the next nights' notifications, with whatever data it just fetched. [onDone] gets true if the work ran to the end without being cancelled, and may
  * be called on any thread.
  */
 fun refreshSatellitesInBackground(
     analytics: Analytics,
     flags: FlagSource,
+    notificationCenter: LocalNotificationCenter,
     onDone: (completed: Boolean) -> Unit,
 ): SatelliteBackgroundRefresh {
-    val graph = sharedAppGraph(analytics, flags)
+    val graph = sharedAppGraph(analytics, flags, notificationCenter)
     val job = graph.startBackgroundRefresh()
     job.invokeOnCompletion { onDone(it == null) }
     return SatelliteBackgroundRefresh(job)

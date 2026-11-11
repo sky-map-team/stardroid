@@ -60,6 +60,8 @@ kotlin {
             implementation(project(":shared:viewmodels"))
             implementation(project(":shared:ui"))
             implementation(project(":shared:layers"))
+            implementation(project(":shared:surfaces"))
+            implementation(project(":core:text"))
             api(project(":shared:model"))
             implementation(project(":data"))
             implementation(project(":render:metal"))

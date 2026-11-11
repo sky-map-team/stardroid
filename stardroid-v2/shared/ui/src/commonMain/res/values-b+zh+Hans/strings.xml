@@ -583,4 +583,5 @@
     <string name="notif_eclipse_text" translation_description="Body of the lunar eclipse notification, telling the user when it begins. %1$s is a time.">大约在%1$s开始 — 值得出门观看</string>
     <string name="satellite_name_iss" translation_description="Display name for the International Space Station.">国际空间站</string>
     <string name="satellite_name_tiangong" translation_description="Display name for the Chinese space station Tiangong.">天宫</string>
+    <string name="tonight_trailing_pass_peak" translation_description="Small trailing note on a satellite pass row. %1$d is the peak altitude in degrees, %2$.1f is a brightness magnitude.">最高%1$d°，视星等%2$.1f</string>
 </resources>
