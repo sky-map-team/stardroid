@@ -379,6 +379,7 @@ platform :ios do
       api_key: asc_api_key,
       app_identifier: IOS_BUNDLE_ID,
       distribute_only: true,
+      app_platform: "ios",
       build_number: options[:build_number]&.to_s,
       distribute_external: true,
       groups: groups,
