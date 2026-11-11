@@ -172,6 +172,22 @@ Update only the promotional text on the live App Store version
 
 Build and upload to TestFlight (internal testers). Pass changelog:"..." for What to Test.
 
+### ios screenshots
+
+```sh
+[bundle exec] fastlane ios screenshots
+```
+
+Upload App Store screenshots from fastlane/screenshots/ios to the editable version (overwrite:true replaces what is already there)
+
+### ios external
+
+```sh
+[bundle exec] fastlane ios external
+```
+
+Send a processed TestFlight build to external testers (groups:"A,B" build_number:N changelog:"...")
+
 ----
 
 This README.md is auto-generated and will be re-generated every time [_fastlane_](https://fastlane.tools) is run.

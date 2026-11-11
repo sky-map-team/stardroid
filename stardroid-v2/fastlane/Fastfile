@@ -342,4 +342,48 @@ platform :ios do
       skip_waiting_for_build_processing: true
     )
   end
+
+  # A new App Store version inherits the previous version's screenshots, so this is only needed
+  # when they change. Expects fastlane/screenshots/ios/<locale>/ (deliver sorts by image size).
+  desc "Upload App Store screenshots from fastlane/screenshots/ios to the editable version " \
+       "(overwrite:true replaces what is already there)"
+  lane :screenshots do |options|
+    options ||= {}
+    path = File.expand_path("screenshots/ios", __dir__)
+    UI.user_error!("No screenshots at #{path}") unless Dir.exist?(path)
+    deliver(
+      api_key: asc_api_key,
+      app_identifier: IOS_BUNDLE_ID,
+      screenshots_path: path,
+      metadata_path: File.expand_path("metadata/ios", __dir__),
+      overwrite_screenshots: options[:overwrite] == true,
+      skip_metadata: true,
+      skip_binary_upload: true,
+      force: true,
+      submit_for_review: false,
+      run_precheck_before_submit: false,
+      version_check_wait_retry_limit: 1
+    )
+  end
+
+  # The first build of a version goes through Beta App Review. The group must be external and the
+  # build already processed, so run this after `beta` has finished processing.
+  desc "Send a processed TestFlight build to external testers (groups:\"A,B\" build_number:N " \
+       "changelog:\"...\")"
+  lane :external do |options|
+    options ||= {}
+    groups = (options[:groups] || ENV["TESTFLIGHT_EXTERNAL_GROUPS"]).to_s.split(",").map(&:strip)
+    UI.user_error!("Pass groups:\"Group name\" (external TestFlight group)") if groups.empty?
+    UI.user_error!("Pass changelog:\"...\" (What to Test)") unless options[:changelog]
+    upload_to_testflight(
+      api_key: asc_api_key,
+      app_identifier: IOS_BUNDLE_ID,
+      distribute_only: true,
+      build_number: options[:build_number]&.to_s,
+      distribute_external: true,
+      groups: groups,
+      changelog: options[:changelog],
+      reject_build_waiting_for_review: false
+    )
+  end
 end
