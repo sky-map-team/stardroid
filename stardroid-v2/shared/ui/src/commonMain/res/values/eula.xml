@@ -60,12 +60,12 @@ ask for those.</p>
 them on.</p>
     ]]></string>
 
-    <string name="permissions_notice_ios" translation_description="iOS version of the legally-required disclosure of the device permissions the app requests: only location, which is optional. Shown on the first-launch terms screen and in Help. Please do not change the markup"><![CDATA[
+    <string name="permissions_notice_ios" translation_description="iOS version of the legally-required disclosure of the device permissions the app requests: location and notifications, both optional. Shown on the first-launch terms screen and in Help. Please do not change the markup"><![CDATA[
 <h2>Permissions</h2>
-<p><b>Sky Map has no required permissions.</b> The one permission below is optional — you may
-refuse it and still use the app. Sky Map asks for it once, after you have accepted these terms,
-because drawing the sky needs to know where you are. You can grant or withdraw it at any time under
-<b>Settings → Sky Map</b> on your device.</p>
+<p><b>Sky Map has no required permissions.</b> The permissions below are optional — you may
+refuse them and still use the app. Sky Map asks for location once, after you have accepted these
+terms, because drawing the sky needs to know where you are. You can grant or withdraw either at any
+time under <b>Settings → Sky Map</b> on your device.</p>
 <h3>Location — optional</h3>
 <p><b>What is accessed:</b> your approximate location.</p>
 <p><b>Why:</b> which stars are above you depends on where you are, so Sky Map uses your approximate
@@ -74,5 +74,11 @@ location to draw the correct sky.</p>
 keeps working.</p>
 <blockquote>Your location is used on your device to draw the sky. The location screen\'s map picture
 sends a rounded version of it to Geoapify, a map service (see the privacy policy).</blockquote>
+<h3>Notifications — optional</h3>
+<p><b>What is accessed:</b> permission to show notifications.</p>
+<p><b>Why:</b> to let you know about meteor-shower peaks, satellite passes, lunar eclipses and what
+is worth seeing tonight, if you ask for those. Sky Map asks only when you first turn one on.</p>
+<p><b>If you refuse:</b> nothing else changes — these notifications stay off until you turn
+them on.</p>
     ]]></string>
 </resources>

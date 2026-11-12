@@ -33,8 +33,6 @@ interface LocalNotificationCenter {
         onDone: () -> Unit,
     )
 
+    /** The system's answer; asking the user is the Settings and layer toggles' job. */
     fun authorization(onResult: (NotificationAuthorization) -> Unit)
-
-    /** Shows the system prompt if it has not been shown; [onResult] is whether alerts are allowed. */
-    fun requestAuthorization(onResult: (Boolean) -> Unit)
 }

@@ -14,14 +14,14 @@ import com.google.android.stardroid.startup.ExperimentConfig
 import com.google.android.stardroid.startup.FlagSource
 import com.google.android.stardroid.startup.FlagSourceExperimentConfig
 
-// A flag is on by default only if its iOS surface exists. Notifications are off until iOS
-// delivers some (add them to `permissions_notice_ios` with them).
+// A flag is on by default only if its iOS surface exists.
 private val IosDefaults: ExperimentConfig =
-    ExperimentConfig { it != Experiment.NOTIFICATIONS && ExperimentConfig.Static.isEnabled(it) }
+    ExperimentConfig { ExperimentConfig.Static.isEnabled(it) }
 
 // The flags the server may change on iOS: those with an iOS surface to switch. Add a flag here
 // with the feature that gives it one.
-private val ServerControlled: Set<Experiment> = setOf(Experiment.SATELLITES)
+private val ServerControlled: Set<Experiment> =
+    setOf(Experiment.SATELLITES, Experiment.NOTIFICATIONS)
 
 internal fun iosExperiments(source: FlagSource): ExperimentConfig =
     FlagSourceExperimentConfig(source, IosDefaults, ServerControlled)

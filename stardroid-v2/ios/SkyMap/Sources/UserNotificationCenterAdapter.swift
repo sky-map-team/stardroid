@@ -51,12 +51,4 @@ final class UserNotificationCenterAdapter: NSObject, LocalNotificationCenter {
             }
         }
     }
-
-    /// Alerts only: provisional authorization would deliver silently, which defeats an alert
-    /// meant to arrive minutes before a pass.
-    func requestAuthorization(onResult: @escaping (KotlinBoolean) -> Void) {
-        center.requestAuthorization(options: [.alert, .sound]) { granted, _ in
-            onResult(KotlinBoolean(bool: granted))
-        }
-    }
 }

@@ -266,7 +266,17 @@ second settle. It schedules nothing unless the notifications flag is on, a kind 
 system allows alerts, and it never shows the permission prompt. iOS fills the `%1$s`
 placeholders itself (`TextTemplate`), because the Compose lookup is `suspend`.
 
-Still to build, in order: the Settings and layer-option toggles with the permission prompt; deep links.
+**Slice 5 (built):** switched on. The shared Settings section and the layer-sheet toggles
+already existed for Android, with an iOS permission request that asks for alerts and sound and
+not provisional authorization, so no new screens. What changed: the iOS flag defaults no longer
+exclude `NOTIFICATIONS`, and the flag is server-controlled like `SATELLITES`, so it can be
+turned off remotely (a launch later, which also clears what was scheduled). The layers sheet
+shows the alert rows with the flag. The scheduler replans whenever the app becomes active, not
+only on entering the foreground, because the system permission prompt closing and a return from
+Settings are activations only; without that, the first alert after granting would wait for the
+next launch. `permissions_notice_ios` and `PRIVACY_POLICY.md` now cover notifications.
+
+Still to build: deep links, the manual device check, and the translations for the notice.
 
 ### 5.3 Kinds, permission and settings
 

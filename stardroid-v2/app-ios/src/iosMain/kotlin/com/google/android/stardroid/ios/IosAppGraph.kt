@@ -278,7 +278,11 @@ class IosAppGraph(
             // Whatever the plan depends on changing, or the app coming forward, replans it.
             @OptIn(FlowPreview::class)
             combine(
-                foreground.isForeground,
+                // Active again also covers the system permission prompt closing and a return
+                // from Settings, neither of which is entering the foreground.
+                combine(foreground.isForeground, foreground.activations) { inForeground, _ ->
+                    inForeground
+                },
                 notifications.preferences,
                 settings.savedLocation,
                 locale,
@@ -395,12 +399,12 @@ class IosAppGraph(
     fun startupViewModel(): StartupViewModel =
         StartupViewModel(startupRouter, startupState, analytics = analytics)
 
-    /** The layer rail and sheet; alert rows stay hidden until iOS has notifications. */
+    /** The layer rail and sheet; the alert rows show with the notifications flag. */
     fun layersViewModel(): LayersViewModel =
         LayersViewModel(
             settings,
             satellitesEnabled = satellitesEnabled,
-            notificationsEnabled = false,
+            notificationsEnabled = experiments.isEnabled(Experiment.NOTIFICATIONS),
             satelliteStatus =
                 if (satellitesEnabled) {
                     satelliteUiStatusFlow(
