@@ -36,7 +36,7 @@ coreSplashscreen = "1.0.1"
 coil = "2.7.0"
 glance = "1.1.1"
 workManager = "2.10.0"
-camerax = "1.4.1"
+camerax = "1.6.2"
 
 # Compose Multiplatform: the iOS app's UI layer (D134). 1.9.x is the last line built with a Kotlin
 # compiler this build can read (2.1.21; 1.10 needs Kotlin 2.2.20).

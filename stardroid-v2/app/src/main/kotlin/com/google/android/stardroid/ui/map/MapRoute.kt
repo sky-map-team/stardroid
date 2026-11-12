@@ -13,17 +13,19 @@ import android.graphics.Bitmap
 import android.opengl.GLSurfaceView
 import androidx.camera.view.PreviewView
 import androidx.compose.foundation.background
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.gestures.awaitEachGesture
 import androidx.compose.foundation.gestures.awaitFirstDown
 import androidx.compose.foundation.gestures.calculatePan
 import androidx.compose.foundation.gestures.calculateRotation
 import androidx.compose.foundation.gestures.calculateZoom
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.SnackbarHostState
+import androidx.compose.material3.Switch
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
@@ -67,9 +69,11 @@ import com.google.android.stardroid.ui.objectinfo.ObjectInfoViewModel
 import com.google.android.stardroid.ui.search.SearchViewModel
 import com.google.android.stardroid.ui.timetravel.TimeTravelViewModel
 import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
 import kotlin.math.max
 import kotlin.math.min
+import kotlin.math.roundToInt
 
 /**
  * Android's map destination: the shared [MapScreen] over what only Android has — the GL sky and
@@ -114,6 +118,10 @@ fun MapRoute(
     val scope = rememberCoroutineScope()
     val lifecycleOwner = LocalLifecycleOwner.current
     val arModeOn by mapViewModel.arMode.collectAsStateWithLifecycle()
+    val previewLuma by mapViewModel.arPreviewLuma.collectAsStateWithLifecycle()
+    val appliedScrim by remember {
+        mapViewModel.renderState.map { it.cameraScrim }
+    }.collectAsStateWithLifecycle(0.0)
     // The two AR share composites awaiting a layout pick; bitmaps, so deliberately not
     // saveable — a rotation simply drops the sheet and the user shares again.
     var shareLayouts by remember { mutableStateOf<SkyShare.ShareLayouts?>(null) }
@@ -172,6 +180,7 @@ fun MapRoute(
         hasArCamera = arCamera.hasCamera && cameraArEnabled,
         hasCameraPermission = hasCameraPermission,
         onRequestCameraPermission = onRequestCameraPermission,
+        arExtraControls = { StillModeControl(arCamera, previewLuma, appliedScrim) },
     ) { onTap, onDoubleTap ->
         // The camera layer's plumbing lives while the layer is on: the preview binds under the
         // GL surface, the view model's zoom/exposure decisions reach the hardware, and leaving
@@ -198,6 +207,7 @@ fun MapRoute(
                             previewView = view,
                             lifecycleOwner = lifecycleOwner,
                             viewAspectLongOverShort = long / short,
+                            onPreviewLuma = mapViewModel::onArPreviewLuma,
                             onReady = mapViewModel::onArCameraReady,
                         )
                     }
@@ -209,10 +219,6 @@ fun MapRoute(
             }
         }
         AndroidView(factory = { glSurfaceView }, modifier = Modifier.matchParentSize())
-        // TODO(night-still): remove before the AR launch; testers need it in release builds.
-        if (arModeOn) {
-            StillModeDebugChip(arCamera, Modifier.align(Alignment.BottomStart))
-        }
 
         // Transparent gesture layer above the GL surface. The detector outlives recompositions
         // (it restarts only when the screen's size does), so it calls through to the latest
@@ -233,6 +239,10 @@ fun MapRoute(
                     )
                 },
         )
+
+        if (arCamera.capturingNight) {
+            HoldStillMessage(Modifier.align(Alignment.Center))
+        }
     }
 
     shareLayouts?.let { layouts ->
@@ -252,39 +262,64 @@ fun MapRoute(
 }
 
 /**
- * Temporary, while the night still is tuned: flips the share still between auto
- * exposure and the vendor night mode, and asks for stillness while a night capture runs.
+ * Temporary, while the night still is tuned: switches the share still between auto exposure and
+ * the vendor night mode. Greyed with the reason when the device offers no night mode.
  */
 @Composable
-private fun StillModeDebugChip(
+private fun StillModeControl(
     arCamera: SkyCameraPreview,
-    modifier: Modifier = Modifier,
+    previewLuma: Double,
+    appliedScrim: Double,
 ) {
-    val label =
-        when {
-            arCamera.capturingNight -> "Hold still…"
-            !arCamera.nightAvailable -> "Still: auto (no night: ${arCamera.extensionReport})"
-            arCamera.stillMode == SkyCameraPreview.StillMode.NIGHT ->
-                "Still: night (${arCamera.extensionReport})"
-            else -> "Still: auto (tap for night; ${arCamera.extensionReport})"
-        }
-    Text(
-        label,
-        color = Color.White,
-        style = MaterialTheme.typography.labelMedium,
-        modifier =
-            modifier
-                .padding(start = 8.dp, bottom = 96.dp)
-                .background(Color.Black.copy(alpha = 0.6f), RoundedCornerShape(12.dp))
-                .clickable(enabled = arCamera.nightAvailable) {
+    val night = arCamera.stillMode == SkyCameraPreview.StillMode.NIGHT
+    Column(modifier = Modifier.padding(vertical = 4.dp)) {
+        Row(verticalAlignment = Alignment.CenterVertically) {
+            Switch(
+                checked = night && arCamera.nightAvailable,
+                enabled = arCamera.nightAvailable,
+                onCheckedChange = {
                     arCamera.stillMode =
-                        if (arCamera.stillMode == SkyCameraPreview.StillMode.AUTO) {
+                        if (it) {
                             SkyCameraPreview.StillMode.NIGHT
                         } else {
                             SkyCameraPreview.StillMode.AUTO
                         }
-                }
-                .padding(horizontal = 12.dp, vertical = 6.dp),
+                },
+            )
+            Text(
+                "Night photo",
+                style = MaterialTheme.typography.labelMedium,
+                color = MaterialTheme.colorScheme.onSurface,
+                modifier = Modifier.padding(start = 10.dp),
+            )
+        }
+        Text(
+            "Preview brightness ${(previewLuma * 100).roundToInt()}% " +
+                "· camera dimmed ${(appliedScrim * 100).roundToInt()}%",
+            style = MaterialTheme.typography.labelSmall,
+            color = MaterialTheme.colorScheme.onSurfaceVariant,
+        )
+        if (!arCamera.nightAvailable) {
+            Text(
+                "Night not offered here (${arCamera.extensionReport})",
+                style = MaterialTheme.typography.labelSmall,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+            )
+        }
+    }
+}
+
+/** Shown over the sky while a night photo is taken, wherever the controls are. */
+@Composable
+private fun HoldStillMessage(modifier: Modifier = Modifier) {
+    Text(
+        "Hold still…",
+        color = Color.White,
+        style = MaterialTheme.typography.titleMedium,
+        modifier =
+            modifier
+                .background(Color.Black.copy(alpha = 0.6f), RoundedCornerShape(16.dp))
+                .padding(horizontal = 20.dp, vertical = 10.dp),
     )
 }
 

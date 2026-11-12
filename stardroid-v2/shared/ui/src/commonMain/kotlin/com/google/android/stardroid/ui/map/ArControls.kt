@@ -70,6 +70,8 @@ fun ArControls(
     modifier: Modifier = Modifier,
     hudState: HudState? = null,
     onResetAlignment: () -> Unit = {},
+    // Host-supplied extra row (the temporary share-still mode switch), below the dimmer.
+    extraContent: (@Composable () -> Unit)? = null,
 ) {
     val shape = RoundedCornerShape(14.dp)
     Column(
@@ -163,6 +165,7 @@ fun ArControls(
             range = 0f..MapViewModel.MAX_AR_SCRIM.toFloat(),
             onChange = { onScrimChange(it.toDouble()) },
         )
+        extraContent?.invoke()
         // The HUD this panel replaces owns the drag-to-align readout and its reset, which
         // are most needed here, so the correction row travels with the panel.
         if (hudState != null &&

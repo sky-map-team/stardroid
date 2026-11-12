@@ -330,6 +330,7 @@ fun MapChrome(
     onArExposureChange: (Int) -> Unit = {},
     onArIsoFractionChange: (Double) -> Unit = {},
     onArShutterFractionChange: (Double) -> Unit = {},
+    arExtraControls: (@Composable () -> Unit)? = null,
     onShareShutter: () -> Unit = {},
     // The in-AR shutter is a share entry point, so it follows the SHARE_SKY experiment
     // independently of the camera layer itself.
@@ -380,6 +381,7 @@ fun MapChrome(
                     onExposureChange = onArExposureChange,
                     onIsoFractionChange = onArIsoFractionChange,
                     onShutterFractionChange = onArShutterFractionChange,
+                    extraContent = arExtraControls,
                     hudState = hudState,
                     onResetAlignment = onResetAlignment,
                     modifier =

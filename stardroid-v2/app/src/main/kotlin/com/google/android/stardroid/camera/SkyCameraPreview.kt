@@ -19,6 +19,7 @@ import android.hardware.camera2.CameraManager
 import android.hardware.camera2.CameraMetadata
 import android.hardware.camera2.CaptureRequest
 import android.os.Build
+import android.os.SystemClock
 import android.util.Log
 import androidx.camera.camera2.interop.Camera2CameraControl
 import androidx.camera.camera2.interop.Camera2CameraInfo
@@ -26,10 +27,12 @@ import androidx.camera.camera2.interop.Camera2Interop
 import androidx.camera.camera2.interop.CaptureRequestOptions
 import androidx.camera.core.Camera
 import androidx.camera.core.CameraSelector
+import androidx.camera.core.ImageAnalysis
 import androidx.camera.core.ImageCapture
 import androidx.camera.core.ImageCaptureException
 import androidx.camera.core.ImageProxy
 import androidx.camera.core.Preview
+import androidx.camera.core.UseCase
 import androidx.camera.extensions.ExtensionMode
 import androidx.camera.extensions.ExtensionsManager
 import androidx.camera.lifecycle.ProcessCameraProvider
@@ -44,6 +47,8 @@ import com.google.android.stardroid.ui.map.ArCameraSpecs
 import com.google.android.stardroid.ui.map.ArManualExposure
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.suspendCancellableCoroutine
+import java.util.concurrent.ExecutorService
+import java.util.concurrent.Executors
 import kotlin.coroutines.resume
 
 /**
@@ -72,6 +77,9 @@ class SkyCameraPreview(
     private var lifecycleOwner: LifecycleOwner? = null
     private var viewAspectLongOverShort = 1.0
     private var onReady: ((ArCameraSpecs) -> Unit)? = null
+    private var onPreviewLuma: ((Double) -> Unit)? = null
+    private var analysisExecutor: ExecutorService? = null
+    private var lastLumaMillis = 0L
 
     // The latest controls, re-applied after a rebind drops them.
     private var zoomRatio = 1.0
@@ -107,9 +115,11 @@ class SkyCameraPreview(
         previewView: PreviewView,
         lifecycleOwner: LifecycleOwner,
         viewAspectLongOverShort: Double,
+        onPreviewLuma: (Double) -> Unit,
         onReady: (ArCameraSpecs) -> Unit,
     ) {
         bound = true
+        this.onPreviewLuma = onPreviewLuma
         this.previewView = previewView
         this.lifecycleOwner = lifecycleOwner
         this.viewAspectLongOverShort = viewAspectLongOverShort
@@ -132,6 +142,9 @@ class SkyCameraPreview(
         previewView = null
         lifecycleOwner = null
         onReady = null
+        onPreviewLuma = null
+        analysisExecutor?.shutdown()
+        analysisExecutor = null
         nightAvailable = false
         extensionReport = "probing"
         provider?.unbindAll()
@@ -160,7 +173,12 @@ class SkyCameraPreview(
             preview.surfaceProvider = view.surfaceProvider
             val capture = buildCapture(view.display.rotation, tuned = !night)
             provider.unbindAll()
-            val session = provider.bindToLifecycle(owner, selector, preview, capture)
+            // The brightness probe rides only the live session; extension sessions take just
+            // preview and capture.
+            val useCases =
+                listOfNotNull<UseCase>(preview, capture, if (night) null else buildAnalysis())
+            val session =
+                provider.bindToLifecycle(owner, selector, *useCases.toTypedArray())
             camera = session
             imageCapture = capture
             session
@@ -168,6 +186,51 @@ class SkyCameraPreview(
             Log.w(TAG, "Camera bind failed (night=$night)", e)
             null
         }
+    }
+
+    /**
+     * A few brightness samples a second from the live preview, so the map can dim a camera
+     * image bright enough to drown it out (see `ArScrimMath`). Auto-exposure holds the image
+     * near mid-grey, so the sensor settings can't tell us; the pixels can.
+     */
+    private fun buildAnalysis(): ImageAnalysis {
+        val executor =
+            analysisExecutor ?: Executors.newSingleThreadExecutor().also {
+                analysisExecutor = it
+            }
+        return ImageAnalysis.Builder()
+            .setBackpressureStrategy(ImageAnalysis.STRATEGY_KEEP_ONLY_LATEST)
+            .build()
+            .also { analysis ->
+                analysis.setAnalyzer(executor) { image ->
+                    image.use { frame ->
+                        val now = SystemClock.elapsedRealtime()
+                        if (now - lastLumaMillis < LUMA_INTERVAL_MS) return@use
+                        lastLumaMillis = now
+                        val luma = meanLuma(frame)
+                        ContextCompat.getMainExecutor(
+                            context,
+                        ).execute { onPreviewLuma?.invoke(luma) }
+                    }
+                }
+            }
+    }
+
+    /** Mean of a coarse grid of the Y plane, 0–1. */
+    private fun meanLuma(image: ImageProxy): Double {
+        val plane = image.planes[0]
+        val buffer = plane.buffer
+        val rowStride = plane.rowStride
+        val pixelStride = plane.pixelStride
+        var sum = 0L
+        for (row in 0 until LUMA_GRID) {
+            val y = row * (image.height - 1) / (LUMA_GRID - 1)
+            for (col in 0 until LUMA_GRID) {
+                val x = col * (image.width - 1) / (LUMA_GRID - 1)
+                sum += buffer.get(y * rowStride + x * pixelStride).toInt() and 0xFF
+            }
+        }
+        return sum / (LUMA_GRID * LUMA_GRID * 255.0)
     }
 
     private fun probeNightExtension(provider: ProcessCameraProvider) {
@@ -185,7 +248,9 @@ class SkyCameraPreview(
                         .firstOrNull { mode -> offered.any { it.first == mode } }
                         ?: ExtensionMode.NONE
                 nightAvailable = bound && stillExtensionMode != ExtensionMode.NONE
-                extensionReport = offered.joinToString { it.second }.ifEmpty { "none offered" }
+                extensionReport =
+                    "camerax: " + offered.joinToString { it.second }.ifEmpty { "none" } +
+                    "; platform: " + platformExtensions()
                 Log.i(TAG, "Extensions offered: $extensionReport")
             } catch (e: Exception) {
                 Log.w(TAG, "Extensions probe failed", e)
@@ -193,6 +258,22 @@ class SkyCameraPreview(
             }
         }, ContextCompat.getMainExecutor(context))
     }
+
+    /** The platform's own extension list (API 31+), to compare with what CameraX offers. */
+    @SuppressLint("UnsafeOptInUsageError")
+    private fun platformExtensions(): String =
+        try {
+            val id = Camera2CameraInfo.from(camera!!.cameraInfo).cameraId
+            val supported =
+                context.getSystemService(CameraManager::class.java)
+                    .getCameraExtensionCharacteristics(id)
+                    .supportedExtensions
+            supported.joinToString { PLATFORM_EXTENSION_NAMES[it] ?: "#$it" }
+                .ifEmpty { "none" }
+        } catch (e: Exception) {
+            Log.w(TAG, "Platform extension probe failed", e)
+            "failed"
+        }
 
     /**
      * A camera still for the share layouts, upright per its rotation metadata; null when
@@ -320,7 +401,7 @@ class SkyCameraPreview(
     private fun applyManualOptions(manual: ArManualExposure?) {
         val control = camera?.cameraControl ?: return
         val camera2 = Camera2CameraControl.from(control)
-        camera2.captureRequestOptions =
+        val options =
             if (manual == null) {
                 CaptureRequestOptions.Builder().build()
             } else {
@@ -343,6 +424,7 @@ class SkyCameraPreview(
                     )
                     .build()
             }
+        camera2.setCaptureRequestOptions(options)
     }
 
     /**
@@ -486,6 +568,9 @@ class SkyCameraPreview(
     companion object {
         private const val TAG = "SkyCameraPreview"
 
+        private val PLATFORM_EXTENSION_NAMES =
+            mapOf(0 to "auto", 1 to "face", 2 to "bokeh", 3 to "hdr", 4 to "night")
+
         private val EXTENSION_MODES =
             listOf(
                 ExtensionMode.NIGHT to "night",
@@ -494,6 +579,9 @@ class SkyCameraPreview(
                 ExtensionMode.BOKEH to "bokeh",
                 ExtensionMode.FACE_RETOUCH to "face",
             )
+
+        private const val LUMA_INTERVAL_MS = 250L
+        private const val LUMA_GRID = 24
 
         /** How long AE gets to converge after the manual options are dropped for a still. */
         private const val AE_SETTLE_MS = 600L

@@ -168,6 +168,12 @@ class MapViewModel(
 
     private val arScrimSetting = MutableStateFlow(DEFAULT_AR_SCRIM)
 
+    // Smoothed mean brightness (0–1) of the camera preview, fed by the hardware edge.
+    private val arPreviewLumaState = MutableStateFlow(0.0)
+
+    /** The preview's smoothed brightness, for the tuning readout. */
+    val arPreviewLuma: StateFlow<Double> = arPreviewLumaState.asStateFlow()
+
     private val _arExposureIndex = MutableStateFlow(0)
 
     private val _arZoomRatio = MutableStateFlow(1.0)
@@ -272,23 +278,25 @@ class MapViewModel(
             settings.fontSize,
             skyGradients(),
             _arMode,
-            arScrimSetting,
+            effectiveArScrim(),
         ) { night, font, gradient, ar, scrim ->
             RenderState(
                 nightMode = night,
                 labelScaleFactor = font.scale,
                 skyGradient = gradient,
                 transparentBackground = ar,
-                // Night mode imposes the scrim floor (D64): the un-reddened video must not
-                // wreck dark adaptation — dim further, never brighter.
-                cameraScrim =
-                    when {
-                        !ar -> 0.0
-                        night -> maxOf(scrim, NIGHT_AR_SCRIM_FLOOR)
-                        else -> scrim
-                    },
+                cameraScrim = if (ar) scrim else 0.0,
             )
         }
+
+    /**
+     * The user's dimmer, raised as needed so a bright preview does not drown out the map
+     * (D64's night-mode floor, now only where the image is actually bright).
+     */
+    private fun effectiveArScrim(): Flow<Double> =
+        combine(arScrimSetting, arPreviewLumaState, settings.nightMode) { user, luma, night ->
+            maxOf(user, ArScrimMath.autoScrim(luma, night))
+        }.distinctUntilChanged()
 
     /**
      * The map HUD's readout (map-hud.md, D65): the screen centre in equatorial and horizontal
@@ -598,6 +606,7 @@ class MapViewModel(
             _arZoomRatio.value = 1.0
             arIsoFractionSetting.value = 0.0
             arShutterFractionSetting.value = 0.0
+            arPreviewLumaState.value = 0.0
             _arMode.value = true
             applyArFov()
         } else {
@@ -620,6 +629,13 @@ class MapViewModel(
         _arZoomRatio.value = 1.0
         _arExposureIndex.value = 0
         applyArFov()
+    }
+
+    /** The hardware edge reports the preview's mean brightness (0–1); smoothed here. */
+    fun onArPreviewLuma(luma: Double) {
+        val sample = luma.coerceIn(0.0, 1.0)
+        arPreviewLumaState.value =
+            arPreviewLumaState.value * (1 - LUMA_SMOOTHING) + sample * LUMA_SMOOTHING
     }
 
     /** Camera dimmer (the GL scrim); clamped to the slider's range. */
@@ -1089,14 +1105,14 @@ class MapViewModel(
         private const val DEFAULT_MANUAL_ISO = 800
         private const val DEFAULT_MANUAL_SHUTTER_NS = 33_333_333L
 
-        /** Camera dimmer default: "map first, camera as context" (camera-ar-mode.md). */
-        const val DEFAULT_AR_SCRIM = 0.35
+        /** Extra camera dimming default: none; bright previews are dimmed automatically. */
+        const val DEFAULT_AR_SCRIM = 0.0
+
+        /** Weight of each new brightness sample in the running average. */
+        private const val LUMA_SMOOTHING = 0.3
 
         /** The dimmer slider's ceiling — full black would beg "why is my camera broken". */
         const val MAX_AR_SCRIM = 0.8
-
-        /** Night mode's minimum camera dimming (D64): protect dark adaptation. */
-        const val NIGHT_AR_SCRIM_FLOOR = 0.65
 
         /** Pitch error is small (D64 caveat); corrections beyond this are finger slips. */
         const val MAX_ALTITUDE_ADJUSTMENT_DEG = 45.0
