@@ -84,6 +84,7 @@ internal class IosNotificationScheduler(
                     preferences.any &&
                     center.currentAuthorization() == NotificationAuthorization.AUTHORIZED
             if (!allowed) {
+                log("nothing scheduled (flag, a kind on and permission are all needed)")
                 center.replaceAllNotifications(emptyList())
                 return@withLock
             }
@@ -113,6 +114,7 @@ internal class IosNotificationScheduler(
                         preferences = preferences,
                     ),
                 )
+            log("scheduled ${plan.size}: " + plan.joinToString { "${it.id}@${it.fireAt}" })
             center.replaceAllNotifications(
                 plan.map {
                     LocalNotification(
@@ -151,6 +153,9 @@ internal class IosNotificationScheduler(
             )
         }
     }
+
+    // Stdout reaches the device console (devicectl --console), as the search log does.
+    private fun log(message: String) = println("NotificationScheduler: $message")
 
     private fun formatTime(time: Instant): String {
         val formatter =
