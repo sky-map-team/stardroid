@@ -276,7 +276,16 @@ only on entering the foreground, because the system permission prompt closing an
 Settings are activations only; without that, the first alert after granting would wait for the
 next launch. `permissions_notice_ios` and `PRIVACY_POLICY.md` now cover notifications.
 
-Still to build: deep links, the manual device check, and the translations for the notice.
+**Slice 6 (built):** deep links. Each notification carries the object it is about in its
+`userInfo` (a shower's id, the Moon for an eclipse, the satellite for a pass; the digest carries
+none). The Swift adapter is the `UNUserNotificationCenter` delegate, set before launch finishes
+so the tap that launches the app is delivered, and hands the id to `DeepLinks`. `DeepLinks`
+holds it until the screen is up; the screen then goes back to the map (the gallery shows cards
+itself) and calls `ObjectInfoViewModel.show`, as Android's `onNewIntent` does. An id that no
+longer resolves, such as a satellite after its layer was switched off, leaves the user on the
+map. The universal-link handler planned in share-object-card.md calls the same `DeepLinks`.
+
+Still to build: the translations for the notice, and the review.
 
 ### 5.3 Kinds, permission and settings
 

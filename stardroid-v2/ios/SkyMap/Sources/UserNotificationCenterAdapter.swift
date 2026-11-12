@@ -13,8 +13,28 @@ import UserNotifications
 /// Local notifications over `UNUserNotificationCenter`. Kotlin plans the next nights and renders
 /// the words; this only hands them to the system, which delivers each at its time with no code of
 /// ours running. See docs/design/ios-platform-surfaces.md section 5.
-final class UserNotificationCenterAdapter: NSObject, LocalNotificationCenter {
+final class UserNotificationCenterAdapter: NSObject, LocalNotificationCenter,
+    UNUserNotificationCenterDelegate
+{
     private let center = UNUserNotificationCenter.current()
+
+    override init() {
+        super.init()
+        // Before the app finishes launching, so the tap that launched it is delivered.
+        center.delegate = self
+    }
+
+    /// A tap on a notification: the object it carries opens as a card, no object just the map.
+    func userNotificationCenter(
+        _ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse,
+        withCompletionHandler completionHandler: @escaping () -> Void
+    ) {
+        let objectId = response.notification.request.content.userInfo["objectId"] as? String
+        DispatchQueue.main.async {
+            DeepLinksKt.openObjectFromNotification(objectId: objectId)
+        }
+        completionHandler()
+    }
 
     func replaceAll(notifications: [LocalNotification], onDone: @escaping () -> Void) {
         center.removeAllPendingNotificationRequests()
