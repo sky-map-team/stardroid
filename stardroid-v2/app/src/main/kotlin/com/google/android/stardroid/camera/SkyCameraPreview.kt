@@ -143,11 +143,11 @@ class SkyCameraPreview(
         lifecycleOwner = null
         onReady = null
         onPreviewLuma = null
+        provider?.unbindAll()
         analysisExecutor?.shutdown()
         analysisExecutor = null
         nightAvailable = false
         extensionReport = "probing"
-        provider?.unbindAll()
     }
 
     /**
@@ -243,9 +243,10 @@ class SkyCameraPreview(
                     EXTENSION_MODES.filter { (mode, _) ->
                         manager.isExtensionAvailable(CameraSelector.DEFAULT_BACK_CAMERA, mode)
                     }
+                val offeredModes = offered.map { it.first }
                 stillExtensionMode =
                     listOf(ExtensionMode.NIGHT, ExtensionMode.AUTO)
-                        .firstOrNull { mode -> offered.any { it.first == mode } }
+                        .firstOrNull { it in offeredModes }
                         ?: ExtensionMode.NONE
                 nightAvailable = bound && stillExtensionMode != ExtensionMode.NONE
                 extensionReport =
@@ -261,9 +262,12 @@ class SkyCameraPreview(
 
     /** The platform's own extension list (API 31+), to compare with what CameraX offers. */
     @SuppressLint("UnsafeOptInUsageError")
-    private fun platformExtensions(): String =
-        try {
-            val id = Camera2CameraInfo.from(camera!!.cameraInfo).cameraId
+    private fun platformExtensions(): String {
+        // getCameraExtensionCharacteristics is API 31; minSdk 28 would throw NoSuchMethodError.
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.S) return "n/a (API < 31)"
+        val camera = camera ?: return "no camera"
+        return try {
+            val id = Camera2CameraInfo.from(camera.cameraInfo).cameraId
             val supported =
                 context.getSystemService(CameraManager::class.java)
                     .getCameraExtensionCharacteristics(id)
@@ -274,6 +278,7 @@ class SkyCameraPreview(
             Log.w(TAG, "Platform extension probe failed", e)
             "failed"
         }
+    }
 
     /**
      * A camera still for the share layouts, upright per its rotation metadata; null when
@@ -318,7 +323,13 @@ class SkyCameraPreview(
             return capture()
         } finally {
             capturingNight = false
-            if (bound && bindSession(night = false) != null) reapplyControls()
+            if (bound) {
+                if (bindSession(night = false) != null) {
+                    reapplyControls()
+                } else {
+                    Log.w(TAG, "Live session failed to rebind after night still")
+                }
+            }
         }
     }
 
