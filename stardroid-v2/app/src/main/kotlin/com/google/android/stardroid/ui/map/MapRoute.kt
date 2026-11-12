@@ -262,7 +262,7 @@ fun MapRoute(
 }
 
 /**
- * Temporary, while the night still is tuned: switches the share still between auto exposure and
+ * TODO(night-still): remove, or localize the strings, once tuned. Switches the share still between auto exposure and
  * the vendor night mode. Greyed with the reason when the device offers no night mode.
  */
 @Composable
