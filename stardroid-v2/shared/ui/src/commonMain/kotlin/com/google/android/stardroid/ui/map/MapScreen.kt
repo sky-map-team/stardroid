@@ -172,6 +172,8 @@ fun MapScreen(
     hasArCamera: Boolean = false,
     hasCameraPermission: () -> Boolean = { false },
     onRequestCameraPermission: () -> Unit = {},
+    // Extra rows for the AR control panel (host-specific camera options); null adds none.
+    arExtraControls: (@Composable () -> Unit)? = null,
     sky: @Composable BoxScope.(onTap: (Offset) -> Unit, onDoubleTap: () -> Unit) -> Unit,
 ) {
     val referenceFrame by mapViewModel.referenceFrame.collectAsStateWithLifecycle()
@@ -530,6 +532,7 @@ fun MapScreen(
                 onArExposureChange = mapViewModel::setArExposureIndex,
                 onArIsoFractionChange = mapViewModel::setArIsoFraction,
                 onArShutterFractionChange = mapViewModel::setArShutterFraction,
+                arExtraControls = arExtraControls,
                 onShareShutter = onShareSky ?: {},
                 shareEnabled = onShareSky != null,
                 skyGradientOn = skyGradientOn,

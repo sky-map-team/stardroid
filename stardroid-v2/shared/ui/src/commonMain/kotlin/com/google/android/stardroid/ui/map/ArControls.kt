@@ -19,6 +19,7 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Slider
@@ -26,17 +27,22 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.google.android.stardroid.ui.resources.Res
+import com.google.android.stardroid.ui.resources.ar_auto_off_note
 import com.google.android.stardroid.ui.resources.ar_dimmer_slider
 import com.google.android.stardroid.ui.resources.ar_exposure_auto
 import com.google.android.stardroid.ui.resources.ar_exposure_slider
+import com.google.android.stardroid.ui.resources.ar_group_auto
+import com.google.android.stardroid.ui.resources.ar_group_manual
 import com.google.android.stardroid.ui.resources.ar_iso_slider
 import com.google.android.stardroid.ui.resources.ar_iso_slider_label
+import com.google.android.stardroid.ui.resources.ar_manual_off_note
 import com.google.android.stardroid.ui.resources.ar_shutter_slider
 import com.google.android.stardroid.ui.resources.ar_shutter_slider_label
 import com.google.android.stardroid.ui.resources.ic_ar_dimmer
@@ -47,11 +53,11 @@ import org.jetbrains.compose.resources.stringResource
 import kotlin.math.roundToInt
 
 /**
- * The in-AR exposure and dimmer controls (camera-ar-mode.md/D64, exposure levers 1 + 2):
- * shown only while the camera layer is on, in the HUD's top-right slot, riding the chrome
- * show/hide like everything else. The dimmer is the GL scrim ("how bright is the video");
- * exposure is AE compensation ("what did the sensor capture") — the row hides when the camera
- * doesn't support compensation.
+ * The in-AR exposure and dimmer controls (camera-ar-mode.md/D64): shown only while the camera
+ * layer is on, in the HUD's top-right slot, riding the chrome show/hide like everything else.
+ * Three independent-looking groups: auto exposure (AE compensation, hidden when unsupported),
+ * manual ISO/shutter (which turns AE off, so the groups are mutually exclusive), and the dimmer
+ * (the GL scrim, "how bright is the video", unaffected by either).
  */
 @Composable
 fun ArControls(
@@ -64,6 +70,8 @@ fun ArControls(
     modifier: Modifier = Modifier,
     hudState: HudState? = null,
     onResetAlignment: () -> Unit = {},
+    // Host-supplied extra row (the temporary share-still mode switch), below the dimmer.
+    extraContent: (@Composable () -> Unit)? = null,
 ) {
     val shape = RoundedCornerShape(14.dp)
     Column(
@@ -76,14 +84,79 @@ fun ArControls(
                 .border(1.dp, MaterialTheme.colorScheme.outline.copy(alpha = 0.3f), shape)
                 .padding(horizontal = 10.dp, vertical = 2.dp),
     ) {
+        // Auto and manual exposure are mutually exclusive: manual turns the camera's AE off, so
+        // the exposure slider is inert then, and touching it hands control back to auto. The
+        // inactive group is dimmed but stays touchable, because touching it is how you switch.
+        // Read once: ArCameraSpecs is in :shared:viewmodels, and Kotlin will not smart-cast
+        // another module's properties.
+        val isoRange = specs?.isoRange
+        val exposureTimeRangeNs = specs?.exposureTimeRangeNs
+        val showManual =
+            state.manualExposureSupported && isoRange != null && exposureTimeRangeNs != null
         if (state.exposureSupported) {
-            ArSliderRow(
-                icon = Res.drawable.ic_sun,
-                description = stringResource(Res.string.ar_exposure_slider),
-                value = state.exposureIndex.toFloat(),
-                range = state.exposureMin.toFloat()..state.exposureMax.toFloat(),
-                onChange = { onExposureChange(it.roundToInt()) },
-            )
+            ArGroup(
+                title = stringResource(Res.string.ar_group_auto),
+                note =
+                    if (state.manualActive) {
+                        stringResource(
+                            Res.string.ar_auto_off_note,
+                        )
+                    } else {
+                        null
+                    },
+                active = !state.manualActive,
+            ) {
+                ArSliderRow(
+                    icon = Res.drawable.ic_sun,
+                    description = stringResource(Res.string.ar_exposure_slider),
+                    value = state.exposureIndex.toFloat(),
+                    range = state.exposureMin.toFloat()..state.exposureMax.toFloat(),
+                    onChange = { onExposureChange(it.roundToInt()) },
+                )
+            }
+        }
+        if (showManual && isoRange != null && exposureTimeRangeNs != null) {
+            ArGroup(
+                title = stringResource(Res.string.ar_group_manual),
+                note =
+                    if (state.manualActive) null else stringResource(Res.string.ar_manual_off_note),
+                active = state.manualActive,
+            ) {
+                ManualExposureRow(
+                    label = stringResource(Res.string.ar_iso_slider_label),
+                    description = stringResource(Res.string.ar_iso_slider),
+                    fraction = state.isoFraction,
+                    valueText =
+                        if (state.isoFraction > 0.0) {
+                            ArExposureMath.isoForFraction(isoRange, state.isoFraction)
+                                .toString()
+                        } else {
+                            stringResource(Res.string.ar_exposure_auto)
+                        },
+                    onChange = onIsoFractionChange,
+                )
+                ManualExposureRow(
+                    label = stringResource(Res.string.ar_shutter_slider_label),
+                    description = stringResource(Res.string.ar_shutter_slider),
+                    fraction = state.shutterFraction,
+                    valueText =
+                        if (state.shutterFraction > 0.0) {
+                            formatExposureTime(
+                                ArExposureMath.exposureTimeForFraction(
+                                    exposureTimeRangeNs,
+                                    state.shutterFraction,
+                                ),
+                            )
+                        } else {
+                            stringResource(Res.string.ar_exposure_auto)
+                        },
+                    onChange = onShutterFractionChange,
+                )
+            }
+        }
+        // The dimmer is the display-only scrim, independent of both exposure groups.
+        if (state.exposureSupported || showManual) {
+            HorizontalDivider(color = MaterialTheme.colorScheme.outline.copy(alpha = 0.3f))
         }
         ArSliderRow(
             icon = Res.drawable.ic_ar_dimmer,
@@ -92,46 +165,7 @@ fun ArControls(
             range = 0f..MapViewModel.MAX_AR_SCRIM.toFloat(),
             onChange = { onScrimChange(it.toDouble()) },
         )
-        // Temporary dev controls (exposure lever 4) while the night behavior is tuned:
-        // manual ISO and shutter, log-scaled, far left = auto.
-        // Read once: ArCameraSpecs is in :shared:viewmodels, and Kotlin will not smart-cast
-        // another module's properties.
-        val isoRange = specs?.isoRange
-        val exposureTimeRangeNs = specs?.exposureTimeRangeNs
-        if (state.manualExposureSupported && isoRange != null) {
-            ManualExposureRow(
-                label = stringResource(Res.string.ar_iso_slider_label),
-                description = stringResource(Res.string.ar_iso_slider),
-                fraction = state.isoFraction,
-                valueText =
-                    if (state.isoFraction > 0.0) {
-                        ArExposureMath.isoForFraction(isoRange, state.isoFraction)
-                            .toString()
-                    } else {
-                        stringResource(Res.string.ar_exposure_auto)
-                    },
-                onChange = onIsoFractionChange,
-            )
-        }
-        if (state.manualExposureSupported && exposureTimeRangeNs != null) {
-            ManualExposureRow(
-                label = stringResource(Res.string.ar_shutter_slider_label),
-                description = stringResource(Res.string.ar_shutter_slider),
-                fraction = state.shutterFraction,
-                valueText =
-                    if (state.shutterFraction > 0.0) {
-                        formatExposureTime(
-                            ArExposureMath.exposureTimeForFraction(
-                                exposureTimeRangeNs,
-                                state.shutterFraction,
-                            ),
-                        )
-                    } else {
-                        stringResource(Res.string.ar_exposure_auto)
-                    },
-                onChange = onShutterFractionChange,
-            )
-        }
+        extraContent?.invoke()
         // The HUD this panel replaces owns the drag-to-align readout and its reset, which
         // are most needed here, so the correction row travels with the panel.
         if (hudState != null &&
@@ -139,6 +173,37 @@ fun ArControls(
         ) {
             CorrectionRow(hudState, onResetAlignment)
         }
+    }
+}
+
+/** A headed set of sliders; dimmed (not disabled) while another group is in control. */
+@Composable
+private fun ArGroup(
+    title: String,
+    note: String?,
+    active: Boolean,
+    content: @Composable () -> Unit,
+) {
+    Column(modifier = Modifier.alpha(if (active) 1f else INACTIVE_GROUP_ALPHA)) {
+        Row(
+            modifier = Modifier.padding(top = 6.dp),
+            verticalAlignment = Alignment.CenterVertically,
+        ) {
+            Text(
+                title,
+                style = MaterialTheme.typography.labelMedium,
+                color = MaterialTheme.colorScheme.onSurface,
+            )
+            if (note != null) {
+                Text(
+                    note,
+                    style = MaterialTheme.typography.labelSmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                    modifier = Modifier.padding(start = 8.dp),
+                )
+            }
+        }
+        content()
     }
 }
 
@@ -203,6 +268,8 @@ private fun ArSliderRow(
         )
     }
 }
+
+private const val INACTIVE_GROUP_ALPHA = 0.45f
 
 /** Wide enough for the correction row, so the panel doesn't resize when it appears. */
 private val AR_PANEL_MIN_WIDTH: Dp = 208.dp

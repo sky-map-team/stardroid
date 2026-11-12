@@ -54,6 +54,9 @@ data class ArUiState(
     val manualExposureSupported: Boolean = false,
 ) {
     val exposureSupported: Boolean get() = exposureMin != 0 || exposureMax != 0
+
+    /** Manual ISO/shutter is in control: the camera's AE is off, so the exposure slider is inert. */
+    val manualActive: Boolean get() = isoFraction > 0.0 || shutterFraction > 0.0
 }
 
 /**
@@ -81,5 +84,36 @@ object ArExposureMath {
     ): Double {
         val f = fraction.coerceIn(0.0, 1.0)
         return exp(ln(min) + (ln(max) - ln(min)) * f)
+    }
+}
+
+/**
+ * How much to dim the camera so it does not drown out the map, from the preview's mean
+ * brightness. A dark sky needs none; a bright, lit or hazy view ramps up to a ceiling. The
+ * constants are first guesses, tuned against the live readout on a device.
+ */
+object ArScrimMath {
+    /** Mean preview luma (0–1) at or below which the camera never competes with the map. */
+    const val CLEAR_LUMA = 0.30
+
+    /** Mean preview luma at which the dimming reaches its ceiling. */
+    const val FULL_LUMA = 0.60
+
+    /** The most auto-dimming applies in day mode. */
+    const val CEILING = 0.55
+
+    /** Night mode's ceiling (D64's old fixed floor): protects dark adaptation when bright. */
+    const val NIGHT_CEILING = 0.65
+
+    /** Dimming comes in steps this size, so the GL layer is not redrawn for every wobble. */
+    private const val STEP = 0.05
+
+    fun autoScrim(
+        luma: Double,
+        night: Boolean,
+    ): Double {
+        val ramp = ((luma - CLEAR_LUMA) / (FULL_LUMA - CLEAR_LUMA)).coerceIn(0.0, 1.0)
+        val raw = ramp * if (night) NIGHT_CEILING else CEILING
+        return kotlin.math.round(raw / STEP) * STEP
     }
 }
