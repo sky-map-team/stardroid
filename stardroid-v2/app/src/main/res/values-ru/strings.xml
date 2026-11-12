@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--
-  Carried over from v1 by tools/salvage-translations/salvage.py.
-  Only strings whose English source is identical between v1 and v2 appear here;
-  everything else is translated by `tm`. Safe to hand-edit thereafter.
--->
 <resources>
+
+    <!-- Метки карты: полюса, зенит, надир, стороны света, эклиптика -->
     <string name="north_pole">СП</string>
     <string name="south_pole">ЮП</string>
     <string name="zenith">ЗЕНИТ</string>
@@ -13,7 +10,9 @@
     <string name="south">ЮГ</string>
     <string name="east">ВОСТОК</string>
     <string name="west">ЗАПАД</string>
-    <string name="ecliptic">эклиптика</string>
+    <string name="ecliptic">Эклиптика</string>
+
+    <!-- Названия тел Солнечной системы на карте -->
     <string name="sun">Солнце</string>
     <string name="moon">Луна</string>
     <string name="mercury">Меркурий</string>
@@ -25,4 +24,97 @@
     <string name="uranus">Уран</string>
     <string name="neptune">Нептун</string>
     <string name="pluto">Плутон</string>
+
+    <!-- Каналы уведомлений: пролёты спутников и затмения -->
+    <string name="channel_passes_name">Пролёты спутников</string>
+    <string name="channel_passes_description">Одно оповещение незадолго до лучшего видимого пролёта за ночь</string>
+    <string name="notif_pass_title">%1$s скоро пролетит над вами</string>
+    <string name="notif_pass_text">Виден примерно с %1$s — выходите и дайте глазам привыкнуть к темноте</string>
+    <string name="channel_passes_now_name">Спутник поднимается сейчас</string>
+    <string name="channel_passes_now_description">Оповещение с вибрацией в момент начала лучшего видимого пролёта за ночь</string>
+    <string name="notif_pass_now_title">%1$s сейчас поднимается</string>
+    <string name="notif_pass_now_text">Посмотрите вверх — он пересекает небо прямо сейчас</string>
+    <string name="channel_eclipses_name">Лунные затмения</string>
+    <string name="channel_eclipses_description">Одно оповещение перед началом лунного затмения</string>
+    <string name="notif_eclipse_title">Скоро начнётся %1$s</string>
+    <string name="notif_eclipse_text">Начнётся примерно в %1$s — стоит выйти на улицу</string>
+    <string name="satellite_name_iss">МКС</string>
+    <string name="satellite_name_tiangong">Тяньгун</string>
+    <string name="tonight_satellite_pass">%2$s · %1$s</string>
+
+    <!-- Общий доступ (шаринг) снимков неба -->
+    <string name="share_chooser_title">Поделиться этим небом</string>
+    <string name="share_invitation">Вселенная в кармане — получите Sky Map бесплатно</string>
+    <string name="share_text">Вселенная в кармане — получите Sky Map бесплатно: %1$s</string>
+    <string name="share_layout_overlay">Наложение</string>
+    <string name="share_layout_side_by_side">Рядом</string>
+    <string name="share_failed_message">Не удалось сделать снимок неба — попробуйте ещё раз</string>
+
+    <!-- Заголовок "Что нового" -->
+    <string name="whats_new_version_heading">Новое в версии %1$s</string>
+
+    <!-- Каталог виджетов домашнего экрана -->
+    <string name="widgets_sheet_title">Виджеты домашнего экрана</string>
+    <string name="widgets_sheet_subtitle">Небо этой ночи — на вашем домашнем экране. Выберите виджет, чтобы добавить его.</string>
+
+    <!-- Виджет фазы Луны -->
+    <string name="moon_widget_label">Фаза Луны</string>
+    <string name="moon_widget_description">Фаза Луны, освещённость, время восхода и захода — обновляется ежедневно.</string>
+    <string name="moon_widget_illumination_short">%1$d%%</string>
+    <string name="moon_widget_rise_time">восход %1$s</string>
+    <string name="moon_widget_set_time">заход %1$s</string>
+    <string name="moon_widget_time_day_offset">" +%1$d"</string>
+    <string name="moon_widget_promo_title">Держите Луну на домашнем экране</string>
+    <string name="moon_widget_promo_subtitle">Фаза, освещённость и время восхода — обновляется ежедневно</string>
+    <string name="moon_widget_promo_add">Добавить виджет</string>
+    <string name="moon_widget_pin_unsupported_title">Добавьте виджет с домашнего экрана</string>
+    <string name="moon_widget_pin_unsupported_body">Ваш лаунчер не поддерживает добавление виджетов из приложения. Нажмите и удерживайте домашний экран, выберите «Виджеты» и найдите Sky Map.</string>
+    <string name="moon_widget_pin_unsupported_ok">Понятно</string>
+    <string name="moon_widget_preview_illumination">освещено 83%</string>
+
+    <!-- Виджет "Небо сегодня ночью" и отсчёт -->
+    <string name="tonight_widget_label">Небо этой ночью</string>
+    <string name="tonight_widget_description">Лучшее на небе этой ночью: планеты в удобном положении, метеорные потоки и лунные события — обновляется ежедневно.</string>
+    <string name="tonight_widget_header">Сегодня · %1$s</string>
+    <string name="tonight_widget_sun_times">закат %1$s · темно с %2$s</string>
+    <string name="tonight_widget_sunset_only">закат %1$s</string>
+    <string name="tonight_well_placed">%1$s хорошо виден с %2$s</string>
+    <string name="tonight_shower_peak">Максимум %1$s сегодня ночью</string>
+    <string name="tonight_shower_days">Максимум %1$s через %2$d дн.</string>
+    <string name="tonight_new_moon">Новолуние — самое тёмное небо месяца</string>
+    <string name="tonight_full_moon">Сегодня полнолуние</string>
+    <string name="tonight_bright_moon">Яркая Луна «засвечивает» слабые объекты</string>
+    <string name="tonight_quiet">Сегодня небо спокойное</string>
+    <string name="tonight_quiet_next">Далее: %1$s через %2$d дн.</string>
+    <string name="countdown_widget_label">Небесный отсчёт</string>
+    <string name="countdown_widget_description">Дни до следующего максимума метеорного потока или лунного события.</string>
+    <string name="countdown_days">дн.</string>
+    <string name="countdown_tonight">сейчас</string>
+    <string name="countdown_shower_peak">Максимум %1$s</string>
+    <string name="countdown_new_moon_peak">Максимум в новолуние</string>
+    <string name="countdown_full_moon">Полнолуние</string>
+    <string name="countdown_new_moon">Новолуние</string>
+    <string name="tonight_widget_preview_row">Юпитер хорошо виден с 21:30</string>
+    <string name="countdown_widget_preview_days">14</string>
+    <string name="countdown_widget_preview_name">Максимум Персеид</string>
+
+    <!-- Уведомления о небесных событиях -->
+    <string name="channel_announcements_name">Сообщения от Sky Map</string>
+    <string name="channel_announcements_description">Редкие уведомления о заметных небесных событиях</string>
+    <string name="announcement_dialog_dismiss">Закрыть</string>
+    <string name="announcement_dialog_open">Посмотреть</string>
+    <string name="announcement_dialog_continue">Продолжить</string>
+    <string name="channel_showers_name">Максимумы метеорных потоков</string>
+    <string name="channel_showers_description">Около дюжины в год, вечером в день максимума</string>
+    <string name="channel_digest_name">Сводка неба на сегодня</string>
+    <string name="channel_digest_description">Одна вечерняя сводка; пропускается в спокойные ночи</string>
+    <string name="notif_shower_title">Сегодня ночью максимум %1$s</string>
+    <string name="notif_shower_direction">Лучше всего после полуночи, смотрите на %1$s.</string>
+    <string name="notif_shower_dark_moon">Тёмное безлунное небо — ждите до %1$d метеоров в час вдали от городской засветки.</string>
+    <string name="notif_shower_bright_moon">Луна, освещённая на %1$d%%, скроет слабые метеоры — до %2$d в час при идеальном небе.</string>
+    <string name="notif_digest_title">Сегодня стоит посмотреть на небо</string>
+    <string name="notif_action_mute_showers">Отключить потоки</string>
+
+    <!-- Хвостовые заметки к строкам пролётов спутников -->
+    <string name="tonight_trailing_pass_peak">Макс. %1$d°, блеск %2$.1f</string>
 </resources>

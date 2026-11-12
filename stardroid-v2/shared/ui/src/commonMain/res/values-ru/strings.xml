@@ -1,100 +1,633 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="eula_title">Условия предоставления услуг</string>
+
+    <!-- Условия использования -->
+    <string name="eula_title">Условия использования</string>
     <string name="dialog_accept">Принять</string>
     <string name="dialog_decline">Нет, спасибо</string>
+
+    <!-- Показания направления (HUD) -->
+    <string name="hud_ra_label">α</string>
+    <string name="hud_dec_label">δ</string>
+    <string name="hud_alt_label">h</string>
+    <string name="hud_az_label">A</string>
+    <string name="hud_fov_label">Поле</string>
+    <string name="hud_correction_label">Поп.</string>
+    <string name="hud_ra_value">%1$dч %2$02dм</string>
+    <string name="hud_signed_degrees_value">%1$+.1f°</string>
+    <string name="hud_azimuth_value">%1$d° %2$s</string>
+    <string name="hud_fov_value">%1$d°</string>
+    <string name="hud_fov_value_fine">%1$.1f°</string>
+    <string name="hud_fov_value_finest">%1$.2f°</string>
+    <string name="hud_correction_value">%1$+.1f° %2$+.1f°</string>
+    <string name="hud_correction_reset">Сбросить поправку выравнивания</string>
+    <string name="hud_fov_locked">Масштаб привязан к камере</string>
+    <string-array name="hud_cardinal_directions">
+        <item>С</item>
+        <item>ССВ</item>
+        <item>СВ</item>
+        <item>ВСВ</item>
+        <item>В</item>
+        <item>ВЮВ</item>
+        <item>ЮВ</item>
+        <item>ЮЮВ</item>
+        <item>Ю</item>
+        <item>ЮЮЗ</item>
+        <item>ЮЗ</item>
+        <item>ЗЮЗ</item>
+        <item>З</item>
+        <item>ЗСЗ</item>
+        <item>СЗ</item>
+        <item>ССЗ</item>
+    </string-array>
+
+    <!-- Слои и их параметры -->
     <string name="search_button">Поиск</string>
-    <string name="layer_stars">Звезды</string>
+    <string name="layer_stars">Звёзды</string>
     <string name="layer_constellations">Созвездия</string>
-    <string name="layer_solar_system">Планеты</string>
-    <string name="layer_meteor_showers">Метеоритные дожди</string>
+    <string name="layer_deep_sky">Глубокий космос</string>
+    <string name="layer_solar_system">Солнечная система</string>
+    <string name="layer_meteor_showers">Метеорные потоки</string>
+    <string name="layer_satellites">Спутники Земли</string>
+    <string name="layer_param_shower_alerts">Оповещения о максимуме</string>
+    <string name="layer_param_shower_alerts_description">Уведомить вечером в день максимума потока</string>
+    <string name="layer_param_pass_alerts">Оповещения о пролётах</string>
+    <string name="layer_param_pass_alerts_description">Уведомить перед лучшим видимым пролётом за ночь</string>
+    <string name="layer_param_eclipse_alerts">Оповещения о затмениях</string>
+    <string name="layer_param_eclipse_alerts_description">Уведомить перед началом лунного затмения</string>
+    <string name="layer_param_altaz_grid_density">Число линий</string>
+    <string name="layer_param_altaz_grid_density_coarse">Редкая</string>
+    <string name="layer_param_altaz_grid_density_coarse_desc">8 линий направлений — по румбам компаса</string>
+    <string name="layer_param_altaz_grid_density_medium">Средняя</string>
+    <string name="layer_param_altaz_grid_density_medium_desc">12 линий направлений с шагом 30°</string>
+    <string name="layer_param_altaz_grid_density_fine">Частая</string>
+    <string name="layer_param_altaz_grid_density_fine_desc">24 линии направлений — как в небесной сетке</string>
+    <string name="layer_param_grid_brightness">Яркость линий</string>
+    <string name="layer_param_grid_brightness_normal">Обычная</string>
+    <string name="layer_param_grid_brightness_normal_desc">Приглушённые линии — щадят привыкшее к темноте зрение</string>
+    <string name="layer_param_grid_brightness_bright">Яркая</string>
+    <string name="layer_param_grid_brightness_bright_desc">Более чёткие линии для сумерек или засвеченного неба</string>
+    <string name="layer_param_grid_brightness_brightest">Максимальная</string>
+    <string name="layer_param_grid_brightness_brightest_desc">Самые заметные линии — для дня или городского неба</string>
+    <string name="layer_param_radec_grid_density">Число линий</string>
+    <string name="layer_param_radec_grid_density_coarse_desc">Меридианы каждые 3 часа, параллели каждые 30°</string>
+    <string name="layer_param_radec_grid_density_medium_desc">Меридианы каждые 2 часа, параллели каждые 15°</string>
+    <string name="layer_param_radec_grid_density_fine_desc">Меридианы каждый час, параллели каждые 10°</string>
+    <string name="satellites_no_data">Положения спутников загружаются из интернета. В первый раз они могут появиться через несколько минут.</string>
+    <string name="satellites_refresh">Обновить</string>
+    <string name="satellites_retry_soon">Повторите через несколько минут</string>
+    <string name="satellites_retry_within_hour">Повторите в течение часа</string>
+    <string name="satellites_retry_hours">Повторите через несколько часов</string>
+    <string name="satellites_retry_tomorrow">Повторите завтра</string>
+    <string name="satellites_retry_days">Повторите через несколько дней</string>
+    <string name="layer_grid">Небесная сетка</string>
     <string name="layer_horizon">Горизонт</string>
-    <string name="layer_ecliptic">эклиптика</string>
-    <string name="layer_sky_gradient">Градиент неба</string>
+    <string name="layer_ecliptic">Эклиптика</string>
+    <string name="layer_altaz_grid">Сетка высот и азимутов</string>
+    <string name="layer_sky_gradient">Окраска неба</string>
+
+    <!-- Пояснения к слоям -->
+    <string name="layer_help_stars">Звёзды: размер — по яркости, оттенок — по цвету. Нажмите на звезду, чтобы узнать о ней подробнее.</string>
+    <string name="layer_help_constellations">Линии и названия созвездий — помогают ориентироваться в звёздных узорах.</string>
+    <string name="layer_help_deep_sky">Галактики, туманности и звёздные скопления — объекты далеко за пределами Солнечной системы. Многие из них по-настоящему увидеть можно только в бинокль или телескоп.</string>
+    <string name="layer_help_solar_system">Солнце, Луна (в текущей фазе) и планеты.</string>
+    <string name="layer_help_meteor_showers">Радиант каждого ежегодного метеорного потока — точка неба, из которой, кажется, вылетают метеоры.</string>
+    <string name="layer_help_satellites">Спутники вроде Международной космической станции (МКС) и «Тяньгуна» — там, где они находятся прямо сейчас. Нужны недавно загруженные данные об орбитах.</string>
+    <string name="layer_help_grid">Небесная сетка прямых восхождений и склонений — небесный аналог широты и долготы. Она привязана к звёздам.</string>
+    <string name="layer_help_horizon">Линия горизонта и стороны света — чтобы понимать, где север и где земля.</string>
+    <string name="layer_help_ecliptic">Путь, который Солнце проходит по небу за год. Луна и планеты всегда держатся рядом с ним.</string>
+    <string name="layer_help_altaz_grid">Сетка высоты (над горизонтом) и азимута (стороны света). В отличие от небесной сетки, она привязана к вашему горизонту, а не к звёздам.</string>
+    <string name="layer_help_sky_gradient">Окрашивает небо по времени суток — светло днём и темно ночью, а также раскрашивает землю.</string>
+    <string name="layer_help_hud">Показывает, куда направлен телефон: сторону света и высоту над горизонтом.</string>
+    <string name="layer_help_camera">Показывает живое изображение с камеры под картой неба, чтобы нарисованное небо легло поверх настоящего. Нужны датчики движения.</string>
+    <string name="layer_help_options_solar_system">Размер дисков: насколько крупно рисовать Солнце, Луну и планеты.
+Оповещения о затмениях: уведомление перед лунным затмением.</string>
+    <string name="layer_help_options_satellites">Оповещения о пролётах: уведомление перед лучшим видимым пролётом за ночь.</string>
+    <string name="layer_help_options_meteor_showers">Оповещения о максимуме: уведомление вечером в день годового максимума потока.</string>
+    <string name="layer_help_options_grid">Число линий: линия каждые 3, 2 или 1 час и каждые 30°, 15° или 10°.
+Яркость линий: обычная, яркая или максимальная — для сумерек, дня или засвеченного неба.</string>
+    <string name="layer_help_options_altaz_grid">Число линий: 8, 12 или 24 линии направлений.
+Яркость линий: обычная, яркая или максимальная — для сумерек, дня или засвеченного неба.</string>
+    <string name="layer_help_customizable">Что можно настроить</string>
+    <string name="layer_help_expand_hint">Нажмите стрелку в строке, чтобы изменить эти параметры.</string>
+    <string name="layer_help_customize">Настроить</string>
+    <string name="layer_help_close">Понятно</string>
+    <string name="layer_help_long_click_label">Показать, что делает этот слой</string>
+    <string name="layers_sheet_title">Слои</string>
+    <string name="layers_group_objects">Объекты</string>
+    <string name="layers_group_reference">Ориентиры</string>
+    <string name="layers_group_display">Отображение</string>
+    <string name="show_layers">Другие слои и настройки</string>
+    <string name="more_button">Другие действия</string>
+    <string name="night_mode">Ночной режим</string>
+    <string name="switch_to_manual">Переключить в ручной режим</string>
+    <string name="switch_to_auto">Переключить в автоматический режим</string>
+    <string name="layer_hud">Координаты направления</string>
+    <string name="layer_camera">Режим «через камеру»</string>
+    <string name="layer_camera_needs_sensors">Нужны датчики движения, которых на этом устройстве нет</string>
+
+    <!-- Режим «через камеру» -->
+    <string name="ar_exposure_slider">Экспозиция камеры</string>
+    <string name="ar_dimmer_slider">Затемнение камеры</string>
+    <string name="ar_iso_slider_label">ISO</string>
+    <string name="ar_iso_slider">ISO камеры</string>
+    <string name="ar_shutter_slider_label">Выд.</string>
+    <string name="ar_shutter_slider">Выдержка камеры</string>
+    <string name="ar_group_auto">Автоэкспозиция</string>
+    <string name="ar_group_manual">Ручная экспозиция</string>
+    <string name="ar_auto_off_note">Выключена, пока включён ручной режим</string>
+    <string name="ar_manual_off_note">Сдвиньте, чтобы выключить автоматическую</string>
+    <string name="share_shutter_button">Поделиться этим видом</string>
+    <string name="ar_exposure_auto">Авто</string>
+
+    <!-- Главные кнопки -->
     <string name="time_travel_button">Путешествие во времени</string>
+    <string name="location_button">Местоположение</string>
+    <string name="gallery_button">Галерея неба</string>
     <string name="settings_button">Настройки</string>
     <string name="calibration_button">Калибровка</string>
     <string name="help_button">Справка</string>
+    <string name="tutorial_button">Обучение</string>
+    <string name="whats_new_button">Что нового</string>
+    <string name="widgets_button">Виджеты</string>
+    <string name="support_button">Поддержать</string>
+
+    <!-- Экран поддержки проекта -->
+    <string name="support_screen_title">Поддержать Sky Map</string>
+    <string name="support_intro">Sky Map — бесплатное приложение с открытым исходным кодом, и таким оно останется. Если оно вам нравится, вот несколько способов помочь.</string>
+    <string name="support_star_title">Поставить звезду Sky Map на GitHub</string>
+    <string name="support_star_desc">Это помогает другим людям найти приложение.</string>
+    <string name="support_issues_title">Сообщить о проблеме или предложить идею</string>
+    <string name="support_issues_desc">Создать задачу (issue) на GitHub.</string>
+    <string name="support_rate_title">Оценить Sky Map</string>
+    <string name="support_rate_desc">Отзыв в магазине приложений помогает другим любителям неба нас найти.</string>
+    <string name="support_share_title">Рассказать другу</string>
+    <string name="support_share_desc">Поделитесь Sky Map с тем, кто любит ночное небо.</string>
+    <string name="support_bmac_title">Купить нам кофе</string>
+    <string name="support_bmac_desc">Небольшой добровольный вклад в расходы на разработку.</string>
+    <string name="support_tip_title">Оставить чаевые</string>
+    <string name="support_tip_desc">Разовая добровольная благодарность в счёт расходов на разработку. Sky Map остаётся бесплатным в любом случае.</string>
+    <string name="tip_mercury">Меркурий</string>
+    <string name="tip_mars">Марс</string>
+    <string name="tip_jupiter">Юпитер</string>
+    <string name="support_tip_thanks">Спасибо, и ясного неба!</string>
+    <string name="support_tip_pending">Ваши чаевые ждут подтверждения. Спасибо!</string>
+    <string name="support_tip_failed">Покупка не прошла. Попробуйте позже.</string>
+    <string name="support_privacy_title">Политика конфиденциальности</string>
+    <string name="support_privacy_desc">Что собирает Sky Map и как от этого отказаться.</string>
+    <string name="support_share_message">Вы пробовали Sky Map? Это бесплатный планетарий с открытым исходным кодом для вашего телефона: %1$s</string>
+    <string name="support_thanks_html"><![CDATA[
+<h2>Спасибо</h2>
+<h3>Нас поддержали</h3>
+<p>%1$s</p>
+<h3>Участники разработки</h3>
+<p>%2$s</p>
+<p>Актуальный список участников — на <a href="https://github.com/sky-map-team/stardroid/graphs/contributors">GitHub</a>.</p>
+]]></string>
+
+    <!-- Размер дисков планет -->
+    <string name="layer_param_disc_size">Размер дисков</string>
+    <string name="layer_param_disc_size_true">Истинный масштаб</string>
+    <string name="layer_param_disc_size_true_desc">Реальный размер на небе при любом масштабе. Планеты остаются точками, пока вы сильно не приблизите.</string>
+    <string name="layer_param_disc_size_glyphs">Значки</string>
+    <string name="layer_param_disc_size_glyphs_desc">Размер зависит от того, насколько тело велико на самом деле, а не от того, как оно выглядит. Хорошо видно при любом масштабе.</string>
+    <string name="layer_param_disc_size_auto">Постоянный</string>
+    <string name="layer_param_disc_size_auto_desc">Сохраняет фиксированный размер на экране при увеличении, а затем переключается на реальный.</string>
+    <string name="layer_param_expand">Показать настройки слоя «%1$s»</string>
+
+    <!-- Поиск -->
     <string name="search_label">Поиск на небе</string>
+    <string name="search_hint">например, Марс или M31</string>
+    <string name="search_coordinates_hint">Или введите координаты: 12h 30m, +45° или 187.5 -45.2</string>
+    <string name="search_go">Перейти</string>
     <string name="search_cancel">Отмена</string>
-    <string name="search_overlay_prompt">Поверните телефон в направлении стрелки</string>
+    <string name="search_no_results">Ничего не найдено. Возможно, объект сейчас не виден.</string>
+    <string name="search_standing_on_earth">Вы на ней стоите!</string>
+    <string name="search_target_looking_message">Ищем: %1$s</string>
+    <string name="search_target_found_message">Найдено: %1$s</string>
+    <string name="search_overlay_prompt">Поверните телефон в сторону стрелки</string>
+
+    <!-- Путешествие во времени -->
     <string name="time_travel_title">Путешествие во времени</string>
+    <string name="time_travel_visiting">Текущий момент: %1$s</string>
+    <string name="time_travel_pick_date">Выбрать дату</string>
+    <string name="time_travel_pick_time">Выбрать время</string>
+    <string name="time_travel_select_event">Выберите популярное событие…</string>
+    <string name="time_travel_go">Перейти</string>
+    <string name="time_travel_from_now">Начать с текущего момента</string>
+    <string name="time_travel_ok">ОК</string>
     <string name="time_travel_cancel">Отмена</string>
-    <string name="time_travel_stopped">Путешествие во времени остановлено</string>
-    <string name="time_travel_second_speed">Путешествие со скоростью &gt; @ 1 с/с</string>
-    <string name="time_travel_minute_speed">Путешествие со скоростью &gt; @ 1 мин/с</string>
-    <string name="time_travel_10minute_speed">Путешествие со скоростью &gt; @ 10 мин/с</string>
-    <string name="time_travel_hour_speed">Путешествие со скоростью &gt; @ 1 ч/с</string>
-    <string name="time_travel_day_speed">Путешествие со скоростью &gt; @ 1 дн/с</string>
-    <string name="time_travel_week_speed">Путешествие со скоростью &gt; @ 1 нед/с</string>
-    <string name="time_travel_second_speed_back">Путешествие со скоростью &lt; @ 1 с/с</string>
-    <string name="time_travel_minute_speed_back">Путешествие со скоростью &lt; @ 1 мин/с</string>
-    <string name="time_travel_10minute_speed_back">Путешествие со скоростью &lt; @ 10 мин/с</string>
-    <string name="time_travel_hour_speed_back">Путешествие со скоростью &lt; @ 1 ч/с</string>
-    <string name="time_travel_day_speed_back">Путешествие со скоростью &lt; @ 1 дн/с</string>
-    <string name="time_travel_week_speed_back">Путешествие со скоростью &lt; @ 1 нед/с</string>
-    <string name="time_travel_next_sunset">Следующий заход Солнца</string>
-    <string name="time_travel_next_sunrise">Следующий восход Солнца</string>
-    <string name="time_travel_next_full_moon">Следующее полнолуние</string>
+    <string name="time_travel_slower">◀◀</string>
+    <string name="time_travel_pause">❚❚</string>
+    <string name="time_travel_faster">▶▶</string>
+    <string name="time_travel_return">Сейчас</string>
+    <string name="time_travel_second_speed">Путешествие &gt; @ 1 с/с</string>
+    <string name="time_travel_minute_speed">Путешествие &gt; @ 1 мин/с</string>
+    <string name="time_travel_10minute_speed">Путешествие &gt; @ 10 мин/с</string>
+    <string name="time_travel_hour_speed">Путешествие &gt; @ 1 ч/с</string>
+    <string name="time_travel_day_speed">Путешествие &gt; @ 1 дн/с</string>
+    <string name="time_travel_week_speed">Путешествие &gt; @ 1 нед/с</string>
+    <string name="time_travel_second_speed_back">Путешествие &lt; @ 1 с/с</string>
+    <string name="time_travel_minute_speed_back">Путешествие &lt; @ 1 мин/с</string>
+    <string name="time_travel_10minute_speed_back">Путешествие &lt; @ 10 мин/с</string>
+    <string name="time_travel_hour_speed_back">Путешествие &lt; @ 1 ч/с</string>
+    <string name="time_travel_day_speed_back">Путешествие &lt; @ 1 дн/с</string>
+    <string name="time_travel_week_speed_back">Путешествие &lt; @ 1 нед/с</string>
+    <string name="time_travel_now">Сейчас</string>
+    <string name="time_travel_next_sunset">Ближайший вечерний закат</string>
+    <string name="time_travel_next_sunrise">Ближайший утренний восход</string>
+    <string name="time_travel_next_full_moon">Ближайшее полнолуние</string>
+    <string name="time_travel_next_new_moon">Ближайшее новолуние</string>
+    <string name="time_travel_six_planet_parade_2026">Парад шести планет, 28 февраля 2026 г.</string>
+    <string name="time_travel_lunar_eclipse_2026">Полное лунное затмение, 3 марта 2026 г.</string>
+    <string name="time_travel_lyrids_2026">Метеорный поток Лириды, 22 апреля 2026 г.</string>
+    <string name="time_travel_venus_jupiter_2026">Соединение Венеры и Юпитера, 9 июня 2026 г.</string>
+    <string name="time_travel_mars_uranus_2026">Сближение Марса и Урана, 4 июля 2026 г.</string>
+    <string name="time_travel_solar_eclipse_2026">Полное солнечное затмение, 12 августа 2026 г.</string>
+    <string name="time_travel_perseids_2026">Метеорный поток Персеиды, 12–13 августа 2026 г.</string>
+    <string name="time_travel_lunar_eclipse_aug_2026">Частное лунное затмение, 28 августа 2026 г.</string>
+    <string name="time_travel_jupiter_occultation_2026">Покрытие Юпитера Луной, 6 октября 2026 г.</string>
+    <string name="time_travel_geminids_2026">Метеорный поток Геминиды, 13–14 декабря 2026 г.</string>
+    <string name="time_travel_supermoon_2026">Суперлуние в сочельник, 24 декабря 2026 г.</string>
     <string name="time_travel_mercury_transit_2016">Транзит Меркурия 9 мая 2016 г.</string>
-    <string name="time_travel_solar_eclipse_2024">Солнечное затмение 8 aпрельское 2024 г.</string>
-    <string name="time_travel_apollo_11">Посадка на Луну Аполлона 11</string>
-    <string name="time_travel_jupiter_saturn_2020">Соединение Юпитер-Сатурн</string>
-    <string name="sun_wont_set_message">В течение ближайших 24 часов захода Солнца в вашем местоположении не будет.</string>
-    <string name="time_travel_close_message">Назад в настоящее...</string>
-    <string name="object_info_find_in_sky">Найти в небе</string>
+    <string name="time_travel_solar_eclipse_2024">Солнечное затмение 8 апреля 2024 г.</string>
+    <string name="time_travel_apollo_11">Высадка «Аполлона-11» на Луну</string>
+    <string name="time_travel_jupiter_saturn_2020">Соединение Юпитера и Сатурна 2020 г.</string>
+    <string name="time_travel_stopped">Путешествие во времени приостановлено</string>
+    <string name="sun_wont_set_message">В ближайшие 24 часа Солнце в вашем текущем местоположении не зайдёт.</string>
+    <string name="time_travel_start_message">Путешествие во времени к %1$s…</string>
+    <string name="time_travel_close_message">Возвращаемся в настоящее…</string>
+
+    <!-- Пролёты спутников и ближайшие события -->
+    <string name="satellite_next_pass">Ближайшие хорошие пролёты</string>
+    <string name="satellite_pass_col_when">Когда</string>
+    <string name="satellite_pass_col_rises">Восход</string>
+    <string name="satellite_pass_col_peak">Макс.</string>
+    <string name="satellite_pass_col_magnitude">Блеск</string>
+    <string name="satellite_pass_shadow">Скроется в тени Земли в %1$s</string>
+    <string name="satellite_no_pass">В ближайшие дни хороших пролётов не будет</string>
+    <string name="satellite_pass_unknown">Данные об орбите слишком старые для прогноза пролётов</string>
+    <string name="upcoming_well_placed">Хорошо виден с %1$s</string>
+    <string name="upcoming_shower_peak">Максимум %1$s</string>
+
+    <!-- Карточка объекта -->
+    <string name="object_info_upcoming">Ближайшие события</string>
+    <string name="object_info_eclipse_title">Лунное затмение</string>
+    <string name="object_info_no_eclipse">В ближайшее время лунных затмений не ожидается</string>
+    <string name="object_info_eclipse_greatest">%1$s — максимум %2$s в %3$s</string>
+    <string name="object_info_eclipse_totality">Полная фаза: %1$s – %2$s</string>
+    <string name="object_info_image_credit">Изображение: %1$s</string>
+    <string name="object_info_fun_fact">Интересный факт: %1$s</string>
+    <string name="object_info_distance">Расстояние:</string>
+    <string name="object_info_size">Размер:</string>
+    <string name="object_info_mass">Масса:</string>
+    <string name="object_info_spectral_class">Спектральный класс:</string>
+    <string name="object_info_magnitude">Блеск:</string>
+    <string name="object_info_rises">Восход:</string>
+    <string name="object_info_sets">Заход:</string>
+    <string name="object_info_always_above_horizon">Всегда над горизонтом в вашем местоположении</string>
+    <string name="object_info_always_below_horizon">Всегда под горизонтом в вашем местоположении</string>
+    <string name="object_info_also_known_as">Другие названия:</string>
+    <string name="object_info_see_also">Смотрите также</string>
+    <string name="object_info_find_in_sky">Найти на небе</string>
+    <string name="object_info_close">Закрыть</string>
+    <string name="object_info_tap_to_close">Нажмите, чтобы закрыть</string>
+    <string name="tonight_lunar_eclipse_total">Полное лунное затмение</string>
+    <string name="tonight_lunar_eclipse_partial">Частное лунное затмение</string>
+    <string name="tonight_lunar_eclipse_penumbral">Полутеневое лунное затмение</string>
+
+    <!-- Местоположение -->
+    <string name="location_management_title">Ваше местоположение</string>
+    <string name="location_source_auto">Автоматически</string>
+    <string name="location_source_manual">Вручную</string>
+    <string name="location_source_acquiring">Определяем…</string>
+    <string name="location_source_unset">Местоположение не задано</string>
+    <string name="location_source_hardware_unavailable">На этом устройстве определение местоположения недоступно</string>
+    <string name="location_switch_to_auto">Определять автоматически</string>
+    <string name="location_switch_to_manual">Ввести местоположение вручную</string>
+    <string name="location_change">Изменить местоположение</string>
+    <string name="location_set_toast">Местоположение: %1$s</string>
+    <string name="location_long_lat">Долгота: %1$.2f, широта: %2$.2f</string>
+    <string name="location_map_unavailable">Карта недоступна</string>
+    <string name="location_map_content_description">Карта вашего текущего местоположения</string>
+    <string name="location_permission_dialog_title">Местоположение (необязательно)</string>
+    <string name="location_permission_dialog_message">Sky Map использует ваше приблизительное местоположение, чтобы показывать правильное ночное небо. Это разрешение необязательно: можно отказаться и ввести местоположение вручную или решить позже. Если решить позже, карта будет неточной, пока местоположение не задано.</string>
+    <string name="location_permission_grant">Разрешить</string>
+    <string name="location_permission_enter_manually">Ввести вручную</string>
+    <string name="location_permission_later">Позже</string>
+    <string name="location_permanently_denied_title">Требуется разрешение</string>
+    <string name="location_permanently_denied_message">Разрешение на определение местоположения отклонено навсегда. Откройте настройки приложения, чтобы включить его снова.</string>
+    <string name="location_open_settings">Открыть настройки приложения</string>
+    <string name="location_acquiring_title">Определяем ваше местоположение…</string>
+    <string name="location_acquiring_message">Всё ещё пытаемся определить ваше местоположение…</string>
+    <string name="location_keep_waiting">Продолжить ожидание</string>
+    <string name="location_manual_entry_title">Введите ваше местоположение</string>
+    <string name="location_place_name_hint">Город или название места</string>
+    <string name="location_latitude_hint">Широта</string>
+    <string name="location_latitude_placeholder">51.5</string>
+    <string name="location_longitude_hint">Долгота</string>
+    <string name="location_longitude_placeholder">0.1</string>
+    <string name="location_resolve_button">Найти координаты</string>
+    <string name="location_set_button">Задать местоположение</string>
+    <string name="location_place_not_found">Место не найдено — попробуйте более точное название</string>
+    <string name="location_geocoder_offline">Нет интернета — введите координаты вручную</string>
+    <string name="location_geocoder_unavailable">На этом устройстве нет службы геокодирования — введите координаты вручную</string>
+    <string name="location_geocoder_failed">Не удалось найти место — введите координаты вручную</string>
+    <string name="location_invalid_latitude">Широта должна быть от −90 до 90</string>
+    <string name="location_invalid_longitude">Долгота должна быть от −180 до 180</string>
+    <string name="location_hemisphere_north_description">Северное полушарие (положительная широта)</string>
+    <string name="location_hemisphere_south_description">Южное полушарие (отрицательная широта)</string>
+    <string name="location_hemisphere_east_description">Восточное полушарие (положительная долгота)</string>
+    <string name="location_hemisphere_west_description">Западное полушарие (отрицательная долгота)</string>
+
+    <!-- Справка и «Что нового» -->
+    <string name="settings_back">Назад</string>
+    <string name="dialog_ok_button">ОК</string>
     <string name="whats_new_dialog_title">Что нового</string>
     <string name="help_dialog_title">Справка</string>
+    <string name="help_version">Версия %1$s</string>
+    <string name="whats_new_screen_title">Что нового и авторы</string>
+    <string name="help_search_hint">Поиск по справке</string>
+    <string name="help_search_clear">Очистить поиск</string>
+    <string name="help_search_no_results">Нет разделов справки, соответствующих «%1$s».</string>
+    <string name="help_symbol_key_title">Обозначения на карте</string>
+    <string name="help_symbol_key_intro">Объекты глубокого космоса и метеорные потоки отмечены значком, показывающим их тип:</string>
+    <string name="symbol_key_galaxy">Галактика</string>
+    <string name="symbol_key_open_cluster">Рассеянное скопление</string>
+    <string name="symbol_key_globular_cluster">Шаровое скопление</string>
+    <string name="symbol_key_diffuse_nebula">Диффузная туманность</string>
+    <string name="symbol_key_planetary_nebula">Планетарная туманность</string>
+    <string name="symbol_key_supernova_remnant">Остаток сверхновой</string>
+    <string name="symbol_key_asterism">Астеризм или звёздное облако</string>
+    <string name="symbol_key_other">Другой объект глубокого космоса</string>
+    <string name="symbol_key_meteor_radiant">Радиант метеорного потока</string>
+    <string name="symbol_key_meteor_radiant_peak">Метеорный поток вблизи максимума</string>
     <string name="diagnostics_accelerometer">Акселерометр</string>
     <string name="diagnostics_compass">Компас</string>
     <string name="diagnostics_gyroscope">Гироскоп</string>
+
+    <!-- Приветственное обучение -->
+    <string name="warm_welcome_slide1_title">Исследуйте космос</string>
+    <string name="warm_welcome_slide1_desc">Слои слева позволяют отбирать звёзды, созвездия, планеты и многое другое. Кнопки справа внизу ищут объекты на небе, путешествуют во времени и переключают режимы отображения. Нажмите на небо в любой момент, чтобы скрыть или показать элементы управления.</string>
+    <string name="warm_welcome_slide2_title">Ориентируйтесь в небе</string>
+    <string name="warm_welcome_slide2_desc"><![CDATA[Наведите телефон, чтобы осмотреться в <b>автоматическом режиме</b>, или нажмите, чтобы включить <b>ручной</b> и исследовать небо, перетаскивая карту и меняя масштаб двумя пальцами.]]></string>
+    <string name="warm_welcome_slide2_info_desc">Нажмите на любой подписанный объект, чтобы открыть такую же карточку: с фотографией, интересными фактами и астрономическими данными.</string>
     <string name="warm_welcome_card_name">Крабовидная туманность</string>
+    <string name="warm_welcome_card_description">Крабовидная туманность — остаток сверхновой в Тельце, результат взрыва звезды, записанного китайскими астрономами в 1054 году.</string>
+    <string name="warm_welcome_card_fun_fact">В Крабовидной туманности находится пульсар, вращающийся 30 раз в секунду, — схлопнувшееся ядро взорвавшейся звезды!</string>
+    <string name="warm_welcome_card_distance">6500 световых лет</string>
+    <string name="warm_welcome_card_size">11 световых лет в поперечнике</string>
+    <string name="warm_welcome_slide3_title">Датчики и калибровка</string>
+    <string name="warm_welcome_slide3_desc">Sky Map использует датчики вашего телефона, чтобы совместить карту со звёздами.</string>
+    <string name="warm_welcome_slide3_no_sensors"><![CDATA[Похоже, на вашем устройстве нет датчиков, необходимых для автоматического слежения. Не беда — вы можете исследовать весь космос в <b>ручном режиме</b>!]]></string>
+    <string name="warm_welcome_slide3_compass_calib"><![CDATA[Чтобы всё оставалось точным, время от времени «рисуйте» телефоном в воздухе <b>восьмёрку</b>.]]></string>
+    <string name="warm_welcome_skip">Пропустить</string>
+    <string name="warm_welcome_next">Далее</string>
+    <string name="warm_welcome_finish">Поехали!</string>
+    <string name="warm_welcome_sensor_ok">Работает</string>
+    <string name="warm_welcome_sensor_missing">Отсутствует</string>
+
+    <!-- Настройки -->
     <string name="settings_title">Настройки</string>
     <string name="settings_cancel">Отмена</string>
-    <string name="settings_section_sensors">Настройки матрицы</string>
-    <string name="enable_analytics">Отправить статистику использования</string>
-    <string name="enable_analytics_desc">Сделайте Sky Map лучше, отправив анонимные данные в Google Analytics</string>
+    <string name="settings_section_controls">Управление</string>
+    <string name="settings_section_appearance">Внешний вид</string>
+    <string name="settings_section_sensors">Датчики</string>
+    <string name="settings_section_other">Прочее</string>
+    <string name="enable_analytics">Отправлять статистику использования</string>
+    <string name="enable_analytics_desc">Помогите сделать Sky Map лучше: отправляйте анонимные данные в Google Analytics</string>
+    <string name="settings_diagnostics_summary">Данные датчиков, местоположения и производительности</string>
+    <string name="settings_section_advanced">Расширенные</string>
+    <string name="settings_renderer">Графический движок (бета)</string>
+    <string name="settings_renderer_summary">Новый движок рисует более реалистичное дневное и сумеречное небо и более чёткие подписи. При смене настройки карта перезапускается.</string>
+    <string name="settings_renderer_gles1">Классический</string>
+    <string name="settings_renderer_gles3">Улучшенный</string>
+    <string name="settings_tap_to_identify">Показывать информацию по нажатию</string>
+    <string name="settings_tap_to_identify_summary">Нажимайте на небесные объекты, чтобы узнать о них больше</string>
     <string name="settings_tap_in_auto_mode">Карточки в автоматическом режиме</string>
-    <string name="settings_tap_in_auto_mode_summary">
-    Показывать информационные карточки при нажатии на объекты в автоматическом (сенсорном) режиме
-    </string>
-    <string name="settings_reverse_magnetic_z">Обратный магнитный Z</string>
-    <string name="settings_magnetic_correction">Исп. поправку на магн. склон.</string>
-    <string name="settings_view_direction">Повернуть горизонтально</string>
+    <string name="settings_tap_in_auto_mode_summary">Показывать карточки и при нажатии на объекты в автоматическом (сенсорном) режиме</string>
+    <string name="settings_auto_level_horizon">Автовыравнивание горизонта</string>
+    <string name="settings_auto_level_horizon_summary">В ручном режиме горизонт постепенно возвращается в горизонтальное положение, когда вы убираете пальцы</string>
+    <string name="settings_font_size">Размер подписей на небе</string>
+    <string name="settings_font_size_summary">Подписи сохраняют этот размер при любом масштабе</string>
+    <string name="settings_font_size_small">Мелкий</string>
+    <string name="settings_font_size_medium">Средний</string>
+    <string name="settings_font_size_large">Крупный</string>
+    <string name="settings_font_size_extra_large">Очень крупный</string>
+    <string name="settings_auto_dimness">Автозатемнение экрана</string>
+    <string name="settings_auto_dimness_summary">Насколько ночной режим затемняет экран</string>
+    <string name="settings_auto_dimness_system">Как в системе</string>
+    <string name="settings_auto_dimness_dim">Очень тусклый</string>
+    <string name="settings_auto_dimness_classic">Классический</string>
+    <string name="settings_disable_gyro">Использовать старые датчики</string>
+    <string name="settings_disable_gyro_summary">Наводить карту по компасу и акселерометру вместо гироскопа. Попробуйте, если карта уплывает или гироскоп устройства ведёт себя странно; на устройствах без гироскопа эти датчики используются автоматически.</string>
+    <string name="settings_classic_sensors_only">Действует только при использовании старых датчиков</string>
+    <string name="settings_smoothing">Сглаживание движений датчиков</string>
+    <string name="settings_smoothing_summary">Стабилизирует вид неба. Это новая функция, включённая по умолчанию, пока мы её настраиваем: если заметите задержку, дрожание или что-то странное — расскажите нам. Здесь её можно в любой момент выключить и использовать «сырые» данные датчиков.</string>
+    <string name="settings_steadiness">Стабильность</string>
+    <string name="settings_steadiness_summary">Насколько сильно вид стабилизируется, пока вы держите телефон неподвижно. Более высокие значения уменьшают дрожание, но чуть дольше успокаиваются.</string>
+    <string name="settings_steadiness_low">Низкая</string>
+    <string name="settings_steadiness_medium">Средняя</string>
+    <string name="settings_steadiness_high">Высокая</string>
+    <string name="settings_steadiness_very_high">Очень высокая</string>
+    <string name="settings_steadiness_extreme">Максимальная</string>
+    <string name="settings_ease_off">Ослаблять при движении</string>
+    <string name="settings_ease_off_summary">Насколько стабилизация ослабевает, когда вы начинаете двигать телефон, чтобы вид успевал за вами. Выберите «Нет», чтобы стабилизация была одинаковой и в покое, и в движении.</string>
+    <string name="settings_ease_off_none">Нет</string>
+    <string name="settings_ease_off_low">Немного</string>
+    <string name="settings_ease_off_medium">Умеренно</string>
+    <string name="settings_ease_off_high">Сильно</string>
+    <string name="settings_reverse_magnetic_z">Инвертировать магнитную ось Z</string>
+    <string name="settings_magnetic_correction">Использовать магнитную поправку</string>
+    <string name="settings_magnetic_correction_summary">Учитывает разницу между магнитным и истинным севером</string>
+    <string name="settings_view_direction">Направление обзора</string>
+    <string name="settings_view_direction_summary">Повернуть горизонт на 90 градусов (для устройств с принудительной альбомной ориентацией) или включить режим указки, чтобы экран показывал то, куда направлена верхняя грань телефона</string>
+    <string name="settings_view_direction_standard">Обычное</string>
+    <string name="settings_view_direction_rotate90">Повёрнутый горизонт</string>
+    <string name="settings_view_direction_telescope">Режим указки</string>
     <string name="diagnostics_button">Диагностика</string>
+
+    <!-- Уведомления -->
+    <string name="settings_section_notifications">Уведомления</string>
+    <string name="settings_notifications_intro">Sky Map уведомляет только о редких небесных событиях, не чаще раза в день. Всё выключено, пока вы сами не включите.</string>
+    <string name="settings_shower_alerts">Максимумы метеорных потоков</string>
+    <string name="settings_shower_alerts_summary">Около десятка раз в год, вечером в день максимума</string>
+    <string name="settings_eclipse_alerts">Лунные затмения</string>
+    <string name="settings_eclipse_alerts_summary">Одно уведомление перед началом лунного затмения</string>
+    <string name="settings_pass_alerts">Пролёты спутников</string>
+    <string name="settings_pass_alerts_summary">Одно уведомление перед лучшим видимым пролётом за ночь</string>
+    <string name="settings_announcements">Сообщения от Sky Map</string>
+    <string name="settings_announcements_summary">Редкие предупреждения — например, о сильном полярном сиянии или яркой планете. Показываются как уведомление, в виджете «Небо сегодня» или при открытии приложения.</string>
+    <string name="settings_tonight_digest">Обзор неба на сегодня</string>
+    <string name="settings_tonight_digest_summary">Одна сводка после заката; в спокойные ночи пропускается</string>
+    <string name="settings_notifications_blocked">Уведомления для Sky Map заблокированы</string>
+    <string name="settings_notifications_blocked_action">Нажмите, чтобы разрешить их в настройках системы</string>
+
+    <!-- Диагностика -->
     <string name="diagnostics_title">Диагностика</string>
+    <string name="diagnostics_share">Отправить разработчикам</string>
+    <string name="diagnostics_share_subject">Отчёт диагностики Sky Map</string>
+    <string name="diagnostics_report_header">--- Диагностика Sky Map. Опишите проблему выше этой строки. ---</string>
+    <string name="diagnostics_section_recent_log">Свежий журнал</string>
     <string name="diagnostics_section_general">Общие</string>
     <string name="diagnostics_device">Устройство</string>
+    <string name="diagnostics_phone_format">%1$s (%2$s) %3$s</string>
     <string name="diagnostics_android_version">Версия Android</string>
+    <string name="diagnostics_ios_version">Версия iOS</string>
     <string name="diagnostics_sky_map_version">Версия Sky Map</string>
+    <string name="diagnostics_section_graphics">Графика</string>
+    <string name="diagnostics_gl_renderer">Рендерер</string>
+    <string name="diagnostics_gl_version">OpenGL</string>
+    <string name="diagnostics_gl_limits">Ограничения GL</string>
+    <string name="diagnostics_metal_limits">Ограничения Metal</string>
+    <string name="diagnostics_gl_limits_format">текс. %1$d, линии %2$s, точки %3$s</string>
+    <string name="diagnostics_gl_unavailable">Пока недоступно</string>
     <string name="diagnostics_section_sensors">Датчики</string>
     <string name="diagnostics_rotation">Вращение</string>
-    <string name="diagnostics_rotation_matrix">Матрица вращения</string>
-    <string name="diagnostics_light_level">Уровень освещенности</string>
+    <string name="diagnostics_rotation_matrix">Матрица поворота</string>
+    <string name="diagnostics_light_level">Уровень освещённости</string>
     <string name="diagnostics_sensor_absent">Отсутствует</string>
+    <string name="diagnostics_sensor_rate_format">(%1$.1f Гц, %2$.1f с назад)</string>
+    <string name="diagnostics_section_orientation_settings">Настройки ориентации</string>
+    <string name="diagnostics_gyro_mode">Гироскоп</string>
+    <string name="diagnostics_gyro_fused">Комбинированный вектор поворота</string>
+    <string name="diagnostics_gyro_disabled">Акселерометр + компас</string>
+    <string name="diagnostics_smoothing">Сглаживание</string>
+    <string name="diagnostics_steadiness">Стабильность</string>
+    <string name="diagnostics_ease_off">Ослабление</string>
+    <string name="diagnostics_reverse_magnetic_z">Инверсия магнитной оси Z</string>
+    <string name="diagnostics_use_magnetic_correction_setting">Магнитная поправка</string>
+    <string name="diagnostics_view_direction_mode">Направление обзора</string>
+    <string name="diagnostics_calibration_dialog">Автоподсказка калибровки</string>
+    <string name="diagnostics_jitter_raw">Дрожание (без сглаживания)</string>
+    <string name="diagnostics_jitter_smoothed">Дрожание (со сглаживанием)</string>
+    <string name="diagnostics_jitter_format">аз σ%1$.2f°, выс σ%2$.2f°</string>
+    <string name="diagnostics_jitter_pending">Собираем данные…</string>
     <string name="diagnostics_section_location_time">Местоположение и время</string>
+    <string name="diagnostics_location_permission">Разрешение на местоположение</string>
+    <string name="diagnostics_permission_granted">Предоставлено</string>
+    <string name="diagnostics_permission_denied">Отклонено</string>
+    <string name="diagnostics_gps">GPS</string>
     <string name="diagnostics_no_gps">Нет GPS</string>
     <string name="diagnostics_enabled">Включено</string>
     <string name="diagnostics_disabled">Выключено</string>
-    <string name="diagnostics_permission_disabled">Разрешение отключено</string>
+    <string name="diagnostics_permission_disabled">Разрешение не предоставлено</string>
     <string name="diagnostics_location">Местоположение (ш, д)</string>
-    <string name="diagnostics_pointing">Указывающий снимок</string>
-    <string name="diagnostics_magnetic_correction">Магнитная коррекция</string>
+    <string name="diagnostics_location_format">%1$.4f°, %2$.4f° (%3$s)</string>
+    <string name="diagnostics_location_unset">Не задано</string>
+    <string name="diagnostics_location_acquiring">Определяем…</string>
+    <string name="diagnostics_location_hardware_unavailable">Нет доступного источника местоположения</string>
+    <string name="diagnostics_pointing">Координаты центра экрана</string>
+    <string name="diagnostics_dec_format">%1$.2f°</string>
+    <string name="diagnostics_magnetic_correction">Магн. поправка</string>
+    <string name="diagnostics_alignment_adjustment">Поправка выравнивания</string>
+    <string name="diagnostics_alignment_format">%1$+.1f° аз, %2$+.1f° выс</string>
+    <string name="diagnostics_magnetic_correction_format">%1$.2f° %2$s</string>
+    <string name="diagnostics_east">Восток</string>
+    <string name="diagnostics_west">Запад</string>
     <string name="diagnostics_local_datetime">Местное время</string>
-    <string name="diagnostics_utc_datetime">Глобальное время</string>
+    <string name="diagnostics_utc_datetime">Всемирное время (UTC)</string>
     <string name="diagnostics_section_network">Сеть</string>
     <string name="diagnostics_connection">Соединение</string>
-    <string name="diagnostics_connected">Соединено</string>
-    <string name="diagnostics_disconnected">Не соединено</string>
-    <string name="diagnostics_cell">" (мобильный)"</string>
-    <string name="app_name">Карта звездного неба</string>
-    <string name="calibration_heading_warning">Ваш компас должен быть откалиброван</string>
+    <string name="diagnostics_section_experiments">Флаги экспериментов</string>
+    <string name="diagnostics_experiments_last_fetched">Последняя загрузка</string>
+    <string name="diagnostics_experiments_never_fetched">Никогда</string>
+    <string name="diagnostics_experiments_fetch_now">Загрузить флаги экспериментов сейчас</string>
+    <string name="diagnostics_satellite_force_fetch">Загрузить данные спутников сейчас (отладка)</string>
+    <string name="diagnostics_connected">Подключено</string>
+    <string name="diagnostics_disconnected">Не подключено</string>
+    <string name="diagnostics_wifi">" (Wi-Fi)"</string>
+    <string name="diagnostics_cell">" (мобильная сеть)"</string>
+
+    <!-- Галерея, заставка, общие кнопки -->
+    <string name="gallery_title">Галерея неба</string>
+    <string name="gallery_back">Назад</string>
+    <string name="app_name">Карта звёздного неба</string>
+    <string name="splash_version">v%1$s</string>
+    <string name="splash_dismiss">Закрыть</string>
+    <string name="snackbar_action_open">Открыть</string>
+    <string name="settings_ok">ОК</string>
+
+    <!-- Калибровка компаса -->
+    <string name="calibration_heading_user">Компас вашего телефона</string>
+    <string name="calibration_heading_warning">Компас вашего телефона требует внимания</string>
     <string name="calibration_accuracy_unknown">Калибровка: неизвестна</string>
-    <string name="calibration_accuracy_unreliable">Калибровка: не откалибровано</string>
+    <string name="calibration_accuracy_unreliable">Калибровка: не откалиброван</string>
     <string name="calibration_accuracy_low">Калибровка: плохая</string>
-    <string name="calibration_accuracy_medium">Калибровка: нормально</string>
+    <string name="calibration_accuracy_medium">Калибровка: нормальная</string>
     <string name="calibration_accuracy_high">Калибровка: хорошая</string>
-    <string name="calibration_accuracy_no_contact">Калибровка: нет данных</string>
-    <string name="calibration_do_not_show_again">Не показывать это снова</string>
+    <string name="calibration_accuracy_no_contact">Калибровка: нет контакта с датчиком</string>
+    <string name="calibration_do_not_show_again">Больше не показывать</string>
+    <string name="calibration_what_to_do"><![CDATA[
+Датчик компаса вашего телефона сообщает о плохой калибровке. Движение «восьмёркой» (<a href="%s">посмотрите демонстрацию</a>) побуждает аппаратную часть телефона
+сбросить показания датчика компаса — Sky Map не управляет этим процессом.<br/><br/>
+<blockquote><b>Откалиброван — не значит точен.</b> Жест «восьмёркой» помогает сбросить датчик, но не может устранить помехи от находящихся рядом металлических предметов,
+панелей автомобиля или чехлов телефона. Если после калибровки карта всё равно врёт, вероятнее всего дело в этих внешних источниках, а не в Sky Map.</blockquote>
+Отойдите на открытое место подальше от металла и попробуйте снова.
+]]></string>
+    <string name="calibration_what_to_do_user"><![CDATA[
+Ваш телефон сообщает состояние калибровки компаса, показанное выше.<br/><br/>
+При необходимости выполните движение «восьмёркой» (<a href="%s">посмотрите демонстрацию</a>), чтобы побудить аппаратную часть телефона перекалибровать датчик компаса.<br/><br/>
+<blockquote><b>Важно:</b> калибровка помогает датчику сброситься изнутри. Это не значит, что компас обязательно точен!
+Местные магнитные помехи (металлические предметы, панели автомобиля, чехлы телефона) всё равно могут приводить к тому, что компас телефона передаёт в Sky Map
+неточные показания.</blockquote>
+<b>Если карта показывает положения неправильно, проблема, скорее всего, в телефоне, а не в Sky Map!</b>
+]]></string>
+    <string name="calibration_low_accuracy_toast">Компас вашего телефона сообщает о низкой точности</string>
+    <string name="calibration_complete_toast">Датчики вышли на высокую точность</string>
+    <string name="no_sensor_warning">На этом устройстве нет компаса и датчиков движения, поэтому Sky Map не может следовать за тем, куда вы его направляете. Перетаскивайте карту вручную.</string>
+    <string name="no_sensor_warning_dismiss">ОК</string>
+
+    <!-- Всплывающие сообщения -->
+    <string name="hud_alignment_reset_message">Поправка выравнивания сброшена</string>
+    <string name="ar_auto_mode_snackbar">Для вида через камеру включён автоматический режим</string>
+    <string name="ar_permission_denied">Режиму «через камеру» нужно разрешение на доступ к камере</string>
     <string name="ar_permission_settings_action">Настройки</string>
+    <string name="ar_alignment_adjusted_message">Выравнивание карты изменено</string>
+    <string name="snackbar_action_undo">Отменить</string>
+    <string name="label_size_hint_message">Размер подписей не меняется при масштабировании — задайте его в настройках</string>
+    <string name="label_size_hint_action">Настройки</string>
+    <string name="auto_level_on_toast">Автовыравнивание горизонта включено</string>
+    <string name="auto_level_off_toast">Автовыравнивание горизонта выключено</string>
+
+    <!-- Диагностика карты -->
+    <string name="diagnostics_app_lifecycle">Состояние жизненного цикла приложения</string>
+    <string name="diagnostics_gyro_none">Нет</string>
+    <string name="diagnostics_map_mode">Режим</string>
+    <string name="diagnostics_map_mode_auto">Авто (датчики)</string>
+    <string name="diagnostics_map_mode_manual">Ручной</string>
+    <string name="diagnostics_map_orientation">Последнее обновление ориентации</string>
+    <string name="diagnostics_map_orientation_format">%1$.1f с назад</string>
+    <string name="diagnostics_map_orientation_none">Не получена</string>
+    <string name="diagnostics_rejected_samples">Отклонённые показания датчиков (с запуска)</string>
+    <string name="diagnostics_section_map">Карта</string>
+    <string name="diagnostics_smoother_heals">Сбросы сглаживания (с запуска)</string>
+
+    <!-- Луна и виджет «Небо сегодня» -->
+    <string name="moon_widget_illumination">Освещено %1$d%%</string>
+    <string name="moon_phase_new">Новолуние</string>
+    <string name="moon_phase_waxing_crescent">Растущий серп</string>
+    <string name="moon_phase_first_quarter">Первая четверть</string>
+    <string name="moon_phase_waxing_gibbous">Растущая Луна</string>
+    <string name="moon_phase_full">Полнолуние</string>
+    <string name="moon_phase_waning_gibbous">Убывающая Луна</string>
+    <string name="moon_phase_last_quarter">Последняя четверть</string>
+    <string name="moon_phase_waning_crescent">Убывающий серп</string>
+    <string name="moon_widget_age">День %1$d</string>
+    <string name="tonight_trailing_direction">%1$s · %2$d°</string>
+    <string name="tonight_dark_skies">тёмное небо</string>
+    <string name="tonight_trailing_moon">Луна %1$d%%</string>
+
+    <!-- Спутники -->
+    <string name="diagnostics_section_satellites">Спутники</string>
+    <string name="diagnostics_satellite_data">Данные об орбитах</string>
+    <string name="diagnostics_satellite_data_none">Не загружены</string>
+    <string name="diagnostics_satellite_data_format">Спутников: %1$d, данным %2$.1f дн.</string>
+    <string name="diagnostics_satellite_last_fetch">Последняя загрузка</string>
+    <string name="diagnostics_satellite_never_fetched">Никогда</string>
+    <string name="diagnostics_satellite_circuit_open">Загрузки приостановлены</string>
+    <string name="diagnostics_satellite_circuit_open_format">До %1$s (сбоев: %2$d)</string>
+    <string name="satellite_description">Искусственный спутник на низкой околоземной орбите, освещённый Солнцем на тёмном небе. Он пересекает небо от горизонта до горизонта за несколько минут, двигаясь ровно и не мигая.</string>
+    <string name="satellite_search_name_iss">Международная космическая станция (МКС)</string>
+    <string name="satellite_search_name_tiangong">Космическая станция «Тяньгун»</string>
 </resources>

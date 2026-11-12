@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="credits_body"><![CDATA[
+<h1>Благодарности</h1>
+<h2>Посвящение</h2>
+<p>Sky Map 2.0 посвящён Margaret Hamilton, написавшей программу, которая доставила Apollo на Луну, и всем недооценённым женщинам-пионерам в науке и инженерии.</p>
+<h2>Разработка</h2>
+<p>John Taylor</p>
+<h2>Первоначальная разработка, дизайн и управление продуктом в Google</h2>
+<p>Brent Bryan, Dominic Widdows, Hector Ouilhet, James Powell, John Taylor, Kevin Serafini, Lior Ron.</p>
+<h1>Благодарности</h1>
+<p>Sky Map изначально разрабатывался как «Google Sky Map» компанией Google Inc. и стал проектом с открытым исходным кодом в 2012 году.</p>
+<p>Особая благодарность Pat Stephenson за то, что подал идею своим конкурсом для телефона G1, а также Chris DiBona и Michael Weiss-Malik за помощь в переходе от Google к Open Source.</p>
+<h2>Данные</h2>
+<p>Sky Map использует карты, основанные на данных из:</p>
+<p>• Centre de Données astronomiques de Strasbourg (<a href="https://cdsweb.u-strasbg.fr/">cdsweb.u-strasbg.fr</a>)<br/>
+• The Bright Star Catalogue, 5th Revised Ed. (Hoffleit D., Warren Jr W.H.)<br/>
+• Star names: IAU Catalog of Star Names, IAU Working Group on Star Names (<a href="https://www.iau.org/public/themes/naming_stars/">iau.org</a>), CC BY 4.0<br/>
+• The HYG Database, HYG v1.0. (<a href="https://www.astronexus.com/">astronexus.com</a>)<br/>
+• History and Accurate Positions for the NGC/IC Objects (Harold G. Corwin Jr)<br/>
+• Revised New General Catalogue of Nonstellar Astronomical Objects (Sulentic J.W., Tifft W.G.)<br/>
+• SFA Star Charts (<a href="https://observe.phy.sfasu.edu/SFAStarCharts/SFAStarChartFAQ.html">observe.phy.sfasu.edu</a>)<br/>
+• Positions of Solar System Objects are calculated from data provided by the USNO (<a href="https://www.usno.navy.mil/USNO/astronomical-applications">usno.navy.mil</a>)<br/>
+• Spherical coverage data obtained from <a href="https://www2.research.att.com/~njas/coverings">research.att.com</a></p>
+<h2>Источники изображений</h2>
+<p>Небесные изображения в этом приложении любезно предоставлены следующими источниками:</p>
+<p>• Hubble Space Telescope images: NASA, ESA, and the Space Telescope Science Institute (<a href="https://hubblesite.org/">hubblesite.org</a>)<br/>
+• Planet images: NASA/JPL-Caltech, NASA/Johns Hopkins APL/Carnegie (MESSENGER), NASA/Johns Hopkins APL/SwRI (New Horizons)<br/>
+• Moon image: NASA/GSFC/Arizona State University (Lunar Reconnaissance Orbiter)<br/>
+• Star field images: ESO Digitized Sky Survey 2 (<a href="https://archive.eso.org/dss/dss">archive.eso.org/dss</a>), CC BY 4.0<br/>
+• Constellation charts: IAU and Sky & Telescope (Roger Sinnott & Rick Fienberg), CC BY 4.0<br/>
+• Additional deep-sky object images: Gemini Observatory/NOIRLab/NSF/AURA (<a href="https://noirlab.edu/">noirlab.edu</a>)<br/>
+• M31 image: Peter Kennett (<a href="https://commons.wikimedia.org/wiki/File:M31(Kennett).jpg">Wikimedia Commons</a>)<br/>
+• Sagittarius A* image: EHT Collaboration (<a href="https://www.eso.org/public/images/eso2208-eht-mwa/">eso.org</a>), CC BY 4.0<br/>
+• Cygnus X-1 illustration: NASA/CXC/M.Weiss (<a href="https://chandra.harvard.edu/photo/2011/cygx1/">chandra.harvard.edu</a>)<br/>
+• International Space Station photo: NASA/Crew of STS-132<br/>
+• Tiangong space station rendering: Shujianyang (<a href="https://commons.wikimedia.org/wiki/File:Chinese_Tiangong_Space_Station.jpg">Wikimedia Commons</a>), CC BY-SA 4.0</p>
+]]></string>
+</resources>
