@@ -113,6 +113,11 @@ narrate what the code does, restate a name or signature, or leave multi-paragrap
 self-explanatory members. If a comment is needed to explain confusing code, prefer renaming or
 simplifying the code first. Delete comments that have gone stale.
 
+## GitHub comments
+
+In PR and issue comments, number list items as plain "1", "2", never "#1": GitHub auto-links `#N`
+to issue N. Real issue/PR references are fine.
+
 ## Strings
 
 Remember to properly escape any text added as Android resource strings (e.g. ' must be escaped
