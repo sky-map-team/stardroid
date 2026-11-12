@@ -477,6 +477,7 @@ class SkyCameraPreview(
     }
 
     /** [tuned] false for the night-extension session, which owns its own capture settings. */
+    @SuppressLint("UnsafeOptInUsageError")
     private fun buildPreview(tuned: Boolean): Preview {
         val builder = Preview.Builder()
         if (tuned) applySkyTuning(Camera2Interop.Extender(builder))
@@ -488,6 +489,7 @@ class SkyCameraPreview(
      * over latency now that stills are being tuned for night; the same sky tuning as the
      * preview, so the still is no worse than what the user framed.
      */
+    @SuppressLint("UnsafeOptInUsageError")
     private fun buildCapture(
         rotation: Int,
         tuned: Boolean,
