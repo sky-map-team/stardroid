@@ -13,6 +13,7 @@ import com.google.android.stardroid.data.satellites.FetchOutcome
 import com.google.common.truth.Truth.assertThat
 import org.junit.jupiter.api.Test
 import java.io.IOException
+import java.net.SocketTimeoutException
 
 /**
  * The outcome → WorkManager `Result` mapping, pinned as a table.
@@ -35,6 +36,14 @@ class SatelliteWorkerMappingTest {
             assertThat(satelliteWorkAction(FetchOutcome.HttpError(status)))
                 .isEqualTo(SatelliteWorkAction.SUCCEED)
         }
+    }
+
+    @Test
+    fun `a timeout on a working network never asks WorkManager to retry`() {
+        // CelesTrak's firewall drops connections without answering, so this is a refusal in all
+        // but name. Even the first one, which leaves the circuit shut, waits for the schedule.
+        val timeout = FetchOutcome.ServerUnreachable(SocketTimeoutException("connect timed out"))
+        assertThat(satelliteWorkAction(timeout)).isEqualTo(SatelliteWorkAction.SUCCEED)
     }
 
     @Test
@@ -77,6 +86,7 @@ class SatelliteWorkerMappingTest {
                 FetchOutcome.Success("b", null),
                 FetchOutcome.NotModified,
                 FetchOutcome.HttpError(500),
+                FetchOutcome.ServerUnreachable(SocketTimeoutException()),
                 FetchOutcome.TransportFailure(IOException()),
                 FetchOutcome.UnusableBody("x"),
                 FetchOutcome.StorageFailure(IOException()),

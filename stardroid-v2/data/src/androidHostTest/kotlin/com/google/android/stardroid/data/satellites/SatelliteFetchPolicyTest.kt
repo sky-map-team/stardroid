@@ -13,6 +13,7 @@ import com.google.common.truth.Truth.assertThat
 import kotlinx.datetime.Instant
 import org.junit.jupiter.api.Test
 import java.io.IOException
+import java.net.SocketTimeoutException
 import kotlin.time.Duration.Companion.days
 import kotlin.time.Duration.Companion.hours
 import kotlin.time.Duration.Companion.minutes
@@ -162,6 +163,150 @@ class SatelliteFetchPolicyTest {
         assertThat(SatelliteFetchPolicy.mayFetch(offline, t0 + 1.hours)).isFalse()
     }
 
+    private fun timeout() =
+        FetchOutcome.ServerUnreachable(
+            SocketTimeoutException("connect timed out"),
+        )
+
+    @Test
+    fun `one timeout on a working network leaves the circuit shut`() {
+        // One flaky connection must not cost a day. It is still an attempt, so the 2-hour floor
+        // holds, and it is remembered as the first strike.
+        val once = SatelliteFetchPolicy.afterOutcome(SatelliteFetchState(), timeout(), t0)
+
+        assertThat(once.circuitOpenUntil).isNull()
+        assertThat(once.consecutiveFailures).isEqualTo(0)
+        assertThat(once.consecutiveTimeouts).isEqualTo(1)
+        assertThat(SatelliteFetchPolicy.mayFetch(once, t0 + 1.hours)).isFalse()
+    }
+
+    @Test
+    fun `a second timeout in a row opens the circuit and climbs the same ladder as a refusal`() {
+        // CelesTrak's firewall drops us without answering, so this is what being blocked looks
+        // like. Without it, a firewalled install retried every 12 hours forever (#1277).
+        var now = t0
+        var state = SatelliteFetchPolicy.afterOutcome(SatelliteFetchState(), timeout(), now)
+
+        now += 12.hours
+        state = SatelliteFetchPolicy.afterOutcome(state, timeout(), now)
+        assertThat(state.circuitOpenUntil).isEqualTo(now + 24.hours)
+        assertThat(state.consecutiveFailures).isEqualTo(1)
+
+        // From here every timeout climbs at once: the benefit of the doubt is given once.
+        now += 25.hours
+        state = SatelliteFetchPolicy.afterOutcome(state, timeout(), now)
+        assertThat(state.circuitOpenUntil).isEqualTo(now + 48.hours)
+
+        now += 49.hours
+        state = SatelliteFetchPolicy.afterOutcome(state, timeout(), now)
+        assertThat(state.circuitOpenUntil).isEqualTo(now + 7.days)
+    }
+
+    @Test
+    fun `a timeout after a refusal climbs the ladder at once`() {
+        // A refusal then silence is a firewall going up, not a flaky connection.
+        var state =
+            SatelliteFetchPolicy.afterOutcome(
+                SatelliteFetchState(),
+                FetchOutcome.HttpError(429),
+                t0,
+            )
+        state = SatelliteFetchPolicy.afterOutcome(state, timeout(), t0 + 25.hours)
+
+        assertThat(state.circuitOpenUntil).isEqualTo(t0 + 25.hours + 48.hours)
+        assertThat(state.consecutiveFailures).isEqualTo(2)
+        // Nothing answered, so the last real status stays on the Diagnostics screen.
+        assertThat(state.lastStatusCode).isEqualTo(429)
+    }
+
+    @Test
+    fun `being offline between two timeouts neither counts nor clears the first`() {
+        // Offline says nothing about CelesTrak either way. If it cleared the strike, an install
+        // that is firewalled and often offline would never back off.
+        var state = SatelliteFetchPolicy.afterOutcome(SatelliteFetchState(), timeout(), t0)
+        state =
+            SatelliteFetchPolicy.afterOutcome(
+                state,
+                FetchOutcome.TransportFailure(IOException("no route to host")),
+                t0 + 12.hours,
+            )
+        assertThat(state.consecutiveTimeouts).isEqualTo(1)
+        assertThat(state.circuitOpenUntil).isNull()
+
+        state = SatelliteFetchPolicy.afterOutcome(state, timeout(), t0 + 24.hours)
+        assertThat(state.circuitOpenUntil).isEqualTo(t0 + 24.hours + 24.hours)
+    }
+
+    @Test
+    fun `a lone strike is forgotten after 72 hours`() {
+        // Unrelated timeouts days apart are two flaky evenings, not a firewall.
+        val strike = SatelliteFetchPolicy.afterOutcome(SatelliteFetchState(), timeout(), t0)
+        assertThat(strike.lastTimeout).isEqualTo(t0)
+
+        val later = SatelliteFetchPolicy.afterOutcome(strike, timeout(), t0 + 73.hours)
+        assertThat(later.circuitOpenUntil).isNull()
+        // The new timeout is a fresh first strike, dated now.
+        assertThat(later.consecutiveTimeouts).isEqualTo(1)
+        assertThat(later.lastTimeout).isEqualTo(t0 + 73.hours)
+
+        // And it is live: the next one within the window opens the circuit.
+        val opened = SatelliteFetchPolicy.afterOutcome(later, timeout(), t0 + 85.hours)
+        assertThat(opened.circuitOpenUntil).isEqualTo(t0 + 85.hours + 24.hours)
+    }
+
+    @Test
+    fun `a strike exactly 72 hours old still counts`() {
+        // Two 12-hour runs that Doze or a standby bucket pushed far apart are still consecutive.
+        val strike = SatelliteFetchPolicy.afterOutcome(SatelliteFetchState(), timeout(), t0)
+        val second = SatelliteFetchPolicy.afterOutcome(strike, timeout(), t0 + 72.hours)
+
+        assertThat(second.circuitOpenUntil).isEqualTo(t0 + 72.hours + 24.hours)
+    }
+
+    @Test
+    fun `the expiry never stops a climbing breaker from climbing`() {
+        // The week-long rung means timeouts more than 72 hours apart; each must still climb.
+        var state =
+            SatelliteFetchPolicy.afterOutcome(
+                SatelliteFetchState(),
+                FetchOutcome.HttpError(503),
+                t0,
+            )
+        state = SatelliteFetchPolicy.afterOutcome(state, timeout(), t0 + 8.days)
+
+        assertThat(state.consecutiveFailures).isEqualTo(2)
+        assertThat(state.circuitOpenUntil).isEqualTo(t0 + 8.days + 48.hours)
+    }
+
+    @Test
+    fun `a success between two timeouts starts the count again`() {
+        var state = SatelliteFetchPolicy.afterOutcome(SatelliteFetchState(), timeout(), t0)
+        state = SatelliteFetchPolicy.afterOutcome(state, FetchOutcome.NotModified, t0 + 12.hours)
+        assertThat(state.consecutiveTimeouts).isEqualTo(0)
+        assertThat(state.lastTimeout).isNull()
+
+        state = SatelliteFetchPolicy.afterOutcome(state, timeout(), t0 + 24.hours)
+        assertThat(state.circuitOpenUntil).isNull()
+    }
+
+    @Test
+    fun `a firewalled install backs off to a week instead of trying twice a day`() {
+        // The 12-hour job against a CelesTrak that never answers, for 30 days. Before #1277 every
+        // run reached the network: 60 attempts.
+        var state = SatelliteFetchState()
+        var attempts = 0
+        var now = t0
+        while (now < t0 + 30.days) {
+            if (SatelliteFetchPolicy.mayFetch(state, now)) {
+                attempts++
+                state = SatelliteFetchPolicy.afterOutcome(state, timeout(), now)
+            }
+            now += 12.hours
+        }
+        assertThat(attempts).isEqualTo(7)
+        assertThat(state.circuitOpenUntil).isEqualTo(state.lastAttempt!! + 7.days)
+    }
+
     @Test
     fun `a captive portal's 200 does not open the circuit but is not cached either`() {
         // A hotel login page arrives with a perfectly valid 200. That is not CelesTrak refusing
@@ -184,6 +329,8 @@ class SatelliteFetchPolicyTest {
         assertThat(
             SatelliteFetchPolicy.warrantsReporting(FetchOutcome.TransportFailure(IOException())),
         ).isFalse()
+        // A timeout is not a response, so there is no status for anyone to act on.
+        assertThat(SatelliteFetchPolicy.warrantsReporting(timeout())).isFalse()
         assertThat(SatelliteFetchPolicy.warrantsReporting(FetchOutcome.NotModified)).isFalse()
         assertThat(
             SatelliteFetchPolicy.warrantsReporting(FetchOutcome.Success("b", null)),

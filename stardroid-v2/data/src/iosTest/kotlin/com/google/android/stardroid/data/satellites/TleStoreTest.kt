@@ -55,6 +55,8 @@ class TleStoreTest {
         val state =
             SatelliteFetchState(
                 consecutiveFailures = 2,
+                consecutiveTimeouts = 3,
+                lastTimeout = Instant.parse("2026-09-30T09:00:00Z"),
                 circuitOpenUntil = Instant.parse("2026-09-30T12:00:00Z"),
                 lastAttempt = Instant.parse("2026-09-30T10:15:30.250Z"),
                 lastSuccess = Instant.parse("2026-09-29T22:00:00Z"),
