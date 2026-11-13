@@ -66,7 +66,6 @@ import com.google.android.stardroid.announcements.AnnouncementState
 import com.google.android.stardroid.astronomy.MeeusEphemeris
 import com.google.android.stardroid.camera.SkyCameraPreview
 import com.google.android.stardroid.catalog.CelestialObjectId
-import com.google.android.stardroid.data.satellites.RefreshResult
 import com.google.android.stardroid.layers.LayerRegistry
 import com.google.android.stardroid.layers.SatelliteLayer
 import com.google.android.stardroid.locale.LocaleSource
@@ -126,18 +125,15 @@ import com.google.android.stardroid.widget.MoonWidgetReceiver
 import com.google.android.stardroid.widget.TonightWidget
 import com.google.android.stardroid.widget.WidgetScheduler
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.filterNotNull
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
-import kotlinx.coroutines.withContext
 import org.jetbrains.compose.resources.getString
 import java.util.Calendar
 import javax.inject.Inject
-import kotlin.time.Duration
 import com.google.android.stardroid.settings.Settings as SkyMapSettings
 
 /**
@@ -229,19 +225,6 @@ class MainActivity : ComponentActivity() {
                             satelliteEntryPoint(appContext)
                                 .satelliteElementsRepository(),
                         ),
-                    // The ordinary policy-respecting refresh, never the debug force path.
-                    // Returns the remaining wait when policy refused, so the card can say so.
-                    onRefreshSatellites = {
-                        withContext(Dispatchers.IO) {
-                            val repository =
-                                satelliteEntryPoint(appContext)
-                                    .satelliteElementsRepository()
-                            when (val result = repository.refresh()) {
-                                is RefreshResult.Skipped -> result.retryAfter
-                                is RefreshResult.Completed -> Duration.ZERO
-                            }
-                        }
-                    },
                 )
             }
         }

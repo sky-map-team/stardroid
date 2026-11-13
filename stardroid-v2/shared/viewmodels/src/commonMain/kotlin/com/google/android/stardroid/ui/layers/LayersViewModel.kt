@@ -31,7 +31,6 @@ import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
-import kotlin.time.Duration
 
 /**
  * How healthy a layer's underlying data is, shown as a corner badge on its glyph.
@@ -95,19 +94,7 @@ class LayersViewModel(
      * to report on (the tour's canned chrome, and tests that do not care).
      */
     satelliteStatus: Flow<SatelliteUiStatus?> = flowOf(null),
-    /**
-     * The user-facing Refresh action.
-     *
-     * Wired to the repository's ordinary `refresh()`, which **respects the circuit breaker and
-     * CelesTrak's minimum query interval**. Deliberately not the debug force path: this button is
-     * reachable by every user, so it is the one that must never be able to hammer the source.
-     * Returns how long the caller must wait, or [Duration.ZERO] when the request was made — the
-     * card uses it to explain a refusal rather than appear inert.
-     */
-    private val onRefreshSatellites: suspend () -> Duration = { Duration.ZERO },
 ) : ViewModel() {
-    private val refusedRefreshWait = MutableStateFlow(Duration.ZERO)
-
     private val toggleableIds = LayerRegistry.toggleableIds(satellitesEnabled)
 
     val toggles: StateFlow<List<LayerToggle>> =
@@ -143,29 +130,6 @@ class LayersViewModel(
         ) { enabled, status ->
             satellitesEnabled && enabled && status?.freshness == ElementFreshness.ABSENT
         }.stateIn(viewModelScope, SharingStarted.Eagerly, false)
-
-    /**
-     * How long until a user-triggered refresh would actually reach CelesTrak, or [Duration.ZERO]
-     * when it would go now.
-     *
-     * Drives whether the empty state offers a Refresh button at all. Backed by
-     * [refusedRefreshWait] once a tap has been refused, so the message updates immediately rather
-     * than waiting for the next poll.
-     */
-    val satelliteRefreshWait: StateFlow<Duration> =
-        combine(satelliteStatus, refusedRefreshWait) { status, refused ->
-            maxOf(refused, status?.refreshAllowedIn ?: Duration.ZERO)
-        }.stateIn(viewModelScope, SharingStarted.Eagerly, Duration.ZERO)
-
-    /**
-     * Asks for a satellite refresh, subject to policy. See [onRefreshSatellites].
-     *
-     * If policy refuses, the returned wait is published so the card can say when to try again
-     * instead of appearing to have done nothing.
-     */
-    fun refreshSatelliteData() {
-        viewModelScope.launch { refusedRefreshWait.value = onRefreshSatellites() }
-    }
 
     /**
      * The sky gradient rides along with the layer toggles in the UI (as it did in v1's layer

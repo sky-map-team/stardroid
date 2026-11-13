@@ -69,12 +69,6 @@
     <string name="layer_param_radec_grid_density_medium_desc" translation_description="Explains the medium celestial grid density: a meridian every 2 hours of right ascension and a circle every 15 degrees of declination.">Meridianos cada 2 horas, círculos cada 15°</string>
     <string name="layer_param_radec_grid_density_fine_desc" translation_description="Explains the fine celestial grid density: a meridian every hour of right ascension and a circle every 10 degrees of declination.">Meridianos cada hora, círculos cada 10°</string>
     <string name="satellites_no_data" translation_description="Explanation shown when satellite orbital data has not been downloaded yet and so no satellites can be drawn.">Las posiciones de los satélites necesitan conexión a internet para actualizarse.</string>
-    <string name="satellites_refresh" translation_description="Button that tries to download satellite orbital data now.">Actualizar</string>
-    <string name="satellites_retry_soon" translation_description="Shown instead of a Refresh button when satellite data was just requested and cannot be requested again for a few minutes.">Inténtalo de nuevo en unos minutos</string>
-    <string name="satellites_retry_within_hour" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again for up to an hour.">Inténtalo de nuevo en una hora</string>
-    <string name="satellites_retry_hours" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again for several hours.">Inténtalo de nuevo en unas horas</string>
-    <string name="satellites_retry_tomorrow" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again until the next day.">Inténtalo de nuevo mañana</string>
-    <string name="satellites_retry_days" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again for several days.">Inténtalo de nuevo en unos días</string>
     <string name="layer_grid" translation_description="Toggle label for the layer showing the right ascension / declination grid.">Cuadrícula celeste</string>
     <string name="layer_horizon">Horizonte</string>
     <string name="layer_ecliptic">Eclíptica</string>

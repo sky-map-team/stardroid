@@ -48,12 +48,6 @@
     <string name="layer_param_eclipse_alerts" translation_description="Label for the setting that turns on a notification before a lunar eclipse begins.">Alertas de eclipse</string>
     <string name="layer_param_eclipse_alerts_description" translation_description="Explains what the eclipse-alert setting does: a single notification before a lunar eclipse starts.">Notificarme antes de que comece un eclipse lunar</string>
     <string name="satellites_no_data" translation_description="Explanation shown when satellite orbital data has not been downloaded yet and so no satellites can be drawn.">As posicións dos satélites precisan conexión a internet para actualizarse.</string>
-    <string name="satellites_refresh" translation_description="Button that tries to download satellite orbital data now.">Actualizar</string>
-    <string name="satellites_retry_soon" translation_description="Shown instead of a Refresh button when satellite data was just requested and cannot be requested again for a few minutes.">Téntao de novo en uns minutos</string>
-    <string name="satellites_retry_within_hour" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again for up to an hour.">Téntao de novo nunha hora</string>
-    <string name="satellites_retry_hours" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again for several hours.">Téntao de novo en unhas horas</string>
-    <string name="satellites_retry_tomorrow" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again until the next day.">Téntao de novo mañá</string>
-    <string name="satellites_retry_days" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again for several days.">Téntao de novo en uns días</string>
     <string name="layer_grid" translation_description="Toggle label for the layer showing the right ascension / declination grid.">Grella celeste</string>
     <string name="layer_horizon" translation_description="Toggle label for the layer showing the horizon line and compass points.">Horizonte</string>
     <string name="layer_ecliptic" translation_description="Toggle label for the layer showing the ecliptic line.">Eclíptica</string>

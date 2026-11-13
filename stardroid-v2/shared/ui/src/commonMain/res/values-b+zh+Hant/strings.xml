@@ -69,12 +69,6 @@
     <string name="layer_param_radec_grid_density_medium_desc" translation_description="Explains the medium celestial grid density: a meridian every 2 hours of right ascension and a circle every 15 degrees of declination.">赤經每 2 小時一條經線，赤緯每 15° 一條圓圈</string>
     <string name="layer_param_radec_grid_density_fine_desc" translation_description="Explains the fine celestial grid density: a meridian every hour of right ascension and a circle every 10 degrees of declination.">赤經每小時一條經線，赤緯每 10° 一條圓圈</string>
     <string name="satellites_no_data" translation_description="Explanation shown when satellite orbital data has not been downloaded yet and so no satellites can be drawn.">衛星位置需要網路連線才能更新。</string>
-    <string name="satellites_refresh" translation_description="Button that tries to download satellite orbital data now.">重新整理</string>
-    <string name="satellites_retry_soon" translation_description="Shown instead of a Refresh button when satellite data was just requested and cannot be requested again for a few minutes.">請在幾分鐘後再試一次</string>
-    <string name="satellites_retry_within_hour" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again for up to an hour.">請在一小時內再試一次</string>
-    <string name="satellites_retry_hours" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again for several hours.">請在幾小時後再試一次</string>
-    <string name="satellites_retry_tomorrow" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again until the next day.">明天再試</string>
-    <string name="satellites_retry_days" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again for several days.">幾天後再試</string>
     <string name="layer_grid" translation_description="Toggle label for the layer showing the right ascension / declination grid.">天球網格</string>
     <string name="layer_horizon">地平線</string>
     <string name="layer_ecliptic">黃道</string>

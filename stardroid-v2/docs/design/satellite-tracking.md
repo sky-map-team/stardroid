@@ -509,10 +509,10 @@ constraints matter more than its convenience.
   `BuildConfig` today and `buildConfig` is not enabled in the convention plugin, so this needs
   `buildConfig = true` in `skymap.android-application`. Small, but it is new build configuration
   rather than a free win, and it is the reason this is called out rather than assumed.
-- **Distinct from the user-facing Refresh.** The empty state's Refresh button (§"Staleness and
-  offline behaviour") **respects** the breaker and the minimum interval; this one does not. Two
-  different affordances with two different contracts — the design should not let them share an
-  implementation, or the safe one will inherit the unsafe one's behaviour in some later edit.
+- **The only manual trigger.** There is no user-facing Refresh (removed in #1284: downloads must
+  not be under user control, see #1269). Everything else — the worker, the iOS foreground and
+  background fetches — goes through the policy-respecting `refresh()`; this one deliberately does
+  not, so it must never share an implementation with them.
 - **Lives in Diagnostics**, beside the last-fetch status and code the circuit breaker already
   surfaces there, so the trigger and its result are in one place.
 - **Logs loudly on every use**, and the KDoc should say plainly that CelesTrak's 2-hour minimum
@@ -557,7 +557,7 @@ TLE degradation is smooth and well characterised, so the UX can be honest rather
 | < 3 days | < ~2 km | Normal. No UI mention. |
 | 3–10 days | ~2–15 km | Show passes, with a quiet "orbit data N days old" note on the card. |
 | > 10 days | tens of km, growing | Keep the map layer (roughly right, still pleasant), but **suppress precise pass times**. A confidently wrong "21:47" is worse than admitting the data is stale. |
-| none | — | Actionable empty state: "Satellite positions need an internet connection to update." with a Refresh button, which still respects the breaker. |
+| none | — | Actionable empty state: Explanatory card ("Satellite positions need an internet connection to download…"), with no button: downloads are not user-triggered (#1284). |
 
 The 10-day bound belongs on the model as its `validRange` — per-model rather than an interface
 global, which is exactly the migration D26 anticipated satellites would force.
@@ -811,8 +811,8 @@ The decisions it proposes:
   glyph's shape fixed keeps "is the layer on?" and "is the data good?" as two separately readable
   questions rather than one overloaded icon.
 - **The empty state is a card, not a missing layer** — "Satellite positions need an internet
-  connection to update." with a Refresh button that still respects the circuit breaker, matching
-  the §"Staleness and offline behaviour" table.
+  connection to download…", with no Refresh button (#1284), matching the §"Staleness and offline
+  behaviour" table.
 - **Panel D of the bench mocks the pass surfaces** from §"Where the pass predictor surfaces": the
   object-info sheet with its pass row, the tonight widget with a pass sitting among the ordinary
   `SkyEvent` rows, and the degraded/empty variants of the sheet. It also states the notification-

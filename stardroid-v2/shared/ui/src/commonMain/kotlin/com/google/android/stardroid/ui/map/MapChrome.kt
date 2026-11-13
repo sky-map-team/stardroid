@@ -234,12 +234,6 @@ import com.google.android.stardroid.ui.resources.location_button
 import com.google.android.stardroid.ui.resources.more_button
 import com.google.android.stardroid.ui.resources.night_mode
 import com.google.android.stardroid.ui.resources.satellites_no_data
-import com.google.android.stardroid.ui.resources.satellites_refresh
-import com.google.android.stardroid.ui.resources.satellites_retry_days
-import com.google.android.stardroid.ui.resources.satellites_retry_hours
-import com.google.android.stardroid.ui.resources.satellites_retry_soon
-import com.google.android.stardroid.ui.resources.satellites_retry_tomorrow
-import com.google.android.stardroid.ui.resources.satellites_retry_within_hour
 import com.google.android.stardroid.ui.resources.search_button
 import com.google.android.stardroid.ui.resources.settings_button
 import com.google.android.stardroid.ui.resources.share_shutter_button
@@ -259,9 +253,6 @@ import org.jetbrains.compose.resources.DrawableResource
 import org.jetbrains.compose.resources.StringResource
 import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
-import kotlin.time.Duration
-import kotlin.time.Duration.Companion.hours
-import kotlin.time.Duration.Companion.minutes
 
 /**
  * One highlightable control of the map chrome, keyed for the warm-welcome tour (D61): the
@@ -1175,8 +1166,6 @@ fun LayersSheet(
     val hudEnabled by layersViewModel.hudEnabled.collectAsStateWithLifecycle()
     val satelliteDataMissing by
         layersViewModel.satelliteDataMissing.collectAsStateWithLifecycle()
-    val satelliteRefreshWait by
-        layersViewModel.satelliteRefreshWait.collectAsStateWithLifecycle()
     // Reference elements are a fixed set; anything else (all object layers, and whatever
     // future layers land) stays in the object group in registry order.
     val (reference, objects) = toggles.partition { it.id in REFERENCE_LAYER_IDS }
@@ -1234,10 +1223,7 @@ fun LayersSheet(
                     onExpandToggled = keepExpanded,
                 )
                 if (toggle.id == SatelliteLayer.LAYER_ID && satelliteDataMissing) {
-                    SatelliteEmptyStateCard(
-                        refreshWait = satelliteRefreshWait,
-                        onRefresh = layersViewModel::refreshSatelliteData,
-                    )
+                    SatelliteEmptyStateCard()
                 }
             }
             LayerGroupHeader(Res.string.layers_group_reference)
@@ -1812,24 +1798,13 @@ private fun layerIcon(id: LayerId): DrawableResource =
  *
  * **A card, not a missing layer** (iconography bench, panel C). Silently drawing nothing would be
  * indistinguishable from "there is nothing up there", which is both wrong and unfixable by the
- * user; saying why, and offering the fix, is the honest version.
+ * user; saying why is the honest version.
  *
- * The Refresh button **respects the circuit breaker and the minimum query interval** — it calls
- * the ordinary `refresh()`, not the debug force path. Two affordances, two contracts: this one is
- * reachable by every user, so it must never be the one that can hammer CelesTrak.
- *
- * And when policy would refuse, the button is **replaced by the wait** rather than shown and
- * quietly doing nothing. A button that does nothing reads as a broken app; the real reason is a
- * rate limit that is nobody's fault, and saying roughly how long is both honest and actionable.
- * The wording is bucketed rather than a countdown — the difference that matters is "shortly"
- * versus "tomorrow" versus "in a few days", which is exactly the difference between the
- * two-hour minimum interval and an open circuit breaker.
+ * Deliberately no Refresh button: downloads are not under user control, so nothing here can
+ * trigger a CelesTrak request (#1269). The app fetches on its own schedule.
  */
 @Composable
-private fun SatelliteEmptyStateCard(
-    refreshWait: Duration,
-    onRefresh: () -> Unit,
-) {
+private fun SatelliteEmptyStateCard() {
     Card(
         colors =
             CardDefaults.cardColors(
@@ -1837,44 +1812,13 @@ private fun SatelliteEmptyStateCard(
             ),
         modifier = Modifier.fillMaxWidth().padding(start = 36.dp, top = 4.dp, bottom = 8.dp),
     ) {
-        Column(Modifier.padding(12.dp)) {
-            Text(
-                stringResource(Res.string.satellites_no_data),
-                style = MaterialTheme.typography.bodySmall,
-            )
-            if (refreshWait == Duration.ZERO) {
-                TextButton(
-                    onClick = onRefresh,
-                    modifier = Modifier.align(Alignment.End),
-                ) {
-                    Text(stringResource(Res.string.satellites_refresh))
-                }
-            } else {
-                Text(
-                    stringResource(retryWaitText(refreshWait)),
-                    style = MaterialTheme.typography.labelLarge,
-                    color = MaterialTheme.colorScheme.onSurfaceVariant,
-                    modifier = Modifier.align(Alignment.End).padding(top = 8.dp, end = 12.dp),
-                )
-            }
-        }
+        Text(
+            stringResource(Res.string.satellites_no_data),
+            style = MaterialTheme.typography.bodySmall,
+            modifier = Modifier.padding(12.dp),
+        )
     }
 }
-
-/**
- * Buckets a wait into a phrase, avoiding both a live countdown and plural grammar.
- *
- * The bands line up with the two things that actually cause a wait: CelesTrak's two-hour minimum
- * query interval, and the circuit breaker's 24 h / 48 h / 7 day ladder.
- */
-private fun retryWaitText(wait: Duration): StringResource =
-    when {
-        wait <= 5.minutes -> Res.string.satellites_retry_soon
-        wait <= 90.minutes -> Res.string.satellites_retry_within_hour
-        wait <= 20.hours -> Res.string.satellites_retry_hours
-        wait <= 36.hours -> Res.string.satellites_retry_tomorrow
-        else -> Res.string.satellites_retry_days
-    }
 
 /** Landscape right inset that clears the action column: 8 dp edge + 48 dp button + 8 dp gap. */
 private val ACTION_COLUMN_CLEARANCE: Dp = 64.dp

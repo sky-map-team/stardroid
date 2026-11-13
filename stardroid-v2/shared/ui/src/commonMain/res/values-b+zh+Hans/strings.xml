@@ -69,12 +69,6 @@
     <string name="layer_param_radec_grid_density_medium_desc" translation_description="Explains the medium celestial grid density: a meridian every 2 hours of right ascension and a circle every 15 degrees of declination.">经线每 2 小时，纬线每 15°</string>
     <string name="layer_param_radec_grid_density_fine_desc" translation_description="Explains the fine celestial grid density: a meridian every hour of right ascension and a circle every 10 degrees of declination.">经线每小时，纬线每 10°</string>
     <string name="satellites_no_data" translation_description="Explanation shown when satellite orbital data has not been downloaded yet and so no satellites can be drawn.">卫星位置需要互联网连接才能更新。</string>
-    <string name="satellites_refresh" translation_description="Button that tries to download satellite orbital data now.">刷新</string>
-    <string name="satellites_retry_soon" translation_description="Shown instead of a Refresh button when satellite data was just requested and cannot be requested again for a few minutes.">请几分钟后重试</string>
-    <string name="satellites_retry_within_hour" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again for up to an hour.">请一小时内重试</string>
-    <string name="satellites_retry_hours" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again for several hours.">请几小时后重试</string>
-    <string name="satellites_retry_tomorrow" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again until the next day.">明天再试</string>
-    <string name="satellites_retry_days" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again for several days.">几天后重试</string>
     <string name="layer_grid" translation_description="Toggle label for the layer showing the right ascension / declination grid.">天球网格</string>
     <string name="layer_horizon">水平线</string>
     <string name="layer_ecliptic">黄道</string>
