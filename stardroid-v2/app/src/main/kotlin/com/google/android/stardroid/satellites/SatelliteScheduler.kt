@@ -177,7 +177,7 @@ object SatelliteScheduler {
  * widget with passes), or pass alerts or the tonight digest. A notification that can't be posted
  * needs no data.
  */
-fun satelliteBackgroundUse(
+internal fun satelliteBackgroundUse(
     passAlertsOn: Boolean,
     digestOn: Boolean,
     notificationsFlagOn: Boolean,

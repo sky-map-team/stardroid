@@ -67,4 +67,10 @@ class SatelliteBackgroundUseTest {
         assertThat(use(passAlertsOn = true, notificationsAllowed = false)).isFalse()
         assertThat(use(digestOn = true, notificationsAllowed = false)).isFalse()
     }
+
+    @Test
+    fun `alerts and the digest together still need notifications allowed by the OS`() {
+        assertThat(use(passAlertsOn = true, digestOn = true, notificationsAllowed = false))
+            .isFalse()
+    }
 }
