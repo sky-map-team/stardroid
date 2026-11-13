@@ -42,10 +42,7 @@ fun refreshSatellitesInBackground(
     flags: FlagSource,
     onDone: (completed: Boolean, scheduleNext: Boolean) -> Unit,
 ): SatelliteBackgroundRefresh {
-    val graph = sharedAppGraph(analytics, flags)
-    var scheduleNext = false
-    val job = graph.startBackgroundRefresh { scheduleNext = it }
-    job.invokeOnCompletion { onDone(it == null, scheduleNext) }
+    val job = sharedAppGraph(analytics, flags).startBackgroundRefresh(onDone)
     return SatelliteBackgroundRefresh(job)
 }
 

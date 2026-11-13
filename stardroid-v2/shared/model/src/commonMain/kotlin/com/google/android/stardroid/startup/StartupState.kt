@@ -64,5 +64,6 @@ interface StartupState {
      */
     val lastForegroundAt: Flow<Instant?>
 
+    /** Best effort: a write that fails is dropped rather than thrown. */
     suspend fun setLastForegroundAt(at: Instant)
 }

@@ -65,10 +65,8 @@ class SkyMapApplication : Application(), ImageLoaderFactory {
         // TIME_SET/DATE_CHANGED to dead apps at all, so a clock change made while the
         // process was down lands here (and the periodic jobs bound staleness meanwhile).
         WidgetScheduler.refreshIfPlaced(this)
-        // Satellite fetching: this process may have been started by a reboot, a clock change,
-        // a widget update or another job, with nobody looking. 2.3.0 scheduled the download
-        // from here and so fetched for installs nobody used (#1269), so this only cancels when a
-        // gate closes. MainActivity is what schedules (#1272).
+        // Satellite downloads: this start may be a reboot or a widget update, so only cancel here.
+        // MainActivity schedules (#1272).
         CoroutineScope(SupervisorJob() + Dispatchers.Default).launch {
             SatelliteScheduler.followInAnyProcess(this@SkyMapApplication)
         }

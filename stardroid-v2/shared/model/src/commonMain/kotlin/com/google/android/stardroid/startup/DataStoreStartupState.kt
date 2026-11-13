@@ -93,7 +93,11 @@ class DataStoreStartupState(
             .distinctUntilChanged()
 
     override suspend fun setLastForegroundAt(at: Instant) {
-        dataStore.edit { it[LAST_FOREGROUND_MILLIS] = at.toEpochMilliseconds() }
+        try {
+            dataStore.edit { it[LAST_FOREGROUND_MILLIS] = at.toEpochMilliseconds() }
+        } catch (e: IOException) {
+            // Called on every foreground: a full disk must cost one visit's stamp, not a crash.
+        }
     }
 
     /** The preferences stream with the standard unreadable-file fallback. */

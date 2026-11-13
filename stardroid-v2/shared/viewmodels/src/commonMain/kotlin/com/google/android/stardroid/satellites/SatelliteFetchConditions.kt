@@ -23,10 +23,8 @@ import kotlin.time.Duration
 import kotlin.time.Duration.Companion.days
 
 /**
- * Everything that must hold before Sky Map downloads satellite data, on either platform.
- *
- * 2.3.0 downloaded for every install, used or not, and overloaded CelesTrak (#1269). Each gate
- * here cuts that population down to people who actually use the feature (#1272).
+ * Everything that must hold before Sky Map downloads satellite data, on either platform. See "Who
+ * downloads" in satellite-tracking.md (#1272).
  */
 data class SatelliteFetchConditions(
     val featureEnabled: Boolean,
@@ -58,7 +56,10 @@ data class SatelliteFetchConditions(
     }
 }
 
-/** The conditions as they stand, re-emitted whenever one of the stored inputs changes. */
+/**
+ * The conditions as they stand. Re-emitted when a stored input changes; [backgroundUse] is only as
+ * live as the flow the caller passes.
+ */
 fun satelliteFetchConditions(
     experiments: ExperimentConfig,
     settings: Settings,
@@ -74,7 +75,6 @@ fun satelliteFetchConditions(
         backgroundUse,
     ) { consented, layerOn, needsEula, lastForeground, background ->
         SatelliteFetchConditions(
-            // Read on every emission rather than once, as the flag check always has been.
             featureEnabled = experiments.isEnabled(Experiment.SATELLITES),
             dataConsented = consented,
             layerEnabled = layerOn,

@@ -24,6 +24,7 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.map
 import kotlinx.datetime.Clock
+import kotlinx.datetime.Instant
 import java.util.concurrent.TimeUnit
 import kotlin.random.Random
 
@@ -35,17 +36,20 @@ enum class SatelliteScheduleAction {
 }
 
 /**
- * Only a session the user sees may start the schedule (#1272). 2.3.0 scheduled on any process
- * start, so a reboot or a clock change kept unused installs fetching. A background-only start may
- * still cancel, and otherwise leaves whatever schedule exists alone.
+ * Only a session the user sees schedules; any other process start may only cancel (#1272).
+ *
+ * A background start ignores recent use: a cold start may be about to show the map, and a cancel
+ * computed from the previous visit could land after `MainActivity` schedules. The worker cancels
+ * once use lapses. See "Who downloads" in satellite-tracking.md.
  */
 fun satelliteScheduleAction(
-    allowed: Boolean,
+    conditions: SatelliteFetchConditions,
+    now: Instant,
     userVisible: Boolean,
 ): SatelliteScheduleAction =
     when {
-        !allowed -> SatelliteScheduleAction.CANCEL
-        userVisible -> SatelliteScheduleAction.SCHEDULE
+        userVisible && conditions.allowFetch(now) -> SatelliteScheduleAction.SCHEDULE
+        userVisible || !conditions.switchedOn -> SatelliteScheduleAction.CANCEL
         else -> SatelliteScheduleAction.LEAVE
     }
 
@@ -63,8 +67,8 @@ fun satelliteScheduleAction(
  *    window is a real herd source. Five minutes spreads that without leaving a new user staring at
  *    an empty layer for an hour; the delay also fixes the device's phase for the 12-hour period.
  *  - **Scheduled only for people using the feature**, and only from a session they can see: see
- *    [SatelliteFetchConditions] and [satelliteScheduleAction]. Cancelled as soon as any gate
- *    closes, so turning satellites off stops requests immediately.
+ *    [SatelliteFetchConditions] and [satelliteScheduleAction]. Cancelled as soon as a setting
+ *    turns off, and by the worker once use lapses.
  *
  * **Nothing here fetches on app open**, and nothing should. That is the most important of the
  * three herd defences: app opens are strongly diurnally correlated across a timezone, so opening
@@ -113,16 +117,10 @@ object SatelliteScheduler {
         WorkManager.getInstance(context).cancelUniqueWork(WORK_NAME)
     }
 
-    /** For while the map is visible: schedules or cancels as the conditions change. */
+    /** While the map is visible. */
     suspend fun followInVisibleSession(context: Context) = follow(context, userVisible = true)
 
-    /**
-     * For every process start, including boot and widget updates: may cancel, never schedules.
-     *
-     * Only the flag and the user's choices count here. A cold start may be about to show the map,
-     * and a cancel computed from the visit before this one could land after `MainActivity`
-     * schedules. The worker cancels once use lapses, without fetching.
-     */
+    /** On every process start, including boot and widget updates: never schedules. */
     suspend fun followInAnyProcess(context: Context) = follow(context, userVisible = false)
 
     private suspend fun follow(
@@ -130,13 +128,7 @@ object SatelliteScheduler {
         userVisible: Boolean,
     ) {
         conditions(context).distinctUntilChanged().collect { conditions ->
-            val allowed =
-                if (userVisible) {
-                    conditions.allowFetch(Clock.System.now())
-                } else {
-                    conditions.switchedOn
-                }
-            when (satelliteScheduleAction(allowed, userVisible)) {
+            when (satelliteScheduleAction(conditions, Clock.System.now(), userVisible)) {
                 SatelliteScheduleAction.SCHEDULE -> ensureScheduled(context)
                 SatelliteScheduleAction.CANCEL -> cancel(context)
                 SatelliteScheduleAction.LEAVE -> Unit
@@ -144,7 +136,11 @@ object SatelliteScheduler {
         }
     }
 
-    /** The gates as this install stands; the worker re-reads them on every run. */
+    /**
+     * The gates as this install stands. Widget placement and notification permission are read
+     * only when pass alerts change, so a long-lived collector can miss them; the worker reads
+     * fresh ones on every run.
+     */
     fun conditions(context: Context): Flow<SatelliteFetchConditions> {
         val entryPoint = satelliteEntryPoint(context)
         val experiments = entryPoint.experimentConfig()

@@ -600,9 +600,8 @@ class MainActivity : ComponentActivity() {
             }
         }
 
-        // The one place satellite downloads are scheduled (#1272): a session the user sees, not
-        // a background process start. Recording the visit first means the 14-day window the
-        // gates check already includes this one.
+        // Satellite downloads are scheduled only here (#1272). Recording the visit first means
+        // the 14-day window the gates check already includes this one.
         lifecycleScope.launch {
             repeatOnLifecycle(Lifecycle.State.STARTED) {
                 startupState.setLastForegroundAt(Clock.System.now())

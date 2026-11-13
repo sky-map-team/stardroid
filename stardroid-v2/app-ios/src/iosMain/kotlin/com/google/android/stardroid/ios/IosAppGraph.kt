@@ -297,13 +297,21 @@ class IosAppGraph(
     /**
      * The system's background refresh slot ([SatelliteBackgroundRefresh]): the same gates and
      * policy as the foreground fetch, minus the staleness test, since the system picks the time.
-     * [onGates] hears whether the gates were open, which is whether to ask for the next slot.
+     * [onDone] runs however the job ends; `scheduleNext` is whether the gates were open.
      */
-    internal fun startBackgroundRefresh(onGates: (Boolean) -> Unit): Job =
+    internal fun startBackgroundRefresh(
+        onDone: (completed: Boolean, scheduleNext: Boolean) -> Unit,
+    ): Job =
         scope.launch {
-            val open = satelliteRefreshWanted()
-            onGates(open)
-            if (open) withContext(Dispatchers.IO) { satellites.refreshNow() }
+            var open = false
+            var completed = false
+            try {
+                open = satelliteRefreshWanted()
+                if (open) withContext(Dispatchers.IO) { satellites.refreshNow() }
+                completed = true
+            } finally {
+                onDone(completed, open)
+            }
         }
 
     /** Tells [onResult] whether a background refresh would download anything now. */

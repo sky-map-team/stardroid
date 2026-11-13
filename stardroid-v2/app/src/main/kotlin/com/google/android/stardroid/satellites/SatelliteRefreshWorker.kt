@@ -89,8 +89,8 @@ class SatelliteRefreshWorker(
             }
             val conditions = SatelliteScheduler.conditions(applicationContext).first()
             if (!conditions.allowFetch(Clock.System.now())) {
-                // Nobody is using the feature here any more (#1272), so stop waking every 12
-                // hours. Only a session the user sees can schedule it again.
+                // Stop waking every 12 hours; only a session the user sees reschedules (#1272).
+                // This cancels the current run too, so the result below is ignored.
                 SatelliteScheduler.cancel(applicationContext)
                 return@withContext Result.success()
             }
