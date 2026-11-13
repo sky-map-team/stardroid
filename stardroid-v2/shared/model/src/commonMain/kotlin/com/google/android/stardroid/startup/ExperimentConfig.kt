@@ -9,6 +9,8 @@
 
 package com.google.android.stardroid.startup
 
+import kotlin.time.Duration
+
 /** Feature-flag experiments, keyed as v1's Remote Config parameters. */
 enum class Experiment(val key: String) {
     /** Shower-peak and tonight-digest notifications and their settings section (D77). */
@@ -85,6 +87,13 @@ fun interface ExperimentConfig {
      * testing aid for Diagnostics. Only meaningful when [canFetch] is true.
      */
     suspend fun fetchNow(): FetchResult = FetchResult.Unsupported
+
+    /**
+     * Waits up to [timeout] for a fresh fetch-and-activate, so a gate about to cause network
+     * traffic reads a current value. Returns false if the values may be stale (the fetch failed
+     * or timed out). Configs with no server are always current.
+     */
+    suspend fun awaitFresh(timeout: Duration): Boolean = true
 
     companion object {
         /** The shipped defaults, kept in sync with `remote_config_defaults.xml`. */

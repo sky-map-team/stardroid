@@ -13,7 +13,9 @@ import android.util.Log
 import com.google.android.stardroid.R
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig
 import kotlinx.coroutines.suspendCancellableCoroutine
+import kotlinx.coroutines.withTimeoutOrNull
 import kotlin.coroutines.resume
+import kotlin.time.Duration
 
 /**
  * [ExperimentConfig] over Firebase Remote Config — v1's gms `ExperimentConfigImpl`.
@@ -62,10 +64,21 @@ class RemoteConfigExperimentConfig : ExperimentConfig {
         }
 
     /** `fetch(0)` bypasses the 12-hour client throttle; the server may still throttle. */
-    override suspend fun fetchNow(): FetchResult =
+    override suspend fun fetchNow(): FetchResult = fetchAndActivate(minimumIntervalSeconds = 0)
+
+    /**
+     * A 15-minute floor, not 0: the gate runs at most about every 12 hours, so this is a handful
+     * of fetches a day per install, and it skips the fetch the process just made at start-up.
+     */
+    override suspend fun awaitFresh(timeout: Duration): Boolean =
+        withTimeoutOrNull(timeout) {
+            fetchAndActivate(minimumIntervalSeconds = FRESH_MIN_INTERVAL_SECONDS)
+        } is FetchResult.Success
+
+    private suspend fun fetchAndActivate(minimumIntervalSeconds: Long): FetchResult =
         suspendCancellableCoroutine { continuation ->
             remoteConfig
-                .fetch(0)
+                .fetch(minimumIntervalSeconds)
                 .onSuccessTask { remoteConfig.activate() }
                 .addOnCompleteListener { task ->
                     val result =
@@ -80,5 +93,6 @@ class RemoteConfigExperimentConfig : ExperimentConfig {
 
     private companion object {
         const val TAG = "RemoteConfigExperiment"
+        const val FRESH_MIN_INTERVAL_SECONDS = 15 * 60L
     }
 }
