@@ -18,6 +18,7 @@ import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.cancelAndJoin
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.test.runTest
+import kotlinx.datetime.Instant
 import okio.FileSystem
 import okio.Path.Companion.toPath
 import kotlin.random.Random
@@ -74,6 +75,18 @@ class DataStoreSettingsTest {
 
             assertThat(startup.eulaAcceptedVersion.first()).isEqualTo(3)
             assertThat(settings.nightMode.first()).isTrue()
+        }
+
+    @Test
+    fun lastForegroundIsUnsetUntilRecorded() =
+        runTest {
+            val startup =
+                DataStoreStartupState(settingsDataStore(path, CoroutineScope(Dispatchers.IO)))
+            assertThat(startup.lastForegroundAt.first()).isNull()
+
+            val at = Instant.fromEpochMilliseconds(1_794_000_000_000)
+            startup.setLastForegroundAt(at)
+            assertThat(startup.lastForegroundAt.first()).isEqualTo(at)
         }
 
     @Test

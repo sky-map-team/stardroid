@@ -33,16 +33,24 @@ class SatelliteBackgroundRefresh internal constructor(
 
 /**
  * The body of the `BGAppRefreshTask` (Swift schedules it), run on the main thread once the flags
- * are readable. [onDone] gets true if the work ran to the end without being cancelled, and may
- * be called on any thread.
+ * are readable. [onDone] gets whether the work ran to the end without being cancelled, and
+ * whether to ask for the next slot: only while the download gates are open (#1272), so the chain
+ * ends for an install nobody opens. It may be called on any thread.
  */
 fun refreshSatellitesInBackground(
     analytics: Analytics,
     flags: FlagSource,
-    onDone: (completed: Boolean) -> Unit,
+    onDone: (completed: Boolean, scheduleNext: Boolean) -> Unit,
 ): SatelliteBackgroundRefresh {
-    val graph = sharedAppGraph(analytics, flags)
-    val job = graph.startBackgroundRefresh()
-    job.invokeOnCompletion { onDone(it == null) }
+    val job = sharedAppGraph(analytics, flags).startBackgroundRefresh(onDone)
     return SatelliteBackgroundRefresh(job)
+}
+
+/**
+ * Whether satellites may refresh in the background, asked on leaving the foreground so Swift
+ * schedules only then (#1278 finding 5). [onResult] runs on the main thread, and never if the app
+ * has not built its graph yet, as when it is left before the flags were read.
+ */
+fun mayRefreshSatellites(onResult: (may: Boolean) -> Unit) {
+    sharedGraph?.checkMayRefreshSatellites(onResult)
 }

@@ -40,7 +40,7 @@ struct SkyMapApp: App {
             }
             .ignoresSafeArea()
             .onChange(of: scenePhase) { phase in
-                if phase == .background { SatelliteRefreshTask.schedule() }
+                if phase == .background { SatelliteRefreshTask.scheduleIfAllowed() }
             }
         }
     }

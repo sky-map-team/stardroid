@@ -17,8 +17,6 @@ import com.google.android.stardroid.analytics.Analytics
 import com.google.android.stardroid.data.satellites.FetchOutcome
 import com.google.android.stardroid.data.satellites.RefreshResult
 import com.google.android.stardroid.data.satellites.SatelliteFetchPolicy
-import com.google.android.stardroid.layers.LayerRegistry
-import com.google.android.stardroid.layers.SatelliteLayer
 import com.google.android.stardroid.startup.Experiment
 import com.google.android.stardroid.startup.ExperimentConfig
 import kotlinx.coroutines.Dispatchers
@@ -39,6 +37,9 @@ enum class SatelliteWorkAction {
     SUCCEED,
     RETRY,
     FAIL,
+
+    /** Cancel the schedule, then succeed. Only the flag uses it; no fetch outcome may (#1272). */
+    CANCEL,
 }
 
 /**
@@ -103,11 +104,14 @@ internal suspend fun satelliteFlagState(
  * only the Firebase fetch; the CelesTrak download still needs a fresh ON, and keeps its own
  * 2-hour floor and circuit breaker. Never reached after a CelesTrak request, so this can't
  * become a retry loop against CelesTrak.
+ *
+ * OFF cancels the schedule, like a closed local gate, so switching the flag back on resumes
+ * downloads as people open the app rather than in every live job at once (#1272).
  */
 internal fun satelliteFlagWorkAction(state: SatelliteFlagState): SatelliteWorkAction? =
     when (state) {
         SatelliteFlagState.ON -> null
-        SatelliteFlagState.OFF -> SatelliteWorkAction.SUCCEED
+        SatelliteFlagState.OFF -> SatelliteWorkAction.CANCEL
         SatelliteFlagState.UNKNOWN -> SatelliteWorkAction.RETRY
     }
 
@@ -119,8 +123,9 @@ internal fun satelliteFlagWorkAction(state: SatelliteFlagState): SatelliteWorkAc
  * drive requests at CelesTrak is the failure mode the entire circuit breaker exists to prevent,
  * so that mapping should not be inferred from a scattering of `return` statements.
  *
- * What remains here is the surrounding work: re-checking both gates at run time, reporting server
- * refusals as CelesTrak's policy requires, and keeping anything from escaping as an exception.
+ * What remains here is the surrounding work: re-checking the gates at run time (and cancelling the
+ * schedule once they close), reporting server refusals as CelesTrak's policy requires, and keeping
+ * anything from escaping as an exception.
  */
 class SatelliteRefreshWorker(
     context: Context,
@@ -131,19 +136,29 @@ class SatelliteRefreshWorker(
     override suspend fun doWork(): Result =
         withContext(Dispatchers.IO) {
             // The gates are re-checked at run time, not just at schedule time: a Remote Config
-            // flip, a withdrawn consent or the layer being switched off must stop traffic even if
-            // a job is already enqueued.
-            if (!entryPoint.settings().satelliteDataEnabled.first()) {
+            // flip, a withdrawn consent, the layer being switched off or the app going unused must
+            // stop traffic even if a job is already enqueued. The cheap local gates come first,
+            // including the stored flag, so only an install about to download pays for the fresh
+            // flag fetch below.
+            val conditions = SatelliteScheduler.conditions(applicationContext).first()
+            if (!conditions.allowFetch(Clock.System.now())) {
+                // Stop waking every 12 hours; only a session the user sees reschedules (#1272).
+                // This cancels the current run too, so the result below is ignored.
+                SatelliteScheduler.cancel(applicationContext)
                 return@withContext Result.success()
             }
-            val layerOn =
-                LayerRegistry.layerEnabled(entryPoint.settings(), SatelliteLayer.LAYER_ID).first()
-            if (!layerOn) return@withContext Result.success()
-            // Last, so only installs about to download pay for the fetch.
+            // No CelesTrak request without a fresh ON. UNKNOWN retries only the Firebase fetch,
+            // and each retry passes the local gates above again.
             when (satelliteFlagWorkAction(satelliteFlagState(entryPoint.experimentConfig()))) {
                 null -> Unit
                 SatelliteWorkAction.RETRY -> return@withContext Result.retry()
-                else -> return@withContext Result.success()
+                SatelliteWorkAction.CANCEL -> {
+                    SatelliteScheduler.cancel(applicationContext)
+                    return@withContext Result.success()
+                }
+                // Not returned for a flag state; mapped rather than thrown, as below.
+                SatelliteWorkAction.SUCCEED, SatelliteWorkAction.FAIL ->
+                    return@withContext Result.success()
             }
             val repository = entryPoint.satelliteElementsRepository()
             val analytics = entryPoint.analytics()
@@ -188,7 +203,7 @@ class SatelliteRefreshWorker(
             SatelliteWorkAction.RETRY -> Result.retry()
             // Unreachable by construction, and asserted so; mapped rather than thrown because
             // a worker that throws is a worker that stops running.
-            SatelliteWorkAction.FAIL -> Result.success()
+            SatelliteWorkAction.FAIL, SatelliteWorkAction.CANCEL -> Result.success()
         }
     }
 
