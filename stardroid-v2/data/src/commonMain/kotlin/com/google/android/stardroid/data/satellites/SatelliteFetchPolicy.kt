@@ -158,12 +158,7 @@ object SatelliteFetchPolicy {
      */
     const val TIMEOUTS_TO_OPEN = 2
 
-    /**
-     * How long a lone timeout strike is remembered. Several 12-hour periods, so consecutive runs
-     * still count even when Doze or a standby bucket delays one, but short enough that unrelated
-     * timeouts days apart do not add up. An install whose attempts are this far apart is already
-     * below the ladder's first rungs, so forgetting costs CelesTrak little.
-     */
+    /** How long a lone strike lasts: six 12 h periods, so a Doze-delayed run still counts. */
     val TIMEOUT_STRIKE_EXPIRY: Duration = 72.hours
 
     /**

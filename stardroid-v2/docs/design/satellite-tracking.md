@@ -490,19 +490,22 @@ This is the part that protects the install base, and it inverts normal retry ins
   same 24 h → 48 h → 7 days ladder. Once the breaker is climbing, after a refusal or a
   timeout, each further timeout climbs it at once. A success clears the strike. An offline
   attempt neither counts nor clears it, or an install that is both firewalled and often offline
-  would never back off. **A lone strike expires after 72 h** (`lastTimeout`, also persisted):
-  that is six 12 h periods, so two consecutive runs still count even when Doze or a standby
-  bucket delays one, but two flaky evenings days apart do not add up to a day of backoff. An
-  install whose attempts are more than 72 h apart is already below the ladder's first two rungs,
-  so forgetting the strike costs CelesTrak little. The expiry never applies once the breaker is
-  climbing: its own week-long rung puts timeouts more than 72 h apart, and each must still climb
-  it. Why two: a firewall drops every attempt, so the next one (12 h later on
+  would never back off. Why two: a firewall drops every attempt, so the next one (12 h later on
   Android) fails too, while a flaky connection (Android does not re-validate for every request,
   so the flag can lag a network that has just gone bad) almost always recovers by then. The
   cost is one extra dropped connection per outage, not one per rung: over 30 days on Android's
-  12 h job, a firewalled install makes 7 attempts instead of 60. A timeout has no HTTP code, so
-  `lastStatusCode` keeps the last real response, Diagnostics shows the open circuit and its
-  failure count, and no `satellite_fetch_failed` event is sent.
+  12 h job, a firewalled install makes 7 attempts instead of 60.
+
+  **A lone strike expires after 72 h** (`lastTimeout`, also persisted), measured from the
+  timeout itself, so time spent offline still counts towards it. That is six 12 h periods, so
+  two consecutive runs still count when Doze or a standby bucket delays one, while unrelated
+  timeouts days apart do not add up. An install whose attempts are more than 72 h apart is
+  already slower than the ladder's first two rungs, so forgetting the strike costs CelesTrak
+  little. The expiry never applies once the breaker is climbing: its own week-long rung puts
+  timeouts more than 72 h apart, and each must still climb it.
+
+  A timeout has no HTTP code, so `lastStatusCode` keeps the last real response, Diagnostics
+  shows the open circuit and its failure count, and no `satellite_fetch_failed` event is sent.
 - **On any non-200**, increment a failure counter and set `circuitOpenUntil = now + backoff`,
   where backoff runs **24 h → 48 h → 7 days**, capped. Far more conservative than typical retry
   policy, deliberately.
