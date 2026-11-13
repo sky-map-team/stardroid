@@ -89,8 +89,10 @@ class CoreMotionOrientationSource(
     // conflated channel hands the main thread only the newest.
     private val motionQueue = NSOperationQueue().apply { maxConcurrentOperationCount = 1 }
 
+    // An iPod touch fuses accelerometer and gyro into device motion but has no compass, so it
+    // has no heading to align the sky with; it must boot into manual mode.
     override val available: Boolean
-        get() = motionManager.deviceMotionAvailable
+        get() = motionManager.deviceMotionAvailable && motionManager.magnetometerAvailable
 
     // CoreMotion's attitude is already fused and there is no legacy path, so the Gyro setting
     // changes nothing here.
