@@ -16,6 +16,7 @@ import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.io.TempDir
 import java.io.File
 import java.io.IOException
+import java.net.SocketTimeoutException
 import kotlin.time.Duration
 import kotlin.time.Duration.Companion.days
 import kotlin.time.Duration.Companion.hours
@@ -228,6 +229,25 @@ class SatelliteElementsRepositoryTest {
     }
 
     @Test
+    fun `a firewalled CelesTrak opens the circuit on the second timeout, across restarts`() {
+        // The first strike is persisted: the two timeouts are 12 hours apart, and the process
+        // will not live that long.
+        val clock = FakeClock(Instant.parse("2026-08-15T12:00:00Z"))
+        val firewalled = FakeClient(FetchOutcome.ServerUnreachable(SocketTimeoutException()))
+        val first = repository(firewalled, clock).refresh() as RefreshResult.Completed
+        assertThat(first.state.circuitOpenUntil).isNull()
+
+        clock.now += 12.hours
+        val second = repository(firewalled, clock).refresh() as RefreshResult.Completed
+        assertThat(second.state.circuitOpenUntil).isEqualTo(clock.now + 24.hours)
+
+        clock.now += 12.hours
+        assertThat(repository(firewalled, clock).refresh())
+            .isInstanceOf(RefreshResult.Skipped::class.java)
+        assertThat(firewalled.calls).isEqualTo(2)
+    }
+
+    @Test
     fun `a conditional request is sent once a Last-Modified is known`() {
         val clock = FakeClock(Instant.parse("2026-08-15T12:00:00Z"))
         val client = FakeClient(FetchOutcome.Success(issElements, "Sat, 15 Aug 2026 02:00:00 GMT"))
@@ -296,6 +316,8 @@ class SatelliteElementsRepositoryTest {
         val state =
             SatelliteFetchState(
                 consecutiveFailures = 2,
+                consecutiveTimeouts = 3,
+                lastTimeout = Instant.parse("2026-08-15T11:00:00Z"),
                 circuitOpenUntil = Instant.parse("2026-08-17T12:00:00Z"),
                 lastAttempt = Instant.parse("2026-08-15T12:00:00Z"),
                 lastSuccess = Instant.parse("2026-08-14T12:00:00Z"),
@@ -397,6 +419,7 @@ class SatelliteElementsRepositoryTest {
         // otherwise escape into the worker.
         val client =
             HttpUrlConnectionCelesTrakClient(
+                validatedNetwork = { null },
                 openConnection = { throw SecurityException("Permission denied: missing INTERNET") },
             )
         val outcome = client.fetch(SatelliteGroup.STATIONS, ifModifiedSince = null)

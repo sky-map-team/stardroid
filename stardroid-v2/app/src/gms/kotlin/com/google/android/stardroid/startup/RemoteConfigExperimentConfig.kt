@@ -62,10 +62,27 @@ class RemoteConfigExperimentConfig : ExperimentConfig {
         }
 
     /** `fetch(0)` bypasses the 12-hour client throttle; the server may still throttle. */
-    override suspend fun fetchNow(): FetchResult =
+    override suspend fun fetchNow(): FetchResult = fetchAndActivate(minimumIntervalSeconds = 0)
+
+    /**
+     * A 15-minute floor, not 0: it skips the fetch the process just made at start-up. Only a
+     * successful fetch counts as fresh. A throttled or failed one (including
+     * `FirebaseRemoteConfigFetchThrottledException`) leaves the last-fetch time alone, so the
+     * floor never blocks a retry and a throttled cached value is never read as fresh.
+     */
+    override suspend fun awaitFresh(): Boolean =
+        when (val result = fetchAndActivate(minimumIntervalSeconds = FRESH_MIN_INTERVAL_SECONDS)) {
+            is FetchResult.Success -> true
+            else -> {
+                Log.w(TAG, "Fresh Remote Config fetch failed: $result")
+                false
+            }
+        }
+
+    private suspend fun fetchAndActivate(minimumIntervalSeconds: Long): FetchResult =
         suspendCancellableCoroutine { continuation ->
             remoteConfig
-                .fetch(0)
+                .fetch(minimumIntervalSeconds)
                 .onSuccessTask { remoteConfig.activate() }
                 .addOnCompleteListener { task ->
                     val result =
@@ -80,5 +97,6 @@ class RemoteConfigExperimentConfig : ExperimentConfig {
 
     private companion object {
         const val TAG = "RemoteConfigExperiment"
+        const val FRESH_MIN_INTERVAL_SECONDS = 15 * 60L
     }
 }
