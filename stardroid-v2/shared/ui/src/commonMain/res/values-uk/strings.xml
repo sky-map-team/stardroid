@@ -69,12 +69,6 @@
     <string name="layer_param_radec_grid_density_medium_desc" translation_description="Explains the medium celestial grid density: a meridian every 2 hours of right ascension and a circle every 15 degrees of declination.">Меридіани кожні 2 години, кола кожні 15°</string>
     <string name="layer_param_radec_grid_density_fine_desc" translation_description="Explains the fine celestial grid density: a meridian every hour of right ascension and a circle every 10 degrees of declination.">Меридіани щогодини, кола кожні 10°</string>
     <string name="satellites_no_data" translation_description="Explanation shown when satellite orbital data has not been downloaded yet and so no satellites can be drawn.">Для оновлення положення супутників потрібне підключення до інтернету.</string>
-    <string name="satellites_refresh" translation_description="Button that tries to download satellite orbital data now.">Оновити</string>
-    <string name="satellites_retry_soon" translation_description="Shown instead of a Refresh button when satellite data was just requested and cannot be requested again for a few minutes.">Повторіть спробу за кілька хвилин</string>
-    <string name="satellites_retry_within_hour" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again for up to an hour.">Повторіть спробу протягом години</string>
-    <string name="satellites_retry_hours" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again for several hours.">Спробуйте за кілька годин</string>
-    <string name="satellites_retry_tomorrow" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again until the next day.">Спробуйте завтра</string>
-    <string name="satellites_retry_days" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again for several days.">Спробуйте за кілька днів</string>
     <string name="layer_grid" translation_description="Toggle label for the layer showing the right ascension / declination grid.">Небесна сітка</string>
     <string name="layer_horizon">Горизонт</string>
     <string name="layer_ecliptic">Екліптика</string>

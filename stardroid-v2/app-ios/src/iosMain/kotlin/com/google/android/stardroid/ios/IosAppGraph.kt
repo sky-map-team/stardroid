@@ -374,7 +374,6 @@ class IosAppGraph(
                 } else {
                     flowOf(null)
                 },
-            onRefreshSatellites = { withContext(Dispatchers.IO) { satellites.refreshNow() } },
             analytics = analytics,
         )
 
