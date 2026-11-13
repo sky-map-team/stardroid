@@ -33,13 +33,13 @@ import com.google.android.stardroid.astronomy.LunarEclipseCircumstances
 import com.google.android.stardroid.astronomy.LunarEclipseType
 import com.google.android.stardroid.astronomy.MeeusEphemeris
 import com.google.android.stardroid.astronomy.nextLunarEclipse
-import com.google.android.stardroid.events.moonAboveHorizonBetween
 import com.google.android.stardroid.layers.LayerParameter
 import com.google.android.stardroid.layers.SolarSystemLayer
-import com.google.android.stardroid.math.LatLong
 import com.google.android.stardroid.notifications.SkyNotification
 import com.google.android.stardroid.notifications.SkyNotifier
+import com.google.android.stardroid.notifications.notificationText
 import com.google.android.stardroid.startup.Experiment
+import com.google.android.stardroid.surfaces.NotificationPlanner
 import com.google.android.stardroid.ui.MainActivity
 import com.google.android.stardroid.widget.MoonWidget
 import com.google.android.stardroid.widget.widgetEntryPoint
@@ -53,11 +53,8 @@ import kotlinx.datetime.atTime
 import kotlinx.datetime.plus
 import kotlinx.datetime.toInstant
 import kotlinx.datetime.toLocalDateTime
-import java.text.DateFormat
-import java.util.Date
 import java.util.concurrent.TimeUnit
 import kotlin.time.Duration.Companion.hours
-import kotlin.time.Duration.Companion.minutes
 
 /**
  * The lunar-eclipse reminder (D106): a daily planner/one-time-poster pair over WorkManager,
@@ -74,9 +71,6 @@ object EclipseAlertScheduler {
     private const val PLAN_ONCE_WORK = "eclipse_alert_plan_once"
     private const val POST_WORK = "eclipse_alert_post"
     internal const val TAG = "EclipseAlerts"
-
-    /** How far ahead of the eclipse's visible start to notify. */
-    internal val LEAD_TIME = 30.minutes
 
     /**
      * How far ahead the planner is willing to arm the poster. Comfortably wider than the
@@ -136,9 +130,8 @@ object EclipseAlertScheduler {
         )
     }
 
-    /** [circumstances]' visible start: the umbral contact for a partial/total eclipse, else P1. */
     internal fun alertTime(circumstances: LunarEclipseCircumstances): Instant =
-        circumstances.umbralBegin ?: circumstances.penumbralBegin ?: circumstances.greatestEclipse
+        NotificationPlanner.eclipseAlertPoint(circumstances)
 }
 
 /**
@@ -174,27 +167,22 @@ class EclipseAlertPlannerWorker(
         if (!wanted) return Result.success()
 
         val now = Clock.System.now()
-        val eclipse = nextLunarEclipse(now, MeeusEphemeris) ?: return Result.success()
-        val endsAt = eclipse.penumbralEnd ?: eclipse.greatestEclipse
-        if (now >= endsAt) return Result.success()
-
-        val location = settings.savedLocation.first()
-        if (location != null && !visibleFrom(eclipse, location)) {
-            Log.i(EclipseAlertScheduler.TAG, "Next eclipse not visible from saved location")
+        val planned =
+            NotificationPlanner.planEclipseAlert(
+                now,
+                nextLunarEclipse(now, MeeusEphemeris),
+                settings.savedLocation.first(),
+                EclipseAlertScheduler.PLAN_HORIZON,
+            )
+        if (planned == null) {
+            Log.i(EclipseAlertScheduler.TAG, "No eclipse alert to arm yet")
             return Result.success()
         }
-
-        // Never earlier than now: an eclipse already under way when the planner runs still gets
-        // an (immediate) alert rather than none, as long as it hasn't fully ended (checked above).
-        val fireAt =
-            maxOf(EclipseAlertScheduler.alertTime(eclipse) - EclipseAlertScheduler.LEAD_TIME, now)
-        if (fireAt - now > EclipseAlertScheduler.PLAN_HORIZON) {
-            Log.i(EclipseAlertScheduler.TAG, "Next eclipse too far out to arm yet ($fireAt)")
-            return Result.success()
-        }
-        val postAt = maxOf(fireAt, now + 1.minutes)
-        Log.i(EclipseAlertScheduler.TAG, "Arming eclipse alert for $postAt")
-        EclipseAlertScheduler.armPoster(applicationContext, (postAt - now).inWholeMilliseconds)
+        Log.i(EclipseAlertScheduler.TAG, "Arming eclipse alert for ${planned.fireAt}")
+        EclipseAlertScheduler.armPoster(
+            applicationContext,
+            (planned.fireAt - now).inWholeMilliseconds,
+        )
         return Result.success()
     }
 }
@@ -235,15 +223,6 @@ class EclipseAlertPosterWorker(
     }
 }
 
-private fun visibleFrom(
-    circumstances: LunarEclipseCircumstances,
-    location: LatLong,
-): Boolean {
-    val start = circumstances.penumbralBegin ?: circumstances.greatestEclipse
-    val end = circumstances.penumbralEnd ?: circumstances.greatestEclipse
-    return moonAboveHorizonBetween(start, end, location)
-}
-
 /** The lunar-eclipse notification, on its own channel (D106). */
 object EclipseNotifier {
     const val CHANNEL_ECLIPSES = "lunar_eclipses"
@@ -264,18 +243,9 @@ object EclipseNotifier {
     ) {
         if (!SkyNotifier.canPost(context, CHANNEL_ECLIPSES)) return
         ensureChannel(context)
-        val typeRes =
-            when (circumstances.type) {
-                LunarEclipseType.TOTAL -> R.string.tonight_lunar_eclipse_total
-                LunarEclipseType.PARTIAL -> R.string.tonight_lunar_eclipse_partial
-                LunarEclipseType.PENUMBRAL -> R.string.tonight_lunar_eclipse_penumbral
-                // nextLunarEclipse never returns a NONE-type result; nothing to post for one.
-                LunarEclipseType.NONE -> return
-            }
-        val time =
-            DateFormat
-                .getTimeInstance(DateFormat.SHORT)
-                .format(Date(circumstances.greatestEclipse.toEpochMilliseconds()))
+        // nextLunarEclipse never returns a NONE-type result; nothing to post for one.
+        if (circumstances.type == LunarEclipseType.NONE) return
+        val words = notificationText(context)
         val contentIntent =
             Intent(context, MainActivity::class.java).apply {
                 putExtra(MoonWidget.EXTRA_SHOW_OBJECT_ID, MoonWidget.MOON_OBJECT_ID)
@@ -285,9 +255,8 @@ object EclipseNotifier {
                 .Builder(context, CHANNEL_ECLIPSES)
                 .setSmallIcon(R.drawable.ic_stat_skymap)
                 .setColor(0xFFFFC107.toInt())
-                .setContentTitle(
-                    context.getString(R.string.notif_eclipse_title, context.getString(typeRes)),
-                ).setContentText(context.getString(R.string.notif_eclipse_text, time))
+                .setContentTitle(words.eclipseTitle(circumstances))
+                .setContentText(words.eclipseBody(circumstances))
                 .setAutoCancel(true)
                 .setContentIntent(
                     PendingIntent.getActivity(

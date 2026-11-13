@@ -10,7 +10,8 @@
 import BackgroundTasks
 import SkyMapKit
 
-/// Best-effort background refresh of the satellite element sets. The system picks when (often
+/// Best-effort background refresh of the satellite element sets, after which it also plans the
+/// next nights' notifications. The system picks when (often
 /// rarely, for a little-used app), so the foreground fetch on app open stays the dependable path;
 /// this one just keeps data fresh for people who open the app only briefly.
 enum SatelliteRefreshTask {
@@ -20,13 +21,16 @@ enum SatelliteRefreshTask {
     private static let jitter: TimeInterval = 60 * 60
 
     /// Must run before the app finishes launching.
-    static func register(analytics: SkyMapKit.Analytics, flags: FirebaseRemoteConfigAdapter) {
+    static func register(
+        analytics: SkyMapKit.Analytics, flags: FirebaseRemoteConfigAdapter,
+        notificationCenter: LocalNotificationCenter
+    ) {
         BGTaskScheduler.shared.register(forTaskWithIdentifier: identifier, using: .main) { task in
             schedule()
             // The stored flags must be readable before the shared graph freezes them.
             flags.prepare {
                 let work = SatelliteBackgroundRefreshKt.refreshSatellitesInBackground(
-                    analytics: analytics, flags: flags
+                    analytics: analytics, flags: flags, notificationCenter: notificationCenter
                 ) { completed in
                     task.setTaskCompleted(success: completed.boolValue)
                 }

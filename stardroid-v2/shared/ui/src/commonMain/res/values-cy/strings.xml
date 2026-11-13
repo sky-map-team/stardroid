@@ -628,4 +628,39 @@ cael ei osod.
     </string>
     <string name="satellite_search_name_iss" translation_description="Common name of the International Space Station, matched when the user types it in search. Use the name people in this language actually type.">Gorsaf Awyr Rhyngwladol</string>
     <string name="satellite_search_name_tiangong" translation_description="Common name of the Chinese Tiangong space station, matched when the user types it in search. Use the name people in this language actually type.">Gorsaf Awyr Tiangong</string>
+    <string name="notif_shower_title" translation_description="Title of the meteor-shower notification; %1$s is the shower name">uchafbwynt %1$s heno</string>
+    <string name="notif_shower_direction" translation_description="Notification sentence telling the user where to look; %1$s is a compass point like NE">Gorau ar ôl hanner nos, yn edrych tua %1$s.</string>
+    <string name="notif_shower_dark_moon" translation_description="Notification sentence when the moon is dark during a meteor shower peak; %1$d is the expected meteors per hour">
+    Awyr dywyll, ddi-leuad — disgwyliwch hyd at %1$d o feteorau yr awr i ffwrdd o olau\u0027r ddinas.
+    </string>
+    <string name="notif_shower_bright_moon" translation_description="Notification sentence when a bright moon will interfere with a meteor shower; %1$d is the moon illumination percentage, %2$d the meteors per hour under ideal skies">
+    Bydd y lleuad sydd wedi\u0027i goleuo %1$d%% yn golchi allan y meteoriaid gwanach — hyd at %2$d yr awr o dan awyr ddelfrydol.
+    </string>
+    <string name="notif_digest_title" translation_description="Title of the tonight\'s-sky digest notification">Werth edrych heno</string>
+    <string name="tonight_well_placed" translation_description="Tonight-widget row: a planet is high in the sky and easy to observe; %1$s is the planet name, %2$s the time from which it is well placed">%1$s mewn lle da o %2$s</string>
+    <string name="tonight_shower_peak" translation_description="Tonight-widget row: a meteor shower reaches its annual peak tonight; %1$s is the shower name">Brig %1$s heno</string>
+    <string name="tonight_shower_days" translation_description="Tonight-widget row: a meteor shower peaks within a few days; %1$s is the shower name, %2$d the number of days">Brig %1$s mewn %2$d diwrnod</string>
+    <string name="tonight_new_moon" translation_description="Tonight-widget row shown at new moon">Lleuad Newydd — awyr dywyllaf y mis</string>
+    <string name="tonight_full_moon" translation_description="Tonight-widget row shown at full moon">Lleuad Llawn heno</string>
+    <string name="tonight_bright_moon" translation_description="Tonight-widget row warning that a bright moon washes out faint objects">Lleuad llachar yn golchi gwrthrychau gwan allan</string>
+    <string name="moon_widget_set_time" translation_description="Widget fragment showing today\'s moonset time; %1$s is a clock time like 03:12">yn machlud %1$s</string>
+    <string name="sun">Haul</string>
+    <string name="moon">Lleuad</string>
+    <string name="mercury">Mercher</string>
+    <string name="venus">Gwener</string>
+    <string name="earth">Daear</string>
+    <string name="mars">Mawrth</string>
+    <string name="jupiter">Iau</string>
+    <string name="saturn">Sadwrn</string>
+    <string name="uranus">Wranws</string>
+    <string name="neptune">Neifion</string>
+    <string name="pluto">Plwton</string>
+    <!-- tm:omitted name="tonight_satellite_pass" reason="identical_to_source" -->
+    <string name="notif_pass_title" translation_description="Title of the notification sent shortly before a satellite passes overhead. %1$s is the satellite name.">Mae %1$s yn tramwy uwchben yn fuan</string>
+    <string name="notif_pass_text" translation_description="Body of the satellite pass notification, telling the user when to go outside. %1$s is a time.">Gweladwy o tua %1$s — ewch allan a gadewch i\'ch llygaid addasu</string>
+    <string name="notif_eclipse_title" translation_description="Title of the notification sent before a lunar eclipse starts. %1$s is a localized eclipse type like \'Total lunar eclipse\'.">Mae %1$s yn dechrau cyn bo hir</string>
+    <string name="notif_eclipse_text" translation_description="Body of the lunar eclipse notification, telling the user when it begins. %1$s is a time.">Yn dechrau tua %1$s — werth camu allan amdano</string>
+    <string name="satellite_name_iss" translation_description="Display name for the International Space Station.">Yr Orsaf Ofod</string>
+    <!-- tm:omitted name="satellite_name_tiangong" reason="identical_to_source" -->
+    <string name="tonight_trailing_pass_peak" translation_description="Small trailing note on a satellite pass row. %1$d is the peak altitude in degrees, %2$.1f is a brightness magnitude.">Uchafbwynt %1$d°, mag %2$.1f</string>
 </resources>

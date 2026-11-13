@@ -11,18 +11,15 @@ package com.google.android.stardroid.widget
 
 import android.content.Context
 import com.google.android.stardroid.R
-import com.google.android.stardroid.astronomy.LunarEclipseType
 import com.google.android.stardroid.astronomy.LunarPhase
 import com.google.android.stardroid.events.CountdownTarget
-import com.google.android.stardroid.events.DARK_MOON_FRACTION
 import com.google.android.stardroid.events.SkyEvent
-import com.google.android.stardroid.layers.ResourceLayerStrings
+import com.google.android.stardroid.notifications.notificationText
 import com.google.android.stardroid.satellites.SatelliteIds
 import com.google.android.stardroid.ui.map.HudFormats
 import com.google.android.stardroid.ui.search.SolarSystemIds
 import kotlinx.datetime.Instant
 import java.util.Date
-import kotlin.math.roundToInt
 
 /**
  * One rendered highlight: the main sentence, the small trailing note, and the catalog id
@@ -38,94 +35,21 @@ internal data class HighlightLine(
 internal fun highlightLine(
     event: SkyEvent,
     context: Context,
-): HighlightLine =
+): HighlightLine {
+    val words = notificationText(context).highlight(event)
+    return HighlightLine(words.text, words.trailing, targetIdFor(event))
+}
+
+/** The card a row opens when tapped. */
+private fun targetIdFor(event: SkyEvent): String =
     when (event) {
-        is SkyEvent.WellPlacedPlanet ->
-            HighlightLine(
-                context.getString(
-                    R.string.tonight_well_placed,
-                    ResourceLayerStrings(context.resources).bodyName(event.body),
-                    formatTime(context, event.from),
-                ),
-                context.getString(
-                    R.string.tonight_trailing_direction,
-                    cardinal(context, event.azimuthDeg),
-                    event.bestAltitudeDeg.roundToInt(),
-                ),
-                SolarSystemIds.idFor(event.body).value,
-            )
-        is SkyEvent.SatellitePassTonight ->
-            HighlightLine(
-                context.getString(
-                    R.string.tonight_satellite_pass,
-                    event.pass.satelliteName,
-                    formatTime(context, event.pass.start),
-                ),
-                // Direction lives on the satellite card; the row is too narrow for it. The
-                // magnitude is shown to one decimal and no more, because the model is only good
-                // to about half a magnitude (D94).
-                context.getString(
-                    R.string.tonight_trailing_pass_peak,
-                    event.pass.maxAltitudeDeg.roundToInt(),
-                    event.pass.peakMagnitude,
-                ),
-                SatelliteIds.idFor(event.pass.noradId).value,
-            )
-        is SkyEvent.ShowerPeak ->
-            HighlightLine(
-                if (event.daysUntilPeak == 0) {
-                    context.getString(R.string.tonight_shower_peak, event.shower.name)
-                } else {
-                    context.getString(
-                        R.string.tonight_shower_days,
-                        event.shower.name,
-                        event.daysUntilPeak,
-                    )
-                },
-                if (event.moonIllumination < DARK_MOON_FRACTION) {
-                    context.getString(R.string.tonight_dark_skies)
-                } else {
-                    context.getString(
-                        R.string.tonight_trailing_moon,
-                        (event.moonIllumination * 100).roundToInt(),
-                    )
-                },
-                event.shower.id.value,
-            )
-        is SkyEvent.MoonPhaseTonight ->
-            HighlightLine(
-                context.getString(
-                    if (event.phase == LunarPhase.NEW) {
-                        R.string.tonight_new_moon
-                    } else {
-                        R.string.tonight_full_moon
-                    },
-                ),
-                formatTime(context, event.time),
-                MoonWidget.MOON_OBJECT_ID,
-            )
-        is SkyEvent.BrightMoon ->
-            HighlightLine(
-                context.getString(R.string.tonight_bright_moon),
-                event.moonSet?.let {
-                    context.getString(R.string.moon_widget_set_time, formatTime(context, it))
-                } ?: "",
-                MoonWidget.MOON_OBJECT_ID,
-            )
-        is SkyEvent.LunarEclipseUpcoming ->
-            HighlightLine(
-                context.getString(
-                    when (event.circumstances.type) {
-                        LunarEclipseType.TOTAL -> R.string.tonight_lunar_eclipse_total
-                        LunarEclipseType.PARTIAL -> R.string.tonight_lunar_eclipse_partial
-                        LunarEclipseType.PENUMBRAL -> R.string.tonight_lunar_eclipse_penumbral
-                        LunarEclipseType.NONE ->
-                            error("LunarEclipseUpcoming must carry a real eclipse type")
-                    },
-                ),
-                formatTime(context, event.circumstances.greatestEclipse),
-                MoonWidget.MOON_OBJECT_ID,
-            )
+        is SkyEvent.WellPlacedPlanet -> SolarSystemIds.idFor(event.body).value
+        is SkyEvent.SatellitePassTonight -> SatelliteIds.idFor(event.pass.noradId).value
+        is SkyEvent.ShowerPeak -> event.shower.id.value
+        is SkyEvent.MoonPhaseTonight,
+        is SkyEvent.BrightMoon,
+        is SkyEvent.LunarEclipseUpcoming,
+        -> MoonWidget.MOON_OBJECT_ID
     }
 
 /** The countdown target's display name, shared by the countdown and tonight widgets. */

@@ -16,6 +16,7 @@ import android.content.Context
 import android.content.Intent
 import android.util.Log
 import com.google.android.stardroid.astronomy.SatellitePass
+import com.google.android.stardroid.surfaces.NotificationPlanner
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
@@ -58,11 +59,6 @@ object PassAlerts {
      */
     val LEAD_TIME: Duration = 10.minutes
 
-    /**
-     * Passes closer than this are not worth arming — the alarm would fire at or after the pass.
-     */
-    private val MINIMUM_NOTICE: Duration = 2.minutes
-
     private const val ACTION_PASS_ALERT = "com.google.android.stardroid.PASS_ALERT"
     private const val EXTRA_NORAD_ID = "norad_id"
     private const val EXTRA_START_MILLIS = "start_millis"
@@ -87,11 +83,7 @@ object PassAlerts {
         now: Instant = Clock.System.now(),
     ) {
         cancel(context)
-        val best =
-            passes
-                .filter { it.start - now > LEAD_TIME + MINIMUM_NOTICE }
-                .minByOrNull { it.peakMagnitude }
-                ?: return
+        val best = NotificationPlanner.alertablePass(now, passes, LEAD_TIME) ?: return
 
         val fireAt = best.start - LEAD_TIME
         val alarmManager = context.getSystemService(AlarmManager::class.java) ?: return

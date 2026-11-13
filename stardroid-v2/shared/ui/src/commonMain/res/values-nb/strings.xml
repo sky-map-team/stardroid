@@ -626,4 +626,37 @@ Flytt deg til et åpent område vekk fra metall og prøv igjen.]]></string>
     </string>
     <string name="satellite_search_name_iss" translation_description="Common name of the International Space Station, matched when the user types it in search. Use the name people in this language actually type.">Den internasjonale romstasjonen</string>
     <string name="satellite_search_name_tiangong" translation_description="Common name of the Chinese Tiangong space station, matched when the user types it in search. Use the name people in this language actually type.">Tiangong-romstasjonen</string>
+    <string name="notif_shower_title" translation_description="Title of the meteor-shower notification; %1$s is the shower name">%1$s på topp i kveld</string>
+    <string name="notif_shower_direction" translation_description="Notification sentence telling the user where to look; %1$s is a compass point like NE">Best etter midnatt, seende mot %1$s.</string>
+    <string name="notif_shower_dark_moon" translation_description="Notification sentence when the moon is dark during a meteor shower peak; %1$d is the expected meteors per hour">Mørk, måneløs himmel — forvent opptil %1$d meteorer i timen vekk fra bylys.</string>
+    <string name="notif_shower_bright_moon" translation_description="Notification sentence when a bright moon will interfere with a meteor shower; %1$d is the moon illumination percentage, %2$d the meteors per hour under ideal skies">
+    Den %1$d%%-belyste månen vil overskygge svakere meteorer — opptil %2$d i timen under ideelle forhold.
+    </string>
+    <string name="notif_digest_title" translation_description="Title of the tonight\'s-sky digest notification">Verdt å se i kveld</string>
+    <string name="tonight_well_placed" translation_description="Tonight-widget row: a planet is high in the sky and easy to observe; %1$s is the planet name, %2$s the time from which it is well placed">%1$s godt synlig fra %2$s</string>
+    <string name="tonight_shower_peak" translation_description="Tonight-widget row: a meteor shower reaches its annual peak tonight; %1$s is the shower name">%1$s på topp i kveld</string>
+    <string name="tonight_shower_days" translation_description="Tonight-widget row: a meteor shower peaks within a few days; %1$s is the shower name, %2$d the number of days">%1$s på topp om %2$d dager</string>
+    <string name="tonight_new_moon" translation_description="Tonight-widget row shown at new moon">Nymåne — månedens mørkeste himmel</string>
+    <string name="tonight_full_moon" translation_description="Tonight-widget row shown at full moon">Fullmåne i kveld</string>
+    <string name="tonight_bright_moon" translation_description="Tonight-widget row warning that a bright moon washes out faint objects">Lys måne overskygger svake objekter</string>
+    <string name="moon_widget_set_time" translation_description="Widget fragment showing today\'s moonset time; %1$s is a clock time like 03:12">går ned %1$s</string>
+    <string name="sun">Solen</string>
+    <string name="moon">Månen</string>
+    <string name="mercury">Merkur</string>
+    <string name="earth">Jorden</string>
+    <string name="neptune">Neptun</string>
+    <!-- tm:omitted name="tonight_satellite_pass" reason="identical_to_source" -->
+    <!-- tm:omitted name="venus" reason="identical_to_source" -->
+    <!-- tm:omitted name="mars" reason="identical_to_source" -->
+    <!-- tm:omitted name="jupiter" reason="identical_to_source" -->
+    <!-- tm:omitted name="saturn" reason="identical_to_source" -->
+    <!-- tm:omitted name="uranus" reason="identical_to_source" -->
+    <!-- tm:omitted name="pluto" reason="identical_to_source" -->
+    <string name="notif_pass_title" translation_description="Title of the notification sent shortly before a satellite passes overhead. %1$s is the satellite name.">%1$s passerer snart over deg</string>
+    <string name="notif_pass_text" translation_description="Body of the satellite pass notification, telling the user when to go outside. %1$s is a time.">Synlig fra ca. %1$s – gå ut og la øynene dine tilpasse seg</string>
+    <string name="notif_eclipse_title" translation_description="Title of the notification sent before a lunar eclipse starts. %1$s is a localized eclipse type like \'Total lunar eclipse\'.">%1$s starter snart</string>
+    <string name="notif_eclipse_text" translation_description="Body of the lunar eclipse notification, telling the user when it begins. %1$s is a time.">Begynner rundt %1$s – verdt å gå ut for</string>
+    <string name="satellite_name_iss" translation_description="Display name for the International Space Station.">Romstasjonen</string>
+    <!-- tm:omitted name="satellite_name_tiangong" reason="identical_to_source" -->
+    <string name="tonight_trailing_pass_peak" translation_description="Small trailing note on a satellite pass row. %1$d is the peak altitude in degrees, %2$.1f is a brightness magnitude.">Maks %1$d°, mag %2$.1f</string>
 </resources>

@@ -619,4 +619,39 @@ Svetlost črt: običajna, svetla ali najsvetlejša, za mrak, dan ali svetlobno o
     </string>
     <string name="satellite_search_name_iss" translation_description="Common name of the International Space Station, matched when the user types it in search. Use the name people in this language actually type.">Mednarodna vesoljska postaja</string>
     <string name="satellite_search_name_tiangong" translation_description="Common name of the Chinese Tiangong space station, matched when the user types it in search. Use the name people in this language actually type.">Vesoljska postaja Tiangong</string>
+    <string name="notif_shower_title" translation_description="Title of the meteor-shower notification; %1$s is the shower name">Vrhunec %1$s nocoj</string>
+    <string name="notif_shower_direction" translation_description="Notification sentence telling the user where to look; %1$s is a compass point like NE">Najboljše po polnoči, gledano proti %1$s.</string>
+    <string name="notif_shower_dark_moon" translation_description="Notification sentence when the moon is dark during a meteor shower peak; %1$d is the expected meteors per hour">
+    Temno nebo brez lune — pričakujte do %1$d meteorjev na uro stran od mestne svetlobe.
+    </string>
+    <string name="notif_shower_bright_moon" translation_description="Notification sentence when a bright moon will interfere with a meteor shower; %1$d is the moon illumination percentage, %2$d the meteors per hour under ideal skies">
+    %1$d%% osvetljena luna bo prekrila šibkejše meteorje — do %2$d na uro v idealnih razmerah.
+    </string>
+    <string name="notif_digest_title" translation_description="Title of the tonight\'s-sky digest notification">Vredno ogleda nocoj</string>
+    <string name="tonight_well_placed" translation_description="Tonight-widget row: a planet is high in the sky and easy to observe; %1$s is the planet name, %2$s the time from which it is well placed">%1$s dobro viden od %2$s</string>
+    <string name="tonight_shower_peak" translation_description="Tonight-widget row: a meteor shower reaches its annual peak tonight; %1$s is the shower name">%1$s vrhunec nocoj</string>
+    <string name="tonight_shower_days" translation_description="Tonight-widget row: a meteor shower peaks within a few days; %1$s is the shower name, %2$d the number of days">%1$s vrhunec čez %2$d dni</string>
+    <string name="tonight_new_moon" translation_description="Tonight-widget row shown at new moon">Mlaj — najtemnejše nebo v mesecu</string>
+    <string name="tonight_full_moon" translation_description="Tonight-widget row shown at full moon">Ščip nocoj</string>
+    <string name="tonight_bright_moon" translation_description="Tonight-widget row warning that a bright moon washes out faint objects">Svetla luna zasenči šibke objekte</string>
+    <string name="moon_widget_set_time" translation_description="Widget fragment showing today\'s moonset time; %1$s is a clock time like 03:12">zahaja %1$s</string>
+    <string name="sun">Sonce</string>
+    <string name="moon">Luna</string>
+    <string name="mercury">Merkur</string>
+    <string name="venus">Venera</string>
+    <string name="earth">Zemlja</string>
+    <string name="uranus">Uran</string>
+    <string name="neptune">Neptun</string>
+    <string name="pluto">Pluton</string>
+    <!-- tm:omitted name="tonight_satellite_pass" reason="identical_to_source" -->
+    <!-- tm:omitted name="mars" reason="identical_to_source" -->
+    <!-- tm:omitted name="jupiter" reason="identical_to_source" -->
+    <!-- tm:omitted name="saturn" reason="identical_to_source" -->
+    <string name="notif_pass_title" translation_description="Title of the notification sent shortly before a satellite passes overhead. %1$s is the satellite name.">%1$s bo kmalu preletel</string>
+    <string name="notif_pass_text" translation_description="Body of the satellite pass notification, telling the user when to go outside. %1$s is a time.">Vidno od približno %1$s — pojdite ven in pustite, da se vaše oči prilagodijo</string>
+    <string name="notif_eclipse_title" translation_description="Title of the notification sent before a lunar eclipse starts. %1$s is a localized eclipse type like \'Total lunar eclipse\'.">%1$s se kmalu začne</string>
+    <string name="notif_eclipse_text" translation_description="Body of the lunar eclipse notification, telling the user when it begins. %1$s is a time.">Začne se okoli %1$s — vredno je iti ven</string>
+    <string name="satellite_name_iss" translation_description="Display name for the International Space Station.">Mednarodna vesoljska postaja</string>
+    <!-- tm:omitted name="satellite_name_tiangong" reason="identical_to_source" -->
+    <string name="tonight_trailing_pass_peak" translation_description="Small trailing note on a satellite pass row. %1$d is the peak altitude in degrees, %2$.1f is a brightness magnitude.">Najv. %1$d°, sij %2$.1f</string>
 </resources>

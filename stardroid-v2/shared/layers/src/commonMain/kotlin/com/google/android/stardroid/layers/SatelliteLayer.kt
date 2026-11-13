@@ -11,6 +11,7 @@ package com.google.android.stardroid.layers
 
 import com.google.android.stardroid.astronomy.SatelliteEphemeris
 import com.google.android.stardroid.astronomy.Sgp4
+import com.google.android.stardroid.astronomy.SpaceStations
 import com.google.android.stardroid.astronomy.Tle
 import com.google.android.stardroid.data.satellites.ElementFreshness
 import com.google.android.stardroid.data.satellites.SatelliteElements
@@ -213,10 +214,10 @@ class SatelliteLayer(
         val TRACKED_NORAD_IDS = setOf(ISS_NORAD_ID, TIANGONG_NORAD_ID)
 
         /** The International Space Station (ZARYA is the core module the catalog names it by). */
-        const val ISS_NORAD_ID = 25544
+        const val ISS_NORAD_ID = SpaceStations.ISS_NORAD_ID
 
         /** Tiangong, catalogued under its Tianhe core module. */
-        const val TIANGONG_NORAD_ID = 48274
+        const val TIANGONG_NORAD_ID = SpaceStations.TIANGONG_NORAD_ID
 
         /** In front of the solar system (60), behind the horizon. */
         private const val DEPTH = 55

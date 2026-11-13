@@ -545,4 +545,35 @@ Line brightness: normal, bright or brightest, for twilight, daylight or light-po
     <!-- tm:omitted name="satellite_description" reason="identical_to_source" -->
     <!-- tm:omitted name="satellite_search_name_iss" reason="identical_to_source" -->
     <!-- tm:omitted name="satellite_search_name_tiangong" reason="identical_to_source" -->
+    <!-- tm:omitted name="notif_shower_title" reason="identical_to_source" -->
+    <!-- tm:omitted name="notif_shower_direction" reason="identical_to_source" -->
+    <!-- tm:omitted name="notif_shower_dark_moon" reason="identical_to_source" -->
+    <!-- tm:omitted name="notif_shower_bright_moon" reason="identical_to_source" -->
+    <!-- tm:omitted name="notif_digest_title" reason="identical_to_source" -->
+    <!-- tm:omitted name="tonight_well_placed" reason="identical_to_source" -->
+    <!-- tm:omitted name="tonight_shower_peak" reason="identical_to_source" -->
+    <!-- tm:omitted name="tonight_shower_days" reason="identical_to_source" -->
+    <!-- tm:omitted name="tonight_new_moon" reason="identical_to_source" -->
+    <!-- tm:omitted name="tonight_full_moon" reason="identical_to_source" -->
+    <!-- tm:omitted name="tonight_bright_moon" reason="identical_to_source" -->
+    <!-- tm:omitted name="tonight_satellite_pass" reason="identical_to_source" -->
+    <!-- tm:omitted name="moon_widget_set_time" reason="identical_to_source" -->
+    <!-- tm:omitted name="sun" reason="identical_to_source" -->
+    <!-- tm:omitted name="moon" reason="identical_to_source" -->
+    <!-- tm:omitted name="mercury" reason="identical_to_source" -->
+    <!-- tm:omitted name="venus" reason="identical_to_source" -->
+    <!-- tm:omitted name="earth" reason="identical_to_source" -->
+    <!-- tm:omitted name="mars" reason="identical_to_source" -->
+    <!-- tm:omitted name="jupiter" reason="identical_to_source" -->
+    <!-- tm:omitted name="saturn" reason="identical_to_source" -->
+    <!-- tm:omitted name="uranus" reason="identical_to_source" -->
+    <!-- tm:omitted name="neptune" reason="identical_to_source" -->
+    <!-- tm:omitted name="pluto" reason="identical_to_source" -->
+    <!-- tm:omitted name="notif_pass_title" reason="identical_to_source" -->
+    <!-- tm:omitted name="notif_pass_text" reason="identical_to_source" -->
+    <!-- tm:omitted name="notif_eclipse_title" reason="identical_to_source" -->
+    <!-- tm:omitted name="notif_eclipse_text" reason="identical_to_source" -->
+    <!-- tm:omitted name="satellite_name_iss" reason="identical_to_source" -->
+    <!-- tm:omitted name="satellite_name_tiangong" reason="identical_to_source" -->
+    <!-- tm:omitted name="tonight_trailing_pass_peak" reason="identical_to_source" -->
 </resources>

@@ -607,4 +607,39 @@
     </string>
     <string name="satellite_search_name_iss" translation_description="Common name of the International Space Station, matched when the user types it in search. Use the name people in this language actually type.">محطة الفضاء الدولية</string>
     <string name="satellite_search_name_tiangong" translation_description="Common name of the Chinese Tiangong space station, matched when the user types it in search. Use the name people in this language actually type.">محطة تيانگونغ الفضائية</string>
+    <string name="notif_shower_title" translation_description="Title of the meteor-shower notification; %1$s is the shower name">ذروة %1$s الليلة</string>
+    <string name="notif_shower_direction" translation_description="Notification sentence telling the user where to look; %1$s is a compass point like NE">الأفضل بعد منتصف الليل، بالنظر إلى %1$s.</string>
+    <string name="notif_shower_dark_moon" translation_description="Notification sentence when the moon is dark during a meteor shower peak; %1$d is the expected meteors per hour">
+    سماء مظلمة وخالية من القمر — توقع ما يصل إلى %1$d شهاب في الساعة بعيدًا عن أضواء المدينة.
+    </string>
+    <string name="notif_shower_bright_moon" translation_description="Notification sentence when a bright moon will interfere with a meteor shower; %1$d is the moon illumination percentage, %2$d the meteors per hour under ideal skies">
+    القمر المضاء بنسبة %1$d%% سيحجب الشهب الخافتة — ما يصل إلى %2$d في الساعة تحت سماء مثالية.
+    </string>
+    <string name="notif_digest_title" translation_description="Title of the tonight\'s-sky digest notification">يستحق المشاهدة الليلة</string>
+    <string name="tonight_well_placed" translation_description="Tonight-widget row: a planet is high in the sky and easy to observe; %1$s is the planet name, %2$s the time from which it is well placed">%1$s في موقع جيد من %2$s</string>
+    <string name="tonight_shower_peak" translation_description="Tonight-widget row: a meteor shower reaches its annual peak tonight; %1$s is the shower name">ذروة %1$s الليلة</string>
+    <string name="tonight_shower_days" translation_description="Tonight-widget row: a meteor shower peaks within a few days; %1$s is the shower name, %2$d the number of days">ذروة %1$s في غضون %2$d يوم</string>
+    <string name="tonight_new_moon" translation_description="Tonight-widget row shown at new moon">المحاق — أحلك سماء الشهر</string>
+    <string name="tonight_full_moon" translation_description="Tonight-widget row shown at full moon">البدر الليلة</string>
+    <string name="tonight_bright_moon" translation_description="Tonight-widget row warning that a bright moon washes out faint objects">القمر الساطع يحجب الأجرام الخافتة</string>
+    <string name="moon_widget_set_time" translation_description="Widget fragment showing today\'s moonset time; %1$s is a clock time like 03:12">يغرب %1$s</string>
+    <string name="sun">الشمس</string>
+    <string name="moon">القمر</string>
+    <string name="mercury">عطارد</string>
+    <string name="venus">الزهرة</string>
+    <string name="earth">الأرض</string>
+    <string name="mars">المريخ</string>
+    <string name="jupiter">المشتري</string>
+    <string name="saturn">زحل</string>
+    <string name="uranus">اورانوس</string>
+    <string name="neptune">نبتون</string>
+    <string name="pluto">بلوتو</string>
+    <!-- tm:omitted name="tonight_satellite_pass" reason="identical_to_source" -->
+    <string name="notif_pass_title" translation_description="Title of the notification sent shortly before a satellite passes overhead. %1$s is the satellite name.">%1$s يمر فوقك قريباً</string>
+    <string name="notif_pass_text" translation_description="Body of the satellite pass notification, telling the user when to go outside. %1$s is a time.">مرئي من حوالي %1$s — اخرج ودع عينيك تتكيف</string>
+    <string name="notif_eclipse_title" translation_description="Title of the notification sent before a lunar eclipse starts. %1$s is a localized eclipse type like \'Total lunar eclipse\'.">%1$s سيبدأ قريباً</string>
+    <string name="notif_eclipse_text" translation_description="Body of the lunar eclipse notification, telling the user when it begins. %1$s is a time.">يبدأ حوالي %1$s — يستحق الخروج لمشاهدته</string>
+    <string name="satellite_name_iss" translation_description="Display name for the International Space Station.">محطة الفضاء</string>
+    <!-- tm:omitted name="satellite_name_tiangong" reason="identical_to_source" -->
+    <string name="tonight_trailing_pass_peak" translation_description="Small trailing note on a satellite pass row. %1$d is the peak altitude in degrees, %2$.1f is a brightness magnitude.">الذروة %1$d°، القدر %2$.1f</string>
 </resources>

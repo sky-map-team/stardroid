@@ -17,20 +17,24 @@ struct SkyMapApp: App {
     private let analytics = FirebaseAnalyticsAdapter()
     private let flags: FirebaseRemoteConfigAdapter
     private let tipStore = StoreKitTipStore()
+    private let notificationCenter = UserNotificationCenterAdapter()
     @State private var flagsReady = false
     @Environment(\.scenePhase) private var scenePhase
 
     init() {
         // After the analytics adapter, which configures Firebase.
         flags = FirebaseRemoteConfigAdapter()
-        SatelliteRefreshTask.register(analytics: analytics, flags: flags)
+        SatelliteRefreshTask.register(
+            analytics: analytics, flags: flags, notificationCenter: notificationCenter)
     }
 
     var body: some Scene {
         WindowGroup {
             Group {
                 if flagsReady {
-                    RootView(analytics: analytics, tipStore: tipStore, flags: flags)
+                    RootView(
+                        analytics: analytics, tipStore: tipStore, flags: flags,
+                        notificationCenter: notificationCenter)
                 } else {
                     // The launch screen's navy, until the stored flags can be read.
                     Color("LaunchNavy").onAppear {
@@ -50,10 +54,12 @@ private struct RootView: UIViewControllerRepresentable {
     let analytics: SkyMapKit.Analytics
     let tipStore: TipStore
     let flags: SkyMapKit.FlagSource
+    let notificationCenter: LocalNotificationCenter
 
     func makeUIViewController(context: Context) -> UIViewController {
         let controller = SkyMapScreenKt.skyMapViewController(
-            analytics: analytics, tipStore: tipStore, flags: flags)
+            analytics: analytics, tipStore: tipStore, flags: flags,
+            notificationCenter: notificationCenter)
         // Only now that the app has read its flags: a fetch applies from the next launch.
         flags.fetch(ignoreThrottle: false) { _, _ in }
         return controller

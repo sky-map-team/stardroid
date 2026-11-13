@@ -13,35 +13,17 @@
     <!-- tm:omitted name="west" reason="identical_to_source" -->
     <!-- tm:omitted name="ecliptic" reason="identical_to_source" -->
 
-    <!-- tm:omitted name="sun" reason="identical_to_source" -->
-    <!-- tm:omitted name="moon" reason="identical_to_source" -->
-    <!-- tm:omitted name="mercury" reason="identical_to_source" -->
-    <!-- tm:omitted name="venus" reason="identical_to_source" -->
-    <!-- tm:omitted name="earth" reason="identical_to_source" -->
-    <!-- tm:omitted name="mars" reason="identical_to_source" -->
-    <!-- tm:omitted name="jupiter" reason="identical_to_source" -->
-    <!-- tm:omitted name="saturn" reason="identical_to_source" -->
-    <!-- tm:omitted name="uranus" reason="identical_to_source" -->
-    <!-- tm:omitted name="neptune" reason="identical_to_source" -->
-    <!-- tm:omitted name="pluto" reason="identical_to_source" -->
 
     <!-- Search (map-screen search dialog and overlay). -->
 
     <!-- tm:omitted name="channel_passes_name" reason="identical_to_source" -->
     <!-- tm:omitted name="channel_passes_description" reason="identical_to_source" -->
-    <!-- tm:omitted name="notif_pass_title" reason="identical_to_source" -->
-    <!-- tm:omitted name="notif_pass_text" reason="identical_to_source" -->
     <!-- tm:omitted name="channel_passes_now_name" reason="identical_to_source" -->
     <!-- tm:omitted name="channel_passes_now_description" reason="identical_to_source" -->
     <!-- tm:omitted name="notif_pass_now_title" reason="identical_to_source" -->
     <!-- tm:omitted name="notif_pass_now_text" reason="identical_to_source" -->
     <!-- tm:omitted name="channel_eclipses_name" reason="identical_to_source" -->
     <!-- tm:omitted name="channel_eclipses_description" reason="identical_to_source" -->
-    <!-- tm:omitted name="notif_eclipse_title" reason="identical_to_source" -->
-    <!-- tm:omitted name="notif_eclipse_text" reason="identical_to_source" -->
-    <!-- tm:omitted name="satellite_name_iss" reason="identical_to_source" -->
-    <!-- tm:omitted name="satellite_name_tiangong" reason="identical_to_source" -->
-    <!-- tm:omitted name="tonight_satellite_pass" reason="identical_to_source" -->
 
     <!-- Long-press help for layers in the layer-visibility sheet. -->
 
@@ -92,7 +74,6 @@
     <!-- tm:omitted name="moon_widget_description" reason="identical_to_source" -->
     <!-- tm:omitted name="moon_widget_illumination_short" reason="identical_to_source" -->
     <!-- tm:omitted name="moon_widget_rise_time" reason="identical_to_source" -->
-    <!-- tm:omitted name="moon_widget_set_time" reason="identical_to_source" -->
     <string name="moon_widget_time_day_offset" translation_description="Compact suffix appended after a widget rise/set time that falls on a later day than today, so a reader doesn\'t mistake it for today\'s crossing; %1$d is the number of days ahead (almost always 1). Keep it short — the widget is very narrow. Note the leading space.">+%1$d</string>
     <!-- tm:omitted name="moon_widget_promo_title" reason="identical_to_source" -->
     <!-- tm:omitted name="moon_widget_promo_subtitle" reason="identical_to_source" -->
@@ -107,12 +88,6 @@
     <!-- tm:omitted name="tonight_widget_header" reason="identical_to_source" -->
     <!-- tm:omitted name="tonight_widget_sun_times" reason="identical_to_source" -->
     <!-- tm:omitted name="tonight_widget_sunset_only" reason="identical_to_source" -->
-    <!-- tm:omitted name="tonight_well_placed" reason="identical_to_source" -->
-    <!-- tm:omitted name="tonight_shower_peak" reason="identical_to_source" -->
-    <!-- tm:omitted name="tonight_shower_days" reason="identical_to_source" -->
-    <!-- tm:omitted name="tonight_new_moon" reason="identical_to_source" -->
-    <!-- tm:omitted name="tonight_full_moon" reason="identical_to_source" -->
-    <!-- tm:omitted name="tonight_bright_moon" reason="identical_to_source" -->
     <!-- tm:omitted name="tonight_quiet" reason="identical_to_source" -->
     <!-- tm:omitted name="tonight_quiet_next" reason="identical_to_source" -->
     <!-- tm:omitted name="countdown_widget_label" reason="identical_to_source" -->
@@ -136,11 +111,5 @@
     <!-- tm:omitted name="channel_showers_description" reason="identical_to_source" -->
     <!-- tm:omitted name="channel_digest_name" reason="identical_to_source" -->
     <!-- tm:omitted name="channel_digest_description" reason="identical_to_source" -->
-    <!-- tm:omitted name="notif_shower_title" reason="identical_to_source" -->
-    <!-- tm:omitted name="notif_shower_direction" reason="identical_to_source" -->
-    <!-- tm:omitted name="notif_shower_dark_moon" reason="identical_to_source" -->
-    <!-- tm:omitted name="notif_shower_bright_moon" reason="identical_to_source" -->
-    <!-- tm:omitted name="notif_digest_title" reason="identical_to_source" -->
     <!-- tm:omitted name="notif_action_mute_showers" reason="identical_to_source" -->
-    <!-- tm:omitted name="tonight_trailing_pass_peak" reason="identical_to_source" -->
 </resources>

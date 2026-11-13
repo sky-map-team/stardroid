@@ -624,4 +624,41 @@ Metalden uzak, açık bir alana geçin ve tekrar deneyin.]]></string>
     </string>
     <string name="satellite_search_name_iss" translation_description="Common name of the International Space Station, matched when the user types it in search. Use the name people in this language actually type.">Uluslararası Uzay İstasyonu</string>
     <string name="satellite_search_name_tiangong" translation_description="Common name of the Chinese Tiangong space station, matched when the user types it in search. Use the name people in this language actually type.">Tiangong Uzay İstasyonu</string>
+    <string name="notif_shower_title" translation_description="Title of the meteor-shower notification; %1$s is the shower name">Bu gece %1$s zirvesi</string>
+    <string name="notif_shower_direction" translation_description="Notification sentence telling the user where to look; %1$s is a compass point like NE">En iyisi gece yarısından sonra, %1$s yönüne bakılarak.</string>
+    <string name="notif_shower_dark_moon" translation_description="Notification sentence when the moon is dark during a meteor shower peak; %1$d is the expected meteors per hour">
+    Karanlık, aysız gökyüzü — şehir ışıklarından uzakta saatte %1$d meteora kadar görebilirsiniz.
+    </string>
+    <string name="notif_shower_bright_moon" translation_description="Notification sentence when a bright moon will interfere with a meteor shower; %1$d is the moon illumination percentage, %2$d the meteors per hour under ideal skies">
+    %%%1$d\'si aydınlık olan ay sönük meteorları gizleyecek — ideal gökyüzünde saatte %2$d\'ye kadar.
+    </string>
+    <string name="notif_digest_title" translation_description="Title of the tonight\'s-sky digest notification">Bu gece bakmaya değer</string>
+    <string name="tonight_well_placed" translation_description="Tonight-widget row: a planet is high in the sky and easy to observe; %1$s is the planet name, %2$s the time from which it is well placed">%1$s, %2$s itibarıyla iyi konumda</string>
+    <string name="tonight_shower_peak" translation_description="Tonight-widget row: a meteor shower reaches its annual peak tonight; %1$s is the shower name">%1$s bu gece zirvede</string>
+    <string name="tonight_shower_days" translation_description="Tonight-widget row: a meteor shower peaks within a few days; %1$s is the shower name, %2$d the number of days">%1$s %2$d gün içinde zirvede</string>
+    <string name="tonight_new_moon" translation_description="Tonight-widget row shown at new moon">Yeni Ay — ayın en karanlık geceleri</string>
+    <string name="tonight_full_moon" translation_description="Tonight-widget row shown at full moon">Bu gece Dolunay</string>
+    <string name="tonight_bright_moon" translation_description="Tonight-widget row warning that a bright moon washes out faint objects">Parlak ay sönük nesneleri görünmez kılıyor</string>
+    <string name="moon_widget_set_time" translation_description="Widget fragment showing today\'s moonset time; %1$s is a clock time like 03:12">batış %1$s</string>
+    <string name="sun">Güneş</string>
+    <string name="moon">Ay</string>
+    <string name="mercury">Merkür</string>
+    <string name="venus">Venüs</string>
+    <string name="earth">Dünya</string>
+    <string name="jupiter">Jüpiter</string>
+    <string name="saturn">Satürn</string>
+    <string name="uranus">Uranüs</string>
+    <string name="neptune">Neptün</string>
+    <string name="pluto">Plüton</string>
+    <!-- tm:omitted name="tonight_satellite_pass" reason="identical_to_source" -->
+    <!-- tm:omitted name="mars" reason="identical_to_source" -->
+    <string name="notif_pass_title" translation_description="Title of the notification sent shortly before a satellite passes overhead. %1$s is the satellite name.">%1$s yakında baş üstünden geçecek</string>
+    <string name="notif_pass_text" translation_description="Body of the satellite pass notification, telling the user when to go outside. %1$s is a time.">
+    Yaklaşık %1$s itibarıyla görünür — dışarı çıkın ve gözlerinizin karanlığa alışmasını sağlayın
+    </string>
+    <string name="notif_eclipse_title" translation_description="Title of the notification sent before a lunar eclipse starts. %1$s is a localized eclipse type like \'Total lunar eclipse\'.">%1$s yakında başlıyor</string>
+    <string name="notif_eclipse_text" translation_description="Body of the lunar eclipse notification, telling the user when it begins. %1$s is a time.">Saat %1$s civarında başlıyor — dışarı çıkmaya değer</string>
+    <string name="satellite_name_iss" translation_description="Display name for the International Space Station.">Uluslararası Uzay İstasyonu</string>
+    <!-- tm:omitted name="satellite_name_tiangong" reason="identical_to_source" -->
+    <string name="tonight_trailing_pass_peak" translation_description="Small trailing note on a satellite pass row. %1$d is the peak altitude in degrees, %2$.1f is a brightness magnitude.">En yüksek %1$d°, parlaklık %2$.1f</string>
 </resources>

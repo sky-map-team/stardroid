@@ -15,6 +15,7 @@ import kotlinx.coroutines.flow.asStateFlow
 import platform.Foundation.NSNotificationCenter
 import platform.Foundation.NSOperationQueue
 import platform.UIKit.UIApplication
+import platform.UIKit.UIApplicationDidBecomeActiveNotification
 import platform.UIKit.UIApplicationDidEnterBackgroundNotification
 import platform.UIKit.UIApplicationState
 import platform.UIKit.UIApplicationWillEnterForegroundNotification
@@ -33,6 +34,11 @@ class AppForeground {
 
     val isForeground: StateFlow<Boolean> = _isForeground.asStateFlow()
 
+    private val _activations = MutableStateFlow(0)
+
+    /** Counts each time the app becomes active, which a closed permission prompt also causes. */
+    val activations: StateFlow<Int> = _activations.asStateFlow()
+
     init {
         val center = NSNotificationCenter.defaultCenter
         val queue = NSOperationQueue.mainQueue
@@ -41,6 +47,9 @@ class AppForeground {
         }
         center.addObserverForName(UIApplicationDidEnterBackgroundNotification, null, queue) {
             _isForeground.value = false
+        }
+        center.addObserverForName(UIApplicationDidBecomeActiveNotification, null, queue) {
+            _activations.value += 1
         }
     }
 }

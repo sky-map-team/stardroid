@@ -62,6 +62,7 @@ import com.google.android.stardroid.ui.timetravel.TimeTravelViewModel
 import kotlinx.cinterop.ExperimentalForeignApi
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.FlowPreview
 import kotlinx.coroutines.IO
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.MainScope
@@ -70,6 +71,7 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.combine
+import kotlinx.coroutines.flow.debounce
 import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.emptyFlow
 import kotlinx.coroutines.flow.first
@@ -91,6 +93,7 @@ import platform.Foundation.preferredLanguages
 import platform.Foundation.timeIntervalSince1970
 import platform.UIKit.UIApplication
 import platform.UIKit.UIApplicationOpenSettingsURLString
+import kotlin.time.Duration.Companion.seconds
 
 /**
  * The iOS app's object graph: what Android's Hilt modules provide, built by hand. The foreground
@@ -101,6 +104,7 @@ import platform.UIKit.UIApplicationOpenSettingsURLString
 class IosAppGraph(
     private val analytics: Analytics = NoOpAnalytics,
     flags: FlagSource = NoFlagSource,
+    notificationCenter: LocalNotificationCenter,
 ) {
     /** The experiment flags, frozen for this launch (see [FlagSourceExperimentConfig]). */
     val experiments: ExperimentConfig = iosExperiments(flags)
@@ -259,7 +263,38 @@ class IosAppGraph(
         }
     }
 
+    private val notifications =
+        IosNotificationScheduler(
+            notificationCenter,
+            settings,
+            experiments,
+            ::catalog,
+            locale,
+            satellites.takeIf { satellitesEnabled },
+        )
+
     init {
+        scope.launch {
+            // Whatever the plan depends on changing, or the app coming forward, replans it.
+            @OptIn(FlowPreview::class)
+            combine(
+                // Active again also covers the system permission prompt closing and a return
+                // from Settings, neither of which is entering the foreground.
+                combine(foreground.isForeground, foreground.activations) { inForeground, _ ->
+                    inForeground
+                },
+                notifications.preferences,
+                settings.savedLocation,
+                locale,
+                if (satellitesEnabled) {
+                    satelliteElementsFlow(satellites.repository)
+                } else {
+                    flowOf(Unit)
+                },
+            ) { inForeground, _, _, _, _ -> inForeground }
+                .debounce(NOTIFICATION_REPLAN_DELAY)
+                .collect { if (it) notifications.replan() }
+        }
         scope.launch {
             // Latest: going to the background cancels a start still waiting on the EULA.
             foreground.isForeground.collectLatest {
@@ -287,7 +322,11 @@ class IosAppGraph(
         withContext(Dispatchers.IO) { satellites.refreshNow() }
     }
 
-    internal fun startBackgroundRefresh(): Job = scope.launch { refreshSatellitesInBackground() }
+    internal fun startBackgroundRefresh(): Job =
+        scope.launch {
+            refreshSatellitesInBackground()
+            notifications.replan()
+        }
 
     /** Satellite data status for the Diagnostics screen; null with the flag off. */
     suspend fun satelliteDiagnostics(): SatelliteDiagnosticsState? =
@@ -360,12 +399,12 @@ class IosAppGraph(
     fun startupViewModel(): StartupViewModel =
         StartupViewModel(startupRouter, startupState, analytics = analytics)
 
-    /** The layer rail and sheet; alert rows stay hidden until iOS has notifications. */
+    /** The layer rail and sheet; the alert rows show with the notifications flag. */
     fun layersViewModel(): LayersViewModel =
         LayersViewModel(
             settings,
             satellitesEnabled = satellitesEnabled,
-            notificationsEnabled = false,
+            notificationsEnabled = experiments.isEnabled(Experiment.NOTIFICATIONS),
             satelliteStatus =
                 if (satellitesEnabled) {
                     satelliteUiStatusFlow(
@@ -544,3 +583,6 @@ class IosAppGraph(
 }
 
 private const val MILLIS_PER_SECOND = 1000
+
+/** Settling time, so a burst of changes (a setting, then the location) plans once. */
+private val NOTIFICATION_REPLAN_DELAY = 2.seconds

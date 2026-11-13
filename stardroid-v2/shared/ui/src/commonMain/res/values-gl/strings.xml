@@ -420,4 +420,34 @@ A interferencia magnética local (obxectos metálicos, salpicadeiros de coches, 
     <string name="diagnostics_satellite_circuit_open" translation_description="Row label in the diagnostics screen for when satellite downloads are paused after repeated server errors">Descargas en pausa</string>
     <string name="diagnostics_satellite_circuit_open_format" translation_description="Row value in the diagnostics screen showing when paused satellite downloads will resume and how many failures caused the pause. %1$s is a date and time, %2$d is a count">Ata %1$s (%2$d fallos)</string>
     <string name="satellite_description" translation_description="Short description shown on the info card for an artificial satellite.">Un satélite artificial en órbita terrestre baixa, iluminado polo sol contra un ceo escuro. Cruza de horizonte a horizonte en poucos minutos, movéndose de forma constante e sen pestanexar.</string>
+    <string name="notif_shower_title" translation_description="Title of the meteor-shower notification; %1$s is the shower name">Pico de %1$s esta noite</string>
+    <string name="notif_shower_direction" translation_description="Notification sentence telling the user where to look; %1$s is a compass point like NE">Mellor despois da medianoite, mirando cara ao %1$s.</string>
+    <string name="notif_shower_dark_moon" translation_description="Notification sentence when the moon is dark during a meteor shower peak; %1$d is the expected meteors per hour">Ceos escuros e sen lúa — espera ata %1$d meteoros por hora lonxe da luz da cidade.</string>
+    <string name="notif_shower_bright_moon" translation_description="Notification sentence when a bright moon will interfere with a meteor shower; %1$d is the moon illumination percentage, %2$d the meteors per hour under ideal skies">A lúa iluminada ao %1$d%% ocultará os meteoros máis débiles — ata %2$d por hora baixo ceos ideais.</string>
+    <string name="notif_digest_title" translation_description="Title of the tonight\'s-sky digest notification">Paga a pena botar unha ollada esta noite</string>
+    <string name="tonight_well_placed" translation_description="Tonight-widget row: a planet is high in the sky and easy to observe; %1$s is the planet name, %2$s the time from which it is well placed">%1$s ben situado dende %2$s</string>
+    <string name="tonight_shower_peak" translation_description="Tonight-widget row: a meteor shower reaches its annual peak tonight; %1$s is the shower name">Pico de %1$s esta noite</string>
+    <string name="tonight_shower_days" translation_description="Tonight-widget row: a meteor shower peaks within a few days; %1$s is the shower name, %2$d the number of days">Pico de %1$s en %2$d días</string>
+    <string name="tonight_new_moon" translation_description="Tonight-widget row shown at new moon">Lúa Nova — os ceos máis escuros do mes</string>
+    <string name="tonight_full_moon" translation_description="Tonight-widget row shown at full moon">Lúa Chea esta noite</string>
+    <string name="tonight_bright_moon" translation_description="Tonight-widget row warning that a bright moon washes out faint objects">A lúa brillante oculta obxectos tenues</string>
+    <string name="tonight_satellite_pass" translation_description="Tonight-widget row announcing a visible satellite pass. %1$s is the satellite name, %2$s is a time of day.">%1$s pasa por riba ás %2$s</string>
+    <string name="moon_widget_set_time" translation_description="Widget fragment showing today\'s moonset time; %1$s is a clock time like 03:12">ponse %1$s</string>
+    <string name="sun" translation_description="Name of the Sun, drawn as a label on the sky map.">Sol</string>
+    <string name="moon" translation_description="Name of Earth\'s Moon, drawn as a label on the sky map.">Lúa</string>
+    <string name="mercury" translation_description="Name of the planet Mercury, drawn as a label on the sky map.">Mercurio</string>
+    <string name="venus" translation_description="Name of the planet Venus, drawn as a label on the sky map.">Venus</string>
+    <string name="earth" translation_description="Name of the planet Earth.">Terra</string>
+    <string name="mars" translation_description="Name of the planet Mars, drawn as a label on the sky map.">Marte</string>
+    <string name="jupiter" translation_description="Name of the planet Jupiter, drawn as a label on the sky map.">Xúpiter</string>
+    <string name="saturn" translation_description="Name of the planet Saturn, drawn as a label on the sky map.">Saturno</string>
+    <string name="uranus" translation_description="Name of the planet Uranus, drawn as a label on the sky map.">Urano</string>
+    <string name="neptune" translation_description="Name of the planet Neptune, drawn as a label on the sky map.">Neptuno</string>
+    <string name="pluto" translation_description="Name of the dwarf planet Pluto, drawn as a label on the sky map.">Plutón</string>
+    <string name="notif_pass_title" translation_description="Title of the notification sent shortly before a satellite passes overhead. %1$s is the satellite name.">%1$s pasa por riba pronto</string>
+    <string name="notif_pass_text" translation_description="Body of the satellite pass notification, telling the user when to go outside. %1$s is a time.">Visible desde aproximadamente as %1$s — sae e deixa que os teus ollos se adapten</string>
+    <string name="notif_eclipse_title" translation_description="Title of the notification sent before a lunar eclipse starts. %1$s is a localized eclipse type like \'Total lunar eclipse\'.">%1$s comeza pronto</string>
+    <string name="notif_eclipse_text" translation_description="Body of the lunar eclipse notification, telling the user when it begins. %1$s is a time.">Comeza arredor das %1$s — paga a pena saír a velo</string>
+    <string name="satellite_name_iss" translation_description="Display name for the International Space Station.">A Estación Espacial</string>
+    <string name="satellite_name_tiangong" translation_description="Display name for the Chinese space station Tiangong.">Tiangong</string>
 </resources>

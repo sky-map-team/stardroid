@@ -15,36 +15,18 @@
     <string name="ecliptic">مسير الشمس</string>
 
     <!-- Solar-system body names, drawn as labels next to each body. -->
-    <string name="sun">الشمس</string>
-    <string name="moon">القمر</string>
-    <string name="mercury">عطارد</string>
-    <string name="venus">الزهرة</string>
-    <string name="earth">الأرض</string>
-    <string name="mars">المريخ</string>
-    <string name="jupiter">المشتري</string>
-    <string name="saturn">زحل</string>
-    <string name="uranus">اورانوس</string>
-    <string name="neptune">نبتون</string>
-    <string name="pluto">بلوتو</string>
 
     <!-- Search (map-screen search dialog and overlay). -->
 
     <!-- Layer names in the layer-visibility sheet. -->
     <string name="channel_passes_name" translation_description="Name of the notification channel for alerts shortly before a satellite passes overhead.">مرور الأقمار الصناعية</string>
     <string name="channel_passes_description" translation_description="Description of the satellite-pass notification channel.">تنبيه واحد قبل أفضل مرور مرئي في الليل</string>
-    <string name="notif_pass_title" translation_description="Title of the notification sent shortly before a satellite passes overhead. %1$s is the satellite name.">%1$s يمر فوقك قريباً</string>
-    <string name="notif_pass_text" translation_description="Body of the satellite pass notification, telling the user when to go outside. %1$s is a time.">مرئي من حوالي %1$s — اخرج ودع عينيك تتكيف</string>
     <string name="channel_passes_now_name" translation_description="Name of the notification channel for the alert sent the moment a satellite rises.">القمر الصناعي يرتفع الآن</string>
     <string name="channel_passes_now_description" translation_description="Description of the notification channel for the alert sent the moment a satellite pass begins.">تنبيه مع اهتزاز، مع بداية أفضل مرور مرئي خلال الليل</string>
     <string name="notif_pass_now_title" translation_description="Title of the notification sent the moment a satellite pass begins. %1$s is the satellite name.">%1$s يرتفع الآن</string>
     <string name="notif_pass_now_text" translation_description="Body of the notification sent the moment a satellite pass begins.">انظر لأعلى — إنه يعبر السماء الآن</string>
     <string name="channel_eclipses_name" translation_description="Name of the notification channel for alerts before a lunar eclipse starts.">خسوف القمر</string>
     <string name="channel_eclipses_description" translation_description="Description of the lunar-eclipse notification channel.">تنبيه واحد قبل بدء خسوف القمر</string>
-    <string name="notif_eclipse_title" translation_description="Title of the notification sent before a lunar eclipse starts. %1$s is a localized eclipse type like \'Total lunar eclipse\'.">%1$s سيبدأ قريباً</string>
-    <string name="notif_eclipse_text" translation_description="Body of the lunar eclipse notification, telling the user when it begins. %1$s is a time.">يبدأ حوالي %1$s — يستحق الخروج لمشاهدته</string>
-    <string name="satellite_name_iss" translation_description="Display name for the International Space Station.">محطة الفضاء</string>
-    <!-- tm:omitted name="satellite_name_tiangong" reason="identical_to_source" -->
-    <!-- tm:omitted name="tonight_satellite_pass" reason="identical_to_source" -->
 
     <!-- Long-press help for layers in the layer-visibility sheet. -->
 
@@ -101,7 +83,6 @@
     <string name="moon_widget_description" translation_description="Description of the moon-phase widget, shown under its preview in the launcher\'s widget picker">طور القمر وإضاءته وأوقات شروقه وغروبه، يتم تحديثها يومياً.</string>
     <!-- tm:omitted name="moon_widget_illumination_short" reason="identical_to_source" -->
     <string name="moon_widget_rise_time" translation_description="Widget fragment showing today\'s moonrise time; %1$s is a clock time like 17:42">يشرق %1$s</string>
-    <string name="moon_widget_set_time" translation_description="Widget fragment showing today\'s moonset time; %1$s is a clock time like 03:12">يغرب %1$s</string>
     <string name="moon_widget_time_day_offset" translation_description="Compact suffix appended after a widget rise/set time that falls on a later day than today, so a reader doesn\'t mistake it for today\'s crossing; %1$d is the number of days ahead (almost always 1). Keep it short — the widget is very narrow. Note the leading space.">+%1$d</string>
     <string name="moon_widget_promo_title" translation_description="Title of the row on the Moon\'s info card offering to add the moon-phase widget to the home screen">احتفظ بالقمر على شاشتك الرئيسية</string>
     <string name="moon_widget_promo_subtitle" translation_description="Subtitle of the row offering the moon-phase widget, summarizing what the widget shows">الطور والإضاءة وأوقات الشروق، تُحدّث يوميًا</string>
@@ -121,12 +102,6 @@
     <string name="tonight_widget_header" translation_description="Small header label on the tonight widget; %1$s is a short date like \'Wed 30 Jul\'">الليلة · %1$s</string>
     <string name="tonight_widget_sun_times" translation_description="Header line on the tonight widget; %1$s is the sunset time, %2$s the time the sky becomes fully dark">الشمس تغرب %1$s · الظلام %2$s</string>
     <string name="tonight_widget_sunset_only" translation_description="Header fragment when only the sunset time is known; %1$s is the sunset time">الشمس تغرب %1$s</string>
-    <string name="tonight_well_placed" translation_description="Tonight-widget row: a planet is high in the sky and easy to observe; %1$s is the planet name, %2$s the time from which it is well placed">%1$s في موقع جيد من %2$s</string>
-    <string name="tonight_shower_peak" translation_description="Tonight-widget row: a meteor shower reaches its annual peak tonight; %1$s is the shower name">ذروة %1$s الليلة</string>
-    <string name="tonight_shower_days" translation_description="Tonight-widget row: a meteor shower peaks within a few days; %1$s is the shower name, %2$d the number of days">ذروة %1$s في غضون %2$d يوم</string>
-    <string name="tonight_new_moon" translation_description="Tonight-widget row shown at new moon">المحاق — أحلك سماء الشهر</string>
-    <string name="tonight_full_moon" translation_description="Tonight-widget row shown at full moon">البدر الليلة</string>
-    <string name="tonight_bright_moon" translation_description="Tonight-widget row warning that a bright moon washes out faint objects">القمر الساطع يحجب الأجرام الخافتة</string>
     <string name="tonight_quiet" translation_description="Tonight-widget line shown when nothing notable is visible tonight">سماء هادئة الليلة</string>
     <string name="tonight_quiet_next" translation_description="Tonight-widget line under the quiet-night message; %1$s is an event name, %2$d the days until it">التالي: %1$s في غضون %2$d يوم</string>
     <string name="countdown_widget_label" translation_description="Name of the countdown home-screen widget, shown in the launcher\'s widget picker">عداد السماء التنازلي</string>
@@ -151,16 +126,6 @@
     <string name="channel_showers_description" translation_description="Description of the meteor-shower notification channel in the system\'s notification settings">حوالي اثني عشر في السنة، في مساء الذروة</string>
     <string name="channel_digest_name" translation_description="Name of the tonight-digest notification channel, shown in the system\'s notification settings">ملخص سماء الليلة</string>
     <string name="channel_digest_description" translation_description="Description of the tonight-digest notification channel in the system\'s notification settings">ملخص مسائي واحد، يتم تخطيه في الليالي الهادئة</string>
-    <string name="notif_shower_title" translation_description="Title of the meteor-shower notification; %1$s is the shower name">ذروة %1$s الليلة</string>
-    <string name="notif_shower_direction" translation_description="Notification sentence telling the user where to look; %1$s is a compass point like NE">الأفضل بعد منتصف الليل، بالنظر إلى %1$s.</string>
-    <string name="notif_shower_dark_moon" translation_description="Notification sentence when the moon is dark during a meteor shower peak; %1$d is the expected meteors per hour">
-    سماء مظلمة وخالية من القمر — توقع ما يصل إلى %1$d شهاب في الساعة بعيدًا عن أضواء المدينة.
-    </string>
-    <string name="notif_shower_bright_moon" translation_description="Notification sentence when a bright moon will interfere with a meteor shower; %1$d is the moon illumination percentage, %2$d the meteors per hour under ideal skies">
-    القمر المضاء بنسبة %1$d%% سيحجب الشهب الخافتة — ما يصل إلى %2$d في الساعة تحت سماء مثالية.
-    </string>
-    <string name="notif_digest_title" translation_description="Title of the tonight\'s-sky digest notification">يستحق المشاهدة الليلة</string>
     <string name="notif_action_mute_showers" translation_description="Notification action button that opens the system toggle for the meteor-shower channel">كتم زخات الشهب</string>
     <!-- Layers sheet: per-layer parameters (D87). -->
-    <string name="tonight_trailing_pass_peak" translation_description="Small trailing note on a satellite pass row. %1$d is the peak altitude in degrees, %2$.1f is a brightness magnitude.">الذروة %1$d°، القدر %2$.1f</string>
 </resources>
