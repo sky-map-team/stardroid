@@ -57,7 +57,10 @@ final class UserNotificationCenterAdapter: NSObject, LocalNotificationCenter,
                 content: content,
                 trigger: UNTimeIntervalNotificationTrigger(timeInterval: seconds, repeats: false))
             group.enter()
-            center.add(request) { _ in group.leave() }
+            center.add(request) { error in
+                if let error { print("NotificationScheduler: add \(notification.id) failed: \(error)") }
+                group.leave()
+            }
         }
         group.notify(queue: .main) { onDone() }
     }
@@ -65,6 +68,7 @@ final class UserNotificationCenterAdapter: NSObject, LocalNotificationCenter,
     func authorization(onResult: @escaping (NotificationAuthorization) -> Void) {
         center.getNotificationSettings { settings in
             switch settings.authorizationStatus {
+            // Provisional is never requested, but an existing grant still counts.
             case .authorized, .provisional, .ephemeral: onResult(.authorized)
             case .denied: onResult(.denied)
             default: onResult(.notDetermined)

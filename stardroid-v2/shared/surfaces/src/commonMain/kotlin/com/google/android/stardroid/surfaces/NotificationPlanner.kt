@@ -68,10 +68,8 @@ object NotificationPlanner {
         )
     }
 
-    /** A pass closer than this to its alert time is not worth arming: it would fire too late. */
     val PASS_MINIMUM_NOTICE = 2.minutes
 
-    /** How far ahead of a lunar eclipse's visible start to notify. */
     val ECLIPSE_LEAD = 30.minutes
 
     /**
@@ -89,9 +87,9 @@ object NotificationPlanner {
             .minByOrNull { it.peakMagnitude }
 
     /**
-     * One pass alert per night over the next [horizon], each for that night's brightest pass.
-     * A night runs noon to noon in [zone], so a pass just after midnight belongs to the evening
-     * before. The plan-ahead model for platforms that cannot run code when an alert fires.
+     * One pass alert per night over the next [horizon] (filtered here so any caller is safe), each
+     * for that night's brightest pass. A night runs noon to noon in [zone], so a pass just after
+     * midnight belongs to the evening before.
      */
     fun planPassAlerts(
         now: Instant,

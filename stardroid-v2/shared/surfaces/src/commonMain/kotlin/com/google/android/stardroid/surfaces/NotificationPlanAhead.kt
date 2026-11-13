@@ -102,6 +102,9 @@ class NotificationPlanAhead(
                     inputs.zone,
                     passes = tonightsPasses,
                 )
+            // No sunset (polar): the planner would fall back to "now", which for a later night
+            // is noon the day before.
+            if (sky.sunset == null) return@mapNotNull null
             val plan =
                 NotificationPlanner.plan(
                     reference,
@@ -198,7 +201,6 @@ class NotificationPlanAhead(
         const val THREAD_PASSES = "passes"
         const val THREAD_ECLIPSES = "eclipses"
 
-        /** The Moon's object id, which an eclipse alert opens. */
         const val MOON_OBJECT_ID = "planet/moon"
 
         // Far under the system's 64 pending notifications.

@@ -9,11 +9,13 @@
 package com.google.android.stardroid.ios
 
 import com.google.android.stardroid.astronomy.MeeusEphemeris
+import com.google.android.stardroid.astronomy.SatellitePass
 import com.google.android.stardroid.astronomy.nextLunarEclipse
 import com.google.android.stardroid.catalog.CatalogRepository
 import com.google.android.stardroid.catalog.LocaleSpec
 import com.google.android.stardroid.layers.LayerRegistry
 import com.google.android.stardroid.layers.SatelliteLayer
+import com.google.android.stardroid.math.LatLong
 import com.google.android.stardroid.satellites.SatelliteIds
 import com.google.android.stardroid.satellites.passesWithin
 import com.google.android.stardroid.settings.Settings
@@ -25,6 +27,7 @@ import com.google.android.stardroid.startup.ExperimentConfig
 import com.google.android.stardroid.surfaces.AlertPreferences
 import com.google.android.stardroid.surfaces.NotificationPlanAhead
 import com.google.android.stardroid.surfaces.NotificationText
+import com.google.android.stardroid.surfaces.ScheduledNotification
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.IO
 import kotlinx.coroutines.flow.Flow
@@ -46,14 +49,10 @@ import platform.Foundation.dateWithTimeIntervalSince1970
 import kotlin.coroutines.resume
 
 /**
- * Keeps the system's pending local notifications in step with what the user has asked for. iOS
- * cannot run code when an alert is due, so this plans the next few nights ahead
- * ([NotificationPlanAhead]) and hands the result to [center], which replaces whatever was there.
- *
- * Planning is cheap and idempotent, so callers just ask whenever something it depends on has
- * changed: the app coming forward, a setting, the location, new satellite elements, a background
- * refresh. Nothing is scheduled until the notifications flag is on, the user has turned a kind
- * on, and the system has allowed alerts; this never shows the permission prompt itself.
+ * Keeps the system's pending local notifications in step with the user's settings. iOS cannot run
+ * code when an alert is due, so this plans the next few nights ahead ([NotificationPlanAhead])
+ * and has [center] replace what was pending. Planning is idempotent: replan whenever an input
+ * changes. It never shows the permission prompt itself.
  */
 internal class IosNotificationScheduler(
     private val center: LocalNotificationCenter,
@@ -63,9 +62,9 @@ internal class IosNotificationScheduler(
     private val locale: StateFlow<LocaleSpec>,
     private val satellites: IosSatellites?,
 ) {
+    // Also what makes Swift's remove-then-add in replaceAll safe: replans never overlap.
     private val lock = Mutex()
 
-    /** The user's four alert switches, for a caller that wants to replan when one changes. */
     val preferences: Flow<AlertPreferences> =
         combine(
             settings.showerAlertsEnabled,
@@ -90,51 +89,44 @@ internal class IosNotificationScheduler(
             }
             val now = Clock.System.now()
             val location = settings.savedLocation.first()
-            val passes = passesFor(preferences, location?.let { it }, now)
+            val passes = passesFor(preferences, location, now)
+            // Off the main thread: the eclipse search and three nights' sky are not cheap.
             val plan =
-                NotificationPlanAhead(
-                    words = NotificationText(loadIosTextSource(), ::formatTime),
-                    satelliteObjectId = { SatelliteIds.idFor(it).value },
-                ).plan(
-                    NotificationPlanAhead.Inputs(
-                        now = now,
-                        zone = TimeZone.currentSystemDefault(),
-                        location = location,
-                        showers = catalog().meteorShowers(locale.value).first(),
-                        passes = passes,
-                        eclipse =
-                            if (preferences.eclipses) {
-                                nextLunarEclipse(
-                                    now,
-                                    MeeusEphemeris,
-                                )
-                            } else {
-                                null
-                            },
-                        preferences = preferences,
-                    ),
-                )
-            log("scheduled ${plan.size}: " + plan.joinToString { "${it.id}@${it.fireAt}" })
-            center.replaceAllNotifications(
-                plan.map {
-                    LocalNotification(
-                        it.id,
-                        it.threadId,
-                        it.fireAt.toEpochMilliseconds(),
-                        it.title,
-                        it.body,
-                        it.objectId,
+                withContext(Dispatchers.Default) {
+                    val formatter = timeFormatter()
+                    NotificationPlanAhead(
+                        words = NotificationText(loadIosTextSource()) { formatTime(formatter, it) },
+                        satelliteObjectId = { SatelliteIds.idFor(it).value },
+                    ).plan(
+                        NotificationPlanAhead.Inputs(
+                            now = now,
+                            zone = TimeZone.currentSystemDefault(),
+                            location = location,
+                            showers = catalog().meteorShowers(locale.value).first(),
+                            passes = passes,
+                            eclipse =
+                                if (preferences.eclipses) {
+                                    nextLunarEclipse(
+                                        now,
+                                        MeeusEphemeris,
+                                    )
+                                } else {
+                                    null
+                                },
+                            preferences = preferences,
+                        ),
                     )
-                },
-            )
+                }
+            log("scheduled ${plan.size}: " + plan.joinToString { "${it.id}@${it.fireAt}" })
+            center.replaceAllNotifications(plan.map { it.toLocal() })
         }
 
     /** The passes the pass alerts and the digest's pass row draw on; none with satellites off. */
     private suspend fun passesFor(
         preferences: AlertPreferences,
-        location: com.google.android.stardroid.math.LatLong?,
+        location: LatLong?,
         now: Instant,
-    ): List<com.google.android.stardroid.astronomy.SatellitePass> {
+    ): List<SatellitePass> {
         if (satellites == null || location == null) return emptyList()
         if (!preferences.passes && !preferences.digest) return emptyList()
         if (!LayerRegistry.layerEnabled(
@@ -157,12 +149,17 @@ internal class IosNotificationScheduler(
     // Stdout reaches the device console (devicectl --console), as the search log does.
     private fun log(message: String) = println("NotificationScheduler: $message")
 
-    private fun formatTime(time: Instant): String {
-        val formatter =
-            NSDateFormatter().apply {
-                timeStyle = NSDateFormatterShortStyle
-                dateStyle = NSDateFormatterNoStyle
-            }
+    // One per replan: formatters are costly to make, and the locale can change between replans.
+    private fun timeFormatter() =
+        NSDateFormatter().apply {
+            timeStyle = NSDateFormatterShortStyle
+            dateStyle = NSDateFormatterNoStyle
+        }
+
+    private fun formatTime(
+        formatter: NSDateFormatter,
+        time: Instant,
+    ): String {
         return formatter.stringFromDate(
             NSDate.dateWithTimeIntervalSince1970(time.toEpochMilliseconds() / MILLIS_PER_SECOND),
         )
@@ -172,6 +169,9 @@ internal class IosNotificationScheduler(
         const val MILLIS_PER_SECOND = 1000.0
     }
 }
+
+private fun ScheduledNotification.toLocal() =
+    LocalNotification(id, threadId, fireAt.toEpochMilliseconds(), title, body, objectId)
 
 internal suspend fun LocalNotificationCenter.currentAuthorization(): NotificationAuthorization =
     suspendCancellableCoroutine { continuation -> authorization { continuation.resume(it) } }

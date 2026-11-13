@@ -40,10 +40,11 @@ class NotificationPlanAheadTest {
         preferences: AlertPreferences,
         passes: List<SatellitePass> = emptyList(),
         eclipse: com.google.android.stardroid.astronomy.LunarEclipseCircumstances? = null,
+        location: LatLong = london,
     ) = NotificationPlanAhead.Inputs(
         now = Instant.parse(now),
         zone = utc,
-        location = london,
+        location = location,
         showers = listOf(PERSEIDS),
         passes = passes,
         eclipse = eclipse,
@@ -90,6 +91,21 @@ class NotificationPlanAheadTest {
     fun `planning again after the alert has gone does not announce the night twice`() {
         val planned =
             planAhead.plan(inputs("2026-08-12T22:00:00Z", AlertPreferences(showers = true)))
+
+        assertThat(planned).isEmpty()
+    }
+
+    @Test
+    fun `a night with no sunset is not planned`() {
+        val svalbard = LatLong(78.2, 15.6)
+        val planned =
+            planAhead.plan(
+                inputs(
+                    "2026-06-20T08:00:00Z",
+                    AlertPreferences(digest = true),
+                    location = svalbard,
+                ),
+            )
 
         assertThat(planned).isEmpty()
     }
