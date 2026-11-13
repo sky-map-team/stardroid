@@ -32,7 +32,7 @@ data class SatelliteFetchConditions(
     val layerEnabled: Boolean,
     val termsAccepted: Boolean,
     val lastForegroundAt: Instant?,
-    /** A placed widget or an armed pass alert shows satellite data while the app is closed. */
+    /** Something shows satellite data while the app is closed: a widget, alert or digest. */
     val backgroundUse: Boolean,
 ) {
     /** The flag and the user's own choices: every gate except recent use. */

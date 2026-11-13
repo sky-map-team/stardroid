@@ -565,12 +565,23 @@ only when all of these hold:
 4. The terms are accepted (`StartupRouter.needsEula` is false).
 5. The app was in the foreground, where the user could see it, within the last **14 days**
    (`StartupState.lastForegroundAt`). Alternatively, something shows satellite data while the
-   app is closed: a placed Tonight widget, or pass alerts turned on with notifications allowed.
-   iOS has neither, so only use counts there.
+   app is closed (`satelliteBackgroundUse`, Android only):
+   - a placed Tonight widget, the only widget with passes;
+   - pass alerts turned on;
+   - the D77 tonight digest turned on.
+
+   Alerts and the digest count only with `Experiment.NOTIFICATIONS` on and notifications allowed
+   by the OS, because a notification that can't be posted needs no data. iOS has none of the
+   three, so only use counts there.
 
 The timestamp is written each time `MainActivity` starts and each time iOS enters the
 foreground. A background start never writes it. A stamp more than a day in the future means the
 clock was wrong when it was written, so it doesn't count.
+
+**Existing installs count as unused until opened.** An upgrade from a release without the
+timestamp has none recorded. Until the user next opens the app, such an install keeps
+downloading only if a widget, alert or digest from rule 5 needs the data. Any other install's
+schedule is cancelled at its next run.
 
 **Who schedules.** Only a session the user sees. While `MainActivity` is started it follows the
 conditions, scheduling or cancelling. `SkyMapApplication.onCreate` runs on every process start,
@@ -583,13 +594,16 @@ stops opening the app therefore makes no request after day 14 and wakes at most 
 Opening the app again reschedules, and the first fetch follows within the usual jitter, still
 subject to the 2-hour floor.
 
-**iOS** applies the same conditions in three places: the fetch on app open, the request for a
-`BGAppRefreshTask` when the app leaves the foreground, and each background run. A run asks for
-the next slot only while the conditions hold. Before this change every run rescheduled itself
-unconditionally.
+**iOS** applies the same conditions in three places:
+- the fetch on app open;
+- the request for a `BGAppRefreshTask`. When the app leaves the foreground, Swift asks Kotlin
+  (`mayRefreshSatellites`) and schedules only if the answer is yes, otherwise dropping any
+  pending request. A layer switched on in the foreground is therefore armed on the next move to
+  the background;
+- each background run, which asks for the next slot only while the conditions hold.
 
-The D77 tonight digest also shows passes but doesn't keep downloads going on its own. Once the
-elements are more than 10 days old the digest drops the pass line, as the widget does.
+Before this change, every move to the background and every run rescheduled unconditionally
+(#1278, finding 5).
 
 ## Staleness and offline behaviour
 
@@ -665,8 +679,8 @@ the first download can take a few minutes. Users who never touched the toggle se
 from on to off on update; those who set it keep their choice.
 
 **Update (November 2026, #1272): accepted terms and recent use.** After CelesTrak was overloaded
-(#1269), downloads also need accepted terms and use within the last 14 days, or a widget or pass
-alert that shows the data. They are scheduled only from a session the user sees. See §"Who
+(#1269), downloads also need accepted terms and use within the last 14 days, or a widget, pass alert
+or digest that shows the data. They are scheduled only from a session the user sees. See §"Who
 downloads".
 
 One hazard to note for whoever implements it: `SettingsViewModel`'s `combine` unpacks its flows by

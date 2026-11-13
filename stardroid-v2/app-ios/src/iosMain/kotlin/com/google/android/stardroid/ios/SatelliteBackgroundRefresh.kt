@@ -47,10 +47,10 @@ fun refreshSatellitesInBackground(
 }
 
 /**
- * On leaving the foreground, whether to ask the system for a background refresh: [onResult] gets
- * true only if one would download anything, on the main thread. Never called if the app has not
- * built its graph yet, as when it is left before the flags were read.
+ * Whether satellites may refresh in the background, asked on leaving the foreground so Swift
+ * schedules only then (#1278 finding 5). [onResult] runs on the main thread, and never if the app
+ * has not built its graph yet, as when it is left before the flags were read.
  */
-fun satelliteRefreshWanted(onResult: (wanted: Boolean) -> Unit) {
-    sharedGraph?.checkSatelliteRefreshWanted(onResult)
+fun mayRefreshSatellites(onResult: (may: Boolean) -> Unit) {
+    sharedGraph?.checkMayRefreshSatellites(onResult)
 }

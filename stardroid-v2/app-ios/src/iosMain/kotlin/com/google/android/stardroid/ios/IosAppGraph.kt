@@ -307,7 +307,7 @@ class IosAppGraph(
             var open = false
             var completed = false
             try {
-                open = satelliteRefreshWanted()
+                open = mayRefreshSatellites()
                 if (open) withContext(Dispatchers.IO) { satellites.refreshNow() }
                 completed = true
             } finally {
@@ -315,11 +315,11 @@ class IosAppGraph(
             }
         }
 
-    /** Tells [onResult] whether a background refresh would download anything now. */
-    internal fun checkSatelliteRefreshWanted(onResult: (Boolean) -> Unit): Job =
-        scope.launch { onResult(satelliteRefreshWanted()) }
+    /** Tells [onResult] whether a background refresh may download now. */
+    internal fun checkMayRefreshSatellites(onResult: (Boolean) -> Unit): Job =
+        scope.launch { onResult(mayRefreshSatellites()) }
 
-    private suspend fun satelliteRefreshWanted(): Boolean =
+    private suspend fun mayRefreshSatellites(): Boolean =
         satelliteGates.first().allowFetch(Clock.System.now())
 
     /** Satellite data status for the Diagnostics screen; null with the flag off. */

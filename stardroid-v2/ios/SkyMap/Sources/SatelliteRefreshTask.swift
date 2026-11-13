@@ -30,7 +30,7 @@ enum SatelliteRefreshTask {
                 let work = SatelliteBackgroundRefreshKt.refreshSatellitesInBackground(
                     analytics: analytics, flags: flags
                 ) { completed, scheduleNext in
-                    if scheduleNext.boolValue { submit() }
+                    if scheduleNext.boolValue { schedule() }
                     task.setTaskCompleted(success: completed.boolValue)
                 }
                 task.expirationHandler = { work.cancel() }
@@ -38,12 +38,12 @@ enum SatelliteRefreshTask {
         }
     }
 
-    /// On leaving the foreground: asks for a refresh if one would download, else drops any
-    /// pending request.
-    static func schedule() {
-        SatelliteBackgroundRefreshKt.satelliteRefreshWanted { wanted in
-            if wanted.boolValue {
-                submit()
+    /// On leaving the foreground: schedules only if satellites may refresh, else drops any
+    /// pending request. Switching the layer on in the foreground re-arms here next time.
+    static func scheduleIfAllowed() {
+        SatelliteBackgroundRefreshKt.mayRefreshSatellites { may in
+            if may.boolValue {
+                schedule()
             } else {
                 BGTaskScheduler.shared.cancel(taskRequestWithIdentifier: identifier)
             }
@@ -51,7 +51,7 @@ enum SatelliteRefreshTask {
     }
 
     /// Spread over an hour so installs don't all fetch together.
-    private static func submit() {
+    private static func schedule() {
         let request = BGAppRefreshTaskRequest(identifier: identifier)
         request.earliestBeginDate = Date(timeIntervalSinceNow: interval + .random(in: 0...jitter))
         try? BGTaskScheduler.shared.submit(request)
