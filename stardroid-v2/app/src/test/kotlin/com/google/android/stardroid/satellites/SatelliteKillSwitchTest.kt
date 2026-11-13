@@ -16,6 +16,7 @@ import com.google.common.truth.Truth.assertThat
 import kotlinx.coroutines.awaitCancellation
 import kotlinx.coroutines.test.runTest
 import org.junit.jupiter.api.Test
+import kotlin.time.Duration
 import kotlin.time.Duration.Companion.seconds
 
 class SatelliteKillSwitchTest {
@@ -34,28 +35,46 @@ class SatelliteKillSwitchTest {
         }
     }
 
+    private suspend fun state(
+        config: ExperimentConfig,
+        timeout: Duration = 10.seconds,
+    ) = satelliteFlagState(config, timeout)
+
     @Test
-    fun `a flag switched off on the server stops the run`() =
+    fun `a flag switched off on the server reads as off`() =
         runTest {
-            assertThat(satellitesAllowed(FakeConfig(value = true, fetchedValue = false))).isFalse()
+            assertThat(state(FakeConfig(value = true, fetchedValue = false)))
+                .isEqualTo(SatelliteFlagState.OFF)
         }
 
     @Test
-    fun `an enabled fresh flag allows the run`() =
-        runTest { assertThat(satellitesAllowed(FakeConfig(value = true))).isTrue() }
-
-    @Test
-    fun `a failed fetch skips the run even if the stale value is on`() =
+    fun `an enabled fresh flag reads as on`() =
         runTest {
-            assertThat(satellitesAllowed(FakeConfig(value = true, fresh = false))).isFalse()
+            assertThat(state(FakeConfig(value = true))).isEqualTo(SatelliteFlagState.ON)
         }
 
     @Test
-    fun `a fetch that never completes is abandoned after the timeout`() =
+    fun `a failed or throttled fetch is unknown even if the stale value is on`() =
         runTest {
-            assertThat(satellitesAllowed(FakeConfig(value = true, hang = true), 1.seconds))
-                .isFalse()
+            assertThat(state(FakeConfig(value = true, fresh = false)))
+                .isEqualTo(SatelliteFlagState.UNKNOWN)
         }
+
+    @Test
+    fun `a fetch that never completes is unknown after the timeout`() =
+        runTest {
+            assertThat(state(FakeConfig(value = true, hang = true), 1.seconds))
+                .isEqualTo(SatelliteFlagState.UNKNOWN)
+        }
+
+    @Test
+    fun `only an unknown flag asks WorkManager to retry, and only on is allowed to download`() {
+        assertThat(satelliteFlagWorkAction(SatelliteFlagState.UNKNOWN))
+            .isEqualTo(SatelliteWorkAction.RETRY)
+        assertThat(satelliteFlagWorkAction(SatelliteFlagState.OFF))
+            .isEqualTo(SatelliteWorkAction.SUCCEED)
+        assertThat(satelliteFlagWorkAction(SatelliteFlagState.ON)).isNull()
+    }
 
     @Test
     fun `a server-backed config is fresh only if the fetch succeeded`() =
@@ -84,6 +103,6 @@ class SatelliteKillSwitchTest {
     fun `a config with no server is always current`() =
         runTest {
             assertThat(ExperimentConfig { true }.awaitFresh()).isTrue()
-            assertThat(satellitesAllowed(ExperimentConfig { true })).isTrue()
+            assertThat(state(ExperimentConfig { true })).isEqualTo(SatelliteFlagState.ON)
         }
 }

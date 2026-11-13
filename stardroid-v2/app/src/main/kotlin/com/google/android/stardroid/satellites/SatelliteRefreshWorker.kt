@@ -69,16 +69,43 @@ fun satelliteWorkAction(outcome: FetchOutcome): SatelliteWorkAction =
 
 internal val SATELLITE_FLAG_TIMEOUT: Duration = 10.seconds
 
+/** The kill switch as seen after waiting for a fresh value. */
+internal enum class SatelliteFlagState {
+    ON,
+    OFF,
+
+    /** The fresh fetch failed, was throttled or timed out, so the flag can't be trusted. */
+    UNKNOWN,
+}
+
 /**
- * The kill-switch check: waits up to [timeout] for a fresh flag, then reads it. Fails closed —
- * the flag exists to stop CelesTrak traffic, and a skipped run just retries on the next tick.
+ * Waits up to [timeout] for a fresh flag, then reads it. Never answers [SatelliteFlagState.ON]
+ * from a stale value: the flag exists to stop CelesTrak traffic.
  */
-internal suspend fun satellitesAllowed(
+internal suspend fun satelliteFlagState(
     config: ExperimentConfig,
     timeout: Duration = SATELLITE_FLAG_TIMEOUT,
-): Boolean =
-    withTimeoutOrNull(timeout) { config.awaitFresh() } == true &&
-        config.isEnabled(Experiment.SATELLITES)
+): SatelliteFlagState =
+    when {
+        withTimeoutOrNull(timeout) { config.awaitFresh() } != true -> SatelliteFlagState.UNKNOWN
+        config.isEnabled(Experiment.SATELLITES) -> SatelliteFlagState.ON
+        else -> SatelliteFlagState.OFF
+    }
+
+/**
+ * What to tell WorkManager for each flag state, or null to go on and download.
+ *
+ * UNKNOWN retries so WorkManager's default backoff (30 s, doubling, capped at 5 h) re-attempts
+ * only the Firebase fetch; the CelesTrak download still needs a fresh ON, and keeps its own
+ * 2-hour floor and circuit breaker. Never reached after a CelesTrak request, so this can't
+ * become a retry loop against CelesTrak.
+ */
+internal fun satelliteFlagWorkAction(state: SatelliteFlagState): SatelliteWorkAction? =
+    when (state) {
+        SatelliteFlagState.ON -> null
+        SatelliteFlagState.OFF -> SatelliteWorkAction.SUCCEED
+        SatelliteFlagState.UNKNOWN -> SatelliteWorkAction.RETRY
+    }
 
 /**
  * The periodic CelesTrak fetch (D92), scheduled by [SatelliteScheduler].
@@ -109,8 +136,10 @@ class SatelliteRefreshWorker(
                 LayerRegistry.layerEnabled(entryPoint.settings(), SatelliteLayer.LAYER_ID).first()
             if (!layerOn) return@withContext Result.success()
             // Last, so only installs about to download pay for the fetch.
-            if (!satellitesAllowed(entryPoint.experimentConfig())) {
-                return@withContext Result.success()
+            when (satelliteFlagWorkAction(satelliteFlagState(entryPoint.experimentConfig()))) {
+                null -> Unit
+                SatelliteWorkAction.RETRY -> return@withContext Result.retry()
+                else -> return@withContext Result.success()
             }
             val repository = entryPoint.satelliteElementsRepository()
             val analytics = entryPoint.analytics()

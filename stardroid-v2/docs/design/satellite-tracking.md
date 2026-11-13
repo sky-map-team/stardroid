@@ -584,6 +584,14 @@ other pair rather than replacing either of them:
    is new and CelesTrak-dependent enough that off-everywhere is the honest shipping posture,
    same as D80's camera-AR and share-sky launch.
 
+   Before each download the worker waits up to 10 s for a fresh Remote Config fetch (gms: a
+   15-minute minimum fetch interval) and reads the flag after activation. If the fetch fails,
+   is throttled or times out the flag is unknown, so the worker returns `Result.retry()` and
+   WorkManager's default backoff (30 s, doubling, capped at 5 h) re-attempts only that Firebase
+   fetch. The CelesTrak download needs a fresh ON and is still bounded by the 2-hour floor and
+   the circuit breaker; it is never retried by this path. F-Droid has no server and always reads
+   its static value.
+
    The two flavors then diverge in *how* they get turned on, and the asymmetry is deliberate:
 
    - **gms is enabled remotely**, via Remote Config, per D80's staged-rollout pattern. No release
