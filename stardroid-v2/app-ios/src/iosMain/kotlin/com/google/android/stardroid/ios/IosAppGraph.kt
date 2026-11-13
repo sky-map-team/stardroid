@@ -27,6 +27,7 @@ import com.google.android.stardroid.render.api.RendererInfo
 import com.google.android.stardroid.satellites.SatelliteDiagnosticsState
 import com.google.android.stardroid.satellites.TrackedSatellite
 import com.google.android.stardroid.satellites.satelliteElementsFlow
+import com.google.android.stardroid.satellites.satelliteFetchConditions
 import com.google.android.stardroid.satellites.satelliteUiStatusFlow
 import com.google.android.stardroid.satellites.trackedSatellites
 import com.google.android.stardroid.satellites.upcomingGoodPasses
@@ -78,6 +79,7 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock
 import kotlinx.coroutines.withContext
+import kotlinx.datetime.Clock
 import org.jetbrains.compose.resources.getString
 import platform.CoreMotion.CMMotionManager
 import platform.Foundation.NSApplicationSupportDirectory
@@ -259,6 +261,16 @@ class IosAppGraph(
         }
     }
 
+    /** The download gates shared with Android (#1272). iOS has no widgets or alerts to count. */
+    private val satelliteGates =
+        satelliteFetchConditions(
+            experiments = experiments,
+            settings = settings,
+            startupRouter = startupRouter,
+            startupState = startupState,
+            backgroundUse = flowOf(false),
+        )
+
     init {
         scope.launch {
             // Latest: going to the background cancels a start still waiting on the EULA.
@@ -267,43 +279,49 @@ class IosAppGraph(
             }
         }
         scope.launch {
-            // Opening the app, and switching the layer on, both look for stale elements.
-            combine(
-                foreground.isForeground,
-                LayerRegistry.layerEnabled(settings, SatelliteLayer.LAYER_ID),
-            ) { inForeground, layerOn -> inForeground && layerOn }
-                .distinctUntilChanged()
+            // Only a foreground the user sees counts as use, never a background refresh launch.
+            foreground.isForeground.collect {
+                if (it) startupState.setLastForegroundAt(Clock.System.now())
+            }
+        }
+        scope.launch {
+            // Opening the app, switching the layer on and accepting the terms all look for stale
+            // elements, once every gate is open.
+            combine(foreground.isForeground, satelliteGates) { inForeground, gates ->
+                inForeground && gates.allowFetch(Clock.System.now())
+            }.distinctUntilChanged()
                 .collect { if (it) refreshSatellitesIfStale() }
         }
     }
 
     /**
-     * The system's background refresh slot ([SatelliteBackgroundRefresh]): the same conditions and
+     * The system's background refresh slot ([SatelliteBackgroundRefresh]): the same gates and
      * policy as the foreground fetch, minus the staleness test, since the system picks the time.
+     * [onGates] hears whether the gates were open, which is whether to ask for the next slot.
      */
-    internal suspend fun refreshSatellitesInBackground() {
-        if (!mayFetchSatellites()) return
-        if (!LayerRegistry.layerEnabled(settings, SatelliteLayer.LAYER_ID).first()) return
-        withContext(Dispatchers.IO) { satellites.refreshNow() }
-    }
+    internal fun startBackgroundRefresh(onGates: (Boolean) -> Unit): Job =
+        scope.launch {
+            val open = satelliteRefreshWanted()
+            onGates(open)
+            if (open) withContext(Dispatchers.IO) { satellites.refreshNow() }
+        }
 
-    internal fun startBackgroundRefresh(): Job = scope.launch { refreshSatellitesInBackground() }
+    /** Tells [onResult] whether a background refresh would download anything now. */
+    internal fun checkSatelliteRefreshWanted(onResult: (Boolean) -> Unit): Job =
+        scope.launch { onResult(satelliteRefreshWanted()) }
+
+    private suspend fun satelliteRefreshWanted(): Boolean =
+        satelliteGates.first().allowFetch(Clock.System.now())
 
     /** Satellite data status for the Diagnostics screen; null with the flag off. */
     suspend fun satelliteDiagnostics(): SatelliteDiagnosticsState? =
         if (satellitesEnabled) withContext(Dispatchers.IO) { satellites.diagnostics() } else null
 
-    /** Flag on and consent given. */
-    private suspend fun mayFetchSatellites() =
-        satellitesEnabled && settings.satelliteDataEnabled.first()
-
     /**
-     * Only for a user who switched the Satellites layer on (it starts off, so they choose to show
-     * their IP address to CelesTrak), with the flag on and consent given. Through the repository,
-     * so the circuit breaker and the two-hour minimum still apply.
+     * The caller has checked the gates. Through the repository, so the circuit breaker and the
+     * two-hour minimum still apply.
      */
     private suspend fun refreshSatellitesIfStale() {
-        if (!mayFetchSatellites()) return
         withContext(Dispatchers.IO) { satellites.refreshIfStale() }
     }
 

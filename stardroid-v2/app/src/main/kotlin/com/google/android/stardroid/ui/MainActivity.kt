@@ -80,6 +80,7 @@ import com.google.android.stardroid.render.RenderConnector
 import com.google.android.stardroid.render.RendererInfoStore
 import com.google.android.stardroid.render.createRendererBackend
 import com.google.android.stardroid.render.supportsGles3
+import com.google.android.stardroid.satellites.SatelliteScheduler
 import com.google.android.stardroid.satellites.satelliteEntryPoint
 import com.google.android.stardroid.satellites.satelliteUiStatusFlow
 import com.google.android.stardroid.satellites.trackedSatellites
@@ -134,6 +135,7 @@ import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.withContext
+import kotlinx.datetime.Clock
 import org.jetbrains.compose.resources.getString
 import java.util.Calendar
 import javax.inject.Inject
@@ -595,6 +597,16 @@ class MainActivity : ComponentActivity() {
                     settings.autoDimness,
                     ::Pair,
                 ).collect { (night, dimness) -> applyScreenDimming(night, dimness) }
+            }
+        }
+
+        // The one place satellite downloads are scheduled (#1272): a session the user sees, not
+        // a background process start. Recording the visit first means the 14-day window the
+        // gates check already includes this one.
+        lifecycleScope.launch {
+            repeatOnLifecycle(Lifecycle.State.STARTED) {
+                startupState.setLastForegroundAt(Clock.System.now())
+                SatelliteScheduler.followInVisibleSession(applicationContext)
             }
         }
 

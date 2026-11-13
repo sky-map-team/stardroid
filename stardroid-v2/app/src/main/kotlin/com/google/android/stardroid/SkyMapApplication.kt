@@ -15,8 +15,6 @@ import coil.ImageLoaderFactory
 import com.google.android.stardroid.announcements.AnnouncementScheduler
 import com.google.android.stardroid.eclipses.EclipseAlertScheduler
 import com.google.android.stardroid.layers.LayerParameter
-import com.google.android.stardroid.layers.LayerRegistry
-import com.google.android.stardroid.layers.SatelliteLayer
 import com.google.android.stardroid.layers.SolarSystemLayer
 import com.google.android.stardroid.notifications.NotificationScheduler
 import com.google.android.stardroid.notifications.SkyNotifier
@@ -67,28 +65,12 @@ class SkyMapApplication : Application(), ImageLoaderFactory {
         // TIME_SET/DATE_CHANGED to dead apps at all, so a clock change made while the
         // process was down lands here (and the periodic jobs bound staleness meanwhile).
         WidgetScheduler.refreshIfPlaced(this)
-        // Satellite fetching follows all three gates for the process lifetime (D92): the
-        // experiment flag, the user's consent to the network request, and the Satellites layer
-        // being on (it starts off). Any one off cancels the job, so withdrawing consent or
-        // switching the layer off stops traffic immediately rather than at the next flag read.
-        //
-        // Note this only ever *schedules*; it never fetches. App opens are strongly diurnally
-        // correlated across a timezone, so fetching here would convert user behaviour directly
-        // into request volume against CelesTrak.
+        // Satellite fetching: this process may have been started by a reboot, a clock change,
+        // a widget update or another job, with nobody looking. 2.3.0 scheduled the download
+        // from here and so fetched for installs nobody used (#1269), so this only cancels when a
+        // gate closes. MainActivity is what schedules (#1272).
         CoroutineScope(SupervisorJob() + Dispatchers.Default).launch {
-            combine(
-                settings.satelliteDataEnabled,
-                LayerRegistry.layerEnabled(settings, SatelliteLayer.LAYER_ID),
-            ) { consented, layerOn -> consented to layerOn }
-                .distinctUntilChanged()
-                .collect { (consented, layerOn) ->
-                    SatelliteScheduler.syncSchedule(
-                        this@SkyMapApplication,
-                        featureEnabled = experimentConfig.isEnabled(Experiment.SATELLITES),
-                        dataConsented = consented,
-                        layerEnabled = layerOn,
-                    )
-                }
+            SatelliteScheduler.followInAnyProcess(this@SkyMapApplication)
         }
         // Pass alerts (D92 phase 4c). Re-armed on every app start and whenever the opt-in
         // changes: the alarm targets one specific pass, so it has to be recomputed as the night

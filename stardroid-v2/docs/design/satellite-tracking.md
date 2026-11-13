@@ -538,7 +538,7 @@ constraints matter more than its convenience.
 Mirror `widget/WidgetScheduler.kt` — `enqueueUniquePeriodicWork`, `ExistingPeriodicWorkPolicy.KEEP`,
 a 12 h period — with two deliberate departures: add `NetworkType.CONNECTED` constraints (nothing
 in the repo currently sets constraints, and this job must, so it waits rather than fails), and
-schedule only while the satellite layer is enabled.
+schedule only for people using the feature, from a session they can see (§"Who downloads").
 
 Cache **the raw TLE text, verbatim**. It is already compact and line-oriented, so re-serializing
 to JSON or Room gains nothing; and storing bytes-as-received means the network and cache paths
@@ -547,6 +547,49 @@ exercise one parser rather than two.
 Store under `filesDir/satellites/`, **not `cacheDir`** — the OS may evict `cacheDir` at any time,
 and losing the TLE silently kills the feature offline. Write atomically (temp file, then rename)
 so a kill mid-write cannot leave a truncated element set.
+
+### Who downloads: people using the feature (#1272)
+
+In 2.3.0 each install's own limits held: the 2-hour floor, the 12-hour job and the breaker. But
+nothing limited how many installs were downloading. The job was scheduled on every process start,
+so a reboot (`PassAlertBootReceiver`), a clock change (`WidgetClockChangeReceiver`) or a widget
+update kept installs nobody used fetching every 12 hours, and the combined load overloaded
+CelesTrak (#1269). Download volume now follows use, not installs.
+
+`SatelliteFetchConditions` (in `:shared:viewmodels`, so both platforms use it) allows a download
+only when all of these hold:
+
+1. `Experiment.SATELLITES` is on.
+2. The user has consented (`satelliteDataEnabled`).
+3. The Satellites layer is on. It starts off.
+4. The terms are accepted (`StartupRouter.needsEula` is false).
+5. The app was in the foreground, where the user could see it, within the last **14 days**
+   (`StartupState.lastForegroundAt`). Alternatively, something shows satellite data while the
+   app is closed: a placed Tonight widget, or pass alerts turned on with notifications allowed.
+   iOS has neither, so only use counts there.
+
+The timestamp is written each time `MainActivity` starts and each time iOS enters the
+foreground. A background start never writes it. A stamp more than a day in the future means the
+clock was wrong when it was written, so it doesn't count.
+
+**Who schedules.** Only a session the user sees. While `MainActivity` is started it follows the
+conditions, scheduling or cancelling. `SkyMapApplication.onCreate` runs on every process start,
+including boot, clock broadcasts, widget updates and other jobs, so there it may only cancel
+(`satelliteScheduleAction`). It cancels when the flag or one of the user's choices is off
+(`switchedOn`), but not for lapsed use. A cold start may be about to show the map, and a cancel
+computed from the previous visit could land after `MainActivity` schedules. The worker re-reads
+every condition on each run and cancels its own schedule once they fail. An install whose user
+stops opening the app therefore makes no request after day 14 and wakes at most once more.
+Opening the app again reschedules, and the first fetch follows within the usual jitter, still
+subject to the 2-hour floor.
+
+**iOS** applies the same conditions in three places: the fetch on app open, the request for a
+`BGAppRefreshTask` when the app leaves the foreground, and each background run. A run asks for
+the next slot only while the conditions hold. Before this change every run rescheduled itself
+unconditionally.
+
+The D77 tonight digest also shows passes but doesn't keep downloads going on its own. Once the
+elements are more than 10 days old the digest drops the pass line, as the widget does.
 
 ## Staleness and offline behaviour
 
@@ -620,6 +663,11 @@ turn on the satellite layer" true, lets the user decide whether to show their IP
 CelesTrak, and spreads first requests by when people choose to try it. The empty-state card says
 the first download can take a few minutes. Users who never touched the toggle see the layer go
 from on to off on update; those who set it keep their choice.
+
+**Update (November 2026, #1272): accepted terms and recent use.** After CelesTrak was overloaded
+(#1269), downloads also need accepted terms and use within the last 14 days, or a widget or pass
+alert that shows the data. They are scheduled only from a session the user sees. See §"Who
+downloads".
 
 One hazard to note for whoever implements it: `SettingsViewModel`'s `combine` unpacks its flows by
 **positional index** (`values[0]` … `values[15]`). Append only; inserting mid-list silently shifts

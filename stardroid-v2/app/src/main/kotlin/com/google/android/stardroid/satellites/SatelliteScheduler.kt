@@ -10,13 +10,44 @@
 package com.google.android.stardroid.satellites
 
 import android.content.Context
+import androidx.core.app.NotificationManagerCompat
 import androidx.work.Constraints
 import androidx.work.ExistingPeriodicWorkPolicy
 import androidx.work.NetworkType
 import androidx.work.PeriodicWorkRequestBuilder
 import androidx.work.WorkManager
+import com.google.android.stardroid.settings.passAlertsEnabled
+import com.google.android.stardroid.startup.Experiment
+import com.google.android.stardroid.widget.TonightWidgetReceiver
+import com.google.android.stardroid.widget.WidgetScheduler
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.distinctUntilChanged
+import kotlinx.coroutines.flow.map
+import kotlinx.datetime.Clock
 import java.util.concurrent.TimeUnit
 import kotlin.random.Random
+
+/** What a change in the [SatelliteFetchConditions] does to the periodic fetch. */
+enum class SatelliteScheduleAction {
+    SCHEDULE,
+    CANCEL,
+    LEAVE,
+}
+
+/**
+ * Only a session the user sees may start the schedule (#1272). 2.3.0 scheduled on any process
+ * start, so a reboot or a clock change kept unused installs fetching. A background-only start may
+ * still cancel, and otherwise leaves whatever schedule exists alone.
+ */
+fun satelliteScheduleAction(
+    allowed: Boolean,
+    userVisible: Boolean,
+): SatelliteScheduleAction =
+    when {
+        !allowed -> SatelliteScheduleAction.CANCEL
+        userVisible -> SatelliteScheduleAction.SCHEDULE
+        else -> SatelliteScheduleAction.LEAVE
+    }
 
 /**
  * Schedules the periodic CelesTrak fetch (D92).
@@ -31,8 +62,9 @@ import kotlin.random.Random
  *    time, but a staged Play rollout or a Remote Config flip reaching many devices in a coordinated
  *    window is a real herd source. Five minutes spreads that without leaving a new user staring at
  *    an empty layer for an hour; the delay also fixes the device's phase for the 12-hour period.
- *  - **Scheduled only while the feature is on and consented to.** Cancelled otherwise, so a user
- *    who turns satellites off stops making requests immediately rather than at the next flag read.
+ *  - **Scheduled only for people using the feature**, and only from a session they can see: see
+ *    [SatelliteFetchConditions] and [satelliteScheduleAction]. Cancelled as soon as any gate
+ *    closes, so turning satellites off stops requests immediately.
  *
  * **Nothing here fetches on app open**, and nothing should. That is the most important of the
  * three herd defences: app opens are strongly diurnally correlated across a timezone, so opening
@@ -76,26 +108,63 @@ object SatelliteScheduler {
         )
     }
 
-    /** Stops fetching: the flag went off, or the user withdrew consent or switched the layer off. */
+    /** Stops fetching: a gate closed (see [SatelliteFetchConditions]). */
     fun cancel(context: Context) {
         WorkManager.getInstance(context).cancelUniqueWork(WORK_NAME)
     }
 
+    /** For while the map is visible: schedules or cancels as the conditions change. */
+    suspend fun followInVisibleSession(context: Context) = follow(context, userVisible = true)
+
     /**
-     * Applies the three gates: the feature must be enabled, the user must have consented to the
-     * network request, *and* the Satellites layer must be on, which is how a user chooses to show
-     * their IP address to CelesTrak. Any one off means no scheduled traffic at all.
+     * For every process start, including boot and widget updates: may cancel, never schedules.
+     *
+     * Only the flag and the user's choices count here. A cold start may be about to show the map,
+     * and a cancel computed from the visit before this one could land after `MainActivity`
+     * schedules. The worker cancels once use lapses, without fetching.
      */
-    fun syncSchedule(
+    suspend fun followInAnyProcess(context: Context) = follow(context, userVisible = false)
+
+    private suspend fun follow(
         context: Context,
-        featureEnabled: Boolean,
-        dataConsented: Boolean,
-        layerEnabled: Boolean,
+        userVisible: Boolean,
     ) {
-        if (featureEnabled && dataConsented && layerEnabled) {
-            ensureScheduled(context)
-        } else {
-            cancel(context)
+        conditions(context).distinctUntilChanged().collect { conditions ->
+            val allowed =
+                if (userVisible) {
+                    conditions.allowFetch(Clock.System.now())
+                } else {
+                    conditions.switchedOn
+                }
+            when (satelliteScheduleAction(allowed, userVisible)) {
+                SatelliteScheduleAction.SCHEDULE -> ensureScheduled(context)
+                SatelliteScheduleAction.CANCEL -> cancel(context)
+                SatelliteScheduleAction.LEAVE -> Unit
+            }
         }
+    }
+
+    /** The gates as this install stands; the worker re-reads them on every run. */
+    fun conditions(context: Context): Flow<SatelliteFetchConditions> {
+        val entryPoint = satelliteEntryPoint(context)
+        val experiments = entryPoint.experimentConfig()
+        val settings = entryPoint.settings()
+        return satelliteFetchConditions(
+            experiments = experiments,
+            settings = settings,
+            startupRouter = entryPoint.startupRouter(),
+            startupState = entryPoint.startupState(),
+            backgroundUse =
+                settings.passAlertsEnabled.map { alertsOn ->
+                    // An alert that can't be posted needs no data.
+                    val alertArmed =
+                        alertsOn &&
+                            experiments.isEnabled(Experiment.NOTIFICATIONS) &&
+                            NotificationManagerCompat.from(context).areNotificationsEnabled()
+                    // Of the widgets, only Tonight shows satellite passes.
+                    alertArmed ||
+                        WidgetScheduler.hasInstances(context, TonightWidgetReceiver::class.java)
+                },
+        )
     }
 }

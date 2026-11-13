@@ -17,8 +17,6 @@ import com.google.android.stardroid.analytics.Analytics
 import com.google.android.stardroid.data.satellites.FetchOutcome
 import com.google.android.stardroid.data.satellites.RefreshResult
 import com.google.android.stardroid.data.satellites.SatelliteFetchPolicy
-import com.google.android.stardroid.layers.LayerRegistry
-import com.google.android.stardroid.layers.SatelliteLayer
 import com.google.android.stardroid.startup.Experiment
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.first
@@ -71,8 +69,9 @@ fun satelliteWorkAction(outcome: FetchOutcome): SatelliteWorkAction =
  * drive requests at CelesTrak is the failure mode the entire circuit breaker exists to prevent,
  * so that mapping should not be inferred from a scattering of `return` statements.
  *
- * What remains here is the surrounding work: re-checking both gates at run time, reporting server
- * refusals as CelesTrak's policy requires, and keeping anything from escaping as an exception.
+ * What remains here is the surrounding work: re-checking the gates at run time (and cancelling the
+ * schedule once they close), reporting server refusals as CelesTrak's policy requires, and keeping
+ * anything from escaping as an exception.
  */
 class SatelliteRefreshWorker(
     context: Context,
@@ -83,17 +82,18 @@ class SatelliteRefreshWorker(
     override suspend fun doWork(): Result =
         withContext(Dispatchers.IO) {
             // The gates are re-checked at run time, not just at schedule time: a Remote Config
-            // flip, a withdrawn consent or the layer being switched off must stop traffic even if
-            // a job is already enqueued.
+            // flip, a withdrawn consent, the layer being switched off or the app going unused must
+            // stop traffic even if a job is already enqueued.
             if (!entryPoint.experimentConfig().isEnabled(Experiment.SATELLITES)) {
                 return@withContext Result.success()
             }
-            if (!entryPoint.settings().satelliteDataEnabled.first()) {
+            val conditions = SatelliteScheduler.conditions(applicationContext).first()
+            if (!conditions.allowFetch(Clock.System.now())) {
+                // Nobody is using the feature here any more (#1272), so stop waking every 12
+                // hours. Only a session the user sees can schedule it again.
+                SatelliteScheduler.cancel(applicationContext)
                 return@withContext Result.success()
             }
-            val layerOn =
-                LayerRegistry.layerEnabled(entryPoint.settings(), SatelliteLayer.LAYER_ID).first()
-            if (!layerOn) return@withContext Result.success()
             val repository = entryPoint.satelliteElementsRepository()
             val analytics = entryPoint.analytics()
 

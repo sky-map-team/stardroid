@@ -21,6 +21,7 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.map
+import kotlinx.datetime.Instant
 
 /** [StartupState] on Preferences DataStore, sharing the app's single settings file. */
 class DataStoreStartupState(
@@ -86,6 +87,15 @@ class DataStoreStartupState(
             .map { it[SUPPRESS_MISSING_SENSOR_WARNING] ?: false }
             .distinctUntilChanged()
 
+    override val lastForegroundAt: Flow<Instant?> =
+        safeData()
+            .map { prefs -> prefs[LAST_FOREGROUND_MILLIS]?.let(Instant::fromEpochMilliseconds) }
+            .distinctUntilChanged()
+
+    override suspend fun setLastForegroundAt(at: Instant) {
+        dataStore.edit { it[LAST_FOREGROUND_MILLIS] = at.toEpochMilliseconds() }
+    }
+
     /** The preferences stream with the standard unreadable-file fallback. */
     private fun safeData(): Flow<Preferences> =
         dataStore.data
@@ -106,5 +116,7 @@ class DataStoreStartupState(
 
         private val SUPPRESS_MISSING_SENSOR_WARNING =
             booleanPreferencesKey("suppress_missing_sensor_warning")
+
+        private val LAST_FOREGROUND_MILLIS = longPreferencesKey("last_foreground_millis")
     }
 }

@@ -10,6 +10,7 @@
 package com.google.android.stardroid.startup
 
 import kotlinx.coroutines.flow.Flow
+import kotlinx.datetime.Instant
 
 /**
  * The persisted first-run bookkeeping behind [StartupRouter]
@@ -55,4 +56,13 @@ interface StartupState {
      * set by warm-welcome completion.
      */
     val suppressMissingSensorWarning: Flow<Boolean>
+
+    /**
+     * When the app was last in the foreground where the user could see it; null if never
+     * recorded. Never set from a background-only start (boot, a widget update, a job), so it
+     * stands for actual use: satellite downloads stop once it is old (#1272).
+     */
+    val lastForegroundAt: Flow<Instant?>
+
+    suspend fun setLastForegroundAt(at: Instant)
 }
