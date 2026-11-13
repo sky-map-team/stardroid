@@ -105,11 +105,13 @@ object PassAlerts {
             best.start.toEpochMilliseconds(),
             pendingIntent(context, best, atRise = true),
         )
+        PassAlertBootReceiver.setEnabled(context, true)
         Log.i(TAG, "Armed pass alert for ${best.satelliteName} at $fireAt (pass at ${best.start})")
     }
 
     /** Disarms any pending alerts — the opt-in went off, or the layer did. */
     fun cancel(context: Context) {
+        PassAlertBootReceiver.setEnabled(context, false)
         val alarmManager = context.getSystemService(AlarmManager::class.java) ?: return
         existingIntent(context, atRise = false)?.let(alarmManager::cancel)
         existingIntent(context, atRise = true)?.let(alarmManager::cancel)
@@ -143,6 +145,19 @@ object PassAlerts {
             Intent(context, PassAlertReceiver::class.java).apply { action = ACTION_PASS_ALERT },
             PendingIntent.FLAG_NO_CREATE or PendingIntent.FLAG_IMMUTABLE,
         )
+
+    /**
+     * The rise alarm is the last of the pair, so once it has fired nothing is left to re-arm
+     * after a reboot and the boot receiver goes back to disabled.
+     */
+    internal fun bootReceiverNeededAfterFire(atRise: Boolean): Boolean = !atRise
+
+    internal fun onAlarmFired(
+        context: Context,
+        atRise: Boolean,
+    ) {
+        if (!bootReceiverNeededAfterFire(atRise)) PassAlertBootReceiver.setEnabled(context, false)
+    }
 
     /** True once the pass has begun; a late alert would send the user to an empty sky. */
     internal fun isStale(
@@ -214,6 +229,7 @@ class PassAlertReceiver : BroadcastReceiver() {
                     SatellitePassNotifier.post(context, noradId, start)
                 }
             } finally {
+                PassAlerts.onAlarmFired(context, atRise)
                 pending.finish()
             }
         }
