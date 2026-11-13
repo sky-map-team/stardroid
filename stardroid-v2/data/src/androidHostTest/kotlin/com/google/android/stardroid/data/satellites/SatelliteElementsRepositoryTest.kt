@@ -317,6 +317,7 @@ class SatelliteElementsRepositoryTest {
             SatelliteFetchState(
                 consecutiveFailures = 2,
                 consecutiveTimeouts = 3,
+                lastTimeout = Instant.parse("2026-08-15T11:00:00Z"),
                 circuitOpenUntil = Instant.parse("2026-08-17T12:00:00Z"),
                 lastAttempt = Instant.parse("2026-08-15T12:00:00Z"),
                 lastSuccess = Instant.parse("2026-08-14T12:00:00Z"),

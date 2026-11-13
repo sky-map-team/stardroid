@@ -44,6 +44,7 @@ class TleStore(
             SatelliteFetchState(
                 consecutiveFailures = fields[KEY_FAILURES]?.toIntOrNull() ?: 0,
                 consecutiveTimeouts = fields[KEY_TIMEOUTS]?.toIntOrNull() ?: 0,
+                lastTimeout = fields[KEY_LAST_TIMEOUT]?.toInstantOrNull(),
                 circuitOpenUntil = fields[KEY_OPEN_UNTIL]?.toInstantOrNull(),
                 lastAttempt = fields[KEY_LAST_ATTEMPT]?.toInstantOrNull(),
                 lastSuccess = fields[KEY_LAST_SUCCESS]?.toInstantOrNull(),
@@ -62,6 +63,7 @@ class TleStore(
             buildString {
                 appendLine("$KEY_FAILURES=${state.consecutiveFailures}")
                 appendLine("$KEY_TIMEOUTS=${state.consecutiveTimeouts}")
+                state.lastTimeout?.let { appendLine("$KEY_LAST_TIMEOUT=$it") }
                 state.circuitOpenUntil?.let { appendLine("$KEY_OPEN_UNTIL=$it") }
                 state.lastAttempt?.let { appendLine("$KEY_LAST_ATTEMPT=$it") }
                 state.lastSuccess?.let { appendLine("$KEY_LAST_SUCCESS=$it") }
@@ -80,6 +82,7 @@ class TleStore(
 
         const val KEY_FAILURES = "consecutiveFailures"
         const val KEY_TIMEOUTS = "consecutiveTimeouts"
+        const val KEY_LAST_TIMEOUT = "lastTimeout"
         const val KEY_OPEN_UNTIL = "circuitOpenUntil"
         const val KEY_LAST_ATTEMPT = "lastAttempt"
         const val KEY_LAST_SUCCESS = "lastSuccess"

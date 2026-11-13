@@ -77,6 +77,8 @@ data class SatelliteFetchState(
     val consecutiveFailures: Int = 0,
     /** [FetchOutcome.ServerUnreachable]s since the last success. */
     val consecutiveTimeouts: Int = 0,
+    /** When the latest [FetchOutcome.ServerUnreachable] arrived, so a lone strike can expire. */
+    val lastTimeout: Instant? = null,
     /** While this is in the future, no request may be made. */
     val circuitOpenUntil: Instant? = null,
     val lastAttempt: Instant? = null,
@@ -157,6 +159,14 @@ object SatelliteFetchPolicy {
     const val TIMEOUTS_TO_OPEN = 2
 
     /**
+     * How long a lone timeout strike is remembered. Several 12-hour periods, so consecutive runs
+     * still count even when Doze or a standby bucket delays one, but short enough that unrelated
+     * timeouts days apart do not add up. An install whose attempts are this far apart is already
+     * below the ladder's first rungs, so forgetting costs CelesTrak little.
+     */
+    val TIMEOUT_STRIKE_EXPIRY: Duration = 72.hours
+
+    /**
      * Whether a request may be made at [now].
      *
      * False while the circuit is open, and false again inside [MINIMUM_QUERY_INTERVAL] of the last
@@ -203,6 +213,7 @@ object SatelliteFetchPolicy {
                 attempted.copy(
                     consecutiveFailures = 0,
                     consecutiveTimeouts = 0,
+                    lastTimeout = null,
                     circuitOpenUntil = null,
                     lastSuccess = now,
                     elementsWrittenAt = now,
@@ -217,6 +228,7 @@ object SatelliteFetchPolicy {
                 attempted.copy(
                     consecutiveFailures = 0,
                     consecutiveTimeouts = 0,
+                    lastTimeout = null,
                     circuitOpenUntil = null,
                     lastSuccess = now,
                     lastStatusCode = 304,
@@ -238,16 +250,21 @@ object SatelliteFetchPolicy {
             }
 
             is FetchOutcome.ServerUnreachable -> {
-                val timeouts = state.consecutiveTimeouts + 1
+                val climbing = state.consecutiveFailures > 0
+                // The expiry only forgets a lone strike: once the breaker is climbing, its own
+                // backoff (up to a week) sets the gap, and every timeout must still climb it.
+                val strikeLive =
+                    state.lastTimeout?.let { now - it <= TIMEOUT_STRIKE_EXPIRY } == true
+                val timeouts = if (climbing || strikeLive) state.consecutiveTimeouts + 1 else 1
+                val timedOut = attempted.copy(consecutiveTimeouts = timeouts, lastTimeout = now)
                 // A first timeout from a closed circuit gets the benefit of the doubt. No
                 // lastStatusCode: nothing answered, and the last real response stays on show.
-                if (state.consecutiveFailures == 0 && timeouts < TIMEOUTS_TO_OPEN) {
-                    attempted.copy(consecutiveTimeouts = timeouts)
+                if (!climbing && timeouts < TIMEOUTS_TO_OPEN) {
+                    timedOut
                 } else {
                     val failures = state.consecutiveFailures + 1
-                    attempted.copy(
+                    timedOut.copy(
                         consecutiveFailures = failures,
-                        consecutiveTimeouts = timeouts,
                         circuitOpenUntil = now + ladderBackoff(failures),
                     )
                 }

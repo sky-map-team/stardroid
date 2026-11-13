@@ -238,10 +238,52 @@ class SatelliteFetchPolicyTest {
     }
 
     @Test
+    fun `a lone strike is forgotten after 72 hours`() {
+        // Unrelated timeouts days apart are two flaky evenings, not a firewall.
+        val strike = SatelliteFetchPolicy.afterOutcome(SatelliteFetchState(), timeout(), t0)
+        assertThat(strike.lastTimeout).isEqualTo(t0)
+
+        val later = SatelliteFetchPolicy.afterOutcome(strike, timeout(), t0 + 73.hours)
+        assertThat(later.circuitOpenUntil).isNull()
+        // The new timeout is a fresh first strike, dated now.
+        assertThat(later.consecutiveTimeouts).isEqualTo(1)
+        assertThat(later.lastTimeout).isEqualTo(t0 + 73.hours)
+
+        // And it is live: the next one within the window opens the circuit.
+        val opened = SatelliteFetchPolicy.afterOutcome(later, timeout(), t0 + 85.hours)
+        assertThat(opened.circuitOpenUntil).isEqualTo(t0 + 85.hours + 24.hours)
+    }
+
+    @Test
+    fun `a strike exactly 72 hours old still counts`() {
+        // Two 12-hour runs that Doze or a standby bucket pushed far apart are still consecutive.
+        val strike = SatelliteFetchPolicy.afterOutcome(SatelliteFetchState(), timeout(), t0)
+        val second = SatelliteFetchPolicy.afterOutcome(strike, timeout(), t0 + 72.hours)
+
+        assertThat(second.circuitOpenUntil).isEqualTo(t0 + 72.hours + 24.hours)
+    }
+
+    @Test
+    fun `the expiry never stops a climbing breaker from climbing`() {
+        // The week-long rung means timeouts more than 72 hours apart; each must still climb.
+        var state =
+            SatelliteFetchPolicy.afterOutcome(
+                SatelliteFetchState(),
+                FetchOutcome.HttpError(503),
+                t0,
+            )
+        state = SatelliteFetchPolicy.afterOutcome(state, timeout(), t0 + 8.days)
+
+        assertThat(state.consecutiveFailures).isEqualTo(2)
+        assertThat(state.circuitOpenUntil).isEqualTo(t0 + 8.days + 48.hours)
+    }
+
+    @Test
     fun `a success between two timeouts starts the count again`() {
         var state = SatelliteFetchPolicy.afterOutcome(SatelliteFetchState(), timeout(), t0)
         state = SatelliteFetchPolicy.afterOutcome(state, FetchOutcome.NotModified, t0 + 12.hours)
         assertThat(state.consecutiveTimeouts).isEqualTo(0)
+        assertThat(state.lastTimeout).isNull()
 
         state = SatelliteFetchPolicy.afterOutcome(state, timeout(), t0 + 24.hours)
         assertThat(state.circuitOpenUntil).isNull()
