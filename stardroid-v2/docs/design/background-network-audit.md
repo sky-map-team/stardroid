@@ -93,7 +93,7 @@ non-Firebase host needs a conservative code default, not just a flag.
 1. **Boot receiver (finding 2):** do it if easy. Follow-up, not in this PR.
 2. **iOS re-arm (finding 5):** fix it; the cost of leaving it is small (see the PR thread). Fold into #1272.
 3. **Geoapify (finding 6):** little to do. Track map opens as an analytics event, add an event for quota exhaustion, and alert on it in GA4. Needs a privacy-policy check when added.
-4. **F-Droid satellites (finding 7):** do not launch satellites on F-Droid. Revisit only if Sky Map mirrors CelesTrak, since then we control the host.
+4. **F-Droid satellites (finding 7):** do not launch satellites on F-Droid. Reconsider only if Sky Map ever mirrors CelesTrak and so controls the host (a possible future option, not planned).
 
 ## Rule for new background network work
 
