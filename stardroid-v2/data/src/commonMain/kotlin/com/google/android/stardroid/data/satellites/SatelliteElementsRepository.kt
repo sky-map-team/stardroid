@@ -132,8 +132,8 @@ class SatelliteElementsRepository(
      *
      * The safe path, and the only one anything scheduled may call (the WorkManager job and the iOS
      * background refresh); only the debug Diagnostics screen may force past it. It respects both
-     * the circuit breaker and CelesTrak's two-hour minimum interval, reporting [RefreshResult.Skipped] rather than making
-     * a request when either forbids it.
+     * the circuit breaker and CelesTrak's two-hour minimum interval, reporting
+     * [RefreshResult.Skipped] rather than making a request when either forbids it.
      *
      * Returns [FetchOutcome] rather than throwing so the caller can act on the distinction that
      * matters: a WorkManager job must return `Result.retry()` only for

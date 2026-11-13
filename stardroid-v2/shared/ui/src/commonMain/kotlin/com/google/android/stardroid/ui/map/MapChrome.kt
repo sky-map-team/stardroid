@@ -1800,8 +1800,7 @@ private fun layerIcon(id: LayerId): DrawableResource =
  * indistinguishable from "there is nothing up there", which is both wrong and unfixable by the
  * user; saying why is the honest version.
  *
- * Deliberately no Refresh button: downloads are not under user control, so nothing here can
- * trigger a CelesTrak request (#1269). The app fetches on its own schedule.
+ * No action here by design: downloads are not user-triggered (#1269).
  */
 @Composable
 private fun SatelliteEmptyStateCard() {
