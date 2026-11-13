@@ -134,6 +134,11 @@ object AnalyticsEvents {
     const val SATELLITE_FETCH_CIRCUIT_OPENED = "circuit_opened"
     const val SATELLITE_FETCH_CIRCUIT_OPEN_UNTIL = "circuit_open_until"
 
+    // A sampled 1-in-SATELLITE_FETCH_OK_SAMPLE_ONE_IN count of successful downloads, so total
+    // volume can be estimated (count x sample size) without logging every fetch. No parameters.
+    const val SATELLITE_FETCH_OK_EVENT = "satellite_fetch_ok"
+    const val SATELLITE_FETCH_OK_SAMPLE_ONE_IN = 100
+
     const val SATELLITE_CIRCUIT_CLOSED_EVENT = "satellite_circuit_closed"
     const val SATELLITE_CIRCUIT_OPEN_HOURS = "open_hours"
 

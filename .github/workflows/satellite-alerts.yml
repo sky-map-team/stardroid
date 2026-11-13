@@ -1,0 +1,65 @@
+name: Satellite alerts
+
+# Watches GA4 for CelesTrak errors and download volume (issue #1273) and opens or updates a
+# GitHub issue. Does nothing until the repository has the variable GA_PROPERTY_ID and the secret
+# GA_SERVICE_ACCOUNT_KEY (see the PR description for the one-time setup). Forks have neither.
+on:
+  schedule:
+    - cron: "17 */4 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    env:
+      GA_PROPERTY_ID: ${{ vars.GA_PROPERTY_ID }}
+      GA_KEY: ${{ secrets.GA_SERVICE_ACCOUNT_KEY }}
+      SATELLITE_DAILY_BUDGET: ${{ vars.SATELLITE_DAILY_BUDGET }}
+      SATELLITE_FAILURE_FLOOR: ${{ vars.SATELLITE_FAILURE_FLOOR || '500' }}
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - name: Check configuration
+        id: config
+        run: |
+          if [ -n "$GA_PROPERTY_ID" ] && [ -n "$GA_KEY" ]; then
+            echo "configured=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "GA_PROPERTY_ID or GA_SERVICE_ACCOUNT_KEY not set; skipping."
+          fi
+
+      - uses: actions/checkout@v4
+        if: steps.config.outputs.configured == 'true'
+
+      - uses: google-github-actions/auth@v2
+        if: steps.config.outputs.configured == 'true'
+        with:
+          credentials_json: ${{ secrets.GA_SERVICE_ACCOUNT_KEY }}
+
+      - name: Query GA4
+        if: steps.config.outputs.configured == 'true'
+        run: |
+          pip install --quiet google-auth requests
+          python3 -I stardroid-v2/tools/satellite_alerts.py > "$RUNNER_TEMP/alert.md"
+          cat "$RUNNER_TEMP/alert.md"
+
+      - name: Open or update the alert issue
+        if: steps.config.outputs.configured == 'true'
+        run: |
+          [ -s "$RUNNER_TEMP/alert.md" ] || exit 0
+          gh label create satellite-alert --color B60205 \
+            --description "Automated CelesTrak error or volume alert" 2>/dev/null || true
+          existing=$(gh issue list --label satellite-alert --state open \
+            --json number --jq '.[0].number')
+          body="$(cat "$RUNNER_TEMP/alert.md")
+
+          Run: $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
+          if [ -n "$existing" ]; then
+            gh issue edit "$existing" --body "$body"
+          else
+            gh issue create --label satellite-alert \
+              --title "Satellite alert: CelesTrak errors or download volume" --body "$body"
+          fi

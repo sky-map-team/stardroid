@@ -15,16 +15,19 @@ import com.google.android.stardroid.data.satellites.FetchOutcome
 import com.google.android.stardroid.data.satellites.RefreshResult
 import com.google.android.stardroid.data.satellites.SatelliteFetchPolicy
 import kotlinx.datetime.Instant
+import kotlin.random.Random
 
 /**
  * Reports what CelesTrak's usage policy asks us to report, as the aggregate signal that stands in
  * for logs we cannot see: a server refusal (and whether it opened the circuit), and a success
- * that closed a circuit which had been open. Shared so every platform's fetch reports the same.
+ * that closed a circuit which had been open, plus a sampled count of successful downloads for
+ * estimating total volume. Shared so every platform's fetch reports the same.
  */
 fun trackSatelliteFetchResult(
     result: RefreshResult.Completed,
     analytics: Analytics,
     now: Instant,
+    random: Random = Random.Default,
 ) {
     val outcome = result.outcome
     if (SatelliteFetchPolicy.warrantsReporting(outcome)) {
@@ -41,6 +44,9 @@ fun trackSatelliteFetchResult(
         )
     }
     if (outcome is FetchOutcome.Success || outcome is FetchOutcome.NotModified) {
+        if (random.nextInt(AnalyticsEvents.SATELLITE_FETCH_OK_SAMPLE_ONE_IN) == 0) {
+            analytics.trackEvent(AnalyticsEvents.SATELLITE_FETCH_OK_EVENT, emptyMap())
+        }
         // Read from the previous state: the success has already cleared the circuit.
         val previous = result.previousState
         val openedAt = previous.lastAttempt
