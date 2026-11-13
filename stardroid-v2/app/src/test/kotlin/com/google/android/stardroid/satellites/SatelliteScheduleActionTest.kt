@@ -16,9 +16,8 @@ import kotlin.time.Duration.Companion.days
 import kotlin.time.Duration.Companion.hours
 
 /**
- * Who may schedule the CelesTrak download (#1272): the rule 2.3.0 lacked, which let a reboot or a
- * clock change schedule downloads for installs nobody used (#1269). The gates themselves are
- * pinned in `SatelliteFetchConditionsTest`.
+ * Who may schedule the CelesTrak download; see "Who downloads" in satellite-tracking.md (#1272).
+ * The gates themselves are pinned in `SatelliteFetchConditionsTest`.
  */
 class SatelliteScheduleActionTest {
     private val now = Instant.fromEpochMilliseconds(1_794_000_000_000)

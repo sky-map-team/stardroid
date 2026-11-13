@@ -297,7 +297,8 @@ class IosAppGraph(
     /**
      * The system's background refresh slot ([SatelliteBackgroundRefresh]): the same gates and
      * policy as the foreground fetch, minus the staleness test, since the system picks the time.
-     * [onDone] runs however the job ends; `scheduleNext` is whether the gates were open.
+     * [onDone] runs however the job ends, cancellation included, so it must not throw;
+     * `scheduleNext` is whether the gates were open.
      */
     internal fun startBackgroundRefresh(
         onDone: (completed: Boolean, scheduleNext: Boolean) -> Unit,
