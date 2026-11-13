@@ -9,8 +9,12 @@
 
 package com.google.android.stardroid.data.satellites
 
+import android.content.Context
+import android.net.ConnectivityManager
+import android.net.NetworkCapabilities
 import java.io.IOException
 import java.net.HttpURLConnection
+import java.net.SocketTimeoutException
 import java.net.URL
 import kotlin.time.Duration.Companion.seconds
 
@@ -23,8 +27,11 @@ import kotlin.time.Duration.Companion.seconds
  * buy nothing against one small request every twelve hours, and the one thing a client library
  * would genuinely add — automatic retry with backoff — is exactly the behaviour this feature must
  * not have.
+ *
+ * [validatedNetwork] is [validatedNetworkOf] in production.
  */
 class HttpUrlConnectionCelesTrakClient(
+    private val validatedNetwork: () -> Long?,
     private val baseUrl: String = CelesTrakEndpoint.GP_URL,
     private val userAgent: String = CelesTrakEndpoint.USER_AGENT,
     private val openConnection: (
@@ -36,7 +43,9 @@ class HttpUrlConnectionCelesTrakClient(
         ifModifiedSince: String?,
     ): FetchOutcome {
         val url = URL("$baseUrl?GROUP=${group.queryValue}&FORMAT=tle")
+        val networkAtStart = runCatching(validatedNetwork).getOrNull()
         var connection: HttpURLConnection? = null
+        var answered = false
         return try {
             connection =
                 openConnection(url).apply {
@@ -53,16 +62,25 @@ class HttpUrlConnectionCelesTrakClient(
                     ifModifiedSince?.let { setRequestProperty("If-Modified-Since", it) }
                 }
 
-            when (val status = connection.responseCode) {
+            val status = connection.responseCode
+            answered = true
+            when (status) {
                 HttpURLConnection.HTTP_OK -> readBoundedBody(connection)
 
                 HttpURLConnection.HTTP_NOT_MODIFIED -> FetchOutcome.NotModified
                 else -> FetchOutcome.HttpError(status)
             }
         } catch (e: IOException) {
-            // Never reached the server, or died mid-body: not evidence about CelesTrak, so it must
-            // not be reported as an HTTP error or the breaker would punish being offline.
-            FetchOutcome.TransportFailure(e)
+            // A firewall drop looks like a timeout before any response; a stall after the status
+            // line means CelesTrak answered, and a network switch mid-request is not evidence.
+            val onlineThroughout =
+                networkAtStart != null &&
+                    runCatching(validatedNetwork).getOrNull() == networkAtStart
+            if (!answered && onlineThroughout && e.isTimeout()) {
+                FetchOutcome.ServerUnreachable(e)
+            } else {
+                FetchOutcome.TransportFailure(e)
+            }
         } catch (e: RuntimeException) {
             // Broader than it looks like it should be, and deliberate. This runs in a background
             // worker, and the platform HTTP stack can raise unchecked exceptions that are not
@@ -109,7 +127,19 @@ class HttpUrlConnectionCelesTrakClient(
             )
         }
 
+    /**
+     * Searches suppressed exceptions too: the platform stack can try each of the host's addresses
+     * and throw the last failure, so an IPv4 timeout may sit behind an unreachable IPv6 route.
+     */
+    private fun Throwable.isTimeout(): Boolean =
+        generateSequence(this) { it.cause }
+            .take(MAX_CAUSE_DEPTH)
+            .flatMap { sequenceOf(it) + it.suppressed }
+            .any { it is SocketTimeoutException }
+
     companion object {
+        private const val MAX_CAUSE_DEPTH = 8
+
         private val CONNECT_TIMEOUT = 15.seconds
         private val READ_TIMEOUT = 20.seconds
 
@@ -118,5 +148,22 @@ class HttpUrlConnectionCelesTrakClient(
 
         /** Read granularity. Comfortably larger than the whole expected payload. */
         private const val CHUNK_CHARS = 8 * 1024
+    }
+}
+
+/**
+ * The default network's handle if Android has validated it, else null. `activeNetwork` is also
+ * null when this app's network access is blocked (Data Saver, background restrictions), so those
+ * read as offline.
+ */
+fun validatedNetworkOf(context: Context): () -> Long? {
+    val connectivity = context.getSystemService(ConnectivityManager::class.java)
+    return {
+        connectivity?.activeNetwork?.let { network ->
+            network.networkHandle.takeIf {
+                connectivity.getNetworkCapabilities(network)
+                    ?.hasCapability(NetworkCapabilities.NET_CAPABILITY_VALIDATED) == true
+            }
+        }
     }
 }

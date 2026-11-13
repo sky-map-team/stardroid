@@ -12,12 +12,16 @@ package com.google.android.stardroid.data.satellites
 import com.google.common.truth.Truth.assertThat
 import org.junit.jupiter.api.Test
 import java.io.ByteArrayInputStream
+import java.io.IOException
 import java.io.InputStream
+import java.net.ConnectException
 import java.net.HttpURLConnection
+import java.net.SocketTimeoutException
 import java.net.URL
+import java.net.UnknownHostException
 
 /**
- * The body-size cap (audit-2026-08 M6).
+ * The body-size cap (audit-2026-08 M6), and telling a firewall from being offline (#1277).
  *
  * The expected payload is ~1 KB, but nothing about an HTTP response guarantees that: a captive
  * portal, a hijacked DNS answer or a CelesTrak misconfiguration can return an arbitrarily large
@@ -74,11 +78,94 @@ class HttpUrlConnectionCelesTrakClientTest {
             .isEqualTo(FetchOutcome.NotModified)
     }
 
+    @Test
+    fun `a timeout on a validated network is reported as CelesTrak being unreachable`() {
+        val outcome = failingWith(SocketTimeoutException("connect timed out"), WIFI, WIFI)
+
+        assertThat(outcome).isInstanceOf(FetchOutcome.ServerUnreachable::class.java)
+    }
+
+    @Test
+    fun `a timeout without a validated network is just being offline`() {
+        assertThat(failingWith(SocketTimeoutException(), null, null))
+            .isInstanceOf(FetchOutcome.TransportFailure::class.java)
+        // Validation lost during the request: the network went, not CelesTrak.
+        assertThat(failingWith(SocketTimeoutException(), WIFI, null))
+            .isInstanceOf(FetchOutcome.TransportFailure::class.java)
+    }
+
+    @Test
+    fun `a timeout across a network switch is not evidence about CelesTrak`() {
+        // Walked out of Wi-Fi range mid-request: the socket died with the old network, and the
+        // new one being validated says nothing about the request that timed out.
+        assertThat(failingWith(SocketTimeoutException(), WIFI, CELLULAR))
+            .isInstanceOf(FetchOutcome.TransportFailure::class.java)
+    }
+
+    @Test
+    fun `only a timeout counts, not any failure on a validated network`() {
+        // A refused connection or a DNS failure is not how CelesTrak's firewall behaves.
+        assertThat(failingWith(ConnectException("Connection refused"), WIFI, WIFI))
+            .isInstanceOf(FetchOutcome.TransportFailure::class.java)
+        assertThat(failingWith(UnknownHostException("celestrak.org"), WIFI, WIFI))
+            .isInstanceOf(FetchOutcome.TransportFailure::class.java)
+    }
+
+    @Test
+    fun `a timeout behind another address's failure still counts`() {
+        // The stack tries each address and throws the last failure, with earlier ones suppressed.
+        val lastRoute =
+            ConnectException("Network is unreachable").apply {
+                addSuppressed(SocketTimeoutException("connect timed out"))
+            }
+
+        assertThat(failingWith(lastRoute, WIFI, WIFI))
+            .isInstanceOf(FetchOutcome.ServerUnreachable::class.java)
+    }
+
+    @Test
+    fun `a read timeout after the status line is not CelesTrak being unreachable`() {
+        // The server answered, so it is not dropping us; a stalled body is a flaky link.
+        val client =
+            HttpUrlConnectionCelesTrakClient(
+                validatedNetwork = { WIFI },
+                openConnection = { url ->
+                    object : FakeConnection(url, HttpURLConnection.HTTP_OK, "", null) {
+                        override fun getInputStream(): InputStream =
+                            throw SocketTimeoutException("Read timed out")
+                    }
+                },
+            )
+
+        assertThat(client.fetch(SatelliteGroup.STATIONS, ifModifiedSince = null))
+            .isInstanceOf(FetchOutcome.TransportFailure::class.java)
+    }
+
+    /** Fails the request with [failure], with [before] and [after] as the validated network. */
+    private fun failingWith(
+        failure: IOException,
+        before: Long?,
+        after: Long?,
+    ): FetchOutcome {
+        val networks = ArrayDeque(listOf(before, after))
+        val client =
+            HttpUrlConnectionCelesTrakClient(
+                validatedNetwork = { networks.removeFirst() },
+                openConnection = { url ->
+                    object : FakeConnection(url, HttpURLConnection.HTTP_OK, "", null) {
+                        override fun getResponseCode(): Int = throw failure
+                    }
+                },
+            )
+        return client.fetch(SatelliteGroup.STATIONS, ifModifiedSince = null)
+    }
+
     private fun clientReturning(
         status: Int,
         body: String,
         lastModified: String? = null,
     ) = HttpUrlConnectionCelesTrakClient(
+        validatedNetwork = { WIFI },
         openConnection = { url -> FakeConnection(url, status, body, lastModified) },
     )
 
@@ -87,7 +174,7 @@ class HttpUrlConnectionCelesTrakClientTest {
      * header. Hand-written rather than mocked because the client deliberately depends on the JDK
      * type (no HTTP library, per the class KDoc), and a fake keeps that honest.
      */
-    private class FakeConnection(
+    private open class FakeConnection(
         url: URL,
         private val status: Int,
         private val body: String,
@@ -105,5 +192,10 @@ class HttpUrlConnectionCelesTrakClientTest {
         override fun disconnect() = Unit
 
         override fun usingProxy(): Boolean = false
+    }
+
+    private companion object {
+        const val WIFI = 100L
+        const val CELLULAR = 101L
     }
 }

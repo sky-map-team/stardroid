@@ -27,6 +27,7 @@ import com.google.android.stardroid.data.satellites.DirectoryTextFiles
 import com.google.android.stardroid.data.satellites.HttpUrlConnectionCelesTrakClient
 import com.google.android.stardroid.data.satellites.SatelliteElementsRepository
 import com.google.android.stardroid.data.satellites.TleStore
+import com.google.android.stardroid.data.satellites.validatedNetworkOf
 import com.google.android.stardroid.location.LocationController
 import com.google.android.stardroid.math.Matrix3
 import com.google.android.stardroid.sensors.DisplayRotationBus
@@ -114,7 +115,7 @@ object AppModule {
     fun satelliteElementsRepository(application: Application): SatelliteElementsRepository =
         SatelliteElementsRepository(
             store = TleStore(DirectoryTextFiles(File(application.filesDir, "satellites"))),
-            client = HttpUrlConnectionCelesTrakClient(),
+            client = HttpUrlConnectionCelesTrakClient(validatedNetworkOf(application)),
         )
 
     /** First-run bookkeeping for the startup gates, in the same DataStore file. */

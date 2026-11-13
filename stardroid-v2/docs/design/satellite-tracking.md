@@ -464,15 +464,55 @@ belongs in `:data` alongside the other repositories, which already depends on `:
 
 This is the part that protects the install base, and it inverts normal retry instincts.
 
-- **Distinguish transport failure from server refusal.** No connectivity, DNS failure, or timeout
-  never reached CelesTrak, and is a legitimate `Result.retry()`. Any non-200 *response* is a policy
-  event and must never be retried on the normal schedule.
+- **Distinguish transport failure from server refusal.** No connectivity, DNS failure, or a
+  timeout the OS cannot vouch for never reached CelesTrak, and is a legitimate `Result.retry()`.
+  Any non-200 *response* is a policy event and must never be retried on the normal schedule.
+- **A timeout on a working network counts as a refusal (#1277).** CelesTrak's firewall drops a
+  blocked client without answering (#1269), so a blocked install only ever sees a timeout. While
+  that looked like being offline, a firewalled install kept trying every 12 h indefinitely. The
+  breaker is pure, so the platform client makes the call and reports `ServerUnreachable`:
+  - **Android:** a `SocketTimeoutException` before any response (connect, or read before the
+    status line, including one suppressed behind another address's failure) while the same
+    default network had `NET_CAPABILITY_VALIDATED` both before the request and after it failed.
+    A stall after the status line means CelesTrak answered, so it stays a transport failure.
+    `activeNetwork` is null when the app's network access is blocked (Data Saver, background
+    restrictions), so those read as offline.
+  - **iOS:** `NSURLErrorTimedOut` while an `NWPathMonitor` path was satisfied for the whole
+    request, with no change along the way (a repeated update for the same path is not a
+    change). The session does not wait for connectivity, so being offline fails fast with a
+    different code. iOS cannot tell a stall after the status line from a dropped connection;
+    the two-timeout rule absorbs that.
+
+  Anything else, including a timeout across a network switch, is still a transport failure.
+
+  **Two in a row open the circuit.** The first from a closed circuit only records a strike
+  (`consecutiveTimeouts`, persisted with the rest of the state). The second opens it on the
+  same 24 h → 48 h → 7 days ladder. Once the breaker is climbing, after a refusal or a
+  timeout, each further timeout climbs it at once. A success clears the strike. An offline
+  attempt neither counts nor clears it, or an install that is both firewalled and often offline
+  would never back off. Why two: a firewall drops every attempt, so the next one (12 h later on
+  Android) fails too, while a flaky connection (Android does not re-validate for every request,
+  so the flag can lag a network that has just gone bad) almost always recovers by then. The
+  cost is one extra dropped connection per outage, not one per rung: over 30 days on Android's
+  12 h job, a firewalled install makes 7 attempts instead of 60.
+
+  **A lone strike expires after 72 h** (`lastTimeout`, also persisted), measured from the
+  timeout itself, so time spent offline still counts towards it. That is six 12 h periods, so
+  two consecutive runs still count when Doze or a standby bucket delays one, while unrelated
+  timeouts days apart do not add up. An install whose attempts are more than 72 h apart is
+  already slower than the ladder's first two rungs, so forgetting the strike costs CelesTrak
+  little. The expiry never applies once the breaker is climbing: its own week-long rung puts
+  timeouts more than 72 h apart, and each must still climb it.
+
+  A timeout has no HTTP code, so `lastStatusCode` keeps the last real response, Diagnostics
+  shows the open circuit and its failure count, and no `satellite_fetch_failed` event is sent.
 - **On any non-200**, increment a failure counter and set `circuitOpenUntil = now + backoff`,
   where backoff runs **24 h → 48 h → 7 days**, capped. Far more conservative than typical retry
   policy, deliberately.
-- **The worker returns `Result.success()`, never `Result.retry()`, on an HTTP error.** WorkManager's
-  retry machinery must never be allowed to drive requests at CelesTrak — that is exactly the storm
-  the policy forbids. The 12 h periodic job fires again on schedule and no-ops against the breaker.
+- **The worker returns `Result.success()`, never `Result.retry()`, on an HTTP error or a timeout
+  while online**, even a first timeout that left the circuit shut. WorkManager's retry machinery
+  must never be allowed to drive requests at CelesTrak — that is exactly the storm the policy
+  forbids. The 12 h periodic job fires again on schedule and no-ops against the breaker.
 - **301 is terminal.** The policy says it means the URL is outdated, which no amount of retrying
   fixes. Open the breaker for the full 7 days and log loudly.
 - **304 is not an error.** Send `If-Modified-Since` from the last success; handle Not-Modified as a
@@ -594,6 +634,17 @@ stops opening the app therefore makes no request after day 14 and wakes at most 
 Opening the app again reschedules, and the first fetch follows within the usual jitter, still
 subject to the 2-hour floor.
 
+**Order inside the worker.** On each run:
+
+1. The local conditions come first, including the stored flag. If they fail, the worker cancels
+   its schedule, with no Firebase fetch and no CelesTrak request.
+2. Then comes the fresh flag (§"Settings", gate 0):
+   - UNKNOWN retries. Each retry repeats the Firebase fetch only, and passes step 1 again first,
+     so a lapse during backoff still cancels.
+   - OFF cancels the schedule, like a closed gate. Switching the flag back on then resumes
+     downloads as people open the app, rather than in every live job at once.
+   - ON goes on to the download.
+
 **iOS** applies the same conditions in three places:
 - the fetch on app open;
 - the request for a `BGAppRefreshTask`. When the app leaves the foreground, Swift asks Kotlin
@@ -640,6 +691,14 @@ other pair rather than replacing either of them:
    which default true as staged-rollout levers over already-decided features, satellite tracking
    is new and CelesTrak-dependent enough that off-everywhere is the honest shipping posture,
    same as D80's camera-AR and share-sky launch.
+
+   Before each download the worker waits up to 10 s for a fresh Remote Config fetch (gms: a
+   15-minute minimum fetch interval) and reads the flag after activation. If the fetch fails,
+   is throttled or times out the flag is unknown, so the worker returns `Result.retry()` and
+   WorkManager's default backoff (30 s, doubling, capped at 5 h) re-attempts only that Firebase
+   fetch. The CelesTrak download needs a fresh ON and is still bounded by the 2-hour floor and
+   the circuit breaker; it is never retried by this path. A fresh OFF cancels the job (§"Who
+   downloads"). F-Droid has no server and always reads its static value.
 
    The two flavors then diverge in *how* they get turned on, and the asymmetry is deliberate:
 
