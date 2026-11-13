@@ -75,10 +75,19 @@ class PassAlertBootReceiverTest {
 
     @Test
     fun disabledAfterTheRiseAlertFiresButNotTheAdvanceOne() {
-        PassAlerts.armBestPass(context, listOf(pass(hoursAhead = 3)))
-        PassAlerts.onAlarmFired(context, atRise = false)
+        val armed = pass(hoursAhead = 3)
+        PassAlerts.armBestPass(context, listOf(armed))
+        PassAlerts.onAlarmFired(context, atRise = false, passStart = armed.start)
         assertThat(PassAlertBootReceiver.isEnabled(context)).isTrue()
-        PassAlerts.onAlarmFired(context, atRise = true)
+        PassAlerts.onAlarmFired(context, atRise = true, passStart = armed.start)
         assertThat(PassAlertBootReceiver.isEnabled(context)).isFalse()
+    }
+
+    @Test
+    fun staysEnabledWhenALaterPassWasArmedBeforeTheRiseAlertFinished() {
+        val fired = pass(hoursAhead = 3)
+        PassAlerts.armBestPass(context, listOf(pass(hoursAhead = 30)))
+        PassAlerts.onAlarmFired(context, atRise = true, passStart = fired.start)
+        assertThat(PassAlertBootReceiver.isEnabled(context)).isTrue()
     }
 }
