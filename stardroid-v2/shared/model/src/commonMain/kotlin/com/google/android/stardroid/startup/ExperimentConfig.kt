@@ -94,7 +94,8 @@ fun interface ExperimentConfig {
                     Experiment.NOTIFICATIONS -> true
                     Experiment.CAMERA_AR -> false
                     Experiment.SHARE_SKY -> false
-                    Experiment.SATELLITES -> true
+                    // Emergency: off while CelesTrak traffic is investigated (issue #1269).
+                    Experiment.SATELLITES -> false
                     Experiment.GLES3_RENDERER -> true
                     Experiment.ANNOUNCEMENTS -> false
                 }
