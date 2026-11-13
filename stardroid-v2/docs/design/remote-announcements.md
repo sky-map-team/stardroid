@@ -87,3 +87,8 @@ template of Firebase project `sky-map-1286`; gms only.
 - FCM topic push for same-hour alerts. It would plug in behind `AnnouncementSource` by
   triggering an out-of-band `AnnouncementWorker` run.
 - Latitude-band targeting using `Settings.savedLocation`.
+- A short body for the widget. The banner shows a one-line title and a two-line body, so a
+  message written for the notification or dialog truncates there. Until this exists, author
+  two messages: a short `widget`-only one and a longer `notification` + `interstitial` one,
+  each with its own `id`. A `short_body` per locale, used by the widget when present, would
+  let one message do both.

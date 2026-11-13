@@ -296,10 +296,10 @@ platform :ios do
        File.join(IOS_DIR, "build", "ipa-dev", "SkyMap.ipa"))
   end
 
-  # Name, subtitle and keywords only apply to an editable version, so create the version in App
-  # Store Connect first. Promotional text can be changed at any time.
-  desc "Upload App Store listing text from fastlane/metadata/ios (no binary, no screenshots, " \
-       "no submission)"
+  # deliver only looks for an editable version, so this needs one in App Store Connect first, even
+  # for promotional text; use the promo lane to change that on the live version.
+  desc "Upload App Store listing text from fastlane/metadata/ios to the editable version (no " \
+       "binary, no screenshots, no submission)"
   lane :metadata do
     deliver(
       api_key: asc_api_key,
@@ -309,8 +309,26 @@ platform :ios do
       skip_screenshots: true,
       force: true,
       submit_for_review: false,
-      run_precheck_before_submit: false
+      run_precheck_before_submit: false,
+      version_check_wait_retry_limit: 1
     )
+  end
+
+  # Promotional text is the one field Apple lets you change on a live version without review.
+  # Calls Spaceship directly because deliver's edit_live crashes in 2.240.1 (it skips loading the
+  # version localizations, then enqueues nil in upload_metadata.rb).
+  desc "Update only the promotional text on the live App Store version"
+  lane :promo do
+    asc_api_key
+    app = Spaceship::ConnectAPI::App.find(IOS_BUNDLE_ID)
+    UI.user_error!("App #{IOS_BUNDLE_ID} not found") unless app
+    version = app.get_live_app_store_version(platform: Spaceship::ConnectAPI::Platform::IOS)
+    UI.user_error!("No live iOS version found") unless version
+    text = File.read(File.join(__dir__, "metadata/ios/en-US/promotional_text.txt")).strip
+    localization = version.get_app_store_version_localizations.find { |l| l.locale == "en-US" }
+    UI.user_error!("No en-US localization on live version #{version.version_string}") unless localization
+    UI.message("Setting en-US promotional text on live version #{version.version_string}")
+    localization.update(attributes: { promotionalText: text })
   end
 
   desc "Build and upload to TestFlight (internal testers). Pass changelog:\"...\" for What to Test."
@@ -322,6 +340,51 @@ platform :ios do
       app_identifier: IOS_BUNDLE_ID,
       changelog: options[:changelog],
       skip_waiting_for_build_processing: true
+    )
+  end
+
+  # A new App Store version inherits the previous version's screenshots, so this is only needed
+  # when they change. Expects fastlane/screenshots/ios/<locale>/ (deliver sorts by image size).
+  desc "Upload App Store screenshots from fastlane/screenshots/ios to the editable version " \
+       "(overwrite:true replaces what is already there)"
+  lane :screenshots do |options|
+    options ||= {}
+    path = File.expand_path("screenshots/ios", __dir__)
+    UI.user_error!("No screenshots at #{path}") unless Dir.exist?(path)
+    deliver(
+      api_key: asc_api_key,
+      app_identifier: IOS_BUNDLE_ID,
+      screenshots_path: path,
+      metadata_path: File.expand_path("metadata/ios", __dir__),
+      overwrite_screenshots: options[:overwrite] == true,
+      skip_metadata: true,
+      skip_binary_upload: true,
+      force: true,
+      submit_for_review: false,
+      run_precheck_before_submit: false,
+      version_check_wait_retry_limit: 1
+    )
+  end
+
+  # The first build of a version goes through Beta App Review. The group must be external and the
+  # build already processed, so run this after `beta` has finished processing.
+  desc "Send a processed TestFlight build to external testers (groups:\"A,B\" build_number:N " \
+       "changelog:\"...\")"
+  lane :external do |options|
+    options ||= {}
+    groups = (options[:groups] || ENV["TESTFLIGHT_EXTERNAL_GROUPS"]).to_s.split(",").map(&:strip)
+    UI.user_error!("Pass groups:\"Group name\" (external TestFlight group)") if groups.empty?
+    UI.user_error!("Pass changelog:\"...\" (What to Test)") unless options[:changelog]
+    upload_to_testflight(
+      api_key: asc_api_key,
+      app_identifier: IOS_BUNDLE_ID,
+      distribute_only: true,
+      app_platform: "ios",
+      build_number: options[:build_number]&.to_s,
+      distribute_external: true,
+      groups: groups,
+      changelog: options[:changelog],
+      reject_build_waiting_for_review: false
     )
   end
 end

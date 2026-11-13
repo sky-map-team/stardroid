@@ -1052,27 +1052,61 @@ class MapViewModelTest {
         }
 
     @Test
-    fun `render state goes transparent with the scrim - and night mode floors it`() =
+    fun `render state goes transparent with the user's dimmer and no auto-dimming in the dark`() =
         testScope.runCurrentTest {
             val vm = viewModel()
             vm.setArMode(true)
+            assertThat(vm.renderState.first().cameraScrim).isEqualTo(0.0)
+
             vm.setArScrim(0.2)
             val day = vm.renderState.first()
             assertThat(day.transparentBackground).isTrue()
             assertThat(day.cameraScrim).isWithin(TOL).of(0.2)
 
+            // Night mode no longer forces dimming on a dark preview.
             settings.setNightMode(true)
             runCurrent()
-            val night = vm.renderState.first()
-            assertThat(night.cameraScrim)
-                .isWithin(TOL)
-                .of(MapViewModel.NIGHT_AR_SCRIM_FLOOR)
+            assertThat(vm.renderState.first().cameraScrim).isWithin(TOL).of(0.2)
 
             vm.setArMode(false)
             val off = vm.renderState.first()
             assertThat(off.transparentBackground).isFalse()
             assertThat(off.cameraScrim).isEqualTo(0.0)
         }
+
+    @Test
+    fun `a bright preview is dimmed automatically up to the ceiling - higher in night mode`() =
+        testScope.runCurrentTest {
+            val vm = viewModel()
+            vm.setArMode(true)
+            repeat(40) { vm.onArPreviewLuma(1.0) }
+            val day = vm.renderState.first().cameraScrim
+            assertThat(day).isWithin(TOL).of(ArScrimMath.CEILING)
+
+            settings.setNightMode(true)
+            runCurrent()
+            val night = vm.renderState.first().cameraScrim
+            assertThat(night).isWithin(TOL).of(ArScrimMath.NIGHT_CEILING)
+
+            // The user's own dimmer still wins when it asks for more.
+            vm.setArScrim(MapViewModel.MAX_AR_SCRIM)
+            assertThat(vm.renderState.first().cameraScrim)
+                .isWithin(TOL)
+                .of(MapViewModel.MAX_AR_SCRIM)
+        }
+
+    @Test
+    fun `auto scrim is zero below the clear luma and ramps to the ceiling`() {
+        assertThat(ArScrimMath.autoScrim(0.0, night = false)).isEqualTo(0.0)
+        assertThat(ArScrimMath.autoScrim(ArScrimMath.CLEAR_LUMA, night = false)).isEqualTo(0.0)
+        assertThat(ArScrimMath.autoScrim(1.0, night = false))
+            .isWithin(TOL)
+            .of(ArScrimMath.CEILING)
+        val mid = (ArScrimMath.CLEAR_LUMA + ArScrimMath.FULL_LUMA) / 2
+        assertThat(ArScrimMath.autoScrim(mid, night = false))
+            .isWithin(0.05)
+            .of(ArScrimMath.CEILING / 2)
+    }
 
     // ---- Drag-to-align (camera-ar-mode.md, D64, slice 2) ---------------------------------
 
@@ -1198,6 +1232,28 @@ class MapViewModelTest {
             vm.setArIsoFraction(0.0)
             runCurrent()
             assertThat(values.last()).isNull()
+        }
+
+    @Test
+    fun `touching the exposure slider hands control back from manual to auto`() =
+        testScope.runCurrentTest {
+            val vm = viewModel()
+            val ui = mutableListOf<ArUiState?>()
+            val manual = mutableListOf<ArManualExposure?>()
+            backgroundScope.launch { vm.arUi.collect { ui += it } }
+            backgroundScope.launch { vm.arManualExposure.collect { manual += it } }
+            vm.setArMode(true)
+            vm.onArCameraReady(AR_SPECS)
+            vm.setArShutterFraction(0.5)
+            runCurrent()
+            assertThat(ui.last()!!.manualActive).isTrue()
+            assertThat(manual.last()).isNotNull()
+
+            vm.setArExposureIndex(1)
+            runCurrent()
+            assertThat(ui.last()!!.manualActive).isFalse()
+            assertThat(ui.last()!!.exposureIndex).isEqualTo(1)
+            assertThat(manual.last()).isNull()
         }
 
     /**

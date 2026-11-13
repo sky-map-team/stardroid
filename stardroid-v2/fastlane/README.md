@@ -148,6 +148,22 @@ Archive the Release build and export a signed App Store .ipa (build number: late
 
 Install the Release build on a connected iPhone, development-signed, without uploading (device:<CoreDevice id> or IOS_DEVICE_ID). Needs the device registered on the team.
 
+### ios metadata
+
+```sh
+[bundle exec] fastlane ios metadata
+```
+
+Upload App Store listing text from fastlane/metadata/ios to the editable version (no binary, no screenshots, no submission)
+
+### ios promo
+
+```sh
+[bundle exec] fastlane ios promo
+```
+
+Update only the promotional text on the live App Store version
+
 ### ios beta
 
 ```sh
@@ -155,6 +171,22 @@ Install the Release build on a connected iPhone, development-signed, without upl
 ```
 
 Build and upload to TestFlight (internal testers). Pass changelog:"..." for What to Test.
+
+### ios screenshots
+
+```sh
+[bundle exec] fastlane ios screenshots
+```
+
+Upload App Store screenshots from fastlane/screenshots/ios to the editable version (overwrite:true replaces what is already there)
+
+### ios external
+
+```sh
+[bundle exec] fastlane ios external
+```
+
+Send a processed TestFlight build to external testers (groups:"A,B" build_number:N changelog:"...")
 
 ----
 
