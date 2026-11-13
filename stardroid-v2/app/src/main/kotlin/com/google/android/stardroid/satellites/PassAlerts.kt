@@ -63,6 +63,11 @@ object PassAlerts {
      */
     private val MINIMUM_NOTICE: Duration = 2.minutes
 
+    private val stateLock = Any()
+
+    /** Start of the pass currently armed by this process, if any. */
+    private var armedStart: Instant? = null
+
     private const val ACTION_PASS_ALERT = "com.google.android.stardroid.PASS_ALERT"
     private const val EXTRA_NORAD_ID = "norad_id"
     private const val EXTRA_START_MILLIS = "start_millis"
@@ -86,6 +91,14 @@ object PassAlerts {
         passes: List<SatellitePass>,
         now: Instant = Clock.System.now(),
     ) {
+        synchronized(stateLock) { armLocked(context, passes, now) }
+    }
+
+    private fun armLocked(
+        context: Context,
+        passes: List<SatellitePass>,
+        now: Instant,
+    ) {
         cancel(context)
         val best =
             passes
@@ -105,14 +118,21 @@ object PassAlerts {
             best.start.toEpochMilliseconds(),
             pendingIntent(context, best, atRise = true),
         )
+        armedStart = best.start
+        PassAlertBootReceiver.setEnabled(context, true)
         Log.i(TAG, "Armed pass alert for ${best.satelliteName} at $fireAt (pass at ${best.start})")
     }
 
     /** Disarms any pending alerts — the opt-in went off, or the layer did. */
     fun cancel(context: Context) {
-        val alarmManager = context.getSystemService(AlarmManager::class.java) ?: return
-        existingIntent(context, atRise = false)?.let(alarmManager::cancel)
-        existingIntent(context, atRise = true)?.let(alarmManager::cancel)
+        synchronized(stateLock) {
+            armedStart = null
+            PassAlertBootReceiver.setEnabled(context, false)
+            val alarmManager =
+                context.getSystemService(AlarmManager::class.java) ?: return
+            existingIntent(context, atRise = false)?.let(alarmManager::cancel)
+            existingIntent(context, atRise = true)?.let(alarmManager::cancel)
+        }
     }
 
     private fun pendingIntent(
@@ -143,6 +163,22 @@ object PassAlerts {
             Intent(context, PassAlertReceiver::class.java).apply { action = ACTION_PASS_ALERT },
             PendingIntent.FLAG_NO_CREATE or PendingIntent.FLAG_IMMUTABLE,
         )
+
+    /**
+     * The rise alarm is the last of the pair. Skips the disable if a later pass is already armed
+     * (a cold start by this alarm can re-arm first); a null [passStart], from a malformed
+     * intent, counts as earlier than anything armed.
+     */
+    internal fun onAlarmFired(
+        context: Context,
+        atRise: Boolean,
+        passStart: Instant? = null,
+    ) {
+        synchronized(stateLock) {
+            val laterArmed = armedStart?.let { passStart == null || it > passStart } == true
+            if (atRise && !laterArmed) PassAlertBootReceiver.setEnabled(context, false)
+        }
+    }
 
     /** True once the pass has begun; a late alert would send the user to an empty sky. */
     internal fun isStale(
@@ -185,9 +221,13 @@ class PassAlertReceiver : BroadcastReceiver() {
         context: Context,
         intent: Intent,
     ) {
-        val start = PassAlerts.startTimeFrom(intent) ?: return
-        val noradId = PassAlerts.noradIdFrom(intent)
         val atRise = PassAlerts.atRiseFrom(intent)
+        val start =
+            PassAlerts.startTimeFrom(intent) ?: run {
+                PassAlerts.onAlarmFired(context, atRise)
+                return
+            }
+        val noradId = PassAlerts.noradIdFrom(intent)
         val end = PassAlerts.endTimeFrom(intent)
         // A BroadcastReceiver's process can be killed the moment onReceive returns, so the
         // opt-in re-check must finish before then — but reading DataStore (disk I/O) is not
@@ -214,6 +254,7 @@ class PassAlertReceiver : BroadcastReceiver() {
                     SatellitePassNotifier.post(context, noradId, start)
                 }
             } finally {
+                PassAlerts.onAlarmFired(context, atRise, start)
                 pending.finish()
             }
         }

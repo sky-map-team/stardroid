@@ -39,10 +39,17 @@ sealed interface FetchOutcome {
     data class HttpError(val statusCode: Int) : FetchOutcome
 
     /**
-     * The request never reached CelesTrak — no connectivity, DNS failure, timeout, TLS error.
-     * Legitimately retryable, because it says nothing about the server's willingness to serve us.
+     * The request never reached CelesTrak — no connectivity, DNS failure, TLS error, or a timeout
+     * while the OS did not vouch for the network. Legitimately retryable, because it says nothing
+     * about the server's willingness to serve us.
      */
     data class TransportFailure(val cause: Throwable) : FetchOutcome
+
+    /**
+     * A timeout on a network the OS vouched for throughout: how CelesTrak's firewall dropping us
+     * looks. Counts towards the breaker; see docs/design/satellite-tracking.md (#1277).
+     */
+    data class ServerUnreachable(val cause: Throwable) : FetchOutcome
 
     /**
      * A `200` whose body contained no usable element sets.
@@ -68,6 +75,10 @@ sealed interface FetchOutcome {
  */
 data class SatelliteFetchState(
     val consecutiveFailures: Int = 0,
+    /** [FetchOutcome.ServerUnreachable]s since the last success. */
+    val consecutiveTimeouts: Int = 0,
+    /** When the latest [FetchOutcome.ServerUnreachable] arrived, so a lone strike can expire. */
+    val lastTimeout: Instant? = null,
     /** While this is in the future, no request may be made. */
     val circuitOpenUntil: Instant? = null,
     val lastAttempt: Instant? = null,
@@ -141,6 +152,16 @@ object SatelliteFetchPolicy {
     private val MOVED_PERMANENTLY_BACKOFF: Duration = 7.days
 
     /**
+     * Timeouts in a row that open a closed circuit. Two gives a flaky link one benefit of the
+     * doubt, as a firewall fails the next attempt too; see the design doc. Once the breaker is
+     * climbing, every timeout climbs it.
+     */
+    const val TIMEOUTS_TO_OPEN = 2
+
+    /** How long a lone strike lasts: six 12 h periods, so a Doze-delayed run still counts. */
+    val TIMEOUT_STRIKE_EXPIRY: Duration = 72.hours
+
+    /**
      * Whether a request may be made at [now].
      *
      * False while the circuit is open, and false again inside [MINIMUM_QUERY_INTERVAL] of the last
@@ -170,10 +191,11 @@ object SatelliteFetchPolicy {
     /**
      * The state after [outcome] arrives at [now].
      *
-     * A success or a 304 closes the circuit and clears the failure count. An
-     * [FetchOutcome.HttpError] opens it. A [FetchOutcome.TransportFailure] does **neither**: it
-     * never reached CelesTrak, so it is not evidence about them, and punishing it would leave a
-     * user who spent a week offline unable to fetch for a week after reconnecting.
+     * A success or a 304 closes the circuit and clears the failure counts. An
+     * [FetchOutcome.HttpError] opens it, and so does a [FetchOutcome.ServerUnreachable] once
+     * there have been [TIMEOUTS_TO_OPEN] of them. A [FetchOutcome.TransportFailure] does
+     * **neither**: it never reached CelesTrak, so it is not evidence about them, and punishing it
+     * would leave a user who spent a week offline unable to fetch for a week after reconnecting.
      */
     fun afterOutcome(
         state: SatelliteFetchState,
@@ -185,6 +207,8 @@ object SatelliteFetchPolicy {
             is FetchOutcome.Success ->
                 attempted.copy(
                     consecutiveFailures = 0,
+                    consecutiveTimeouts = 0,
+                    lastTimeout = null,
                     circuitOpenUntil = null,
                     lastSuccess = now,
                     elementsWrittenAt = now,
@@ -198,6 +222,8 @@ object SatelliteFetchPolicy {
                 // which is the common case for a feed re-issued only daily.
                 attempted.copy(
                     consecutiveFailures = 0,
+                    consecutiveTimeouts = 0,
+                    lastTimeout = null,
                     circuitOpenUntil = null,
                     lastSuccess = now,
                     lastStatusCode = 304,
@@ -209,13 +235,34 @@ object SatelliteFetchPolicy {
                     if (outcome.statusCode == HTTP_MOVED_PERMANENTLY) {
                         MOVED_PERMANENTLY_BACKOFF
                     } else {
-                        BACKOFF_LADDER[(failures - 1).coerceAtMost(BACKOFF_LADDER.lastIndex)]
+                        ladderBackoff(failures)
                     }
                 attempted.copy(
                     consecutiveFailures = failures,
                     circuitOpenUntil = now + backoff,
                     lastStatusCode = outcome.statusCode,
                 )
+            }
+
+            is FetchOutcome.ServerUnreachable -> {
+                val climbing = state.consecutiveFailures > 0
+                // The expiry only forgets a lone strike: once the breaker is climbing, its own
+                // backoff (up to a week) sets the gap, and every timeout must still climb it.
+                val strikeLive =
+                    state.lastTimeout?.let { now - it <= TIMEOUT_STRIKE_EXPIRY } == true
+                val timeouts = if (climbing || strikeLive) state.consecutiveTimeouts + 1 else 1
+                val timedOut = attempted.copy(consecutiveTimeouts = timeouts, lastTimeout = now)
+                // A first timeout from a closed circuit gets the benefit of the doubt. No
+                // lastStatusCode: nothing answered, and the last real response stays on show.
+                if (!climbing && timeouts < TIMEOUTS_TO_OPEN) {
+                    timedOut
+                } else {
+                    val failures = state.consecutiveFailures + 1
+                    timedOut.copy(
+                        consecutiveFailures = failures,
+                        circuitOpenUntil = now + ladderBackoff(failures),
+                    )
+                }
             }
 
             // Both record the attempt — so the 2-hour floor still applies and nothing can hammer —
@@ -234,6 +281,9 @@ object SatelliteFetchPolicy {
      * Only server refusals qualify. Being offline is not something anyone needs to hear about.
      */
     fun warrantsReporting(outcome: FetchOutcome): Boolean = outcome is FetchOutcome.HttpError
+
+    private fun ladderBackoff(failures: Int): Duration =
+        BACKOFF_LADDER[(failures - 1).coerceAtMost(BACKOFF_LADDER.lastIndex)]
 
     /** True for the one status that no retry can ever fix and that needs a new release. */
     fun isTerminal(outcome: FetchOutcome): Boolean =

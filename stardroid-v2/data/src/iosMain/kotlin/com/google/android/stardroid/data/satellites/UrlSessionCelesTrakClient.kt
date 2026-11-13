@@ -16,6 +16,8 @@ import platform.Foundation.NSHTTPURLResponse
 import platform.Foundation.NSMutableURLRequest
 import platform.Foundation.NSString
 import platform.Foundation.NSURL
+import platform.Foundation.NSURLErrorDomain
+import platform.Foundation.NSURLErrorTimedOut
 import platform.Foundation.NSURLRequest
 import platform.Foundation.NSURLRequestReloadIgnoringLocalCacheData
 import platform.Foundation.NSURLSession
@@ -26,11 +28,22 @@ import platform.Foundation.NSUTF8StringEncoding
 import platform.Foundation.create
 import platform.Foundation.dataTaskWithRequest
 import platform.Foundation.setValue
+import platform.Network.nw_path_get_status
+import platform.Network.nw_path_is_equal
+import platform.Network.nw_path_monitor_cancel
+import platform.Network.nw_path_monitor_create
+import platform.Network.nw_path_monitor_set_queue
+import platform.Network.nw_path_monitor_set_update_handler
+import platform.Network.nw_path_monitor_start
+import platform.Network.nw_path_status_satisfied
+import platform.Network.nw_path_t
 import platform.darwin.DISPATCH_TIME_NOW
 import platform.darwin.NSObject
+import platform.darwin.dispatch_queue_create
 import platform.darwin.dispatch_semaphore_create
 import platform.darwin.dispatch_semaphore_signal
 import platform.darwin.dispatch_semaphore_wait
+import platform.darwin.dispatch_sync
 import platform.darwin.dispatch_time
 
 /**
@@ -48,6 +61,19 @@ class UrlSessionCelesTrakClient(
     override fun fetch(
         group: SatelliteGroup,
         ifModifiedSince: String?,
+    ): FetchOutcome {
+        val path = PathWatch()
+        return try {
+            fetchWatching(group, ifModifiedSince, path)
+        } finally {
+            path.stop()
+        }
+    }
+
+    private fun fetchWatching(
+        group: SatelliteGroup,
+        ifModifiedSince: String?,
+        path: PathWatch,
     ): FetchOutcome {
         val url =
             NSURL.URLWithString("$baseUrl?GROUP=${group.queryValue}&FORMAT=tle")
@@ -88,7 +114,9 @@ class UrlSessionCelesTrakClient(
         session.finishTasksAndInvalidate()
         if (timedOut) return FetchOutcome.TransportFailure(Exception("timed out"))
 
-        error?.let { return FetchOutcome.TransportFailure(Exception(it.localizedDescription)) }
+        error?.let {
+            return failureOutcomeFor(it.domain, it.code, it.localizedDescription, path::online)
+        }
         val http =
             response ?: return FetchOutcome.TransportFailure(Exception("not an HTTP response"))
         return fetchOutcomeFor(
@@ -107,6 +135,42 @@ class UrlSessionCelesTrakClient(
             newRequest: NSURLRequest,
             completionHandler: (NSURLRequest?) -> Unit,
         ) = completionHandler(null)
+    }
+
+    /** The default path, watched for one request so a timeout can be told from being offline. */
+    private class PathWatch {
+        private val queue = dispatch_queue_create("SatelliteFetchPath", null)
+        private val monitor = nw_path_monitor_create()
+        private var first: nw_path_t = null
+        private var changed = false
+
+        init {
+            nw_path_monitor_set_queue(monitor, queue)
+            nw_path_monitor_set_update_handler(monitor) { current ->
+                val start = first
+                when {
+                    start == null -> first = current
+                    // A repeated update for the same path is not a change.
+                    !nw_path_is_equal(start, current) -> changed = true
+                }
+            }
+            nw_path_monitor_start(monitor)
+        }
+
+        /**
+         * Satisfied from the start and unchanged: a switch mid-request is not evidence about
+         * CelesTrak. Read on the monitor's own serial queue, so it sees the handler's writes.
+         */
+        fun online(): Boolean {
+            var result = false
+            dispatch_sync(queue) {
+                val status = first?.let { nw_path_get_status(it) }
+                result = !changed && status == nw_path_status_satisfied
+            }
+            return result
+        }
+
+        fun stop() = nw_path_monitor_cancel(monitor)
     }
 
     private companion object {
@@ -134,6 +198,27 @@ internal fun fetchOutcomeFor(
         STATUS_NOT_MODIFIED -> FetchOutcome.NotModified
         else -> FetchOutcome.HttpError(status)
     }
+
+/**
+ * A failed task as a [FetchOutcome]: only a timeout while the path stayed [online] is
+ * [FetchOutcome.ServerUnreachable]. Offline fails fast with another code, as the session does not
+ * wait for connectivity. Unlike Android, a stall after the status line can't be told apart here;
+ * the two-timeout rule absorbs it.
+ */
+internal fun failureOutcomeFor(
+    domain: String?,
+    code: Long,
+    description: String,
+    online: () -> Boolean,
+): FetchOutcome {
+    val cause = Exception(description)
+    val timedOut = domain == NSURLErrorDomain && code == NSURLErrorTimedOut
+    return if (timedOut && online()) {
+        FetchOutcome.ServerUnreachable(cause)
+    } else {
+        FetchOutcome.TransportFailure(cause)
+    }
+}
 
 private const val STATUS_OK = 200
 private const val STATUS_NOT_MODIFIED = 304

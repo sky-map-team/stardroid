@@ -20,10 +20,14 @@ import com.google.android.stardroid.data.satellites.SatelliteFetchPolicy
 import com.google.android.stardroid.layers.LayerRegistry
 import com.google.android.stardroid.layers.SatelliteLayer
 import com.google.android.stardroid.startup.Experiment
+import com.google.android.stardroid.startup.ExperimentConfig
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.withContext
+import kotlinx.coroutines.withTimeoutOrNull
 import kotlinx.datetime.Clock
+import kotlin.time.Duration
+import kotlin.time.Duration.Companion.seconds
 
 /**
  * What [SatelliteRefreshWorker] should tell WorkManager after a fetch.
@@ -45,6 +49,8 @@ enum class SatelliteWorkAction {
  *  - **HttpError → succeed, never retry.** CelesTrak refused us, and retrying is the storm the
  *    usage policy forbids: the breaker already holds the door shut, and the 12-hour job fires
  *    again on schedule and no-ops against it.
+ *  - **ServerUnreachable → succeed, never retry.** A timeout on a working network, which is how
+ *    CelesTrak's firewall drops us; the breaker decides when to try again.
  *  - **TransportFailure → retry.** Never reached them; a legitimate transient.
  *  - **UnusableBody → succeed.** A captive portal, not CelesTrak; retrying hammers the portal.
  *  - **StorageFailure → retry.** Our disk, not their server.
@@ -58,9 +64,51 @@ fun satelliteWorkAction(outcome: FetchOutcome): SatelliteWorkAction =
         is FetchOutcome.Success, FetchOutcome.NotModified -> SatelliteWorkAction.SUCCEED
         // Never RETRY here. This is the single most important line in the feature.
         is FetchOutcome.HttpError -> SatelliteWorkAction.SUCCEED
+        // Nor here, even for a first timeout that left the circuit shut.
+        is FetchOutcome.ServerUnreachable -> SatelliteWorkAction.SUCCEED
         is FetchOutcome.UnusableBody -> SatelliteWorkAction.SUCCEED
         is FetchOutcome.TransportFailure -> SatelliteWorkAction.RETRY
         is FetchOutcome.StorageFailure -> SatelliteWorkAction.RETRY
+    }
+
+internal val SATELLITE_FLAG_TIMEOUT: Duration = 10.seconds
+
+/** The kill switch as seen after waiting for a fresh value. */
+internal enum class SatelliteFlagState {
+    ON,
+    OFF,
+
+    /** The fresh fetch failed, was throttled or timed out, so the flag can't be trusted. */
+    UNKNOWN,
+}
+
+/**
+ * Waits up to [timeout] for a fresh flag, then reads it. Never answers [SatelliteFlagState.ON]
+ * from a stale value: the flag exists to stop CelesTrak traffic.
+ */
+internal suspend fun satelliteFlagState(
+    config: ExperimentConfig,
+    timeout: Duration = SATELLITE_FLAG_TIMEOUT,
+): SatelliteFlagState =
+    when {
+        withTimeoutOrNull(timeout) { config.awaitFresh() } != true -> SatelliteFlagState.UNKNOWN
+        config.isEnabled(Experiment.SATELLITES) -> SatelliteFlagState.ON
+        else -> SatelliteFlagState.OFF
+    }
+
+/**
+ * What to tell WorkManager for each flag state, or null to go on and download.
+ *
+ * UNKNOWN retries so WorkManager's default backoff (30 s, doubling, capped at 5 h) re-attempts
+ * only the Firebase fetch; the CelesTrak download still needs a fresh ON, and keeps its own
+ * 2-hour floor and circuit breaker. Never reached after a CelesTrak request, so this can't
+ * become a retry loop against CelesTrak.
+ */
+internal fun satelliteFlagWorkAction(state: SatelliteFlagState): SatelliteWorkAction? =
+    when (state) {
+        SatelliteFlagState.ON -> null
+        SatelliteFlagState.OFF -> SatelliteWorkAction.SUCCEED
+        SatelliteFlagState.UNKNOWN -> SatelliteWorkAction.RETRY
     }
 
 /**
@@ -85,15 +133,18 @@ class SatelliteRefreshWorker(
             // The gates are re-checked at run time, not just at schedule time: a Remote Config
             // flip, a withdrawn consent or the layer being switched off must stop traffic even if
             // a job is already enqueued.
-            if (!entryPoint.experimentConfig().isEnabled(Experiment.SATELLITES)) {
-                return@withContext Result.success()
-            }
             if (!entryPoint.settings().satelliteDataEnabled.first()) {
                 return@withContext Result.success()
             }
             val layerOn =
                 LayerRegistry.layerEnabled(entryPoint.settings(), SatelliteLayer.LAYER_ID).first()
             if (!layerOn) return@withContext Result.success()
+            // Last, so only installs about to download pay for the fetch.
+            when (satelliteFlagWorkAction(satelliteFlagState(entryPoint.experimentConfig()))) {
+                null -> Unit
+                SatelliteWorkAction.RETRY -> return@withContext Result.retry()
+                else -> return@withContext Result.success()
+            }
             val repository = entryPoint.satelliteElementsRepository()
             val analytics = entryPoint.analytics()
 
@@ -125,7 +176,11 @@ class SatelliteRefreshWorker(
         result: RefreshResult.Completed,
         analytics: Analytics,
     ): Result {
-        logRefusal(result)
+        when (val outcome = result.outcome) {
+            is FetchOutcome.HttpError -> logRefusal(outcome, result)
+            is FetchOutcome.ServerUnreachable -> logUnreachable(result)
+            else -> Unit
+        }
         trackSatelliteFetchResult(result, analytics, Clock.System.now())
 
         return when (satelliteWorkAction(result.outcome)) {
@@ -137,11 +192,22 @@ class SatelliteRefreshWorker(
         }
     }
 
+    private fun logUnreachable(result: RefreshResult.Completed) {
+        val state = result.state
+        val circuit = state.circuitOpenUntil?.let { "circuit open until $it" } ?: "circuit shut"
+        Log.w(
+            TAG,
+            "CelesTrak timed out on a validated network " +
+                "(${state.consecutiveTimeouts} since the last success); $circuit",
+        )
+    }
+
     /** A server refusal, to the log for a developer, as CelesTrak's policy requires. */
-    private fun logRefusal(result: RefreshResult.Completed) {
-        val outcome = result.outcome
-        if (!SatelliteFetchPolicy.warrantsReporting(outcome)) return
-        val statusCode = (outcome as FetchOutcome.HttpError).statusCode
+    private fun logRefusal(
+        outcome: FetchOutcome.HttpError,
+        result: RefreshResult.Completed,
+    ) {
+        val statusCode = outcome.statusCode
 
         if (SatelliteFetchPolicy.isTerminal(outcome)) {
             // 301 means our URL is outdated and only a new release fixes it, so this is the
