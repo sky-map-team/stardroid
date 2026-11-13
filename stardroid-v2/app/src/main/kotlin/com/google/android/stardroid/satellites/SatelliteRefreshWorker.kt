@@ -24,6 +24,7 @@ import com.google.android.stardroid.startup.ExperimentConfig
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.withContext
+import kotlinx.coroutines.withTimeoutOrNull
 import kotlinx.datetime.Clock
 import kotlin.time.Duration
 import kotlin.time.Duration.Companion.seconds
@@ -66,20 +67,18 @@ fun satelliteWorkAction(outcome: FetchOutcome): SatelliteWorkAction =
         is FetchOutcome.StorageFailure -> SatelliteWorkAction.RETRY
     }
 
-/** How long the worker waits for a fresh Remote Config value before deciding. */
-val SATELLITE_FLAG_TIMEOUT: Duration = 10.seconds
+internal val SATELLITE_FLAG_TIMEOUT: Duration = 10.seconds
 
 /**
- * The kill-switch check: waits briefly for a fresh flag, then reads it.
- *
- * If the fresh value can't be had in time this skips the run (fails closed): the flag exists to
- * stop traffic to CelesTrak, a skipped run just retries on the next 12-hour tick, and an install
- * that can't reach Remote Config is rarely one that should be downloading.
+ * The kill-switch check: waits up to [timeout] for a fresh flag, then reads it. Fails closed —
+ * the flag exists to stop CelesTrak traffic, and a skipped run just retries on the next tick.
  */
-suspend fun satellitesAllowed(
+internal suspend fun satellitesAllowed(
     config: ExperimentConfig,
     timeout: Duration = SATELLITE_FLAG_TIMEOUT,
-): Boolean = config.awaitFresh(timeout) && config.isEnabled(Experiment.SATELLITES)
+): Boolean =
+    withTimeoutOrNull(timeout) { config.awaitFresh() } == true &&
+        config.isEnabled(Experiment.SATELLITES)
 
 /**
  * The periodic CelesTrak fetch (D92), scheduled by [SatelliteScheduler].
@@ -103,15 +102,16 @@ class SatelliteRefreshWorker(
             // The gates are re-checked at run time, not just at schedule time: a Remote Config
             // flip, a withdrawn consent or the layer being switched off must stop traffic even if
             // a job is already enqueued.
-            if (!satellitesAllowed(entryPoint.experimentConfig())) {
-                return@withContext Result.success()
-            }
             if (!entryPoint.settings().satelliteDataEnabled.first()) {
                 return@withContext Result.success()
             }
             val layerOn =
                 LayerRegistry.layerEnabled(entryPoint.settings(), SatelliteLayer.LAYER_ID).first()
             if (!layerOn) return@withContext Result.success()
+            // Last, so only installs about to download pay for the fetch.
+            if (!satellitesAllowed(entryPoint.experimentConfig())) {
+                return@withContext Result.success()
+            }
             val repository = entryPoint.satelliteElementsRepository()
             val analytics = entryPoint.analytics()
 

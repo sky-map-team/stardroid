@@ -11,12 +11,11 @@ package com.google.android.stardroid.satellites
 
 import com.google.android.stardroid.startup.Experiment
 import com.google.android.stardroid.startup.ExperimentConfig
+import com.google.android.stardroid.startup.FetchResult
 import com.google.common.truth.Truth.assertThat
 import kotlinx.coroutines.awaitCancellation
 import kotlinx.coroutines.test.runTest
-import kotlinx.coroutines.withTimeoutOrNull
 import org.junit.jupiter.api.Test
-import kotlin.time.Duration
 import kotlin.time.Duration.Companion.seconds
 
 class SatelliteKillSwitchTest {
@@ -28,11 +27,8 @@ class SatelliteKillSwitchTest {
     ) : ExperimentConfig {
         override fun isEnabled(experiment: Experiment) = value
 
-        override suspend fun awaitFresh(timeout: Duration): Boolean {
-            if (hang) {
-                withTimeoutOrNull(timeout) { awaitCancellation() }
-                return false
-            }
+        override suspend fun awaitFresh(): Boolean {
+            if (hang) awaitCancellation()
             if (fresh) value = fetchedValue
             return fresh
         }
@@ -62,9 +58,32 @@ class SatelliteKillSwitchTest {
         }
 
     @Test
+    fun `a server-backed config is fresh only if the fetch succeeded`() =
+        runTest {
+            val ok =
+                object : ExperimentConfig {
+                    override fun isEnabled(experiment: Experiment) = true
+
+                    override val canFetch = true
+
+                    override suspend fun fetchNow() = FetchResult.Success(updated = false)
+                }
+            val failed =
+                object : ExperimentConfig {
+                    override fun isEnabled(experiment: Experiment) = true
+
+                    override val canFetch = true
+
+                    override suspend fun fetchNow() = FetchResult.Failure("offline")
+                }
+            assertThat(ok.awaitFresh()).isTrue()
+            assertThat(failed.awaitFresh()).isFalse()
+        }
+
+    @Test
     fun `a config with no server is always current`() =
         runTest {
-            assertThat(ExperimentConfig.Static.awaitFresh(1.seconds)).isTrue()
-            assertThat(satellitesAllowed(ExperimentConfig.Static)).isFalse()
+            assertThat(ExperimentConfig { true }.awaitFresh()).isTrue()
+            assertThat(satellitesAllowed(ExperimentConfig { true })).isTrue()
         }
 }
