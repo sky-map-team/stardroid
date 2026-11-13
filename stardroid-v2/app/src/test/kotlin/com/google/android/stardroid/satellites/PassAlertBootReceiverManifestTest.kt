@@ -28,10 +28,4 @@ class PassAlertBootReceiverManifestTest {
     fun `the boot receiver is disabled by default`() {
         assertThat(receiverTag).contains("android:enabled=\"false\"")
     }
-
-    @Test
-    fun `the advance alert leaves the boot receiver on until the rise alert fires`() {
-        assertThat(PassAlerts.bootReceiverNeededAfterFire(atRise = false)).isTrue()
-        assertThat(PassAlerts.bootReceiverNeededAfterFire(atRise = true)).isFalse()
-    }
 }

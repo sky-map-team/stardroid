@@ -146,17 +146,12 @@ object PassAlerts {
             PendingIntent.FLAG_NO_CREATE or PendingIntent.FLAG_IMMUTABLE,
         )
 
-    /**
-     * The rise alarm is the last of the pair, so once it has fired nothing is left to re-arm
-     * after a reboot and the boot receiver goes back to disabled.
-     */
-    internal fun bootReceiverNeededAfterFire(atRise: Boolean): Boolean = !atRise
-
+    /** The rise alarm is the last of the pair, so nothing is left to re-arm after a reboot. */
     internal fun onAlarmFired(
         context: Context,
         atRise: Boolean,
     ) {
-        if (!bootReceiverNeededAfterFire(atRise)) PassAlertBootReceiver.setEnabled(context, false)
+        if (atRise) PassAlertBootReceiver.setEnabled(context, false)
     }
 
     /** True once the pass has begun; a late alert would send the user to an empty sky. */
@@ -200,9 +195,13 @@ class PassAlertReceiver : BroadcastReceiver() {
         context: Context,
         intent: Intent,
     ) {
-        val start = PassAlerts.startTimeFrom(intent) ?: return
-        val noradId = PassAlerts.noradIdFrom(intent)
         val atRise = PassAlerts.atRiseFrom(intent)
+        val start =
+            PassAlerts.startTimeFrom(intent) ?: run {
+                PassAlerts.onAlarmFired(context, atRise)
+                return
+            }
+        val noradId = PassAlerts.noradIdFrom(intent)
         val end = PassAlerts.endTimeFrom(intent)
         // A BroadcastReceiver's process can be killed the moment onReceive returns, so the
         // opt-in re-check must finish before then — but reading DataStore (disk I/O) is not

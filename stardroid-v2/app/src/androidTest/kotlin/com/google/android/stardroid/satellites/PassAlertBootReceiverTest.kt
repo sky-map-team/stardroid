@@ -45,7 +45,7 @@ class PassAlertBootReceiverTest {
     @Before
     fun clean() = PassAlerts.cancel(context)
 
-    /** Leaves the app's own state for whatever runs next: nothing armed, receiver off. */
+    /** Leave nothing armed. */
     @After
     fun restore() = PassAlerts.cancel(context)
 

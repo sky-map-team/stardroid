@@ -34,7 +34,6 @@ class PassAlertBootReceiver : BroadcastReceiver() {
     ) = Unit
 
     companion object {
-        /** `DONT_KILL_APP`: this is called from the running app. */
         fun setEnabled(
             context: Context,
             enabled: Boolean,
@@ -52,6 +51,7 @@ class PassAlertBootReceiver : BroadcastReceiver() {
             )
         }
 
+        /** Only an explicit enable counts: the manifest default is disabled. */
         fun isEnabled(context: Context): Boolean =
             context.packageManager.getComponentEnabledSetting(
                 ComponentName(context, PassAlertBootReceiver::class.java),
