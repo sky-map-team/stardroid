@@ -96,18 +96,17 @@ class NotificationPlanAheadTest {
     }
 
     @Test
-    fun `a night with no sunset is not planned`() {
+    fun `nights with no sunset are not planned`() {
+        // Svalbard: midnight sun in June, polar night in December.
         val svalbard = LatLong(78.2, 15.6)
-        val planned =
-            planAhead.plan(
-                inputs(
-                    "2026-06-20T08:00:00Z",
-                    AlertPreferences(digest = true),
-                    location = svalbard,
-                ),
-            )
+        for (now in listOf("2026-06-20T08:00:00Z", "2026-12-20T08:00:00Z")) {
+            val planned =
+                planAhead.plan(
+                    inputs(now, AlertPreferences(digest = true), location = svalbard),
+                )
 
-        assertThat(planned).isEmpty()
+            assertThat(planned).isEmpty()
+        }
     }
 
     @Test

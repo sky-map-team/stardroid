@@ -102,8 +102,9 @@ class NotificationPlanAhead(
                     inputs.zone,
                     passes = tonightsPasses,
                 )
-            // No sunset (polar): the planner would fall back to "now", which for a later night
-            // is noon the day before.
+            // No sunset (midnight sun or polar night): nothing to anchor "after sunset" to, and
+            // the planner would fall back to "now", which for a later night is noon the day
+            // before. Those nights go without an alert.
             if (sky.sunset == null) return@mapNotNull null
             val plan =
                 NotificationPlanner.plan(
