@@ -1,60 +1,132 @@
 object_id,name,is_primary
+asterism/summer_triangle,Летний треугольник,1
 constellation/andromeda,Андромеда,1
+constellation/antlia,Насос,1
+constellation/apus,Райская Птица,1
 constellation/aquarius,Водолей,1
-constellation/aquila,Орел,1
+constellation/aquila,Орёл,1
+constellation/ara,Жертвенник,1
 constellation/aries,Овен,1
 constellation/auriga,Возничий,1
 constellation/bootes,Волопас,1
+constellation/caelum,Резец,1
+constellation/camelopardalis,Жираф,1
 constellation/cancer,Рак,1
-constellation/canis_major,Большой Пес,1
+constellation/canes_venatici,Гончие Псы,1
+constellation/canis_major,Большой Пёс,1
+constellation/canis_minor,Малый Пёс,1
 constellation/capricornus,Козерог,1
-constellation/carina,Карина,1
+constellation/carina,Киль,1
 constellation/cassiopeia,Кассиопея,1
 constellation/centaurus,Центавр,1
+constellation/cepheus,Цефей,1
 constellation/cetus,Кит,1
+constellation/chamaeleon,Хамелеон,1
+constellation/circinus,Циркуль,1
+constellation/columba,Голубь,1
+constellation/coma_berenices,Волосы Вероники,1
+constellation/corona_australis,Южная Корона,1
+constellation/corona_borealis,Северная Корона,1
+constellation/corvus,Ворон,1
+constellation/crater,Чаша,1
 constellation/crux,Южный Крест,1
 constellation/cygnus,Лебедь,1
+constellation/delphinus,Дельфин,1
+constellation/dorado,Золотая Рыба,1
 constellation/draco,Дракон,1
+constellation/equuleus,Малый Конь,1
 constellation/eridanus,Эридан,1
+constellation/fornax,Печь,1
 constellation/gemini,Близнецы,1
 constellation/grus,Журавль,1
 constellation/hercules,Геркулес,1
-constellation/hydrus,Гидра,1
+constellation/horologium,Часы,1
+constellation/hydra,Гидра,1
+constellation/hydrus,Южная Гидра,1
+constellation/indus,Индеец,1
+constellation/lacerta,Ящерица,1
 constellation/leo,Лев,1
+constellation/leo,Серп,0
+constellation/leo_minor,Малый Лев,1
+constellation/lepus,Заяц,1
 constellation/libra,Весы,1
 constellation/lupus,Волк,1
+constellation/lynx,Рысь,1
 constellation/lyra,Лира,1
+constellation/mensa,Столовая Гора,1
+constellation/microscopium,Микроскоп,1
+constellation/monoceros,Единорог,1
+constellation/musca,Муха,1
+constellation/norma,Наугольник,1
+constellation/octans,Октант,1
 constellation/ophiuchus,Змееносец,1
 constellation/orion,Орион,1
+constellation/orion,Пояс Ориона,0
 constellation/pavo,Павлин,1
 constellation/pegasus,Пегас,1
 constellation/perseus,Персей,1
 constellation/phoenix,Феникс,1
+constellation/pictor,Живописец,1
 constellation/pisces,Рыбы,1
 constellation/piscis_austrinus,Южная Рыба,1
 constellation/puppis,Корма,1
+constellation/pyxis,Компас,1
+constellation/reticulum,Сетка,1
+constellation/sagitta,Стрела,1
 constellation/sagittarius,Стрелец,1
+constellation/sagittarius,Чайник,0
 constellation/scorpius,Скорпион,1
+constellation/sculptor,Скульптор,1
+constellation/scutum,Щит,1
+constellation/serpens_caput,Голова Змеи,1
+constellation/serpens_cauda,Хвост Змеи,1
+constellation/sextans,Секстант,1
 constellation/taurus,Телец,1
+constellation/telescopium,Телескоп,1
+constellation/triangulum,Треугольник,1
+constellation/triangulum_australe,Южный Треугольник,1
 constellation/tucana,Тукан,1
 constellation/ursa_major,Большая Медведица,1
+constellation/ursa_major,Большой Ковш,0
 constellation/ursa_minor,Малая Медведица,1
+constellation/ursa_minor,Малый Ковш,0
 constellation/vela,Паруса,1
 constellation/virgo,Дева,1
-dso/hdf,Область глубокого обзора Хаббла,1
+constellation/volans,Летучая Рыба,1
+constellation/vulpecula,Лисичка,1
+dso/blue_snowball_nebula,Туманность Голубой Снежок,1
+dso/centaurus_a,Центавр A,1
+dso/coathanger,Вешалка,1
+dso/coathanger,Скопление Брокки,0
+dso/coma_star_cluster,Скопление Волос Вероники,1
+dso/cygnus_x_1,Лебедь X-1,1
+dso/cygnus_x_1,Чёрная дыра звёздной массы,0
+dso/double_cluster,h и χ Персея,0
+dso/double_cluster,Двойное скопление в Персее,1
+dso/eta_carinae_nebula,Туманность Киля,1
+dso/eta_carinae_nebula,Туманность Эты Киля,0
+dso/exposed_cranium_nebula,Туманность Обнажённый Череп,1
+dso/ghost_of_jupiter,Призрак Юпитера,1
 dso/hdf,Область глубокого обзора Хаббла,0
+dso/hdf,Область глубокого обзора Хаббла,1
+dso/helix_nebula,Око Бога,0
+dso/helix_nebula,Туманность Улитка,1
+dso/hyades,Гиады,1
+dso/jewel_box,Шкатулка с драгоценностями Гершеля,0
+dso/jewel_box,Шкатулка с драгоценностями,1
+dso/lmc,Большое Магелланово Облако,1
 dso/m1,Крабовидная туманность,1
 dso/m101,Галактика Вертушка,1
 dso/m102,Галактика Веретено,1
 dso/m104,Галактика Сомбреро,1
 dso/m11,Рассеянное скопление Дикая Утка,1
-dso/m13,Шаровое скопление в созвездии Геркулеса,1
 dso/m13,Hercules Globular Cluster,0
-dso/m16,Туманность Орла,1
+dso/m13,Большое шаровое скопление в Геркулесе,1
+dso/m16,Туманность Орёл,1
 dso/m20,Туманность Трёхраздельная,1
 dso/m24,Звёздное облако Стрельца,1
 dso/m27,Туманность Гантель,1
-dso/m31,Туманность Андромеды,1
+dso/m31,Галактика Андромеды,1
 dso/m33,Галактика Треугольника,1
 dso/m40,Виннеке 4,1
 dso/m42,Туманность Ориона,1
@@ -62,14 +134,18 @@ dso/m43,Туманность де Мейрана,1
 dso/m44,Скопление Улей,1
 dso/m44,Ясли,0
 dso/m45,Плеяды,1
-dso/m45,Семь сестер,0
+dso/m45,Семь сестёр,0
 dso/m51,Галактика Водоворот,1
-dso/m57,Кольцевая туманность,1
+dso/m57,Туманность Кольцо,1
 dso/m6,Скопление Бабочка,1
 dso/m63,Галактика Подсолнух,1
 dso/m64,Галактика Чёрный Глаз,1
-dso/m7,Хвост Скорпиона,1
+dso/m65,M65,1
+dso/m65,Триплет Льва,0
+dso/m66,M66,1
+dso/m66,Триплет Льва,0
 dso/m7,Ptolemy Cluster,0
+dso/m7,Хвост Скорпиона,1
 dso/m74,Галактика Фантом,1
 dso/m76,Туманность Малая Гантель,1
 dso/m8,Туманность Лагуна,1
@@ -77,9 +153,39 @@ dso/m81,Галактика Боде,1
 dso/m82,Галактика Сигара,1
 dso/m83,Южная Вертушка,1
 dso/m97,Туманность Сова,1
+dso/n47_tucanae,47 Тукана,1
 dso/ngc_6543,Туманность Кошачий Глаз,1
-dso/omega_centauri,Шаровое скопление Омега Центавра,1
+dso/north_america_nebula,Туманность Северная Америка,1
 dso/omega_centauri,ω Centauri,0
+dso/omega_centauri,Шаровое скопление Омега Центавра,1
+dso/saturn_nebula,Туманность Сатурн,1
+dso/sculptor_galaxy,Галактика Серебряная Монета,0
+dso/sculptor_galaxy,Галактика Скульптор,1
+dso/sgr_a_star,Галактический центр,0
+dso/sgr_a_star,Стрелец A*,1
+dso/sgr_a_star,Чёрная дыра,0
+dso/smc,Малое Магелланово Облако,1
+dso/t_crb,T Северной Короны,1
+dso/t_crb,Полыхающая звезда,0
+dso/tarantula_nebula,Туманность Тарантул,1
+dso/v838_mon,V838 Единорога,1
+dso/willman_1,Уиллман 1,1
+moon/ariel,Ариэль,1
+moon/callisto,Каллисто,1
+moon/deimos,Деймос,1
+moon/dione,Диона,1
+moon/europa,Европа,1
+moon/ganymede,Ганимед,1
+moon/iapetus,Япет,1
+moon/io,Ио,1
+moon/oberon,Оберон,1
+moon/phobos,Фобос,1
+moon/rhea,Рея,1
+moon/tethys,Тефия,1
+moon/titan,Титан,1
+moon/titania,Титания,1
+moon/triton,Тритон,1
+moon/umbriel,Умбриэль,1
 planet/jupiter,Юпитер,1
 planet/mars,Марс,1
 planet/mercury,Меркурий,1
@@ -114,6 +220,7 @@ star/alioth,Алиот,1
 star/alkaid,Алькаид,1
 star/alnair,Альнаир,1
 star/alnath,Альнах,1
+star/alnath,Эльнат,0
 star/alnilam,Альнилам,1
 star/alphard,Альфард,1
 star/alphekka,Альфекка,1
@@ -134,35 +241,307 @@ star/diphda,Дифда,1
 star/dubhe,Дубхе,1
 star/e_lyrae,ε Лиры,1
 star/enif,Эниф,1
+star/etamin,Эльтанин,0
 star/etamin,Этамин,1
 star/fomalhaut,Фомальгаут,1
 star/hadar,Хадар,1
 star/hamal,Гамаль,1
 star/izar,Ицар,1
+star/j003712+535400,Фулу,1
+star/j004912+574912,Ахирд,1
+star/j005624+591048,Кастула,1
+star/j010824-551500,Вуррен,1
+star/j011348+073448,Ревати,1
+star/j012212+453148,Адхил,1
+star/j012548+601424,Рукба,1
+star/j013112+152100,Альферг,1
+star/j013636+412436,Титавин,1
+star/j013748+483748,Нембус,1
+star/j014536+090936,Торкулар,1
+star/j015136-101948,Батен Кайтос,1
+star/j015248+293448,Моталлах,1
+star/j015436+204836,Шератан,1
+star/j015436+634012,Сегин,1
+star/j020148+024536,Альриша,1
+star/j020336+421948,Аламак,1
+star/j024312+031424,Каффальджидма,1
+star/j024800+291500,Лилии Бореа,1
+star/j024948+271536,Бхарани,1
+star/j025024+555400,Мирам,1
+star/j025100-210000,Ангетенар,1
+star/j025624-085400,Ажа,1
+star/j025812-401800,Акамар,1
+star/j030936+445136,Мисам,1
+star/j031124+194348,Ботейн,1
+star/j031200-285924,Далим,1
+star/j031536-084912,Зибаль,1
+star/j033300-092736,Ран,1
+star/j034312-094612,Рана,1
+star/j034424+321724,Атик,1
+star/j034500+240636,Электра,1
+star/j034500+241724,Целена,1
+star/j034500+242812,Тайгета,1
+star/j034536+242212,Майя,1
+star/j034612+235700,Меропа,1
+star/j034612+243300,Астеропа,1
+star/j034912+240300,Атлас,1
+star/j034912+240824,Плейона,1
+star/j035812-133036,Заурак,1
+star/j035848+354724,Менкиб,1
+star/j041200-065024,Бейд,1
+star/j041500-073824,Кейд,1
+star/j041948+153748,Прима Гиадум,1
+star/j042248+173224,Секунда Гиадум,1
+star/j042400-340112,Бимим,1
+star/j042848+155212,Чамукуй,1
+star/j042848+191048,Аин,1
+star/j043524-303336,Тимин,1
+star/j043824-141800,Сцептрум,1
+star/j044948+065736,Табит,1
+star/j045700+331012,Хассалех,1
+star/j050148+434912,Альмааз,1
+star/j050224+410448,Саклатени,1
+star/j050636+411348,Хедус,1
+star/j050748-050524,Курса,1
+star/j052512+062100,Беллатрикс,1
+star/j052812-204536,Нихал,1
+star/j053148-001800,Минтака,1
+star/j053524+095548,Меисса,1
+star/j053524-055436,Хатиса,1
+star/j053748+210824,Тяньгуань,1
+star/j053936-340412,Факт,1
+star/j054048-015624,Альнитак,1
+star/j055100-354612,Вазн,1
+star/j055924+445700,Менкалинан,1
+star/j060000+371236,Махасим,1
+star/j060748-371500,Элькуруд,1
+star/j061500+223036,Пропус,1
+star/j062024-300336,Фуруд,1
+star/j062248+223036,Теят,1
+star/j062248-175736,Мирцам,1
+star/j064348+250748,Мебсута,1
+star/j064500+125400,Альзирр,1
+star/j070148-275548,Нганурганити,1
+star/j070336-153748,Мулифен,1
+star/j070412+203412,Мекбуда,1
+star/j070824-262324,Везен,1
+star/j072024+215848,Васат,1
+star/j072400-291800,Алудра,1
+star/j072700+081724,Гомейса,1
+star/j073900+343448,Цзишуй,1
+star/j074912-245136,Азмиди,1
+star/j080336-400000,Наос,1
+star/j080748-241800,Турейс,1
+star/j081200+173900,Тегмин,1
+star/j081648+091124,Тарф,1
+star/j082024+240112,Пиаутос,1
+star/j082248+431124,Альциаукат,1
+star/j082248-593036,Авиор,1
+star/j083000+604312,Мусцида,1
+star/j083900+032024,Минхир,1
+star/j084312+212812,Азеллюс Бореалис,1
+star/j084424+180900,Азеллюс Аустралис,1
+star/j084500-544236,Альсефина,1
+star/j084648+062512,Ашлеша,1
+star/j085248+281948,Коперник,1
+star/j085812+115136,Акубенс,1
+star/j085924+480224,Талита,1
+star/j090336+470936,Алькафра,1
+star/j090748-432548,Сухайль,1
+star/j090936+220300,Нан,1
+star/j091312-694312,Миаплацидус,1
+star/j091648-591648,Аспидиске,1
+star/j092212-550036,Маркеб,1
+star/j092848+453600,Интеркрус,1
+star/j093148+225812,Альтерф,1
+star/j093936-010824,Укда,1
+star/j094124+095324,Субра,1
+star/j095136-145100,Чжан,1
+star/j095248+260036,Расалас,1
+star/j095436-190036,Фелис,1
+star/j101648+232512,Адхафера,1
+star/j101648+425436,Тания Бореалис,1
+star/j102212+413000,Тания Аустралис,1
+star/j105324+341312,Преципуа,1
+star/j105924+402548,Чалаван,1
+star/j110000-181800,Алькес,1
+star/j111424+152548,Чертан,1
+star/j111424+203112,Зосма,1
+star/j111800+313224,Алула Аустралис,1
+star/j111836+330524,Алула Бореалис,1
+star/j113112+691948,Гиаусар,1
+star/j114612+474648,Тайяншоу,1
+star/j115024+014612,Завийява,1
+star/j120524+765436,Тонатиу,1
+star/j120824-244348,Альхиба,1
+star/j121500-584500,Имай,1
+star/j121536+570148,Мегрец,1
+star/j121536-173224,Гиенах,1
+star/j121948-004012,Заниах,1
+star/j122136-602400,Гинан,1
+star/j123000-163112,Алгораб,1
+star/j123112-570636,Гакрукс,1
+star/j123336+412136,Хара,1
+star/j123412-232400,Краз,1
+star/j124124-012700,Поррима,1
+star/j124500+452624,Ла Суперба,1
+star/j124724+664724,Тяньи,1
+star/j124800-594124,Мимоза,1
+star/j125512+652624,Тайи,1
+star/j125548+032400,Минелаува,1
+star/j125548+381912,Кор Кароли,1
+star/j131012+173148,Диадема,1
+star/j132400+545548,Мицар,1
+star/j132512+545924,Алькор,1
+star/j133448-003600,Хезе,1
+star/j135436+182400,Муфрид,1
+star/j140412+642248,Тубан,1
+star/j140636-362212,Менкент,1
+star/j141236-101612,Кан,1
+star/j141612+460524,Сюаньгэ,1
+star/j141612-060000,Сирма,1
+star/j141912-132212,Хамбалия,1
+star/j142812-021348,Эльгафар,1
+star/j143148+381836,Сегинус,1
+star/j143936-605024,Толиман,1
+star/j144912+460712,Мерга,1
+star/j145100-160224,Зубен Эльгенуби,1
+star/j150148+402324,Неккар,1
+star/j150412-251648,Брахиум,1
+star/j151648-092248,Зубен Эльшамали,1
+star/j152100+714948,Феркад,1
+star/j152436+372248,Алькалуропс,1
+star/j152512+585812,Эдасих,1
+star/j152736+290636,Нусакан,1
+star/j153524-144724,Зубен Эльакраби,1
+star/j154836+180824,Гуджа,1
+star/j155700-291236,Иклиль,1
+star/j155848-260636,Фан,1
+star/j160036-223712,Джубба,1
+star/j160524-194836,Акраб,1
+star/j160748+170300,Марсик,1
+star/j161200-192736,Джаббах,1
+star/j161424-034124,Йед Приор,1
+star/j161836-044124,Йед Постериор,1
+star/j162100-253524,Альният,1
+star/j162400+613036,Атебин,1
+star/j162512+140148,Куям,1
+star/j163000+212924,Корнефорос,1
+star/j163112+015848,Марфик,1
+star/j163600-281312,Пайкаухале,1
+star/j164836-690148,Атриа,1
+star/j165024-341724,Лараваг,1
+star/j165136-380300,Хамидимура,1
+star/j165212-380112,Пипирима,1
+star/j170524+542812,Арракис,1
+star/j170900+654236,Альдиба,1
+star/j171012-154348,Сабик,1
+star/j171424+142324,Рас Альгети,1
+star/j171500+245024,Сарин,1
+star/j171536-263524,Гуниибуу,1
+star/j173036+260636,Маасим,1
+star/j173036+521800,Растабан,1
+star/j173036-371800,Лесат,1
+star/j173224+863524,Йильдун,1
+star/j173712-430000,Саргас,1
+star/j174200+720900,Дзибан,1
+star/j174312+043412,Кебальрай,1
+star/j174348+534800,Альруба,1
+star/j174424-514948,Сервантес,1
+star/j174948-370224,Фуюэ,1
+star/j175324+565212,Грумиум,1
+star/j180600-302512,Альназл,1
+star/j181348-210336,Полис,1
+star/j182100-294948,Каус Медиа,1
+star/j182548+653336,Фафнир,1
+star/j182812-252512,Каус Бореалис,1
+star/j184348+363336,Сихэ,1
+star/j184948+332136,Шелиак,1
+star/j185400-224424,Айнальрами,1
+star/j185624+041200,Алия,1
+star/j185848+324124,Сулафат,1
+star/j190224-295248,Асцелла,1
+star/j190524+135136,Окаб,1
+star/j190936-210112,Альбальда,1
+star/j190936-375400,Меридиана,1
+star/j191236+673936,Альтаис,1
+star/j191348+390900,Аладфар,1
+star/j192248-442736,Аркаб Приор,1
+star/j192324-444800,Аркаб Постериор,1
+star/j192400-403712,Рукбат,1
+star/j192848+244012,Ансер,1
+star/j193036+275736,Альбирео,1
+star/j193224+694012,Альсафи,1
+star/j194012+180036,Шам,1
+star/j194500+450748,Фаварис,1
+star/j194612+103636,Таразед,1
+star/j195400+082736,Либертас,1
+star/j195512+062436,Альшаин,1
+star/j195548-261800,Теребеллум,1
+star/j201800-123224,Альгеди,1
+star/j202024-124536,Альшат,1
+star/j202100-144648,Дабих,1
+star/j202212+401536,Садр,1
+star/j202548-564348,Пикок,1
+star/j203300+111800,Альдульфин,1
+star/j203748+143600,Ротанев,1
+star/j203936+155436,Суалоцин,1
+star/j204612+335812,Альджанах,1
+star/j204724-093000,Альбали,1
+star/j205812+105024,Музика,1
+star/j210900-885736,Полярис Аустралис,1
+star/j211536+051500,Китальфа,1
+star/j212848+703336,Альфирк,1
+star/j213148-053412,Садальсууд,1
+star/j213748-075100,Бунда,1
+star/j214012-163936,Нашира,1
+star/j214200+511124,Азельфафаге,1
+star/j214648-160748,Денеб Альгеди,1
+star/j215400-372136,Альдханаб,1
+star/j220336+643748,Курхах,1
+star/j220600-001912,Садальмелик,1
+star/j221012+061200,Бихам,1
+star/j221648-074648,Анча,1
+star/j222136-012324,Садахбия,1
+star/j223748-041348,Ситула,1
+star/j224124+104948,Хомам,1
+star/j224236-465248,Тиаки,1
+star/j224312+301312,Матар,1
+star/j224948+243600,Садальбари,1
+star/j225436-154912,Скат,1
+star/j225736+204612,Гельвециос,1
+star/j230336+034912,Фумальсамака,1
+star/j232024+234424,Сальм,1
+star/j232512+232400,Алькараб,1
+star/j233112+391424,Веритате,1
+star/j233936+773748,Эррай,1
 star/kaus_australis,Каус Аустралис,1
 star/kochab,Кохаб,1
 star/markab,Маркаб,1
 star/menkar,Менкар,1
 star/merak,Мерак,1
 star/mirach,Мирах,1
+star/mirphak,Мирфак,0
 star/mirphak,Мирфак,1
 star/nunki,Нунки,1
+star/phad,Фекда,0
 star/phad,Фекда,1
-star/polaris,Полярная,1
 star/polaris,Полярная звезда,0
 star/polaris,Полярная звезда,0
+star/polaris,Полярная звезда,1
 star/pollux,Поллукс,1
 star/procyon,Процион,1
 star/rasalhague,Рас-Альхаг,1
 star/regulus,Регул,1
 star/rigel,Ригель,1
 star/rigil_kentaurus_a,Альфа Центавра,1
-star/rigil_kentaurus_a,Ригель Центавра А,0
-star/rigil_kentaurus_a,Ригель Центавра А,0
 star/rigil_kentaurus_a,Ригель Кентаурус,0
+star/rigil_kentaurus_a,Ригель Центавра А,0
+star/rigil_kentaurus_a,Ригель Центавра А,0
 star/saiph,Саиф,1
 star/scheat,Шеат,1
 star/shaula,Шаула,1
+star/shedir,Шедар,0
 star/shedir,Шедар,1
 star/sirius,Сириус,1
 star/sirius,Собачья звезда,0
@@ -170,4 +549,3 @@ star/spica,Спика,1
 star/unukalhai,Унукалхай,1
 star/vega,Вега,1
 star/vindemiatrix,Виндемиатрикс,1
-dso/v838_mon,V838 Единорога,1
