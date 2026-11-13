@@ -124,7 +124,8 @@ class HttpUrlConnectionCelesTrakClientTest {
     }
 
     @Test
-    fun `a read timeout mid-body on a validated network counts too`() {
+    fun `a read timeout after the status line is not CelesTrak being unreachable`() {
+        // The server answered, so it is not dropping us; a stalled body is a flaky link.
         val client =
             HttpUrlConnectionCelesTrakClient(
                 validatedNetwork = { WIFI },
@@ -137,7 +138,7 @@ class HttpUrlConnectionCelesTrakClientTest {
             )
 
         assertThat(client.fetch(SatelliteGroup.STATIONS, ifModifiedSince = null))
-            .isInstanceOf(FetchOutcome.ServerUnreachable::class.java)
+            .isInstanceOf(FetchOutcome.TransportFailure::class.java)
     }
 
     /** Fails the request with [failure], with [before] and [after] as the validated network. */

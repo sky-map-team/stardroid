@@ -28,9 +28,7 @@ import kotlin.time.Duration.Companion.seconds
  * would genuinely add — automatic retry with backoff — is exactly the behaviour this feature must
  * not have.
  *
- * [validatedNetwork] returns an id for the default network if Android has validated it, else null
- * ([validatedNetworkOf] in production). It is how a timeout on a working network is told apart
- * from being offline.
+ * [validatedNetwork] is [validatedNetworkOf] in production.
  */
 class HttpUrlConnectionCelesTrakClient(
     private val validatedNetwork: () -> Long?,
@@ -47,6 +45,7 @@ class HttpUrlConnectionCelesTrakClient(
         val url = URL("$baseUrl?GROUP=${group.queryValue}&FORMAT=tle")
         val networkAtStart = runCatching(validatedNetwork).getOrNull()
         var connection: HttpURLConnection? = null
+        var answered = false
         return try {
             connection =
                 openConnection(url).apply {
@@ -63,21 +62,21 @@ class HttpUrlConnectionCelesTrakClient(
                     ifModifiedSince?.let { setRequestProperty("If-Modified-Since", it) }
                 }
 
-            when (val status = connection.responseCode) {
+            val status = connection.responseCode
+            answered = true
+            when (status) {
                 HttpURLConnection.HTTP_OK -> readBoundedBody(connection)
 
                 HttpURLConnection.HTTP_NOT_MODIFIED -> FetchOutcome.NotModified
                 else -> FetchOutcome.HttpError(status)
             }
         } catch (e: IOException) {
-            // Usually never reached the server, which is not evidence about CelesTrak and must not
-            // be reported as an HTTP error or the breaker would punish being offline. The
-            // exception is a timeout with the same validated network as the default at both ends
-            // (a switch mid-request is not evidence): that is how CelesTrak's firewall looks.
+            // A firewall drop looks like a timeout before any response; a stall after the status
+            // line means CelesTrak answered, and a network switch mid-request is not evidence.
             val onlineThroughout =
                 networkAtStart != null &&
                     runCatching(validatedNetwork).getOrNull() == networkAtStart
-            if (onlineThroughout && e.isTimeout()) {
+            if (!answered && onlineThroughout && e.isTimeout()) {
                 FetchOutcome.ServerUnreachable(e)
             } else {
                 FetchOutcome.TransportFailure(e)
@@ -153,10 +152,9 @@ class HttpUrlConnectionCelesTrakClient(
 }
 
 /**
- * [HttpUrlConnectionCelesTrakClient]'s `validatedNetwork` on a device: the default network's
- * handle if Android's own probe has confirmed it reaches the internet. Null when offline, and also
- * when this app's network access is blocked (Data Saver, background restrictions), because
- * `activeNetwork` is null for a blocked app.
+ * The default network's handle if Android has validated it, else null. `activeNetwork` is also
+ * null when this app's network access is blocked (Data Saver, background restrictions), so those
+ * read as offline.
  */
 fun validatedNetworkOf(context: Context): () -> Long? {
     val connectivity = context.getSystemService(ConnectivityManager::class.java)

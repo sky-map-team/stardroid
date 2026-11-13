@@ -46,12 +46,8 @@ sealed interface FetchOutcome {
     data class TransportFailure(val cause: Throwable) : FetchOutcome
 
     /**
-     * A connect or read timeout on a network the OS says reaches the internet (Android's
-     * `NET_CAPABILITY_VALIDATED`, a satisfied `NWPathMonitor` path on iOS), for the whole request.
-     *
-     * CelesTrak's firewall drops a blocked client without answering, so this is what being
-     * firewalled looks like from here. Only the platform client can tell it apart from being
-     * offline; the policy counts it towards the breaker like an [HttpError] (#1277).
+     * A timeout on a network the OS vouched for throughout: how CelesTrak's firewall dropping us
+     * looks. Counts towards the breaker; see docs/design/satellite-tracking.md (#1277).
      */
     data class ServerUnreachable(val cause: Throwable) : FetchOutcome
 
@@ -79,11 +75,7 @@ sealed interface FetchOutcome {
  */
 data class SatelliteFetchState(
     val consecutiveFailures: Int = 0,
-    /**
-     * [FetchOutcome.ServerUnreachable]s since the last success. Kept apart from
-     * [consecutiveFailures] because the first one does not open the circuit; see
-     * [SatelliteFetchPolicy.TIMEOUTS_TO_OPEN].
-     */
+    /** [FetchOutcome.ServerUnreachable]s since the last success. */
     val consecutiveTimeouts: Int = 0,
     /** While this is in the future, no request may be made. */
     val circuitOpenUntil: Instant? = null,
@@ -158,13 +150,9 @@ object SatelliteFetchPolicy {
     private val MOVED_PERMANENTLY_BACKOFF: Duration = 7.days
 
     /**
-     * How many [FetchOutcome.ServerUnreachable]s in a row open a closed circuit.
-     *
-     * Two, because the second attempt is cheap and tells the cases apart: a firewall drops every
-     * connection, so the next attempt times out too, while a flaky connection (a validated
-     * network that has just gone bad) almost always works by then. Once the breaker is climbing,
-     * each further timeout climbs it at once, so this costs one extra attempt per outage, not one
-     * per rung.
+     * Timeouts in a row that open a closed circuit. Two gives a flaky link one benefit of the
+     * doubt, as a firewall fails the next attempt too; see the design doc. Once the breaker is
+     * climbing, every timeout climbs it.
      */
     const val TIMEOUTS_TO_OPEN = 2
 

@@ -471,14 +471,17 @@ This is the part that protects the install base, and it inverts normal retry ins
   blocked client without answering (#1269), so a blocked install only ever sees a timeout. While
   that looked like being offline, a firewalled install kept trying every 12 h indefinitely. The
   breaker is pure, so the platform client makes the call and reports `ServerUnreachable`:
-  - **Android:** a `SocketTimeoutException` (connect or read, including one suppressed behind
-    another address's failure) while the same default network had
-    `NET_CAPABILITY_VALIDATED` both before the request and after it failed. `activeNetwork` is
-    null when the app's network access is blocked (Data Saver, background restrictions), so
-    those read as offline.
+  - **Android:** a `SocketTimeoutException` before any response (connect, or read before the
+    status line, including one suppressed behind another address's failure) while the same
+    default network had `NET_CAPABILITY_VALIDATED` both before the request and after it failed.
+    A stall after the status line means CelesTrak answered, so it stays a transport failure.
+    `activeNetwork` is null when the app's network access is blocked (Data Saver, background
+    restrictions), so those read as offline.
   - **iOS:** `NSURLErrorTimedOut` while an `NWPathMonitor` path was satisfied for the whole
-    request, with no change along the way. The session does not wait for connectivity, so
-    being offline fails fast with a different code.
+    request, with no change along the way (a repeated update for the same path is not a
+    change). The session does not wait for connectivity, so being offline fails fast with a
+    different code. iOS cannot tell a stall after the status line from a dropped connection;
+    the two-timeout rule absorbs that.
 
   Anything else, including a timeout across a network switch, is still a transport failure.
 

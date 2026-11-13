@@ -129,7 +129,11 @@ class SatelliteRefreshWorker(
         result: RefreshResult.Completed,
         analytics: Analytics,
     ): Result {
-        logRefusal(result)
+        when (val outcome = result.outcome) {
+            is FetchOutcome.HttpError -> logRefusal(outcome, result)
+            is FetchOutcome.ServerUnreachable -> logUnreachable(result)
+            else -> Unit
+        }
         trackSatelliteFetchResult(result, analytics, Clock.System.now())
 
         return when (satelliteWorkAction(result.outcome)) {
@@ -141,21 +145,22 @@ class SatelliteRefreshWorker(
         }
     }
 
+    private fun logUnreachable(result: RefreshResult.Completed) {
+        val state = result.state
+        val circuit = state.circuitOpenUntil?.let { "circuit open until $it" } ?: "circuit shut"
+        Log.w(
+            TAG,
+            "CelesTrak timed out on a validated network " +
+                "(${state.consecutiveTimeouts} since the last success); $circuit",
+        )
+    }
+
     /** A server refusal, to the log for a developer, as CelesTrak's policy requires. */
-    private fun logRefusal(result: RefreshResult.Completed) {
-        val outcome = result.outcome
-        if (outcome is FetchOutcome.ServerUnreachable) {
-            val state = result.state
-            val circuit = state.circuitOpenUntil?.let { "circuit open until $it" } ?: "circuit shut"
-            Log.w(
-                TAG,
-                "CelesTrak timed out on a validated network " +
-                    "(${state.consecutiveTimeouts} since the last success); $circuit",
-            )
-            return
-        }
-        if (!SatelliteFetchPolicy.warrantsReporting(outcome)) return
-        val statusCode = (outcome as FetchOutcome.HttpError).statusCode
+    private fun logRefusal(
+        outcome: FetchOutcome.HttpError,
+        result: RefreshResult.Completed,
+    ) {
+        val statusCode = outcome.statusCode
 
         if (SatelliteFetchPolicy.isTerminal(outcome)) {
             // 301 means our URL is outdated and only a new release fixes it, so this is the
