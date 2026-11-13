@@ -464,15 +464,43 @@ belongs in `:data` alongside the other repositories, which already depends on `:
 
 This is the part that protects the install base, and it inverts normal retry instincts.
 
-- **Distinguish transport failure from server refusal.** No connectivity, DNS failure, or timeout
-  never reached CelesTrak, and is a legitimate `Result.retry()`. Any non-200 *response* is a policy
-  event and must never be retried on the normal schedule.
+- **Distinguish transport failure from server refusal.** No connectivity, DNS failure, or a
+  timeout the OS cannot vouch for never reached CelesTrak, and is a legitimate `Result.retry()`.
+  Any non-200 *response* is a policy event and must never be retried on the normal schedule.
+- **A timeout on a working network counts as a refusal (#1277).** CelesTrak's firewall drops a
+  blocked client without answering (#1269), so a blocked install only ever sees a timeout. While
+  that looked like being offline, a firewalled install kept trying every 12 h indefinitely. The
+  breaker is pure, so the platform client makes the call and reports `ServerUnreachable`:
+  - **Android:** a `SocketTimeoutException` (connect or read, including one suppressed behind
+    another address's failure) while the same default network had
+    `NET_CAPABILITY_VALIDATED` both before the request and after it failed. `activeNetwork` is
+    null when the app's network access is blocked (Data Saver, background restrictions), so
+    those read as offline.
+  - **iOS:** `NSURLErrorTimedOut` while an `NWPathMonitor` path was satisfied for the whole
+    request, with no change along the way. The session does not wait for connectivity, so
+    being offline fails fast with a different code.
+
+  Anything else, including a timeout across a network switch, is still a transport failure.
+
+  **Two in a row open the circuit.** The first from a closed circuit only records a strike
+  (`consecutiveTimeouts`, persisted with the rest of the state). The second opens it on the
+  same 24 h → 48 h → 7 days ladder. Once the breaker is climbing, after a refusal or a
+  timeout, each further timeout climbs it at once. A success clears the strike. An offline
+  attempt neither counts nor clears it, or an install that is both firewalled and often offline
+  would never back off. Why two: a firewall drops every attempt, so the next one (12 h later on
+  Android) fails too, while a flaky connection (Android does not re-validate for every request,
+  so the flag can lag a network that has just gone bad) almost always recovers by then. The
+  cost is one extra dropped connection per outage, not one per rung: over 30 days on Android's
+  12 h job, a firewalled install makes 7 attempts instead of 60. A timeout has no HTTP code, so
+  `lastStatusCode` keeps the last real response, Diagnostics shows the open circuit and its
+  failure count, and no `satellite_fetch_failed` event is sent.
 - **On any non-200**, increment a failure counter and set `circuitOpenUntil = now + backoff`,
   where backoff runs **24 h → 48 h → 7 days**, capped. Far more conservative than typical retry
   policy, deliberately.
-- **The worker returns `Result.success()`, never `Result.retry()`, on an HTTP error.** WorkManager's
-  retry machinery must never be allowed to drive requests at CelesTrak — that is exactly the storm
-  the policy forbids. The 12 h periodic job fires again on schedule and no-ops against the breaker.
+- **The worker returns `Result.success()`, never `Result.retry()`, on an HTTP error or a timeout
+  while online**, even a first timeout that left the circuit shut. WorkManager's retry machinery
+  must never be allowed to drive requests at CelesTrak — that is exactly the storm the policy
+  forbids. The 12 h periodic job fires again on schedule and no-ops against the breaker.
 - **301 is terminal.** The policy says it means the URL is outdated, which no amount of retrying
   fixes. Open the breaker for the full 7 days and log loudly.
 - **304 is not an error.** Send `If-Modified-Since` from the last success; handle Not-Modified as a

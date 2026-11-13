@@ -10,6 +10,10 @@
 package com.google.android.stardroid.data.satellites
 
 import com.google.android.stardroid.testing.assertThat
+import platform.Foundation.NSURLErrorCannotConnectToHost
+import platform.Foundation.NSURLErrorDomain
+import platform.Foundation.NSURLErrorNotConnectedToInternet
+import platform.Foundation.NSURLErrorTimedOut
 import kotlin.test.Test
 
 class UrlSessionCelesTrakClientTest {
@@ -58,4 +62,31 @@ class UrlSessionCelesTrakClientTest {
         })
         assertThat(read).isFalse()
     }
+
+    @Test
+    fun aTimeoutWhileOnlineIsCelesTrakBeingUnreachable() {
+        assertThat(failure(NSURLErrorTimedOut, online = true))
+            .isInstanceOf(FetchOutcome.ServerUnreachable::class)
+    }
+
+    @Test
+    fun aTimeoutWithoutAStableSatisfiedPathIsJustOffline() {
+        assertThat(failure(NSURLErrorTimedOut, online = false))
+            .isInstanceOf(FetchOutcome.TransportFailure::class)
+    }
+
+    @Test
+    fun onlyATimeoutCountsWhileOnline() {
+        assertThat(failure(NSURLErrorNotConnectedToInternet, online = true))
+            .isInstanceOf(FetchOutcome.TransportFailure::class)
+        assertThat(failure(NSURLErrorCannotConnectToHost, online = true))
+            .isInstanceOf(FetchOutcome.TransportFailure::class)
+        assertThat(failureOutcomeFor("SomeOtherDomain", NSURLErrorTimedOut, "x") { true })
+            .isInstanceOf(FetchOutcome.TransportFailure::class)
+    }
+
+    private fun failure(
+        code: Long,
+        online: Boolean,
+    ) = failureOutcomeFor(NSURLErrorDomain, code, "failed") { online }
 }

@@ -9,8 +9,12 @@
 
 package com.google.android.stardroid.data.satellites
 
+import android.content.Context
+import android.net.ConnectivityManager
+import android.net.NetworkCapabilities
 import java.io.IOException
 import java.net.HttpURLConnection
+import java.net.SocketTimeoutException
 import java.net.URL
 import kotlin.time.Duration.Companion.seconds
 
@@ -23,8 +27,13 @@ import kotlin.time.Duration.Companion.seconds
  * buy nothing against one small request every twelve hours, and the one thing a client library
  * would genuinely add — automatic retry with backoff — is exactly the behaviour this feature must
  * not have.
+ *
+ * [validatedNetwork] returns an id for the default network if Android has validated it, else null
+ * ([validatedNetworkOf] in production). It is how a timeout on a working network is told apart
+ * from being offline.
  */
 class HttpUrlConnectionCelesTrakClient(
+    private val validatedNetwork: () -> Long?,
     private val baseUrl: String = CelesTrakEndpoint.GP_URL,
     private val userAgent: String = CelesTrakEndpoint.USER_AGENT,
     private val openConnection: (
@@ -36,6 +45,7 @@ class HttpUrlConnectionCelesTrakClient(
         ifModifiedSince: String?,
     ): FetchOutcome {
         val url = URL("$baseUrl?GROUP=${group.queryValue}&FORMAT=tle")
+        val networkAtStart = runCatching(validatedNetwork).getOrNull()
         var connection: HttpURLConnection? = null
         return try {
             connection =
@@ -60,9 +70,18 @@ class HttpUrlConnectionCelesTrakClient(
                 else -> FetchOutcome.HttpError(status)
             }
         } catch (e: IOException) {
-            // Never reached the server, or died mid-body: not evidence about CelesTrak, so it must
-            // not be reported as an HTTP error or the breaker would punish being offline.
-            FetchOutcome.TransportFailure(e)
+            // Usually never reached the server, which is not evidence about CelesTrak and must not
+            // be reported as an HTTP error or the breaker would punish being offline. The
+            // exception is a timeout with the same validated network as the default at both ends
+            // (a switch mid-request is not evidence): that is how CelesTrak's firewall looks.
+            val onlineThroughout =
+                networkAtStart != null &&
+                    runCatching(validatedNetwork).getOrNull() == networkAtStart
+            if (onlineThroughout && e.isTimeout()) {
+                FetchOutcome.ServerUnreachable(e)
+            } else {
+                FetchOutcome.TransportFailure(e)
+            }
         } catch (e: RuntimeException) {
             // Broader than it looks like it should be, and deliberate. This runs in a background
             // worker, and the platform HTTP stack can raise unchecked exceptions that are not
@@ -109,7 +128,19 @@ class HttpUrlConnectionCelesTrakClient(
             )
         }
 
+    /**
+     * Searches suppressed exceptions too: the platform stack can try each of the host's addresses
+     * and throw the last failure, so an IPv4 timeout may sit behind an unreachable IPv6 route.
+     */
+    private fun Throwable.isTimeout(): Boolean =
+        generateSequence(this) { it.cause }
+            .take(MAX_CAUSE_DEPTH)
+            .flatMap { sequenceOf(it) + it.suppressed }
+            .any { it is SocketTimeoutException }
+
     companion object {
+        private const val MAX_CAUSE_DEPTH = 8
+
         private val CONNECT_TIMEOUT = 15.seconds
         private val READ_TIMEOUT = 20.seconds
 
@@ -118,5 +149,23 @@ class HttpUrlConnectionCelesTrakClient(
 
         /** Read granularity. Comfortably larger than the whole expected payload. */
         private const val CHUNK_CHARS = 8 * 1024
+    }
+}
+
+/**
+ * [HttpUrlConnectionCelesTrakClient]'s `validatedNetwork` on a device: the default network's
+ * handle if Android's own probe has confirmed it reaches the internet. Null when offline, and also
+ * when this app's network access is blocked (Data Saver, background restrictions), because
+ * `activeNetwork` is null for a blocked app.
+ */
+fun validatedNetworkOf(context: Context): () -> Long? {
+    val connectivity = context.getSystemService(ConnectivityManager::class.java)
+    return {
+        connectivity?.activeNetwork?.let { network ->
+            network.networkHandle.takeIf {
+                connectivity.getNetworkCapabilities(network)
+                    ?.hasCapability(NetworkCapabilities.NET_CAPABILITY_VALIDATED) == true
+            }
+        }
     }
 }

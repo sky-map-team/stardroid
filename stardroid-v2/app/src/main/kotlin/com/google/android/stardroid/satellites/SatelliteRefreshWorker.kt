@@ -45,6 +45,8 @@ enum class SatelliteWorkAction {
  *  - **HttpError → succeed, never retry.** CelesTrak refused us, and retrying is the storm the
  *    usage policy forbids: the breaker already holds the door shut, and the 12-hour job fires
  *    again on schedule and no-ops against it.
+ *  - **ServerUnreachable → succeed, never retry.** A timeout on a working network, which is how
+ *    CelesTrak's firewall drops us; the breaker decides when to try again.
  *  - **TransportFailure → retry.** Never reached them; a legitimate transient.
  *  - **UnusableBody → succeed.** A captive portal, not CelesTrak; retrying hammers the portal.
  *  - **StorageFailure → retry.** Our disk, not their server.
@@ -58,6 +60,8 @@ fun satelliteWorkAction(outcome: FetchOutcome): SatelliteWorkAction =
         is FetchOutcome.Success, FetchOutcome.NotModified -> SatelliteWorkAction.SUCCEED
         // Never RETRY here. This is the single most important line in the feature.
         is FetchOutcome.HttpError -> SatelliteWorkAction.SUCCEED
+        // Nor here, even for a first timeout that left the circuit shut.
+        is FetchOutcome.ServerUnreachable -> SatelliteWorkAction.SUCCEED
         is FetchOutcome.UnusableBody -> SatelliteWorkAction.SUCCEED
         is FetchOutcome.TransportFailure -> SatelliteWorkAction.RETRY
         is FetchOutcome.StorageFailure -> SatelliteWorkAction.RETRY
@@ -140,6 +144,16 @@ class SatelliteRefreshWorker(
     /** A server refusal, to the log for a developer, as CelesTrak's policy requires. */
     private fun logRefusal(result: RefreshResult.Completed) {
         val outcome = result.outcome
+        if (outcome is FetchOutcome.ServerUnreachable) {
+            val state = result.state
+            val circuit = state.circuitOpenUntil?.let { "circuit open until $it" } ?: "circuit shut"
+            Log.w(
+                TAG,
+                "CelesTrak timed out on a validated network " +
+                    "(${state.consecutiveTimeouts} since the last success); $circuit",
+            )
+            return
+        }
         if (!SatelliteFetchPolicy.warrantsReporting(outcome)) return
         val statusCode = (outcome as FetchOutcome.HttpError).statusCode
 
