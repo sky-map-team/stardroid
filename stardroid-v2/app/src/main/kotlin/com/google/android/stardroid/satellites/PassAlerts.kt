@@ -90,16 +90,24 @@ object PassAlerts {
         context: Context,
         passes: List<SatellitePass>,
         now: Instant = Clock.System.now(),
-    ) = synchronized(stateLock) {
+    ) {
+        synchronized(stateLock) { armLocked(context, passes, now) }
+    }
+
+    private fun armLocked(
+        context: Context,
+        passes: List<SatellitePass>,
+        now: Instant,
+    ) {
         cancel(context)
         val best =
             passes
                 .filter { it.start - now > LEAD_TIME + MINIMUM_NOTICE }
                 .minByOrNull { it.peakMagnitude }
-                ?: return@synchronized
+                ?: return
 
         val fireAt = best.start - LEAD_TIME
-        val alarmManager = context.getSystemService(AlarmManager::class.java) ?: return@synchronized
+        val alarmManager = context.getSystemService(AlarmManager::class.java) ?: return
         alarmManager.setAndAllowWhileIdle(
             AlarmManager.RTC_WAKEUP,
             fireAt.toEpochMilliseconds(),
@@ -116,15 +124,16 @@ object PassAlerts {
     }
 
     /** Disarms any pending alerts — the opt-in went off, or the layer did. */
-    fun cancel(context: Context) =
+    fun cancel(context: Context) {
         synchronized(stateLock) {
             armedStart = null
             PassAlertBootReceiver.setEnabled(context, false)
             val alarmManager =
-                context.getSystemService(AlarmManager::class.java) ?: return@synchronized
+                context.getSystemService(AlarmManager::class.java) ?: return
             existingIntent(context, atRise = false)?.let(alarmManager::cancel)
             existingIntent(context, atRise = true)?.let(alarmManager::cancel)
         }
+    }
 
     private fun pendingIntent(
         context: Context,
@@ -156,17 +165,19 @@ object PassAlerts {
         )
 
     /**
-     * The rise alarm is the last of the pair, so nothing is left to re-arm after a reboot, unless
-     * a later pass has been armed since: a cold start by this very alarm re-arms in
-     * `Application.onCreate`, possibly before this runs, and the disable must not undo that.
+     * The rise alarm is the last of the pair. Skips the disable if a later pass is already armed
+     * (a cold start by this alarm can re-arm first); a null [passStart], from a malformed
+     * intent, counts as earlier than anything armed.
      */
     internal fun onAlarmFired(
         context: Context,
         atRise: Boolean,
         passStart: Instant? = null,
-    ) = synchronized(stateLock) {
-        val laterArmed = armedStart?.let { passStart == null || it > passStart } == true
-        if (atRise && !laterArmed) PassAlertBootReceiver.setEnabled(context, false)
+    ) {
+        synchronized(stateLock) {
+            val laterArmed = armedStart?.let { passStart == null || it > passStart } == true
+            if (atRise && !laterArmed) PassAlertBootReceiver.setEnabled(context, false)
+        }
     }
 
     /** True once the pass has begun; a late alert would send the user to an empty sky. */
