@@ -93,5 +93,8 @@ class SatelliteWorkerMappingTest {
             )
         assertThat(everyOutcome.map(::satelliteWorkAction))
             .doesNotContain(SatelliteWorkAction.FAIL)
+        // Nor to cancelling the schedule: what CelesTrak says is the breaker's business.
+        assertThat(everyOutcome.map(::satelliteWorkAction))
+            .doesNotContain(SatelliteWorkAction.CANCEL)
     }
 }

@@ -37,6 +37,9 @@ enum class SatelliteWorkAction {
     SUCCEED,
     RETRY,
     FAIL,
+
+    /** Cancel the schedule, then succeed. Only the flag uses it; no fetch outcome may (#1272). */
+    CANCEL,
 }
 
 /**
@@ -101,11 +104,14 @@ internal suspend fun satelliteFlagState(
  * only the Firebase fetch; the CelesTrak download still needs a fresh ON, and keeps its own
  * 2-hour floor and circuit breaker. Never reached after a CelesTrak request, so this can't
  * become a retry loop against CelesTrak.
+ *
+ * OFF cancels the schedule, like a closed local gate, so switching the flag back on resumes
+ * downloads as people open the app rather than in every live job at once (#1272).
  */
 internal fun satelliteFlagWorkAction(state: SatelliteFlagState): SatelliteWorkAction? =
     when (state) {
         SatelliteFlagState.ON -> null
-        SatelliteFlagState.OFF -> SatelliteWorkAction.SUCCEED
+        SatelliteFlagState.OFF -> SatelliteWorkAction.CANCEL
         SatelliteFlagState.UNKNOWN -> SatelliteWorkAction.RETRY
     }
 
@@ -146,12 +152,13 @@ class SatelliteRefreshWorker(
             when (satelliteFlagWorkAction(satelliteFlagState(entryPoint.experimentConfig()))) {
                 null -> Unit
                 SatelliteWorkAction.RETRY -> return@withContext Result.retry()
-                else -> {
-                    // Off on the server: cancel like a closed gate, so switching it back on
-                    // resumes downloads as people open the app rather than all at once.
+                SatelliteWorkAction.CANCEL -> {
                     SatelliteScheduler.cancel(applicationContext)
                     return@withContext Result.success()
                 }
+                // Not returned for a flag state; mapped rather than thrown, as below.
+                SatelliteWorkAction.SUCCEED, SatelliteWorkAction.FAIL ->
+                    return@withContext Result.success()
             }
             val repository = entryPoint.satelliteElementsRepository()
             val analytics = entryPoint.analytics()
@@ -196,7 +203,7 @@ class SatelliteRefreshWorker(
             SatelliteWorkAction.RETRY -> Result.retry()
             // Unreachable by construction, and asserted so; mapped rather than thrown because
             // a worker that throws is a worker that stops running.
-            SatelliteWorkAction.FAIL -> Result.success()
+            SatelliteWorkAction.FAIL, SatelliteWorkAction.CANCEL -> Result.success()
         }
     }
 

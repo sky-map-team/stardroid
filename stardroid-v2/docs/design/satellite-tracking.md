@@ -599,7 +599,8 @@ CelesTrak (#1269). Download volume now follows use, not installs.
 `SatelliteFetchConditions` (in `:shared:viewmodels`, so both platforms use it) allows a download
 only when all of these hold:
 
-1. `Experiment.SATELLITES` is on.
+1. `Experiment.SATELLITES` is on: the stored value from the last activation. The worker also
+   checks a fresh one before downloading (see "Order inside the worker" below).
 2. The user has consented (`satelliteDataEnabled`).
 3. The Satellites layer is on. It starts off.
 4. The terms are accepted (`StartupRouter.needsEula` is false).
@@ -644,6 +645,10 @@ subject to the 2-hour floor.
    - OFF cancels the schedule, like a closed gate. Switching the flag back on then resumes
      downloads as people open the app, rather than in every live job at once.
    - ON goes on to the download.
+
+A consequence on gms: an install whose stored flag is OFF cancels without a fresh fetch, so it
+learns of a remote ON only when the app is next opened and Remote Config activates. A remote
+flip never restarts downloads in the background.
 
 **iOS** applies the same conditions in three places:
 - the fetch on app open;
