@@ -23,25 +23,24 @@ class SatelliteFetchReportingTest {
     private val now = Instant.parse("2026-11-12T12:00:00Z")
     private val analytics = FakeAnalytics()
 
-    // Always draws 0, so it always lands in the sample.
+    // nextInt(until) is overridden directly: the default rejection-samples nextBits and would
+    // spin forever on a constant source.
     private val alwaysSampled =
         object : Random() {
             override fun nextBits(bitCount: Int) = 0
+
+            override fun nextInt(until: Int) = 0
         }
 
-    // Never draws 0 from a range of more than one.
     private val neverSampled =
         object : Random() {
-            override fun nextBits(bitCount: Int) = -1
+            override fun nextBits(bitCount: Int) = 0
+
+            override fun nextInt(until: Int) = until - 1
         }
 
     private fun completed(outcome: FetchOutcome) =
         RefreshResult.Completed(outcome, SatelliteFetchState(), SatelliteFetchState())
-
-    private fun report(
-        outcome: FetchOutcome,
-        random: Random,
-    ) = trackSatelliteFetchResult(completed(outcome), analytics, now, random)
 
     @Test
     fun aSampledSuccessIsCounted() {
