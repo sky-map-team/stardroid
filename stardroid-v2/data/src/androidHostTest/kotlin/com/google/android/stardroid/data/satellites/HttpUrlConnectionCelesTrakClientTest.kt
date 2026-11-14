@@ -39,7 +39,7 @@ class HttpUrlConnectionCelesTrakClientTest {
                 lastModified = "Sat, 15 Aug 2026 12:00:00 GMT",
             )
 
-        val outcome = client.fetch(SatelliteGroup.STATIONS, ifModifiedSince = null)
+        val outcome = client.fetch(SatelliteTarget.ISS, ifModifiedSince = null)
 
         assertThat(outcome).isInstanceOf(FetchOutcome.Success::class.java)
         val success = outcome as FetchOutcome.Success
@@ -50,10 +50,10 @@ class HttpUrlConnectionCelesTrakClientTest {
     @Test
     fun `a body larger than the cap is unusable rather than materialized`() {
         // Comfortably over the 2 MB cap. The point is that this is refused, not truncated:
-        // a half-read TLE catalog would parse into plausible-but-wrong element sets.
+        // a half-read CSV would parse into plausible-but-wrong element sets.
         val client = clientReturning(HttpURLConnection.HTTP_OK, "x".repeat(3 * 1024 * 1024))
 
-        val outcome = client.fetch(SatelliteGroup.STATIONS, ifModifiedSince = null)
+        val outcome = client.fetch(SatelliteTarget.ISS, ifModifiedSince = null)
 
         assertThat(outcome).isInstanceOf(FetchOutcome.UnusableBody::class.java)
     }
@@ -65,7 +65,7 @@ class HttpUrlConnectionCelesTrakClientTest {
         val body = "y".repeat(2 * 1024 * 1024 - 1)
         val client = clientReturning(HttpURLConnection.HTTP_OK, body)
 
-        val outcome = client.fetch(SatelliteGroup.STATIONS, ifModifiedSince = null)
+        val outcome = client.fetch(SatelliteTarget.ISS, ifModifiedSince = null)
 
         assertThat((outcome as FetchOutcome.Success).body).hasLength(body.length)
     }
@@ -74,7 +74,7 @@ class HttpUrlConnectionCelesTrakClientTest {
     fun `a 304 is reported as NotModified without reading a body`() {
         val client = clientReturning(HttpURLConnection.HTTP_NOT_MODIFIED, body = "")
 
-        assertThat(client.fetch(SatelliteGroup.STATIONS, ifModifiedSince = "whenever"))
+        assertThat(client.fetch(SatelliteTarget.ISS, ifModifiedSince = "whenever"))
             .isEqualTo(FetchOutcome.NotModified)
     }
 
@@ -137,7 +137,7 @@ class HttpUrlConnectionCelesTrakClientTest {
                 },
             )
 
-        assertThat(client.fetch(SatelliteGroup.STATIONS, ifModifiedSince = null))
+        assertThat(client.fetch(SatelliteTarget.ISS, ifModifiedSince = null))
             .isInstanceOf(FetchOutcome.TransportFailure::class.java)
     }
 
@@ -157,7 +157,7 @@ class HttpUrlConnectionCelesTrakClientTest {
                     }
                 },
             )
-        return client.fetch(SatelliteGroup.STATIONS, ifModifiedSince = null)
+        return client.fetch(SatelliteTarget.ISS, ifModifiedSince = null)
     }
 
     private fun clientReturning(

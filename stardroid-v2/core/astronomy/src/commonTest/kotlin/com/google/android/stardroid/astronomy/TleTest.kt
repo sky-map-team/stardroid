@@ -228,4 +228,68 @@ class TleTest {
             .isWithin(1e-9)
             .of(-0.5)
     }
+
+    private val ommHeader =
+        "OBJECT_NAME,OBJECT_ID,EPOCH,MEAN_MOTION,ECCENTRICITY,INCLINATION,RA_OF_ASC_NODE," +
+            "ARG_OF_PERICENTER,MEAN_ANOMALY,EPHEMERIS_TYPE,CLASSIFICATION_TYPE,NORAD_CAT_ID," +
+            "ELEMENT_SET_NO,REV_AT_EPOCH,BSTAR,MEAN_MOTION_DOT,MEAN_MOTION_DDOT"
+
+    // A live CelesTrak `FORMAT=CSV` row for the CSS core module, 2026-11-13.
+    private val cssRow =
+        "CSS (TIANHE),2021-035A,2026-11-13T12:59:15.891360,15.61773849,.00043868,41.4674," +
+            "134.3818,302.2376,57.8037,0,U,48274,999,31649,.20630815E-3,.18078E-3,0"
+
+    @Test
+    fun `parses every field of an OMM CSV row`() {
+        val tle = Tle.parseOmmCsv("$ommHeader\n$cssRow\n").single()
+
+        assertThat(tle.name).isEqualTo("CSS (TIANHE)")
+        assertThat(tle.noradId).isEqualTo(48274)
+        assertThat(tle.epoch).isEqualTo(Instant.parse("2026-11-13T12:59:15.891360Z"))
+        assertThat(tle.inclinationRad * RADIANS_TO_DEGREES).isWithin(1e-9).of(41.4674)
+        assertThat(tle.raanRad * RADIANS_TO_DEGREES).isWithin(1e-9).of(134.3818)
+        assertThat(tle.eccentricity).isWithin(1e-12).of(0.00043868)
+        assertThat(tle.argOfPerigeeRad * RADIANS_TO_DEGREES).isWithin(1e-9).of(302.2376)
+        assertThat(tle.meanAnomalyRad * RADIANS_TO_DEGREES).isWithin(1e-9).of(57.8037)
+        assertThat(tle.meanMotionRadPerMin * 1440.0 / (2 * PI)).isWithin(1e-9).of(15.61773849)
+        assertThat(tle.bstar).isWithin(1e-12).of(0.20630815e-3)
+        assertThat(tle.meanMotionDotRevPerDay2).isWithin(1e-12).of(0.18078e-3)
+    }
+
+    @Test
+    fun `OMM CSV columns are found by name rather than position`() {
+        val reordered = "NORAD_CAT_ID," + ommHeader.replace(",NORAD_CAT_ID", "")
+        val row = "48274," + cssRow.replace(",48274", "")
+        val parsed = Tle.parseOmmCsv("$reordered\n$row\n")
+        assertThat(parsed.map { it.name }).containsExactly("CSS (TIANHE)")
+    }
+
+    @Test
+    fun `a six-digit catalog number parses`() {
+        val row = cssRow.replace(",48274,", ",100123,")
+        assertThat(Tle.parseOmmCsv("$ommHeader\n$row\n").single().noradId).isEqualTo(100123)
+    }
+
+    @Test
+    fun `an OMM CSV object name may be quoted and hold a comma`() {
+        val row = cssRow.replace("CSS (TIANHE)", "\"CSS, (TIANHE)\"")
+        assertThat(Tle.parseOmmCsv("$ommHeader\n$row\n").single().name)
+            .isEqualTo("CSS, (TIANHE)")
+    }
+
+    @Test
+    fun `the OMM CSV parser drops bad rows and deep-space objects`() {
+        val garbled = cssRow.replace(",15.61773849,", ",not-a-number,")
+        val molniya = cssRow.replace(",15.61773849,", ",2.00813614,")
+        val csv = "$ommHeader\n$garbled\n$molniya\n$cssRow\n"
+        assertThat(Tle.parseOmmCsv(csv)).hasSize(1)
+    }
+
+    @Test
+    fun `an empty or header-only OMM CSV body parses to nothing`() {
+        assertThat(Tle.parseOmmCsv("")).isEmpty()
+        assertThat(Tle.parseOmmCsv("$ommHeader\n")).isEmpty()
+        // A captive portal's login page is a 200 too.
+        assertThat(Tle.parseOmmCsv("<html><body>Sign in</body></html>")).isEmpty()
+    }
 }

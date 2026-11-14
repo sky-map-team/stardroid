@@ -110,11 +110,15 @@ question people actually have.
 1980s and the source essentially every amateur tracker uses.
 
 ```
-https://celestrak.org/NORAD/elements/gp.php?GROUP=stations&FORMAT=tle
+https://celestrak.org/NORAD/elements/gp.php?CATNR=25544&FORMAT=CSV   (ISS)
+https://celestrak.org/NORAD/elements/gp.php?CATNR=48274&FORMAT=CSV   (CSS / Tianhe)
 ```
 
-`GROUP=stations` is ~1 KB (ISS, Tiangong, station-adjacent objects). `GROUP=visual` is the ~100
-brightest, ~50 KB. `FORMAT` accepts `tle`/`3le`/`2le`/`xml`/`kvn`/`json`/`csv`.
+One request per object, by catalog number, each a header row plus one data row (~0.5 KB). The app
+used to fetch `GROUP=stations` (21 objects, mostly docked visiting vehicles and debris it then
+discarded); CelesTrak asked clients to request only what they draw (#1269, #1299). `GROUP=visual`
+(the ~100 brightest, ~50 KB) remains the phase 5 option. `FORMAT` accepts
+`tle`/`3le`/`2le`/`xml`/`kvn`/`json`/`csv`.
 
 ### Usage policy — binding constraints
 
@@ -167,421 +171,30 @@ benefit.
 A useful signal that the placement is right: this design touches **no** `build.gradle.kts`, no
 `settings.gradle.kts`, no `libs.versions.toml`, and no Konsist file.
 
-### Wire format: TLE text, not `FORMAT=json`
-
-CelesTrak's `FORMAT` parameter accepts `json`, which would remove the need for `Tle.kt`'s
-line-oriented parser and checksum validation. Rejected anyway, for three reasons: the Vallado
-verification vectors and every reference SGP4 implementation are written against TLE text, so
-parsing TLE text is what the verification strategy below actually exercises; the two-line format
-is what "cache the raw text verbatim" (§"Scheduling and cache") caches, so JSON would mean a
-second serialization the cache never uses; and `:data` — where the CelesTrak client lives — has
-no JSON dependency on its runtime classpath today (`kotlinx-serialization-json` is currently
-`:data:generator`-only, a build-time tool, per `build-and-tooling.md`), so `FORMAT=json` would
-add a runtime dependency this design otherwise avoids for no offsetting benefit. The line above
-about touching no `libs.versions.toml` would stop being true.
-
-New files, all in `core/astronomy/src/main/kotlin/com/google/android/stardroid/astronomy/`:
-
-| File | Contents |
-|---|---|
-| `Tle.kt` | `data class Tle` (NORAD id, name, epoch, inclination, RAAN, eccentricity, argument of perigee, mean anomaly, mean motion, B\*, derivatives) and the parser — including mod-10 checksum validation and the two-digit-year epoch pivot (57–99 → 19xx, 00–56 → 20xx). |
-| `Sgp4.kt` | The propagator: one-time initialization from a `Tle`, then `propagate(minutesSinceEpoch)`. |
-| `SatelliteEphemeris.kt` | The frame chain — TEME → topocentric, WGS84 observer, precession to J2000. |
-| `SatellitePass.kt` | Pass search and the `SatellitePass` result type. |
-| `SatelliteMagnitude.kt` | Brightness model and the Earth-shadow test. |
-
-### `Ephemeris` and `SolarSystemBody` stay untouched
-
-Every member of the `Ephemeris` interface is the wrong shape for an object 400 km up:
-`earthDistanceAu` measures in AU, `illuminatedFraction` assumes planetary phase, `validRange` is a
-1800–2050 global, and `maxAngularVelocityDegPerDay` is degrees per *day* for a body that moves
-4° per *minute*. `SolarSystemBody` is a closed enum that a satellite cannot join.
-
-D26 anticipates all of this and proposes a `sealed Body` migration. **That migration stays
-deferred.** `SatelliteEphemeris` is a standalone type with its own signature; it does not
-implement `Ephemeris`. This keeps the feature additive and leaves D26's broader reframe to be
-driven by whichever feature genuinely needs the unified key — probably minor bodies, which fit the
-existing Keplerian kernel and would actually benefit.
-
-### Coordinate types
-
-`:core:math` has unit-vector `Vector3` and angle-only `RaDec`; satellites need range as well
-(topocentric parallax, magnitude, shadow geometry all depend on it).
-
-**Do not add a distance-carrying type to `:core:math`.** `Vector3` is already a plain `(x, y, z)`
-triple with `length`, `minus`, and `normalized()`, unit-ness being a convention rather than an
-invariant — and `RaDec.fromGeocentricVector`'s KDoc already states its input "need not be a unit
-vector", which `KeplerianEphemeris.topocentricLunarPosition` relies on today.
-
-Define instead, in `:core:astronomy`, with units in the property names:
-
-```kotlin
-data class TemeState(val positionKm: Vector3, val velocityKmPerSec: Vector3)
-data class TopocentricPosition(val raDec: RaDec, val rangeKm: Double, val rangeRateKmPerSec: Double)
-```
-
-If a second consumer ever needs a general distance-carrying vector, promote it then.
-
-## Scope: SGP4 only; deep-space element sets are rejected
-
-The near-earth/deep-space split is orbital period ≥ 225 minutes. Every target in scope is
-near-earth: the ISS is ~93 minutes, and the `visual` group is essentially all LEO.
-
-Omitting SDP4 — the deep-space path, with lunar-solar periodic terms and 12 h/24 h resonance
-handling — costs geostationary and Molniya orbits. Those are not visible-pass targets:
-geostationary satellites are magnitude 11+ and, by definition, do not move against the sky, which
-is the opposite of what makes this feature appealing.
-
-The important part is the failure mode. **Running SGP4 on a deep-space element set does not
-degrade gracefully; it produces grossly wrong positions.** The design therefore requires an
-explicit guard —
-
-```kotlin
-val isDeepSpace: Boolean get() = TWO_PI / meanMotionRadPerMin >= 225.0
-```
-
-— with construction refused for deep-space TLEs and the repository filtering them at parse time.
-One line converts a silent-wrong-answer bug class into a clean, testable absence.
-
-## Frame chain
-
-SGP4 emits positions in **TEME** (True Equator, Mean Equinox) — an idiosyncratic frame that is
-neither J2000 nor GCRF. Getting from there to something the app can draw is where most third-party
-SGP4 ports go wrong, so the error budget is stated explicitly.
-
-### 1. Observer position — WGS84, not a sphere
-
-`KeplerianEphemeris.topocentricLunarPosition` (around line 222) builds the observer's geocentric
-offset on a **spherical** Earth, at exactly one Earth radius:
-
-```kotlin
-val observerFromGeocentre = Vector3(cos(latRad) * cos(lmstRad), cos(latRad) * sin(lmstRad), sin(latRad))
-```
-
-For the Moon at 60 Earth radii, sphere-versus-ellipsoid costs arcseconds. **For the ISS at ~1.07
-Earth radii it costs 1–3°** — the ~21 km difference between equatorial and polar radii is a large
-fraction of a 400 km range. This is the single most important correctness detail in the feature,
-and the lunar pattern must **not** be copied verbatim.
-
-Use the WGS84 ellipsoid (`a = 6378.137 km`, `f = 1/298.257223563`), geodetic → ECEF via the
-standard `C = 1/√(1 − e² sin²φ)` formulation, then rotate by GMST + longitude into TEME.
-
-Two notes: `LatLong` carries no altitude, so sea level is assumed — worth ~0.1° for an observer at
-1 km elevation, acceptable and documented. And the rotation should reuse `meanSiderealTimeDeg`
-from `Time.kt` rather than introducing a second GMST; its low-precision linear formula errs by
-~0.0004° here, which is irrelevant. GMST is precisely the angle relating TEME to the Earth-fixed
-frame — that is what TEME is *for* — so using it here is correct rather than approximate.
-
-### 2. Topocentric vector
-
-`satelliteTeme − observerTeme`, both in TEME. Because the frames match, the resulting **altitude
-and azimuth are correct to arcseconds** without any further conversion. This is all the pass
-predictor needs, and alt/az is what a pass prediction is expressed in.
-
-### 3. Precession to J2000, for the map layer only
-
-The map layer needs RA/Dec consistent with a J2000 catalog. TEME differs from J2000 by precession
-since J2000 — **~0.36° by 2026**, more than half a Moon-width, so this is not optional — plus
-nutation and the equation of the equinoxes, together under 0.02°.
-
-Reuse `Precession.j2000FromDate(time)` — landed by D84 with exactly these IAU-76 (Lieske) angles,
-so this step is a rotation call, not new arithmetic. Nutation and the equinox equation stay
-omitted, both far below the layer's resubmit threshold and below label decluttering scale;
-D84 documents the same omission for its own callers, so the precedent is established.
-
-### Time
-
-`Time.kt` treats instants as UTC, and SGP4 wants UTC for both the epoch and minutes-since-epoch,
-so the two are self-consistent. **Do not introduce ΔT.**
-
-## Pass prediction
-
-### Search
-
-```
-coarse scan at 30 s steps over the horizon window:
-    altitude(t) via the chain above
-    on upward zero crossing   -> bisect [t-30s, t] for AOS
-    on downward zero crossing -> bisect [t-30s, t] for LOS
-    within a pass, track max altitude; refine the peak by parabolic fit
-```
-
-**Step size.** Near the horizon — where AOS and LOS live — the ISS climbs at ~0.15–0.3°/s, and a
-pass lasts 4–10 minutes. A 30 s step therefore guarantees 8–20 samples inside any real pass; none
-can be stepped over. The only thing a coarser scan misses is a marginal sub-degree pass, which the
-minimum-elevation filter discards anyway.
-
-**Bisection.** Six iterations on a 30 s bracket converges to ~0.5 s, ample when the displayed
-precision is a minute.
-
-**Horizon: 48 hours, parameterized.** This answers "tonight and tomorrow" honestly and correctly
-returns *empty* during the multi-week gaps between ISS pass seasons — which is a useful answer, not
-a failure. A longer horizon lets the UI say "next pass Thursday" at roughly linear cost; the
-parameter exists so a "more passes" screen can ask for it. Beyond ~5 days TLE drift makes
-predicted times uncertain by tens of seconds, which is a reason not to promise a fortnight.
-
-**Cost.** 48 h ÷ 30 s = 5760 propagations per satellite, at ~2–5 µs each ≈ 25 ms. Trivial for the
-ISS alone; ~2.5 s for a 100-satellite fleet, which wants a coarse 5-minute pre-filter (fine-scan
-only windows approaching the horizon, ~5× saving) and `Dispatchers.Default` regardless.
-
-### Reuse and one anti-pattern
-
-`altitudeDeg` and `azimuthDeg` from `RiseSet.kt` are used directly. `:core:events`
-`TonightSky.planetEvents()` — a coarse sample over a window, tracking first-qualifying and best
-altitude — is the existing precedent this scales up, not a new pattern.
-
-But **`RiseSet.nextRiseSetTime` must not be used.** Its hour-angle iteration
-(`CONVERGENCE_HOURS = 0.008`, `MAX_ITERATIONS = 25`, day offsets 0..2) is tuned for bodies moving
-≤15° per *day*; it will not converge for one moving 4° per *minute*. The scan-and-bisect above
-exists precisely because the general solver does not generalize this far.
-
-### Visibility — three simultaneous conditions
-
-A pass is *visible*, rather than merely geometric, when all three hold:
-
-1. **Satellite above 10° elevation.** Below that, buildings and horizon haze make it a non-event.
-2. **Observer in darkness** — Sun altitude below −6° (civil twilight), the conventional cut.
-   `RiseSet.kt` defines `CIVIL_TWILIGHT_SUN_ALT_DEG = -6.0`; reuse that constant so the two
-   surfaces cannot drift apart. (It was `TonightSky`'s and named `SKY_DARK_SUN_ALT_DEG` when
-   this was written — see D95 for why it moved and was renamed.)
-3. **Satellite in sunlight.** Cylindrical shadow test: with `r` the satellite's geocentric
-   position and `s` the unit vector to the Sun, it is lit if `r · s > 0`; otherwise lit iff
-   `|r − (r·s)s| > R⊕ + 30 km`. The 30 km term stands in for atmospheric refraction and
-   penumbra — a bare cylinder overestimates lit time by 10–20 s at shadow entry.
-
-   `r` is the satellite in TEME (SGP4's native output, undisturbed). `MeeusEphemeris` gives the
-   Sun in J2000 (D84), so `s` must be `Precession.dateFromJ2000(time)` applied to that result
-   before the dot product — otherwise the test carries a ~0.36° frame mismatch between the two
-   vectors, which is exactly the class of error D84 exists to close. Both `r` and `s` end up in
-   the same of-date frame; nothing is precessed to J2000 here, matching step 3's "only the map
-   layer needs J2000" scope.
-
-Visibility uses the −6° test, but the *reported peak magnitude* covers every sunlit sample with the
-Sun below the horizon. A faint pass whose best moment falls in twilight can therefore look
-brighter than it would in a dark sky; accepted for now, revisit if "good pass" counts feel inflated.
-
-**Shadow entry inside a pass is worth capturing as a first-class field.** A satellite that fades
-out mid-sky is the single most-asked question after someone watches it happen, and
-*"fades into Earth's shadow at 21:51"* converts a confusing disappearance into the most memorable
-thing the app can tell them.
-
-### Magnitude
-
-```
-mag = stdMag − 15.75 + 2.5 · log10(rangeKm² / phaseFactor)
-phaseFactor = 0.5 · ((1 + cos(phaseAngle)) / 2 + 0.14) / 0.64
-```
-
-where `stdMag` is the satellite's brightness at 1000 km and 90° phase (ISS: −1.8) and the phase
-angle is measured at the satellite between Sun and observer, using the same frame-consistent Sun
-direction as the shadow test above.
-
-**Calibration (issue #1210).** The first version used a bare `(1 + cos θ)/2` and `stdMag = −1.3`,
-and showed −1.9 for a pass Heavens-Above gave as −3.7. Fitting 27 Heavens-Above pass-event
-brightnesses (phase 3°–156°, range 430–2400 km, ranges reproduced to 6 km) gave:
-
-| Phase law | Best stdMag | RMS vs Heavens-Above |
-|---|---|---|
-| `(1 + cos θ)/2`, stdMag −1.3 (old) | −1.3 | 0.95 mag |
-| `(1 + cos θ)/2`, refitted | −2.15 | 0.44 mag |
-| Lambertian sphere, `(sin θ + (π − θ) cos θ)/π` | −2.48 | 1.04 mag |
-| `(1 + cos θ)/2 + 0.14` (current) | −1.84 | 0.07 mag |
-
-The Lambertian sphere is *worse* than the old law: the ISS is mostly flat, specular panels and
-radiators, which keep reflecting at high phase where a sphere goes dark. The additive constant
-captures that. This matches Heavens-Above, not the sky: the real ISS strays from any smooth curve
-by a magnitude or more as its arrays and attitude change, so the model is good to roughly ±1 in
-practice even though it reproduces the predictor to ~0.1. **Do not display more precision than
-that** (see the UI follow-up, #1211). For ISS-only, hardcode `stdMag` with its citation; a fleet
-needs a small bundled table (a few KB, no concern against D19's budget).
-
-**Per satellite.** The same phase law fits Tiangong (CSS) to ~0.1 mag against 11 Heavens-Above
-samples; only the standard magnitude differs, at about 0.0 against the ISS's −1.8.
-`SatelliteMagnitude.standardMagnitudeFor(noradId)` supplies it, and `PassSearch` uses it by default. An uncalibrated ID gets a deliberately absurd +30, so its
-passes are listed but never "good" rather than passing as the ISS; add an entry when tracking a new satellite.
-Before this, Tiangong inherited the ISS value and was shown ~1.8 mag too bright.
-
-**Peak brightness vs visibility.** A pass is *visible* only if it is sunlit while the Sun is at or
-below −6°, but its reported peak magnitude is the brightest sunlit sample with the Sun below the
-horizon. Gating the magnitude on the same −6° test dropped the near-zenith moment of the #1210 pass
-(Sun at −5.6°), turning −3.4 into −1.9.
-
-Note that `(1 + cos θ)/2` is the same general identity `core-math-astronomy.md` already flags as
-misplaced in `KeplerianEphemeris`. Implementing it here gives it a second call site, strengthening
-the case for lifting it to an `Ephemeris` default — but that refactor is not this feature's job.
-
-### Result type
-
-```kotlin
-data class SatellitePass(
-    val satelliteName: String,
-    val noradId: Int,
-    val start: Instant,
-    val culmination: Instant,
-    val end: Instant,
-    val maxAltitudeDeg: Double,
-    val startAzimuthDeg: Double,
-    val endAzimuthDeg: Double,
-    val peakMagnitude: Double,
-    val shadowEntry: Instant?,
-)
-```
-
-Azimuth stays numeric. Mapping 315° to "NW" needs localized strings and is presentation, so it
-belongs app-side — the precedent `TonightSky` already sets by returning raw `azimuthDeg`.
-
-## Networking
-
-### Client: `java.net.HttpURLConnection`
-
-The entire requirement is one GET, ~1 KB of text, a timeout, and a status code. That is ~30 lines
-against the JDK.
-
-**No HTTP client dependency is added.** This extends the stance D79 already
-took for data packs — "no new networking dependencies" — and the empty HTTP section of
-`libs.versions.toml` is a deliberate position rather than an oversight. Fewer dependencies also
-suits F-Droid reproducibility.
-
-Note that D79's own choice, the system `DownloadManager`, is the wrong tool here: it is built for
-large resumable file downloads, not a 1 KB text fetch. Same principle, different mechanism.
-
-The one genuine advantage a library would bring — automatic retry with backoff — is something this
-feature must specifically **not** have, given CelesTrak's policy. Manual control is a feature.
-
-**Reconsidered, since a dependency is on the table if it earns its place**: nothing else a client
-library offers (connection pooling, HTTP/2, interceptors, `MockWebServer`-backed tests) pays for
-itself against one ~1 KB GET every 12 h. There is no OkHttp/Retrofit already in the dependency
-graph to piggyback on — adding one would be net-new, purely for this feature. Testability doesn't
-need it either: the client is small enough to sit behind a one-method interface the circuit
-breaker can fake in tests without a real socket. If a second, higher-volume network use case
-shows up later (the deferred data-packs work in D79/`design/data-packs.md` is the likely
-candidate), that is the point to revisit a shared client — not this single GET.
-
-The client needs no flavor split: plain HTTPS, no Google dependency, so it lives in `main`. It
-belongs in `:data` alongside the other repositories, which already depends on `:core:astronomy`.
-
-### The circuit breaker
-
-This is the part that protects the install base, and it inverts normal retry instincts.
-
-- **Distinguish transport failure from server refusal.** No connectivity, DNS failure, or a
-  timeout the OS cannot vouch for never reached CelesTrak, and is a legitimate `Result.retry()`.
-  Any non-200 *response* is a policy event and must never be retried on the normal schedule.
-- **A timeout on a working network counts as a refusal (#1277).** CelesTrak's firewall drops a
-  blocked client without answering (#1269), so a blocked install only ever sees a timeout. While
-  that looked like being offline, a firewalled install kept trying every 12 h indefinitely. The
-  breaker is pure, so the platform client makes the call and reports `ServerUnreachable`:
-  - **Android:** a `SocketTimeoutException` before any response (connect, or read before the
-    status line, including one suppressed behind another address's failure) while the same
-    default network had `NET_CAPABILITY_VALIDATED` both before the request and after it failed.
-    A stall after the status line means CelesTrak answered, so it stays a transport failure.
-    `activeNetwork` is null when the app's network access is blocked (Data Saver, background
-    restrictions), so those read as offline.
-  - **iOS:** `NSURLErrorTimedOut` while an `NWPathMonitor` path was satisfied for the whole
-    request, with no change along the way (a repeated update for the same path is not a
-    change). The session does not wait for connectivity, so being offline fails fast with a
-    different code. iOS cannot tell a stall after the status line from a dropped connection;
-    the two-timeout rule absorbs that.
-
-  Anything else, including a timeout across a network switch, is still a transport failure.
-
-  **Two in a row open the circuit.** The first from a closed circuit only records a strike
-  (`consecutiveTimeouts`, persisted with the rest of the state). The second opens it on the
-  same 24 h → 48 h → 7 days ladder. Once the breaker is climbing, after a refusal or a
-  timeout, each further timeout climbs it at once. A success clears the strike. An offline
-  attempt neither counts nor clears it, or an install that is both firewalled and often offline
-  would never back off. Why two: a firewall drops every attempt, so the next one (12 h later on
-  Android) fails too, while a flaky connection (Android does not re-validate for every request,
-  so the flag can lag a network that has just gone bad) almost always recovers by then. The
-  cost is one extra dropped connection per outage, not one per rung: over 30 days on Android's
-  12 h job, a firewalled install makes 7 attempts instead of 60.
-
-  **A lone strike expires after 72 h** (`lastTimeout`, also persisted), measured from the
-  timeout itself, so time spent offline still counts towards it. That is six 12 h periods, so
-  two consecutive runs still count when Doze or a standby bucket delays one, while unrelated
-  timeouts days apart do not add up. An install whose attempts are more than 72 h apart is
-  already slower than the ladder's first two rungs, so forgetting the strike costs CelesTrak
-  little. The expiry never applies once the breaker is climbing: its own week-long rung puts
-  timeouts more than 72 h apart, and each must still climb it.
-
-  A timeout has no HTTP code, so `lastStatusCode` keeps the last real response, Diagnostics
-  shows the open circuit and its failure count, and no `satellite_fetch_failed` event is sent.
-- **On any non-200**, increment a failure counter and set `circuitOpenUntil = now + backoff`,
-  where backoff runs **24 h → 48 h → 7 days**, capped. Far more conservative than typical retry
-  policy, deliberately.
-- **The worker returns `Result.success()`, never `Result.retry()`, on an HTTP error or a timeout
-  while online**, even a first timeout that left the circuit shut. WorkManager's retry machinery
-  must never be allowed to drive requests at CelesTrak — that is exactly the storm the policy
-  forbids. The 12 h periodic job fires again on schedule and no-ops against the breaker.
-- **301 is terminal.** The policy says it means the URL is outdated, which no amount of retrying
-  fixes. Open the breaker for the full 7 days and log loudly.
-- **304 is not an error.** Send `If-Modified-Since` from the last success; handle Not-Modified as a
-  success that refreshes timestamps without touching the cache.
-- **Send a descriptive User-Agent** naming the app with a contact URL. CelesTrak's operator has
-  historically preferred to make contact before firewalling; an anonymous UA forecloses that.
-- **Report to a human**, as the policy requires: surface last-fetch status and code in the app's
-  diagnostics surface so a user reporting "satellites don't update" can hand us the code, plus a
-  gms-only analytics event behind the existing consent flag (`AnalyticsEvents`, alongside
-  `diagnostics_opened` and the other menu/error events already logged there).
-
-  **The analytics event, concretely** — this is the aggregate signal that stands in for the
-  "report to a human" the policy demands, since we cannot see individual devices' logs: a
-  `satellite_fetch_failed` event on every non-200/301 (params: HTTP code, whether it opened or
-  extended the circuit breaker, and the new `circuitOpenUntil`), and a `satellite_circuit_closed`
-  event the next time a fetch succeeds after a breaker was open (param: how long it was open).
-  Both are cheap, both are gms-only same as the rest of the app's analytics, and together they are
-  what would tell us — before CelesTrak firewalls anyone — that a retry bug is loose in
-  production, which is the entire reason the circuit breaker exists.
-
-### Forcing a fetch — debug builds only
-
-Testing the network path otherwise means waiting up to 12 hours, or clock-fiddling. So there is a
-**force-fetch affordance that bypasses the breaker, the 12-hour interval and the jitter** — and
-because that is precisely the behaviour the rest of this section exists to prevent, its
-constraints matter more than its convenience.
-
-- **Debug builds only, gated on `BuildConfig.DEBUG`.** A discoverable "fetch now" in release is
-  the retry storm the circuit breaker is built to stop: at scale it converts curiosity into
-  request volume against a source that firewalls by IP. This must not be a hidden release
-  affordance, a long-press easter egg, or anything reachable by an ordinary user — a build-type
-  gate, so it cannot ship by accident.
-- **It is the codebase's first `BuildConfig` use.** Nothing in `app/src/main` references
-  `BuildConfig` today and `buildConfig` is not enabled in the convention plugin, so this needs
-  `buildConfig = true` in `skymap.android-application`. Small, but it is new build configuration
-  rather than a free win, and it is the reason this is called out rather than assumed.
-- **The only manual trigger.** There is no user-facing Refresh (removed in #1284: downloads must
-  not be under user control, see #1269). Everything else — the worker, the iOS foreground and
-  background fetches — goes through the policy-respecting `refresh()`; this one deliberately does
-  not, so it must never share an implementation with them.
-- **Lives in Diagnostics**, beside the last-fetch status and code the circuit breaker already
-  surfaces there, so the trigger and its result are in one place.
-- **Logs loudly on every use**, and the KDoc should say plainly that CelesTrak's 2-hour minimum
-  applies to the developer's IP as much as to a user's: someone hammering this can get the office
-  address firewalled, which breaks testing for everyone.
-- **Most testing should not need it.** Phases 1–2 are driven by frozen TLE fixtures and are fully
-  testable in CI without a network; this exists to exercise the *client, cache and breaker*
-  specifically, which is a narrower job than it first appears.
-
-### Avoiding a thundering herd
-
-- A fixed 12 h period is fine on its own — installs are already scattered by install time, and
-  WorkManager's batching and Doze add jitter.
-- **Add 0–60 minutes of random initial delay** on first schedule. A staged Play Store rollout
-  reaching millions of devices in a coordinated window is a real herd source.
-- **Never fetch on app open.** This is the most important of the three: it converts user behavior,
-  which is strongly diurnally correlated across a timezone, directly into request volume.
-- **Fetch only what is needed.** `GROUP=stations` (~1 KB) for ISS-only; `GROUP=visual` (~50 KB)
-  only when the fleet ships. This is the policy's "only download the data you need" verbatim.
-
-### Scheduling and cache
+### Wire format: OMM CSV, not TLE text
+
+CelesTrak ran out of 5-digit catalog numbers on 2026-07-11, and TLEs cannot carry the 6-digit
+numbers now issued, so the feed moved to the OMM CSV format (`FORMAT=CSV`, the format CelesTrak's
+operator recommended). The ISS and Tiangong still have 5-digit numbers, but a TLE parser would
+silently lose every new object, so the app moved before it mattered.
+
+CSV over JSON or XML: the header row names the columns, so the parser (`Tle.parseOmmCsv`) finds
+fields by name and ignores extras, and `:data` still needs no JSON dependency. The mean elements
+are the same SGP4 inputs a TLE carries, so `Sgp4` and the Vallado vectors are unchanged;
+`Tle.parse` for TLE text remains for those vectors and the fixtures. A CSV row has no checksum, so
+the parser validates values instead (positive mean motion, eccentricity in [0, 1)) and skips bad
+rows. The two responses are merged into one CSV (one header, both data rows) for the cache.
+
+Requests are unconditional (no `If-Modified-Since`): with two objects there is no single
+`Last-Modified` to send, and each body is a few hundred bytes.
 
 Mirror `widget/WidgetScheduler.kt` — `enqueueUniquePeriodicWork`, `ExistingPeriodicWorkPolicy.KEEP`,
 a 12 h period — with two deliberate departures: add `NetworkType.CONNECTED` constraints (nothing
 in the repo currently sets constraints, and this job must, so it waits rather than fails), and
 schedule only for people using the feature, from a session they can see (§"Who downloads").
 
-Cache **the raw TLE text, verbatim**. It is already compact and line-oriented, so re-serializing
-to JSON or Room gains nothing; and storing bytes-as-received means the network and cache paths
+Cache **the merged OMM CSV text** (`elements.csv`). It is already compact, so re-serializing
+to JSON or Room gains nothing; and storing the text as received means the network and cache paths
 exercise one parser rather than two.
 
 Store under `filesDir/satellites/`, **not `cacheDir`** — the OS may evict `cacheDir` at any time,

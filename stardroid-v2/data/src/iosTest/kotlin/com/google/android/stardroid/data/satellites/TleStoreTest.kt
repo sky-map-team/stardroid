@@ -83,7 +83,7 @@ class TleStoreTest {
         // into place, so it must throw (the repository reports a StorageFailure), and reading
         // must degrade to "nothing cached" rather than throw.
         NSFileManager.defaultManager
-            .createDirectoryAtPath("$directory/elements.tle", true, null, null)
+            .createDirectoryAtPath("$directory/elements.csv", true, null, null)
 
         assertFails { store.writeElements("new elements") }
         assertThat(store.readElements()).isNull()

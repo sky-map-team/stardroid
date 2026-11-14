@@ -13,6 +13,12 @@ package com.google.android.stardroid.data.satellites
 object CelesTrakEndpoint {
     const val GP_URL = "https://celestrak.org/NORAD/elements/gp.php"
 
+    /** OMM CSV, not TLE: TLEs can't carry the 6-digit catalog numbers now being issued. */
+    fun gpUrl(
+        baseUrl: String,
+        target: SatelliteTarget,
+    ) = "$baseUrl?CATNR=${target.catalogNumber}&FORMAT=CSV"
+
     /** Descriptive and contactable, as the usage policy prefers. */
     const val USER_AGENT = "SkyMap/2.0 (+https://github.com/sky-map-team/stardroid)"
 }

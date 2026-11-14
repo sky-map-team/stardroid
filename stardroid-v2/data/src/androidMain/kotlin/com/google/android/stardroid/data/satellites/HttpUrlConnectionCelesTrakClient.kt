@@ -39,10 +39,10 @@ class HttpUrlConnectionCelesTrakClient(
     ) -> HttpURLConnection = { it.openConnection() as HttpURLConnection },
 ) : CelesTrakClient {
     override fun fetch(
-        group: SatelliteGroup,
+        target: SatelliteTarget,
         ifModifiedSince: String?,
     ): FetchOutcome {
-        val url = URL("$baseUrl?GROUP=${group.queryValue}&FORMAT=tle")
+        val url = URL(CelesTrakEndpoint.gpUrl(baseUrl, target))
         val networkAtStart = runCatching(validatedNetwork).getOrNull()
         var connection: HttpURLConnection? = null
         var answered = false
@@ -101,8 +101,8 @@ class HttpUrlConnectionCelesTrakClient(
     }
 
     /**
-     * Reads the response body with a hard cap, rather than trusting a ~1 KB payload to stay
-     * ~1 KB. A captive portal, a hijacked DNS answer, or a CelesTrak misconfiguration can hand
+     * Reads the response body with a hard cap, rather than trusting a ~0.5 KB payload to stay
+     * small. A captive portal, a hijacked DNS answer, or a CelesTrak misconfiguration can hand
      * back an arbitrarily large body; an over-long one is treated as unusable rather than
      * materialized into memory.
      */

@@ -14,7 +14,7 @@ import kotlinx.datetime.Instant
 /**
  * On-disk home for the element sets and the fetch state that guards them. Durable storage, never
  * a cache the OS may evict: losing the TLE silently kills the feature for offline users.
- * Element sets are stored verbatim, so the network and cache paths share one parser.
+ * Element sets are stored verbatim (the merged OMM CSV), so the network and cache paths share one parser.
  */
 class TleStore(
     private val files: TextFiles,
@@ -77,7 +77,7 @@ class TleStore(
     private fun String.toInstantOrNull(): Instant? = runCatching { Instant.parse(this) }.getOrNull()
 
     private companion object {
-        const val ELEMENTS_FILE = "elements.tle"
+        const val ELEMENTS_FILE = "elements.csv"
         const val STATE_FILE = "fetch-state.txt"
 
         const val KEY_FAILURES = "consecutiveFailures"

@@ -59,24 +59,24 @@ class UrlSessionCelesTrakClient(
     private val userAgent: String = CelesTrakEndpoint.USER_AGENT,
 ) : CelesTrakClient {
     override fun fetch(
-        group: SatelliteGroup,
+        target: SatelliteTarget,
         ifModifiedSince: String?,
     ): FetchOutcome {
         val path = PathWatch()
         return try {
-            fetchWatching(group, ifModifiedSince, path)
+            fetchWatching(target, ifModifiedSince, path)
         } finally {
             path.stop()
         }
     }
 
     private fun fetchWatching(
-        group: SatelliteGroup,
+        target: SatelliteTarget,
         ifModifiedSince: String?,
         path: PathWatch,
     ): FetchOutcome {
         val url =
-            NSURL.URLWithString("$baseUrl?GROUP=${group.queryValue}&FORMAT=tle")
+            NSURL.URLWithString(CelesTrakEndpoint.gpUrl(baseUrl, target))
                 ?: return FetchOutcome.TransportFailure(IllegalArgumentException("bad URL"))
         val request =
             NSMutableURLRequest.requestWithURL(url).apply {

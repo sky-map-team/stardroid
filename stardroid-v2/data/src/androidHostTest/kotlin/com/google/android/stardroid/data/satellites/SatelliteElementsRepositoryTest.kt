@@ -32,11 +32,11 @@ class SatelliteElementsRepositoryTest {
     lateinit var tempDir: File
 
     private val issElements =
-        """
-        ISS (ZARYA)
-        1 25544U 98067A   26227.08368470  .00004985  00000+0  97076-4 0  9993
-        2 25544  51.6331   8.6030 0007568  47.4901 312.6726 15.49446860580882
-        """.trimIndent()
+        "OBJECT_NAME,OBJECT_ID,EPOCH,MEAN_MOTION,ECCENTRICITY,INCLINATION,RA_OF_ASC_NODE," +
+            "ARG_OF_PERICENTER,MEAN_ANOMALY,EPHEMERIS_TYPE,CLASSIFICATION_TYPE,NORAD_CAT_ID," +
+            "ELEMENT_SET_NO,REV_AT_EPOCH,BSTAR,MEAN_MOTION_DOT,MEAN_MOTION_DDOT\n" +
+            "ISS (ZARYA),1998-067A,2026-11-14T07:16:30.203040,15.49368089,.000738,51.6324," +
+            "277.2306,24.2289,335.9045,0,U,25544,999,59502,.17615E-3,.9396E-4,0\n"
 
     private class FakeClock(var now: Instant) : Clock {
         override fun now(): Instant = now
@@ -47,12 +47,14 @@ class SatelliteElementsRepositoryTest {
     ) : CelesTrakClient {
         var calls = 0
         var lastIfModifiedSince: String? = null
+        val targets = mutableListOf<SatelliteTarget>()
 
         override fun fetch(
-            group: SatelliteGroup,
+            target: SatelliteTarget,
             ifModifiedSince: String?,
         ): FetchOutcome {
             calls++
+            targets += target
             lastIfModifiedSince = ifModifiedSince
             return outcome
         }
@@ -64,8 +66,7 @@ class SatelliteElementsRepositoryTest {
     ) = SatelliteElementsRepository(
         TleStore(DirectoryTextFiles(tempDir)),
         client,
-        SatelliteGroup.STATIONS,
-        clock,
+        clock = clock,
     )
 
     @Test
@@ -248,16 +249,33 @@ class SatelliteElementsRepositoryTest {
     }
 
     @Test
-    fun `a conditional request is sent once a Last-Modified is known`() {
+    fun `the ISS and the CSS are requested separately, unconditionally`() {
         val clock = FakeClock(Instant.parse("2026-08-15T12:00:00Z"))
         val client = FakeClient(FetchOutcome.Success(issElements, "Sat, 15 Aug 2026 02:00:00 GMT"))
 
         repository(client, clock).refresh()
-        assertThat(client.lastIfModifiedSince).isNull()
-
         clock.now += 13.hours
         repository(client, clock).refresh()
-        assertThat(client.lastIfModifiedSince).isEqualTo("Sat, 15 Aug 2026 02:00:00 GMT")
+
+        assertThat(client.targets)
+            .containsExactly(
+                SatelliteTarget.ISS,
+                SatelliteTarget.CSS,
+                SatelliteTarget.ISS,
+                SatelliteTarget.CSS,
+            ).inOrder()
+        // Two objects have no single Last-Modified to send, and each body is a few hundred bytes.
+        assertThat(client.lastIfModifiedSince).isNull()
+    }
+
+    @Test
+    fun `a failing first request means the second is never made`() {
+        val clock = FakeClock(Instant.parse("2026-08-15T12:00:00Z"))
+        val client = FakeClient(FetchOutcome.HttpError(503))
+
+        repository(client, clock).refresh()
+
+        assertThat(client.targets).containsExactly(SatelliteTarget.ISS)
     }
 
     @Test
@@ -291,11 +309,11 @@ class SatelliteElementsRepositoryTest {
     @Test
     fun `a truncated write cannot corrupt the cached elements`() {
         // Writes go to a temp file and are renamed, so a kill mid-write leaves the previous good
-        // copy in place rather than half a TLE - which would parse as garbage or, worse, as a
+        // copy in place rather than half a CSV row - which would parse as garbage or, worse, as a
         // plausible wrong orbit.
         val store = TleStore(DirectoryTextFiles(tempDir))
         store.writeElements(issElements)
-        assertThat(File(tempDir, "elements.tle.tmp").exists()).isFalse()
+        assertThat(File(tempDir, "elements.csv.tmp").exists()).isFalse()
         assertThat(store.readElements()).isEqualTo(issElements)
     }
 
@@ -338,8 +356,8 @@ class SatelliteElementsRepositoryTest {
 
         // Make the elements path un-writable by turning it into a directory the rename cannot
         // replace, which is the closest portable stand-in for a filesystem failure.
-        File(tempDir, "elements.tle").delete()
-        File(tempDir, "elements.tle").mkdirs()
+        File(tempDir, "elements.csv").delete()
+        File(tempDir, "elements.csv").mkdirs()
 
         clock.now += 13.hours
         val result =
@@ -355,7 +373,7 @@ class SatelliteElementsRepositoryTest {
     fun `an unreadable element file degrades to the empty state rather than throwing`() {
         // current() is called from UI code on any thread, so it has to be total. A directory where
         // the elements file should be is the closest portable stand-in for an unreadable file.
-        File(tempDir, "elements.tle").mkdirs()
+        File(tempDir, "elements.csv").mkdirs()
 
         val elements =
             repository(
@@ -372,7 +390,7 @@ class SatelliteElementsRepositoryTest {
     fun `garbage in the element file yields no satellites rather than throwing`() {
         // A half-written or corrupted cache must not take the app down; the parser skips what it
         // cannot read, and an empty catalog is indistinguishable from "nothing up there" to the UI.
-        File(tempDir, "elements.tle").writeText("\u0000\u0000 not a TLE at all\nnor is this")
+        File(tempDir, "elements.csv").writeText("\u0000\u0000 not a TLE at all\nnor is this")
 
         val elements =
             repository(
@@ -401,8 +419,7 @@ class SatelliteElementsRepositoryTest {
             SatelliteElementsRepository(
                 TleStore(DirectoryTextFiles(tempDir)),
                 exploding,
-                SatelliteGroup.STATIONS,
-                clock,
+                clock = clock,
             )
 
         // Does not throw.
@@ -422,7 +439,7 @@ class SatelliteElementsRepositoryTest {
                 validatedNetwork = { null },
                 openConnection = { throw SecurityException("Permission denied: missing INTERNET") },
             )
-        val outcome = client.fetch(SatelliteGroup.STATIONS, ifModifiedSince = null)
+        val outcome = client.fetch(SatelliteTarget.ISS, ifModifiedSince = null)
         assertThat(outcome).isInstanceOf(FetchOutcome.TransportFailure::class.java)
     }
 }
