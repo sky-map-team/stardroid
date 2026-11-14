@@ -75,14 +75,18 @@ internal class IosNotificationScheduler(
             AlertPreferences(showers, digest, passes && satellites != null, eclipses)
         }
 
+    /** Whether there is anything to plan: the flag on, a kind switched on, and permission. */
+    suspend fun allowed(): Boolean = allowed(preferences.first())
+
+    private suspend fun allowed(preferences: AlertPreferences) =
+        experiments.isEnabled(Experiment.NOTIFICATIONS) &&
+            preferences.any &&
+            center.currentAuthorization() == NotificationAuthorization.AUTHORIZED
+
     suspend fun replan() =
         lock.withLock {
             val preferences = preferences.first()
-            val allowed =
-                experiments.isEnabled(Experiment.NOTIFICATIONS) &&
-                    preferences.any &&
-                    center.currentAuthorization() == NotificationAuthorization.AUTHORIZED
-            if (!allowed) {
+            if (!allowed(preferences)) {
                 log("nothing scheduled (flag, a kind on and permission are all needed)")
                 center.replaceAllNotifications(emptyList())
                 return@withLock

@@ -11,9 +11,13 @@ import BackgroundTasks
 import SkyMapKit
 
 /// Best-effort background refresh of the satellite element sets, after which it also plans the
-/// next nights' notifications. The system picks when (often
-/// rarely, for a little-used app), so the foreground fetch on app open stays the dependable path;
-/// this one just keeps data fresh for people who open the app only briefly.
+/// next nights' notifications. The system picks when (often rarely, for a little-used app), so
+/// the foreground fetch on app open stays the dependable path; this one just keeps data fresh for
+/// people who open the app only briefly.
+///
+/// It is first asked for on leaving the foreground, and each run asks for the next only while
+/// the download gates hold (#1272) or notifications are on, so an install nobody opens stops
+/// downloading.
 enum SatelliteRefreshTask {
     static let identifier = "io.penterakt.skymap.satellite-refresh"
 
@@ -26,12 +30,12 @@ enum SatelliteRefreshTask {
         notificationCenter: LocalNotificationCenter
     ) {
         BGTaskScheduler.shared.register(forTaskWithIdentifier: identifier, using: .main) { task in
-            schedule()
             // The stored flags must be readable before the shared graph freezes them.
             flags.prepare {
                 let work = SatelliteBackgroundRefreshKt.refreshSatellitesInBackground(
                     analytics: analytics, flags: flags, notificationCenter: notificationCenter
-                ) { completed in
+                ) { completed, scheduleNext in
+                    if scheduleNext.boolValue { schedule() }
                     task.setTaskCompleted(success: completed.boolValue)
                 }
                 task.expirationHandler = { work.cancel() }
@@ -39,8 +43,21 @@ enum SatelliteRefreshTask {
         }
     }
 
+    /// On leaving the foreground: schedules only if satellites may refresh or notifications are
+    /// on, else drops any pending request. Switching either on in the foreground re-arms here
+    /// next time.
+    static func scheduleIfAllowed() {
+        SatelliteBackgroundRefreshKt.backgroundRefreshWanted { wanted in
+            if wanted.boolValue {
+                schedule()
+            } else {
+                BGTaskScheduler.shared.cancel(taskRequestWithIdentifier: identifier)
+            }
+        }
+    }
+
     /// Spread over an hour so installs don't all fetch together.
-    static func schedule() {
+    private static func schedule() {
         let request = BGAppRefreshTaskRequest(identifier: identifier)
         request.earliestBeginDate = Date(timeIntervalSinceNow: interval + .random(in: 0...jitter))
         try? BGTaskScheduler.shared.submit(request)

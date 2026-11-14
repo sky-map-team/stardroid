@@ -62,6 +62,7 @@ private fun describe(outcome: FetchOutcome): String =
         is FetchOutcome.Success -> "OK — ${outcome.body.lineSequence().count()} lines"
         FetchOutcome.NotModified -> "304 Not Modified — cache is current"
         is FetchOutcome.HttpError -> "HTTP ${outcome.statusCode} — circuit opened"
+        is FetchOutcome.ServerUnreachable -> "Timed out while online — ${outcome.cause.message}"
         is FetchOutcome.TransportFailure -> "No response — ${outcome.cause.message}"
         is FetchOutcome.UnusableBody -> "Unusable body — ${outcome.reason}"
         is FetchOutcome.StorageFailure -> "Could not save — ${outcome.cause.message}"
