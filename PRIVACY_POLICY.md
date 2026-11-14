@@ -56,6 +56,10 @@ which anyone can read. If the categories change, we will update this policy.
 - **Settings snapshot**: key preference values at each session start (e.g. whether gyro is
   disabled, sensor speed/damping, night mode state). This helps us understand which settings
   people actually use.
+- **Satellite download results**: if you turn on the satellite layer, whether a download of
+  orbit data failed (with the server's error code and when the app will try again) and, for about
+  1 in 100 successful downloads, a bare count with no details. We use these to spot problems
+  and to estimate how much load Sky Map puts on the data provider.
 - **Language**: your device locale (e.g. `en-US`) to help us prioritise translations.
 - **Install version**: for new installs only, the app version you first installed. This helps
   us understand user retention across releases.
