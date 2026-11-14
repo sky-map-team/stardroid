@@ -25,8 +25,6 @@ import kotlinx.coroutines.test.setMain
 import kotlin.test.AfterTest
 import kotlin.test.BeforeTest
 import kotlin.test.Test
-import kotlin.time.Duration
-import kotlin.time.Duration.Companion.hours
 
 /**
  * The freshness badge and the empty-state trigger.
@@ -51,15 +49,11 @@ class LayersFreshnessTest {
     private fun viewModel(
         settings: FakeSettings = FakeSettings(),
         freshness: ElementFreshness? = null,
-        refreshAllowedIn: Duration = Duration.ZERO,
-        onRefresh: suspend () -> Duration = { Duration.ZERO },
     ) = LayersViewModel(
         settings,
         satellitesEnabled = true,
         notificationsEnabled = true,
-        satelliteStatus =
-            MutableStateFlow(freshness?.let { SatelliteUiStatus(it, refreshAllowedIn) }),
-        onRefreshSatellites = onRefresh,
+        satelliteStatus = MutableStateFlow(freshness?.let { SatelliteUiStatus(it) }),
     )
 
     private fun satelliteRow(vm: LayersViewModel) =
@@ -128,44 +122,9 @@ class LayersFreshnessTest {
                     satellitesEnabled = false,
                     notificationsEnabled = true,
                     satelliteStatus =
-                        MutableStateFlow(
-                            SatelliteUiStatus(ElementFreshness.ABSENT, Duration.ZERO),
-                        ),
+                        MutableStateFlow(SatelliteUiStatus(ElementFreshness.ABSENT)),
                 )
             runCurrent()
             assertThat(vm.satelliteDataMissing.value).isFalse()
-        }
-
-    @Test
-    fun `no Refresh is offered while policy would refuse one`() =
-        runTest(dispatcher.scheduler) {
-            // A button that silently does nothing reads as a broken app. The real cause is a rate
-            // limit that is nobody's fault, so the card says how long instead of offering a
-            // control that cannot work.
-            val waiting =
-                viewModel(freshness = ElementFreshness.ABSENT, refreshAllowedIn = 26.hours)
-            val ready = viewModel(freshness = ElementFreshness.ABSENT)
-            runCurrent()
-
-            assertThat(waiting.satelliteRefreshWait.value).isEqualTo(26.hours)
-            assertThat(ready.satelliteRefreshWait.value).isEqualTo(Duration.ZERO)
-        }
-
-    @Test
-    fun `a refused tap updates the wait immediately - without waiting for the next poll`() =
-        runTest(dispatcher.scheduler) {
-            // The poll is minutes apart. If a tap is refused, the card has to explain itself now,
-            // not eventually.
-            val vm =
-                viewModel(
-                    freshness = ElementFreshness.ABSENT,
-                    onRefresh = { 24.hours },
-                )
-            runCurrent()
-            assertThat(vm.satelliteRefreshWait.value).isEqualTo(Duration.ZERO)
-
-            vm.refreshSatelliteData()
-            runCurrent()
-            assertThat(vm.satelliteRefreshWait.value).isEqualTo(24.hours)
         }
 }

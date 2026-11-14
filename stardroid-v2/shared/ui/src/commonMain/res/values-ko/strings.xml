@@ -69,12 +69,6 @@
     <string name="layer_param_radec_grid_density_medium_desc" translation_description="Explains the medium celestial grid density: a meridian every 2 hours of right ascension and a circle every 15 degrees of declination.">적경 2시간마다 자오선, 15°마다 원 표시</string>
     <string name="layer_param_radec_grid_density_fine_desc" translation_description="Explains the fine celestial grid density: a meridian every hour of right ascension and a circle every 10 degrees of declination.">적경 1시간마다 자오선, 10°마다 원 표시</string>
     <string name="satellites_no_data" translation_description="Explanation shown when satellite orbital data has not been downloaded yet and so no satellites can be drawn.">위성 위치를 업데이트하려면 인터넷 연결이 필요합니다.</string>
-    <string name="satellites_refresh" translation_description="Button that tries to download satellite orbital data now.">새로고침</string>
-    <string name="satellites_retry_soon" translation_description="Shown instead of a Refresh button when satellite data was just requested and cannot be requested again for a few minutes.">몇 분 후에 다시 시도</string>
-    <string name="satellites_retry_within_hour" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again for up to an hour.">한 시간 내 다시 시도</string>
-    <string name="satellites_retry_hours" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again for several hours.">몇 시간 후 다시 시도</string>
-    <string name="satellites_retry_tomorrow" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again until the next day.">내일 다시 시도</string>
-    <string name="satellites_retry_days" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again for several days.">며칠 후 다시 시도</string>
     <string name="layer_grid" translation_description="Toggle label for the layer showing the right ascension / declination grid.">천체 그리드</string>
     <string name="layer_horizon">지평선</string>
     <string name="layer_ecliptic">단주기 혜성</string>

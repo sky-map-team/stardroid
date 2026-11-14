@@ -69,12 +69,6 @@
     <string name="layer_param_radec_grid_density_medium_desc" translation_description="Explains the medium celestial grid density: a meridian every 2 hours of right ascension and a circle every 15 degrees of declination.">Meridiane alle 2 Stunden, Kreise alle 15°</string>
     <string name="layer_param_radec_grid_density_fine_desc" translation_description="Explains the fine celestial grid density: a meridian every hour of right ascension and a circle every 10 degrees of declination.">Meridiane jede Stunde, Kreise alle 10°</string>
     <string name="satellites_no_data" translation_description="Explanation shown when satellite orbital data has not been downloaded yet and so no satellites can be drawn.">Satellitenpositionen benötigen eine Internetverbindung zur Aktualisierung.</string>
-    <string name="satellites_refresh" translation_description="Button that tries to download satellite orbital data now.">Aktualisieren</string>
-    <string name="satellites_retry_soon" translation_description="Shown instead of a Refresh button when satellite data was just requested and cannot be requested again for a few minutes.">In ein paar Minuten erneut versuchen</string>
-    <string name="satellites_retry_within_hour" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again for up to an hour.">Innerhalb der Stunde erneut versuchen</string>
-    <string name="satellites_retry_hours" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again for several hours.">In ein paar Stunden erneut versuchen</string>
-    <string name="satellites_retry_tomorrow" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again until the next day.">Morgen erneut versuchen</string>
-    <string name="satellites_retry_days" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again for several days.">In ein paar Tagen erneut versuchen</string>
     <string name="layer_grid" translation_description="Toggle label for the layer showing the right ascension / declination grid.">Himmelsgitter</string>
     <string name="layer_horizon">Horizont</string>
     <string name="layer_ecliptic">Ekliptik</string>

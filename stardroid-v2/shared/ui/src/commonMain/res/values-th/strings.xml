@@ -52,12 +52,6 @@
     <string name="layer_param_radec_grid_density_medium_desc" translation_description="Explains the medium celestial grid density: a meridian every 2 hours of right ascension and a circle every 15 degrees of declination.">เส้นเมริเดียนทุกๆ 2 ชั่วโมง วงกลมทุกๆ 15°</string>
     <string name="layer_param_radec_grid_density_fine_desc" translation_description="Explains the fine celestial grid density: a meridian every hour of right ascension and a circle every 10 degrees of declination.">เส้นเมริเดียนทุกชั่วโมง วงกลมทุกๆ 10°</string>
     <string name="satellites_no_data" translation_description="Explanation shown when satellite orbital data has not been downloaded yet and so no satellites can be drawn.">ตำแหน่งดาวเทียมจำเป็นต้องเชื่อมต่ออินเทอร์เน็ตจึงจะอัปเดตได้</string>
-    <string name="satellites_refresh" translation_description="Button that tries to download satellite orbital data now.">รีเฟรช</string>
-    <string name="satellites_retry_soon" translation_description="Shown instead of a Refresh button when satellite data was just requested and cannot be requested again for a few minutes.">ลองอีกครั้งในอีกสักครู่</string>
-    <string name="satellites_retry_within_hour" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again for up to an hour.">ลองอีกครั้งภายในหนึ่งชั่วโมง</string>
-    <string name="satellites_retry_hours" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again for several hours.">ลองอีกครั้งในอีกไม่กี่ชั่วโมง</string>
-    <string name="satellites_retry_tomorrow" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again until the next day.">ลองอีกครั้งในวันพรุ่งนี้</string>
-    <string name="satellites_retry_days" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again for several days.">ลองอีกครั้งในอีกไม่กี่วัน</string>
     <string name="layer_grid" translation_description="Toggle label for the layer showing the right ascension / declination grid.">ตารางพิกัดท้องฟ้า</string>
     <string name="layer_horizon">ขอบฟ้า</string>
     <string name="layer_ecliptic">สุริยวิถี</string>

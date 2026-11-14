@@ -69,12 +69,6 @@
     <string name="layer_param_radec_grid_density_medium_desc" translation_description="Explains the medium celestial grid density: a meridian every 2 hours of right ascension and a circle every 15 degrees of declination.">Meridianer hver 2. time, sirkler hver 15°</string>
     <string name="layer_param_radec_grid_density_fine_desc" translation_description="Explains the fine celestial grid density: a meridian every hour of right ascension and a circle every 10 degrees of declination.">Meridianer hver time, sirkler hver 10°</string>
     <string name="satellites_no_data" translation_description="Explanation shown when satellite orbital data has not been downloaded yet and so no satellites can be drawn.">Satellittposisjoner krever en internettilkobling for å oppdateres.</string>
-    <string name="satellites_refresh" translation_description="Button that tries to download satellite orbital data now.">Oppdater</string>
-    <string name="satellites_retry_soon" translation_description="Shown instead of a Refresh button when satellite data was just requested and cannot be requested again for a few minutes.">Prøv igjen om noen minutter</string>
-    <string name="satellites_retry_within_hour" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again for up to an hour.">Prøv igjen innen timen</string>
-    <string name="satellites_retry_hours" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again for several hours.">Prøv igjen om noen timer</string>
-    <string name="satellites_retry_tomorrow" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again until the next day.">Prøv igjen i morgen</string>
-    <string name="satellites_retry_days" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again for several days.">Prøv igjen om noen dager</string>
     <string name="layer_grid" translation_description="Toggle label for the layer showing the right ascension / declination grid.">Himmelgitter</string>
     <string name="layer_horizon">Horisont</string>
     <string name="layer_ecliptic">Ekliptikken</string>

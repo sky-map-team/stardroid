@@ -71,12 +71,6 @@
     <string name="satellites_no_data" translation_description="Explanation shown when satellite orbital data has not been downloaded yet and so no satellites can be drawn.">
     Les positions des satellites nécessitent une connexion internet pour être mises à jour.
     </string>
-    <string name="satellites_refresh" translation_description="Button that tries to download satellite orbital data now.">Actualiser</string>
-    <string name="satellites_retry_soon" translation_description="Shown instead of a Refresh button when satellite data was just requested and cannot be requested again for a few minutes.">Réessayer dans quelques minutes</string>
-    <string name="satellites_retry_within_hour" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again for up to an hour.">Réessayer dans l\'heure</string>
-    <string name="satellites_retry_hours" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again for several hours.">Réessayer dans quelques heures</string>
-    <string name="satellites_retry_tomorrow" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again until the next day.">Réessayer demain</string>
-    <string name="satellites_retry_days" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again for several days.">Réessayer dans quelques jours</string>
     <string name="layer_grid" translation_description="Toggle label for the layer showing the right ascension / declination grid.">Grille céleste</string>
     <!-- tm:omitted name="layer_horizon" reason="identical_to_source" -->
     <string name="layer_ecliptic">Écliptique</string>
