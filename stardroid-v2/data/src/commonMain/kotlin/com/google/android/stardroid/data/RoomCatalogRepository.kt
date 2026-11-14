@@ -120,9 +120,11 @@ class RoomCatalogRepository(
         val rows = candidates.filter { it.locale.isEmpty() || it.locale == winners[it.objectId] }
         if (rows.isEmpty()) return emptyList()
 
-        // Shared ranking head: whole-name-prefix beats word-prefix, then primary-name status.
+        // Shared ranking head: exact name (else "M1" loses to M10-M19 when M1 has a primary
+        // common name), then whole-name prefix, then primary-name status.
         val matchQuality =
-            compareByDescending<SearchNameRow> { it.nameNormalized.startsWith(normalizedPrefix) }
+            compareByDescending<SearchNameRow> { it.nameNormalized == normalizedPrefix }
+                .thenByDescending { it.nameNormalized.startsWith(normalizedPrefix) }
                 .thenByDescending { it.isPrimary }
         // Best matched name per object: match quality, then locale specificity.
         val bestNameOrder =
