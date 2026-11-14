@@ -1,48 +1,45 @@
 #!/usr/bin/env python3
-"""Checks Sky Map's satellite download health in GA4 and prints a Markdown alert, if any.
+"""Prints a Markdown alert if satellite downloads look unhealthy in GA4 (nothing if healthy).
 
-Alerts when, for today (so far) or yesterday:
-  1. satellite_fetch_failed exceeds FACTOR x its trailing 7-day daily average AND a floor, or
-  2. estimated downloads (sampled satellite_fetch_ok x sample size) exceed a daily budget.
+Alerts, for today so far or yesterday, when satellite_fetch_failed exceeds FACTOR x its
+trailing 7-day average and a floor (split by http_code), or when estimated downloads
+(sampled satellite_fetch_ok x SAMPLE_ONE_IN) exceed a budget. Background analytics arrive
+hours late, so thresholds are set against GA's own baseline.
 
-Failures are split by the http_code parameter (register it as an event-scoped custom
-dimension in GA4, or the split is empty). GA data for background work arrives hours late, so
-thresholds are set against analytics' own baseline.
-
-Needs GA_PROPERTY_ID and Google credentials (Application Default Credentials: a service
-account key via GOOGLE_APPLICATION_CREDENTIALS, or Workload Identity Federation). With either
-absent it exits 0 saying so. Exit status is 0 whether or not there is an alert; the alert is
-the Markdown on stdout (empty when all is well). Run locally with --dry-run to print the
-numbers instead.
-
-Env: GA_PROPERTY_ID, SATELLITE_FAILURE_FLOOR (500), SATELLITE_FAILURE_FACTOR (3),
-SATELLITE_DAILY_BUDGET (unset = volume check off), SATELLITE_SAMPLE_ONE_IN (100; must match
-SATELLITE_FETCH_OK_SAMPLE_ONE_IN in AnalyticsEvents.kt).
+Auth is Application Default Credentials (a service account key or Workload Identity Federation).
+Env: GA_PROPERTY_ID (required, else skips), SATELLITE_FAILURE_FLOOR (500),
+SATELLITE_FAILURE_FACTOR (3), SATELLITE_DAILY_BUDGET (unset = volume check off).
+Local run: add --dry-run to print the numbers.
 """
 
 import json
 import os
+import re
 import sys
-from datetime import date, timedelta
+from datetime import datetime, timedelta
+from zoneinfo import ZoneInfo
 
 FAILED = "satellite_fetch_failed"
 OK = "satellite_fetch_ok"
+# Must match SATELLITE_FETCH_OK_SAMPLE_ONE_IN in AnalyticsEvents.kt.
+SAMPLE_ONE_IN = 100
 API = "https://analyticsdata.googleapis.com/v1beta/properties/{}:runReport"
 
 
 def daily_counts(rows):
-    """[(date_iso, event, http_code, count)] -> {event: {date_iso: n}} and failed-by-code."""
     totals, by_code = {}, {}
     for day, event, code, n in rows:
         totals.setdefault(event, {}).setdefault(day, 0)
         totals[event][day] += n
         if event == FAILED:
-            by_code.setdefault(day, {}).setdefault(code or "(not set)", 0)
-            by_code[day][code or "(not set)"] += n
+            # http_code is client-supplied; only real status codes may reach the issue text.
+            code = code if re.fullmatch(r"\d{3}", code or "") else "other"
+            by_code.setdefault(day, {}).setdefault(code, 0)
+            by_code[day][code] += n
     return totals, by_code
 
 
-def evaluate(rows, today, floor=500, factor=3.0, budget=None, sample_one_in=100):
+def evaluate(rows, today, floor=500, factor=3.0, budget=None, sample_one_in=SAMPLE_ONE_IN):
     """Returns (alerts, summary lines). Pure, so it can be tested without GA."""
     totals, by_code = daily_counts(rows)
     failed, ok = totals.get(FAILED, {}), totals.get(OK, {})
@@ -67,37 +64,52 @@ def evaluate(rows, today, floor=500, factor=3.0, budget=None, sample_one_in=100)
         if budget is not None and estimate > budget:
             alerts.append(
                 f"**{label}**: ~{estimate} estimated downloads ({ok.get(iso, 0)} sampled x "
-                f"{sample_one_in}), over the budget of {budget} a day."
+                f"{sample_one_in}), over the budget of {budget} a day. This is a lower bound: installs "
+                f"with analytics off are not counted, and a sample this small is noisy."
             )
     return alerts, summary
 
 
-def fetch_rows(property_id, today):
+def fetch_rows(property_id):
+    """Returns (rows, property time zone). Dates are in the property's zone, not the runner's."""
     import google.auth
     from google.auth.transport.requests import AuthorizedSession
 
     credentials, _ = google.auth.default(
         scopes=["https://www.googleapis.com/auth/analytics.readonly"]
     )
-    body = {
-        "dateRanges": [{"startDate": (today - timedelta(days=8)).isoformat(),
-                        "endDate": today.isoformat()}],
-        "dimensions": [{"name": "date"}, {"name": "eventName"},
-                       {"name": "customEvent:http_code"}],
-        "metrics": [{"name": "eventCount"}],
-        "dimensionFilter": {"filter": {"fieldName": "eventName", "inListFilter": {
-            "values": [FAILED, OK]}}},
-        "limit": 10000,
-    }
-    response = AuthorizedSession(credentials).post(API.format(property_id), json=body)
+    session = AuthorizedSession(credentials)
+
+    def run(with_code):
+        dimensions = [{"name": "date"}, {"name": "eventName"}]
+        if with_code:
+            dimensions.append({"name": "customEvent:http_code"})
+        return session.post(API.format(property_id), json={
+            "dateRanges": [{"startDate": "9daysAgo", "endDate": "today"}],
+            "dimensions": dimensions,
+            "metrics": [{"name": "eventCount"}],
+            "dimensionFilter": {"filter": {"fieldName": "eventName", "inListFilter": {
+                "values": [FAILED, OK]}}},
+            "limit": 10000,
+        })
+
+    response = run(True)
+    with_code = response.status_code != 400
+    if not with_code:
+        # An unregistered custom dimension is rejected; carry on without the split.
+        print("http_code dimension unavailable; no split by code.", file=sys.stderr)
+        response = run(False)
     response.raise_for_status()
+    data = response.json()
     rows = []
-    for row in response.json().get("rows", []):
-        d, event, code = (v["value"] for v in row["dimensionValues"])
+    for row in data.get("rows", []):
+        values = [v["value"] for v in row["dimensionValues"]]
+        d, event = values[0], values[1]
+        code = values[2] if with_code else ""
         rows.append((f"{d[:4]}-{d[4:6]}-{d[6:]}", event,
                      "" if code == "(not set)" else code,
                      int(row["metricValues"][0]["value"])))
-    return rows
+    return rows, data.get("metadata", {}).get("timeZone", "UTC")
 
 
 def main(argv):
@@ -105,18 +117,14 @@ def main(argv):
     if not property_id:
         print("GA_PROPERTY_ID not set; skipping.", file=sys.stderr)
         return 0
-    if not (os.environ.get("GOOGLE_APPLICATION_CREDENTIALS") or "--adc" in argv):
-        print("No Google credentials configured; skipping.", file=sys.stderr)
-        return 0
     budget = os.environ.get("SATELLITE_DAILY_BUDGET")
-    today = date.today()
+    rows, zone = fetch_rows(property_id)
     alerts, summary = evaluate(
-        fetch_rows(property_id, today),
-        today,
+        rows,
+        datetime.now(ZoneInfo(zone)).date(),
         floor=int(os.environ.get("SATELLITE_FAILURE_FLOOR", "500")),
         factor=float(os.environ.get("SATELLITE_FAILURE_FACTOR", "3")),
         budget=int(budget) if budget else None,
-        sample_one_in=int(os.environ.get("SATELLITE_SAMPLE_ONE_IN", "100")),
     )
     if "--dry-run" in argv:
         print("\n".join(summary))

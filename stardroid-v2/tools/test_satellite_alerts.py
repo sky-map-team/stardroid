@@ -30,6 +30,19 @@ class EvaluateTest(unittest.TestCase):
         self.assertEqual(len(evaluate(rows, TODAY, budget=4000)[0]), 1)
         self.assertEqual(evaluate(rows, TODAY, budget=6000)[0], [])
 
+    def test_untrusted_codes_fold_into_other(self):
+        rows = week(100) + [("2026-11-12", "satellite_fetch_failed", "@maintainer", 900),
+                            ("2026-11-12", "satellite_fetch_failed", "", 100)]
+        alerts, _ = evaluate(rows, TODAY)
+        self.assertIn("other: 1000", alerts[0])
+        self.assertNotIn("@maintainer", alerts[0])
+
+    def test_yesterday_alone_can_alert(self):
+        rows = week(100) + [("2026-11-11", "satellite_fetch_failed", "503", 2000)]
+        alerts, _ = evaluate(rows, TODAY)
+        self.assertEqual(len(alerts), 1)
+        self.assertIn("2026-11-11", alerts[0])
+
     def test_no_budget_means_no_volume_alert(self):
         rows = [("2026-11-12", "satellite_fetch_ok", "", 5000)]
         self.assertEqual(evaluate(rows, TODAY)[0], [])
