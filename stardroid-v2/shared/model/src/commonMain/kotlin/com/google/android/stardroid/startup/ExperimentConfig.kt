@@ -72,6 +72,12 @@ fun interface ExperimentConfig {
     fun isEnabled(experiment: Experiment): Boolean
 
     /**
+     * [experiment] as the config stands now, for a gate about to cause network traffic. The same
+     * as [isEnabled] unless the config freezes its values for the launch.
+     */
+    fun isEnabledNow(experiment: Experiment): Boolean = isEnabled(experiment)
+
+    /**
      * Epoch millis of the last successful fetch from the server, or null if there has been none
      * (or this config never fetches, as on fdroid).
      */

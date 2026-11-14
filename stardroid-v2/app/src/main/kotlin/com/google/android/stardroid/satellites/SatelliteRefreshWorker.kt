@@ -17,15 +17,10 @@ import com.google.android.stardroid.analytics.Analytics
 import com.google.android.stardroid.data.satellites.FetchOutcome
 import com.google.android.stardroid.data.satellites.RefreshResult
 import com.google.android.stardroid.data.satellites.SatelliteFetchPolicy
-import com.google.android.stardroid.startup.Experiment
-import com.google.android.stardroid.startup.ExperimentConfig
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.withContext
-import kotlinx.coroutines.withTimeoutOrNull
 import kotlinx.datetime.Clock
-import kotlin.time.Duration
-import kotlin.time.Duration.Companion.seconds
 
 /**
  * What [SatelliteRefreshWorker] should tell WorkManager after a fetch.
@@ -70,31 +65,6 @@ fun satelliteWorkAction(outcome: FetchOutcome): SatelliteWorkAction =
         is FetchOutcome.UnusableBody -> SatelliteWorkAction.SUCCEED
         is FetchOutcome.TransportFailure -> SatelliteWorkAction.RETRY
         is FetchOutcome.StorageFailure -> SatelliteWorkAction.RETRY
-    }
-
-internal val SATELLITE_FLAG_TIMEOUT: Duration = 10.seconds
-
-/** The kill switch as seen after waiting for a fresh value. */
-internal enum class SatelliteFlagState {
-    ON,
-    OFF,
-
-    /** The fresh fetch failed, was throttled or timed out, so the flag can't be trusted. */
-    UNKNOWN,
-}
-
-/**
- * Waits up to [timeout] for a fresh flag, then reads it. Never answers [SatelliteFlagState.ON]
- * from a stale value: the flag exists to stop CelesTrak traffic.
- */
-internal suspend fun satelliteFlagState(
-    config: ExperimentConfig,
-    timeout: Duration = SATELLITE_FLAG_TIMEOUT,
-): SatelliteFlagState =
-    when {
-        withTimeoutOrNull(timeout) { config.awaitFresh() } != true -> SatelliteFlagState.UNKNOWN
-        config.isEnabled(Experiment.SATELLITES) -> SatelliteFlagState.ON
-        else -> SatelliteFlagState.OFF
     }
 
 /**

@@ -51,8 +51,8 @@ internal class IosSatellites(
     fun diagnostics(): SatelliteDiagnosticsState = repository.diagnostics()
 
     /** Blocks on the network: call off the main thread. */
-    suspend fun refreshIfStale() {
-        refreshLock.withLock { staleRefresh.refreshIfStale() }
+    suspend fun refreshIfStale(mayDownload: suspend () -> Boolean) {
+        staleRefresh.refreshIfStale(refreshLock, mayDownload)
     }
 
     /** Policy-respecting; the debug force path lives in Diagnostics. */

@@ -71,7 +71,7 @@ class RemoteConfigExperimentConfig : ExperimentConfig {
      * floor never blocks a retry and a throttled cached value is never read as fresh.
      */
     override suspend fun awaitFresh(): Boolean =
-        when (val result = fetchAndActivate(minimumIntervalSeconds = FRESH_MIN_INTERVAL_SECONDS)) {
+        when (val result = fetchAndActivate(FRESH_FETCH_FLOOR.inWholeSeconds)) {
             is FetchResult.Success -> true
             else -> {
                 Log.w(TAG, "Fresh Remote Config fetch failed: $result")
@@ -97,6 +97,5 @@ class RemoteConfigExperimentConfig : ExperimentConfig {
 
     private companion object {
         const val TAG = "RemoteConfigExperiment"
-        const val FRESH_MIN_INTERVAL_SECONDS = 15 * 60L
     }
 }

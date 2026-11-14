@@ -658,6 +658,9 @@ flip never restarts downloads in the background.
   the background;
 - each background run, which asks for the next slot only while the conditions hold.
 
+Both downloads also need a fresh ON flag, read at call time rather than at launch (§"Settings",
+gate 0). The app-open fetch asks for it only once the cache is stale.
+
 Before this change, every move to the background and every run rescheduled unconditionally
 (#1278, finding 5).
 
@@ -708,6 +711,14 @@ other pair rather than replacing either of them:
    fetch. The CelesTrak download needs a fresh ON and is still bounded by the 2-hour floor and
    the circuit breaker; it is never retried by this path. A fresh OFF cancels the job (§"Who
    downloads"). F-Droid has no server and always reads its static value.
+
+   iOS uses the same shared gate, `satelliteFlagState`, before both of its downloads (#1285):
+   the app-open fetch and the background refresh. iOS freezes its flags for the launch, so the
+   gate reads the flag at call time (`ExperimentConfig.isEnabledNow`), after a fetch that has
+   the same 15-minute floor as gms. iOS has no WorkManager to retry with. An unknown flag skips
+   the download, and the next app open or background slot tries again. A failed Remote Config
+   fetch isn't recorded, so while the cache stays stale each app open or slot fetches the flag
+   again, at most once each. A fresh OFF ends the background chain, as Android's cancel does.
 
    The two flavors then diverge in *how* they get turned on, and the asymmetry is deliberate:
 
