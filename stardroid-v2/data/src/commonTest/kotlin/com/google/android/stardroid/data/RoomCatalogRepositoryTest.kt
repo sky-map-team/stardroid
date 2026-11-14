@@ -192,6 +192,18 @@ class RoomCatalogRepositoryTest {
         }
 
     @Test
+    fun search_exactNameOutranksLongerPrefixMatchesEvenWhenSecondary() =
+        runTest {
+            // "Mar" is Rigel's non-primary designation; Mars and Marsic are primary names that
+            // also start with it. The exact match must still lead (the "M1" vs M10-M19 bug).
+            val hits = repository.searchByPrefix("mar", english, limit = 10)
+
+            assertThat(hits.map { it.name }).containsExactly("Mar", "Mars", "Marsic").inOrder()
+            assertThat(repository.searchByPrefix("mar", english, limit = 1).single().name)
+                .isEqualTo("Mar")
+        }
+
+    @Test
     fun search_multiWordQueryMatchesWordPrefixes() =
         runTest {
             val hits = repository.searchByPrefix("andr gal", english, limit = 10)
