@@ -92,8 +92,9 @@ fun skyMapViewController(
     analytics: Analytics,
     tipStore: TipStore,
     flags: FlagSource,
+    notificationCenter: LocalNotificationCenter,
 ): UIViewController {
-    val graph = sharedAppGraph(analytics, flags)
+    val graph = sharedAppGraph(analytics, flags, notificationCenter)
     val mapViewModel = graph.mapViewModel()
     val map = MapViewController(graph, mapViewModel)
     val startup = graph.startupViewModel()
@@ -176,6 +177,17 @@ private fun SkyMapScreen(
     val supportEmail = stringResource(Res.string.support_email)
     val shareMessage = formattedStringResource(Res.string.support_share_message, SHARE_LINK)
     val scope = rememberCoroutineScope()
+    LaunchedEffect(Unit) {
+        // A tapped notification: back to the map (the gallery shows cards itself), then the card.
+        // While the terms or the tour cover the map the card waits, as Android's does.
+        DeepLinks.pending.collect { id ->
+            if (id != null) {
+                if (pages.lastOrNull() != Page.GALLERY) pages = emptyList()
+                objectInfoViewModel.show(id)
+                DeepLinks.consume(id)
+            }
+        }
+    }
     SkyMapTheme(nightMode) {
         Box(Modifier.fillMaxSize()) {
             val current = gates

@@ -14,6 +14,8 @@ import com.google.android.stardroid.analytics.Analytics
 import com.google.android.stardroid.data.satellites.SatelliteElementsRepository
 import com.google.android.stardroid.settings.Settings
 import com.google.android.stardroid.startup.ExperimentConfig
+import com.google.android.stardroid.startup.StartupRouter
+import com.google.android.stardroid.startup.StartupState
 import dagger.hilt.EntryPoint
 import dagger.hilt.InstallIn
 import dagger.hilt.android.EntryPointAccessors
@@ -38,6 +40,10 @@ interface SatelliteEntryPoint {
     fun experimentConfig(): ExperimentConfig
 
     fun analytics(): Analytics
+
+    fun startupRouter(): StartupRouter
+
+    fun startupState(): StartupState
 }
 
 fun satelliteEntryPoint(context: Context): SatelliteEntryPoint =

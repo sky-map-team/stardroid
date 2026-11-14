@@ -25,16 +25,11 @@ import androidx.core.content.ContextCompat
 import com.google.android.stardroid.R
 import com.google.android.stardroid.announcements.AnnouncementAction
 import com.google.android.stardroid.announcements.AnnouncementText
-import com.google.android.stardroid.astronomy.azimuthDeg
-import com.google.android.stardroid.events.DARK_MOON_FRACTION
 import com.google.android.stardroid.events.SkyEvent
 import com.google.android.stardroid.events.TonightSky
 import com.google.android.stardroid.math.LatLong
 import com.google.android.stardroid.ui.MainActivity
 import com.google.android.stardroid.widget.MoonWidget
-import com.google.android.stardroid.widget.cardinal
-import com.google.android.stardroid.widget.highlightLine
-import kotlin.math.roundToInt
 
 /**
  * Builds and posts the two D77 notifications. The frequency contract lives one level up
@@ -95,33 +90,16 @@ object SkyNotifier {
     ) {
         if (!canPost(context, CHANNEL_SHOWERS)) return
         ensureChannels(context)
-        val direction =
-            location?.let {
-                context.getString(
-                    R.string.notif_shower_direction,
-                    cardinal(context, azimuthDeg(peak.shower.radiant, peak.peakTime, it)),
-                )
-            }
-        val moonLine =
-            if (peak.moonIllumination < DARK_MOON_FRACTION) {
-                context.getString(R.string.notif_shower_dark_moon, peak.shower.peakZhr)
-            } else {
-                context.getString(
-                    R.string.notif_shower_bright_moon,
-                    (peak.moonIllumination * 100).roundToInt(),
-                    peak.shower.peakZhr,
-                )
-            }
-        val body = listOfNotNull(direction, moonLine).joinToString(" ")
+        val words = notificationText(context)
+        val body = words.showerBody(peak, location)
         val muteIntent =
             Intent(Settings.ACTION_CHANNEL_NOTIFICATION_SETTINGS)
                 .putExtra(Settings.EXTRA_APP_PACKAGE, context.packageName)
                 .putExtra(Settings.EXTRA_CHANNEL_ID, CHANNEL_SHOWERS)
         val notification =
             baseBuilder(context, CHANNEL_SHOWERS, peak.shower.id.value)
-                .setContentTitle(
-                    context.getString(R.string.notif_shower_title, peak.shower.name),
-                ).setContentText(body)
+                .setContentTitle(words.showerTitle(peak))
+                .setContentText(body)
                 .setStyle(NotificationCompat.BigTextStyle().bigText(body))
                 .addAction(
                     0,
@@ -143,11 +121,12 @@ object SkyNotifier {
     ) {
         if (!canPost(context, CHANNEL_DIGEST)) return
         ensureChannels(context)
-        val lines = sky.highlights.map { highlightLine(it, context).text }
+        val words = notificationText(context)
+        val lines = words.digestLines(sky)
         if (lines.isEmpty()) return
         val notification =
             baseBuilder(context, CHANNEL_DIGEST, targetId = null)
-                .setContentTitle(context.getString(R.string.notif_digest_title))
+                .setContentTitle(words.digestTitle())
                 .setContentText(lines.first())
                 .setStyle(
                     NotificationCompat.BigTextStyle().bigText(lines.joinToString("\n")),

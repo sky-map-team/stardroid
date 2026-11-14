@@ -549,10 +549,10 @@ constraints matter more than its convenience.
   `BuildConfig` today and `buildConfig` is not enabled in the convention plugin, so this needs
   `buildConfig = true` in `skymap.android-application`. Small, but it is new build configuration
   rather than a free win, and it is the reason this is called out rather than assumed.
-- **Distinct from the user-facing Refresh.** The empty state's Refresh button (§"Staleness and
-  offline behaviour") **respects** the breaker and the minimum interval; this one does not. Two
-  different affordances with two different contracts — the design should not let them share an
-  implementation, or the safe one will inherit the unsafe one's behaviour in some later edit.
+- **The only manual trigger.** There is no user-facing Refresh (removed in #1284: downloads must
+  not be under user control, see #1269). Everything else — the worker, the iOS foreground and
+  background fetches — goes through the policy-respecting `refresh()`; this one deliberately does
+  not, so it must never share an implementation with them.
 - **Lives in Diagnostics**, beside the last-fetch status and code the circuit breaker already
   surfaces there, so the trigger and its result are in one place.
 - **Logs loudly on every use**, and the KDoc should say plainly that CelesTrak's 2-hour minimum
@@ -578,7 +578,7 @@ constraints matter more than its convenience.
 Mirror `widget/WidgetScheduler.kt` — `enqueueUniquePeriodicWork`, `ExistingPeriodicWorkPolicy.KEEP`,
 a 12 h period — with two deliberate departures: add `NetworkType.CONNECTED` constraints (nothing
 in the repo currently sets constraints, and this job must, so it waits rather than fails), and
-schedule only while the satellite layer is enabled.
+schedule only for people using the feature, from a session they can see (§"Who downloads").
 
 Cache **the raw TLE text, verbatim**. It is already compact and line-oriented, so re-serializing
 to JSON or Room gains nothing; and storing bytes-as-received means the network and cache paths
@@ -587,6 +587,83 @@ exercise one parser rather than two.
 Store under `filesDir/satellites/`, **not `cacheDir`** — the OS may evict `cacheDir` at any time,
 and losing the TLE silently kills the feature offline. Write atomically (temp file, then rename)
 so a kill mid-write cannot leave a truncated element set.
+
+### Who downloads: people using the feature (#1272)
+
+In 2.3.0 each install's own limits held: the 2-hour floor, the 12-hour job and the breaker. But
+nothing limited how many installs were downloading. The job was scheduled on every process start,
+so a reboot (`PassAlertBootReceiver`), a clock change (`WidgetClockChangeReceiver`) or a widget
+update kept installs nobody used fetching every 12 hours, and the combined load overloaded
+CelesTrak (#1269). Download volume now follows use, not installs.
+
+`SatelliteFetchConditions` (in `:shared:viewmodels`, so both platforms use it) allows a download
+only when all of these hold:
+
+1. `Experiment.SATELLITES` is on: the stored value from the last activation. The worker also
+   checks a fresh one before downloading (see "Order inside the worker" below).
+2. The user has consented (`satelliteDataEnabled`).
+3. The Satellites layer is on. It starts off.
+4. The terms are accepted (`StartupRouter.needsEula` is false).
+5. The app was in the foreground, where the user could see it, within the last **14 days**
+   (`StartupState.lastForegroundAt`). Alternatively, something shows satellite data while the
+   app is closed (`satelliteBackgroundUse`, shared by both platforms):
+   - a placed Tonight widget, the only widget with passes (Android only);
+   - pass alerts turned on;
+   - the D77 tonight digest turned on.
+
+   Alerts and the digest count only with `Experiment.NOTIFICATIONS` on and notifications allowed
+   by the OS, because a notification that can't be posted needs no data. This waives only the
+   recent-use rule: rules 1 to 4 still apply, so the layer must be on.
+
+The timestamp is written each time `MainActivity` starts and each time iOS enters the
+foreground. A background start never writes it. A stamp more than a day in the future means the
+clock was wrong when it was written, so it doesn't count.
+
+**Existing installs count as unused until opened.** An upgrade from a release without the
+timestamp has none recorded. Until the user next opens the app, such an install keeps
+downloading only if a widget, alert or digest from rule 5 needs the data. Any other install's
+schedule is cancelled at its next run.
+
+**Who schedules.** Only a session the user sees. While `MainActivity` is started it follows the
+conditions, scheduling or cancelling. `SkyMapApplication.onCreate` runs on every process start,
+including boot, clock broadcasts, widget updates and other jobs, so there it may only cancel
+(`satelliteScheduleAction`). It cancels when the flag or one of the user's choices is off
+(`switchedOn`), but not for lapsed use. A cold start may be about to show the map, and a cancel
+computed from the previous visit could land after `MainActivity` schedules. The worker re-reads
+every condition on each run and cancels its own schedule once they fail. An install whose user
+stops opening the app therefore makes no request after day 14 and wakes at most once more.
+Opening the app again reschedules, and the first fetch follows within the usual jitter, still
+subject to the 2-hour floor.
+
+**Order inside the worker.** On each run:
+
+1. The local conditions come first, including the stored flag. If they fail, the worker cancels
+   its schedule, with no Firebase fetch and no CelesTrak request.
+2. Then comes the fresh flag (§"Settings", gate 0):
+   - UNKNOWN retries. Each retry repeats the Firebase fetch only, and passes step 1 again first,
+     so a lapse during backoff still cancels.
+   - OFF cancels the schedule, like a closed gate. Switching the flag back on then resumes
+     downloads as people open the app, rather than in every live job at once.
+   - ON goes on to the download.
+
+A consequence on gms: an install whose stored flag is OFF cancels without a fresh fetch, so it
+learns of a remote ON only when the app is next opened and Remote Config activates. A remote
+flip never restarts downloads in the background.
+
+**iOS** applies the same conditions in three places:
+- the fetch on app open;
+- the request for a `BGAppRefreshTask`. When the app leaves the foreground, Swift asks Kotlin
+  (`backgroundRefreshWanted`) and schedules only if the answer is yes, otherwise dropping any
+  pending request. A layer switched on in the foreground is therefore armed on the next move to
+  the background;
+- each background run, which asks for the next slot only while the conditions hold.
+
+Before this change, every move to the background and every run rescheduled unconditionally
+(#1278, finding 5).
+
+The same task also replans iOS notifications, which needs no network, so it is also requested
+while notifications are on (flag, a kind switched on, permission). A run then downloads only if
+the conditions hold, and replans either way.
 
 ## Staleness and offline behaviour
 
@@ -597,7 +674,7 @@ TLE degradation is smooth and well characterised, so the UX can be honest rather
 | < 3 days | < ~2 km | Normal. No UI mention. |
 | 3–10 days | ~2–15 km | Show passes, with a quiet "orbit data N days old" note on the card. |
 | > 10 days | tens of km, growing | Keep the map layer (roughly right, still pleasant), but **suppress precise pass times**. A confidently wrong "21:47" is worse than admitting the data is stale. |
-| none | — | Actionable empty state: "Satellite positions need an internet connection to update." with a Refresh button, which still respects the breaker. |
+| none | — | Actionable empty state: Explanatory card ("Satellite positions need an internet connection to download…"), with no button: downloads are not user-triggered (#1284). |
 
 The 10-day bound belongs on the model as its `validRange` — per-model rather than an interface
 global, which is exactly the migration D26 anticipated satellites would force.
@@ -629,8 +706,8 @@ other pair rather than replacing either of them:
    is throttled or times out the flag is unknown, so the worker returns `Result.retry()` and
    WorkManager's default backoff (30 s, doubling, capped at 5 h) re-attempts only that Firebase
    fetch. The CelesTrak download needs a fresh ON and is still bounded by the 2-hour floor and
-   the circuit breaker; it is never retried by this path. F-Droid has no server and always reads
-   its static value.
+   the circuit breaker; it is never retried by this path. A fresh OFF cancels the job (§"Who
+   downloads"). F-Droid has no server and always reads its static value.
 
    The two flavors then diverge in *how* they get turned on, and the asymmetry is deliberate:
 
@@ -668,6 +745,11 @@ turn on the satellite layer" true, lets the user decide whether to show their IP
 CelesTrak, and spreads first requests by when people choose to try it. The empty-state card says
 the first download can take a few minutes. Users who never touched the toggle see the layer go
 from on to off on update; those who set it keep their choice.
+
+**Update (November 2026, #1272): accepted terms and recent use.** After CelesTrak was overloaded
+(#1269), downloads also need accepted terms and use within the last 14 days, or a widget, pass alert
+or digest that shows the data. They are scheduled only from a session the user sees. See §"Who
+downloads".
 
 One hazard to note for whoever implements it: `SettingsViewModel`'s `combine` unpacks its flows by
 **positional index** (`values[0]` … `values[15]`). Append only; inserting mid-list silently shifts
@@ -859,8 +941,8 @@ The decisions it proposes:
   glyph's shape fixed keeps "is the layer on?" and "is the data good?" as two separately readable
   questions rather than one overloaded icon.
 - **The empty state is a card, not a missing layer** — "Satellite positions need an internet
-  connection to update." with a Refresh button that still respects the circuit breaker, matching
-  the §"Staleness and offline behaviour" table.
+  connection to download…", with no Refresh button (#1284), matching the §"Staleness and offline
+  behaviour" table.
 - **Panel D of the bench mocks the pass surfaces** from §"Where the pass predictor surfaces": the
   object-info sheet with its pass row, the tonight widget with a pass sitting among the ordinary
   `SkyEvent` rows, and the degraded/empty variants of the sheet. It also states the notification-

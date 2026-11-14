@@ -38,7 +38,7 @@ enum class ElementFreshness {
      */
     STALE,
 
-    /** Nothing cached. The empty state, with an honest explanation and a Refresh button. */
+    /** Nothing cached. The empty state, with an honest explanation. */
     ABSENT,
 }
 
@@ -128,22 +128,12 @@ class SatelliteElementsRepository(
     fun fetchState(): SatelliteFetchState = store.readState()
 
     /**
-     * How long until [refresh] would actually make a request, or [Duration.ZERO] if it would go
-     * now.
-     *
-     * Lets a user-facing Refresh affordance show the wait rather than offering a button that
-     * silently does nothing. The policy is not the user's fault and should not look like a bug.
-     */
-    fun refreshAllowedIn(): Duration =
-        SatelliteFetchPolicy.timeUntilFetchAllowed(store.readState(), clock.now())
-
-    /**
      * Attempts a refresh **if [SatelliteFetchPolicy] allows one**, returning what happened.
      *
-     * The safe path, and the only one anything scheduled or user-facing may call: the WorkManager
-     * job, and the Refresh button on the empty state. It respects both the circuit breaker and
-     * CelesTrak's two-hour minimum interval, reporting [RefreshResult.Skipped] rather than making
-     * a request when either forbids it.
+     * The safe path, and the only one anything scheduled may call (the WorkManager job and the iOS
+     * background refresh); only the debug Diagnostics screen may force past it. It respects both
+     * the circuit breaker and CelesTrak's two-hour minimum interval, reporting
+     * [RefreshResult.Skipped] rather than making a request when either forbids it.
      *
      * Returns [FetchOutcome] rather than throwing so the caller can act on the distinction that
      * matters: a WorkManager job must return `Result.retry()` only for

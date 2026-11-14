@@ -70,12 +70,6 @@
     <string name="layer_param_radec_grid_density_medium_desc" translation_description="Explains the medium celestial grid density: a meridian every 2 hours of right ascension and a circle every 15 degrees of declination.">نصف‌النهارها هر ۲ ساعت، دایره‌ها هر ۱۵°</string>
     <string name="layer_param_radec_grid_density_fine_desc" translation_description="Explains the fine celestial grid density: a meridian every hour of right ascension and a circle every 10 degrees of declination.">نصف‌النهارها هر ساعت، دایره‌ها هر ۱۰°</string>
     <string name="satellites_no_data" translation_description="Explanation shown when satellite orbital data has not been downloaded yet and so no satellites can be drawn.">موقعیت‌های ماهواره برای به‌روزرسانی نیاز به اتصال اینترنت دارند.</string>
-    <string name="satellites_refresh" translation_description="Button that tries to download satellite orbital data now.">تازه‌سازی</string>
-    <string name="satellites_retry_soon" translation_description="Shown instead of a Refresh button when satellite data was just requested and cannot be requested again for a few minutes.">چند دقیقه دیگر دوباره امتحان کنید</string>
-    <string name="satellites_retry_within_hour" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again for up to an hour.">تا یک ساعت دیگر دوباره امتحان کنید</string>
-    <string name="satellites_retry_hours" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again for several hours.">چند ساعت دیگر دوباره امتحان کنید</string>
-    <string name="satellites_retry_tomorrow" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again until the next day.">فردا دوباره امتحان کنید</string>
-    <string name="satellites_retry_days" translation_description="Shown instead of a Refresh button when satellite data cannot be requested again for several days.">چند روز دیگر دوباره امتحان کنید</string>
     <string name="layer_grid" translation_description="Toggle label for the layer showing the right ascension / declination grid.">شبکه سماوی</string>
     <string name="layer_horizon">افق</string>
     <string name="layer_ecliptic">دایرة البروج</string>
@@ -628,4 +622,39 @@
     </string>
     <string name="satellite_search_name_iss" translation_description="Common name of the International Space Station, matched when the user types it in search. Use the name people in this language actually type.">ایستگاه فضایی بین‌المللی</string>
     <string name="satellite_search_name_tiangong" translation_description="Common name of the Chinese Tiangong space station, matched when the user types it in search. Use the name people in this language actually type.">ایستگاه فضایی تیانگونگ</string>
+    <string name="notif_shower_title" translation_description="Title of the meteor-shower notification; %1$s is the shower name">اوج %1$s امشب</string>
+    <string name="notif_shower_direction" translation_description="Notification sentence telling the user where to look; %1$s is a compass point like NE">بهترین زمان پس از نیمه‌شب، با نگاه به %1$s.</string>
+    <string name="notif_shower_dark_moon" translation_description="Notification sentence when the moon is dark during a meteor shower peak; %1$d is the expected meteors per hour">
+    آسمان تاریک و بدون ماه — انتظار می‌رود تا %1$d شهاب در ساعت، دور از نور شهر مشاهده شود.
+    </string>
+    <string name="notif_shower_bright_moon" translation_description="Notification sentence when a bright moon will interfere with a meteor shower; %1$d is the moon illumination percentage, %2$d the meteors per hour under ideal skies">
+    ماه با نور %1$d%% شهاب‌های کم‌نورتر را محو می‌کند — تا %2$d شهاب در ساعت در آسمان ایده‌آل.
+    </string>
+    <string name="notif_digest_title" translation_description="Title of the tonight\'s-sky digest notification">امشب ارزش دیدن دارد</string>
+    <string name="tonight_well_placed" translation_description="Tonight-widget row: a planet is high in the sky and easy to observe; %1$s is the planet name, %2$s the time from which it is well placed">%1$s از %2$s در موقعیت مناسب است</string>
+    <string name="tonight_shower_peak" translation_description="Tonight-widget row: a meteor shower reaches its annual peak tonight; %1$s is the shower name">اوج %1$s امشب</string>
+    <string name="tonight_shower_days" translation_description="Tonight-widget row: a meteor shower peaks within a few days; %1$s is the shower name, %2$d the number of days">اوج %1$s در %2$d روز دیگر</string>
+    <string name="tonight_new_moon" translation_description="Tonight-widget row shown at new moon">ماه نو — تاریک‌ترین آسمان ماه</string>
+    <string name="tonight_full_moon" translation_description="Tonight-widget row shown at full moon">ماه کامل امشب</string>
+    <string name="tonight_bright_moon" translation_description="Tonight-widget row warning that a bright moon washes out faint objects">ماه روشن اجرام کم‌نور را محو می‌کند</string>
+    <string name="moon_widget_set_time" translation_description="Widget fragment showing today\'s moonset time; %1$s is a clock time like 03:12">غروب %1$s</string>
+    <string name="sun">خورشید</string>
+    <string name="moon">ماه</string>
+    <string name="mercury">عطارد</string>
+    <string name="venus">زهره</string>
+    <string name="earth">زمین</string>
+    <string name="mars">مریخ</string>
+    <string name="jupiter">مشتری</string>
+    <string name="saturn">زحل</string>
+    <string name="uranus">اورانوس</string>
+    <string name="neptune">نپتون</string>
+    <string name="pluto">پلوتون</string>
+    <!-- tm:omitted name="tonight_satellite_pass" reason="identical_to_source" -->
+    <string name="notif_pass_title" translation_description="Title of the notification sent shortly before a satellite passes overhead. %1$s is the satellite name.">%1$s به زودی از بالای سر عبور می‌کند</string>
+    <string name="notif_pass_text" translation_description="Body of the satellite pass notification, telling the user when to go outside. %1$s is a time.">از حدود %1$s قابل مشاهده است — بیرون بروید و اجازه دهید چشمانتان عادت کند</string>
+    <string name="notif_eclipse_title" translation_description="Title of the notification sent before a lunar eclipse starts. %1$s is a localized eclipse type like \'Total lunar eclipse\'.">%1$s به زودی شروع می‌شود</string>
+    <string name="notif_eclipse_text" translation_description="Body of the lunar eclipse notification, telling the user when it begins. %1$s is a time.">حدود %1$s شروع می‌شود — ارزش بیرون رفتن را دارد</string>
+    <string name="satellite_name_iss" translation_description="Display name for the International Space Station.">ایستگاه فضایی</string>
+    <string name="satellite_name_tiangong" translation_description="Display name for the Chinese space station Tiangong.">تیانگونگ</string>
+    <string name="tonight_trailing_pass_peak" translation_description="Small trailing note on a satellite pass row. %1$d is the peak altitude in degrees, %2$.1f is a brightness magnitude.">اوج %1$d°، قدر %2$.1f</string>
 </resources>
