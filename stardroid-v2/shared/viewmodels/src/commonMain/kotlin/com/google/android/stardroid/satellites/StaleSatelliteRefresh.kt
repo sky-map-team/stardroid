@@ -12,8 +12,10 @@ package com.google.android.stardroid.satellites
 import com.google.android.stardroid.analytics.Analytics
 import com.google.android.stardroid.data.satellites.RefreshResult
 import com.google.android.stardroid.data.satellites.SatelliteElementsRepository
+import kotlinx.coroutines.NonCancellable
 import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock
+import kotlinx.coroutines.withContext
 import kotlinx.datetime.Clock
 import kotlin.time.Duration
 import kotlin.time.Duration.Companion.days
@@ -45,11 +47,14 @@ class StaleSatelliteRefresh(
         if (!isStale() || !mayDownload()) return null
         return downloadLock.withLock {
             if (!isStale()) return@withLock null
-            val result = repository.refresh()
-            if (result is RefreshResult.Completed) {
-                trackSatelliteFetchResult(result, analytics, clock.now())
+            // Cancelling the wait is fine; a download once started finishes and is recorded.
+            withContext(NonCancellable) {
+                val result = repository.refresh()
+                if (result is RefreshResult.Completed) {
+                    trackSatelliteFetchResult(result, analytics, clock.now())
+                }
+                result
             }
-            result
         }
     }
 

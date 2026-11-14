@@ -18,6 +18,8 @@ import com.google.android.stardroid.data.satellites.SatelliteElementsRepository
 import com.google.android.stardroid.data.satellites.TextFiles
 import com.google.android.stardroid.data.satellites.TleStore
 import com.google.android.stardroid.testing.assertThat
+import kotlinx.coroutines.awaitCancellation
+import kotlinx.coroutines.cancelAndJoin
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.test.runCurrent
@@ -128,6 +130,24 @@ class StaleSatelliteRefreshTest {
             downloadLock.unlock()
             pending.join()
             assertThat(requests).isEqualTo(1)
+        }
+
+    @Test
+    fun cancellingDuringTheFlagWaitMakesNoRequest() =
+        runTest {
+            val refresher = StaleSatelliteRefresh(repository, analytics, Duration.ZERO, clock)
+            val pending =
+                launch {
+                    refresher.refreshIfStale(downloadLock) {
+                        awaitCancellation()
+                    }
+                }
+            runCurrent()
+
+            pending.cancelAndJoin()
+
+            assertThat(requests).isEqualTo(0)
+            assertThat(downloadLock.isLocked).isFalse()
         }
 
     @Test
