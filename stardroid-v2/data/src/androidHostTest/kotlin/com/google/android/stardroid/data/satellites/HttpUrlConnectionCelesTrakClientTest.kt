@@ -129,6 +129,7 @@ class HttpUrlConnectionCelesTrakClientTest {
         val client =
             HttpUrlConnectionCelesTrakClient(
                 validatedNetwork = { WIFI },
+                appVersionName = "2.4.0",
                 openConnection = { url ->
                     object : FakeConnection(url, HttpURLConnection.HTTP_OK, "", null) {
                         override fun getInputStream(): InputStream =
@@ -151,6 +152,7 @@ class HttpUrlConnectionCelesTrakClientTest {
         val client =
             HttpUrlConnectionCelesTrakClient(
                 validatedNetwork = { networks.removeFirst() },
+                appVersionName = "2.4.0",
                 openConnection = { url ->
                     object : FakeConnection(url, HttpURLConnection.HTTP_OK, "", null) {
                         override fun getResponseCode(): Int = throw failure
@@ -166,6 +168,7 @@ class HttpUrlConnectionCelesTrakClientTest {
         lastModified: String? = null,
     ) = HttpUrlConnectionCelesTrakClient(
         validatedNetwork = { WIFI },
+        appVersionName = "2.4.0",
         openConnection = { url -> FakeConnection(url, status, body, lastModified) },
     )
 

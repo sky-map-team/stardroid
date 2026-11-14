@@ -78,9 +78,8 @@ is the Swift side. Three choices beyond the design above:
   `IosExperiments.kt`) listen to the server. The key names are shared with Android, so
   Android turning on camera AR or notifications must not turn them on here. Add a flag to the list
   in the change that gives it an iOS surface.
-- **Same keys, so conditions matter.** `satellites_enabled` is already true for everyone, so a
-  build that honours it turns satellites on at its first fetch. To ship satellites dark, add a
-  Platform = iOS condition that is false first.
+- **Satellites use their own key.** Satellites read `satellites_v2_enabled`, default false.
+  `satellites_enabled` belongs to 2.3.0-2.3.2 and stays false in Remote Config for good (#1296).
 
 ### Privacy
 

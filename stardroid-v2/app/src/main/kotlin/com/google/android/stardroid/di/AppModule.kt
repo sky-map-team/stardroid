@@ -115,7 +115,15 @@ object AppModule {
     fun satelliteElementsRepository(application: Application): SatelliteElementsRepository =
         SatelliteElementsRepository(
             store = TleStore(DirectoryTextFiles(File(application.filesDir, "satellites"))),
-            client = HttpUrlConnectionCelesTrakClient(validatedNetworkOf(application)),
+            client =
+                HttpUrlConnectionCelesTrakClient(
+                    validatedNetwork = validatedNetworkOf(application),
+                    appVersionName =
+                        runCatching {
+                            application.packageManager
+                                .getPackageInfo(application.packageName, 0).versionName
+                        }.getOrNull().orEmpty(),
+                ),
         )
 
     /** First-run bookkeeping for the startup gates, in the same DataStore file. */

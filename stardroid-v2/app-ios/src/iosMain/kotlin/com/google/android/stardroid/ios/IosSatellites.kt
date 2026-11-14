@@ -21,6 +21,7 @@ import com.google.android.stardroid.satellites.SatelliteDiagnosticsState
 import com.google.android.stardroid.satellites.StaleSatelliteRefresh
 import com.google.android.stardroid.satellites.diagnostics
 import com.google.android.stardroid.satellites.trackSatelliteFetchResult
+import com.google.android.stardroid.ui.startup.iosAppVersionName
 import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock
 import kotlinx.datetime.Clock
@@ -37,7 +38,7 @@ import kotlin.time.Duration.Companion.minutes
 internal class IosSatellites(
     directory: String,
     private val analytics: Analytics,
-    client: CelesTrakClient = UrlSessionCelesTrakClient(),
+    client: CelesTrakClient = UrlSessionCelesTrakClient(iosAppVersionName()),
 ) {
     private val files = DirectoryTextFiles(directory)
 

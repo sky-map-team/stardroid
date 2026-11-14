@@ -207,7 +207,7 @@ or [the full surface](#the-full-at-launch-feature-surface) above with a real
 | Through-camera (AR) mode, with drag-to-align | `camera_ar_enabled` | D64, D67, D68 |
 | Share the sky (overflow row + in-AR shutter, camera composite layouts) | `share_sky_enabled` | D70, D71 |
 | Shower-peak and tonight-digest notifications | `notifications_enabled` | D77 |
-| Satellite tracking — layer, pass predictor, CelesTrak fetch | `satellites_enabled` | D92 |
+| Satellite tracking — layer, pass predictor, CelesTrak fetch | `satellites_v2_enabled` | D92 |
 
 The warm-welcome onboarding pager used to sit in this table. It never belonged: it was
 inherited from v1 as an A/B lever on the first-run funnel, not a gate on something

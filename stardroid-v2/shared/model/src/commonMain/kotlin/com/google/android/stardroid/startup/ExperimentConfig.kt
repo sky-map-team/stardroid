@@ -27,8 +27,12 @@ enum class Experiment(val key: String) {
      * than the other flags here because the feature depends on a third party whose usage policy
      * firewalls misbehaving clients, so this is the lever that turns the whole thing off remotely
      * if our traffic ever looks wrong.
+     *
+     * The key is `satellites_v2_enabled`, not `satellites_enabled`: 2.3.0-2.3.2 read the old key
+     * with the old on-by-default behaviour (issue #1269), so it stays false in Remote Config for
+     * good rather than gating them by app version.
      */
-    SATELLITES("satellites_enabled"),
+    SATELLITES("satellites_v2_enabled"),
 
     /**
      * The GL ES 3.0 rendering backend and the settings row that selects it
