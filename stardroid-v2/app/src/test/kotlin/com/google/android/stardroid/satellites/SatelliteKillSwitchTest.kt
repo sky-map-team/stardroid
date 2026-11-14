@@ -71,8 +71,9 @@ class SatelliteKillSwitchTest {
     fun `only an unknown flag asks WorkManager to retry, and only on is allowed to download`() {
         assertThat(satelliteFlagWorkAction(SatelliteFlagState.UNKNOWN))
             .isEqualTo(SatelliteWorkAction.RETRY)
+        // Off cancels the schedule (#1272), so a later ON resumes only as people open the app.
         assertThat(satelliteFlagWorkAction(SatelliteFlagState.OFF))
-            .isEqualTo(SatelliteWorkAction.SUCCEED)
+            .isEqualTo(SatelliteWorkAction.CANCEL)
         assertThat(satelliteFlagWorkAction(SatelliteFlagState.ON)).isNull()
     }
 
