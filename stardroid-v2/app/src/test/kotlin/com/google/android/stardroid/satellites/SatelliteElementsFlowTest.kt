@@ -94,8 +94,8 @@ class SatelliteElementsFlowTest {
 
                 repository.refresh()
 
-                withTimeout(5_000) { while (listOf(25544) !in seen) delay(20) }
-                assertThat(seen.last()).containsExactly(25544)
+                withTimeout(5_000) { while (seen.none { it.size == 2 }) delay(20) }
+                assertThat(seen.last()).containsExactly(25544, 48274)
             } finally {
                 job.cancel()
             }
