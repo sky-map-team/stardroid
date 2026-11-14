@@ -10,6 +10,7 @@
 package com.google.android.stardroid.math
 
 import kotlin.math.PI
+import kotlin.math.roundToInt
 
 /** 2π, in radians. */
 const val TWO_PI: Double = 2.0 * PI
@@ -31,3 +32,6 @@ fun normalizeRadians(radians: Double): Double = floorMod(radians, TWO_PI)
 
 /** Reduces an angle in degrees to `[0, 360)`. */
 fun normalizeDegrees(degrees: Double): Double = floorMod(degrees, 360.0)
+
+/** Index into the 16-point compass rose for [azDeg]: N at 0, then NNE, NE... every 22.5 degrees. */
+fun compassPointIndex(azDeg: Double): Int = (normalizeDegrees(azDeg) / 22.5).roundToInt() % 16

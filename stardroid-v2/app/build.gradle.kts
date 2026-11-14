@@ -131,6 +131,7 @@ dependencies {
     implementation(project(":shared:layers"))
     implementation(project(":shared:viewmodels"))
     implementation(project(":shared:ui"))
+    implementation(project(":shared:surfaces"))
     implementation(libs.kotlinx.coroutines.android)
     // Parses the Remote Config announcements payload (JsonElement API only; no plugin).
     implementation(libs.kotlinx.serialization.json)

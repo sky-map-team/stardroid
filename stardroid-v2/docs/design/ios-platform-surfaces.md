@@ -226,6 +226,67 @@ The Android scheduler then consumes the same planner output, so both platforms a
 frequency rules. That is the largest Android-side cost of the whole project, and it needs its
 own slice-by-slice review.
 
+**Slice 1 (built, 2.1.0 branch):** `shared/surfaces` holds `NotificationPlanner`, the decision
+of which alert is due tonight (shower peak, else digest, else nothing) and when it fires (30
+minutes after sunset, at least a minute from now). Android's planner and poster workers now call
+it, with no behaviour change; golden tests are in `NotificationPlannerTest`.
+
+**Slice 2 (built):** `core/text` holds `TextSource` and `TextId`, and `shared/surfaces` holds
+`NotificationText`, which builds the shower title and body, the digest title and lines, and the
+tonight rows the widget shares. Android's `SkyNotifier` and `highlightLine` use it through
+`AndroidTextSource`, a `when` over `R.string`. The strings behind the ids moved from `app` to
+`shared/ui` with their translations and their `tm` baselines, so nothing needs translating
+again. `channel_*` and the "Mute showers" action stay in `app`: iOS has no channels. Clock
+format is a function passed in, because 12 or 24 hour follows the device.
+
+For iOS, Compose Resources' `getString` is `suspend`, and `TextSource.text` is not. The iOS
+implementation reads every `TextId` once when it plans (in the app's locale) and answers from
+that map. Planning runs on foreground and on a locale change, so the map is never stale.
+
+**Slice 3 (built):** the planner and text for the two other kinds. `NotificationPlanner` gains
+`planPassAlerts` (one alert per night, the brightest pass, noon to noon in the user's zone, over
+a horizon the platform chooses), `alertablePass` (the selection Android's single alarm already
+used, now shared) and `planEclipseAlert` (next eclipse, not over, Moon up at the saved place,
+30 minutes before the visible start, or a minute from now if under way). `NotificationText`
+gains the pass and eclipse words. Android's eclipse planner and `PassAlerts.armBestPass` call
+the shared functions. The pass lead stays a parameter: Android passes 10 minutes for Doze, iOS
+passes 6. The two station ids moved to `core/astronomy` (`SpaceStations`) so the surfaces module
+need not depend on `shared/layers`. Android's eclipse text shows the eclipse's peak time after
+"Begins around"; that is kept as it was and tracked in #1266.
+
+**Slice 4 (built):** the iOS scheduler. `NotificationPlanAhead` (in `shared/surfaces`) plans the
+next three nights, the passes over three days and the next eclipse within 60 days, and renders
+the words. It drops an alert whose time has gone, and one that would land on a different night,
+because a replan runs at every foreground and would otherwise announce tonight again after
+dark. `IosNotificationScheduler` gathers the inputs and hands the result to
+`LocalNotificationCenter`, which `UserNotificationCenterAdapter.swift` implements over
+`UNUserNotificationCenter`, replacing all pending requests. Replans on foreground, a setting,
+the saved location, the language, new element sets and each background refresh, after a two
+second settle. It schedules nothing unless the notifications flag is on, a kind is on and the
+system allows alerts, and it never shows the permission prompt. iOS fills the `%1$s`
+placeholders itself (`TextTemplate`), because the Compose lookup is `suspend`.
+
+**Slice 5 (built):** switched on. The shared Settings section and the layer-sheet toggles
+already existed for Android, with an iOS permission request that asks for alerts and sound and
+not provisional authorization, so no new screens. What changed: the iOS flag defaults no longer
+exclude `NOTIFICATIONS`, and the flag is server-controlled like `SATELLITES`, so it can be
+turned off remotely (a launch later, which also clears what was scheduled). The layers sheet
+shows the alert rows with the flag. The scheduler replans whenever the app becomes active, not
+only on entering the foreground, because the system permission prompt closing and a return from
+Settings are activations only; without that, the first alert after granting would wait for the
+next launch. `permissions_notice_ios` and `PRIVACY_POLICY.md` now cover notifications.
+
+**Slice 6 (built):** deep links. Each notification carries the object it is about in its
+`userInfo` (a shower's id, the Moon for an eclipse, the satellite for a pass; the digest carries
+none). The Swift adapter is the `UNUserNotificationCenter` delegate, set before launch finishes
+so the tap that launches the app is delivered, and hands the id to `DeepLinks`. `DeepLinks`
+holds it until the screen is up; the screen then goes back to the map (the gallery shows cards
+itself) and calls `ObjectInfoViewModel.show`, as Android's `onNewIntent` does. An id that no
+longer resolves, such as a satellite after its layer was switched off, leaves the user on the
+map. The universal-link handler planned in share-object-card.md calls the same `DeepLinks`.
+
+Still to build: the translations for the notice, and the review.
+
 ### 5.3 Kinds, permission and settings
 
 Same kinds as Android, same defaults (all **off**): shower peak, tonight digest, satellite pass
@@ -402,7 +463,9 @@ Decided 2026-11-03/04:
 
 Open:
 
-5. Eclipse alerts: in the first notifications release or later?
+5. ~~Eclipse alerts: in the first notifications release or later?~~ **Decided: eclipse alerts and
+   satellite pass alerts are both in the first notifications release (2.1.0).** Eclipse first, as
+   the cheaper; each kind has its own in-app toggle, default off.
 
 ## 11. Verification
 

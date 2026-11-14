@@ -124,6 +124,15 @@ at https://www.geoapify.com/privacy-policy for how it handles them.
   background when the system allows it. The request shows your IP
   address to that service and contains no location.
 
+## Notifications
+
+Sky Map can remind you about meteor-shower peaks, what is worth seeing tonight, satellite passes
+and lunar eclipses. They are off until you turn them on, and Sky Map asks your device for
+permission only then. The reminders are worked out on your device from your saved location and the
+satellite data it already holds, and nothing about them is sent to us or to anyone else. On iOS
+they are scheduled a few nights ahead and delivered by the system. Switching them off in Sky Map,
+or in your device's settings, stops them.
+
 ## Tips and donations
 
 - **iOS:** the optional tips on the Support screen are in-app purchases made through Apple.

@@ -26,6 +26,7 @@ import com.google.android.stardroid.location.LocationState
 import com.google.android.stardroid.render.api.RendererInfo
 import com.google.android.stardroid.satellites.SatelliteDiagnosticsState
 import com.google.android.stardroid.satellites.TrackedSatellite
+import com.google.android.stardroid.satellites.satelliteBackgroundUseFlow
 import com.google.android.stardroid.satellites.satelliteElementsFlow
 import com.google.android.stardroid.satellites.satelliteFetchConditions
 import com.google.android.stardroid.satellites.satelliteUiStatusFlow
@@ -63,6 +64,7 @@ import com.google.android.stardroid.ui.timetravel.TimeTravelViewModel
 import kotlinx.cinterop.ExperimentalForeignApi
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.FlowPreview
 import kotlinx.coroutines.IO
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.MainScope
@@ -71,6 +73,7 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.combine
+import kotlinx.coroutines.flow.debounce
 import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.emptyFlow
 import kotlinx.coroutines.flow.first
@@ -93,6 +96,7 @@ import platform.Foundation.preferredLanguages
 import platform.Foundation.timeIntervalSince1970
 import platform.UIKit.UIApplication
 import platform.UIKit.UIApplicationOpenSettingsURLString
+import kotlin.time.Duration.Companion.seconds
 
 /**
  * The iOS app's object graph: what Android's Hilt modules provide, built by hand. The foreground
@@ -103,6 +107,7 @@ import platform.UIKit.UIApplicationOpenSettingsURLString
 class IosAppGraph(
     private val analytics: Analytics = NoOpAnalytics,
     flags: FlagSource = NoFlagSource,
+    notificationCenter: LocalNotificationCenter,
 ) {
     /** The experiment flags, frozen for this launch (see [FlagSourceExperimentConfig]). */
     val experiments: ExperimentConfig = iosExperiments(flags)
@@ -261,17 +266,54 @@ class IosAppGraph(
         }
     }
 
-    /** The download gates shared with Android (#1272). iOS has no widgets or alerts to count. */
+    private val notifications =
+        IosNotificationScheduler(
+            notificationCenter,
+            settings,
+            experiments,
+            ::catalog,
+            locale,
+            satellites.takeIf { satellitesEnabled },
+        )
+
+    /** The download gates shared with Android (#1272). iOS has no widgets. */
     private val satelliteGates =
         satelliteFetchConditions(
             experiments = experiments,
             settings = settings,
             startupRouter = startupRouter,
             startupState = startupState,
-            backgroundUse = flowOf(false),
+            backgroundUse =
+                satelliteBackgroundUseFlow(
+                    settings,
+                    experiments,
+                    notificationsAllowed = notifications::permitted,
+                    tonightWidgetPlaced = { false },
+                ),
         )
 
     init {
+        scope.launch {
+            // Whatever the plan depends on changing, or the app coming forward, replans it.
+            @OptIn(FlowPreview::class)
+            combine(
+                // Active again also covers the system permission prompt closing and a return
+                // from Settings, neither of which is entering the foreground.
+                combine(foreground.isForeground, foreground.activations) { inForeground, _ ->
+                    inForeground
+                },
+                notifications.preferences,
+                settings.savedLocation,
+                locale,
+                if (satellitesEnabled) {
+                    satelliteElementsFlow(satellites.repository)
+                } else {
+                    flowOf(Unit)
+                },
+            ) { inForeground, _, _, _, _ -> inForeground }
+                .debounce(NOTIFICATION_REPLAN_DELAY)
+                .collect { if (it) notifications.replan() }
+        }
         scope.launch {
             // Latest: going to the background cancels a start still waiting on the EULA.
             foreground.isForeground.collectLatest {
@@ -297,27 +339,31 @@ class IosAppGraph(
     /**
      * The system's background refresh slot ([SatelliteBackgroundRefresh]): the same gates and
      * policy as the foreground fetch, minus the staleness test, since the system picks the time.
-     * [onDone] runs however the job ends, cancellation included, so it must not throw;
-     * `scheduleNext` is whether the gates were open.
+     * It then replans the notifications. [onDone] runs however the job ends, cancellation
+     * included, so it must not throw. Both gates are read first, so an expiry or a failed download
+     * cannot end the chain.
      */
     internal fun startBackgroundRefresh(
         onDone: (completed: Boolean, scheduleNext: Boolean) -> Unit,
     ): Job =
         scope.launch {
-            var open = false
+            var download = false
+            var replan = false
             var completed = false
             try {
-                open = mayRefreshSatellites()
-                if (open) withContext(Dispatchers.IO) { satellites.refreshNow() }
+                download = mayRefreshSatellites()
+                replan = notifications.allowed()
+                if (download) withContext(Dispatchers.IO) { satellites.refreshNow() }
+                notifications.replan()
                 completed = true
             } finally {
-                onDone(completed, open)
+                onDone(completed, download || replan)
             }
         }
 
-    /** Tells [onResult] whether a background refresh may download now. */
-    internal fun checkMayRefreshSatellites(onResult: (Boolean) -> Unit): Job =
-        scope.launch { onResult(mayRefreshSatellites()) }
+    /** Tells [onResult] whether a background refresh has anything to do now. */
+    internal fun checkBackgroundRefreshWanted(onResult: (Boolean) -> Unit): Job =
+        scope.launch { onResult(mayRefreshSatellites() || notifications.allowed()) }
 
     private suspend fun mayRefreshSatellites(): Boolean =
         satelliteGates.first().allowFetch(Clock.System.now())
@@ -387,12 +433,12 @@ class IosAppGraph(
     fun startupViewModel(): StartupViewModel =
         StartupViewModel(startupRouter, startupState, analytics = analytics)
 
-    /** The layer rail and sheet; alert rows stay hidden until iOS has notifications. */
+    /** The layer rail and sheet; the alert rows show with the notifications flag. */
     fun layersViewModel(): LayersViewModel =
         LayersViewModel(
             settings,
             satellitesEnabled = satellitesEnabled,
-            notificationsEnabled = false,
+            notificationsEnabled = experiments.isEnabled(Experiment.NOTIFICATIONS),
             satelliteStatus =
                 if (satellitesEnabled) {
                     satelliteUiStatusFlow(
@@ -570,3 +616,6 @@ class IosAppGraph(
 }
 
 private const val MILLIS_PER_SECOND = 1000
+
+/** Settling time, so a burst of changes (a setting, then the location) plans once. */
+private val NOTIFICATION_REPLAN_DELAY = 2.seconds

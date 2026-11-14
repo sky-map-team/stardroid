@@ -22,7 +22,9 @@ private var sharedGraph: IosAppGraph? = null
 internal fun sharedAppGraph(
     analytics: Analytics,
     flags: FlagSource,
-): IosAppGraph = sharedGraph ?: IosAppGraph(analytics, flags).also { sharedGraph = it }
+    notificationCenter: LocalNotificationCenter,
+): IosAppGraph =
+    sharedGraph ?: IosAppGraph(analytics, flags, notificationCenter).also { sharedGraph = it }
 
 /** A running background refresh, for the system's expiration handler to cancel. */
 class SatelliteBackgroundRefresh internal constructor(
@@ -33,24 +35,25 @@ class SatelliteBackgroundRefresh internal constructor(
 
 /**
  * The body of the `BGAppRefreshTask` (Swift schedules it), run on the main thread once the flags
- * are readable. [onDone] gets whether the work ran to the end without being cancelled, and
- * whether to ask for the next slot: only while the download gates are open (#1272), so the chain
- * ends for an install nobody opens. It may be called on any thread.
+ * are readable. `scheduleNext`: ask for another slot only while downloads or notifications need
+ * one (#1272). [onDone] may be called on any thread.
  */
 fun refreshSatellitesInBackground(
     analytics: Analytics,
     flags: FlagSource,
+    notificationCenter: LocalNotificationCenter,
     onDone: (completed: Boolean, scheduleNext: Boolean) -> Unit,
 ): SatelliteBackgroundRefresh {
-    val job = sharedAppGraph(analytics, flags).startBackgroundRefresh(onDone)
+    val job = sharedAppGraph(analytics, flags, notificationCenter).startBackgroundRefresh(onDone)
     return SatelliteBackgroundRefresh(job)
 }
 
 /**
- * Whether satellites may refresh in the background, asked on leaving the foreground so Swift
- * schedules only then (#1278 finding 5). [onResult] runs on the main thread, and never if the app
- * has not built its graph yet, as when it is left before the flags were read.
+ * Whether a background refresh has anything to do: satellites may download, or notifications need
+ * replanning. Asked on leaving the foreground so Swift schedules only then (#1278 finding 5).
+ * [onResult] runs on the main thread, and never if the app has not built its graph yet, as when
+ * it is left before the flags were read.
  */
-fun mayRefreshSatellites(onResult: (may: Boolean) -> Unit) {
-    sharedGraph?.checkMayRefreshSatellites(onResult)
+fun backgroundRefreshWanted(onResult: (wanted: Boolean) -> Unit) {
+    sharedGraph?.checkBackgroundRefreshWanted(onResult)
 }

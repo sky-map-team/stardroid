@@ -9,8 +9,14 @@
 
 package com.google.android.stardroid.satellites
 
-import com.google.common.truth.Truth.assertThat
-import org.junit.jupiter.api.Test
+import com.google.android.stardroid.settings.FakeSettings
+import com.google.android.stardroid.settings.setPassAlertsEnabled
+import com.google.android.stardroid.startup.Experiment
+import com.google.android.stardroid.startup.ExperimentConfig
+import com.google.android.stardroid.testing.assertThat
+import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.test.runTest
+import kotlin.test.Test
 
 /** What keeps satellite downloads going without the app being opened (#1272). */
 class SatelliteBackgroundUseTest {
@@ -29,12 +35,12 @@ class SatelliteBackgroundUseTest {
     )
 
     @Test
-    fun `nothing placed or enabled is no background use`() {
+    fun nothingPlacedOrEnabledIsNoBackgroundUse() {
         assertThat(use()).isFalse()
     }
 
     @Test
-    fun `a placed Tonight widget counts`() {
+    fun aPlacedTonightWidgetCounts() {
         assertThat(use(tonightWidgetPlaced = true)).isTrue()
         // The widget isn't a notification, so the notification gates don't apply to it.
         val noNotifications =
@@ -47,30 +53,59 @@ class SatelliteBackgroundUseTest {
     }
 
     @Test
-    fun `pass alerts count`() {
+    fun passAlertsCount() {
         assertThat(use(passAlertsOn = true)).isTrue()
     }
 
     @Test
-    fun `the tonight digest counts`() {
+    fun theTonightDigestCounts() {
         assertThat(use(digestOn = true)).isTrue()
     }
 
     @Test
-    fun `alerts and the digest need the notifications flag`() {
+    fun alertsAndTheDigestNeedTheNotificationsFlag() {
         assertThat(use(passAlertsOn = true, notificationsFlagOn = false)).isFalse()
         assertThat(use(digestOn = true, notificationsFlagOn = false)).isFalse()
     }
 
     @Test
-    fun `alerts and the digest need notifications allowed by the OS`() {
+    fun alertsAndTheDigestNeedNotificationsAllowedByTheOS() {
         assertThat(use(passAlertsOn = true, notificationsAllowed = false)).isFalse()
         assertThat(use(digestOn = true, notificationsAllowed = false)).isFalse()
     }
 
     @Test
-    fun `alerts and the digest together still need notifications allowed by the OS`() {
+    fun alertsAndTheDigestTogetherStillNeedNotificationsAllowedByTheOS() {
         assertThat(use(passAlertsOn = true, digestOn = true, notificationsAllowed = false))
             .isFalse()
     }
+
+    @Test
+    fun theFlowReadsPermissionAndWidgetAfreshOnEachCollection() =
+        runTest {
+            val settings = FakeSettings()
+            var allowed = false
+            var widget = false
+            val flow =
+                satelliteBackgroundUseFlow(
+                    settings,
+                    ExperimentConfig { it == Experiment.NOTIFICATIONS },
+                    notificationsAllowed = { allowed },
+                    tonightWidgetPlaced = { widget },
+                )
+            settings.setTonightDigestEnabled(true)
+            assertThat(flow.first()).isFalse()
+
+            allowed = true
+            assertThat(flow.first()).isTrue()
+
+            settings.setTonightDigestEnabled(false)
+            settings.setPassAlertsEnabled(true)
+            assertThat(flow.first()).isTrue()
+
+            settings.setPassAlertsEnabled(false)
+            assertThat(flow.first()).isFalse()
+            widget = true
+            assertThat(flow.first()).isTrue()
+        }
 }

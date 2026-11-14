@@ -26,13 +26,12 @@ import com.google.android.stardroid.layers.LayerRegistry
 import com.google.android.stardroid.layers.SatelliteLayer
 import com.google.android.stardroid.notifications.SkyNotification
 import com.google.android.stardroid.notifications.SkyNotifier
+import com.google.android.stardroid.notifications.notificationText
 import com.google.android.stardroid.settings.Settings
 import com.google.android.stardroid.ui.MainActivity
 import com.google.android.stardroid.widget.MoonWidget
 import kotlinx.coroutines.flow.first
 import kotlinx.datetime.Instant
-import java.text.DateFormat
-import java.util.Date
 
 /**
  * The pass alert notification, on its **own channel** (D92 phase 4c).
@@ -95,15 +94,11 @@ object SatellitePassNotifier {
     ) {
         if (!SkyNotifier.canPost(context, CHANNEL_PASSES)) return
         ensureChannel(context)
-        val name = satelliteName(context, noradId)
-        val time =
-            DateFormat
-                .getTimeInstance(DateFormat.SHORT)
-                .format(Date(passStart.toEpochMilliseconds()))
+        val words = notificationText(context)
         val notification =
             baseBuilder(context, CHANNEL_PASSES, noradId, SkyNotification.SATELLITE_PASS)
-                .setContentTitle(context.getString(R.string.notif_pass_title, name))
-                .setContentText(context.getString(R.string.notif_pass_text, time))
+                .setContentTitle(words.passTitle(noradId, satelliteName(context, noradId)))
+                .setContentText(words.passBody(passStart))
                 .build()
         notify(context, SkyNotification.SATELLITE_PASS, notification)
     }

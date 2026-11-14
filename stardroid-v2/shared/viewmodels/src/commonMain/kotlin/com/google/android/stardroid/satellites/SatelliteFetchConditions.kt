@@ -12,6 +12,7 @@ package com.google.android.stardroid.satellites
 import com.google.android.stardroid.layers.LayerRegistry
 import com.google.android.stardroid.layers.SatelliteLayer
 import com.google.android.stardroid.settings.Settings
+import com.google.android.stardroid.settings.passAlertsEnabled
 import com.google.android.stardroid.startup.Experiment
 import com.google.android.stardroid.startup.ExperimentConfig
 import com.google.android.stardroid.startup.StartupRouter
@@ -81,5 +82,41 @@ fun satelliteFetchConditions(
             termsAccepted = !needsEula,
             lastForegroundAt = lastForeground,
             backgroundUse = background,
+        )
+    }
+
+/**
+ * Whether something shows satellite data while the app is closed: the Tonight widget (the only
+ * widget with passes), or pass alerts or the tonight digest. A notification that can't be posted
+ * needs no data. This only waives recent use: [SatelliteFetchConditions.switchedOn], the layer
+ * included, still has to hold.
+ */
+fun satelliteBackgroundUse(
+    passAlertsOn: Boolean,
+    digestOn: Boolean,
+    notificationsFlagOn: Boolean,
+    notificationsAllowed: Boolean,
+    tonightWidgetPlaced: Boolean,
+): Boolean =
+    tonightWidgetPlaced ||
+        ((passAlertsOn || digestOn) && notificationsFlagOn && notificationsAllowed)
+
+/**
+ * [satelliteBackgroundUse] as the platform stands. The lambdas are read only when an alert or
+ * digest setting changes, so a caller that needs current values collects afresh (`.first()`).
+ */
+fun satelliteBackgroundUseFlow(
+    settings: Settings,
+    experiments: ExperimentConfig,
+    notificationsAllowed: suspend () -> Boolean,
+    tonightWidgetPlaced: () -> Boolean,
+): Flow<Boolean> =
+    combine(settings.passAlertsEnabled, settings.tonightDigestEnabled) { alerts, digest ->
+        satelliteBackgroundUse(
+            passAlertsOn = alerts,
+            digestOn = digest,
+            notificationsFlagOn = experiments.isEnabled(Experiment.NOTIFICATIONS),
+            notificationsAllowed = notificationsAllowed(),
+            tonightWidgetPlaced = tonightWidgetPlaced(),
         )
     }

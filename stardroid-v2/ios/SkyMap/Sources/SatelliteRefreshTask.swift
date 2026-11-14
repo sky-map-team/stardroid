@@ -10,12 +10,10 @@
 import BackgroundTasks
 import SkyMapKit
 
-/// Best-effort background refresh of the satellite element sets. The system picks when (often
-/// rarely, for a little-used app), so the foreground fetch on app open stays the dependable path;
-/// this one just keeps data fresh for people who open the app only briefly.
-///
-/// It is first asked for on leaving the foreground, and each run asks for the next only while
-/// the download gates hold (#1272), so an install nobody opens stops downloading.
+/// Best-effort background refresh of the satellite element sets, after which it also plans the
+/// next nights' notifications. The system picks when (often rarely, for a little-used app), so
+/// the foreground fetch on app open stays the dependable path; this one just keeps data fresh for
+/// people who open the app only briefly.
 enum SatelliteRefreshTask {
     static let identifier = "io.penterakt.skymap.satellite-refresh"
 
@@ -23,12 +21,15 @@ enum SatelliteRefreshTask {
     private static let jitter: TimeInterval = 60 * 60
 
     /// Must run before the app finishes launching.
-    static func register(analytics: SkyMapKit.Analytics, flags: FirebaseRemoteConfigAdapter) {
+    static func register(
+        analytics: SkyMapKit.Analytics, flags: FirebaseRemoteConfigAdapter,
+        notificationCenter: LocalNotificationCenter
+    ) {
         BGTaskScheduler.shared.register(forTaskWithIdentifier: identifier, using: .main) { task in
             // The stored flags must be readable before the shared graph freezes them.
             flags.prepare {
                 let work = SatelliteBackgroundRefreshKt.refreshSatellitesInBackground(
-                    analytics: analytics, flags: flags
+                    analytics: analytics, flags: flags, notificationCenter: notificationCenter
                 ) { completed, scheduleNext in
                     if scheduleNext.boolValue { schedule() }
                     task.setTaskCompleted(success: completed.boolValue)
@@ -38,11 +39,12 @@ enum SatelliteRefreshTask {
         }
     }
 
-    /// On leaving the foreground: schedules only if satellites may refresh, else drops any
-    /// pending request. Switching the layer on in the foreground re-arms here next time.
+    /// On leaving the foreground: schedules only if satellites may refresh or notifications are
+    /// on (#1272), else drops any pending request. Each run then asks for the next on the same
+    /// terms.
     static func scheduleIfAllowed() {
-        SatelliteBackgroundRefreshKt.mayRefreshSatellites { may in
-            if may.boolValue {
+        SatelliteBackgroundRefreshKt.backgroundRefreshWanted { wanted in
+            if wanted.boolValue {
                 schedule()
             } else {
                 BGTaskScheduler.shared.cancel(taskRequestWithIdentifier: identifier)
