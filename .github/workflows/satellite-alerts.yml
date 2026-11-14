@@ -61,7 +61,7 @@ jobs:
             || gh label create satellite-alert --color B60205 \
               --description "Automated CelesTrak error or volume alert"
           existing=$(gh issue list --label satellite-alert --state open \
-            --json number --jq '.[0].number')
+            --json number --jq '.[0].number // empty')
           body="$(cat "$RUNNER_TEMP/alert.md")
 
           Run: $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"

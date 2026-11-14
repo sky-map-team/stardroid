@@ -97,7 +97,7 @@ def fetch_rows(property_id):
     with_code = response.status_code != 400
     if not with_code:
         # An unregistered custom dimension is rejected; carry on without the split.
-        print("http_code dimension unavailable; no split by code.", file=sys.stderr)
+        print(f"400 with http_code, retrying without: {response.text[:200]}", file=sys.stderr)
         response = run(False)
     response.raise_for_status()
     data = response.json()
@@ -112,19 +112,26 @@ def fetch_rows(property_id):
     return rows, data.get("metadata", {}).get("timeZone", "UTC")
 
 
+def thresholds(env):
+    """Env -> evaluate() kwargs. Empty counts as unset: unset Actions variables arrive as ''."""
+    budget = env.get("SATELLITE_DAILY_BUDGET")
+    return {
+        "floor": int(env.get("SATELLITE_FAILURE_FLOOR") or 500),
+        "factor": float(env.get("SATELLITE_FAILURE_FACTOR") or 3),
+        "budget": int(budget) if budget else None,
+    }
+
+
 def main(argv):
     property_id = os.environ.get("GA_PROPERTY_ID", "")
     if not property_id:
         print("GA_PROPERTY_ID not set; skipping.", file=sys.stderr)
         return 0
-    budget = os.environ.get("SATELLITE_DAILY_BUDGET")
     rows, zone = fetch_rows(property_id)
     alerts, summary = evaluate(
         rows,
         datetime.now(ZoneInfo(zone)).date(),
-        floor=int(os.environ.get("SATELLITE_FAILURE_FLOOR", "500")),
-        factor=float(os.environ.get("SATELLITE_FAILURE_FACTOR", "3")),
-        budget=int(budget) if budget else None,
+        **thresholds(os.environ),
     )
     if "--dry-run" in argv:
         print("\n".join(summary))

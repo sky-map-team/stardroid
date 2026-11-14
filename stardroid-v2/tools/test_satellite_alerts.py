@@ -1,7 +1,7 @@
 import unittest
 from datetime import date
 
-from satellite_alerts import evaluate
+from satellite_alerts import evaluate, thresholds
 
 TODAY = date(2026, 11, 12)
 
@@ -46,6 +46,15 @@ class EvaluateTest(unittest.TestCase):
     def test_no_budget_means_no_volume_alert(self):
         rows = [("2026-11-12", "satellite_fetch_ok", "", 5000)]
         self.assertEqual(evaluate(rows, TODAY)[0], [])
+
+    def test_empty_env_values_mean_defaults(self):
+        env = {"SATELLITE_FAILURE_FLOOR": "", "SATELLITE_DAILY_BUDGET": ""}
+        self.assertEqual(thresholds(env), {"floor": 500, "factor": 3.0, "budget": None})
+
+    def test_env_values_are_parsed(self):
+        env = {"SATELLITE_FAILURE_FLOOR": "10", "SATELLITE_DAILY_BUDGET": "4000"}
+        self.assertEqual(thresholds(env)["floor"], 10)
+        self.assertEqual(thresholds(env)["budget"], 4000)
 
 
 if __name__ == "__main__":
