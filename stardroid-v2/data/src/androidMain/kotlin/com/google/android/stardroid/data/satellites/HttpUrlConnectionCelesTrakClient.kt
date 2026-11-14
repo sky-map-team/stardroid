@@ -32,8 +32,8 @@ import kotlin.time.Duration.Companion.seconds
  */
 class HttpUrlConnectionCelesTrakClient(
     private val validatedNetwork: () -> Long?,
-    private val baseUrl: String = CelesTrakEndpoint.GP_URL,
     appVersionName: String,
+    private val baseUrl: String = CelesTrakEndpoint.GP_URL,
     private val userAgent: String = CelesTrakEndpoint.userAgent(appVersionName, "Android"),
     private val openConnection: (
         URL,

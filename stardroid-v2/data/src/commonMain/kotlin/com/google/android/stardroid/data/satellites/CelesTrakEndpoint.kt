@@ -14,9 +14,8 @@ object CelesTrakEndpoint {
     const val GP_URL = "https://celestrak.org/NORAD/elements/gp.php"
 
     /**
-     * Descriptive and contactable, as the usage policy prefers, and versioned so a host can tell
-     * releases and platforms apart. [appVersionName] may carry a release name ("2.3.2:Cassini");
-     * only the number is sent.
+     * Descriptive, contactable and versioned, so a host can tell releases and platforms apart.
+     * Only the number of [appVersionName] is sent, not a release name ("2.3.2:Cassini").
      */
     fun userAgent(
         appVersionName: String,

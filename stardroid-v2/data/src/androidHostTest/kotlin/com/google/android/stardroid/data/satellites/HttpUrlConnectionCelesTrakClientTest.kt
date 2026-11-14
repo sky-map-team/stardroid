@@ -124,6 +124,29 @@ class HttpUrlConnectionCelesTrakClientTest {
     }
 
     @Test
+    fun `the request carries the versioned user agent`() {
+        var sent: String? = null
+        val client =
+            HttpUrlConnectionCelesTrakClient(
+                validatedNetwork = { WIFI },
+                appVersionName = "2.4.0:Name",
+                openConnection = { url ->
+                    object : FakeConnection(url, HttpURLConnection.HTTP_OK, "", null) {
+                        override fun getResponseCode(): Int {
+                            sent = getRequestProperty("User-Agent")
+                            return super.getResponseCode()
+                        }
+                    }
+                },
+            )
+
+        client.fetch(SatelliteGroup.STATIONS, ifModifiedSince = null)
+
+        assertThat(sent)
+            .isEqualTo("SkyMap/2.4.0 (Android; +https://github.com/sky-map-team/stardroid)")
+    }
+
+    @Test
     fun `a read timeout after the status line is not CelesTrak being unreachable`() {
         // The server answered, so it is not dropping us; a stalled body is a flaky link.
         val client =
