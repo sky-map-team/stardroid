@@ -12,6 +12,8 @@ package com.google.android.stardroid.satellites
 import com.google.android.stardroid.analytics.Analytics
 import com.google.android.stardroid.data.satellites.RefreshResult
 import com.google.android.stardroid.data.satellites.SatelliteElementsRepository
+import kotlinx.coroutines.sync.Mutex
+import kotlinx.coroutines.sync.withLock
 import kotlinx.datetime.Clock
 import kotlin.time.Duration
 import kotlin.time.Duration.Companion.days
@@ -30,19 +32,31 @@ class StaleSatelliteRefresh(
     private val clock: Clock = Clock.System,
 ) {
     /**
-     * Refreshes if stale and [mayDownload] agrees; returns what happened, or null if nothing was
-     * asked of CelesTrak. [mayDownload] is asked only once the cache is stale, so the fresh-flag
-     * fetch it makes is paid only by an install about to download (#1285).
+     * Refreshes if stale and [mayDownload] agrees. Returns null if nothing was asked of CelesTrak.
+     *
+     * [mayDownload] can wait seconds for a flag fetch, so it runs outside [downloadLock] and
+     * never holds up another download. Staleness is checked again under the lock, in case one
+     * ran meanwhile.
      */
-    suspend fun refreshIfStale(mayDownload: suspend () -> Boolean): RefreshResult? {
+    suspend fun refreshIfStale(
+        downloadLock: Mutex,
+        mayDownload: suspend () -> Boolean,
+    ): RefreshResult? {
+        if (!isStale() || !mayDownload()) return null
+        return downloadLock.withLock {
+            if (!isStale()) return@withLock null
+            val result = repository.refresh()
+            if (result is RefreshResult.Completed) {
+                trackSatelliteFetchResult(result, analytics, clock.now())
+            }
+            result
+        }
+    }
+
+    private fun isStale(): Boolean {
         val state = repository.fetchState()
-        val lastGood = state.lastSuccess ?: state.elementsWrittenAt
-        val now = clock.now()
-        if (lastGood != null && now - lastGood < STALE_AFTER + offset) return null
-        if (!mayDownload()) return null
-        val result = repository.refresh()
-        if (result is RefreshResult.Completed) trackSatelliteFetchResult(result, analytics, now)
-        return result
+        val lastGood = state.lastSuccess ?: state.elementsWrittenAt ?: return true
+        return clock.now() - lastGood >= STALE_AFTER + offset
     }
 
     private companion object {

@@ -71,9 +71,9 @@ class FlagSourceExperimentConfig(
     override fun isEnabledNow(experiment: Experiment): Boolean = read(experiment)
 
     /**
-     * A successful fetch within [FRESH_FETCH_FLOOR] counts as fresh without another, as on
-     * Android: it skips the fetch the app just made, and keeps background wakes clear of
-     * Firebase's throttle.
+     * A successful fetch within [FRESH_FETCH_FLOOR] counts as fresh without another, as on gms:
+     * it skips the fetch the app just made, and keeps background wakes clear of Firebase's
+     * throttle.
      */
     override suspend fun awaitFresh(): Boolean {
         if (!canFetch) return true
@@ -89,6 +89,8 @@ class FlagSourceExperimentConfig(
 
     override val lastFetchTimeMillis: Long? get() = source.lastFetchTimeMillis
 
+    // A caller that stops waiting leaves the fetch to finish and be stored, so its stamp counts
+    // as fresh next time.
     override suspend fun fetchNow(): FetchResult =
         suspendCancellableCoroutine { continuation ->
             source.fetch(ignoreThrottle = true) { updated, error ->
@@ -100,5 +102,5 @@ class FlagSourceExperimentConfig(
         }
 }
 
-/** How recent a successful fetch must be to count as fresh; matches Android's floor. */
+/** How recent a successful fetch must be to count as fresh, on gms and iOS alike. */
 val FRESH_FETCH_FLOOR: Duration = 15.minutes

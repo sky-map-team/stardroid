@@ -52,7 +52,7 @@ internal class IosSatellites(
 
     /** Blocks on the network: call off the main thread. */
     suspend fun refreshIfStale(mayDownload: suspend () -> Boolean) {
-        refreshLock.withLock { staleRefresh.refreshIfStale(mayDownload) }
+        staleRefresh.refreshIfStale(refreshLock, mayDownload)
     }
 
     /** Policy-respecting; the debug force path lives in Diagnostics. */

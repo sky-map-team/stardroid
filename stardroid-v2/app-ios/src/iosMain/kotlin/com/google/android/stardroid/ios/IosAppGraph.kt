@@ -331,10 +331,11 @@ class IosAppGraph(
         scope.launch {
             // Opening the app, switching the layer on and accepting the terms all look for stale
             // elements, once every gate is open.
+            // Latest: a gate closing cancels a refresh still waiting on the fresh flag.
             combine(foreground.isForeground, satelliteGates) { inForeground, gates ->
                 inForeground && gates.allowFetch(Clock.System.now())
             }.distinctUntilChanged()
-                .collect { if (it) refreshSatellitesIfStale() }
+                .collectLatest { if (it) refreshSatellitesIfStale() }
         }
     }
 
@@ -356,9 +357,8 @@ class IosAppGraph(
                 download = mayRefreshSatellites()
                 replan = notifications.allowed()
                 if (download) {
-                    // A fresh flag read now, not the value frozen at launch (#1285). Off ends
-                    // the download chain, as Android cancels its job; unknown skips this slot
-                    // and the next one tries again. CelesTrak is never retried this way.
+                    // Read fresh, not the launch value. Off ends the chain, as Android cancels;
+                    // unknown leaves it to the next slot, never retrying CelesTrak.
                     when (satelliteFlagState(experiments)) {
                         SatelliteFlagState.ON ->
                             withContext(Dispatchers.IO) { satellites.refreshNow() }
@@ -385,8 +385,8 @@ class IosAppGraph(
         if (satellitesEnabled) withContext(Dispatchers.IO) { satellites.diagnostics() } else null
 
     /**
-     * The caller has checked the local gates; a stale cache then also needs a fresh ON flag
-     * (#1285). Through the repository, so the circuit breaker and the two-hour minimum still apply.
+     * The caller has checked the local gates; a stale cache then also needs a fresh ON flag.
+     * Through the repository, so the circuit breaker and the two-hour minimum still apply.
      */
     private suspend fun refreshSatellitesIfStale() {
         withContext(Dispatchers.IO) {

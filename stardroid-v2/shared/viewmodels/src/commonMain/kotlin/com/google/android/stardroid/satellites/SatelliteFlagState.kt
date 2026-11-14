@@ -15,7 +15,7 @@ import kotlinx.coroutines.withTimeoutOrNull
 import kotlin.time.Duration
 import kotlin.time.Duration.Companion.seconds
 
-val SATELLITE_FLAG_TIMEOUT: Duration = 10.seconds
+private val SATELLITE_FLAG_TIMEOUT: Duration = 10.seconds
 
 /** The kill switch as seen after waiting for a fresh value (#1275, #1285). */
 enum class SatelliteFlagState {

@@ -73,7 +73,7 @@ fun interface ExperimentConfig {
 
     /**
      * [experiment] as the config stands now, for a gate about to cause network traffic. The same
-     * as [isEnabled] unless a config freezes its values for the launch, as iOS's does (#1285).
+     * as [isEnabled] unless the config freezes its values for the launch.
      */
     fun isEnabledNow(experiment: Experiment): Boolean = isEnabled(experiment)
 

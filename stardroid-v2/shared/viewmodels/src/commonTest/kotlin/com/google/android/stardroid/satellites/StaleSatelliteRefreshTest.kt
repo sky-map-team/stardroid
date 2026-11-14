@@ -18,6 +18,9 @@ import com.google.android.stardroid.data.satellites.SatelliteElementsRepository
 import com.google.android.stardroid.data.satellites.TextFiles
 import com.google.android.stardroid.data.satellites.TleStore
 import com.google.android.stardroid.testing.assertThat
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.sync.Mutex
+import kotlinx.coroutines.test.runCurrent
 import kotlinx.coroutines.test.runTest
 import kotlinx.datetime.Clock
 import kotlinx.datetime.Instant
@@ -64,9 +67,10 @@ class StaleSatelliteRefreshTest {
 
     private var downloadAllowed = true
     private var downloadAsked = 0
+    private val downloadLock = Mutex()
 
     private suspend fun refresh(offset: Duration = Duration.ZERO) =
-        StaleSatelliteRefresh(repository, analytics, offset, clock).refreshIfStale {
+        StaleSatelliteRefresh(repository, analytics, offset, clock).refreshIfStale(downloadLock) {
             downloadAsked++
             downloadAllowed
         }
@@ -108,6 +112,36 @@ class StaleSatelliteRefreshTest {
             assertThat(refresh()).isNull()
             assertThat(downloadAsked).isEqualTo(1)
             assertThat(requests).isEqualTo(0)
+        }
+
+    @Test
+    fun theFlagWaitDoesNotHoldTheDownloadLock() =
+        runTest {
+            downloadLock.lock()
+            val pending = launch { refresh() }
+            runCurrent()
+
+            // Asked while another download holds the lock, and waits for it only to download.
+            assertThat(downloadAsked).isEqualTo(1)
+            assertThat(requests).isEqualTo(0)
+
+            downloadLock.unlock()
+            pending.join()
+            assertThat(requests).isEqualTo(1)
+        }
+
+    @Test
+    fun aDownloadThatRanDuringTheWaitIsNotRepeated() =
+        runTest {
+            val refresher = StaleSatelliteRefresh(repository, analytics, Duration.ZERO, clock)
+
+            refresher.refreshIfStale(downloadLock) {
+                // Another path downloads while this one waits for the flag.
+                repository.refresh()
+                true
+            }
+
+            assertThat(requests).isEqualTo(1)
         }
 
     @Test

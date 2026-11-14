@@ -716,8 +716,9 @@ other pair rather than replacing either of them:
    the app-open fetch and the background refresh. iOS freezes its flags for the launch, so the
    gate reads the flag at call time (`ExperimentConfig.isEnabledNow`), after a fetch that has
    the same 15-minute floor as gms. iOS has no WorkManager to retry with. An unknown flag skips
-   the download, and the next app open or background slot tries again. A fresh OFF ends the
-   background chain, as Android's cancel does.
+   the download, and the next app open or background slot tries again. A failed Remote Config
+   fetch isn't recorded, so while the cache stays stale each app open or slot fetches the flag
+   again, at most once each. A fresh OFF ends the background chain, as Android's cancel does.
 
    The two flavors then diverge in *how* they get turned on, and the asymmetry is deliberate:
 
