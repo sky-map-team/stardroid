@@ -25,10 +25,12 @@ import com.google.android.stardroid.location.LocationSource
 import com.google.android.stardroid.location.LocationState
 import com.google.android.stardroid.render.api.RendererInfo
 import com.google.android.stardroid.satellites.SatelliteDiagnosticsState
+import com.google.android.stardroid.satellites.SatelliteFlagState
 import com.google.android.stardroid.satellites.TrackedSatellite
 import com.google.android.stardroid.satellites.satelliteBackgroundUseFlow
 import com.google.android.stardroid.satellites.satelliteElementsFlow
 import com.google.android.stardroid.satellites.satelliteFetchConditions
+import com.google.android.stardroid.satellites.satelliteFlagState
 import com.google.android.stardroid.satellites.satelliteUiStatusFlow
 import com.google.android.stardroid.satellites.trackedSatellites
 import com.google.android.stardroid.satellites.upcomingGoodPasses
@@ -353,7 +355,17 @@ class IosAppGraph(
             try {
                 download = mayRefreshSatellites()
                 replan = notifications.allowed()
-                if (download) withContext(Dispatchers.IO) { satellites.refreshNow() }
+                if (download) {
+                    // A fresh flag read now, not the value frozen at launch (#1285). Off ends
+                    // the download chain, as Android cancels its job; unknown skips this slot
+                    // and the next one tries again. CelesTrak is never retried this way.
+                    when (satelliteFlagState(experiments)) {
+                        SatelliteFlagState.ON ->
+                            withContext(Dispatchers.IO) { satellites.refreshNow() }
+                        SatelliteFlagState.OFF -> download = false
+                        SatelliteFlagState.UNKNOWN -> Unit
+                    }
+                }
                 notifications.replan()
                 completed = true
             } finally {
@@ -373,11 +385,13 @@ class IosAppGraph(
         if (satellitesEnabled) withContext(Dispatchers.IO) { satellites.diagnostics() } else null
 
     /**
-     * The caller has checked the gates. Through the repository, so the circuit breaker and the
-     * two-hour minimum still apply.
+     * The caller has checked the local gates; a stale cache then also needs a fresh ON flag
+     * (#1285). Through the repository, so the circuit breaker and the two-hour minimum still apply.
      */
     private suspend fun refreshSatellitesIfStale() {
-        withContext(Dispatchers.IO) { satellites.refreshIfStale() }
+        withContext(Dispatchers.IO) {
+            satellites.refreshIfStale { satelliteFlagState(experiments) == SatelliteFlagState.ON }
+        }
     }
 
     /**

@@ -18,6 +18,7 @@ import com.google.android.stardroid.data.satellites.SatelliteElementsRepository
 import com.google.android.stardroid.data.satellites.TextFiles
 import com.google.android.stardroid.data.satellites.TleStore
 import com.google.android.stardroid.testing.assertThat
+import kotlinx.coroutines.test.runTest
 import kotlinx.datetime.Clock
 import kotlinx.datetime.Instant
 import kotlin.test.Test
@@ -61,84 +62,119 @@ class StaleSatelliteRefreshTest {
             clock = clock,
         )
 
-    private fun refresh(offset: Duration = Duration.ZERO) =
-        StaleSatelliteRefresh(repository, analytics, offset, clock).refreshIfStale()
+    private var downloadAllowed = true
+    private var downloadAsked = 0
+
+    private suspend fun refresh(offset: Duration = Duration.ZERO) =
+        StaleSatelliteRefresh(repository, analytics, offset, clock).refreshIfStale {
+            downloadAsked++
+            downloadAllowed
+        }
 
     @Test
-    fun anEmptyCacheIsFetched() {
-        assertThat(refresh()).isInstanceOf(RefreshResult.Completed::class)
-        assertThat(requests).isEqualTo(1)
-    }
+    fun anEmptyCacheIsFetched() =
+        runTest {
+            assertThat(refresh()).isInstanceOf(RefreshResult.Completed::class)
+            assertThat(requests).isEqualTo(1)
+        }
 
     @Test
-    fun aFreshCacheIsLeftAlone() {
-        refresh()
-        clock.now = start + 2.days
+    fun aFreshCacheIsLeftAlone() =
+        runTest {
+            refresh()
+            clock.now = start + 2.days
 
-        assertThat(refresh()).isNull()
-        assertThat(requests).isEqualTo(1)
-    }
-
-    @Test
-    fun aCachePastThreeDaysIsRefetched() {
-        refresh()
-        clock.now = start + 3.days + 1.hours
-
-        refresh()
-
-        assertThat(requests).isEqualTo(2)
-    }
+            assertThat(refresh()).isNull()
+            assertThat(requests).isEqualTo(1)
+        }
 
     @Test
-    fun theInstallOffsetPostponesTheRefetch() {
-        refresh(offset = 20.hours)
-        clock.now = start + 3.days + 1.hours
+    fun aFreshCacheDoesNotAskForTheFlag() =
+        runTest {
+            refresh()
+            clock.now = start + 2.days
+            downloadAsked = 0
 
-        assertThat(refresh(offset = 20.hours)).isNull()
+            refresh()
 
-        clock.now = start + 3.days + 21.hours
-        refresh(offset = 20.hours)
-
-        assertThat(requests).isEqualTo(2)
-    }
-
-    @Test
-    fun theMinimumIntervalStillApplies() {
-        // A failure leaves the cache empty, so it is "stale", but the two-hour minimum holds.
-        outcome = FetchOutcome.TransportFailure(Exception("offline"))
-        refresh()
-        clock.now = start + 1.hours
-
-        assertThat(refresh()).isInstanceOf(RefreshResult.Skipped::class)
-        assertThat(requests).isEqualTo(1)
-    }
+            assertThat(downloadAsked).isEqualTo(0)
+        }
 
     @Test
-    fun aServerRefusalIsReported() {
-        outcome = FetchOutcome.HttpError(403)
+    fun aStaleCacheIsNotFetchedWithoutAFreshOnFlag() =
+        runTest {
+            downloadAllowed = false
 
-        refresh()
-
-        assertThat(analytics.events.map { it.name })
-            .containsExactly(AnalyticsEvents.SATELLITE_FETCH_FAILED_EVENT)
-        assertThat(analytics.events.single().params[AnalyticsEvents.SATELLITE_FETCH_HTTP_CODE])
-            .isEqualTo("403")
-    }
+            assertThat(refresh()).isNull()
+            assertThat(downloadAsked).isEqualTo(1)
+            assertThat(requests).isEqualTo(0)
+        }
 
     @Test
-    fun aSuccessThatClosesTheCircuitIsReported() {
-        outcome = FetchOutcome.HttpError(403)
-        refresh()
-        analytics.events.clear()
-        outcome = FetchOutcome.Success(ISS, null)
-        // Past the breaker's hold.
-        clock.now = start + 3.days
+    fun aCachePastThreeDaysIsRefetched() =
+        runTest {
+            refresh()
+            clock.now = start + 3.days + 1.hours
 
-        refresh()
+            refresh()
 
-        assertThat(analytics.events.map { it.name })
-            .containsExactly(AnalyticsEvents.SATELLITE_CIRCUIT_CLOSED_EVENT)
-    }
+            assertThat(requests).isEqualTo(2)
+        }
+
+    @Test
+    fun theInstallOffsetPostponesTheRefetch() =
+        runTest {
+            refresh(offset = 20.hours)
+            clock.now = start + 3.days + 1.hours
+
+            assertThat(refresh(offset = 20.hours)).isNull()
+
+            clock.now = start + 3.days + 21.hours
+            refresh(offset = 20.hours)
+
+            assertThat(requests).isEqualTo(2)
+        }
+
+    @Test
+    fun theMinimumIntervalStillApplies() =
+        runTest {
+            // A failure leaves the cache empty, so it is "stale", but the two-hour minimum holds.
+            outcome = FetchOutcome.TransportFailure(Exception("offline"))
+            refresh()
+            clock.now = start + 1.hours
+
+            assertThat(refresh()).isInstanceOf(RefreshResult.Skipped::class)
+            assertThat(requests).isEqualTo(1)
+        }
+
+    @Test
+    fun aServerRefusalIsReported() =
+        runTest {
+            outcome = FetchOutcome.HttpError(403)
+
+            refresh()
+
+            assertThat(analytics.events.map { it.name })
+                .containsExactly(AnalyticsEvents.SATELLITE_FETCH_FAILED_EVENT)
+            assertThat(analytics.events.single().params[AnalyticsEvents.SATELLITE_FETCH_HTTP_CODE])
+                .isEqualTo("403")
+        }
+
+    @Test
+    fun aSuccessThatClosesTheCircuitIsReported() =
+        runTest {
+            outcome = FetchOutcome.HttpError(403)
+            refresh()
+            analytics.events.clear()
+            outcome = FetchOutcome.Success(ISS, null)
+            // Past the breaker's hold.
+            clock.now = start + 3.days
+
+            refresh()
+
+            assertThat(analytics.events.map { it.name })
+                .containsExactly(AnalyticsEvents.SATELLITE_CIRCUIT_CLOSED_EVENT)
+        }
 
     private companion object {
         const val ISS =

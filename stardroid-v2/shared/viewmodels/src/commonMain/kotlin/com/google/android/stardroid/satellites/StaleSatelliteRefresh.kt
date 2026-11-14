@@ -29,12 +29,17 @@ class StaleSatelliteRefresh(
     private val offset: Duration,
     private val clock: Clock = Clock.System,
 ) {
-    /** Refreshes if stale; returns what happened, or null if the cache was fresh enough. */
-    fun refreshIfStale(): RefreshResult? {
+    /**
+     * Refreshes if stale and [mayDownload] agrees; returns what happened, or null if nothing was
+     * asked of CelesTrak. [mayDownload] is asked only once the cache is stale, so the fresh-flag
+     * fetch it makes is paid only by an install about to download (#1285).
+     */
+    suspend fun refreshIfStale(mayDownload: suspend () -> Boolean): RefreshResult? {
         val state = repository.fetchState()
         val lastGood = state.lastSuccess ?: state.elementsWrittenAt
         val now = clock.now()
         if (lastGood != null && now - lastGood < STALE_AFTER + offset) return null
+        if (!mayDownload()) return null
         val result = repository.refresh()
         if (result is RefreshResult.Completed) trackSatelliteFetchResult(result, analytics, now)
         return result
