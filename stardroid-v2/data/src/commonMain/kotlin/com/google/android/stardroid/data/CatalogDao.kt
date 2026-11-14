@@ -87,11 +87,11 @@ interface CatalogDao {
      * matches a large fraction of every name row in the catalog — all of which used to be
      * materialized, grouped and sorted in Kotlin only to be thrown away by the display limit
      * (audit-2026-08 M3). The ORDER BY is the head of `RoomCatalogRepository.searchByPrefix`'s
-     * own ranking — whole-name prefix, then primary name, then unlayered objects (Sun, Moon,
-     * planets, non-Earth moons and black holes — none rendered by any layer, and searched far
-     * more than their often-missing magnitude would suggest), then brightness — so truncation
-     * drops the rows that ranking would have dropped anyway. `substr`
-     * rather than `LIKE` because the prefix is user text and must not be read as a wildcard
+     * own ranking — exact name, whole-name prefix, then primary name, then unlayered objects
+     * (Sun, Moon, planets, non-Earth moons and black holes — none rendered by any layer, and
+     * searched far more than their often-missing magnitude would suggest), then brightness — so
+     * truncation drops the rows that ranking would have dropped anyway. `substr` rather than
+     * `LIKE` because the prefix is user text and must not be read as a wildcard
      * pattern.
      */
     @Query(
@@ -105,7 +105,8 @@ interface CatalogDao {
         LEFT JOIN celestial_object p ON p.id = o.parent_object_id
         WHERE n.locale IN (:locales)
           AND n.id IN (SELECT docid FROM object_name_fts WHERE object_name_fts MATCH :ftsQuery)
-        ORDER BY substr(n.name_normalized, 1, length(:normalizedPrefix)) = :normalizedPrefix DESC,
+        ORDER BY n.name_normalized = :normalizedPrefix DESC,
+                 substr(n.name_normalized, 1, length(:normalizedPrefix)) = :normalizedPrefix DESC,
                  n.is_primary DESC,
                  o.layer_kind IS NULL DESC,
                  o.magnitude IS NULL, o.magnitude

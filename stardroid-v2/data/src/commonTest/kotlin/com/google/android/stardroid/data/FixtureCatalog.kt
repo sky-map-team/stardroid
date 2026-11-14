@@ -130,6 +130,8 @@ object FixtureCatalog {
                     name("star/rigel", "en", "Rigel"),
                     name("star/little-sirius", "en", "Little Sirius"),
                     name("star/altair", "en", "Altair"),
+                    // A secondary designation that is a prefix of "Mars"/"Marsic".
+                    name("star/altair", "", "Mar", isPrimary = false),
                     name("star/alderamin", "en", "Alderamin"),
                     name("planet/mars", "en", "Mars"),
                     name("star/marsic", "en", "Marsic"),

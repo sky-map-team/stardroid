@@ -31,7 +31,8 @@ import kotlin.time.Duration.Companion.minutes
 /**
  * iOS can't promise a 12-hour background job the way Android's WorkManager does, so staleness on
  * app open ([StaleSatelliteRefresh]) is the trigger rather than a schedule. Refreshes are
- * serialised: WorkManager does that on Android, here a Refresh tap could overlap an app-open fetch.
+ * serialised: WorkManager does that on Android, here a background refresh could overlap an
+ * app-open fetch.
  */
 internal class IosSatellites(
     directory: String,
@@ -54,20 +55,15 @@ internal class IosSatellites(
         refreshLock.withLock { staleRefresh.refreshIfStale() }
     }
 
-    /**
-     * The Refresh button: the ordinary policy-respecting refresh, never the debug force path.
-     * Returns how long the user must wait when policy refused, or [Duration.ZERO] if it ran.
-     */
-    suspend fun refreshNow(): Duration =
+    /** Policy-respecting; the debug force path lives in Diagnostics. */
+    suspend fun refreshNow() {
         refreshLock.withLock {
-            when (val result = repository.refresh()) {
-                is RefreshResult.Skipped -> result.retryAfter
-                is RefreshResult.Completed -> {
-                    trackSatelliteFetchResult(result, analytics, Clock.System.now())
-                    Duration.ZERO
-                }
+            val result = repository.refresh()
+            if (result is RefreshResult.Completed) {
+                trackSatelliteFetchResult(result, analytics, Clock.System.now())
             }
         }
+    }
 
     private companion object {
         const val OFFSET_FILE = "fetch_offset_minutes"

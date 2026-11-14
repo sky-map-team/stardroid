@@ -11,6 +11,7 @@ package com.google.android.stardroid.startup
 
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.datetime.Instant
 
 /** In-memory [StartupState] for JVM tests: every flow is a hot [MutableStateFlow]. */
 class FakeStartupState : StartupState {
@@ -47,5 +48,13 @@ class FakeStartupState : StartupState {
     override suspend fun markWarmWelcomeSeenOnUpgrade(version: Long) {
         warmWelcomeSeenVersionState.value = version
         suppressMissingSensorWarningState.value = true
+    }
+
+    val lastForegroundAtState = MutableStateFlow<Instant?>(null)
+
+    override val lastForegroundAt: Flow<Instant?> = lastForegroundAtState
+
+    override suspend fun setLastForegroundAt(at: Instant) {
+        lastForegroundAtState.value = at
     }
 }

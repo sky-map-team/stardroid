@@ -12,35 +12,15 @@
     <string name="west">ЗАПАД</string>
     <string name="ecliptic">Эклиптика</string>
 
-    <!-- Названия тел Солнечной системы на карте -->
-    <string name="sun">Солнце</string>
-    <string name="moon">Луна</string>
-    <string name="mercury">Меркурий</string>
-    <string name="venus">Венера</string>
-    <string name="earth">Земля</string>
-    <string name="mars">Марс</string>
-    <string name="jupiter">Юпитер</string>
-    <string name="saturn">Сатурн</string>
-    <string name="uranus">Уран</string>
-    <string name="neptune">Нептун</string>
-    <string name="pluto">Плутон</string>
-
     <!-- Каналы уведомлений: пролёты спутников и затмения -->
     <string name="channel_passes_name">Пролёты спутников</string>
     <string name="channel_passes_description">Одно оповещение незадолго до лучшего видимого пролёта за ночь</string>
-    <string name="notif_pass_title">%1$s скоро пролетит над вами</string>
-    <string name="notif_pass_text">Виден примерно с %1$s — выходите и дайте глазам привыкнуть к темноте</string>
     <string name="channel_passes_now_name">Спутник поднимается сейчас</string>
     <string name="channel_passes_now_description">Оповещение с вибрацией в момент начала лучшего видимого пролёта за ночь</string>
     <string name="notif_pass_now_title">%1$s сейчас поднимается</string>
     <string name="notif_pass_now_text">Посмотрите вверх — он пересекает небо прямо сейчас</string>
     <string name="channel_eclipses_name">Лунные затмения</string>
     <string name="channel_eclipses_description">Одно оповещение перед началом лунного затмения</string>
-    <string name="notif_eclipse_title">Скоро начнётся %1$s</string>
-    <string name="notif_eclipse_text">Начнётся примерно в %1$s — стоит выйти на улицу</string>
-    <string name="satellite_name_iss">МКС</string>
-    <string name="satellite_name_tiangong">Тяньгун</string>
-    <string name="tonight_satellite_pass">%2$s · %1$s</string>
 
     <!-- Общий доступ (шаринг) снимков неба -->
     <string name="share_chooser_title">Поделиться этим небом</string>
@@ -62,7 +42,6 @@
     <string name="moon_widget_description">Фаза Луны, освещённость, время восхода и захода — обновляется ежедневно.</string>
     <string name="moon_widget_illumination_short">%1$d%%</string>
     <string name="moon_widget_rise_time">восход %1$s</string>
-    <string name="moon_widget_set_time">заход %1$s</string>
     <string name="moon_widget_time_day_offset">" +%1$d"</string>
     <string name="moon_widget_promo_title">Держите Луну на домашнем экране</string>
     <string name="moon_widget_promo_subtitle">Фаза, освещённость и время восхода — обновляется ежедневно</string>
@@ -78,12 +57,6 @@
     <string name="tonight_widget_header">Сегодня · %1$s</string>
     <string name="tonight_widget_sun_times">закат %1$s · темно с %2$s</string>
     <string name="tonight_widget_sunset_only">закат %1$s</string>
-    <string name="tonight_well_placed">%1$s хорошо виден с %2$s</string>
-    <string name="tonight_shower_peak">Максимум %1$s сегодня ночью</string>
-    <string name="tonight_shower_days">Максимум %1$s через %2$d дн.</string>
-    <string name="tonight_new_moon">Новолуние — самое тёмное небо месяца</string>
-    <string name="tonight_full_moon">Сегодня полнолуние</string>
-    <string name="tonight_bright_moon">Яркая Луна «засвечивает» слабые объекты</string>
     <string name="tonight_quiet">Сегодня небо спокойное</string>
     <string name="tonight_quiet_next">Далее: %1$s через %2$d дн.</string>
     <string name="countdown_widget_label">Небесный отсчёт</string>
@@ -108,13 +81,5 @@
     <string name="channel_showers_description">Около дюжины в год, вечером в день максимума</string>
     <string name="channel_digest_name">Сводка неба на сегодня</string>
     <string name="channel_digest_description">Одна вечерняя сводка; пропускается в спокойные ночи</string>
-    <string name="notif_shower_title">Сегодня ночью максимум %1$s</string>
-    <string name="notif_shower_direction">Лучше всего после полуночи, смотрите на %1$s.</string>
-    <string name="notif_shower_dark_moon">Тёмное безлунное небо — ждите до %1$d метеоров в час вдали от городской засветки.</string>
-    <string name="notif_shower_bright_moon">Луна, освещённая на %1$d%%, скроет слабые метеоры — до %2$d в час при идеальном небе.</string>
-    <string name="notif_digest_title">Сегодня стоит посмотреть на небо</string>
     <string name="notif_action_mute_showers">Отключить потоки</string>
-
-    <!-- Хвостовые заметки к строкам пролётов спутников -->
-    <string name="tonight_trailing_pass_peak">Макс. %1$d°, блеск %2$.1f</string>
 </resources>

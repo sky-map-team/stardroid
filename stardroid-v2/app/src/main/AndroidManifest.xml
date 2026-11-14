@@ -117,10 +117,12 @@
           AlarmManager alarms do not survive a reboot. This receiver's only job is to bring the
           process up on BOOT_COMPLETED; Application.onCreate already re-arms the best pass from
           current settings on every process start (see the comment there), so no logic is
-          duplicated here.
+          duplicated here. Disabled by default: PassAlerts enables it only while an alert is
+          armed, so installs without one don't start the process on every boot.
         -->
         <receiver
             android:name=".satellites.PassAlertBootReceiver"
+            android:enabled="false"
             android:exported="false">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />

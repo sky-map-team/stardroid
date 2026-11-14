@@ -57,6 +57,7 @@ the two ever drift.
 | [info-card-coverage.md](info-card-coverage.md) | Which labelled objects still lack info cards, why that blocks tap-to-identify, and how to write new ones |
 | [design/sensor-correction-model.md](design/sensor-correction-model.md) | Sensor error physics and why drag-to-align's az/alt correction matches them |
 | [design/ephemeris-accuracy.md](design/ephemeris-accuracy.md) §1–2 | Coordinate-frame audit and the residual error budget (precession fix, D84) |
+| [design/background-network-audit.md](design/background-network-audit.md) | Every request the app makes without the user present — host, trigger, frequency, gates, scale — and the findings from the CelesTrak incident (#1276) |
 | [user-testers.md](user-testers.md) | How testers join the internal/alpha/beta channels |
 
 ## Status

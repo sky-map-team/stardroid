@@ -71,3 +71,23 @@ fun upcomingGoodPasses(
         .getOrDefault(emptyList())
         .goodPasses(CARD_PASS_LIMIT)
 }
+
+/**
+ * The good passes of every tracked satellite over the next [window], soonest first, for alerts.
+ * Empty when the elements are too old to time a pass honestly.
+ */
+fun passesWithin(
+    elements: SatelliteElements,
+    location: LatLong,
+    from: Instant,
+    window: Duration,
+): List<SatellitePass> {
+    if (!elements.mayShowPassTimes) return emptyList()
+    return elements.tles
+        .filter { it.noradId in SatelliteLayer.TRACKED_NORAD_IDS }
+        .flatMap { tle ->
+            runCatching { PassSearch(tle, location).visiblePasses(from, window) }
+                .getOrDefault(emptyList())
+                .goodPasses()
+        }.sortedBy { it.start }
+}

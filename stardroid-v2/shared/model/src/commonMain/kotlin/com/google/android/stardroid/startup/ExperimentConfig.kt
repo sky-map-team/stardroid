@@ -86,6 +86,12 @@ fun interface ExperimentConfig {
      */
     suspend fun fetchNow(): FetchResult = FetchResult.Unsupported
 
+    /**
+     * Fetches and activates so a gate about to cause network traffic reads a current value; false
+     * if the values may be stale. The caller bounds the wait. Configs with no server are current.
+     */
+    suspend fun awaitFresh(): Boolean = if (canFetch) fetchNow() is FetchResult.Success else true
+
     companion object {
         /** The shipped defaults, kept in sync with `remote_config_defaults.xml`. */
         val Static: ExperimentConfig =
@@ -94,7 +100,8 @@ fun interface ExperimentConfig {
                     Experiment.NOTIFICATIONS -> true
                     Experiment.CAMERA_AR -> false
                     Experiment.SHARE_SKY -> false
-                    Experiment.SATELLITES -> true
+                    // Emergency 2.3.2: off while CelesTrak traffic is investigated (issue #1269).
+                    Experiment.SATELLITES -> false
                     Experiment.GLES3_RENDERER -> true
                     Experiment.ANNOUNCEMENTS -> false
                 }

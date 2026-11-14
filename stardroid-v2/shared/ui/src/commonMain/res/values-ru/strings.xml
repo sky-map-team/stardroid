@@ -74,12 +74,6 @@
     <string name="layer_param_radec_grid_density_medium_desc">Меридианы каждые 2 часа, параллели каждые 15°</string>
     <string name="layer_param_radec_grid_density_fine_desc">Меридианы каждый час, параллели каждые 10°</string>
     <string name="satellites_no_data">Положения спутников загружаются из интернета. В первый раз они могут появиться через несколько минут.</string>
-    <string name="satellites_refresh">Обновить</string>
-    <string name="satellites_retry_soon">Повторите через несколько минут</string>
-    <string name="satellites_retry_within_hour">Повторите в течение часа</string>
-    <string name="satellites_retry_hours">Повторите через несколько часов</string>
-    <string name="satellites_retry_tomorrow">Повторите завтра</string>
-    <string name="satellites_retry_days">Повторите через несколько дней</string>
     <string name="layer_grid">Небесная сетка</string>
     <string name="layer_horizon">Горизонт</string>
     <string name="layer_ecliptic">Эклиптика</string>
@@ -630,4 +624,37 @@
     <string name="satellite_description">Искусственный спутник на низкой околоземной орбите, освещённый Солнцем на тёмном небе. Он пересекает небо от горизонта до горизонта за несколько минут, двигаясь ровно и не мигая.</string>
     <string name="satellite_search_name_iss">Международная космическая станция (МКС)</string>
     <string name="satellite_search_name_tiangong">Космическая станция «Тяньгун»</string>
+
+    <!-- Названия тел и уведомления (перенесено из app) -->
+    <string name="sun">Солнце</string>
+    <string name="moon">Луна</string>
+    <string name="mercury">Меркурий</string>
+    <string name="venus">Венера</string>
+    <string name="earth">Земля</string>
+    <string name="mars">Марс</string>
+    <string name="jupiter">Юпитер</string>
+    <string name="saturn">Сатурн</string>
+    <string name="uranus">Уран</string>
+    <string name="neptune">Нептун</string>
+    <string name="pluto">Плутон</string>
+    <string name="notif_pass_title">%1$s скоро пролетит над вами</string>
+    <string name="notif_pass_text">Виден примерно с %1$s — выходите и дайте глазам привыкнуть к темноте</string>
+    <string name="notif_eclipse_title">Скоро начнётся %1$s</string>
+    <string name="notif_eclipse_text">Начнётся примерно в %1$s — стоит выйти на улицу</string>
+    <string name="satellite_name_iss">МКС</string>
+    <string name="satellite_name_tiangong">Тяньгун</string>
+    <string name="tonight_satellite_pass">%2$s · %1$s</string>
+    <string name="moon_widget_set_time">заход %1$s</string>
+    <string name="tonight_well_placed">%1$s хорошо виден с %2$s</string>
+    <string name="tonight_shower_peak">Максимум %1$s сегодня ночью</string>
+    <string name="tonight_shower_days">Максимум %1$s через %2$d дн.</string>
+    <string name="tonight_new_moon">Новолуние — самое тёмное небо месяца</string>
+    <string name="tonight_full_moon">Сегодня полнолуние</string>
+    <string name="tonight_bright_moon">Яркая Луна «засвечивает» слабые объекты</string>
+    <string name="notif_shower_title">Сегодня ночью максимум %1$s</string>
+    <string name="notif_shower_direction">Лучше всего после полуночи, смотрите на %1$s.</string>
+    <string name="notif_shower_dark_moon">Тёмное безлунное небо — ждите до %1$d метеоров в час вдали от городской засветки.</string>
+    <string name="notif_shower_bright_moon">Луна, освещённая на %1$d%%, скроет слабые метеоры — до %2$d в час при идеальном небе.</string>
+    <string name="notif_digest_title">Сегодня стоит посмотреть на небо</string>
+    <string name="tonight_trailing_pass_peak">Макс. %1$d°, блеск %2$.1f</string>
 </resources>
