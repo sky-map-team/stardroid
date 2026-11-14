@@ -81,7 +81,7 @@ internal class IosNotificationScheduler(
     private suspend fun allowed(preferences: AlertPreferences) =
         experiments.isEnabled(Experiment.NOTIFICATIONS) && preferences.any && permitted()
 
-    /** Whether the user has granted notification permission. */
+    /** Provisional and ephemeral grants count, as `UserNotificationCenterAdapter` maps them. */
     suspend fun permitted(): Boolean =
         center.currentAuthorization() == NotificationAuthorization.AUTHORIZED
 
