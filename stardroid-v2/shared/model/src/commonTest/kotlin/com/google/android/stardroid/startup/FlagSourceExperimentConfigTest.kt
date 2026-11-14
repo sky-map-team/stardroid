@@ -11,7 +11,10 @@ package com.google.android.stardroid.startup
 
 import com.google.android.stardroid.testing.assertThat
 import kotlinx.coroutines.test.runTest
+import kotlinx.datetime.Clock
+import kotlinx.datetime.Instant
 import kotlin.test.Test
+import kotlin.time.Duration.Companion.minutes
 
 class FlagSourceExperimentConfigTest {
     private class FakeSource(
@@ -22,6 +25,7 @@ class FlagSourceExperimentConfigTest {
         private val callbackTwice: Boolean = false,
     ) : FlagSource {
         var ignoredThrottle: Boolean? = null
+        var fetches = 0
 
         override fun serverValue(key: String): Boolean? = server[key]
 
@@ -30,6 +34,7 @@ class FlagSourceExperimentConfigTest {
             onDone: (Boolean, String?) -> Unit,
         ) {
             ignoredThrottle = ignoreThrottle
+            fetches++
             onDone(outcome.first, outcome.second)
             if (callbackTwice) onDone(outcome.first, outcome.second)
         }
@@ -37,10 +42,17 @@ class FlagSourceExperimentConfigTest {
 
     private val defaults = ExperimentConfig { it == Experiment.SATELLITES }
 
+    private val now = Instant.parse("2026-11-14T12:00:00Z")
+
+    private val clock =
+        object : Clock {
+            override fun now() = now
+        }
+
     private fun config(
         source: FlagSource,
         controlled: Set<Experiment> = setOf(Experiment.SATELLITES, Experiment.GLES3_RENDERER),
-    ) = FlagSourceExperimentConfig(source, defaults, controlled)
+    ) = FlagSourceExperimentConfig(source, defaults, controlled, clock)
 
     @Test
     fun noServerValueMeansTheDefault() {
@@ -81,6 +93,76 @@ class FlagSourceExperimentConfigTest {
 
         assertThat(config.isEnabled(Experiment.SATELLITES)).isTrue()
     }
+
+    @Test
+    fun isEnabledNowReadsTheSourceAtCallTime() {
+        val server = mutableMapOf(Experiment.SATELLITES.key to true)
+        val config = config(FakeSource(server))
+
+        server[Experiment.SATELLITES.key] = false
+
+        assertThat(config.isEnabled(Experiment.SATELLITES)).isTrue()
+        assertThat(config.isEnabledNow(Experiment.SATELLITES)).isFalse()
+    }
+
+    @Test
+    fun isEnabledNowStillIgnoresTheServerForAFlagWithNoSurfaceHere() {
+        val config = config(FakeSource(mutableMapOf(Experiment.CAMERA_AR.key to true)))
+
+        assertThat(config.isEnabledNow(Experiment.CAMERA_AR)).isFalse()
+    }
+
+    @Test
+    fun aRecentSuccessfulFetchIsFreshWithoutAnother() =
+        runTest {
+            val recent = now - FRESH_FETCH_FLOOR + 1.minutes
+            val source = FakeSource(lastFetchTimeMillis = recent.toEpochMilliseconds())
+
+            assertThat(config(source).awaitFresh()).isTrue()
+            assertThat(source.fetches).isEqualTo(0)
+        }
+
+    @Test
+    fun anOlderFetchMeansFetchingAgain() =
+        runTest {
+            val old = now - FRESH_FETCH_FLOOR - 1.minutes
+            val ok =
+                FakeSource(
+                    lastFetchTimeMillis = old.toEpochMilliseconds(),
+                    outcome = false to null,
+                )
+            val failed =
+                FakeSource(
+                    lastFetchTimeMillis = old.toEpochMilliseconds(),
+                    outcome = false to "offline",
+                )
+
+            assertThat(config(ok).awaitFresh()).isTrue()
+            assertThat(ok.fetches).isEqualTo(1)
+            assertThat(config(failed).awaitFresh()).isFalse()
+        }
+
+    @Test
+    fun neverFetchedOrAFutureStampMeansFetching() =
+        runTest {
+            val never = FakeSource()
+            val future = FakeSource(lastFetchTimeMillis = (now + 1.minutes).toEpochMilliseconds())
+
+            config(never).awaitFresh()
+            config(future).awaitFresh()
+
+            assertThat(never.fetches).isEqualTo(1)
+            assertThat(future.fetches).isEqualTo(1)
+        }
+
+    @Test
+    fun aSourceThatCannotFetchIsAlwaysCurrent() =
+        runTest {
+            val source = FakeSource(canFetch = false)
+
+            assertThat(config(source).awaitFresh()).isTrue()
+            assertThat(source.fetches).isEqualTo(0)
+        }
 
     @Test
     fun fetchNowIgnoresTheThrottleAndReportsTheOutcome() =

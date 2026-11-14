@@ -25,10 +25,12 @@ import com.google.android.stardroid.location.LocationSource
 import com.google.android.stardroid.location.LocationState
 import com.google.android.stardroid.render.api.RendererInfo
 import com.google.android.stardroid.satellites.SatelliteDiagnosticsState
+import com.google.android.stardroid.satellites.SatelliteFlagState
 import com.google.android.stardroid.satellites.TrackedSatellite
 import com.google.android.stardroid.satellites.satelliteBackgroundUseFlow
 import com.google.android.stardroid.satellites.satelliteElementsFlow
 import com.google.android.stardroid.satellites.satelliteFetchConditions
+import com.google.android.stardroid.satellites.satelliteFlagState
 import com.google.android.stardroid.satellites.satelliteUiStatusFlow
 import com.google.android.stardroid.satellites.trackedSatellites
 import com.google.android.stardroid.satellites.upcomingGoodPasses
@@ -329,10 +331,11 @@ class IosAppGraph(
         scope.launch {
             // Opening the app, switching the layer on and accepting the terms all look for stale
             // elements, once every gate is open.
+            // Latest: a gate closing cancels a refresh still waiting on the fresh flag.
             combine(foreground.isForeground, satelliteGates) { inForeground, gates ->
                 inForeground && gates.allowFetch(Clock.System.now())
             }.distinctUntilChanged()
-                .collect { if (it) refreshSatellitesIfStale() }
+                .collectLatest { if (it) refreshSatellitesIfStale() }
         }
     }
 
@@ -353,7 +356,16 @@ class IosAppGraph(
             try {
                 download = mayRefreshSatellites()
                 replan = notifications.allowed()
-                if (download) withContext(Dispatchers.IO) { satellites.refreshNow() }
+                if (download) {
+                    // Read fresh, not the launch value. Off ends the chain, as Android cancels;
+                    // unknown leaves it to the next slot, never retrying CelesTrak.
+                    when (satelliteFlagState(experiments)) {
+                        SatelliteFlagState.ON ->
+                            withContext(Dispatchers.IO) { satellites.refreshNow() }
+                        SatelliteFlagState.OFF -> download = false
+                        SatelliteFlagState.UNKNOWN -> Unit
+                    }
+                }
                 notifications.replan()
                 completed = true
             } finally {
@@ -373,11 +385,13 @@ class IosAppGraph(
         if (satellitesEnabled) withContext(Dispatchers.IO) { satellites.diagnostics() } else null
 
     /**
-     * The caller has checked the gates. Through the repository, so the circuit breaker and the
-     * two-hour minimum still apply.
+     * The caller has checked the local gates; a stale cache then also needs a fresh ON flag.
+     * Through the repository, so the circuit breaker and the two-hour minimum still apply.
      */
     private suspend fun refreshSatellitesIfStale() {
-        withContext(Dispatchers.IO) { satellites.refreshIfStale() }
+        withContext(Dispatchers.IO) {
+            satellites.refreshIfStale { satelliteFlagState(experiments) == SatelliteFlagState.ON }
+        }
     }
 
     /**
