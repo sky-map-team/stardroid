@@ -26,7 +26,7 @@ import com.google.android.stardroid.location.LocationState
 import com.google.android.stardroid.render.api.RendererInfo
 import com.google.android.stardroid.satellites.SatelliteDiagnosticsState
 import com.google.android.stardroid.satellites.TrackedSatellite
-import com.google.android.stardroid.satellites.satelliteBackgroundUse
+import com.google.android.stardroid.satellites.satelliteBackgroundUseFlow
 import com.google.android.stardroid.satellites.satelliteElementsFlow
 import com.google.android.stardroid.satellites.satelliteFetchConditions
 import com.google.android.stardroid.satellites.satelliteUiStatusFlow
@@ -284,13 +284,10 @@ class IosAppGraph(
             startupRouter = startupRouter,
             startupState = startupState,
             backgroundUse =
-                satelliteBackgroundUse(
+                satelliteBackgroundUseFlow(
                     settings,
                     experiments,
-                    notificationsAllowed = {
-                        notificationCenter.currentAuthorization() ==
-                            NotificationAuthorization.AUTHORIZED
-                    },
+                    notificationsAllowed = notifications::permitted,
                     tonightWidgetPlaced = { false },
                 ),
         )
@@ -342,9 +339,9 @@ class IosAppGraph(
     /**
      * The system's background refresh slot ([SatelliteBackgroundRefresh]): the same gates and
      * policy as the foreground fetch, minus the staleness test, since the system picks the time.
-     * It then replans the notifications, which needs no network. [onDone] runs however the job
-     * ends, cancellation included, so it must not throw; `scheduleNext` is whether the gates were
-     * open or notifications are on, so the chain outlives the downloads while alerts need replans.
+     * It then replans the notifications. [onDone] runs however the job ends, cancellation
+     * included, so it must not throw. Both gates are read first, so an expiry or a failed download
+     * cannot end the chain.
      */
     internal fun startBackgroundRefresh(
         onDone: (completed: Boolean, scheduleNext: Boolean) -> Unit,

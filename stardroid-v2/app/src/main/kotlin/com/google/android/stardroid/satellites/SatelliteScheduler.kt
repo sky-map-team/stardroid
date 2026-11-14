@@ -144,7 +144,7 @@ object SatelliteScheduler {
             startupRouter = entryPoint.startupRouter(),
             startupState = entryPoint.startupState(),
             backgroundUse =
-                satelliteBackgroundUse(
+                satelliteBackgroundUseFlow(
                     settings,
                     experiments,
                     notificationsAllowed = {

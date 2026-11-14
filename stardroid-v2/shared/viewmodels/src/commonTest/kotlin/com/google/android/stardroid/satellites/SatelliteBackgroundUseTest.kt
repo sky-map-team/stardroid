@@ -9,7 +9,13 @@
 
 package com.google.android.stardroid.satellites
 
+import com.google.android.stardroid.settings.FakeSettings
+import com.google.android.stardroid.settings.setPassAlertsEnabled
+import com.google.android.stardroid.startup.Experiment
+import com.google.android.stardroid.startup.ExperimentConfig
 import com.google.android.stardroid.testing.assertThat
+import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.test.runTest
 import kotlin.test.Test
 
 /** What keeps satellite downloads going without the app being opened (#1272). */
@@ -73,4 +79,33 @@ class SatelliteBackgroundUseTest {
         assertThat(use(passAlertsOn = true, digestOn = true, notificationsAllowed = false))
             .isFalse()
     }
+
+    @Test
+    fun theFlowReadsPermissionAndWidgetAfreshOnEachCollection() =
+        runTest {
+            val settings = FakeSettings()
+            var allowed = false
+            var widget = false
+            val flow =
+                satelliteBackgroundUseFlow(
+                    settings,
+                    ExperimentConfig { it == Experiment.NOTIFICATIONS },
+                    notificationsAllowed = { allowed },
+                    tonightWidgetPlaced = { widget },
+                )
+            settings.setTonightDigestEnabled(true)
+            assertThat(flow.first()).isFalse()
+
+            allowed = true
+            assertThat(flow.first()).isTrue()
+
+            settings.setTonightDigestEnabled(false)
+            settings.setPassAlertsEnabled(true)
+            assertThat(flow.first()).isTrue()
+
+            settings.setPassAlertsEnabled(false)
+            assertThat(flow.first()).isFalse()
+            widget = true
+            assertThat(flow.first()).isTrue()
+        }
 }

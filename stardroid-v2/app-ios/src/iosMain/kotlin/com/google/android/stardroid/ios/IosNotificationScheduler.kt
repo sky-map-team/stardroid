@@ -79,9 +79,11 @@ internal class IosNotificationScheduler(
     suspend fun allowed(): Boolean = allowed(preferences.first())
 
     private suspend fun allowed(preferences: AlertPreferences) =
-        experiments.isEnabled(Experiment.NOTIFICATIONS) &&
-            preferences.any &&
-            center.currentAuthorization() == NotificationAuthorization.AUTHORIZED
+        experiments.isEnabled(Experiment.NOTIFICATIONS) && preferences.any && permitted()
+
+    /** Whether the user has granted notification permission. */
+    suspend fun permitted(): Boolean =
+        center.currentAuthorization() == NotificationAuthorization.AUTHORIZED
 
     suspend fun replan() =
         lock.withLock {

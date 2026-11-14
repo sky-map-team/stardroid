@@ -14,10 +14,6 @@ import SkyMapKit
 /// next nights' notifications. The system picks when (often rarely, for a little-used app), so
 /// the foreground fetch on app open stays the dependable path; this one just keeps data fresh for
 /// people who open the app only briefly.
-///
-/// It is first asked for on leaving the foreground, and each run asks for the next only while
-/// the download gates hold (#1272) or notifications are on, so an install nobody opens stops
-/// downloading.
 enum SatelliteRefreshTask {
     static let identifier = "io.penterakt.skymap.satellite-refresh"
 
@@ -44,8 +40,8 @@ enum SatelliteRefreshTask {
     }
 
     /// On leaving the foreground: schedules only if satellites may refresh or notifications are
-    /// on, else drops any pending request. Switching either on in the foreground re-arms here
-    /// next time.
+    /// on (#1272), else drops any pending request. Each run then asks for the next on the same
+    /// terms.
     static func scheduleIfAllowed() {
         SatelliteBackgroundRefreshKt.backgroundRefreshWanted { wanted in
             if wanted.boolValue {

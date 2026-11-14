@@ -35,10 +35,8 @@ class SatelliteBackgroundRefresh internal constructor(
 
 /**
  * The body of the `BGAppRefreshTask` (Swift schedules it), run on the main thread once the flags
- * are readable. It also plans the next nights' notifications, with whatever data it just fetched.
- * [onDone] gets whether the work ran to the end without being cancelled, and whether to ask for
- * the next slot: only while the download gates are open (#1272) or notifications are on, so the
- * chain ends for an install nobody opens that has no alerts. It may be called on any thread.
+ * are readable. `scheduleNext`: ask for another slot only while downloads or notifications need
+ * one (#1272). [onDone] may be called on any thread.
  */
 fun refreshSatellitesInBackground(
     analytics: Analytics,

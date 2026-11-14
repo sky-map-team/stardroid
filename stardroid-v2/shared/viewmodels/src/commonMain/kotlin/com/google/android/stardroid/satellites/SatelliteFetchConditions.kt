@@ -102,11 +102,10 @@ fun satelliteBackgroundUse(
         ((passAlertsOn || digestOn) && notificationsFlagOn && notificationsAllowed)
 
 /**
- * [satelliteBackgroundUse] as the platform stands. Permission and widget placement are read only
- * when the alert or digest setting changes, so a long-lived collector can miss them; `first()`
- * reads fresh ones.
+ * [satelliteBackgroundUse] as the platform stands. The lambdas are read only when an alert or
+ * digest setting changes, so a caller that needs current values collects afresh (`.first()`).
  */
-fun satelliteBackgroundUse(
+fun satelliteBackgroundUseFlow(
     settings: Settings,
     experiments: ExperimentConfig,
     notificationsAllowed: suspend () -> Boolean,
