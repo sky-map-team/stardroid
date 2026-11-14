@@ -606,14 +606,14 @@ only when all of these hold:
 4. The terms are accepted (`StartupRouter.needsEula` is false).
 5. The app was in the foreground, where the user could see it, within the last **14 days**
    (`StartupState.lastForegroundAt`). Alternatively, something shows satellite data while the
-   app is closed (`satelliteBackgroundUse`, Android only):
-   - a placed Tonight widget, the only widget with passes;
+   app is closed (`satelliteBackgroundUse`, shared by both platforms):
+   - a placed Tonight widget, the only widget with passes (Android only);
    - pass alerts turned on;
    - the D77 tonight digest turned on.
 
    Alerts and the digest count only with `Experiment.NOTIFICATIONS` on and notifications allowed
-   by the OS, because a notification that can't be posted needs no data. On iOS only use
-   counts: it has no widget, and its alerts and digest are not counted (yet).
+   by the OS, because a notification that can't be posted needs no data. This waives only the
+   recent-use rule: rules 1 to 4 still apply, so the layer must be on.
 
 The timestamp is written each time `MainActivity` starts and each time iOS enters the
 foreground. A background start never writes it. A stamp more than a day in the future means the
@@ -653,17 +653,17 @@ flip never restarts downloads in the background.
 **iOS** applies the same conditions in three places:
 - the fetch on app open;
 - the request for a `BGAppRefreshTask`. When the app leaves the foreground, Swift asks Kotlin
-  (`mayRefreshSatellites`) and schedules only if the answer is yes, otherwise dropping any
+  (`backgroundRefreshWanted`) and schedules only if the answer is yes, otherwise dropping any
   pending request. A layer switched on in the foreground is therefore armed on the next move to
   the background;
 - each background run, which asks for the next slot only while the conditions hold.
 
+Before this change, every move to the background and every run rescheduled unconditionally
+(#1278, finding 5).
+
 The same task also replans iOS notifications, which needs no network, so it is also requested
 while notifications are on (flag, a kind switched on, permission). A run then downloads only if
 the conditions hold, and replans either way.
-
-Before this change, every move to the background and every run rescheduled unconditionally
-(#1278, finding 5).
 
 ## Staleness and offline behaviour
 

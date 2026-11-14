@@ -26,6 +26,7 @@ import com.google.android.stardroid.location.LocationState
 import com.google.android.stardroid.render.api.RendererInfo
 import com.google.android.stardroid.satellites.SatelliteDiagnosticsState
 import com.google.android.stardroid.satellites.TrackedSatellite
+import com.google.android.stardroid.satellites.satelliteBackgroundUse
 import com.google.android.stardroid.satellites.satelliteElementsFlow
 import com.google.android.stardroid.satellites.satelliteFetchConditions
 import com.google.android.stardroid.satellites.satelliteUiStatusFlow
@@ -275,17 +276,23 @@ class IosAppGraph(
             satellites.takeIf { satellitesEnabled },
         )
 
-    /**
-     * The download gates shared with Android (#1272). Unlike Android, alerts and the digest don't
-     * count as background use here, so they keep only the replan going, not downloads.
-     */
+    /** The download gates shared with Android (#1272). iOS has no widgets. */
     private val satelliteGates =
         satelliteFetchConditions(
             experiments = experiments,
             settings = settings,
             startupRouter = startupRouter,
             startupState = startupState,
-            backgroundUse = flowOf(false),
+            backgroundUse =
+                satelliteBackgroundUse(
+                    settings,
+                    experiments,
+                    notificationsAllowed = {
+                        notificationCenter.currentAuthorization() ==
+                            NotificationAuthorization.AUTHORIZED
+                    },
+                    tonightWidgetPlaced = { false },
+                ),
         )
 
     init {

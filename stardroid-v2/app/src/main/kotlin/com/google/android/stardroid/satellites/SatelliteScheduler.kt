@@ -16,12 +16,9 @@ import androidx.work.ExistingPeriodicWorkPolicy
 import androidx.work.NetworkType
 import androidx.work.PeriodicWorkRequestBuilder
 import androidx.work.WorkManager
-import com.google.android.stardroid.settings.passAlertsEnabled
-import com.google.android.stardroid.startup.Experiment
 import com.google.android.stardroid.widget.TonightWidgetReceiver
 import com.google.android.stardroid.widget.WidgetScheduler
 import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.datetime.Clock
 import kotlinx.datetime.Instant
@@ -136,11 +133,7 @@ object SatelliteScheduler {
         }
     }
 
-    /**
-     * The gates as this install stands. Widget placement and notification permission are read
-     * only when the alert or digest setting changes, so a long-lived collector can miss them; the
-     * worker reads fresh ones on every run.
-     */
+    /** The gates as this install stands; the worker reads fresh ones on every run. */
     fun conditions(context: Context): Flow<SatelliteFetchConditions> {
         val entryPoint = satelliteEntryPoint(context)
         val experiments = entryPoint.experimentConfig()
@@ -151,38 +144,16 @@ object SatelliteScheduler {
             startupRouter = entryPoint.startupRouter(),
             startupState = entryPoint.startupState(),
             backgroundUse =
-                combine(
-                    settings.passAlertsEnabled,
-                    settings.tonightDigestEnabled,
-                ) { alerts, digest ->
-                    satelliteBackgroundUse(
-                        passAlertsOn = alerts,
-                        digestOn = digest,
-                        notificationsFlagOn = experiments.isEnabled(Experiment.NOTIFICATIONS),
-                        notificationsAllowed =
-                            NotificationManagerCompat.from(context).areNotificationsEnabled(),
-                        tonightWidgetPlaced =
-                            WidgetScheduler.hasInstances(
-                                context,
-                                TonightWidgetReceiver::class.java,
-                            ),
-                    )
-                },
+                satelliteBackgroundUse(
+                    settings,
+                    experiments,
+                    notificationsAllowed = {
+                        NotificationManagerCompat.from(context).areNotificationsEnabled()
+                    },
+                    tonightWidgetPlaced = {
+                        WidgetScheduler.hasInstances(context, TonightWidgetReceiver::class.java)
+                    },
+                ),
         )
     }
 }
-
-/**
- * Whether something shows satellite data while the app is closed: the Tonight widget (the only
- * widget with passes), or pass alerts or the tonight digest. A notification that can't be posted
- * needs no data.
- */
-internal fun satelliteBackgroundUse(
-    passAlertsOn: Boolean,
-    digestOn: Boolean,
-    notificationsFlagOn: Boolean,
-    notificationsAllowed: Boolean,
-    tonightWidgetPlaced: Boolean,
-): Boolean =
-    tonightWidgetPlaced ||
-        ((passAlertsOn || digestOn) && notificationsFlagOn && notificationsAllowed)

@@ -9,8 +9,8 @@
 
 package com.google.android.stardroid.satellites
 
-import com.google.common.truth.Truth.assertThat
-import org.junit.jupiter.api.Test
+import com.google.android.stardroid.testing.assertThat
+import kotlin.test.Test
 
 /** What keeps satellite downloads going without the app being opened (#1272). */
 class SatelliteBackgroundUseTest {
@@ -29,12 +29,12 @@ class SatelliteBackgroundUseTest {
     )
 
     @Test
-    fun `nothing placed or enabled is no background use`() {
+    fun nothingPlacedOrEnabledIsNoBackgroundUse() {
         assertThat(use()).isFalse()
     }
 
     @Test
-    fun `a placed Tonight widget counts`() {
+    fun aPlacedTonightWidgetCounts() {
         assertThat(use(tonightWidgetPlaced = true)).isTrue()
         // The widget isn't a notification, so the notification gates don't apply to it.
         val noNotifications =
@@ -47,29 +47,29 @@ class SatelliteBackgroundUseTest {
     }
 
     @Test
-    fun `pass alerts count`() {
+    fun passAlertsCount() {
         assertThat(use(passAlertsOn = true)).isTrue()
     }
 
     @Test
-    fun `the tonight digest counts`() {
+    fun theTonightDigestCounts() {
         assertThat(use(digestOn = true)).isTrue()
     }
 
     @Test
-    fun `alerts and the digest need the notifications flag`() {
+    fun alertsAndTheDigestNeedTheNotificationsFlag() {
         assertThat(use(passAlertsOn = true, notificationsFlagOn = false)).isFalse()
         assertThat(use(digestOn = true, notificationsFlagOn = false)).isFalse()
     }
 
     @Test
-    fun `alerts and the digest need notifications allowed by the OS`() {
+    fun alertsAndTheDigestNeedNotificationsAllowedByTheOS() {
         assertThat(use(passAlertsOn = true, notificationsAllowed = false)).isFalse()
         assertThat(use(digestOn = true, notificationsAllowed = false)).isFalse()
     }
 
     @Test
-    fun `alerts and the digest together still need notifications allowed by the OS`() {
+    fun alertsAndTheDigestTogetherStillNeedNotificationsAllowedByTheOS() {
         assertThat(use(passAlertsOn = true, digestOn = true, notificationsAllowed = false))
             .isFalse()
     }
