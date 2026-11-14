@@ -107,7 +107,6 @@ dso/eta_carinae_nebula,Туманность Киля,1
 dso/eta_carinae_nebula,Туманность Эты Киля,0
 dso/exposed_cranium_nebula,Туманность Обнажённый Череп,1
 dso/ghost_of_jupiter,Призрак Юпитера,1
-dso/hdf,Область глубокого обзора Хаббла,0
 dso/hdf,Область глубокого обзора Хаббла,1
 dso/helix_nebula,Око Бога,0
 dso/helix_nebula,Туманность Улитка,1
@@ -186,6 +185,7 @@ moon/titan,Титан,1
 moon/titania,Титания,1
 moon/triton,Тритон,1
 moon/umbriel,Умбриэль,1
+planet/earth,Земля,1
 planet/jupiter,Юпитер,1
 planet/mars,Марс,1
 planet/mercury,Меркурий,1
@@ -521,13 +521,9 @@ star/markab,Маркаб,1
 star/menkar,Менкар,1
 star/merak,Мерак,1
 star/mirach,Мирах,1
-star/mirphak,Мирфак,0
 star/mirphak,Мирфак,1
 star/nunki,Нунки,1
-star/phad,Фекда,0
 star/phad,Фекда,1
-star/polaris,Полярная звезда,0
-star/polaris,Полярная звезда,0
 star/polaris,Полярная звезда,1
 star/pollux,Поллукс,1
 star/procyon,Процион,1
@@ -537,11 +533,9 @@ star/rigel,Ригель,1
 star/rigil_kentaurus_a,Альфа Центавра,1
 star/rigil_kentaurus_a,Ригель Кентаурус,0
 star/rigil_kentaurus_a,Ригель Центавра А,0
-star/rigil_kentaurus_a,Ригель Центавра А,0
 star/saiph,Саиф,1
 star/scheat,Шеат,1
 star/shaula,Шаула,1
-star/shedir,Шедар,0
 star/shedir,Шедар,1
 star/sirius,Сириус,1
 star/sirius,Собачья звезда,0
