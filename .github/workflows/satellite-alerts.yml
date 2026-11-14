@@ -24,7 +24,6 @@ jobs:
       GA_PROPERTY_ID: ${{ vars.GA_PROPERTY_ID }}
       SATELLITE_DAILY_BUDGET: ${{ vars.SATELLITE_DAILY_BUDGET }}
       SATELLITE_FAILURE_FLOOR: ${{ vars.SATELLITE_FAILURE_FLOOR }}
-      GH_TOKEN: ${{ github.token }}
     steps:
       - name: Check configuration
         id: config
@@ -37,10 +36,12 @@ jobs:
             echo "GA_PROPERTY_ID or GA_SERVICE_ACCOUNT_KEY not set; skipping."
           fi
 
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
         if: steps.config.outputs.configured == 'true'
+        with:
+          persist-credentials: false
 
-      - uses: google-github-actions/auth@v2
+      - uses: google-github-actions/auth@c200f3691d83b41bf9bbd8638997a462592937ed # v2
         if: steps.config.outputs.configured == 'true'
         with:
           credentials_json: ${{ secrets.GA_SERVICE_ACCOUNT_KEY }}
@@ -54,6 +55,8 @@ jobs:
 
       - name: Open or update the alert issue
         if: steps.config.outputs.configured == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
           [ -s "$RUNNER_TEMP/alert.md" ] || exit 0
           gh label list --search satellite-alert --json name --jq '.[].name' \
