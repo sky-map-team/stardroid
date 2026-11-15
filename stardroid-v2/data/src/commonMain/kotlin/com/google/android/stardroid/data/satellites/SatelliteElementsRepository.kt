@@ -199,6 +199,7 @@ class SatelliteElementsRepository(
         // A partial refresh is not a Success, so the policy leaves the age alone. It is still
         // only as old as its oldest retained row, or brand new if nothing was retained.
         if (failure != null && written?.isSuccess == true) {
+            // No recorded age for retained rows (a lost state write) counts as new, not absent.
             val writtenAt = if (body.retainedOld) state.elementsWrittenAt ?: now else now
             updated = updated.copy(elementsWrittenAt = writtenAt)
         }
@@ -266,6 +267,8 @@ class SatelliteElementsRepository(
         return MergedBody(mergeCsv(parts), retainedOld = old != null)
     }
 
+    private val targetIds = targets.map { it.catalogNumber }.toSet()
+
     private fun retainedRows(
         oldCsv: String,
         fetchedIds: Set<Int>,
@@ -275,7 +278,7 @@ class SatelliteElementsRepository(
         val rows =
             lines.drop(1).filter { row ->
                 Tle.parseOmmCsv("$header\n$row").firstOrNull()?.noradId
-                    ?.let { it !in fetchedIds } == true
+                    ?.let { it !in fetchedIds && it in targetIds } == true
             }
         return if (rows.isEmpty()) null else (listOf(header) + rows).joinToString("\n")
     }
