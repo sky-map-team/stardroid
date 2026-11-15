@@ -27,8 +27,10 @@
     <string name="whats_new_content_ios" translation_description="HTML content for the iPhone release, shown in the What's new screen and the post-update dialog in place of the longer release notes of earlier versions. Please do not change the &lt; and &gt; markup."><![CDATA[
 <h1>What\'s new on iPhone and iPad</h1>
 <ul>
+<li><b>Notifications:</b> optional alerts for meteor shower peaks, lunar eclipses and a summary of tonight\'s sky, at most one a day. Everything is off until you turn it on under <b>Settings → Notifications</b>.</li>
 <li><b>iPad:</b> Sky Map now fills larger screens and works in every orientation.</li>
-<li><b>Satellites:</b> see the International Space Station and other satellites crossing the sky.</li>
+<li><b>Satellites:</b> see the International Space Station and other satellites crossing the sky. Satellites are being rolled out gradually to protect the server, so you may not see them yet.</li>
+<li><b>Support screen:</b> tell a friend about Sky Map, or rate it.</li>
 </ul>
 <h2>And this is just the start...</h2>
 <p>More is on the way. Tell us what you would like from the Support screen.</p>
