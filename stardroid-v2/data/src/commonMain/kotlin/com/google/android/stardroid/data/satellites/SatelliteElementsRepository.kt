@@ -219,8 +219,8 @@ class SatelliteElementsRepository(
     /**
      * One request per target, in order, stopping at the first that is not a success so a failing
      * CelesTrak is asked once, not once per object. All-or-nothing: a failure leaves the previous
-     * cache untouched, so a persistent failure for one object also stalls the other. The bodies are merged into a single CSV (one
-     * header, every data row) so the cache and parser stay a single file.
+     * cache untouched, so a persistent failure for one object also stalls the other. The bodies are merged into a
+     * single CSV (one header, every data row) so the cache and parser stay a single file.
      *
      * Requests are unconditional: with two objects there is no single `Last-Modified` to send, and
      * each body is a few hundred bytes, so a 304 would save almost nothing.

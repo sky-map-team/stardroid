@@ -28,6 +28,8 @@ private const val DEEP_SPACE_PERIOD_MINUTES: Double = 225.0
 
 /** Fixed columns of a TLE line, 1-based and inclusive, as the format specifies them. */
 private const val TLE_LINE_LENGTH = 69
+
+/** Byte-order mark some servers prepend to a CSV header. */
 private const val BOM = '\uFEFF'
 
 /**
@@ -219,7 +221,7 @@ data class Tle(
             )
         }
 
-        /** Splits one CSV row, honouring double-quoted fields (which may hold commas) on one line. */
+        /** Splits one CSV row; double-quoted fields may hold commas but not newlines. */
         private fun splitCsvRow(line: String): List<String> {
             val fields = mutableListOf<String>()
             val current = StringBuilder()
