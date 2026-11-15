@@ -218,7 +218,8 @@ class SatelliteElementsRepository(
 
     /**
      * One request per target, in order, stopping at the first that is not a success so a failing
-     * CelesTrak is asked once, not once per object. The bodies are merged into a single CSV (one
+     * CelesTrak is asked once, not once per object. All-or-nothing: a failure leaves the previous
+     * cache untouched, so a persistent failure for one object also stalls the other. The bodies are merged into a single CSV (one
      * header, every data row) so the cache and parser stay a single file.
      *
      * Requests are unconditional: with two objects there is no single `Last-Modified` to send, and
@@ -227,11 +228,8 @@ class SatelliteElementsRepository(
     private fun fetchTargets(): FetchOutcome {
         val bodies = mutableListOf<String>()
         for (target in targets) {
-            // Defence in depth: [CelesTrakClient] is an interface and this is the composition
-            // point that runs inside a background worker. Nothing an implementation does should
-            // be able to take the process down, so an unchecked throw becomes the same transport
-            // failure a dropped connection would — which notably does not open the circuit, since
-            // our bug is not CelesTrak refusing us.
+            // An unchecked throw from a client becomes a transport failure, which does not open
+            // the circuit.
             val outcome =
                 runCatching { client.fetch(target, ifModifiedSince = null) }
                     .getOrElse { FetchOutcome.TransportFailure(it) }

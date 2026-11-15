@@ -12,6 +12,7 @@ package com.google.android.stardroid.layers
 import com.google.android.stardroid.astronomy.Tle
 import com.google.android.stardroid.data.satellites.ElementFreshness
 import com.google.android.stardroid.data.satellites.SatelliteElements
+import com.google.android.stardroid.data.satellites.SatelliteTarget
 import com.google.android.stardroid.math.LatLong
 import com.google.android.stardroid.render.api.PointAppearance
 import com.google.android.stardroid.testing.assertThat
@@ -230,4 +231,10 @@ class SatelliteLayerTest {
 
             assertThat(head).isEqualTo(expected.points.last().pos)
         }
+
+    @Test
+    fun `the layer draws exactly the objects the repository fetches`() {
+        assertThat(SatelliteLayer.TRACKED_NORAD_IDS)
+            .isEqualTo(SatelliteTarget.entries.map { it.catalogNumber }.toSet())
+    }
 }

@@ -101,7 +101,7 @@ class HttpUrlConnectionCelesTrakClient(
     }
 
     /**
-     * Reads the response body with a hard cap, rather than trusting a ~0.5 KB payload to stay
+     * Reads the response body with a hard cap, rather than trusting the payload to stay
      * small. A captive portal, a hijacked DNS answer, or a CelesTrak misconfiguration can hand
      * back an arbitrarily large body; an over-long one is treated as unusable rather than
      * materialized into memory.

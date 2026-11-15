@@ -200,10 +200,9 @@ class SatelliteLayer(
          * Which catalog objects to draw.
          *
          * **Only what a naked-eye observer can identify.** The fetch asks CelesTrak for exactly
-         * these two objects by catalog number (see `SatelliteTarget`), so there is no larger feed
-         * to filter. CelesTrak's `GROUP=stations` is 21 objects, seven of them with *identical*
-         * elements because they are docked to the ISS, which would stack markers and labels on
-         * one pixel. The `fleet` layer parameter in phase 5 is where this becomes a user choice.
+         * these two objects by catalog number (see `SatelliteTarget`). Drawing all of
+         * `GROUP=stations` would stack docked vehicles, which share the ISS's elements, on one
+         * pixel. The `fleet` layer parameter in phase 5 makes this a user choice.
          */
         val TRACKED_NORAD_IDS = setOf(ISS_NORAD_ID, TIANGONG_NORAD_ID)
 

@@ -28,11 +28,11 @@ private const val DEEP_SPACE_PERIOD_MINUTES: Double = 225.0
 
 /** Fixed columns of a TLE line, 1-based and inclusive, as the format specifies them. */
 private const val TLE_LINE_LENGTH = 69
+private const val BOM = '\uFEFF'
 
 /**
  * The mean orbital elements of an Earth satellite at a given epoch, as NORAD/CelesTrak distribute
- * them. Named for the two-line element set they began as; the app now reads them from CelesTrak's
- * OMM CSV ([parseOmmCsv]), because TLEs can't carry catalog numbers above 99999.
+ * them. Read from CelesTrak OMM CSV ([parseOmmCsv]); TLEs can't carry catalog numbers above 99999.
  *
  * These are *not* osculating Keplerian elements and must not be fed to [KeplerianEphemeris]. They
  * are mean elements in the particular averaged sense SGP4 defines, and are only meaningful when
@@ -177,7 +177,9 @@ data class Tle(
          */
         fun parseOmmCsv(text: String): List<Tle> {
             val rows = text.lineSequence().filter { it.isNotBlank() }.map(::splitCsvRow).toList()
-            val header = rows.firstOrNull()?.map { it.trim() } ?: return emptyList()
+            val header =
+                rows.firstOrNull()?.map { name -> name.trim { it.isWhitespace() || it == BOM } }
+                    ?: return emptyList()
             val columns = header.withIndex().associate { (index, name) -> name to index }
             return rows.drop(1).mapNotNull { row ->
                 runCatching { fromOmmRow(row, columns) }
@@ -193,7 +195,8 @@ data class Tle(
             fun text(column: String): String =
                 row[requireNotNull(columns[column]) { "missing column $column" }].trim()
 
-            fun number(column: String): Double = text(column).toDouble()
+            fun number(column: String): Double =
+                text(column).toDouble().also { require(it.isFinite()) { "$column not finite" } }
 
             val meanMotionRevPerDay = number("MEAN_MOTION")
             require(meanMotionRevPerDay > 0.0) { "mean motion must be positive" }
@@ -216,7 +219,7 @@ data class Tle(
             )
         }
 
-        /** Splits one CSV row, honouring double-quoted fields (which may hold commas). */
+        /** Splits one CSV row, honouring double-quoted fields (which may hold commas) on one line. */
         private fun splitCsvRow(line: String): List<String> {
             val fields = mutableListOf<String>()
             val current = StringBuilder()

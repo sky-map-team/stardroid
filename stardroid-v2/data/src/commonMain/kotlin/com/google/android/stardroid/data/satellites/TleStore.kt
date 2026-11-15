@@ -14,7 +14,8 @@ import kotlinx.datetime.Instant
 /**
  * On-disk home for the element sets and the fetch state that guards them. Durable storage, never
  * a cache the OS may evict: losing the TLE silently kills the feature for offline users.
- * Element sets are stored verbatim (the merged OMM CSV), so the network and cache paths share one parser.
+ * Element sets are stored verbatim (the merged OMM CSV), so the network and cache paths
+ * share one parser.
  */
 class TleStore(
     private val files: TextFiles,
