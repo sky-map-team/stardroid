@@ -76,13 +76,21 @@ targets:
         NSLocationWhenInUseUsageDescription: >-
           Sky Map uses your location to show the sky as it looks from where you are.
     postCompileScripts:
-      # The Firebase console's config, not checked in. Without it analytics stays off (see
-      # FirebaseAnalyticsAdapter); a missing file is not an error.
+      # The Firebase console's config, not checked in: one plist per registered app, so dev builds
+      # report as io.penterakt.skymap.dev and never as the App Store app. Without the matching
+      # file analytics stays off (see FirebaseAnalyticsAdapter); a missing file is not an error.
       - name: Bundle GoogleService-Info.plist if present
         basedOnDependencyAnalysis: false
         script: |
-          if [ -f "$SRCROOT/GoogleService-Info.plist" ]; then
-            cp "$SRCROOT/GoogleService-Info.plist" "$TARGET_BUILD_DIR/$UNLOCALIZED_RESOURCES_FOLDER_PATH/"
+          if [ "$CONFIGURATION" = "Release" ]; then
+            plist="GoogleService-Info.plist"
+          else
+            plist="GoogleService-Info-Dev.plist"
+          fi
+          if [ -f "$SRCROOT/$plist" ]; then
+            cp "$SRCROOT/$plist" "$TARGET_BUILD_DIR/$UNLOCALIZED_RESOURCES_FOLDER_PATH/GoogleService-Info.plist"
+          else
+            echo "warning: $plist not found; Firebase stays unconfigured for this build"
           fi
     preBuildScripts:
       - name: Build SkyMapKit and the catalog (Kotlin)
