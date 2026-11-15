@@ -128,7 +128,8 @@ at https://www.geoapify.com/privacy-policy for how it handles them.
   Sky Map downloads orbit data from CelesTrak (celestrak.org). On iOS this happens when you open
   the app and the data is several days old, or occasionally in the
   background when the system allows it. The request shows your IP
-  address to that service and contains no location.
+  address and the Sky Map version and platform (Android or iOS) to that service and contains no
+  location.
 
 ## Notifications
 

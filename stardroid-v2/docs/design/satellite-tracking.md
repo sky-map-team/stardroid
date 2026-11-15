@@ -700,7 +700,7 @@ honest and this is understood to be a connected feature.
 Three distinct gates, not two — a remote kill switch was added on review, and it sits above the
 other pair rather than replacing either of them:
 
-0. **`Experiment.SATELLITES` (`satellites_enabled`)** — the remote kill switch, following the
+0. **`Experiment.SATELLITES` (`satellites_v2_enabled`; `satellites_enabled` is retired, #1296)** — the remote kill switch, following the
    `Experiment`/`ExperimentConfig` pattern D79/D80 already established
    (`startup/ExperimentConfig.kt`). This is the primary gate: nothing below is reachable unless
    it is on. **Ships off for both flavors** — `false` in `ExperimentConfig.Static` (fdroid) and

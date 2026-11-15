@@ -20,4 +20,21 @@ class CelesTrakEndpointTest {
         assertThat(CelesTrakEndpoint.gpUrl(CelesTrakEndpoint.GP_URL, SatelliteTarget.CSS))
             .isEqualTo("https://celestrak.org/NORAD/elements/gp.php?CATNR=48274&FORMAT=CSV")
     }
+
+    @Test
+    fun `the user agent carries the version, the platform and the contact URL`() {
+        assertThat(CelesTrakEndpoint.userAgent("2.4.0", "Android"))
+            .isEqualTo("SkyMap/2.4.0 (Android; +https://github.com/sky-map-team/stardroid)")
+    }
+
+    @Test
+    fun `the release name is not sent`() {
+        assertThat(CelesTrakEndpoint.userAgent("2.3.2:Cassini", "iOS"))
+            .isEqualTo("SkyMap/2.3.2 (iOS; +https://github.com/sky-map-team/stardroid)")
+    }
+
+    @Test
+    fun `an unreadable version still gives a valid user agent`() {
+        assertThat(CelesTrakEndpoint.userAgent("", "iOS")).startsWith("SkyMap/unknown (iOS;")
+    }
 }

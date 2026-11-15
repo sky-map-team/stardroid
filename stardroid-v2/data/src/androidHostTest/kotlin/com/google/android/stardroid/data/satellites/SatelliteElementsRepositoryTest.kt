@@ -437,6 +437,7 @@ class SatelliteElementsRepositoryTest {
         val client =
             HttpUrlConnectionCelesTrakClient(
                 validatedNetwork = { null },
+                appVersionName = "2.4.0",
                 openConnection = { throw SecurityException("Permission denied: missing INTERNET") },
             )
         val outcome = client.fetch(SatelliteTarget.ISS, ifModifiedSince = null)
