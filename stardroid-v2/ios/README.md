@@ -29,10 +29,12 @@ after each as attachments (`xcrun xcresulttool export attachments --path <result
 
 Usage analytics is Firebase (GA4, the same property as Android), behind the shared `Analytics`
 edge that `FirebaseAnalyticsAdapter.swift` implements. It is on by default with an opt-out in
-Settings, as on Android's gms flavor. Download `GoogleService-Info.plist` from the Firebase
-console and put it in `ios/SkyMap/` (gitignored); the build bundles it when present. Without it
-Firebase stays unconfigured and every call is a no-op. Register both bundle IDs (`.dev` and the
-App Store one) in the console, so development events don't land in the production stream. The
+Settings, as on Android's gms flavor. Download one plist per registered app from the Firebase
+console into `ios/SkyMap/` (both gitignored): `GoogleService-Info.plist` for the App Store ID
+(`io.penterakt.skymap`, bundled in Release) and `GoogleService-Info-Dev.plist` for
+`io.penterakt.skymap.dev` (bundled in every other configuration), so development events and
+Remote Config conditions never mix with production. A missing plist leaves Firebase unconfigured
+and every call a no-op. The
 `WithoutAdIdSupport` variant is linked, so the advertising ID is never read.
 
 ## RendererHarness
