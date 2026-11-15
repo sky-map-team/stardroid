@@ -68,7 +68,9 @@
     <string name="layer_param_radec_grid_density_coarse_desc" translation_description="Explains the coarse celestial grid density: a meridian every 3 hours of right ascension and a circle every 30 degrees of declination.">Her 3 saatte bir meridyen, her 30°\u0027de bir daire</string>
     <string name="layer_param_radec_grid_density_medium_desc" translation_description="Explains the medium celestial grid density: a meridian every 2 hours of right ascension and a circle every 15 degrees of declination.">Her 2 saatte bir meridyen, her 15°\u0027de bir daire</string>
     <string name="layer_param_radec_grid_density_fine_desc" translation_description="Explains the fine celestial grid density: a meridian every hour of right ascension and a circle every 10 degrees of declination.">Her saatte bir meridyen, her 10°\u0027de bir daire</string>
-    <string name="satellites_no_data" translation_description="Explanation shown when satellite orbital data has not been downloaded yet and so no satellites can be drawn.">Uydu konumlarını güncellemek için internet bağlantısı gerekiyor.</string>
+    <string name="satellites_no_data" translation_description="Explanation shown when satellite orbital data has not been downloaded yet and so no satellites can be drawn.">
+    Uydu konumlarının indirilmesi için internet bağlantısı gerekiyor. İlk seferinde görünmeleri birkaç dakika sürebilir.
+    </string>
     <string name="layer_grid" translation_description="Toggle label for the layer showing the right ascension / declination grid.">Göksel ızgara</string>
     <string name="layer_horizon">Ufuk</string>
     <string name="layer_ecliptic">Ekliptik</string>
@@ -147,6 +149,10 @@ Tutulma uyarıları: Ay tutulmasından önce gelen bir bildirim.
     <string name="ar_iso_slider" translation_description="Accessibility label for the temporary developer slider setting the camera\'s manual ISO sensitivity in through-camera mode.">Kamera ISO değeri</string>
     <string name="ar_shutter_slider_label" translation_description="Very short label for the temporary developer slider setting the camera\'s manual shutter (exposure) time in through-camera mode.">Perde</string>
     <string name="ar_shutter_slider" translation_description="Accessibility label for the temporary developer slider setting the camera\'s manual shutter (exposure) time in through-camera mode.">Kamera deklanşör süresi</string>
+    <string name="ar_group_auto" translation_description="Heading above the through-camera slider that adjusts the camera\'s automatic exposure.">Otomatik pozlama</string>
+    <string name="ar_group_manual" translation_description="Heading above the through-camera sliders that set the camera\'s ISO and shutter time by hand.">Manuel pozlama</string>
+    <string name="ar_auto_off_note" translation_description="Note under the auto-exposure heading while manual exposure is in use: auto exposure is switched off. Touching the slider switches it back on.">Manuel etkinken kapalı</string>
+    <string name="ar_manual_off_note" translation_description="Note under the manual-exposure heading while auto exposure is in use: moving either slider switches auto exposure off.">Otomatikleri kapatmak için taşıyın</string>
     <string name="share_shutter_button" translation_description="Accessibility label for the round shutter button that captures and shares the current through-camera view.">Bu görünümü paylaş</string>
     <string name="ar_exposure_auto" translation_description="Readout shown when a manual camera exposure slider sits at its automatic position.">Otomatik</string>
     <string name="time_travel_button">Zaman Yolculuğu</string>
@@ -167,10 +173,26 @@ Tutulma uyarıları: Ay tutulmasından önce gelen bir bildirim.
     <string name="support_star_desc" translation_description="Support screen row description: starring helps other people find the app">Diğer insanların uygulamayı bulmasına yardımcı olur.</string>
     <string name="support_issues_title" translation_description="Support screen row: report a problem or suggest an idea on GitHub">Bir sorun bildirin veya fikir önerin</string>
     <string name="support_issues_desc" translation_description="Support screen row description: opens the issue tracker on GitHub">GitHub\'da bir sorun (issue) açın.</string>
+    <string name="support_rate_title" translation_description="Support screen row: leave a rating or review on the app store">Sky Map\'i değerlendir</string>
+    <string name="support_rate_desc" translation_description="Support screen row description: a store review helps other stargazers find the app">
+    Mağazadaki bir değerlendirme, diğer gökbilimcilerin bizi bulmasına yardımcı olur.
+    </string>
     <string name="support_share_title" translation_description="Support screen row: share the app with a friend">Bir arkadaşına anlat</string>
     <string name="support_share_desc" translation_description="Support screen row description: share the app with someone who likes the night sky">Sky Map\'i gece gökyüzünü seven biriyle paylaş.</string>
     <string name="support_bmac_title" translation_description="Support screen row: make a small voluntary donation on the Buy Me a Coffee website">Bize bir kahve ısmarla</string>
     <string name="support_bmac_desc" translation_description="Support screen row description: donations are optional">Geliştirme maliyetlerine katkı için isteğe bağlı küçük bir bağış.</string>
+    <string name="support_tip_title" translation_description="iOS Support screen row title: leave a one-time voluntary tip for the developer, paid through the App Store">Bahşiş bırak</string>
+    <string name="support_tip_desc" translation_description="iOS Support screen row description: tips are optional one-time purchases and the app stays free">
+    Geliştirme maliyetlerine katkı için tek seferlik, isteğe bağlı bir teşekkür. Sky Map her iki durumda da ücretsiz kalır.
+    </string>
+    <string name="tip_mercury" translation_description="Name of the smallest tip amount, a planet name used as a button label next to the price. Mercury, the smallest planet">Merkür</string>
+    <!-- tm:omitted name="tip_mars" reason="identical_to_source" -->
+    <string name="tip_jupiter" translation_description="Name of the largest tip amount, a planet name used as a button label next to the price. Jupiter, the biggest planet">Jüpiter</string>
+    <string name="support_tip_thanks" translation_description="Shown after a tip purchase succeeds">Teşekkürler, gökyüzünüz açık olsun!</string>
+    <string name="support_tip_pending" translation_description="Shown when a tip purchase is waiting for approval, for example from a family organizer">Bahşişiniz onay bekliyor. Teşekkürler!</string>
+    <string name="support_tip_failed" translation_description="Shown when a tip purchase did not go through">Satın alma işlemi gerçekleşmedi. Lütfen daha sonra tekrar deneyin.</string>
+    <string name="support_privacy_title" translation_description="Support screen row title: opens the privacy policy web page">Gizlilik politikası</string>
+    <string name="support_privacy_desc" translation_description="Support screen row description: the privacy policy explains what data Sky Map collects and how to opt out">Sky Map\'in ne topladığı ve nasıl vazgeçileceği.</string>
     <string name="support_share_message" translation_description="Message sent when the user shares the app with a friend. %1$s is the web link to the app's store page. Keep the %1$s placeholder.">
     Sky Map\'i denedin mi? Telefonunuz için ücretsiz, açık kaynaklı bir planetaryum: %1$s
     </string>
@@ -633,19 +655,19 @@ Metalden uzak, açık bir alana geçin ve tekrar deneyin.]]></string>
     <string name="tonight_new_moon" translation_description="Tonight-widget row shown at new moon">Yeni Ay — ayın en karanlık geceleri</string>
     <string name="tonight_full_moon" translation_description="Tonight-widget row shown at full moon">Bu gece Dolunay</string>
     <string name="tonight_bright_moon" translation_description="Tonight-widget row warning that a bright moon washes out faint objects">Parlak ay sönük nesneleri görünmez kılıyor</string>
+    <!-- tm:omitted name="tonight_satellite_pass" reason="identical_to_source" -->
     <string name="moon_widget_set_time" translation_description="Widget fragment showing today\'s moonset time; %1$s is a clock time like 03:12">batış %1$s</string>
     <string name="sun">Güneş</string>
     <string name="moon">Ay</string>
     <string name="mercury">Merkür</string>
     <string name="venus">Venüs</string>
     <string name="earth">Dünya</string>
+    <!-- tm:omitted name="mars" reason="identical_to_source" -->
     <string name="jupiter">Jüpiter</string>
     <string name="saturn">Satürn</string>
     <string name="uranus">Uranüs</string>
     <string name="neptune">Neptün</string>
     <string name="pluto">Plüton</string>
-    <!-- tm:omitted name="tonight_satellite_pass" reason="identical_to_source" -->
-    <!-- tm:omitted name="mars" reason="identical_to_source" -->
     <string name="notif_pass_title" translation_description="Title of the notification sent shortly before a satellite passes overhead. %1$s is the satellite name.">%1$s yakında baş üstünden geçecek</string>
     <string name="notif_pass_text" translation_description="Body of the satellite pass notification, telling the user when to go outside. %1$s is a time.">
     Yaklaşık %1$s itibarıyla görünür — dışarı çıkın ve gözlerinizin karanlığa alışmasını sağlayın

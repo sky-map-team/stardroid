@@ -68,7 +68,7 @@
     <string name="layer_param_radec_grid_density_coarse_desc" translation_description="Explains the coarse celestial grid density: a meridian every 3 hours of right ascension and a circle every 30 degrees of declination.">赤経 3 時間ごと、赤緯 30° ごとの経緯線</string>
     <string name="layer_param_radec_grid_density_medium_desc" translation_description="Explains the medium celestial grid density: a meridian every 2 hours of right ascension and a circle every 15 degrees of declination.">赤経 2 時間ごと、赤緯 15° ごとの経緯線</string>
     <string name="layer_param_radec_grid_density_fine_desc" translation_description="Explains the fine celestial grid density: a meridian every hour of right ascension and a circle every 10 degrees of declination.">赤経 1 時間ごと、赤緯 10° ごとの経緯線</string>
-    <string name="satellites_no_data" translation_description="Explanation shown when satellite orbital data has not been downloaded yet and so no satellites can be drawn.">人工衛星の位置を更新するにはインターネット接続が必要です。</string>
+    <string name="satellites_no_data" translation_description="Explanation shown when satellite orbital data has not been downloaded yet and so no satellites can be drawn.">衛星の位置情報をダウンロードするにはインターネット接続が必要です。初回は表示までに数分かかることがあります。</string>
     <string name="layer_grid" translation_description="Toggle label for the layer showing the right ascension / declination grid.">天球グリッド</string>
     <string name="layer_horizon">地平線</string>
     <string name="layer_ecliptic">黄道</string>
@@ -120,6 +120,10 @@
     <string name="ar_iso_slider" translation_description="Accessibility label for the temporary developer slider setting the camera\'s manual ISO sensitivity in through-camera mode.">カメラISO</string>
     <string name="ar_shutter_slider_label" translation_description="Very short label for the temporary developer slider setting the camera\'s manual shutter (exposure) time in through-camera mode.">シャッター</string>
     <string name="ar_shutter_slider" translation_description="Accessibility label for the temporary developer slider setting the camera\'s manual shutter (exposure) time in through-camera mode.">カメラシャッター時間</string>
+    <string name="ar_group_auto" translation_description="Heading above the through-camera slider that adjusts the camera\'s automatic exposure.">自動露出</string>
+    <string name="ar_group_manual" translation_description="Heading above the through-camera sliders that set the camera\'s ISO and shutter time by hand.">マニュアル露出</string>
+    <string name="ar_auto_off_note" translation_description="Note under the auto-exposure heading while manual exposure is in use: auto exposure is switched off. Touching the slider switches it back on.">マニュアル中無効</string>
+    <string name="ar_manual_off_note" translation_description="Note under the manual-exposure heading while auto exposure is in use: moving either slider switches auto exposure off.">動かすと自動がオフになります</string>
     <string name="share_shutter_button" translation_description="Accessibility label for the round shutter button that captures and shares the current through-camera view.">このビューを共有</string>
     <string name="ar_exposure_auto" translation_description="Readout shown when a manual camera exposure slider sits at its automatic position.">自動</string>
     <string name="time_travel_button">タイムトラベル</string>
@@ -138,10 +142,22 @@
     <string name="support_star_desc" translation_description="Support screen row description: starring helps other people find the app">他の人がこのアプリを見つけやすくなります。</string>
     <string name="support_issues_title" translation_description="Support screen row: report a problem or suggest an idea on GitHub">問題を報告する、またはアイデアを提案する</string>
     <string name="support_issues_desc" translation_description="Support screen row description: opens the issue tracker on GitHub">GitHubでIssueを作成します。</string>
+    <string name="support_rate_title" translation_description="Support screen row: leave a rating or review on the app store">Sky Mapを評価</string>
+    <string name="support_rate_desc" translation_description="Support screen row description: a store review helps other stargazers find the app">ストアでのレビューは、他の星空観察者がアプリを見つけるのに役立ちます。</string>
     <string name="support_share_title" translation_description="Support screen row: share the app with a friend">友だちにおすすめする</string>
     <string name="support_share_desc" translation_description="Support screen row description: share the app with someone who likes the night sky">夜空が好きな人にSky Mapをシェアしましょう。</string>
     <string name="support_bmac_title" translation_description="Support screen row: make a small voluntary donation on the Buy Me a Coffee website">開発者にコーヒーを奢る</string>
     <string name="support_bmac_desc" translation_description="Support screen row description: donations are optional">開発コストを応援する、任意の少額のチップです。</string>
+    <string name="support_tip_title" translation_description="iOS Support screen row title: leave a one-time voluntary tip for the developer, paid through the App Store">チップを送る</string>
+    <string name="support_tip_desc" translation_description="iOS Support screen row description: tips are optional one-time purchases and the app stays free">開発費用を支援するための、任意の1回限りのチップです。Sky Mapはどちらの場合も無料でご利用いただけます。</string>
+    <string name="tip_mercury" translation_description="Name of the smallest tip amount, a planet name used as a button label next to the price. Mercury, the smallest planet">水星</string>
+    <string name="tip_mars" translation_description="Name of the middle tip amount, a planet name used as a button label next to the price. Mars">火星</string>
+    <string name="tip_jupiter" translation_description="Name of the largest tip amount, a planet name used as a button label next to the price. Jupiter, the biggest planet">木星</string>
+    <string name="support_tip_thanks" translation_description="Shown after a tip purchase succeeds">ありがとうございます。晴天に恵まれますように！</string>
+    <string name="support_tip_pending" translation_description="Shown when a tip purchase is waiting for approval, for example from a family organizer">チップの承認待ちです。ありがとうございます！</string>
+    <string name="support_tip_failed" translation_description="Shown when a tip purchase did not go through">購入を完了できませんでした。後ほどもう一度お試しください。</string>
+    <string name="support_privacy_title" translation_description="Support screen row title: opens the privacy policy web page">プライバシーポリシー</string>
+    <string name="support_privacy_desc" translation_description="Support screen row description: the privacy policy explains what data Sky Map collects and how to opt out">Sky Mapが収集するデータと、オプトアウトの方法について。</string>
     <string name="support_share_message" translation_description="Message sent when the user shares the app with a friend. %1$s is the web link to the app's store page. Keep the %1$s placeholder.">Sky Mapをご存知ですか？スマートフォン向けの無料オープンソースプラネタリウムアプリです: %1$s</string>
     <string name="support_thanks_html" translation_description="HTML section at the bottom of the Support screen thanking donors and open-source contributors. %1$s is a list of donor names and %2$s a list of contributor names. Please do not change the &lt; and &gt; markup or the placeholders."><![CDATA[<h2>謝辞</h2> <h3>サポーターの皆様</h3> <p>%1$s</p> <h3>オープンソースへの貢献者の皆様</h3> <p>%2$s</p> <p>最新の貢献者一覧は <a href="https://github.com/sky-map-team/stardroid/graphs/contributors">GitHub</a> をご覧ください。</p>]]></string>
     <string name="layer_param_disc_size">ディスクサイズ</string>
@@ -571,6 +587,7 @@
     <string name="tonight_new_moon" translation_description="Tonight-widget row shown at new moon">新月 — 今月で最も暗い空</string>
     <string name="tonight_full_moon" translation_description="Tonight-widget row shown at full moon">今夜は満月</string>
     <string name="tonight_bright_moon" translation_description="Tonight-widget row warning that a bright moon washes out faint objects">明るい月が淡い天体をかき消す</string>
+    <!-- tm:omitted name="tonight_satellite_pass" reason="identical_to_source" -->
     <string name="moon_widget_set_time" translation_description="Widget fragment showing today\'s moonset time; %1$s is a clock time like 03:12">%1$s に沈む</string>
     <string name="sun">太陽</string>
     <string name="moon">月</string>
@@ -583,7 +600,6 @@
     <string name="uranus">天王星</string>
     <string name="neptune">海王星</string>
     <string name="pluto">冥王星</string>
-    <!-- tm:omitted name="tonight_satellite_pass" reason="identical_to_source" -->
     <string name="notif_pass_title" translation_description="Title of the notification sent shortly before a satellite passes overhead. %1$s is the satellite name.">%1$s がまもなく頭上を通過します</string>
     <string name="notif_pass_text" translation_description="Body of the satellite pass notification, telling the user when to go outside. %1$s is a time.">約%1$sから見えます — 外に出て目を慣らしましょう</string>
     <string name="notif_eclipse_title" translation_description="Title of the notification sent before a lunar eclipse starts. %1$s is a localized eclipse type like \'Total lunar eclipse\'.">%1$s がまもなく始まります</string>

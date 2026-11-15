@@ -68,7 +68,7 @@
     <string name="layer_param_radec_grid_density_coarse_desc" translation_description="Explains the coarse celestial grid density: a meridian every 3 hours of right ascension and a circle every 30 degrees of declination.">赤經每 3 小時一條經線，赤緯每 30° 一條圓圈</string>
     <string name="layer_param_radec_grid_density_medium_desc" translation_description="Explains the medium celestial grid density: a meridian every 2 hours of right ascension and a circle every 15 degrees of declination.">赤經每 2 小時一條經線，赤緯每 15° 一條圓圈</string>
     <string name="layer_param_radec_grid_density_fine_desc" translation_description="Explains the fine celestial grid density: a meridian every hour of right ascension and a circle every 10 degrees of declination.">赤經每小時一條經線，赤緯每 10° 一條圓圈</string>
-    <string name="satellites_no_data" translation_description="Explanation shown when satellite orbital data has not been downloaded yet and so no satellites can be drawn.">衛星位置需要網路連線才能更新。</string>
+    <string name="satellites_no_data" translation_description="Explanation shown when satellite orbital data has not been downloaded yet and so no satellites can be drawn.">衛星位置需要網際網路連線來下載。初次下載可能需要幾分鐘才會顯示。</string>
     <string name="layer_grid" translation_description="Toggle label for the layer showing the right ascension / declination grid.">天球網格</string>
     <string name="layer_horizon">地平線</string>
     <string name="layer_ecliptic">黃道</string>
@@ -118,6 +118,10 @@
     <string name="ar_iso_slider" translation_description="Accessibility label for the temporary developer slider setting the camera\'s manual ISO sensitivity in through-camera mode.">相機 ISO</string>
     <string name="ar_shutter_slider_label" translation_description="Very short label for the temporary developer slider setting the camera\'s manual shutter (exposure) time in through-camera mode.">快門</string>
     <string name="ar_shutter_slider" translation_description="Accessibility label for the temporary developer slider setting the camera\'s manual shutter (exposure) time in through-camera mode.">相機快門時間</string>
+    <string name="ar_group_auto" translation_description="Heading above the through-camera slider that adjusts the camera\'s automatic exposure.">自動曝光</string>
+    <string name="ar_group_manual" translation_description="Heading above the through-camera sliders that set the camera\'s ISO and shutter time by hand.">手動曝光</string>
+    <string name="ar_auto_off_note" translation_description="Note under the auto-exposure heading while manual exposure is in use: auto exposure is switched off. Touching the slider switches it back on.">手動啟用時關閉</string>
+    <string name="ar_manual_off_note" translation_description="Note under the manual-exposure heading while auto exposure is in use: moving either slider switches auto exposure off.">移動以關閉自動曝光</string>
     <string name="share_shutter_button" translation_description="Accessibility label for the round shutter button that captures and shares the current through-camera view.">分享此畫面</string>
     <string name="ar_exposure_auto" translation_description="Readout shown when a manual camera exposure slider sits at its automatic position.">自動</string>
     <string name="time_travel_button">時光旅行</string>
@@ -136,10 +140,22 @@
     <string name="support_star_desc" translation_description="Support screen row description: starring helps other people find the app">這有助於其他人找到這個應用程式。</string>
     <string name="support_issues_title" translation_description="Support screen row: report a problem or suggest an idea on GitHub">回報問題或提出建議</string>
     <string name="support_issues_desc" translation_description="Support screen row description: opens the issue tracker on GitHub">在 GitHub 上開立 Issue。</string>
+    <string name="support_rate_title" translation_description="Support screen row: leave a rating or review on the app store">評分 Sky Map</string>
+    <string name="support_rate_desc" translation_description="Support screen row description: a store review helps other stargazers find the app">在商店留下評價有助於其他觀星者找到我們。</string>
     <string name="support_share_title" translation_description="Support screen row: share the app with a friend">告訴朋友</string>
     <string name="support_share_desc" translation_description="Support screen row description: share the app with someone who likes the night sky">將 Sky Map 分享給喜愛夜空的人。</string>
     <string name="support_bmac_title" translation_description="Support screen row: make a small voluntary donation on the Buy Me a Coffee website">請我們喝杯咖啡</string>
     <string name="support_bmac_desc" translation_description="Support screen row description: donations are optional">一筆小額且自願的小費，用於補貼開發成本。</string>
+    <string name="support_tip_title" translation_description="iOS Support screen row title: leave a one-time voluntary tip for the developer, paid through the App Store">贊助我們</string>
+    <string name="support_tip_desc" translation_description="iOS Support screen row description: tips are optional one-time purchases and the app stays free">一次性且非強制的感謝贊助，用於分擔開發成本。無論是否贊助，Sky Map 始終免費。</string>
+    <string name="tip_mercury" translation_description="Name of the smallest tip amount, a planet name used as a button label next to the price. Mercury, the smallest planet">水星</string>
+    <string name="tip_mars" translation_description="Name of the middle tip amount, a planet name used as a button label next to the price. Mars">火星</string>
+    <string name="tip_jupiter" translation_description="Name of the largest tip amount, a planet name used as a button label next to the price. Jupiter, the biggest planet">木星</string>
+    <string name="support_tip_thanks" translation_description="Shown after a tip purchase succeeds">謝謝你，祝觀星愉快！</string>
+    <string name="support_tip_pending" translation_description="Shown when a tip purchase is waiting for approval, for example from a family organizer">你的贊助正在等待批准。謝謝你！</string>
+    <string name="support_tip_failed" translation_description="Shown when a tip purchase did not go through">購買未成功。請稍後再試。</string>
+    <string name="support_privacy_title" translation_description="Support screen row title: opens the privacy policy web page">隱私權政策</string>
+    <string name="support_privacy_desc" translation_description="Support screen row description: the privacy policy explains what data Sky Map collects and how to opt out">Sky Map 收集哪些資料以及如何退出。</string>
     <string name="support_share_message" translation_description="Message sent when the user shares the app with a friend. %1$s is the web link to the app's store page. Keep the %1$s placeholder.">你用過 Sky Map 嗎？這是專為你的手機打造的免費開源天文館：%1$s</string>
     <string name="support_thanks_html" translation_description="HTML section at the bottom of the Support screen thanking donors and open-source contributors. %1$s is a list of donor names and %2$s a list of contributor names. Please do not change the &lt; and &gt; markup or the placeholders."><![CDATA[<h2>謝謝你</h2> <h3>支持者</h3> <p>%1$s</p> <h3>開源貢獻者</h3> <p>%2$s</p> <p>請至 <a href="https://github.com/sky-map-team/stardroid/graphs/contributors">GitHub</a> 查看最新貢獻者。</p>]]></string>
     <string name="layer_param_disc_size">盤面大小</string>
@@ -558,6 +574,7 @@
     <string name="tonight_new_moon" translation_description="Tonight-widget row shown at new moon">新月 — 本月最暗星空</string>
     <string name="tonight_full_moon" translation_description="Tonight-widget row shown at full moon">今晚滿月</string>
     <string name="tonight_bright_moon" translation_description="Tonight-widget row warning that a bright moon washes out faint objects">明亮的月亮遮蔽微弱天體</string>
+    <!-- tm:omitted name="tonight_satellite_pass" reason="identical_to_source" -->
     <string name="moon_widget_set_time" translation_description="Widget fragment showing today\'s moonset time; %1$s is a clock time like 03:12">落下 %1$s</string>
     <string name="sun">太陽</string>
     <string name="moon">月球</string>
@@ -570,7 +587,6 @@
     <string name="uranus">天王星</string>
     <string name="neptune">海王星</string>
     <string name="pluto">冥王星</string>
-    <!-- tm:omitted name="tonight_satellite_pass" reason="identical_to_source" -->
     <string name="notif_pass_title" translation_description="Title of the notification sent shortly before a satellite passes overhead. %1$s is the satellite name.">%1$s 即將凌空</string>
     <string name="notif_pass_text" translation_description="Body of the satellite pass notification, telling the user when to go outside. %1$s is a time.">大約從 %1$s 開始可見 — 到戶外讓眼睛適應黑暗</string>
     <string name="notif_eclipse_title" translation_description="Title of the notification sent before a lunar eclipse starts. %1$s is a localized eclipse type like \'Total lunar eclipse\'.">%1$s 即將開始</string>

@@ -68,7 +68,7 @@
     <string name="layer_param_radec_grid_density_coarse_desc" translation_description="Explains the coarse celestial grid density: a meridian every 3 hours of right ascension and a circle every 30 degrees of declination.">적경 3시간마다 자오선, 30°마다 원 표시</string>
     <string name="layer_param_radec_grid_density_medium_desc" translation_description="Explains the medium celestial grid density: a meridian every 2 hours of right ascension and a circle every 15 degrees of declination.">적경 2시간마다 자오선, 15°마다 원 표시</string>
     <string name="layer_param_radec_grid_density_fine_desc" translation_description="Explains the fine celestial grid density: a meridian every hour of right ascension and a circle every 10 degrees of declination.">적경 1시간마다 자오선, 10°마다 원 표시</string>
-    <string name="satellites_no_data" translation_description="Explanation shown when satellite orbital data has not been downloaded yet and so no satellites can be drawn.">위성 위치를 업데이트하려면 인터넷 연결이 필요합니다.</string>
+    <string name="satellites_no_data" translation_description="Explanation shown when satellite orbital data has not been downloaded yet and so no satellites can be drawn.">위성 위치를 다운로드하려면 인터넷 연결이 필요합니다. 처음 실행할 때는 나타나는 데 몇 분 정도 걸릴 수 있습니다.</string>
     <string name="layer_grid" translation_description="Toggle label for the layer showing the right ascension / declination grid.">천체 그리드</string>
     <string name="layer_horizon">지평선</string>
     <string name="layer_ecliptic">단주기 혜성</string>
@@ -120,6 +120,10 @@
     <string name="ar_iso_slider" translation_description="Accessibility label for the temporary developer slider setting the camera\'s manual ISO sensitivity in through-camera mode.">카메라 ISO</string>
     <string name="ar_shutter_slider_label" translation_description="Very short label for the temporary developer slider setting the camera\'s manual shutter (exposure) time in through-camera mode.">셔터</string>
     <string name="ar_shutter_slider" translation_description="Accessibility label for the temporary developer slider setting the camera\'s manual shutter (exposure) time in through-camera mode.">카메라 셔터 시간</string>
+    <string name="ar_group_auto" translation_description="Heading above the through-camera slider that adjusts the camera\'s automatic exposure.">자동 노출</string>
+    <string name="ar_group_manual" translation_description="Heading above the through-camera sliders that set the camera\'s ISO and shutter time by hand.">수동 노출</string>
+    <string name="ar_auto_off_note" translation_description="Note under the auto-exposure heading while manual exposure is in use: auto exposure is switched off. Touching the slider switches it back on.">수동 노출 중에는 꺼짐</string>
+    <string name="ar_manual_off_note" translation_description="Note under the manual-exposure heading while auto exposure is in use: moving either slider switches auto exposure off.">움직이면 자동 노출이 꺼집니다</string>
     <string name="share_shutter_button" translation_description="Accessibility label for the round shutter button that captures and shares the current through-camera view.">이 화면 공유</string>
     <string name="ar_exposure_auto" translation_description="Readout shown when a manual camera exposure slider sits at its automatic position.">자동</string>
     <string name="time_travel_button">시간 여행</string>
@@ -138,10 +142,22 @@
     <string name="support_star_desc" translation_description="Support screen row description: starring helps other people find the app">다른 사람들이 앱을 찾는 데 도움이 됩니다.</string>
     <string name="support_issues_title" translation_description="Support screen row: report a problem or suggest an idea on GitHub">문제 신고 또는 아이디어 제안하기</string>
     <string name="support_issues_desc" translation_description="Support screen row description: opens the issue tracker on GitHub">GitHub에서 이슈를 열어주세요.</string>
+    <string name="support_rate_title" translation_description="Support screen row: leave a rating or review on the app store">Sky Map 평가하기</string>
+    <string name="support_rate_desc" translation_description="Support screen row description: a store review helps other stargazers find the app">스토어에 남겨주신 리뷰는 다른 별지기들이 앱을 찾는 데 도움이 됩니다.</string>
     <string name="support_share_title" translation_description="Support screen row: share the app with a friend">친구에게 알리기</string>
     <string name="support_share_desc" translation_description="Support screen row description: share the app with someone who likes the night sky">밤하늘을 사랑하는 사람과 Sky Map을 공유하세요.</string>
     <string name="support_bmac_title" translation_description="Support screen row: make a small voluntary donation on the Buy Me a Coffee website">커피 한 잔 사주기</string>
     <string name="support_bmac_desc" translation_description="Support screen row description: donations are optional">개발 비용에 보태는 작고 자발적인 후원입니다.</string>
+    <string name="support_tip_title" translation_description="iOS Support screen row title: leave a one-time voluntary tip for the developer, paid through the App Store">개발자 후원하기</string>
+    <string name="support_tip_desc" translation_description="iOS Support screen row description: tips are optional one-time purchases and the app stays free">개발 비용을 지원하는 일회성 자발적 후원입니다. Sky Map은 후원 여부와 관계없이 계속 무료로 제공됩니다.</string>
+    <string name="tip_mercury" translation_description="Name of the smallest tip amount, a planet name used as a button label next to the price. Mercury, the smallest planet">수성</string>
+    <string name="tip_mars" translation_description="Name of the middle tip amount, a planet name used as a button label next to the price. Mars">화성</string>
+    <string name="tip_jupiter" translation_description="Name of the largest tip amount, a planet name used as a button label next to the price. Jupiter, the biggest planet">목성</string>
+    <string name="support_tip_thanks" translation_description="Shown after a tip purchase succeeds">감사합니다. 늘 맑은 밤하늘이 함께하길 바랍니다!</string>
+    <string name="support_tip_pending" translation_description="Shown when a tip purchase is waiting for approval, for example from a family organizer">후원 승인을 대기 중입니다. 감사합니다!</string>
+    <string name="support_tip_failed" translation_description="Shown when a tip purchase did not go through">구매가 완료되지 않았습니다. 나중에 다시 시도해 주세요.</string>
+    <string name="support_privacy_title" translation_description="Support screen row title: opens the privacy policy web page">개인정보 처리방침</string>
+    <string name="support_privacy_desc" translation_description="Support screen row description: the privacy policy explains what data Sky Map collects and how to opt out">Sky Map이 수집하는 데이터와 거부 방법에 대해 알아보세요.</string>
     <string name="support_share_message" translation_description="Message sent when the user shares the app with a friend. %1$s is the web link to the app's store page. Keep the %1$s placeholder.">Sky Map을 사용해 보셨나요? 휴대폰을 위한 무료 오픈소스 천체 투영관 앱입니다: %1$s</string>
     <string name="support_thanks_html" translation_description="HTML section at the bottom of the Support screen thanking donors and open-source contributors. %1$s is a list of donor names and %2$s a list of contributor names. Please do not change the &lt; and &gt; markup or the placeholders."><![CDATA[<h2>감사합니다</h2> <h3>후원자 분들</h3> <p>%1$s</p> <h3>오픈소스 기여자 분들</h3> <p>%2$s</p> <p>최신 기여자 목록은 <a href="https://github.com/sky-map-team/stardroid/graphs/contributors">GitHub</a>에서 확인하세요.</p>]]></string>
     <string name="layer_param_disc_size">원반 크기</string>
@@ -570,6 +586,7 @@
     <string name="tonight_new_moon" translation_description="Tonight-widget row shown at new moon">신월 — 한 달 중 가장 어두운 밤하늘</string>
     <string name="tonight_full_moon" translation_description="Tonight-widget row shown at full moon">오늘 밤 보름달</string>
     <string name="tonight_bright_moon" translation_description="Tonight-widget row warning that a bright moon washes out faint objects">밝은 달이 희미한 물체를 가립니다</string>
+    <!-- tm:omitted name="tonight_satellite_pass" reason="identical_to_source" -->
     <string name="moon_widget_set_time" translation_description="Widget fragment showing today\'s moonset time; %1$s is a clock time like 03:12">%1$s에 짐</string>
     <string name="sun">태양</string>
     <string name="moon">달</string>
@@ -582,7 +599,6 @@
     <string name="uranus">천왕성</string>
     <string name="neptune">해왕성</string>
     <string name="pluto">명왕성</string>
-    <!-- tm:omitted name="tonight_satellite_pass" reason="identical_to_source" -->
     <string name="notif_pass_title" translation_description="Title of the notification sent shortly before a satellite passes overhead. %1$s is the satellite name.">%1$s이(가) 곧 머리 위를 통과합니다</string>
     <string name="notif_pass_text" translation_description="Body of the satellite pass notification, telling the user when to go outside. %1$s is a time.">약 %1$s부터 보입니다 — 밖으로 나가 눈을 적응시키세요</string>
     <string name="notif_eclipse_title" translation_description="Title of the notification sent before a lunar eclipse starts. %1$s is a localized eclipse type like \'Total lunar eclipse\'.">%1$s이(가) 곧 시작됩니다</string>
