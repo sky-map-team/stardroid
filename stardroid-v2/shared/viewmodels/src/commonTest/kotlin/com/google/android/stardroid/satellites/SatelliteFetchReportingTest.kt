@@ -45,20 +45,7 @@ class SatelliteFetchReportingTest {
     @Test
     fun aSampledSuccessIsCounted() {
         trackSatelliteFetchResult(
-            completed(FetchOutcome.Success("", null)),
-            analytics,
-            now,
-            alwaysSampled,
-        )
-
-        assertThat(analytics.events.map { it.name })
-            .containsExactly(AnalyticsEvents.SATELLITE_FETCH_OK_EVENT)
-    }
-
-    @Test
-    fun aSampledNotModifiedIsCounted() {
-        trackSatelliteFetchResult(
-            completed(FetchOutcome.NotModified),
+            completed(FetchOutcome.Success("")),
             analytics,
             now,
             alwaysSampled,
@@ -71,7 +58,7 @@ class SatelliteFetchReportingTest {
     @Test
     fun anUnsampledSuccessIsNotCounted() {
         trackSatelliteFetchResult(
-            completed(FetchOutcome.Success("", null)),
+            completed(FetchOutcome.Success("")),
             analytics,
             now,
             neverSampled,

@@ -20,23 +20,16 @@ class UrlSessionCelesTrakClientTest {
     private fun outcome(
         status: Int,
         body: String? = null,
-        lastModified: String? = null,
-    ) = fetchOutcomeFor(status, { body }, { lastModified })
+    ) = fetchOutcomeFor(status) { body }
 
     @Test
-    fun okWithABodyIsASuccessCarryingLastModified() {
-        assertThat(outcome(200, "ISS\n1 25544U", "Sat, 07 Nov 2026 00:00:00 GMT"))
-            .isEqualTo(FetchOutcome.Success("ISS\n1 25544U", "Sat, 07 Nov 2026 00:00:00 GMT"))
+    fun okWithABodyIsASuccess() {
+        assertThat(outcome(200, "ISS\n1 25544U")).isEqualTo(FetchOutcome.Success("ISS\n1 25544U"))
     }
 
     @Test
     fun okWithNoUsableBodyIsUnusableNotAnError() {
         assertThat(outcome(200, body = null)).isInstanceOf(FetchOutcome.UnusableBody::class)
-    }
-
-    @Test
-    fun notModifiedIsNotAnError() {
-        assertThat(outcome(304)).isEqualTo(FetchOutcome.NotModified)
     }
 
     @Test
@@ -53,13 +46,10 @@ class UrlSessionCelesTrakClientTest {
     @Test
     fun theBodyIsOnlyReadForOk() {
         var read = false
-        fetchOutcomeFor(301, {
+        fetchOutcomeFor(301) {
             read = true
             "x"
-        }, {
-            read = true
-            "y"
-        })
+        }
         assertThat(read).isFalse()
     }
 

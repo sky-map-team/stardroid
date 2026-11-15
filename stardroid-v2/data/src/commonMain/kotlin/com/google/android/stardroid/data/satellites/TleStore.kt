@@ -14,7 +14,8 @@ import kotlinx.datetime.Instant
 /**
  * On-disk home for the element sets and the fetch state that guards them. Durable storage, never
  * a cache the OS may evict: losing the TLE silently kills the feature for offline users.
- * Element sets are stored verbatim, so the network and cache paths share one parser.
+ * Element sets are stored verbatim (the merged OMM CSV), so the network and cache paths
+ * share one parser.
  */
 class TleStore(
     private val files: TextFiles,
@@ -49,15 +50,11 @@ class TleStore(
                 lastAttempt = fields[KEY_LAST_ATTEMPT]?.toInstantOrNull(),
                 lastSuccess = fields[KEY_LAST_SUCCESS]?.toInstantOrNull(),
                 elementsWrittenAt = fields[KEY_ELEMENTS_WRITTEN_AT]?.toInstantOrNull(),
-                lastModified = fields[KEY_LAST_MODIFIED]?.takeIf { it.isNotEmpty() },
                 lastStatusCode = fields[KEY_LAST_STATUS]?.toIntOrNull(),
             )
         }.getOrElse { SatelliteFetchState() }
 
-    /**
-     * Hand-rolled `key=value`: `:data` has no JSON library at runtime, and `Last-Modified` never
-     * contains a newline or `=`.
-     */
+    /** Hand-rolled `key=value`: `:data` has no JSON library at runtime. */
     fun writeState(state: SatelliteFetchState) {
         val text =
             buildString {
@@ -68,7 +65,6 @@ class TleStore(
                 state.lastAttempt?.let { appendLine("$KEY_LAST_ATTEMPT=$it") }
                 state.lastSuccess?.let { appendLine("$KEY_LAST_SUCCESS=$it") }
                 state.elementsWrittenAt?.let { appendLine("$KEY_ELEMENTS_WRITTEN_AT=$it") }
-                state.lastModified?.let { appendLine("$KEY_LAST_MODIFIED=$it") }
                 state.lastStatusCode?.let { appendLine("$KEY_LAST_STATUS=$it") }
             }
         files.replace(STATE_FILE, text)
@@ -77,7 +73,7 @@ class TleStore(
     private fun String.toInstantOrNull(): Instant? = runCatching { Instant.parse(this) }.getOrNull()
 
     private companion object {
-        const val ELEMENTS_FILE = "elements.tle"
+        const val ELEMENTS_FILE = "elements.csv"
         const val STATE_FILE = "fetch-state.txt"
 
         const val KEY_FAILURES = "consecutiveFailures"
@@ -87,7 +83,6 @@ class TleStore(
         const val KEY_LAST_ATTEMPT = "lastAttempt"
         const val KEY_LAST_SUCCESS = "lastSuccess"
         const val KEY_ELEMENTS_WRITTEN_AT = "elementsWrittenAt"
-        const val KEY_LAST_MODIFIED = "lastModified"
         const val KEY_LAST_STATUS = "lastStatusCode"
     }
 }

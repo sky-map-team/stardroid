@@ -59,31 +59,26 @@ class UrlSessionCelesTrakClient(
     private val baseUrl: String = CelesTrakEndpoint.GP_URL,
     private val userAgent: String = CelesTrakEndpoint.userAgent(appVersionName, "iOS"),
 ) : CelesTrakClient {
-    override fun fetch(
-        group: SatelliteGroup,
-        ifModifiedSince: String?,
-    ): FetchOutcome {
+    override fun fetch(target: SatelliteTarget): FetchOutcome {
         val path = PathWatch()
         return try {
-            fetchWatching(group, ifModifiedSince, path)
+            fetchWatching(target, path)
         } finally {
             path.stop()
         }
     }
 
     private fun fetchWatching(
-        group: SatelliteGroup,
-        ifModifiedSince: String?,
+        target: SatelliteTarget,
         path: PathWatch,
     ): FetchOutcome {
         val url =
-            NSURL.URLWithString("$baseUrl?GROUP=${group.queryValue}&FORMAT=tle")
+            NSURL.URLWithString(CelesTrakEndpoint.gpUrl(baseUrl, target))
                 ?: return FetchOutcome.TransportFailure(IllegalArgumentException("bad URL"))
         val request =
             NSMutableURLRequest.requestWithURL(url).apply {
                 setCachePolicy(NSURLRequestReloadIgnoringLocalCacheData)
                 setValue(userAgent, forHTTPHeaderField = "User-Agent")
-                ifModifiedSince?.let { setValue(it, forHTTPHeaderField = "If-Modified-Since") }
             }
         // Ephemeral, so no cache or cookie jar adds validators or state of its own, and no
         // waiting for connectivity: offline is a transport failure now, not a request that
@@ -120,11 +115,7 @@ class UrlSessionCelesTrakClient(
         }
         val http =
             response ?: return FetchOutcome.TransportFailure(Exception("not an HTTP response"))
-        return fetchOutcomeFor(
-            status = http.statusCode.toInt(),
-            body = { data?.toBoundedString() },
-            lastModified = { http.valueForHTTPHeaderField("Last-Modified") },
-        )
+        return fetchOutcomeFor(http.statusCode.toInt()) { data?.toBoundedString() }
     }
 
     /** Answers every redirect with "don't follow", so a 301 reaches the circuit breaker. */
@@ -182,21 +173,19 @@ class UrlSessionCelesTrakClient(
 }
 
 /**
- * A response as a [FetchOutcome]: `200` with a usable body is a success, `304` is "not modified",
- * anything else is an HTTP error (a policy event for the circuit breaker, never a retry). Pure,
- * so the mapping is tested without a socket; [body] and [lastModified] are read only for a `200`.
+ * A response as a [FetchOutcome]: `200` with a usable body is a success, anything else is an HTTP
+ * error (a policy event for the circuit breaker, never a retry). Pure, so the mapping is tested
+ * without a socket; [body] is read only for a `200`.
  */
 internal fun fetchOutcomeFor(
     status: Int,
     body: () -> String?,
-    lastModified: () -> String?,
 ): FetchOutcome =
     when (status) {
         STATUS_OK ->
-            body()?.let { FetchOutcome.Success(it, lastModified()) }
+            body()?.let { FetchOutcome.Success(it) }
                 ?: FetchOutcome.UnusableBody("empty, oversized or undecodable body")
 
-        STATUS_NOT_MODIFIED -> FetchOutcome.NotModified
         else -> FetchOutcome.HttpError(status)
     }
 
@@ -222,7 +211,6 @@ internal fun failureOutcomeFor(
 }
 
 private const val STATUS_OK = 200
-private const val STATUS_NOT_MODIFIED = 304
 
 /** ~2000x the expected ~1 KB payload: generous headroom, still far from unbounded. */
 private const val MAX_BODY_BYTES = 2 * 1024 * 1024

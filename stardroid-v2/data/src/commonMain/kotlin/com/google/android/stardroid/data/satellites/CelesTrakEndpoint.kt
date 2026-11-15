@@ -13,6 +13,12 @@ package com.google.android.stardroid.data.satellites
 object CelesTrakEndpoint {
     const val GP_URL = "https://celestrak.org/NORAD/elements/gp.php"
 
+    /** OMM CSV, not TLE: TLEs can't carry the 6-digit catalog numbers now being issued. */
+    fun gpUrl(
+        baseUrl: String,
+        target: SatelliteTarget,
+    ) = "$baseUrl?CATNR=${target.catalogNumber}&FORMAT=CSV"
+
     /**
      * Descriptive, contactable and versioned, so a host can tell releases and platforms apart.
      * Only the number of [appVersionName] is sent, not a release name ("2.3.2:Cassini").

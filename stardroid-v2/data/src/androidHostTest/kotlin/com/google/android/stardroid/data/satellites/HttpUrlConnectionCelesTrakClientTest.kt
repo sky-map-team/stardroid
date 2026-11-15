@@ -30,30 +30,23 @@ import java.net.UnknownHostException
  */
 class HttpUrlConnectionCelesTrakClientTest {
     @Test
-    fun `a normal body is returned intact with its Last-Modified`() {
+    fun `a normal body is returned intact`() {
         val body = "ISS (ZARYA)\n1 25544U ...\n2 25544 ...\n"
-        val client =
-            clientReturning(
-                HttpURLConnection.HTTP_OK,
-                body,
-                lastModified = "Sat, 15 Aug 2026 12:00:00 GMT",
-            )
+        val client = clientReturning(HttpURLConnection.HTTP_OK, body)
 
-        val outcome = client.fetch(SatelliteGroup.STATIONS, ifModifiedSince = null)
+        val outcome = client.fetch(SatelliteTarget.ISS)
 
         assertThat(outcome).isInstanceOf(FetchOutcome.Success::class.java)
-        val success = outcome as FetchOutcome.Success
-        assertThat(success.body).isEqualTo(body)
-        assertThat(success.lastModified).isEqualTo("Sat, 15 Aug 2026 12:00:00 GMT")
+        assertThat((outcome as FetchOutcome.Success).body).isEqualTo(body)
     }
 
     @Test
     fun `a body larger than the cap is unusable rather than materialized`() {
         // Comfortably over the 2 MB cap. The point is that this is refused, not truncated:
-        // a half-read TLE catalog would parse into plausible-but-wrong element sets.
+        // a half-read CSV would parse into plausible-but-wrong element sets.
         val client = clientReturning(HttpURLConnection.HTTP_OK, "x".repeat(3 * 1024 * 1024))
 
-        val outcome = client.fetch(SatelliteGroup.STATIONS, ifModifiedSince = null)
+        val outcome = client.fetch(SatelliteTarget.ISS)
 
         assertThat(outcome).isInstanceOf(FetchOutcome.UnusableBody::class.java)
     }
@@ -65,17 +58,9 @@ class HttpUrlConnectionCelesTrakClientTest {
         val body = "y".repeat(2 * 1024 * 1024 - 1)
         val client = clientReturning(HttpURLConnection.HTTP_OK, body)
 
-        val outcome = client.fetch(SatelliteGroup.STATIONS, ifModifiedSince = null)
+        val outcome = client.fetch(SatelliteTarget.ISS)
 
         assertThat((outcome as FetchOutcome.Success).body).hasLength(body.length)
-    }
-
-    @Test
-    fun `a 304 is reported as NotModified without reading a body`() {
-        val client = clientReturning(HttpURLConnection.HTTP_NOT_MODIFIED, body = "")
-
-        assertThat(client.fetch(SatelliteGroup.STATIONS, ifModifiedSince = "whenever"))
-            .isEqualTo(FetchOutcome.NotModified)
     }
 
     @Test
@@ -131,7 +116,7 @@ class HttpUrlConnectionCelesTrakClientTest {
                 validatedNetwork = { WIFI },
                 appVersionName = "2.4.0:Name",
                 openConnection = { url ->
-                    object : FakeConnection(url, HttpURLConnection.HTTP_OK, "", null) {
+                    object : FakeConnection(url, HttpURLConnection.HTTP_OK, "") {
                         override fun getResponseCode(): Int {
                             sent = getRequestProperty("User-Agent")
                             return super.getResponseCode()
@@ -140,7 +125,7 @@ class HttpUrlConnectionCelesTrakClientTest {
                 },
             )
 
-        client.fetch(SatelliteGroup.STATIONS, ifModifiedSince = null)
+        client.fetch(SatelliteTarget.ISS)
 
         assertThat(sent)
             .isEqualTo("SkyMap/2.4.0 (Android; +https://github.com/sky-map-team/stardroid)")
@@ -154,14 +139,14 @@ class HttpUrlConnectionCelesTrakClientTest {
                 validatedNetwork = { WIFI },
                 appVersionName = "2.4.0",
                 openConnection = { url ->
-                    object : FakeConnection(url, HttpURLConnection.HTTP_OK, "", null) {
+                    object : FakeConnection(url, HttpURLConnection.HTTP_OK, "") {
                         override fun getInputStream(): InputStream =
                             throw SocketTimeoutException("Read timed out")
                     }
                 },
             )
 
-        assertThat(client.fetch(SatelliteGroup.STATIONS, ifModifiedSince = null))
+        assertThat(client.fetch(SatelliteTarget.ISS))
             .isInstanceOf(FetchOutcome.TransportFailure::class.java)
     }
 
@@ -177,22 +162,21 @@ class HttpUrlConnectionCelesTrakClientTest {
                 validatedNetwork = { networks.removeFirst() },
                 appVersionName = "2.4.0",
                 openConnection = { url ->
-                    object : FakeConnection(url, HttpURLConnection.HTTP_OK, "", null) {
+                    object : FakeConnection(url, HttpURLConnection.HTTP_OK, "") {
                         override fun getResponseCode(): Int = throw failure
                     }
                 },
             )
-        return client.fetch(SatelliteGroup.STATIONS, ifModifiedSince = null)
+        return client.fetch(SatelliteTarget.ISS)
     }
 
     private fun clientReturning(
         status: Int,
         body: String,
-        lastModified: String? = null,
     ) = HttpUrlConnectionCelesTrakClient(
         validatedNetwork = { WIFI },
         appVersionName = "2.4.0",
-        openConnection = { url -> FakeConnection(url, status, body, lastModified) },
+        openConnection = { url -> FakeConnection(url, status, body) },
     )
 
     /**
@@ -204,14 +188,10 @@ class HttpUrlConnectionCelesTrakClientTest {
         url: URL,
         private val status: Int,
         private val body: String,
-        private val lastModified: String?,
     ) : HttpURLConnection(url) {
         override fun getResponseCode(): Int = status
 
         override fun getInputStream(): InputStream = ByteArrayInputStream(body.toByteArray())
-
-        override fun getHeaderField(name: String): String? =
-            lastModified.takeIf { name == "Last-Modified" }
 
         override fun connect() = Unit
 

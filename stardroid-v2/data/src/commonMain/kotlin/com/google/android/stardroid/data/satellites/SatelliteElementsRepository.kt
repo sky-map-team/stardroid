@@ -68,7 +68,7 @@ data class SatelliteElements(
 class SatelliteElementsRepository(
     private val store: TleStore,
     private val client: CelesTrakClient,
-    private val group: SatelliteGroup = SatelliteGroup.STATIONS,
+    private val targets: List<SatelliteTarget> = SatelliteTarget.entries,
     private val clock: Clock = Clock.System,
 ) {
     private val completedFetches = MutableStateFlow(0)
@@ -99,7 +99,7 @@ class SatelliteElementsRepository(
         }
         val ageDays = (clock.now() - writtenAt).inWholeSeconds / SECONDS_PER_DAY
         return SatelliteElements(
-            tles = Tle.parseCatalog(text),
+            tles = Tle.parseOmmCsv(text),
             freshness = freshnessFor(ageDays),
             fetchedAt = writtenAt,
             ageDays = ageDays,
@@ -109,7 +109,7 @@ class SatelliteElementsRepository(
     /**
      * [current]'s [ElementFreshness] without reading or parsing the element-set file — what the
      * Layers sheet's status line actually needs. [current] does the same age computation, but
-     * only after a `readElements()` + [Tle.parseCatalog] pass whose result callers of this method
+     * only after a `readElements()` + [Tle.parseOmmCsv] pass whose result callers of this method
      * throw away.
      */
     fun freshness(): ElementFreshness {
@@ -180,42 +180,117 @@ class SatelliteElementsRepository(
         state: SatelliteFetchState,
         now: Instant,
     ): RefreshResult {
-        // Only accept the payload if it actually parses into something usable: a captive portal's
-        // login page arrives with a perfectly good 200, and caching it would replace working
-        // elements with nothing.
-        // Defence in depth: HttpUrlConnectionCelesTrakClient already converts its own failures into
-        // outcomes, but [CelesTrakClient] is an interface and this is the composition point that
-        // runs inside a background worker. Nothing an implementation does should be able to take
-        // the process down, so an unchecked throw becomes the same transport failure a dropped
-        // connection would — which notably does not open the circuit, since our bug is not
-        // CelesTrak refusing us.
-        val fetched =
-            runCatching { client.fetch(group, state.lastModified) }
-                .getOrElse { FetchOutcome.TransportFailure(it) }
-                .let { raw ->
-                    if (raw is FetchOutcome.Success && Tle.parseCatalog(raw.body).isEmpty()) {
-                        FetchOutcome.UnusableBody(
-                            "no parseable element sets in a ${raw.body.length}-byte body",
-                        )
-                    } else {
-                        raw
-                    }
-                }
+        val fetched = fetchTargets()
+        val failure = fetched.failure
+        val body = mergedBody(fetched.bodies)
 
         // A full or failing filesystem must not escape as an exception: this runs in a background
         // worker, and either way the previous good copy is left on disk.
+        val written = body?.let { runCatching { store.writeElements(it.text) } }
         val outcome =
-            if (fetched is FetchOutcome.Success) {
-                runCatching { store.writeElements(fetched.body) }
-                    .fold(onSuccess = { fetched }, onFailure = { FetchOutcome.StorageFailure(it) })
-            } else {
-                fetched
+            when {
+                failure != null -> failure
+                written == null -> FetchOutcome.UnusableBody("no element sets fetched")
+                written.isFailure -> FetchOutcome.StorageFailure(written.exceptionOrNull()!!)
+                else -> FetchOutcome.Success(body.text)
             }
 
-        val updated = SatelliteFetchPolicy.afterOutcome(state, outcome, now)
+        var updated = SatelliteFetchPolicy.afterOutcome(state, outcome, now)
+        // A partial refresh is not a Success, so the policy leaves the age alone. It is still
+        // only as old as its oldest retained row, or brand new if nothing was retained.
+        if (failure != null && written?.isSuccess == true) {
+            // No recorded age for retained rows (a lost state write) counts as new, not absent.
+            val writtenAt = if (body.retainedOld) state.elementsWrittenAt ?: now else now
+            updated = updated.copy(elementsWrittenAt = writtenAt)
+        }
         runCatching { store.writeState(updated) }
         completedFetches.update { it + 1 }
         return RefreshResult.Completed(outcome, updated, previousState = state)
+    }
+
+    private class Fetched(
+        val bodies: Map<SatelliteTarget, String>,
+        val failure: FetchOutcome?,
+    )
+
+    private class MergedBody(
+        val text: String,
+        /** Whether rows from the previous cache were kept, so the file is no fresher than they were. */
+        val retainedOld: Boolean,
+    )
+
+    /**
+     * One request per target, in order, stopping at the first that is not a success so a failing
+     * CelesTrak is asked once, not once per object. A body counts only if it holds that target's
+     * element set, so a captive portal's 200 is a failure, not a success.
+     *
+     * Requests are unconditional: each body is a few hundred bytes, so a 304 would save almost
+     * nothing.
+     */
+    private fun fetchTargets(): Fetched {
+        val bodies = LinkedHashMap<SatelliteTarget, String>()
+        for (target in targets) {
+            // An unchecked throw from a client becomes a transport failure, which does not open
+            // the circuit.
+            val outcome =
+                runCatching { client.fetch(target) }
+                    .getOrElse { FetchOutcome.TransportFailure(it) }
+            val checked =
+                if (outcome is FetchOutcome.Success && !holds(outcome.body, target)) {
+                    FetchOutcome.UnusableBody(
+                        "no ${target.name} element set in a ${outcome.body.length}-byte body",
+                    )
+                } else {
+                    outcome
+                }
+            if (checked !is FetchOutcome.Success) return Fetched(bodies, checked)
+            bodies[target] = checked.body
+        }
+        return Fetched(bodies, null)
+    }
+
+    private fun holds(
+        body: String,
+        target: SatelliteTarget,
+    ) = Tle.parseOmmCsv(body).any { it.noradId == target.catalogNumber }
+
+    /**
+     * The fetched bodies as one CSV (one header, every data row), plus the previous cache's rows
+     * for objects that were not fetched this time, so a failure for one object does not discard
+     * the other's old elements. Null if nothing was fetched.
+     */
+    private fun mergedBody(bodies: Map<SatelliteTarget, String>): MergedBody? {
+        if (bodies.isEmpty()) return null
+        val fetchedIds = bodies.keys.map { it.catalogNumber }.toSet()
+        val old = store.readElements()?.let { retainedRows(it, fetchedIds) }
+        val parts = bodies.values.toList() + listOfNotNull(old)
+        return MergedBody(mergeCsv(parts), retainedOld = old != null)
+    }
+
+    private val targetIds = targets.map { it.catalogNumber }.toSet()
+
+    private fun retainedRows(
+        oldCsv: String,
+        fetchedIds: Set<Int>,
+    ): String? {
+        val lines = oldCsv.lines().filter { it.isNotBlank() }
+        val header = lines.firstOrNull() ?: return null
+        val rows =
+            lines.drop(1).filter { row ->
+                Tle.parseOmmCsv("$header\n$row").firstOrNull()?.noradId
+                    ?.let { it !in fetchedIds && it in targetIds } == true
+            }
+        return if (rows.isEmpty()) null else (listOf(header) + rows).joinToString("\n")
+    }
+
+    private fun mergeCsv(bodies: List<String>): String {
+        val lines = bodies.map { body -> body.lines().filter { it.isNotBlank() } }
+        val header = lines.firstOrNull()?.firstOrNull() ?: return ""
+        // A body whose header differs (or that has none) contributes nothing rather than rows the
+        // parser would misread under the wrong column names.
+        val rows =
+            lines.flatMap { if (it.firstOrNull() == header) it.drop(1) else emptyList() }.distinct()
+        return (listOf(header) + rows).joinToString("\n", postfix = "\n")
     }
 
     private fun freshnessFor(ageDays: Double): ElementFreshness =

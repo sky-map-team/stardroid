@@ -14,7 +14,7 @@ import com.google.android.stardroid.data.satellites.DirectoryTextFiles
 import com.google.android.stardroid.data.satellites.ElementFreshness
 import com.google.android.stardroid.data.satellites.FetchOutcome
 import com.google.android.stardroid.data.satellites.SatelliteElementsRepository
-import com.google.android.stardroid.data.satellites.SatelliteGroup
+import com.google.android.stardroid.data.satellites.SatelliteTarget
 import com.google.android.stardroid.data.satellites.TleStore
 import com.google.common.truth.Truth.assertThat
 import kotlinx.coroutines.delay
@@ -35,26 +35,20 @@ class SatelliteElementsFlowTest {
     @TempDir
     lateinit var tempDir: File
 
-    private val issElements =
-        """
-        ISS (ZARYA)
-        1 25544U 98067A   26227.08368470  .00004985  00000+0  97076-4 0  9993
-        2 25544  51.6331   8.6030 0007568  47.4901 312.6726 15.49446860580882
-        """.trimIndent()
-
     private val client =
-        object : CelesTrakClient {
-            override fun fetch(
-                group: SatelliteGroup,
-                ifModifiedSince: String?,
-            ): FetchOutcome = FetchOutcome.Success(issElements, null)
+        CelesTrakClient { target ->
+            val row =
+                when (target) {
+                    SatelliteTarget.ISS -> ISS_ROW
+                    SatelliteTarget.CSS -> CSS_ROW
+                }
+            FetchOutcome.Success("$HEADER\n$row\n")
         }
 
     private fun repository() =
         SatelliteElementsRepository(
             TleStore(DirectoryTextFiles(tempDir)),
             client,
-            SatelliteGroup.STATIONS,
         )
 
     @Test
@@ -100,10 +94,27 @@ class SatelliteElementsFlowTest {
 
                 repository.refresh()
 
-                withTimeout(5_000) { while (listOf(25544) !in seen) delay(20) }
-                assertThat(seen.last()).containsExactly(25544)
+                withTimeout(5_000) { while (seen.none { it.size == 2 }) delay(20) }
+                assertThat(seen.last()).containsExactly(25544, 48274)
             } finally {
                 job.cancel()
             }
         }
+
+    private companion object {
+        const val HEADER =
+            "OBJECT_NAME,OBJECT_ID,EPOCH,MEAN_MOTION,ECCENTRICITY," +
+                "INCLINATION,RA_OF_ASC_NODE,ARG_OF_PERICENTER,MEAN_ANOMALY," +
+                "EPHEMERIS_TYPE,CLASSIFICATION_TYPE,NORAD_CAT_ID," +
+                "ELEMENT_SET_NO,REV_AT_EPOCH,BSTAR,MEAN_MOTION_DOT," +
+                "MEAN_MOTION_DDOT"
+        const val ISS_ROW =
+            "ISS (ZARYA),1998-067A,2026-11-14T07:16:30.203040,15.49368089," +
+                ".000738,51.6324,277.2306,24.2289,335.9045,0,U,25544,999,59502," +
+                ".17615E-3,.9396E-4,0"
+        const val CSS_ROW =
+            "CSS (TIANHE),2021-035A,2026-11-13T12:59:15.891360,15.61773849," +
+                ".00043868,41.4674,134.3818,302.2376,57.8037,0,U,48274,999," +
+                "31649,.20630815E-3,.18078E-3,0"
+    }
 }

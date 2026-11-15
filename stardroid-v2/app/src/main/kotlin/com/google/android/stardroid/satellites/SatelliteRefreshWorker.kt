@@ -41,7 +41,7 @@ enum class SatelliteWorkAction {
  * Translates a [FetchOutcome] into what the worker should do — the single most consequential
  * decision in the satellite feature, factored out so it can be pinned by a unit test.
  *
- *  - **Success / NotModified → succeed.** Nothing to do.
+ *  - **Success → succeed.** Nothing to do.
  *  - **HttpError → succeed, never retry.** CelesTrak refused us, and retrying is the storm the
  *    usage policy forbids: the breaker already holds the door shut, and the 12-hour job fires
  *    again on schedule and no-ops against it.
@@ -57,7 +57,7 @@ enum class SatelliteWorkAction {
  */
 fun satelliteWorkAction(outcome: FetchOutcome): SatelliteWorkAction =
     when (outcome) {
-        is FetchOutcome.Success, FetchOutcome.NotModified -> SatelliteWorkAction.SUCCEED
+        is FetchOutcome.Success -> SatelliteWorkAction.SUCCEED
         // Never RETRY here. This is the single most important line in the feature.
         is FetchOutcome.HttpError -> SatelliteWorkAction.SUCCEED
         // Nor here, even for a first timeout that left the circuit shut.

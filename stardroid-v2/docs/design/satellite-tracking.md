@@ -110,11 +110,15 @@ question people actually have.
 1980s and the source essentially every amateur tracker uses.
 
 ```
-https://celestrak.org/NORAD/elements/gp.php?GROUP=stations&FORMAT=tle
+https://celestrak.org/NORAD/elements/gp.php?CATNR=25544&FORMAT=CSV   (ISS)
+https://celestrak.org/NORAD/elements/gp.php?CATNR=48274&FORMAT=CSV   (CSS / Tianhe)
 ```
 
-`GROUP=stations` is ~1 KB (ISS, Tiangong, station-adjacent objects). `GROUP=visual` is the ~100
-brightest, ~50 KB. `FORMAT` accepts `tle`/`3le`/`2le`/`xml`/`kvn`/`json`/`csv`.
+One request per object, by catalog number, each a header row plus one data row (~0.5 KB). The app
+used to fetch `GROUP=stations` (21 objects, mostly docked visiting vehicles and debris it then
+discarded); CelesTrak asked clients to request only what they draw (#1269, #1299). `GROUP=visual`
+(the ~100 brightest, ~50 KB) remains the phase 5 option. `FORMAT` accepts
+`tle`/`3le`/`2le`/`xml`/`kvn`/`json`/`csv`.
 
 ### Usage policy — binding constraints
 
@@ -167,18 +171,26 @@ benefit.
 A useful signal that the placement is right: this design touches **no** `build.gradle.kts`, no
 `settings.gradle.kts`, no `libs.versions.toml`, and no Konsist file.
 
-### Wire format: TLE text, not `FORMAT=json`
+### Wire format: OMM CSV, not TLE text
 
-CelesTrak's `FORMAT` parameter accepts `json`, which would remove the need for `Tle.kt`'s
-line-oriented parser and checksum validation. Rejected anyway, for three reasons: the Vallado
-verification vectors and every reference SGP4 implementation are written against TLE text, so
-parsing TLE text is what the verification strategy below actually exercises; the two-line format
-is what "cache the raw text verbatim" (§"Scheduling and cache") caches, so JSON would mean a
-second serialization the cache never uses; and `:data` — where the CelesTrak client lives — has
-no JSON dependency on its runtime classpath today (`kotlinx-serialization-json` is currently
-`:data:generator`-only, a build-time tool, per `build-and-tooling.md`), so `FORMAT=json` would
-add a runtime dependency this design otherwise avoids for no offsetting benefit. The line above
-about touching no `libs.versions.toml` would stop being true.
+CelesTrak ran out of 5-digit catalog numbers on 2026-07-11, and TLEs cannot carry the 6-digit
+numbers now issued, so the feed moved to the OMM CSV format (`FORMAT=CSV`, the format CelesTrak's
+operator recommended). The ISS and Tiangong still have 5-digit numbers, but a TLE parser would
+silently lose every new object, so the app moved before it mattered.
+
+CSV over JSON or XML: the header row names the columns, so the parser (`Tle.parseOmmCsv`) finds
+fields by name and ignores extras, and `:data` still needs no JSON dependency. The mean elements
+are the same SGP4 inputs a TLE carries, so `Sgp4` and the Vallado vectors are unchanged;
+`Tle.parse` for TLE text remains for those vectors and the fixtures. A CSV row has no checksum, so
+the parser validates values instead (positive mean motion, eccentricity in [0, 1)) and skips bad
+rows. The two responses are merged into one CSV (one header, both data rows) for the cache.
+
+A refresh is not all-or-nothing. The requests stop at the first failure (a failing CelesTrak is
+asked once), but objects already fetched are written, merged by NORAD ID over the previous
+cache's rows for the others, so a persistent failure for the CSS does not freeze the ISS. A body
+only counts if it holds the requested object. The cache's age (`elementsWrittenAt`) is the age of
+its oldest row: a full success sets it to now, a partial refresh that retains old rows leaves it
+alone, and one that retains none (a first fetch) sets it to now.
 
 New files, all in `core/astronomy/src/main/kotlin/com/google/android/stardroid/astronomy/`:
 
@@ -515,8 +527,8 @@ This is the part that protects the install base, and it inverts normal retry ins
   forbids. The 12 h periodic job fires again on schedule and no-ops against the breaker.
 - **301 is terminal.** The policy says it means the URL is outdated, which no amount of retrying
   fixes. Open the breaker for the full 7 days and log loudly.
-- **304 is not an error.** Send `If-Modified-Since` from the last success; handle Not-Modified as a
-  success that refreshes timestamps without touching the cache.
+- **No conditional requests.** Each body is a few hundred bytes and two objects have no single
+  `Last-Modified`, so a 304 would save almost nothing; requests are unconditional.
 - **Send a descriptive User-Agent** naming the app with a contact URL. CelesTrak's operator has
   historically preferred to make contact before firewalling; an anonymous UA forecloses that.
 - **Report to a human**, as the policy requires: surface last-fetch status and code in the app's
@@ -570,8 +582,8 @@ constraints matter more than its convenience.
   reaching millions of devices in a coordinated window is a real herd source.
 - **Never fetch on app open.** This is the most important of the three: it converts user behavior,
   which is strongly diurnally correlated across a timezone, directly into request volume.
-- **Fetch only what is needed.** `GROUP=stations` (~1 KB) for ISS-only; `GROUP=visual` (~50 KB)
-  only when the fleet ships. This is the policy's "only download the data you need" verbatim.
+- **Fetch only what is needed.** One `CATNR` request per drawn object (~0.5 KB each); `GROUP=visual`
+  (~50 KB) only when the fleet ships. This is the policy's "only download the data you need" verbatim.
 
 ### Scheduling and cache
 
@@ -580,8 +592,8 @@ a 12 h period — with two deliberate departures: add `NetworkType.CONNECTED` co
 in the repo currently sets constraints, and this job must, so it waits rather than fails), and
 schedule only for people using the feature, from a session they can see (§"Who downloads").
 
-Cache **the raw TLE text, verbatim**. It is already compact and line-oriented, so re-serializing
-to JSON or Room gains nothing; and storing bytes-as-received means the network and cache paths
+Cache **the merged OMM CSV text** (`elements.csv`). It is already compact, so re-serializing
+to JSON or Room gains nothing; and storing the text as received means the network and cache paths
 exercise one parser rather than two.
 
 Store under `filesDir/satellites/`, **not `cacheDir`** — the OS may evict `cacheDir` at any time,

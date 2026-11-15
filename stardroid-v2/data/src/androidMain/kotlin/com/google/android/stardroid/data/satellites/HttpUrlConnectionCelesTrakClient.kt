@@ -39,11 +39,8 @@ class HttpUrlConnectionCelesTrakClient(
         URL,
     ) -> HttpURLConnection = { it.openConnection() as HttpURLConnection },
 ) : CelesTrakClient {
-    override fun fetch(
-        group: SatelliteGroup,
-        ifModifiedSince: String?,
-    ): FetchOutcome {
-        val url = URL("$baseUrl?GROUP=${group.queryValue}&FORMAT=tle")
+    override fun fetch(target: SatelliteTarget): FetchOutcome {
+        val url = URL(CelesTrakEndpoint.gpUrl(baseUrl, target))
         val networkAtStart = runCatching(validatedNetwork).getOrNull()
         var connection: HttpURLConnection? = null
         var answered = false
@@ -60,15 +57,12 @@ class HttpUrlConnectionCelesTrakClient(
                     // Never follow a redirect silently. A 301 means our URL is outdated, which is
                     // information the circuit breaker must see rather than paper over.
                     instanceFollowRedirects = false
-                    ifModifiedSince?.let { setRequestProperty("If-Modified-Since", it) }
                 }
 
             val status = connection.responseCode
             answered = true
             when (status) {
                 HttpURLConnection.HTTP_OK -> readBoundedBody(connection)
-
-                HttpURLConnection.HTTP_NOT_MODIFIED -> FetchOutcome.NotModified
                 else -> FetchOutcome.HttpError(status)
             }
         } catch (e: IOException) {
@@ -102,8 +96,8 @@ class HttpUrlConnectionCelesTrakClient(
     }
 
     /**
-     * Reads the response body with a hard cap, rather than trusting a ~1 KB payload to stay
-     * ~1 KB. A captive portal, a hijacked DNS answer, or a CelesTrak misconfiguration can hand
+     * Reads the response body with a hard cap, rather than trusting the payload to stay
+     * small. A captive portal, a hijacked DNS answer, or a CelesTrak misconfiguration can hand
      * back an arbitrarily large body; an over-long one is treated as unusable rather than
      * materialized into memory.
      */
@@ -122,10 +116,7 @@ class HttpUrlConnectionCelesTrakClient(
                 }
                 body.appendRange(chunk, 0, read)
             }
-            FetchOutcome.Success(
-                body = body.toString(),
-                lastModified = connection.getHeaderField("Last-Modified"),
-            )
+            FetchOutcome.Success(body.toString())
         }
 
     /**

@@ -14,6 +14,14 @@ import org.junit.jupiter.api.Test
 
 class CelesTrakEndpointTest {
     @Test
+    fun `the ISS and the CSS are separate OMM CSV requests by catalog number`() {
+        assertThat(CelesTrakEndpoint.gpUrl(CelesTrakEndpoint.GP_URL, SatelliteTarget.ISS))
+            .isEqualTo("https://celestrak.org/NORAD/elements/gp.php?CATNR=25544&FORMAT=CSV")
+        assertThat(CelesTrakEndpoint.gpUrl(CelesTrakEndpoint.GP_URL, SatelliteTarget.CSS))
+            .isEqualTo("https://celestrak.org/NORAD/elements/gp.php?CATNR=48274&FORMAT=CSV")
+    }
+
+    @Test
     fun `the user agent carries the version, the platform and the contact URL`() {
         assertThat(CelesTrakEndpoint.userAgent("2.4.0", "Android"))
             .isEqualTo("SkyMap/2.4.0 (Android; +https://github.com/sky-map-team/stardroid)")

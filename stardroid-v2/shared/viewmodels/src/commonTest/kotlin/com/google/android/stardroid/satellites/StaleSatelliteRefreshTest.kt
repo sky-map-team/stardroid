@@ -15,6 +15,7 @@ import com.google.android.stardroid.data.satellites.CelesTrakClient
 import com.google.android.stardroid.data.satellites.FetchOutcome
 import com.google.android.stardroid.data.satellites.RefreshResult
 import com.google.android.stardroid.data.satellites.SatelliteElementsRepository
+import com.google.android.stardroid.data.satellites.SatelliteTarget
 import com.google.android.stardroid.data.satellites.TextFiles
 import com.google.android.stardroid.data.satellites.TleStore
 import com.google.android.stardroid.testing.assertThat
@@ -55,15 +56,16 @@ class StaleSatelliteRefreshTest {
     private val clock = MutableClock(start)
     private val analytics = FakeAnalytics()
     private var requests = 0
-    private var outcome: FetchOutcome = FetchOutcome.Success(ISS, null)
+    private var outcome: FetchOutcome = FetchOutcome.Success(ISS)
 
     private val repository =
         SatelliteElementsRepository(
             TleStore(MemoryFiles()),
-            CelesTrakClient { _, _ ->
+            CelesTrakClient {
                 requests++
                 outcome
             },
+            targets = listOf(SatelliteTarget.ISS),
             clock = clock,
         )
 
@@ -220,7 +222,7 @@ class StaleSatelliteRefreshTest {
             outcome = FetchOutcome.HttpError(403)
             refresh()
             analytics.events.clear()
-            outcome = FetchOutcome.Success(ISS, null)
+            outcome = FetchOutcome.Success(ISS)
             // Past the breaker's hold.
             clock.now = start + 3.days
 
@@ -232,8 +234,14 @@ class StaleSatelliteRefreshTest {
 
     private companion object {
         const val ISS =
-            "ISS (ZARYA)\n" +
-                "1 25544U 98067A   26227.08368470  .00004985  00000+0  97076-4 0  9993\n" +
-                "2 25544  51.6331   8.6030 0007568  47.4901 312.6726 15.49446860580882\n"
+            "OBJECT_NAME,OBJECT_ID,EPOCH,MEAN_MOTION,ECCENTRICITY," +
+                "INCLINATION,RA_OF_ASC_NODE,ARG_OF_PERICENTER,MEAN_ANOMALY," +
+                "EPHEMERIS_TYPE,CLASSIFICATION_TYPE,NORAD_CAT_ID," +
+                "ELEMENT_SET_NO,REV_AT_EPOCH,BSTAR,MEAN_MOTION_DOT," +
+                "MEAN_MOTION_DDOT\n" +
+                "ISS (ZARYA),1998-067A," +
+                "2026-11-14T07:16:30.203040,15.49368089,.000738,51.6324," +
+                "277.2306,24.2289,335.9045,0,U,25544,999,59502,.17615E-3," +
+                ".9396E-4,0\n"
     }
 }

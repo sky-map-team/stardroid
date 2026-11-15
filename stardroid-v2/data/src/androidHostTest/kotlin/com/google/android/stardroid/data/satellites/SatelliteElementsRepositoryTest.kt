@@ -32,30 +32,41 @@ class SatelliteElementsRepositoryTest {
     lateinit var tempDir: File
 
     private val issElements =
-        """
-        ISS (ZARYA)
-        1 25544U 98067A   26227.08368470  .00004985  00000+0  97076-4 0  9993
-        2 25544  51.6331   8.6030 0007568  47.4901 312.6726 15.49446860580882
-        """.trimIndent()
+        "OBJECT_NAME,OBJECT_ID,EPOCH,MEAN_MOTION,ECCENTRICITY,INCLINATION,RA_OF_ASC_NODE," +
+            "ARG_OF_PERICENTER,MEAN_ANOMALY,EPHEMERIS_TYPE,CLASSIFICATION_TYPE,NORAD_CAT_ID," +
+            "ELEMENT_SET_NO,REV_AT_EPOCH,BSTAR,MEAN_MOTION_DOT,MEAN_MOTION_DDOT\n" +
+            "ISS (ZARYA),1998-067A,2026-11-14T07:16:30.203040,15.49368089,.000738,51.6324," +
+            "277.2306,24.2289,335.9045,0,U,25544,999,59502,.17615E-3,.9396E-4,0\n"
+
+    private val cssElements =
+        issElements.substringBefore("\n") + "\n" +
+            "CSS (TIANHE),2021-035A,2026-11-14T07:16:30.203040,15.60,.0005,41.4673," +
+            "100.1,50.2,300.3,0,U,48274,999,9000,.1E-3,.1E-4,0\n"
 
     private class FakeClock(var now: Instant) : Clock {
         override fun now(): Instant = now
     }
 
     private class FakeClient(
-        var outcome: FetchOutcome,
+        private val outcomeFor: (SatelliteTarget) -> FetchOutcome,
     ) : CelesTrakClient {
-        var calls = 0
-        var lastIfModifiedSince: String? = null
+        constructor(outcome: FetchOutcome) : this({ outcome })
 
-        override fun fetch(
-            group: SatelliteGroup,
-            ifModifiedSince: String?,
-        ): FetchOutcome {
+        var calls = 0
+        val targets = mutableListOf<SatelliteTarget>()
+
+        override fun fetch(target: SatelliteTarget): FetchOutcome {
             calls++
-            lastIfModifiedSince = ifModifiedSince
-            return outcome
+            targets += target
+            return outcomeFor(target)
         }
+    }
+
+    private fun bothOk(
+        iss: String = issElements,
+        css: String = cssElements,
+    ) = FakeClient {
+        FetchOutcome.Success(if (it == SatelliteTarget.ISS) iss else css)
     }
 
     private fun repository(
@@ -64,28 +75,27 @@ class SatelliteElementsRepositoryTest {
     ) = SatelliteElementsRepository(
         TleStore(DirectoryTextFiles(tempDir)),
         client,
-        SatelliteGroup.STATIONS,
-        clock,
+        clock = clock,
     )
 
     @Test
     fun `a successful fetch caches the elements and parses them back`() {
         val clock = FakeClock(Instant.parse("2026-08-15T12:00:00Z"))
-        val client = FakeClient(FetchOutcome.Success(issElements, "Sat, 15 Aug 2026 02:00:00 GMT"))
+        val client = bothOk()
 
         val result = repository(client, clock).refresh()
         assertThat(result).isInstanceOf(RefreshResult.Completed::class.java)
 
         val elements = repository(client, clock).current()
-        assertThat(elements.tles.map { it.noradId }).containsExactly(25544)
-        assertThat(elements.tles.single().name).isEqualTo("ISS (ZARYA)")
+        assertThat(elements.tles.map { it.noradId }).containsExactly(25544, 48274)
+        assertThat(elements.tles.first().name).isEqualTo("ISS (ZARYA)")
         assertThat(elements.freshness).isEqualTo(ElementFreshness.FRESH)
     }
 
     @Test
     fun `a completed fetch is counted so observers need not wait for a poll`() {
         val clock = FakeClock(Instant.parse("2026-08-15T12:00:00Z"))
-        val repository = repository(FakeClient(FetchOutcome.Success(issElements, null)), clock)
+        val repository = repository(bothOk(), clock)
         assertThat(repository.fetchCount.value).isEqualTo(0)
 
         repository.refresh()
@@ -96,7 +106,7 @@ class SatelliteElementsRepositoryTest {
     @Test
     fun `a refresh the policy skips is not counted`() {
         val clock = FakeClock(Instant.parse("2026-08-15T12:00:00Z"))
-        val repository = repository(FakeClient(FetchOutcome.Success(issElements, null)), clock)
+        val repository = repository(bothOk(), clock)
         repository.refresh()
 
         // Inside the two-hour minimum interval, so this is skipped rather than fetched.
@@ -108,7 +118,7 @@ class SatelliteElementsRepositoryTest {
     @Test
     fun `nothing cached reports an absent state rather than an empty success`() {
         val clock = FakeClock(Instant.parse("2026-08-15T12:00:00Z"))
-        val elements = repository(FakeClient(FetchOutcome.NotModified), clock).current()
+        val elements = repository(bothOk(), clock).current()
 
         assertThat(elements.freshness).isEqualTo(ElementFreshness.ABSENT)
         assertThat(elements.tles).isEmpty()
@@ -120,7 +130,7 @@ class SatelliteElementsRepositoryTest {
     @Test
     fun `freshness grades with age, and pass times are suppressed past ten days`() {
         val clock = FakeClock(Instant.parse("2026-08-15T12:00:00Z"))
-        val client = FakeClient(FetchOutcome.Success(issElements, null))
+        val client = bothOk()
         repository(client, clock).refresh()
 
         fun freshnessAfter(elapsed: Duration): SatelliteElements {
@@ -201,24 +211,24 @@ class SatelliteElementsRepositoryTest {
         // The failure mode this guards: a hotel login page arrives with a valid 200, and caching
         // it would swap working element sets for an HTML document that parses to nothing.
         val clock = FakeClock(Instant.parse("2026-08-15T12:00:00Z"))
-        repository(FakeClient(FetchOutcome.Success(issElements, null)), clock).refresh()
+        repository(bothOk(), clock).refresh()
 
         clock.now += 13.hours
-        val portal = FakeClient(FetchOutcome.Success("<html>Please sign in to WiFi</html>", null))
+        val portal = FakeClient(FetchOutcome.Success("<html>Please sign in to WiFi</html>"))
         val result = repository(portal, clock).refresh() as RefreshResult.Completed
 
         assertThat(result.outcome).isInstanceOf(FetchOutcome.UnusableBody::class.java)
         // The good elements are still there, and the circuit did not open over someone's hotel.
         assertThat(
             repository(portal, clock).current().tles.map { it.noradId },
-        ).containsExactly(25544)
+        ).containsExactly(25544, 48274)
         assertThat(result.state.circuitOpenUntil).isNull()
     }
 
     @Test
     fun `offline leaves the cache intact and the circuit shut`() {
         val clock = FakeClock(Instant.parse("2026-08-15T12:00:00Z"))
-        repository(FakeClient(FetchOutcome.Success(issElements, null)), clock).refresh()
+        repository(bothOk(), clock).refresh()
 
         clock.now += 13.hours
         val offline = FakeClient(FetchOutcome.TransportFailure(IOException("airplane mode")))
@@ -248,54 +258,41 @@ class SatelliteElementsRepositoryTest {
     }
 
     @Test
-    fun `a conditional request is sent once a Last-Modified is known`() {
+    fun `the ISS and the CSS are requested separately`() {
         val clock = FakeClock(Instant.parse("2026-08-15T12:00:00Z"))
-        val client = FakeClient(FetchOutcome.Success(issElements, "Sat, 15 Aug 2026 02:00:00 GMT"))
+        val client = bothOk()
 
         repository(client, clock).refresh()
-        assertThat(client.lastIfModifiedSince).isNull()
-
         clock.now += 13.hours
         repository(client, clock).refresh()
-        assertThat(client.lastIfModifiedSince).isEqualTo("Sat, 15 Aug 2026 02:00:00 GMT")
+
+        assertThat(client.targets)
+            .containsExactly(
+                SatelliteTarget.ISS,
+                SatelliteTarget.CSS,
+                SatelliteTarget.ISS,
+                SatelliteTarget.CSS,
+            ).inOrder()
     }
 
     @Test
-    fun `304 refreshes the timestamps without touching the cache`() {
+    fun `a failing first request means the second is never made`() {
         val clock = FakeClock(Instant.parse("2026-08-15T12:00:00Z"))
-        repository(
-            FakeClient(FetchOutcome.Success(issElements, "Sat, 15 Aug 2026 02:00:00 GMT")),
-            clock,
-        )
-            .refresh()
-        val originalFetchedAt =
-            repository(
-                FakeClient(FetchOutcome.NotModified),
-                clock,
-            ).current().fetchedAt
+        val client = FakeClient(FetchOutcome.HttpError(503))
 
-        clock.now += 13.hours
-        val result =
-            repository(
-                FakeClient(FetchOutcome.NotModified),
-                clock,
-            ).refresh() as RefreshResult.Completed
+        repository(client, clock).refresh()
 
-        assertThat(result.state.lastStatusCode).isEqualTo(304)
-        assertThat(result.state.lastSuccess).isEqualTo(clock.now)
-        // The bytes on disk are untouched, so the element file's own mtime is unchanged.
-        assertThat(repository(FakeClient(FetchOutcome.NotModified), clock).current().fetchedAt)
-            .isEqualTo(originalFetchedAt)
+        assertThat(client.targets).containsExactly(SatelliteTarget.ISS)
     }
 
     @Test
     fun `a truncated write cannot corrupt the cached elements`() {
         // Writes go to a temp file and are renamed, so a kill mid-write leaves the previous good
-        // copy in place rather than half a TLE - which would parse as garbage or, worse, as a
+        // copy in place rather than half a CSV row - which would parse as garbage or, worse, as a
         // plausible wrong orbit.
         val store = TleStore(DirectoryTextFiles(tempDir))
         store.writeElements(issElements)
-        assertThat(File(tempDir, "elements.tle.tmp").exists()).isFalse()
+        assertThat(File(tempDir, "elements.csv.tmp").exists()).isFalse()
         assertThat(store.readElements()).isEqualTo(issElements)
     }
 
@@ -321,7 +318,6 @@ class SatelliteElementsRepositoryTest {
                 circuitOpenUntil = Instant.parse("2026-08-17T12:00:00Z"),
                 lastAttempt = Instant.parse("2026-08-15T12:00:00Z"),
                 lastSuccess = Instant.parse("2026-08-14T12:00:00Z"),
-                lastModified = "Sat, 15 Aug 2026 02:00:00 GMT",
                 lastStatusCode = 503,
             )
         store.writeState(state)
@@ -334,16 +330,16 @@ class SatelliteElementsRepositoryTest {
         // outcome rather than an exception escaping into WorkManager - and because the write is a
         // temp-file rename, the previous good copy survives either way.
         val clock = FakeClock(Instant.parse("2026-08-15T12:00:00Z"))
-        repository(FakeClient(FetchOutcome.Success(issElements, null)), clock).refresh()
+        repository(bothOk(), clock).refresh()
 
         // Make the elements path un-writable by turning it into a directory the rename cannot
         // replace, which is the closest portable stand-in for a filesystem failure.
-        File(tempDir, "elements.tle").delete()
-        File(tempDir, "elements.tle").mkdirs()
+        File(tempDir, "elements.csv").delete()
+        File(tempDir, "elements.csv").mkdirs()
 
         clock.now += 13.hours
         val result =
-            repository(FakeClient(FetchOutcome.Success(issElements, null)), clock)
+            repository(bothOk(), clock)
                 .refresh() as RefreshResult.Completed
 
         assertThat(result.outcome).isInstanceOf(FetchOutcome.StorageFailure::class.java)
@@ -355,11 +351,11 @@ class SatelliteElementsRepositoryTest {
     fun `an unreadable element file degrades to the empty state rather than throwing`() {
         // current() is called from UI code on any thread, so it has to be total. A directory where
         // the elements file should be is the closest portable stand-in for an unreadable file.
-        File(tempDir, "elements.tle").mkdirs()
+        File(tempDir, "elements.csv").mkdirs()
 
         val elements =
             repository(
-                FakeClient(FetchOutcome.NotModified),
+                bothOk(),
                 FakeClock(Instant.parse("2026-08-15T12:00:00Z")),
             )
                 .current()
@@ -372,11 +368,11 @@ class SatelliteElementsRepositoryTest {
     fun `garbage in the element file yields no satellites rather than throwing`() {
         // A half-written or corrupted cache must not take the app down; the parser skips what it
         // cannot read, and an empty catalog is indistinguishable from "nothing up there" to the UI.
-        File(tempDir, "elements.tle").writeText("\u0000\u0000 not a TLE at all\nnor is this")
+        File(tempDir, "elements.csv").writeText("\u0000\u0000 not a TLE at all\nnor is this")
 
         val elements =
             repository(
-                FakeClient(FetchOutcome.NotModified),
+                bothOk(),
                 FakeClock(Instant.parse("2026-08-15T12:00:00Z")),
             )
                 .current()
@@ -392,17 +388,13 @@ class SatelliteElementsRepositoryTest {
         val clock = FakeClock(Instant.parse("2026-08-15T12:00:00Z"))
         val exploding =
             CelesTrakClient {
-                    _,
-                    _,
-                ->
                 throw SecurityException("Permission denied: missing INTERNET")
             }
         val repository =
             SatelliteElementsRepository(
                 TleStore(DirectoryTextFiles(tempDir)),
                 exploding,
-                SatelliteGroup.STATIONS,
-                clock,
+                clock = clock,
             )
 
         // Does not throw.
@@ -423,7 +415,67 @@ class SatelliteElementsRepositoryTest {
                 appVersionName = "2.4.0",
                 openConnection = { throw SecurityException("Permission denied: missing INTERNET") },
             )
-        val outcome = client.fetch(SatelliteGroup.STATIONS, ifModifiedSince = null)
+        val outcome = client.fetch(SatelliteTarget.ISS)
         assertThat(outcome).isInstanceOf(FetchOutcome.TransportFailure::class.java)
+    }
+
+    @Test
+    fun `an ISS refresh that outlives a failing CSS request keeps the old CSS row`() {
+        val clock = FakeClock(Instant.parse("2026-08-15T12:00:00Z"))
+        repository(bothOk(), clock).refresh()
+        val firstFetchedAt = repository(bothOk(), clock).current().fetchedAt
+
+        clock.now += 13.hours
+        val cssDown =
+            FakeClient {
+                if (it == SatelliteTarget.ISS) {
+                    FetchOutcome.Success(issElements.replace("277.2306", "100.0000"))
+                } else {
+                    FetchOutcome.TransportFailure(IOException("no route"))
+                }
+            }
+        val result = repository(cssDown, clock).refresh() as RefreshResult.Completed
+
+        assertThat(result.outcome).isInstanceOf(FetchOutcome.TransportFailure::class.java)
+        val elements = repository(cssDown, clock).current()
+        assertThat(elements.tles.map { it.noradId }).containsExactly(25544, 48274)
+        // The ISS row is the new one, and the file is only as fresh as its oldest row.
+        assertThat(elements.tles.first { it.noradId == 25544 }.raanRad)
+            .isWithin(1e-6).of(Math.toRadians(100.0))
+        assertThat(elements.fetchedAt).isEqualTo(firstFetchedAt)
+    }
+
+    @Test
+    fun `a first fetch where only the ISS succeeds is fresh, with no CSS row`() {
+        val clock = FakeClock(Instant.parse("2026-08-15T12:00:00Z"))
+        val cssDown =
+            FakeClient {
+                if (it == SatelliteTarget.ISS) {
+                    FetchOutcome.Success(issElements)
+                } else {
+                    FetchOutcome.HttpError(503)
+                }
+            }
+
+        repository(cssDown, clock).refresh()
+
+        val elements = repository(cssDown, clock).current()
+        assertThat(elements.tles.map { it.noradId }).containsExactly(25544)
+        assertThat(elements.fetchedAt).isEqualTo(clock.now)
+    }
+
+    @Test
+    fun `a body without the requested object is a failure, not a success`() {
+        val clock = FakeClock(Instant.parse("2026-08-15T12:00:00Z"))
+        repository(bothOk(), clock).refresh()
+
+        clock.now += 13.hours
+        // CelesTrak answers the CSS request with the ISS row: not the object we asked for.
+        val wrong = bothOk(css = issElements)
+        val result = repository(wrong, clock).refresh() as RefreshResult.Completed
+
+        assertThat(result.outcome).isInstanceOf(FetchOutcome.UnusableBody::class.java)
+        assertThat(repository(wrong, clock).current().tles.map { it.noradId })
+            .containsExactly(25544, 48274)
     }
 }

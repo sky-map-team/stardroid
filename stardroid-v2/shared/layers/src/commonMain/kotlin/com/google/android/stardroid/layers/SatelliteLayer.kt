@@ -199,17 +199,10 @@ class SatelliteLayer(
         /**
          * Which catalog objects to draw.
          *
-         * **Not everything the feed returns.** `GROUP=stations` sounds like "the space stations"
-         * and is actually 21 objects, verified against a live fetch: seven of them — the ISS
-         * modules plus whatever Dragon, Progress and Cygnus are currently docked — carry
-         * *identical* orbital elements, because they are physically bolted together. Drawing the
-         * feed as-is stacks seven markers and seven labels on one pixel, then does it again with
-         * five more at Tiangong, and adds spent upper-stage debris and cubesats far too faint to
-         * see.
-         *
-         * So the layer draws the two objects a naked-eye observer can actually identify. The
-         * `fleet` layer parameter in phase 5 is where this becomes a user choice over
-         * `GROUP=visual`; until then an explicit list beats showing everything and hoping.
+         * **Only what a naked-eye observer can identify.** The fetch asks CelesTrak for exactly
+         * these two objects by catalog number (see `SatelliteTarget`). Drawing all of
+         * `GROUP=stations` would stack docked vehicles, which share the ISS's elements, on one
+         * pixel. The `fleet` layer parameter in phase 5 makes this a user choice.
          */
         val TRACKED_NORAD_IDS = setOf(ISS_NORAD_ID, TIANGONG_NORAD_ID)
 

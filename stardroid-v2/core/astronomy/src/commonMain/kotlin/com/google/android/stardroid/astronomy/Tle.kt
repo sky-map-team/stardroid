@@ -29,9 +29,12 @@ private const val DEEP_SPACE_PERIOD_MINUTES: Double = 225.0
 /** Fixed columns of a TLE line, 1-based and inclusive, as the format specifies them. */
 private const val TLE_LINE_LENGTH = 69
 
+/** Byte-order mark some servers prepend to a CSV header. */
+private const val BOM = '\uFEFF'
+
 /**
- * A two-line element set: the mean orbital elements of an Earth satellite at a given epoch, in the
- * form NORAD/CelesTrak distribute them.
+ * The mean orbital elements of an Earth satellite at a given epoch, as NORAD/CelesTrak distribute
+ * them. Read from CelesTrak OMM CSV ([parseOmmCsv]); TLEs can't carry catalog numbers above 99999.
  *
  * These are *not* osculating Keplerian elements and must not be fed to [KeplerianEphemeris]. They
  * are mean elements in the particular averaged sense SGP4 defines, and are only meaningful when
@@ -164,6 +167,84 @@ data class Tle(
                 index += 2
             }
             return result
+        }
+
+        /**
+         * Parses a CelesTrak OMM CSV response (`FORMAT=CSV`): a header row naming the columns,
+         * then one element set per row. Columns are found by name, so their order and any extras
+         * don't matter.
+         *
+         * As with [parseCatalog], malformed and deep-space rows are skipped rather than raised.
+         * Unlike a TLE, a row has no checksum, so the plausibility checks are on the values.
+         */
+        fun parseOmmCsv(text: String): List<Tle> {
+            val rows = text.lineSequence().filter { it.isNotBlank() }.map(::splitCsvRow).toList()
+            val header =
+                rows.firstOrNull()?.map { name -> name.trim { it.isWhitespace() || it == BOM } }
+                    ?: return emptyList()
+            val columns = header.withIndex().associate { (index, name) -> name to index }
+            return rows.drop(1).mapNotNull { row ->
+                runCatching { fromOmmRow(row, columns) }
+                    .getOrNull()
+                    ?.takeUnless { it.isDeepSpace }
+            }
+        }
+
+        private fun fromOmmRow(
+            row: List<String>,
+            columns: Map<String, Int>,
+        ): Tle {
+            fun text(column: String): String =
+                row[requireNotNull(columns[column]) { "missing column $column" }].trim()
+
+            fun number(column: String): Double =
+                text(column).toDouble().also { require(it.isFinite()) { "$column not finite" } }
+
+            val meanMotionRevPerDay = number("MEAN_MOTION")
+            require(meanMotionRevPerDay > 0.0) { "mean motion must be positive" }
+            val eccentricity = number("ECCENTRICITY")
+            require(eccentricity in 0.0..<1.0) { "eccentricity out of range: $eccentricity" }
+            return Tle(
+                name = text("OBJECT_NAME"),
+                noradId = text("NORAD_CAT_ID").toInt(),
+                // CelesTrak's epoch is UTC but carries no zone designator.
+                epoch = Instant.parse(text("EPOCH").let { if (it.endsWith("Z")) it else "${it}Z" }),
+                inclinationRad = number("INCLINATION").degreesToRadians(),
+                raanRad = number("RA_OF_ASC_NODE").degreesToRadians(),
+                eccentricity = eccentricity,
+                argOfPerigeeRad = number("ARG_OF_PERICENTER").degreesToRadians(),
+                meanAnomalyRad = number("MEAN_ANOMALY").degreesToRadians(),
+                meanMotionRadPerMin = meanMotionRevPerDay * TWO_PI / MINUTES_PER_DAY,
+                bstar = number("BSTAR"),
+                meanMotionDotRevPerDay2 = number("MEAN_MOTION_DOT"),
+                meanMotionDdotRevPerDay3 = number("MEAN_MOTION_DDOT"),
+            )
+        }
+
+        /** Splits one CSV row; double-quoted fields may hold commas but not newlines. */
+        private fun splitCsvRow(line: String): List<String> {
+            val fields = mutableListOf<String>()
+            val current = StringBuilder()
+            var quoted = false
+            var index = 0
+            while (index < line.length) {
+                val c = line[index]
+                when {
+                    c == '"' && quoted && line.getOrNull(index + 1) == '"' -> {
+                        current.append('"')
+                        index++
+                    }
+                    c == '"' -> quoted = !quoted
+                    c == ',' && !quoted -> {
+                        fields += current.toString()
+                        current.clear()
+                    }
+                    else -> current.append(c)
+                }
+                index++
+            }
+            fields += current.toString()
+            return fields
         }
 
         /**

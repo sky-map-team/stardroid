@@ -9,26 +9,29 @@
 
 package com.google.android.stardroid.data.satellites
 
-/**
- * Which CelesTrak group to fetch. "Download only what you need" is part of the usage policy, so
- * this is a closed set rather than a free-form query.
- */
-enum class SatelliteGroup(
-    val queryValue: String,
-) {
-    /** ISS, Tiangong and station-adjacent objects — about 1 KB. What ships first. */
-    STATIONS("stations"),
+import com.google.android.stardroid.astronomy.SpaceStations
 
-    /** The ~100 brightest objects, about 50 KB. Phase 5 only. */
-    VISUAL("visual"),
+/**
+ * One object to fetch from CelesTrak, by NORAD catalog number. "Download only what you need" is
+ * part of the usage policy, so this is a closed set of the objects the app draws rather than a
+ * group or free-form query.
+ */
+enum class SatelliteTarget(
+    val catalogNumber: Int,
+) {
+    /** The International Space Station. */
+    ISS(SpaceStations.ISS_NORAD_ID),
+
+    /** Tiangong, catalogued under its Tianhe core module. */
+    CSS(SpaceStations.TIANGONG_NORAD_ID),
 }
 
 /**
- * Fetches two-line element sets from CelesTrak.
+ * Fetches one object's orbital elements from CelesTrak, as OMM CSV (a header row and a data row).
  *
  * An interface with one method, so the circuit breaker and repository can be tested against a
  * fake without a socket. That testability is the whole reason a real HTTP client library was not
- * worth adding for a single ~1 KB GET every 12 hours.
+ * worth adding for a single ~0.5 KB GET per object every 12 hours.
  *
  * Each platform implements it over its own HTTP stack — [HttpUrlConnectionCelesTrakClient] on
  * Android; on iOS, URLSession once satellites ship there — rather than sharing a multiplatform
@@ -40,8 +43,5 @@ fun interface CelesTrakClient {
      * [SatelliteFetchPolicy], and a library that helpfully retries is precisely what CelesTrak's
      * usage policy forbids.
      */
-    fun fetch(
-        group: SatelliteGroup,
-        ifModifiedSince: String?,
-    ): FetchOutcome
+    fun fetch(target: SatelliteTarget): FetchOutcome
 }
