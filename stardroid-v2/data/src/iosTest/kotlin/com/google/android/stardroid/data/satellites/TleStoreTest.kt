@@ -61,7 +61,6 @@ class TleStoreTest {
                 lastAttempt = Instant.parse("2026-09-30T10:15:30.250Z"),
                 lastSuccess = Instant.parse("2026-09-29T22:00:00Z"),
                 elementsWrittenAt = Instant.parse("2026-09-29T22:00:00Z"),
-                lastModified = "Tue, 29 Sep 2026 21:58:04 GMT",
                 lastStatusCode = 503,
             )
         store.writeState(state)

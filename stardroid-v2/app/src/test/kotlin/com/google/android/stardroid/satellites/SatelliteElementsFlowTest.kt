@@ -36,13 +36,13 @@ class SatelliteElementsFlowTest {
     lateinit var tempDir: File
 
     private val client =
-        CelesTrakClient { target, _ ->
+        CelesTrakClient { target ->
             val row =
                 when (target) {
                     SatelliteTarget.ISS -> ISS_ROW
                     SatelliteTarget.CSS -> CSS_ROW
                 }
-            FetchOutcome.Success("$HEADER\n$row\n", null)
+            FetchOutcome.Success("$HEADER\n$row\n")
         }
 
     private fun repository() =

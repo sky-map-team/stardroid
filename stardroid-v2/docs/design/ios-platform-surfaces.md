@@ -114,7 +114,6 @@ iOS `DirectoryTextFiles` already exists in `data/src/iosMain`. The iOS graph cur
      set `waitsForConnectivity = false` and a short timeout so it cannot hang around.
    - **Do not follow redirects.** `NSURLSession` follows them by default; the delegate must
      answer `willPerformHTTPRedirection` with `nil` so a 301 is seen and treated as terminal.
-   - **Honour `If-Modified-Since`** and map 304 to `NotModified`.
    - The interface is synchronous, so bridge with a semaphore on a background dispatcher, not
      the main thread.
 2. **A refresh scheduler** (§4.1).
@@ -183,7 +182,7 @@ part of the notification work (§5); until then the layer ships with the pass ro
 ### 4.4 Tests
 
 Existing common tests cover the policy, store and repository. Add `iosTest` coverage for the
-client's redirect and 304 handling against a local stub, and a manual device check using
+client's redirect handling against a local stub, and a manual device check using
 Xcode's `_simulateLaunchForTaskWithIdentifier` for the background task.
 
 ## 5. Notifications

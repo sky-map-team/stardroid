@@ -39,10 +39,7 @@ class HttpUrlConnectionCelesTrakClient(
         URL,
     ) -> HttpURLConnection = { it.openConnection() as HttpURLConnection },
 ) : CelesTrakClient {
-    override fun fetch(
-        target: SatelliteTarget,
-        ifModifiedSince: String?,
-    ): FetchOutcome {
+    override fun fetch(target: SatelliteTarget): FetchOutcome {
         val url = URL(CelesTrakEndpoint.gpUrl(baseUrl, target))
         val networkAtStart = runCatching(validatedNetwork).getOrNull()
         var connection: HttpURLConnection? = null
@@ -60,15 +57,12 @@ class HttpUrlConnectionCelesTrakClient(
                     // Never follow a redirect silently. A 301 means our URL is outdated, which is
                     // information the circuit breaker must see rather than paper over.
                     instanceFollowRedirects = false
-                    ifModifiedSince?.let { setRequestProperty("If-Modified-Since", it) }
                 }
 
             val status = connection.responseCode
             answered = true
             when (status) {
                 HttpURLConnection.HTTP_OK -> readBoundedBody(connection)
-
-                HttpURLConnection.HTTP_NOT_MODIFIED -> FetchOutcome.NotModified
                 else -> FetchOutcome.HttpError(status)
             }
         } catch (e: IOException) {
@@ -122,10 +116,7 @@ class HttpUrlConnectionCelesTrakClient(
                 }
                 body.appendRange(chunk, 0, read)
             }
-            FetchOutcome.Success(
-                body = body.toString(),
-                lastModified = connection.getHeaderField("Last-Modified"),
-            )
+            FetchOutcome.Success(body.toString())
         }
 
     /**

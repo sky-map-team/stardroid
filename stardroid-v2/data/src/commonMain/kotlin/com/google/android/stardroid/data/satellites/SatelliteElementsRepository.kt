@@ -180,64 +180,104 @@ class SatelliteElementsRepository(
         state: SatelliteFetchState,
         now: Instant,
     ): RefreshResult {
-        // Only accept the payload if it actually parses into something usable: a captive portal's
-        // login page arrives with a perfectly good 200, and caching it would replace working
-        // elements with nothing.
-        // Defence in depth: HttpUrlConnectionCelesTrakClient already converts its own failures into
-        // outcomes, but [CelesTrakClient] is an interface and this is the composition point that
-        // runs inside a background worker. Nothing an implementation does should be able to take
-        // the process down, so an unchecked throw becomes the same transport failure a dropped
-        // connection would — which notably does not open the circuit, since our bug is not
-        // CelesTrak refusing us.
-        val fetched =
-            fetchTargets().let { raw ->
-                if (raw is FetchOutcome.Success && Tle.parseOmmCsv(raw.body).isEmpty()) {
-                    FetchOutcome.UnusableBody(
-                        "no parseable element sets in a ${raw.body.length}-byte body",
-                    )
-                } else {
-                    raw
-                }
-            }
+        val fetched = fetchTargets()
+        val failure = fetched.failure
+        val body = mergedBody(fetched.bodies)
 
         // A full or failing filesystem must not escape as an exception: this runs in a background
         // worker, and either way the previous good copy is left on disk.
+        val written = body?.let { runCatching { store.writeElements(it.text) } }
         val outcome =
-            if (fetched is FetchOutcome.Success) {
-                runCatching { store.writeElements(fetched.body) }
-                    .fold(onSuccess = { fetched }, onFailure = { FetchOutcome.StorageFailure(it) })
-            } else {
-                fetched
+            when {
+                failure != null -> failure
+                written == null -> FetchOutcome.UnusableBody("no element sets fetched")
+                written.isFailure -> FetchOutcome.StorageFailure(written.exceptionOrNull()!!)
+                else -> FetchOutcome.Success(body.text)
             }
 
-        val updated = SatelliteFetchPolicy.afterOutcome(state, outcome, now)
+        var updated = SatelliteFetchPolicy.afterOutcome(state, outcome, now)
+        // A partial refresh is not a Success, so the policy leaves the age alone. It is still
+        // only as old as its oldest retained row, or brand new if nothing was retained.
+        if (failure != null && written?.isSuccess == true) {
+            val writtenAt = if (body.retainedOld) state.elementsWrittenAt ?: now else now
+            updated = updated.copy(elementsWrittenAt = writtenAt)
+        }
         runCatching { store.writeState(updated) }
         completedFetches.update { it + 1 }
         return RefreshResult.Completed(outcome, updated, previousState = state)
     }
 
+    private class Fetched(
+        val bodies: Map<SatelliteTarget, String>,
+        val failure: FetchOutcome?,
+    )
+
+    private class MergedBody(
+        val text: String,
+        /** Whether rows from the previous cache were kept, so the file is no fresher than they were. */
+        val retainedOld: Boolean,
+    )
+
     /**
      * One request per target, in order, stopping at the first that is not a success so a failing
-     * CelesTrak is asked once, not once per object. All-or-nothing: a failure leaves the previous
-     * cache untouched, so a persistent failure for one object also stalls the other. The bodies
-     * are merged into a single CSV (one header, every data row) so the cache and parser stay a
-     * single file.
+     * CelesTrak is asked once, not once per object. A body counts only if it holds that target's
+     * element set, so a captive portal's 200 is a failure, not a success.
      *
-     * Requests are unconditional: with two objects there is no single `Last-Modified` to send, and
-     * each body is a few hundred bytes, so a 304 would save almost nothing.
+     * Requests are unconditional: each body is a few hundred bytes, so a 304 would save almost
+     * nothing.
      */
-    private fun fetchTargets(): FetchOutcome {
-        val bodies = mutableListOf<String>()
+    private fun fetchTargets(): Fetched {
+        val bodies = LinkedHashMap<SatelliteTarget, String>()
         for (target in targets) {
             // An unchecked throw from a client becomes a transport failure, which does not open
             // the circuit.
             val outcome =
-                runCatching { client.fetch(target, ifModifiedSince = null) }
+                runCatching { client.fetch(target) }
                     .getOrElse { FetchOutcome.TransportFailure(it) }
-            if (outcome !is FetchOutcome.Success) return outcome
-            bodies += outcome.body
+            val checked =
+                if (outcome is FetchOutcome.Success && !holds(outcome.body, target)) {
+                    FetchOutcome.UnusableBody(
+                        "no ${target.name} element set in a ${outcome.body.length}-byte body",
+                    )
+                } else {
+                    outcome
+                }
+            if (checked !is FetchOutcome.Success) return Fetched(bodies, checked)
+            bodies[target] = checked.body
         }
-        return FetchOutcome.Success(body = mergeCsv(bodies), lastModified = null)
+        return Fetched(bodies, null)
+    }
+
+    private fun holds(
+        body: String,
+        target: SatelliteTarget,
+    ) = Tle.parseOmmCsv(body).any { it.noradId == target.catalogNumber }
+
+    /**
+     * The fetched bodies as one CSV (one header, every data row), plus the previous cache's rows
+     * for objects that were not fetched this time, so a failure for one object does not discard
+     * the other's old elements. Null if nothing was fetched.
+     */
+    private fun mergedBody(bodies: Map<SatelliteTarget, String>): MergedBody? {
+        if (bodies.isEmpty()) return null
+        val fetchedIds = bodies.keys.map { it.catalogNumber }.toSet()
+        val old = store.readElements()?.let { retainedRows(it, fetchedIds) }
+        val parts = bodies.values.toList() + listOfNotNull(old)
+        return MergedBody(mergeCsv(parts), retainedOld = old != null)
+    }
+
+    private fun retainedRows(
+        oldCsv: String,
+        fetchedIds: Set<Int>,
+    ): String? {
+        val lines = oldCsv.lines().filter { it.isNotBlank() }
+        val header = lines.firstOrNull() ?: return null
+        val rows =
+            lines.drop(1).filter { row ->
+                Tle.parseOmmCsv("$header\n$row").firstOrNull()?.noradId
+                    ?.let { it !in fetchedIds } == true
+            }
+        return if (rows.isEmpty()) null else (listOf(header) + rows).joinToString("\n")
     }
 
     private fun mergeCsv(bodies: List<String>): String {

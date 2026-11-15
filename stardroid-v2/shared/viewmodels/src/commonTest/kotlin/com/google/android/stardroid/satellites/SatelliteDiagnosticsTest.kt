@@ -33,7 +33,7 @@ class SatelliteDiagnosticsTest {
     }
 
     private fun repository(outcome: FetchOutcome) =
-        SatelliteElementsRepository(TleStore(MemoryFiles()), CelesTrakClient { _, _ -> outcome })
+        SatelliteElementsRepository(TleStore(MemoryFiles()), CelesTrakClient { outcome })
 
     @Test
     fun beforeAnyFetchThereIsNothingToReport() {

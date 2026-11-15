@@ -56,16 +56,16 @@ class StaleSatelliteRefreshTest {
     private val clock = MutableClock(start)
     private val analytics = FakeAnalytics()
     private var requests = 0
-    private var outcome: FetchOutcome = FetchOutcome.Success(ISS, null)
+    private var outcome: FetchOutcome = FetchOutcome.Success(ISS)
 
     private val repository =
         SatelliteElementsRepository(
             TleStore(MemoryFiles()),
-            CelesTrakClient { target, _ ->
-                // One refresh is one request per object; count refreshes.
-                if (target == SatelliteTarget.ISS) requests++
+            CelesTrakClient {
+                requests++
                 outcome
             },
+            targets = listOf(SatelliteTarget.ISS),
             clock = clock,
         )
 
@@ -222,7 +222,7 @@ class StaleSatelliteRefreshTest {
             outcome = FetchOutcome.HttpError(403)
             refresh()
             analytics.events.clear()
-            outcome = FetchOutcome.Success(ISS, null)
+            outcome = FetchOutcome.Success(ISS)
             // Past the breaker's hold.
             clock.now = start + 3.days
 

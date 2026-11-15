@@ -69,10 +69,8 @@ class SatelliteWorkerMappingTest {
     }
 
     @Test
-    fun `success and not-modified both succeed`() {
-        assertThat(satelliteWorkAction(FetchOutcome.Success("body", lastModified = null)))
-            .isEqualTo(SatelliteWorkAction.SUCCEED)
-        assertThat(satelliteWorkAction(FetchOutcome.NotModified))
+    fun `success succeeds`() {
+        assertThat(satelliteWorkAction(FetchOutcome.Success("body")))
             .isEqualTo(SatelliteWorkAction.SUCCEED)
     }
 
@@ -83,8 +81,7 @@ class SatelliteWorkerMappingTest {
         // breaker, in a form that recovers on its own.
         val everyOutcome =
             listOf(
-                FetchOutcome.Success("b", null),
-                FetchOutcome.NotModified,
+                FetchOutcome.Success("b"),
                 FetchOutcome.HttpError(500),
                 FetchOutcome.ServerUnreachable(SocketTimeoutException()),
                 FetchOutcome.TransportFailure(IOException()),

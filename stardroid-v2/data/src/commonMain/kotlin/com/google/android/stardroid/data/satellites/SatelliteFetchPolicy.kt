@@ -26,15 +26,10 @@ sealed interface FetchOutcome {
     /** Element sets were returned. */
     data class Success(
         val body: String,
-        /** The response's `Last-Modified`, to send back as `If-Modified-Since` next time. */
-        val lastModified: String?,
     ) : FetchOutcome
 
-    /** `304`: our cached copy is current. A success, not an error. */
-    data object NotModified : FetchOutcome
-
     /**
-     * The server responded, and not with 200 or 304. **A policy event, never a transient one.**
+     * The server responded, and not with 200. **A policy event, never a transient one.**
      */
     data class HttpError(val statusCode: Int) : FetchOutcome
 
@@ -71,7 +66,7 @@ sealed interface FetchOutcome {
 
 /**
  * Everything the fetcher remembers between runs: enough to honour CelesTrak's minimum interval,
- * to keep a circuit open across process death, and to send a conditional request.
+ * and to keep a circuit open across process death.
  */
 data class SatelliteFetchState(
     val consecutiveFailures: Int = 0,
@@ -84,14 +79,11 @@ data class SatelliteFetchState(
     val lastAttempt: Instant? = null,
     val lastSuccess: Instant? = null,
     /**
-     * When the cached element bytes were last actually replaced — a [FetchOutcome.Success] only,
-     * unlike [lastSuccess] which also advances on a [FetchOutcome.NotModified]. This is what
-     * element-set age must be measured against: a 304 confirms the cache is still current but
-     * writes nothing, so it must not reset the age clock.
+     * The age of the oldest element set in the cache, which element-set freshness is measured
+     * against. A full [FetchOutcome.Success] sets it to now; a partial refresh (some objects
+     * fetched, one failed) leaves it alone, since the retained rows are no newer.
      */
     val elementsWrittenAt: Instant? = null,
-    /** The last successful response's `Last-Modified` header, verbatim. */
-    val lastModified: String? = null,
     /** The most recent non-200 status, retained so a human can be shown it in Diagnostics. */
     val lastStatusCode: Int? = null,
 ) {
@@ -191,7 +183,7 @@ object SatelliteFetchPolicy {
     /**
      * The state after [outcome] arrives at [now].
      *
-     * A success or a 304 closes the circuit and clears the failure counts. An
+     * A success closes the circuit and clears the failure counts. An
      * [FetchOutcome.HttpError] opens it, and so does a [FetchOutcome.ServerUnreachable] once
      * there have been [TIMEOUTS_TO_OPEN] of them. A [FetchOutcome.TransportFailure] does
      * **neither**: it never reached CelesTrak, so it is not evidence about them, and punishing it
@@ -212,21 +204,7 @@ object SatelliteFetchPolicy {
                     circuitOpenUntil = null,
                     lastSuccess = now,
                     elementsWrittenAt = now,
-                    lastModified = outcome.lastModified,
                     lastStatusCode = 200,
-                )
-
-            FetchOutcome.NotModified ->
-                // Our copy is current, so the cache is untouched but the timestamps advance:
-                // treating this as an error would open the circuit every time nothing changed,
-                // which is the common case for a feed re-issued only daily.
-                attempted.copy(
-                    consecutiveFailures = 0,
-                    consecutiveTimeouts = 0,
-                    lastTimeout = null,
-                    circuitOpenUntil = null,
-                    lastSuccess = now,
-                    lastStatusCode = 304,
                 )
 
             is FetchOutcome.HttpError -> {

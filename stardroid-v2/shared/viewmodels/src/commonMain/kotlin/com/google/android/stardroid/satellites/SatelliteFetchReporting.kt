@@ -43,7 +43,7 @@ fun trackSatelliteFetchResult(
             ),
         )
     }
-    if (outcome is FetchOutcome.Success || outcome is FetchOutcome.NotModified) {
+    if (outcome is FetchOutcome.Success) {
         if (random.nextInt(AnalyticsEvents.SATELLITE_FETCH_OK_SAMPLE_ONE_IN) == 0) {
             analytics.trackEvent(AnalyticsEvents.SATELLITE_FETCH_OK_EVENT, emptyMap())
         }

@@ -43,8 +43,5 @@ fun interface CelesTrakClient {
      * [SatelliteFetchPolicy], and a library that helpfully retries is precisely what CelesTrak's
      * usage policy forbids.
      */
-    fun fetch(
-        target: SatelliteTarget,
-        ifModifiedSince: String?,
-    ): FetchOutcome
+    fun fetch(target: SatelliteTarget): FetchOutcome
 }

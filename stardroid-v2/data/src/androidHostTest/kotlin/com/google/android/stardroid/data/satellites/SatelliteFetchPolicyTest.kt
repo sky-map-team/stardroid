@@ -42,7 +42,7 @@ class SatelliteFetchPolicyTest {
         val afterSuccess =
             SatelliteFetchPolicy.afterOutcome(
                 SatelliteFetchState(),
-                FetchOutcome.Success("body", lastModified = null),
+                FetchOutcome.Success("body"),
                 t0,
             )
         assertThat(SatelliteFetchPolicy.mayFetch(afterSuccess, t0 + 119.minutes)).isFalse()
@@ -104,29 +104,6 @@ class SatelliteFetchPolicyTest {
     }
 
     @Test
-    fun `304 Not Modified is a success, not an error`() {
-        // The feed is re-issued roughly daily and we poll twice a day, so "nothing changed" is the
-        // *common* response. Treating it as an error would open the circuit almost every time.
-        val open =
-            SatelliteFetchPolicy.afterOutcome(
-                SatelliteFetchState(),
-                FetchOutcome.HttpError(500),
-                t0,
-            )
-        val recovered =
-            SatelliteFetchPolicy.afterOutcome(
-                open,
-                FetchOutcome.NotModified,
-                t0 + 25.hours,
-            )
-
-        assertThat(recovered.circuitOpenUntil).isNull()
-        assertThat(recovered.consecutiveFailures).isEqualTo(0)
-        assertThat(recovered.lastSuccess).isEqualTo(t0 + 25.hours)
-        assertThat(recovered.lastStatusCode).isEqualTo(304)
-    }
-
-    @Test
     fun `a success closes an open circuit and clears the failure count`() {
         var state = SatelliteFetchState()
         state = SatelliteFetchPolicy.afterOutcome(state, FetchOutcome.HttpError(500), t0)
@@ -136,12 +113,11 @@ class SatelliteFetchPolicyTest {
         val recovered =
             SatelliteFetchPolicy.afterOutcome(
                 state,
-                FetchOutcome.Success("body", lastModified = "Sat, 15 Aug 2026 02:00:00 GMT"),
+                FetchOutcome.Success("body"),
                 t0 + 4.days,
             )
         assertThat(recovered.circuitOpenUntil).isNull()
         assertThat(recovered.consecutiveFailures).isEqualTo(0)
-        assertThat(recovered.lastModified).isEqualTo("Sat, 15 Aug 2026 02:00:00 GMT")
     }
 
     @Test
@@ -281,7 +257,7 @@ class SatelliteFetchPolicyTest {
     @Test
     fun `a success between two timeouts starts the count again`() {
         var state = SatelliteFetchPolicy.afterOutcome(SatelliteFetchState(), timeout(), t0)
-        state = SatelliteFetchPolicy.afterOutcome(state, FetchOutcome.NotModified, t0 + 12.hours)
+        state = SatelliteFetchPolicy.afterOutcome(state, FetchOutcome.Success("b"), t0 + 12.hours)
         assertThat(state.consecutiveTimeouts).isEqualTo(0)
         assertThat(state.lastTimeout).isNull()
 
@@ -331,9 +307,8 @@ class SatelliteFetchPolicyTest {
         ).isFalse()
         // A timeout is not a response, so there is no status for anyone to act on.
         assertThat(SatelliteFetchPolicy.warrantsReporting(timeout())).isFalse()
-        assertThat(SatelliteFetchPolicy.warrantsReporting(FetchOutcome.NotModified)).isFalse()
         assertThat(
-            SatelliteFetchPolicy.warrantsReporting(FetchOutcome.Success("b", null)),
+            SatelliteFetchPolicy.warrantsReporting(FetchOutcome.Success("b")),
         ).isFalse()
     }
 
@@ -353,7 +328,7 @@ class SatelliteFetchPolicyTest {
         val succeeded =
             SatelliteFetchPolicy.afterOutcome(
                 SatelliteFetchState(),
-                FetchOutcome.Success("b", null),
+                FetchOutcome.Success("b"),
                 t0,
             )
         assertThat(SatelliteFetchPolicy.timeUntilFetchAllowed(succeeded, t0)).isEqualTo(2.hours)
@@ -372,7 +347,7 @@ class SatelliteFetchPolicyTest {
         state =
             SatelliteFetchPolicy.afterOutcome(
                 state,
-                FetchOutcome.Success("b", null),
+                FetchOutcome.Success("b"),
                 t0 + 25.hours,
             )
         state = SatelliteFetchPolicy.afterOutcome(state, FetchOutcome.HttpError(500), t0 + 40.days)

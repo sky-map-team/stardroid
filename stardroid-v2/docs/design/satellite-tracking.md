@@ -185,6 +185,13 @@ are the same SGP4 inputs a TLE carries, so `Sgp4` and the Vallado vectors are un
 the parser validates values instead (positive mean motion, eccentricity in [0, 1)) and skips bad
 rows. The two responses are merged into one CSV (one header, both data rows) for the cache.
 
+A refresh is not all-or-nothing. The requests stop at the first failure (a failing CelesTrak is
+asked once), but objects already fetched are written, merged by NORAD ID over the previous
+cache's rows for the others, so a persistent failure for the CSS does not freeze the ISS. A body
+only counts if it holds the requested object. The cache's age (`elementsWrittenAt`) is the age of
+its oldest row: a full success sets it to now, a partial refresh that retains old rows leaves it
+alone, and one that retains none (a first fetch) sets it to now.
+
 New files, all in `core/astronomy/src/main/kotlin/com/google/android/stardroid/astronomy/`:
 
 | File | Contents |
@@ -520,8 +527,8 @@ This is the part that protects the install base, and it inverts normal retry ins
   forbids. The 12 h periodic job fires again on schedule and no-ops against the breaker.
 - **301 is terminal.** The policy says it means the URL is outdated, which no amount of retrying
   fixes. Open the breaker for the full 7 days and log loudly.
-- **304 is not an error.** Send `If-Modified-Since` from the last success; handle Not-Modified as a
-  success that refreshes timestamps without touching the cache.
+- **No conditional requests.** Each body is a few hundred bytes and two objects have no single
+  `Last-Modified`, so a 304 would save almost nothing; requests are unconditional.
 - **Send a descriptive User-Agent** naming the app with a contact URL. CelesTrak's operator has
   historically preferred to make contact before firewalling; an anonymous UA forecloses that.
 - **Report to a human**, as the policy requires: surface last-fetch status and code in the app's
