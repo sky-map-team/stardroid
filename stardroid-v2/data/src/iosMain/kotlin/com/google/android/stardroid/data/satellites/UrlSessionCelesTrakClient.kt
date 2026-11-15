@@ -55,8 +55,9 @@ import platform.darwin.dispatch_time
  */
 @OptIn(ExperimentalForeignApi::class)
 class UrlSessionCelesTrakClient(
+    appVersionName: String,
     private val baseUrl: String = CelesTrakEndpoint.GP_URL,
-    private val userAgent: String = CelesTrakEndpoint.USER_AGENT,
+    private val userAgent: String = CelesTrakEndpoint.userAgent(appVersionName, "iOS"),
 ) : CelesTrakClient {
     override fun fetch(
         group: SatelliteGroup,
