@@ -1,7 +1,11 @@
 # Detailed Design: iOS Feature Parity — Flags, Satellites, Notifications, Widgets
 
-**Status: PROPOSED.** Nothing here is built. Decision numbers are unassigned. Written while iOS
-2.0.0 (build 6) waits on App Review, so the work can start the day it is approved.
+**Status: MOSTLY BUILT.** Flags (§3) and satellites (§4, including the background refresh) are
+built for iOS 2.0.1. Notifications (§5) are built through slice 6; the notice's translations
+and the review remain. Announcements on iOS (§5.4) are deferred, and widgets (§6) are not
+started. Decision numbers are unassigned. Written while iOS 2.0.0 (build 6) waited on App
+Review, so parts of the text below still describe the plan rather than the result; the "As
+built" notes and the slice notes in §5.2 say what was built.
 
 iOS 2.0.0 ships the sky, search, time travel, info cards, settings and tips. It does not ship
 the four things Android has behind experiment flags: remote flags themselves, satellites,
@@ -129,11 +133,15 @@ iOS `DirectoryTextFiles` already exists in `data/src/iosMain`. The iOS graph cur
 Android's worker for the analytics events, so both report refusals the same way); `IosSatellites`
 in `app-ios` ties them to the graph. Differences from the design:
 
-- **No `BGAppRefreshTask` yet.** The foreground fetch alone keeps data fresh for anyone who opens
-  the app, and a background task needs the graph to be a process singleton first (#1243). Follow-up.
+- **The background task came second.** The first cut had the foreground fetch alone, because a
+  background task needed the graph to be a process singleton first (#1243). Both followed:
+  `SatelliteRefreshTask.swift` runs the `BGAppRefreshTask` (12 h plus jitter) through
+  `SatelliteBackgroundRefresh`, under the same flag, consent and layer conditions as the
+  foreground fetch, and replans notifications afterwards.
 - **The fetch needs the Satellites layer on** as well as the flag and consent, which is what the
   privacy policy promises.
-- **No iOS Diagnostics satellite row yet** (Android's is in `DiagnosticsRoute`).
+- **Diagnostics shows the satellite data's state** on iOS as on Android. Its state, section and
+  strings moved to the shared modules, which Android now uses too.
 
 ### 4.1 Refreshing the element sets
 

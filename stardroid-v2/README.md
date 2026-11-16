@@ -74,8 +74,8 @@ Entirely offline — no network needed for anything below.
 Counts are generated from [`source-data/`](source-data) at build time by `:data:generator`;
 regenerate with `./gradlew :data:generateCatalogDb`.
 
-Eight layers — Stars, Constellations, Deep Sky, Solar System, Meteor Showers, Grid, Horizon,
-Ecliptic — plus a daylight sky gradient, and a night mode red-shifted across both the Compose
+Nine layers — Stars, Constellations, Deep Sky, Solar System, Meteor Showers, Celestial Grid,
+Alt/Az Grid, Horizon, Ecliptic — plus a daylight sky gradient, and a night mode red-shifted across both the Compose
 theme and the renderer at three dimming levels.
 
 ---

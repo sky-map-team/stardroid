@@ -1,7 +1,6 @@
 # Sky Map v2 — Code Overview
 
-**Status:** §2–§7 checked against master on 2026-11-15, after the iOS port. §1 is still the
-2026-08-05 snapshot (through the 2.0.0-alpha04 "Apollo" release prep). This document supplements the per-area design docs in
+**Status:** checked against master on 2026-11-15, after the iOS port. This document supplements the per-area design docs in
 [design/](design/) with a single top-down tour of what actually exists, where it lives, and
 which design docs are still the authoritative reference for each area. It repeats as little as
 possible — where a design doc is current, this doc just points at it.
@@ -14,46 +13,29 @@ behind any surprising choice (code comments cite decision ids like `D33` through
 
 ## 1. What this is
 
-Sky Map v2 is a ground-up Kotlin rewrite of the v1 Java planetarium app: a full-screen OpenGL
-sky map driven by device sensors, with catalog-backed and computed layers (stars, DSOs,
-constellations, solar system, meteor showers, grid/ecliptic/horizon), search, time travel,
-object info cards, a gallery, diagnostics, settings, onboarding, home-screen widgets, and
-notifications. Single-activity Jetpack Compose app, minSdk 28 (Android 9 best-effort only,
-see D9), targetSdk 36, two flavors
-(`gms` with Firebase/Play Services, `fdroid` fully FOSS).
+Sky Map v2 is a ground-up Kotlin rewrite of the v1 Java planetarium app, now for Android and
+iOS from one Kotlin Multiplatform build: a full-screen sky map driven by device sensors, with
+catalog-backed and computed layers (stars, DSOs, constellations, solar system, meteor showers,
+two grids, ecliptic, horizon, and satellites behind a flag), search, time travel, object info
+cards, a gallery, diagnostics, settings, onboarding and notifications. Android also has
+home-screen widgets, and camera-AR behind a flag.
 
-### Where the moving parts are
+- **Android:** a single-activity Jetpack Compose app, minSdk 28 (Android 9 best-effort only,
+  see D9), targetSdk 36, two flavors (`gms` with Firebase/Play Services, `fdroid` fully FOSS),
+  drawn by GLES1 or GLES3.
+- **iOS:** a Swift shell hosting the Kotlin `SkyMapKit` framework, with the same Compose
+  Multiplatform screens and a Metal renderer. Deployment target iOS 15.
 
-- **master** — everything through camera-AR mode (#67), the UI-nit pass (#69), localization
-  (#70), the widgets/notifications stickiness stack (#72–74), data-pack design (D79), and the
-  experiment-flag work that gates camera-AR/share alongside widgets/notifications (#76, D80).
-  Also merged: a "disable unreleased features" pass that flips all five `Experiment` flags
-  (moon widget, tonight widget, notifications, camera-AR, share) to default-off pending
-  announcement — the code is complete and live behind the gate, not removed (see §6).
-- **2.0.0-alpha04 "Apollo"** is the current release-prep tip.
+### Where to find what's current
 
-### Documentation health
+This doc describes the code, not the release train. For what has shipped, what is in progress
+and what is built but switched off:
 
-| Doc | Status |
-|---|---|
-| [design/high-level-architecture.md](design/high-level-architecture.md) | Current at the architecture level; still the best statement of intent |
-| [design/core-math-astronomy.md](design/core-math-astronomy.md), [design/render-api.md](design/render-api.md), [design/catalog-and-schema.md](design/catalog-and-schema.md), [design/data-layer.md](design/data-layer.md) | Current; post-doc additions (Icon primitive, Ground shading, rise/set solver, lunar phase) are recorded in decisions D35/D40/D50/D51 |
-| [design/screens-and-startup.md](design/screens-and-startup.md), [design/map-hud.md](design/map-hud.md), [design/ux-polish.md](design/ux-polish.md) | Current |
-| [design/camera-ar-mode.md](design/camera-ar-mode.md) | Current — shipped (D64 + AR-track D67–D71), now also gated by `CAMERA_AR`/`SHARE_SKY` (D80) |
-| [design/widgets-and-notifications.md](design/widgets-and-notifications.md) | Current — shipped (D75–D77), now default-off pending announcement (see §6) |
-| [design/color-scheme-proposal.md](design/color-scheme-proposal.md) | Current — accepted and implemented (D73); kept as the rationale and before/after reference |
-| [design/sensor-correction-model.md](design/sensor-correction-model.md) | Reference, not a design — the error physics behind drag-to-align (D68) |
-| [design/ephemeris-accuracy.md](design/ephemeris-accuracy.md) | Split status: §1–2 are a reference audit whose precession fix shipped (D84); §3's Astronomy Engine evaluation is proposed and undecided |
-| [design/data-packs.md](design/data-packs.md) | Design only, not implemented (D79) |
-| [design/localization.md](design/localization.md) | Proposed; the shipped localization work (D78) is 31 salvaged `values-*` locales plus the split help document — see §7 |
-| [design/layers-and-app.md](design/layers-and-app.md) | Current (status header refreshed 2026-08-03; the body's `AppGraph` sketch is superseded by Hilt per D59, which the header notes) |
-| [design/build-and-tooling.md](design/build-and-tooling.md) | Current. Holds the one full module list (refreshed 2026-11-15), plus the convention plugins, the smoke-not-benchmark perf gate and CI at the monorepo root |
-| [README.md](README.md) | Groups every doc as built / proposed / reference, tracks implementation slice-by-slice, and carries the standing "Not built" list; also lists [improvements-over-v1.md](improvements-over-v1.md) (release-notes/store-copy source), which this doc does not duplicate |
-
-decisions.md runs D1–D84 with no gaps or duplicates as of this writing. An earlier draft of
-this doc warned that D67–D71 existed twice (an AR-track set and a mainline set assigned on
-parallel branches) — the mainline decisions were since renumbered to D75–D81, so that hazard
-no longer applies.
+- [README.md](README.md) — the index of every design doc (built, proposed or reference, with
+  the decision that landed it), implementation status slice by slice, and the standing "Not
+  built" list. Where a design doc's status matters, look there; this doc doesn't repeat it.
+- [CHANGELOG.md](../../CHANGELOG.md) — what each release shipped.
+- §6's Experiments list — the features that are built but default off.
 
 ---
 

@@ -251,7 +251,7 @@ targets, so it covers them on the JVM only).
 | Flow behavior | Turbine |
 | `:data` (Room) | tests against real SQLite (FTS4 + Room invalidation need it), so on Android they are **instrumented** (`connectedAndroidDeviceTest`); the ones in `commonTest` also run on the iOS simulator. Fixture pack; generator golden test on the JVM; satellite logic as JVM host tests |
 | ViewModels (`:shared:viewmodels`) | `commonTest` with `:shared:testing`'s fakes (the point of the decomposition), run on the JVM and the iOS simulator |
-| Compose screens | not yet built — coverage is at the ViewModel layer; Compose UI tests remain the plan for critical paths |
+| Compose screens (`:shared:ui`) | No Compose UI tests on Android yet; the screens' non-UI logic (text, HTML, help links, rail slots, the diagnostics report) has `commonTest` suites. On iOS, XCUITests in `ios/SkyMap/UITests` drive most screens of the same shared UI end to end |
 | Architecture | Konsist (D20) |
 | Performance | `RendererPerfTest` smoke gate in CI; real D19 budget checked manually at release (see above) |
 | Renderer visual | dev-only test activity + v1/v2 screenshot comparison (intentional D12 diffs noted) |

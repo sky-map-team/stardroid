@@ -40,8 +40,9 @@ below.
 
 - Real-time sky driven by device sensors; auto (sensor) ⇄ manual mode toggle
 - Drag, pinch-zoom, and rotate; double-tap toggles horizon auto-leveling
-- **Eight layers** — Stars, Constellations, Deep Sky, Solar System, Meteor Showers, Grid,
-  Horizon, Ecliptic — reachable from the layer rail; long-press opens the full sheet
+- **Nine layers** — Stars, Constellations, Deep Sky, Solar System, Meteor Showers, Celestial
+  Grid, Alt/Az Grid, Horizon, Ecliptic — reachable from the layer rail; long-press opens the
+  full sheet
 - Sky gradient (the daylight dome) as a separate display toggle
 - Night mode, red-shifted across both the Compose theme and the renderer, with three
   dimming levels
