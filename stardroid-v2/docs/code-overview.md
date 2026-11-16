@@ -1,7 +1,7 @@
 # Sky Map v2 — Code Overview
 
-**Status:** snapshot of the codebase as of 2026-08-05 (master, through the 2.0.0-alpha04
-"Apollo" release prep). This document supplements the per-area design docs in
+**Status:** §2–§7 checked against master on 2026-11-15, after the iOS port. §1 is still the
+2026-08-05 snapshot (through the 2.0.0-alpha04 "Apollo" release prep). This document supplements the per-area design docs in
 [design/](design/) with a single top-down tour of what actually exists, where it lives, and
 which design docs are still the authoritative reference for each area. It repeats as little as
 possible — where a design doc is current, this doc just points at it.
@@ -123,67 +123,95 @@ generator and app via `:core:catalog` so normalized names cannot drift (D33).
 ### `:core:math` and `:core:astronomy`
 
 Ported from v1 with golden tests against v1 outputs (D6/D25). `Ephemeris` is the swappable
-interface (`geocentricPosition`, `topocentricPosition`, `phaseAngleDeg`, `magnitude`,
-`earthDistanceAu`, `maxAngularVelocityDegPerDay`); `KeplerianEphemeris` is the v1-ported
-implementation — a VSOP87/ELP one could slot in behind it. Time currency is
+interface (`geocentricPosition`, `topocentricPosition`, `phaseAngleDeg`, `illuminatedFraction`,
+`angularDiameterDeg`, `magnitude`, `earthDistanceAu`, `maxAngularVelocityDegPerDay`).
+`KeplerianEphemeris` is the v1-ported baseline. `MeeusEphemeris`, which both apps use, slots in
+behind the same interface: it computes the Sun and Moon from full analytic series, since the
+baseline placed some eclipse maxima ~30 minutes out, and delegates every other body to the
+baseline ([design/ephemeris-accuracy.md](design/ephemeris-accuracy.md)). Time currency is
 `kotlinx.datetime.Instant` throughout. Beyond the port: `RiseSet.kt` (Astronomical Almanac
 hour-angle iteration, works for ephemeris bodies *and* fixed RA/Dec, D50/D51), `LunarPhase.kt`
-(analytic next-phase-event, replacing v1's stepping loop), `MoonWidgetModel.kt`.
+(analytic next-phase-event, replacing v1's stepping loop), `LunarEclipse.kt` (D106),
+`MoonWidgetModel.kt`, and the satellite maths: `Tle`, `Sgp4`, `SatelliteEphemeris`,
+`SatellitePass`, `SatelliteMagnitude` ([design/satellite-tracking.md](design/satellite-tracking.md)).
 
 `SkyModel.kt` is the heart of pointing: `LocalFrame` (observer north/east/up in equatorial
 coordinates, with a magnetic pair pre-rotated by declination — v1's trick of rotating the
 *celestial axes* rather than correcting each sensor reading), and
 `pointing(localFrame, orientationMatrix, viewDirection)` mapping the phone frame onto the sky.
-It is entirely pure; sensors are an app-side edge.
+It is entirely pure. Reading the sensors is each platform's job (§6); the smoothing they share
+is in `:shared:model`.
 
-### `:core:catalog` and `:core:events`
+### `:core:catalog`, `:core:events` and `:core:text`
 
 `CatalogRepository` (Flow-returning interfaces), the object/type domain model, `LocaleSpec`
-with its fallback chain (`pt-BR → pt → en → ""`), `NameNormalizer`. `:core:events` holds
-`TonightSky` — twilight window, well-placed planets, shower peaks vs moonlight, moon phase
-events — consumed by widgets and notifications (see
-[design/widgets-and-notifications.md](design/widgets-and-notifications.md)).
+with its fallback chain (`pt-BR → pt → en → ""`), `NameNormalizer` (the `expect`/`actual` the
+KMP move needed). `:core:events` holds `TonightSky` — twilight window, well-placed planets,
+shower peaks vs moonlight, moon phases, lunar eclipses — which the widgets and the notification
+planner read (see [design/widgets-and-notifications.md](design/widgets-and-notifications.md)).
+`:core:text` is how shared logic asks for translated text: it names each string by `TextId`, and
+each platform answers from its own resources (`AndroidTextSource`, `IosTextSource`). The
+notification planner is its first user.
 
 ---
 
 ## 4. The renderer
 
-Authoritative design: [design/render-api.md](design/render-api.md). Short version:
+Authoritative designs: [design/render-api.md](design/render-api.md) for the contract, and
+[design/render-gles3.md](design/render-gles3.md) and [design/render-metal.md](design/render-metal.md)
+for the newer backends. Short version:
 
 ### `:render:api` — the contract (pure)
 
 `SkyRenderer` is three thread-safe methods: `submit(layerId, scene?)` (replace a whole layer's
 immutable `LayerScene`; null removes), `setCamera(camera)`, `setRenderState(state)`. This is
 the D13 "retained scenes + per-frame camera" model: producers publish complete scenes only when
-*their* content changes; the camera changes every frame. Five primitive kinds — points (with
-`Stellar(magnitude, colorIndex)` vs `Fixed` vs `Icon` appearance, D12), lines, world-anchored
-images, and screen-space labels (with declutter priority). Positions are unit
-geocentric vectors, sizes are dp, colors abstract `Rgba`; night mode is the backend's job.
+*their* content changes; the camera changes every frame. The primitives are points (with a
+`Stellar(magnitude, colorIndex)`, `Fixed` or `Icon` appearance, D12), lines, world-anchored
+images (which can carry a phase `Terminator` or an `EclipseShadow`), and screen-space labels
+(with declutter priority). Positions are unit geocentric vectors, sizes are dp, colors abstract
+`Rgba`; night mode is the backend's job.
 
 The single most port-relevant decision (D21): **the view-projection pipeline lives in the pure
-module.** `SkyProjection`/`Matrix4` build the byte-identical matrix used by the GL backend
-(`glLoadMatrixf`) and by every Compose overlay that needs sky↔screen math — the search arrow
-(`ui/search/SearchGeometry.kt`) and tap-to-identify (`ui/objectinfo/IdentifyGeometry.kt`)
-invert the same projection. FOV spans the *short* viewport side (portrait/landscape parity).
+module.** `SkyProjection`/`Matrix4` build the matrix every backend draws with and every Compose
+overlay that needs sky↔screen math inverts: the search arrow (`SearchGeometry.kt`) and
+tap-to-identify (`IdentifyGeometry.kt`), both in `:shared:viewmodels`. FOV spans the *short*
+viewport side (portrait/landscape parity).
 
-### `:render:gles1` — the backend
+Rendering policy that isn't graphics-API code lives here too, so all three backends share it:
+`StellarRamps` (magnitude and colour index → size, brightness and tint), `GreatCircleSubdivision`,
+the label pipeline (`LabelAtlas`, `LabelAtlasPacker`, `LabelDeclutterer`, `LabelFader`),
+`PhaseGeometry` and `MoonShading`, `EclipseGeometry`, `GroundRamp`. All of it is tested in
+`commonTest` on the JVM and the iOS simulator.
 
-`GLSkyRenderer` implements `SkyRenderer` + `GLSurfaceView.Renderer`; cross-thread state is
-immutable snapshots swapped atomically, with per-primitive-family GPU caches keyed by scene
-identity so unrelated state changes don't force rebuilds. Fixed-function GLES1 drawers:
-`PointDrawer` (native `glPointSize` — zoom-invariant for free), `LineDrawer` (+
-`GreatCircleSubdivision`), `ImageDrawer` (dual day/night textures), `IconDrawer`,
-`GroundDrawer` (the translucent ground), `SkyGradientDrawer` (v1's SkyBox dome),
-`CameraScrimDrawer` (AR video dimmer). Labels are text-to-texture: `android.graphics.Canvas`
-rasterizes white-on-transparent into atlas pages (`LabelAtlasPacker`), tinting happens at draw
-time via `glColor4f`, and `LabelDeclutterer` does per-frame priority decluttering. Notably,
-`StellarStyler`, `GreatCircleSubdivision`, `LabelAtlasPacker`, and `LabelDeclutterer` are
-GL-free pure Kotlin with plain JUnit tests — backend policy, not GL code.
+### The backends
 
-Render loop: `RENDERMODE_WHEN_DIRTY` (D23); the app-side `RenderConnector` is the only owner
-of `requestRender()`. Perf harness: `testscene/RendererTestActivity` (drives the real catalog
-or a seeded 100k-star synthetic scene; `app/src/debug/`, never in a release build) +
-`RendererPerfTest`.
+- **`:render:gles1`** — `GLSkyRenderer` implements `SkyRenderer` + `GLSurfaceView.Renderer`;
+  cross-thread state is immutable snapshots swapped atomically, with per-primitive-family GPU
+  caches keyed by scene identity so unrelated state changes don't force rebuilds. Fixed-function
+  drawers: `PointDrawer` (native `glPointSize` — zoom-invariant for free), `LineDrawer`,
+  `ImageDrawer` (with `PhaseCompositor` for phases), `IconDrawer`, `GroundDrawer`,
+  `SkyGradientDrawer` (v1's SkyBox dome), `CameraScrimDrawer` (AR video dimmer), `LabelDrawer`.
+  Labels are text-to-texture: `android.graphics.Canvas` rasterizes white-on-transparent into
+  atlas pages, and tinting happens at draw time via `glColor4f`.
+- **`:render:gles3`** — `GLES3SkyRenderer`: the same drawers on GLSL shaders
+  (`src/main/assets/shaders/`), adding the analytic sky, a shaded ground, an eclipse shader and
+  label halos. It is Android's default while the `GLES3_RENDERER` flag is on and the device
+  supports GLES 3. `createRendererBackend` (`app/.../render/RendererBackends.kt`) makes the
+  choice and falls back to GLES1; Settings → Advanced → Graphics engine overrides it. The two GL
+  backends are siblings, and Konsist stops either importing the other.
+- **`:render:metal`** — `MetalSkyRenderer`, Kotlin/Native calling Metal, with labels rasterized
+  by `UIKitGlyphRasterizer`. It draws everything `:render:gles3` does. Its shaders in
+  `render/metal/shaders/*.metal` are hand-transcribed from `:render:gles3`'s GLSL, so a change
+  to either must be mirrored in the other (`MetalShaderConstantParityTest` catches only some
+  drift). The on-device perf gate is still to come.
+
+Render loop: on Android, `RENDERMODE_WHEN_DIRTY` (D23), with `RenderConnector` bridging the
+backend to the `GLSurfaceView` and requesting a frame after each change. On iOS, a display link
+that starts paused (`DisplayLinkFrameTicker`, `PausedDisplayLink`). Harnesses: Android's
+`testscene/RendererTestActivity` (`app/src/debug/`, never in a release build) +
+`RendererPerfTest`, and iOS's `ios/RendererHarness` over `:render:metal-harness`. Both draw
+`:render:testscene`'s seeded scene.
 
 ---
 
@@ -192,43 +220,98 @@ or a seeded 100k-star synthetic scene; `app/src/debug/`, never in a release buil
 Authoritative design: [design/catalog-and-schema.md](design/catalog-and-schema.md) and
 [design/data-layer.md](design/data-layer.md). Key facts:
 
-- **Room catalog** (`data/src/commonMain/kotlin/.../data/`, shared with iOS): pack-based provenance (bundled pack
-  `"core"`; `PackDao.applyPack/removePack` is the future download path), hierarchical object
-  types as *data* (`galaxy.spiral` inherits rendering from `galaxy`), deliberately no foreign
-  keys (cross-pack references must dangle gracefully), FTS4 external-content name search with
-  diacritic folding, year-agnostic meteor-shower activity windows, constellation figures as
-  vertex rows. Locale fallback is whole-object via `LocaleSpec.fallbackChain`, resolved
-  Kotlin-side in `RoomCatalogRepository`.
+- **Room catalog** (`data/src/commonMain/kotlin/.../data/`, shared with iOS): pack-based
+  provenance (bundled pack `"core"`; `PackDao.applyPack/removePack` is the future download
+  path), hierarchical object types as *data* (`galaxy.spiral` inherits rendering from
+  `galaxy`), deliberately no foreign keys (cross-pack references must dangle gracefully), FTS4
+  external-content name search with diacritic folding, year-agnostic meteor-shower activity
+  windows, constellation figures as vertex rows. Locale fallback is whole-object via
+  `LocaleSpec.fallbackChain`, resolved Kotlin-side in `RoomCatalogRepository`.
 - **Bundled DB**: on Android, `createFromAsset("skymap.db")` with D24 recovery (probe; on
   failure delete and re-copy once). iOS opens a copy with Room's bundled-SQLite driver; Android
-  sets no driver and keeps the platform SQLite (D127). The DB holds **no user state** — that invariant is what makes wholesale
-  replacement and recovery safe.
+  sets no driver and keeps the platform SQLite (D127). The DB holds **no user state** — that
+  invariant is what makes wholesale replacement and recovery safe.
 - **Search**: word-prefix FTS with operator-injection-proof tokenization; ranked by
   whole-name-prefix, primary-ness, brightness; moons resolve to their parent's position;
   `planet/*` ids bridge to live ephemeris positions (`SolarSystemIds.kt`).
-- **Settings** (`settings/Settings.kt`, `DataStoreSettings.kt`): one Preferences DataStore
-  file (`"settings"`, shared with startup state); everything is `Flow<T>` + suspend setters;
-  enums stored by name with unknown-value fallback; `IOException` → empty preferences. v1
-  SharedPreferences deliberately not migrated (D1).
-- **Startup state** (`startup/DataStoreStartupState.kt`): EULA version int, warm-welcome/
-  what's-new seen versions, sensor-warning suppression — consumed by `StartupRouter` (v1's
-  gating ported verbatim, D48).
+- **Satellite elements** (`data/.../satellites/`): `CelesTrakClient` (`HttpURLConnection` on
+  Android, `URLSession` on iOS), `SatelliteElementsRepository` caching what was fetched, and
+  `SatelliteFetchPolicy` deciding when to fetch. Off by default since #1269 (D147/D148); see
+  [design/background-network-audit.md](design/background-network-audit.md).
+- **Settings** (`:shared:model`'s `settings/Settings.kt`, `DataStoreSettings.kt`): one
+  Preferences DataStore file, shared with startup state. Android opens it as
+  `preferencesDataStore(name = "settings")`; iOS opens the same format by path under Application
+  Support (`SettingsDataStore.kt`). Everything is `Flow<T>` + suspend setters; enums stored by
+  name with unknown-value fallback; `IOException` → empty preferences. v1 SharedPreferences
+  deliberately not migrated (D1).
+- **Startup state** (`startup/DataStoreStartupState.kt`, also `:shared:model`): EULA version
+  int, warm-welcome/what's-new seen versions, sensor-warning suppression — consumed by
+  `StartupRouter` (v1's gating ported verbatim, D48).
 
 ---
 
-## 6. The app shell
+## 6. The apps
 
 Authoritative designs: [design/layers-and-app.md](design/layers-and-app.md),
 [design/screens-and-startup.md](design/screens-and-startup.md),
 [design/map-hud.md](design/map-hud.md), [design/ux-polish.md](design/ux-polish.md).
 
-### DI and wiring
+Most of the app is shared: the layers, the ViewModels and the screens are in `:shared:*`, so both
+apps run the same code. Each platform adds its wiring and the edges only it can provide: `:app`
+on Android, and `:app-ios` + `ios/SkyMap` on iOS.
+
+### Layers (`:shared:layers`)
+
+`SkyLayer` is `id` + `depth` + `scenes(): Flow<LayerScene>`. `LayerRegistry` builds three
+`CatalogLayer` instances differing only in `PrimitiveMapping` policy (stars → stellar points,
+DSOs → tinted type icons resolved by walking up the type hierarchy, constellations → figure
+lines), plus computed Grid, Alt/Az grid, Ecliptic, Horizon, SolarSystem (Earth-distance-sorted
+for eclipse occlusion, D18/D54 topocentric Moon), MeteorShowers, and Satellites, which is
+registered only when the `SATELLITES` flag is on. Styling is layer policy from `SkyColors`
+(D40), never DB data. Each layer re-emits only on the inputs it cares about — the stars layer
+ignores the clock entirely; the solar-system layer re-submits only when a body could have moved
+past a visible threshold.
+
+`RenderBinder` bridges Flows → renderer: camera and render state from `MapViewModel`, and per
+layer `enabled(id).flatMapLatest { on -> if (on) layer.scenes() else flowOf(null) }`. Each
+platform runs it while the map is visible; scene data never flows through Compose.
+
+### Screens and ViewModels (`:shared:viewmodels`, `:shared:ui`)
+
+The ViewModels (map, search, time travel, layers, location, object info, gallery, settings,
+startup, compass calibration, diagnostics) are on androidx.lifecycle's multiplatform
+`ViewModel`, hold no GL or platform types, and are tested in `commonTest`. The screens are
+Compose Multiplatform in `:shared:ui` (D134), with their strings as Android-format resources
+(§7). The map screen takes the sky as a slot that each platform fills with its renderer's view
+(D137).
+
+`MapViewModel` is the junction: SENSOR mode maps the platform's `OrientationSource` through
+`SkyModel.pointing` into a `SkyCamera`; MANUAL mode ports v1's drag/stretch/rotate/fling/slew
+semantics. The declination correction model (magnetic correction toggle + manual offset, cached
+against time-travel's fast clock) and the D65/D66 HUD state (RA/Dec, Alt/Az, FOV, correction
+row) live here too, with pure formatting helpers in `HudFormats`. Both platforms' sensor sources
+share `:shared:model`'s `OneEuroQuaternionSmoother`, and `SensorAccuracyMonitor` drives
+calibration prompts.
+
+`MapChrome` implements the three-zone chrome (D56/D57): layer rail (with `ifroom` overflow
+semantics), action cluster, overflow sheet — all tagged as `ChromeTourTarget`s so the warm
+welcome can spotlight the *real* chrome with canned state.
+
+The other screens: warm welcome (3-slide pager: live chrome tour, real Crab Nebula info card,
+sensor check), object info cards (photo, description, data rows, rise/set, "Now" facts and
+"Upcoming" events per D141, see-also chips) + tap-to-identify, gallery (downsampled decode +
+LRU cache), time travel, diagnostics, help (with the DSO symbol key rendered from real map
+textures), what's new, settings (Controls, Appearance, Sensors, Notifications and Other, over
+generic row kinds), support, EULA. Startup runs `StartupRouter`'s gating, then a
+once-per-cold-start version banner.
+
+### Android (`:app`)
 
 `di/AppModule.kt` holds the whole singleton graph (Hilt since D59): settings, startup state,
 the shared **clock bus** (`TimeController`, D42) and **location bus** (`LocationController`,
-D44), sensors, sound effects, and the `FlavorEdges`-supplied platform services.
-Suspend-initialized state (catalog open, layer registry) lives in `CatalogAccess` — a
-mutex-guarded first-use open with recovery.
+D44), sensors, and the `FlavorEdges`-supplied platform services. Suspend-initialized state
+(catalog open, layer registry) lives in `CatalogAccess` — a mutex-guarded first-use open with
+recovery.
 
 The app's locale is deliberately *not* one of the captured singletons: `locale/LocaleSource`
 re-reads the configuration per request (`current`) and re-emits it on a configuration change
@@ -236,91 +319,88 @@ re-reads the configuration per request (`current`) and re-emits it on a configur
 `LocaleSpec` would leave every catalog-sourced string — names, map labels, info-card prose —
 in the old language until the process happened to die.
 
-`ui/MainActivity.kt` is the single activity: it owns the `GLSurfaceView` + `GLSkyRenderer`,
-and `RenderBinder` bridges Flows → renderer inside `repeatOnLifecycle(STARTED)`: camera and
-render state from `MapViewModel`, and per-layer
-`enabled(id).flatMapLatest { on -> if (on) layer.scenes() else flowOf(null) }`. The GL surface
-is passed *into* the composition (`AndroidView` in `MapScreen`); scene data never flows through
-Compose. `ui/SkyMapNavHost.kt` has 8 destinations (map, welcome, settings, gallery,
-diagnostics, help, what's new, calibration); search/time-travel/object-info/location/layers
-stay map-owned dialogs and sheets.
+`ui/MainActivity.kt` is the single activity: it owns the `GLSurfaceView` and the backend
+`createRendererBackend` picks, and runs `RenderBinder` inside `repeatOnLifecycle(STARTED)`. The
+GL surface goes into the map screen's sky slot as an `AndroidView` (`ui/map/MapRoute.kt`).
+`ui/SkyMapNavHost.kt` has 9 destinations (map, welcome, settings, gallery, diagnostics, help,
+what's new, support, calibration); search/time-travel/object-info/location/layers stay
+map-owned dialogs and sheets. The AndroidX splash is held until the startup-state read.
+`sensors/SensorOrientationSource` prefers the rotation-vector sensor, with v1's
+accel+magnetometer fusion as the fallback.
 
-### Layers
+Platform services:
 
-`layers/SkyLayer` is `id` + `depth` + `scenes(): Flow<LayerScene>`. `LayerRegistry` builds
-eight: three `CatalogLayer` instances differing only in `PrimitiveMapping` policy (stars →
-stellar points, DSOs → tinted type icons resolved by walking up the type hierarchy,
-constellations → figure lines), plus computed Grid, Ecliptic, Horizon, SolarSystem (Earth-
-distance-sorted for eclipse occlusion, D18/D54 topocentric Moon), and MeteorShowers. Styling
-is layer policy from `SkyColors` (D40), never DB data. Each layer re-emits only on the inputs
-it cares about — the stars layer ignores the clock entirely; the solar-system layer re-submits
-only when a body could have moved past a visible threshold.
+- **Analytics**: `AnalyticsEvents` (in `:shared:model`) keeps v1's event names verbatim, so the
+  GA4 stream doesn't fork. gms sends them to Firebase; fdroid's `Analytics` is a no-op. What is
+  collected, and the opt-out, are in [PRIVACY_POLICY.md](../../PRIVACY_POLICY.md).
+- **Experiments**: `ExperimentConfig` (in `:shared:model`) over the `Experiment` flags.
+  `NOTIFICATIONS` and `GLES3_RENDERER` default on; `CAMERA_AR`, `SHARE_SKY`, `SATELLITES` and
+  `ANNOUNCEMENTS` default off. `SATELLITES` reads the key `satellites_v2_enabled`, because
+  2.3.0–2.3.2 read the old key with on-by-default behaviour (#1269). Retired: `WARM_WELCOME`
+  (D81) and `MOON_WIDGET`/`TONIGHT_WIDGET`, once the widgets launched. gms backs the flags with
+  Remote Config, including a static-source fallback that works around the `setDefaultsAsync`
+  cold-start race (a real D69 bug); fdroid uses the static defaults.
+- **Location**: `LocationController` (in `:shared:model`) is a state machine over the flavor's
+  `LocationProvider`; Greenwich default; the saved location seeds the sky at startup. Place
+  names come from the platform `Geocoder`, and the location sheet's map is a Geoapify static
+  map. That map is the only thing Coil loads (`RemoteImage` on Android, through
+  `SkyMapApplication`'s `ImageLoader`); the gallery and info cards decode their own images.
 
-### The map screen and sensor pipeline
+Surfaces beyond the map:
 
-`MapViewModel` (pure JVM-testable — no GL or Android types) is the junction: SENSOR mode maps
-`OrientationSource` matrices through `SkyModel.pointing` into a `SkyCamera`; MANUAL mode ports
-v1's drag/stretch/rotate/fling/slew semantics. The declination correction model (magnetic
-correction toggle + manual offset, cached against time-travel's fast clock) and the D65/D66
-HUD state (RA/Dec, Alt/Az, FOV, correction row) live here too, with pure formatting helpers in
-`HudFormats`. `sensors/SensorOrientationSource` prefers the rotation-vector sensor with v1's
-accel+magnetometer fusion fallback and speed/damping settings; `SensorAccuracyMonitor` drives
-calibration prompts.
+- **Widgets** (D75/D76): three Glance widgets — moon phase (custom-drawn disc), tonight's sky,
+  shower countdown — fed by the pure `TonightSky` engine and launched. `WidgetScheduler` keeps
+  WorkManager refresh jobs alive only while a widget is placed, with an app-start catch-up
+  sweep.
+- **Notifications** (D77, D106): `:shared:surfaces`' `NotificationPlanner` decides which alert
+  is due tonight and when it fires; `notifications/` schedules and posts it through WorkManager.
+  Channels: meteor showers, the tonight digest, lunar eclipses, satellite passes, and
+  announcements.
+- **Satellites** (D92–D97, D147/D148): the layer, pass prediction, pass alerts and the CelesTrak
+  fetch, all behind `SATELLITES`, which has been off since #1269. The app side is
+  `satellites/` (`SatelliteScheduler`, `SatelliteRefreshWorker`, `PassAlerts`).
+- **Announcements** ([design/remote-announcements.md](design/remote-announcements.md)):
+  remotely authored messages on the notification, widget and interstitial surfaces, in
+  `announcements/`, behind `ANNOUNCEMENTS`.
+- **Camera-AR** (D64/D67–D71, still off behind `CAMERA_AR` and `SHARE_SKY`): CameraX
+  `PreviewView` *under* a translucent GL surface; `CameraFov` computes the FILL_CENTER-cropped
+  FOV to lock the map's camera to the lens; `CameraScrimDrawer` dims the video plane; two
+  exposure levers (scrim + AE compensation); `SkyShare` composites GL + camera stills via
+  `PixelCopy` for the share sheet, gated independently via `SHARE_SKY` so camera-on/share-off
+  keeps the AR controls panel and drops only the shutter. See
+  [design/camera-ar-mode.md](design/camera-ar-mode.md); the launch plan is
+  [design/camera-ar-launch.md](design/camera-ar-launch.md) (proposed).
 
-`MapChrome` implements the three-zone chrome (D56/D57): layer rail (with `ifroom` overflow
-semantics), action cluster, overflow sheet — all tagged with `ChromeTourTarget` so the warm
-welcome can spotlight the *real* chrome with canned state.
+### iOS (`:app-ios` + `ios/SkyMap`)
 
-### Supporting screens
-
-Warm welcome (3-slide pager: live chrome tour, real Crab Nebula info card, sensor check),
-object info cards (photo/description/data rows/see-also chips + tap-to-identify), gallery
-(downsampled decode + LRU, no Coil), diagnostics, help (with the DSO symbol key rendered from
-real map textures), what's new, settings (five sections over generic row kinds), EULA. Startup:
-AndroidX splash held until the startup-state read, then `StartupRouter` gating, then a
-once-per-cold-start version banner.
-
-### Platform services
-
-- **Analytics**: `AnalyticsEvents` keeps v1's event names verbatim; opt-in respected before
-  the first event.
-- **Experiments**: `ExperimentConfig` (`NOTIFICATIONS`, `CAMERA_AR`,
-  `SHARE_SKY`, … — `WARM_WELCOME` retired per D81, onboarding is unconditional now, and
-  `MOON_WIDGET`/`TONIGHT_WIDGET` retired once the widgets launched);
-  gms backs it with Remote Config including a static-source fallback that works around the
-  `setDefaultsAsync` cold-start race (a real D69 bug). All five remaining flags default to
-  `false` as of the "disable unreleased features" pass — the features are complete and
-  merged, just not yet announced (D80).
-- **Location**: `LocationController` state machine over the flavor `LocationProvider`;
-  Greenwich default; saved location seeds the sky at startup; Geoapify static map + geocoding
-  in the location sheet.
-
-### Widgets, notifications, camera-AR (the newest surfaces — all shipped, all gated off by default)
-
-All five surfaces below are complete and merged but currently default-off via `ExperimentConfig`
-(D80) pending a public announcement — see "Experiments" above.
-
-- **Widgets** (D75/D76, PR #72–73): three Glance widgets — moon phase (custom-drawn disc),
-  tonight's sky, shower countdown — fed by the pure `TonightSky` engine;
-  `WidgetScheduler` keeps WorkManager refresh jobs alive only while a widget is placed, with
-  an app-start catch-up sweep.
-- **Notifications** (D77, PR #74): one slot per night — a planner worker arms a poster for
-  sunset + 30 min; the poster recomputes at post time; two channels mapping 1:1 to settings
-  rows, off by default (both the `NOTIFICATIONS` experiment and the per-channel settings rows).
-- **Camera-AR** (D64/D67–D71, merged #67, gated per D80): CameraX `PreviewView` *under* a
-  translucent GL surface; `CameraFov` computes the FILL_CENTER-cropped FOV to lock the map's
-  camera to the lens; the GL `CameraScrimDrawer` dims the video plane; two exposure levers
-  (scrim + AE compensation); `SkyShare` composites GL + camera stills via `PixelCopy` for the
-  share sheet, gated independently via `SHARE_SKY` so camera-on/share-off keeps the AR controls
-  panel and drops only the shutter. See [design/camera-ar-mode.md](design/camera-ar-mode.md).
+`IosAppGraph` builds by hand what Android's Hilt modules provide. `SkyMapScreen` is the root the
+Swift shell hosts: the shared map screen over the Metal sky (`MapViewController`, whose UIKit
+recognizers take every gesture), with full-screen pages standing in for Android's navigation
+routes. The iOS edges are Kotlin too: Core Motion orientation and sensor status, Core Location,
+the display link, geocoding, local notifications, the satellite background refresh, and the tip
+jar. The Swift in `ios/SkyMap/Sources` is the entry point plus adapters for SDKs used from
+Swift — Firebase Analytics and Remote Config, StoreKit, `UNUserNotificationCenter`, and the
+background task — passed into Kotlin through the shared interfaces. Not on iOS so far: widgets
+and camera-AR. [design/ios-platform-surfaces.md](design/ios-platform-surfaces.md) plans the
+widget and notification work, and [`ios/README.md`](../ios/README.md) covers building.
 
 ---
 
 ## 7. Localization
 
-Two-track: **catalog text** (object names, info cards) ships *in the generated DB* — ~30
-locales already — while **UI strings** were English-only until PR #70 (merged), which adds 31
-locale `values-*` directories (191 of 337 strings salvaged from v1 with exact-match-only
-guards), splits the 11 KB `help_text` into 14 per-section keys, and adds `.tmconfig.toml` for
-the translation pipeline. See `tools/salvage-translations/review-manifest.md` for the
-remainder not yet salvaged, and D78 for the analysis.
+Two tracks, each translated by the `tm` pipeline (`.tmconfig.toml`; see `AGENTS.md`'s
+Translations section for when to run it):
+
+- **Catalog text** (object names, info cards) ships *in the generated DB*, from per-locale
+  files under `source-data/names/` and `source-data/info_cards/`, so it is translated on both
+  platforms.
+- **UI strings** are Android-format `values-*` resources in two places:
+  `app/src/main/res/` for the Android-only surfaces, and `shared/ui/src/commonMain/res/` for
+  the shared screens, which Compose Multiplatform also bundles into the iOS app. Shared logic
+  that needs text outside a screen (the notification planner) goes through `:core:text`.
+
+`.tmconfig.toml`'s `primary_languages` lists the 28 core languages. `ca`, `hu` and `ru` exist as
+partial locale directories and are intentionally excluded. The first locales were salvaged from
+v1 (PR #70, D78; `tools/salvage-translations/review-manifest.md`). iOS's layer labels are still
+English (`EnglishLayerStrings`) until iOS reads localized layer strings; catalog names are
+unaffected.
