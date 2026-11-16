@@ -53,7 +53,7 @@ assets/welcome/welcome_sky_bg.webp
 assets/catalog/icons/*.webp
 
 # iOS version-banner portrait. iOS names its releases independently of Android, so it has its
-# own file, not assets/splash/splash.png. A photograph (GDC, 2.0.0), copyright Penterakt LLC;
+# own file, not assets/splash/splash.png. A photograph (Izzie, 2.1.0; GDC before that), copyright Penterakt LLC;
 # All Rights Reserved.
 ios/SkyMap/Resources/splash/splash.png
 
