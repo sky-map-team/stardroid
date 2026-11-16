@@ -16,7 +16,7 @@ the two ever drift.
 |---|---|---|
 | [design/high-level-architecture.md](design/high-level-architecture.md) | Module structure, layer separation, rendering/ephemeris API abstractions | approved D15; realized across slices 1–19 |
 | [design/data-layer.md](design/data-layer.md) | Catalog storage, localization, and download strategy | approved D15; realized in slice 4 |
-| [design/build-and-tooling.md](design/build-and-tooling.md) | Module graph, convention plugins, CI architecture/perf/DB gates | slice 1, D20 |
+| [design/build-and-tooling.md](design/build-and-tooling.md) | The one full module list, convention plugins, CI architecture/perf/DB gates | slice 1, D20 |
 | [design/core-math-astronomy.md](design/core-math-astronomy.md) | `:core:math`, `:core:astronomy` | slices 2/5, D25–D27, D36 |
 | [design/render-api.md](design/render-api.md) | `:render:api` contract, `:render:gles1` port notes | slices 3a/3b, D28–D31 |
 | [design/render-gles3.md](design/render-gles3.md) | The GL ES 3.0 backend beside GLES1, selectable in settings; Part B still proposed | Part A built; §7.2–§8 design only |
@@ -52,7 +52,7 @@ the two ever drift.
 | Document | Purpose |
 |---|---|
 | decisions.md | Running log of product/technical decisions and their rationale — the authority behind every status above |
-| [code-overview.md](code-overview.md) | Top-down tour of the codebase as built — module graph, build machinery, subsystem pointers, doc-health table |
+| [code-overview.md](code-overview.md) | Top-down tour of the codebase as built — build machinery, subsystem pointers, doc-health table (the module list itself is in build-and-tooling.md) |
 | [improvements-over-v1.md](improvements-over-v1.md) | The full at-launch feature surface (unflagged only) plus the net-new-vs-v1 highlights drawn from it — the source for help text, store copy, screenshots, and release notes |
 | [info-card-coverage.md](info-card-coverage.md) | Which labelled objects still lack info cards, why that blocks tap-to-identify, and how to write new ones |
 | [design/sensor-correction-model.md](design/sensor-correction-model.md) | Sensor error physics and why drag-to-align's az/alt correction matches them |

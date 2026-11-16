@@ -96,6 +96,8 @@ Always specify a **flavor** — there is no plain `assembleDebug`:
 `gms` *release* builds additionally need `no-checkin.properties`, which is not in the repo.
 F-Droid builds need nothing extra.
 
+The iOS app builds with Xcode; see [`ios/README.md`](ios/README.md).
+
 ## Testing
 
 ```bash
@@ -108,29 +110,32 @@ F-Droid builds need nothing extra.
 
 ## Module layout
 
-Ten Gradle modules, split hard between **pure Kotlin** and **Android**. Pure modules have no
-Android SDK on the classpath at all — `import android.*` is a compile error there, enforced by
-a Konsist architecture gate rather than by convention.
+One Kotlin Multiplatform build makes both the Android and the iOS app. They share everything
+except a thin platform shell each and a renderer backend each.
 
-| Module | Type | Purpose |
-|---|---|---|
-| `:core:math` | pure | `Vector3`, `Matrix3`, `RaDec`, `LatLong`, angles, geometry |
-| `:core:astronomy` | pure | Ephemeris, sky model, sensor-fusion math, time, rise/set, lunar phase |
-| `:core:catalog` | pure | Celestial-object domain model, repository interfaces, locale fallback |
-| `:core:events` | pure | Sky-events engine ("what's up tonight") |
-| `:render:api` | pure | Renderer contract: primitives, camera, the shared projection |
-| `:data:generator` | pure (build tool) | Deterministic catalog-DB generator over `source-data/` |
-| `:render:gles1` | Android lib | OpenGL ES 1.0 backend implementing `:render:api` |
-| `:data` | Android lib | Room catalog store implementing `:core:catalog` |
-| `:app` | Android app | Compose UI, ViewModels, Hilt, sensors, location |
-| `:konsist` | test-only | The architecture gate itself |
+| Folder | What's in it |
+|---|---|
+| `core/` | The pure core: maths, astronomy, the catalog model, sky events, text ids. No Android SDK and no JDK, so it compiles for the JVM and iOS alike |
+| `render/` | The renderer contract (`api`) and its backends: OpenGL ES 1 and 3 on Android, Metal on iOS |
+| `data/` | The Room catalog store, used by both apps, and `generator`, the build-time tool that makes its database from `source-data/` |
+| `shared/` | The app's middle layer, used by both apps: the Compose Multiplatform screens, their ViewModels, the sky layers, settings and controllers |
+| `app/` | The Android app: Hilt wiring, sensors, location, camera, widgets, notifications, the `gms`/`fdroid` flavors |
+| `app-ios/` | The iOS app's Kotlin, built as the `SkyMapKit` framework: its wiring, Core Motion and Core Location, the Compose root |
+| `ios/` | The Xcode projects that host those frameworks: `SkyMap`, the iOS app's Swift shell, and `RendererHarness`, a Metal test bed |
+| `konsist/` | The architecture gate |
+| `build-logic/` | Gradle convention plugins. A module's plugin decides which platforms it builds for |
 
-Dependencies point inward only: `:app → {:render:*, :data, :core:*}`,
-`:render:gles1 → :render:api → :core:math`, `:data → :core:*`.
+**The full module list** (every module, the platforms it builds for, what it depends on) is the
+module graph in [`docs/design/build-and-tooling.md`](docs/design/build-and-tooling.md#module-graph).
+
+The split between pure and platform code is enforced, not a convention: the pure modules have no
+Android SDK on the classpath, so `import android.*` is a compile error there, and a Konsist
+architecture gate backs that up. Dependencies point inward only.
 
 The renderer sits behind a backend-agnostic contract that takes domain and mathematical types,
-never fixed-function GL concepts — so the GLES 1.0 backend can be replaced by a shader-based
-one without the layers above noticing. The ephemeris engine sits behind the same kind of seam.
+never fixed-function GL concepts. That's how the GLES 1, GLES 3 and Metal backends draw the same
+scene without the layers above noticing which one is running. The ephemeris engine sits behind
+the same kind of seam.
 
 ## Docs
 

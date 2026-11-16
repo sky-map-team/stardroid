@@ -82,6 +82,10 @@ Do not add a third notice — per-directory notices are what let the old claim d
 ## Key Files
 
 - `docs/design/` — per-area design docs; `docs/README.md` tracks implementation status.
+- **The full module list** — every module, its convention plugin, its dependencies, what it
+  holds — is the module graph in `docs/design/build-and-tooling.md`. It is the only full list;
+  the notes below and the README go by folder. When you add, remove or rewire a module, update
+  that table in the same change.
 - `core/*`, `render/api` — pure Kotlin **Multiplatform** modules (JVM + iOS), shared with the
   iOS port. No Android SDK anywhere, and no JDK in common code: production code goes in
   `src/commonMain`, tests in `src/commonTest` using `kotlin.test` plus `:core:testing`'s
@@ -92,16 +96,15 @@ Do not add a third notice — per-directory notices are what let the old claim d
   from the APK asset, the satellite fetcher) is in `src/androidMain`. Never add a SQLite driver
   to `commonMain` — Android must keep the platform SQLite (D127). Catalog tests in
   `src/commonTest` run as Android instrumented tests and on the iOS simulator.
-- `shared/` — the app's middle layer, moving out of `app/` for the iOS port (phase 3):
-  `shared/model` (the app's state contracts — `Settings`, `StartupState`, `Analytics`, the
-  location edges — and the controllers over them: time, location, startup routing),
-  `shared/layers` (the sky layers, Android + iOS like `data/`), `shared/viewmodels` (the
-  screens' ViewModels — androidx.lifecycle's multiplatform `ViewModel` — with the Compose screens
-  left in `app/`) and `shared/testing` (fakes for `:shared` and `:app` tests). The same rules as
-  `core/*`: no Android SDK and no JDK in common code, tests in `commonTest`.
-- `app-ios/` + `ios/SkyMap/` — the iOS app (phase 4 of the port): its Kotlin side (the
-  `SkyMapKit` framework, Compose Multiplatform per D134) and the XcodeGen Swift shell that hosts
-  it. See `ios/README.md` to build and run it.
+- `shared/` — the app's middle layer, used by both apps: the screens (`shared/ui`, Compose
+  Multiplatform per D134), their ViewModels, the sky layers, the app's state contracts and
+  controllers, notification planning, and test fakes. The same rules as `core/*`: no Android SDK
+  and no JDK in common code, tests in `commonTest`. `shared/ui`'s strings are Android-format
+  resources under `src/commonMain/res`, and `tm` translates them like `app/`'s.
+- `app-ios/` + `ios/SkyMap/` — the iOS app, in two halves: `app-ios/` is its Kotlin (the
+  `SkyMapKit` framework: wiring, iOS platform edges, the Compose root), and `ios/SkyMap/` is the
+  XcodeGen Swift shell that links it. `ios/RendererHarness/` does the same for
+  `render/metal-harness`. See `ios/README.md` to build and run them.
 - `render/api` — pure renderer contract + shared projection and vertex builders;
   `render/gles1` — a GLES1 backend written to match v1's rendering behaviour (an independent
   implementation, not a port; see `NOTICE.md`); `render/metal` — the iOS backend, Kotlin/Native
@@ -109,10 +112,11 @@ Do not add a third notice — per-directory notices are what let the old claim d
   **The `.metal` shaders are hand-transcribed from `render/gles3`'s GLSL, not generated: a change
   to either must be mirrored in the other** (including constants — `MetalShaderConstantParityTest`
   catches only some drift). The Kotlin in `render/api` is the golden reference for shared maths.
-- `app/` — the Android app shell (currently the dev test-scene activity and perf gate).
+- `app/` — the Android app: `MainActivity` and the nav host over `shared/ui`'s screens, Hilt
+  wiring, sensors, location, camera, widgets, notifications, the `gms`/`fdroid` flavors.
 - `konsist/` — architecture-gate tests enforcing the pure/Android module boundary (D20).
-- `build-logic/` — Gradle convention plugins (`skymap.pure-kmp`, `skymap.pure-kotlin`,
-  `skymap.kmp-android-library`, `skymap.kmp-room`, `skymap.android-*`).
+- `build-logic/` — Gradle convention plugins; a module's plugin decides which platforms it
+  builds for (table in `docs/design/build-and-tooling.md`).
 
 ## Translations
 

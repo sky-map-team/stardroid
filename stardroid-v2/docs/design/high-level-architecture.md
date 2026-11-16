@@ -17,36 +17,24 @@ a refactor. (It was: the pure modules became Kotlin Multiplatform, JVM + iOS, in
 one `expect`/`actual` — see
 [build-and-tooling.md](build-and-tooling.md#kotlin-multiplatform--the-shared-core-ios-port-phase-0).)
 
-```
-:app                  Android. Compose UI, ViewModels, Hilt, sensors, location,
-                      navigation, settings. Wires everything together.
-:render:api           pure. Renderer contract: scene primitives + camera, no GL types.
-:render:gles1         Android. OpenGL ES 1.0 backend implementing :render:api
-                      (port of the v1 renderer). Future :render:gles3 / :render:vulkan
-                      slot in beside it.
-:shared:viewmodels    KMP: Android + iOS. The screens' ViewModels (androidx.lifecycle's
-                      multiplatform ViewModel), moved out of :app in iOS port phase 3;
-                      the Compose screens that render them stay in :app.
-:shared:layers        KMP: Android + iOS. The sky layers and their registry (moved out
-                      of :app in iOS port phase 3).
-:shared:model         pure. The app's state contracts (Settings, StartupState,
-                      Analytics, the location edges) and the controllers over them
-                      (time, location, startup routing).
-:data                 KMP: Android + iOS (Room KMP). Room DB, prepackaged catalog,
-                      repositories implementing :core:catalog interfaces.
-:core:catalog         pure. Domain model of celestial objects, catalog/search
-                      repository interfaces, layer content definitions.
-:core:astronomy       pure. Ephemeris API + Keplerian implementation, coordinate
-                      transforms, sky-model (orientation+location+time → view), clocks
-                      including time travel.
-:core:math            pure. Vectors, matrices, RaDec, sidereal time. Ported from v1
-                      math/ (already Android-free); replace 2009-era custom code with
-                      stdlib/kotlinx where better alternatives exist.
-```
+The modules fall into four layers, outermost first:
 
-Dependency rule: arrows point inward only — `:app → {:render:*, :data, :core:*}`,
-`:render:gles1 → :render:api → :core:math`, `:data → :core:*`. Core modules depend on nothing
-above them.
+- **The apps** — `:app` on Android (Compose, Hilt, sensors, location, the flavors), and on iOS
+  `:app-ios` with its Swift shell `ios/SkyMap`. Each wires everything together for its platform.
+- **Renderer backends** — `:render:gles1` and `:render:gles3` on Android, `:render:metal` on
+  iOS, each implementing `:render:api`.
+- **The shared middle** — `:shared:*` (the screens, their ViewModels, the sky layers, the app's
+  state contracts and controllers) and `:data` (the Room catalog). These are Kotlin Multiplatform
+  for Android and iOS, and were moved out of `:app` during the iOS port.
+- **The pure core** — `:core:*` (maths, astronomy, catalog, events, text) and `:render:api`
+  (the renderer contract, with no GL types): no Android, and no JDK in common code.
+
+The full list, with each module's dependencies, is in
+[build-and-tooling.md](build-and-tooling.md#module-graph).
+
+Dependency rule: arrows point inward only. An app depends on the layers below it, a backend
+only on `:render:api`, the shared middle on the core, and the core on nothing above it. The
+renderer backends never import one another.
 
 DI per D2: Hilt lives only in `:app` (and other Android modules' entry points); pure modules
 use constructors. Koin modules are introduced only when shared code actually needs a container

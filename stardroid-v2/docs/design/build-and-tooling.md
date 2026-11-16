@@ -1,66 +1,102 @@
 # Detailed Design: Build, Modules, and CI Tooling
 
 **Status: IMPLEMENTED** (slice 1, D20; this doc refreshed 2026-08-02 to match the as-built
-graph, and 2026-09-23 for the pure modules' move to Kotlin Multiplatform — iOS port phase 0).
+graph, 2026-09-23 for the pure modules' move to Kotlin Multiplatform — iOS port phase 0, and
+2026-11-15 to make its module graph the one full list of modules).
 Records the build scaffolding the other increments assume (G13) and the CI guardrails for the
 architecture (D20) and performance (D19).
 
 ## Module graph
 
-Twenty Gradle modules, following the dependency rule (arrows inward only; see
-[high-level-architecture.md](high-level-architecture.md)):
+**This is the one full list of v2's modules.** The README, `AGENTS.md`,
+[code-overview.md](../code-overview.md) and [high-level-architecture.md](high-level-architecture.md)
+describe the code by folder or layer and link here. When a change adds, removes or rewires a
+module in `settings.gradle.kts`, update this table in the same change, and only this table.
+
+One Gradle build makes both apps. The pure core and the shared middle layer are Kotlin
+Multiplatform; each app is a platform shell over them, with its own renderer backend:
 
 ```
-:app            android-app    → :render:api, :render:gles1, :render:gles3, :data, :shared:*,
-                                 :core:*
-:shared:viewmodels kmp-android-library → :shared:layers, :shared:model, :data
-                                 (+ androidx.lifecycle's multiplatform ViewModel)
-:shared:layers  kmp-android-library → :shared:model, :data, :render:api, :core:*
-:shared:model   pure-kmp       → :render:api, :core:astronomy, :core:math
-:shared:testing pure-kmp       → :shared:model, :core:catalog (test support: fakes of the
-                                 shared interfaces, for :shared and :app tests)
-:render:gles1   android-library→ :render:api
-:render:gles3   android-library→ :render:api
-:render:api     pure-kmp       → :core:math
-:render:testscene pure-kmp     → :render:api (the seeded scene every renderer harness draws)
-:render:metal   ios-library    → :render:api (the iOS Metal backend, D128; render-metal.md)
-:render:metal-harness ios-library → :render:metal, :render:testscene (the iOS harness's
-                                 framework; ios/RendererHarness hosts it)
-:app-ios        ios-compose    → :shared:viewmodels, :shared:layers, :shared:model, :data,
-                                 :render:metal (the iOS app's framework, SkyMapKit; ios/SkyMap
-                                 hosts it; Compose Multiplatform, D134)
-:data           kmp-android-library → :core:catalog, :core:astronomy, :core:math
-:data:generator pure-kotlin    → :core:catalog (build-time JVM tool; sqlite-jdbc,
-                                 kotlinx-serialization)
-:core:events    pure-kmp       → :core:catalog, :core:astronomy, :core:math
-:core:catalog   pure-kmp       → :core:astronomy, :core:math
-:core:astronomy pure-kmp       → :core:math
-:core:math      pure-kmp       → (nothing)
-:core:testing   pure-kmp       → (nothing; test support for the pure-kmp modules' tests)
-:konsist        pure-kotlin    → (nothing; test-only architecture gate)
+ Android                                   iOS
+ :app                                      ios/SkyMap  (Swift, Xcode — not a Gradle module)
+  │                                         └─ links SkyMapKit.framework, built by :app-ios
+  ├─ :render:gles1, :render:gles3              └─ :render:metal
+  └───────────────────────┬────────────────────────┘
+                          │ both use
+            :shared:ui, :shared:viewmodels, :shared:layers,
+            :shared:model, :shared:surfaces, :data
+                          │
+            :render:api, :core:*
 ```
 
-Plus build-only: `build-logic/` (convention plugins, JVM, via `includeBuild`). The catalog
-generator originally sketched here as `:tools:catalog-gen` landed as `:data:generator` (D34):
-`:data` wires it through a dedicated `catalogGenerator` configuration and a
-`GenerateCatalogDbTask` whose output is registered as a per-variant generated asset.
+Dependencies point inward only (see [high-level-architecture.md](high-level-architecture.md)).
+The table lists each module's project dependencies in its main source sets; test-only ones
+(`:core:testing`, `:shared:testing`, `:render:testscene` in `:render:metal`'s tests) are left
+out. The plugin decides which platforms a module builds for — see
+[Convention plugins](#convention-plugins-build-logic) below.
+
+| Module | Plugin | Depends on | What it holds |
+|---|---|---|---|
+| `:core:math` | `pure-kmp` | — | `Vector3`, `Matrix3`, `RaDec`, `LatLong`, angles, geometry |
+| `:core:astronomy` | `pure-kmp` | `:core:math` | Ephemeris, sky model, sensor-fusion maths, time, rise/set, lunar phase ([core-math-astronomy.md](core-math-astronomy.md)) |
+| `:core:catalog` | `pure-kmp` | `:core:astronomy`, `:core:math` | Celestial-object domain model, repository interfaces, locale fallback, name normalization |
+| `:core:events` | `pure-kmp` | `:core:catalog`, `:core:astronomy`, `:core:math` | The "tonight's sky" events engine behind widgets, notifications and the info card (D70) |
+| `:core:text` | `pure-kmp` | — | `TextSource`, the one interface shared logic asks for translated text through; each platform maps the ids to its own resources ([ios-platform-surfaces.md](ios-platform-surfaces.md) §10) |
+| `:core:testing` | `pure-kmp` | — | Test support: a Truth-shaped `assertThat` for multiplatform tests (Truth is JVM-only) |
+| `:render:api` | `pure-kmp` | `:core:math` | The renderer contract: primitives, camera, the shared projection and vertex builders ([render-api.md](render-api.md)) |
+| `:render:testscene` | `pure-kmp` | `:render:api` | The seeded synthetic scene every renderer harness draws |
+| `:render:gles1` | `android-library` | `:render:api` | OpenGL ES 1.0 backend, written to match v1's rendering |
+| `:render:gles3` | `android-library` | `:render:api` | OpenGL ES 3.0 backend; a flag and a setting choose it over `:render:gles1` ([render-gles3.md](render-gles3.md)) |
+| `:render:metal` | `ios-library` | `:render:api` | Metal backend in Kotlin/Native; its `.metal` shaders mirror `:render:gles3`'s GLSL by hand ([render-metal.md](render-metal.md), D128) |
+| `:render:metal-harness` | `ios-library` | `:render:metal`, `:render:testscene` | The `SkyMapHarness` framework that `ios/RendererHarness` hosts: the Metal backend drawing the test scene. A dev tool, not shipped |
+| `:data` | `kmp-android-library` + `kmp-room` | `:core:catalog`, `:core:astronomy`, `:core:math` | The Room catalog store implementing `:core:catalog`, and the satellite elements fetcher, for Android and iOS ([data-layer.md](data-layer.md)) |
+| `:data:generator` | `pure-kotlin` | `:core:catalog` | Build-time JVM tool: the deterministic catalog-DB generator over `source-data/` (sqlite-jdbc, kotlinx-serialization) |
+| `:shared:model` | `pure-kmp` | `:render:api`, `:core:astronomy`, `:core:math` | The app's state contracts (`Settings`, `StartupState`, `ExperimentConfig`, `Analytics`, location, geocoding, the sensor sources), the controllers over them (time, location, startup routing), orientation smoothing, and the DataStore-backed `Settings` and `StartupState` both platforms use |
+| `:shared:layers` | `kmp-android-library` | `:shared:model`, `:data`, `:render:api`, `:core:astronomy`, `:core:catalog`, `:core:math` | The sky layers and `LayerRegistry`; `RenderBinder` feeds them, the camera and the render state into a `SkyRenderer` ([layers-and-app.md](layers-and-app.md)) |
+| `:shared:viewmodels` | `kmp-android-library` | `:shared:layers`, `:shared:model`, `:data`, `:core:events` | The screens' ViewModels, on androidx.lifecycle's multiplatform `ViewModel`, and the state they compute |
+| `:shared:ui` | `kmp-compose` | `:shared:viewmodels`, `:render:api`, `:core:catalog` | The screens both apps draw, in Compose Multiplatform (D134). Their strings are Android-format `values-*/` resources in `src/commonMain/res`, which `tm` translates like `:app`'s |
+| `:shared:surfaces` | `pure-kmp` | `:core:events`, `:core:text` | What notifications and widgets decide: which alert is due tonight and when it fires. Posting stays with each platform ([ios-platform-surfaces.md](ios-platform-surfaces.md) §5) |
+| `:shared:testing` | `pure-kmp` | `:shared:model`, `:core:catalog` | Test support: fakes of the shared interfaces, for `:shared` and `:app` tests |
+| `:app` | `android-app` | `:shared:{ui,viewmodels,layers,model,surfaces}`, `:data`, `:render:{api,gles1,gles3}`, `:core:{math,astronomy,catalog,events}`; `:render:testscene` in debug builds | The Android app: `MainActivity` and the nav host over `:shared:ui`'s screens, Hilt wiring, sensors, location, camera, widgets, notifications, announcements, satellite scheduling, the `gms`/`fdroid` flavors |
+| `:app-ios` | `ios-compose` | `:shared:{ui,viewmodels,layers,model,surfaces}`, `:data`, `:render:metal`, `:core:text` | The iOS app's Kotlin, built as the `SkyMapKit` framework that `ios/SkyMap` links: the app graph, the iOS platform edges (Core Motion, Core Location, display link, notifications, geocoding, satellites, tip jar) and the Compose root |
+| `:konsist` | `pure-kotlin` | — | Test-only: the architecture gate (D20) |
+
+**Outside Gradle:**
+
+- `ios/SkyMap` — the iOS app's Swift shell, an Xcode project that XcodeGen generates from
+  `project.yml`. It holds the entry point, Swift adapters for Firebase, StoreKit, the
+  notification center and background refresh, `Info.plist` and the privacy manifest, and the UI
+  tests. A build phase runs Gradle for `SkyMapKit` and the catalog DB. `:app-ios` and
+  `ios/SkyMap` are two halves of one app, because Gradle can't build an iOS app and Xcode can't
+  build Kotlin. [`ios/README.md`](../../ios/README.md) covers building it.
+- `ios/RendererHarness` — the same kind of shell, for `:render:metal-harness`.
+- `build-logic/` — the convention plugins below: an included build, JVM only.
+- `source-data/` — the catalog's CSV/JSON sources; its README documents the formats.
+- `tools/` — maintenance scripts, including the asset-licence check CI runs.
+
+The catalog generator originally sketched here as `:tools:catalog-gen` landed as
+`:data:generator` (D34): `:data` wires it through a dedicated `catalogGenerator` configuration
+and a `GenerateCatalogDbTask` whose output is registered as a per-variant generated asset.
 
 ## Convention plugins (`build-logic/`)
 
-Seven plugins keep module build scripts to a few lines and make module *kind* a declaration,
-not a copy-paste of config. They are the structural half of D20. The three multiplatform ones
-share `skymap.kmp-base` (the iOS targets, the `commonTest` stack, and the skip rule for Macs
-without Xcode), which no module applies directly; every plugin lints through `skymap.ktlint`.
+Convention plugins keep module build scripts to a few lines and make module *kind* a
+declaration, not a copy-paste of config. They are the structural half of D20. The module table
+above says which one each module applies. The multiplatform plugins all build on
+`skymap.kmp-base` (the iOS targets, the `commonTest` stack, and the skip rule for Macs without
+Xcode), which no module applies directly; every plugin lints through `skymap.ktlint`.
 
-| Plugin | Applies | Used by |
+| Plugin | Builds for | Applies |
 |---|---|---|
-| `skymap.pure-kmp` | `kotlin("multiplatform")` — JVM + iOS targets, kotlin.test + `:core:testing`, **no Android plugin** | `:core:*`, `:render:api`, `:render:testscene`, `:shared:model`, `:shared:testing` |
-| `skymap.kmp-android-library` | `kotlin("multiplatform")` — AGP's multiplatform Android target (`com.android.kotlin.multiplatform.library`) + iOS targets | `:data`, `:shared:layers`, `:shared:viewmodels` |
-| `skymap.ios-library` | `kotlin("multiplatform")` — the iOS targets only, kotlin.test + `:core:testing`: iOS-only platform code | `:render:metal`, `:render:metal-harness` |
-| `skymap.pure-kotlin` | `kotlin("jvm")`, JUnit5/Truth, **no Android plugin** | `:data:generator`, `:konsist` |
-| `skymap.android-library` | `com.android.library` + Kotlin, common Android config | `:render:gles1`, `:render:gles3` |
-| `skymap.android-app` | `com.android.application` + Kotlin + Compose + Hilt + flavors | `:app` |
-| `skymap.kmp-room` | KSP + Room for every target, Room's Gradle plugin, checked-in exported schema (`data/schemas/`) | `:data` |
+| `skymap.pure-kmp` | JVM + iOS | `kotlin("multiplatform")`, kotlin.test + `:core:testing`, **no Android plugin** |
+| `skymap.kmp-android-library` | Android + iOS | `kotlin("multiplatform")` with AGP's multiplatform Android target (`com.android.kotlin.multiplatform.library`) |
+| `skymap.kmp-compose` | Android + iOS | `skymap.kmp-android-library` plus the Compose compiler and Compose Multiplatform, with the module's strings written as Android resources (D134) |
+| `skymap.ios-library` | iOS | `kotlin("multiplatform")` with the iOS targets only, kotlin.test + `:core:testing` |
+| `skymap.ios-compose` | iOS | `skymap.ios-library` plus the Compose compiler and Compose Multiplatform, which copies `:shared:ui`'s resources into the app bundle |
+| `skymap.pure-kotlin` | JVM | `kotlin("jvm")`, JUnit5/Truth, **no Android plugin** |
+| `skymap.android-library` | Android | `com.android.library` + Kotlin, common Android config |
+| `skymap.android-app` | Android | `com.android.application` + Kotlin + Compose + Hilt + flavors |
+| `skymap.kmp-room` | (adds to a KMP module) | KSP + Room for every target, Room's Gradle plugin, checked-in exported schema (`data/schemas/`) |
 
 Because neither pure plugin ever puts the Android SDK on the classpath, `import android.*` in
 a pure module is a **compile error** — the primary, structural guarantee that the pure/Android
@@ -116,9 +152,10 @@ target exactly as they consumed the old `kotlin("jvm")` jar.
   including CI's); `iosX64` for simulators on Intel Macs, to be dropped when Kotlin retires the
   x86_64 Apple targets.
 - **Layout:** `src/commonMain` (all production code), `src/commonTest` (all tests). Platform
-  code appears only as an `expect`/`actual` pair; today there is exactly one —
-  `NameNormalizer`'s canonical decomposition (`java.text.Normalizer` in `jvmMain`, Foundation's
-  `decomposedStringWithCanonicalMapping` in `appleMain`).
+  code appears only as an `expect`/`actual` pair, with the JVM side in `jvmMain` and the iOS
+  side in `appleMain` — for example `NameNormalizer`'s canonical decomposition
+  (`java.text.Normalizer` on the JVM, Foundation's `decomposedStringWithCanonicalMapping` on
+  iOS). The modules with an Android target use `androidMain` and `iosMain` instead.
 - **Tests run on every target.** Truth is JVM-only, so `:core:testing` provides a
   multiplatform stand-in with Truth's names and semantics for exactly the subset in use (a
   suite moved over by changing its imports; its own tests pin that each assertion can fail).
@@ -213,7 +250,7 @@ targets, so it covers them on the JVM only).
 | Pure modules (`:core:*`, `:render:api`) | kotlin.test + `:core:testing`'s Truth-shaped assertions in `commonTest`, run on the JVM (JUnit 5) and the iOS simulator; kotlin property tests; golden fixtures vs. v1 (D6) |
 | Flow behavior | Turbine |
 | `:data` (Room) | tests against real SQLite (FTS4 + Room invalidation need it), so on Android they are **instrumented** (`connectedAndroidDeviceTest`); the ones in `commonTest` also run on the iOS simulator. Fixture pack; generator golden test on the JVM; satellite logic as JVM host tests |
-| `:app` ViewModels | pure JVM with fakes (the point of the decomposition) |
+| ViewModels (`:shared:viewmodels`) | `commonTest` with `:shared:testing`'s fakes (the point of the decomposition), run on the JVM and the iOS simulator |
 | Compose screens | not yet built — coverage is at the ViewModel layer; Compose UI tests remain the plan for critical paths |
 | Architecture | Konsist (D20) |
 | Performance | `RendererPerfTest` smoke gate in CI; real D19 budget checked manually at release (see above) |
