@@ -37,6 +37,13 @@ directly to `master` without a feature branch.
 
 Only commit to `master` when explicitly instructed to do so.
 
+**Release builds go through PRs too.** A release (Android beta/production or an iOS TestFlight
+build) is made on a `release/<version>` branch in a free worktree: version bump, What's New,
+translations and any fixes to them are committed there, the build is uploaded from that branch,
+and a PR is opened. Tag the built commit (`v<version>` / `ios-v<version>-bN`) and ask for a merge
+commit so the tag stays in master's history. Never push a release commit straight to `master`.
+See the `skymap.release` skill.
+
 ## Git Worktrees
 
 Thirteen reusable worktrees live under `.worktrees/` in the repo root:
