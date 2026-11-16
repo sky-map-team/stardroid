@@ -68,7 +68,9 @@
     <string name="layer_param_radec_grid_density_coarse_desc" translation_description="Explains the coarse celestial grid density: a meridian every 3 hours of right ascension and a circle every 30 degrees of declination.">Meridian tiap 3 jam, lingkaran tiap 30°</string>
     <string name="layer_param_radec_grid_density_medium_desc" translation_description="Explains the medium celestial grid density: a meridian every 2 hours of right ascension and a circle every 15 degrees of declination.">Meridian tiap 2 jam, lingkaran tiap 15°</string>
     <string name="layer_param_radec_grid_density_fine_desc" translation_description="Explains the fine celestial grid density: a meridian every hour of right ascension and a circle every 10 degrees of declination.">Meridian tiap jam, lingkaran tiap 10°</string>
-    <string name="satellites_no_data" translation_description="Explanation shown when satellite orbital data has not been downloaded yet and so no satellites can be drawn.">Posisi satelit membutuhkan koneksi internet untuk memperbarui.</string>
+    <string name="satellites_no_data" translation_description="Explanation shown when satellite orbital data has not been downloaded yet and so no satellites can be drawn.">
+    Posisi satelit memerlukan koneksi internet untuk mengunduh. Pada awalnya, ini memerlukan waktu beberapa menit untuk muncul.
+    </string>
     <string name="layer_grid" translation_description="Toggle label for the layer showing the right ascension / declination grid.">Kisi langit</string>
     <string name="layer_horizon">Cakrawala</string>
     <string name="layer_ecliptic">Ekliptika</string>
@@ -146,6 +148,10 @@ Kecerahan garis: normal, terang, atau sangat terang, untuk langit senja, siang h
     <string name="ar_iso_slider" translation_description="Accessibility label for the temporary developer slider setting the camera\'s manual ISO sensitivity in through-camera mode.">ISO kamera</string>
     <!-- tm:omitted name="ar_shutter_slider_label" reason="identical_to_source" -->
     <string name="ar_shutter_slider" translation_description="Accessibility label for the temporary developer slider setting the camera\'s manual shutter (exposure) time in through-camera mode.">Waktu rana kamera</string>
+    <string name="ar_group_auto" translation_description="Heading above the through-camera slider that adjusts the camera\'s automatic exposure.">Pencahayaan otomatis</string>
+    <string name="ar_group_manual" translation_description="Heading above the through-camera sliders that set the camera\'s ISO and shutter time by hand.">Pencahayaan manual</string>
+    <string name="ar_auto_off_note" translation_description="Note under the auto-exposure heading while manual exposure is in use: auto exposure is switched off. Touching the slider switches it back on.">Nonaktif saat manual aktif</string>
+    <string name="ar_manual_off_note" translation_description="Note under the manual-exposure heading while auto exposure is in use: moving either slider switches auto exposure off.">Geser untuk menonaktifkan otomatis</string>
     <string name="share_shutter_button" translation_description="Accessibility label for the round shutter button that captures and shares the current through-camera view.">Bagikan tampilan ini</string>
     <string name="ar_exposure_auto" translation_description="Readout shown when a manual camera exposure slider sits at its automatic position.">Otomatis</string>
     <string name="time_travel_button">Perjalanan Waktu</string>
@@ -166,10 +172,24 @@ Kecerahan garis: normal, terang, atau sangat terang, untuk langit senja, siang h
     <string name="support_star_desc" translation_description="Support screen row description: starring helps other people find the app">Ini membantu orang lain menemukan aplikasi ini.</string>
     <string name="support_issues_title" translation_description="Support screen row: report a problem or suggest an idea on GitHub">Laporkan masalah atau sarankan ide</string>
     <string name="support_issues_desc" translation_description="Support screen row description: opens the issue tracker on GitHub">Buka isu di GitHub.</string>
+    <string name="support_rate_title" translation_description="Support screen row: leave a rating or review on the app store">Beri Nilai Sky Map</string>
+    <string name="support_rate_desc" translation_description="Support screen row description: a store review helps other stargazers find the app">Ulasan di toko aplikasi membantu pengamat bintang lain menemukan kami.</string>
     <string name="support_share_title" translation_description="Support screen row: share the app with a friend">Beritahu teman</string>
     <string name="support_share_desc" translation_description="Support screen row description: share the app with someone who likes the night sky">Bagikan Sky Map dengan seseorang yang menyukai langit malam.</string>
     <string name="support_bmac_title" translation_description="Support screen row: make a small voluntary donation on the Buy Me a Coffee website">Belikan kami kopi</string>
     <string name="support_bmac_desc" translation_description="Support screen row description: donations are optional">Donasi opsional kecil untuk biaya pengembangan.</string>
+    <string name="support_tip_title" translation_description="iOS Support screen row title: leave a one-time voluntary tip for the developer, paid through the App Store">Beri dukungan</string>
+    <string name="support_tip_desc" translation_description="iOS Support screen row description: tips are optional one-time purchases and the app stays free">
+    Dukungan opsional satu kali untuk membantu biaya pengembangan. Sky Map tetap gratis bagaimanapun juga.
+    </string>
+    <string name="tip_mercury" translation_description="Name of the smallest tip amount, a planet name used as a button label next to the price. Mercury, the smallest planet">Merkurius</string>
+    <!-- tm:omitted name="tip_mars" reason="identical_to_source" -->
+    <!-- tm:omitted name="tip_jupiter" reason="identical_to_source" -->
+    <string name="support_tip_thanks" translation_description="Shown after a tip purchase succeeds">Terima kasih, dan semoga langit cerah!</string>
+    <string name="support_tip_pending" translation_description="Shown when a tip purchase is waiting for approval, for example from a family organizer">Dukungan Anda sedang menunggu persetujuan. Terima kasih!</string>
+    <string name="support_tip_failed" translation_description="Shown when a tip purchase did not go through">Pembelian tidak berhasil. Silakan coba lagi nanti.</string>
+    <string name="support_privacy_title" translation_description="Support screen row title: opens the privacy policy web page">Kebijakan privasi</string>
+    <string name="support_privacy_desc" translation_description="Support screen row description: the privacy policy explains what data Sky Map collects and how to opt out">Data yang dikumpulkan oleh Sky Map, dan cara menyapih pengumpulan data.</string>
     <string name="support_share_message" translation_description="Message sent when the user shares the app with a friend. %1$s is the web link to the app's store page. Keep the %1$s placeholder.">
     Pernah mencoba Sky Map? Aplikasi ini adalah planetarium sumber terbuka gratis untuk ponsel Anda: %1$s
     </string>
@@ -636,18 +656,18 @@ Kecerahan garis: normal, terang, atau sangat terang, untuk langit senja, siang h
     <string name="tonight_new_moon" translation_description="Tonight-widget row shown at new moon">Bulan Baru — langit tergelap bulan ini</string>
     <string name="tonight_full_moon" translation_description="Tonight-widget row shown at full moon">Bulan Purnama malam ini</string>
     <string name="tonight_bright_moon" translation_description="Tonight-widget row warning that a bright moon washes out faint objects">Bulan terang mengaburkan objek redup</string>
+    <!-- tm:omitted name="tonight_satellite_pass" reason="identical_to_source" -->
     <string name="moon_widget_set_time" translation_description="Widget fragment showing today\'s moonset time; %1$s is a clock time like 03:12">terbenam %1$s</string>
     <string name="sun">Matahari</string>
     <string name="moon">Bulan</string>
     <string name="mercury">Merkurius</string>
-    <string name="earth">Bumi</string>
-    <string name="saturn">Saturnus</string>
-    <string name="neptune">Neptunus</string>
-    <!-- tm:omitted name="tonight_satellite_pass" reason="identical_to_source" -->
     <!-- tm:omitted name="venus" reason="identical_to_source" -->
+    <string name="earth">Bumi</string>
     <!-- tm:omitted name="mars" reason="identical_to_source" -->
     <!-- tm:omitted name="jupiter" reason="identical_to_source" -->
+    <string name="saturn">Saturnus</string>
     <!-- tm:omitted name="uranus" reason="identical_to_source" -->
+    <string name="neptune">Neptunus</string>
     <!-- tm:omitted name="pluto" reason="identical_to_source" -->
     <string name="notif_pass_title" translation_description="Title of the notification sent shortly before a satellite passes overhead. %1$s is the satellite name.">%1$s akan melintas di atas segera</string>
     <string name="notif_pass_text" translation_description="Body of the satellite pass notification, telling the user when to go outside. %1$s is a time.">Terlihat mulai sekitar %1$s — keluarlah dan biarkan mata Anda menyesuaikan</string>

@@ -110,6 +110,10 @@ Line brightness: normal, bright or brightest, for twilight, daylight or light-po
     <!-- tm:omitted name="ar_iso_slider" reason="identical_to_source" -->
     <!-- tm:omitted name="ar_shutter_slider_label" reason="identical_to_source" -->
     <!-- tm:omitted name="ar_shutter_slider" reason="identical_to_source" -->
+    <!-- tm:omitted name="ar_group_auto" reason="identical_to_source" -->
+    <!-- tm:omitted name="ar_group_manual" reason="identical_to_source" -->
+    <!-- tm:omitted name="ar_auto_off_note" reason="identical_to_source" -->
+    <!-- tm:omitted name="ar_manual_off_note" reason="identical_to_source" -->
     <!-- tm:omitted name="share_shutter_button" reason="identical_to_source" -->
     <!-- tm:omitted name="ar_exposure_auto" reason="identical_to_source" -->
     <!-- tm:omitted name="time_travel_button" reason="identical_to_source" -->
@@ -128,10 +132,22 @@ Line brightness: normal, bright or brightest, for twilight, daylight or light-po
     <!-- tm:omitted name="support_star_desc" reason="identical_to_source" -->
     <!-- tm:omitted name="support_issues_title" reason="identical_to_source" -->
     <!-- tm:omitted name="support_issues_desc" reason="identical_to_source" -->
+    <!-- tm:omitted name="support_rate_title" reason="identical_to_source" -->
+    <!-- tm:omitted name="support_rate_desc" reason="identical_to_source" -->
     <!-- tm:omitted name="support_share_title" reason="identical_to_source" -->
     <!-- tm:omitted name="support_share_desc" reason="identical_to_source" -->
     <!-- tm:omitted name="support_bmac_title" reason="identical_to_source" -->
     <!-- tm:omitted name="support_bmac_desc" reason="identical_to_source" -->
+    <!-- tm:omitted name="support_tip_title" reason="identical_to_source" -->
+    <!-- tm:omitted name="support_tip_desc" reason="identical_to_source" -->
+    <!-- tm:omitted name="tip_mercury" reason="identical_to_source" -->
+    <!-- tm:omitted name="tip_mars" reason="identical_to_source" -->
+    <!-- tm:omitted name="tip_jupiter" reason="identical_to_source" -->
+    <!-- tm:omitted name="support_tip_thanks" reason="identical_to_source" -->
+    <!-- tm:omitted name="support_tip_pending" reason="identical_to_source" -->
+    <!-- tm:omitted name="support_tip_failed" reason="identical_to_source" -->
+    <!-- tm:omitted name="support_privacy_title" reason="identical_to_source" -->
+    <!-- tm:omitted name="support_privacy_desc" reason="identical_to_source" -->
     <!-- tm:omitted name="support_share_message" reason="identical_to_source" -->
     <!-- tm:omitted name="support_thanks_html" reason="identical_to_source" -->
     <!-- tm:omitted name="layer_param_disc_size" reason="identical_to_source" -->
@@ -528,14 +544,14 @@ Line brightness: normal, bright or brightest, for twilight, daylight or light-po
     <!-- tm:omitted name="tonight_trailing_direction" reason="identical_to_source" -->
     <!-- tm:omitted name="tonight_dark_skies" reason="identical_to_source" -->
     <!-- tm:omitted name="tonight_trailing_moon" reason="identical_to_source" -->
-    <!-- tm:omitted name="diagnostics_satellite_circuit_open" reason="identical_to_source" -->
-    <!-- tm:omitted name="diagnostics_satellite_circuit_open_format" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_section_satellites" reason="identical_to_source" -->
     <!-- tm:omitted name="diagnostics_satellite_data" reason="identical_to_source" -->
-    <!-- tm:omitted name="diagnostics_satellite_data_format" reason="identical_to_source" -->
     <!-- tm:omitted name="diagnostics_satellite_data_none" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_satellite_data_format" reason="identical_to_source" -->
     <!-- tm:omitted name="diagnostics_satellite_last_fetch" reason="identical_to_source" -->
     <!-- tm:omitted name="diagnostics_satellite_never_fetched" reason="identical_to_source" -->
-    <!-- tm:omitted name="diagnostics_section_satellites" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_satellite_circuit_open" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_satellite_circuit_open_format" reason="identical_to_source" -->
     <!-- tm:omitted name="satellite_description" reason="identical_to_source" -->
     <!-- tm:omitted name="satellite_search_name_iss" reason="identical_to_source" -->
     <!-- tm:omitted name="satellite_search_name_tiangong" reason="identical_to_source" -->

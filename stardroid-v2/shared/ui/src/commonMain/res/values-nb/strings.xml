@@ -68,7 +68,9 @@
     <string name="layer_param_radec_grid_density_coarse_desc" translation_description="Explains the coarse celestial grid density: a meridian every 3 hours of right ascension and a circle every 30 degrees of declination.">Meridianer hver 3. time, sirkler hver 30°</string>
     <string name="layer_param_radec_grid_density_medium_desc" translation_description="Explains the medium celestial grid density: a meridian every 2 hours of right ascension and a circle every 15 degrees of declination.">Meridianer hver 2. time, sirkler hver 15°</string>
     <string name="layer_param_radec_grid_density_fine_desc" translation_description="Explains the fine celestial grid density: a meridian every hour of right ascension and a circle every 10 degrees of declination.">Meridianer hver time, sirkler hver 10°</string>
-    <string name="satellites_no_data" translation_description="Explanation shown when satellite orbital data has not been downloaded yet and so no satellites can be drawn.">Satellittposisjoner krever en internettilkobling for å oppdateres.</string>
+    <string name="satellites_no_data" translation_description="Explanation shown when satellite orbital data has not been downloaded yet and so no satellites can be drawn.">
+    Posisjoner til satellitter krever en internettforbindelse for å lastes ned. Første gang kan det ta noen minutter før de dukker opp.
+    </string>
     <string name="layer_grid" translation_description="Toggle label for the layer showing the right ascension / declination grid.">Himmelgitter</string>
     <string name="layer_horizon">Horisont</string>
     <string name="layer_ecliptic">Ekliptikken</string>
@@ -146,6 +148,10 @@ Linjelysstyrke: normal, sterk eller sterkest, for skumring, dagslys eller lysfor
     <string name="ar_iso_slider" translation_description="Accessibility label for the temporary developer slider setting the camera\'s manual ISO sensitivity in through-camera mode.">Kamera-ISO</string>
     <!-- tm:omitted name="ar_shutter_slider_label" reason="identical_to_source" -->
     <string name="ar_shutter_slider" translation_description="Accessibility label for the temporary developer slider setting the camera\'s manual shutter (exposure) time in through-camera mode.">Kamerautløsertid</string>
+    <string name="ar_group_auto" translation_description="Heading above the through-camera slider that adjusts the camera\'s automatic exposure.">Autoeksponering</string>
+    <string name="ar_group_manual" translation_description="Heading above the through-camera sliders that set the camera\'s ISO and shutter time by hand.">Manuell eksponering</string>
+    <string name="ar_auto_off_note" translation_description="Note under the auto-exposure heading while manual exposure is in use: auto exposure is switched off. Touching the slider switches it back on.">Av når manuell er på</string>
+    <string name="ar_manual_off_note" translation_description="Note under the manual-exposure heading while auto exposure is in use: moving either slider switches auto exposure off.">Flytt for å slå av auto</string>
     <string name="share_shutter_button" translation_description="Accessibility label for the round shutter button that captures and shares the current through-camera view.">Del denne visningen</string>
     <!-- tm:omitted name="ar_exposure_auto" reason="identical_to_source" -->
     <string name="time_travel_button">Tidsreise</string>
@@ -166,10 +172,24 @@ Linjelysstyrke: normal, sterk eller sterkest, for skumring, dagslys eller lysfor
     <string name="support_star_desc" translation_description="Support screen row description: starring helps other people find the app">Det hjelper andre å finne appen.</string>
     <string name="support_issues_title" translation_description="Support screen row: report a problem or suggest an idea on GitHub">Rapporter et problem eller foreslå en idé</string>
     <string name="support_issues_desc" translation_description="Support screen row description: opens the issue tracker on GitHub">Åpne en sak på GitHub.</string>
+    <string name="support_rate_title" translation_description="Support screen row: leave a rating or review on the app store">Gi Sky Map en vurdering</string>
+    <string name="support_rate_desc" translation_description="Support screen row description: a store review helps other stargazers find the app">En omtale i butikken hjelper andre stjernekikkere å finne oss.</string>
     <string name="support_share_title" translation_description="Support screen row: share the app with a friend">Fortell det til en venn</string>
     <string name="support_share_desc" translation_description="Support screen row description: share the app with someone who likes the night sky">Del Sky Map med noen som elsker nattehimmelen.</string>
     <string name="support_bmac_title" translation_description="Support screen row: make a small voluntary donation on the Buy Me a Coffee website">Kjøp en kaffe til oss</string>
     <string name="support_bmac_desc" translation_description="Support screen row description: donations are optional">Et lite, valgfritt bidrag til utviklingskostnadene.</string>
+    <string name="support_tip_title" translation_description="iOS Support screen row title: leave a one-time voluntary tip for the developer, paid through the App Store">Legg igjen et bidrag</string>
+    <string name="support_tip_desc" translation_description="iOS Support screen row description: tips are optional one-time purchases and the app stays free">
+    Et engangs, valgfritt bidrag for å dekke utviklingskostnader. Sky Map forblir gratis uansett.
+    </string>
+    <string name="tip_mercury" translation_description="Name of the smallest tip amount, a planet name used as a button label next to the price. Mercury, the smallest planet">Merkur</string>
+    <!-- tm:omitted name="tip_mars" reason="identical_to_source" -->
+    <!-- tm:omitted name="tip_jupiter" reason="identical_to_source" -->
+    <string name="support_tip_thanks" translation_description="Shown after a tip purchase succeeds">Tusen takk, og stjerneklare netter!</string>
+    <string name="support_tip_pending" translation_description="Shown when a tip purchase is waiting for approval, for example from a family organizer">Bidraget ditt venter på godkjenning. Takk skal du ha!</string>
+    <string name="support_tip_failed" translation_description="Shown when a tip purchase did not go through">Kjøpet gikk ikke gjennom. Prøv igjen senere.</string>
+    <string name="support_privacy_title" translation_description="Support screen row title: opens the privacy policy web page">Personvernerklæring</string>
+    <string name="support_privacy_desc" translation_description="Support screen row description: the privacy policy explains what data Sky Map collects and how to opt out">Hva Sky Map samler inn, og hvordan du reserverer deg.</string>
     <string name="support_share_message" translation_description="Message sent when the user shares the app with a friend. %1$s is the web link to the app's store page. Keep the %1$s placeholder.">
     Har du prøvd Sky Map? Det er et gratis, åpen kildekode-planetarium for telefonen din: %1$s
     </string>
@@ -633,18 +653,18 @@ Flytt deg til et åpent område vekk fra metall og prøv igjen.]]></string>
     <string name="tonight_new_moon" translation_description="Tonight-widget row shown at new moon">Nymåne — månedens mørkeste himmel</string>
     <string name="tonight_full_moon" translation_description="Tonight-widget row shown at full moon">Fullmåne i kveld</string>
     <string name="tonight_bright_moon" translation_description="Tonight-widget row warning that a bright moon washes out faint objects">Lys måne overskygger svake objekter</string>
+    <!-- tm:omitted name="tonight_satellite_pass" reason="identical_to_source" -->
     <string name="moon_widget_set_time" translation_description="Widget fragment showing today\'s moonset time; %1$s is a clock time like 03:12">går ned %1$s</string>
     <string name="sun">Solen</string>
     <string name="moon">Månen</string>
     <string name="mercury">Merkur</string>
-    <string name="earth">Jorden</string>
-    <string name="neptune">Neptun</string>
-    <!-- tm:omitted name="tonight_satellite_pass" reason="identical_to_source" -->
     <!-- tm:omitted name="venus" reason="identical_to_source" -->
+    <string name="earth">Jorden</string>
     <!-- tm:omitted name="mars" reason="identical_to_source" -->
     <!-- tm:omitted name="jupiter" reason="identical_to_source" -->
     <!-- tm:omitted name="saturn" reason="identical_to_source" -->
     <!-- tm:omitted name="uranus" reason="identical_to_source" -->
+    <string name="neptune">Neptun</string>
     <!-- tm:omitted name="pluto" reason="identical_to_source" -->
     <string name="notif_pass_title" translation_description="Title of the notification sent shortly before a satellite passes overhead. %1$s is the satellite name.">%1$s passerer snart over deg</string>
     <string name="notif_pass_text" translation_description="Body of the satellite pass notification, telling the user when to go outside. %1$s is a time.">Synlig fra ca. %1$s – gå ut og la øynene dine tilpasse seg</string>

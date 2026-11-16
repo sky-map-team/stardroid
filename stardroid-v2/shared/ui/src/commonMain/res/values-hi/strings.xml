@@ -68,7 +68,9 @@
     <string name="layer_param_radec_grid_density_coarse_desc" translation_description="Explains the coarse celestial grid density: a meridian every 3 hours of right ascension and a circle every 30 degrees of declination.">हर 3 घंटे पर मध्याह्न रेखाएं, हर 30° पर वृत्त</string>
     <string name="layer_param_radec_grid_density_medium_desc" translation_description="Explains the medium celestial grid density: a meridian every 2 hours of right ascension and a circle every 15 degrees of declination.">हर 2 घंटे पर मध्याह्न रेखाएं, हर 15° पर वृत्त</string>
     <string name="layer_param_radec_grid_density_fine_desc" translation_description="Explains the fine celestial grid density: a meridian every hour of right ascension and a circle every 10 degrees of declination.">हर घंटे पर मध्याह्न रेखाएं, हर 10° पर वृत्त</string>
-    <string name="satellites_no_data" translation_description="Explanation shown when satellite orbital data has not been downloaded yet and so no satellites can be drawn.">उपग्रह की स्थिति अपडेट करने के लिए इंटरनेट कनेक्शन की आवश्यकता है।</string>
+    <string name="satellites_no_data" translation_description="Explanation shown when satellite orbital data has not been downloaded yet and so no satellites can be drawn.">
+    उपग्रह की स्थितियों को डाउनलोड करने के लिए इंटरनेट कनेक्शन की आवश्यकता है। पहली बार, इन्हें प्रकट होने में कुछ मिनट लग सकते हैं।
+    </string>
     <string name="layer_grid" translation_description="Toggle label for the layer showing the right ascension / declination grid.">खगोलीय ग्रिड</string>
     <string name="layer_horizon">क्षितिज</string>
     <string name="layer_ecliptic">क्रांतिवृत्त</string>
@@ -143,6 +145,10 @@
     <string name="ar_iso_slider" translation_description="Accessibility label for the temporary developer slider setting the camera\'s manual ISO sensitivity in through-camera mode.">कैमरा ISO</string>
     <!-- tm:omitted name="ar_shutter_slider_label" reason="identical_to_source" -->
     <string name="ar_shutter_slider" translation_description="Accessibility label for the temporary developer slider setting the camera\'s manual shutter (exposure) time in through-camera mode.">कैमरा शटर समय</string>
+    <string name="ar_group_auto" translation_description="Heading above the through-camera slider that adjusts the camera\'s automatic exposure.">ऑटो एक्स्पोज़र</string>
+    <string name="ar_group_manual" translation_description="Heading above the through-camera sliders that set the camera\'s ISO and shutter time by hand.">मैनुअल एक्स्पोज़र</string>
+    <string name="ar_auto_off_note" translation_description="Note under the auto-exposure heading while manual exposure is in use: auto exposure is switched off. Touching the slider switches it back on.">मैनुअल चालू होने पर बंद</string>
+    <string name="ar_manual_off_note" translation_description="Note under the manual-exposure heading while auto exposure is in use: moving either slider switches auto exposure off.">ऑटो बंद करने के लिए स्लाइड करें</string>
     <string name="share_shutter_button" translation_description="Accessibility label for the round shutter button that captures and shares the current through-camera view.">यह दृश्य साझा करें</string>
     <string name="ar_exposure_auto" translation_description="Readout shown when a manual camera exposure slider sits at its automatic position.">ऑटो</string>
     <string name="time_travel_button">समय यात्रा</string>
@@ -163,10 +169,24 @@
     <string name="support_star_desc" translation_description="Support screen row description: starring helps other people find the app">यह अन्य लोगों को ऐप ढूंढने में मदद करता है।</string>
     <string name="support_issues_title" translation_description="Support screen row: report a problem or suggest an idea on GitHub">कोई समस्या रिपोर्ट करें या कोई विचार सुझाएं</string>
     <string name="support_issues_desc" translation_description="Support screen row description: opens the issue tracker on GitHub">GitHub पर एक समस्या खोलें।</string>
+    <string name="support_rate_title" translation_description="Support screen row: leave a rating or review on the app store">Sky Map को रेट करें</string>
+    <string name="support_rate_desc" translation_description="Support screen row description: a store review helps other stargazers find the app">स्टोर पर समीक्षा देने से अन्य खगोल प्रेमियों को हमें खोजने में मदद मिलती है।</string>
     <string name="support_share_title" translation_description="Support screen row: share the app with a friend">किसी मित्र को बताएं</string>
     <string name="support_share_desc" translation_description="Support screen row description: share the app with someone who likes the night sky">Sky Map को ऐसे व्यक्ति के साथ साझा करें जो रात के आसमान से प्यार करता है।</string>
     <string name="support_bmac_title" translation_description="Support screen row: make a small voluntary donation on the Buy Me a Coffee website">हमारे लिए एक कॉफी खरीदें</string>
     <string name="support_bmac_desc" translation_description="Support screen row description: donations are optional">विकास की लागत के प्रति एक छोटी, वैकल्पिक टिप।</string>
+    <string name="support_tip_title" translation_description="iOS Support screen row title: leave a one-time voluntary tip for the developer, paid through the App Store">टिप दें</string>
+    <string name="support_tip_desc" translation_description="iOS Support screen row description: tips are optional one-time purchases and the app stays free">
+    विकास लागत में योगदान के लिए एक बार की, वैकल्पिक धन्यवाद राशि। Sky Map हर तरह से मुफ़्त रहता है।
+    </string>
+    <string name="tip_mercury" translation_description="Name of the smallest tip amount, a planet name used as a button label next to the price. Mercury, the smallest planet">बुध</string>
+    <string name="tip_mars" translation_description="Name of the middle tip amount, a planet name used as a button label next to the price. Mars">मंगल</string>
+    <string name="tip_jupiter" translation_description="Name of the largest tip amount, a planet name used as a button label next to the price. Jupiter, the biggest planet">बृहस्पति</string>
+    <string name="support_tip_thanks" translation_description="Shown after a tip purchase succeeds">धन्यवाद, और आसमान साफ रहे!</string>
+    <string name="support_tip_pending" translation_description="Shown when a tip purchase is waiting for approval, for example from a family organizer">आपकी टिप स्वीकृति की प्रतीक्षा में है। धन्यवाद!</string>
+    <string name="support_tip_failed" translation_description="Shown when a tip purchase did not go through">खरीद पूरी नहीं हो पाई। कृपया बाद में पुनः प्रयास करें।</string>
+    <string name="support_privacy_title" translation_description="Support screen row title: opens the privacy policy web page">गोपनीयता नीति</string>
+    <string name="support_privacy_desc" translation_description="Support screen row description: the privacy policy explains what data Sky Map collects and how to opt out">Sky Map क्या एकत्र करता है, और इससे कैसे बाहर निकलें।</string>
     <string name="support_share_message" translation_description="Message sent when the user shares the app with a friend. %1$s is the web link to the app's store page. Keep the %1$s placeholder.">
     क्या आपने Sky Map आज़माया है? यह आपके फोन के लिए एक मुफ़्त, ओपन-सोर्स तारामंडल है: %1$s
     </string>
@@ -631,6 +651,7 @@
     <string name="tonight_new_moon" translation_description="Tonight-widget row shown at new moon">अमावस्या — महीने का सबसे अंधेरा आकाश</string>
     <string name="tonight_full_moon" translation_description="Tonight-widget row shown at full moon">आज रात पूर्णिमा</string>
     <string name="tonight_bright_moon" translation_description="Tonight-widget row warning that a bright moon washes out faint objects">चमकदार चन्द्रमा धुंधली वस्तुओं को धुंधला कर देता है</string>
+    <!-- tm:omitted name="tonight_satellite_pass" reason="identical_to_source" -->
     <string name="moon_widget_set_time" translation_description="Widget fragment showing today\'s moonset time; %1$s is a clock time like 03:12">अस्त होता है %1$s</string>
     <string name="sun">सूर्य</string>
     <string name="moon">चंद्रमा</string>
@@ -643,7 +664,6 @@
     <string name="uranus">अरुण</string>
     <string name="neptune">वरुण</string>
     <string name="pluto">प्लूटो</string>
-    <!-- tm:omitted name="tonight_satellite_pass" reason="identical_to_source" -->
     <string name="notif_pass_title" translation_description="Title of the notification sent shortly before a satellite passes overhead. %1$s is the satellite name.">%1$s जल्द ही ऊपर से गुजरेगा</string>
     <string name="notif_pass_text" translation_description="Body of the satellite pass notification, telling the user when to go outside. %1$s is a time.">लगभग %1$s से दिखाई देगा — बाहर जाएँ और अपनी आँखों को समायोजित होने दें</string>
     <string name="notif_eclipse_title" translation_description="Title of the notification sent before a lunar eclipse starts. %1$s is a localized eclipse type like \'Total lunar eclipse\'.">%1$s जल्द ही शुरू हो रहा है</string>

@@ -68,7 +68,9 @@
     <string name="layer_param_radec_grid_density_coarse_desc" translation_description="Explains the coarse celestial grid density: a meridian every 3 hours of right ascension and a circle every 30 degrees of declination.">Μεσημβρινοί ανά 3 ώρες, κύκλοι ανά 30°</string>
     <string name="layer_param_radec_grid_density_medium_desc" translation_description="Explains the medium celestial grid density: a meridian every 2 hours of right ascension and a circle every 15 degrees of declination.">Μεσημβρινοί ανά 2 ώρες, κύκλοι ανά 15°</string>
     <string name="layer_param_radec_grid_density_fine_desc" translation_description="Explains the fine celestial grid density: a meridian every hour of right ascension and a circle every 10 degrees of declination.">Μεσημβρινοί ανά ώρα, κύκλοι ανά 10°</string>
-    <string name="satellites_no_data" translation_description="Explanation shown when satellite orbital data has not been downloaded yet and so no satellites can be drawn.">Οι θέσεις των δορυφόρων χρειάζονται σύνδεση στο διαδίκτυο για ενημέρωση.</string>
+    <string name="satellites_no_data" translation_description="Explanation shown when satellite orbital data has not been downloaded yet and so no satellites can be drawn.">
+    Οι θέσεις των δορυφόρων απαιτούν σύνδεση στο διαδίκτυο για λήψη. Την πρώτη φορά, ενδέχεται να χρειαστούν λίγα λεπτά για να εμφανιστούν.
+    </string>
     <string name="layer_grid" translation_description="Toggle label for the layer showing the right ascension / declination grid.">Ουράνιο πλέγμα</string>
     <string name="layer_horizon">Ορίζοντας</string>
     <string name="layer_ecliptic">Εκλειπτική</string>
@@ -151,6 +153,10 @@
     <string name="ar_iso_slider" translation_description="Accessibility label for the temporary developer slider setting the camera\'s manual ISO sensitivity in through-camera mode.">ISO κάμερας</string>
     <string name="ar_shutter_slider_label" translation_description="Very short label for the temporary developer slider setting the camera\'s manual shutter (exposure) time in through-camera mode.">Κλείστ.</string>
     <string name="ar_shutter_slider" translation_description="Accessibility label for the temporary developer slider setting the camera\'s manual shutter (exposure) time in through-camera mode.">Χρόνος κλείστρου κάμερας</string>
+    <string name="ar_group_auto" translation_description="Heading above the through-camera slider that adjusts the camera\'s automatic exposure.">Αυτόματη έκθεση</string>
+    <string name="ar_group_manual" translation_description="Heading above the through-camera sliders that set the camera\'s ISO and shutter time by hand.">Χειροκίνητη έκθεση</string>
+    <string name="ar_auto_off_note" translation_description="Note under the auto-exposure heading while manual exposure is in use: auto exposure is switched off. Touching the slider switches it back on.">Ανενεργό όταν η χειροκίνητη λειτουργία είναι ενεργή</string>
+    <string name="ar_manual_off_note" translation_description="Note under the manual-exposure heading while auto exposure is in use: moving either slider switches auto exposure off.">Μετακινήστε για απενεργοποίηση της αυτόματης λειτουργίας</string>
     <string name="share_shutter_button" translation_description="Accessibility label for the round shutter button that captures and shares the current through-camera view.">Κοινοποίηση αυτής της προβολής</string>
     <string name="ar_exposure_auto" translation_description="Readout shown when a manual camera exposure slider sits at its automatic position.">Αυτόματο</string>
     <string name="time_travel_button">Ταξίδι στο χρόνο</string>
@@ -171,10 +177,24 @@
     <string name="support_star_desc" translation_description="Support screen row description: starring helps other people find the app">Βοηθάει άλλους ανθρώπους να βρουν την εφαρμογή.</string>
     <string name="support_issues_title" translation_description="Support screen row: report a problem or suggest an idea on GitHub">Αναφέρετε ένα πρόβλημα ή προτείνετε μια ιδέα</string>
     <string name="support_issues_desc" translation_description="Support screen row description: opens the issue tracker on GitHub">Ανοίξτε ένα ζήτημα στο GitHub.</string>
+    <string name="support_rate_title" translation_description="Support screen row: leave a rating or review on the app store">Βαθμολογήστε το Sky Map</string>
+    <string name="support_rate_desc" translation_description="Support screen row description: a store review helps other stargazers find the app">Μια κριτική στο κατάστημα βοηθά άλλους αστρονόμους να μας βρουν.</string>
     <string name="support_share_title" translation_description="Support screen row: share the app with a friend">Πείτε το σε έναν φίλο</string>
     <string name="support_share_desc" translation_description="Support screen row description: share the app with someone who likes the night sky">Μοιραστείτε το Sky Map με κάποιον που αγαπά τον νυχτερινό ουρανό.</string>
     <string name="support_bmac_title" translation_description="Support screen row: make a small voluntary donation on the Buy Me a Coffee website">Κεράστε μας έναν καφέ</string>
     <string name="support_bmac_desc" translation_description="Support screen row description: donations are optional">Μια μικρή, προαιρετική συνεισφορά προς το κόστος ανάπτυξης.</string>
+    <string name="support_tip_title" translation_description="iOS Support screen row title: leave a one-time voluntary tip for the developer, paid through the App Store">Αφήστε ένα φιλοδώρημα</string>
+    <string name="support_tip_desc" translation_description="iOS Support screen row description: tips are optional one-time purchases and the app stays free">
+    Μια εφάπαξ, προαιρετική συνεισφορά για το κόστος ανάπτυξης. Το Sky Map παραμένει δωρεάν ούτως ή άλλως.
+    </string>
+    <string name="tip_mercury" translation_description="Name of the smallest tip amount, a planet name used as a button label next to the price. Mercury, the smallest planet">Ερμής</string>
+    <string name="tip_mars" translation_description="Name of the middle tip amount, a planet name used as a button label next to the price. Mars">Άρης</string>
+    <string name="tip_jupiter" translation_description="Name of the largest tip amount, a planet name used as a button label next to the price. Jupiter, the biggest planet">Δίας</string>
+    <string name="support_tip_thanks" translation_description="Shown after a tip purchase succeeds">Σας ευχαριστούμε και καθαρούς ουρανούς!</string>
+    <string name="support_tip_pending" translation_description="Shown when a tip purchase is waiting for approval, for example from a family organizer">Το φιλοδώρημά σας αναμένει έγκριση. Σας ευχαριστούμε!</string>
+    <string name="support_tip_failed" translation_description="Shown when a tip purchase did not go through">Η αγορά δεν ολοκληρώθηκε. Δοκιμάστε ξανά αργότερα.</string>
+    <string name="support_privacy_title" translation_description="Support screen row title: opens the privacy policy web page">Πολιτική απορρήτου</string>
+    <string name="support_privacy_desc" translation_description="Support screen row description: the privacy policy explains what data Sky Map collects and how to opt out">Τι συλλέγει το Sky Map και πώς να εξαιρεθείτε.</string>
     <string name="support_share_message" translation_description="Message sent when the user shares the app with a friend. %1$s is the web link to the app's store page. Keep the %1$s placeholder.">
     Έχετε δοκιμάσει το Sky Map; Είναι ένα δωρεάν πλανητάριο ανοιχτού κώδικα για το κινητό σας: %1$s
     </string>
@@ -647,6 +667,7 @@
     <string name="tonight_new_moon" translation_description="Tonight-widget row shown at new moon">Νέα Σελήνη — οι πιο σκοτεινοί ουρανοί του μήνα</string>
     <string name="tonight_full_moon" translation_description="Tonight-widget row shown at full moon">Πανσέληνος απόψε</string>
     <string name="tonight_bright_moon" translation_description="Tonight-widget row warning that a bright moon washes out faint objects">Η φωτεινή σελήνη επισκιάζει τα αμυδρά αντικείμενα</string>
+    <!-- tm:omitted name="tonight_satellite_pass" reason="identical_to_source" -->
     <string name="moon_widget_set_time" translation_description="Widget fragment showing today\'s moonset time; %1$s is a clock time like 03:12">δύει %1$s</string>
     <string name="sun">Ήλιος</string>
     <string name="moon">Σελήνη</string>
@@ -659,7 +680,6 @@
     <string name="uranus">Ουρανός</string>
     <string name="neptune">Ποσειδώνας</string>
     <string name="pluto">Πλούτωνας</string>
-    <!-- tm:omitted name="tonight_satellite_pass" reason="identical_to_source" -->
     <string name="notif_pass_title" translation_description="Title of the notification sent shortly before a satellite passes overhead. %1$s is the satellite name.">Ο/Η %1$s περνάει από πάνω σύντομα</string>
     <string name="notif_pass_text" translation_description="Body of the satellite pass notification, telling the user when to go outside. %1$s is a time.">Ορατό από περίπου %1$s — βγείτε έξω και αφήστε τα μάτια σας να προσαρμοστούν</string>
     <string name="notif_eclipse_title" translation_description="Title of the notification sent before a lunar eclipse starts. %1$s is a localized eclipse type like \'Total lunar eclipse\'.">Το/Η %1$s ξεκινάει σύντομα</string>

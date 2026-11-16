@@ -68,7 +68,9 @@
     <string name="layer_param_radec_grid_density_coarse_desc" translation_description="Explains the coarse celestial grid density: a meridian every 3 hours of right ascension and a circle every 30 degrees of declination.">Meridianau bob 3 awr, cylchoedd bob 30°</string>
     <string name="layer_param_radec_grid_density_medium_desc" translation_description="Explains the medium celestial grid density: a meridian every 2 hours of right ascension and a circle every 15 degrees of declination.">Meridianau bob 2 awr, cylchoedd bob 15°</string>
     <string name="layer_param_radec_grid_density_fine_desc" translation_description="Explains the fine celestial grid density: a meridian every hour of right ascension and a circle every 10 degrees of declination.">Meridianau bob awr, cylchoedd bob 10°</string>
-    <string name="satellites_no_data" translation_description="Explanation shown when satellite orbital data has not been downloaded yet and so no satellites can be drawn.">Mae angen cysylltiad rhyngrwyd ar safleoedd lloeren i ddiweddaru.</string>
+    <string name="satellites_no_data" translation_description="Explanation shown when satellite orbital data has not been downloaded yet and so no satellites can be drawn.">
+    Mae angen cysylltiad rhyngrwyd i lawrlwytho safleoedd lloerennau. Y tro cyntaf, gallant gymryd ychydig funudau i ymddangos.
+    </string>
     <string name="layer_grid" translation_description="Toggle label for the layer showing the right ascension / declination grid.">Grid nefol</string>
     <string name="layer_horizon">Gorwel</string>
     <string name="layer_ecliptic">Ecliptig</string>
@@ -143,6 +145,10 @@ Disgleirdeb llinellau: arferol, llachar neu fwyaf llachar, ar gyfer awyr cyfnos,
     <string name="ar_iso_slider" translation_description="Accessibility label for the temporary developer slider setting the camera\'s manual ISO sensitivity in through-camera mode.">ISO camera</string>
     <!-- tm:omitted name="ar_shutter_slider_label" reason="identical_to_source" -->
     <string name="ar_shutter_slider" translation_description="Accessibility label for the temporary developer slider setting the camera\'s manual shutter (exposure) time in through-camera mode.">Amser caead camera</string>
+    <string name="ar_group_auto" translation_description="Heading above the through-camera slider that adjusts the camera\'s automatic exposure.">Amlygiad awtomatig</string>
+    <string name="ar_group_manual" translation_description="Heading above the through-camera sliders that set the camera\'s ISO and shutter time by hand.">Amlygiad llawlyfr</string>
+    <string name="ar_auto_off_note" translation_description="Note under the auto-exposure heading while manual exposure is in use: auto exposure is switched off. Touching the slider switches it back on.">I ffwrdd tra bo llawlyfr ymlaen</string>
+    <string name="ar_manual_off_note" translation_description="Note under the manual-exposure heading while auto exposure is in use: moving either slider switches auto exposure off.">Symud i ddiffodd awtomatig</string>
     <string name="share_shutter_button" translation_description="Accessibility label for the round shutter button that captures and shares the current through-camera view.">Rhannu\'r olygfa hon</string>
     <!-- tm:omitted name="ar_exposure_auto" reason="identical_to_source" -->
     <string name="time_travel_button">Teithio mewn Amser</string>
@@ -163,10 +169,24 @@ Disgleirdeb llinellau: arferol, llachar neu fwyaf llachar, ar gyfer awyr cyfnos,
     <string name="support_star_desc" translation_description="Support screen row description: starring helps other people find the app">Mae\'n helpu pobl eraill i ddod o hyd i\'r ap.</string>
     <string name="support_issues_title" translation_description="Support screen row: report a problem or suggest an idea on GitHub">Adrodd am broblem neu awgrymu syniad</string>
     <string name="support_issues_desc" translation_description="Support screen row description: opens the issue tracker on GitHub">Agor mater ar GitHub.</string>
+    <string name="support_rate_title" translation_description="Support screen row: leave a rating or review on the app store">Graddio Sky Map</string>
+    <string name="support_rate_desc" translation_description="Support screen row description: a store review helps other stargazers find the app">Mae adolygiad ar y siop yn helpu sêr-wyr eraill i\'n dilyn.</string>
     <string name="support_share_title" translation_description="Support screen row: share the app with a friend">Dweud wrth ffrind</string>
     <string name="support_share_desc" translation_description="Support screen row description: share the app with someone who likes the night sky">Rhannu Sky Map â rhywun sy\'n caru awyr y nos.</string>
     <string name="support_bmac_title" translation_description="Support screen row: make a small voluntary donation on the Buy Me a Coffee website">Prynu paned i ni</string>
     <string name="support_bmac_desc" translation_description="Support screen row description: donations are optional">Tip bach, dewisol tuag at gost datblygu.</string>
+    <string name="support_tip_title" translation_description="iOS Support screen row title: leave a one-time voluntary tip for the developer, paid through the App Store">Gadael tipyn</string>
+    <string name="support_tip_desc" translation_description="iOS Support screen row description: tips are optional one-time purchases and the app stays free">
+    Rhodd un-tro, ddewisol tuag at gost datblygu. Bydd Sky Map yn parhau i fod yn rhad ac am ddim beth bynnag.
+    </string>
+    <string name="tip_mercury" translation_description="Name of the smallest tip amount, a planet name used as a button label next to the price. Mercury, the smallest planet">Merw</string>
+    <string name="tip_mars" translation_description="Name of the middle tip amount, a planet name used as a button label next to the price. Mars">Mawrth</string>
+    <string name="tip_jupiter" translation_description="Name of the largest tip amount, a planet name used as a button label next to the price. Jupiter, the biggest planet">Iau</string>
+    <string name="support_tip_thanks" translation_description="Shown after a tip purchase succeeds">Diolch i chi, a chefn gwlad clir!</string>
+    <string name="support_tip_pending" translation_description="Shown when a tip purchase is waiting for approval, for example from a family organizer">Mae eich tipyn yn aros am gymeradwyaeth. Diolch!</string>
+    <string name="support_tip_failed" translation_description="Shown when a tip purchase did not go through">Ni aeth y pryniant drwodd. Rhowch gynnig arall arni yn nes ymlaen.</string>
+    <string name="support_privacy_title" translation_description="Support screen row title: opens the privacy policy web page">Polisi preifatrwydd</string>
+    <string name="support_privacy_desc" translation_description="Support screen row description: the privacy policy explains what data Sky Map collects and how to opt out">Yr hyn y mae Sky Map yn ei gasglu, a sut i optio allan.</string>
     <string name="support_share_message" translation_description="Message sent when the user shares the app with a friend. %1$s is the web link to the app's store page. Keep the %1$s placeholder.">
     Wedi rhoi cynnig ar Sky Map? Mae yn blanedariwm rhad ac am ddim, ffynhonnell agored ar gyfer eich ffôn: %1$s
     </string>
@@ -637,6 +657,7 @@ cael ei osod.
     <string name="tonight_new_moon" translation_description="Tonight-widget row shown at new moon">Lleuad Newydd — awyr dywyllaf y mis</string>
     <string name="tonight_full_moon" translation_description="Tonight-widget row shown at full moon">Lleuad Llawn heno</string>
     <string name="tonight_bright_moon" translation_description="Tonight-widget row warning that a bright moon washes out faint objects">Lleuad llachar yn golchi gwrthrychau gwan allan</string>
+    <!-- tm:omitted name="tonight_satellite_pass" reason="identical_to_source" -->
     <string name="moon_widget_set_time" translation_description="Widget fragment showing today\'s moonset time; %1$s is a clock time like 03:12">yn machlud %1$s</string>
     <string name="sun">Haul</string>
     <string name="moon">Lleuad</string>
@@ -649,7 +670,6 @@ cael ei osod.
     <string name="uranus">Wranws</string>
     <string name="neptune">Neifion</string>
     <string name="pluto">Plwton</string>
-    <!-- tm:omitted name="tonight_satellite_pass" reason="identical_to_source" -->
     <string name="notif_pass_title" translation_description="Title of the notification sent shortly before a satellite passes overhead. %1$s is the satellite name.">Mae %1$s yn tramwy uwchben yn fuan</string>
     <string name="notif_pass_text" translation_description="Body of the satellite pass notification, telling the user when to go outside. %1$s is a time.">Gweladwy o tua %1$s — ewch allan a gadewch i\'ch llygaid addasu</string>
     <string name="notif_eclipse_title" translation_description="Title of the notification sent before a lunar eclipse starts. %1$s is a localized eclipse type like \'Total lunar eclipse\'.">Mae %1$s yn dechrau cyn bo hir</string>

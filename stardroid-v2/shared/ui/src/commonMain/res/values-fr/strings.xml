@@ -69,7 +69,7 @@
     <string name="layer_param_radec_grid_density_medium_desc" translation_description="Explains the medium celestial grid density: a meridian every 2 hours of right ascension and a circle every 15 degrees of declination.">Méridiens toutes les 2 heures, cercles tous les 15°</string>
     <string name="layer_param_radec_grid_density_fine_desc" translation_description="Explains the fine celestial grid density: a meridian every hour of right ascension and a circle every 10 degrees of declination.">Méridiens chaque heure, cercles tous les 10°</string>
     <string name="satellites_no_data" translation_description="Explanation shown when satellite orbital data has not been downloaded yet and so no satellites can be drawn.">
-    Les positions des satellites nécessitent une connexion internet pour être mises à jour.
+    Les positions des satellites nécessitent une connexion Internet pour être téléchargées. La première fois, cela peut prendre quelques minutes pour apparaître.
     </string>
     <string name="layer_grid" translation_description="Toggle label for the layer showing the right ascension / declination grid.">Grille céleste</string>
     <!-- tm:omitted name="layer_horizon" reason="identical_to_source" -->
@@ -152,6 +152,10 @@ Luminosité des lignes : normale, brillante ou très brillante, pour le crépusc
     <string name="ar_iso_slider" translation_description="Accessibility label for the temporary developer slider setting the camera\'s manual ISO sensitivity in through-camera mode.">ISO de la caméra</string>
     <!-- tm:omitted name="ar_shutter_slider_label" reason="identical_to_source" -->
     <string name="ar_shutter_slider" translation_description="Accessibility label for the temporary developer slider setting the camera\'s manual shutter (exposure) time in through-camera mode.">Temps d\'obturation de la caméra</string>
+    <string name="ar_group_auto" translation_description="Heading above the through-camera slider that adjusts the camera\'s automatic exposure.">Exposition automatique</string>
+    <string name="ar_group_manual" translation_description="Heading above the through-camera sliders that set the camera\'s ISO and shutter time by hand.">Exposition manuelle</string>
+    <string name="ar_auto_off_note" translation_description="Note under the auto-exposure heading while manual exposure is in use: auto exposure is switched off. Touching the slider switches it back on.">Désactivé en mode manuel</string>
+    <string name="ar_manual_off_note" translation_description="Note under the manual-exposure heading while auto exposure is in use: moving either slider switches auto exposure off.">Déplacer pour désactiver l\'auto</string>
     <string name="share_shutter_button" translation_description="Accessibility label for the round shutter button that captures and shares the current through-camera view.">Partager cette vue</string>
     <!-- tm:omitted name="ar_exposure_auto" reason="identical_to_source" -->
     <string name="time_travel_button">Voyage dans le temps</string>
@@ -172,10 +176,24 @@ Luminosité des lignes : normale, brillante ou très brillante, pour le crépusc
     <string name="support_star_desc" translation_description="Support screen row description: starring helps other people find the app">Cela aide d\'autres personnes à trouver l\'application.</string>
     <string name="support_issues_title" translation_description="Support screen row: report a problem or suggest an idea on GitHub">Signaler un problème ou suggérer une idée</string>
     <string name="support_issues_desc" translation_description="Support screen row description: opens the issue tracker on GitHub">Ouvrir un ticket sur GitHub.</string>
+    <string name="support_rate_title" translation_description="Support screen row: leave a rating or review on the app store">Noter Sky Map</string>
+    <string name="support_rate_desc" translation_description="Support screen row description: a store review helps other stargazers find the app">Un avis sur le store aide les autres passionnés d\'astronomie à nous trouver.</string>
     <string name="support_share_title" translation_description="Support screen row: share the app with a friend">En parler à un ami</string>
     <string name="support_share_desc" translation_description="Support screen row description: share the app with someone who likes the night sky">Partager Sky Map avec quelqu\'un qui aime le ciel nocturne.</string>
     <string name="support_bmac_title" translation_description="Support screen row: make a small voluntary donation on the Buy Me a Coffee website">Offrez-nous un café</string>
     <string name="support_bmac_desc" translation_description="Support screen row description: donations are optional">Un petit pourboire facultatif pour contribuer aux frais de développement.</string>
+    <string name="support_tip_title" translation_description="iOS Support screen row title: leave a one-time voluntary tip for the developer, paid through the App Store">Laisser un pourboire</string>
+    <string name="support_tip_desc" translation_description="iOS Support screen row description: tips are optional one-time purchases and the app stays free">
+    Un remerciement facultatif et unique pour participer aux frais de développement. Sky Map reste gratuit dans tous les cas.
+    </string>
+    <string name="tip_mercury" translation_description="Name of the smallest tip amount, a planet name used as a button label next to the price. Mercury, the smallest planet">Mercure</string>
+    <!-- tm:omitted name="tip_mars" reason="identical_to_source" -->
+    <!-- tm:omitted name="tip_jupiter" reason="identical_to_source" -->
+    <string name="support_tip_thanks" translation_description="Shown after a tip purchase succeeds">Merci, et bon ciel !</string>
+    <string name="support_tip_pending" translation_description="Shown when a tip purchase is waiting for approval, for example from a family organizer">Votre pourboire est en attente d\'approbation. Merci !</string>
+    <string name="support_tip_failed" translation_description="Shown when a tip purchase did not go through">L\'achat n\'a pas abouti. Veuillez réessayer plus tard.</string>
+    <string name="support_privacy_title" translation_description="Support screen row title: opens the privacy policy web page">Politique de confidentialité</string>
+    <string name="support_privacy_desc" translation_description="Support screen row description: the privacy policy explains what data Sky Map collects and how to opt out">Ce que Sky Map collecte et comment s\'y opposer.</string>
     <string name="support_share_message" translation_description="Message sent when the user shares the app with a friend. %1$s is the web link to the app's store page. Keep the %1$s placeholder.">
     Avez-vous essayé Sky Map ? C\'est un planétarium gratuit et open source pour votre téléphone : %1$s
     </string>
@@ -626,6 +644,7 @@ Luminosité des lignes : normale, brillante ou très brillante, pour le crépusc
     <!-- tm:omitted name="tonight_trailing_direction" reason="identical_to_source" -->
     <string name="tonight_dark_skies" translation_description="Small trailing note: the moon is dark, so viewing conditions are ideal">ciel sombre</string>
     <string name="tonight_trailing_moon" translation_description="Small trailing note: how much of the moon is lit; %1$d is a percentage">lune %1$d%%</string>
+    <!-- tm:omitted name="diagnostics_section_satellites" reason="identical_to_source" -->
     <string name="diagnostics_satellite_data" translation_description="Row label in the diagnostics screen for the age and count of cached satellite orbital data">Données d\'orbite</string>
     <string name="diagnostics_satellite_data_none" translation_description="Row value in the diagnostics screen when no satellite orbital data has been downloaded yet">Non téléchargé</string>
     <string name="diagnostics_satellite_data_format" translation_description="Row value in the diagnostics screen showing how many satellites are cached and how many days old the data is. %1$d is a count, %2$.1f is a number of days">%1$d satellites, %2$.1f jours</string>
@@ -638,7 +657,6 @@ Luminosité des lignes : normale, brillante ou très brillante, pour le crépusc
     </string>
     <string name="satellite_search_name_iss" translation_description="Common name of the International Space Station, matched when the user types it in search. Use the name people in this language actually type.">Station spatiale internationale</string>
     <string name="satellite_search_name_tiangong" translation_description="Common name of the Chinese Tiangong space station, matched when the user types it in search. Use the name people in this language actually type.">Station spatiale Tiangong</string>
-    <!-- tm:omitted name="diagnostics_section_satellites" reason="identical_to_source" -->
     <string name="notif_shower_title" translation_description="Title of the meteor-shower notification; %1$s is the shower name">Pic des %1$s ce soir</string>
     <string name="notif_shower_direction" translation_description="Notification sentence telling the user where to look; %1$s is a compass point like NE">Idéal après minuit, en regardant vers le %1$s.</string>
     <string name="notif_shower_dark_moon" translation_description="Notification sentence when the moon is dark during a meteor shower peak; %1$d is the expected meteors per hour">
