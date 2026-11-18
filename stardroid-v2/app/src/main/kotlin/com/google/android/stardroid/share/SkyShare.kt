@@ -9,6 +9,7 @@
 
 package com.google.android.stardroid.share
 
+import android.content.ContentValues
 import android.content.Context
 import android.content.Intent
 import android.graphics.Bitmap
@@ -18,8 +19,10 @@ import android.graphics.Paint
 import android.graphics.Rect
 import android.graphics.Typeface
 import android.opengl.GLSurfaceView
+import android.os.Environment
 import android.os.Handler
 import android.os.Looper
+import android.provider.MediaStore
 import android.util.Log
 import android.view.PixelCopy
 import androidx.core.content.FileProvider
@@ -109,6 +112,41 @@ object SkyShare {
                 )
             } finally {
                 branding.recycle()
+            }
+        }
+
+    /**
+     * Saves [bitmap] to the device's Pictures/Sky Map gallery folder (scoped storage, so no
+     * permission at API 29+). Best effort: false on failure, which never blocks sharing.
+     */
+    suspend fun saveToGallery(
+        context: Context,
+        bitmap: Bitmap,
+    ): Boolean =
+        withContext(Dispatchers.IO) {
+            try {
+                val resolver = context.contentResolver
+                val values =
+                    ContentValues().apply {
+                        put(
+                            MediaStore.Images.Media.DISPLAY_NAME,
+                            "sky_map_${System.currentTimeMillis()}.png",
+                        )
+                        put(MediaStore.Images.Media.MIME_TYPE, "image/png")
+                        put(
+                            MediaStore.Images.Media.RELATIVE_PATH,
+                            "${Environment.DIRECTORY_PICTURES}/Sky Map",
+                        )
+                    }
+                val uri =
+                    resolver.insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, values)
+                        ?: return@withContext false
+                resolver.openOutputStream(uri)?.use {
+                    bitmap.compress(Bitmap.CompressFormat.PNG, 100, it)
+                } != null
+            } catch (e: Exception) {
+                Log.w(TAG, "Could not save the photo to the gallery", e)
+                false
             }
         }
 

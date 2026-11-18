@@ -320,6 +320,11 @@ class SkyCameraPreview(
         capturingNight = true
         try {
             if (bindSession(night = true) == null) return null
+            // The fresh session starts at 1x and the vendor's own focus; carry the user's
+            // framing and pin focus at infinity before the shot.
+            reapplyZoom()
+            pinFocusAtInfinity()
+            delay(NIGHT_SETTLE_MS)
             return capture()
         } finally {
             capturingNight = false
@@ -377,8 +382,39 @@ class SkyCameraPreview(
         }
     }
 
+    /** Re-applies the zoom, clamped to what this session (an extension may differ) allows. */
+    private fun reapplyZoom() {
+        val camera = camera ?: return
+        val state = camera.cameraInfo.zoomState.value
+        val ratio =
+            zoomRatio.toFloat().coerceIn(state?.minZoomRatio ?: 1f, state?.maxZoomRatio ?: 1f)
+        camera.cameraControl.setZoomRatio(ratio)
+    }
+
+    /**
+     * Best effort: vendor extension sessions may ignore Camera2 options, in which case the
+     * vendor's own focus applies.
+     */
+    @SuppressLint("UnsafeOptInUsageError")
+    private fun pinFocusAtInfinity() {
+        val control = camera?.cameraControl ?: return
+        try {
+            Camera2CameraControl.from(control).addCaptureRequestOptions(
+                CaptureRequestOptions.Builder()
+                    .setCaptureRequestOption(
+                        CaptureRequest.CONTROL_AF_MODE,
+                        CameraMetadata.CONTROL_AF_MODE_OFF,
+                    )
+                    .setCaptureRequestOption(CaptureRequest.LENS_FOCUS_DISTANCE, 0.0f)
+                    .build(),
+            )
+        } catch (e: Exception) {
+            Log.w(TAG, "Could not pin focus for the night still", e)
+        }
+    }
+
     private fun reapplyControls() {
-        camera?.cameraControl?.setZoomRatio(zoomRatio.toFloat())
+        reapplyZoom()
         camera?.cameraControl?.setExposureCompensationIndex(exposureIndex)
         applyManualOptions(manualExposure)
     }
@@ -598,6 +634,9 @@ class SkyCameraPreview(
 
         /** How long AE gets to converge after the manual options are dropped for a still. */
         private const val AE_SETTLE_MS = 600L
+
+        /** Lets the zoom and focus requests reach the night session before the shot. */
+        private const val NIGHT_SETTLE_MS = 400L
 
         /** ~30 fps; long manual exposures stretch the frame duration past this. */
         private const val DEFAULT_FRAME_DURATION_NS = 33_333_333L
