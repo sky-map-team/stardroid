@@ -604,6 +604,7 @@ class MapViewModel(
             }
             fovBeforeAr = _camera.value.fovDeg
             _arZoomRatio.value = 1.0
+            _arExposureIndex.value = 0
             arIsoFractionSetting.value = 0.0
             arShutterFractionSetting.value = 0.0
             arPreviewLumaState.value = 0.0
@@ -627,7 +628,9 @@ class MapViewModel(
         if (!_arMode.value) return
         arSpecs.value = specs
         _arZoomRatio.value = 1.0
-        _arExposureIndex.value = 0
+        // Not reset: a rebind (rotation recreates the camera) keeps the user's exposure.
+        _arExposureIndex.value =
+            _arExposureIndex.value.coerceIn(specs.exposureMin, specs.exposureMax)
         applyArFov()
     }
 

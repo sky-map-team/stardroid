@@ -128,7 +128,11 @@ class SkyCameraPreview(
             // The toggle may have flipped off while the provider was starting up.
             if (!bound) return@addListener
             val camera = bindSession(night = false)
-            if (camera != null) onReady(specsFor(camera, viewAspectLongOverShort))
+            if (camera != null) {
+                // After rotation the view model's values arrive before the camera exists.
+                reapplyControls()
+                onReady(specsFor(camera, viewAspectLongOverShort))
+            }
             probeNightExtension(provider)
         }, ContextCompat.getMainExecutor(context))
     }
