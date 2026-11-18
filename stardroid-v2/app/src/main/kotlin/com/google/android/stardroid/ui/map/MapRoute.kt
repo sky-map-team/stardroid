@@ -69,6 +69,7 @@ import com.google.android.stardroid.ui.objectinfo.MoonWidgetPromoRow
 import com.google.android.stardroid.ui.objectinfo.ObjectInfoViewModel
 import com.google.android.stardroid.ui.search.SearchViewModel
 import com.google.android.stardroid.ui.timetravel.TimeTravelViewModel
+import kotlinx.coroutines.NonCancellable
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
@@ -252,7 +253,8 @@ fun MapRoute(
             layouts = layouts,
             onPick = { picked ->
                 capture.shareLayouts = null
-                scope.launch {
+                // NonCancellable: a rotation mid-save must not swallow the share.
+                scope.launch(NonCancellable) {
                     // Saved so it can be shared again later; the saved copy is what is sent.
                     val saved = SkyShare.saveToGallery(context, picked)
                     if (saved != null) {

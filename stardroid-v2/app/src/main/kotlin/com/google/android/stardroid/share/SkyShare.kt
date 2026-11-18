@@ -29,6 +29,7 @@ import android.view.PixelCopy
 import androidx.core.content.FileProvider
 import androidx.core.graphics.drawable.toBitmap
 import com.google.android.stardroid.R
+import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.suspendCancellableCoroutine
 import kotlinx.coroutines.withContext
@@ -60,8 +61,8 @@ import kotlin.coroutines.resume
  *
  * The two finished [ShareLayouts] are deliberately **not** recycled. They live in a ViewModel
  * (surviving rotation) and are drawn as thumbnails, so recycling them races with the sheet
- * that is still drawing them — and a recycled bitmap that is still being drawn is a crash. They are ordinary
- * garbage instead, and bounded by [MAX_SHARE_EDGE_PX] to roughly 25 MB for the pair.
+ * still drawing them — and a recycled bitmap that is still being drawn is a crash. They are
+ * ordinary garbage instead, and bounded by [MAX_SHARE_EDGE_PX] to roughly 25 MB for the pair.
  */
 object SkyShare {
     /** Map-only share (slice 3): capture, brand, and launch the chooser in one go. */
@@ -167,6 +168,8 @@ object SkyShare {
                     resolver.delete(uri, null, null)
                     null
                 }
+            } catch (e: CancellationException) {
+                throw e
             } catch (e: Exception) {
                 Log.w(TAG, "Could not save the photo to the gallery", e)
                 null
