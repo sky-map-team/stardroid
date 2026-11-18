@@ -18,6 +18,7 @@ import android.graphics.Color
 import android.graphics.Paint
 import android.graphics.Rect
 import android.graphics.Typeface
+import android.net.Uri
 import android.opengl.GLSurfaceView
 import android.os.Environment
 import android.os.Handler
@@ -57,9 +58,9 @@ import kotlin.coroutines.resume
  * larger win: it scales every bitmap in the pipeline down at once, and the share target
  * re-encodes the image anyway.
  *
- * The two finished [ShareLayouts] are deliberately **not** recycled. They are held in Compose
- * state and drawn as thumbnails, so recycling them races with the recomposition that drops
- * the sheet — and a recycled bitmap that is still being drawn is a crash. They are ordinary
+ * The two finished [ShareLayouts] are deliberately **not** recycled. They live in a ViewModel
+ * (surviving rotation) and are drawn as thumbnails, so recycling them races with the sheet
+ * that is still drawing them — and a recycled bitmap that is still being drawn is a crash. They are ordinary
  * garbage instead, and bounded by [MAX_SHARE_EDGE_PX] to roughly 25 MB for the pair.
  */
 object SkyShare {
@@ -116,13 +117,13 @@ object SkyShare {
         }
 
     /**
-     * Saves [bitmap] to the device's Pictures/Sky Map gallery folder (scoped storage, so no
-     * permission at API 29+). Best effort: false on failure, which never blocks sharing.
+     * Saves [bitmap] to Pictures/Sky Map (scoped storage, no permission) and returns its URI,
+     * or null on failure. On API 28, which lacks `RELATIVE_PATH`, this is a silent null.
      */
     suspend fun saveToGallery(
         context: Context,
         bitmap: Bitmap,
-    ): Boolean =
+    ): Uri? =
         withContext(Dispatchers.IO) {
             try {
                 val resolver = context.contentResolver
@@ -137,16 +138,38 @@ object SkyShare {
                             MediaStore.Images.Media.RELATIVE_PATH,
                             "${Environment.DIRECTORY_PICTURES}/Sky Map",
                         )
+                        // Hidden from the gallery until fully written.
+                        put(MediaStore.Images.Media.IS_PENDING, 1)
                     }
                 val uri =
                     resolver.insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, values)
-                        ?: return@withContext false
-                resolver.openOutputStream(uri)?.use {
-                    bitmap.compress(Bitmap.CompressFormat.PNG, 100, it)
-                } != null
+                        ?: return@withContext null
+                val written =
+                    try {
+                        resolver.openOutputStream(uri)?.use {
+                            bitmap.compress(Bitmap.CompressFormat.PNG, 100, it)
+                        } == true
+                    } catch (e: Exception) {
+                        Log.w(TAG, "Could not write the photo to the gallery", e)
+                        false
+                    }
+                if (written) {
+                    resolver.update(
+                        uri,
+                        ContentValues().apply {
+                            put(MediaStore.Images.Media.IS_PENDING, 0)
+                        },
+                        null,
+                        null,
+                    )
+                    uri
+                } else {
+                    resolver.delete(uri, null, null)
+                    null
+                }
             } catch (e: Exception) {
                 Log.w(TAG, "Could not save the photo to the gallery", e)
-                false
+                null
             }
         }
 
@@ -170,6 +193,14 @@ object SkyShare {
                     file,
                 )
             }
+        sendUri(context, uri)
+    }
+
+    /** Launches the system share sheet for an image already at [uri]. */
+    fun sendUri(
+        context: Context,
+        uri: Uri,
+    ) {
         val send =
             Intent(Intent.ACTION_SEND).apply {
                 type = "image/png"

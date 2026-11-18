@@ -45,3 +45,10 @@ fun cameraShortSideFovDeg(
         }
     return 2.0 * atan(visibleShortSideMm / (2.0 * focalLengthMm)) * RADIANS_TO_DEGREES
 }
+
+/** [requested] limited to the session's zoom range; unchanged while the range is unknown. */
+fun clampZoom(
+    requested: Float,
+    min: Float?,
+    max: Float?,
+): Float = if (min == null || max == null) requested else requested.coerceIn(min, max)

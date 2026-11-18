@@ -86,8 +86,6 @@ class SkyCameraPreview(
     private var exposureIndex = 0
     private var manualExposure: ArManualExposure? = null
 
-    var stillMode by mutableStateOf(StillMode.AUTO)
-
     /** Whether the device offers a vendor night mode (CameraX Extensions) for stills. */
     var nightAvailable by mutableStateOf(false)
         private set
@@ -291,8 +289,8 @@ class SkyCameraPreview(
      * rear camera, and it is only ever centre-cropped into a share composite that is a
      * fraction of that (audit-2026-08 M5). The caller owns the result and recycles it.
      */
-    suspend fun takeStill(): Bitmap? =
-        if (stillMode == StillMode.NIGHT && nightAvailable) {
+    suspend fun takeStill(mode: StillMode): Bitmap? =
+        if (mode == StillMode.NIGHT && nightAvailable) {
             takeNightStill() ?: takeAutoStill()
         } else {
             takeAutoStill()
@@ -320,8 +318,7 @@ class SkyCameraPreview(
         capturingNight = true
         try {
             if (bindSession(night = true) == null) return null
-            // The fresh session starts at 1x and the vendor's own focus; carry the user's
-            // framing and pin focus at infinity before the shot.
+            // The fresh session starts at 1x; carry the user's framing and pin focus.
             reapplyZoom()
             pinFocusAtInfinity()
             delay(NIGHT_SETTLE_MS)
@@ -386,14 +383,15 @@ class SkyCameraPreview(
     private fun reapplyZoom() {
         val camera = camera ?: return
         val state = camera.cameraInfo.zoomState.value
-        val ratio =
-            zoomRatio.toFloat().coerceIn(state?.minZoomRatio ?: 1f, state?.maxZoomRatio ?: 1f)
-        camera.cameraControl.setZoomRatio(ratio)
+        // The returned future is ignored: a bad ratio can only fail the request, not the session.
+        camera.cameraControl.setZoomRatio(
+            clampZoom(zoomRatio.toFloat(), state?.minZoomRatio, state?.maxZoomRatio),
+        )
     }
 
     /**
-     * Best effort: vendor extension sessions may ignore Camera2 options, in which case the
-     * vendor's own focus applies.
+     * Best effort: vendor extension sessions may ignore Camera2 options. Added (not set) so the
+     * live session's tuning is untouched; [reapplyControls] replaces them on the way back.
      */
     @SuppressLint("UnsafeOptInUsageError")
     private fun pinFocusAtInfinity() {

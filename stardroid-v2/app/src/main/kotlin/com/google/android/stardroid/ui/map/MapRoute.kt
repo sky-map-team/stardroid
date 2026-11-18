@@ -56,7 +56,6 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.google.android.stardroid.R
 import com.google.android.stardroid.analytics.AnalyticsEvents
-import com.google.android.stardroid.camera.ArCaptureViewModel
 import com.google.android.stardroid.camera.SkyCameraPreview
 import com.google.android.stardroid.share.SkyShare
 import com.google.android.stardroid.startup.Experiment
@@ -124,10 +123,10 @@ fun MapRoute(
     val appliedScrim by remember {
         mapViewModel.renderState.map { it.cameraScrim }
     }.collectAsStateWithLifecycle(0.0)
-    // Held in a ViewModel so a rotation keeps the still mode and the pending layout sheet.
     val capture: ArCaptureViewModel = viewModel()
     val shareLayouts = capture.shareLayouts
-    LaunchedEffect(capture.stillMode) { arCamera.stillMode = capture.stillMode }
+    // Don't hold ~25 MB of layouts once the camera layer is off.
+    LaunchedEffect(arModeOn) { if (!arModeOn) capture.shareLayouts = null }
     val shareFailedMessage = stringResource(R.string.share_failed_message)
     val startShare: () -> Unit = {
         mapViewModel.logMenuItem(AnalyticsEvents.SHARE_SKY_LABEL)
@@ -135,7 +134,7 @@ fun MapRoute(
             val map = if (arModeOn) SkyShare.captureMap(glSurfaceView) else null
             var still: Bitmap? = null
             try {
-                still = if (map != null) arCamera.takeStill() else null
+                still = if (map != null) arCamera.takeStill(capture.stillMode) else null
                 if (map != null && still != null) {
                     // The composites use the scrim exactly as rendered (night floor included).
                     val scrim = mapViewModel.renderState.first().cameraScrim
@@ -254,9 +253,13 @@ fun MapRoute(
             onPick = { picked ->
                 capture.shareLayouts = null
                 scope.launch {
-                    // Keep a copy in the gallery so it can be shared again later.
-                    SkyShare.saveToGallery(context, picked)
-                    SkyShare.sendBitmap(context, picked)
+                    // Saved so it can be shared again later; the saved copy is what is sent.
+                    val saved = SkyShare.saveToGallery(context, picked)
+                    if (saved != null) {
+                        SkyShare.sendUri(context, saved)
+                    } else {
+                        SkyShare.sendBitmap(context, picked)
+                    }
                 }
             },
             onDismiss = { capture.shareLayouts = null },

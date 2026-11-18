@@ -7,21 +7,19 @@
  * (at your option) any later version.
  */
 
-package com.google.android.stardroid.camera
+package com.google.android.stardroid.ui.map
 
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
+import com.google.android.stardroid.camera.SkyCameraPreview
 import com.google.android.stardroid.share.SkyShare
 
-/**
- * Through-camera state that must outlive an activity recreation (rotation). [SkyCameraPreview]
- * is owned by the activity, so anything the user chose or produced there is kept here instead.
- */
+/** State that must survive activity recreation; [SkyCameraPreview] itself does not. */
 class ArCaptureViewModel : ViewModel() {
     var stillMode by mutableStateOf(SkyCameraPreview.StillMode.AUTO)
 
-    /** The composites awaiting a layout pick; held so a rotation doesn't drop the sheet. */
+    // Never recycled here: the layout sheet may still be drawing them (see SkyShare).
     var shareLayouts by mutableStateOf<SkyShare.ShareLayouts?>(null)
 }
