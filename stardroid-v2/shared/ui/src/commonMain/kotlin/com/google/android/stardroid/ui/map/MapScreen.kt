@@ -451,6 +451,7 @@ fun MapScreen(
                     targetName = target.name,
                     found = found,
                     onCancel = { searchViewModel.cancelSearch() },
+                    compact = screenSize.width > screenSize.height,
                 )
             }
         }

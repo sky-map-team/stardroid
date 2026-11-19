@@ -18,6 +18,7 @@ import androidx.compose.animation.core.tween
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
@@ -202,6 +203,7 @@ fun SearchControlBar(
     targetName: String,
     found: Boolean,
     onCancel: () -> Unit,
+    compact: Boolean = false,
 ) {
     Surface(
         color = MaterialTheme.colorScheme.surface.copy(alpha = 0.8f),
@@ -210,29 +212,41 @@ fun SearchControlBar(
         contentColor = MaterialTheme.colorScheme.onSurface,
         shape = MaterialTheme.shapes.medium,
     ) {
-        Column(
-            horizontalAlignment = Alignment.CenterHorizontally,
-            modifier = Modifier.padding(8.dp),
-        ) {
-            Text(
-                formattedStringResource(
-                    if (found) {
-                        Res.string.search_target_found_message
-                    } else {
-                        Res.string.search_target_looking_message
-                    },
-                    targetName,
-                ),
-                style = MaterialTheme.typography.titleSmall,
+        val status =
+            formattedStringResource(
+                if (found) {
+                    Res.string.search_target_found_message
+                } else {
+                    Res.string.search_target_looking_message
+                },
+                targetName,
             )
-            if (!found) {
-                Text(
-                    stringResource(Res.string.search_overlay_prompt),
-                    style = MaterialTheme.typography.bodySmall,
-                )
+        if (compact) {
+            // Landscape: one short row, so it doesn't cover the guide arrow below the target.
+            Row(
+                verticalAlignment = Alignment.CenterVertically,
+                modifier = Modifier.padding(start = 12.dp, end = 4.dp),
+            ) {
+                Text(status, style = MaterialTheme.typography.titleSmall)
+                TextButton(onClick = onCancel) {
+                    Text(stringResource(Res.string.search_cancel))
+                }
             }
-            TextButton(onClick = onCancel) {
-                Text(stringResource(Res.string.search_cancel))
+        } else {
+            Column(
+                horizontalAlignment = Alignment.CenterHorizontally,
+                modifier = Modifier.padding(8.dp),
+            ) {
+                Text(status, style = MaterialTheme.typography.titleSmall)
+                if (!found) {
+                    Text(
+                        stringResource(Res.string.search_overlay_prompt),
+                        style = MaterialTheme.typography.bodySmall,
+                    )
+                }
+                TextButton(onClick = onCancel) {
+                    Text(stringResource(Res.string.search_cancel))
+                }
             }
         }
     }
