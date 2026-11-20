@@ -48,7 +48,8 @@ See the `skymap.release` skill.
 
 Seven reusable worktrees live under `.worktrees/` in the repo root, named for Greek letters:
 `stardroid-alpha`, `-beta`, `-gamma`, `-delta`, `-epsilon`, `-zeta` and `-eta`
-(`.worktrees/stardroid-<letter>`). Add more as needed. Idle ones sit on a detached HEAD, so there
+(`.worktrees/stardroid-<letter>`). The `new-worktree` skill claims the first idle one, or creates
+a new slot when none is free, and copies the untracked setup files. Idle ones sit on a detached HEAD, so there
 are no placeholder branches.
 
 ### Default to a worktree for new features
