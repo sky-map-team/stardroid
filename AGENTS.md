@@ -46,49 +46,33 @@ See the `skymap.release` skill.
 
 ## Git Worktrees
 
-Thirteen reusable worktrees live under `.worktrees/` in the repo root:
-
-| Worktree | Path | Placeholder branch |
-|---|---|---|
-| stardroid-alpha | `.worktrees/stardroid-alpha` | `worktree/stardroid-alpha` |
-| stardroid-beta | `.worktrees/stardroid-beta` | `worktree/stardroid-beta` |
-| stardroid-gamma | `.worktrees/stardroid-gamma` | `worktree/stardroid-gamma` |
-| stardroid-delta | `.worktrees/stardroid-delta` | `worktree/stardroid-delta` |
-| stardroid-epsilon | `.worktrees/stardroid-epsilon` | `worktree/stardroid-epsilon` |
-| stardroid-zeta | `.worktrees/stardroid-zeta` | `worktree/stardroid-zeta` |
-| stardroid-eta | `.worktrees/stardroid-eta` | `worktree/stardroid-eta` |
-| stardroid-iota | `.worktrees/stardroid-iota` | `worktree/stardroid-iota` |
-| stardroid-kappa | `.worktrees/stardroid-kappa` | `worktree/stardroid-kappa` |
-| stardroid-lambda | `.worktrees/stardroid-lambda` | `worktree/stardroid-lambda` |
-| stardroid-mu | `.worktrees/stardroid-mu` | `worktree/stardroid-mu` |
-| stardroid-nu | `.worktrees/stardroid-nu` | `worktree/stardroid-nu` |
-| stardroid-theta | `.worktrees/stardroid-theta` | `worktree/stardroid-theta` |
+Seven reusable worktrees live under `.worktrees/` in the repo root, named for Greek letters:
+`stardroid-alpha`, `-beta`, `-gamma`, `-delta`, `-epsilon`, `-zeta` and `-eta`
+(`.worktrees/stardroid-<letter>`). Add more as needed. Idle ones sit on a detached HEAD, so there
+are no placeholder branches.
 
 ### Default to a worktree for new features
 
 Unless told otherwise, always build a new feature (or fix) in a **free Greek-letter worktree**,
-not in the main checkout. A worktree is free when its checked-out branch is still its
-`worktree/stardroid-*` placeholder (check with `git worktree list` and
-`git -C .worktrees/<name> status`). Claim one as described below and do all edits, builds and
-commits there. Only work in the main checkout when the user explicitly asks for that, or for
-documentation-only changes.
+not in the main checkout. A worktree is free when it is on a detached HEAD with a clean tree
+(check with `git worktree list` and `git -C .worktrees/<name> status`). Claim one as described
+below and do all edits, builds and commits there. Only work in the main checkout when the user
+explicitly asks for that, or for documentation-only changes.
 
 ### Worktree lifecycle
 
 **1. Claim a worktree for a new task** — fetch latest master, then branch from it:
 ```bash
 git fetch origin
-git -C .worktrees/stardroid-alpha checkout -b feature/my-task origin/master
+git -C .worktrees/stardroid-alpha switch -c feature/my-task origin/master
 ```
 
-**2. Reset a worktree when done** — return it to its placeholder branch so the feature branch
-can be deleted:
+**2. Reset a worktree when done** — detach it at master so the feature branch can be deleted:
 ```bash
-git -C .worktrees/stardroid-alpha checkout worktree/stardroid-alpha
+git -C .worktrees/stardroid-alpha switch --detach origin/master
 ```
-After resetting all affected worktrees, run `/clean-branches` to delete the merged feature
-branches. That skill uses `git branch -d` (safe delete) and will skip any branch still checked
-out in a worktree.
+Run `/clean-git` to do this for every merged or abandoned worktree and delete local branches whose
+remote was deleted. It shows a dry-run plan first and skips worktrees with uncommitted changes.
 
 Each worktree already contains the v2 build-critical files excluded from version control:
 `stardroid-v2/local.properties`, `stardroid-v2/app/no-checkin.properties`,
