@@ -23,6 +23,19 @@ kotlin {
     }
 }
 
+// Every TextId's resource name, which the shared tonight rows are worded from. Read from the enum's
+// source so a new TextId can't be left out of the export.
+val textIdSource =
+    rootProject.layout.projectDirectory.file(
+        "core/text/src/commonMain/kotlin/com/google/android/stardroid/text/TextId.kt",
+    )
+val textIdKeys =
+    Regex("""^\s*[A-Z][A-Z0-9_]*\("([^"]+)"""", RegexOption.MULTILINE)
+        .findAll(textIdSource.asFile.readText())
+        .map { it.groupValues[1] }
+        .toList()
+        .also { check(it.size > 50) { "Read only ${it.size} TextIds from $textIdSource" } }
+
 // The widgets' strings for the extension's bundle, from the same Android-format XML that :app and
 // :shared:ui read and tm translates. The Xcode build copies them in (project.yml).
 tasks.register<ExportAppleStrings>("exportWidgetStrings") {
@@ -48,7 +61,22 @@ tasks.register<ExportAppleStrings>("exportWidgetStrings") {
             "moon_phase_waning_gibbous",
             "moon_phase_last_quarter",
             "moon_phase_waning_crescent",
-        ),
+            "tonight_widget_label",
+            "tonight_widget_description",
+            "tonight_widget_header",
+            "tonight_widget_sun_times",
+            "tonight_widget_sunset_only",
+            "tonight_quiet",
+            "tonight_quiet_next",
+            "countdown_widget_label",
+            "countdown_widget_description",
+            "countdown_days",
+            "countdown_tonight",
+            "countdown_shower_peak",
+            "countdown_new_moon_peak",
+            "countdown_full_moon",
+            "countdown_new_moon",
+        ).plus(textIdKeys).distinct(),
     )
     outputDirectory.set(layout.buildDirectory.dir("generated/widgetStrings"))
 }

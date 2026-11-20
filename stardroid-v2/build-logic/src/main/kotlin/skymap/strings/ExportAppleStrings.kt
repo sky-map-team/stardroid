@@ -27,6 +27,7 @@ import javax.xml.parsers.DocumentBuilderFactory
 /**
  * Writes `<lproj>/Localizable.strings` for a chosen set of [keys], read from Android-format `res`
  * directories, for an Apple target that can't read Compose resources (the iOS widget extension).
+ * A string array's items are the keys `<name>.<index>`.
  * The XML stays the one source that tm translates; this is a build output, never checked in.
  *
  * A locale that lacks a key (tm leaves out a translation identical to the English) gets the
@@ -80,10 +81,23 @@ abstract class ExportAppleStrings : DefaultTask() {
                 .newDocumentBuilder()
                 .parse(file)
                 .documentElement
-        return (0 until root.childNodes.length)
-            .map { root.childNodes.item(it) }
-            .filterIsInstance<Element>()
-            .filter { it.tagName == "string" && it.getAttribute("name") in wanted }
-            .associate { it.getAttribute("name") to AndroidStringText.process(it.textContent) }
+        val elements =
+            (0 until root.childNodes.length)
+                .map { root.childNodes.item(it) }
+                .filterIsInstance<Element>()
+        val strings =
+            elements
+                .filter { it.tagName == "string" }
+                .associate { it.getAttribute("name") to AndroidStringText.process(it.textContent) }
+        // `.strings` has no arrays, so item i of array `name` is the key `name.i`.
+        val arrayItems =
+            elements.filter { it.tagName == "string-array" }.flatMap { array ->
+                val items = array.getElementsByTagName("item")
+                (0 until items.length).map { index ->
+                    "${array.getAttribute("name")}.$index" to
+                        AndroidStringText.process(items.item(index).textContent)
+                }
+            }
+        return (strings + arrayItems).filterKeys { it in wanted }
     }
 }

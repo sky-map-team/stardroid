@@ -13,6 +13,7 @@ import com.google.android.stardroid.astronomy.SatelliteEphemeris
 import com.google.android.stardroid.astronomy.SatellitePass
 import com.google.android.stardroid.astronomy.Sgp4
 import com.google.android.stardroid.astronomy.goodPasses
+import com.google.android.stardroid.catalog.SatelliteIds
 import com.google.android.stardroid.data.satellites.ElementFreshness
 import com.google.android.stardroid.data.satellites.SatelliteElements
 import com.google.android.stardroid.layers.SatelliteLayer

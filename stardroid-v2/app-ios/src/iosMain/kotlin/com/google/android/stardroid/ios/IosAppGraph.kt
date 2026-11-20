@@ -13,6 +13,7 @@ import com.google.android.stardroid.analytics.Analytics
 import com.google.android.stardroid.analytics.AnalyticsEvents
 import com.google.android.stardroid.analytics.NoOpAnalytics
 import com.google.android.stardroid.astronomy.MeeusEphemeris
+import com.google.android.stardroid.astronomy.PassSearch
 import com.google.android.stardroid.astronomy.SatellitePass
 import com.google.android.stardroid.catalog.CatalogRepository
 import com.google.android.stardroid.catalog.LocaleSpec
@@ -28,6 +29,7 @@ import com.google.android.stardroid.render.api.RendererInfo
 import com.google.android.stardroid.satellites.SatelliteDiagnosticsState
 import com.google.android.stardroid.satellites.SatelliteFlagState
 import com.google.android.stardroid.satellites.TrackedSatellite
+import com.google.android.stardroid.satellites.passesWithin
 import com.google.android.stardroid.satellites.satelliteBackgroundUseFlow
 import com.google.android.stardroid.satellites.satelliteElementsFlow
 import com.google.android.stardroid.satellites.satelliteFetchConditions
@@ -72,6 +74,7 @@ import kotlinx.coroutines.IO
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.SupervisorJob
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.collectLatest
@@ -321,6 +324,26 @@ class IosAppGraph(
                 .collect { if (it) notifications.replan() }
         }
         scope.launch {
+            // The tonight widget's showers and passes, which the extension has no database or
+            // element sets to work out. Settled while open; leaving writes at once. The Swift shell's
+            // reload may beat that write, so the widget can catch up at its next refresh.
+            @OptIn(FlowPreview::class)
+            combine(
+                foreground.isForeground,
+                settings.savedLocation,
+                LayerRegistry.layerEnabled(settings, SatelliteLayer.LAYER_ID),
+                if (satellitesEnabled) {
+                    satelliteElementsFlow(satellites.repository)
+                } else {
+                    flowOf(Unit)
+                },
+            ) { inForeground, _, _, _ -> inForeground }
+                .collectLatest { inForeground ->
+                    if (inForeground) delay(NOTIFICATION_REPLAN_DELAY)
+                    mirrorTonightWidgetInputs()
+                }
+        }
+        scope.launch {
             // Latest: going to the background cancels a start still waiting on the EULA.
             foreground.isForeground.collectLatest {
                 if (it) onStart() else locationController.stop()
@@ -371,11 +394,38 @@ class IosAppGraph(
                     }
                 }
                 notifications.replan()
+                // New element sets move the passes; the Swift handler then reloads the widgets.
+                mirrorTonightWidgetInputs()
                 completed = true
             } finally {
                 onDone(completed, download || replan)
             }
         }
+
+    /** Writes what the tonight widget reads from the App Group ([WidgetSharedStore]). */
+    private suspend fun mirrorTonightWidgetInputs() {
+        val showers = catalog().meteorShowers(locale.value).first()
+        val location = settings.savedLocation.first()
+        val passes =
+            if (satellitesEnabled &&
+                location != null &&
+                LayerRegistry.layerEnabled(settings, SatelliteLayer.LAYER_ID).first()
+            ) {
+                withContext(Dispatchers.IO) {
+                    passesWithin(
+                        satellites.repository.current(),
+                        location,
+                        Clock.System.now(),
+                        PassSearch.DEFAULT_SEARCH_WINDOW,
+                    )
+                }
+            } else {
+                emptyList()
+            }
+        // Back to back, so the extension never reads new showers with old passes.
+        WidgetSharedStore.showers = showers
+        WidgetSharedStore.passes = passes
+    }
 
     /** Tells [onResult] whether a background refresh has anything to do now. */
     internal fun checkBackgroundRefreshWanted(onResult: (Boolean) -> Unit): Job =

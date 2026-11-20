@@ -15,9 +15,10 @@ import com.google.android.stardroid.astronomy.LunarPhase
 import com.google.android.stardroid.events.CountdownTarget
 import com.google.android.stardroid.events.SkyEvent
 import com.google.android.stardroid.notifications.notificationText
-import com.google.android.stardroid.satellites.SatelliteIds
+import com.google.android.stardroid.surfaces.HighlightDot
+import com.google.android.stardroid.surfaces.highlightDot
+import com.google.android.stardroid.surfaces.targetObjectId
 import com.google.android.stardroid.ui.map.HudFormats
-import com.google.android.stardroid.ui.search.SolarSystemIds
 import kotlinx.datetime.Instant
 import java.util.Date
 
@@ -37,20 +38,8 @@ internal fun highlightLine(
     context: Context,
 ): HighlightLine {
     val words = notificationText(context).highlight(event)
-    return HighlightLine(words.text, words.trailing, targetIdFor(event))
+    return HighlightLine(words.text, words.trailing, event.targetObjectId)
 }
-
-/** The card a row opens when tapped. */
-private fun targetIdFor(event: SkyEvent): String =
-    when (event) {
-        is SkyEvent.WellPlacedPlanet -> SolarSystemIds.idFor(event.body).value
-        is SkyEvent.SatellitePassTonight -> SatelliteIds.idFor(event.pass.noradId).value
-        is SkyEvent.ShowerPeak -> event.shower.id.value
-        is SkyEvent.MoonPhaseTonight,
-        is SkyEvent.BrightMoon,
-        is SkyEvent.LunarEclipseUpcoming,
-        -> MoonWidget.MOON_OBJECT_ID
-    }
 
 /** The countdown target's display name, shared by the countdown and tonight widgets. */
 internal fun countdownName(
@@ -87,8 +76,8 @@ internal fun formatTime(
         .format(Date(time.toEpochMilliseconds()))
 
 internal fun dotRes(quality: Double): Int =
-    when {
-        quality >= 0.6 -> R.drawable.widget_dot_gold
-        quality >= 0.4 -> R.drawable.widget_dot_blue
-        else -> R.drawable.widget_dot_dim
+    when (highlightDot(quality)) {
+        HighlightDot.GOLD -> R.drawable.widget_dot_gold
+        HighlightDot.BLUE -> R.drawable.widget_dot_blue
+        HighlightDot.DIM -> R.drawable.widget_dot_dim
     }

@@ -50,12 +50,11 @@ import com.google.android.stardroid.events.TonightSky
 import com.google.android.stardroid.events.tonightSky
 import com.google.android.stardroid.satellites.tonightSatellitePasses
 import com.google.android.stardroid.startup.Experiment
+import com.google.android.stardroid.surfaces.dayOffset
 import com.google.android.stardroid.ui.MainActivity
 import kotlinx.coroutines.flow.first
 import kotlinx.datetime.Clock
 import kotlinx.datetime.TimeZone
-import kotlinx.datetime.daysUntil
-import kotlinx.datetime.toLocalDateTime
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
@@ -247,14 +246,7 @@ private fun QuietNight(
         modifier = GlanceModifier.padding(top = 8.dp),
     )
     if (countdown != null) {
-        val days =
-            Clock.System
-                .now()
-                .toLocalDateTime(TimeZone.currentSystemDefault())
-                .date
-                .daysUntil(
-                    countdown.time.toLocalDateTime(TimeZone.currentSystemDefault()).date,
-                )
+        val days = dayOffset(Clock.System.now(), countdown.time, TimeZone.currentSystemDefault())
         Text(
             text =
                 context.getString(

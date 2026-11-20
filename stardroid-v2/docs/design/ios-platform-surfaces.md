@@ -346,9 +346,9 @@ its own process with a tight memory limit (roughly 30 MB), that never runs the C
 - **The astronomy runs in the extension.** Passing precomputed results would go stale when the
   app is not opened for days.
 
-### As built (Moon widget, unreleased)
+### As built (Moon, Tonight and Countdown widgets, unreleased)
 
-The groundwork and the Moon widget. Differences from the design above:
+The groundwork and the three widgets. Differences from the design above:
 
 - **No copies.** The palette, the moon disc's geometry, the "+1" day arithmetic and the rise/set
   ordering moved from `:app`'s widget code to `:shared:surfaces` (`WidgetColors`, `MoonDisc`,
@@ -361,7 +361,7 @@ The groundwork and the Moon widget. Differences from the design above:
   `build-logic`) writes `<lproj>/Localizable.strings` for the widget keys from `:shared:ui`'s
   and `:app`'s XML at build time, through the same aapt2 rules as Compose's, and the extension's
   build phase copies them in. A locale tm left a key out of gets the English, as a `.strings`
-  miss would show the key.
+  miss would show the key. A string array's items are `<name>.<index>` (the compass points).
 - **Location:** `IosAppGraph` mirrors `savedLocation` into the App Group's `UserDefaults`; the
   Swift shell reloads the timelines when the app goes to the background.
 - **Per-build group and scheme.** Debug uses `group.io.penterakt.skymap.dev` and `skymap-dev://`,
@@ -370,9 +370,27 @@ The groundwork and the Moon widget. Differences from the design above:
 - **Size (risk 2):** the Release extension for arm64 is 3.8 MB, about 1 MB compressed, almost
   all of it the Kotlin astronomy.
 - **Lock Screen:** `accessoryCircular` (disc and percentage) and `accessoryInline` (phase and
-  percentage); `accessoryRectangular` is left for the Tonight widget.
+  percentage); `accessoryRectangular` is the Tonight widget's.
+- **Tonight and Countdown.** What Android's widget code decided that iOS needs too moved to
+  `:shared:surfaces` (`TonightWidgetSurface.kt`): the card each row opens, the dot grades, the
+  ring's fill and the 16 h pass horizon. `tonightWidgetTimeline` (hourly for 12 h) and
+  `countdownWidgetTimeline` (each local midnight for 7 days) build the entries. The rows are worded
+  by the shared `NotificationText`, over a `TextSource` that reads `TextId.resourceName` from the
+  exported `.strings` (the iOS app's `IosTextSource` reads Compose resources by the same names), so
+  `exportWidgetStrings` takes every `TextId`'s name straight from the enum's source.
+  `SolarSystemIds` and `SatelliteIds` moved to `:core:catalog`, below the database.
+- **Showers and passes cross the App Group.** The extension has no catalog database and no
+  element sets, so the app writes the meteor showers (in its language) and the next 48 h of good
+  passes there as text (`WidgetSkyCodec`). It does so on each foreground, on a change of location,
+  satellite layer or element sets, and after a background refresh, which then reloads the Tonight
+  timeline. Each entry narrows the passes to its own 16 h. Not opened for two days, the widget
+  shows no passes; the rest is still computed in the extension.
+- **Countdown:** days, as on Android, not the timer text the table below planned: a running
+  `HH:MM:SS` for an event weeks away says less than "12 days".
 
-Still to do before release: the Tonight and Countdown widgets, the info card's promo row (§6.5),
+Still to do before release: the info card's promo row (§6.5), counting a placed Tonight widget
+as background use for the satellite refresh gate (`tonightWidgetPlaced` is `false` on iOS; it
+needs `WidgetCenter.getCurrentConfigurations`),
 a memory check in Instruments, and the App Group registered for both bundle IDs in the developer
 portal (automatic signing does this on a device build).
 

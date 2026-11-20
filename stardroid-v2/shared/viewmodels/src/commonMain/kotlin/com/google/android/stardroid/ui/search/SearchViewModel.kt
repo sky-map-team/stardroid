@@ -22,7 +22,9 @@ import com.google.android.stardroid.catalog.CoordinateParser
 import com.google.android.stardroid.catalog.LayerKind
 import com.google.android.stardroid.catalog.LocaleSpec
 import com.google.android.stardroid.catalog.ObjectInfo
+import com.google.android.stardroid.catalog.SatelliteIds
 import com.google.android.stardroid.catalog.SearchHit
+import com.google.android.stardroid.catalog.SolarSystemIds
 import com.google.android.stardroid.layers.CatalogLayers
 import com.google.android.stardroid.layers.MeteorShowerLayer
 import com.google.android.stardroid.layers.SatelliteLayer
@@ -31,7 +33,6 @@ import com.google.android.stardroid.math.LatLong
 import com.google.android.stardroid.math.RaDec
 import com.google.android.stardroid.math.Vector3
 import com.google.android.stardroid.render.api.LayerId
-import com.google.android.stardroid.satellites.SatelliteIds
 import com.google.android.stardroid.satellites.TrackedSatellite
 import com.google.android.stardroid.settings.Settings
 import kotlinx.coroutines.CancellationException

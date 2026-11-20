@@ -29,6 +29,8 @@ enum WidgetInk {
     static let starGold = Color(argb: WidgetPalette.shared.starGold)
     static let muted = Color(argb: WidgetPalette.shared.muted)
     static let surface = Color(argb: WidgetPalette.shared.surface)
+    static let outline = Color(argb: WidgetPalette.shared.outline)
+    static let planetGreen = Color(argb: WidgetPalette.shared.planetGreen)
 }
 
 /// A string from the generated Localizable.strings, keyed by the shared resource name.
@@ -47,6 +49,18 @@ extension View {
             containerBackground(color, for: .widget)
         } else {
             background(color)
+        }
+    }
+}
+
+extension View {
+    /// iOS 17 insets a widget's content by the system's margins; earlier systems leave it to us.
+    @ViewBuilder
+    func widgetPadding() -> some View {
+        if #available(iOSApplicationExtension 17.0, *) {
+            self
+        } else {
+            padding()
         }
     }
 }

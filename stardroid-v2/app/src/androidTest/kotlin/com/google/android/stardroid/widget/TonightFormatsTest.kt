@@ -12,8 +12,8 @@ package com.google.android.stardroid.widget
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
 import com.google.android.stardroid.astronomy.SatellitePass
+import com.google.android.stardroid.catalog.SatelliteIds
 import com.google.android.stardroid.events.SkyEvent
-import com.google.android.stardroid.satellites.SatelliteIds
 import com.google.common.truth.Truth.assertThat
 import kotlinx.datetime.Instant
 import org.junit.Test
