@@ -50,6 +50,7 @@ import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.graphics.drawscope.rotate
 import androidx.compose.ui.layout.onGloballyPositioned
 import androidx.compose.ui.text.input.ImeAction
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.google.android.stardroid.catalog.SearchHit
@@ -196,7 +197,8 @@ private fun DrawScope.drawArrow(
 
 /**
  * v1's `search_control_bar`: the Looking for / Found status, the point-your-phone prompt while
- * seeking, and the cancel button.
+ * seeking, and the cancel button. In [compact] mode the prompt is omitted and the status and
+ * cancel button share one row.
  */
 @Composable
 fun SearchControlBar(
@@ -227,7 +229,13 @@ fun SearchControlBar(
                 verticalAlignment = Alignment.CenterVertically,
                 modifier = Modifier.padding(start = 12.dp, end = 4.dp),
             ) {
-                Text(status, style = MaterialTheme.typography.titleSmall)
+                Text(
+                    status,
+                    style = MaterialTheme.typography.titleSmall,
+                    maxLines = 1,
+                    overflow = TextOverflow.Ellipsis,
+                    modifier = Modifier.weight(1f, fill = false),
+                )
                 TextButton(onClick = onCancel) {
                     Text(stringResource(Res.string.search_cancel))
                 }
