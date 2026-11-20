@@ -51,6 +51,19 @@ class MoonWidgetTest {
     }
 
     @Test
+    fun `the age line flips at the exact height where a minimum disc fits`() {
+        assertThat(fullLayoutPlan(heightDp = 134f, fontScale = 1f, timeRows = 2).showAge).isTrue()
+        assertThat(fullLayoutPlan(heightDp = 133f, fontScale = 1f, timeRows = 2).showAge).isFalse()
+    }
+
+    @Test
+    fun `no time rows leaves more room and no gap`() {
+        assertThat(fullLayoutPlan(heightDp = 190f, fontScale = 1f, timeRows = 0).discDp)
+            .isEqualTo(56)
+        assertThat(fullLayoutPlan(heightDp = 110f, fontScale = 1f, timeRows = 1).showAge).isFalse()
+    }
+
+    @Test
     fun `the disc never shrinks below its minimum`() {
         val plan = fullLayoutPlan(heightDp = 110f, fontScale = 2f, timeRows = 2)
         assertThat(plan.discDp).isEqualTo(32)

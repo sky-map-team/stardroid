@@ -200,7 +200,8 @@ private fun HeaderRow(
 }
 
 // Width at 1.0 font scale where "Tonight · <date>" and "sun sets X · dark Y" fit on one line.
-private const val FULL_HEADER_WIDTH_DP = 330f
+// LocalSize.width is always a ladder step (20dp apart), so this is a ladder value on purpose.
+private const val FULL_HEADER_WIDTH_DP = 340f
 
 /** Whether the header has room for the darkness time; narrower widgets show sunset only. */
 internal fun showDarkTime(

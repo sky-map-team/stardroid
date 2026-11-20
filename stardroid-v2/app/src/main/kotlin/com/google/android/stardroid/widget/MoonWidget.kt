@@ -84,7 +84,7 @@ class MoonWidget : GlanceAppWidget() {
         // layout learns how much room it has (see [fullLayoutPlan]).
         internal val COMPACT_SIZE = DpSize(40.dp, 40.dp)
         internal val FULL_SIZE = DpSize(110.dp, 110.dp)
-        internal val FULL_SIZES = (110..190 step 10).map { DpSize(110.dp, it.dp) }
+        internal val FULL_SIZES = (110..190 step 10).map { DpSize(FULL_SIZE.width, it.dp) }
     }
 }
 
@@ -195,11 +195,11 @@ private fun FullMoonWidget(
             style =
                 TextStyle(
                     color = ColorProvider(STARLIGHT),
-                    fontSize = 15.sp,
+                    fontSize = PHASE_SP.sp,
                     fontWeight = FontWeight.Medium,
                 ),
             maxLines = 1,
-            modifier = GlanceModifier.padding(top = 4.dp),
+            modifier = GlanceModifier.padding(top = PHASE_TOP_GAP_DP.dp),
         )
         Text(
             text =
@@ -210,7 +210,7 @@ private fun FullMoonWidget(
             style =
                 TextStyle(
                     color = ColorProvider(STAR_GOLD),
-                    fontSize = 13.sp,
+                    fontSize = ILLUMINATION_SP.sp,
                     fontWeight = FontWeight.Bold,
                 ),
             maxLines = 1,
@@ -218,7 +218,7 @@ private fun FullMoonWidget(
         if (plan.showAge) {
             Text(
                 text = context.getString(R.string.moon_widget_age, model.dayOfCycle),
-                style = TextStyle(color = ColorProvider(MUTED), fontSize = 12.sp),
+                style = TextStyle(color = ColorProvider(MUTED), fontSize = DETAIL_SP.sp),
                 maxLines = 1,
             )
         }
@@ -227,7 +227,13 @@ private fun FullMoonWidget(
             val labelRes =
                 if (crossing.rise) R.string.moon_widget_rise_time else R.string.moon_widget_set_time
             val time = crossing.time
-            TimeRow(labelRes, time, now, context, topPadding = if (index == 0) 2.dp else 0.dp)
+            TimeRow(
+                labelRes,
+                time,
+                now,
+                context,
+                topPadding = if (index == 0) FIRST_TIME_ROW_GAP_DP.dp else 0.dp,
+            )
         }
     }
 }
@@ -255,13 +261,12 @@ private fun TimeRow(
         if (offset > 0) context.getString(R.string.moon_widget_time_day_offset, offset) else ""
     Text(
         text = context.getString(labelRes, formatted) + suffix,
-        style = TextStyle(color = ColorProvider(MUTED), fontSize = 12.sp),
+        style = TextStyle(color = ColorProvider(MUTED), fontSize = DETAIL_SP.sp),
         maxLines = 1,
         modifier = GlanceModifier.padding(top = topPadding),
     )
 }
 
-/** What the full layout can afford at a given height: the optional age line, and the disc size. */
 internal data class FullLayoutPlan(val showAge: Boolean, val discDp: Int)
 
 private const val FULL_PADDING_DP = 8
@@ -269,6 +274,7 @@ private const val DISC_MAX_DP = 56
 private const val DISC_MIN_DP = 32
 
 // A text line is about 1.25x its sp size; sp scales with the user's font size, dp doesn't.
+// Linear in fontScale, so deliberately conservative under Android 14+ nonlinear scaling.
 private const val LINE_HEIGHT_FACTOR = 1.25f
 private const val PHASE_SP = 15
 private const val ILLUMINATION_SP = 13
@@ -291,14 +297,9 @@ internal fun fullLayoutPlan(
         2 * FULL_PADDING_DP + PHASE_TOP_GAP_DP + line(PHASE_SP) + line(ILLUMINATION_SP) +
             timeRows * line(DETAIL_SP) + if (timeRows > 0) FIRST_TIME_ROW_GAP_DP else 0
     val withAge = heightDp - (textWithoutAge + line(DETAIL_SP))
-    if (withAge >= DISC_MIN_DP) {
-        return FullLayoutPlan(showAge = true, discDp = withAge.toInt().coerceAtMost(DISC_MAX_DP))
-    }
-    val withoutAge = heightDp - textWithoutAge
-    return FullLayoutPlan(
-        showAge = false,
-        discDp = withoutAge.toInt().coerceIn(DISC_MIN_DP, DISC_MAX_DP),
-    )
+    val showAge = withAge >= DISC_MIN_DP
+    val room = if (showAge) withAge else heightDp - textWithoutAge
+    return FullLayoutPlan(showAge, room.toInt().coerceIn(DISC_MIN_DP, DISC_MAX_DP))
 }
 
 internal enum class MoonWidgetLayout { COMPACT, FULL }
@@ -323,7 +324,7 @@ private fun phaseNameRes(phase: LunarPhase): Int =
         LunarPhase.WANING_CRESCENT -> R.string.moon_phase_waning_crescent
     }
 
-// 56 dp at xxhdpi; Glance scales the bitmap to the Image's dp size.
-private const val DISC_SIZE_PX = 168
+// Rendered at xxhdpi (3 px/dp); Glance scales the bitmap to the Image's dp size.
+private const val DISC_SIZE_PX = DISC_MAX_DP * 3
 private val COMPACT_DISC_DP = 34.dp
 private const val COMPACT_DISC_SIZE_PX = 102

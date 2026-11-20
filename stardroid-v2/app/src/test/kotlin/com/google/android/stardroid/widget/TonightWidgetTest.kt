@@ -25,6 +25,12 @@ class TonightWidgetTest {
     }
 
     @Test
+    fun `the darkness time appears at the 340dp ladder step, not below`() {
+        assertThat(showDarkTime(widthDp = 320f, fontScale = 1f)).isFalse()
+        assertThat(showDarkTime(widthDp = 340f, fontScale = 1f)).isTrue()
+    }
+
+    @Test
     fun `larger font scale needs more width`() {
         assertThat(showDarkTime(widthDp = 340f, fontScale = 1.3f)).isFalse()
     }
