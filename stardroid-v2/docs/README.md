@@ -33,6 +33,7 @@ the two ever drift.
 | [design/color-scheme-proposal.md](design/color-scheme-proposal.md) | The "Deep Space / Star Gold" brand palette — rationale and before/after | accepted and implemented, D73 |
 | [design/widgets-and-notifications.md](design/widgets-and-notifications.md) | Home-screen widgets, notification channels, events engine | phases 1–3, D75–D77 (flag-gated, D80); **phase 4 unbuilt** |
 | [design/remote-announcements.md](design/remote-announcements.md) | Remote Config messages on notification, widget and launch-dialog surfaces | built, flag-gated (`ANNOUNCEMENTS`, default off) |
+| [design/tonight-sheet.md](design/tonight-sheet.md) | One in-app Tonight sheet (both apps): highlights in full, announcements kept findable; opened by the widgets and the digest | proposed, D149 |
 | [design/lunar-eclipse.md](design/lunar-eclipse.md) | Shadow-cone astronomy, tonight/digest highlights, Moon info-card row, GLES1 map tinting, opt-in alert | D106, D107 |
 
 ### Proposed — design only, no code
