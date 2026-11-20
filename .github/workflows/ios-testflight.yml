@@ -4,7 +4,8 @@ name: iOS TestFlight
 # (`fastlane ios beta`). Manual only: run it from the Actions tab on any branch, e.g. to put an
 # iPad or foldable test build in front of a tester before merging.
 #
-# Setup (once): the `testflight` environment's secrets, listed in the comments below.
+# Setup (once): the `testflight` environment's secrets: ASC_KEY_ID, ASC_ISSUER_ID, ASC_KEY_P8 and,
+# optionally, GOOGLE_SERVICE_INFO_PLIST_B64.
 on:
   workflow_dispatch:
     inputs:
@@ -17,6 +18,10 @@ on:
         description: TestFlight "What to Test"
         type: string
         default: ''
+
+concurrency:
+  group: ios-testflight
+  cancel-in-progress: false
 
 jobs:
   testflight:
@@ -38,6 +43,8 @@ jobs:
       APP_STORE_CONNECT_KEY_PATH: ${{ runner.temp }}/AuthKey.p8
     steps:
       - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
       - uses: actions/setup-java@v4
         with:
           distribution: zulu
@@ -61,7 +68,10 @@ jobs:
       - name: Install XcodeGen
         run: brew install xcodegen
       - name: Write the App Store Connect key (secret ASC_KEY_P8)
-        run: printf '%s' "$ASC_KEY_P8" > "$APP_STORE_CONNECT_KEY_PATH"
+        run: |
+          [ -n "$ASC_KEY_P8" ] || { echo "ASC_KEY_P8 is not set"; exit 1; }
+          umask 077
+          printf '%s\n' "$ASC_KEY_P8" > "$APP_STORE_CONNECT_KEY_PATH"
         env:
           ASC_KEY_P8: ${{ secrets.ASC_KEY_P8 }}
       # Optional: without it the app builds with analytics off (see ios/README.md).
