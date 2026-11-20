@@ -81,7 +81,8 @@ class MoonWidget : GlanceAppWidget() {
 
         // Responsive picks the largest listed size that fits the placed widget, and LocalSize
         // reports that listed size, not the real one. The extra heights are how the full
-        // layout learns how much room it has (see [fullLayoutPlan]).
+        // layout learns how much room it has (see [fullLayoutPlan]). The tall end only matters at
+        // larger font scales, so don't trim it.
         internal val COMPACT_SIZE = DpSize(40.dp, 40.dp)
         internal val FULL_SIZE = DpSize(110.dp, 110.dp)
         internal val FULL_SIZES = (110..190 step 10).map { DpSize(FULL_SIZE.width, it.dp) }
