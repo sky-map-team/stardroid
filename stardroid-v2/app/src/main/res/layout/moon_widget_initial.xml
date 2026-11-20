@@ -45,4 +45,13 @@
         android:text="@string/moon_widget_preview_illumination"
         android:textColor="#FFC107"
         android:textSize="13sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:text="@string/moon_widget_preview_age"
+        android:textColor="#A9B4D0"
+        android:textSize="12sp"
+        tools:ignore="SpUsage" />
 </LinearLayout>
