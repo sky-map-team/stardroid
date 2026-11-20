@@ -24,13 +24,14 @@ import com.google.android.stardroid.catalog.LayerKind
 import com.google.android.stardroid.catalog.LocaleSpec
 import com.google.android.stardroid.catalog.MeteorShower
 import com.google.android.stardroid.catalog.ObjectInfo
+import com.google.android.stardroid.catalog.SatelliteIds
 import com.google.android.stardroid.catalog.SearchHit
+import com.google.android.stardroid.catalog.SolarSystemIds
 import com.google.android.stardroid.catalog.TypeCode
 import com.google.android.stardroid.layers.CatalogLayers
 import com.google.android.stardroid.layers.SatelliteLayer
 import com.google.android.stardroid.layers.SolarSystemLayer
 import com.google.android.stardroid.math.RaDec
-import com.google.android.stardroid.satellites.SatelliteIds
 import com.google.android.stardroid.satellites.TrackedSatellite
 import com.google.android.stardroid.settings.FakeSettings
 import com.google.android.stardroid.testing.assertThat

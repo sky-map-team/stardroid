@@ -15,7 +15,6 @@ import com.google.android.stardroid.astronomy.illuminationPercent
 import com.google.android.stardroid.surfaces.MOON_OBJECT_ID
 import com.google.android.stardroid.surfaces.MoonDisc
 import com.google.android.stardroid.surfaces.MoonWidgetEntry
-import com.google.android.stardroid.surfaces.ObjectLink
 import com.google.android.stardroid.surfaces.WidgetColors
 import com.google.android.stardroid.surfaces.crossingsInOrder
 import com.google.android.stardroid.surfaces.dayOffset
@@ -66,7 +65,7 @@ object MoonWidgets {
     }
 
     val link: String
-        get() = ObjectLink.build(infoString(URL_SCHEME_KEY) ?: "skymap", MOON_OBJECT_ID)
+        get() = objectLink(MOON_OBJECT_ID)
 
     val maria: List<WidgetMare> = MoonDisc.MARIA.map { WidgetMare(it.x, it.y, it.r) }
 }
@@ -81,6 +80,7 @@ object WidgetPalette {
     val moonLit = WidgetColors.MOON_LIT
     val moonShadow = WidgetColors.MOON_SHADOW
     val moonMaria = WidgetColors.MOON_MARIA
+    val planetGreen = WidgetColors.PLANET_GREEN
 }
 
 private fun MoonWidgetEntry.toSnapshot(zone: TimeZone): MoonWidgetSnapshot {

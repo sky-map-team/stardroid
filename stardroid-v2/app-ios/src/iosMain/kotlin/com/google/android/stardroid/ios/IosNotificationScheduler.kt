@@ -13,10 +13,10 @@ import com.google.android.stardroid.astronomy.SatellitePass
 import com.google.android.stardroid.astronomy.nextLunarEclipse
 import com.google.android.stardroid.catalog.CatalogRepository
 import com.google.android.stardroid.catalog.LocaleSpec
+import com.google.android.stardroid.catalog.SatelliteIds
 import com.google.android.stardroid.layers.LayerRegistry
 import com.google.android.stardroid.layers.SatelliteLayer
 import com.google.android.stardroid.math.LatLong
-import com.google.android.stardroid.satellites.SatelliteIds
 import com.google.android.stardroid.satellites.passesWithin
 import com.google.android.stardroid.settings.Settings
 import com.google.android.stardroid.settings.eclipseAlertsEnabled

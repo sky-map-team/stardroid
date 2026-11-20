@@ -9,9 +9,10 @@
 
 import BackgroundTasks
 import SkyMapKit
+import WidgetKit
 
 /// Best-effort background refresh of the satellite element sets, after which it also plans the
-/// next nights' notifications. The system picks when (often rarely, for a little-used app), so
+/// next nights' notifications and hands the tonight widget its passes. The system picks when (often rarely, for a little-used app), so
 /// the foreground fetch on app open stays the dependable path; this one just keeps data fresh for
 /// people who open the app only briefly.
 enum SatelliteRefreshTask {
@@ -32,6 +33,8 @@ enum SatelliteRefreshTask {
                     analytics: analytics, flags: flags, notificationCenter: notificationCenter
                 ) { completed, scheduleNext in
                     if scheduleNext.boolValue { schedule() }
+                    // Fresh element sets move tonight's passes (WidgetSharedStore).
+                    WidgetCenter.shared.reloadTimelines(ofKind: "TonightWidget")
                     task.setTaskCompleted(success: completed.boolValue)
                 }
                 task.expirationHandler = { work.cancel() }

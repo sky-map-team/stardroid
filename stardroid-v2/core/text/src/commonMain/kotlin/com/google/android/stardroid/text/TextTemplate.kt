@@ -16,10 +16,11 @@ import kotlin.math.roundToLong
  * Fills a string resource's printf-style placeholders where the platform cannot do it for us.
  *
  * Supports the forms the app's strings use: `%1$s`, `%1$d`, `%1$02d`, `%1$.1f`, `%1$+.1f`
- * and `%%`. Anything else fails, so a new form is noticed rather than printed raw.
+ * and `%%`, and `%1$@`, the same strings exported for Foundation (`ExportAppleStrings`). Anything
+ * else fails, so a new form is noticed rather than printed raw.
  */
 object TextTemplate {
-    private val placeholder = Regex("%(?:(\\d+)\\$([-+0]*)(\\d*)(?:\\.(\\d+))?([sdf])|%)")
+    private val placeholder = Regex("%(?:(\\d+)\\$([-+0]*)(\\d*)(?:\\.(\\d+))?([sdf@])|%)")
 
     fun fill(
         template: String,
@@ -31,7 +32,7 @@ object TextTemplate {
             val arg = args.getOrNull(index.toInt() - 1) ?: error("No argument $index for $template")
             pad(
                 when (conversion) {
-                    "s" -> arg.toString()
+                    "s", "@" -> arg.toString()
                     "d" -> signed((arg as Number).toLong().toString(), flags)
                     else ->
                         signed(

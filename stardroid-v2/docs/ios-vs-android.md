@@ -18,8 +18,8 @@ here may reach your phone a little after the update that carries it.
 | Sky, search, time travel, info cards | Yes | Yes |
 | Satellites and pass predictions | Yes | Yes |
 | Notifications (meteor showers, tonight's sky, satellite passes, eclipses) | Yes | Yes |
-| Home Screen widgets | Moon (coming); Tonight and Countdown to follow | Moon, Tonight, Countdown |
-| Lock Screen widgets | Moon (coming) | No |
+| Home Screen widgets | Moon, Tonight, Countdown (coming) | Moon, Tonight, Countdown |
+| Lock Screen widgets | Moon, Tonight (coming) | No |
 | Through-the-camera (AR) mode | Not yet | In testing, not yet released |
 | Share a picture of the sky | Not yet | In testing, not yet released |
 | News and announcements from the Sky Map team | Not yet | Yes |
@@ -37,29 +37,41 @@ or the Moon's info card), and the system asks you to confirm. iOS doesn't let an
 widget, so you add it yourself: touch and hold the Home Screen, tap **Edit** then **Add Widget**
 (**+** before iOS 18), and search for Sky Map.
 
-**Sizes.** The Android Moon widget can be resized freely, and switches to a compact disc-only
-layout when it's smaller than 2×2. On iPhone it comes in the small Home Screen size.
+**Sizes.** Android widgets can be resized freely, and the Moon switches to a compact disc-only
+layout when it's smaller than 2×2. iPhone widgets come in fixed sizes: the Moon and the Countdown
+are small (a square), and Tonight is medium (a wide rectangle, room for three highlights).
 
-**Lock Screen (iPhone only).** iOS 16 and later can show the Moon on the Lock Screen in two forms:
+**Lock Screen (iPhone only).** iOS 16 and later can show Sky Map on the Lock Screen:
 
-- **Circular**, in the row under the clock: the phase disc and how much is lit.
-- **Inline**, in the line of text above the clock: the phase name and the percentage. This one
-  only appears when you tap that line while customizing the Lock Screen, not the row below it.
+- **Moon, circular**, in the row under the clock: the phase disc and how much is lit.
+- **Moon, inline**, in the line of text above the clock: the phase name and the percentage. This
+  one only appears when you tap that line while customizing the Lock Screen, not the row below it.
+- **Tonight, rectangular**, in the row under the clock: the top highlights, one per line. It takes
+  the space of two circular widgets.
 
 Android has no Lock Screen widgets.
 
 **Staying current.** An Android widget is refreshed by a background job every 12 hours, and
-whenever you use the app. iOS doesn't let a widget run whenever it likes, so the iPhone widget
-works out a whole day of hourly snapshots in advance and the system shows each one at its time.
-In practice the iPhone's illumination figure moves hourly, and neither widget goes stale if you
-don't open the app for a while.
+whenever you use the app. iOS doesn't let a widget run whenever it likes, so each iPhone widget
+works out its snapshots in advance and the system shows each one at its time: the Moon and
+Tonight hourly, the Countdown at each midnight. In practice the iPhone's figures move on by
+themselves, and no widget goes stale if you don't open the app for a while.
 
-**Your location.** The widgets use the location the app last saved. On iPhone, open the app once
-after installing (or after moving somewhere new) so the widget picks it up. The location is
-shared between the app and its widget on the phone only, through an iOS "App Group"; it isn't
-sent anywhere.
+**What the widgets need from the app.** On iPhone, a widget can't read the app's own data, so
+the app hands it a copy, through an iOS "App Group", on the phone only; none of it is sent
+anywhere. Open the app once after installing (or after moving somewhere new) so the widgets
+pick it up:
 
-**Tapping one** opens Sky Map on that object on both platforms.
+- **your location**, for all three;
+- **the meteor shower list**, in your language, for Tonight and the Countdown. Until the app has
+  been opened, the Countdown counts to the next new or full moon;
+- **the next two nights' satellite passes**, for Tonight, when the satellite layer is on. They
+  can't be worked out in the widget, so Tonight shows passes only for two days after you last
+  opened the app (or after iOS last let it refresh in the background).
+
+**Tapping one** opens Sky Map on that object on both platforms. On the Tonight widget each
+highlight opens its own object; on the Lock Screen only the whole widget can be tapped, so it
+opens the top one.
 
 ## Notifications
 

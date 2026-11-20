@@ -26,6 +26,13 @@ object WidgetColors {
     /** The hairline border round the surface. */
     const val OUTLINE: Long = 0xFF2A3355
 
+    /**
+     * The tonight rows' [HighlightDot]s below gold, as Android's `widget_dot_blue` and
+     * `widget_dot_dim` drawables draw them.
+     */
+    const val DOT_BLUE: Long = 0xFF7EC8E3
+    const val DOT_DIM: Long = 0xFF5A6486
+
     const val MOON_LIT: Long = 0xFFE8E4D8
 
     /** surfaceVariant navy, so the dark limb still reads against the surface. */

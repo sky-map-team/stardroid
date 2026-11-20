@@ -7,10 +7,9 @@
  * (at your option) any later version.
  */
 
-package com.google.android.stardroid.ui.search
+package com.google.android.stardroid.catalog
 
 import com.google.android.stardroid.astronomy.SolarSystemBody
-import com.google.android.stardroid.catalog.CelestialObjectId
 
 /**
  * The `planet/<body>` join between catalog ids and [SolarSystemBody] (source-data/README.md):

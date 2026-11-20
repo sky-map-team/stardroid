@@ -7,12 +7,9 @@
  * (at your option) any later version.
  */
 
-package com.google.android.stardroid.satellites
+package com.google.android.stardroid.catalog
 
 import com.google.android.stardroid.astronomy.Tle
-import com.google.android.stardroid.catalog.CelestialObjectId
-import com.google.android.stardroid.catalog.ObjectInfo
-import com.google.android.stardroid.catalog.TypeCode
 import com.google.android.stardroid.math.RaDec
 
 /**
