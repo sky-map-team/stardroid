@@ -144,7 +144,7 @@ private fun TonightContent(
             GlanceModifier
                 .fillMaxSize()
                 .background(ImageProvider(R.drawable.widget_background))
-                .clickable(actionStartActivity<MainActivity>())
+                .clickable(openTonightSheet())
                 .padding(horizontal = 14.dp, vertical = 10.dp),
         // Centered so short content (one highlight) reads as composed, not as a
         // half-empty box; the provider info lets users resize down to one row.
@@ -358,3 +358,11 @@ private fun AnnouncementRow(banner: WidgetBanner) {
         }
     }
 }
+
+/** The widget's header and background open the Tonight sheet (D149); a row opens its card. */
+private fun openTonightSheet() =
+    actionStartActivity<MainActivity>(
+        actionParametersOf(
+            ActionParameters.Key<Boolean>(MainActivity.EXTRA_SHOW_TONIGHT) to true,
+        ),
+    )

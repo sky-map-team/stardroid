@@ -28,6 +28,7 @@ import com.google.android.stardroid.surfaces.AlertPreferences
 import com.google.android.stardroid.surfaces.NotificationPlanAhead
 import com.google.android.stardroid.surfaces.NotificationText
 import com.google.android.stardroid.surfaces.ScheduledNotification
+import com.google.android.stardroid.ui.tonight.loadTextSource
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.IO
 import kotlinx.coroutines.flow.Flow
@@ -101,7 +102,7 @@ internal class IosNotificationScheduler(
                 withContext(Dispatchers.Default) {
                     val formatter = timeFormatter()
                     NotificationPlanAhead(
-                        words = NotificationText(loadIosTextSource()) { formatTime(formatter, it) },
+                        words = NotificationText(loadTextSource()) { formatTime(formatter, it) },
                         satelliteObjectId = { SatelliteIds.idFor(it).value },
                     ).plan(
                         NotificationPlanAhead.Inputs(

@@ -149,6 +149,7 @@ fun MapScreen(
     onOpenHelp: () -> Unit,
     onOpenWhatsNew: () -> Unit,
     onOpenSupport: (() -> Unit)?,
+    onOpenTonight: (() -> Unit)?,
     onOpenCalibration: (userInitiated: Boolean) -> Unit,
     // Null where the system's own prompt is the rationale (iOS).
     onRequestLocationPermission: (() -> Unit)?,
@@ -614,6 +615,13 @@ fun MapScreen(
 
         if (showOverflowSheet) {
             OverflowSheet(
+                onOpenTonight =
+                    onOpenTonight?.let { open ->
+                        {
+                            showOverflowSheet = false
+                            open()
+                        }
+                    },
                 onOpenGallery = {
                     showOverflowSheet = false
                     mapViewModel.logMenuItem(AnalyticsEvents.GALLERY_OPENED_LABEL)

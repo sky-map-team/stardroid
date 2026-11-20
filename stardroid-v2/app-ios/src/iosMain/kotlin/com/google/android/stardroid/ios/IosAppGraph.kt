@@ -25,6 +25,7 @@ import com.google.android.stardroid.layers.SatelliteLayer
 import com.google.android.stardroid.location.LocationController
 import com.google.android.stardroid.location.LocationSource
 import com.google.android.stardroid.location.LocationState
+import com.google.android.stardroid.math.LatLong
 import com.google.android.stardroid.render.api.RendererInfo
 import com.google.android.stardroid.satellites.SatelliteDiagnosticsState
 import com.google.android.stardroid.satellites.SatelliteFlagState
@@ -49,6 +50,7 @@ import com.google.android.stardroid.startup.FlagSource
 import com.google.android.stardroid.startup.FlagSourceExperimentConfig
 import com.google.android.stardroid.startup.StartupRouter
 import com.google.android.stardroid.startup.StartupState
+import com.google.android.stardroid.surfaces.NotificationText
 import com.google.android.stardroid.time.TimeController
 import com.google.android.stardroid.ui.calibration.CompassCalibrationViewModel
 import com.google.android.stardroid.ui.diagnostics.DiagnosticsViewModel
@@ -66,6 +68,9 @@ import com.google.android.stardroid.ui.search.SearchViewModel
 import com.google.android.stardroid.ui.settings.SettingsViewModel
 import com.google.android.stardroid.ui.startup.StartupViewModel
 import com.google.android.stardroid.ui.timetravel.TimeTravelViewModel
+import com.google.android.stardroid.ui.tonight.TonightViewModel
+import com.google.android.stardroid.ui.tonight.TonightWords
+import com.google.android.stardroid.ui.tonight.loadTextSource
 import kotlinx.cinterop.ExperimentalForeignApi
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -406,26 +411,43 @@ class IosAppGraph(
     private suspend fun mirrorTonightWidgetInputs() {
         val showers = catalog().meteorShowers(locale.value).first()
         val location = settings.savedLocation.first()
-        val passes =
-            if (satellitesEnabled &&
-                location != null &&
-                LayerRegistry.layerEnabled(settings, SatelliteLayer.LAYER_ID).first()
-            ) {
-                withContext(Dispatchers.IO) {
-                    passesWithin(
-                        satellites.repository.current(),
-                        location,
-                        Clock.System.now(),
-                        PassSearch.DEFAULT_SEARCH_WINDOW,
-                    )
-                }
-            } else {
-                emptyList()
-            }
+        val passes = tonightPasses(location)
         // Back to back, so the extension never reads new showers with old passes.
         WidgetSharedStore.showers = showers
         WidgetSharedStore.passes = passes
     }
+
+    /** Tonight's visible passes, or none with the layer off, no location or no satellites. */
+    private suspend fun tonightPasses(location: LatLong?): List<SatellitePass> =
+        if (satellitesEnabled &&
+            location != null &&
+            LayerRegistry.layerEnabled(settings, SatelliteLayer.LAYER_ID).first()
+        ) {
+            withContext(Dispatchers.IO) {
+                passesWithin(
+                    satellites.repository.current(),
+                    location,
+                    Clock.System.now(),
+                    PassSearch.DEFAULT_SEARCH_WINDOW,
+                )
+            }
+        } else {
+            emptyList()
+        }
+
+    /** The Tonight sheet (D149). iOS has no announcements yet, so its notices are empty. */
+    fun tonightViewModel(): TonightViewModel =
+        TonightViewModel(
+            now = Clock.System::now,
+            location = { settings.savedLocation.first() },
+            showers = { catalog().meteorShowers(locale.value).first() },
+            passes = { tonightPasses(it) },
+            notices = { emptyList() },
+            words = {
+                val format = deviceTimeFormat()
+                TonightWords(NotificationText(loadTextSource(), format), format)
+            },
+        )
 
     /** Tells [onResult] whether a background refresh has anything to do now. */
     internal fun checkBackgroundRefreshWanted(onResult: (Boolean) -> Unit): Job =

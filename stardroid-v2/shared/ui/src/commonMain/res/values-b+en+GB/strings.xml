@@ -586,4 +586,12 @@ Line brightness: normal, bright or brightest, for twilight, daylight or light-po
     <!-- tm:omitted name="satellite_name_iss" reason="identical_to_source" -->
     <!-- tm:omitted name="satellite_name_tiangong" reason="identical_to_source" -->
     <!-- tm:omitted name="tonight_trailing_pass_peak" reason="identical_to_source" -->
+    <!-- tm:omitted name="tonight_widget_header" reason="identical_to_source" -->
+    <!-- tm:omitted name="tonight_widget_sun_times" reason="identical_to_source" -->
+    <!-- tm:omitted name="tonight_widget_sunset_only" reason="identical_to_source" -->
+    <!-- tm:omitted name="tonight_quiet" reason="identical_to_source" -->
+    <!-- tm:omitted name="tonight_quiet_next" reason="identical_to_source" -->
+    <!-- tm:omitted name="countdown_shower_peak" reason="identical_to_source" -->
+    <!-- tm:omitted name="countdown_full_moon" reason="identical_to_source" -->
+    <!-- tm:omitted name="countdown_new_moon" reason="identical_to_source" -->
 </resources>

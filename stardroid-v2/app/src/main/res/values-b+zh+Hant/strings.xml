@@ -95,19 +95,11 @@
     <!-- Tonight's-sky and countdown home-screen widgets (D69 phase 2). -->
     <string name="tonight_widget_label" translation_description="Name of the tonight\'s-sky home-screen widget, shown in the launcher\'s widget picker">今晚星空</string>
     <string name="tonight_widget_description" translation_description="Description of the tonight\'s-sky widget, shown under its preview in the launcher\'s widget picker">今晚最佳景觀：位置良好的行星、流星雨及月亮事件，每日更新。</string>
-    <string name="tonight_widget_header" translation_description="Small header label on the tonight widget; %1$s is a short date like \'Wed 30 Jul\'">今晚 · %1$s</string>
-    <string name="tonight_widget_sun_times" translation_description="Header line on the tonight widget; %1$s is the sunset time, %2$s the time the sky becomes fully dark">日落 %1$s · 天黑 %2$s</string>
-    <string name="tonight_widget_sunset_only" translation_description="Header fragment when only the sunset time is known; %1$s is the sunset time">日落 %1$s</string>
-    <string name="tonight_quiet" translation_description="Tonight-widget line shown when nothing notable is visible tonight">今晚星空平靜</string>
-    <string name="tonight_quiet_next" translation_description="Tonight-widget line under the quiet-night message; %1$s is an event name, %2$d the days until it">下一個：%1$s 在 %2$d 天後</string>
     <string name="countdown_widget_label" translation_description="Name of the countdown home-screen widget, shown in the launcher\'s widget picker">星空倒數</string>
     <string name="countdown_widget_description" translation_description="Description of the countdown widget, shown under its preview in the launcher\'s widget picker">距離下一個流星雨高峰或月相事件的天數。</string>
     <string name="countdown_days" translation_description="Unit label inside the countdown ring, under the number of days">天</string>
     <string name="countdown_tonight" translation_description="Shown inside the countdown ring when the event is tonight (zero days left)">現在</string>
-    <string name="countdown_shower_peak" translation_description="Countdown-widget event name; %1$s is a meteor shower name">%1$s 極大期</string>
     <string name="countdown_new_moon_peak" translation_description="Countdown-widget note: the shower peaks near new moon, so skies will be dark">新月極大期</string>
-    <string name="countdown_full_moon" translation_description="Countdown-widget event name for the next full moon">滿月</string>
-    <string name="countdown_new_moon" translation_description="Countdown-widget event name for the next new moon">新月</string>
     <string name="tonight_widget_preview_row" translation_description="Representative highlight row shown in the widget picker\'s preview of the tonight widget">木星在晚上 9:30 後觀測條件佳</string>
     <!-- tm:omitted name="countdown_widget_preview_days" reason="identical_to_source" -->
     <string name="countdown_widget_preview_name" translation_description="Representative event name shown in the widget picker\'s preview of the countdown widget">英仙座流星雨極大期</string>
