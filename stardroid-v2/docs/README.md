@@ -54,6 +54,7 @@ the two ever drift.
 | decisions.md | Running log of product/technical decisions and their rationale — the authority behind every status above |
 | [code-overview.md](code-overview.md) | Top-down tour of the codebase as built — build machinery, subsystem pointers, doc-health table (the module list itself is in build-and-tooling.md) |
 | [improvements-over-v1.md](improvements-over-v1.md) | The full at-launch feature surface (unflagged only) plus the net-new-vs-v1 highlights drawn from it — the source for help text, store copy, screenshots, and release notes |
+| [ios-vs-android.md](ios-vs-android.md) | User-facing: how the iPhone and Android apps differ, and why. Update it when a feature lands on one platform, or one platform behaves differently |
 | [info-card-coverage.md](info-card-coverage.md) | Which labelled objects still lack info cards, why that blocks tap-to-identify, and how to write new ones |
 | [design/sensor-correction-model.md](design/sensor-correction-model.md) | Sensor error physics and why drag-to-align's az/alt correction matches them |
 | [design/ephemeris-accuracy.md](design/ephemeris-accuracy.md) §1–2 | Coordinate-frame audit and the residual error budget (precession fix, D84) |
