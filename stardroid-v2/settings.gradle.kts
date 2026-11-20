@@ -48,6 +48,8 @@ include(":render:metal-harness")
 
 // The iOS app's Kotlin side (iOS port phase 4): its framework, its platform edges and its UI root.
 if (file("app-ios").exists()) include(":app-ios")
+// Its widget extension's Kotlin, the SkyMapWidgetKit framework.
+include(":app-ios-widgets")
 
 // Android modules (:data is Android + iOS)
 include(":render:gles1")

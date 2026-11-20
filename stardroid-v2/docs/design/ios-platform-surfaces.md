@@ -2,8 +2,9 @@
 
 **Status: MOSTLY BUILT.** Flags (§3) and satellites (§4, including the background refresh) are
 built for iOS 2.0.1. Notifications (§5) are built through slice 6; the notice's translations
-and the review remain. Announcements on iOS (§5.4) are deferred, and widgets (§6) are not
-started. Decision numbers are unassigned. Written while iOS 2.0.0 (build 6) waited on App
+and the review remain. Announcements on iOS (§5.4) are deferred. Widgets (§6) are under way:
+the groundwork and the Moon widget are built, Tonight and Countdown are not, and none ships
+until all three do (§6.3). Decision numbers are unassigned. Written while iOS 2.0.0 (build 6) waited on App
 Review, so parts of the text below still describe the plan rather than the result; the "As
 built" notes and the slice notes in §5.2 say what was built.
 
@@ -344,6 +345,36 @@ its own process with a tight memory limit (roughly 30 MB), that never runs the C
 - **The astronomy runs in the extension.** Passing precomputed results would go stale when the
   app is not opened for days.
 
+### As built (Moon widget, unreleased)
+
+The groundwork and the Moon widget. Differences from the design above:
+
+- **No copies.** The palette, the moon disc's geometry, the "+1" day arithmetic and the rise/set
+  ordering moved from `:app`'s widget code to `:shared:surfaces` (`WidgetColors`, `MoonDisc`,
+  `MoonWidgetSurface.kt`), and Android draws from them too, so there is no second palette to pin.
+  `moonWidgetTimeline` builds the entries.
+- **`:app-ios-widgets`** is the `SkyMapWidgetKit` framework: `:shared:surfaces` and below, with a
+  small Swift-facing API (`MoonWidgets`, `WidgetPalette`). Nothing is exported, so the linker
+  can drop what the widgets don't call. `:app-ios` depends on it for `WidgetSharedStore`.
+- **Strings** are not copied either. `exportWidgetStrings` (`ExportAppleStrings` in
+  `build-logic`) writes `<lproj>/Localizable.strings` for the widget keys from `:shared:ui`'s
+  and `:app`'s XML at build time, through the same aapt2 rules as Compose's, and the extension's
+  build phase copies them in. A locale tm left a key out of gets the English, as a `.strings`
+  miss would show the key.
+- **Location:** `IosAppGraph` mirrors `savedLocation` into the App Group's `UserDefaults`; the
+  Swift shell reloads the timelines when the app goes to the background.
+- **Per-build group and scheme.** Debug uses `group.io.penterakt.skymap.dev` and `skymap-dev://`,
+  Release `group.io.penterakt.skymap` and `skymap://`, so a dev install never reads the App Store
+  app's data or answers its links. A widget opens `<scheme>://object/<id>` (`ObjectLink`).
+- **Size (risk 2):** the Release extension for arm64 is 3.8 MB, about 1 MB compressed, almost
+  all of it the Kotlin astronomy.
+- **Lock Screen:** `accessoryCircular` (disc and percentage) and `accessoryInline` (phase and
+  percentage); `accessoryRectangular` is left for the Tonight widget.
+
+Still to do before release: the Tonight and Countdown widgets, the info card's promo row (§6.5),
+a memory check in Instruments, and the App Group registered for both bundle IDs in the developer
+portal (automatic signing does this on a device build).
+
 ### 6.2 Timelines instead of a 12 h refresh
 
 WidgetKit lets a provider hand back many future entries. Because the maths is offline and cheap:
@@ -398,9 +429,9 @@ iPhone 13.
 
 Built in slice 1 or 2 and reused after:
 
-1. **`group.io.penterakt.skymap` App Group** and the small shared key store (needed by widgets
+1. **`group.io.penterakt.skymap` App Group** (built) and the small shared key store (needed by widgets
    and by notification planning on a cold start).
-2. **URL handling** (`skymap://` scheme and, with share-object-card, universal links).
+2. **URL handling** (`skymap://` scheme built; and, with share-object-card, universal links).
 3. **`BGTaskScheduler` registration** in the Swift shell, with a Kotlin entry point per task.
 4. **`shared/surfaces`** module and the Android re-wiring on top of it.
 

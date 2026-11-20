@@ -1,0 +1,55 @@
+/*
+ * Copyright (c) 2026 Penterakt LLC.
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ */
+
+package com.google.android.stardroid.ios.widgets
+
+import com.google.android.stardroid.math.LatLong
+import platform.Foundation.NSBundle
+import platform.Foundation.NSUserDefaults
+
+/**
+ * What the app hands its widget extension through their App Group (ios-platform-surfaces.md
+ * §6.1): only the saved location for now. The app's settings stay in its own DataStore; it
+ * mirrors these few keys here whenever they change, and the extension only reads them.
+ */
+object WidgetSharedStore {
+    private const val LATITUDE = "savedLocation.latitudeDeg"
+    private const val LONGITUDE = "savedLocation.longitudeDeg"
+
+    // Null when the bundle names no group (a test host), which reads as nothing saved.
+    private val defaults: NSUserDefaults? by lazy {
+        infoString(APP_GROUP_KEY)?.let { NSUserDefaults(suiteName = it) }
+    }
+
+    var savedLocation: LatLong?
+        get() {
+            val store = defaults ?: return null
+            if (store.objectForKey(LATITUDE) == null || store.objectForKey(LONGITUDE) == null) {
+                return null
+            }
+            return LatLong(store.doubleForKey(LATITUDE), store.doubleForKey(LONGITUDE))
+        }
+        set(value) {
+            val store = defaults ?: return
+            if (value == null) {
+                store.removeObjectForKey(LATITUDE)
+                store.removeObjectForKey(LONGITUDE)
+            } else {
+                store.setDouble(value.latitudeDeg, LATITUDE)
+                store.setDouble(value.longitudeDeg, LONGITUDE)
+            }
+        }
+}
+
+// Both bundles' Info.plist carry these, set per build configuration in project.yml.
+internal const val APP_GROUP_KEY = "SkyMapAppGroup"
+internal const val URL_SCHEME_KEY = "SkyMapURLScheme"
+
+internal fun infoString(key: String): String? =
+    (NSBundle.mainBundle.objectForInfoDictionaryKey(key) as? String)?.takeIf { it.isNotEmpty() }
