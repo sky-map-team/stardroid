@@ -22,8 +22,8 @@ data class SeenRecord(
  *
  * - A message fires at most once across the interruptive surfaces (notification, interstitial):
  *   once the user has been told, they are not told again in another place.
- * - The widget and the Tonight sheet are passive and exempt, so it keeps showing the message until it expires. An
- *   explicit in-app dismissal hides it everywhere.
+ * - The widget and the Tonight sheet are passive and exempt, so they keep showing the message
+ *   until it expires. An explicit in-app dismissal hides it everywhere.
  */
 object AnnouncementPolicy {
     /**

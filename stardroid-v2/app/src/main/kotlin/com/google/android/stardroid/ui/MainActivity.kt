@@ -128,6 +128,7 @@ import com.google.android.stardroid.ui.theme.SkyMapTheme
 import com.google.android.stardroid.ui.timetravel.TimeTravelViewModel
 import com.google.android.stardroid.ui.tonight.TonightSheet
 import com.google.android.stardroid.ui.tonight.TonightViewModel
+import com.google.android.stardroid.ui.tonight.TonightWords
 import com.google.android.stardroid.ui.tonight.loadTextSource
 import com.google.android.stardroid.widget.MoonWidget
 import com.google.android.stardroid.widget.MoonWidgetReceiver
@@ -323,9 +324,9 @@ class MainActivity : ComponentActivity() {
                         }
                     },
                     words = {
-                        NotificationText(loadTextSource(), formatTimeFor(appContext))
+                        val format = formatTimeFor(appContext)
+                        TonightWords(NotificationText(loadTextSource(), format), format)
                     },
-                    formatTime = { formatTimeFor(appContext) },
                 )
             }
         }
@@ -688,11 +689,14 @@ class MainActivity : ComponentActivity() {
                     },
                     experimentConfig = experimentConfig,
                 )
-                TonightSheet(
-                    viewModel = tonightViewModel,
-                    onOpenObject = { objectInfoViewModel.show(CelestialObjectId(it)) },
-                    onSearch = ::runSearch,
-                )
+                // Like the info card, it waits for the terms and the tour to clear.
+                if (!gates.needsEula && !gates.needsWarmWelcome) {
+                    TonightSheet(
+                        viewModel = tonightViewModel,
+                        onOpenObject = { objectInfoViewModel.show(CelestialObjectId(it)) },
+                        onSearch = ::runSearch,
+                    )
+                }
                 // The info card is a dialog window and would float above the EULA, so links
                 // wait for acceptance; the pending intent is kept until then.
                 if (!gates.needsEula) {
@@ -796,10 +800,10 @@ class MainActivity : ComponentActivity() {
             intent.removeExtra(MoonWidget.EXTRA_SHOW_OBJECT_ID)
         }
         // The widget header or background, or a digest or announcement notification (D149).
-        if (intent.getBooleanExtra(TonightWidget.EXTRA_SHOW_TONIGHT, false)) {
+        if (intent.getBooleanExtra(EXTRA_SHOW_TONIGHT, false)) {
             navController.popBackStack(Routes.MAP, inclusive = false)
             tonightViewModel.open()
-            intent.removeExtra(TonightWidget.EXTRA_SHOW_TONIGHT)
+            intent.removeExtra(EXTRA_SHOW_TONIGHT)
         }
         // An announcement notification or widget banner whose action is a search.
         intent.getStringExtra(AnnouncementAction.EXTRA_SEARCH_QUERY)?.let {
@@ -1022,6 +1026,9 @@ class MainActivity : ComponentActivity() {
     }
 
     companion object {
+        /** Intent extra: open the Tonight sheet (D149). */
+        const val EXTRA_SHOW_TONIGHT = "extra_show_tonight"
+
         private const val SAVED_SESSION_START_TIME_KEY = "saved_session_start_time"
 
         /** v1 `DiagnosticActivity.updateLocation`'s GPS-provider probe. */

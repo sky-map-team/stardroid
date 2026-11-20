@@ -36,7 +36,9 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.google.android.stardroid.astronomy.LunarPhase
 import com.google.android.stardroid.events.CountdownTarget
+import com.google.android.stardroid.surfaces.HighlightDot
 import com.google.android.stardroid.surfaces.WidgetColors
+import com.google.android.stardroid.surfaces.highlightDot
 import com.google.android.stardroid.ui.common.formattedStringResource
 import com.google.android.stardroid.ui.resources.Res
 import com.google.android.stardroid.ui.resources.countdown_full_moon
@@ -51,11 +53,6 @@ import com.google.android.stardroid.ui.resources.tonight_widget_sun_times
 import com.google.android.stardroid.ui.resources.tonight_widget_sunset_only
 import org.jetbrains.compose.resources.stringResource
 
-private const val GOLD_QUALITY = 0.6
-private const val BLUE_QUALITY = 0.4
-private val DOT_BLUE = Color(0xFF6C8EF5)
-private val DOT_DIM = Color(0xFF6B7490)
-
 /**
  * The Tonight sheet (D149): sun times, active announcements and every highlight, wrapped rather
  * than cut off. A row opens its object's card via [onOpenObject]; an announcement that carries a
@@ -69,8 +66,9 @@ fun TonightSheet(
     onSearch: (String) -> Unit,
 ) {
     val visible by viewModel.visible.collectAsState()
-    if (!visible) return
     val state by viewModel.state.collectAsState()
+    // Held back until loaded, so it doesn't open as a title-only sliver and then jump.
+    if (!visible || state == null) return
     ModalBottomSheet(onDismissRequest = viewModel::close) {
         TonightContent(
             state = state,
@@ -221,8 +219,10 @@ private fun countdownName(next: CountdownTarget): String =
     }
 
 private fun dotColor(quality: Double): Color =
-    when {
-        quality >= GOLD_QUALITY -> Color(WidgetColors.STAR_GOLD)
-        quality >= BLUE_QUALITY -> DOT_BLUE
-        else -> DOT_DIM
-    }
+    Color(
+        when (highlightDot(quality)) {
+            HighlightDot.GOLD -> WidgetColors.STAR_GOLD
+            HighlightDot.BLUE -> WidgetColors.DOT_BLUE
+            HighlightDot.DIM -> WidgetColors.DOT_DIM
+        },
+    )

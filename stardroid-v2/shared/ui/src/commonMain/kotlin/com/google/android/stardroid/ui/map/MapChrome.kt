@@ -1074,7 +1074,7 @@ private fun ActionTooltip(
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun OverflowSheet(
-    onOpenTonight: (() -> Unit)? = null,
+    onOpenTonight: (() -> Unit)?,
     onOpenGallery: (() -> Unit)?,
     onOpenWidgets: (() -> Unit)?,
     // Hidden when no widget is offerable at all, rather than opening an empty sheet.

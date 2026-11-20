@@ -64,7 +64,6 @@ class CountdownWidgetSnapshot(
 
 /** The tonight and countdown widgets' entry point for the Swift extension. */
 object TonightWidgets {
-    /** What the header, the background and the Lock Screen widget open: the Tonight sheet. */
     val tonightLink: String
         get() = ObjectLink.tonight(infoString(URL_SCHEME_KEY) ?: "skymap")
 

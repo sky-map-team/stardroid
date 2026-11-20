@@ -149,7 +149,7 @@ fun MapScreen(
     onOpenHelp: () -> Unit,
     onOpenWhatsNew: () -> Unit,
     onOpenSupport: (() -> Unit)?,
-    onOpenTonight: (() -> Unit)? = null,
+    onOpenTonight: (() -> Unit)?,
     onOpenCalibration: (userInitiated: Boolean) -> Unit,
     // Null where the system's own prompt is the rationale (iOS).
     onRequestLocationPermission: (() -> Unit)?,

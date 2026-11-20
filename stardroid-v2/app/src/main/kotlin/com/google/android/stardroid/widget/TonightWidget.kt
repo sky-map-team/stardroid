@@ -75,11 +75,6 @@ class TonightWidget : GlanceAppWidget() {
             (180..400 step 20).map { DpSize(it.dp, 55.dp) }.toSet(),
         )
 
-    companion object {
-        /** Intent extra: open the Tonight sheet (D149). */
-        const val EXTRA_SHOW_TONIGHT = "extra_show_tonight"
-    }
-
     override suspend fun provideGlance(
         context: Context,
         id: GlanceId,
@@ -368,6 +363,6 @@ private fun AnnouncementRow(banner: WidgetBanner) {
 private fun openTonightSheet() =
     actionStartActivity<MainActivity>(
         actionParametersOf(
-            ActionParameters.Key<Boolean>(TonightWidget.EXTRA_SHOW_TONIGHT) to true,
+            ActionParameters.Key<Boolean>(MainActivity.EXTRA_SHOW_TONIGHT) to true,
         ),
     )

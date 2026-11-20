@@ -95,7 +95,7 @@ class AndroidTextSource(
 
 /** The shared notification and tonight-row wording, in this device's language and clock. */
 fun notificationText(context: Context): NotificationText =
-    NotificationText(AndroidTextSource(context)) { formatTime(context, it) }
+    NotificationText(AndroidTextSource(context), formatTimeFor(context))
 
 /** The device's 12 or 24 hour clock format, as the notification and sheet wording wants it. */
 fun formatTimeFor(context: Context): (Instant) -> String = { formatTime(context, it) }

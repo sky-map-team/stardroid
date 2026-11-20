@@ -242,14 +242,17 @@ private fun SkyMapScreen(
             ) { onTap, onDoubleTap ->
                 MetalSky(map, onTap, onDoubleTap)
             }
-            TonightSheet(
-                viewModel = tonightViewModel,
-                onOpenObject = { objectInfoViewModel.show(CelestialObjectId(it)) },
-                onSearch = {
-                    searchViewModel.setQuery(it)
-                    searchViewModel.submit()
-                },
-            )
+            // Waits behind the terms, the tour and the pages, as the info card does.
+            if (!covered) {
+                TonightSheet(
+                    viewModel = tonightViewModel,
+                    onOpenObject = { objectInfoViewModel.show(CelestialObjectId(it)) },
+                    onSearch = {
+                        searchViewModel.setQuery(it)
+                        searchViewModel.submit()
+                    },
+                )
+            }
             // The edge swipe closes a page, as Android's system back pops its destination.
             BackHandler(enabled = page != null) { back() }
             when (page) {

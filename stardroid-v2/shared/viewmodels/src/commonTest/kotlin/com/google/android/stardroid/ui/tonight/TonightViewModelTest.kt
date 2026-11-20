@@ -51,18 +51,19 @@ class TonightViewModelTest {
 
     private fun viewModel(
         location: LatLong? = LONDON,
-        passes: suspend (LatLong?) -> List<SatellitePass> = { emptyList() },
-        notices: List<TonightNotice> = emptyList(),
+        passes: suspend (LatLong) -> List<SatellitePass> = { emptyList() },
+        notices: suspend () -> List<TonightNotice> = { emptyList() },
     ) = TonightViewModel(
         now = { now },
         location = { location },
         showers = { listOf(PERSEIDS) },
         passes = passes,
-        notices = { notices },
+        notices = notices,
         words = {
-            NotificationText(TextSource { id, args -> "$id(${args.joinToString()})" }) { "t" }
+            TonightWords(
+                NotificationText(TextSource { id, args -> "$id(${args.joinToString()})" }) { "t" },
+            ) { "t" }
         },
-        formatTime = { { "t" } },
         zone = { TimeZone.UTC },
     )
 
@@ -126,11 +127,50 @@ class TonightViewModelTest {
     fun `announcements are carried through in full`() =
         runTest(dispatcher) {
             val notice = TonightNotice("Voyager", "A long body", searchQuery = "Voyager 1")
-            val vm = viewModel(notices = listOf(notice))
+            val vm = viewModel(notices = { listOf(notice) })
             vm.open()
             runCurrent()
 
             assertThat(vm.state.value!!.notices).isEqualTo(listOf(notice))
+        }
+
+    @Test
+    fun `a failing announcement source leaves the highlights`() =
+        runTest(dispatcher) {
+            val vm = viewModel(notices = { error("remote config unavailable") })
+            vm.open()
+            runCurrent()
+
+            val state = vm.state.value!!
+            assertThat(state.notices).isEqualTo(emptyList<TonightNotice>())
+            assertThat(state.rows.isNotEmpty()).isTrue()
+        }
+
+    @Test
+    fun `a failing build shows an empty sheet rather than crashing`() =
+        runTest(dispatcher) {
+            val vm = viewModel(passes = { error("elements unreadable") })
+            vm.open()
+            runCurrent()
+
+            assertThat(vm.state.value!!.rows).isEqualTo(emptyList<TonightRow>())
+        }
+
+    @Test
+    fun `opening again clears the old contents and uses the latest inputs`() =
+        runTest(dispatcher) {
+            var announced = listOf(TonightNotice("First", "", null))
+            val vm = viewModel(notices = { announced })
+            vm.open()
+            runCurrent()
+            vm.close()
+
+            announced = listOf(TonightNotice("Second", "", null))
+            vm.open()
+            assertThat(vm.state.value).isNull()
+            runCurrent()
+
+            assertThat(vm.state.value!!.notices.map { it.title }).isEqualTo(listOf("Second"))
         }
 
     private companion object {

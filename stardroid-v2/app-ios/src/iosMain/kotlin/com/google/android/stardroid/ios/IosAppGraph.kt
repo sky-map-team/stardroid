@@ -69,6 +69,7 @@ import com.google.android.stardroid.ui.settings.SettingsViewModel
 import com.google.android.stardroid.ui.startup.StartupViewModel
 import com.google.android.stardroid.ui.timetravel.TimeTravelViewModel
 import com.google.android.stardroid.ui.tonight.TonightViewModel
+import com.google.android.stardroid.ui.tonight.TonightWords
 import com.google.android.stardroid.ui.tonight.loadTextSource
 import kotlinx.cinterop.ExperimentalForeignApi
 import kotlinx.coroutines.CoroutineScope
@@ -440,10 +441,12 @@ class IosAppGraph(
             now = Clock.System::now,
             location = { settings.savedLocation.first() },
             showers = { catalog().meteorShowers(locale.value).first() },
-            passes = ::tonightPasses,
+            passes = { tonightPasses(it) },
             notices = { emptyList() },
-            words = { NotificationText(loadTextSource(), deviceTimeFormat()) },
-            formatTime = { deviceTimeFormat() },
+            words = {
+                val format = deviceTimeFormat()
+                TonightWords(NotificationText(loadTextSource(), format), format)
+            },
         )
 
     /** Tells [onResult] whether a background refresh has anything to do now. */

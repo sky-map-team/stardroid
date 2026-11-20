@@ -29,7 +29,6 @@ import com.google.android.stardroid.events.TonightSky
 import com.google.android.stardroid.math.LatLong
 import com.google.android.stardroid.ui.MainActivity
 import com.google.android.stardroid.widget.MoonWidget
-import com.google.android.stardroid.widget.TonightWidget
 
 /**
  * Builds and posts the two D77 notifications. The frequency contract lives one level up
@@ -148,7 +147,7 @@ object SkyNotifier {
         val contentIntent =
             // The sheet carries the message in full and its search button (D149).
             Intent(context, MainActivity::class.java)
-                .putExtra(TonightWidget.EXTRA_SHOW_TONIGHT, true)
+                .putExtra(MainActivity.EXTRA_SHOW_TONIGHT, true)
         val notification =
             NotificationCompat
                 .Builder(context, CHANNEL_ANNOUNCEMENTS)
@@ -202,7 +201,7 @@ object SkyNotifier {
         val contentIntent =
             Intent(context, MainActivity::class.java).apply {
                 targetId?.let { putExtra(MoonWidget.EXTRA_SHOW_OBJECT_ID, it) }
-                if (showTonight) putExtra(TonightWidget.EXTRA_SHOW_TONIGHT, true)
+                if (showTonight) putExtra(MainActivity.EXTRA_SHOW_TONIGHT, true)
             }
         return NotificationCompat
             .Builder(context, channelId)

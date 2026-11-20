@@ -18,7 +18,6 @@ import platform.Foundation.dateWithTimeIntervalSince1970
 
 private const val MILLIS_PER_SECOND = 1000.0
 
-/** The device's short time format, made once and read in the locale current at the call. */
 internal fun deviceTimeFormat(): (Instant) -> String {
     val formatter =
         NSDateFormatter().apply {
