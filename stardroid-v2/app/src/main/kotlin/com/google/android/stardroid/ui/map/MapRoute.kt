@@ -53,6 +53,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.viewinterop.AndroidView
 import androidx.lifecycle.compose.LocalLifecycleOwner
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import androidx.lifecycle.viewmodel.compose.viewModel
 import com.google.android.stardroid.R
 import com.google.android.stardroid.analytics.AnalyticsEvents
 import com.google.android.stardroid.camera.SkyCameraPreview
@@ -68,6 +69,7 @@ import com.google.android.stardroid.ui.objectinfo.MoonWidgetPromoRow
 import com.google.android.stardroid.ui.objectinfo.ObjectInfoViewModel
 import com.google.android.stardroid.ui.search.SearchViewModel
 import com.google.android.stardroid.ui.timetravel.TimeTravelViewModel
+import kotlinx.coroutines.NonCancellable
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
@@ -122,9 +124,10 @@ fun MapRoute(
     val appliedScrim by remember {
         mapViewModel.renderState.map { it.cameraScrim }
     }.collectAsStateWithLifecycle(0.0)
-    // The two AR share composites awaiting a layout pick; bitmaps, so deliberately not
-    // saveable — a rotation simply drops the sheet and the user shares again.
-    var shareLayouts by remember { mutableStateOf<SkyShare.ShareLayouts?>(null) }
+    val capture: ArCaptureViewModel = viewModel()
+    val shareLayouts = capture.shareLayouts
+    // Don't hold ~25 MB of layouts once the camera layer is off.
+    LaunchedEffect(arModeOn) { if (!arModeOn) capture.shareLayouts = null }
     val shareFailedMessage = stringResource(R.string.share_failed_message)
     val startShare: () -> Unit = {
         mapViewModel.logMenuItem(AnalyticsEvents.SHARE_SKY_LABEL)
@@ -132,11 +135,11 @@ fun MapRoute(
             val map = if (arModeOn) SkyShare.captureMap(glSurfaceView) else null
             var still: Bitmap? = null
             try {
-                still = if (map != null) arCamera.takeStill() else null
+                still = if (map != null) arCamera.takeStill(capture.stillMode) else null
                 if (map != null && still != null) {
                     // The composites use the scrim exactly as rendered (night floor included).
                     val scrim = mapViewModel.renderState.first().cameraScrim
-                    shareLayouts = SkyShare.arShareLayouts(context, map, still, scrim)
+                    capture.shareLayouts = SkyShare.arShareLayouts(context, map, still, scrim)
                 } else if (!SkyShare.shareSky(context, glSurfaceView)) {
                     snackbarHostState.showSnackbar(shareFailedMessage)
                 }
@@ -180,7 +183,7 @@ fun MapRoute(
         hasArCamera = arCamera.hasCamera && cameraArEnabled,
         hasCameraPermission = hasCameraPermission,
         onRequestCameraPermission = onRequestCameraPermission,
-        arExtraControls = { StillModeControl(arCamera, previewLuma, appliedScrim) },
+        arExtraControls = { StillModeControl(capture, arCamera, previewLuma, appliedScrim) },
     ) { onTap, onDoubleTap ->
         // The camera layer's plumbing lives while the layer is on: the preview binds under the
         // GL surface, the view model's zoom/exposure decisions reach the hardware, and leaving
@@ -249,10 +252,19 @@ fun MapRoute(
         ShareLayoutSheet(
             layouts = layouts,
             onPick = { picked ->
-                shareLayouts = null
-                scope.launch { SkyShare.sendBitmap(context, picked) }
+                capture.shareLayouts = null
+                // NonCancellable: a rotation mid-save must not swallow the share.
+                scope.launch(NonCancellable) {
+                    // Saved so it can be shared again later; the saved copy is what is sent.
+                    val saved = SkyShare.saveToGallery(context, picked)
+                    if (saved != null) {
+                        SkyShare.sendUri(context, saved)
+                    } else {
+                        SkyShare.sendBitmap(context, picked)
+                    }
+                }
             },
-            onDismiss = { shareLayouts = null },
+            onDismiss = { capture.shareLayouts = null },
         )
     }
 
@@ -269,18 +281,19 @@ fun MapRoute(
  */
 @Composable
 private fun StillModeControl(
+    capture: ArCaptureViewModel,
     arCamera: SkyCameraPreview,
     previewLuma: Double,
     appliedScrim: Double,
 ) {
-    val night = arCamera.stillMode == SkyCameraPreview.StillMode.NIGHT
+    val night = capture.stillMode == SkyCameraPreview.StillMode.NIGHT
     Column(modifier = Modifier.padding(vertical = 4.dp)) {
         Row(verticalAlignment = Alignment.CenterVertically) {
             Switch(
                 checked = night && arCamera.nightAvailable,
                 enabled = arCamera.nightAvailable,
                 onCheckedChange = {
-                    arCamera.stillMode =
+                    capture.stillMode =
                         if (it) {
                             SkyCameraPreview.StillMode.NIGHT
                         } else {

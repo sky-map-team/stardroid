@@ -9,6 +9,7 @@
 
 package com.google.android.stardroid.share
 
+import android.content.ContentValues
 import android.content.Context
 import android.content.Intent
 import android.graphics.Bitmap
@@ -17,14 +18,18 @@ import android.graphics.Color
 import android.graphics.Paint
 import android.graphics.Rect
 import android.graphics.Typeface
+import android.net.Uri
 import android.opengl.GLSurfaceView
+import android.os.Environment
 import android.os.Handler
 import android.os.Looper
+import android.provider.MediaStore
 import android.util.Log
 import android.view.PixelCopy
 import androidx.core.content.FileProvider
 import androidx.core.graphics.drawable.toBitmap
 import com.google.android.stardroid.R
+import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.suspendCancellableCoroutine
 import kotlinx.coroutines.withContext
@@ -54,10 +59,10 @@ import kotlin.coroutines.resume
  * larger win: it scales every bitmap in the pipeline down at once, and the share target
  * re-encodes the image anyway.
  *
- * The two finished [ShareLayouts] are deliberately **not** recycled. They are held in Compose
- * state and drawn as thumbnails, so recycling them races with the recomposition that drops
- * the sheet — and a recycled bitmap that is still being drawn is a crash. They are ordinary
- * garbage instead, and bounded by [MAX_SHARE_EDGE_PX] to roughly 25 MB for the pair.
+ * The two finished [ShareLayouts] are deliberately **not** recycled. They live in a ViewModel
+ * (surviving rotation) and are drawn as thumbnails, so recycling them races with the sheet
+ * still drawing them — and a recycled bitmap that is still being drawn is a crash. They are
+ * ordinary garbage instead, and bounded by [MAX_SHARE_EDGE_PX] to roughly 25 MB for the pair.
  */
 object SkyShare {
     /** Map-only share (slice 3): capture, brand, and launch the chooser in one go. */
@@ -112,6 +117,65 @@ object SkyShare {
             }
         }
 
+    /**
+     * Saves [bitmap] to Pictures/Sky Map (scoped storage, no permission) and returns its URI,
+     * or null on failure. On API 28, which lacks `RELATIVE_PATH`, this is a silent null.
+     */
+    suspend fun saveToGallery(
+        context: Context,
+        bitmap: Bitmap,
+    ): Uri? =
+        withContext(Dispatchers.IO) {
+            try {
+                val resolver = context.contentResolver
+                val values =
+                    ContentValues().apply {
+                        put(
+                            MediaStore.Images.Media.DISPLAY_NAME,
+                            "sky_map_${System.currentTimeMillis()}.png",
+                        )
+                        put(MediaStore.Images.Media.MIME_TYPE, "image/png")
+                        put(
+                            MediaStore.Images.Media.RELATIVE_PATH,
+                            "${Environment.DIRECTORY_PICTURES}/Sky Map",
+                        )
+                        // Hidden from the gallery until fully written.
+                        put(MediaStore.Images.Media.IS_PENDING, 1)
+                    }
+                val uri =
+                    resolver.insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, values)
+                        ?: return@withContext null
+                val written =
+                    try {
+                        resolver.openOutputStream(uri)?.use {
+                            bitmap.compress(Bitmap.CompressFormat.PNG, 100, it)
+                        } == true
+                    } catch (e: Exception) {
+                        Log.w(TAG, "Could not write the photo to the gallery", e)
+                        false
+                    }
+                if (written) {
+                    resolver.update(
+                        uri,
+                        ContentValues().apply {
+                            put(MediaStore.Images.Media.IS_PENDING, 0)
+                        },
+                        null,
+                        null,
+                    )
+                    uri
+                } else {
+                    resolver.delete(uri, null, null)
+                    null
+                }
+            } catch (e: CancellationException) {
+                throw e
+            } catch (e: Exception) {
+                Log.w(TAG, "Could not save the photo to the gallery", e)
+                null
+            }
+        }
+
     /** Writes [bitmap] to the share cache and launches the system share sheet. */
     suspend fun sendBitmap(
         context: Context,
@@ -132,6 +196,14 @@ object SkyShare {
                     file,
                 )
             }
+        sendUri(context, uri)
+    }
+
+    /** Launches the system share sheet for an image already at [uri]. */
+    fun sendUri(
+        context: Context,
+        uri: Uri,
+    ) {
         val send =
             Intent(Intent.ACTION_SEND).apply {
                 type = "image/png"

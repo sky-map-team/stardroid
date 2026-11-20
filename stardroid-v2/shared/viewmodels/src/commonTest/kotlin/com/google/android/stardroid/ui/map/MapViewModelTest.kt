@@ -1256,6 +1256,27 @@ class MapViewModelTest {
             assertThat(manual.last()).isNull()
         }
 
+    @Test
+    fun `exposure survives the camera rebinding but not a fresh AR session`() =
+        testScope.runCurrentTest {
+            val vm = viewModel()
+            vm.setArMode(true)
+            vm.onArCameraReady(AR_SPECS)
+            vm.setArExposureIndex(3)
+
+            // Rotation recreates the camera, which reports ready again.
+            vm.onArCameraReady(AR_SPECS)
+            assertThat(vm.arExposureIndex.value).isEqualTo(3)
+
+            // A narrower range on the new camera clamps it.
+            vm.onArCameraReady(AR_SPECS.copy(exposureMin = -2, exposureMax = 2))
+            assertThat(vm.arExposureIndex.value).isEqualTo(2)
+
+            vm.setArMode(false)
+            vm.setArMode(true)
+            assertThat(vm.arExposureIndex.value).isEqualTo(0)
+        }
+
     /**
      * `runTest` on the shared scheduler, cancelling every created view model's scope before
      * `runTest`'s until-idle cleanup runs, so nothing the view model launched (a fling pump
