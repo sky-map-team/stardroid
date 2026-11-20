@@ -16,7 +16,8 @@ order they should be built, and names what is shared with Android and what is ne
 It extends [satellite-tracking.md](satellite-tracking.md),
 [widgets-and-notifications.md](widgets-and-notifications.md) and
 [remote-announcements.md](remote-announcements.md); read those for the Android designs. Anything
-not restated here is unchanged.
+not restated here is unchanged. The user-facing summary of how the two apps differ is
+[ios-vs-android.md](../ios-vs-android.md); update it when a slice ships.
 
 ## 1. Principles
 

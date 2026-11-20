@@ -3,7 +3,9 @@
 The iOS side of Sky Map v2. Shared code is Kotlin Multiplatform in the Gradle build one level
 up; what lives here is the thin native shell that hosts it. Which Gradle modules build for iOS
 is in the module list in
-[`docs/design/build-and-tooling.md`](../docs/design/build-and-tooling.md#module-graph).
+[`docs/design/build-and-tooling.md`](../docs/design/build-and-tooling.md#module-graph). How the
+iOS app differs from Android, for users, is in
+[`docs/ios-vs-android.md`](../docs/ios-vs-android.md).
 
 ## SkyMap — the app
 
