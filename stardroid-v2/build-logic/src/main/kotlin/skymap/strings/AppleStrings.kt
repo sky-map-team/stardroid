@@ -63,6 +63,22 @@ object AppleStrings {
             .replace("\n", "\\n")
             .replace("\t", "\\t")
 
+    /**
+     * Every locale's [wanted] strings, in that order, with English filling the gaps: tm leaves
+     * out a translation identical to the English, and a `.strings` miss shows the key.
+     */
+    fun complete(
+        byLocale: Map<String, Map<String, String>>,
+        wanted: List<String>,
+    ): Map<String, Map<String, String>> {
+        val english = byLocale["en"].orEmpty()
+        val missing = wanted.filterNot { it in english }
+        require(missing.isEmpty()) { "no English string for $missing" }
+        return byLocale.mapValues { (_, strings) ->
+            wanted.associateWith { strings[it] ?: english.getValue(it) }
+        }
+    }
+
     /** A `Localizable.strings` file, keys in the order given. */
     fun file(strings: Map<String, String>): String =
         strings.entries.joinToString("\n", postfix = "\n") { (key, value) ->

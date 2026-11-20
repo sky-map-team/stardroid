@@ -32,6 +32,7 @@ enum WidgetInk {
 }
 
 /// A string from the generated Localizable.strings, keyed by the shared resource name.
+/// Pass Kotlin's Int32 values for `%d`, never a Swift Int: `%d` reads 32 bits.
 func widgetText(_ key: String, _ args: CVarArg...) -> String {
     let format = NSLocalizedString(key, comment: "")
     return args.isEmpty ? format : String(format: format, arguments: args)

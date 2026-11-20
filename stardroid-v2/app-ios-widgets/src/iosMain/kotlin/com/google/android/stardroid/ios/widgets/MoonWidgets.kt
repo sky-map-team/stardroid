@@ -65,7 +65,6 @@ object MoonWidgets {
             .map { it.toSnapshot(zone) }
     }
 
-    /** The link that opens the Moon's card, in this build's URL scheme. */
     val link: String
         get() = ObjectLink.build(infoString(URL_SCHEME_KEY) ?: "skymap", MOON_OBJECT_ID)
 

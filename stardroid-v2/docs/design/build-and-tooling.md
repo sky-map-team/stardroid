@@ -56,10 +56,10 @@ out. The plugin decides which platforms a module builds for — see
 | `:shared:layers` | `kmp-android-library` | `:shared:model`, `:data`, `:render:api`, `:core:astronomy`, `:core:catalog`, `:core:math` | The sky layers and `LayerRegistry`; `RenderBinder` feeds them, the camera and the render state into a `SkyRenderer` ([layers-and-app.md](layers-and-app.md)) |
 | `:shared:viewmodels` | `kmp-android-library` | `:shared:layers`, `:shared:model`, `:data`, `:core:events` | The screens' ViewModels, on androidx.lifecycle's multiplatform `ViewModel`, and the state they compute |
 | `:shared:ui` | `kmp-compose` | `:shared:viewmodels`, `:render:api`, `:core:catalog` | The screens both apps draw, in Compose Multiplatform (D134). Their strings are Android-format `values-*/` resources in `src/commonMain/res`, which `tm` translates like `:app`'s |
-| `:shared:surfaces` | `pure-kmp` | `:core:events`, `:core:text` | What notifications and widgets decide: which alert is due tonight and when it fires. Posting stays with each platform ([ios-platform-surfaces.md](ios-platform-surfaces.md) §5) |
+| `:shared:surfaces` | `pure-kmp` | `:core:events`, `:core:text` | What notifications and widgets decide: which alert is due tonight and when it fires, the Moon widget's timeline, disc geometry and palette, and the object links widgets open. Posting and drawing stay with each platform ([ios-platform-surfaces.md](ios-platform-surfaces.md) §5, §6) |
 | `:shared:testing` | `pure-kmp` | `:shared:model`, `:core:catalog` | Test support: fakes of the shared interfaces, for `:shared` and `:app` tests |
 | `:app` | `android-app` | `:shared:{ui,viewmodels,layers,model,surfaces}`, `:data`, `:render:{api,gles1,gles3}`, `:core:{math,astronomy,catalog,events}`; `:render:testscene` in debug builds | The Android app: `MainActivity` and the nav host over `:shared:ui`'s screens, Hilt wiring, sensors, location, camera, widgets, notifications, announcements, satellite scheduling, the `gms`/`fdroid` flavors |
-| `:app-ios` | `ios-compose` | `:shared:{ui,viewmodels,layers,model,surfaces}`, `:data`, `:render:metal`, `:core:text` | The iOS app's Kotlin, built as the `SkyMapKit` framework that `ios/SkyMap` links: the app graph, the iOS platform edges (Core Motion, Core Location, display link, notifications, geocoding, satellites, tip jar) and the Compose root |
+| `:app-ios` | `ios-compose` | `:shared:{ui,viewmodels,layers,model,surfaces}`, `:app-ios-widgets`, `:data`, `:render:metal`, `:core:text` | The iOS app's Kotlin, built as the `SkyMapKit` framework that `ios/SkyMap` links: the app graph, the iOS platform edges (Core Motion, Core Location, display link, notifications, geocoding, satellites, tip jar) and the Compose root |
 | `:app-ios-widgets` | `ios-library` | `:shared:surfaces` | The iOS widget extension's Kotlin, built as the `SkyMapWidgetKit` framework: the widget timelines over the shared astronomy, the App Group store, and the widget strings' export. No Compose, Metal or database, for the extension's memory limit ([ios-platform-surfaces.md](ios-platform-surfaces.md) §6) |
 | `:konsist` | `pure-kotlin` | — | Test-only: the architecture gate (D20) |
 
@@ -68,9 +68,9 @@ out. The plugin decides which platforms a module builds for — see
 - `ios/SkyMap` — the iOS app's Swift shell, an Xcode project that XcodeGen generates from
   `project.yml`. It holds the entry point, Swift adapters for Firebase, StoreKit, the
   notification center and background refresh, `Info.plist` and the privacy manifest, the UI
-  tests, and the widget extension (`Widgets/`, linking `SkyMapWidgetKit`). A build phase runs Gradle for `SkyMapKit` and the catalog DB. `:app-ios` and
-  `ios/SkyMap` are two halves of one app, because Gradle can't build an iOS app and Xcode can't
-  build Kotlin. [`ios/README.md`](../../ios/README.md) covers building it.
+  tests, and the widget extension (`Widgets/`, linking `SkyMapWidgetKit`). A build phase runs
+  Gradle for `SkyMapKit` and the catalog DB. `:app-ios` and `ios/SkyMap` are two halves of one
+  app, because Gradle can't build an iOS app and Xcode can't build Kotlin. [`ios/README.md`](../../ios/README.md) covers building it.
 - `ios/RendererHarness` — the same kind of shell, for `:render:metal-harness`.
 - `build-logic/` — the convention plugins below: an included build, JVM only.
 - `source-data/` — the catalog's CSV/JSON sources; its README documents the formats.

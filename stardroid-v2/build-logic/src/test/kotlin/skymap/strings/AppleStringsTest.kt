@@ -11,6 +11,7 @@ package skymap.strings
 
 import com.google.common.truth.Truth.assertThat
 import org.junit.jupiter.api.Test
+import org.junit.jupiter.api.assertThrows
 
 class AppleStringsTest {
     @Test
@@ -51,5 +52,23 @@ class AppleStringsTest {
     fun `the file escapes quotes, backslashes and newlines`() {
         val file = AppleStrings.file(mapOf("a" to "say \"hi\"\\\nnow", "b" to " +%1\$d"))
         assertThat(file).isEqualTo("\"a\" = \"say \\\"hi\\\"\\\\\\nnow\";\n\"b\" = \" +%1\$d\";\n")
+    }
+
+    @Test
+    fun `a locale missing a key gets the english text, in the wanted order`() {
+        val complete =
+            AppleStrings.complete(
+                mapOf("en" to mapOf("a" to "A", "b" to "B"), "fr" to mapOf("b" to "Bé")),
+                listOf("b", "a"),
+            )
+        assertThat(complete["fr"]).containsExactly("b", "Bé", "a", "A").inOrder()
+        assertThat(complete["en"]).containsExactly("b", "B", "a", "A").inOrder()
+    }
+
+    @Test
+    fun `a key with no english string fails the export`() {
+        assertThrows<IllegalArgumentException> {
+            AppleStrings.complete(mapOf("en" to mapOf("a" to "A")), listOf("a", "b"))
+        }
     }
 }

@@ -47,27 +47,24 @@ abstract class ExportAppleStrings : DefaultTask() {
     @TaskAction
     fun export() {
         val wanted = keys.get()
+        val wantedSet = wanted.toSet()
         val byLocale = mutableMapOf<String, MutableMap<String, String>>()
         androidResources.files.filter { it.isDirectory }.forEach { res ->
             res.listFiles().orEmpty().filter { it.isDirectory }.forEach { folder ->
                 val lproj = AppleStrings.lprojFor(folder.name) ?: return@forEach
                 val strings = byLocale.getOrPut(lproj) { mutableMapOf() }
                 folder.listFiles().orEmpty().filter { it.extension == "xml" }.forEach { file ->
-                    strings.putAll(readStrings(file, wanted.toSet()))
+                    strings.putAll(readStrings(file, wantedSet))
                 }
             }
         }
-        val english = byLocale["en"].orEmpty()
-        val missing = wanted.filterNot { it in english }
-        require(missing.isEmpty()) { "no English string for $missing" }
 
         val target = outputDirectory.get().asFile
         target.deleteRecursively()
-        byLocale.forEach { (lproj, strings) ->
-            val complete = wanted.associateWith { strings[it] ?: english.getValue(it) }
+        AppleStrings.complete(byLocale, wanted).forEach { (lproj, strings) ->
             File(target, "$lproj.lproj/Localizable.strings").apply {
                 parentFile.mkdirs()
-                writeText(AppleStrings.file(complete))
+                writeText(AppleStrings.file(strings))
             }
         }
     }

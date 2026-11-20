@@ -14,7 +14,6 @@ import androidx.compose.ui.unit.dp
 import com.google.common.truth.Truth.assertThat
 import org.junit.jupiter.api.Test
 
-/** The moon widget's layout choice; its day arithmetic is tested in :shared:surfaces. */
 class MoonWidgetTest {
     @Test
     fun `1x1 and 2x1 footprints use the compact layout`() {
