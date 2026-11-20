@@ -15,22 +15,22 @@
     android:background="@drawable/widget_background"
     android:gravity="center"
     android:orientation="vertical"
-    android:padding="12dp">
+    android:padding="8dp">
 
     <ImageView
-        android:layout_width="64dp"
+        android:layout_width="56dp"
         android:layout_height="0dp"
         android:layout_weight="1"
         android:adjustViewBounds="true"
         android:importantForAccessibility="no"
-        android:maxHeight="64dp"
+        android:maxHeight="56dp"
         android:scaleType="fitCenter"
         android:src="@drawable/moon_widget_preview_disc" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="6dp"
+        android:layout_marginTop="4dp"
         android:maxLines="1"
         android:text="@string/moon_phase_waxing_gibbous"
         android:textColor="#E0E1DD"
