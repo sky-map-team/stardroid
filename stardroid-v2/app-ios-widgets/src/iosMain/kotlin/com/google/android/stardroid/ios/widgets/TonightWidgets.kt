@@ -12,6 +12,7 @@ package com.google.android.stardroid.ios.widgets
 import com.google.android.stardroid.events.CountdownTarget
 import com.google.android.stardroid.surfaces.CountdownWidgetEntry
 import com.google.android.stardroid.surfaces.HighlightDot
+import com.google.android.stardroid.surfaces.ObjectLink
 import com.google.android.stardroid.surfaces.TonightWidgetEntry
 import com.google.android.stardroid.surfaces.WidgetColors
 import com.google.android.stardroid.surfaces.countdownRingProgress
@@ -63,6 +64,10 @@ class CountdownWidgetSnapshot(
 
 /** The tonight and countdown widgets' entry point for the Swift extension. */
 object TonightWidgets {
+    /** What the header, the background and the Lock Screen widget open: the Tonight sheet. */
+    val tonightLink: String
+        get() = ObjectLink.tonight(infoString(URL_SCHEME_KEY) ?: "skymap")
+
     fun snapshots(
         startEpochSeconds: Double,
         hours: Int,

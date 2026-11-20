@@ -68,7 +68,9 @@ struct TonightWidgetView: View {
         case .accessoryRectangular:
             rectangular.widgetSurface(.clear)
         default:
+            // The header and the background open the Tonight sheet; a row's own link wins.
             medium.widgetPadding().widgetSurface(WidgetInk.surface)
+                .widgetURL(URL(string: TonightWidgets.shared.tonightLink))
         }
     }
 
@@ -131,7 +133,7 @@ struct TonightWidgetView: View {
 
     /// The Lock Screen's fixed three lines, as much as fits without cutting a sentence off: every
     /// highlight, else the top one with its note, else the top one alone in up to three lines.
-    /// Only the whole widget can be tapped there, so it opens the top highlight.
+    /// Only the whole widget can be tapped there, so it opens the Tonight sheet.
     @ViewBuilder
     private var rectangular: some View {
         Group {
@@ -147,7 +149,7 @@ struct TonightWidgetView: View {
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
-        .widgetURL(snapshot.rows.first.flatMap { URL(string: $0.link) })
+        .widgetURL(URL(string: TonightWidgets.shared.tonightLink))
     }
 
     /// Wrapped, never truncated, so ViewThatFits can tell whether they fit; the first is bold.

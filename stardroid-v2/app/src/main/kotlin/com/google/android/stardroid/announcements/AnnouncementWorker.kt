@@ -129,7 +129,7 @@ class AnnouncementWorker(
             } else {
                 val text = due.localized(ep.localeSource().current)
                 if (text != null &&
-                    SkyNotifier.postAnnouncement(applicationContext, text, due.action)
+                    SkyNotifier.postAnnouncement(applicationContext, text)
                 ) {
                     Log.i(AnnouncementScheduler.TAG, "Posted announcement ${due.id}")
                     state.markShown(due.id, Surface.NOTIFICATION, now)

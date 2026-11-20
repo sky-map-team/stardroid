@@ -1,6 +1,6 @@
 # Detailed Design: The Tonight Sheet
 
-**Status: PROPOSED.** Decision entry reserved: **D149**.
+**Status: IMPLEMENTED** (translations of the three new strings pending). Decision: **D149**.
 
 ## 1. Problem
 

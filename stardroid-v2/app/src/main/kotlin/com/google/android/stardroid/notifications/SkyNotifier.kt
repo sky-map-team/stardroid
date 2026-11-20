@@ -23,13 +23,13 @@ import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import androidx.core.content.ContextCompat
 import com.google.android.stardroid.R
-import com.google.android.stardroid.announcements.AnnouncementAction
 import com.google.android.stardroid.announcements.AnnouncementText
 import com.google.android.stardroid.events.SkyEvent
 import com.google.android.stardroid.events.TonightSky
 import com.google.android.stardroid.math.LatLong
 import com.google.android.stardroid.ui.MainActivity
 import com.google.android.stardroid.widget.MoonWidget
+import com.google.android.stardroid.widget.TonightWidget
 
 /**
  * Builds and posts the two D77 notifications. The frequency contract lives one level up
@@ -125,7 +125,7 @@ object SkyNotifier {
         val lines = words.digestLines(sky)
         if (lines.isEmpty()) return
         val notification =
-            baseBuilder(context, CHANNEL_DIGEST, targetId = null)
+            baseBuilder(context, CHANNEL_DIGEST, targetId = null, showTonight = true)
                 .setContentTitle(words.digestTitle())
                 .setContentText(lines.first())
                 .setStyle(
@@ -142,16 +142,13 @@ object SkyNotifier {
     fun postAnnouncement(
         context: Context,
         text: AnnouncementText,
-        action: AnnouncementAction,
     ): Boolean {
         if (!canPost(context, CHANNEL_ANNOUNCEMENTS)) return false
         ensureChannels(context)
         val contentIntent =
-            Intent(context, MainActivity::class.java).apply {
-                if (action is AnnouncementAction.Search) {
-                    putExtra(AnnouncementAction.EXTRA_SEARCH_QUERY, action.query)
-                }
-            }
+            // The sheet carries the message in full and its search button (D149).
+            Intent(context, MainActivity::class.java)
+                .putExtra(TonightWidget.EXTRA_SHOW_TONIGHT, true)
         val notification =
             NotificationCompat
                 .Builder(context, CHANNEL_ANNOUNCEMENTS)
@@ -200,10 +197,12 @@ object SkyNotifier {
         context: Context,
         channelId: String,
         targetId: String?,
+        showTonight: Boolean = false,
     ): NotificationCompat.Builder {
         val contentIntent =
             Intent(context, MainActivity::class.java).apply {
                 targetId?.let { putExtra(MoonWidget.EXTRA_SHOW_OBJECT_ID, it) }
+                if (showTonight) putExtra(TonightWidget.EXTRA_SHOW_TONIGHT, true)
             }
         return NotificationCompat
             .Builder(context, channelId)

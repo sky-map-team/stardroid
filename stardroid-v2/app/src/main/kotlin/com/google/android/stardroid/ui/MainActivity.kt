@@ -63,6 +63,8 @@ import com.google.android.stardroid.analytics.SessionBucket
 import com.google.android.stardroid.announcements.AnnouncementAction
 import com.google.android.stardroid.announcements.AnnouncementSource
 import com.google.android.stardroid.announcements.AnnouncementState
+import com.google.android.stardroid.announcements.appVersionCode
+import com.google.android.stardroid.announcements.tonightNotices
 import com.google.android.stardroid.astronomy.MeeusEphemeris
 import com.google.android.stardroid.camera.SkyCameraPreview
 import com.google.android.stardroid.catalog.CelestialObjectId
@@ -73,6 +75,7 @@ import com.google.android.stardroid.location.AndroidGeocoding
 import com.google.android.stardroid.location.LocationController
 import com.google.android.stardroid.location.LocationSource
 import com.google.android.stardroid.location.LocationState
+import com.google.android.stardroid.notifications.formatTimeFor
 import com.google.android.stardroid.render.AssetImageLoader
 import com.google.android.stardroid.render.RenderBinder
 import com.google.android.stardroid.render.RenderConnector
@@ -82,6 +85,7 @@ import com.google.android.stardroid.render.supportsGles3
 import com.google.android.stardroid.satellites.SatelliteScheduler
 import com.google.android.stardroid.satellites.satelliteEntryPoint
 import com.google.android.stardroid.satellites.satelliteUiStatusFlow
+import com.google.android.stardroid.satellites.tonightSatellitePasses
 import com.google.android.stardroid.satellites.trackedSatellites
 import com.google.android.stardroid.satellites.upcomingGoodPasses
 import com.google.android.stardroid.sensors.DisplayRotationBus
@@ -95,6 +99,7 @@ import com.google.android.stardroid.startup.Experiment
 import com.google.android.stardroid.startup.ExperimentConfig
 import com.google.android.stardroid.startup.StartupRouter
 import com.google.android.stardroid.startup.StartupState
+import com.google.android.stardroid.surfaces.NotificationText
 import com.google.android.stardroid.time.TimeController
 import com.google.android.stardroid.ui.calibration.CompassCalibrationViewModel
 import com.google.android.stardroid.ui.diagnostics.DiagnosticsViewModel
@@ -121,6 +126,9 @@ import com.google.android.stardroid.ui.startup.VersionBanner
 import com.google.android.stardroid.ui.startup.WhatsNewDialog
 import com.google.android.stardroid.ui.theme.SkyMapTheme
 import com.google.android.stardroid.ui.timetravel.TimeTravelViewModel
+import com.google.android.stardroid.ui.tonight.TonightSheet
+import com.google.android.stardroid.ui.tonight.TonightViewModel
+import com.google.android.stardroid.ui.tonight.loadTextSource
 import com.google.android.stardroid.widget.MoonWidget
 import com.google.android.stardroid.widget.MoonWidgetReceiver
 import com.google.android.stardroid.widget.TonightWidget
@@ -283,6 +291,41 @@ class MainActivity : ComponentActivity() {
                             else -> emptyList()
                         }
                     },
+                )
+            }
+        }
+    }
+
+    private val tonightViewModel: TonightViewModel by viewModels {
+        viewModelFactory {
+            initializer {
+                val appContext = applicationContext
+                TonightViewModel(
+                    now = Clock.System::now,
+                    location = { settings.savedLocation.first() },
+                    showers = {
+                        catalogAccess.repository().meteorShowers(localeSource.current).first()
+                    },
+                    passes = { tonightSatellitePasses(appContext, it) },
+                    notices = {
+                        if (experimentConfig.isEnabled(Experiment.ANNOUNCEMENTS) &&
+                            settings.announcementsEnabled.first()
+                        ) {
+                            tonightNotices(
+                                Clock.System.now(),
+                                announcementSource,
+                                announcementState.seen.first(),
+                                appVersionCode(appContext),
+                                localeSource.current,
+                            )
+                        } else {
+                            emptyList()
+                        }
+                    },
+                    words = {
+                        NotificationText(loadTextSource(), formatTimeFor(appContext))
+                    },
+                    formatTime = { formatTimeFor(appContext) },
                 )
             }
         }
@@ -631,6 +674,7 @@ class MainActivity : ComponentActivity() {
                     onWelcomeSkipped = startupViewModel::skipWarmWelcome,
                     onWelcomeStarted = startupViewModel::warmWelcomeStarted,
                     onWelcomeSlideViewed = startupViewModel::warmWelcomeSlideViewed,
+                    onOpenTonight = tonightViewModel::open,
                     onRequestLocationPermission = ::requestLocationPermission,
                     onRequestAutoLocation = ::requestAutoLocation,
                     onOpenAppSettings = ::openAppSettings,
@@ -643,6 +687,11 @@ class MainActivity : ComponentActivity() {
                         cameraPermissionRequest.launch(Manifest.permission.CAMERA)
                     },
                     experimentConfig = experimentConfig,
+                )
+                TonightSheet(
+                    viewModel = tonightViewModel,
+                    onOpenObject = { objectInfoViewModel.show(CelestialObjectId(it)) },
+                    onSearch = ::runSearch,
                 )
                 // The info card is a dialog window and would float above the EULA, so links
                 // wait for acceptance; the pending intent is kept until then.
@@ -745,6 +794,12 @@ class MainActivity : ComponentActivity() {
             }
             objectInfoViewModel.show(CelestialObjectId(it))
             intent.removeExtra(MoonWidget.EXTRA_SHOW_OBJECT_ID)
+        }
+        // The widget header or background, or a digest or announcement notification (D149).
+        if (intent.getBooleanExtra(TonightWidget.EXTRA_SHOW_TONIGHT, false)) {
+            navController.popBackStack(Routes.MAP, inclusive = false)
+            tonightViewModel.open()
+            intent.removeExtra(TonightWidget.EXTRA_SHOW_TONIGHT)
         }
         // An announcement notification or widget banner whose action is a search.
         intent.getStringExtra(AnnouncementAction.EXTRA_SEARCH_QUERY)?.let {

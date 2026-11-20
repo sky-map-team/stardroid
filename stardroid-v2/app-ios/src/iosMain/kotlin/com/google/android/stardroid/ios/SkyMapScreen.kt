@@ -35,6 +35,7 @@ import androidx.compose.ui.viewinterop.UIKitInteropProperties
 import androidx.compose.ui.viewinterop.UIKitViewController
 import androidx.compose.ui.window.ComposeUIViewController
 import com.google.android.stardroid.analytics.Analytics
+import com.google.android.stardroid.catalog.CelestialObjectId
 import com.google.android.stardroid.catalog.ObjectInfo
 import com.google.android.stardroid.catalog.SearchHit
 import com.google.android.stardroid.satellites.SatelliteDiagnosticsState
@@ -75,6 +76,8 @@ import com.google.android.stardroid.ui.startup.appVersionName
 import com.google.android.stardroid.ui.support.SupportScreen
 import com.google.android.stardroid.ui.theme.SkyMapTheme
 import com.google.android.stardroid.ui.timetravel.TimeTravelViewModel
+import com.google.android.stardroid.ui.tonight.TonightSheet
+import com.google.android.stardroid.ui.tonight.TonightViewModel
 import kotlinx.coroutines.launch
 import org.jetbrains.compose.resources.stringResource
 import platform.UIKit.UIViewController
@@ -107,6 +110,7 @@ fun skyMapViewController(
     val diagnostics = graph.diagnosticsViewModel(mapViewModel, map.rendererInfo)
     val gallery = graph.galleryViewModel()
     val calibration = graph.calibrationViewModel()
+    val tonight = graph.tonightViewModel()
     return ComposeUIViewController {
         SkyMapScreen(
             map,
@@ -120,6 +124,7 @@ fun skyMapViewController(
             diagnostics,
             gallery,
             calibration,
+            tonight,
             startup,
             onRequestAutoLocation = graph::requestAutoLocation,
             onOpenAppSettings = graph::openAppSettings,
@@ -146,6 +151,7 @@ private fun SkyMapScreen(
     diagnosticsViewModel: DiagnosticsViewModel,
     galleryViewModel: GalleryViewModel,
     calibrationViewModel: CompassCalibrationViewModel,
+    tonightViewModel: TonightViewModel,
     startup: StartupViewModel,
     onRequestAutoLocation: () -> Unit,
     onOpenAppSettings: () -> Unit,
@@ -188,6 +194,16 @@ private fun SkyMapScreen(
             }
         }
     }
+    LaunchedEffect(Unit) {
+        // A widget or the digest asks for the Tonight sheet: back to the map, then the sheet.
+        DeepLinks.tonight.collect { asked ->
+            if (asked) {
+                pages = emptyList()
+                tonightViewModel.open()
+                DeepLinks.consumeTonight()
+            }
+        }
+    }
     SkyMapTheme(nightMode) {
         Box(Modifier.fillMaxSize()) {
             val current = gates
@@ -211,6 +227,7 @@ private fun SkyMapScreen(
                 onOpenHelp = { open(Page.HELP) },
                 onOpenWhatsNew = { open(Page.WHATS_NEW) },
                 onOpenSupport = { open(Page.SUPPORT) },
+                onOpenTonight = tonightViewModel::open,
                 onOpenCalibration = { userInitiated ->
                     open(if (userInitiated) Page.CALIBRATION else Page.CALIBRATION_PROMPT)
                 },
@@ -225,6 +242,14 @@ private fun SkyMapScreen(
             ) { onTap, onDoubleTap ->
                 MetalSky(map, onTap, onDoubleTap)
             }
+            TonightSheet(
+                viewModel = tonightViewModel,
+                onOpenObject = { objectInfoViewModel.show(CelestialObjectId(it)) },
+                onSearch = {
+                    searchViewModel.setQuery(it)
+                    searchViewModel.submit()
+                },
+            )
             // The edge swipe closes a page, as Android's system back pops its destination.
             BackHandler(enabled = page != null) { back() }
             when (page) {

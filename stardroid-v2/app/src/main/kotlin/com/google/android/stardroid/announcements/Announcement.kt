@@ -17,13 +17,17 @@ enum class Surface(val wire: String) {
     NOTIFICATION("notification"),
     WIDGET("widget"),
     INTERSTITIAL("interstitial"),
+
+    /** The Tonight sheet. Implicit: never named in a payload, and shows whatever is active. */
+    SHEET("sheet"),
     ;
 
     /** Interruptive surfaces fire at most once per message, across all of them. */
-    val interruptive: Boolean get() = this != WIDGET
+    val interruptive: Boolean get() = this != WIDGET && this != SHEET
 
     companion object {
-        fun fromWire(wire: String): Surface? = entries.firstOrNull { it.wire == wire }
+        fun fromWire(wire: String): Surface? =
+            entries.firstOrNull { it != SHEET && it.wire == wire }
     }
 }
 
