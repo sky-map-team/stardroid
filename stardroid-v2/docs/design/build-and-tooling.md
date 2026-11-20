@@ -70,7 +70,8 @@ out. The plugin decides which platforms a module builds for — see
   notification center and background refresh, `Info.plist` and the privacy manifest, the UI
   tests, and the widget extension (`Widgets/`, linking `SkyMapWidgetKit`). A build phase runs
   Gradle for `SkyMapKit` and the catalog DB. `:app-ios` and `ios/SkyMap` are two halves of one
-  app, because Gradle can't build an iOS app and Xcode can't build Kotlin. [`ios/README.md`](../../ios/README.md) covers building it.
+  app, because Gradle can't build an iOS app and Xcode can't build Kotlin.
+  [`ios/README.md`](../../ios/README.md) covers building it.
 - `ios/RendererHarness` — the same kind of shell, for `:render:metal-harness`.
 - `build-logic/` — the convention plugins below: an included build, JVM only.
 - `source-data/` — the catalog's CSV/JSON sources; its README documents the formats.
