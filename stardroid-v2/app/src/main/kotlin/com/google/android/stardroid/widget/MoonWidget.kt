@@ -111,7 +111,7 @@ private fun MoonWidgetContent(
                 fullLayoutPlan(
                     heightDp = LocalSize.current.height.value,
                     fontScale = context.resources.configuration.fontScale,
-                    timeRows = listOfNotNull(model.riseTime, model.setTime).size,
+                    timeRows = model.crossingsInOrder.size,
                 ),
             )
     }
