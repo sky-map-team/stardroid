@@ -13,6 +13,7 @@ import com.google.android.stardroid.analytics.Analytics
 import com.google.android.stardroid.analytics.AnalyticsEvents
 import com.google.android.stardroid.analytics.NoOpAnalytics
 import com.google.android.stardroid.astronomy.MeeusEphemeris
+import com.google.android.stardroid.astronomy.PassSearch
 import com.google.android.stardroid.astronomy.SatellitePass
 import com.google.android.stardroid.catalog.CatalogRepository
 import com.google.android.stardroid.catalog.LocaleSpec
@@ -73,6 +74,7 @@ import kotlinx.coroutines.IO
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.SupervisorJob
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.collectLatest
@@ -100,7 +102,6 @@ import platform.Foundation.preferredLanguages
 import platform.Foundation.timeIntervalSince1970
 import platform.UIKit.UIApplication
 import platform.UIKit.UIApplicationOpenSettingsURLString
-import kotlin.time.Duration.Companion.hours
 import kotlin.time.Duration.Companion.seconds
 
 /**
@@ -324,8 +325,8 @@ class IosAppGraph(
         }
         scope.launch {
             // The tonight widget's showers and passes, which the extension has no database or
-            // element sets to work out. Refreshed while in the foreground; the Swift shell
-            // reloads the widgets as the app goes to the background.
+            // element sets to work out. Settled while open; leaving writes at once, ahead of the
+            // Swift shell's widget reload.
             @OptIn(FlowPreview::class)
             combine(
                 foreground.isForeground,
@@ -337,8 +338,10 @@ class IosAppGraph(
                     flowOf(Unit)
                 },
             ) { inForeground, _, _, _ -> inForeground }
-                .debounce(NOTIFICATION_REPLAN_DELAY)
-                .collectLatest { if (it) mirrorTonightWidgetInputs() }
+                .collectLatest { inForeground ->
+                    if (inForeground) delay(NOTIFICATION_REPLAN_DELAY)
+                    mirrorTonightWidgetInputs()
+                }
         }
         scope.launch {
             // Latest: going to the background cancels a start still waiting on the EULA.
@@ -401,9 +404,9 @@ class IosAppGraph(
 
     /** Writes what the tonight widget reads from the App Group ([WidgetSharedStore]). */
     private suspend fun mirrorTonightWidgetInputs() {
-        WidgetSharedStore.showers = catalog().meteorShowers(locale.value).first()
+        val showers = catalog().meteorShowers(locale.value).first()
         val location = settings.savedLocation.first()
-        WidgetSharedStore.passes =
+        val passes =
             if (satellitesEnabled &&
                 location != null &&
                 LayerRegistry.layerEnabled(settings, SatelliteLayer.LAYER_ID).first()
@@ -413,12 +416,15 @@ class IosAppGraph(
                         satellites.repository.current(),
                         location,
                         Clock.System.now(),
-                        TONIGHT_WIDGET_PASS_SEARCH,
+                        PassSearch.DEFAULT_SEARCH_WINDOW,
                     )
                 }
             } else {
                 emptyList()
             }
+        // Back to back, so the extension never reads new showers with old passes.
+        WidgetSharedStore.showers = showers
+        WidgetSharedStore.passes = passes
     }
 
     /** Tells [onResult] whether a background refresh has anything to do now. */
@@ -681,9 +687,3 @@ private const val MILLIS_PER_SECOND = 1000
 
 /** Settling time, so a burst of changes (a setting, then the location) plans once. */
 private val NOTIFICATION_REPLAN_DELAY = 2.seconds
-
-/**
- * How far ahead the passes handed to the tonight widget run: two nights, so the widget still has
- * tomorrow's when the app isn't opened for a day. Each timeline entry narrows them to tonight.
- */
-private val TONIGHT_WIDGET_PASS_SEARCH = 48.hours

@@ -63,7 +63,6 @@ class CountdownWidgetSnapshot(
 
 /** The tonight and countdown widgets' entry point for the Swift extension. */
 object TonightWidgets {
-    /** Hourly snapshots for [hours] hours from [startEpochSeconds], at the saved location. */
     fun snapshots(
         startEpochSeconds: Double,
         hours: Int,
@@ -79,7 +78,6 @@ object TonightWidgets {
         ).map { it.toSnapshot(zone) }
     }
 
-    /** "Quiet sky tonight", the line shown when no row is worth a look. */
     val quiet: String get() = WidgetText.text("tonight_quiet")
 
     /** A snapshot from [startEpochSeconds], then one at each local midnight for [days] days. */

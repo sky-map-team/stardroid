@@ -35,9 +35,8 @@ import kotlin.time.Duration.Companion.hours
 val TONIGHT_PASS_HORIZON: Duration = 16.hours
 
 /**
- * The passes the tonight widget shows from [at]: those beginning within [TONIGHT_PASS_HORIZON],
- * as a pass search from [at] would find them. iOS searches once, further ahead, and narrows the
- * result to each timeline entry with this.
+ * The passes beginning within [TONIGHT_PASS_HORIZON] of [at]. iOS searches once, further ahead
+ * (so it has tomorrow's when the app isn't opened for a day), and narrows to each timeline entry.
  */
 fun List<SatellitePass>.tonightFrom(at: Instant): List<SatellitePass> =
     filter { it.start >= at && it.start < at + TONIGHT_PASS_HORIZON }

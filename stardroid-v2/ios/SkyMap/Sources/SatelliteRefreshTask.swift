@@ -12,9 +12,9 @@ import SkyMapKit
 import WidgetKit
 
 /// Best-effort background refresh of the satellite element sets, after which it also plans the
-/// next nights' notifications and hands the tonight widget its passes. The system picks when (often rarely, for a little-used app), so
-/// the foreground fetch on app open stays the dependable path; this one just keeps data fresh for
-/// people who open the app only briefly.
+/// next nights' notifications and hands the tonight widget its passes. The system picks when
+/// (often rarely, for a little-used app), so the foreground fetch on app open stays the dependable
+/// path; this one just keeps data fresh for people who open the app only briefly.
 enum SatelliteRefreshTask {
     static let identifier = "io.penterakt.skymap.satellite-refresh"
 

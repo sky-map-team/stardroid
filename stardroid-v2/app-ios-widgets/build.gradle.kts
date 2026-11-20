@@ -30,7 +30,7 @@ val textIdSource =
         "core/text/src/commonMain/kotlin/com/google/android/stardroid/text/TextId.kt",
     )
 val textIdKeys =
-    Regex("""^\s+[A-Z_]+\("([^"]+)"\),$""", RegexOption.MULTILINE)
+    Regex("""^\s*[A-Z][A-Z0-9_]*\("([^"]+)"""", RegexOption.MULTILINE)
         .findAll(textIdSource.asFile.readText())
         .map { it.groupValues[1] }
         .toList()

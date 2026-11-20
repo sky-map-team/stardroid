@@ -130,8 +130,8 @@ struct TonightWidgetView: View {
     }
 
     /// The Lock Screen's fixed three lines, as much as fits without cutting a sentence off: every
-    /// highlight, else the top one with its note, else the top one alone in up to three lines. Only the whole widget
-    /// can be tapped there, so it opens the top highlight.
+    /// highlight, else the top one with its note, else the top one alone in up to three lines.
+    /// Only the whole widget can be tapped there, so it opens the top highlight.
     @ViewBuilder
     private var rectangular: some View {
         Group {

@@ -24,6 +24,7 @@ import kotlinx.datetime.Instant
  */
 object WidgetSkyCodec {
     private const val SEP = "\t"
+    private val CONTROL_CHARS = Regex("[\t\n\r]")
 
     fun encodeShowers(showers: List<MeteorShower>): String =
         showers.joinToString("\n") {
@@ -86,7 +87,7 @@ object WidgetSkyCodec {
 
     // A name can't hold a tab or a newline once it's a field; a space reads the same on a widget.
     private fun fields(vararg values: Any): String =
-        values.joinToString(SEP) { it.toString().replace(Regex("[\t\n\r]"), " ") }
+        values.joinToString(SEP) { it.toString().replace(CONTROL_CHARS, " ") }
 
     private fun <T> records(
         text: String,
