@@ -689,7 +689,8 @@ class MainActivity : ComponentActivity() {
                     },
                     experimentConfig = experimentConfig,
                 )
-                // Like the info card, it waits for the terms and the tour to clear.
+                // An open request made over the terms or the tour is kept (visible stays true)
+                // and shows once they clear.
                 if (!gates.needsEula && !gates.needsWarmWelcome) {
                     TonightSheet(
                         viewModel = tonightViewModel,

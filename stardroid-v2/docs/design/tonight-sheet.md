@@ -62,7 +62,9 @@ notification they dismissed.
 - **Android** opens it with an intent extra, `EXTRA_SHOW_TONIGHT`, handled in `MainActivity`
   beside `EXTRA_SHOW_OBJECT_ID`.
 - **iOS** opens it with `<scheme>://tonight` (`ObjectLink` gains the route), handled by
-  `DeepLinks` beside `object/<id>`.
+  `DeepLinks` beside `object/<id>`. The digest notification carries `ObjectLink.TONIGHT_TARGET`
+  in its `objectId` field, deliberately: catalog ids are `type/name`, so it can't clash, and
+  the Swift notification plumbing stays unchanged. A typed target is a possible follow-up.
 
 ## 4. Where the work lives
 

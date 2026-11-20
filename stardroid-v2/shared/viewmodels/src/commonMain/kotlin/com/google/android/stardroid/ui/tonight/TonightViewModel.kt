@@ -80,6 +80,10 @@ class TonightViewModel(
     private val zone: () -> TimeZone = { TimeZone.currentSystemDefault() },
     private val limit: Int = SHEET_HIGHLIGHT_LIMIT,
 ) : ViewModel() {
+    private companion object {
+        val EMPTY = TonightState(null, null, emptyList(), emptyList(), null, 0)
+    }
+
     private val _visible = MutableStateFlow(false)
     val visible: StateFlow<Boolean> = _visible.asStateFlow()
 
@@ -101,6 +105,7 @@ class TonightViewModel(
     }
 
     fun close() {
+        loading?.cancel()
         _visible.value = false
     }
 
@@ -116,7 +121,9 @@ class TonightViewModel(
                 passes = where?.let { passes(it) }.orEmpty(),
                 limit = limit,
             )
-        val (text, format) = words().let { it.text to it.formatTime }
+        val wording = words()
+        val text = wording.text
+        val format = wording.formatTime
         val today = at.toLocalDateTime(zone()).date
         return TonightState(
             sunset = sky.sunset?.let(format),
@@ -136,16 +143,13 @@ class TonightViewModel(
         )
     }
 
-    private companion object {
-        val EMPTY = TonightState(null, null, emptyList(), emptyList(), null, 0)
-    }
-
     private suspend fun <T> guarded(block: suspend () -> T): T? =
         try {
             block()
         } catch (e: CancellationException) {
             throw e
         } catch (e: Exception) {
+            // Silent on purpose: commonMain has no logger, and no analytics may carry this.
             null
         }
 }
