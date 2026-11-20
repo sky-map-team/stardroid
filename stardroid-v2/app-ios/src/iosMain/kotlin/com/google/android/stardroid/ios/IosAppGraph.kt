@@ -325,8 +325,8 @@ class IosAppGraph(
         }
         scope.launch {
             // The tonight widget's showers and passes, which the extension has no database or
-            // element sets to work out. Settled while open; leaving writes at once, ahead of the
-            // Swift shell's widget reload.
+            // element sets to work out. Settled while open; leaving writes at once. The Swift shell's
+            // reload may beat that write, so the widget can catch up at its next refresh.
             @OptIn(FlowPreview::class)
             combine(
                 foreground.isForeground,
