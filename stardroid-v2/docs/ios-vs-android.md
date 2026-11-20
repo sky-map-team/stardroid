@@ -46,8 +46,8 @@ are small (a square), and Tonight is medium (a wide rectangle, room for three hi
 - **Moon, circular**, in the row under the clock: the phase disc and how much is lit.
 - **Moon, inline**, in the line of text above the clock: the phase name and the percentage. This
   one only appears when you tap that line while customizing the Lock Screen, not the row below it.
-- **Tonight, rectangular**, in the row under the clock: the top highlights, one per line. It takes
-  the space of two circular widgets.
+- **Tonight, rectangular**, in the row under the clock: as many of the top highlights as fit in
+  full (often just the first, with its detail). It takes the space of two circular widgets.
 
 Android has no Lock Screen widgets.
 

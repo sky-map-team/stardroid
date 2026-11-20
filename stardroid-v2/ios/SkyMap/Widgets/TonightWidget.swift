@@ -129,22 +129,35 @@ struct TonightWidgetView: View {
         .padding(.top, 8)
     }
 
-    /// The Lock Screen's three lines: the top highlights, or the quiet-night message. Only the
-    /// whole widget can be tapped there, so it opens the first highlight.
+    /// The Lock Screen's fixed three lines, as much as fits without cutting a sentence off: every
+    /// highlight, else the top one with its note, else the top one alone in up to three lines. Only the whole widget
+    /// can be tapped there, so it opens the top highlight.
+    @ViewBuilder
     private var rectangular: some View {
-        VStack(alignment: .leading, spacing: 0) {
-            if snapshot.rows.isEmpty {
-                Text(TonightWidgets.shared.quiet).font(.headline)
-                if let next = snapshot.quietNext { Text(next) }
-            } else {
-                ForEach(Array(snapshot.rows.enumerated()), id: \.offset) { index, row in
-                    Text(row.text).font(index == 0 ? .headline : .body)
+        Group {
+            if #available(iOSApplicationExtension 16.0, *), let top = snapshot.rows.first {
+                ViewThatFits(in: .vertical) {
+                    lines(snapshot.rows.map(\.text))
+                    lines([top.text, top.trailing])
+                    // The last resort may still be too long, so it truncates rather than clips.
+                    Text(top.text).font(.headline).lineLimit(3)
                 }
+            } else {
+                lines([TonightWidgets.shared.quiet] + [snapshot.quietNext].compactMap { $0 })
             }
         }
-        .lineLimit(1)
-        .minimumScaleFactor(0.8)
-        .frame(maxWidth: .infinity, alignment: .leading)
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
         .widgetURL(snapshot.rows.first.flatMap { URL(string: $0.link) })
+    }
+
+    /// Wrapped, never truncated, so ViewThatFits can tell whether they fit; the first is bold.
+    private func lines(_ texts: [String]) -> some View {
+        VStack(alignment: .leading, spacing: 0) {
+            ForEach(Array(texts.filter { !$0.isEmpty }.enumerated()), id: \.offset) { index, text in
+                Text(text)
+                    .font(index == 0 ? .headline : .body)
+                    .fixedSize(horizontal: false, vertical: true)
+            }
+        }
     }
 }
