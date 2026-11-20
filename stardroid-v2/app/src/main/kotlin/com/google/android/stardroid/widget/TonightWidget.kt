@@ -11,18 +11,21 @@ package com.google.android.stardroid.widget
 
 import android.content.Context
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.unit.DpSize
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.glance.GlanceId
 import androidx.glance.GlanceModifier
 import androidx.glance.Image
 import androidx.glance.ImageProvider
+import androidx.glance.LocalSize
 import androidx.glance.action.ActionParameters
 import androidx.glance.action.actionParametersOf
 import androidx.glance.action.actionStartActivity
 import androidx.glance.action.clickable
 import androidx.glance.appwidget.GlanceAppWidget
 import androidx.glance.appwidget.GlanceAppWidgetReceiver
+import androidx.glance.appwidget.SizeMode
 import androidx.glance.appwidget.provideContent
 import androidx.glance.background
 import androidx.glance.layout.Alignment
@@ -65,6 +68,13 @@ import java.util.Locale
  * astronomy lives in `:core:events`'s [tonightSky]; this class only formats rows.
  */
 class TonightWidget : GlanceAppWidget() {
+    // LocalSize reports the nearest listed size, not the real one, so list a ladder of widths
+    // (down to the provider's minResizeWidth) for the header to adapt to.
+    override val sizeMode =
+        SizeMode.Responsive(
+            (180..400 step 20).map { DpSize(it.dp, 55.dp) }.toSet(),
+        )
+
     override suspend fun provideGlance(
         context: Context,
         id: GlanceId,
@@ -140,7 +150,12 @@ private fun TonightContent(
         // half-empty box; the provider info lets users resize down to one row.
         verticalAlignment = Alignment.CenterVertically,
     ) {
-        HeaderRow(sky, context)
+        val showDarkTime =
+            showDarkTime(
+                widthDp = LocalSize.current.width.value,
+                fontScale = context.resources.configuration.fontScale,
+            )
+        HeaderRow(sky, context, showDarkTime)
         banner?.let { AnnouncementRow(it) }
         if (sky.highlights.isEmpty()) {
             QuietNight(sky.countdown, context)
@@ -156,6 +171,7 @@ private fun TonightContent(
 private fun HeaderRow(
     sky: TonightSky,
     context: Context,
+    showDarkTime: Boolean,
 ) {
     val date = SimpleDateFormat("EEE d MMM", Locale.getDefault()).format(Date())
     Row(modifier = GlanceModifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
@@ -168,9 +184,11 @@ private fun HeaderRow(
                     fontWeight = FontWeight.Bold,
                 ),
             maxLines = 1,
+            // Takes the leftover width and ellipsizes, so it can never overlap the sun times.
+            modifier = GlanceModifier.defaultWeight(),
         )
-        Spacer(GlanceModifier.defaultWeight())
-        sunTimes(sky, context)?.let {
+        Spacer(GlanceModifier.width(8.dp))
+        sunTimes(sky, context, showDarkTime)?.let {
             Text(
                 text = it,
                 style = TextStyle(color = ColorProvider(MUTED), fontSize = 11.sp),
@@ -180,12 +198,24 @@ private fun HeaderRow(
     }
 }
 
+// Width at 1.0 font scale where "Tonight · <date>" and "sun sets X · dark Y" fit on one line.
+// LocalSize.width is always a ladder step (20dp apart), so this is a ladder value on purpose.
+// At font scale 1.2+ the scaled threshold exceeds the widest step, so sunset only, on purpose.
+private const val FULL_HEADER_WIDTH_DP = 340f
+
+/** Whether the header has room for the darkness time; narrower widgets show sunset only. */
+internal fun showDarkTime(
+    widthDp: Float,
+    fontScale: Float,
+): Boolean = widthDp >= FULL_HEADER_WIDTH_DP * fontScale
+
 private fun sunTimes(
     sky: TonightSky,
     context: Context,
+    showDarkTime: Boolean,
 ): String? {
     val sunset = sky.sunset?.let { formatTime(context, it) } ?: return null
-    val dark = sky.darknessStart?.let { formatTime(context, it) }
+    val dark = sky.darknessStart?.takeIf { showDarkTime }?.let { formatTime(context, it) }
     return if (dark != null) {
         context.getString(R.string.tonight_widget_sun_times, sunset, dark)
     } else {
