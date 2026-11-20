@@ -6,8 +6,7 @@ Moon phases agree to the minute. What differs is the part that touches the phone
 widgets, notifications, background work, and a few features that have reached Android first.
 
 This page lists those differences and why they exist. Most come from what each system allows an
-app to do, not from a choice to leave something out. It's written for people who know their
-way around iOS or Android settings; you don't need to be a developer to read it.
+app to do, not from a choice to leave something out.
 
 Some features on both platforms are switched on gradually after a release, so a feature listed
 here may reach your phone a little after the update that carries it.
