@@ -38,9 +38,11 @@ the shared `NotificationText`, so the three surfaces can't disagree.
 
 ### 2.1 How many highlights
 
-`tonightSky` keeps the top three. The sheet shows the same three, not a longer list: a fourth
-would be a highlight the widget and the digest decided wasn't worth a look, and the sheet would
-then disagree with them. Revisit if three feels thin.
+`tonightSky` keeps the top three. The sheet shows the same three for now, so it agrees with the
+widget and the digest. It may show more later, once we've seen it, so it is built for that:
+`tonightSky` takes the count as a parameter (`limit`, default 3), and the sheet passes its own
+constant. Showing more is then a one-line change that leaves the widget and the digest as they
+are.
 
 ## 3. What opens it
 
@@ -92,20 +94,26 @@ way:
   the user asked for that.
 - Opening the sheet records nothing, so it never suppresses a notification or the dialog.
 
-This adds `Surface.SHEET` to the policy (non-interruptive), but not to the payload: messages
-don't need to list it. The sheet shows a message that lists any surface. A message aimed only at
-the dialog is still news the user may want to find again.
+This adds `Surface.SHEET` to the policy (non-interruptive), but not to the payload. The sheet is
+implicit: a message lists `notification`, `widget` or `interstitial` in Remote Config as now, and
+the sheet shows it whichever it lists, so publishing (`skymap.push-announcement`) doesn't change.
+A message aimed only at the dialog is still news the user may want to find again. The cost is
+that no message can be kept out of the sheet. If one ever needs to be, `sheet` becomes a payload
+value then.
 
 iOS has no announcements yet (no background fetch without push, ios-vs-android.md). The sheet's
 section is simply empty there, and showing it needs no layout change.
 
-## 6. Decisions to confirm
+## 6. Decisions (confirmed in review)
 
-1. **D149a**: the sheet shows only the three highlights the widget shows (§2.1).
+1. **D149a**: the sheet shows the three highlights the widget shows, for now. The count is a
+   parameter so this can be revisited once it's built (§2.1).
 2. **D149b**: a dismissed notification doesn't hide a message from the sheet; a Dismiss in the
    dialog does (§5).
 3. **D149c**: the widget-only strings move from `:app` to `:shared:ui` (§4).
 4. **D149d**: the Lock Screen widget opens the sheet instead of the first row's card.
+5. **D149e**: the map's menu has a "Tonight" item, the only way in for someone with no Tonight
+   widget, and the only way back to an announcement after its notification is dismissed (§3).
 
 ## 7. Build order
 
