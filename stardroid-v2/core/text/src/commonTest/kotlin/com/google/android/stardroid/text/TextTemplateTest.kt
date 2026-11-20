@@ -24,6 +24,11 @@ class TextTemplateTest {
     }
 
     @Test
+    fun `Foundation's object placeholder fills as a string`() {
+        assertThat(fill("%1\$@ peak", "Perseids")).isEqualTo("Perseids peak")
+    }
+
+    @Test
     fun `a doubled percent is a percent sign`() {
         assertThat(fill("The %1\$d%%-lit moon", 90)).isEqualTo("The 90%-lit moon")
     }

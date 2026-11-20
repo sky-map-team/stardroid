@@ -604,6 +604,7 @@ class MapViewModel(
             }
             fovBeforeAr = _camera.value.fovDeg
             _arZoomRatio.value = 1.0
+            _arExposureIndex.value = 0
             arIsoFractionSetting.value = 0.0
             arShutterFractionSetting.value = 0.0
             arPreviewLumaState.value = 0.0
@@ -622,12 +623,18 @@ class MapViewModel(
         return true
     }
 
-    /** The hardware edge reports the running camera's envelope; the FOV lock engages here. */
+    /**
+     * The hardware edge reports the running camera's envelope; the FOV lock engages here, and the
+     * kept exposure is clamped to the new camera's range.
+     */
     fun onArCameraReady(specs: ArCameraSpecs) {
         if (!_arMode.value) return
         arSpecs.value = specs
+        // Zoom deliberately restarts at 1x: the FOV lock is computed from the 1x specs.
         _arZoomRatio.value = 1.0
-        _arExposureIndex.value = 0
+        // Not reset: a rebind (rotation recreates the camera) keeps the user's exposure.
+        _arExposureIndex.value =
+            _arExposureIndex.value.coerceIn(specs.exposureMin, specs.exposureMax)
         applyArFov()
     }
 

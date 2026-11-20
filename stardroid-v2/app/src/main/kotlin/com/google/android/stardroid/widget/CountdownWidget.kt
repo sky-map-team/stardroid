@@ -41,16 +41,16 @@ import androidx.glance.text.TextStyle
 import androidx.glance.unit.ColorProvider
 import com.google.android.stardroid.R
 import com.google.android.stardroid.analytics.AnalyticsEvents
-import com.google.android.stardroid.astronomy.SolarSystemBody
 import com.google.android.stardroid.events.CountdownTarget
 import com.google.android.stardroid.events.tonightSky
+import com.google.android.stardroid.surfaces.WidgetColors
+import com.google.android.stardroid.surfaces.countdownRingProgress
+import com.google.android.stardroid.surfaces.dayOffset
+import com.google.android.stardroid.surfaces.targetObjectId
 import com.google.android.stardroid.ui.MainActivity
-import com.google.android.stardroid.ui.search.SolarSystemIds
 import kotlinx.coroutines.flow.first
 import kotlinx.datetime.Clock
 import kotlinx.datetime.TimeZone
-import kotlinx.datetime.daysUntil
-import kotlinx.datetime.toLocalDateTime
 
 /**
  * The countdown widget (D75 phase 2): a ring counting down to the events engine's
@@ -113,12 +113,7 @@ private fun CountdownContent(
     countdown: CountdownTarget?,
     context: Context,
 ) {
-    val targetId =
-        when (countdown) {
-            is CountdownTarget.ToShowerPeak -> countdown.shower.id.value
-            is CountdownTarget.ToMoonPhase -> SolarSystemIds.idFor(SolarSystemBody.MOON).value
-            null -> null
-        }
+    val targetId = countdown?.targetObjectId
     Column(
         modifier =
             GlanceModifier
@@ -140,13 +135,8 @@ private fun CountdownContent(
         verticalAlignment = Alignment.CenterVertically,
     ) {
         if (countdown == null) return@Column
-        val zone = TimeZone.currentSystemDefault()
         val days =
-            Clock.System
-                .now()
-                .toLocalDateTime(zone)
-                .date
-                .daysUntil(countdown.time.toLocalDateTime(zone).date)
+            dayOffset(Clock.System.now(), countdown.time, TimeZone.currentSystemDefault())
                 .coerceAtLeast(0)
         Box(contentAlignment = Alignment.Center) {
             Image(
@@ -205,13 +195,12 @@ private fun CountdownContent(
 
 /**
  * Draws the countdown ring: a full navy track with a Star Gold arc that fills as the event
- * approaches (30 days out = empty, tonight = full). Drawn, like the moon disc, because
- * Glance has no arc primitive.
+ * approaches ([countdownRingProgress]). Drawn, like the moon disc, because Glance has no arc
+ * primitive.
  */
 private object CountdownRingRenderer {
-    private const val TRACK_COLOR = 0xFF2A3355.toInt()
-    private const val ARC_COLOR = 0xFFFFC107.toInt()
-    private const val WINDOW_DAYS = 30
+    private val TRACK_COLOR = WidgetColors.OUTLINE.toInt()
+    private val ARC_COLOR = WidgetColors.STAR_GOLD.toInt()
 
     fun render(
         sizePx: Int,
@@ -230,7 +219,7 @@ private object CountdownRingRenderer {
             }
         paint.color = TRACK_COLOR
         canvas.drawOval(bounds, paint)
-        val progress = 1f - daysRemaining.coerceIn(0, WINDOW_DAYS) / WINDOW_DAYS.toFloat()
+        val progress = countdownRingProgress(daysRemaining)
         if (progress > 0f) {
             paint.color = ARC_COLOR
             canvas.drawArc(bounds, -90f, 360f * progress, false, paint)

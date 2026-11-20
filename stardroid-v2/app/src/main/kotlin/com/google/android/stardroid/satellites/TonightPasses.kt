@@ -18,13 +18,13 @@ import com.google.android.stardroid.layers.LayerRegistry
 import com.google.android.stardroid.layers.SatelliteLayer
 import com.google.android.stardroid.math.LatLong
 import com.google.android.stardroid.startup.Experiment
+import com.google.android.stardroid.surfaces.TONIGHT_PASS_HORIZON
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.withContext
 import kotlinx.datetime.Clock
 import kotlinx.datetime.Instant
 import kotlin.time.Duration
-import kotlin.time.Duration.Companion.hours
 
 /**
  * Tonight's good satellite passes (`isGood`), for the surfaces that render [SkyEvent]s (D92).
@@ -42,7 +42,7 @@ suspend fun tonightSatellitePasses(
     context: Context,
     location: LatLong?,
     from: Instant = Clock.System.now(),
-    within: Duration = TONIGHT_HORIZON,
+    within: Duration = TONIGHT_PASS_HORIZON,
 ): List<SatellitePass> {
     if (location == null) return emptyList()
     val entryPoint = satelliteEntryPoint(context)
@@ -73,14 +73,6 @@ suspend fun tonightSatellitePasses(
             }.goodPasses()
     }
 }
-
-/**
- * How far ahead "tonight" looks for the widget and digest.
- *
- * Shorter than [PassSearch.DEFAULT_SEARCH_WINDOW]'s 48 hours: these surfaces answer "what is worth
- * going outside for tonight", and a pass 40 hours away is not tonight's business.
- */
-val TONIGHT_HORIZON: Duration = 16.hours
 
 /**
  * The satellites the map is drawing, as tap targets with cards attached.

@@ -29,7 +29,9 @@ import com.google.android.stardroid.catalog.LocaleSpec
 import com.google.android.stardroid.catalog.MeteorShower
 import com.google.android.stardroid.catalog.MonthDay
 import com.google.android.stardroid.catalog.ObjectInfo
+import com.google.android.stardroid.catalog.SatelliteIds
 import com.google.android.stardroid.catalog.SearchHit
+import com.google.android.stardroid.catalog.SolarSystemIds
 import com.google.android.stardroid.catalog.TypeCode
 import com.google.android.stardroid.events.SkyEvent
 import com.google.android.stardroid.layers.CatalogLayers
@@ -39,11 +41,9 @@ import com.google.android.stardroid.math.LatLong
 import com.google.android.stardroid.math.RaDec
 import com.google.android.stardroid.math.Vector3
 import com.google.android.stardroid.render.api.SkyCamera
-import com.google.android.stardroid.satellites.SatelliteIds
 import com.google.android.stardroid.satellites.TrackedSatellite
 import com.google.android.stardroid.settings.FakeSettings
 import com.google.android.stardroid.testing.assertThat
-import com.google.android.stardroid.ui.search.SolarSystemIds
 import kotlinx.coroutines.CompletableDeferred
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi

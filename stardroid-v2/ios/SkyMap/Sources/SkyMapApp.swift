@@ -49,7 +49,7 @@ struct SkyMapApp: App {
             .onChange(of: scenePhase) { phase in
                 if phase == .background {
                     SatelliteRefreshTask.scheduleIfAllowed()
-                    // The saved location may have changed (WidgetSharedStore).
+                    // The location, showers or passes may have changed (WidgetSharedStore).
                     WidgetCenter.shared.reloadAllTimelines()
                 }
             }

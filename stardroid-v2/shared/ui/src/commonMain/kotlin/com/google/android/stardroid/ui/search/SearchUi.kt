@@ -18,6 +18,7 @@ import androidx.compose.animation.core.tween
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
@@ -49,6 +50,7 @@ import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.graphics.drawscope.rotate
 import androidx.compose.ui.layout.onGloballyPositioned
 import androidx.compose.ui.text.input.ImeAction
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.google.android.stardroid.catalog.SearchHit
@@ -195,13 +197,15 @@ private fun DrawScope.drawArrow(
 
 /**
  * v1's `search_control_bar`: the Looking for / Found status, the point-your-phone prompt while
- * seeking, and the cancel button.
+ * seeking, and the cancel button. In [compact] mode the prompt is omitted and the status and
+ * cancel button share one row.
  */
 @Composable
 fun SearchControlBar(
     targetName: String,
     found: Boolean,
     onCancel: () -> Unit,
+    compact: Boolean = false,
 ) {
     Surface(
         color = MaterialTheme.colorScheme.surface.copy(alpha = 0.8f),
@@ -210,29 +214,47 @@ fun SearchControlBar(
         contentColor = MaterialTheme.colorScheme.onSurface,
         shape = MaterialTheme.shapes.medium,
     ) {
-        Column(
-            horizontalAlignment = Alignment.CenterHorizontally,
-            modifier = Modifier.padding(8.dp),
-        ) {
-            Text(
-                formattedStringResource(
-                    if (found) {
-                        Res.string.search_target_found_message
-                    } else {
-                        Res.string.search_target_looking_message
-                    },
-                    targetName,
-                ),
-                style = MaterialTheme.typography.titleSmall,
+        val status =
+            formattedStringResource(
+                if (found) {
+                    Res.string.search_target_found_message
+                } else {
+                    Res.string.search_target_looking_message
+                },
+                targetName,
             )
-            if (!found) {
+        if (compact) {
+            // Landscape: one short row, so it doesn't cover the guide arrow below the target.
+            Row(
+                verticalAlignment = Alignment.CenterVertically,
+                modifier = Modifier.padding(start = 12.dp, end = 4.dp),
+            ) {
                 Text(
-                    stringResource(Res.string.search_overlay_prompt),
-                    style = MaterialTheme.typography.bodySmall,
+                    status,
+                    style = MaterialTheme.typography.titleSmall,
+                    maxLines = 1,
+                    overflow = TextOverflow.Ellipsis,
+                    modifier = Modifier.weight(1f, fill = false),
                 )
+                TextButton(onClick = onCancel) {
+                    Text(stringResource(Res.string.search_cancel))
+                }
             }
-            TextButton(onClick = onCancel) {
-                Text(stringResource(Res.string.search_cancel))
+        } else {
+            Column(
+                horizontalAlignment = Alignment.CenterHorizontally,
+                modifier = Modifier.padding(8.dp),
+            ) {
+                Text(status, style = MaterialTheme.typography.titleSmall)
+                if (!found) {
+                    Text(
+                        stringResource(Res.string.search_overlay_prompt),
+                        style = MaterialTheme.typography.bodySmall,
+                    )
+                }
+                TextButton(onClick = onCancel) {
+                    Text(stringResource(Res.string.search_cancel))
+                }
             }
         }
     }

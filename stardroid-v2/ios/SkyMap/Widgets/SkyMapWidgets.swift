@@ -16,5 +16,7 @@ import WidgetKit
 struct SkyMapWidgets: WidgetBundle {
     var body: some Widget {
         MoonWidget()
+        TonightWidget()
+        CountdownWidget()
     }
 }

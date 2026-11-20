@@ -86,8 +86,6 @@ class SkyCameraPreview(
     private var exposureIndex = 0
     private var manualExposure: ArManualExposure? = null
 
-    var stillMode by mutableStateOf(StillMode.AUTO)
-
     /** Whether the device offers a vendor night mode (CameraX Extensions) for stills. */
     var nightAvailable by mutableStateOf(false)
         private set
@@ -130,7 +128,11 @@ class SkyCameraPreview(
             // The toggle may have flipped off while the provider was starting up.
             if (!bound) return@addListener
             val camera = bindSession(night = false)
-            if (camera != null) onReady(specsFor(camera, viewAspectLongOverShort))
+            if (camera != null) {
+                // After rotation the view model's values arrive before the camera exists.
+                reapplyControls()
+                onReady(specsFor(camera, viewAspectLongOverShort))
+            }
             probeNightExtension(provider)
         }, ContextCompat.getMainExecutor(context))
     }
@@ -291,8 +293,8 @@ class SkyCameraPreview(
      * rear camera, and it is only ever centre-cropped into a share composite that is a
      * fraction of that (audit-2026-08 M5). The caller owns the result and recycles it.
      */
-    suspend fun takeStill(): Bitmap? =
-        if (stillMode == StillMode.NIGHT && nightAvailable) {
+    suspend fun takeStill(mode: StillMode): Bitmap? =
+        if (mode == StillMode.NIGHT && nightAvailable) {
             takeNightStill() ?: takeAutoStill()
         } else {
             takeAutoStill()
@@ -320,6 +322,10 @@ class SkyCameraPreview(
         capturingNight = true
         try {
             if (bindSession(night = true) == null) return null
+            // The fresh session starts at 1x; carry the user's framing and pin focus.
+            reapplyZoom()
+            pinFocusAtInfinity()
+            delay(NIGHT_SETTLE_MS)
             return capture()
         } finally {
             capturingNight = false
@@ -377,8 +383,40 @@ class SkyCameraPreview(
         }
     }
 
+    /** Re-applies the zoom, clamped to what this session (an extension may differ) allows. */
+    private fun reapplyZoom() {
+        val camera = camera ?: return
+        val state = camera.cameraInfo.zoomState.value
+        // The returned future is ignored: a bad ratio can only fail the request, not the session.
+        camera.cameraControl.setZoomRatio(
+            clampZoom(zoomRatio.toFloat(), state?.minZoomRatio, state?.maxZoomRatio),
+        )
+    }
+
+    /**
+     * Best effort: vendor extension sessions may ignore Camera2 options. Added (not set) so the
+     * live session's tuning is untouched; [reapplyControls] replaces them on the way back.
+     */
+    @SuppressLint("UnsafeOptInUsageError")
+    private fun pinFocusAtInfinity() {
+        val control = camera?.cameraControl ?: return
+        try {
+            Camera2CameraControl.from(control).addCaptureRequestOptions(
+                CaptureRequestOptions.Builder()
+                    .setCaptureRequestOption(
+                        CaptureRequest.CONTROL_AF_MODE,
+                        CameraMetadata.CONTROL_AF_MODE_OFF,
+                    )
+                    .setCaptureRequestOption(CaptureRequest.LENS_FOCUS_DISTANCE, 0.0f)
+                    .build(),
+            )
+        } catch (e: Exception) {
+            Log.w(TAG, "Could not pin focus for the night still", e)
+        }
+    }
+
     private fun reapplyControls() {
-        camera?.cameraControl?.setZoomRatio(zoomRatio.toFloat())
+        reapplyZoom()
         camera?.cameraControl?.setExposureCompensationIndex(exposureIndex)
         applyManualOptions(manualExposure)
     }
@@ -598,6 +636,9 @@ class SkyCameraPreview(
 
         /** How long AE gets to converge after the manual options are dropped for a still. */
         private const val AE_SETTLE_MS = 600L
+
+        /** Lets the zoom and focus requests reach the night session before the shot. */
+        private const val NIGHT_SETTLE_MS = 400L
 
         /** ~30 fps; long manual exposures stretch the frame duration past this. */
         private const val DEFAULT_FRAME_DURATION_NS = 33_333_333L
