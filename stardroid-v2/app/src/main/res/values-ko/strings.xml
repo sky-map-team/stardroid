@@ -95,19 +95,11 @@
     <!-- Tonight's-sky and countdown home-screen widgets (D69 phase 2). -->
     <string name="tonight_widget_label" translation_description="Name of the tonight\'s-sky home-screen widget, shown in the launcher\'s widget picker">오늘 밤 하늘</string>
     <string name="tonight_widget_description" translation_description="Description of the tonight\'s-sky widget, shown under its preview in the launcher\'s widget picker">오늘 밤 최고의 볼거리: 잘 보이는 행성, 유성우, 달 현상. 매일 업데이트됩니다.</string>
-    <string name="tonight_widget_header" translation_description="Small header label on the tonight widget; %1$s is a short date like \'Wed 30 Jul\'">오늘 밤 · %1$s</string>
-    <string name="tonight_widget_sun_times" translation_description="Header line on the tonight widget; %1$s is the sunset time, %2$s the time the sky becomes fully dark">해넘이 %1$s · 어둠 %2$s</string>
-    <string name="tonight_widget_sunset_only" translation_description="Header fragment when only the sunset time is known; %1$s is the sunset time">해넘이 %1$s</string>
-    <string name="tonight_quiet" translation_description="Tonight-widget line shown when nothing notable is visible tonight">오늘 밤 조용한 하늘</string>
-    <string name="tonight_quiet_next" translation_description="Tonight-widget line under the quiet-night message; %1$s is an event name, %2$d the days until it">다음: %2$d일 후 %1$s</string>
     <string name="countdown_widget_label" translation_description="Name of the countdown home-screen widget, shown in the launcher\'s widget picker">하늘 카운트다운</string>
     <string name="countdown_widget_description" translation_description="Description of the countdown widget, shown under its preview in the launcher\'s widget picker">다음 유성우 극대기 또는 달 이벤트까지 남은 일수.</string>
     <string name="countdown_days" translation_description="Unit label inside the countdown ring, under the number of days">일</string>
     <string name="countdown_tonight" translation_description="Shown inside the countdown ring when the event is tonight (zero days left)">지금</string>
-    <string name="countdown_shower_peak" translation_description="Countdown-widget event name; %1$s is a meteor shower name">%1$s 극대기</string>
     <string name="countdown_new_moon_peak" translation_description="Countdown-widget note: the shower peaks near new moon, so skies will be dark">신월 극대기</string>
-    <string name="countdown_full_moon" translation_description="Countdown-widget event name for the next full moon">보름달</string>
-    <string name="countdown_new_moon" translation_description="Countdown-widget event name for the next new moon">신월</string>
     <string name="tonight_widget_preview_row" translation_description="Representative highlight row shown in the widget picker\'s preview of the tonight widget">목성, 오후 9시 30분부터 잘 보임</string>
     <!-- tm:omitted name="countdown_widget_preview_days" reason="identical_to_source" -->
     <string name="countdown_widget_preview_name" translation_description="Representative event name shown in the widget picker\'s preview of the countdown widget">페르세우스자리 유성우 극대기</string>

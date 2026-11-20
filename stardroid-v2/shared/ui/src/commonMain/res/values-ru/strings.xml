@@ -657,4 +657,12 @@
     <string name="notif_shower_bright_moon">Луна, освещённая на %1$d%%, скроет слабые метеоры — до %2$d в час при идеальном небе.</string>
     <string name="notif_digest_title">Сегодня стоит посмотреть на небо</string>
     <string name="tonight_trailing_pass_peak">Макс. %1$d°, блеск %2$.1f</string>
+    <string name="tonight_widget_header">Сегодня · %1$s</string>
+    <string name="tonight_widget_sun_times">закат %1$s · темно с %2$s</string>
+    <string name="tonight_widget_sunset_only">закат %1$s</string>
+    <string name="tonight_quiet">Сегодня небо спокойное</string>
+    <string name="tonight_quiet_next">Далее: %1$s через %2$d дн.</string>
+    <string name="countdown_shower_peak">Максимум %1$s</string>
+    <string name="countdown_new_moon">Новолуние</string>
+    <string name="countdown_full_moon">Полнолуние</string>
 </resources>

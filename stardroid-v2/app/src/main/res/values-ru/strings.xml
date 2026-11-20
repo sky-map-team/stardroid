@@ -54,19 +54,11 @@
     <!-- Виджет "Небо сегодня ночью" и отсчёт -->
     <string name="tonight_widget_label">Небо этой ночью</string>
     <string name="tonight_widget_description">Лучшее на небе этой ночью: планеты в удобном положении, метеорные потоки и лунные события — обновляется ежедневно.</string>
-    <string name="tonight_widget_header">Сегодня · %1$s</string>
-    <string name="tonight_widget_sun_times">закат %1$s · темно с %2$s</string>
-    <string name="tonight_widget_sunset_only">закат %1$s</string>
-    <string name="tonight_quiet">Сегодня небо спокойное</string>
-    <string name="tonight_quiet_next">Далее: %1$s через %2$d дн.</string>
     <string name="countdown_widget_label">Небесный отсчёт</string>
     <string name="countdown_widget_description">Дни до следующего максимума метеорного потока или лунного события.</string>
     <string name="countdown_days">дн.</string>
     <string name="countdown_tonight">сейчас</string>
-    <string name="countdown_shower_peak">Максимум %1$s</string>
     <string name="countdown_new_moon_peak">Максимум в новолуние</string>
-    <string name="countdown_full_moon">Полнолуние</string>
-    <string name="countdown_new_moon">Новолуние</string>
     <string name="tonight_widget_preview_row">Юпитер хорошо виден с 21:30</string>
     <string name="countdown_widget_preview_days">14</string>
     <string name="countdown_widget_preview_name">Максимум Персеид</string>

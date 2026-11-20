@@ -105,19 +105,11 @@
     <string name="tonight_widget_description" translation_description="Description of the tonight\'s-sky widget, shown under its preview in the launcher\'s widget picker">
     Le migliori osservazioni di stasera: pianeti ben posizionati, sciami meteorici ed eventi lunari, aggiornati quotidianamente.
     </string>
-    <string name="tonight_widget_header" translation_description="Small header label on the tonight widget; %1$s is a short date like \'Wed 30 Jul\'">Stasera · %1$s</string>
-    <string name="tonight_widget_sun_times" translation_description="Header line on the tonight widget; %1$s is the sunset time, %2$s the time the sky becomes fully dark">sole tramonta %1$s · buio %2$s</string>
-    <string name="tonight_widget_sunset_only" translation_description="Header fragment when only the sunset time is known; %1$s is the sunset time">sole tramonta %1$s</string>
-    <string name="tonight_quiet" translation_description="Tonight-widget line shown when nothing notable is visible tonight">Cielo tranquillo stanotte</string>
-    <string name="tonight_quiet_next" translation_description="Tonight-widget line under the quiet-night message; %1$s is an event name, %2$d the days until it">Prossimo: %1$s tra %2$d giorni</string>
     <string name="countdown_widget_label" translation_description="Name of the countdown home-screen widget, shown in the launcher\'s widget picker">Conto alla rovescia celeste</string>
     <string name="countdown_widget_description" translation_description="Description of the countdown widget, shown under its preview in the launcher\'s widget picker">Giorni al prossimo picco di pioggia meteorica o evento lunare.</string>
     <string name="countdown_days" translation_description="Unit label inside the countdown ring, under the number of days">giorni</string>
     <string name="countdown_tonight" translation_description="Shown inside the countdown ring when the event is tonight (zero days left)">ora</string>
-    <string name="countdown_shower_peak" translation_description="Countdown-widget event name; %1$s is a meteor shower name">Picco delle %1$s</string>
     <string name="countdown_new_moon_peak" translation_description="Countdown-widget note: the shower peaks near new moon, so skies will be dark">Picco in luna nuova</string>
-    <string name="countdown_full_moon" translation_description="Countdown-widget event name for the next full moon">Luna Piena</string>
-    <string name="countdown_new_moon" translation_description="Countdown-widget event name for the next new moon">Luna Nuova</string>
     <string name="tonight_widget_preview_row" tm_human="true" translation_description="Representative highlight row shown in the widget picker\'s preview of the tonight widget">Giove ben posizionato dalle 21:30</string>
     <!-- tm:omitted name="countdown_widget_preview_days" reason="identical_to_source" -->
     <string name="countdown_widget_preview_name" translation_description="Representative event name shown in the widget picker\'s preview of the countdown widget">Picco delle Perseidi</string>
