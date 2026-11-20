@@ -10,11 +10,11 @@
 package com.google.android.stardroid.widget
 
 import androidx.compose.ui.graphics.Color
+import com.google.android.stardroid.surfaces.WidgetColors
 
-// The widget-world palette (D67): Starlight ink, Star Gold for the one key figure per
-// widget, onSurfaceVariant for muted secondary lines, Planet Green for good-news notes.
-// The navy surface itself is res/drawable/widget_background.
-internal val STARLIGHT = Color(0xFFE0E1DD)
-internal val STAR_GOLD = Color(0xFFFFC107)
-internal val MUTED = Color(0xFFA9B4D0)
-internal val PLANET_GREEN = Color(0xFF4DB848)
+// The shared widget palette (WidgetColors) as Compose colours. The navy surface itself is
+// res/drawable/widget_background.
+internal val STARLIGHT = Color(WidgetColors.STARLIGHT)
+internal val STAR_GOLD = Color(WidgetColors.STAR_GOLD)
+internal val MUTED = Color(WidgetColors.MUTED)
+internal val PLANET_GREEN = Color(WidgetColors.PLANET_GREEN)

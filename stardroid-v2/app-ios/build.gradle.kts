@@ -61,6 +61,8 @@ kotlin {
             implementation(project(":shared:ui"))
             implementation(project(":shared:layers"))
             implementation(project(":shared:surfaces"))
+            // The App Group store the widget extension reads.
+            implementation(project(":app-ios-widgets"))
             implementation(project(":core:text"))
             api(project(":shared:model"))
             implementation(project(":data"))

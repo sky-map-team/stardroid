@@ -24,6 +24,12 @@ developer disk image). Signing is automatic under the Penterakt team (`DEVELOPME
 registers its bundle ID to the signing team, and bundle IDs are unique across Apple, so a dev
 build must never claim the App Store app's. Release builds (archives) use `io.penterakt.skymap`.
 
+The widget extension (`Widgets/`, bundle ID `<app's>.widgets`) is a second target the app
+embeds. It links `SkyMapWidgetKit` (`:app-ios-widgets`), and its build phase also writes the
+widget strings from the shared XML. The app and the extension share an App Group,
+`group.io.penterakt.skymap` (`.dev` for Debug), which automatic signing registers on the first
+device build with `-allowProvisioningUpdates`.
+
 `MapGestureTests` (the scheme's `test`) drags, flings and pinches the map, capturing the sky
 after each as attachments (`xcrun xcresulttool export attachments --path <result bundle>`).
 

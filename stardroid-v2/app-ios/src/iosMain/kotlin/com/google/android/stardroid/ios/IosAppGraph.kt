@@ -18,6 +18,7 @@ import com.google.android.stardroid.catalog.CatalogRepository
 import com.google.android.stardroid.catalog.LocaleSpec
 import com.google.android.stardroid.data.RoomCatalogRepository
 import com.google.android.stardroid.data.SkyMapDatabaseFactory
+import com.google.android.stardroid.ios.widgets.WidgetSharedStore
 import com.google.android.stardroid.layers.LayerRegistry
 import com.google.android.stardroid.layers.SatelliteLayer
 import com.google.android.stardroid.location.LocationController
@@ -221,6 +222,9 @@ class IosAppGraph(
         // As on Android, the opt-out drives collection for the process lifetime.
         scope.launch { settings.enableAnalytics.collect { analytics.setEnabled(it) } }
         analytics.setUserProperty(AnalyticsEvents.USER_LOCALE, locale.value.tag)
+        // The widget extension can't read the DataStore, so the location is mirrored into the
+        // App Group. The Swift shell reloads the widgets as the app goes to the background.
+        scope.launch { settings.savedLocation.collect { WidgetSharedStore.savedLocation = it } }
     }
 
     private val catalogMutex = Mutex()

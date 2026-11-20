@@ -43,13 +43,15 @@ import com.google.android.stardroid.astronomy.MoonWidgetModel
 import com.google.android.stardroid.astronomy.dayOfCycle
 import com.google.android.stardroid.astronomy.illuminationPercent
 import com.google.android.stardroid.astronomy.moonWidgetModel
+import com.google.android.stardroid.surfaces.crossingsInOrder
+import com.google.android.stardroid.surfaces.dayOffset
 import com.google.android.stardroid.ui.MainActivity
 import kotlinx.coroutines.flow.first
 import kotlinx.datetime.Clock
 import kotlinx.datetime.Instant
 import kotlinx.datetime.TimeZone
-import kotlinx.datetime.toLocalDateTime
 import java.util.Date
+import com.google.android.stardroid.surfaces.MOON_OBJECT_ID as SHARED_MOON_OBJECT_ID
 
 /**
  * The moon-phase home-screen widget (D75): drawn phase disc, phase name, illumination, and
@@ -75,7 +77,7 @@ class MoonWidget : GlanceAppWidget() {
     companion object {
         /** Intent extra: the catalog id whose info card the app opens on widget tap. */
         const val EXTRA_SHOW_OBJECT_ID = "extra_show_object_id"
-        const val MOON_OBJECT_ID = "planet/moon"
+        const val MOON_OBJECT_ID = SHARED_MOON_OBJECT_ID
 
         // Responsive picks the largest listed size that fits the placed widget.
         internal val COMPACT_SIZE = DpSize(40.dp, 40.dp)
@@ -204,17 +206,11 @@ private fun FullMoonWidget(
             style = TextStyle(color = ColorProvider(MUTED), fontSize = 12.sp),
             maxLines = 1,
         )
-        // One row per crossing (they don't fit side by side in 2 cells); either alone when
-        // only one converged (D51), neither without a location. riseTime and setTime are each
-        // independently "next after now" (issue #1067), so whichever comes first chronologically
-        // — rise or set — must render first, or the pair reads as if it happened in the wrong
-        // order (e.g. "rises 6:36PM" above a "sets 5:56AM" that is actually earlier, tonight).
-        val rows =
-            listOfNotNull(
-                model.riseTime?.let { R.string.moon_widget_rise_time to it },
-                model.setTime?.let { R.string.moon_widget_set_time to it },
-            ).sortedBy { it.second }
-        rows.forEachIndexed { index, (labelRes, time) ->
+        // One row per crossing: they don't fit side by side in 2 cells.
+        model.crossingsInOrder.forEachIndexed { index, crossing ->
+            val labelRes =
+                if (crossing.rise) R.string.moon_widget_rise_time else R.string.moon_widget_set_time
+            val time = crossing.time
             TimeRow(labelRes, time, now, context, topPadding = if (index == 0) 2.dp else 0.dp)
         }
     }
@@ -258,17 +254,6 @@ internal fun moonWidgetLayoutFor(size: DpSize): MoonWidgetLayout =
     } else {
         MoonWidgetLayout.COMPACT
     }
-
-/** How many local calendar days after [now]'s day [time] falls on; negative if before. */
-internal fun dayOffset(
-    now: Instant,
-    time: Instant,
-    zone: TimeZone,
-): Int {
-    val nowDay = now.toLocalDateTime(zone).date.toEpochDays()
-    val timeDay = time.toLocalDateTime(zone).date.toEpochDays()
-    return timeDay - nowDay
-}
 
 private fun phaseNameRes(phase: LunarPhase): Int =
     when (phase) {
