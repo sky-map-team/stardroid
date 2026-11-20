@@ -6,6 +6,21 @@ options:
   bundleIdPrefix: io.penterakt.skymap
   deploymentTarget:
     iOS: "15.0"
+# Shared by the app and its widget extension, whose versions must match.
+settings:
+  base:
+    MARKETING_VERSION: "2.1.0"
+    SKYMAP_RELEASE_NAME: Izzie
+    CURRENT_PROJECT_VERSION: "1"
+  configs:
+    # A development build has its own App Group and link scheme, so a dev install beside the App
+    # Store app never reads its data or answers its links.
+    Debug:
+      SKYMAP_APP_GROUP: group.io.penterakt.skymap.dev
+      SKYMAP_URL_SCHEME: skymap-dev
+    Release:
+      SKYMAP_APP_GROUP: group.io.penterakt.skymap
+      SKYMAP_URL_SCHEME: skymap
 packages:
   Firebase:
     url: https://github.com/firebase/firebase-ios-sdk
@@ -20,6 +35,8 @@ targets:
         product: FirebaseAnalyticsWithoutAdIdSupport
       - package: Firebase
         product: FirebaseRemoteConfig
+      # The home-screen and Lock Screen widgets, embedded as an app extension.
+      - target: SkyMapWidgets
     sources:
       - Sources
       # The renderer's images, copied as Android packages them so the keys map to the same paths.
@@ -75,6 +92,18 @@ targets:
         # The system location prompt's text. Localized with the app's strings in phase 5.
         NSLocationWhenInUseUsageDescription: >-
           Sky Map uses your location to show the sky as it looks from where you are.
+        # Read by both bundles' Kotlin (WidgetSharedStore, MoonWidgets).
+        SkyMapAppGroup: $(SKYMAP_APP_GROUP)
+        SkyMapURLScheme: $(SKYMAP_URL_SCHEME)
+        # Links to an object's card (ObjectLink), which the widgets open the app with.
+        CFBundleURLTypes:
+          - CFBundleURLName: io.penterakt.skymap.object
+            CFBundleURLSchemes: [$(SKYMAP_URL_SCHEME)]
+    # The App Group the widget extension reads the saved location from.
+    entitlements:
+      path: SkyMap.entitlements
+      properties:
+        com.apple.security.application-groups: [$(SKYMAP_APP_GROUP)]
     postCompileScripts:
       # The Firebase console's config, not checked in: one plist per registered app, so dev builds
       # report as io.penterakt.skymap.dev and never as the App Store app. Without the matching
@@ -107,9 +136,6 @@ targets:
         PRODUCT_BUNDLE_IDENTIFIER: io.penterakt.skymap.dev
         DEVELOPMENT_TEAM: F98KUL97FJ
         CODE_SIGN_STYLE: Automatic
-        MARKETING_VERSION: "2.1.0"
-        SKYMAP_RELEASE_NAME: Izzie
-        CURRENT_PROJECT_VERSION: "1"
         GENERATE_INFOPLIST_FILE: YES
         INFOPLIST_KEY_CFBundleDisplayName: Sky Map
         INFOPLIST_KEY_UIApplicationSceneManifest_Generation: YES
@@ -129,6 +155,59 @@ targets:
           INFOPLIST_KEY_CFBundleDisplayName: Sky Map Dev
         Release:
           PRODUCT_BUNDLE_IDENTIFIER: io.penterakt.skymap
+  SkyMapWidgets:
+    # ios-platform-surfaces.md §6. Its own process with a tight memory limit, so it links only
+    # SkyMapWidgetKit (:app-ios-widgets): the shared astronomy, with no Compose, Metal or database.
+    type: app-extension
+    platform: iOS
+    sources:
+      - Widgets
+    dependencies:
+      - sdk: WidgetKit.framework
+      - sdk: SwiftUI.framework
+    info:
+      path: Widgets/Info.plist
+      properties:
+        CFBundleDisplayName: Sky Map
+        NSExtension:
+          NSExtensionPointIdentifier: com.apple.widgetkit-extension
+        SkyMapAppGroup: $(SKYMAP_APP_GROUP)
+        SkyMapURLScheme: $(SKYMAP_URL_SCHEME)
+    entitlements:
+      path: Widgets/SkyMapWidgets.entitlements
+      properties:
+        com.apple.security.application-groups: [$(SKYMAP_APP_GROUP)]
+    preBuildScripts:
+      - name: Build SkyMapWidgetKit and the widget strings (Kotlin)
+        basedOnDependencyAnalysis: false
+        script: |
+          cd "$SRCROOT/../.."
+          export JAVA_HOME="${JAVA_HOME:-$(/usr/libexec/java_home -v 17)}"
+          ./gradlew :app-ios-widgets:embedAndSignAppleFrameworkForXcode :app-ios-widgets:exportWidgetStrings
+    postCompileScripts:
+      # Generated from the shared Android-format strings (ExportAppleStrings), never checked in,
+      # so they are copied in rather than listed as sources.
+      - name: Bundle the widget strings
+        basedOnDependencyAnalysis: false
+        script: |
+          cp -R "$SRCROOT/../../app-ios-widgets/build/generated/widgetStrings/." \
+            "$TARGET_BUILD_DIR/$UNLOCALIZED_RESOURCES_FOLDER_PATH/"
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: io.penterakt.skymap.dev.widgets
+        DEVELOPMENT_TEAM: F98KUL97FJ
+        CODE_SIGN_STYLE: Automatic
+        GENERATE_INFOPLIST_FILE: YES
+        TARGETED_DEVICE_FAMILY: "1,2"
+        FRAMEWORK_SEARCH_PATHS: $(SRCROOT)/../../app-ios-widgets/build/xcode-frameworks/$(CONFIGURATION)/$(SDK_NAME)
+        OTHER_LDFLAGS: -framework SkyMapWidgetKit
+        ENABLE_USER_SCRIPT_SANDBOXING: NO
+        SWIFT_VERSION: "5.0"
+        # The development language; the generated .lproj folders add the rest.
+        DEVELOPMENT_LANGUAGE: en
+      configs:
+        Release:
+          PRODUCT_BUNDLE_IDENTIFIER: io.penterakt.skymap.widgets
   SkyMapUITests:
     type: bundle.ui-testing
     platform: iOS

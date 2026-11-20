@@ -96,6 +96,15 @@
 				<string>C617.1</string>
 			</array>
 		</dict>
+		<!-- The App Group's defaults, where the app leaves the saved location for its widgets. -->
+		<dict>
+			<key>NSPrivacyAccessedAPIType</key>
+			<string>NSPrivacyAccessedAPICategoryUserDefaults</string>
+			<key>NSPrivacyAccessedAPITypeReasons</key>
+			<array>
+				<string>1C8F.1</string>
+			</array>
+		</dict>
 	</array>
 </dict>
 </plist>

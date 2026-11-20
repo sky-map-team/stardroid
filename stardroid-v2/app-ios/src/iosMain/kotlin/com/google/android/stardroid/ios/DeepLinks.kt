@@ -9,6 +9,7 @@
 package com.google.android.stardroid.ios
 
 import com.google.android.stardroid.catalog.CelestialObjectId
+import com.google.android.stardroid.surfaces.ObjectLink
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -35,4 +36,9 @@ internal object DeepLinks {
 /** For Swift: a notification carrying an object id was tapped. Without an id the map just opens. */
 fun openObjectFromNotification(objectId: String?) {
     if (!objectId.isNullOrEmpty()) DeepLinks.openObject(CelestialObjectId(objectId))
+}
+
+/** For Swift: the app was opened with a link, such as a widget's. Others just open the map. */
+fun openObjectFromUrl(url: String) {
+    ObjectLink.objectIdOf(url)?.let { DeepLinks.openObject(CelestialObjectId(it)) }
 }

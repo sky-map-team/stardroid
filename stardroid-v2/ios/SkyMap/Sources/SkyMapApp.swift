@@ -9,6 +9,7 @@
 
 import SkyMapKit
 import SwiftUI
+import WidgetKit
 
 /// Sky Map for iOS. The app is Kotlin (app-ios, over the shared modules); Swift only hosts its
 /// root view controller, edge to edge.
@@ -43,8 +44,14 @@ struct SkyMapApp: App {
                 }
             }
             .ignoresSafeArea()
+            // A tapped widget's link to an object's card.
+            .onOpenURL { url in DeepLinksKt.openObjectFromUrl(url: url.absoluteString) }
             .onChange(of: scenePhase) { phase in
-                if phase == .background { SatelliteRefreshTask.scheduleIfAllowed() }
+                if phase == .background {
+                    SatelliteRefreshTask.scheduleIfAllowed()
+                    // The saved location may have changed (WidgetSharedStore).
+                    WidgetCenter.shared.reloadAllTimelines()
+                }
             }
         }
     }
