@@ -136,6 +136,9 @@ targets:
         PRODUCT_BUNDLE_IDENTIFIER: io.penterakt.skymap.dev
         DEVELOPMENT_TEAM: F98KUL97FJ
         CODE_SIGN_STYLE: Automatic
+        MARKETING_VERSION: "2.1.1"
+        SKYMAP_RELEASE_NAME: Izzie
+        CURRENT_PROJECT_VERSION: "1"
         GENERATE_INFOPLIST_FILE: YES
         INFOPLIST_KEY_CFBundleDisplayName: Sky Map
         INFOPLIST_KEY_UIApplicationSceneManifest_Generation: YES
