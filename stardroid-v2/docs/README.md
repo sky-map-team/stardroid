@@ -74,7 +74,7 @@ Implementation underway, following the porting order in
   FTS prefix search, locale fallback, transactional pack replacement (D33).
 - **Slice 4c** — `source-data/` harvested from v1 (stars, DSOs, constellation figures, ~30
   locales of names and info cards), the deterministic `:data:generateCatalogDb` generator,
-  and `createFromAsset` wiring (D34).
+  and bundled-copy wiring (D34; content-versioned re-copy on update, #1206).
 - **Slice 4d** — catalog-backed layers through the 3b backend: `SkyLayer`/`CatalogLayer`, the
   render-API `Icon` addendum + GLES1 `IconDrawer`, DB failure recovery, and the test activity
   rendering the real bundled catalog (D35).

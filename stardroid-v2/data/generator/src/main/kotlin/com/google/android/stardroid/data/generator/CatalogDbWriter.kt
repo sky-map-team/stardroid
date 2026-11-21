@@ -10,8 +10,10 @@
 package com.google.android.stardroid.data.generator
 
 import com.google.android.stardroid.catalog.NameNormalizer
+import java.io.RandomAccessFile
 import java.nio.file.Files
 import java.nio.file.Path
+import java.security.MessageDigest
 import java.sql.Connection
 import java.sql.DriverManager
 import java.sql.PreparedStatement
@@ -24,13 +26,17 @@ import java.sql.Types
  * catalog-and-schema.md): a fresh file, a fixed page size, a pinned sqlite-jdbc version,
  * stable row ordering, and no wall-clock values (`installed_at` is 0 — "shipped with the
  * app", not an install event).
+ *
+ * The finished file is stamped with its content version (see [stamp]).
  */
 object CatalogDbWriter {
+    internal const val APPLICATION_ID_OFFSET = 68L
+
     fun write(
         schema: RoomSchema,
         catalog: CatalogData,
         out: Path,
-    ) {
+    ): Int {
         Files.deleteIfExists(out)
         out.parent?.let { Files.createDirectories(it) }
         DriverManager.getConnection("jdbc:sqlite:$out").use { conn ->
@@ -59,6 +65,20 @@ object CatalogDbWriter {
                 st.execute("PRAGMA user_version = ${schema.version}")
             }
         }
+        return stamp(out)
+    }
+
+    /** Stamps a hash of [file]'s bytes into `application_id` ([CatalogStamp]); never 0. */
+    internal fun stamp(file: Path): Int {
+        val digest = MessageDigest.getInstance("SHA-256").digest(Files.readAllBytes(file))
+        val version =
+            digest.take(4).fold(0) { acc, b -> (acc shl 8) or (b.toInt() and 0xFF) }
+                .takeIf { it != 0 } ?: 1
+        RandomAccessFile(file.toFile(), "rw").use {
+            it.seek(APPLICATION_ID_OFFSET)
+            it.writeInt(version)
+        }
+        return version
     }
 
     private fun insertRows(
