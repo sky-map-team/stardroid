@@ -32,10 +32,11 @@ import platform.posix.open
 
 /**
  * Builds the on-device catalog database from the bundled `skymap.db` — the iOS counterpart of
- * the Android factory of the same name. Room's prepackaged-database support (`createFromAsset`)
- * is Android-only, so the copy happens here: copy when there is no on-device copy, or when its
- * [CatalogStamp] (schema and content version) differs from the bundled file's, the same rule as
- * Android. The catalog holds no user state, so replacing it loses nothing.
+ * the Android factory of the same name. Room's `createFromAsset` is Android-only, and it would not
+ * do what we want anyway: it copies only when no file exists, so it never sees new content. Both
+ * platforms copy by hand instead, when there is no on-device copy or its [CatalogStamp] (schema
+ * and content version) differs from the bundled file's. The catalog holds no user state, so
+ * replacing it loses nothing.
  *
  * The database opens with Room's bundled SQLite, not the system one (catalog-and-schema.md).
  */
