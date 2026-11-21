@@ -190,8 +190,14 @@ class BundledCatalogTest {
             assertThat(info.description).isNotEmpty()
             assertThat(info.imageRef).isNotEmpty()
             assertThat(info.links.map { it.id.value })
-                .containsExactly("moon/io", "moon/europa", "moon/ganymede", "moon/callisto")
-                .inOrder()
+                .containsExactly(
+                    "moon/io",
+                    "moon/europa",
+                    "moon/ganymede",
+                    "moon/callisto",
+                    "probe/voyager_1",
+                    "probe/voyager_2",
+                ).inOrder()
         }
 
     @Test

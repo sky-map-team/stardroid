@@ -253,15 +253,21 @@ class CatalogDbGeneratorTest {
                 "SELECT linked_id FROM object_link WHERE object_id='planet/jupiter' " +
                     "ORDER BY seq",
             ),
-        ).containsExactly("moon/io", "moon/europa", "moon/ganymede", "moon/callisto")
-            .inOrder()
+        ).containsExactly(
+            "moon/io",
+            "moon/europa",
+            "moon/ganymede",
+            "moon/callisto",
+            "probe/voyager_1",
+            "probe/voyager_2",
+        ).inOrder()
     }
 
     @Test
     fun `info cards cover english plus translations`() {
         assertThat(
             queryInt("SELECT COUNT(*) FROM info_card WHERE locale='en'"),
-        ).isEqualTo(341)
+        ).isEqualTo(344)
         assertThat(
             queryInt("SELECT COUNT(DISTINCT locale) FROM info_card"),
         ).isAtLeast(25)
@@ -271,7 +277,7 @@ class CatalogDbGeneratorTest {
     fun `satellite cards carry an image but no names, so catalog search never finds them`() {
         assertThat(
             queryStrings(
-                "SELECT id FROM celestial_object WHERE type='satellite' " +
+                "SELECT id FROM celestial_object WHERE id LIKE 'satellite/%' " +
                     "AND image_ref IS NOT NULL ORDER BY id",
             ),
         ).containsExactly("satellite/25544", "satellite/48274").inOrder()
