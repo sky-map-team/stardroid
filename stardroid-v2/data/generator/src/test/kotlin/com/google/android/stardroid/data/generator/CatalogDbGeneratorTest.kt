@@ -232,8 +232,8 @@ class CatalogDbGeneratorTest {
                 "WHERE type='black_hole'",
         ) { rs ->
             assertThat(rs.next()).isTrue()
-            assertThat(rs.getInt(1)).isEqualTo(2)
-            assertThat(rs.getInt(2)).isEqualTo(2)
+            assertThat(rs.getInt(1)).isEqualTo(3)
+            assertThat(rs.getInt(2)).isEqualTo(3)
             assertThat(rs.getInt(3)).isEqualTo(0)
         }
     }
@@ -288,7 +288,7 @@ class CatalogDbGeneratorTest {
     fun `info cards cover english plus translations`() {
         assertThat(
             queryInt("SELECT COUNT(*) FROM info_card WHERE locale='en'"),
-        ).isEqualTo(341)
+        ).isEqualTo(342)
         assertThat(
             queryInt("SELECT COUNT(DISTINCT locale) FROM info_card"),
         ).isAtLeast(25)
