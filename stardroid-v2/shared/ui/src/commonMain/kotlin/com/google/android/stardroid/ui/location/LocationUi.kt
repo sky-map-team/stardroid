@@ -141,7 +141,6 @@ fun LocationSheet(
     // bounce a partially expanded sheet between anchors in landscape (#1331).
     val sheetState = rememberModalBottomSheetState(skipPartiallyExpanded = true)
     ModalBottomSheet(onDismissRequest = onDismiss, sheetState = sheetState) {
-        // Scrollable: in landscape the content is taller than the sheet.
         Column(
             Modifier
                 .verticalScroll(rememberScrollState())
