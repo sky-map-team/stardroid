@@ -24,7 +24,11 @@ import platform.Foundation.NSLog
 import platform.Foundation.NSString
 import platform.Foundation.dataWithContentsOfFile
 import platform.Foundation.stringByDeletingLastPathComponent
+import platform.posix.O_RDONLY
+import platform.posix.close
+import platform.posix.fsync
 import platform.posix.memcpy
+import platform.posix.open
 
 /**
  * Builds the on-device catalog database from the bundled `skymap.db` — the iOS counterpart of
@@ -121,6 +125,11 @@ object SkyMapDatabaseFactory {
         check(files.copyItemAtPath(bundledPath, partial, null)) {
             "Could not copy the bundled catalog from $bundledPath"
         }
+        // Flushed first, so a power loss cannot leave a valid header over unwritten pages.
+        val descriptor = open(partial, O_RDONLY)
+        check(descriptor >= 0) { "Could not open $partial to flush it" }
+        fsync(descriptor)
+        close(descriptor)
         // Only now, so a failed copy leaves the previous catalog in place.
         deleteDatabase(databasePath)
         check(files.moveItemAtPath(partial, databasePath, null)) {
