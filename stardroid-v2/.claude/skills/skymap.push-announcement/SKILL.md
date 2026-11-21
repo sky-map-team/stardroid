@@ -20,6 +20,8 @@ preview, then get an explicit go-ahead from the user before the real publish.
   id, otherwise devices that already saw the old text will not show it again.
 - **Surfaces:** ask which of `notification`, `widget`, `interstitial` (default: all three).
   Notification and interstitial fire at most once between them; the widget carries it until `end`.
+  The in-app Tonight sheet also shows every active message, whichever surfaces it lists, until `end`
+  or an in-app dismissal; a message can't be kept out of it.
 - **Text:** English is required (`en`) as the fallback. Add other locales the user supplies;
   offer to draft translations for the languages they want, and have them approve before
   publishing. Keep the title short (notification title) and the body to about one or two

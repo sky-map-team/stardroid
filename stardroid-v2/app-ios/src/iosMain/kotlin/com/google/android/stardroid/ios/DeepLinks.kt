@@ -23,6 +23,17 @@ internal object DeepLinks {
     private val _pending = MutableStateFlow<CelestialObjectId?>(null)
     val pending: StateFlow<CelestialObjectId?> = _pending.asStateFlow()
 
+    private val _tonight = MutableStateFlow(false)
+    val tonight: StateFlow<Boolean> = _tonight.asStateFlow()
+
+    fun openTonight() {
+        _tonight.value = true
+    }
+
+    fun consumeTonight() {
+        _tonight.value = false
+    }
+
     fun openObject(id: CelestialObjectId) {
         _pending.value = id
     }
@@ -33,12 +44,23 @@ internal object DeepLinks {
     }
 }
 
-/** For Swift: a notification carrying an object id was tapped. Without an id the map just opens. */
+/**
+ * For Swift: a notification carrying an object id was tapped. The digest carries
+ * [ObjectLink.TONIGHT_TARGET] and opens the Tonight sheet. Without an id the map just opens.
+ */
 fun openObjectFromNotification(objectId: String?) {
-    if (!objectId.isNullOrEmpty()) DeepLinks.openObject(CelestialObjectId(objectId))
+    when {
+        objectId.isNullOrEmpty() -> Unit
+        objectId == ObjectLink.TONIGHT_TARGET -> DeepLinks.openTonight()
+        else -> DeepLinks.openObject(CelestialObjectId(objectId))
+    }
 }
 
 /** For Swift: the app was opened with a link, such as a widget's. Others just open the map. */
 fun openObjectFromUrl(url: String) {
+    if (ObjectLink.isTonight(url)) {
+        DeepLinks.openTonight()
+        return
+    }
     ObjectLink.objectIdOf(url)?.let { DeepLinks.openObject(CelestialObjectId(it)) }
 }

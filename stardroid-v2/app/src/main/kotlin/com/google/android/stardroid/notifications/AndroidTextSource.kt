@@ -15,6 +15,7 @@ import com.google.android.stardroid.surfaces.NotificationText
 import com.google.android.stardroid.text.TextId
 import com.google.android.stardroid.text.TextSource
 import com.google.android.stardroid.widget.formatTime
+import kotlinx.datetime.Instant
 
 /** Maps the shared [TextId]s to this app's string resources, in the context's locale. */
 class AndroidTextSource(
@@ -94,4 +95,7 @@ class AndroidTextSource(
 
 /** The shared notification and tonight-row wording, in this device's language and clock. */
 fun notificationText(context: Context): NotificationText =
-    NotificationText(AndroidTextSource(context)) { formatTime(context, it) }
+    NotificationText(AndroidTextSource(context), formatTimeFor(context))
+
+/** The device's 12 or 24 hour clock format, as the notification and sheet wording wants it. */
+fun formatTimeFor(context: Context): (Instant) -> String = { formatTime(context, it) }

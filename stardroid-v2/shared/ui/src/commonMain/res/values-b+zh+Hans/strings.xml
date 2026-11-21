@@ -594,4 +594,12 @@
     <string name="satellite_name_iss" translation_description="Display name for the International Space Station.">国际空间站</string>
     <string name="satellite_name_tiangong" translation_description="Display name for the Chinese space station Tiangong.">天宫</string>
     <string name="tonight_trailing_pass_peak" translation_description="Small trailing note on a satellite pass row. %1$d is the peak altitude in degrees, %2$.1f is a brightness magnitude.">最高%1$d°，视星等%2$.1f</string>
+    <string name="tonight_widget_header" translation_description="Small header label on the tonight widget; %1$s is a short date like \'Wed 30 Jul\'">今晚 · %1$s</string>
+    <string name="tonight_widget_sun_times" translation_description="Header line on the tonight widget; %1$s is the sunset time, %2$s the time the sky becomes fully dark">日落 %1$s · 天黑 %2$s</string>
+    <string name="tonight_widget_sunset_only" translation_description="Header fragment when only the sunset time is known; %1$s is the sunset time">日落 %1$s</string>
+    <string name="tonight_quiet" translation_description="Tonight-widget line shown when nothing notable is visible tonight">今晚天空平静</string>
+    <string name="tonight_quiet_next" translation_description="Tonight-widget line under the quiet-night message; %1$s is an event name, %2$d the days until it">下一次：%1$s 在 %2$d 天后</string>
+    <string name="countdown_shower_peak" translation_description="Countdown-widget event name; %1$s is a meteor shower name">%1$s 极大</string>
+    <string name="countdown_new_moon" translation_description="Countdown-widget event name for the next new moon">新月</string>
+    <string name="countdown_full_moon" translation_description="Countdown-widget event name for the next full moon">满月</string>
 </resources>

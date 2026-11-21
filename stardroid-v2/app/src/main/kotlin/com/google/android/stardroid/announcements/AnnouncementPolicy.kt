@@ -22,8 +22,8 @@ data class SeenRecord(
  *
  * - A message fires at most once across the interruptive surfaces (notification, interstitial):
  *   once the user has been told, they are not told again in another place.
- * - The widget is passive and exempt, so it keeps showing the message until it expires. An
- *   explicit in-app dismissal hides it everywhere.
+ * - The widget and the Tonight sheet are passive and exempt, so they keep showing the message
+ *   until it expires. An explicit in-app dismissal hides it everywhere.
  */
 object AnnouncementPolicy {
     /**
@@ -43,6 +43,22 @@ object AnnouncementPolicy {
             .filter { surface in it.surfaces && it.isActive(now) && it.minVersion <= appVersion }
             .filter { eligible(surface, seen[it.id] ?: SeenRecord()) }
             .maxByOrNull { it.start }
+
+    /**
+     * Every message the Tonight sheet shows, newest first. The sheet is passive and implicit: it
+     * ignores which surfaces a message lists and what has been shown elsewhere, and only an
+     * explicit dismissal hides a message from it.
+     */
+    fun forSheet(
+        now: Instant,
+        active: List<Announcement>,
+        seen: Map<String, SeenRecord>,
+        appVersion: Long,
+    ): List<Announcement> =
+        active
+            .filter { it.isActive(now) && it.minVersion <= appVersion }
+            .filter { eligible(Surface.SHEET, seen[it.id] ?: SeenRecord()) }
+            .sortedByDescending { it.start }
 
     private fun eligible(
         surface: Surface,
