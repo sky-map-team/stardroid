@@ -30,9 +30,8 @@ import java.sql.Types
  * The finished file is stamped with its content version (see [stamp]).
  */
 object CatalogDbWriter {
-    private const val APPLICATION_ID_OFFSET = 68L
+    internal const val APPLICATION_ID_OFFSET = 68L
 
-    /** Writes the catalog and returns its content version. */
     fun write(
         schema: RoomSchema,
         catalog: CatalogData,
@@ -69,13 +68,7 @@ object CatalogDbWriter {
         return stamp(out)
     }
 
-    /**
-     * Stamps [file] with a hash of its own bytes in the header's `application_id` and returns it.
-     * The file is a deterministic function of `source-data/`, the generator and the schema, so
-     * the hash changes exactly when the shipped content does. The devices compare it to decide
-     * whether to re-copy the catalog; it is in the header because that is readable without
-     * opening the database and needs no Room schema change. Never 0, which means "unstamped".
-     */
+    /** Stamps a hash of [file]'s bytes into `application_id` ([CatalogStamp]); never 0. */
     internal fun stamp(file: Path): Int {
         val digest = MessageDigest.getInstance("SHA-256").digest(Files.readAllBytes(file))
         val version =

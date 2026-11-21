@@ -110,7 +110,7 @@ object SkyMapDatabaseFactory {
         databasePath: String,
     ) {
         val files = NSFileManager.defaultManager
-        deleteDatabase(databasePath)
+
         @Suppress("CAST_NEVER_SUCCEEDS")
         val directory = (databasePath as NSString).stringByDeletingLastPathComponent
         check(files.createDirectoryAtPath(directory, true, null, null)) {
@@ -121,6 +121,8 @@ object SkyMapDatabaseFactory {
         check(files.copyItemAtPath(bundledPath, partial, null)) {
             "Could not copy the bundled catalog from $bundledPath"
         }
+        // Only now, so a failed copy leaves the previous catalog in place.
+        deleteDatabase(databasePath)
         check(files.moveItemAtPath(partial, databasePath, null)) {
             "Could not move the catalog copy into place at $databasePath"
         }
@@ -136,7 +138,7 @@ object SkyMapDatabaseFactory {
 
     /** Deletes the database and SQLite's files beside it. Missing files are not an error. */
     private fun deleteDatabase(databasePath: String) {
-        listOf("", "-wal", "-shm", "-journal").forEach {
+        (listOf("") + SQLITE_SIDE_FILE_SUFFIXES).forEach {
             NSFileManager.defaultManager.removeItemAtPath(databasePath + it, null)
         }
     }

@@ -10,25 +10,24 @@
 package com.google.android.stardroid.data
 
 import java.io.DataInputStream
-import java.io.EOFException
 import java.io.File
 import java.io.FileInputStream
 import java.io.IOException
 import java.io.InputStream
+import java.nio.channels.FileChannel
 import java.nio.file.Files
 import java.nio.file.StandardCopyOption
+import java.nio.file.StandardOpenOption
 
-/**
- * Puts the bundled catalog where the app opens it. Plain files and streams, so the rule is
- * testable on the JVM; [SkyMapDatabaseFactory] supplies the APK asset.
- */
+/** Puts the bundled catalog where the app opens it. Plain files and streams, so JVM-testable. */
 internal object CatalogInstaller {
     /**
      * Replaces [target] with the bundled catalog unless its stamp ([CatalogStamp]) already
      * matches. The copy is written beside [target] and moved into place, so an interrupted copy
      * leaves the previous file (or none), never a half-written catalog that would be opened.
-     * Returns whether it copied.
+     * Returns whether it copied. Synchronized because the partial file's name is fixed.
      */
+    @Synchronized
     fun installIfStale(
         target: File,
         openBundled: () -> InputStream,
@@ -50,9 +49,12 @@ internal object CatalogInstaller {
                     StandardCopyOption.REPLACE_EXISTING,
                 )
             }
-            // The old copy's side files belong to it, not to the replacement.
-            listOf("-wal", "-shm", "-journal").forEach { File(target.path + it).delete() }
-            Files.move(partial.toPath(), target.toPath(), StandardCopyOption.REPLACE_EXISTING)
+            // Flushed before the rename, so a power loss cannot leave a valid header (which passes
+            // the stamp check) over unwritten pages.
+            FileChannel.open(partial.toPath(), StandardOpenOption.WRITE).use { it.force(true) }
+            // A leftover WAL would be replayed onto the new file, so it goes before the move.
+            SQLITE_SIDE_FILE_SUFFIXES.forEach { File(target.path + it).delete() }
+            Files.move(partial.toPath(), target.toPath(), StandardCopyOption.ATOMIC_MOVE)
         } finally {
             partial.delete()
         }
@@ -65,8 +67,6 @@ internal object CatalogInstaller {
     private fun readHeaderOrNull(file: File): ByteArray? =
         try {
             FileInputStream(file).use(::readHeader)
-        } catch (e: EOFException) {
-            null
         } catch (e: IOException) {
             null
         }

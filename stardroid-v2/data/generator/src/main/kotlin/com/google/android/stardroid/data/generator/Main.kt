@@ -23,7 +23,6 @@ fun main(args: Array<String>) {
     generateCatalogDb(schemaPath, sourceDir, out)
 }
 
-/** Generates the catalog at [out] and returns its content version. */
 fun generateCatalogDb(
     schemaPath: Path,
     sourceDir: Path,

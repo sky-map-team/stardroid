@@ -12,6 +12,9 @@ package com.google.android.stardroid.data
 /** How many bytes of a SQLite file [CatalogStamp.parse] needs: the database header. */
 internal const val SQLITE_HEADER_SIZE = 100
 
+/** SQLite's files beside a database; a replaced copy's must not outlive it. */
+internal val SQLITE_SIDE_FILE_SUFFIXES = listOf("-wal", "-shm", "-journal")
+
 /**
  * What identifies a catalog file without opening it with SQLite: the schema version and the
  * content version, both read straight from the 100-byte SQLite header.
@@ -41,14 +44,13 @@ internal data class CatalogStamp(
         }
 
         /**
-         * True when the on-device copy must be replaced by the bundled one: there is no readable
-         * copy, or its schema or content differs from the bundled one's. Any difference counts,
-         * so a downgrade restores the older bundled catalog too.
+         * True when the on-device copy (null if missing or unreadable) must be replaced by the
+         * bundled one. Any difference counts, so a downgrade restores the older catalog too.
          */
         fun needsRefresh(
             onDevice: CatalogStamp?,
             bundled: CatalogStamp,
-        ): Boolean = onDevice == null || onDevice != bundled
+        ): Boolean = onDevice != bundled
     }
 }
 

@@ -17,10 +17,9 @@ import kotlinx.coroutines.withContext
 
 /**
  * Builds the on-device catalog database from the bundled `skymap.db` asset (produced by
- * `:data:generateCatalogDb`). [CatalogInstaller] copies the asset when there is no on-device copy
- * or its schema or content version ([CatalogStamp]) differs from the asset's, so a content-only
- * change in `source-data/` reaches an in-place upgrade without anyone bumping
- * [CATALOG_SCHEMA_VERSION]. Room then just opens the file: there is deliberately no
+ * `:data:generateCatalogDb`). [CatalogInstaller] copies it per [CatalogStamp.needsRefresh], so a
+ * content-only change in `source-data/` reaches an in-place upgrade without a
+ * [CATALOG_SCHEMA_VERSION] bump. Room then just opens the file: there is deliberately no
  * `createFromAsset` and no destructive migration fallback, because a mismatch Room finds anyway
  * must fail (and be recovered by [createWithRecovery]) rather than silently leave an empty
  * catalog.
@@ -38,12 +37,11 @@ object SkyMapDatabaseFactory {
 
     /**
      * [create] plus the D24/G11 failure recovery: Room opens lazily, so this probes with a
-     * trivial query; if the on-device copy is unusable (killed mid-first-copy, disk damage), it
+     * trivial query; if the on-device copy is unusable (disk damage, a Room identity mismatch), it
      * is deleted and re-copied from the bundled asset once. A failure of the *retry* is a real
      * bug or a full disk — that one propagates.
      *
-     * Main-safe: the recovery path's blocking I/O ([SkyMapDatabase.close], deleteDatabase) runs
-     * on [Dispatchers.IO]; the probe queries are suspend and dispatch to Room's own executor.
+     * Main-safe: blocking I/O runs on [Dispatchers.IO]; the probes dispatch to Room's executor.
      */
     suspend fun createWithRecovery(context: Context): SkyMapDatabase =
         withContext(Dispatchers.IO) {

@@ -64,7 +64,9 @@ class CatalogDbGeneratorTest {
     // --- reproducibility ---
 
     private fun contentVersionOf(file: Path): Int =
-        java.nio.ByteBuffer.wrap(Files.readAllBytes(file)).getInt(APPLICATION_ID_OFFSET)
+        java.nio.ByteBuffer.wrap(
+            Files.readAllBytes(file),
+        ).getInt(CatalogDbWriter.APPLICATION_ID_OFFSET.toInt())
 
     @Test
     fun `the catalog is stamped with a stable content version`() {
@@ -369,10 +371,5 @@ class CatalogDbGeneratorTest {
         val error = runCatching { punctuationOnly.validate() }.exceptionOrNull()
         assertThat(error).isInstanceOf(IllegalArgumentException::class.java)
         assertThat(error).hasMessageThat().contains("star/dots")
-    }
-
-    private companion object {
-        /** The SQLite header's application_id, where the content version is stamped. */
-        const val APPLICATION_ID_OFFSET = 68
     }
 }
