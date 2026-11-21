@@ -13,6 +13,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.google.android.stardroid.location.Geocoding
 import com.google.android.stardroid.location.LocationController
+import com.google.android.stardroid.location.LocationSource
 import com.google.android.stardroid.location.LocationState
 import com.google.android.stardroid.math.LatLong
 import kotlinx.coroutines.Job
@@ -61,12 +62,23 @@ class LocationViewModel(
     /** v1's `showLocationToast`, minus the formatting: the UI owns the strings. */
     val toasts: SharedFlow<LocationToast> = _toasts.asSharedFlow()
 
+    private var lastAutoToastName: String? = null
+
     init {
         viewModelScope.launch {
             // collectLatest: a newer fix cancels the previous fix's still-running geocode,
             // so only the latest position ever becomes a toast.
             controller.fixes.collectLatest { location ->
-                _toasts.emit(LocationToast(location, geocoding.reverseGeocode(location)))
+                val name = geocoding.reverseGeocode(location)
+                val state = controller.state.value
+                val manual =
+                    state is LocationState.Confirmed && state.source == LocationSource.MANUAL
+                // Auto fixes that resolve to the place already announced add nothing (e.g.
+                // fixes alternating between sources a few km apart). Manual entries always
+                // toast, and a failed lookup never counts as "already shown".
+                if (!manual && name != null && name == lastAutoToastName) return@collectLatest
+                lastAutoToastName = if (manual) null else name
+                _toasts.emit(LocationToast(location, name))
             }
         }
     }
