@@ -268,6 +268,9 @@ class SearchViewModelTest {
                 target.direction.distanceTo(ISS_POSITION.toGeocentricVector()),
             ).isLessThan(TOL)
             assertThat(settings.layerEnabled(SatelliteLayer.LAYER_ID).first()).isTrue()
+            // Live satellites have no catalog row, but their card still opens.
+            assertThat(repository.infos).doesNotContainKey(ISS_HIT.id)
+            assertThat(target.objectId).isEqualTo(ISS_HIT.id)
         }
 
     @Test
