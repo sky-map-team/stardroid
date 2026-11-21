@@ -268,6 +268,9 @@ class SearchViewModelTest {
                 target.direction.distanceTo(ISS_POSITION.toGeocentricVector()),
             ).isLessThan(TOL)
             assertThat(settings.layerEnabled(SatelliteLayer.LAYER_ID).first()).isTrue()
+            // Live satellites have no catalog row, but their card still opens.
+            assertThat(repository.infos).doesNotContainKey(ISS_HIT.id)
+            assertThat(target.objectId).isEqualTo(ISS_HIT.id)
         }
 
     @Test
@@ -560,6 +563,38 @@ class SearchViewModelTest {
                     .toGeocentricVector()
             assertThat(vm.target.value!!.name).isEqualTo("Io")
             assertThat(vm.target.value!!.direction.distanceTo(expected)).isLessThan(TOL)
+        }
+
+    @Test
+    fun `a target carries its catalog id so the search bar can open its card`() =
+        testScope.runCurrentTest {
+            repository.infos[SIRIUS_HIT.id] = objectInfo(SIRIUS_HIT.id, parent = null)
+            val vm = viewModel()
+            vm.select(SIRIUS_HIT)
+            runCurrent()
+
+            assertThat(vm.target.value!!.objectId).isEqualTo(SIRIUS_HIT.id)
+        }
+
+    @Test
+    fun `a hit the catalog has no card for carries no card id`() =
+        testScope.runCurrentTest {
+            val vm = viewModel()
+            vm.select(SIRIUS_HIT)
+            runCurrent()
+
+            assertThat(vm.target.value!!.objectId).isNull()
+        }
+
+    @Test
+    fun `a coordinate target has no card`() =
+        testScope.runCurrentTest {
+            val vm = viewModel()
+            vm.setQuery("12h 30m, +45")
+            vm.submit()
+            runCurrent()
+
+            assertThat(vm.target.value!!.objectId).isNull()
         }
 
     @Test

@@ -452,6 +452,7 @@ fun MapScreen(
                     targetName = target.name,
                     found = found,
                     onCancel = { searchViewModel.cancelSearch() },
+                    onInfo = target.objectId?.let { id -> { objectInfoViewModel.show(id) } },
                     compact = screenSize.width > screenSize.height,
                 )
             }
