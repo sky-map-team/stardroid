@@ -24,7 +24,7 @@ import kotlin.test.Test
 import kotlin.test.assertFails
 
 /**
- * The iOS factory's copy rule and D24/G11 recovery: the parts Room does for Android with
+ * The iOS factory's copy rule (schema and content version) and D24/G11 recovery: the parts Room does for Android with
  * `createFromAsset`, done by hand on iOS.
  */
 @OptIn(ExperimentalForeignApi::class)
@@ -82,6 +82,18 @@ class SkyMapDatabaseFactoryTest {
         }
 
     @Test
+    fun aCopyWithOlderContentButTheSameSchemaIsReplaced() =
+        runTest {
+            // The empty-catalog failure mode: same schema, content from an older build.
+            create().apply { packDao().removePack("core") }.close()
+            alterCopy("PRAGMA application_id = 12345")
+
+            val reopened = create()
+            assertThat(reopened.packIds()).containsExactly("core")
+            reopened.close()
+        }
+
+    @Test
     fun aFileThatIsNotADatabaseIsReplaced() =
         runTest {
             @Suppress("CAST_NEVER_SUCCEEDS")
@@ -96,12 +108,10 @@ class SkyMapDatabaseFactoryTest {
     @Test
     fun aCopyRoomCannotValidateIsDeletedAndRecopied() =
         runTest {
-            // Right schema version, wrong contents: the version check passes, Room's identity
-            // check does not, so only the probe in createWithRecovery catches it.
-            BundledSQLiteDriver().open(testCatalogPath).use {
-                it.execSQL("CREATE TABLE unrelated(x)")
-                it.execSQL("PRAGMA user_version = $CATALOG_SCHEMA_VERSION")
-            }
+            // Right stamp, damaged contents: the stamp check passes, so only the probe in
+            // createWithRecovery catches it.
+            create().close()
+            alterCopy("DROP TABLE pack")
             val broken = create()
             assertFails { broken.packIds() }
             broken.close()

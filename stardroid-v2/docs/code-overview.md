@@ -209,8 +209,10 @@ Authoritative design: [design/catalog-and-schema.md](design/catalog-and-schema.m
   external-content name search with diacritic folding, year-agnostic meteor-shower activity
   windows, constellation figures as vertex rows. Locale fallback is whole-object via
   `LocaleSpec.fallbackChain`, resolved Kotlin-side in `RoomCatalogRepository`.
-- **Bundled DB**: on Android, `createFromAsset("skymap.db")` with D24 recovery (probe; on
-  failure delete and re-copy once). iOS opens a copy with Room's bundled-SQLite driver; Android
+- **Bundled DB**: the factory re-copies `skymap.db` when its schema or content version
+  (stamped into the SQLite header at build time) differs from the on-device copy's, with D24
+  recovery (probe; on failure delete and re-copy once). iOS opens a copy with Room's
+  bundled-SQLite driver; Android
   sets no driver and keeps the platform SQLite (D127). The DB holds **no user state** — that
   invariant is what makes wholesale replacement and recovery safe.
 - **Search**: word-prefix FTS with operator-injection-proof tokenization; ranked by

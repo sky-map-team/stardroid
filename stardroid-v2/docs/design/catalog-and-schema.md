@@ -279,11 +279,12 @@ Notes:
   culture-independent.
 - **The catalog DB is read-mostly and replaceable.** User state (preferences, future
   favorites) lives in DataStore, never in this DB, so app updates can swap the bundled pack
-  wholesale: on first run after update, re-copy `createFromAsset` content for `builtin` packs
-  while preserving downloaded packs (keyed by `pack_id`). No Room migrations needed for
-  catalog *content*; schema migrations follow normal Room versioning.
+  wholesale: on first run after update, re-copy the bundled catalog when its content version
+  differs from the on-device copy's (see *Opening the bundled copy*). Downloaded packs
+  (keyed by `pack_id`) are re-applied afterwards, per data-packs.md. No Room migrations needed
+  for catalog *content*; schema migrations follow normal Room versioning.
 - **Local failure modes (G11/D24).** Because the DB is a replaceable derived artifact, recovery
-  is cheap: `createFromAsset`/DB-open failure → delete and re-copy from the bundled asset; if
+  is cheap: DB-open failure → delete and re-copy from the bundled asset; if
   that also fails, surface an error state but keep the app launchable (settings/help). Pack
   application is transactional per `pack_id`, so a failed or partial download leaves prior
   catalog state intact (extends the graceful-degradation principle in
@@ -306,13 +307,26 @@ behaves identically because the folding is all in `NameNormalizer` and the token
   extension loading, which iOS's SQLite is built without, and the open fails with
   `SQLITE_MISUSE`. 2.7 fixes this but drops `iosX64`, the simulator an Intel Mac runs. Switch
   when that target goes.
-- **Opening the bundled copy.** Each platform has its own `SkyMapDatabaseFactory`. On Android,
-  `createFromAsset` copies the asset. On iOS (`iosMain`) the factory copies the bundle's file
-  itself, by Room's rule: when there is no copy, or the copy's `user_version` is not
-  `CATALOG_SCHEMA_VERSION`. It writes beside the target and moves into place, so an
-  interrupted copy is never opened. Both run the same D24/G11 recovery: probe; on failure
-  close, delete and re-copy once. Neither refreshes a copy whose *content* is stale after an
-  app update — that is the core-pack refresh in data-packs.md.
+- **Opening the bundled copy.** Each platform has its own `SkyMapDatabaseFactory`, and both
+  decide with the same common-code rule, `CatalogStamp`: copy the bundled `skymap.db` when
+  there is no readable on-device copy, or its stamp differs from the bundled file's. The stamp
+  is two integers read straight from the 100-byte SQLite header, with no SQLite open and no
+  copy of the asset: the **schema version** (`user_version`, `CATALOG_SCHEMA_VERSION`, bumped
+  only for a real Room schema change) and the **content version**. The content version is a
+  SHA-256 prefix of the generated file, written by `:data:generateCatalogDb` into the header's
+  `application_id`. The file is a deterministic function of `source-data/`, the generator and
+  the schema, so any content change gives a new version with no human bump, and a rebuild of
+  the same inputs gives the same one. It sits in the header instead of a `pack` column because
+  that costs no Room schema change (a column would be a schema bump and an `N.json` export
+  for every future content-version tweak) and can be read from the APK asset without copying
+  it. A downgrade refreshes too (any difference counts). Android uses no `createFromAsset` and
+  no destructive migration fallback: Room's own copy-if-absent rule cannot see content, and
+  the fallback silently produced an empty catalog when the asset and the schema version
+  disagreed. A mismatch Room still finds fails the open, and recovery handles it. Both
+  platforms write the copy beside the target (`skymap.db.partial`) and move it into place, so
+  an interrupted copy is never opened, and both run the D24/G11 recovery: probe; on failure
+  close, delete and re-copy once. A refresh replaces the file wholesale; downloaded packs will
+  need re-applying after it (data-packs.md).
 - **Satellite elements** (`data.satellites`): the fetch policy, repository and `TleStore` are
   common code. The platform edges sit behind two small interfaces, with no multiplatform HTTP or
   I/O library that Android would then carry (D127). `TextFiles` has a `DirectoryTextFiles` on

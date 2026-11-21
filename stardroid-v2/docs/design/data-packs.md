@@ -165,13 +165,14 @@ single constant to change later). Downloads go through the system `DownloadManag
 F-Droid policy note: downloading *data* over HTTPS is acceptable (no code is executed); the
 index and zips must be served over TLS and the app must function fully without them.
 
-**Core-pack refresh on app update (related bug, fix with this feature):** Room's
-`createFromAsset` copies the bundled DB only when no database file exists, so an app update
-with a newer bundled catalog silently keeps serving the old rows (observed during D61
-verification). The fix belongs to this feature's substrate: bump the `pack.version` of the
-builtin `core` row at generation time, and on startup compare the installed core version
-against the bundled asset's (stored in a preference written at copy time); when the asset is
-newer, refresh. Note the asset is a prebuilt SQLite file, not a `rows.json` pack, so
+**Core-pack refresh on app update:** the detection half is done (issue #1206).
+`SkyMapDatabaseFactory` compares a content version stamped into the bundled DB's header with the
+on-device copy's and re-copies when they differ (catalog-and-schema.md, *Opening the bundled
+copy*); no `pack.version` bump or preference is involved. What remains for this feature is
+re-applying installed packs after that re-copy. Originally the problem was that Room's
+`createFromAsset` copied the bundled DB only when no database file existed, so an app update
+with a newer bundled catalog silently kept serving the old rows (observed during D61
+verification). Note the asset is a prebuilt SQLite file, not a `rows.json` pack, so
 `applyPack` does not accept it directly. Two cases:
 
 - **No non-builtin packs installed** (the overwhelmingly common case, and the only one until
