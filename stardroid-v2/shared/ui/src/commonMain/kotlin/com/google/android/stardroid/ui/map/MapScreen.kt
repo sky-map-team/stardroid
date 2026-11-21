@@ -851,7 +851,7 @@ private fun MapSnackbarHost(
     }
 }
 
-/** M3's wide-window snackbar cap: keeps landscape notices a pill clear of the action column. */
+/** Keeps the snackbar a pill on wide windows, clear of the landscape action column. */
 private val SNACKBAR_MAX_WIDTH = 560.dp
 
 @Composable
