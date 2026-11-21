@@ -103,14 +103,26 @@ object SkyShare {
         map: Bitmap,
         cameraStill: Bitmap,
         scrim: Double,
+        stampLines: List<String>? = null,
     ): ShareLayouts =
         withContext(Dispatchers.Default) {
             val branding = branding(context)
             try {
                 ShareLayouts(
-                    overlay = appendFooter(overlayComposite(map, cameraStill, scrim), branding),
+                    overlay =
+                        appendFooter(
+                            withStamp(overlayComposite(map, cameraStill, scrim), stampLines, map),
+                            branding,
+                        ),
                     sideBySide =
-                        appendFooter(sideBySideComposite(map, cameraStill, scrim), branding),
+                        appendFooter(
+                            withStamp(
+                                sideBySideComposite(map, cameraStill, scrim),
+                                stampLines,
+                                map,
+                            ),
+                            branding,
+                        ),
                 )
             } finally {
                 branding.recycle()
@@ -381,6 +393,54 @@ object SkyShare {
         }
     }
 
+    // TODO(ar-debug-stamp): temporary, with the share "Debug stamp" switch.
+    private fun withStamp(
+        content: Bitmap,
+        lines: List<String>?,
+        map: Bitmap,
+    ): Bitmap = if (lines.isNullOrEmpty()) content else appendStamp(content, lines, map.width)
+
+    /**
+     * Appends a block of monospace debug text under [content], sized to fit its longest line
+     * into one map column so both layouts read alike. **Recycles [content]**.
+     */
+    private fun appendStamp(
+        content: Bitmap,
+        lines: List<String>,
+        columnWidth: Int,
+    ): Bitmap {
+        val paint =
+            Paint(Paint.ANTI_ALIAS_FLAG).apply {
+                color = STAMP_COLOR
+                typeface = Typeface.MONOSPACE
+                val widest = lines.maxOf { it.length }.coerceAtLeast(1)
+                textSize = columnWidth * 0.9f / (widest * MONOSPACE_ADVANCE)
+            }
+        val lineHeight = paint.textSize * 1.3f
+        val pad = paint.textSize * 0.6f
+        val stampHeight = (pad * 2 + lineHeight * lines.size).toInt()
+        val result =
+            Bitmap.createBitmap(
+                content.width,
+                content.height + stampHeight,
+                Bitmap.Config.ARGB_8888,
+            )
+        val canvas = Canvas(result)
+        canvas.drawColor(Color.BLACK)
+        canvas.drawBitmap(content, 0f, 0f, null)
+        val top = content.height.toFloat()
+        content.recycle()
+        lines.forEachIndexed { index, line ->
+            canvas.drawText(
+                line,
+                pad,
+                top + pad + lineHeight * (index + 1) - paint.textSize * 0.25f,
+                paint,
+            )
+        }
+        return result
+    }
+
     /**
      * Appends the branding footer strip — icon, app name, invitation, and store link.
      * Footer metrics scale with the image width so the strip reads the same at any capture
@@ -458,6 +518,10 @@ object SkyShare {
     }
 
     private const val TAG = "SkyShare"
+    private const val STAMP_COLOR = 0xFFB8C4D0.toInt()
+
+    // A monospace glyph is ~0.6 em wide.
+    private const val MONOSPACE_ADVANCE = 0.6f
     private const val SHARE_DIR = "share"
     private const val SHARE_FILE = "sky_map.png"
 

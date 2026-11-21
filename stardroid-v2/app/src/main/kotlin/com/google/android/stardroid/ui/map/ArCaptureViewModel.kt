@@ -20,6 +20,9 @@ import com.google.android.stardroid.share.SkyShare
 class ArCaptureViewModel : ViewModel() {
     var stillMode by mutableStateOf(SkyCameraPreview.StillMode.AUTO)
 
+    // TODO(ar-debug-stamp): temporary, with the share stamp.
+    var debugStamp by mutableStateOf(false)
+
     // Never recycled here: the layout sheet may still be drawing them (see SkyShare).
     var shareLayouts by mutableStateOf<SkyShare.ShareLayouts?>(null)
 }

@@ -673,6 +673,59 @@ class MapViewModel(
         _camera.value = SkyCamera(cam.lineOfSight, cam.up, fov)
     }
 
+    // TODO(ar-debug-stamp): temporary, with the share "Debug stamp" switch (see ArStamp.kt).
+
+    /** A snapshot of where the phone points, for the share debug stamp. */
+    fun arStampPointing(): ArStampPointing {
+        val cam = _camera.value
+        val frame = _localFrame.value
+        val raDec = RaDec.fromGeocentricVector(cam.lineOfSight)
+        val azAlt = frame.azAlt(cam.lineOfSight)
+        val location = currentLocation
+        val skyTime = now()
+        val declination =
+            if (useMagneticCorrection) {
+                declinationFor(location, skyTime) - azimuthAdjustment.value
+            } else {
+                0.0
+            }
+        return ArStampPointing(
+            epochMillis = wallClockMillis(),
+            skyEpochMillis = skyTime.toEpochMilliseconds(),
+            raDeg = raDec.raDeg,
+            decDeg = raDec.decDeg,
+            azDeg = azAlt.azimuthDeg,
+            altDeg = azAlt.altitudeDeg,
+            rollDeg = ArStampMath.rollDeg(cam.lineOfSight, cam.up, frame.up),
+            sensorFrame = _referenceFrame.value == ReferenceFrame.SENSOR,
+            declinationDeg = declination,
+            magneticCorrection = useMagneticCorrection,
+            correctionAzDeg = azimuthAdjustment.value,
+            correctionAltDeg = altitudeAdjustment.value,
+            latitudeDeg = location.latitudeDeg,
+            longitudeDeg = location.longitudeDeg,
+        )
+    }
+
+    /** The map's FOV, lock and AR settings at the moment of a share, for the debug stamp. */
+    fun arStampMap(
+        widthPx: Int,
+        heightPx: Int,
+        appliedScrim: Double,
+    ): ArStampMap =
+        ArStampMap(
+            fovDeg = _camera.value.fovDeg,
+            lensFovDeg = arSpecs.value?.shortSideFovDeg,
+            zoomRequested = _arZoomRatio.value,
+            widthPx = widthPx,
+            heightPx = heightPx,
+            exposureIndex = _arExposureIndex.value,
+            manual = arManualExposure.value,
+            scrimUser = arScrimSetting.value,
+            scrimApplied = appliedScrim,
+            previewLuma = arPreviewLumaState.value,
+        )
+
     /** v1's menu-item event; the map chrome's buttons funnel through here. */
     fun logMenuItem(label: String) {
         analytics.trackEvent(

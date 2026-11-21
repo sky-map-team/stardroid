@@ -13,11 +13,13 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
+import android.graphics.ImageFormat
 import android.graphics.Matrix
 import android.hardware.camera2.CameraCharacteristics
 import android.hardware.camera2.CameraManager
 import android.hardware.camera2.CameraMetadata
 import android.hardware.camera2.CaptureRequest
+import android.media.ExifInterface
 import android.os.Build
 import android.os.SystemClock
 import android.util.Log
@@ -45,8 +47,10 @@ import androidx.lifecycle.LifecycleOwner
 import com.google.android.stardroid.share.SkyShare
 import com.google.android.stardroid.ui.map.ArCameraSpecs
 import com.google.android.stardroid.ui.map.ArManualExposure
+import com.google.android.stardroid.ui.map.ArStillReport
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.suspendCancellableCoroutine
+import java.io.ByteArrayInputStream
 import java.util.concurrent.ExecutorService
 import java.util.concurrent.Executors
 import kotlin.coroutines.resume
@@ -85,6 +89,13 @@ class SkyCameraPreview(
     private var zoomRatio = 1.0
     private var exposureIndex = 0
     private var manualExposure: ArManualExposure? = null
+
+    /** What the last [takeStill] did, for the share debug stamp (TODO(ar-debug-stamp)). */
+    var lastStillReport: ArStillReport? = null
+        private set
+
+    private var lensSummary = "unknown"
+    private var lastCaptureInfo: CaptureInfo? = null
 
     /** Whether the device offers a vendor night mode (CameraX Extensions) for stills. */
     var nightAvailable by mutableStateOf(false)
@@ -286,30 +297,123 @@ class SkyCameraPreview(
      * A camera still for the share layouts, upright per its rotation metadata; null when
      * the camera isn't running or the capture fails (the caller falls back to map-only).
      *
-     * [StillMode.AUTO] always uses auto exposure, even while the manual preview sliders are
-     * engaged; [StillMode.NIGHT] takes the vendor night capture when the device has one.
+     * [StillMode.AUTO] keeps the user's exposure settings (manual ISO/shutter, compensation)
+     * while we tune; [StillMode.NIGHT] takes the vendor night capture when the device has one,
+     * and that session ignores them.
      *
      * Sized for sharing, not for the sensor: a full-resolution still is ~48 MB on a 12 MP
      * rear camera, and it is only ever centre-cropped into a share composite that is a
      * fraction of that (audit-2026-08 M5). The caller owns the result and recycles it.
      */
-    suspend fun takeStill(mode: StillMode): Bitmap? =
+    suspend fun takeStill(mode: StillMode): Bitmap? {
+        val started = SystemClock.elapsedRealtime()
+        lastCaptureInfo = null
+        var usedNight = false
+        var path = "auto"
+        var still: Bitmap? = null
         if (mode == StillMode.NIGHT && nightAvailable) {
-            takeNightStill() ?: takeAutoStill()
-        } else {
-            takeAutoStill()
+            still = takeNightStill()
+            usedNight = still != null
+            path = if (usedNight) "night" else "night failed -> auto"
+        } else if (mode == StillMode.NIGHT) {
+            path = "auto (night unavailable)"
         }
+        if (still == null) still = takeAutoStill()
+        lastStillReport =
+            still?.let { stillReport(path, usedNight, it, SystemClock.elapsedRealtime() - started) }
+        return still
+    }
 
-    /** Manual options apply to stills too, so drop them and let AE settle before the shot. */
-    private suspend fun takeAutoStill(): Bitmap? {
-        val manual = manualExposure
-        if (manual == null) return capture()
-        applyManualOptions(null)
-        try {
-            delay(AE_SETTLE_MS)
-            return capture()
-        } finally {
-            applyManualOptions(manual)
+    /** The plain still keeps whatever manual options the live session has (tuning, for now). */
+    private suspend fun takeAutoStill(): Bitmap? = capture()
+
+    private fun stillReport(
+        path: String,
+        usedNight: Boolean,
+        still: Bitmap,
+        elapsedMs: Long,
+    ): ArStillReport {
+        val info = lastCaptureInfo
+        val exif = info?.exif
+        val extension =
+            if (usedNight) {
+                EXTENSION_MODES.firstOrNull { it.first == stillExtensionMode }?.second ?: "?"
+            } else {
+                "none"
+            }
+        return ArStillReport(
+            path = path,
+            extension = extension,
+            extensionReport = extensionReport,
+            lens = lensSummary,
+            zoomReported = info?.zoomReported,
+            sourceWidth = info?.sourceWidth ?: 0,
+            sourceHeight = info?.sourceHeight ?: 0,
+            rotationDegrees = info?.rotationDegrees ?: 0,
+            width = still.width,
+            height = still.height,
+            captureMillis = elapsedMs,
+            exposureTimeSec = exif?.exposureTimeSec,
+            iso = exif?.iso,
+            fNumber = exif?.fNumber,
+            focalLengthMm = exif?.focalLengthMm,
+            focalLength35mm = exif?.focalLength35mm,
+            exifNote = exif?.note ?: "no capture info",
+        )
+    }
+
+    private class CaptureInfo(
+        val sourceWidth: Int,
+        val sourceHeight: Int,
+        val rotationDegrees: Int,
+        val zoomReported: Double?,
+        val exif: ExifSummary,
+    )
+
+    private class ExifSummary(
+        val exposureTimeSec: Double? = null,
+        val iso: Int? = null,
+        val fNumber: Double? = null,
+        val focalLengthMm: Double? = null,
+        val focalLength35mm: Int? = null,
+        val note: String? = null,
+    )
+
+    /** In-memory JPEG captures carry the camera's own EXIF; YUV ones have none. */
+    private fun readExif(image: ImageProxy): ExifSummary {
+        if (image.format != ImageFormat.JPEG) {
+            return ExifSummary(note = "format ${image.format}, not JPEG")
+        }
+        return try {
+            val buffer = image.planes[0].buffer.duplicate()
+            val bytes = ByteArray(buffer.remaining()).also { buffer.get(it) }
+            val exif = ExifInterface(ByteArrayInputStream(bytes))
+            val summary =
+                ExifSummary(
+                    exposureTimeSec =
+                        exif.getAttributeDouble(ExifInterface.TAG_EXPOSURE_TIME, -1.0)
+                            .takeIf { it > 0.0 },
+                    iso =
+                        exif.getAttributeInt(ExifInterface.TAG_ISO_SPEED_RATINGS, -1)
+                            .takeIf { it > 0 },
+                    fNumber =
+                        exif.getAttributeDouble(ExifInterface.TAG_F_NUMBER, -1.0)
+                            .takeIf { it > 0.0 },
+                    focalLengthMm =
+                        exif.getAttributeDouble(ExifInterface.TAG_FOCAL_LENGTH, -1.0)
+                            .takeIf { it > 0.0 },
+                    focalLength35mm =
+                        exif.getAttributeInt(ExifInterface.TAG_FOCAL_LENGTH_IN_35MM_FILM, -1)
+                            .takeIf { it > 0 },
+                )
+            if (summary.exposureTimeSec == null && summary.iso == null) {
+                ExifSummary(note = "JPEG has no exposure tags")
+            } else {
+                summary
+            }
+        } catch (e: Exception) {
+            Log.w(TAG, "Could not read still EXIF", e)
+            ExifSummary(note = "exif read failed: ${e.javaClass.simpleName}")
         }
     }
 
@@ -346,6 +450,15 @@ class SkyCameraPreview(
                 ContextCompat.getMainExecutor(context),
                 object : ImageCapture.OnImageCapturedCallback() {
                     override fun onCaptureSuccess(image: ImageProxy) {
+                        lastCaptureInfo =
+                            CaptureInfo(
+                                sourceWidth = image.width,
+                                sourceHeight = image.height,
+                                rotationDegrees = image.imageInfo.rotationDegrees,
+                                zoomReported =
+                                    camera?.cameraInfo?.zoomState?.value?.zoomRatio?.toDouble(),
+                                exif = readExif(image),
+                            )
                         val bitmap =
                             image.use { proxy ->
                                 val decoded = proxy.toBitmap()
@@ -551,11 +664,15 @@ class SkyCameraPreview(
             characteristics.getCameraCharacteristic(
                 CameraCharacteristics.SENSOR_INFO_PHYSICAL_SIZE,
             )
-        val focalLength =
-            characteristics
-                .getCameraCharacteristic(
-                    CameraCharacteristics.LENS_INFO_AVAILABLE_FOCAL_LENGTHS,
-                )?.firstOrNull()
+        val focalLengths =
+            characteristics.getCameraCharacteristic(
+                CameraCharacteristics.LENS_INFO_AVAILABLE_FOCAL_LENGTHS,
+            )
+        val focalLength = focalLengths?.firstOrNull()
+        lensSummary =
+            "id ${characteristics.cameraId} " +
+            "sensor ${sensorSize?.width}x${sensorSize?.height}mm " +
+            "focal ${focalLengths?.joinToString("/") ?: "?"}mm (first used)"
         val fovDeg =
             if (sensorSize != null && focalLength != null) {
                 cameraShortSideFovDeg(
@@ -633,9 +750,6 @@ class SkyCameraPreview(
 
         private const val LUMA_INTERVAL_MS = 250L
         private const val LUMA_GRID = 24
-
-        /** How long AE gets to converge after the manual options are dropped for a still. */
-        private const val AE_SETTLE_MS = 600L
 
         /** Lets the zoom and focus requests reach the night session before the shot. */
         private const val NIGHT_SETTLE_MS = 400L

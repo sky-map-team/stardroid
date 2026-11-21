@@ -134,13 +134,29 @@ fun MapRoute(
         mapViewModel.logMenuItem(AnalyticsEvents.SHARE_SKY_LABEL)
         scope.launch {
             val map = if (arModeOn) SkyShare.captureMap(glSurfaceView) else null
+            val pointingBefore = if (map != null) mapViewModel.arStampPointing() else null
             var still: Bitmap? = null
             try {
                 still = if (map != null) arCamera.takeStill(capture.stillMode) else null
                 if (map != null && still != null) {
                     // The composites use the scrim exactly as rendered (night floor included).
                     val scrim = mapViewModel.renderState.first().cameraScrim
-                    capture.shareLayouts = SkyShare.arShareLayouts(context, map, still, scrim)
+                    val stamp =
+                        if (capture.debugStamp && pointingBefore != null) {
+                            debugStampLines(
+                                context,
+                                mapViewModel,
+                                arCamera,
+                                pointingBefore,
+                                map,
+                                still,
+                                scrim,
+                            )
+                        } else {
+                            null
+                        }
+                    capture.shareLayouts =
+                        SkyShare.arShareLayouts(context, map, still, scrim, stamp)
                 } else if (!SkyShare.shareSky(context, glSurfaceView)) {
                     snackbarHostState.showSnackbar(shareFailedMessage)
                 }
@@ -305,6 +321,18 @@ private fun StillModeControl(
             )
             Text(
                 "Night photo",
+                style = MaterialTheme.typography.labelMedium,
+                color = MaterialTheme.colorScheme.onSurface,
+                modifier = Modifier.padding(start = 10.dp),
+            )
+        }
+        Row(verticalAlignment = Alignment.CenterVertically) {
+            Switch(
+                checked = capture.debugStamp,
+                onCheckedChange = { capture.debugStamp = it },
+            )
+            Text(
+                "Debug stamp on shared image",
                 style = MaterialTheme.typography.labelMedium,
                 color = MaterialTheme.colorScheme.onSurface,
                 modifier = Modifier.padding(start = 10.dp),
