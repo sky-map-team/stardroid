@@ -1630,6 +1630,32 @@
    "mass": "4.87 × 10²⁴ kg",
    "image_credit": "NASA/JPL"
   },
+  "probe/bepicolombo": {
+   "description": "BepiColombo is a joint ESA–JAXA mission to Mercury, and Europe's first to the planet. Launched on 20 October 2018, it used flybys of Earth (2020), Venus (2020 and 2021) and Mercury itself (six, from 2021 to 2025) to slow down enough to be captured. It reaches Mercury orbit in November 2026, with science operations planned from 2027. Two orbiters ride together, ESA's Mercury Planetary Orbiter and JAXA's Mio. Lost in Mercury's glare, it is shown by pointing at the planet.",
+   "fun_fact": "It is named for Giuseppe \"Bepi\" Colombo, the Italian mathematician who worked out why Mercury spins exactly three times for every two orbits, and whose gravity-assist idea let Mariner 10 visit the planet three times in 1974–75.",
+   "distance": "At Mercury, about 58 million km from the Sun",
+   "mass": "About 4,100 kg at launch",
+   "image_credit": "NASA",
+   "search_subtext": "Space probe at Mercury"
+  },
+  "probe/voyager_1": {
+   "description": "Voyager 1 is the most distant human-made object, now in interstellar space. Launched on 5 September 1977, it flew past Jupiter on 5 March 1979 and Saturn on 12 November 1980, then headed out of the solar system. It crossed the heliopause, the edge of the Sun's bubble of solar wind, on 25 August 2012, and on 18 November 2026 became the first spacecraft to be one light-day from Earth. Too faint to see, it lies in Ophiuchus, a few degrees from Rasalhague.",
+   "fun_fact": "On 14 February 1990, from about 6 billion km away, Voyager 1 turned its camera back and photographed the planets, capturing Earth as the \"Pale Blue Dot\", less than a pixel wide. It still carries the Golden Record, a gold-plated disc of sounds and images of Earth.",
+   "distance": "About 173 AU (25.9 billion km) from Earth, Nov 2026",
+   "size": "3.7 m dish antenna",
+   "mass": "825 kg at launch",
+   "image_credit": "NASA/JPL",
+   "search_subtext": "Space probe"
+  },
+  "probe/voyager_2": {
+   "description": "Voyager 2 is the only spacecraft to have visited all four giant planets. Launched on 20 August 1977, a little before Voyager 1, it flew past Jupiter on 9 July 1979, Saturn on 25 August 1981, Uranus on 24 January 1986 and Neptune on 25 August 1989. It crossed the heliopause into interstellar space on 5 November 2018 and is still sending data home. Like Voyager 1, it carries a Golden Record of sounds and images of Earth.",
+   "fun_fact": "Voyager 2's close pass over Neptune's north pole in 1989 flung it south, out of the plane of the planets, so it now lies far in the southern sky. It should reach one light-day from Earth around November 2035.",
+   "distance": "About 145 AU (21.7 billion km) from Earth, Nov 2026",
+   "size": "3.7 m dish antenna",
+   "mass": "825 kg at launch",
+   "image_credit": "NASA/JPL-Caltech",
+   "search_subtext": "Space probe"
+  },
   "satellite/25544": {
    "description": "The International Space Station is a research laboratory the size of a football field, orbiting about 420 km above Earth. Five space agencies built it, and astronauts live and work aboard. At its brightest it outshines every star and planet, crossing the sky in just a few minutes.",
    "fun_fact": "People have lived aboard continuously since 2 November 2000. The crew sees about 16 sunrises and 16 sunsets every day, because the station circles the Earth about every 93 minutes.",

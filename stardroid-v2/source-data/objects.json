@@ -667,7 +667,9 @@
     "moon/io",
     "moon/europa",
     "moon/ganymede",
-    "moon/callisto"
+    "moon/callisto",
+    "probe/voyager_1",
+    "probe/voyager_2"
    ]
   },
   "asterism/summer_triangle": {
@@ -689,7 +691,10 @@
   },
   "planet/mercury": {
    "type": "planet",
-   "image_ref": "planets/nasa_mercury.webp"
+   "image_ref": "planets/nasa_mercury.webp",
+   "see_also": [
+    "probe/bepicolombo"
+   ]
   },
   "planet/moon": {
    "type": "moon",
@@ -699,7 +704,8 @@
    "type": "planet",
    "image_ref": "planets/hubble_neptune.webp",
    "see_also": [
-    "moon/triton"
+    "moon/triton",
+    "probe/voyager_2"
    ]
   },
   "planet/pluto": {
@@ -714,7 +720,9 @@
     "moon/rhea",
     "moon/tethys",
     "moon/dione",
-    "moon/iapetus"
+    "moon/iapetus",
+    "probe/voyager_1",
+    "probe/voyager_2"
    ]
   },
   "planet/sun": {
@@ -729,12 +737,45 @@
     "moon/titania",
     "moon/oberon",
     "moon/ariel",
-    "moon/umbriel"
+    "moon/umbriel",
+    "probe/voyager_2"
    ]
   },
   "planet/venus": {
    "type": "planet",
    "image_ref": "planets/nasa_venus.webp"
+  },
+  "probe/bepicolombo": {
+   "type": "satellite",
+   "parent": "planet/mercury",
+   "image_ref": "spacecraft/nasa_bepicolombo.webp",
+   "see_also": [
+    "planet/mercury"
+   ]
+  },
+  "probe/voyager_1": {
+   "type": "satellite",
+   "ra": 258.85,
+   "dec": 12.06,
+   "image_ref": "spacecraft/nasa_voyager.webp",
+   "see_also": [
+    "probe/voyager_2",
+    "planet/jupiter",
+    "planet/saturn"
+   ]
+  },
+  "probe/voyager_2": {
+   "type": "satellite",
+   "ra": 302.51,
+   "dec": -59.55,
+   "image_ref": "spacecraft/nasa_voyager_golden_record.webp",
+   "see_also": [
+    "probe/voyager_1",
+    "planet/jupiter",
+    "planet/saturn",
+    "planet/uranus",
+    "planet/neptune"
+   ]
   },
   "satellite/25544": {
    "type": "satellite",
