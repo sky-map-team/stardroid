@@ -128,6 +128,7 @@ fun SkyMapNavHost(
     onWelcomeSkipped: () -> Unit = onWelcomeFinished,
     onWelcomeStarted: () -> Unit = {},
     onWelcomeSlideViewed: (Int) -> Unit = {},
+    onOpenTonight: () -> Unit,
     onRequestLocationPermission: () -> Unit,
     onRequestAutoLocation: () -> Unit,
     onOpenAppSettings: () -> Unit,
@@ -165,6 +166,7 @@ fun SkyMapNavHost(
                 onOpenHelp = { navController.navigate(Routes.HELP) },
                 onOpenWhatsNew = { navController.navigate(Routes.WHATS_NEW) },
                 onOpenSupport = { navController.navigate(Routes.SUPPORT) },
+                onOpenTonight = onOpenTonight,
                 onOpenCalibration = { userInitiated ->
                     navController.navigate(Routes.calibration(userInitiated))
                 },

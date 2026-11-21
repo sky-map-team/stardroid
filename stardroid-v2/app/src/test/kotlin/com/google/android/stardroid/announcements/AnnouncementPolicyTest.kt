@@ -41,6 +41,11 @@ class AnnouncementPolicyTest {
         version: Long = 2000,
     ) = AnnouncementPolicy.next(surface, now, active, seen, version)
 
+    private fun forSheet(
+        active: List<Announcement>,
+        seen: Map<String, SeenRecord> = emptyMap(),
+    ) = AnnouncementPolicy.forSheet(during, active, seen, 2000)
+
     @Test
     fun `fresh message is offered on each of its surfaces`() {
         for (s in Surface.entries) assertThat(next(s, listOf(ann()))?.id).isEqualTo("a")
@@ -101,4 +106,23 @@ class AnnouncementPolicyTest {
     }
 
     private fun Instant.minusSecond() = Instant.fromEpochSeconds(epochSeconds - 1)
+
+    @Test
+    fun `sheet shows a message after its notification and ignores its listed surfaces`() {
+        val seen =
+            mapOf("a" to SeenRecord(shownOn = setOf(Surface.NOTIFICATION, Surface.INTERSTITIAL)))
+        val onlyNotification = ann(surfaces = setOf(Surface.NOTIFICATION))
+        assertThat(forSheet(listOf(onlyNotification), seen).map { it.id }).containsExactly("a")
+    }
+
+    @Test
+    fun `sheet hides a dismissed message`() {
+        val seen = mapOf("a" to SeenRecord(dismissed = true))
+        assertThat(forSheet(listOf(ann()), seen)).isEmpty()
+    }
+
+    @Test
+    fun `sheet is not a payload surface`() {
+        assertThat(Surface.fromWire("sheet")).isNull()
+    }
 }

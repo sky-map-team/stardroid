@@ -242,6 +242,7 @@ import com.google.android.stardroid.ui.resources.support_button
 import com.google.android.stardroid.ui.resources.switch_to_auto
 import com.google.android.stardroid.ui.resources.switch_to_manual
 import com.google.android.stardroid.ui.resources.time_travel_button
+import com.google.android.stardroid.ui.resources.tonight_button
 import com.google.android.stardroid.ui.resources.tutorial_button
 import com.google.android.stardroid.ui.resources.whats_new_button
 import com.google.android.stardroid.ui.resources.widgets_button
@@ -1073,6 +1074,7 @@ private fun ActionTooltip(
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun OverflowSheet(
+    onOpenTonight: (() -> Unit)?,
     onOpenGallery: (() -> Unit)?,
     onOpenWidgets: (() -> Unit)?,
     // Hidden when no widget is offerable at all, rather than opening an empty sheet.
@@ -1100,6 +1102,7 @@ fun OverflowSheet(
             OverflowRow(Res.drawable.ic_tutorial, Res.string.tutorial_button, onOpenTutorial)
             OverflowRow(Res.drawable.ic_settings, Res.string.settings_button, onOpenSettings)
             OverflowRow(Res.drawable.ic_location, Res.string.location_button, onOpenLocation)
+            OverflowRow(Res.drawable.ic_moon, Res.string.tonight_button, onOpenTonight)
             OverflowRow(Res.drawable.ic_gallery, Res.string.gallery_button, onOpenGallery)
             if (widgetsEnabled) {
                 OverflowRow(Res.drawable.ic_widgets, Res.string.widgets_button, onOpenWidgets)

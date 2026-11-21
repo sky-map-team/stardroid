@@ -15,8 +15,8 @@ import androidx.room.RoomDatabase
 import androidx.room.RoomDatabaseConstructor
 
 /**
- * The catalog's Room schema version. iOS checks an on-device copy against it, since Room's
- * prepackaged-database support (which does that check on Android) is Android-only.
+ * The catalog's Room schema version: bump it only for a real schema change. Catalog *content*
+ * changes need no bump; they are detected by the content version in [CatalogStamp].
  */
 internal const val CATALOG_SCHEMA_VERSION = 3
 
@@ -24,7 +24,7 @@ internal const val CATALOG_SCHEMA_VERSION = 3
  * The catalog store (catalog-and-schema.md). Read-mostly and replaceable: user state never
  * lives here, so the bundled pack can be swapped wholesale on app update (D24/G11 recovery is
  * "delete and re-copy from the bundled asset"). Schema JSON is exported to `data/schemas/` —
- * the 4c build-time generator must match it, identity hash included, for `createFromAsset`.
+ * the build-time generator must match it, identity hash included, or Room rejects the copy.
  *
  * Declared in common code so iOS opens the same bundled catalog (phase 1 of the iOS port): Room
  * generates each target's implementation, and [SkyMapDatabaseConstructor] is how a non-Android

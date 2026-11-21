@@ -38,4 +38,13 @@ class ObjectLinkTest {
         assertThat(ObjectLink.objectIdOf("skymap://object/")).isNull()
         assertThat(ObjectLink.objectIdOf("planet/moon")).isNull()
     }
+
+    @Test
+    fun `the tonight route builds and is recognized`() {
+        assertThat(ObjectLink.tonight("skymap")).isEqualTo("skymap://tonight")
+        assertThat(ObjectLink.isTonight("skymap://tonight")).isTrue()
+        assertThat(ObjectLink.isTonight("skymap://tonight/?x=1")).isTrue()
+        assertThat(ObjectLink.isTonight("skymap://object/moon")).isFalse()
+        assertThat(ObjectLink.objectIdOf("skymap://tonight")).isNull()
+    }
 }

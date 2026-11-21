@@ -100,19 +100,11 @@
     <string name="tonight_widget_description" translation_description="Description of the tonight\'s-sky widget, shown under its preview in the launcher\'s widget picker">
     ทัศนียภาพยามค่ำคืนที่ดีที่สุด: ดาวเคราะห์ที่อยู่ในตำแหน่งเหมาะ ฝนดาวตก และเหตุการณ์เกี่ยวกับดวงจันทร์ อัปเดตทุกวัน
     </string>
-    <string name="tonight_widget_header" translation_description="Small header label on the tonight widget; %1$s is a short date like \'Wed 30 Jul\'">คืนนี้ · %1$s</string>
-    <string name="tonight_widget_sun_times" translation_description="Header line on the tonight widget; %1$s is the sunset time, %2$s the time the sky becomes fully dark">ดวงอาทิตย์ตก %1$s · มืดสนิท %2$s</string>
-    <string name="tonight_widget_sunset_only" translation_description="Header fragment when only the sunset time is known; %1$s is the sunset time">ดวงอาทิตย์ตก %1$s</string>
-    <string name="tonight_quiet" translation_description="Tonight-widget line shown when nothing notable is visible tonight">คืนนี้ท้องฟ้าเงียบสงบ</string>
-    <string name="tonight_quiet_next" translation_description="Tonight-widget line under the quiet-night message; %1$s is an event name, %2$d the days until it">ถัดไป: %1$s อีก %2$d วัน</string>
     <string name="countdown_widget_label" translation_description="Name of the countdown home-screen widget, shown in the launcher\'s widget picker">นับถอยหลังท้องฟ้า</string>
     <string name="countdown_widget_description" translation_description="Description of the countdown widget, shown under its preview in the launcher\'s widget picker">จำนวนวันจนถึงจุดสูงสุดของฝนดาวตกครั้งถัดไปหรือเหตุการณ์ดวงจันทร์</string>
     <string name="countdown_days" translation_description="Unit label inside the countdown ring, under the number of days">วัน</string>
     <string name="countdown_tonight" translation_description="Shown inside the countdown ring when the event is tonight (zero days left)">คืนนี้</string>
-    <string name="countdown_shower_peak" translation_description="Countdown-widget event name; %1$s is a meteor shower name">จุดสูงสุดของ %1$s</string>
     <string name="countdown_new_moon_peak" translation_description="Countdown-widget note: the shower peaks near new moon, so skies will be dark">จุดสูงสุดในคืนเดือนมืด</string>
-    <string name="countdown_full_moon" translation_description="Countdown-widget event name for the next full moon">วันเพ็ญ</string>
-    <string name="countdown_new_moon" translation_description="Countdown-widget event name for the next new moon">วันเดือนมืด</string>
     <string name="tonight_widget_preview_row" translation_description="Representative highlight row shown in the widget picker\'s preview of the tonight widget">ดาวพฤหัสบดีอยู่ในตำแหน่งที่ดีตั้งแต่ 21:30 น.</string>
     <!-- tm:omitted name="countdown_widget_preview_days" reason="identical_to_source" -->
     <string name="countdown_widget_preview_name" translation_description="Representative event name shown in the widget picker\'s preview of the countdown widget">จุดสูงสุดของฝนดาวตก Perseids</string>

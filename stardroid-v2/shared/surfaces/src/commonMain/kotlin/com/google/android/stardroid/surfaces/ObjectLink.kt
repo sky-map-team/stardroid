@@ -16,11 +16,26 @@ package com.google.android.stardroid.surfaces
  */
 object ObjectLink {
     private const val HOST = "object"
+    private const val TONIGHT_HOST = "tonight"
+
+    /**
+     * What a notification carries in place of an object id when a tap should open the Tonight
+     * sheet (D149). It can't clash with a catalog id.
+     */
+    const val TONIGHT_TARGET = TONIGHT_HOST
 
     fun build(
         scheme: String,
         objectId: String,
     ): String = "$scheme://$HOST/$objectId"
+
+    /** `<scheme>://tonight`, which opens the Tonight sheet (D149). */
+    fun tonight(scheme: String): String = "$scheme://$TONIGHT_HOST"
+
+    fun isTonight(url: String): Boolean {
+        val rest = url.substringAfter("://", missingDelimiterValue = "")
+        return rest.substringBefore('?').substringBefore('#').trimEnd('/') == TONIGHT_HOST
+    }
 
     /** The catalog id [url] asks for, or null when it isn't an object link. */
     fun objectIdOf(url: String): String? {

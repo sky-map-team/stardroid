@@ -23,6 +23,7 @@ kotlin {
             api(project(":core:events"))
             api(project(":shared:layers"))
             api(project(":shared:model"))
+            api(project(":shared:surfaces"))
             api(project(":data"))
             api(libs.androidx.lifecycle.common)
             api(libs.androidx.lifecycle.viewmodel)

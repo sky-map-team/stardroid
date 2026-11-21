@@ -87,19 +87,11 @@
     <!-- Tonight's-sky and countdown home-screen widgets (D69 phase 2). -->
     <string name="tonight_widget_label" translation_description="Name of the tonight\'s-sky home-screen widget, shown in the launcher\'s widget picker">O ceo desta noite</string>
     <string name="tonight_widget_description" translation_description="Description of the tonight\'s-sky widget, shown under its preview in the launcher\'s widget picker">Os mellores eventos desta noite: planetas ben situados, choivas de meteoros e eventos lunares, actualizados diariamente.</string>
-    <string name="tonight_widget_header" translation_description="Small header label on the tonight widget; %1$s is a short date like \'Wed 30 Jul\'">Esta noite · %1$s</string>
-    <string name="tonight_widget_sun_times" translation_description="Header line on the tonight widget; %1$s is the sunset time, %2$s the time the sky becomes fully dark">sol ponse %1$s · escuro %2$s</string>
-    <string name="tonight_widget_sunset_only" translation_description="Header fragment when only the sunset time is known; %1$s is the sunset time">sol ponse %1$s</string>
-    <string name="tonight_quiet" translation_description="Tonight-widget line shown when nothing notable is visible tonight">Ceo tranquilo esta noite</string>
-    <string name="tonight_quiet_next" translation_description="Tonight-widget line under the quiet-night message; %1$s is an event name, %2$d the days until it">Vindeiro: %1$s en %2$d días</string>
     <string name="countdown_widget_label" translation_description="Name of the countdown home-screen widget, shown in the launcher\'s widget picker">Conta atrás do ceo</string>
     <string name="countdown_widget_description" translation_description="Description of the countdown widget, shown under its preview in the launcher\'s widget picker">Días ata o próximo pico de choiva de meteoros ou evento lunar.</string>
     <string name="countdown_days" translation_description="Unit label inside the countdown ring, under the number of days">días</string>
     <string name="countdown_tonight" translation_description="Shown inside the countdown ring when the event is tonight (zero days left)">agora</string>
-    <string name="countdown_shower_peak" translation_description="Countdown-widget event name; %1$s is a meteor shower name">Pico de %1$s</string>
     <string name="countdown_new_moon_peak" translation_description="Countdown-widget note: the shower peaks near new moon, so skies will be dark">Pico de lúa nova</string>
-    <string name="countdown_full_moon" translation_description="Countdown-widget event name for the next full moon">Lúa chea</string>
-    <string name="countdown_new_moon" translation_description="Countdown-widget event name for the next new moon">Lúa nova</string>
     <string name="tonight_widget_preview_row" translation_description="Representative highlight row shown in the widget picker\'s preview of the tonight widget">Xúpiter ben situado a partir das 21:30</string>
     <string name="countdown_widget_preview_days" translation_description="Representative day count shown in the widget picker\'s preview of the countdown widget">14</string>
     <string name="countdown_widget_preview_name" translation_description="Representative event name shown in the widget picker\'s preview of the countdown widget">Pico das Perseidas</string>
