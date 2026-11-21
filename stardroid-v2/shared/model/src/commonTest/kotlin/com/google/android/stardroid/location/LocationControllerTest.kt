@@ -52,7 +52,7 @@ class LocationControllerTest {
         runTest {
             val controller = controller()
             val fixes = mutableListOf<LatLong>()
-            backgroundScope.launch { controller.fixes.collect(fixes::add) }
+            backgroundScope.launch { controller.fixes.collect { fixes.add(it.location) } }
             controller.start()
             runCurrent()
             val sanFrancisco = LatLong(37.77, -122.42)
@@ -73,7 +73,7 @@ class LocationControllerTest {
         runTest {
             val controller = controller()
             val fixes = mutableListOf<LatLong>()
-            backgroundScope.launch { controller.fixes.collect(fixes::add) }
+            backgroundScope.launch { controller.fixes.collect { fixes.add(it.location) } }
             controller.start()
             runCurrent()
             val sanFrancisco = LatLong(37.77, -122.42)
@@ -101,7 +101,7 @@ class LocationControllerTest {
         runTest {
             val controller = controller()
             val fixes = mutableListOf<LatLong>()
-            backgroundScope.launch { controller.fixes.collect(fixes::add) }
+            backgroundScope.launch { controller.fixes.collect { fixes.add(it.location) } }
             runCurrent()
             val tokyo = LatLong(35.68, 139.69)
             controller.setManualLocation(tokyo)

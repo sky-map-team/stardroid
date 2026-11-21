@@ -30,6 +30,12 @@ import kotlinx.coroutines.flow.receiveAsFlow
 import kotlinx.coroutines.launch
 import kotlinx.datetime.Clock
 
+/** A fresh position for [LocationController.fixes]; [manual] if the user entered it. */
+data class LocationFix(
+    val location: LatLong,
+    val manual: Boolean,
+)
+
 /**
  * The app-scoped location bus, v1's `LocationController` state machine over the
  * [LocationProvider] edge. Like `TimeController`, it lives in the app's singleton graph so every consumer —
@@ -64,7 +70,7 @@ class LocationController(
     val locations: StateFlow<LatLong> = _locations.asStateFlow()
 
     private val _fixes =
-        MutableSharedFlow<LatLong>(
+        MutableSharedFlow<LocationFix>(
             extraBufferCapacity = 4,
             onBufferOverflow = BufferOverflow.DROP_OLDEST,
         )
@@ -76,7 +82,7 @@ class LocationController(
      * which stop/starts the controller). Drives v1's "Location set to X" toast, which should
      * only fire when the location changes.
      */
-    val fixes: SharedFlow<LatLong> = _fixes.asSharedFlow()
+    val fixes: SharedFlow<LocationFix> = _fixes.asSharedFlow()
 
     private val _manualRefusals = Channel<Unit>(Channel.CONFLATED)
 
@@ -190,7 +196,7 @@ class LocationController(
             )
         // A manual entry is a deliberate user action, so it always gets its confirmation.
         lastFixEvent = location
-        _fixes.tryEmit(location)
+        _fixes.tryEmit(LocationFix(location, manual = true))
     }
 
     /** Leaves manual mode and starts acquiring (the caller has checked the permission). */
@@ -236,7 +242,7 @@ class LocationController(
         val last = lastFixEvent
         if (last == null || last.distanceTo(location) >= FIX_EVENT_MIN_DISTANCE_DEG) {
             lastFixEvent = location
-            _fixes.tryEmit(location)
+            _fixes.tryEmit(LocationFix(location, manual = false))
         }
     }
 

@@ -61,12 +61,22 @@ class LocationViewModel(
     /** v1's `showLocationToast`, minus the formatting: the UI owns the strings. */
     val toasts: SharedFlow<LocationToast> = _toasts.asSharedFlow()
 
+    /** Last auto-announced place name; null after a manual entry or failed lookup. */
+    private var lastAutoToastName: String? = null
+
     init {
         viewModelScope.launch {
             // collectLatest: a newer fix cancels the previous fix's still-running geocode,
             // so only the latest position ever becomes a toast.
-            controller.fixes.collectLatest { location ->
-                _toasts.emit(LocationToast(location, geocoding.reverseGeocode(location)))
+            controller.fixes.collectLatest { fix ->
+                val name = geocoding.reverseGeocode(fix.location)
+                // Same place as the last auto toast adds nothing (e.g. sources alternating a
+                // few km apart). Manual entries always toast; a failed lookup never matches.
+                if (!fix.manual && name != null && name == lastAutoToastName) {
+                    return@collectLatest
+                }
+                _toasts.emit(LocationToast(fix.location, name))
+                lastAutoToastName = if (fix.manual) null else name
             }
         }
     }

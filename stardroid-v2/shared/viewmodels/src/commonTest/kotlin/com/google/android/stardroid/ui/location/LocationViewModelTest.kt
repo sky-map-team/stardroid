@@ -278,4 +278,69 @@ class LocationViewModelTest {
                 .isInstanceOf(LocationState.Confirmed::class)
             assertThat(toasts).isEmpty()
         }
+
+    @Test
+    fun `an auto fix resolving to the already-announced place does not toast again`() =
+        runTest(dispatcher.scheduler) {
+            val controller = controller(backgroundScope)
+            val vm = LocationViewModel(controller, geocoding)
+            val toasts = mutableListOf<LocationViewModel.LocationToast>()
+            backgroundScope.launch { vm.toasts.collect(toasts::add) }
+            runCurrent()
+
+            geocoding.reverseName = "San Francisco"
+            controller.start()
+            runCurrent()
+            provider.sendFix(LatLong(37.77, -122.42))
+            runCurrent()
+            // ~11 km away: past the controller's distance gate, same town name.
+            provider.sendFix(LatLong(37.87, -122.42))
+            runCurrent()
+            assertThat(toasts.size).isEqualTo(1)
+
+            geocoding.reverseName = "Oakland"
+            provider.sendFix(LatLong(37.80, -122.27))
+            runCurrent()
+            assertThat(toasts.size).isEqualTo(2)
+        }
+
+    @Test
+    fun `a manual entry toasts even when it matches the last auto toast name`() =
+        runTest(dispatcher.scheduler) {
+            val controller = controller(backgroundScope)
+            val vm = LocationViewModel(controller, geocoding)
+            val toasts = mutableListOf<LocationViewModel.LocationToast>()
+            backgroundScope.launch { vm.toasts.collect(toasts::add) }
+            runCurrent()
+
+            geocoding.reverseName = "San Francisco"
+            controller.start()
+            runCurrent()
+            provider.sendFix(LatLong(37.77, -122.42))
+            runCurrent()
+            controller.setManualLocation(LatLong(37.78, -122.41))
+            runCurrent()
+
+            assertThat(toasts.size).isEqualTo(2)
+        }
+
+    @Test
+    fun `a failed lookup toasts and does not count as already shown`() =
+        runTest(dispatcher.scheduler) {
+            val controller = controller(backgroundScope)
+            val vm = LocationViewModel(controller, geocoding)
+            val toasts = mutableListOf<LocationViewModel.LocationToast>()
+            backgroundScope.launch { vm.toasts.collect(toasts::add) }
+            runCurrent()
+
+            geocoding.reverseName = null
+            controller.start()
+            runCurrent()
+            provider.sendFix(LatLong(37.77, -122.42))
+            runCurrent()
+            provider.sendFix(LatLong(37.87, -122.42))
+            runCurrent()
+
+            assertThat(toasts.size).isEqualTo(2)
+        }
 }

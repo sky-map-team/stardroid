@@ -23,6 +23,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.statusBarsPadding
+import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.ButtonDefaults
@@ -859,6 +860,9 @@ private fun MapSnackbarHost(
     }
 }
 
+/** Keeps the snackbar a pill on wide windows, clear of the landscape action column. */
+private val SNACKBAR_MAX_WIDTH = 560.dp
+
 @Composable
 private fun FlatSnackbar(
     data: SnackbarData,
@@ -868,7 +872,11 @@ private fun FlatSnackbar(
         shape = RoundedCornerShape(4.dp),
         color = SnackbarDefaults.color,
         contentColor = SnackbarDefaults.contentColor,
-        modifier = modifier.padding(12.dp).fillMaxWidth(),
+        modifier =
+            modifier
+                .padding(12.dp)
+                .widthIn(max = SNACKBAR_MAX_WIDTH)
+                .fillMaxWidth(),
     ) {
         Row(
             verticalAlignment = Alignment.CenterVertically,
