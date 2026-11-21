@@ -63,6 +63,31 @@ class CatalogDbGeneratorTest {
 
     // --- reproducibility ---
 
+    private fun contentVersionOf(file: Path): Int =
+        java.nio.ByteBuffer.wrap(Files.readAllBytes(file)).getInt(APPLICATION_ID_OFFSET)
+
+    @Test
+    fun `the catalog is stamped with a stable content version`() {
+        val version = generateCatalogDb(schemaPath, sourceData, workDir.resolve("again.db"))
+        assertThat(version).isNotEqualTo(0)
+        assertThat(contentVersionOf(db)).isEqualTo(version)
+        assertThat(queryInt("PRAGMA application_id")).isEqualTo(version)
+    }
+
+    @Test
+    fun `a source-data change changes the content version`() {
+        val edited = workDir.resolve("edited-source")
+        sourceData.toFile().copyRecursively(edited.toFile(), overwrite = true)
+        val names = edited.resolve("names/en.csv")
+        Files.writeString(
+            names,
+            Files.readString(names).trimEnd() + "\nasterism/summer_triangle,Hash Test Alias,0\n",
+        )
+        val before = contentVersionOf(db)
+        val after = generateCatalogDb(schemaPath, edited, workDir.resolve("edited.db"))
+        assertThat(after).isNotEqualTo(before)
+    }
+
     @Test
     fun `output is byte-identical across runs`() {
         val second = workDir.resolve("skymap-2.db")
@@ -344,5 +369,10 @@ class CatalogDbGeneratorTest {
         val error = runCatching { punctuationOnly.validate() }.exceptionOrNull()
         assertThat(error).isInstanceOf(IllegalArgumentException::class.java)
         assertThat(error).hasMessageThat().contains("star/dots")
+    }
+
+    private companion object {
+        /** The SQLite header's application_id, where the content version is stamped. */
+        const val APPLICATION_ID_OFFSET = 68
     }
 }

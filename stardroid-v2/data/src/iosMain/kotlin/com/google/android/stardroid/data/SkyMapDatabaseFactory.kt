@@ -10,27 +10,28 @@
 package com.google.android.stardroid.data
 
 import androidx.room.Room
-import androidx.sqlite.SQLiteException
 import androidx.sqlite.driver.bundled.BundledSQLiteDriver
-import androidx.sqlite.driver.bundled.SQLITE_OPEN_READONLY
 import kotlinx.cinterop.ExperimentalForeignApi
+import kotlinx.cinterop.addressOf
+import kotlinx.cinterop.usePinned
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.IO
 import kotlinx.coroutines.withContext
+import platform.Foundation.NSData
+import platform.Foundation.NSDataReadingMappedIfSafe
 import platform.Foundation.NSFileManager
 import platform.Foundation.NSLog
 import platform.Foundation.NSString
+import platform.Foundation.dataWithContentsOfFile
 import platform.Foundation.stringByDeletingLastPathComponent
+import platform.posix.memcpy
 
 /**
  * Builds the on-device catalog database from the bundled `skymap.db` — the iOS counterpart of
  * the Android factory of the same name. Room's prepackaged-database support (`createFromAsset`)
- * is Android-only, so the copy happens here, by the rule Room follows there: copy when there is
- * no on-device copy, or when the copy's schema version is not this build's. The catalog holds no
- * user state, so replacing it loses nothing.
- *
- * As on Android, an app update that changes catalog content but not the schema keeps the old
- * copy. Refreshing it is the core-pack refresh of data-packs.md, for both platforms at once.
+ * is Android-only, so the copy happens here: copy when there is no on-device copy, or when its
+ * [CatalogStamp] (schema and content version) differs from the bundled file's, the same rule as
+ * Android. The catalog holds no user state, so replacing it loses nothing.
  *
  * The database opens with Room's bundled SQLite, not the system one (catalog-and-schema.md).
  */
@@ -46,7 +47,11 @@ object SkyMapDatabaseFactory {
         bundledPath: String,
         databasePath: String,
     ): SkyMapDatabase {
-        if (schemaVersion(databasePath) != CATALOG_SCHEMA_VERSION) {
+        val bundled =
+            checkNotNull(CatalogStamp.parse(readHeader(bundledPath))) {
+                "The bundled catalog at $bundledPath is not a SQLite database"
+            }
+        if (CatalogStamp.needsRefresh(CatalogStamp.parse(readHeader(databasePath)), bundled)) {
             copyBundled(bundledPath, databasePath)
         }
         return Room.databaseBuilder<SkyMapDatabase>(name = databasePath)
@@ -83,18 +88,16 @@ object SkyMapDatabaseFactory {
             }
         }
 
-    /** The copy's `user_version`, or null if there is no copy or it is not a readable database. */
-    private fun schemaVersion(databasePath: String): Int? {
-        if (!NSFileManager.defaultManager.fileExistsAtPath(databasePath)) return null
-        return try {
-            BundledSQLiteDriver().open(databasePath, SQLITE_OPEN_READONLY).use { connection ->
-                connection.prepare("PRAGMA user_version").use { statement ->
-                    if (statement.step()) statement.getLong(0).toInt() else null
-                }
-            }
-        } catch (e: SQLiteException) {
-            null
+    /** The first bytes of the file at [path], or null if it is missing or unreadable. */
+    private fun readHeader(path: String): ByteArray? {
+        // Mapped, so only the pages touched (the first) are read.
+        val data =
+            NSData.dataWithContentsOfFile(path, NSDataReadingMappedIfSafe, null) ?: return null
+        val bytes = ByteArray(minOf(data.length.toInt(), SQLITE_HEADER_SIZE))
+        if (bytes.isNotEmpty()) {
+            bytes.usePinned { memcpy(it.addressOf(0), data.bytes, bytes.size.toULong()) }
         }
+        return bytes
     }
 
     /**

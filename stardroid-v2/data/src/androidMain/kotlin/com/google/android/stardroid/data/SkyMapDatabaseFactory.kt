@@ -10,8 +10,6 @@
 package com.google.android.stardroid.data
 
 import android.content.Context
-import android.database.sqlite.SQLiteDatabase
-import android.database.sqlite.SQLiteException
 import android.util.Log
 import androidx.room.Room
 import kotlinx.coroutines.Dispatchers
@@ -19,22 +17,24 @@ import kotlinx.coroutines.withContext
 
 /**
  * Builds the on-device catalog database from the bundled `skymap.db` asset (produced by
- * `:data:generateCatalogDb`). Room copies the asset on first open and validates it against the
- * schema identity hash, which is exactly what the generator wrote from the exported schema
- * JSON. A copy whose `user_version` differs from [CATALOG_SCHEMA_VERSION] is deleted first, so
- * the next open re-copies the asset (as on iOS). Room's destructive fallback alone would leave
- * empty tables.
+ * `:data:generateCatalogDb`). [CatalogInstaller] copies the asset when there is no on-device copy
+ * or its schema or content version ([CatalogStamp]) differs from the asset's, so a content-only
+ * change in `source-data/` reaches an in-place upgrade without anyone bumping
+ * [CATALOG_SCHEMA_VERSION]. Room then just opens the file: there is deliberately no
+ * `createFromAsset` and no destructive migration fallback, because a mismatch Room finds anyway
+ * must fail (and be recovered by [createWithRecovery]) rather than silently leave an empty
+ * catalog.
  */
 object SkyMapDatabaseFactory {
     const val DATABASE_NAME = "skymap.db"
     private const val TAG = "SkyMapDatabaseFactory"
 
-    fun create(context: Context): SkyMapDatabase =
-        Room.databaseBuilder(context, SkyMapDatabase::class.java, DATABASE_NAME)
-            .createFromAsset(DATABASE_NAME)
-            // Backstop only: [discardStaleCopy] normally removes a mismatched copy before this runs.
-            .fallbackToDestructiveMigration(dropAllTables = true)
-            .build()
+    fun create(context: Context): SkyMapDatabase {
+        CatalogInstaller.installIfStale(context.getDatabasePath(DATABASE_NAME)) {
+            context.assets.open(DATABASE_NAME)
+        }
+        return Room.databaseBuilder(context, SkyMapDatabase::class.java, DATABASE_NAME).build()
+    }
 
     /**
      * [create] plus the D24/G11 failure recovery: Room opens lazily, so this probes with a
@@ -47,7 +47,6 @@ object SkyMapDatabaseFactory {
      */
     suspend fun createWithRecovery(context: Context): SkyMapDatabase =
         withContext(Dispatchers.IO) {
-            discardStaleCopy(context)
             val db = create(context)
             try {
                 db.packDao().packs()
@@ -64,21 +63,4 @@ object SkyMapDatabaseFactory {
                 create(context).also { it.packDao().packs() }
             }
         }
-
-    private fun discardStaleCopy(context: Context) {
-        val file = context.getDatabasePath(DATABASE_NAME)
-        if (!file.exists()) return
-        val version =
-            try {
-                SQLiteDatabase.openDatabase(file.path, null, SQLiteDatabase.OPEN_READONLY).use {
-                    it.version
-                }
-            } catch (e: SQLiteException) {
-                null
-            }
-        if (version != CATALOG_SCHEMA_VERSION) {
-            Log.i(TAG, "Catalog DB version $version != $CATALOG_SCHEMA_VERSION; re-copying")
-            context.deleteDatabase(DATABASE_NAME)
-        }
-    }
 }
