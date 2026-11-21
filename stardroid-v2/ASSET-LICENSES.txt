@@ -81,6 +81,9 @@ assets/calibration/calib.gif
 # (ESO, IAU, IAU/Sky & Telescope, EHT) or CC BY-SA 4.0 (individual Commons contributors,
 # credited on the card). Attribution is carried in res/values/credits.xml.
 # Explicitly NOT covered by the reserved-rights notice, per assets/planets/SOURCES.md.
+# TON 618: NASA/JPL-Caltech artist's concept PIA16695 (supermassive black hole), cropped -
+# https://photojournal.jpl.nasa.gov/catalog/PIA16695. NASA content is generally not subject to
+# copyright in the US; free to reuse with NASA acknowledged (NASA Media Usage Guidelines).
 assets/celestial_images/**
 assets/planets/*.webp
 

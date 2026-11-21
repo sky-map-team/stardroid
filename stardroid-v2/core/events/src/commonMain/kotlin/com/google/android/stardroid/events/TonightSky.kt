@@ -235,6 +235,8 @@ private const val COUNTDOWN_HORIZON_DAYS = 45
 /** Minor showers (low ZHR) never make the countdown; they still highlight on their night. */
 private const val COUNTDOWN_MIN_ZHR = 20
 
+const val DEFAULT_HIGHLIGHT_LIMIT = 3
+
 fun tonightSky(
     now: Instant,
     location: LatLong?,
@@ -251,6 +253,8 @@ fun tonightSky(
      * reaching into a pure module.
      */
     passes: List<SatellitePass> = emptyList(),
+    /** How many highlights to keep; the widget and the digest use the default. */
+    limit: Int = DEFAULT_HIGHLIGHT_LIMIT,
 ): TonightSky {
     val sunset =
         location?.let {
@@ -278,7 +282,7 @@ fun tonightSky(
         brightMoon(now, sunset ?: now, location, ephemeris)?.let { highlights += it }
     }
 
-    val ranked = highlights.sortedByDescending { it.quality }.take(3)
+    val ranked = highlights.sortedByDescending { it.quality }.take(limit)
     // The bright-moon caveat qualifies other sights; alone it would just be a nag.
     val pruned = if (ranked.all { it is SkyEvent.BrightMoon }) emptyList() else ranked
 

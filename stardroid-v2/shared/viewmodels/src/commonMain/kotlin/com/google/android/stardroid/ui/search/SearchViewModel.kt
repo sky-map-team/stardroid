@@ -60,13 +60,15 @@ import kotlin.time.Duration.Companion.seconds
  * The active search target: a **static celestial snapshot**, exactly as v1's `SearchHelper`
  * copied the target on activation, except a satellite ([trackedId]) whose [direction] is
  * refreshed while the search lasts. [fovDeg] is the catalog's `search_level`, `null` for
- * coordinates and objects without one.
+ * coordinates and objects without one. [objectId] is the catalog entry the target came from, so
+ * the search bar can open its card; `null` for coordinates and ids the catalog doesn't know.
  */
 data class SearchTarget(
     val name: String,
     val direction: Vector3,
     val fovDeg: Double?,
     val trackedId: CelestialObjectId? = null,
+    val objectId: CelestialObjectId? = null,
 )
 
 /**
@@ -196,7 +198,9 @@ class SearchViewModel(
                 // never guides the user to empty sky (PR #23 review).
                 layerIdFor(hit, info)?.let { settings.setLayerEnabled(it, enabled = true) }
                 val trackedId = hit.id.takeIf { isSatellite }
-                activate(SearchTarget(hit.name, direction, hit.searchFovDeg, trackedId))
+                // A live satellite has a card even with no catalog row.
+                val objectId = hit.id.takeIf { isSatellite || info != null }
+                activate(SearchTarget(hit.name, direction, hit.searchFovDeg, trackedId, objectId))
             } else {
                 searchFailed(hit.name)
             }

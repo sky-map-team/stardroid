@@ -63,6 +63,33 @@ class CatalogDbGeneratorTest {
 
     // --- reproducibility ---
 
+    private fun contentVersionOf(file: Path): Int =
+        java.nio.ByteBuffer.wrap(
+            Files.readAllBytes(file),
+        ).getInt(CatalogDbWriter.APPLICATION_ID_OFFSET.toInt())
+
+    @Test
+    fun `the catalog is stamped with a stable content version`() {
+        val version = generateCatalogDb(schemaPath, sourceData, workDir.resolve("again.db"))
+        assertThat(version).isNotEqualTo(0)
+        assertThat(contentVersionOf(db)).isEqualTo(version)
+        assertThat(queryInt("PRAGMA application_id")).isEqualTo(version)
+    }
+
+    @Test
+    fun `a source-data change changes the content version`() {
+        val edited = workDir.resolve("edited-source")
+        sourceData.toFile().copyRecursively(edited.toFile(), overwrite = true)
+        val names = edited.resolve("names/en.csv")
+        Files.writeString(
+            names,
+            Files.readString(names).trimEnd() + "\nasterism/summer_triangle,Hash Test Alias,0\n",
+        )
+        val before = contentVersionOf(db)
+        val after = generateCatalogDb(schemaPath, edited, workDir.resolve("edited.db"))
+        assertThat(after).isNotEqualTo(before)
+    }
+
     @Test
     fun `output is byte-identical across runs`() {
         val second = workDir.resolve("skymap-2.db")
@@ -205,8 +232,8 @@ class CatalogDbGeneratorTest {
                 "WHERE type='black_hole'",
         ) { rs ->
             assertThat(rs.next()).isTrue()
-            assertThat(rs.getInt(1)).isEqualTo(2)
-            assertThat(rs.getInt(2)).isEqualTo(2)
+            assertThat(rs.getInt(1)).isEqualTo(3)
+            assertThat(rs.getInt(2)).isEqualTo(3)
             assertThat(rs.getInt(3)).isEqualTo(0)
         }
     }
@@ -253,15 +280,21 @@ class CatalogDbGeneratorTest {
                 "SELECT linked_id FROM object_link WHERE object_id='planet/jupiter' " +
                     "ORDER BY seq",
             ),
-        ).containsExactly("moon/io", "moon/europa", "moon/ganymede", "moon/callisto")
-            .inOrder()
+        ).containsExactly(
+            "moon/io",
+            "moon/europa",
+            "moon/ganymede",
+            "moon/callisto",
+            "probe/voyager_1",
+            "probe/voyager_2",
+        ).inOrder()
     }
 
     @Test
     fun `info cards cover english plus translations`() {
         assertThat(
             queryInt("SELECT COUNT(*) FROM info_card WHERE locale='en'"),
-        ).isEqualTo(341)
+        ).isEqualTo(345)
         assertThat(
             queryInt("SELECT COUNT(DISTINCT locale) FROM info_card"),
         ).isAtLeast(25)
@@ -271,7 +304,7 @@ class CatalogDbGeneratorTest {
     fun `satellite cards carry an image but no names, so catalog search never finds them`() {
         assertThat(
             queryStrings(
-                "SELECT id FROM celestial_object WHERE type='satellite' " +
+                "SELECT id FROM celestial_object WHERE id LIKE 'satellite/%' " +
                     "AND image_ref IS NOT NULL ORDER BY id",
             ),
         ).containsExactly("satellite/25544", "satellite/48274").inOrder()

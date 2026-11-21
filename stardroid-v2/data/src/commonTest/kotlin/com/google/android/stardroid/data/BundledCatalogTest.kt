@@ -21,8 +21,8 @@ import kotlin.test.Test
 
 /**
  * End-to-end proof of the 4c pipeline: the `skymap.db` produced by `:data:generateCatalogDb`
- * opens as each platform ships it (on Android through [SkyMapDatabaseFactory]'s
- * `createFromAsset`, on iOS by the system SQLite), Room validates the generator's schema and
+ * opens as each platform ships it (through each platform's [SkyMapDatabaseFactory], which
+ * copies it), Room validates the generator's schema and
  * identity hash, and the repository answers queries with the harvested v1 content. It runs on an
  * Android device and on the iOS simulator, so both platforms' SQLite must agree on every answer
  * — search included.
@@ -190,8 +190,14 @@ class BundledCatalogTest {
             assertThat(info.description).isNotEmpty()
             assertThat(info.imageRef).isNotEmpty()
             assertThat(info.links.map { it.id.value })
-                .containsExactly("moon/io", "moon/europa", "moon/ganymede", "moon/callisto")
-                .inOrder()
+                .containsExactly(
+                    "moon/io",
+                    "moon/europa",
+                    "moon/ganymede",
+                    "moon/callisto",
+                    "probe/voyager_1",
+                    "probe/voyager_2",
+                ).inOrder()
         }
 
     @Test

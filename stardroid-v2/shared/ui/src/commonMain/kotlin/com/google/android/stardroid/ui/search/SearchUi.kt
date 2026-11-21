@@ -69,6 +69,7 @@ import com.google.android.stardroid.ui.resources.search_no_results
 import com.google.android.stardroid.ui.resources.search_overlay_prompt
 import com.google.android.stardroid.ui.resources.search_standing_on_earth
 import com.google.android.stardroid.ui.resources.search_target_found_message
+import com.google.android.stardroid.ui.resources.search_target_info
 import com.google.android.stardroid.ui.resources.search_target_looking_message
 import org.jetbrains.compose.resources.stringResource
 import kotlin.math.PI
@@ -197,14 +198,16 @@ private fun DrawScope.drawArrow(
 
 /**
  * v1's `search_control_bar`: the Looking for / Found status, the point-your-phone prompt while
- * seeking, and the cancel button. In [compact] mode the prompt is omitted and the status and
- * cancel button share one row.
+ * seeking, and the cancel button. [onInfo] adds a button that opens the target's card, for
+ * objects (a probe, say) that draw nothing on the sky to tap. In [compact] mode the prompt is
+ * omitted and the status and buttons share one row.
  */
 @Composable
 fun SearchControlBar(
     targetName: String,
     found: Boolean,
     onCancel: () -> Unit,
+    onInfo: (() -> Unit)? = null,
     compact: Boolean = false,
 ) {
     Surface(
@@ -236,6 +239,7 @@ fun SearchControlBar(
                     overflow = TextOverflow.Ellipsis,
                     modifier = Modifier.weight(1f, fill = false),
                 )
+                onInfo?.let { InfoButton(it) }
                 TextButton(onClick = onCancel) {
                     Text(stringResource(Res.string.search_cancel))
                 }
@@ -252,11 +256,21 @@ fun SearchControlBar(
                         style = MaterialTheme.typography.bodySmall,
                     )
                 }
-                TextButton(onClick = onCancel) {
-                    Text(stringResource(Res.string.search_cancel))
+                Row {
+                    onInfo?.let { InfoButton(it) }
+                    TextButton(onClick = onCancel) {
+                        Text(stringResource(Res.string.search_cancel))
+                    }
                 }
             }
         }
+    }
+}
+
+@Composable
+private fun InfoButton(onClick: () -> Unit) {
+    TextButton(onClick = onClick) {
+        Text(stringResource(Res.string.search_target_info))
     }
 }
 

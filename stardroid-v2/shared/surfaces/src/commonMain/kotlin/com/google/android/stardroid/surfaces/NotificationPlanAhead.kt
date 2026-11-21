@@ -138,7 +138,7 @@ class NotificationPlanAhead(
                         fireAt = plan.fireAt,
                         title = words.digestTitle(),
                         body = words.digestLines(sky).joinToString("\n"),
-                        objectId = null,
+                        objectId = ObjectLink.TONIGHT_TARGET,
                     )
             }
         }

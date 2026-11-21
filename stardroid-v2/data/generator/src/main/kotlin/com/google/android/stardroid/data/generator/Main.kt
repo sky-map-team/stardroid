@@ -27,12 +27,14 @@ fun generateCatalogDb(
     schemaPath: Path,
     sourceDir: Path,
     out: Path,
-) {
+): Int {
     val schema = parseRoomSchema(schemaPath)
     val catalog = SourceDataLoader.load(sourceDir)
-    CatalogDbWriter.write(schema, catalog, out)
+    val contentVersion = CatalogDbWriter.write(schema, catalog, out)
     println(
-        "Wrote $out: ${catalog.objects.size} objects, ${catalog.names.size} names, " +
-            "${catalog.figures.size} figures, ${catalog.cards.size} cards",
+        "Wrote $out (content version $contentVersion): ${catalog.objects.size} objects, " +
+            "${catalog.names.size} names, ${catalog.figures.size} figures, " +
+            "${catalog.cards.size} cards",
     )
+    return contentVersion
 }
