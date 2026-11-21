@@ -563,6 +563,38 @@ class SearchViewModelTest {
         }
 
     @Test
+    fun `a target carries its catalog id so the search bar can open its card`() =
+        testScope.runCurrentTest {
+            repository.infos[SIRIUS_HIT.id] = objectInfo(SIRIUS_HIT.id, parent = null)
+            val vm = viewModel()
+            vm.select(SIRIUS_HIT)
+            runCurrent()
+
+            assertThat(vm.target.value!!.objectId).isEqualTo(SIRIUS_HIT.id)
+        }
+
+    @Test
+    fun `a hit the catalog has no card for carries no card id`() =
+        testScope.runCurrentTest {
+            val vm = viewModel()
+            vm.select(SIRIUS_HIT)
+            runCurrent()
+
+            assertThat(vm.target.value!!.objectId).isNull()
+        }
+
+    @Test
+    fun `a coordinate target has no card`() =
+        testScope.runCurrentTest {
+            val vm = viewModel()
+            vm.setQuery("12h 30m, +45")
+            vm.submit()
+            runCurrent()
+
+            assertThat(vm.target.value!!.objectId).isNull()
+        }
+
+    @Test
     fun `an unresolvable hit reports no results instead of a target`() =
         testScope.runCurrentTest {
             val vm = viewModel()
