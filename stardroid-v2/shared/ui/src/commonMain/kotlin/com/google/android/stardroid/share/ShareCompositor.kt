@@ -27,6 +27,7 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.drawText
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextDirection
 import androidx.compose.ui.unit.Density
 import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.IntSize
@@ -41,8 +42,8 @@ import kotlinx.coroutines.withContext
  * (D110). Capturing and encoding stay with each platform.
  *
  * Bitmaps passed in stay the caller's; the ones made along the way are released here. Call from
- * the main thread, where text is measured (Skia's font collection isn't thread-safe); the pixels
- * are drawn on a background one.
+ * the main thread, which measures and paints the text (Skia's font collection isn't thread-safe);
+ * the images are drawn on a background one.
  */
 class ShareCompositor(
     private val textMeasurer: TextMeasurer,
@@ -52,9 +53,9 @@ class ShareCompositor(
         branding: ShareBranding,
     ): ImageBitmap {
         val footer = measureFooter(map.width, map.height, branding)
-        return withContext(Dispatchers.Default) {
-            appendFooter(mapOverBlack(map), footer)
-        }
+        val image = withContext(Dispatchers.Default) { withStrip(map, footer) }
+        drawLines(image, footer)
+        return image
     }
 
     /**
@@ -70,20 +71,27 @@ class ShareCompositor(
         val pairWidth = map.width * 2 + gap
         val overlayFooter = measureFooter(map.width, map.height, branding)
         val pairFooter = measureFooter(pairWidth, map.height, branding)
-        return withContext(Dispatchers.Default) {
-            val overlay =
-                drawBitmap(map.width, map.height) {
-                    drawCamera(still, map.width, map.height, cameraDim)
-                    drawWhole(map)
-                }
-            val pair =
-                drawBitmap(pairWidth, map.height) {
-                    drawRect(Color.Black)
-                    drawCamera(still, map.width, map.height, cameraDim)
-                    drawWhole(map, left = map.width + gap)
-                }
-            ShareLayouts(appendFooter(overlay, overlayFooter), appendFooter(pair, pairFooter))
-        }
+        val layouts =
+            withContext(Dispatchers.Default) {
+                val overlay =
+                    drawBitmap(map.width, map.height) {
+                        drawCamera(still, map.width, map.height, cameraDim)
+                        drawWhole(map)
+                    }
+                val pair =
+                    drawBitmap(pairWidth, map.height) {
+                        drawRect(Color.Black)
+                        drawCamera(still, map.width, map.height, cameraDim)
+                        drawWhole(map, left = map.width + gap)
+                    }
+                ShareLayouts(
+                    withStrip(overlay, overlayFooter).also { overlay.release() },
+                    withStrip(pair, pairFooter).also { pair.release() },
+                )
+            }
+        drawLines(layouts.overlay, overlayFooter)
+        drawLines(layouts.sideBySide, pairFooter)
+        return layouts
     }
 
     private class Footer(
@@ -107,10 +115,16 @@ class ShareCompositor(
         val iconSize = (height - 2 * padding).toInt()
         val left = if (branding.icon == null) padding else padding + iconSize + padding
 
+        // Each line reads in its own language's direction, though the strip is laid out LTR.
         fun measure(
             text: String,
             style: TextStyle,
-        ) = textMeasurer.measure(text, style, softWrap = false, maxLines = 1)
+        ) = textMeasurer.measure(
+            text,
+            style.copy(textDirection = TextDirection.Content),
+            softWrap = false,
+            maxLines = 1,
+        )
 
         val titleSize = height * TITLE_FRACTION
         val titleStyle =
@@ -155,39 +169,36 @@ class ShareCompositor(
         return Footer(height, branding.icon, padding, iconSize, lines)
     }
 
-    private fun appendFooter(
+    /** [content] flattened over black, above the strip and its icon; [drawLines] adds the text. */
+    private fun withStrip(
         content: ImageBitmap,
         footer: Footer,
-    ): ImageBitmap {
-        val result =
-            drawBitmap(content.width, content.height + footer.height) {
-                drawRect(Color.Black)
-                drawWhole(content)
-                drawRect(
-                    FOOTER_BACKGROUND,
-                    topLeft = Offset(0f, content.height.toFloat()),
-                    size = Size(content.width.toFloat(), footer.height.toFloat()),
-                )
-                footer.icon?.let { icon ->
-                    val inset = footer.padding.toInt()
-                    drawImage(
-                        icon,
-                        dstOffset = IntOffset(inset, content.height + inset),
-                        dstSize = IntSize(footer.iconSize, footer.iconSize),
-                        filterQuality = FilterQuality.Low,
-                    )
-                }
-                for ((layout, topLeft) in footer.lines) drawText(layout, topLeft = topLeft)
-            }
-        content.release()
-        return result
-    }
-
-    private fun mapOverBlack(map: ImageBitmap): ImageBitmap =
-        drawBitmap(map.width, map.height) {
+    ): ImageBitmap =
+        drawBitmap(content.width, content.height + footer.height) {
             drawRect(Color.Black)
-            drawWhole(map)
+            drawWhole(content)
+            drawRect(
+                FOOTER_BACKGROUND,
+                topLeft = Offset(0f, content.height.toFloat()),
+                size = Size(content.width.toFloat(), footer.height.toFloat()),
+            )
+            footer.icon?.let { icon ->
+                val inset = footer.padding.toInt()
+                drawImage(
+                    icon,
+                    dstOffset = IntOffset(inset, content.height + inset),
+                    dstSize = IntSize(footer.iconSize, footer.iconSize),
+                    filterQuality = FilterQuality.Low,
+                )
+            }
         }
+
+    private fun drawLines(
+        image: ImageBitmap,
+        footer: Footer,
+    ) = drawInto(image) {
+        for ((layout, topLeft) in footer.lines) drawText(layout, topLeft = topLeft)
+    }
 
     // Cropped as the preview was, so the still shows what was behind the map.
     private fun DrawScope.drawCamera(
@@ -275,9 +286,12 @@ private fun drawBitmap(
     width: Int,
     height: Int,
     draw: DrawScope.() -> Unit,
-): ImageBitmap {
-    val bitmap = ImageBitmap(width, height)
-    val size = Size(width.toFloat(), height.toFloat())
-    CanvasDrawScope().draw(Density(1f), LayoutDirection.Ltr, Canvas(bitmap), size, draw)
-    return bitmap
+): ImageBitmap = ImageBitmap(width, height).also { drawInto(it, draw) }
+
+private fun drawInto(
+    image: ImageBitmap,
+    draw: DrawScope.() -> Unit,
+) {
+    val size = Size(image.width.toFloat(), image.height.toFloat())
+    CanvasDrawScope().draw(Density(1f), LayoutDirection.Ltr, Canvas(image), size, draw)
 }

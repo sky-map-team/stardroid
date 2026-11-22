@@ -121,6 +121,33 @@ final class ArModeTests: XCTestCase {
         capture(self, "11-landscape-share-sheet")
     }
 
+    /// The layouts' pixels are freed as the sheet goes, so a mistake there is a crash here.
+    func testSharingAgainAfterDismissingAndAfterSharing() {
+        let app = launch(flags: "camera_ar_enabled,share_sky_enabled")
+        turnOn(app)
+        let aboveTheSheet = app.windows.firstMatch
+            .coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.1))
+        for _ in 1...3 {
+            offerLayouts(app)
+            sleep(1)
+            aboveTheSheet.tap()
+            XCTAssertTrue(element(app, "Overlay").isGone(within: 5), "still up")
+        }
+        for choice in ["Overlay", "Side by side", "Overlay"] {
+            // A simulator can have no fix, and this runs past the location timeout's 30 s.
+            let keepWaiting = app.buttons["Keep Waiting"]
+            if keepWaiting.exists {
+                keepWaiting.tap()
+            }
+            offerLayouts(app)
+            element(app, choice).tap()
+            XCTAssertTrue(app.cells["Copy"].waitForExistence(timeout: 20), "no share sheet")
+            aboveTheSheet.tap()
+            XCTAssertTrue(app.cells["Copy"].isGone(within: 10), "share sheet stuck")
+        }
+        XCTAssertEqual(app.state, .runningForeground)
+    }
+
     func testComesBackFromSettingsAndTheBackground() {
         let app = launch(flags: "camera_ar_enabled,share_sky_enabled")
         turnOn(app)
@@ -197,5 +224,14 @@ final class ArModeTests: XCTestCase {
         XCTAssertTrue(button.waitForExistence(timeout: 10), "no shutter")
         button.tap()
         XCTAssertTrue(element(app, "Overlay").waitForExistence(timeout: 20), "no layouts")
+    }
+}
+
+private extension XCUIElement {
+    // XCTest has waitForExistence, and the opposite only on newer systems.
+    func isGone(within seconds: TimeInterval) -> Bool {
+        let gone = XCTNSPredicateExpectation(
+            predicate: NSPredicate(format: "exists == false"), object: self)
+        return XCTWaiter().wait(for: [gone], timeout: seconds) == .completed
     }
 }

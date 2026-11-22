@@ -37,8 +37,9 @@ class MetalSnapshot(
 
 /**
  * Draws the current scene offscreen at [width] × [height] and reads it back, without the camera
- * scrim: the share compositor dims the still itself. Call on the render thread; [onDone] comes on
- * a Metal thread, with null if the GPU refused.
+ * scrim: the share compositor dims the still itself. Call on the render thread (the main thread,
+ * under an MTKView): it shares the live frame's pending textures. [onDone] comes on a Metal
+ * thread, with null if the GPU refused.
  */
 @OptIn(ExperimentalForeignApi::class)
 fun MetalSkyRenderer.snapshot(

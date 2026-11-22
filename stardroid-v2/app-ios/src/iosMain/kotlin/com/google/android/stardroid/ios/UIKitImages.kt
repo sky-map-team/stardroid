@@ -106,8 +106,8 @@ internal fun drawImageBitmap(
     draw: () -> Unit,
 ): ImageBitmap? {
     val pixels = ByteArray(width * height * BYTES_PER_PIXEL)
-    val drawn = withBitmapContext(pixels, width, height, draw) { true } ?: return null
-    return if (drawn) imageBitmapOfPixels(pixels, width, height, bgra = false) else null
+    withBitmapContext(pixels, width, height, draw) { } ?: return null
+    return imageBitmapOfPixels(pixels, width, height, bgra = false)
 }
 
 @OptIn(ExperimentalForeignApi::class)

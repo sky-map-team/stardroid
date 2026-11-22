@@ -95,7 +95,7 @@ targets:
         # Asked when through-camera mode is first turned on, never at launch. English, as the
         # location prompt's is, until the plist strings are localized.
         NSCameraUsageDescription: >-
-          Sky Map shows the real sky behind the map. It never records what the camera sees.
+          Sky Map shows the real sky behind the map. It takes a photo only when you share the sky, and never sends it to us.
         # Add-only. Without it the share sheet leaves Save Image out; Sky Map never reads Photos.
         NSPhotoLibraryAddUsageDescription: >-
           Sky Map saves a sky picture to your photos only when you choose Save Image.

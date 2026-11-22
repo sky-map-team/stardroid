@@ -79,7 +79,6 @@ import com.google.android.stardroid.ui.theme.SkyMapTheme
 import com.google.android.stardroid.ui.timetravel.TimeTravelViewModel
 import com.google.android.stardroid.ui.tonight.TonightSheet
 import com.google.android.stardroid.ui.tonight.TonightViewModel
-import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.launch
 import org.jetbrains.compose.resources.stringResource
 import platform.UIKit.UIViewController
@@ -121,7 +120,6 @@ fun skyMapViewController(
             camera,
             graph.isForeground,
             enabled = graph.experiments.isEnabled(Experiment.CAMERA_AR),
-            scope = MainScope(),
         )
     return ComposeUIViewController {
         SkyMapScreen(
@@ -201,6 +199,7 @@ private fun SkyMapScreen(
     val scope = rememberCoroutineScope()
     val sharing = rememberSkySharing(map, camera, mapViewModel, snackbarHostState)
     val heatMessage = stringResource(Res.string.ar_stopped_hot_message)
+    LaunchedEffect(ar) { ar.run() }
     LaunchedEffect(page) { ar.setMapShowing(page == null) }
     LaunchedEffect(heatMessage) {
         ar.stoppedForHeat.collect { snackbarHostState.showSnackbar(heatMessage) }

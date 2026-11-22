@@ -64,7 +64,7 @@ internal class CameraOptics(
                         formatHeight,
                         shape.shortSide,
                         shape.longSide,
-                        landscape = shape.crossways,
+                        sensorWidthAlongViewWidth = shape.crossways,
                     )
                 }
             }

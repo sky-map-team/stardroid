@@ -34,20 +34,52 @@ class ArLensFovTest {
     fun bothEntryPointsAgreeOnTheSameLens() {
         val fromSensor = cameraShortSideFovDeg(6.4, 4.8, 4.38, 20.0 / 9.0)!!
         val horizontal = fullAngleDeg(6.4 / (2 * 4.38))
-        val fromFov = cameraShortHalfTan(horizontal, 4032, 3024, 900.0, 2000.0, landscape = false)!!
+        val fromFov =
+            cameraShortHalfTan(
+                horizontal,
+                4032,
+                3024,
+                900.0,
+                2000.0,
+                sensorWidthAlongViewWidth = false,
+            )!!
         assertThat(fullAngleDeg(fromFov)).isWithin(1e-9).of(fromSensor)
     }
 
     @Test
     fun turningThePhoneKeepsTheShortSideFov() {
-        val portrait = cameraShortHalfTan(70.0, 4, 3, 390.0, 844.0, landscape = false)!!
-        val landscape = cameraShortHalfTan(70.0, 4, 3, 844.0, 390.0, landscape = true)!!
+        val portrait =
+            cameraShortHalfTan(
+                70.0,
+                4,
+                3,
+                390.0,
+                844.0,
+                sensorWidthAlongViewWidth = false,
+            )!!
+        val landscape =
+            cameraShortHalfTan(
+                70.0,
+                4,
+                3,
+                844.0,
+                390.0,
+                sensorWidthAlongViewWidth = true,
+            )!!
         assertThat(landscape).isWithin(1e-12).of(portrait)
     }
 
     @Test
     fun aTallWindowOnASidewaysTabletIsCroppedFromTheWideImage() {
-        val halfTan = cameraShortHalfTan(70.0, 4, 3, 500.0, 1000.0, landscape = true)!!
+        val halfTan =
+            cameraShortHalfTan(
+                70.0,
+                4,
+                3,
+                500.0,
+                1000.0,
+                sensorWidthAlongViewWidth = true,
+            )!!
         // The image's whole height shows, and half of that across the window.
         val imageHalfHeight = tan(35.0 * DEGREES_TO_RADIANS) * 3 / 4
         assertThat(halfTan).isWithin(1e-12).of(imageHalfHeight / 2)
@@ -91,8 +123,14 @@ class ArLensFovTest {
 
     @Test
     fun degenerateFormatsAreRejected() {
-        assertThat(cameraShortHalfTan(0.0, 4, 3, 1.0, 2.0, landscape = false)).isNull()
-        assertThat(cameraShortHalfTan(70.0, 0, 3, 1.0, 2.0, landscape = false)).isNull()
-        assertThat(cameraShortHalfTan(70.0, 4, 3, 0.0, 2.0, landscape = false)).isNull()
+        assertThat(
+            cameraShortHalfTan(0.0, 4, 3, 1.0, 2.0, sensorWidthAlongViewWidth = false),
+        ).isNull()
+        assertThat(
+            cameraShortHalfTan(70.0, 0, 3, 1.0, 2.0, sensorWidthAlongViewWidth = false),
+        ).isNull()
+        assertThat(
+            cameraShortHalfTan(70.0, 4, 3, 0.0, 2.0, sensorWidthAlongViewWidth = false),
+        ).isNull()
     }
 }

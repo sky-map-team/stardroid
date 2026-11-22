@@ -11,7 +11,6 @@ package com.google.android.stardroid.ios
 
 import com.google.android.stardroid.ui.map.MapViewModel
 import com.google.android.stardroid.ui.map.followControls
-import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.channels.awaitClose
 import kotlinx.coroutines.coroutineScope
@@ -42,7 +41,6 @@ internal class IosArMode(
     private val camera: IosArCamera,
     private val foreground: StateFlow<Boolean>,
     enabled: Boolean,
-    scope: CoroutineScope,
 ) {
     /** The flag and the hardware: without both the toggle never shows. */
     val available: Boolean = enabled && camera.hasCamera
@@ -53,8 +51,12 @@ internal class IosArMode(
     /** One per time heat turned the layer off, for the snackbar that says so. */
     val stoppedForHeat: Flow<Unit> = heatStops.receiveAsFlow()
 
-    init {
-        if (available) scope.launch { mapViewModel.arMode.collectLatest(::runLayer) }
+    /**
+     * Runs until cancelled, which releases the camera: the screen's composition runs it, so an
+     * iPad window that closes doesn't keep the camera.
+     */
+    suspend fun run() {
+        if (available) mapViewModel.arMode.collectLatest(::runLayer)
     }
 
     private suspend fun runLayer(on: Boolean) {

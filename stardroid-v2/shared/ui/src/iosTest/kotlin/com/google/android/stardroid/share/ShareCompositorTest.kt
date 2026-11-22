@@ -121,6 +121,33 @@ class ShareCompositorTest {
             assertTrue(goldPixels > 10, "no title drawn")
         }
 
+    // Arabic, Persian and Hebrew read from the right, so the first phrase sits rightmost. Glyphs
+    // land a pixel apart between the two directions, so this compares against both orders.
+    @Test
+    fun aRightToLeftInvitationKeepsItsWordOrder() =
+        runBlocking {
+            suspend fun footerOf(invitation: String): IntArray {
+                val text = ShareBranding(null, "Sky Map", invitation, "https://getskymap.app")
+                val image = compositor.mapOnly(filled(600, 600, 0, 0, 0, 0), text)
+                return image.toPixelMap(startY = 600, height = image.height - 600).buffer
+            }
+
+            fun distance(
+                a: IntArray,
+                b: IntArray,
+            ): Long = a.indices.sumOf { abs((a[it] and 0xFF) - (b[it] and 0xFF)).toLong() }
+
+            val hebrew = "\u05d0\u05d1\u05d2\u05d3\u05d4\u05d5"
+            val shown = footerOf("$hebrew abc")
+            val firstPhraseRightmost = footerOf("abc $hebrew")
+            // A left-to-right mark in front forces the wrong direction.
+            val reversed = footerOf("\u200e$hebrew abc")
+            assertTrue(
+                distance(shown, firstPhraseRightmost) < distance(shown, reversed),
+                "the invitation's phrases are in left-to-right order",
+            )
+        }
+
     @Test
     fun anEncodedPngHasNoMetadataChunks() {
         val png = filled(40, 40, 10, 20, 30, 255).encodePng()!!

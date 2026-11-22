@@ -11,6 +11,7 @@ package com.google.android.stardroid.ios
 
 import androidx.compose.material3.SnackbarHostState
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
@@ -64,6 +65,7 @@ internal class SkySharing(
         private set
 
     private var job: Job? = null
+    private var sendJob: Job? = null
 
     fun start() {
         if (job?.isActive == true) return
@@ -84,14 +86,21 @@ internal class SkySharing(
             still = if (inAr) camera.takeStill() else null
             if (still == null) {
                 // No still, map only, as on Android.
-                send(compositor.mapOnly(mapImage, branding))
+                val image = compositor.mapOnly(mapImage, branding)
+                send(image)
+                // Never shown, and written out by now.
+                image.release()
             } else {
                 val scrim = mapViewModel.renderState.first().cameraScrim
                 // Squared: the scrim is blended with the colour's factors, so a quad of opacity
                 // s leaves alpha s² in the layer, and that is how much the screen dims the camera.
                 val composed = compositor.arLayouts(mapImage, still, scrim * scrim, branding)
                 // Turned off meanwhile (a toggle, heat): nothing left to choose for.
-                if (mapViewModel.arMode.value) layouts = composed
+                if (mapViewModel.arMode.value) {
+                    layouts = composed
+                } else {
+                    composed.release()
+                }
             }
         } finally {
             mapImage.release()
@@ -102,12 +111,21 @@ internal class SkySharing(
 
     fun pick(image: ImageBitmap) {
         layouts = null
-        scope.launch { send(image) }
+        sendJob = scope.launch { send(image) }
     }
 
-    // Dropped, not released: the sheet may still be drawing them.
     fun dismiss() {
         layouts = null
+    }
+
+    // Not before the sheet that draws them has gone, and not while one is being written out.
+    fun onSheetGone(shown: ShareLayouts) {
+        // Only covered by a page: it comes back with the same pictures.
+        if (layouts === shown) return
+        scope.launch {
+            sendJob?.join()
+            shown.release()
+        }
     }
 
     private suspend fun send(image: ImageBitmap) {
@@ -156,8 +174,15 @@ internal fun rememberSkySharing(
 @Composable
 internal fun SkySharingSheet(sharing: SkySharing) {
     sharing.layouts?.let { layouts ->
+        // Declared before the sheet, so it's disposed after it.
+        DisposableEffect(layouts) { onDispose { sharing.onSheetGone(layouts) } }
         ShareLayoutSheet(layouts, onPick = sharing::pick, onDismiss = sharing::dismiss)
     }
+}
+
+private fun ShareLayouts.release() {
+    overlay.release()
+    sideBySide.release()
 }
 
 // The installed app's own icon (ASSET-LICENSES.txt's AppIcon.png), masked as Android's launcher

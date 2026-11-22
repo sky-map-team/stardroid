@@ -126,7 +126,9 @@ Core Motion and Metal code already is. (Fall back to Swift only if an API is not
   with the other permission strings (as built it is English, as theirs still are).
 - **Lifecycle.** Stop the session when the app backgrounds or the layer turns off, and restart
   on return only if the layer was on. Follow `ProcessInfo.thermalState`: at `.serious`, stop
-  AR with a snackbar explaining why.
+  AR with a snackbar explaining why. As built, an interruption or runtime error also hides the
+  preview, so no frozen frame sits under the moving map (an error gets one restart), and the
+  screen's composition owns the camera, so a closed iPad window releases it.
 - **Orientation.** iPhone landscape is supported (D143). Keep the preview's rotation in step
   with the interface orientation. The FOV is defined on the shorter view side, so it does not
   depend on orientation. As built, a turn doesn't report new specs (that would reset the zoom).

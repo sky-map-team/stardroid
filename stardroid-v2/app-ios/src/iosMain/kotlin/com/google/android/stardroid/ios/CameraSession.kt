@@ -25,7 +25,11 @@ import platform.AVFoundation.AVCaptureFocusModeContinuousAutoFocus
 import platform.AVFoundation.AVCapturePhotoOutput
 import platform.AVFoundation.AVCapturePhotoSettings
 import platform.AVFoundation.AVCaptureSession
+import platform.AVFoundation.AVCaptureSessionDidStartRunningNotification
+import platform.AVFoundation.AVCaptureSessionInterruptionEndedNotification
 import platform.AVFoundation.AVCaptureSessionPresetPhoto
+import platform.AVFoundation.AVCaptureSessionRuntimeErrorNotification
+import platform.AVFoundation.AVCaptureSessionWasInterruptedNotification
 import platform.AVFoundation.AVCaptureVideoDataOutput
 import platform.AVFoundation.AVCaptureVideoOrientation
 import platform.AVFoundation.AVCaptureVideoOrientationLandscapeLeft
@@ -51,9 +55,12 @@ import platform.AVFoundation.videoZoomFactor
 import platform.CoreGraphics.CGRectMake
 import platform.CoreGraphics.CGRectZero
 import platform.Foundation.NSData
+import platform.Foundation.NSNotificationCenter
+import platform.Foundation.NSOperationQueue
 import platform.QuartzCore.CATransaction
 import platform.UIKit.UIImage
 import platform.UIKit.UIView
+import platform.darwin.NSObjectProtocol
 import platform.darwin.dispatch_async
 import platform.darwin.dispatch_get_main_queue
 import platform.darwin.dispatch_queue_create
@@ -77,7 +84,7 @@ internal class CameraSession(
     private val previewView = UIView(frame = CGRectZero.readValue())
     private val previewLayer = AVCaptureVideoPreviewLayer(session = session)
 
-    // AVFoundation doesn't retain its delegates.
+    // The video output doesn't retain its delegate; the photo receivers are kept to fail on close.
     private val lumaProbe = PreviewLumaProbe(::reportLuma)
     private val photos = mutableSetOf<PhotoReceiver>()
 
@@ -87,16 +94,21 @@ internal class CameraSession(
     private var reportedShape: PreviewShape? = null
     private var zoomRatio = 1.0
     private var exposureIndex = 0
+    private var observers = emptyList<NSObjectProtocol>()
+    private var retriedAfterError = false
 
     fun open() {
+        observeSession()
         previewView.userInteractionEnabled = false
         previewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill
         previewView.layer.addSublayer(previewLayer)
         target.container.insertSubview(previewView, atIndex = 0)
         layoutPreview()
         dispatch_async(queue) {
-            val configured = configure()
-            if (configured != null) session.startRunning()
+            val usable = configure()
+            if (usable) session.startRunning()
+            // Read once running, when the preset has certainly chosen the active format.
+            val configured = if (usable) CameraOptics.read(device) else null
             dispatch_async(dispatch_get_main_queue()) {
                 // Without one (in use, restricted) the layer stays on, showing the map over black.
                 if (!closed && configured != null) {
@@ -111,6 +123,9 @@ internal class CameraSession(
 
     fun close() {
         closed = true
+        observers.forEach(NSNotificationCenter.defaultCenter::removeObserver)
+        observers = emptyList()
+        failPendingPhotos()
         previewView.removeFromSuperview()
         dispatch_async(queue) {
             videoOutput.setSampleBufferDelegate(null, null)
@@ -121,11 +136,48 @@ internal class CameraSession(
     fun setActive(active: Boolean) {
         if (closed || active == this.active) return
         this.active = active
+        if (active) retriedAfterError = false else failPendingPhotos()
         dispatch_async(queue) {
             if (active && !session.running) session.startRunning()
             if (!active && session.running) session.stopRunning()
         }
     }
+
+    // While the camera can't deliver, its last frame would sit still behind a moving map, so the
+    // preview hides and the map is over black. An interruption ends by itself; an error, such as
+    // the media services resetting, gets one restart.
+    private fun observeSession() {
+        fun observe(
+            name: String?,
+            onPosted: () -> Unit,
+        ) = NSNotificationCenter.defaultCenter.addObserverForName(
+            name,
+            session,
+            NSOperationQueue.mainQueue,
+        ) { if (!closed) onPosted() }
+
+        observers =
+            listOf(
+                observe(AVCaptureSessionWasInterruptedNotification) { previewView.setHidden(true) },
+                observe(AVCaptureSessionInterruptionEndedNotification) {
+                    previewView.setHidden(false)
+                },
+                observe(AVCaptureSessionDidStartRunningNotification) {
+                    previewView.setHidden(false)
+                },
+                observe(AVCaptureSessionRuntimeErrorNotification) {
+                    previewView.setHidden(true)
+                    failPendingPhotos()
+                    if (active && !retriedAfterError) {
+                        retriedAfterError = true
+                        dispatch_async(queue) { session.startRunning() }
+                    }
+                },
+            )
+    }
+
+    // Their callbacks may never come once the session stops.
+    private fun failPendingPhotos() = photos.toList().forEach(PhotoReceiver::fail)
 
     fun layoutChanged() {
         if (closed) return
@@ -241,9 +293,9 @@ internal class CameraSession(
         dispatch_async(dispatch_get_main_queue()) { if (!closed) onPreviewLuma(luma) }
     }
 
-    /** On [queue]. Null if the camera can't be used. */
-    private fun configure(): CameraOptics? {
-        val input = AVCaptureDeviceInput.deviceInputWithDevice(device, null) ?: return null
+    /** On [queue]. False if the camera can't be used. */
+    private fun configure(): Boolean {
+        val input = AVCaptureDeviceInput.deviceInputWithDevice(device, null) ?: return false
         session.beginConfiguration()
         // The photo preset gives the preview and the still one field of view.
         if (session.canSetSessionPreset(AVCaptureSessionPresetPhoto)) {
@@ -262,7 +314,7 @@ internal class CameraSession(
             }
         }
         session.commitConfiguration()
-        if (!usable) return null
+        if (!usable) return false
         if (device.lockForConfiguration(null)) {
             if (device.lowLightBoostSupported) {
                 device.automaticallyEnablesLowLightBoostWhenAvailable = true
@@ -275,8 +327,7 @@ internal class CameraSession(
             }
             device.unlockForConfiguration()
         }
-        // After the commit: the preset chooses the active format.
-        return CameraOptics.read(device)
+        return true
     }
 
     private companion object {

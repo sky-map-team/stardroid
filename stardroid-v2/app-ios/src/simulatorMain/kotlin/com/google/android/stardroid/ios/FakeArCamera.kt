@@ -103,7 +103,7 @@ internal class FakeArCamera : IosArCamera {
                 FORMAT_SHORT,
                 shape.shortSide,
                 shape.longSide,
-                landscape = shape.crossways,
+                sensorWidthAlongViewWidth = shape.crossways,
             )
         val lenses =
             arLenses(

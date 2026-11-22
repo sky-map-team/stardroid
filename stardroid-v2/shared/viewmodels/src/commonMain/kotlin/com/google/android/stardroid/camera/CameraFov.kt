@@ -16,13 +16,9 @@ import kotlin.math.atan
 import kotlin.math.tan
 
 /**
- * The physical camera's field of view across the preview's **shorter** side, in degrees —
- * the one number that locks the map's zoom to the camera (camera-ar-mode.md/D64: the map's
- * `SkyCamera.fovDeg` is also short-side, D21). This is Android's entry point, from sensor
- * geometry; phone sensors mount landscape, so the view's short side maps onto the sensor's.
- *
- * Returns null on degenerate inputs (missing/zero characteristics) — the caller falls back
- * to leaving the map FOV unlocked.
+ * Android's camera FOV across the view's shorter side in degrees, as `SkyCamera.fovDeg` is (D21),
+ * from sensor geometry: phone sensors mount landscape. Null, leaving the map's zoom free, on
+ * degenerate inputs.
  */
 fun cameraShortSideFovDeg(
     sensorLongSideMm: Double,
@@ -45,8 +41,8 @@ fun cameraShortSideFovDeg(
 /**
  * iOS's entry point: the tangent of the visible short half-side, from a format's horizontal FOV.
  *
- * [formatWidth] × [formatHeight] is the unrotated sensor image. [landscape] is the interface's
- * orientation, which an iPad window's shape doesn't have to follow. Null on degenerate inputs.
+ * [formatWidth] × [formatHeight] is the unrotated sensor image, and [sensorWidthAlongViewWidth]
+ * whether its width lies along [viewWidth] in this view. Null on degenerate inputs.
  */
 fun cameraShortHalfTan(
     horizontalFovDeg: Double,
@@ -54,15 +50,15 @@ fun cameraShortHalfTan(
     formatHeight: Int,
     viewWidth: Double,
     viewHeight: Double,
-    landscape: Boolean,
+    sensorWidthAlongViewWidth: Boolean,
 ): Double? {
     if (horizontalFovDeg <= 0.0 || horizontalFovDeg >= 180.0) return null
     if (formatWidth <= 0 || formatHeight <= 0 || viewWidth <= 0.0 || viewHeight <= 0.0) return null
     val along = tan(horizontalFovDeg * DEGREES_TO_RADIANS / 2.0)
     val across = along * formatHeight / formatWidth
     return visibleShortHalfTan(
-        imageHalfWidth = if (landscape) along else across,
-        imageHalfHeight = if (landscape) across else along,
+        imageHalfWidth = if (sensorWidthAlongViewWidth) along else across,
+        imageHalfHeight = if (sensorWidthAlongViewWidth) across else along,
         viewWidth = viewWidth,
         viewHeight = viewHeight,
     )
