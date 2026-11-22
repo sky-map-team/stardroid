@@ -1407,6 +1407,14 @@
    "size": "600 Lichtjahre Durchmesser",
    "image_credit": "ESO/R. Fosbury/ST-ECF"
   },
+  "dso/ton_618": {
+   "description": "TON 618 ist ein hyperleuchtkräftiger Quasar nahe der Grenze zwischen den Jagdhunden (Canes Venatici) und dem Haupthaar der Berenike (Coma Berenices), der von einem der massereichsten bekannten Schwarzen Löcher angetrieben wird, das auf etwa 40 Milliarden Sonnenmassen geschätzt wird. Wenn Gas hineinfällt, leuchtet der Quasar mit dem Licht von rund 140 Billionen Sonnen.",
+   "fun_fact": "Der Ereignishorizont des Schwarzen Lochs hat einen Radius von etwa 800 Astronomischen Einheiten und ist damit ein Vielfaches der Neptunbahn breit.",
+   "distance": "~10,8 Milliarden Lichtjahre (Lichtlaufzeit)",
+   "size": "Masse des schwarzen Lochs: ~40 Milliarden Sonnenmassen",
+   "image_credit": "Artist's concept of a supermassive black hole, not TON 618 itself. NASA/JPL-Caltech",
+   "search_subtext": "Hyperleuchtkräftiger Quasar"
+  },
   "dso/v838_mon": {
    "description": "V838 Monocerotis ist ein ungewöhnlicher veränderlicher Stern im Sternbild Einhorn, der 2002 einen spektakulären Ausbruch erlebte und kurzzeitig einer der hellsten Sterne der Milchstraße wurde. Obwohl er heute für visuelle Beobachter viel zu schwach ist, erzeugte seine expandierende Lichtwelle – eine Wellenfront aus Licht, die alte Staubhüllen illuminiert – einige der dramatischsten Bilder des Hubble-Weltraumteleskops, die je aufgenommen wurden.",
    "fun_fact": "Die Natur des Ausbruchs von V838 Mon bleibt umstritten. Die führende Theorie ist eine Sternenverschmelzung — zwei Sterne, die ineinander spiralen und kollidieren — eher als eine klassische Nova oder Überriesen-Eruption. Falls bestätigt, war es der erste Echtzeit-Einblick in eine \"leuchtende rote Nova\", eine seltene Explosionsklasse, die durch Sternenverschmelzungen verursacht wird. Ähnliche Ereignisse wurden seitdem in anderen Galaxien gefunden.",
@@ -1629,6 +1637,32 @@
    "size": "12.104 km Durchmesser",
    "mass": "4,87 × 10²⁴ kg",
    "image_credit": "NASA/JPL"
+  },
+  "probe/bepicolombo": {
+   "description": "BepiColombo ist eine gemeinsame Mission der ESA und der JAXA zum Merkur und die erste europäische Mission zu diesem Planeten. Sie wurde am 20. Oktober 2018 gestartet und nutzt Vorbeiflüge an der Erde (2020), der Venus (2020 und 2021) sowie am Merkur selbst (sechs Vorbeiflüge von 2021 bis 2025), um ausreichend abzubremsen und in eine Umlaufbahn einzuschwenken. Sie erreicht die Merkurbahn im November 2026, wobei der wissenschaftliche Betrieb ab 2027 geplant ist. Zwei Orbiter reisen zusammen: der Mercury Planetary Orbiter der ESA und JAXAs Mio. Da sie im Glanz des Merkurs verloren geht, wird sie angezeigt, indem auf den Planeten gezeigt wird.",
+   "fun_fact": "Sie ist nach Giuseppe „Bepi“ Colombo benannt, dem italienischen Mathematiker, der herausfand, warum sich der Merkur für jeweils zwei Umläuf genau dreimal um die eigene Achse dreht, und dessen Idee des Swing-Befri-Manövers Mariner 10 im Jahr 1974–75 drei Besuche des Planeten ermöglichte.",
+   "distance": "Beim Merkur, ca. 58 Millionen km von der Sonne entfernt",
+   "mass": "Etwa 4.100 kg beim Start",
+   "image_credit": "NASA",
+   "search_subtext": "Raumsonde beim Merkur"
+  },
+  "probe/voyager_1": {
+   "description": "Voyager 1 ist das am weitesten von Menschen geschaffene Objekt und befindet sich inzwischen im interstellaren Raum. Die am 5. September 1977 gestartete Raumsonde flog am 5. März 1979 an Jupiter und am 12. November 1980 an Saturn vorbei und bewegte sich anschließend aus dem Sonnensystem hinaus. Am 25. August 2012 überquerte sie die Heliopause, den Rand der Sonnenwindblase, und wurde am 18. November 2026 das erste Raumfahrzeug in einer Entfernung von einem Lichttag zur Erde. Sie ist zu lichtschwach, um gesehen zu werden, und steht im Sternbild Schlangenträger, wenige Grad von Rasalhague entfernt.",
+   "fun_fact": "Am 14. Februar 1990 drehte Voyager 1 aus rund 6 Milliarden km Entfernung seine Kamera zurück und fotografierte die Planeten, wobei es die Erde als den „blassblauen Punkt“ (Pale Blue Dot) abbildete, der weniger als ein Pixel breit ist. Es hat noch immer die Golden Record an Bord, eine vergoldete Platte mit Klängen und Bildern von der Erde.",
+   "distance": "Etwa 173 AE (25,9 Milliarden km) von der Erde entfernt, Nov 2026",
+   "size": "3,7-m-Parabolantenne",
+   "mass": "Etwa 825 kg beim Start",
+   "image_credit": "NASA/JPL",
+   "search_subtext": "Raumsonde"
+  },
+  "probe/voyager_2": {
+   "description": "Voyager 2 ist das einzige Raumfahrzeug, das alle vier Gasriesen besucht hat. Sie wurde am 20. August 1977, kurz vor Voyager 1, gestartet und flog am 9. Juli 1979 an Jupiter, am 25. August 1981 an Saturn, am 24. Januar 1986 an Uranus und am 25. August 1989 an Neptun vorbei. Am 5. November 2018 überschritt sie die Heliopause in den interstellaren Raum und sendet immer noch Daten zur Erde. Wie Voyager 1 hat sie eine Golden Record mit Geräuschen und Bildern der Erde an Bord.",
+   "fun_fact": "Voyager 2 flog 1989 nah am Nordpol des Neptun vorbei, wodurch die Raumsonde nach Süden aus der Planetenebene herausgeschleudert wurde und sich nun weit am Südhimmel befindet. Etwa im November 2035 wird sie eine Entfernung von einem Lichttag zur Erde erreichen.",
+   "distance": "Etwa 145 AE (21,7 Milliarden km) von der Erde entfernt, Nov 2026",
+   "size": "3,7-m-Parabolantenne",
+   "mass": "Etwa 825 kg beim Start",
+   "image_credit": "NASA/JPL-Caltech",
+   "search_subtext": "Raumsonde"
   },
   "satellite/25544": {
    "description": "Die Internationale Raumstation ist ein Forschungslabor von der Größe eines Fußballfelds, das die Erde in etwa 420 km Höhe umkreist. Fünf Raumfahrtagenturen haben sie gebaut, und Astronauten leben und arbeiten an Bord. Wenn sie am hellsten leuchtet, übertrifft sie jeden Stern und Planeten an Helligkeit und zieht in nur wenigen Minuten über den Himmel.",
