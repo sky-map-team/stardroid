@@ -172,6 +172,14 @@ Update only the promotional text on the live App Store version
 
 Build and upload to TestFlight (internal testers). Pass changelog:"..." for What to Test.
 
+### ios changelog
+
+```sh
+[bundle exec] fastlane ios changelog
+```
+
+Update What to Test on an already-uploaded internal build, without rebuilding. Pass build_number:N changelog:"..."
+
 ### ios screenshots
 
 ```sh
