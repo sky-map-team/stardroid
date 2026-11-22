@@ -71,6 +71,8 @@ object AnalyticsEvents {
     const val CALIBRATION_OPENED_LABEL = "calibration_opened"
     const val TIME_TRAVEL_OPENED_LABEL = "time_travel_opened"
     const val GALLERY_OPENED_LABEL = "gallery_opened"
+    const val TONIGHT_OPENED_LABEL = "tonight_opened"
+    const val LOCATION_OPENED_LABEL = "location_opened"
     const val WIDGETS_OPENED_LABEL = "widgets_opened"
     const val DIAGNOSTICS_OPENED_LABEL = "diagnostics_opened"
 

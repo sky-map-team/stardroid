@@ -16,8 +16,12 @@ import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Favorite
+import androidx.compose.material3.Icon
 import androidx.compose.material3.ListItem
 import androidx.compose.material3.ListItemDefaults
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -95,6 +99,12 @@ fun TipJarRow(
         ListItem(
             headlineContent = { Text(stringResource(Res.string.support_tip_title)) },
             supportingContent = { Text(stringResource(Res.string.support_tip_desc)) },
+            // The same icon and tint as the other Support rows, so the heading lines up with them.
+            leadingContent = { Icon(Icons.Filled.Favorite, contentDescription = null) },
+            colors =
+                ListItemDefaults.colors(
+                    leadingIconColor = MaterialTheme.colorScheme.primary,
+                ),
         )
         // Name over price, three across; at large text sizes (or on a 320 pt screen) the
         // buttons would break words, so they stack instead.

@@ -623,6 +623,7 @@ fun MapScreen(
                     onOpenTonight?.let { open ->
                         {
                             showOverflowSheet = false
+                            mapViewModel.logMenuItem(AnalyticsEvents.TONIGHT_OPENED_LABEL)
                             open()
                         }
                     },
@@ -642,6 +643,7 @@ fun MapScreen(
                 widgetsEnabled = onOpenWidgets != null,
                 onOpenLocation = {
                     showOverflowSheet = false
+                    mapViewModel.logMenuItem(AnalyticsEvents.LOCATION_OPENED_LABEL)
                     showLocationSheet = true
                 },
                 onOpenCalibration =

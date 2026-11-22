@@ -144,11 +144,13 @@
     <string name="widgets_explainer_step_2" translation_description="Step 2 of adding a widget on an iPhone Home Screen: the plus button in the top-left corner">Tap the + button at the top left.</string>
     <string name="widgets_explainer_step_3" translation_description="Step 3 of adding a widget on an iPhone Home Screen. Use the iOS wording for the Add Widget button">Search for Sky Map, choose a widget and tap Add Widget.</string>
     <string name="widgets_explainer_lock_screen" translation_description="Note on how to add a widget to the iPhone Lock Screen. Use the iOS wording for Customize">For the Lock Screen, touch and hold it, tap Customize, then tap the area below the time.</string>
-    <string name="support_button" translation_description="Map-screen menu item that opens the screen listing ways to support Sky Map">Support</string>
+    <string name="support_button" translation_description="Map-screen menu item that opens the screen listing ways to support Sky Map">Support Sky Map</string>
     <string name="support_screen_title" translation_description="Title of the screen listing ways to support Sky Map">Support Sky Map</string>
     <string name="support_intro" translation_description="Opening paragraph of the Support screen. Sky Map is a free, open-source app.">Sky Map is free and open source, and it will stay that way. If you enjoy it, here are some ways to help.</string>
-    <string name="support_star_title" translation_description="Support screen row: star the project's page on GitHub">Star Sky Map on GitHub</string>
-    <string name="support_star_desc" translation_description="Support screen row description: starring helps other people find the app">It helps other people find the app.</string>
+    <string name="support_star_title" translation_description="Support screen row: Sky Map's source code is public on GitHub">Sky Map is open source</string>
+    <string name="support_star_desc" translation_description="Support screen row description: opens the GitHub page, where the user can star the project">Star it on GitHub.</string>
+    <string name="support_header_help" translation_description="Support screen section heading above the row for someone who has a problem and wants help">Need help?</string>
+    <string name="support_header_give" translation_description="Support screen section heading above the rows for ways to support the app: rate it, tip, share, star it">Help Sky Map</string>
     <string name="support_issues_title" translation_description="Support screen row: report a problem or suggest an idea on GitHub">Report a problem or suggest an idea</string>
     <string name="support_issues_desc" translation_description="Support screen row description: opens the issue tracker on GitHub">Open an issue on GitHub.</string>
     <string name="support_rate_title" translation_description="Support screen row: leave a rating or review on the app store">Rate Sky Map</string>
