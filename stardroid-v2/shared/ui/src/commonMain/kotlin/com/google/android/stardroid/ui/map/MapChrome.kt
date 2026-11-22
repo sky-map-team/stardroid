@@ -1838,5 +1838,5 @@ private fun SatelliteEmptyStateCard() {
 /** Landscape right inset that clears the action column: 8 dp edge + 48 dp button + 8 dp gap. */
 private val ACTION_COLUMN_CLEARANCE: Dp = 64.dp
 
-/** Portrait room kept below the AR panel: the shutter and the action row. */
+/** Portrait room kept below the AR panel: the shutter, as placed by [shutterBottomPadding]. */
 private val AR_PANEL_BOTTOM_RESERVE: Dp = 136.dp

@@ -15,6 +15,7 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.IntrinsicSize
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -112,6 +113,7 @@ fun ArControls(
             verticalAlignment = Alignment.CenterVertically,
             modifier =
                 Modifier
+                    .fillMaxWidth()
                     .clickable { expanded = !expanded }
                     .semantics { contentDescription = toggleDescription }
                     .padding(vertical = 6.dp),
