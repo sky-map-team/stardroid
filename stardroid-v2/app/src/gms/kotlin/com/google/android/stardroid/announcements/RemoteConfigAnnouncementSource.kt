@@ -36,11 +36,10 @@ class RemoteConfigAnnouncementSource : AnnouncementSource {
 
     override fun current(): List<Announcement> =
         AnnouncementParser.parse(
-            remoteConfig.getString(KEY),
+            remoteConfig.getString(AnnouncementSource.KEY),
         )
 
     private companion object {
         const val TAG = "RemoteConfigAnnouncements"
-        const val KEY = "announcements"
     }
 }

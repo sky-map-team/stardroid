@@ -18,7 +18,8 @@ import com.google.android.stardroid.share.SkyShare
 
 /** State that must survive activity recreation; [SkyCameraPreview] itself does not. */
 class ArCaptureViewModel : ViewModel() {
-    var stillMode by mutableStateOf(SkyCameraPreview.StillMode.AUTO)
+    // Night by default; takeStill falls back to auto where the device has no night mode.
+    var stillMode by mutableStateOf(SkyCameraPreview.StillMode.NIGHT)
 
     // TODO(ar-debug-stamp): temporary, with the share stamp.
     var debugStamp by mutableStateOf(false)

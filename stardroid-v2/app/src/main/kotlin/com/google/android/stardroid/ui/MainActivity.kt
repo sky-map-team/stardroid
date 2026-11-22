@@ -63,6 +63,7 @@ import com.google.android.stardroid.analytics.SessionBucket
 import com.google.android.stardroid.announcements.AnnouncementAction
 import com.google.android.stardroid.announcements.AnnouncementSource
 import com.google.android.stardroid.announcements.AnnouncementState
+import com.google.android.stardroid.announcements.EXTRA_ANNOUNCEMENT_SEARCH
 import com.google.android.stardroid.announcements.appVersionCode
 import com.google.android.stardroid.announcements.tonightNotices
 import com.google.android.stardroid.astronomy.MeeusEphemeris
@@ -658,6 +659,7 @@ class MainActivity : ComponentActivity() {
                 SkyMapNavHost(
                     navController = navController,
                     startOnWelcome = startOnWelcome,
+                    welcomeVisible = gates.welcomeVisible,
                     glSurfaceView = glSurfaceView,
                     mapViewModel = mapViewModel,
                     layersViewModel = layersViewModel,
@@ -715,20 +717,17 @@ class MainActivity : ComponentActivity() {
                 // as an overlay ahead of the still-pending tour underneath
                 // (needsWhatsNewDuringWarmWelcome).
                 if (gates.needsEula) {
-                    val declineEula = {
-                        startupViewModel.rejectEula()
-                        finish()
-                    }
-                    // BACK declines, as v1 routed cancel to reject.
-                    BackHandler(onBack = declineEula)
+                    // BACK exits without logging: a back gesture isn't a decision about the terms.
+                    BackHandler(onBack = ::finish)
                     EulaScreen(
                         nightMode = nightMode,
                         onAccept = startupViewModel::acceptEula,
-                        onDecline = declineEula,
+                        onDecline = {
+                            startupViewModel.rejectEula()
+                            finish()
+                        },
                     )
-                } else if (gates.needsWhatsNew &&
-                    (!gates.needsWarmWelcome || gates.needsWhatsNewDuringWarmWelcome)
-                ) {
+                } else if (gates.whatsNewShowing) {
                     WhatsNewDialog(
                         nightMode = nightMode,
                         onDismiss = startupViewModel::dismissWhatsNew,
@@ -807,10 +806,10 @@ class MainActivity : ComponentActivity() {
             intent.removeExtra(EXTRA_SHOW_TONIGHT)
         }
         // An announcement notification or widget banner whose action is a search.
-        intent.getStringExtra(AnnouncementAction.EXTRA_SEARCH_QUERY)?.let {
+        intent.getStringExtra(EXTRA_ANNOUNCEMENT_SEARCH)?.let {
             navController.popBackStack(Routes.MAP, inclusive = false)
             runSearch(it)
-            intent.removeExtra(AnnouncementAction.EXTRA_SEARCH_QUERY)
+            intent.removeExtra(EXTRA_ANNOUNCEMENT_SEARCH)
         }
     }
 

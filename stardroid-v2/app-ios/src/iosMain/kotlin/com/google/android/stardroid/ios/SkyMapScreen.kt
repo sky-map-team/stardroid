@@ -35,6 +35,7 @@ import androidx.compose.ui.viewinterop.UIKitInteropProperties
 import androidx.compose.ui.viewinterop.UIKitViewController
 import androidx.compose.ui.window.ComposeUIViewController
 import com.google.android.stardroid.analytics.Analytics
+import com.google.android.stardroid.announcements.AnnouncementAction
 import com.google.android.stardroid.catalog.CelestialObjectId
 import com.google.android.stardroid.catalog.ObjectInfo
 import com.google.android.stardroid.catalog.SearchHit
@@ -68,6 +69,8 @@ import com.google.android.stardroid.ui.resources.support_share_message
 import com.google.android.stardroid.ui.search.SearchViewModel
 import com.google.android.stardroid.ui.settings.SettingsScreen
 import com.google.android.stardroid.ui.settings.SettingsViewModel
+import com.google.android.stardroid.ui.startup.AnnouncementDialog
+import com.google.android.stardroid.ui.startup.AnnouncementViewModel
 import com.google.android.stardroid.ui.startup.EulaScreen
 import com.google.android.stardroid.ui.startup.StartupViewModel
 import com.google.android.stardroid.ui.startup.VersionBanner
@@ -126,6 +129,7 @@ fun skyMapViewController(
             calibration,
             tonight,
             startup,
+            graph.announcementViewModel,
             onRequestAutoLocation = graph::requestAutoLocation,
             onOpenAppSettings = graph::openAppSettings,
             motionHardware =
@@ -153,6 +157,7 @@ private fun SkyMapScreen(
     calibrationViewModel: CompassCalibrationViewModel,
     tonightViewModel: TonightViewModel,
     startup: StartupViewModel,
+    announcementViewModel: AnnouncementViewModel,
     onRequestAutoLocation: () -> Unit,
     onOpenAppSettings: () -> Unit,
     motionHardware: MotionHardware,
@@ -169,6 +174,7 @@ private fun SkyMapScreen(
     // The full-screen pages over the map, standing in for Android's navigation routes: a stack,
     // so back from a page opened from another (Settings from Help) returns there, as Android pops.
     var showBanner by remember { mutableStateOf(true) }
+    var mapIdle by remember { mutableStateOf(false) }
     var pages by remember { mutableStateOf(listOf<Page>()) }
     val page = pages.lastOrNull()
 
@@ -236,6 +242,7 @@ private fun SkyMapScreen(
                 onRequestAutoLocation = onRequestAutoLocation,
                 onOpenAppSettings = onOpenAppSettings,
                 covered = covered,
+                onIdleChanged = { mapIdle = it },
                 // Calibrate lives in Diagnostics (and Help links to it).
                 calibrationInMenu = false,
                 mapApiKey = GEOAPIFY_MAPS_API_KEY.takeUnless { it == "unset" || it.isEmpty() },
@@ -376,10 +383,8 @@ private fun SkyMapScreen(
                             onSlideViewed = startup::warmWelcomeSlideViewed,
                         )
                     }
-                    // Upgrades only, and ahead of a still-pending tour, as on Android.
-                    if (current.needsWhatsNew &&
-                        (!current.needsWarmWelcome || current.needsWhatsNewDuringWarmWelcome)
-                    ) {
+                    // As on Android.
+                    if (current.whatsNewShowing) {
                         WhatsNewDialog(
                             nightMode = nightMode,
                             onDismiss = startup::dismissWhatsNew,
@@ -387,6 +392,30 @@ private fun SkyMapScreen(
                         )
                     }
                 }
+            }
+            // Only once the startup gates have cleared, as on Android. It can come up to 3 s into
+            // an open here, so also only over the bare map: a tap outside it dismisses for good.
+            val tonightShowing by tonightViewModel.visible.collectAsState()
+            val announceable =
+                !covered && mapIdle && !tonightShowing && !showBanner &&
+                    current?.needsWhatsNew == false
+            val readyOpen by announcementViewModel.readyOpen.collectAsState()
+            LaunchedEffect(announceable, readyOpen) {
+                if (announceable && readyOpen != null) announcementViewModel.loadIfNeeded()
+            }
+            val announcement by announcementViewModel.pending.collectAsState()
+            announcement?.takeIf { announceable }?.let { pending ->
+                AnnouncementDialog(
+                    announcement = pending,
+                    onOpen = {
+                        (pending.action as? AnnouncementAction.Search)?.let {
+                            searchViewModel.setQuery(it.query)
+                            searchViewModel.submit()
+                        }
+                        announcementViewModel.close()
+                    },
+                    onDismiss = announcementViewModel::dismiss,
+                )
             }
             // The branded version banner, once per launch, over everything while the app loads,
             // as on Android; the launch screen is the same navy, so the banner continues it.

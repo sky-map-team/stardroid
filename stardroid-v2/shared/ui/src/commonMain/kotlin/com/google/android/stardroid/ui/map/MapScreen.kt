@@ -157,6 +157,8 @@ fun MapScreen(
     onRequestAutoLocation: () -> Unit,
     onOpenAppSettings: () -> Unit,
     covered: Boolean = false,
+    // Whether the map is bare, for a host with something to raise that mustn't interrupt.
+    onIdleChanged: (Boolean) -> Unit = {},
     // Whether the overflow sheet offers Calibrate. iOS keeps it in Diagnostics instead: an
     // iPhone's compass stays calibrated, so it isn't worth a menu row.
     calibrationInMenu: Boolean = true,
@@ -188,6 +190,7 @@ fun MapScreen(
     val moonWidgetPromo by objectInfoViewModel.moonWidgetPromo.collectAsStateWithLifecycle()
     val locationState by locationViewModel.state.collectAsStateWithLifecycle()
     val manualLocationMode by locationViewModel.manualMode.collectAsStateWithLifecycle()
+    val locationStartResolved by locationViewModel.startResolved.collectAsStateWithLifecycle()
     // Saveable so the sheet/dialogs survive rotation — otherwise the dialog dismisses and the
     // rememberSaveable date/time inside it is thrown away with it.
     var showLayersSheet by rememberSaveable { mutableStateOf(false) }
@@ -270,6 +273,7 @@ fun MapScreen(
         !covered && !showSearchDialog && !showTimeTravelDialog && !showLayersSheet &&
             !showOverflowSheet && !showLocationSheet && !showManualLocationDialog &&
             objectInfoCard == null && expandedImage == null
+    LaunchedEffect(mapIdle) { onIdleChanged(mapIdle) }
     LaunchedEffect(calibrationViewModel, lifecycleOwner, gracePeriodPassed && mapIdle) {
         if (gracePeriodPassed && mapIdle) {
             calibrationViewModel.prompts
@@ -537,8 +541,6 @@ fun MapScreen(
                 onArIsoFractionChange = mapViewModel::setArIsoFraction,
                 onArShutterFractionChange = mapViewModel::setArShutterFraction,
                 arExtraControls = arExtraControls,
-                onShareShutter = onShareSky ?: {},
-                shareEnabled = onShareSky != null,
                 skyGradientOn = skyGradientOn,
                 onSetSkyGradient = layersViewModel::setSkyGradientEnabled,
                 arModeOn = arModeOn.takeIf { hasArCamera },
@@ -766,6 +768,7 @@ fun MapScreen(
             LocationStateDialogs(
                 locationState = locationState,
                 manualLocationMode = manualLocationMode,
+                locationStartResolved = locationStartResolved,
                 locationViewModel = locationViewModel,
                 onRequestLocationPermission = onRequestLocationPermission,
                 onOpenAppSettings = onOpenAppSettings,
@@ -783,15 +786,38 @@ fun MapScreen(
             onShown = mapViewModel::logNoSensorsWarning,
         )
 
+        // "Photograph the moment" while the camera is live (camera-ar-mode.md slice 4). Outside
+        // the chrome gate so hiding the controls for a clear view doesn't take the shutter too.
+        val landscape = isLandscapeWindow()
+        val shutterShown = arModeOn && hasArCamera && onShareSky != null
+        if (shutterShown) {
+            ShareShutter(
+                onClick = { onShareSky?.invoke() },
+                modifier =
+                    Modifier
+                        .align(Alignment.BottomCenter)
+                        .navigationBarsPadding()
+                        .padding(bottom = shutterBottomPadding(landscape, chromeShown)),
+            )
+        }
+
         // One host for every transient notice on the map (the six v1 toast sites).
-        // Anchored above the chrome row so a snackbar never covers the action buttons.
+        // Anchored above the chrome row, and above the AR shutter, so a snackbar never covers
+        // the buttons.
         MapSnackbarHost(
             snackbarHostState,
             modifier =
                 Modifier
                     .align(Alignment.BottomCenter)
                     .navigationBarsPadding()
-                    .padding(bottom = 56.dp),
+                    .padding(
+                        bottom =
+                            if (shutterShown) {
+                                shutterBottomPadding(landscape, chromeShown) + SHUTTER_SIZE + 8.dp
+                            } else {
+                                56.dp
+                            },
+                    ),
         )
     }
 }

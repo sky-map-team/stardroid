@@ -29,6 +29,8 @@ class FlagSourceExperimentConfigTest {
 
         override fun serverValue(key: String): Boolean? = server[key]
 
+        override fun serverText(key: String): String? = null
+
         override fun fetch(
             ignoreThrottle: Boolean,
             onDone: (Boolean, String?) -> Unit,
