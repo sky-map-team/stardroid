@@ -44,7 +44,8 @@ class GalleryViewModel(
     }
 
     // Satellite catalog rows have no names (see SatelliteIds), so the repository leaves them
-    // blank. Stopgap: English acronyms, untranslated.
+    // blank. Stopgap: English acronyms, untranslated;
+    // see issue 1352.
     private fun withSatelliteLabels(items: List<GalleryItem>): List<GalleryItem> =
         items
             .map { item ->

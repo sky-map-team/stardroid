@@ -117,6 +117,7 @@ class GalleryViewModelTest {
                         GalleryItem(CelestialObjectId("satellite/25544"), "", "iss.webp"),
                         GalleryItem(CelestialObjectId("satellite/48274"), "", "css.webp"),
                         GalleryItem(CelestialObjectId("satellite/99999"), "Named", "x.webp"),
+                        GalleryItem(CelestialObjectId("satellite/20580"), "Hubble", "h.webp"),
                         GalleryItem(CelestialObjectId("planet/jupiter"), "Jupiter", "j.webp"),
                     ),
                 )
@@ -129,7 +130,7 @@ class GalleryViewModelTest {
             runCurrent()
 
             assertThat(viewModel.items.value.map { it.name })
-                .containsExactly("CSS", "ISS", "Jupiter", "Named")
+                .containsExactly("CSS", "Hubble", "ISS", "Jupiter", "Named")
                 .inOrder()
         }
 }
