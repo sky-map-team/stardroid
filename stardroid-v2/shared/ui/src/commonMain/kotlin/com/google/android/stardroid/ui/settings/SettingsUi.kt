@@ -51,6 +51,7 @@ import com.google.android.stardroid.settings.FontSize
 import com.google.android.stardroid.settings.OneEuroEaseOff
 import com.google.android.stardroid.settings.OneEuroSteadiness
 import com.google.android.stardroid.settings.RendererBackend
+import com.google.android.stardroid.ui.common.announcementsSummaryResource
 import com.google.android.stardroid.ui.common.notificationsBlocked
 import com.google.android.stardroid.ui.common.rememberNotificationPermissionRequest
 import com.google.android.stardroid.ui.common.rememberOpenNotificationSettings
@@ -60,7 +61,6 @@ import com.google.android.stardroid.ui.resources.diagnostics_button
 import com.google.android.stardroid.ui.resources.enable_analytics
 import com.google.android.stardroid.ui.resources.enable_analytics_desc
 import com.google.android.stardroid.ui.resources.settings_announcements
-import com.google.android.stardroid.ui.resources.settings_announcements_summary
 import com.google.android.stardroid.ui.resources.settings_auto_dimness
 import com.google.android.stardroid.ui.resources.settings_auto_dimness_classic
 import com.google.android.stardroid.ui.resources.settings_auto_dimness_dim
@@ -314,7 +314,7 @@ fun SettingsScreen(
                 if (viewModel.announcementsAvailable) {
                     SwitchRow(
                         title = stringResource(Res.string.settings_announcements),
-                        summary = stringResource(Res.string.settings_announcements_summary),
+                        summary = stringResource(announcementsSummaryResource),
                         checked = state.announcements,
                         onCheckedChange = viewModel::setAnnouncements,
                     )

@@ -691,6 +691,9 @@ Brillo de las líneas: normal, brillante o muy brillante, para crepúsculo, luz 
     <string name="countdown_shower_peak" translation_description="Countdown-widget event name; %1$s is a meteor shower name">Pico de %1$s</string>
     <string name="countdown_new_moon" translation_description="Countdown-widget event name for the next new moon">Luna nueva</string>
     <string name="countdown_full_moon" translation_description="Countdown-widget event name for the next full moon">Luna llena</string>
+    <string name="announcement_dialog_dismiss" translation_description="Button that closes an announcement dialog and hides that message everywhere">Descartar</string>
+    <string name="announcement_dialog_open" translation_description="Button on an announcement dialog that jumps to the sky object the message is about">Echar un vistazo</string>
+    <string name="announcement_dialog_continue" translation_description="Button on an announcement dialog that closes it and continues to the sky map">Continuar</string>
     <string name="north_pole">PN</string>
     <string name="south_pole">PS</string>
     <string name="zenith">CENIT</string>

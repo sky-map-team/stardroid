@@ -10,9 +10,9 @@
 package com.google.android.stardroid.announcements
 
 import com.google.android.stardroid.catalog.LocaleSpec
-import com.google.common.truth.Truth.assertThat
+import com.google.android.stardroid.testing.assertThat
 import kotlinx.datetime.Instant
-import org.junit.jupiter.api.Test
+import kotlin.test.Test
 
 class TonightNoticesTest {
     private val start = Instant.parse("2026-10-03T16:00:00Z")

@@ -157,6 +157,8 @@ fun MapScreen(
     onRequestAutoLocation: () -> Unit,
     onOpenAppSettings: () -> Unit,
     covered: Boolean = false,
+    // Whether the map is bare, for a host with something to raise that mustn't interrupt.
+    onIdleChanged: (Boolean) -> Unit = {},
     // Whether the overflow sheet offers Calibrate. iOS keeps it in Diagnostics instead: an
     // iPhone's compass stays calibrated, so it isn't worth a menu row.
     calibrationInMenu: Boolean = true,
@@ -271,6 +273,7 @@ fun MapScreen(
         !covered && !showSearchDialog && !showTimeTravelDialog && !showLayersSheet &&
             !showOverflowSheet && !showLocationSheet && !showManualLocationDialog &&
             objectInfoCard == null && expandedImage == null
+    LaunchedEffect(mapIdle) { onIdleChanged(mapIdle) }
     LaunchedEffect(calibrationViewModel, lifecycleOwner, gracePeriodPassed && mapIdle) {
         if (gracePeriodPassed && mapIdle) {
             calibrationViewModel.prompts

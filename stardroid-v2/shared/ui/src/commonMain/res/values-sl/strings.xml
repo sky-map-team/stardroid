@@ -676,6 +676,9 @@ Svetlost črt: običajna, svetla ali najsvetlejša, za mrak, dan ali svetlobno o
     <string name="countdown_shower_peak" translation_description="Countdown-widget event name; %1$s is a meteor shower name">Vrhunec %1$s</string>
     <string name="countdown_new_moon" translation_description="Countdown-widget event name for the next new moon">Mlaj</string>
     <string name="countdown_full_moon" translation_description="Countdown-widget event name for the next full moon">Polna luna</string>
+    <string name="announcement_dialog_dismiss" translation_description="Button that closes an announcement dialog and hides that message everywhere">Opusti</string>
+    <string name="announcement_dialog_open" translation_description="Button on an announcement dialog that jumps to the sky object the message is about">Oglejte si</string>
+    <string name="announcement_dialog_continue" translation_description="Button on an announcement dialog that closes it and continues to the sky map">Nadaljuj</string>
     <string name="north_pole">SN</string>
     <string name="south_pole">JN</string>
     <string name="zenith">ZENIT</string>

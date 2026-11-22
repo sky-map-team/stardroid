@@ -10,8 +10,8 @@
 package com.google.android.stardroid.announcements
 
 import com.google.android.stardroid.catalog.LocaleSpec
-import com.google.common.truth.Truth.assertThat
-import org.junit.jupiter.api.Test
+import com.google.android.stardroid.testing.assertThat
+import kotlin.test.Test
 
 class AnnouncementParserTest {
     private fun doc(vararg messages: String) =
@@ -71,7 +71,7 @@ class AnnouncementParserTest {
     }
 
     @Test
-    fun `newest first, capped, duplicate ids collapsed`() {
+    fun `newest first - capped - duplicate ids collapsed`() {
         val result =
             AnnouncementParser.parse(
                 doc(
