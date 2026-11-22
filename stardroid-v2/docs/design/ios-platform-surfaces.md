@@ -2,9 +2,8 @@
 
 **Status: MOSTLY BUILT.** Flags (§3) and satellites (§4, including the background refresh) are
 built for iOS 2.0.1. Notifications (§5) are built through slice 6; the notice's translations
-and the review remain. Announcements on iOS (§5.4) are deferred. Widgets (§6) are under way:
-the groundwork and the Moon widget are built, Tonight and Countdown are not, and none ships
-until all three do (§6.3). Decision numbers are unassigned. Written while iOS 2.0.0 (build 6) waited on App
+and the review remain. Announcements on iOS (§5.4) are deferred. Widgets (§6) are built: Moon,
+Tonight and Countdown, with Lock Screen variants; per §6.3 none ships until all three do. Decision numbers are unassigned. Written while iOS 2.0.0 (build 6) waited on App
 Review, so parts of the text below still describe the plan rather than the result; the "As
 built" notes and the slice notes in §5.2 say what was built.
 

@@ -18,8 +18,8 @@ here may reach your phone a little after the update that carries it.
 | Sky, search, time travel, info cards | Yes | Yes |
 | Satellites and pass predictions | Yes | Yes |
 | Notifications (meteor showers, tonight's sky, satellite passes, eclipses) | Yes | Yes |
-| Home Screen widgets | Moon, Tonight, Countdown (coming) | Moon, Tonight, Countdown |
-| Lock Screen widgets | Moon, Tonight (coming) | No |
+| Home Screen widgets | Moon, Tonight, Countdown | Moon, Tonight, Countdown |
+| Lock Screen widgets | Moon, Tonight | No |
 | Through-the-camera (AR) mode | Not yet | In testing, not yet released |
 | Share a picture of the sky | Not yet | In testing, not yet released |
 | News and announcements from the Sky Map team | Not yet | Yes |

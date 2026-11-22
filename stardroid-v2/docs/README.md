@@ -29,11 +29,11 @@ the two ever drift.
 | [design/camera-ar-mode.md](design/camera-ar-mode.md) | Through-camera (AR) mode, drag-to-align, share | D64, D67–D71 (flag-gated, D80) |
 | [design/share-object-card.md](design/share-object-card.md) | Info-card share, getskymap.app object pages, deep links | PROPOSED |
 | [design/camera-ar-launch.md](design/camera-ar-launch.md) | Launching AR mode on Android and iOS together: iOS camera edge and share, Android loose ends, coordinated flag flip | PROPOSED |
-| [design/ios-platform-surfaces.md](design/ios-platform-surfaces.md) | iOS parity: Remote Config flags, satellites, notifications, widgets | flags, satellites and notifications built; widgets: Moon built, Tonight and Countdown to come |
+| [design/ios-platform-surfaces.md](design/ios-platform-surfaces.md) | iOS parity: Remote Config flags, satellites, notifications, widgets | flags, satellites and notifications built; widgets (Moon, Tonight, Countdown) built; announcements deferred |
 | [design/color-scheme-proposal.md](design/color-scheme-proposal.md) | The "Deep Space / Star Gold" brand palette — rationale and before/after | accepted and implemented, D73 |
 | [design/widgets-and-notifications.md](design/widgets-and-notifications.md) | Home-screen widgets, notification channels, events engine | phases 1–3, D75–D77 (flag-gated, D80); **phase 4 unbuilt** |
 | [design/remote-announcements.md](design/remote-announcements.md) | Remote Config messages on notification, widget and launch-dialog surfaces | built, flag-gated (`ANNOUNCEMENTS`, default off) |
-| [design/tonight-sheet.md](design/tonight-sheet.md) | One in-app Tonight sheet (both apps): highlights in full, announcements kept findable; opened by the widgets and the digest | proposed, D149 |
+| [design/tonight-sheet.md](design/tonight-sheet.md) | One in-app Tonight sheet (both apps): highlights in full, announcements kept findable; opened by the widgets and the digest | implemented, D149 |
 | [design/lunar-eclipse.md](design/lunar-eclipse.md) | Shadow-cone astronomy, tonight/digest highlights, Moon info-card row, GLES1 map tinting, opt-in alert | D106, D107 |
 
 ### Proposed — design only, no code
