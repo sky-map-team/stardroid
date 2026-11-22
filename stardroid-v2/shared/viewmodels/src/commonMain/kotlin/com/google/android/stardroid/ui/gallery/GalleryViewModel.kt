@@ -11,9 +11,11 @@ package com.google.android.stardroid.ui.gallery
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.google.android.stardroid.astronomy.SpaceStations
 import com.google.android.stardroid.catalog.CatalogRepository
 import com.google.android.stardroid.catalog.GalleryItem
 import com.google.android.stardroid.catalog.LocaleSpec
+import com.google.android.stardroid.catalog.SatelliteIds
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -37,7 +39,24 @@ class GalleryViewModel(
     // switch triggers, so a once-only load would keep showing the old language's names.
     init {
         viewModelScope.launch {
-            locale.collectLatest { _items.value = catalog().galleryItems(it) }
+            locale.collectLatest { _items.value = withSatelliteLabels(catalog().galleryItems(it)) }
         }
     }
+
+    // Satellite catalog rows carry no names (see SatelliteIds), so the repository leaves
+    // them blank. The acronyms are the same in every language.
+    private fun withSatelliteLabels(items: List<GalleryItem>): List<GalleryItem> =
+        items
+            .map { item ->
+                if (item.name.isNotEmpty()) {
+                    item
+                } else {
+                    when (SatelliteIds.noradIdFor(item.id)) {
+                        SpaceStations.ISS_NORAD_ID -> item.copy(name = "ISS")
+                        SpaceStations.TIANGONG_NORAD_ID -> item.copy(name = "CSS")
+                        else -> item
+                    }
+                }
+            }
+            .sortedBy { it.name }
 }
