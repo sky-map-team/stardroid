@@ -75,9 +75,9 @@ class StartupViewModel(
 
     /**
      * The welcome pager came up on first run (v1's funnel start); call once the tour is
-     * visible ([StartupUiState.welcomeVisible]). Tutorial replays from the
-     * overflow sheet bypass these funnel callbacks entirely, so the D49 metrics stay first-run
-     * only. A v1-history device also logs the one-off upgrade event here — this fires once per
+     * visible ([StartupUiState.welcomeVisible]). Tutorial replays from the overflow sheet
+     * bypass these funnel callbacks entirely, so the D49 metrics stay first-run only. A
+     * v1-history device also logs the one-off upgrade event here — this fires once per
      * arrival, whether or not the tour itself gets finished.
      */
     fun warmWelcomeStarted() {

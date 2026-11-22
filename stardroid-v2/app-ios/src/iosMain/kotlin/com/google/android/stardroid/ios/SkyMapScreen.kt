@@ -376,7 +376,7 @@ private fun SkyMapScreen(
                             onSlideViewed = startup::warmWelcomeSlideViewed,
                         )
                     }
-                    // Upgrades only, and ahead of a still-pending tour, as on Android.
+                    // As on Android.
                     if (current.whatsNewShowing) {
                         WhatsNewDialog(
                             nightMode = nightMode,
