@@ -151,6 +151,9 @@ Brillo de las líneas: normal, brillante o muy brillante, para crepúsculo, luz 
     <string name="ar_iso_slider" translation_description="Accessibility label for the temporary developer slider setting the camera\'s manual ISO sensitivity in through-camera mode.">ISO de la cámara</string>
     <string name="ar_shutter_slider_label" translation_description="Very short label for the temporary developer slider setting the camera\'s manual shutter (exposure) time in through-camera mode.">Obtur.</string>
     <string name="ar_shutter_slider" translation_description="Accessibility label for the temporary developer slider setting the camera\'s manual shutter (exposure) time in through-camera mode.">Tiempo de obturación de la cámara</string>
+    <string name="ar_controls_title" translation_description="Heading of the collapsible through-camera panel holding the exposure and dimmer sliders.">Cámara</string>
+    <string name="ar_controls_expand" translation_description="Accessibility label for the header that opens the collapsed through-camera exposure and dimmer panel.">Mostrar controles de cámara</string>
+    <string name="ar_controls_collapse" translation_description="Accessibility label for the header that collapses the through-camera exposure and dimmer panel.">Ocultar controles de cámara</string>
     <string name="ar_group_auto" translation_description="Heading above the through-camera slider that adjusts the camera\'s automatic exposure.">Exposición automática</string>
     <string name="ar_group_manual" translation_description="Heading above the through-camera sliders that set the camera\'s ISO and shutter time by hand.">Exposición manual</string>
     <string name="ar_auto_off_note" translation_description="Note under the auto-exposure heading while manual exposure is in use: auto exposure is switched off. Touching the slider switches it back on.">Desactivada mientras esté activo el modo manual</string>
@@ -215,6 +218,7 @@ Brillo de las líneas: normal, brillante o muy brillante, para crepúsculo, luz 
     <string name="search_hint" translation_description="Placeholder text in the search field showing example search targets.">p. ej. Marte o M31</string>
     <string name="search_coordinates_hint" translation_description="Helper text under the search field showing that celestial coordinates (right ascension and declination) can be typed directly, with two example formats.">O introduce coordenadas: 12h 30m, +45° o 187.5 -45.2</string>
     <string name="search_go" translation_description="Button that starts navigating the sky map toward the typed search target.">Ir</string>
+    <string name="search_target_info" translation_description="Button on the search status bar that opens the info card of the object being looked for.">Información</string>
     <string name="search_cancel">Cancelar</string>
     <string name="search_no_results">No hubo resultados. Quizás el objeto no es visible en este momento.</string>
     <string name="search_standing_on_earth" translation_description="Friendly message shown when the user searches for Earth, which cannot be pointed at because they are standing on it.">¡Estás de pie sobre ella!</string>
@@ -683,6 +687,9 @@ Brillo de las líneas: normal, brillante o muy brillante, para crepúsculo, luz 
     <string name="satellite_name_iss" translation_description="Display name for the International Space Station.">La Estación Espacial</string>
     <!-- tm:omitted name="satellite_name_tiangong" reason="identical_to_source" -->
     <string name="tonight_trailing_pass_peak" translation_description="Small trailing note on a satellite pass row. %1$d is the peak altitude in degrees, %2$.1f is a brightness magnitude.">Máx. %1$d°, mag. %2$.1f</string>
+    <string name="tonight_sheet_title" translation_description="Title of the sheet listing what is worth seeing in tonight\'s sky">Esta noche</string>
+    <string name="tonight_button" translation_description="Map-screen menu item that opens the Tonight sheet: what is worth seeing in tonight\'s sky">Esta noche</string>
+    <string name="tonight_announcements_heading" translation_description="Heading above messages from the Sky Map team in the Tonight sheet">Del equipo de Sky Map</string>
     <string name="tonight_widget_header" translation_description="Small header label on the tonight widget; %1$s is a short date like \'Wed 30 Jul\'">Esta noche · %1$s</string>
     <string name="tonight_widget_sun_times" translation_description="Header line on the tonight widget; %1$s is the sunset time, %2$s the time the sky becomes fully dark">sol se pone %1$s · oscuro %2$s</string>
     <string name="tonight_widget_sunset_only" translation_description="Header fragment when only the sunset time is known; %1$s is the sunset time">sol se pone %1$s</string>

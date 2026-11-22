@@ -58,8 +58,6 @@
 
     <!-- Settings screen (v1 wording where a v1 string existed) -->
 
-    <!-- Diagnostics screen (slice 15) -->
-
     <!-- Compass calibration screen (slice 15) -->
 
     <!-- Startup routing: EULA, warm welcome, What's New (slice 16) -->
@@ -93,6 +91,7 @@
     </string>
     <string name="moon_widget_pin_unsupported_ok" translation_description="Confirmation button of the manual widget-adding instructions dialog">Razumem</string>
     <string name="moon_widget_preview_illumination" translation_description="Representative illumination line shown in the widget picker\'s preview of the moon-phase widget">83% osvetljeno</string>
+    <string name="moon_widget_preview_age" translation_description="Representative Moon-age line shown in the widget picker\'s preview of the moon-phase widget; a day of the lunar cycle, counting the day of new moon as day 1">11. dan</string>
 
     <!-- Tonight's-sky and countdown home-screen widgets (D69 phase 2). -->
     <string name="tonight_widget_label" translation_description="Name of the tonight\'s-sky home-screen widget, shown in the launcher\'s widget picker">Nebo nocoj</string>

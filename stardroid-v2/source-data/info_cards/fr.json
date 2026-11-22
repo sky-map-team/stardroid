@@ -1407,6 +1407,14 @@
    "size": "600 années-lumière de diamètre",
    "image_credit": "ESO/R. Fosbury/ST-ECF"
   },
+  "dso/ton_618": {
+   "description": "TON 618 est un quasar hyperlumineux situé près de la frontière entre les Chiens de Chasse et la Chevelure de Berenice, alimenté par l'un des trous noirs les plus massifs connus, estimé à environ 40 milliards de masses solaires. Lorsque le gaz s'y gouffre, le quasar brille avec l'éclat d'environ 140 billions de Soleils.",
+   "fun_fact": "L'horizon des événements du trou noir a un rayon d'environ 800 unités astronomiques, soit un diamètre bien plus grand que l'orbite de Neptune.",
+   "distance": "~10,8 milliards d'années-lumière (distance de temps-lumière)",
+   "size": "Masse du trou noir : ~40 milliards de masses solaires",
+   "image_credit": "Artist's concept of a supermassive black hole, not TON 618 itself. NASA/JPL-Caltech",
+   "search_subtext": "Quasar hyperlumineux"
+  },
   "dso/v838_mon": {
    "description": "V838 Monocerotis est une étoile variable atypique de la constellation de la Licorne qui a connu une éruption spectaculaire en 2002, devenant brièvement l'une des étoiles les plus lumineuses de la Voie lactée. Bien que beaucoup trop faible pour les observateurs visuels aujourd'hui, son écho lumineux en expansion — un front d'onde de lumière illuminant d'anciennes coquilles de poussière — a produit certaines des images les plus spectaculaires jamais prises par le télescope spatial Hubble.",
    "fun_fact": "La nature de l'éruption de V838 Mon reste débattue. La théorie principale est une fusion stellaire — deux étoiles s'enroulant l'une autour de l'autre et entrant en collision — plutôt qu'une nova classique ou une éruption de supergéante. Si cela est confirmé, ce fut le premier aperçu en temps réel d'une « nova rouge lumineuse », une classe rare d'explosion causée par des fusions stellaires ; des événements similaires ont depuis été découverts dans d'autres galaxies.",
@@ -1629,6 +1637,32 @@
    "size": "12 104 km de diamètre",
    "mass": "4,87 × 10²⁴ kg",
    "image_credit": "NASA/JPL"
+  },
+  "probe/bepicolombo": {
+   "description": "BepiColombo est une mission conjointe de l'ESA et de la JAXA vers Mercure, et la première mission européenne vers cette planète. Lancée le 20 octobre 2018, elle utilise des survols de la Terre (2020), de Vénus (2020 et 2021) et de Mercure elle-même (six, de 2021 à 2025) pour ralentir suffisamment afin d'être capturée. Elle atteint l'orbite de Mercure en novembre 2026, avec des opérations scientifiques prévues à partir de 2027. Deux orbiteurs voyagent ensemble, le Mercury Planetary Orbiter de l'ESA et Mio de la JAXA. Perdu dans l'éclat de Mercure, il est représenté en pointant vers la planète.",
+   "fun_fact": "Elle doit son nom à Giuseppe \"Bepi\" Colombo, le mathématicien italien qui a découvert pourquoi Mercure tourne exactement trois fois sur elle-même pour deux orbites, et dont l'idée d'assistance gravitationnelle a permis à Mariner 10 de visiter la planète à trois reprises en 1974-1975.",
+   "distance": "Au niveau de Mercure, à environ 58 millions de km du Soleil",
+   "mass": "Environ 4 100 kg au lancement",
+   "image_credit": "NASA",
+   "search_subtext": "Sonde spatiale à Mercure"
+  },
+  "probe/voyager_1": {
+   "description": "Voyager 1 est l'objet fabriqué par l'humain le plus éloigné, se trouvant désormais dans l'espace interstellaire. Lancée le 5 septembre 1977, elle a survolé Jupiter le 5 mars 1979 et Saturne le 12 novembre 1980, avant de quitter le système solaire. Elle a traversé l'héliopause, la limite de la bulle de vent solaire du Soleil, le 25 août 2012, et le 18 novembre 2026 est devenue la première sonde spatiale à se trouver à un jour-lumière de la Terre. Trop faible pour être visible, elle se trouve dans le Serpentaire, à quelques degrés de Rasalhague.",
+   "fun_fact": "Le 14 février 1990, à environ 6 milliards de kilomètres de distance, Voyager 1 a tourné sa caméra vers l'arrière et a photographié les planètes, immortalisant la Terre sous la forme du « Point bleu pâle », large de moins d'un pixel. Il transporte toujours le Golden Record, un disque plaqué or contenant des sons et des images de la Terre.",
+   "distance": "Environ 173 UA (25,9 milliards de km) de la Terre, nov. 2026",
+   "size": "Antenne parabolique de 3,7 m",
+   "mass": "Environ 825 kg au lancement",
+   "image_credit": "NASA/JPL",
+   "search_subtext": "Sonde spatiale"
+  },
+  "probe/voyager_2": {
+   "description": "Voyager 2 est la seule sonde spatiale à avoir visité les quatre géantes gazeuses. Lancée le 20 août 1977, un peu avant Voyager 1, elle a survolé Jupiter le 9 juillet 1979, Saturne le 25 août 1981, Uranus le 24 janvier 1986 et Neptune le 25 août 1989. Elle a franchi l'héliopause pour entrer dans l'espace intersidéral le 5 novembre 2018 et transmet toujours des données vers la Terre. Tout comme Voyager 1, elle emporte un disque d'or contenant des sons et des images de la Terre.",
+   "fun_fact": "Le survol rapproché du pôle nord de Neptune par Voyager 2 en 1989 l'a propulsé vers le sud, hors du plan des planètes, le plaçant désormais loin dans le ciel austral. Il devrait atteindre une distance d'un jour-lumière de la Terre vers novembre 2035.",
+   "distance": "Environ 145 UA (21,7 milliards de km) de la Terre, nov. 2026",
+   "size": "Antenne parabolique de 3,7 m",
+   "mass": "Environ 825 kg au lancement",
+   "image_credit": "NASA/JPL-Caltech",
+   "search_subtext": "Sonde spatiale"
   },
   "satellite/25544": {
    "description": "La Station spatiale internationale est un laboratoire de recherche de la taille d'un terrain de football, orbitant à environ 420 km au-dessus de la Terre. Cinq agences spatiales l'ont construite, et des astronautes y vivent et y travaillent. À son plus brillant, elle surpasse toutes les étoiles et planètes, traversant le ciel en quelques minutes seulement.",

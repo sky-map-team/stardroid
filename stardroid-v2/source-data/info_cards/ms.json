@@ -1407,6 +1407,14 @@
    "size": "600 tahun cahaya lebar",
    "image_credit": "ESO/R. Fosbury/ST-ECF"
   },
+  "dso/ton_618": {
+   "description": "TON 618 ialah kuasar hiperluminous berhampiran sempadan Canes Venatici dan Coma Berenices, dikuasakan oleh salah satu lubang hitam paling besar yang diketahui, dianggarkan kira-kira 40 bilion jisim suria. Apabila gas jatuh ke dalamnya, kuasar itu bersinar dengan cahaya kira-kira 140 trilion Matahari.",
+   "fun_fact": "Cakerawala peristiwa lohong hitam ini mempunyai jejari kira-kira 800 unit astronomi, berkali-kali ganda lebih lebar daripada orbit Neptun.",
+   "distance": "~10.8 bilion tahun cahaya (jarak perjalanan cahaya)",
+   "size": "Jisim lubang hitam: ~40 bilion jisim suria",
+   "image_credit": "Artist's concept of a supermassive black hole, not TON 618 itself. NASA/JPL-Caltech",
+   "search_subtext": "Kuasar hiperbercahaya"
+  },
   "dso/v838_mon": {
    "description": "V838 Monocerotis ialah bintang berubah-ubah yang luar biasa di Monoceros yang mengalami ledakan spektakuler pada tahun 2002, seketika menjadi salah satu bintang paling bercahaya di Bima Sakti. Walaupun terlalu redup untuk pemerhati visual hari ini, gema cahayanya yang berkembang — gelombang cahaya yang menerangi cangkang debu kuno — menghasilkan beberapa imej Teleskop Angkasa Hubble yang paling dramatik yang pernah diambil.",
    "fun_fact": "Sifat letupan V838 Mon masih diperdebatkan. Teori utama ialah penggabungan bintang — dua bintang yang berputar ke dalam satu sama lain dan bertembung — bukan nova klasik atau letusan raksasa merah. Jika disahkan, ia adalah pandangan masa nyata pertama bagi \"nova merah bercahaya,\" kelas letupan yang jarang disebabkan oleh penggabungan bintang, peristiwa serupa telah ditemui dalam galaksi lain.",
@@ -1629,6 +1637,32 @@
    "size": "12,104 km diameter",
    "mass": "4.87 × 10²⁴ kg",
    "image_credit": "NASA/JPL"
+  },
+  "probe/bepicolombo": {
+   "description": "BepiColombo ialah misi bersama ESA–JAXA ke Utarid, dan misi pertama Eropah ke planet tersebut. Dilancarkan pada 20 Oktober 2018, ia menggunakan lintas terbang Bumi (2020), Venus (2020 dan 2021) serta Utarid sendiri (enam kali, dari 2021 hingga 2025) untuk memperlahankan kelajuannya agar dapat ditarik oleh graviti planet itu. Ia tiba di orbit Utarid pada November 2026, dengan operasi sains dirancang bermula pada 2027. Dua pengorbit mengembara bersama, iaitu Pengorbit Planetari Utarid milik ESA dan Mio milik JAXA. Hilang dalam silauan Utarid, ia ditunjukkan dengan menunjuk ke arah planet tersebut.",
+   "fun_fact": "Ia dinamakan sempena Giuseppe \"Bepi\" Colombo, seorang ahli matematik Itali yang merumuskan sebab Utarid berputar tepat tiga kali untuk setiap dua orbit, dan yang idea bantuan gravitinya membolehkan Mariner 10 melawat planet tersebut sebanyak tiga kali pada tahun 1974–75.",
+   "distance": "Di Utarid, kira-kira 58 juta km dari Matahari",
+   "mass": "Kira-kira 4,100 kg semasa dilancarkan",
+   "image_credit": "NASA",
+   "search_subtext": "Kuar angkasa lepas di Utarid"
+  },
+  "probe/voyager_1": {
+   "description": "Voyager 1 ialah objek buatan manusia yang paling jauh, kini berada di ruang antara bintang. Dilancarkan pada 5 September 1977, ia terbang melepasi Musytari pada 5 Mac 1979 dan Zuhal pada 12 November 1980, kemudian menuju keluar dari sistem suria. Ia melintasi heliopaus, pinggir gelembung angin suria Matahari, pada 25 Ogos 2012, dan pada 18 November 2026 menjadi kapal angkasa pertama yang berada pada jarak satu hari cahaya dari Bumi. Terlalu malap untuk dilihat, ia terletak di buruj Ophiuchus, beberapa darjah dari Rasalhague.",
+   "fun_fact": "Pada 14 Februari 1990, dari jarak sekitar 6 bilion km, Voyager 1 memusingkan kameranya ke belakang dan merakam planet-planet, menangkap Bumi sebagai \"Pale Blue Dot\" (Titik Biru Pucat), dengan saiz kurang daripada satu piksel. Ia masih membawa Golden Record, sebuah piring bersalut emas yang mengandungi bunyi dan imej Bumi.",
+   "distance": "Kira-kira 173 AU (25.9 bilion km) dari Bumi, Nov 2026",
+   "size": "Antena piring 3.7 m",
+   "mass": "825 kg semasa dilancarkan",
+   "image_credit": "NASA/JPL",
+   "search_subtext": "Kuar angkasa lepas"
+  },
+  "probe/voyager_2": {
+   "description": "Voyager 2 ialah satu-satunya kapal angkasa yang pernah melawati kesemua empat planet gergasi. Dilancarkan pada 20 Ogos 1977, sedikit masa sebelum Voyager 1, ia terbang melepasi Musytari pada 9 Julai 1979, Zuhal pada 25 Ogos 1981, Uranus pada 24 Januari 1986, dan Neptun pada 25 August 1989. Ia merentasi heliopaus ke angkasa antara bintang pada 5 November 2018 dan masih menghantar data ke bumi. Seperti Voyager 1, ia membawa Piring Emas yang mengandungi bunyi dan imej dari Bumi.",
+   "fun_fact": "Lintasan hampir Voyager 2 di atas kutub utara Neptunus pada tahun 1989 melontarkannya ke selatan, keluar dari bidang planet, sehingga kini ia berada jauh di langit selatan. Wahana ini diperkirakan akan mencapai jarak satu hari cahaya dari Bumi sekitar bulan November 2035.",
+   "distance": "Kira-kira 145 AU (21.7 bilion km) dari Bumi, Nov 2026",
+   "size": "Antena piring 3.7 m",
+   "mass": "825 kg semasa dilancarkan",
+   "image_credit": "NASA/JPL-Caltech",
+   "search_subtext": "Kuar angkasa lepas"
   },
   "satellite/25544": {
    "description": "Stesen Angkasa Antarabangsa ialah makmal penyelidikan sebesar padang bola sepak, mengorbit kira-kira 420 km di atas Bumi. Lima agensi angkasa membinanya, dan angkasawan tinggal serta bekerja di dalamnya. Pada tahap paling cerah, ia lebih terang daripada setiap bintang dan planet, melintasi langit dalam masa beberapa minit sahaja.",

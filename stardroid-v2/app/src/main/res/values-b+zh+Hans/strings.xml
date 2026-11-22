@@ -58,8 +58,6 @@
 
     <!-- Settings screen (v1 wording where a v1 string existed) -->
 
-    <!-- Diagnostics screen (slice 15) -->
-
     <!-- Compass calibration screen (slice 15) -->
 
     <!-- Startup routing: EULA, warm welcome, What's New (slice 16) -->
@@ -91,6 +89,7 @@
     <string name="moon_widget_pin_unsupported_body" translation_description="Body of the fallback dialog explaining how to add the widget manually">您的启动器不支持从应用添加小部件。长按您的主屏幕，选择“小部件”，然后找到 Sky Map。</string>
     <string name="moon_widget_pin_unsupported_ok" translation_description="Confirmation button of the manual widget-adding instructions dialog">知道了</string>
     <string name="moon_widget_preview_illumination" translation_description="Representative illumination line shown in the widget picker\'s preview of the moon-phase widget">83% 已照亮</string>
+    <string name="moon_widget_preview_age" translation_description="Representative Moon-age line shown in the widget picker\'s preview of the moon-phase widget; a day of the lunar cycle, counting the day of new moon as day 1">第 11 天</string>
 
     <!-- Tonight's-sky and countdown home-screen widgets (D69 phase 2). -->
     <string name="tonight_widget_label" translation_description="Name of the tonight\'s-sky home-screen widget, shown in the launcher\'s widget picker">今晚的天空</string>
