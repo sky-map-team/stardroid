@@ -46,6 +46,18 @@ Before deploying, confirm these are done:
 2. **Version name** bumped if needed (see Version Management below)
 3. `./gradlew check` passes (unit tests, ktlint, Konsist gate)
 4. All changes committed and on `master`
+5. **If the changelog was translated**, check every locale's `default.txt` is under Play's real
+   **500-character** API limit — not just English's 350-character limit (`skymap.whatsnew`'s
+   stricter target). A translation can run longer than its English source:
+   ```bash
+   for f in fastlane/metadata/android/*/changelogs/default.txt; do
+     n=$(wc -m < "$f"); [ "$n" -gt 500 ] && echo "$n $f"
+   done
+   ```
+   `upload_to_play_store` rejects the whole upload on the first locale over the limit — better to
+   catch it here than mid-upload. Trim wording first; if a locale is still tight, it's fine to
+   drop the `<b><font color="#F67E81">...</font></b>` heading markup for that locale alone rather
+   than cut content.
 
 v2 *does* now mirror v1's splash-screen sync step: `skymap.release-splashscreen`'s Step 4
 overwrites the in-app launch splash portrait (`app/src/main/assets/splash/splash.png`) each
@@ -184,6 +196,16 @@ bundle exec fastlane android production_yes_im_sure   # Direct to production
   Console's highest, then retry.
 - **`INSTALL_FAILED_UPDATE_INCOMPATIBLE` on device**: uninstall the existing app first with
   `adb uninstall com.google.android.stardroid`.
+- **"Google Api Error: ... notes in language X ... too long"**: a translated changelog is over
+  Play's 500-char limit — see the length check in Step 0. The upload has already failed by the
+  time you see this; fix the file(s) and just re-run the lane (the version-code sync/increment
+  that already happened is harmless to repeat).
+- **A backgrounded `bundle exec fastlane ...` reports success almost instantly**: you likely
+  backgrounded a shell string containing `cmd &` rather than letting the run mechanism background
+  the fastlane command itself — that only tracks the wrapper shell (which returns the moment it
+  forks), not the real fastlane process, which keeps running for real minutes afterward. Check
+  with `ps aux | grep "[f]astlane"` before trusting a suspiciously fast "completed" signal; if
+  it's still running, wait on that PID instead of the wrapper.
 
 ## Key Files
 
