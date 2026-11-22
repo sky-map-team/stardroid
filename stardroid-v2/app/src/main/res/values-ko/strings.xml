@@ -4,15 +4,6 @@
     <!-- Launch splash banner. -->
 
     <!-- Sky-map labels drawn by the computed layers (LayerStrings). -->
-    <string name="north_pole">북극</string>
-    <string name="south_pole">남극</string>
-    <string name="zenith">천정</string>
-    <string name="nadir" translation_description="Label for the nadir point (directly below) shown on the sky map. Displayed in capitals.">천저</string>
-    <string name="north">북쪽</string>
-    <string name="south">남쪽</string>
-    <string name="east">동쪽</string>
-    <string name="west">서쪽</string>
-    <string name="ecliptic">단주기 혜성</string>
 
     <!-- Solar-system body names, drawn as labels next to each body. -->
 

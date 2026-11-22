@@ -688,4 +688,13 @@ Metalden uzak, açık bir alana geçin ve tekrar deneyin.]]></string>
     <string name="announcement_dialog_dismiss" translation_description="Button that closes an announcement dialog and hides that message everywhere">Kapat</string>
     <string name="announcement_dialog_open" translation_description="Button on an announcement dialog that jumps to the sky object the message is about">Göz at</string>
     <string name="announcement_dialog_continue" translation_description="Button on an announcement dialog that closes it and continues to the sky map">Devam et</string>
+    <string name="north_pole">KK</string>
+    <string name="south_pole">GK</string>
+    <string name="zenith">Başucu</string>
+    <string name="nadir">Ayakucu</string>
+    <string name="north">KUZEY</string>
+    <string name="south">GÜNEY</string>
+    <string name="east">DOĞU</string>
+    <string name="west">BATI</string>
+    <string name="ecliptic">Ekliptik</string>
 </resources>

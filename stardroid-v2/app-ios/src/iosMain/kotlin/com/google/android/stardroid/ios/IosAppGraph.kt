@@ -87,6 +87,7 @@ import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.combine
@@ -94,7 +95,9 @@ import kotlinx.coroutines.flow.debounce
 import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.emptyFlow
 import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOf
+import kotlinx.coroutines.flow.shareIn
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock
@@ -288,6 +291,10 @@ class IosAppGraph(
     private val registryMutex = Mutex()
     private var registry: LayerRegistry? = null
 
+    // Shared so the layers, which each collect it, load the strings once.
+    private val layerStrings =
+        flow { emit(ResourceLayerStrings.load()) }.shareIn(scope, SharingStarted.Lazily, 1)
+
     /** Every layer, over [catalog]; built once. */
     suspend fun layerRegistry(): LayerRegistry {
         val repository = catalog()
@@ -296,7 +303,7 @@ class IosAppGraph(
                 ?: LayerRegistry.create(
                     catalog = repository,
                     locale = locale,
-                    strings = flowOf(EnglishLayerStrings),
+                    strings = layerStrings,
                     clock = timeController.times,
                     location = locationController.locations,
                     ephemeris = MeeusEphemeris,

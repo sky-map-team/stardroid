@@ -605,4 +605,13 @@
     <string name="announcement_dialog_dismiss" translation_description="Button that closes an announcement dialog and hides that message everywhere">忽略</string>
     <string name="announcement_dialog_open" translation_description="Button on an announcement dialog that jumps to the sky object the message is about">查看</string>
     <string name="announcement_dialog_continue" translation_description="Button on an announcement dialog that closes it and continues to the sky map">继续</string>
+    <string name="north_pole">北极</string>
+    <string name="south_pole">南极</string>
+    <string name="zenith">天顶</string>
+    <string name="nadir">天底</string>
+    <string name="north">北</string>
+    <string name="south">南</string>
+    <string name="east">东</string>
+    <string name="west">西</string>
+    <string name="ecliptic">黄道</string>
 </resources>

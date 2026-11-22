@@ -3,15 +3,6 @@
 
     <!-- Launch splash banner. -->
 
-    <!-- tm:omitted name="north_pole" reason="identical_to_source" -->
-    <!-- tm:omitted name="south_pole" reason="identical_to_source" -->
-    <string name="zenith">จุดสูงสุด</string>
-    <string name="nadir">จุดต่ำสุด</string>
-    <string name="north">เหนือ</string>
-    <string name="south">ใต้</string>
-    <string name="east">ตะวันออก</string>
-    <string name="west">ตะวันตก</string>
-    <string name="ecliptic">สุริยวิถี</string>
 
     <!-- Solar-system body names, drawn as labels next to each body. -->
 

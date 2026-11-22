@@ -24,7 +24,7 @@ reach your phone a little after that update.
 | Through-the-camera (AR) mode | Not yet | In testing, not yet released |
 | Share a picture of the sky | Not yet | In testing, not yet released |
 | News and announcements from the Sky Map team | When you open the app | Notification, widget and when you open the app |
-| Compass and grid labels in your language | English only for now | Yes |
+| Compass and grid labels in your language | Yes | Yes |
 | Build without Google services | No | Yes, on F-Droid |
 | Oldest supported system | iOS 15 | Android 10 |
 
@@ -117,8 +117,8 @@ to be precise, on both platforms.
 - **AR mode** (the sky drawn over the camera view) and **sharing a picture of the sky** are built
   on Android and being tested there. They aren't public on either platform yet, and the plan is
   to release them on both at once.
-- **Compass and grid labels** (North, Zenith, Ecliptic and so on) are still in English on iPhone.
-  Everything else follows your language, including object names.
+- **Compass and grid labels** (North, Zenith, Ecliptic and so on) follow your language on both
+  platforms, as do planet names and object names.
 
 ## Things that are just different
 

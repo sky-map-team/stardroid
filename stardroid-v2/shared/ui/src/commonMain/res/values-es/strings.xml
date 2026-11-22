@@ -694,4 +694,13 @@ Brillo de las líneas: normal, brillante o muy brillante, para crepúsculo, luz 
     <string name="announcement_dialog_dismiss" translation_description="Button that closes an announcement dialog and hides that message everywhere">Descartar</string>
     <string name="announcement_dialog_open" translation_description="Button on an announcement dialog that jumps to the sky object the message is about">Echar un vistazo</string>
     <string name="announcement_dialog_continue" translation_description="Button on an announcement dialog that closes it and continues to the sky map">Continuar</string>
+    <string name="north_pole">PN</string>
+    <string name="south_pole">PS</string>
+    <string name="zenith">CENIT</string>
+    <!-- tm:omitted name="nadir" reason="identical_to_source" -->
+    <string name="north">NORTE</string>
+    <string name="south">SUR</string>
+    <string name="east">ESTE</string>
+    <string name="west">OESTE</string>
+    <string name="ecliptic">Eclíptica</string>
 </resources>

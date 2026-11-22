@@ -618,4 +618,13 @@
     <string name="announcement_dialog_dismiss" translation_description="Button that closes an announcement dialog and hides that message everywhere">閉じる</string>
     <string name="announcement_dialog_open" translation_description="Button on an announcement dialog that jumps to the sky object the message is about">見てみる</string>
     <string name="announcement_dialog_continue" translation_description="Button on an announcement dialog that closes it and continues to the sky map">続ける</string>
+    <string name="north_pole">北極点</string>
+    <string name="south_pole">南極点</string>
+    <string name="zenith">天頂</string>
+    <string name="nadir">天底</string>
+    <string name="north">北</string>
+    <string name="south">南</string>
+    <string name="east">東</string>
+    <string name="west">西</string>
+    <string name="ecliptic">黄道</string>
 </resources>

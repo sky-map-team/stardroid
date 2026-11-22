@@ -4,15 +4,6 @@
     <!-- Launch splash banner. -->
 
     <!-- Sky-map labels drawn by the computed layers (LayerStrings). -->
-    <string name="north_pole">PN</string>
-    <string name="south_pole">PS</string>
-    <string name="zenith">ZÉNITH</string>
-    <!-- tm:omitted name="nadir" reason="identical_to_source" -->
-    <string name="north">NORD</string>
-    <string name="south">SUD</string>
-    <string name="east">EST</string>
-    <string name="west">OUEST</string>
-    <string name="ecliptic">Écliptique</string>
 
     <!-- Solar-system body names, drawn as labels next to each body. -->
 

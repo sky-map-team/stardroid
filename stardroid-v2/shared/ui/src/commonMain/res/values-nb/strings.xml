@@ -684,4 +684,13 @@ Flytt deg til et åpent område vekk fra metall og prøv igjen.]]></string>
     <string name="announcement_dialog_dismiss" translation_description="Button that closes an announcement dialog and hides that message everywhere">Lukk</string>
     <string name="announcement_dialog_open" translation_description="Button on an announcement dialog that jumps to the sky object the message is about">Ta en titt</string>
     <string name="announcement_dialog_continue" translation_description="Button on an announcement dialog that closes it and continues to the sky map">Fortsett</string>
+    <!-- tm:omitted name="north_pole" reason="identical_to_source" -->
+    <!-- tm:omitted name="south_pole" reason="identical_to_source" -->
+    <string name="zenith">SENIT</string>
+    <!-- tm:omitted name="nadir" reason="identical_to_source" -->
+    <string name="north">NORD</string>
+    <string name="south">SØR</string>
+    <string name="east">ØST</string>
+    <string name="west">VEST</string>
+    <string name="ecliptic">Ekliptikken</string>
 </resources>

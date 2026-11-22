@@ -91,7 +91,7 @@ Implementation underway, following the porting order in
   `AppGraph` (hand-wired DI; Hilt deferred), `MapViewModel` (D14 sensor/manual reference
   frame, v1 drag/rotate/zoom semantics), `LayersViewModel` + `LayerRegistry` with DataStore
   visibility toggles, the `RenderBinder` flow→renderer bridge, night mode spanning theme and
-  render state, and `ResourceLayerStrings` (D38).
+  render state, and `ResourceLayerStrings` (D38; iOS has its own in `app-ios`).
 - **Upstream sync** — the post-fork upstream v1 visual changes ported to v2 (D40): the
   true-ARGB color scheme centralized in `SkyColors`, the graduated Star Gold ecliptic at
   depth 5, the green horizon (originally with an additive glow via `GlowPrimitive`/`GlowDrawer`,

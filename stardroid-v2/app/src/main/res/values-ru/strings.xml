@@ -2,15 +2,6 @@
 <resources>
 
     <!-- Метки карты: полюса, зенит, надир, стороны света, эклиптика -->
-    <string name="north_pole">СП</string>
-    <string name="south_pole">ЮП</string>
-    <string name="zenith">ЗЕНИТ</string>
-    <string name="nadir">НАДИР</string>
-    <string name="north">СЕВЕР</string>
-    <string name="south">ЮГ</string>
-    <string name="east">ВОСТОК</string>
-    <string name="west">ЗАПАД</string>
-    <string name="ecliptic">Эклиптика</string>
 
     <!-- Каналы уведомлений: пролёты спутников и затмения -->
     <string name="channel_passes_name">Пролёты спутников</string>
