@@ -377,9 +377,7 @@ private fun SkyMapScreen(
                         )
                     }
                     // Upgrades only, and ahead of a still-pending tour, as on Android.
-                    if (current.needsWhatsNew &&
-                        (!current.needsWarmWelcome || current.needsWhatsNewDuringWarmWelcome)
-                    ) {
+                    if (current.whatsNewShowing) {
                         WhatsNewDialog(
                             nightMode = nightMode,
                             onDismiss = startup::dismissWhatsNew,

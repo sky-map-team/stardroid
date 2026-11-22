@@ -116,7 +116,7 @@ private val ExpandedGalleryImageSaver =
 fun SkyMapNavHost(
     navController: NavHostController,
     startOnWelcome: Boolean,
-    welcomeVisible: Boolean = true,
+    welcomeVisible: Boolean,
     glSurfaceView: GLSurfaceView,
     mapViewModel: MapViewModel,
     layersViewModel: LayersViewModel,
@@ -208,8 +208,11 @@ fun SkyMapNavHost(
                     }
                 }
             }
-            // Not composed while an overlay covers it: its first-run events fire on composition.
-            if (!welcomeVisible) {
+            // First-run events fire on composition, so hold the tour back while the EULA or
+            // What's New covers it. Latched: once shown it is never torn down mid-exit.
+            var shown by rememberSaveable { mutableStateOf(false) }
+            if (welcomeVisible) shown = true
+            if (!replay && !shown) {
                 Box(Modifier.fillMaxSize().background(Color.Black))
                 return@composable
             }

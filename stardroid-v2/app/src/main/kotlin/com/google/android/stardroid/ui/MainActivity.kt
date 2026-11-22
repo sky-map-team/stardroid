@@ -653,18 +653,12 @@ class MainActivity : ComponentActivity() {
                 val gates = startup ?: return@SkyMapTheme
                 // The start destination is decided once; the gates keep flowing after.
                 val startOnWelcome = remember { gates.needsWarmWelcome }
-                // The EULA and What's New are overlays on top of the nav host, so the tour can
-                // be composed underneath them; it only counts as started once it can be seen.
-                val whatsNewShowing =
-                    gates.needsWhatsNew &&
-                        (!gates.needsWarmWelcome || gates.needsWhatsNewDuringWarmWelcome)
-                val welcomeVisible = !gates.needsEula && !whatsNewShowing
                 val sensorPresence = remember { sensorPresence() }
                 val navController = rememberNavController()
                 SkyMapNavHost(
                     navController = navController,
                     startOnWelcome = startOnWelcome,
-                    welcomeVisible = welcomeVisible,
+                    welcomeVisible = gates.welcomeVisible,
                     glSurfaceView = glSurfaceView,
                     mapViewModel = mapViewModel,
                     layersViewModel = layersViewModel,
@@ -722,8 +716,7 @@ class MainActivity : ComponentActivity() {
                 // as an overlay ahead of the still-pending tour underneath
                 // (needsWhatsNewDuringWarmWelcome).
                 if (gates.needsEula) {
-                    // BACK still exits (as v1 routed cancel to reject) but only the Decline
-                    // button logs a rejection; a back gesture isn't a decision about the terms.
+                    // BACK exits without logging: a back gesture isn't a decision about the terms.
                     BackHandler(onBack = ::finish)
                     EulaScreen(
                         nightMode = nightMode,
@@ -733,7 +726,7 @@ class MainActivity : ComponentActivity() {
                             finish()
                         },
                     )
-                } else if (whatsNewShowing) {
+                } else if (gates.whatsNewShowing) {
                     WhatsNewDialog(
                         nightMode = nightMode,
                         onDismiss = startupViewModel::dismissWhatsNew,

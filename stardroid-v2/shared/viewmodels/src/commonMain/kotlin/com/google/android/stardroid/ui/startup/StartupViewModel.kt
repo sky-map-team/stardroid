@@ -28,7 +28,15 @@ data class StartupUiState(
     val needsWarmWelcome: Boolean,
     val needsWhatsNew: Boolean,
     val needsWhatsNewDuringWarmWelcome: Boolean,
-)
+) {
+    /** Upgrades only, and ahead of a still-pending tour. */
+    val whatsNewShowing: Boolean
+        get() = needsWhatsNew && (!needsWarmWelcome || needsWhatsNewDuringWarmWelcome)
+
+    /** False while the EULA or What's New overlays the tour, so it can't count as started. */
+    val welcomeVisible: Boolean
+        get() = !needsEula && !whatsNewShowing
+}
 
 /**
  * The v1 `SplashScreenActivity` sequence as reactive state: the splash holds until the
@@ -66,8 +74,8 @@ class StartupViewModel(
     }
 
     /**
-     * The welcome pager came up on first run (v1's funnel start), with nothing covering it (the
-     * host must not call this while the EULA or What's New overlays it). Tutorial replays from the
+     * The welcome pager came up on first run (v1's funnel start); call once the tour is
+     * visible ([StartupUiState.welcomeVisible]). Tutorial replays from the
      * overflow sheet bypass these funnel callbacks entirely, so the D49 metrics stay first-run
      * only. A v1-history device also logs the one-off upgrade event here — this fires once per
      * arrival, whether or not the tour itself gets finished.
