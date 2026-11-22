@@ -335,8 +335,7 @@ fun MapChrome(
     railLabels: RailLabelState? = null,
     visible: Boolean = true,
 ) {
-    // Android's ORIENTATION_LANDSCAPE, for a window that fills the screen: wider than tall.
-    val landscape = LocalWindowInfo.current.containerSize.let { it.width > it.height }
+    val landscape = isLandscapeWindow()
     // Sizes in px, each 0 until first measured, which reads as "doesn't fit".
     var chromeHeightPx by remember { mutableIntStateOf(0) }
     var topEndHeightPx by remember { mutableIntStateOf(0) }
@@ -347,6 +346,18 @@ fun MapChrome(
             actionColumnHeightPx > 0 &&
             topEndHeightPx + gapPx + actionColumnHeightPx <= chromeHeightPx
     val topEndMargin = if (landscape && !fitsAboveActionColumn) ACTION_COLUMN_CLEARANCE else 8.dp
+    // The AR panel scrolls rather than reach the landscape action column, or the portrait
+    // shutter's band; unbounded until the column has been measured.
+    val arPanelMaxHeight =
+        with(LocalDensity.current) {
+            val reserve =
+                if (landscape) (actionColumnHeightPx + gapPx).toDp() else AR_PANEL_BOTTOM_RESERVE
+            if (chromeHeightPx > 0 && (!landscape || actionColumnHeightPx > 0)) {
+                (chromeHeightPx.toDp() - 8.dp - hudTopClearance - reserve).coerceAtLeast(0.dp)
+            } else {
+                Dp.Unspecified
+            }
+        }
     Box(
         modifier
             .fillMaxSize()
@@ -370,6 +381,7 @@ fun MapChrome(
                     onIsoFractionChange = onArIsoFractionChange,
                     onShutterFractionChange = onArShutterFractionChange,
                     extraContent = arExtraControls,
+                    maxHeight = arPanelMaxHeight,
                     hudState = hudState,
                     onResetAlignment = onResetAlignment,
                     modifier =
@@ -1006,6 +1018,24 @@ private fun ActionCluster(
     }
 }
 
+/** Android's ORIENTATION_LANDSCAPE, for a window that fills the screen: wider than tall. */
+@Composable
+internal fun isLandscapeWindow(): Boolean =
+    LocalWindowInfo.current.containerSize.let { it.width > it.height }
+
+internal val SHUTTER_SIZE: Dp = 56.dp
+
+/** Clears the portrait action row while the chrome is up; sits low once it is hidden. */
+internal fun shutterBottomPadding(
+    landscape: Boolean,
+    chromeShown: Boolean,
+): Dp =
+    when {
+        landscape -> 8.dp
+        chromeShown -> 68.dp
+        else -> 16.dp
+    }
+
 /** The in-AR share shutter: a camera-style ring, tinted through the theme for night. */
 @Composable
 internal fun ShareShutter(
@@ -1017,7 +1047,7 @@ internal fun ShareShutter(
     Box(
         modifier =
             modifier
-                .size(56.dp)
+                .size(SHUTTER_SIZE)
                 .clip(CircleShape)
                 .background(ring.copy(alpha = 0.18f))
                 .border(3.dp, ring.copy(alpha = 0.85f), CircleShape)
@@ -1807,3 +1837,6 @@ private fun SatelliteEmptyStateCard() {
 
 /** Landscape right inset that clears the action column: 8 dp edge + 48 dp button + 8 dp gap. */
 private val ACTION_COLUMN_CLEARANCE: Dp = 64.dp
+
+/** Portrait room kept below the AR panel: the shutter and the action row. */
+private val AR_PANEL_BOTTOM_RESERVE: Dp = 136.dp

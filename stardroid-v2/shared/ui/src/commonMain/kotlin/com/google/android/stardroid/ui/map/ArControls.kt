@@ -15,6 +15,7 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.IntrinsicSize
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
@@ -68,6 +69,7 @@ import kotlin.math.roundToInt
 /**
  * The in-AR exposure and dimmer controls (camera-ar-mode.md/D64): shown only while the camera
  * layer is on, in the HUD's top-right slot, riding the chrome show/hide like everything else.
+ * Collapsed to a header by default; the alignment correction row stays visible either way.
  * Three independent-looking groups: auto exposure (AE compensation, hidden when unsupported),
  * manual ISO/shutter (which turns AE off, so the groups are mutually exclusive), and the dimmer
  * (the GL scrim, "how bright is the video", unaffected by either).
@@ -81,6 +83,8 @@ fun ArControls(
     onIsoFractionChange: (Double) -> Unit,
     onShutterFractionChange: (Double) -> Unit,
     modifier: Modifier = Modifier,
+    // Expanded sliders scroll within this; Unspecified means no cap.
+    maxHeight: Dp = Dp.Unspecified,
     hudState: HudState? = null,
     onResetAlignment: () -> Unit = {},
     // Host-supplied extra row (the temporary share-still mode switch), below the dimmer.
@@ -90,6 +94,7 @@ fun ArControls(
     Column(
         modifier =
             modifier
+                .heightIn(max = maxHeight)
                 .widthIn(min = AR_PANEL_MIN_WIDTH)
                 .width(IntrinsicSize.Max)
                 .clip(shape)
@@ -125,18 +130,16 @@ fun ArControls(
             )
         }
         if (expanded) {
-            // Scrolls if the sliders are taller than the space the panel is given.
-            Column(Modifier.weight(1f, fill = false).verticalScroll(rememberScrollState())) {
-                ArExposureSections(
-                    state,
-                    specs,
-                    onScrimChange,
-                    onExposureChange,
-                    onIsoFractionChange,
-                    onShutterFractionChange,
-                    extraContent,
-                )
-            }
+            ArExposureSections(
+                state,
+                specs,
+                onScrimChange,
+                onExposureChange,
+                onIsoFractionChange,
+                onShutterFractionChange,
+                extraContent,
+                Modifier.weight(1f, fill = false).verticalScroll(rememberScrollState()),
+            )
         }
         // The HUD this panel replaces owns the drag-to-align readout and its reset, which
         // are most needed here, so the correction row stays visible while collapsed.
@@ -157,8 +160,9 @@ private fun ArExposureSections(
     onIsoFractionChange: (Double) -> Unit,
     onShutterFractionChange: (Double) -> Unit,
     extraContent: (@Composable () -> Unit)?,
+    modifier: Modifier,
 ) {
-    Column {
+    Column(modifier) {
         // Auto and manual exposure are mutually exclusive: manual turns the camera's AE off, so
         // the exposure slider is inert then, and touching it hands control back to auto. The
         // inactive group is dimmed but stays touchable, because touching it is how you switch.
@@ -339,5 +343,8 @@ private fun ArSliderRow(
 
 private const val INACTIVE_GROUP_ALPHA = 0.45f
 
-/** Wide enough for the correction row, so the panel doesn't resize when it appears. */
-private val AR_PANEL_MIN_WIDTH: Dp = 208.dp
+/**
+ * Wide enough for the correction row and the manual ISO/shutter rows, so the panel doesn't
+ * resize when it appears or expands.
+ */
+private val AR_PANEL_MIN_WIDTH: Dp = 220.dp

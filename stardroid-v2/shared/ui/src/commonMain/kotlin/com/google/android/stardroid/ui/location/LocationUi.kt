@@ -619,7 +619,6 @@ fun AcquiringTimeoutDialog(
 fun LocationStateDialogs(
     locationState: LocationState,
     manualLocationMode: Boolean,
-    locationStartResolved: Boolean,
     locationViewModel: LocationViewModel,
     onRequestLocationPermission: (() -> Unit)?,
     onOpenAppSettings: () -> Unit,
@@ -645,7 +644,6 @@ fun LocationStateDialogs(
     val needsLocation =
         locationState is LocationState.Unset || locationState is LocationState.PermissionDenied
     if (onRequestLocationPermission != null &&
-        locationStartResolved &&
         needsLocation &&
         !manualLocationMode &&
         !rationaleDismissed

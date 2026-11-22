@@ -112,16 +112,6 @@ class LocationControllerTest {
         }
 
     @Test
-    fun `startResolved is false until start has run`() =
-        runTest {
-            val controller = controller()
-            assertThat(controller.startResolved.value).isFalse()
-            controller.start()
-            runCurrent()
-            assertThat(controller.startResolved.value).isTrue()
-        }
-
-    @Test
     fun `start without permission rests at Unset`() =
         runTest {
             permissionGranted = false

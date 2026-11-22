@@ -51,7 +51,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.layout.onSizeChanged
 import androidx.compose.ui.platform.LocalDensity
-import androidx.compose.ui.platform.LocalWindowInfo
 import androidx.compose.ui.unit.IntSize
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.Lifecycle
@@ -188,7 +187,6 @@ fun MapScreen(
     val moonWidgetPromo by objectInfoViewModel.moonWidgetPromo.collectAsStateWithLifecycle()
     val locationState by locationViewModel.state.collectAsStateWithLifecycle()
     val manualLocationMode by locationViewModel.manualMode.collectAsStateWithLifecycle()
-    val locationStartResolved by locationViewModel.startResolved.collectAsStateWithLifecycle()
     // Saveable so the sheet/dialogs survive rotation — otherwise the dialog dismisses and the
     // rememberSaveable date/time inside it is thrown away with it.
     var showLayersSheet by rememberSaveable { mutableStateOf(false) }
@@ -765,7 +763,6 @@ fun MapScreen(
             LocationStateDialogs(
                 locationState = locationState,
                 manualLocationMode = manualLocationMode,
-                locationStartResolved = locationStartResolved,
                 locationViewModel = locationViewModel,
                 onRequestLocationPermission = onRequestLocationPermission,
                 onOpenAppSettings = onOpenAppSettings,
@@ -785,7 +782,7 @@ fun MapScreen(
 
         // "Photograph the moment" while the camera is live (camera-ar-mode.md slice 4). Outside
         // the chrome gate so hiding the controls for a clear view doesn't take the shutter too.
-        val landscape = LocalWindowInfo.current.containerSize.let { it.width > it.height }
+        val landscape = isLandscapeWindow()
         val shutterShown = arModeOn && hasArCamera && onShareSky != null
         if (shutterShown) {
             ShareShutter(
@@ -794,7 +791,7 @@ fun MapScreen(
                     Modifier
                         .align(Alignment.BottomCenter)
                         .navigationBarsPadding()
-                        .padding(bottom = if (landscape) 8.dp else 68.dp),
+                        .padding(bottom = shutterBottomPadding(landscape, chromeShown)),
             )
         }
 
@@ -809,10 +806,10 @@ fun MapScreen(
                     .navigationBarsPadding()
                     .padding(
                         bottom =
-                            when {
-                                !shutterShown -> 56.dp
-                                landscape -> 72.dp
-                                else -> 132.dp
+                            if (shutterShown) {
+                                shutterBottomPadding(landscape, chromeShown) + SHUTTER_SIZE + 8.dp
+                            } else {
+                                56.dp
                             },
                     ),
         )
