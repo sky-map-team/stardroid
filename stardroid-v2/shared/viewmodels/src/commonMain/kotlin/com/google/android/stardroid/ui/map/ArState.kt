@@ -9,10 +9,20 @@
 
 package com.google.android.stardroid.ui.map
 
+import com.google.android.stardroid.camera.fullAngleDeg
 import kotlin.math.exp
 import kotlin.math.ln
 import kotlin.math.roundToInt
 import kotlin.math.roundToLong
+
+/**
+ * One lens of a virtual multi-lens camera: from zoom ratio [fromZoom] it supplies the picture,
+ * and there the visible short half-side's tangent is [halfTan].
+ */
+data class ArLens(
+    val fromZoom: Double,
+    val halfTan: Double,
+)
 
 /**
  * What the physical camera can do, reported once it is up (camera-ar-mode.md/D64): the
@@ -20,6 +30,7 @@ import kotlin.math.roundToLong
  * the map FOV then stays free), the digital zoom envelope, the AE-compensation range
  * (0..0 when unsupported — the exposure slider hides), and the manual-sensor envelope for
  * the temporary ISO/shutter dev controls (null when the device lacks `MANUAL_SENSOR`).
+ * [lenses], widest first, is set where the edge knows each lens's FOV (iOS).
  */
 data class ArCameraSpecs(
     val shortSideFovDeg: Double?,
@@ -29,7 +40,17 @@ data class ArCameraSpecs(
     val exposureMax: Int,
     val isoRange: IntRange? = null,
     val exposureTimeRangeNs: LongRange? = null,
-)
+    val lenses: List<ArLens> = emptyList(),
+) {
+    /** The short-side FOV at zoom [ratio]: exact per lens where [lenses] says, else divided. */
+    fun fovAtZoom(ratio: Double): Double? {
+        val base = shortSideFovDeg ?: return null
+        val lens =
+            lenses.lastOrNull { ratio >= it.fromZoom } ?: lenses.firstOrNull()
+                ?: return base / ratio
+        return fullAngleDeg(lens.halfTan * lens.fromZoom / ratio)
+    }
+}
 
 /** A manual sensor exposure (AE off): what the hardware edge applies while set. */
 data class ArManualExposure(

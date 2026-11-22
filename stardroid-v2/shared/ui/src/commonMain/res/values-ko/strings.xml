@@ -614,6 +614,12 @@
     <string name="countdown_shower_peak" translation_description="Countdown-widget event name; %1$s is a meteor shower name">%1$s 극대기</string>
     <string name="countdown_new_moon" translation_description="Countdown-widget event name for the next new moon">신월</string>
     <string name="countdown_full_moon" translation_description="Countdown-widget event name for the next full moon">보름달</string>
+    <string name="share_chooser_title" translation_description="Title of the system share sheet when sharing a captured sky image.">이 하늘 공유</string>
+    <string name="share_invitation" translation_description="Short invitation stamped on the footer of shared sky images, above the store link.">주머니 속의 우주 — Sky Map을 무료로 다운로드하세요</string>
+    <string name="share_text" translation_description="Text accompanying a shared sky image in apps that accept both an image and text. %1$s is the app-store link.">주머니 속의 우주 — Sky Map을 무료로 다운로드하세요: %1$s</string>
+    <string name="share_layout_overlay" translation_description="Caption of the share-layout choice that draws the star map over the camera photo, as seen on screen.">오버레이</string>
+    <string name="share_layout_side_by_side" translation_description="Caption of the share-layout choice that puts the camera photo and the star map next to each other.">나란히</string>
+    <string name="share_failed_message" translation_description="Snackbar shown when capturing the sky image for sharing failed.">하늘을 캡처할 수 없습니다 — 다시 시도하세요</string>
     <string name="announcement_dialog_dismiss" translation_description="Button that closes an announcement dialog and hides that message everywhere">닫기</string>
     <string name="announcement_dialog_open" translation_description="Button on an announcement dialog that jumps to the sky object the message is about">살펴보기</string>
     <string name="announcement_dialog_continue" translation_description="Button on an announcement dialog that closes it and continues to the sky map">계속</string>

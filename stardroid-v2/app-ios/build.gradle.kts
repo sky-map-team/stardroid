@@ -56,6 +56,10 @@ kotlin {
         iosMain {
             kotlin.srcDir(generateSecrets)
         }
+        // Simulator-only stand-ins (a camera, a compass, flag overrides): never in a device binary.
+        for (simulator in listOf("iosSimulatorArm64Main", "iosX64Main")) {
+            getByName(simulator).kotlin.srcDir("src/simulatorMain/kotlin")
+        }
         iosMain.dependencies {
             implementation(project(":shared:viewmodels"))
             implementation(project(":shared:ui"))

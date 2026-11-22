@@ -43,6 +43,7 @@ import androidx.compose.runtime.setValue
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.LifecycleOwner
 import com.google.android.stardroid.share.SkyShare
+import com.google.android.stardroid.ui.map.ArCamera
 import com.google.android.stardroid.ui.map.ArCameraSpecs
 import com.google.android.stardroid.ui.map.ArManualExposure
 import kotlinx.coroutines.delay
@@ -62,7 +63,14 @@ import kotlin.coroutines.resume
  */
 class SkyCameraPreview(
     private val context: Context,
-) {
+) : ArCamera<SkyCameraPreview.Target, Bitmap> {
+    /** Where the preview goes: the view, what drives the camera's lifecycle, and the crop. */
+    class Target(
+        val previewView: PreviewView,
+        val lifecycleOwner: LifecycleOwner,
+        val viewAspectLongOverShort: Double,
+    )
+
     /** How the share still is taken; the debug switch flips it while the night path is tuned. */
     enum class StillMode { AUTO, NIGHT }
 
@@ -102,20 +110,21 @@ class SkyCameraPreview(
         private set
 
     /** Whether the device has any camera at all — the AR toggle hides entirely when not. */
-    val hasCamera: Boolean
+    override val hasCamera: Boolean
         get() = context.packageManager.hasSystemFeature(PackageManager.FEATURE_CAMERA_ANY)
 
     /**
-     * Starts the rear camera into [previewView]; [onReady] fires on the main thread once the
+     * Starts the rear camera into [target]; [onReady] fires on the main thread once the
      * camera is up, carrying the FOV/zoom/exposure envelope for the map's FOV lock.
      */
-    fun bind(
-        previewView: PreviewView,
-        lifecycleOwner: LifecycleOwner,
-        viewAspectLongOverShort: Double,
+    override fun bind(
+        target: Target,
         onPreviewLuma: (Double) -> Unit,
         onReady: (ArCameraSpecs) -> Unit,
     ) {
+        val previewView = target.previewView
+        val lifecycleOwner = target.lifecycleOwner
+        val viewAspectLongOverShort = target.viewAspectLongOverShort
         bound = true
         this.onPreviewLuma = onPreviewLuma
         this.previewView = previewView
@@ -137,7 +146,7 @@ class SkyCameraPreview(
         }, ContextCompat.getMainExecutor(context))
     }
 
-    fun unbind() {
+    override fun unbind() {
         bound = false
         camera = null
         imageCapture = null
@@ -300,6 +309,8 @@ class SkyCameraPreview(
             takeAutoStill()
         }
 
+    override suspend fun takeStill(): Bitmap? = takeStill(StillMode.AUTO)
+
     /** Manual options apply to stills too, so drop them and let AE settle before the shot. */
     private suspend fun takeAutoStill(): Bitmap? {
         val manual = manualExposure
@@ -422,13 +433,13 @@ class SkyCameraPreview(
     }
 
     /** Digital zoom driven by the map's pinch while the FOV is camera-locked. */
-    fun setZoomRatio(ratio: Double) {
+    override fun setZoomRatio(ratio: Double) {
         zoomRatio = ratio
         camera?.cameraControl?.setZoomRatio(ratio.toFloat())
     }
 
     /** AE compensation from the in-AR exposure slider (lever 1 of the exposure plan). */
-    fun setExposureIndex(index: Int) {
+    override fun setExposureIndex(index: Int) {
         exposureIndex = index
         camera?.cameraControl?.setExposureCompensationIndex(index)
     }

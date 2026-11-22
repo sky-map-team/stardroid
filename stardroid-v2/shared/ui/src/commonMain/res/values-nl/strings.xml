@@ -684,6 +684,12 @@ Lijnhelderheid: normaal, helder of helderst, voor de schemering, daglicht of een
     <string name="countdown_shower_peak" translation_description="Countdown-widget event name; %1$s is a meteor shower name">%1$s piek</string>
     <string name="countdown_new_moon" translation_description="Countdown-widget event name for the next new moon">Nieuwe Maan</string>
     <string name="countdown_full_moon" translation_description="Countdown-widget event name for the next full moon">Volle Maan</string>
+    <string name="share_chooser_title" translation_description="Title of the system share sheet when sharing a captured sky image.">Deel deze hemel</string>
+    <string name="share_invitation" translation_description="Short invitation stamped on the footer of shared sky images, above the store link.">Het heelal in je broekzak — download Sky Map gratis</string>
+    <string name="share_text" translation_description="Text accompanying a shared sky image in apps that accept both an image and text. %1$s is the app-store link.">Het heelal in je broekzak — download Sky Map gratis: %1$s</string>
+    <!-- tm:omitted name="share_layout_overlay" reason="identical_to_source" -->
+    <string name="share_layout_side_by_side" translation_description="Caption of the share-layout choice that puts the camera photo and the star map next to each other.">Naast elkaar</string>
+    <string name="share_failed_message" translation_description="Snackbar shown when capturing the sky image for sharing failed.">Kon de hemel niet vastleggen — probeer opnieuw</string>
     <string name="announcement_dialog_dismiss" translation_description="Button that closes an announcement dialog and hides that message everywhere">Sluiten</string>
     <string name="announcement_dialog_open" translation_description="Button on an announcement dialog that jumps to the sky object the message is about">Neem een kijkje</string>
     <string name="announcement_dialog_continue" translation_description="Button on an announcement dialog that closes it and continues to the sky map">Doorgaan</string>

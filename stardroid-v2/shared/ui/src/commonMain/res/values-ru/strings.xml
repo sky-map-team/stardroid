@@ -665,6 +665,12 @@
     <string name="countdown_shower_peak">Максимум %1$s</string>
     <string name="countdown_new_moon">Новолуние</string>
     <string name="countdown_full_moon">Полнолуние</string>
+    <string name="share_chooser_title">Поделиться этим небом</string>
+    <string name="share_invitation">Вселенная в кармане — получите Sky Map бесплатно</string>
+    <string name="share_text">Вселенная в кармане — получите Sky Map бесплатно: %1$s</string>
+    <string name="share_layout_overlay">Наложение</string>
+    <string name="share_layout_side_by_side">Рядом</string>
+    <string name="share_failed_message">Не удалось сделать снимок неба — попробуйте ещё раз</string>
     <string name="announcement_dialog_dismiss">Закрыть</string>
     <string name="announcement_dialog_open">Посмотреть</string>
     <string name="announcement_dialog_continue">Продолжить</string>

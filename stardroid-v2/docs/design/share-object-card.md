@@ -3,8 +3,9 @@
 **Status: PROPOSED.** Nothing here is built. Decision numbers are unassigned.
 
 Today the only share paths are the support page's "share the app" text and the flag-gated sky
-share (`share/SkyShare.kt`, `Experiment.SHARE_SKY`, camera-ar-mode.md Part 3), which captures the
-GL plane and stamps a footer pointing at `https://getskymap.app` (D110). This design adds a share
+share (`Experiment.SHARE_SKY`, camera-ar-mode.md Part 3: `SkyShare` on Android, `SkySharing` on
+iOS), which captures the map and has the shared `ShareCompositor` stamp a footer pointing at
+`https://getskymap.app` (D110). This design adds a share
 action to the **object info card**, and the landing-site and deep-link plumbing that makes the
 shared thing worth tapping. The goal is a growth loop for the iOS launch: someone finds Jupiter,
 shares it, and the recipient sees a rich preview, lands on a useful page, and installs.
@@ -147,7 +148,8 @@ open after install, that is the deferred-deep-link work we deliberately skipped.
   dialog, scroll position or screen size.
 - Platform edges: bitmap to PNG and the share sheet go through a small `expect`/`actual`
   (Android `FileProvider` + `ACTION_SEND`, as `SkyShare.sendBitmap` does; iOS
-  `UIActivityViewController`). Reuse `SkyShare`'s branding footer and its bitmap-ownership rules
+  `UIActivityViewController`, as `shareImage` does). Reuse `ShareCompositor`'s branding footer
+  and `SkyShare`'s bitmap-ownership rules
   (audit-2026-08 M5) rather than a second implementation.
 - Night mode: the image always uses the normal palette. A red-light card in a chat thread is
   confusing.

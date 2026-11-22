@@ -166,6 +166,8 @@ class IosAppGraph(
 
     private val foreground = AppForeground()
 
+    val isForeground: StateFlow<Boolean> get() = foreground.isForeground
+
     private val satellites = IosSatellites("$supportDirectory/satellites", analytics)
 
     // The build number stands in for Android's versionCode in the startup gates; at least 1, the
@@ -742,7 +744,7 @@ class IosAppGraph(
 
     fun mapViewModel(): MapViewModel =
         MapViewModel(
-            orientationSource = orientationSource,
+            orientationSource = orientationSourceForTarget(orientationSource),
             // Core Motion turns to true north itself once location is allowed; until then the
             // map is uncorrected magnetic north (see CoreMotionOrientationSource).
             declinationSource = ZeroMagneticDeclinationSource,

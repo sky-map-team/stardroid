@@ -80,6 +80,9 @@ mipmaps (as GLES3 uploads Android bitmaps, so disc edges blend identically), ble
 non-sRGB `bgra8Unorm` framebuffer, the night-mode transform, painter's order with no depth
 buffer, and the sky's skip rules (night mode, transparent background).
 
+`MetalSkyRenderer.snapshot` renders the current scene offscreen and reads it back, alpha included
+and without the camera scrim, for sharing the sky (camera-ar-launch.md §4.5).
+
 ## 5. Testing
 
 `MetalRenderTest` renders offscreen on the simulator's GPU and samples the frame. Each test pins

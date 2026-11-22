@@ -63,6 +63,7 @@ import com.google.android.stardroid.ui.objectinfo.ObjectInfoCard
 import com.google.android.stardroid.ui.objectinfo.ObjectInfoViewModel
 import com.google.android.stardroid.ui.onboarding.WelcomeScreen
 import com.google.android.stardroid.ui.resources.Res
+import com.google.android.stardroid.ui.resources.ar_stopped_hot_message
 import com.google.android.stardroid.ui.resources.calibration_complete_toast
 import com.google.android.stardroid.ui.resources.support_email
 import com.google.android.stardroid.ui.resources.support_share_message
@@ -114,10 +115,21 @@ fun skyMapViewController(
     val gallery = graph.galleryViewModel()
     val calibration = graph.calibrationViewModel()
     val tonight = graph.tonightViewModel()
+    val camera = createArCamera()
+    val ar =
+        IosArMode(
+            map,
+            mapViewModel,
+            camera,
+            graph.isForeground,
+            enabled = graph.experiments.isEnabled(Experiment.CAMERA_AR),
+        )
     return ComposeUIViewController {
         SkyMapScreen(
             map,
             mapViewModel,
+            ar,
+            camera,
             layers,
             search,
             timeTravel,
@@ -146,6 +158,8 @@ fun skyMapViewController(
 private fun SkyMapScreen(
     map: MapViewController,
     mapViewModel: MapViewModel,
+    ar: IosArMode,
+    camera: IosArCamera,
     layersViewModel: LayersViewModel,
     searchViewModel: SearchViewModel,
     timeTravelViewModel: TimeTravelViewModel,
@@ -189,6 +203,13 @@ private fun SkyMapScreen(
     val supportEmail = stringResource(Res.string.support_email)
     val shareMessage = formattedStringResource(Res.string.support_share_message, SHARE_LINK)
     val scope = rememberCoroutineScope()
+    val sharing = rememberSkySharing(map, camera, mapViewModel, snackbarHostState)
+    val heatMessage = stringResource(Res.string.ar_stopped_hot_message)
+    LaunchedEffect(ar) { ar.run() }
+    LaunchedEffect(page) { ar.setMapShowing(page == null) }
+    LaunchedEffect(heatMessage) {
+        ar.stoppedForHeat.collect { snackbarHostState.showSnackbar(heatMessage) }
+    }
     LaunchedEffect(Unit) {
         // A tapped notification: back to the map (the gallery shows cards itself), then the card.
         // While the terms or the tour cover the map the card waits, as Android's does.
@@ -241,14 +262,19 @@ private fun SkyMapScreen(
                 onRequestLocationPermission = null,
                 onRequestAutoLocation = onRequestAutoLocation,
                 onOpenAppSettings = onOpenAppSettings,
-                covered = covered,
+                covered = covered || sharing.layouts != null,
                 onIdleChanged = { mapIdle = it },
+                onShareSky = sharing::start.takeIf { experiments.isEnabled(Experiment.SHARE_SKY) },
+                hasArCamera = ar.available,
+                hasCameraPermission = ar::hasPermission,
+                onRequestCameraPermission = ar::requestPermission,
                 // Calibrate lives in Diagnostics (and Help links to it).
                 calibrationInMenu = false,
                 mapApiKey = GEOAPIFY_MAPS_API_KEY.takeUnless { it == "unset" || it.isEmpty() },
             ) { onTap, onDoubleTap ->
                 MetalSky(map, onTap, onDoubleTap)
             }
+            if (!covered) SkySharingSheet(sharing)
             // Waits behind the terms, the tour and the pages, as the info card does.
             if (!covered) {
                 TonightSheet(
@@ -397,7 +423,7 @@ private fun SkyMapScreen(
             // an open here, so also only over the bare map: a tap outside it dismisses for good.
             val tonightShowing by tonightViewModel.visible.collectAsState()
             val announceable =
-                !covered && mapIdle && !tonightShowing && !showBanner &&
+                !covered && mapIdle && !sharing.inProgress && !tonightShowing && !showBanner &&
                     current?.needsWhatsNew == false
             val readyOpen by announcementViewModel.readyOpen.collectAsState()
             LaunchedEffect(announceable, readyOpen) {

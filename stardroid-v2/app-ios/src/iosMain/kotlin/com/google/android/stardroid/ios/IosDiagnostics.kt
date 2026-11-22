@@ -141,7 +141,7 @@ internal fun shareText(text: String) {
     top.presentViewController(sheet, animated = true, completion = null)
 }
 
-private fun topViewController(): UIViewController? {
+internal fun topViewController(): UIViewController? {
     val window =
         UIApplication.sharedApplication.connectedScenes
             .filterIsInstance<UIWindowScene>()

@@ -178,13 +178,15 @@ class MetalSkyRenderer(
     /**
      * Encodes one frame into [commandBuffer], drawing into [pass]'s first colour attachment,
      * which is [widthPx] × [heightPx]. Clears it first — to transparent when the render state
-     * asks for a see-through background (D64), otherwise to opaque black.
+     * asks for a see-through background (D64), otherwise to opaque black. A share's capture
+     * turns [drawScrim] off.
      */
     fun encode(
         commandBuffer: MTLCommandBufferProtocol,
         pass: MTLRenderPassDescriptor,
         widthPx: Int,
         heightPx: Int,
+        drawScrim: Boolean = true,
     ) {
         // Build what changed first: new layers stage their textures, and the copies into them
         // have to be encoded before the render pass that samples them.
@@ -209,7 +211,7 @@ class MetalSkyRenderer(
         try {
             val camera = camera
             if (camera != null && widthPx > 0 && heightPx > 0) {
-                draw(encoder, order, camera, state, Viewport(widthPx, heightPx, density))
+                draw(encoder, order, camera, state, Viewport(widthPx, heightPx, density), drawScrim)
             }
         } finally {
             encoder.endEncoding()
@@ -222,8 +224,9 @@ class MetalSkyRenderer(
         camera: SkyCamera,
         state: RenderState,
         viewport: Viewport,
+        drawScrim: Boolean,
     ) {
-        if (state.transparentBackground && state.cameraScrim > 0.0) {
+        if (drawScrim && state.transparentBackground && state.cameraScrim > 0.0) {
             encoder.setRenderPipelineState(pipelines.scrim)
             encoder.setFragmentFloats(floatArrayOf(state.cameraScrim.toFloat(), 0f, 0f, 0f), 0)
             encoder.drawPrimitives(MTLPrimitiveTypeTriangleStrip, 0u, 4u)

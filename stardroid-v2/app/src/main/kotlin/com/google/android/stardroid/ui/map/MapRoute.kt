@@ -42,6 +42,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.asAndroidBitmap
 import androidx.compose.ui.input.pointer.PointerInputChange
 import androidx.compose.ui.input.pointer.PointerInputScope
 import androidx.compose.ui.input.pointer.pointerInput
@@ -58,6 +59,7 @@ import com.google.android.stardroid.R
 import com.google.android.stardroid.analytics.AnalyticsEvents
 import com.google.android.stardroid.camera.SkyCameraPreview
 import com.google.android.stardroid.share.SkyShare
+import com.google.android.stardroid.share.rememberShareCompositor
 import com.google.android.stardroid.startup.Experiment
 import com.google.android.stardroid.startup.ExperimentConfig
 import com.google.android.stardroid.ui.calibration.CompassCalibrationViewModel
@@ -67,6 +69,8 @@ import com.google.android.stardroid.ui.layers.LayersViewModel
 import com.google.android.stardroid.ui.location.LocationViewModel
 import com.google.android.stardroid.ui.objectinfo.MoonWidgetPromoRow
 import com.google.android.stardroid.ui.objectinfo.ObjectInfoViewModel
+import com.google.android.stardroid.ui.resources.Res
+import com.google.android.stardroid.ui.resources.share_failed_message
 import com.google.android.stardroid.ui.search.SearchViewModel
 import com.google.android.stardroid.ui.timetravel.TimeTravelViewModel
 import kotlinx.coroutines.NonCancellable
@@ -76,6 +80,7 @@ import kotlinx.coroutines.launch
 import kotlin.math.max
 import kotlin.math.min
 import kotlin.math.roundToInt
+import org.jetbrains.compose.resources.stringResource as sharedString
 
 /**
  * Android's map destination: the shared [MapScreen] over what only Android has — the GL sky and
@@ -129,7 +134,8 @@ fun MapRoute(
     val shareLayouts = capture.shareLayouts
     // Don't hold ~25 MB of layouts once the camera layer is off.
     LaunchedEffect(arModeOn) { if (!arModeOn) capture.shareLayouts = null }
-    val shareFailedMessage = stringResource(R.string.share_failed_message)
+    val shareFailedMessage = sharedString(Res.string.share_failed_message)
+    val compositor = rememberShareCompositor()
     val startShare: () -> Unit = {
         mapViewModel.logMenuItem(AnalyticsEvents.SHARE_SKY_LABEL)
         scope.launch {
@@ -140,8 +146,9 @@ fun MapRoute(
                 if (map != null && still != null) {
                     // The composites use the scrim exactly as rendered (night floor included).
                     val scrim = mapViewModel.renderState.first().cameraScrim
-                    capture.shareLayouts = SkyShare.arShareLayouts(context, map, still, scrim)
-                } else if (!SkyShare.shareSky(context, glSurfaceView)) {
+                    capture.shareLayouts =
+                        SkyShare.arShareLayouts(context, compositor, map, still, scrim)
+                } else if (!SkyShare.shareSky(context, glSurfaceView, compositor)) {
                     snackbarHostState.showSnackbar(shareFailedMessage)
                 }
             } finally {
@@ -193,12 +200,7 @@ fun MapRoute(
         // plane sits under the (translucent, media-overlay) GL surface — the stacked-surface
         // compositing model of camera-ar-mode.md/D64, Option A.
         if (arModeOn) {
-            LaunchedEffect(Unit) {
-                mapViewModel.arZoomRatio.collect { arCamera.setZoomRatio(it) }
-            }
-            LaunchedEffect(Unit) {
-                mapViewModel.arExposureIndex.collect { arCamera.setExposureIndex(it) }
-            }
+            LaunchedEffect(Unit) { arCamera.followControls(mapViewModel) }
             LaunchedEffect(Unit) {
                 mapViewModel.arManualExposure.collect { arCamera.setManualExposure(it) }
             }
@@ -209,9 +211,12 @@ fun MapRoute(
                         val long = maxOf(metrics.widthPixels, metrics.heightPixels).toDouble()
                         val short = minOf(metrics.widthPixels, metrics.heightPixels).toDouble()
                         arCamera.bind(
-                            previewView = view,
-                            lifecycleOwner = lifecycleOwner,
-                            viewAspectLongOverShort = long / short,
+                            target =
+                                SkyCameraPreview.Target(
+                                    previewView = view,
+                                    lifecycleOwner = lifecycleOwner,
+                                    viewAspectLongOverShort = long / short,
+                                ),
                             onPreviewLuma = mapViewModel::onArPreviewLuma,
                             onReady = mapViewModel::onArCameraReady,
                         )
@@ -253,8 +258,9 @@ fun MapRoute(
     shareLayouts?.let { layouts ->
         ShareLayoutSheet(
             layouts = layouts,
-            onPick = { picked ->
+            onPick = { image ->
                 capture.shareLayouts = null
+                val picked = image.asAndroidBitmap()
                 // NonCancellable: a rotation mid-save must not swallow the share.
                 scope.launch(NonCancellable) {
                     // Saved so it can be shared again later; the saved copy is what is sent.

@@ -664,12 +664,12 @@ class MapViewModel(
     /** The exposure index the hardware edge applies. */
     val arExposureIndex: StateFlow<Int> = _arExposureIndex.asStateFlow()
 
-    /** Map FOV = camera FOV / zoom ratio while the lock is engaged (D64). */
+    /** The map follows the lens while the lock is engaged (D64). */
     private fun applyArFov() {
         if (!_arMode.value) return
-        val baseFov = arSpecs.value?.shortSideFovDeg ?: return
+        val cameraFov = arSpecs.value?.fovAtZoom(_arZoomRatio.value) ?: return
         val cam = _camera.value
-        val fov = (baseFov / _arZoomRatio.value).coerceIn(MIN_FOV_DEG, MAX_FOV_DEG)
+        val fov = cameraFov.coerceIn(MIN_FOV_DEG, MAX_FOV_DEG)
         _camera.value = SkyCamera(cam.lineOfSight, cam.up, fov)
     }
 

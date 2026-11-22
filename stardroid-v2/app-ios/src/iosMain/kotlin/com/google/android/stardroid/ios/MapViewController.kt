@@ -9,6 +9,7 @@
 
 package com.google.android.stardroid.ios
 
+import androidx.compose.ui.graphics.ImageBitmap
 import com.google.android.stardroid.layers.LayerRegistry
 import com.google.android.stardroid.render.RenderBinder
 import com.google.android.stardroid.render.api.LayerId
@@ -18,6 +19,10 @@ import com.google.android.stardroid.render.api.RendererInfo
 import com.google.android.stardroid.render.api.SkyCamera
 import com.google.android.stardroid.render.api.SkyRenderer
 import com.google.android.stardroid.render.metal.MetalSkyRenderer
+import com.google.android.stardroid.render.metal.MetalSnapshot
+import com.google.android.stardroid.render.metal.snapshot
+import com.google.android.stardroid.share.imageBitmapOfPixels
+import com.google.android.stardroid.share.toShareSize
 import com.google.android.stardroid.ui.map.MapViewModel
 import kotlinx.cinterop.BetaInteropApi
 import kotlinx.cinterop.CValue
@@ -25,10 +30,12 @@ import kotlinx.cinterop.ExperimentalForeignApi
 import kotlinx.cinterop.ObjCAction
 import kotlinx.cinterop.readValue
 import kotlinx.cinterop.useContents
+import kotlinx.coroutines.CompletableDeferred
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import platform.CoreGraphics.CGPointZero
 import platform.CoreGraphics.CGRectZero
 import platform.CoreGraphics.CGSize
@@ -48,6 +55,7 @@ import platform.Metal.MTLPixelFormatBGRA8Unorm
 import platform.MetalKit.MTKView
 import platform.MetalKit.MTKViewDelegateProtocol
 import platform.QuartzCore.CADisplayLink
+import platform.UIKit.UIColor
 import platform.UIKit.UIDevice
 import platform.UIKit.UIDeviceOrientationDidChangeNotification
 import platform.UIKit.UIGestureRecognizer
@@ -60,6 +68,7 @@ import platform.UIKit.UIPinchGestureRecognizer
 import platform.UIKit.UIRotationGestureRecognizer
 import platform.UIKit.UIScreen
 import platform.UIKit.UITapGestureRecognizer
+import platform.UIKit.UIView
 import platform.UIKit.UIViewController
 import platform.darwin.NSObject
 import platform.darwin.dispatch_async
@@ -80,6 +89,11 @@ class MapViewController(
 ) {
     private val device = MTLCreateSystemDefaultDevice() ?: error("this device has no Metal GPU")
     private val view = MTKView(CGRectZero.readValue(), device)
+
+    // The three layers of through-camera mode, bottom to top: the camera's preview (inserted
+    // here while it is on), this Metal view, and Compose's chrome over both.
+    private val container = UIView(frame = CGRectZero.readValue())
+    private val queue = device.newCommandQueue() ?: error("no command queue")
     private val renderer =
         MetalSkyRenderer(
             device,
@@ -90,7 +104,7 @@ class MapViewController(
     private val drawLoop =
         DrawLoop(
             renderer,
-            device.newCommandQueue() ?: error("no command queue"),
+            queue,
             onResize = { requestFrame() },
         )
     private val gestures = Gestures()
@@ -99,10 +113,17 @@ class MapViewController(
 
     val viewController: UIViewController = HostViewController()
 
+    /** Where through-camera mode's preview goes. */
+    val cameraTarget = ArPreviewTarget(container) { graph.displayRotation.rotation }
+
+    /** Called after a layout or a turn, for the camera's preview to follow. */
+    var onLayout: (() -> Unit)? = null
+
     /** Keeps [IosAppGraph.displayRotation] current (layout alone misses a 180° turn). */
     private inner class HostViewController : UIViewController(nibName = null, bundle = null) {
         override fun viewDidLayoutSubviews() {
             super.viewDidLayoutSubviews()
+            this@MapViewController.view.setFrame(container.bounds)
             refreshDisplayRotation()
         }
     }
@@ -110,6 +131,26 @@ class MapViewController(
     private fun refreshDisplayRotation() {
         val scene = view.window?.windowScene ?: return
         graph.displayRotation.rotation = DisplayRotation.from(scene.interfaceOrientation)
+        onLayout?.invoke()
+    }
+
+    /** Lets what is behind the map show through, while the camera layer is on. */
+    fun setSeeThrough(on: Boolean) {
+        view.setOpaque(!on)
+        view.layer.setOpaque(!on)
+        view.backgroundColor = if (on) UIColor.clearColor else UIColor.blackColor
+        requestFrame()
+    }
+
+    /** The map as drawn, alpha included and without the scrim, at share size. */
+    suspend fun captureForShare(): ImageBitmap? {
+        val (width, height) = view.drawableSize.useContents { width.toInt() to height.toInt() }
+        val done = CompletableDeferred<MetalSnapshot?>()
+        renderer.snapshot(queue, width, height) { done.complete(it) }
+        val frame = done.await() ?: return null
+        return withContext(Dispatchers.Default) {
+            imageBitmapOfPixels(frame.bgra, frame.width, frame.height, bgra = true)?.toShareSize()
+        }
     }
 
     /** For Diagnostics' Graphics rows; the limits hold on every GPU iOS 15 runs on (A11+). */
@@ -166,7 +207,10 @@ class MapViewController(
             it.delegate = gestures
             view.addGestureRecognizer(it)
         }
-        viewController.view = view
+        container.backgroundColor = UIColor.blackColor
+        container.clipsToBounds = true
+        container.addSubview(view)
+        viewController.view = container
 
         val binder = RenderBinder(Redrawing(renderer))
         binder.bindCamera(scope, mapViewModel.camera)

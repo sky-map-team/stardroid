@@ -82,7 +82,7 @@ which anyone can read. If the categories change, we will update this policy.
 - **The advertising identifier**: Sky Map never reads the advertising ID (IDFA on iOS) and
   never asks permission to track you.
 - **Your name or contact details**: Sky Map has no accounts and never asks for them.
-- **Contacts, photos, microphone, health data, or payment details.**
+- **Contacts, photos, camera images, microphone, health data, or payment details.**
 
 ### How the data is used
 
@@ -104,6 +104,24 @@ events (such as the first time the app is opened) and whether you accepted or de
 terms are recorded.
 
 For more information on Firebase Analytics see https://firebase.google.com/support/privacy.
+
+## Camera and sky pictures
+
+Where through-camera mode is available, Sky Map uses the camera to show the real sky behind the
+map, and only after you turn the mode on and allow camera access. The live view is processed on
+your device (including measuring how bright it is, so the map stays readable). It is never
+recorded or sent anywhere.
+
+If you share a picture of the sky, Sky Map takes one photo, combines it with the map on your
+device, and passes the result to the app you choose, which then handles it under its own privacy
+policy. Sky Map does not add your location to the picture. Keep in mind that a picture of the sky
+can itself hint at where and when it was made.
+
+- **On Android**, the picture you pick is also saved to your device, in Pictures/Sky Map.
+- **On iOS**, it is kept as a temporary file for the share and is saved to your photos only if you
+  choose Save Image. Sky Map can add to your photos but cannot see them.
+
+We receive neither the camera view nor the pictures.
 
 ## Map images (Geoapify)
 

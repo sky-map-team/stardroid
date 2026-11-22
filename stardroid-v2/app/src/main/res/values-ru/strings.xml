@@ -14,12 +14,6 @@
     <string name="channel_eclipses_description">Одно оповещение перед началом лунного затмения</string>
 
     <!-- Общий доступ (шаринг) снимков неба -->
-    <string name="share_chooser_title">Поделиться этим небом</string>
-    <string name="share_invitation">Вселенная в кармане — получите Sky Map бесплатно</string>
-    <string name="share_text">Вселенная в кармане — получите Sky Map бесплатно: %1$s</string>
-    <string name="share_layout_overlay">Наложение</string>
-    <string name="share_layout_side_by_side">Рядом</string>
-    <string name="share_failed_message">Не удалось сделать снимок неба — попробуйте ещё раз</string>
 
     <!-- Заголовок "Что нового" -->
     <string name="whats_new_version_heading">Новое в версии %1$s</string>

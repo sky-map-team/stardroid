@@ -27,13 +27,7 @@
 
 
     <!-- Through-camera (AR) mode (camera-ar-mode.md, D64). -->
-    <string name="share_chooser_title" translation_description="Title of the system share sheet when sharing a captured sky image.">Partager ce ciel</string>
-    <string name="share_invitation" translation_description="Short invitation stamped on the footer of shared sky images, above the store link.">L\'Univers dans votre poche — téléchargez Sky Map gratuitement</string>
-    <string name="share_text" translation_description="Text accompanying a shared sky image in apps that accept both an image and text. %1$s is the app-store link.">L\'Univers dans votre poche — téléchargez Sky Map gratuitement : %1$s</string>
     <!-- tm:omitted name="share_store_link" reason="identical_to_source" -->
-    <string name="share_layout_overlay" translation_description="Caption of the share-layout choice that draws the star map over the camera photo, as seen on screen.">Superposition</string>
-    <string name="share_layout_side_by_side" translation_description="Caption of the share-layout choice that puts the camera photo and the star map next to each other.">Côte à côte</string>
-    <string name="share_failed_message" translation_description="Snackbar shown when capturing the sky image for sharing failed.">Impossible de capturer le ciel — réessayez</string>
 
     <!-- Time travel: entry button, dialog, and the player bar shown while travelling. -->
 

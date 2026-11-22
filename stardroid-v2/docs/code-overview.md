@@ -348,13 +348,13 @@ Surfaces beyond the map:
   surfaces, behind `ANNOUNCEMENTS`. The model and policy are in `:shared:model`, the dialog in
   `:shared:ui`; `:app`'s `announcements/` holds the worker. iOS has the dialog and sheet only.
 - **Camera-AR** (D64/D67–D71, still off behind `CAMERA_AR` and `SHARE_SKY`): CameraX
-  `PreviewView` *under* a translucent GL surface; `CameraFov` computes the FILL_CENTER-cropped
+  `PreviewView` *under* a translucent GL surface; the shared `CameraFov` computes the cropped
   FOV to lock the map's camera to the lens; `CameraScrimDrawer` dims the video plane; two
-  exposure levers (scrim + AE compensation); `SkyShare` composites GL + camera stills via
-  `PixelCopy` for the share sheet, gated independently via `SHARE_SKY` so camera-on/share-off
+  exposure levers (scrim + AE compensation); `SkyShare` captures via `PixelCopy` and the shared
+  `ShareCompositor` draws the picture, gated independently via `SHARE_SKY` so camera-on/share-off
   keeps the AR controls panel and drops only the shutter. See
-  [design/camera-ar-mode.md](design/camera-ar-mode.md); the launch plan is
-  [design/camera-ar-launch.md](design/camera-ar-launch.md) (proposed).
+  [design/camera-ar-mode.md](design/camera-ar-mode.md); the launch plan and the iOS port are
+  [design/camera-ar-launch.md](design/camera-ar-launch.md) (partly built).
 
 ### iOS (`:app-ios` + `ios/SkyMap`)
 
@@ -362,11 +362,12 @@ Surfaces beyond the map:
 Swift shell hosts: the shared map screen over the Metal sky (`MapViewController`, whose UIKit
 recognizers take every gesture), with full-screen pages standing in for Android's navigation
 routes. The iOS edges are Kotlin too: Core Motion orientation and sensor status, Core Location,
-the display link, geocoding, local notifications, the satellite background refresh, and the tip
-jar. The Swift in `ios/SkyMap/Sources` is the entry point plus adapters for SDKs used from
+the display link, geocoding, local notifications, the satellite background refresh, the tip jar,
+and camera-AR with sharing (`IosArMode` over `AvArCamera`, `SkySharing`; off behind the same two
+flags). The Swift in `ios/SkyMap/Sources` is the entry point plus adapters for SDKs used from
 Swift — Firebase Analytics and Remote Config, StoreKit, `UNUserNotificationCenter`, and the
 background task — passed into Kotlin through the shared interfaces. The widgets are a separate
-extension over `:app-ios-widgets`. Not on iOS so far: camera-AR.
+extension over `:app-ios-widgets`.
 [design/ios-platform-surfaces.md](design/ios-platform-surfaces.md) covers the widget,
 notification and announcement work, and [`ios/README.md`](../ios/README.md) covers building.
 
