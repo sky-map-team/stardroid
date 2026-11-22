@@ -133,6 +133,17 @@
     <string name="tutorial_button" translation_description="Map-screen menu item that replays the warm welcome tutorial">Tutorial</string>
     <string name="whats_new_button" translation_description="Map-screen menu item that opens the What's New and Credits screen">What\'s new</string>
     <string name="widgets_button" translation_description="Map-screen menu item that opens the list of home-screen widgets the app offers">Widgets</string>
+    <string name="widgets_explainer_intro" translation_description="Intro of the sheet that explains Sky Map\'s home-screen widgets on iOS, where an app cannot add a widget itself. Ends with a colon: the three widgets follow">Sky Map has widgets for your Home Screen and Lock Screen. iOS doesn\'t let an app add them for you, so you add them yourself.</string>
+    <string name="widgets_explainer_moon_title" translation_description="Name of the moon-phase widget in the iOS widgets explainer sheet">Moon phase</string>
+    <string name="widgets_explainer_moon_desc" translation_description="Description of the moon-phase widget in the iOS widgets explainer sheet">The Moon\'s phase, illumination and rise and set times, updated daily.</string>
+    <string name="widgets_explainer_tonight_title" translation_description="Name of the tonight\'s-sky widget in the iOS widgets explainer sheet">Tonight\'s sky</string>
+    <string name="widgets_explainer_tonight_desc" translation_description="Description of the tonight\'s-sky widget in the iOS widgets explainer sheet">Tonight\'s best sights: well-placed planets, meteor showers and moon events, updated daily.</string>
+    <string name="widgets_explainer_countdown_title" translation_description="Name of the countdown widget in the iOS widgets explainer sheet">Sky countdown</string>
+    <string name="widgets_explainer_countdown_desc" translation_description="Description of the countdown widget in the iOS widgets explainer sheet">Days until the next meteor shower peak or moon event.</string>
+    <string name="widgets_explainer_step_1" translation_description="Step 1 of adding a widget on an iPhone Home Screen. Use the iOS wording for jiggle mode">Touch and hold an empty space on your Home Screen until the icons wiggle.</string>
+    <string name="widgets_explainer_step_2" translation_description="Step 2 of adding a widget on an iPhone Home Screen: the plus button in the top-left corner">Tap the + button at the top left.</string>
+    <string name="widgets_explainer_step_3" translation_description="Step 3 of adding a widget on an iPhone Home Screen. Use the iOS wording for the Add Widget button">Search for Sky Map, choose a widget and tap Add Widget.</string>
+    <string name="widgets_explainer_lock_screen" translation_description="Note on how to add a widget to the iPhone Lock Screen. Use the iOS wording for Customize">For the Lock Screen, touch and hold it, tap Customize, then tap the area below the time.</string>
     <string name="support_button" translation_description="Map-screen menu item that opens the screen listing ways to support Sky Map">Support</string>
     <string name="support_screen_title" translation_description="Title of the screen listing ways to support Sky Map">Support Sky Map</string>
     <string name="support_intro" translation_description="Opening paragraph of the Support screen. Sky Map is a free, open-source app.">Sky Map is free and open source, and it will stay that way. If you enjoy it, here are some ways to help.</string>

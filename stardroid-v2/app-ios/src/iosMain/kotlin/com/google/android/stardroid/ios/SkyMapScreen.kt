@@ -81,6 +81,7 @@ import com.google.android.stardroid.ui.theme.SkyMapTheme
 import com.google.android.stardroid.ui.timetravel.TimeTravelViewModel
 import com.google.android.stardroid.ui.tonight.TonightSheet
 import com.google.android.stardroid.ui.tonight.TonightViewModel
+import com.google.android.stardroid.ui.widgets.WidgetsExplainerSheet
 import kotlinx.coroutines.launch
 import org.jetbrains.compose.resources.stringResource
 import platform.UIKit.UIViewController
@@ -176,6 +177,7 @@ private fun SkyMapScreen(
     var showBanner by remember { mutableStateOf(true) }
     var mapIdle by remember { mutableStateOf(false) }
     var pages by remember { mutableStateOf(listOf<Page>()) }
+    var showWidgetsExplainer by remember { mutableStateOf(false) }
     val page = pages.lastOrNull()
 
     fun open(next: Page) {
@@ -216,7 +218,11 @@ private fun SkyMapScreen(
             // The startup screens and the pages cover the map, and its own dialogs wait for them
             // (on Android the pages are separate destinations, where the map isn't composed).
             val covered =
-                current == null || current.needsEula || current.needsWarmWelcome || page != null
+                current == null ||
+                    current.needsEula ||
+                    current.needsWarmWelcome ||
+                    page != null ||
+                    showWidgetsExplainer
             MapScreen(
                 snackbarHostState,
                 mapViewModel,
@@ -233,6 +239,7 @@ private fun SkyMapScreen(
                 onOpenHelp = { open(Page.HELP) },
                 onOpenWhatsNew = { open(Page.WHATS_NEW) },
                 onOpenSupport = { open(Page.SUPPORT) },
+                onOpenWidgets = { showWidgetsExplainer = true },
                 onOpenTonight = tonightViewModel::open,
                 onOpenCalibration = { userInitiated ->
                     open(if (userInitiated) Page.CALIBRATION else Page.CALIBRATION_PROMPT)
@@ -248,6 +255,9 @@ private fun SkyMapScreen(
                 mapApiKey = GEOAPIFY_MAPS_API_KEY.takeUnless { it == "unset" || it.isEmpty() },
             ) { onTap, onDoubleTap ->
                 MetalSky(map, onTap, onDoubleTap)
+            }
+            if (showWidgetsExplainer) {
+                WidgetsExplainerSheet(onDismiss = { showWidgetsExplainer = false })
             }
             // Waits behind the terms, the tour and the pages, as the info card does.
             if (!covered) {
