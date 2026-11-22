@@ -14,6 +14,9 @@ import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.opengl.GLSurfaceView
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.SnackbarHostState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
@@ -24,6 +27,8 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.saveable.Saver
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavHostController
@@ -111,6 +116,7 @@ private val ExpandedGalleryImageSaver =
 fun SkyMapNavHost(
     navController: NavHostController,
     startOnWelcome: Boolean,
+    welcomeVisible: Boolean = true,
     glSurfaceView: GLSurfaceView,
     mapViewModel: MapViewModel,
     layersViewModel: LayersViewModel,
@@ -201,6 +207,11 @@ fun SkyMapNavHost(
                         popUpTo(Routes.WELCOME) { inclusive = true }
                     }
                 }
+            }
+            // Not composed while an overlay covers it: its first-run events fire on composition.
+            if (!welcomeVisible) {
+                Box(Modifier.fillMaxSize().background(Color.Black))
+                return@composable
             }
             WelcomeScreen(
                 hasCompass = sensorPresence.hasCompass,

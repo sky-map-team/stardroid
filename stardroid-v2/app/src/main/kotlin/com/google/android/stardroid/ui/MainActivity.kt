@@ -653,11 +653,18 @@ class MainActivity : ComponentActivity() {
                 val gates = startup ?: return@SkyMapTheme
                 // The start destination is decided once; the gates keep flowing after.
                 val startOnWelcome = remember { gates.needsWarmWelcome }
+                // The EULA and What's New are overlays on top of the nav host, so the tour can
+                // be composed underneath them; it only counts as started once it can be seen.
+                val whatsNewShowing =
+                    gates.needsWhatsNew &&
+                        (!gates.needsWarmWelcome || gates.needsWhatsNewDuringWarmWelcome)
+                val welcomeVisible = !gates.needsEula && !whatsNewShowing
                 val sensorPresence = remember { sensorPresence() }
                 val navController = rememberNavController()
                 SkyMapNavHost(
                     navController = navController,
                     startOnWelcome = startOnWelcome,
+                    welcomeVisible = welcomeVisible,
                     glSurfaceView = glSurfaceView,
                     mapViewModel = mapViewModel,
                     layersViewModel = layersViewModel,
@@ -715,20 +722,18 @@ class MainActivity : ComponentActivity() {
                 // as an overlay ahead of the still-pending tour underneath
                 // (needsWhatsNewDuringWarmWelcome).
                 if (gates.needsEula) {
-                    val declineEula = {
-                        startupViewModel.rejectEula()
-                        finish()
-                    }
-                    // BACK declines, as v1 routed cancel to reject.
-                    BackHandler(onBack = declineEula)
+                    // BACK still exits (as v1 routed cancel to reject) but only the Decline
+                    // button logs a rejection; a back gesture isn't a decision about the terms.
+                    BackHandler(onBack = ::finish)
                     EulaScreen(
                         nightMode = nightMode,
                         onAccept = startupViewModel::acceptEula,
-                        onDecline = declineEula,
+                        onDecline = {
+                            startupViewModel.rejectEula()
+                            finish()
+                        },
                     )
-                } else if (gates.needsWhatsNew &&
-                    (!gates.needsWarmWelcome || gates.needsWhatsNewDuringWarmWelcome)
-                ) {
+                } else if (whatsNewShowing) {
                     WhatsNewDialog(
                         nightMode = nightMode,
                         onDismiss = startupViewModel::dismissWhatsNew,
