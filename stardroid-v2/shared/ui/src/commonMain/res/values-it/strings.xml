@@ -699,4 +699,16 @@ Luminosità delle linee: normale, luminosa o luminosissima, per il crepuscolo, l
     <string name="countdown_shower_peak" translation_description="Countdown-widget event name; %1$s is a meteor shower name">Picco delle %1$s</string>
     <string name="countdown_new_moon" translation_description="Countdown-widget event name for the next new moon">Luna Nuova</string>
     <string name="countdown_full_moon" translation_description="Countdown-widget event name for the next full moon">Luna Piena</string>
+    <string name="announcement_dialog_dismiss" translation_description="Button that closes an announcement dialog and hides that message everywhere">Ignora</string>
+    <string name="announcement_dialog_open" translation_description="Button on an announcement dialog that jumps to the sky object the message is about">Dai un\'occhiata</string>
+    <string name="announcement_dialog_continue" translation_description="Button on an announcement dialog that closes it and continues to the sky map">Continua</string>
+    <string name="north_pole">PN</string>
+    <string name="south_pole">PS</string>
+    <string name="zenith">ZENIT</string>
+    <!-- tm:omitted name="nadir" reason="identical_to_source" -->
+    <string name="north">NORD</string>
+    <string name="south">SUD</string>
+    <string name="east">EST</string>
+    <string name="west">OVEST</string>
+    <string name="ecliptic">Eclittica</string>
 </resources>

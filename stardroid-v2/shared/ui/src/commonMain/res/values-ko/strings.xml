@@ -621,4 +621,16 @@
     <string name="countdown_shower_peak" translation_description="Countdown-widget event name; %1$s is a meteor shower name">%1$s 극대기</string>
     <string name="countdown_new_moon" translation_description="Countdown-widget event name for the next new moon">신월</string>
     <string name="countdown_full_moon" translation_description="Countdown-widget event name for the next full moon">보름달</string>
+    <string name="announcement_dialog_dismiss" translation_description="Button that closes an announcement dialog and hides that message everywhere">닫기</string>
+    <string name="announcement_dialog_open" translation_description="Button on an announcement dialog that jumps to the sky object the message is about">살펴보기</string>
+    <string name="announcement_dialog_continue" translation_description="Button on an announcement dialog that closes it and continues to the sky map">계속</string>
+    <string name="north_pole">북극</string>
+    <string name="south_pole">남극</string>
+    <string name="zenith">천정</string>
+    <string name="nadir" translation_description="Label for the nadir point (directly below) shown on the sky map. Displayed in capitals.">천저</string>
+    <string name="north">북쪽</string>
+    <string name="south">남쪽</string>
+    <string name="east">동쪽</string>
+    <string name="west">서쪽</string>
+    <string name="ecliptic">단주기 혜성</string>
 </resources>

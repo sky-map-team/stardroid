@@ -4,15 +4,6 @@
     <!-- Launch splash banner. -->
 
     <!-- Sky-map labels drawn by the computed layers (LayerStrings). -->
-    <string name="north_pole">북극</string>
-    <string name="south_pole">남극</string>
-    <string name="zenith">천정</string>
-    <string name="nadir" translation_description="Label for the nadir point (directly below) shown on the sky map. Displayed in capitals.">천저</string>
-    <string name="north">북쪽</string>
-    <string name="south">남쪽</string>
-    <string name="east">동쪽</string>
-    <string name="west">서쪽</string>
-    <string name="ecliptic">단주기 혜성</string>
 
     <!-- Solar-system body names, drawn as labels next to each body. -->
 
@@ -106,9 +97,6 @@
     <!-- Sky-event notifications (D77). -->
     <string name="channel_announcements_name" translation_description="Notification channel name for occasional messages from the Sky Map team">Sky Map 메시지</string>
     <string name="channel_announcements_description" translation_description="Notification channel description for occasional messages from the Sky Map team">주요 천체 관측 이벤트에 대한 특별 안내</string>
-    <string name="announcement_dialog_dismiss" translation_description="Button that closes an announcement dialog and hides that message everywhere">닫기</string>
-    <string name="announcement_dialog_open" translation_description="Button on an announcement dialog that jumps to the sky object the message is about">살펴보기</string>
-    <string name="announcement_dialog_continue" translation_description="Button on an announcement dialog that closes it and continues to the sky map">계속</string>
     <string name="channel_showers_name" translation_description="Name of the meteor-shower notification channel, shown in the system\'s notification settings">유성우 극대기</string>
     <string name="channel_showers_description" translation_description="Description of the meteor-shower notification channel in the system\'s notification settings">매년 약 12회, 극대기 저녁에 알림</string>
     <string name="channel_digest_name" translation_description="Name of the tonight-digest notification channel, shown in the system\'s notification settings">오늘 밤 하늘 요약</string>

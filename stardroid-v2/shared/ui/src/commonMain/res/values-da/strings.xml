@@ -689,4 +689,16 @@ Linjelysstyrke: normal, lys eller kraftigste, til skumring, dagslys eller lysfor
     <string name="countdown_shower_peak" translation_description="Countdown-widget event name; %1$s is a meteor shower name">%1$s-top</string>
     <string name="countdown_new_moon" translation_description="Countdown-widget event name for the next new moon">Nymåne</string>
     <string name="countdown_full_moon" translation_description="Countdown-widget event name for the next full moon">Fuldmåne</string>
+    <string name="announcement_dialog_dismiss" translation_description="Button that closes an announcement dialog and hides that message everywhere">Luk</string>
+    <string name="announcement_dialog_open" translation_description="Button on an announcement dialog that jumps to the sky object the message is about">Tag et kig</string>
+    <string name="announcement_dialog_continue" translation_description="Button on an announcement dialog that closes it and continues to the sky map">Fortsæt</string>
+    <!-- tm:omitted name="north_pole" reason="identical_to_source" -->
+    <!-- tm:omitted name="south_pole" reason="identical_to_source" -->
+    <string name="zenith">ZENIT</string>
+    <!-- tm:omitted name="nadir" reason="identical_to_source" -->
+    <string name="north">NORD</string>
+    <string name="south">SYD</string>
+    <string name="east">ØST</string>
+    <string name="west">VEST</string>
+    <string name="ecliptic">Ekliptika</string>
 </resources>

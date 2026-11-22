@@ -609,4 +609,16 @@
     <string name="countdown_shower_peak" translation_description="Countdown-widget event name; %1$s is a meteor shower name">%1$s 極大期</string>
     <string name="countdown_new_moon" translation_description="Countdown-widget event name for the next new moon">新月</string>
     <string name="countdown_full_moon" translation_description="Countdown-widget event name for the next full moon">滿月</string>
+    <string name="announcement_dialog_dismiss" translation_description="Button that closes an announcement dialog and hides that message everywhere">關閉</string>
+    <string name="announcement_dialog_open" translation_description="Button on an announcement dialog that jumps to the sky object the message is about">瞧一瞧</string>
+    <string name="announcement_dialog_continue" translation_description="Button on an announcement dialog that closes it and continues to the sky map">繼續</string>
+    <string name="north_pole">北極</string>
+    <string name="south_pole">南極</string>
+    <string name="zenith">天頂</string>
+    <string name="nadir">天底</string>
+    <string name="north">北</string>
+    <string name="south">南</string>
+    <string name="east">東</string>
+    <string name="west">西</string>
+    <string name="ecliptic">黃道</string>
 </resources>

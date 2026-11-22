@@ -10,8 +10,8 @@
 package com.google.android.stardroid.announcements
 
 /**
- * Where announcements come from. The gms flavor reads Firebase Remote Config; the fdroid flavor
- * has no remote source at all ([None]), so the feature is simply inert there.
+ * Where announcements come from. Android's gms flavor and iOS read Firebase Remote Config; the
+ * fdroid flavor has no remote source at all ([None]), so the feature is simply inert there.
  */
 interface AnnouncementSource {
     /** Fetch and activate the latest payload. Throttled by the backend; safe to call often. */
@@ -19,6 +19,11 @@ interface AnnouncementSource {
 
     /** The currently activated messages, parsed. Cheap and synchronous — reads the cache. */
     fun current(): List<Announcement>
+
+    companion object {
+        /** The Remote Config parameter, one for both platforms. */
+        const val KEY = "announcements"
+    }
 
     object None : AnnouncementSource {
         override suspend fun refresh() = Unit

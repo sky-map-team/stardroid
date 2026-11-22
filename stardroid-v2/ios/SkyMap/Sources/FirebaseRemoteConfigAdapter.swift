@@ -65,6 +65,12 @@ final class FirebaseRemoteConfigAdapter: NSObject, SkyMapKit.FlagSource {
         return KotlinBoolean(bool: value.boolValue)
     }
 
+    func serverText(key: String) -> String? {
+        guard let remoteConfig else { return nil }
+        let value = remoteConfig.configValue(forKey: key)
+        return value.source == .remote ? value.stringValue : nil
+    }
+
     var lastFetchTimeMillis: KotlinLong? {
         guard let remoteConfig,
             remoteConfig.lastFetchStatus != .noFetchYet,
@@ -84,7 +90,7 @@ final class FirebaseRemoteConfigAdapter: NSObject, SkyMapKit.FlagSource {
                 onDone(KotlinBoolean(bool: false), error?.localizedDescription ?? "Fetch failed")
                 return
             }
-            // Activated now, but the app read its flags at launch, so they apply from the next.
+            // Activated now: announcements read it at once, the frozen flags from the next launch.
             remoteConfig.activate { changed, error in
                 onDone(KotlinBoolean(bool: changed), error?.localizedDescription)
             }

@@ -26,8 +26,7 @@ One bottom sheet in `:shared:ui`, used by both apps, titled **Tonight**:
 
 1. **Header**: the date, the sunset time and when it gets dark, as on the widget.
 2. **Announcements**: any active message from the Sky Map team, shown in full (title and
-   body), with its search action as a button where it has one. Only where announcements exist
-   (Android today; §5).
+   body), with its search action as a button where it has one (§5).
 3. **Highlights**: every highlight `tonightSky` ranks, in full. Each row has the dot, the sentence
    wrapped over as many lines as it needs, and the trailing note on its own line. Tapping a row
    opens its object's card (`targetObjectId`), the same as a widget row.
@@ -72,8 +71,8 @@ notification they dismissed.
   with the catalog's showers. Satellite passes come from a function each app supplies, because the
   layer and flag gates differ: Android's `tonightSatellitePasses`, iOS's `passesWithin` over its
   repository with the layer check. Announcements come from a second supplied function. It returns
-  a small common type, `TonightNotice(title, body, searchQuery)`, because `Announcement` and its
-  policy live in `:app`. On iOS it returns an empty list.
+  a small common type, `TonightNotice(title, body, searchQuery)`, so the sheet needn't know
+  about announcements; both apps fill it with the shared `tonightNotices`.
 - **Wording**: `NotificationText` over a `TextSource` read from Compose resources by
   `TextId.resourceName`. That is today's `loadIosTextSource`, which moves to `:shared:ui`'s common
   code and serves both apps: every `TextId` string is already in `:shared:ui`'s resources.
@@ -103,8 +102,8 @@ A message aimed only at the dialog is still news the user may want to find again
 that no message can be kept out of the sheet. If one ever needs to be, `sheet` becomes a payload
 value then.
 
-iOS has no announcements yet (no background fetch without push, ios-vs-android.md). The sheet's
-section is simply empty there, and showing it needs no layout change.
+On iOS the sheet and the launch dialog are the only surfaces, and messages are as fresh as the
+last open's fetch ([remote-announcements.md](remote-announcements.md#ios)).
 
 ## 6. Decisions (confirmed in review)
 

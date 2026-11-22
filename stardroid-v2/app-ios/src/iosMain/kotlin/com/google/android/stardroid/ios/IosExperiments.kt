@@ -21,7 +21,7 @@ private val IosDefaults: ExperimentConfig =
 // The flags the server may change on iOS: those with an iOS surface to switch. Add a flag here
 // with the feature that gives it one.
 private val ServerControlled: Set<Experiment> =
-    setOf(Experiment.SATELLITES, Experiment.NOTIFICATIONS)
+    setOf(Experiment.SATELLITES, Experiment.NOTIFICATIONS, Experiment.ANNOUNCEMENTS)
 
 internal fun iosExperiments(source: FlagSource): ExperimentConfig =
     FlagSourceExperimentConfig(source, IosDefaults, ServerControlled)
@@ -31,6 +31,8 @@ internal object NoFlagSource : FlagSource {
     override val canFetch: Boolean = false
 
     override fun serverValue(key: String): Boolean? = null
+
+    override fun serverText(key: String): String? = null
 
     override val lastFetchTimeMillis: Long? = null
 
