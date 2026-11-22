@@ -539,6 +539,7 @@ readings to Sky Map.</blockquote>
     <string name="no_sensor_warning_dismiss" translation_description="Button that dismisses the missing-sensors warning dialog.">OK</string>
     <string name="hud_alignment_reset_message" translation_description="Snackbar confirming the sensor-alignment correction was cleared; shown with an Undo action.">Alignment correction reset</string>
     <string name="ar_auto_mode_snackbar" translation_description="Snackbar shown when turning on through-camera mode switched the map from manual dragging back to automatic sensor pointing.">Auto mode turned on for the camera view</string>
+    <string name="ar_stopped_hot_message" translation_description="Snackbar shown when through-camera mode turned itself off because the phone became too hot.">Through-camera mode turned off to let your phone cool down</string>
     <string name="ar_permission_denied" translation_description="Snackbar shown when the user declined the camera permission that through-camera mode needs.">Through-camera mode needs the camera permission</string>
     <string name="ar_permission_settings_action" translation_description="Snackbar action opening the app\'s system settings page so the user can grant the camera permission after permanently denying it.">Settings</string>
     <string name="ar_alignment_adjusted_message" translation_description="Snackbar shown after the user drags the star map to align it with the camera image; shown with an Undo action that reverts the whole drag.">Map alignment adjusted</string>

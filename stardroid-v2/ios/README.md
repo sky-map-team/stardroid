@@ -35,6 +35,19 @@ device build with `-allowProvisioningUpdates`.
 `MapGestureTests` (the scheme's `test`) drags, flings and pinches the map, capturing the sky
 after each as attachments (`xcrun xcresulttool export attachments --path <result bundle>`).
 
+### Through-camera mode and sharing
+
+Both are behind `CAMERA_AR` and `SHARE_SKY`, off by default. A simulator build has a stand-in
+camera and compass, and takes the flags from the environment (device builds have none of this):
+
+```bash
+SIMCTL_CHILD_SKYMAP_EXPERIMENTS=camera_ar_enabled,share_sky_enabled \
+  xcrun simctl launch booted io.penterakt.skymap.dev
+```
+
+`ArModeTests` drives both. To try them on an iPhone, the flags come from Remote Config: use a
+condition limited to the `io.penterakt.skymap.dev` app.
+
 ### Analytics
 
 Usage analytics is Firebase (GA4, the same property as Android), behind the shared `Analytics`

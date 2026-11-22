@@ -20,8 +20,8 @@ here may reach your phone a little after the update that carries it.
 | Notifications (meteor showers, tonight's sky, satellite passes, eclipses) | Yes | Yes |
 | Home Screen widgets | Moon, Tonight, Countdown | Moon, Tonight, Countdown |
 | Lock Screen widgets | Moon, Tonight | No |
-| Through-the-camera (AR) mode | Not yet | In testing, not yet released |
-| Share a picture of the sky | Not yet | In testing, not yet released |
+| Through-the-camera (AR) mode | Built, not yet released | In testing, not yet released |
+| Share a picture of the sky | Built, not yet released | In testing, not yet released |
 | News and announcements from the Sky Map team | Not yet | Yes |
 | Compass and grid labels in your language | English only for now | Yes |
 | Build without Google services | No | Yes, on F-Droid |
@@ -96,11 +96,22 @@ for an app you don't use daily that can be rarely. So the iPhone app also fetche
 it if its data is more than about three days old. Pass times are hidden once the data is too old
 to be precise, on both platforms.
 
+## Through the camera, and sharing the sky
+
+**AR mode** (the sky drawn over the camera view) and **sharing a picture of the sky** are built on
+both platforms. They are switched off on both for now, and the plan is to switch them on for both
+at once. They work the same way, with these differences:
+
+- **Zoom.** The iPhone's zoom reaches the ultra-wide lens on phones that have one, and the map's
+  zoom follows each lens.
+- **Night photos.** Android phones that offer their maker's night mode to apps can use it for
+  the shared photo. iOS doesn't offer Night mode to apps, so the iPhone takes an ordinary photo.
+- **Saving.** Android saves the picture you share to Pictures/Sky Map. The iPhone saves it only
+  if you choose Save Image, and the first time iOS asks if Sky Map may add to your photos.
+- **Heat.** An iPhone that gets too hot turns AR mode off and says so.
+
 ## Features that reached Android first
 
-- **AR mode** (the sky drawn over the camera view) and **sharing a picture of the sky** are built
-  on Android and being tested there. They aren't public on either platform yet, and the plan is
-  to release them on both at once.
 - **News and announcements** (an aurora alert, a bright planet tonight) need the app to check for
   messages while it's closed. iOS doesn't reliably allow that without push notifications, so
   they're iPhone-only later.

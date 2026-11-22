@@ -90,7 +90,7 @@ fun arLenses(
     }
 }
 
-internal fun fullAngleDeg(halfTan: Double): Double = 2.0 * atan(halfTan) * RADIANS_TO_DEGREES
+fun fullAngleDeg(halfTan: Double): Double = 2.0 * atan(halfTan) * RADIANS_TO_DEGREES
 
 // The preview fills the view and crops the overflow, centred, on both platforms.
 private fun visibleShortHalfTan(

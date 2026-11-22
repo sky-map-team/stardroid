@@ -2,7 +2,8 @@
 
 **Status: ALL SLICES IMPLEMENTED (D67–D71)** — all open questions from the exploration
 round were resolved on 2026-07-26 (see Decisions at the end; recorded as D64 in
-`decisions.md`); slice 1 (the camera underlay, plus D69's dev exposure controls), slice 2
+`decisions.md`). This doc describes Android; the iOS port of the same feature is built behind the
+same flags ([camera-ar-launch.md](camera-ar-launch.md) §4). Slice 1 (the camera underlay, plus D69's dev exposure controls), slice 2
 (drag-to-align), slice 3 (map-only Share), and slice 4 (the camera share layouts) are
 implemented. This expands the two stubs already reserved in `ux-polish.md`: the
 "through-camera / AR mode" Display toggle (Layers sheet) and the "Share" action (overflow

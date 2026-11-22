@@ -21,10 +21,16 @@ private val IosDefaults: ExperimentConfig =
 // The flags the server may change on iOS: those with an iOS surface to switch. Add a flag here
 // with the feature that gives it one.
 private val ServerControlled: Set<Experiment> =
-    setOf(Experiment.SATELLITES, Experiment.NOTIFICATIONS)
+    setOf(
+        Experiment.SATELLITES,
+        Experiment.NOTIFICATIONS,
+        // Off by default: one server change launches both apps (camera-ar-launch.md §5).
+        Experiment.CAMERA_AR,
+        Experiment.SHARE_SKY,
+    )
 
 internal fun iosExperiments(source: FlagSource): ExperimentConfig =
-    FlagSourceExperimentConfig(source, IosDefaults, ServerControlled)
+    FlagSourceExperimentConfig(flagSourceForTarget(source), IosDefaults, ServerControlled)
 
 /** No server: the shipped defaults, for a build without a Firebase configuration. */
 internal object NoFlagSource : FlagSource {

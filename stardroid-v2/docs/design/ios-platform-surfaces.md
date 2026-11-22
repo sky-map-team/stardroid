@@ -82,8 +82,9 @@ is the Swift side. Three choices beyond the design above:
   stored values.
 - **A server-controlled allow-list.** Only flags with an iOS surface (`ServerControlled` in
   `IosExperiments.kt`) listen to the server. The key names are shared with Android, so
-  Android turning on camera AR or notifications must not turn them on here. Add a flag to the list
-  in the change that gives it an iOS surface.
+  Android turning on a feature must not turn it on where it hasn't been built. Add a flag to
+  the list in the change that gives it an iOS surface. Camera AR and share are on it since their
+  iOS port, still defaulting to off ([camera-ar-launch.md](camera-ar-launch.md) §5).
 - **Satellites use their own key.** Satellites read `satellites_v2_enabled`, default false.
   `satellites_enabled` belongs to 2.3.0-2.3.2 and stays false in Remote Config for good (#1296).
 

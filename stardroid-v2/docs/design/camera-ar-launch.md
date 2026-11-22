@@ -1,10 +1,14 @@
 # Detailed Design: Launching Through-Camera (AR) Mode on Android and iOS
 
-**Status: PROPOSED.** Nothing here is built. Decision numbers are unassigned.
+**Status: PARTLY BUILT, not launched.** Slices 2, 3, 4 and 6 (the shared camera math, the iOS
+layering, the iOS camera edge, and share on both) are built, and `CAMERA_AR` and `SHARE_SKY` are
+still off on both platforms. The iOS side has run only on the simulator with a stand-in camera: no
+real iPhone camera has been through it (§4.7). Slices 1, 5, 7 and 8 remain. Decision numbers are
+unassigned.
 
 [camera-ar-mode.md](camera-ar-mode.md) designed AR mode, drag-to-align and share, and all four
 slices are built on Android behind `CAMERA_AR` and `SHARE_SKY`, both off. This doc covers what
-stands between that and a public launch **on Android and iOS together**: the iOS port, the
+stood between that and a public launch **on Android and iOS together**: the iOS port, the
 Android loose ends, and how the two releases are coordinated. Anything not restated here is
 unchanged from the original design.
 
@@ -13,15 +17,14 @@ unchanged from the original design.
 | Piece | Android | iOS |
 |---|---|---|
 | Transparent map, camera scrim | Built (GLES1 and GLES3) | **Built** in `MetalSkyRenderer` (`transparentBackground`, `cameraScrim`) |
-| AR state, controls, alignment logic | Shared: `ArState`, `ArControls`, `MapViewModel`, `MapScreen` hooks (`hasArCamera`, `hasCameraPermission`, `onRequestCameraPermission`, `onShareSky`) | Shared, but no host supplies a camera, so the toggle never shows |
-| Camera edge | `SkyCameraPreview` (CameraX): preview, zoom, exposure, still | **None** |
-| Camera FOV | `cameraShortSideFovDeg`, from sensor geometry | **None** |
-| Share | `SkyShare` (PixelCopy, Canvas, `FileProvider`) and `ShareLayoutSheet`, both in `app/` | **None** |
+| AR state, controls, alignment logic | Shared: `ArState`, `ArControls`, `MapViewModel`, `MapScreen` hooks (`hasArCamera`, `hasCameraPermission`, `onRequestCameraPermission`, `onShareSky`) | Shared; `IosArMode` supplies the camera |
+| Camera edge | `SkyCameraPreview` (CameraX): preview, zoom, exposure, still | **Built**: `AvArCamera` (AVFoundation); untested on a device |
+| Camera FOV | `cameraShortSideFovDeg`, from sensor geometry | **Built**: per lens, from the format's FOV; not measured |
+| Share | `SkyShare` (PixelCopy, `FileProvider`) over the shared `ShareCompositor` and `ShareLayoutSheet` | **Built**: `SkySharing` over the same two |
 | Drag-to-align | Built; keys `sensorAzimuthAdjustmentDeg`, `sensorAltitudeAdjustmentDeg` | Works once a camera exists; the keys are shared |
-| Flags | `CAMERA_AR`, `SHARE_SKY` default false | No Remote Config yet ([ios-platform-surfaces.md](ios-platform-surfaces.md) §3) |
+| Flags | `CAMERA_AR`, `SHARE_SKY` default false | Default false, and server-controlled ([ios-platform-surfaces.md](ios-platform-surfaces.md) §3) |
 
-So the iOS work is one platform edge (the camera), one share path, and the flag plumbing. The
-rendering and the interaction are done.
+The iOS work was one platform edge (the camera), one share path, and the flag plumbing.
 
 ## 2. Principles
 
@@ -93,8 +96,9 @@ bottom to top: **camera, Metal map, Compose chrome**.
   clears to alpha 0 and draws the scrim.
 - The preview layer is composited by the system with no copy, the iOS equivalent of Android's
   stacked-surface "Option A", so the original compositing decision carries over unchanged.
-- Spike this first: Compose chrome over a transparent Metal view over a camera layer is the
-  one assumption in the port the codebase has not yet tested.
+- Spike this first: Compose chrome over a transparent Metal view over a camera layer was the
+  one assumption in the port the codebase had not tested. **It holds** on the iOS 26.3 simulator,
+  with the stand-in preview view where the preview layer goes.
 
 ### 4.2 The camera edge
 
@@ -103,6 +107,9 @@ An `ArCamera` interface in `shared/viewmodels` mirrors what `SkyCameraPreview` o
 class implements it with CameraX, iOS's with AVFoundation, in Kotlin/Native in `iosMain` as the
 Core Motion and Metal code already is. (Fall back to Swift only if an API is not reachable.)
 
+- **Zoom ratio, as built.** The app's ratio counts from the main wide lens, as CameraX's does,
+  so AR opens on that lens (the sensitive one, at night) and pinches out to 0.5× for the
+  ultra-wide. `videoZoomFactor` is the ratio times the wide lens's switch-over factor.
 - **Lens: the virtual multi-lens device, as on Android.** Use the dual-wide or triple camera
   where the phone has one (the iPhone 13 test device has the dual-wide) and the single wide
   camera otherwise. Zoom is `videoZoomFactor`, where 1.0 is the ultra-wide, and the system
@@ -117,7 +124,7 @@ Core Motion and Metal code already is. (Fall back to Swift only if an API is not
   through the existing `onRequestCameraPermission` hook. A denial gets the same snackbar as
   location, with a link to Settings. Add `NSCameraUsageDescription` to `Info.plist`, written
   for the benefit ("shows the real sky behind the map; nothing is recorded"), and localised
-  with the other permission strings.
+  with the other permission strings (as built it is English, as theirs still are).
 - **Lifecycle.** Stop the session when the app backgrounds or the layer turns off, and restart
   on return only if the layer was on. Follow `ProcessInfo.thermalState`: at `.serious`, stop
   AR with a snackbar explaining why.
@@ -134,6 +141,8 @@ the format's aspect ratio and the crop, then `2·atan` of the visible short half
 
 - Extract the crop-and-angle step into common code with two entry points (sensor geometry for
   Android, horizontal FOV for iOS), so one set of unit tests covers both.
+- An ultra-wide corrects its distortion by default, which narrows the view, so the FOV read is
+  `geometricDistortionCorrectedVideoFieldOfView` while that correction is on.
 - `videoFieldOfView` is reported per format and is not always exact. Measure it on the iPhone 13
   by aligning on the Moon or a known star pair, and record the error beside Android's (§3.5).
 - **With lens switching, the FOV is computed per lens.** Take each constituent lens's own FOV
@@ -171,8 +180,12 @@ The share path splits into shared geometry and platform capture.
 - **Footer:** the same brand strip and `getskymap.app` link as Android (D110). The brand icon is
   already classified in `ASSET-LICENSES.txt`; check the iOS bundle uses the same file.
 - **Metadata:** re-encode from the pixel data so the file carries no EXIF and no location.
-- **Photos permission:** none needed. The share sheet's Save Image action is handled by the
-  system.
+- **Photos permission: add-only, asked by the system at Save Image.** (Corrected when built: this
+  said none was needed. Without `NSPhotoLibraryAddUsageDescription` the share sheet leaves Save
+  Image out altogether.) The app never reads Photos, and the permissions notice names it.
+- **Dimming, as built.** The renderers blend alpha with the colour's factors, so a scrim of
+  opacity `s` dims the camera on screen by `s²`. iOS captures the map without the scrim and gives
+  the compositor `s²`, so the picture matches the screen. Android keeps its old behaviour (§4.7).
 - The shutter sound on a still photo is legally required in some regions, so do not try to
   silence it.
 
@@ -182,12 +195,44 @@ The simulator has no camera. Provide a `FakeArCamera` that supplies a static nig
 fixed specs, so the layering, scrim, zoom lock and share can be driven in the simulator and in
 UI tests. Real-camera checks happen on the iPhone 13 only.
 
+As built, the fake paints its scene instead of shipping an image, and lives with two other
+stand-ins in `app-ios/src/simulatorMain`, which device builds don't compile: a held-still compass,
+and the `SKYMAP_EXPERIMENTS` environment variable that turns flags on. `ios/README.md` has the
+commands; `ArModeTests` drives it.
+
+### 4.7 Open after the port
+
+To check on an iPhone, none of which a simulator can show:
+
+- the preview, its rotation in both landscapes, and that the still's crop matches it;
+- the FOV of each lens and the jump at the switch (§4.3), including when low light makes the
+  system fall back to another lens;
+- exposure, low-light boost, focus on stars, and the permission prompt with a denial;
+- heat, battery, and an interruption (a call, another app taking the camera);
+- an iPad, whose windows can sit crossways to the interface.
+
+Found in shared or Android code during the port, and left as they are:
+
+- **Android's zoom lock divides the angle** (`fov / zoom`), where zoom divides its tangent. From
+  a 50° lens that is 25° at 2× where the lens shows 26.2°.
+- **Android's shared overlay is darker than the screen**: the captured map already holds the
+  scrim and the still is dimmed again.
+- **The dimmer is weaker than its number** on every backend, because of `s²` above: night mode's
+  65% ceiling dims the camera by about 42%.
+
 ## 5. Coordinating the release
 
 Both stores' builds ship with AR **dark**, then one Remote Config change turns it on for both.
 
 1. **Prerequisite:** the iOS Remote Config adapter (ios-platform-surfaces.md §3), shipped in
    iOS 2.0.1 or earlier. Without it iOS cannot be switched on remotely.
+   - **Before any iOS build with this code goes out** (TestFlight included), look at
+     `camera_ar_enabled` and `share_sky_enabled` in the Remote Config console. iOS now obeys
+     both, so a `true` left there for Android testing, by default or through a condition that
+     matches iOS, would turn AR on for those users at once. Scope any such value to Android
+     first. Older iOS builds ignore both keys.
+   - The iOS permissions notice gained Camera and Photos. It must be translated before that
+     build ships (Korean above all: it is a legal notice).
 2. **Android:** the build with the §3 changes ships dark. `CAMERA_AR` and `SHARE_SKY` stay false.
 3. **iOS:** the AR build goes to App Review.
    - Apple guideline 2.3.1 forbids hidden or dormant features. **Turn the flags on for the
@@ -207,11 +252,11 @@ Both stores' builds ship with AR **dark**, then one Remote Config change turns i
 | # | Slice | Platform | Notes |
 |---|---|---|---|
 | 1 | Remove manual-exposure dev controls; AR analytics; privacy text | Android (shared UI) | Unblocks iOS inheriting clean state |
-| 2 | `ArCamera` interface and common FOV math | Shared | Android implements it with no behaviour change |
-| 3 | Layering spike: Compose over transparent Metal over `AVCaptureVideoPreviewLayer` | iOS | Highest risk; do first |
-| 4 | iOS camera edge: permission, lifecycle, zoom lock, exposure | iOS | Needs a device |
+| 2 | `ArCamera` interface and common FOV math | Shared | **Built.** Android implements it with no behaviour change |
+| 3 | Layering spike: Compose over transparent Metal over `AVCaptureVideoPreviewLayer` | iOS | **Done** on the simulator; confirm with the real layer |
+| 4 | iOS camera edge: permission, lifecycle, zoom lock, exposure | iOS | **Built**; needs a device (§4.7) |
 | 5 | Device FOV measurement and sign-off | Both | §3.5, §4.3 |
-| 6 | Share: common geometry, layout sheet and compositor, then iOS capture and send | Shared, iOS | |
+| 6 | Share: common geometry, layout sheet and compositor, then iOS capture and send | Shared, iOS | **Built** |
 | 7 | Copy, translations, listings, privacy forms | Both | `tm translate` is the maintainer's call |
 | 8 | Launch day and flag removal | Both | §5 |
 
@@ -230,6 +275,11 @@ Slice 1 and 2 are Android-side refactors with no visible change and should merge
 | The two platforms' share images differ | Inconsistent brand | One compositor |
 
 ## 8. Privacy checklist
+
+The iOS port already made the camera part of this change, since it requests new permissions: the
+policy and `permissions_notice_ios` are updated. `TERMS.md` §3 (no data reaches us) and
+`PrivacyInfo.xcprivacy` (nothing collected, no new required-reason API) needed no change. The
+store forms still get their check at launch.
 
 Per `AGENTS.md`, in the launch change update `PRIVACY_POLICY.md`, `eula.xml`/`TERMS.md` section
 3, the iOS `PrivacyInfo.xcprivacy` (confirm no new required-reason API is used), the App Store
