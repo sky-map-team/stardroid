@@ -35,6 +35,7 @@ import androidx.compose.ui.viewinterop.UIKitInteropProperties
 import androidx.compose.ui.viewinterop.UIKitViewController
 import androidx.compose.ui.window.ComposeUIViewController
 import com.google.android.stardroid.analytics.Analytics
+import com.google.android.stardroid.announcements.AnnouncementAction
 import com.google.android.stardroid.catalog.CelestialObjectId
 import com.google.android.stardroid.catalog.ObjectInfo
 import com.google.android.stardroid.catalog.SearchHit
@@ -68,6 +69,8 @@ import com.google.android.stardroid.ui.resources.support_share_message
 import com.google.android.stardroid.ui.search.SearchViewModel
 import com.google.android.stardroid.ui.settings.SettingsScreen
 import com.google.android.stardroid.ui.settings.SettingsViewModel
+import com.google.android.stardroid.ui.startup.AnnouncementDialog
+import com.google.android.stardroid.ui.startup.AnnouncementViewModel
 import com.google.android.stardroid.ui.startup.EulaScreen
 import com.google.android.stardroid.ui.startup.StartupViewModel
 import com.google.android.stardroid.ui.startup.VersionBanner
@@ -126,6 +129,7 @@ fun skyMapViewController(
             calibration,
             tonight,
             startup,
+            graph.announcementViewModel,
             onRequestAutoLocation = graph::requestAutoLocation,
             onOpenAppSettings = graph::openAppSettings,
             motionHardware =
@@ -153,6 +157,7 @@ private fun SkyMapScreen(
     calibrationViewModel: CompassCalibrationViewModel,
     tonightViewModel: TonightViewModel,
     startup: StartupViewModel,
+    announcementViewModel: AnnouncementViewModel,
     onRequestAutoLocation: () -> Unit,
     onOpenAppSettings: () -> Unit,
     motionHardware: MotionHardware,
@@ -385,6 +390,27 @@ private fun SkyMapScreen(
                         )
                     }
                 }
+            }
+            // As on Android, only once every startup gate has cleared. iOS's pages and banner
+            // aren't separate destinations, so the dialog waits for those too.
+            val announceable = !covered && !showBanner && current?.needsWhatsNew == false
+            val readyOpen by announcementViewModel.readyOpen.collectAsState()
+            LaunchedEffect(announceable, readyOpen) {
+                if (announceable && readyOpen != null) announcementViewModel.loadIfNeeded()
+            }
+            val announcement by announcementViewModel.pending.collectAsState()
+            announcement?.takeIf { announceable }?.let { pending ->
+                AnnouncementDialog(
+                    announcement = pending,
+                    onOpen = {
+                        (pending.action as? AnnouncementAction.Search)?.let {
+                            searchViewModel.setQuery(it.query)
+                            searchViewModel.submit()
+                        }
+                        announcementViewModel.close()
+                    },
+                    onDismiss = announcementViewModel::dismiss,
+                )
             }
             // The branded version banner, once per launch, over everything while the app loads,
             // as on Android; the launch screen is the same navy, so the banner continues it.

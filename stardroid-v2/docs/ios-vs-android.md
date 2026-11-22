@@ -8,8 +8,9 @@ widgets, notifications, background work, and a few features that have reached An
 This page lists those differences and why they exist. Most come from what each system allows an
 app to do, not from a choice to leave something out.
 
-Some features on both platforms are switched on gradually after a release, so a feature listed
-here may reach your phone a little after the update that carries it.
+This page follows the code, so a feature can be listed shortly before the update that carries
+it. Some features on both platforms are also switched on gradually after a release, so they may
+reach your phone a little after that update.
 
 ## At a glance
 
@@ -18,11 +19,11 @@ here may reach your phone a little after the update that carries it.
 | Sky, search, time travel, info cards | Yes | Yes |
 | Satellites and pass predictions | Yes | Yes |
 | Notifications (meteor showers, tonight's sky, satellite passes, eclipses) | Yes | Yes |
-| Home Screen widgets | Moon, Tonight, Countdown (coming) | Moon, Tonight, Countdown |
-| Lock Screen widgets | Moon, Tonight (coming) | No |
+| Home Screen widgets | Moon, Tonight, Countdown | Moon, Tonight, Countdown |
+| Lock Screen widgets | Moon, Tonight | No |
 | Through-the-camera (AR) mode | Not yet | In testing, not yet released |
 | Share a picture of the sky | Not yet | In testing, not yet released |
-| News and announcements from the Sky Map team | Not yet | Yes |
+| News and announcements from the Sky Map team | When you open the app | Notification, widget and when you open the app |
 | Compass and grid labels in your language | English only for now | Yes |
 | Build without Google services | No | Yes, on F-Droid |
 | Oldest supported system | iOS 15 | Android 10 |
@@ -88,6 +89,21 @@ sky, satellite passes and eclipses. All are off until you turn them on.
 - **How far ahead.** An iPhone schedules the next few nights each time you open the app. If you
   travel far without opening it, the alerts are for where you were until you next do.
 
+## News and announcements
+
+Both apps can show an occasional message from the Sky Map team, such as an aurora alert or a
+bright planet tonight, and both let you turn them off in Settings.
+
+- **On Android** the app checks twice a day in the background, so a message can arrive as a
+  notification or in the Tonight widget, as well as when you open the app.
+- **On iPhone** the app checks when you open it (at most every 12 hours). iOS doesn't let an app
+  check reliably while it's closed without push notifications, which Sky Map doesn't use. So a
+  message appears when you open the app, never as a notification or in a widget, and you won't
+  see one that has ended before you next open it.
+
+On both, current messages can be read again from **Tonight** in the menu until they end, unless
+you dismissed them.
+
 ## Satellites
 
 Both apps fetch satellite orbits from CelesTrak, no more than every few hours. Android refreshes
@@ -101,9 +117,6 @@ to be precise, on both platforms.
 - **AR mode** (the sky drawn over the camera view) and **sharing a picture of the sky** are built
   on Android and being tested there. They aren't public on either platform yet, and the plan is
   to release them on both at once.
-- **News and announcements** (an aurora alert, a bright planet tonight) need the app to check for
-  messages while it's closed. iOS doesn't reliably allow that without push notifications, so
-  they're iPhone-only later.
 - **Compass and grid labels** (North, Zenith, Ecliptic and so on) are still in English on iPhone.
   Everything else follows your language, including object names.
 

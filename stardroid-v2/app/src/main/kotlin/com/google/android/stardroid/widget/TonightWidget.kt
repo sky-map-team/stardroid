@@ -45,6 +45,7 @@ import com.google.android.stardroid.R
 import com.google.android.stardroid.analytics.AnalyticsEvents
 import com.google.android.stardroid.announcements.AnnouncementAction
 import com.google.android.stardroid.announcements.AnnouncementPolicy
+import com.google.android.stardroid.announcements.EXTRA_ANNOUNCEMENT_SEARCH
 import com.google.android.stardroid.announcements.Surface
 import com.google.android.stardroid.announcements.appVersionCode
 import com.google.android.stardroid.events.CountdownTarget
@@ -329,7 +330,7 @@ private fun AnnouncementRow(banner: WidgetBanner) {
         if (banner.searchQuery != null) {
             actionStartActivity<MainActivity>(
                 actionParametersOf(
-                    ActionParameters.Key<String>(AnnouncementAction.EXTRA_SEARCH_QUERY) to
+                    ActionParameters.Key<String>(EXTRA_ANNOUNCEMENT_SEARCH) to
                         banner.searchQuery,
                 ),
             )

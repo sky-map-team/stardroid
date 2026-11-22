@@ -681,4 +681,7 @@ Flytt deg til et åpent område vekk fra metall og prøv igjen.]]></string>
     <string name="countdown_shower_peak" translation_description="Countdown-widget event name; %1$s is a meteor shower name">%1$s topp</string>
     <string name="countdown_new_moon" translation_description="Countdown-widget event name for the next new moon">Nymåne</string>
     <string name="countdown_full_moon" translation_description="Countdown-widget event name for the next full moon">Fullmåne</string>
+    <string name="announcement_dialog_dismiss" translation_description="Button that closes an announcement dialog and hides that message everywhere">Lukk</string>
+    <string name="announcement_dialog_open" translation_description="Button on an announcement dialog that jumps to the sky object the message is about">Ta en titt</string>
+    <string name="announcement_dialog_continue" translation_description="Button on an announcement dialog that closes it and continues to the sky map">Fortsett</string>
 </resources>

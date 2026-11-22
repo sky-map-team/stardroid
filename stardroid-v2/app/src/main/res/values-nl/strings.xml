@@ -114,9 +114,6 @@
     <!-- Sky-event notifications (D77). -->
     <string name="channel_announcements_name" translation_description="Notification channel name for occasional messages from the Sky Map team">Berichten van Sky Map</string>
     <string name="channel_announcements_description" translation_description="Notification channel description for occasional messages from the Sky Map team">Zeldzame meldingen over opmerkelijke sterrenhemelgebeurtenissen</string>
-    <string name="announcement_dialog_dismiss" translation_description="Button that closes an announcement dialog and hides that message everywhere">Sluiten</string>
-    <string name="announcement_dialog_open" translation_description="Button on an announcement dialog that jumps to the sky object the message is about">Neem een kijkje</string>
-    <string name="announcement_dialog_continue" translation_description="Button on an announcement dialog that closes it and continues to the sky map">Doorgaan</string>
     <string name="channel_showers_name" translation_description="Name of the meteor-shower notification channel, shown in the system\'s notification settings">Meteorenzwermpieken</string>
     <string name="channel_showers_description" translation_description="Description of the meteor-shower notification channel in the system\'s notification settings">Ongeveer een dozijn per jaar, op de avond van de piek</string>
     <string name="channel_digest_name" translation_description="Name of the tonight-digest notification channel, shown in the system\'s notification settings">Hemeloverzicht vanavond</string>

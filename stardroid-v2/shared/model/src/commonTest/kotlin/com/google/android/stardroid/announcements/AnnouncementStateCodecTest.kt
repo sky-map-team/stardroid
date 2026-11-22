@@ -9,22 +9,25 @@
 
 package com.google.android.stardroid.announcements
 
-import com.google.android.stardroid.announcements.DataStoreAnnouncementState.Entry
-import com.google.common.truth.Truth.assertThat
+import com.google.android.stardroid.testing.assertThat
 import kotlinx.datetime.Instant
-import org.junit.jupiter.api.Test
+import kotlin.test.Test
 
 class AnnouncementStateCodecTest {
     @Test
-    fun `round trips shown surfaces, dismissal and first-seen`() {
+    fun `round trips shown surfaces - dismissal and first-seen`() {
         val entries =
             mapOf(
                 "a" to
-                    Entry(
+                    DataStoreAnnouncementState.Entry(
                         SeenRecord(setOf(Surface.NOTIFICATION, Surface.INTERSTITIAL), false),
                         Instant.fromEpochSeconds(1_000),
                     ),
-                "b" to Entry(SeenRecord(emptySet(), true), Instant.fromEpochSeconds(2_000)),
+                "b" to
+                    DataStoreAnnouncementState.Entry(
+                        SeenRecord(emptySet(), true),
+                        Instant.fromEpochSeconds(2_000),
+                    ),
             )
         assertThat(
             DataStoreAnnouncementState.decode(DataStoreAnnouncementState.encode(entries)),

@@ -12,6 +12,10 @@ package com.google.android.stardroid.ios
 import com.google.android.stardroid.analytics.Analytics
 import com.google.android.stardroid.analytics.AnalyticsEvents
 import com.google.android.stardroid.analytics.NoOpAnalytics
+import com.google.android.stardroid.announcements.DataStoreAnnouncementState
+import com.google.android.stardroid.announcements.FlagSourceAnnouncementSource
+import com.google.android.stardroid.announcements.announcementsOn
+import com.google.android.stardroid.announcements.tonightNotices
 import com.google.android.stardroid.astronomy.MeeusEphemeris
 import com.google.android.stardroid.astronomy.PassSearch
 import com.google.android.stardroid.astronomy.SatellitePass
@@ -48,6 +52,7 @@ import com.google.android.stardroid.startup.Experiment
 import com.google.android.stardroid.startup.ExperimentConfig
 import com.google.android.stardroid.startup.FlagSource
 import com.google.android.stardroid.startup.FlagSourceExperimentConfig
+import com.google.android.stardroid.startup.SerializedFlagSource
 import com.google.android.stardroid.startup.StartupRouter
 import com.google.android.stardroid.startup.StartupState
 import com.google.android.stardroid.surfaces.NotificationText
@@ -66,6 +71,7 @@ import com.google.android.stardroid.ui.resources.satellite_search_name_iss
 import com.google.android.stardroid.ui.resources.satellite_search_name_tiangong
 import com.google.android.stardroid.ui.search.SearchViewModel
 import com.google.android.stardroid.ui.settings.SettingsViewModel
+import com.google.android.stardroid.ui.startup.AnnouncementViewModel
 import com.google.android.stardroid.ui.startup.StartupViewModel
 import com.google.android.stardroid.ui.timetravel.TimeTravelViewModel
 import com.google.android.stardroid.ui.tonight.TonightViewModel
@@ -120,8 +126,12 @@ class IosAppGraph(
     flags: FlagSource = NoFlagSource,
     notificationCenter: LocalNotificationCenter,
 ) {
+    private val scope = MainScope()
+
+    private val remoteConfig = SerializedFlagSource(flags, scope)
+
     /** The experiment flags, frozen for this launch (see [FlagSourceExperimentConfig]). */
-    val experiments: ExperimentConfig = iosExperiments(flags)
+    val experiments: ExperimentConfig = iosExperiments(remoteConfig)
 
     private val satellitesEnabled: Boolean = experiments.isEnabled(Experiment.SATELLITES)
 
@@ -135,8 +145,6 @@ class IosAppGraph(
     init {
         recordUncaughtExceptions(supportDirectory)
     }
-
-    private val scope = MainScope()
 
     // DataStore does its file I/O on this scope, which lives as long as the process.
     private val settingsStore =
@@ -235,6 +243,30 @@ class IosAppGraph(
         scope.launch { settings.savedLocation.collect { WidgetSharedStore.savedLocation = it } }
     }
 
+    private val announcementSource = FlagSourceAnnouncementSource(remoteConfig)
+    private val announcementState = DataStoreAnnouncementState(settingsStore)
+
+    /** The launch dialog, one for the process: the graph tells it each time the app opens. */
+    val announcementViewModel =
+        AnnouncementViewModel(
+            source = announcementSource,
+            state = announcementState,
+            settings = settings,
+            experimentConfig = experiments,
+            locale = { locale.value },
+            appVersion = ANNOUNCEMENT_APP_VERSION,
+            analytics = analytics,
+        )
+
+    init {
+        // Never from a background launch. Latest: leaving cancels an open still waiting.
+        scope.launch {
+            foreground.isForeground.collectLatest {
+                if (it) announcementViewModel.onAppOpened()
+            }
+        }
+    }
+
     private val catalogMutex = Mutex()
     private var catalog: CatalogRepository? = null
 
@@ -290,7 +322,7 @@ class IosAppGraph(
             satellites.takeIf { satellitesEnabled },
         )
 
-    /** The download gates shared with Android (#1272). iOS has no widgets. */
+    /** The download gates shared with Android (#1272). */
     private val satelliteGates =
         satelliteFetchConditions(
             experiments = experiments,
@@ -435,14 +467,26 @@ class IosAppGraph(
             emptyList()
         }
 
-    /** The Tonight sheet (D149). iOS has no announcements yet, so its notices are empty. */
+    /** The Tonight sheet (D149), with the messages from the team in its notices. */
     fun tonightViewModel(): TonightViewModel =
         TonightViewModel(
             now = Clock.System::now,
             location = { settings.savedLocation.first() },
             showers = { catalog().meteorShowers(locale.value).first() },
             passes = { tonightPasses(it) },
-            notices = { emptyList() },
+            notices = {
+                if (announcementsOn(experiments, settings)) {
+                    tonightNotices(
+                        Clock.System.now(),
+                        announcementSource,
+                        announcementState.seen.first(),
+                        ANNOUNCEMENT_APP_VERSION,
+                        locale.value,
+                    )
+                } else {
+                    emptyList()
+                }
+            },
             words = {
                 val format = deviceTimeFormat()
                 TonightWords(NotificationText(loadTextSource(), format), format)
@@ -706,6 +750,12 @@ class IosAppGraph(
 }
 
 private const val MILLIS_PER_SECOND = 1000
+
+/**
+ * `min_version` is an Android versionCode, and iOS build numbers restart with each release, so
+ * none compares. At 0, a message with a floor stays off iOS; Remote Config conditions target it.
+ */
+private const val ANNOUNCEMENT_APP_VERSION = 0L
 
 /** Settling time, so a burst of changes (a setting, then the location) plans once. */
 private val NOTIFICATION_REPLAN_DELAY = 2.seconds

@@ -114,9 +114,6 @@
     <!-- Sky-event notifications (D77). -->
     <string name="channel_announcements_name" translation_description="Notification channel name for occasional messages from the Sky Map team">Nachrichten von Sky Map</string>
     <string name="channel_announcements_description" translation_description="Notification channel description for occasional messages from the Sky Map team">Seltene Hinweise zu nennenswerten Himmelsereignissen</string>
-    <string name="announcement_dialog_dismiss" translation_description="Button that closes an announcement dialog and hides that message everywhere">Ausblenden</string>
-    <string name="announcement_dialog_open" translation_description="Button on an announcement dialog that jumps to the sky object the message is about">Ansehen</string>
-    <string name="announcement_dialog_continue" translation_description="Button on an announcement dialog that closes it and continues to the sky map">Weiter</string>
     <string name="channel_showers_name" translation_description="Name of the meteor-shower notification channel, shown in the system\'s notification settings">Meteorschauer-Höhepunkte</string>
     <string name="channel_showers_description" translation_description="Description of the meteor-shower notification channel in the system\'s notification settings">Etwa ein Dutzend pro Jahr, am Abend des Höhepunktes</string>
     <string name="channel_digest_name" translation_description="Name of the tonight-digest notification channel, shown in the system\'s notification settings">Himmelsübersicht für heute Nacht</string>

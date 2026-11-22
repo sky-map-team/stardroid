@@ -111,9 +111,6 @@
     <!-- Sky-event notifications (D77). -->
     <string name="channel_announcements_name" translation_description="Notification channel name for occasional messages from the Sky Map team">Sky Map से संदेश</string>
     <string name="channel_announcements_description" translation_description="Notification channel description for occasional messages from the Sky Map team">उल्लेखनीय खगोलीय घटनाओं के बारे में दुर्लभ पूर्वसूचना</string>
-    <string name="announcement_dialog_dismiss" translation_description="Button that closes an announcement dialog and hides that message everywhere">खारिज करें</string>
-    <string name="announcement_dialog_open" translation_description="Button on an announcement dialog that jumps to the sky object the message is about">एक नज़र डालें</string>
-    <string name="announcement_dialog_continue" translation_description="Button on an announcement dialog that closes it and continues to the sky map">जारी रखें</string>
     <string name="channel_showers_name" translation_description="Name of the meteor-shower notification channel, shown in the system\'s notification settings">उल्का वर्षा का चरम</string>
     <string name="channel_showers_description" translation_description="Description of the meteor-shower notification channel in the system\'s notification settings">साल में लगभग एक दर्जन, चरम की शाम को</string>
     <string name="channel_digest_name" translation_description="Name of the tonight-digest notification channel, shown in the system\'s notification settings">आज रात के आकाश का सार</string>

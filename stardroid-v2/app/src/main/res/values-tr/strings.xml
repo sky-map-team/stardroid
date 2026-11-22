@@ -113,9 +113,6 @@
     <!-- Sky-event notifications (D77). -->
     <string name="channel_announcements_name" translation_description="Notification channel name for occasional messages from the Sky Map team">Sky Map\'ten Mesajlar</string>
     <string name="channel_announcements_description" translation_description="Notification channel description for occasional messages from the Sky Map team">Önemli gökyüzü olayları hakkında nadir bilgilendirmeler</string>
-    <string name="announcement_dialog_dismiss" translation_description="Button that closes an announcement dialog and hides that message everywhere">Kapat</string>
-    <string name="announcement_dialog_open" translation_description="Button on an announcement dialog that jumps to the sky object the message is about">Göz at</string>
-    <string name="announcement_dialog_continue" translation_description="Button on an announcement dialog that closes it and continues to the sky map">Devam et</string>
     <string name="channel_showers_name" translation_description="Name of the meteor-shower notification channel, shown in the system\'s notification settings">Meteor yağmuru zirveleri</string>
     <string name="channel_showers_description" translation_description="Description of the meteor-shower notification channel in the system\'s notification settings">Yılda yaklaşık bir düzine, zirve akşamında</string>
     <string name="channel_digest_name" translation_description="Name of the tonight-digest notification channel, shown in the system\'s notification settings">Bu akşamki gökyüzü özeti</string>
