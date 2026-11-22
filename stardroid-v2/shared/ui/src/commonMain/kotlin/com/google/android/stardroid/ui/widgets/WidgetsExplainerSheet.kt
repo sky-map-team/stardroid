@@ -39,10 +39,7 @@ import com.google.android.stardroid.ui.resources.widgets_explainer_tonight_title
 import org.jetbrains.compose.resources.StringResource
 import org.jetbrains.compose.resources.stringResource
 
-/**
- * Says what Sky Map's widgets are and how to place them. iOS can't add a widget from inside an
- * app, so this is the whole feature there; Android has its own sheet with Add buttons.
- */
+/** iOS can't add a widget from inside an app, so this sheet is the feature there. */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun WidgetsExplainerSheet(onDismiss: () -> Unit) {
@@ -114,6 +111,10 @@ private fun Step(
 ) {
     Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
         Text("$number.", style = MaterialTheme.typography.bodyMedium)
-        Text(stringResource(text), style = MaterialTheme.typography.bodyMedium)
+        Text(
+            stringResource(text),
+            style = MaterialTheme.typography.bodyMedium,
+            modifier = Modifier.weight(1f),
+        )
     }
 }

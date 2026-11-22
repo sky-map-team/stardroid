@@ -215,8 +215,9 @@ private fun SkyMapScreen(
     SkyMapTheme(nightMode) {
         Box(Modifier.fillMaxSize()) {
             val current = gates
-            // The startup screens and the pages cover the map, and its own dialogs wait for them
-            // (on Android the pages are separate destinations, where the map isn't composed).
+            // The startup screens, the pages and the widgets sheet cover the map, and its own
+            // dialogs wait for them (on Android the pages are separate destinations, where the
+            // map isn't composed).
             val covered =
                 current == null ||
                     current.needsEula ||

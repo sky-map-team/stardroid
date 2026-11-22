@@ -133,7 +133,7 @@
     <string name="tutorial_button" translation_description="Map-screen menu item that replays the warm welcome tutorial">Tutorial</string>
     <string name="whats_new_button" translation_description="Map-screen menu item that opens the What's New and Credits screen">What\'s new</string>
     <string name="widgets_button" translation_description="Map-screen menu item that opens the list of home-screen widgets the app offers">Widgets</string>
-    <string name="widgets_explainer_intro" translation_description="Intro of the sheet that explains Sky Map\'s home-screen widgets on iOS, where an app cannot add a widget itself. Ends with a colon: the three widgets follow">Sky Map has widgets for your Home Screen and Lock Screen. iOS doesn\'t let an app add them for you, so you add them yourself.</string>
+    <string name="widgets_explainer_intro" translation_description="Intro of the sheet that explains Sky Map\'s home-screen widgets on iOS, where an app cannot add a widget itself. The three widgets are listed below it">Sky Map has widgets for your Home Screen and Lock Screen. iOS doesn\'t let apps add widgets for you, so you add them yourself.</string>
     <string name="widgets_explainer_moon_title" translation_description="Name of the moon-phase widget in the iOS widgets explainer sheet">Moon phase</string>
     <string name="widgets_explainer_moon_desc" translation_description="Description of the moon-phase widget in the iOS widgets explainer sheet">The Moon\'s phase, illumination and rise and set times, updated daily.</string>
     <string name="widgets_explainer_tonight_title" translation_description="Name of the tonight\'s-sky widget in the iOS widgets explainer sheet">Tonight\'s sky</string>
