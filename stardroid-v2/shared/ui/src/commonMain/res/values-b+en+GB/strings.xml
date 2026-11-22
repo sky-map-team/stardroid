@@ -600,4 +600,16 @@ Line brightness: normal, bright or brightest, for twilight, daylight or light-po
     <!-- tm:omitted name="share_layout_overlay" reason="identical_to_source" -->
     <!-- tm:omitted name="share_layout_side_by_side" reason="identical_to_source" -->
     <!-- tm:omitted name="share_failed_message" reason="identical_to_source" -->
+    <!-- tm:omitted name="announcement_dialog_dismiss" reason="identical_to_source" -->
+    <!-- tm:omitted name="announcement_dialog_open" reason="identical_to_source" -->
+    <!-- tm:omitted name="announcement_dialog_continue" reason="identical_to_source" -->
+    <!-- tm:omitted name="north_pole" reason="identical_to_source" -->
+    <!-- tm:omitted name="south_pole" reason="identical_to_source" -->
+    <!-- tm:omitted name="zenith" reason="identical_to_source" -->
+    <!-- tm:omitted name="nadir" reason="identical_to_source" -->
+    <!-- tm:omitted name="north" reason="identical_to_source" -->
+    <!-- tm:omitted name="south" reason="identical_to_source" -->
+    <!-- tm:omitted name="east" reason="identical_to_source" -->
+    <!-- tm:omitted name="west" reason="identical_to_source" -->
+    <!-- tm:omitted name="ecliptic" reason="identical_to_source" -->
 </resources>

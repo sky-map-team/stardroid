@@ -670,4 +670,16 @@
     <string name="share_layout_overlay" translation_description="Caption of the share-layout choice that draws the star map over the camera photo, as seen on screen.">تراكب</string>
     <string name="share_layout_side_by_side" translation_description="Caption of the share-layout choice that puts the camera photo and the star map next to each other.">جنبًا إلى جنب</string>
     <string name="share_failed_message" translation_description="Snackbar shown when capturing the sky image for sharing failed.">تعذر التقاط السماء — حاول مرة أخرى</string>
+    <string name="announcement_dialog_dismiss" translation_description="Button that closes an announcement dialog and hides that message everywhere">تجاهل</string>
+    <string name="announcement_dialog_open" translation_description="Button on an announcement dialog that jumps to the sky object the message is about">ألق نظرة</string>
+    <string name="announcement_dialog_continue" translation_description="Button on an announcement dialog that closes it and continues to the sky map">متابعة</string>
+    <string name="north_pole">القطب السماوي الشمالي</string>
+    <string name="south_pole">القطب السماوي الجنوبي</string>
+    <string name="zenith">سمت الرأس</string>
+    <string name="nadir">النظير</string>
+    <string name="north">شمال</string>
+    <string name="south">جنوب</string>
+    <string name="east">شرق</string>
+    <string name="west">غرب</string>
+    <string name="ecliptic">مسير الشمس</string>
 </resources>

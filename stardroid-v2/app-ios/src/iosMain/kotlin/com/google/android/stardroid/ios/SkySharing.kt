@@ -37,6 +37,7 @@ import com.google.android.stardroid.ui.resources.share_text
 import kotlinx.cinterop.ExperimentalForeignApi
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Job
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 import org.jetbrains.compose.resources.stringResource
@@ -64,13 +65,20 @@ internal class SkySharing(
     var layouts by mutableStateOf<ShareLayouts?>(null)
         private set
 
+    private var working by mutableStateOf(false)
+    private var systemSheetUp by mutableStateOf(false)
+
+    /** From the shutter until the share sheet closes, which an announcement mustn't interrupt. */
+    val inProgress: Boolean get() = working || layouts != null || systemSheetUp
+
     private var job: Job? = null
     private var sendJob: Job? = null
 
     fun start() {
         if (job?.isActive == true) return
         mapViewModel.logMenuItem(AnalyticsEvents.SHARE_SKY_LABEL)
-        job = scope.launch { capture() }
+        working = true
+        job = scope.launch { whileWorking { capture() } }
     }
 
     private suspend fun capture() {
@@ -110,8 +118,10 @@ internal class SkySharing(
     }
 
     fun pick(image: ImageBitmap) {
+        // Before the layouts go, so inProgress has no gap.
+        working = true
         layouts = null
-        sendJob = scope.launch { send(image) }
+        sendJob = scope.launch { whileWorking { send(image) } }
     }
 
     fun dismiss() {
@@ -128,8 +138,27 @@ internal class SkySharing(
         }
     }
 
+    private suspend fun whileWorking(block: suspend () -> Unit) {
+        working = true
+        try {
+            block()
+        } finally {
+            working = false
+        }
+    }
+
     private suspend fun send(image: ImageBitmap) {
-        if (!shareImage(image, shareText)) showFailure()
+        val sheet = shareImage(image, shareText)
+        if (sheet == null) {
+            showFailure()
+            return
+        }
+        systemSheetUp = true
+        scope.launch {
+            // Polled: the completion handler also fires for activities that leave the sheet up.
+            while (sheet.presentingViewController != null) delay(SHEET_POLL_MILLIS)
+            systemSheetUp = false
+        }
     }
 
     private suspend fun showFailure() {
@@ -200,4 +229,5 @@ private fun appIcon(): ImageBitmap? {
 }
 
 private const val ICON_SIZE_PX = 180
+private const val SHEET_POLL_MILLIS = 500L
 private const val ICON_CORNER = 0.225

@@ -691,4 +691,16 @@ Metalden uzak, açık bir alana geçin ve tekrar deneyin.]]></string>
     <string name="share_layout_overlay" translation_description="Caption of the share-layout choice that draws the star map over the camera photo, as seen on screen.">Bindir</string>
     <string name="share_layout_side_by_side" translation_description="Caption of the share-layout choice that puts the camera photo and the star map next to each other.">Yan yana</string>
     <string name="share_failed_message" translation_description="Snackbar shown when capturing the sky image for sharing failed.">Gökyüzü yakalanamadı — tekrar deneyin</string>
+    <string name="announcement_dialog_dismiss" translation_description="Button that closes an announcement dialog and hides that message everywhere">Kapat</string>
+    <string name="announcement_dialog_open" translation_description="Button on an announcement dialog that jumps to the sky object the message is about">Göz at</string>
+    <string name="announcement_dialog_continue" translation_description="Button on an announcement dialog that closes it and continues to the sky map">Devam et</string>
+    <string name="north_pole">KK</string>
+    <string name="south_pole">GK</string>
+    <string name="zenith">Başucu</string>
+    <string name="nadir">Ayakucu</string>
+    <string name="north">KUZEY</string>
+    <string name="south">GÜNEY</string>
+    <string name="east">DOĞU</string>
+    <string name="west">BATI</string>
+    <string name="ecliptic">Ekliptik</string>
 </resources>

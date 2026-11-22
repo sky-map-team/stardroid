@@ -24,6 +24,7 @@ private val ServerControlled: Set<Experiment> =
     setOf(
         Experiment.SATELLITES,
         Experiment.NOTIFICATIONS,
+        Experiment.ANNOUNCEMENTS,
         // Off by default: one server change launches both apps (camera-ar-launch.md §5).
         Experiment.CAMERA_AR,
         Experiment.SHARE_SKY,
@@ -37,6 +38,8 @@ internal object NoFlagSource : FlagSource {
     override val canFetch: Boolean = false
 
     override fun serverValue(key: String): Boolean? = null
+
+    override fun serverText(key: String): String? = null
 
     override val lastFetchTimeMillis: Long? = null
 

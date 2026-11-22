@@ -672,4 +672,16 @@ Jasność linii: normalna, jasna lub najjaśniejsza, odpowiednio do zmierzchu, d
     <string name="share_layout_overlay" translation_description="Caption of the share-layout choice that draws the star map over the camera photo, as seen on screen.">Nakładka</string>
     <string name="share_layout_side_by_side" translation_description="Caption of the share-layout choice that puts the camera photo and the star map next to each other.">Obok siebie</string>
     <string name="share_failed_message" translation_description="Snackbar shown when capturing the sky image for sharing failed.">Nie udało się uchwycić nieba — spróbuj ponownie</string>
+    <string name="announcement_dialog_dismiss" translation_description="Button that closes an announcement dialog and hides that message everywhere">Odrzuć</string>
+    <string name="announcement_dialog_open" translation_description="Button on an announcement dialog that jumps to the sky object the message is about">Spójrz</string>
+    <string name="announcement_dialog_continue" translation_description="Button on an announcement dialog that closes it and continues to the sky map">Dalej</string>
+    <string name="north_pole">N</string>
+    <string name="south_pole">S</string>
+    <string name="zenith">ZENIT</string>
+    <!-- tm:omitted name="nadir" reason="identical_to_source" -->
+    <string name="north">PÓŁNOC</string>
+    <string name="south">POŁUDNIE</string>
+    <string name="east">WSCHÓD</string>
+    <string name="west">ZACHÓD</string>
+    <string name="ecliptic">Ekliptyka</string>
 </resources>

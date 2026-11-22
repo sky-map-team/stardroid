@@ -344,8 +344,9 @@ Surfaces beyond the map:
   fetch, all behind `SATELLITES`, which has been off since #1269. The app side is
   `satellites/` (`SatelliteScheduler`, `SatelliteRefreshWorker`, `PassAlerts`).
 - **Announcements** ([design/remote-announcements.md](design/remote-announcements.md)):
-  remotely authored messages on the notification, widget and interstitial surfaces, in
-  `announcements/`, behind `ANNOUNCEMENTS`.
+  remotely authored messages on the notification, widget, interstitial and Tonight-sheet
+  surfaces, behind `ANNOUNCEMENTS`. The model and policy are in `:shared:model`, the dialog in
+  `:shared:ui`; `:app`'s `announcements/` holds the worker. iOS has the dialog and sheet only.
 - **Camera-AR** (D64/D67–D71, still off behind `CAMERA_AR` and `SHARE_SKY`): CameraX
   `PreviewView` *under* a translucent GL surface; the shared `CameraFov` computes the cropped
   FOV to lock the map's camera to the lens; `CameraScrimDrawer` dims the video plane; two
@@ -365,9 +366,10 @@ the display link, geocoding, local notifications, the satellite background refre
 and camera-AR with sharing (`IosArMode` over `AvArCamera`, `SkySharing`; off behind the same two
 flags). The Swift in `ios/SkyMap/Sources` is the entry point plus adapters for SDKs used from
 Swift — Firebase Analytics and Remote Config, StoreKit, `UNUserNotificationCenter`, and the
-background task — passed into Kotlin through the shared interfaces, plus the widget extension.
-[design/ios-platform-surfaces.md](design/ios-platform-surfaces.md) covers the widget and
-notification work, and [`ios/README.md`](../ios/README.md) covers building.
+background task — passed into Kotlin through the shared interfaces. The widgets are a separate
+extension over `:app-ios-widgets`.
+[design/ios-platform-surfaces.md](design/ios-platform-surfaces.md) covers the widget,
+notification and announcement work, and [`ios/README.md`](../ios/README.md) covers building.
 
 ---
 
@@ -386,6 +388,5 @@ Translations section for when to run it):
 
 `.tmconfig.toml`'s `primary_languages` lists the 28 core languages. `ca`, `hu` and `ru` exist as
 partial locale directories and are intentionally excluded. The first locales were salvaged from
-v1 (PR #70, D78; `tools/salvage-translations/review-manifest.md`). iOS's layer labels are still
-English (`EnglishLayerStrings`) until iOS reads localized layer strings; catalog names are
-unaffected.
+v1 (PR #70, D78; `tools/salvage-translations/review-manifest.md`). iOS's layer labels (compass, grid,
+planet names) are read from `:shared:ui`'s resources by `ResourceLayerStrings` in `app-ios`.

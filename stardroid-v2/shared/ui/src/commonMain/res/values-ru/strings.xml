@@ -671,4 +671,16 @@
     <string name="share_layout_overlay">Наложение</string>
     <string name="share_layout_side_by_side">Рядом</string>
     <string name="share_failed_message">Не удалось сделать снимок неба — попробуйте ещё раз</string>
+    <string name="announcement_dialog_dismiss">Закрыть</string>
+    <string name="announcement_dialog_open">Посмотреть</string>
+    <string name="announcement_dialog_continue">Продолжить</string>
+    <string name="north_pole">СП</string>
+    <string name="south_pole">ЮП</string>
+    <string name="zenith">ЗЕНИТ</string>
+    <string name="nadir">НАДИР</string>
+    <string name="north">СЕВЕР</string>
+    <string name="south">ЮГ</string>
+    <string name="east">ВОСТОК</string>
+    <string name="west">ЗАПАД</string>
+    <string name="ecliptic">Эклиптика</string>
 </resources>

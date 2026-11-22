@@ -10,6 +10,7 @@
 package com.google.android.stardroid.announcements
 
 import androidx.datastore.core.DataStore
+import androidx.datastore.core.IOException
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.emptyPreferences
@@ -29,7 +30,6 @@ import kotlinx.serialization.json.contentOrNull
 import kotlinx.serialization.json.longOrNull
 import kotlinx.serialization.json.put
 import kotlinx.serialization.json.putJsonArray
-import java.io.IOException
 import kotlin.time.Duration.Companion.days
 
 /** What this device has already done with each announcement, for [AnnouncementPolicy]. */

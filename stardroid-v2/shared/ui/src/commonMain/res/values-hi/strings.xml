@@ -685,4 +685,16 @@
     <string name="share_layout_overlay" translation_description="Caption of the share-layout choice that draws the star map over the camera photo, as seen on screen.">ओवरले</string>
     <string name="share_layout_side_by_side" translation_description="Caption of the share-layout choice that puts the camera photo and the star map next to each other.">साथ-साथ</string>
     <string name="share_failed_message" translation_description="Snackbar shown when capturing the sky image for sharing failed.">आकाश को कैप्चर नहीं कर सका — फिर से प्रयास करें</string>
+    <string name="announcement_dialog_dismiss" translation_description="Button that closes an announcement dialog and hides that message everywhere">खारिज करें</string>
+    <string name="announcement_dialog_open" translation_description="Button on an announcement dialog that jumps to the sky object the message is about">एक नज़र डालें</string>
+    <string name="announcement_dialog_continue" translation_description="Button on an announcement dialog that closes it and continues to the sky map">जारी रखें</string>
+    <string name="north_pole">उ.ध्रुव</string>
+    <string name="south_pole">द.ध्रुव</string>
+    <string name="zenith">शीर्ष बिंदु</string>
+    <string name="nadir">निम्न बिंदु</string>
+    <string name="north">उत्तर</string>
+    <string name="south">दक्षिण</string>
+    <string name="east">पूर्व</string>
+    <string name="west">पश्चिम</string>
+    <string name="ecliptic">क्रांतिवृत्त</string>
 </resources>

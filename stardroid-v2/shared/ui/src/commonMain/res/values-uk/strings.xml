@@ -688,4 +688,16 @@
     <string name="share_layout_overlay" translation_description="Caption of the share-layout choice that draws the star map over the camera photo, as seen on screen.">Накладання</string>
     <string name="share_layout_side_by_side" translation_description="Caption of the share-layout choice that puts the camera photo and the star map next to each other.">Пліч-о-пліч</string>
     <string name="share_failed_message" translation_description="Snackbar shown when capturing the sky image for sharing failed.">Не вдалося зняти небо — спробуйте ще раз</string>
+    <string name="announcement_dialog_dismiss" translation_description="Button that closes an announcement dialog and hides that message everywhere">Закрити</string>
+    <string name="announcement_dialog_open" translation_description="Button on an announcement dialog that jumps to the sky object the message is about">Поглянути</string>
+    <string name="announcement_dialog_continue" translation_description="Button on an announcement dialog that closes it and continues to the sky map">Продовжити</string>
+    <string name="north_pole">Пн.П</string>
+    <string name="south_pole">Пд.П</string>
+    <string name="zenith">ЗЕНІТ</string>
+    <string name="nadir">НАДІР</string>
+    <string name="north">ПІВНІЧ</string>
+    <string name="south">ПІВДЕНЬ</string>
+    <string name="east">СХІД</string>
+    <string name="west">ЗАХІД</string>
+    <string name="ecliptic">Екліптика</string>
 </resources>

@@ -698,4 +698,16 @@ Luminosità delle linee: normale, luminosa o luminosissima, per il crepuscolo, l
     <string name="share_layout_overlay" translation_description="Caption of the share-layout choice that draws the star map over the camera photo, as seen on screen.">Sovrapposizione</string>
     <string name="share_layout_side_by_side" translation_description="Caption of the share-layout choice that puts the camera photo and the star map next to each other.">Affiancati</string>
     <string name="share_failed_message" translation_description="Snackbar shown when capturing the sky image for sharing failed.">Impossibile catturare il cielo — riprova</string>
+    <string name="announcement_dialog_dismiss" translation_description="Button that closes an announcement dialog and hides that message everywhere">Ignora</string>
+    <string name="announcement_dialog_open" translation_description="Button on an announcement dialog that jumps to the sky object the message is about">Dai un\'occhiata</string>
+    <string name="announcement_dialog_continue" translation_description="Button on an announcement dialog that closes it and continues to the sky map">Continua</string>
+    <string name="north_pole">PN</string>
+    <string name="south_pole">PS</string>
+    <string name="zenith">ZENIT</string>
+    <!-- tm:omitted name="nadir" reason="identical_to_source" -->
+    <string name="north">NORD</string>
+    <string name="south">SUD</string>
+    <string name="east">EST</string>
+    <string name="west">OVEST</string>
+    <string name="ecliptic">Eclittica</string>
 </resources>

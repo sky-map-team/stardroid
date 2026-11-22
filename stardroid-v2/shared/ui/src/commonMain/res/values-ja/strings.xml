@@ -621,4 +621,16 @@
     <string name="share_layout_overlay" translation_description="Caption of the share-layout choice that draws the star map over the camera photo, as seen on screen.">オーバーレイ</string>
     <string name="share_layout_side_by_side" translation_description="Caption of the share-layout choice that puts the camera photo and the star map next to each other.">並べて表示</string>
     <string name="share_failed_message" translation_description="Snackbar shown when capturing the sky image for sharing failed.">空をキャプチャできませんでした — もう一度お試しください</string>
+    <string name="announcement_dialog_dismiss" translation_description="Button that closes an announcement dialog and hides that message everywhere">閉じる</string>
+    <string name="announcement_dialog_open" translation_description="Button on an announcement dialog that jumps to the sky object the message is about">見てみる</string>
+    <string name="announcement_dialog_continue" translation_description="Button on an announcement dialog that closes it and continues to the sky map">続ける</string>
+    <string name="north_pole">北極点</string>
+    <string name="south_pole">南極点</string>
+    <string name="zenith">天頂</string>
+    <string name="nadir">天底</string>
+    <string name="north">北</string>
+    <string name="south">南</string>
+    <string name="east">東</string>
+    <string name="west">西</string>
+    <string name="ecliptic">黄道</string>
 </resources>

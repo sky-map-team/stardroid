@@ -706,4 +706,16 @@ Luminosité des lignes : normale, brillante ou très brillante, pour le crépusc
     <string name="share_layout_overlay" translation_description="Caption of the share-layout choice that draws the star map over the camera photo, as seen on screen.">Superposition</string>
     <string name="share_layout_side_by_side" translation_description="Caption of the share-layout choice that puts the camera photo and the star map next to each other.">Côte à côte</string>
     <string name="share_failed_message" translation_description="Snackbar shown when capturing the sky image for sharing failed.">Impossible de capturer le ciel — réessayez</string>
+    <string name="announcement_dialog_dismiss" translation_description="Button that closes an announcement dialog and hides that message everywhere">Ignorer</string>
+    <string name="announcement_dialog_open" translation_description="Button on an announcement dialog that jumps to the sky object the message is about">Jeter un œil</string>
+    <string name="announcement_dialog_continue" translation_description="Button on an announcement dialog that closes it and continues to the sky map">Continuer</string>
+    <string name="north_pole">PN</string>
+    <string name="south_pole">PS</string>
+    <string name="zenith">ZÉNITH</string>
+    <!-- tm:omitted name="nadir" reason="identical_to_source" -->
+    <string name="north">NORD</string>
+    <string name="south">SUD</string>
+    <string name="east">EST</string>
+    <string name="west">OUEST</string>
+    <string name="ecliptic">Écliptique</string>
 </resources>

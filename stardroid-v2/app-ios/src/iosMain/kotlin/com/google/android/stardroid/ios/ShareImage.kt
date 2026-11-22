@@ -26,19 +26,20 @@ import platform.Foundation.NSURL
 import platform.Foundation.dataWithBytes
 import platform.Foundation.writeToURL
 import platform.UIKit.UIActivityViewController
+import platform.UIKit.UIViewController
 import platform.UIKit.popoverPresentationController
 
 /**
  * Writes [image] to a temporary PNG and presents the share sheet with it and [text]. The file
- * goes when the share is over. False if it couldn't be written or presented.
+ * goes when the share is over. Returns the sheet, or null if it couldn't be written or presented.
  */
 @OptIn(ExperimentalForeignApi::class)
 internal suspend fun shareImage(
     image: ImageBitmap,
     text: String,
-): Boolean {
-    val file = withContext(Dispatchers.IO) { writePng(image) } ?: return false
-    val top = topViewController() ?: return false
+): UIViewController? {
+    val file = withContext(Dispatchers.IO) { writePng(image) } ?: return null
+    val top = topViewController() ?: return null
     val sheet = UIActivityViewController(listOf(file, text), null)
     sheet.completionWithItemsHandler = { activity, completed, _, _ ->
         // Backing out of one activity returns to the sheet, which still needs the file.
@@ -53,7 +54,7 @@ internal suspend fun shareImage(
         popover.sourceRect = CGRectMake(width / 2, height - 1, 1.0, 1.0)
     }
     top.presentViewController(sheet, animated = true, completion = null)
-    return true
+    return sheet
 }
 
 @OptIn(ExperimentalForeignApi::class)

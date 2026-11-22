@@ -2,15 +2,6 @@
 <resources>
 
     <!-- Метки карты: полюса, зенит, надир, стороны света, эклиптика -->
-    <string name="north_pole">СП</string>
-    <string name="south_pole">ЮП</string>
-    <string name="zenith">ЗЕНИТ</string>
-    <string name="nadir">НАДИР</string>
-    <string name="north">СЕВЕР</string>
-    <string name="south">ЮГ</string>
-    <string name="east">ВОСТОК</string>
-    <string name="west">ЗАПАД</string>
-    <string name="ecliptic">Эклиптика</string>
 
     <!-- Каналы уведомлений: пролёты спутников и затмения -->
     <string name="channel_passes_name">Пролёты спутников</string>
@@ -60,9 +51,6 @@
     <!-- Уведомления о небесных событиях -->
     <string name="channel_announcements_name">Сообщения от Sky Map</string>
     <string name="channel_announcements_description">Редкие уведомления о заметных небесных событиях</string>
-    <string name="announcement_dialog_dismiss">Закрыть</string>
-    <string name="announcement_dialog_open">Посмотреть</string>
-    <string name="announcement_dialog_continue">Продолжить</string>
     <string name="channel_showers_name">Максимумы метеорных потоков</string>
     <string name="channel_showers_description">Около дюжины в год, вечером в день максимума</string>
     <string name="channel_digest_name">Сводка неба на сегодня</string>
