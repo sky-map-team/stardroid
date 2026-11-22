@@ -287,10 +287,8 @@ private fun SkyMapScreen(
                         onAction = mapViewModel::logSupportAction,
                         onShareApp = { shareText(shareMessage) },
                         onRateApp = ::openReviewPage,
-                        sponsorRow = {
-                            TipJarRow(tipStore, mapViewModel::logSupportAction)
-                            PrivacyRow()
-                        },
+                        sponsorRow = { TipJarRow(tipStore, mapViewModel::logSupportAction) },
+                        footerRow = { PrivacyRow() },
                     )
                 Page.SETTINGS ->
                     SettingsScreen(

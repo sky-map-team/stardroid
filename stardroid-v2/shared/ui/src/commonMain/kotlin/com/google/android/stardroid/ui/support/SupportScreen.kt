@@ -24,7 +24,6 @@ import androidx.compose.material.icons.filled.Star
 import androidx.compose.material.icons.filled.ThumbUp
 import androidx.compose.material.icons.filled.Warning
 import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.LargeTopAppBar
@@ -52,6 +51,8 @@ import com.google.android.stardroid.ui.resources.settings_back
 import com.google.android.stardroid.ui.resources.sponsors_text
 import com.google.android.stardroid.ui.resources.support_bmac_desc
 import com.google.android.stardroid.ui.resources.support_bmac_title
+import com.google.android.stardroid.ui.resources.support_header_give
+import com.google.android.stardroid.ui.resources.support_header_help
 import com.google.android.stardroid.ui.resources.support_intro
 import com.google.android.stardroid.ui.resources.support_issues_desc
 import com.google.android.stardroid.ui.resources.support_issues_title
@@ -74,7 +75,7 @@ private const val BMAC_URL =
  * [onShareApp] is null where the host has no share sheet, [onRateApp] where there is no store
  * listing to review. [sponsorRow] is the host's own sponsoring row (iOS's tip jar, which must be
  * in-app purchase) and is always shown; without one, a Buy Me a Coffee link shows only where
- * [donationLinksAllowed].
+ * [donationLinksAllowed]. [footerRow] follows the last row (iOS's privacy link).
  */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -85,10 +86,10 @@ fun SupportScreen(
     onShareApp: (() -> Unit)?,
     onRateApp: (() -> Unit)? = null,
     sponsorRow: (@Composable () -> Unit)? = null,
+    footerRow: (@Composable () -> Unit)? = null,
 ) {
     val scrollBehavior = TopAppBarDefaults.exitUntilCollapsedScrollBehavior()
     val uriHandler = LocalUriHandler.current
-    val showSponsor = sponsorRow != null || donationLinksAllowed
     Scaffold(
         modifier = Modifier.nestedScroll(scrollBehavior.nestedScrollConnection),
         topBar = {
@@ -119,6 +120,16 @@ fun SupportScreen(
                 stringResource(Res.string.support_intro),
                 modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp),
             )
+            SupportHeader(stringResource(Res.string.support_header_help))
+            SupportRow(
+                stringResource(Res.string.support_issues_title),
+                stringResource(Res.string.support_issues_desc),
+                icon = Icons.Filled.Warning,
+            ) {
+                onAction(AnalyticsEvents.SUPPORT_ACTION_ISSUES)
+                uriHandler.openUri(ISSUES_URL)
+            }
+            SupportHeader(stringResource(Res.string.support_header_give))
             if (onRateApp != null) {
                 SupportRow(
                     stringResource(Res.string.support_rate_title),
@@ -127,6 +138,21 @@ fun SupportScreen(
                 ) {
                     onAction(AnalyticsEvents.SUPPORT_ACTION_RATE)
                     onRateApp()
+                }
+            }
+            // Second, straight after Rate: the monetary ask earns its place near the top
+            // rather than under the free ones.
+            if (sponsorRow != null) {
+                sponsorRow()
+            } else if (donationLinksAllowed) {
+                SupportRow(
+                    stringResource(Res.string.support_bmac_title),
+                    stringResource(Res.string.support_bmac_desc),
+                    icon = Icons.Filled.Favorite,
+                    emphasized = true,
+                ) {
+                    onAction(AnalyticsEvents.SUPPORT_ACTION_BMAC)
+                    uriHandler.openUri(BMAC_URL)
                 }
             }
             if (onShareApp != null) {
@@ -147,30 +173,7 @@ fun SupportScreen(
                 onAction(AnalyticsEvents.SUPPORT_ACTION_GITHUB_STAR)
                 uriHandler.openUri(GITHUB_URL)
             }
-            SupportRow(
-                stringResource(Res.string.support_issues_title),
-                stringResource(Res.string.support_issues_desc),
-                icon = Icons.Filled.Warning,
-            ) {
-                onAction(AnalyticsEvents.SUPPORT_ACTION_ISSUES)
-                uriHandler.openUri(ISSUES_URL)
-            }
-            if (showSponsor) {
-                HorizontalDivider(Modifier.padding(horizontal = 16.dp, vertical = 8.dp))
-            }
-            if (sponsorRow != null) {
-                sponsorRow()
-            } else if (donationLinksAllowed) {
-                SupportRow(
-                    stringResource(Res.string.support_bmac_title),
-                    stringResource(Res.string.support_bmac_desc),
-                    icon = Icons.Filled.Favorite,
-                    emphasized = true,
-                ) {
-                    onAction(AnalyticsEvents.SUPPORT_ACTION_BMAC)
-                    uriHandler.openUri(BMAC_URL)
-                }
-            }
+            footerRow?.invoke()
             StyledHtml(
                 formattedStringResource(
                     Res.string.support_thanks_html,
@@ -182,6 +185,16 @@ fun SupportScreen(
             )
         }
     }
+}
+
+@Composable
+private fun SupportHeader(text: String) {
+    Text(
+        text,
+        style = MaterialTheme.typography.titleSmall,
+        color = MaterialTheme.colorScheme.primary,
+        modifier = Modifier.padding(start = 16.dp, end = 16.dp, top = 16.dp, bottom = 4.dp),
+    )
 }
 
 /**

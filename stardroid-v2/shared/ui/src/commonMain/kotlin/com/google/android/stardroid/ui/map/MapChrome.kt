@@ -1101,30 +1101,42 @@ fun OverflowSheet(
     onOpenSupport: (() -> Unit)?,
     onDismiss: () -> Unit,
 ) {
-    ModalBottomSheet(onDismissRequest = onDismiss) {
+    // Skip the half-height stop: the rows are few enough to show in full, and a half-open sheet
+    // is what pushed Support below the fold.
+    ModalBottomSheet(
+        onDismissRequest = onDismiss,
+        sheetState = rememberModalBottomSheetState(skipPartiallyExpanded = true),
+    ) {
         Column(
             Modifier
                 .verticalScroll(rememberScrollState())
                 .padding(horizontal = 12.dp, vertical = 4.dp),
         ) {
-            // Ordered by when a user needs them, not by how the app is built: Help and
-            // Tutorial were 7th and 6th of nine and fell below the fold on a short phone,
-            // which is precisely where a lost newcomer stops scrolling (Hannah's feedback,
-            // 2026-08). Diagnostics has left for Settings → Advanced entirely.
-            OverflowRow(Res.drawable.ic_help, Res.string.help_button, onOpenHelp)
-            OverflowRow(Res.drawable.ic_tutorial, Res.string.tutorial_button, onOpenTutorial)
-            OverflowRow(Res.drawable.ic_settings, Res.string.settings_button, onOpenSettings)
-            OverflowRow(Res.drawable.ic_location, Res.string.location_button, onOpenLocation)
+            // Three themed groups, split by dividers: what to look at tonight; learning the app
+            // and supporting it; then configuration. Support sits in the middle group, mid-list
+            // and clear of the fold now the sheet opens at full height. Diagnostics has left for
+            // Settings → Advanced entirely.
             OverflowRow(Res.drawable.ic_moon, Res.string.tonight_button, onOpenTonight)
             OverflowRow(Res.drawable.ic_gallery, Res.string.gallery_button, onOpenGallery)
+            OverflowDivider()
+            OverflowRow(Res.drawable.ic_help, Res.string.help_button, onOpenHelp)
+            OverflowRow(Res.drawable.ic_tutorial, Res.string.tutorial_button, onOpenTutorial)
+            OverflowRow(Res.drawable.ic_support, Res.string.support_button, onOpenSupport)
+            OverflowRow(Res.drawable.ic_whats_new, Res.string.whats_new_button, onOpenWhatsNew)
+            OverflowDivider()
+            OverflowRow(Res.drawable.ic_settings, Res.string.settings_button, onOpenSettings)
+            OverflowRow(Res.drawable.ic_location, Res.string.location_button, onOpenLocation)
             if (widgetsEnabled) {
                 OverflowRow(Res.drawable.ic_widgets, Res.string.widgets_button, onOpenWidgets)
             }
-            OverflowRow(Res.drawable.ic_whats_new, Res.string.whats_new_button, onOpenWhatsNew)
-            OverflowRow(Res.drawable.ic_support, Res.string.support_button, onOpenSupport)
             OverflowRow(Res.drawable.ic_calibrate, Res.string.calibration_button, onOpenCalibration)
         }
     }
+}
+
+@Composable
+private fun OverflowDivider() {
+    HorizontalDivider(Modifier.padding(horizontal = 12.dp, vertical = 4.dp))
 }
 
 @Composable
@@ -1142,7 +1154,7 @@ private fun OverflowRow(
                 .fillMaxWidth()
                 .clip(CircleShape)
                 .clickable(onClick = onClick)
-                .padding(horizontal = 12.dp, vertical = 14.dp),
+                .padding(horizontal = 12.dp, vertical = 12.dp),
     ) {
         Icon(
             painterResource(icon),
