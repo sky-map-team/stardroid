@@ -42,6 +42,9 @@ class LocationViewModel(
 ) : ViewModel() {
     val state: StateFlow<LocationState> = controller.state
 
+    /** False until the first start resolves; the permission rationale must not show before. */
+    val startResolved: StateFlow<Boolean> = controller.startResolved
+
     /** Manual mode selected (v1's `no_auto_locate`) — drives the sheet's mode toggle. */
     val manualMode: StateFlow<Boolean> =
         controller.noAutoLocate.stateIn(viewModelScope, SharingStarted.Eagerly, false)

@@ -188,6 +188,7 @@ fun MapScreen(
     val moonWidgetPromo by objectInfoViewModel.moonWidgetPromo.collectAsStateWithLifecycle()
     val locationState by locationViewModel.state.collectAsStateWithLifecycle()
     val manualLocationMode by locationViewModel.manualMode.collectAsStateWithLifecycle()
+    val locationStartResolved by locationViewModel.startResolved.collectAsStateWithLifecycle()
     // Saveable so the sheet/dialogs survive rotation — otherwise the dialog dismisses and the
     // rememberSaveable date/time inside it is thrown away with it.
     var showLayersSheet by rememberSaveable { mutableStateOf(false) }
@@ -766,6 +767,7 @@ fun MapScreen(
             LocationStateDialogs(
                 locationState = locationState,
                 manualLocationMode = manualLocationMode,
+                locationStartResolved = locationStartResolved,
                 locationViewModel = locationViewModel,
                 onRequestLocationPermission = onRequestLocationPermission,
                 onOpenAppSettings = onOpenAppSettings,

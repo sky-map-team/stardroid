@@ -64,6 +64,14 @@ class LocationController(
     /** The state machine's position, for the location UI. */
     val state: StateFlow<LocationState> = _state.asStateFlow()
 
+    private val _startResolved = MutableStateFlow(false)
+
+    /**
+     * False until the first [start] has read the settings and permission. [LocationState.Unset]
+     * before then is just "not looked yet", so the UI must not offer the permission rationale.
+     */
+    val startResolved: StateFlow<Boolean> = _startResolved.asStateFlow()
+
     private val _locations = MutableStateFlow(DEFAULT_LOCATION)
 
     /** The observer position every sky consumer uses; Greenwich until anything better. */
@@ -124,6 +132,7 @@ class LocationController(
                     // would re-offer the rationale after the user already answered.
                     else -> if (!stateIsDenied()) _state.value = LocationState.Unset
                 }
+                _startResolved.value = true
             }
     }
 
