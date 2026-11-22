@@ -62,6 +62,24 @@ class StartupViewModelTest {
         }
 
     @Test
+    fun `the tour is hidden under the EULA and under a What's New that precedes it`() {
+        fun gates(
+            eula: Boolean = false,
+            welcome: Boolean = true,
+            whatsNew: Boolean = false,
+            whatsNewFirst: Boolean = false,
+        ) = StartupUiState(eula, welcome, whatsNew, whatsNewFirst)
+
+        assertThat(gates(eula = true).welcomeVisible).isFalse()
+        assertThat(gates(whatsNew = true, whatsNewFirst = true).welcomeVisible).isFalse()
+        assertThat(gates().welcomeVisible).isTrue()
+        // What's New that isn't flagged to precede the tour doesn't cover it.
+        assertThat(gates(whatsNew = true).welcomeVisible).isTrue()
+        // With no tour pending, What's New shows alone.
+        assertThat(gates(welcome = false, whatsNew = true).whatsNewShowing).isTrue()
+    }
+
+    @Test
     fun `accepting the eula clears its gate`() =
         runTest(dispatcher.scheduler) {
             val viewModel = StartupViewModel(router, state)
