@@ -11,30 +11,45 @@ package com.google.android.stardroid.ui.map
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.IntrinsicSize
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.widthIn
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.verticalScroll
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.ArrowDropDown
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Slider
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.draw.rotate
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.google.android.stardroid.ui.resources.Res
 import com.google.android.stardroid.ui.resources.ar_auto_off_note
+import com.google.android.stardroid.ui.resources.ar_controls_collapse
+import com.google.android.stardroid.ui.resources.ar_controls_expand
+import com.google.android.stardroid.ui.resources.ar_controls_title
 import com.google.android.stardroid.ui.resources.ar_dimmer_slider
 import com.google.android.stardroid.ui.resources.ar_exposure_auto
 import com.google.android.stardroid.ui.resources.ar_exposure_slider
@@ -55,6 +70,7 @@ import kotlin.math.roundToInt
 /**
  * The in-AR exposure and dimmer controls (camera-ar-mode.md/D64): shown only while the camera
  * layer is on, in the HUD's top-right slot, riding the chrome show/hide like everything else.
+ * Collapsed to a header by default; the alignment correction row stays visible either way.
  * Three independent-looking groups: auto exposure (AE compensation, hidden when unsupported),
  * manual ISO/shutter (which turns AE off, so the groups are mutually exclusive), and the dimmer
  * (the GL scrim, "how bright is the video", unaffected by either).
@@ -68,6 +84,8 @@ fun ArControls(
     onIsoFractionChange: (Double) -> Unit,
     onShutterFractionChange: (Double) -> Unit,
     modifier: Modifier = Modifier,
+    // Expanded sliders scroll within this; Unspecified means no cap.
+    maxHeight: Dp = Dp.Unspecified,
     hudState: HudState? = null,
     onResetAlignment: () -> Unit = {},
     // Host-supplied extra row (the temporary share-still mode switch), below the dimmer.
@@ -77,6 +95,7 @@ fun ArControls(
     Column(
         modifier =
             modifier
+                .heightIn(max = maxHeight)
                 .widthIn(min = AR_PANEL_MIN_WIDTH)
                 .width(IntrinsicSize.Max)
                 .clip(shape)
@@ -84,6 +103,68 @@ fun ArControls(
                 .border(1.dp, MaterialTheme.colorScheme.outline.copy(alpha = 0.3f), shape)
                 .padding(horizontal = 10.dp, vertical = 2.dp),
     ) {
+        // Collapsed by default: the sliders are tall, and in landscape they don't fit.
+        var expanded by rememberSaveable { mutableStateOf(false) }
+        val toggleDescription =
+            stringResource(
+                if (expanded) Res.string.ar_controls_collapse else Res.string.ar_controls_expand,
+            )
+        Row(
+            verticalAlignment = Alignment.CenterVertically,
+            modifier =
+                Modifier
+                    .fillMaxWidth()
+                    .clickable { expanded = !expanded }
+                    .semantics { contentDescription = toggleDescription }
+                    .padding(vertical = 6.dp),
+        ) {
+            Text(
+                stringResource(Res.string.ar_controls_title),
+                style = MaterialTheme.typography.labelMedium,
+                color = MaterialTheme.colorScheme.onSurface,
+                modifier = Modifier.weight(1f),
+            )
+            Icon(
+                Icons.Filled.ArrowDropDown,
+                contentDescription = null,
+                tint = MaterialTheme.colorScheme.onSurfaceVariant,
+                modifier = Modifier.size(20.dp).rotate(if (expanded) 180f else 0f),
+            )
+        }
+        if (expanded) {
+            ArExposureSections(
+                state,
+                specs,
+                onScrimChange,
+                onExposureChange,
+                onIsoFractionChange,
+                onShutterFractionChange,
+                extraContent,
+                Modifier.weight(1f, fill = false).verticalScroll(rememberScrollState()),
+            )
+        }
+        // The HUD this panel replaces owns the drag-to-align readout and its reset, which
+        // are most needed here, so the correction row stays visible while collapsed.
+        if (hudState != null &&
+            HudFormats.correctionActive(hudState.correctionAzDeg, hudState.correctionAltDeg)
+        ) {
+            CorrectionRow(hudState, onResetAlignment)
+        }
+    }
+}
+
+@Composable
+private fun ArExposureSections(
+    state: ArUiState,
+    specs: ArCameraSpecs?,
+    onScrimChange: (Double) -> Unit,
+    onExposureChange: (Int) -> Unit,
+    onIsoFractionChange: (Double) -> Unit,
+    onShutterFractionChange: (Double) -> Unit,
+    extraContent: (@Composable () -> Unit)?,
+    modifier: Modifier,
+) {
+    Column(modifier) {
         // Auto and manual exposure are mutually exclusive: manual turns the camera's AE off, so
         // the exposure slider is inert then, and touching it hands control back to auto. The
         // inactive group is dimmed but stays touchable, because touching it is how you switch.
@@ -166,13 +247,6 @@ fun ArControls(
             onChange = { onScrimChange(it.toDouble()) },
         )
         extraContent?.invoke()
-        // The HUD this panel replaces owns the drag-to-align readout and its reset, which
-        // are most needed here, so the correction row travels with the panel.
-        if (hudState != null &&
-            HudFormats.correctionActive(hudState.correctionAzDeg, hudState.correctionAltDeg)
-        ) {
-            CorrectionRow(hudState, onResetAlignment)
-        }
     }
 }
 
@@ -271,5 +345,8 @@ private fun ArSliderRow(
 
 private const val INACTIVE_GROUP_ALPHA = 0.45f
 
-/** Wide enough for the correction row, so the panel doesn't resize when it appears. */
-private val AR_PANEL_MIN_WIDTH: Dp = 208.dp
+/**
+ * Wide enough for the correction row and the manual ISO/shutter rows, so the panel doesn't
+ * resize when it appears or expands.
+ */
+private val AR_PANEL_MIN_WIDTH: Dp = 220.dp
