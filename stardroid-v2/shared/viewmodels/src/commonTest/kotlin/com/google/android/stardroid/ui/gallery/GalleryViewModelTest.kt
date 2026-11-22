@@ -107,4 +107,29 @@ class GalleryViewModelTest {
 
             assertThat(viewModel.items.value.single().name).isEqualTo("Galaxia de Andrómeda")
         }
+
+    @Test
+    fun items_labelBlankSatelliteTilesAndKeepSortOrder() =
+        runTest(dispatcher) {
+            val repository =
+                GalleryRepository(
+                    listOf(
+                        GalleryItem(CelestialObjectId("satellite/25544"), "", "iss.webp"),
+                        GalleryItem(CelestialObjectId("satellite/48274"), "", "css.webp"),
+                        GalleryItem(CelestialObjectId("satellite/99999"), "Named", "x.webp"),
+                        GalleryItem(CelestialObjectId("planet/jupiter"), "Jupiter", "j.webp"),
+                    ),
+                )
+
+            val viewModel =
+                GalleryViewModel(
+                    catalog = { repository },
+                    locale = MutableStateFlow(LocaleSpec("en")),
+                )
+            runCurrent()
+
+            assertThat(viewModel.items.value.map { it.name })
+                .containsExactly("CSS", "ISS", "Jupiter", "Named")
+                .inOrder()
+        }
 }

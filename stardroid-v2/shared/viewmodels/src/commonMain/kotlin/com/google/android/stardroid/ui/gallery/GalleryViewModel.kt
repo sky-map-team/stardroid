@@ -26,7 +26,7 @@ import kotlinx.coroutines.launch
  * The image-gallery grid content: every catalog object with a photo, name-sorted for the
  * requested locale (v1's `ImageGalleryActivity` over `ObjectInfoRegistry.getAllWithImages`).
  * Tapping a tile opens the object's info card, owned by `ObjectInfoViewModel` — this view
- * model only lists.
+ * model only lists. Satellite tiles are labelled here, as the catalog holds no names for them.
  */
 class GalleryViewModel(
     private val catalog: suspend () -> CatalogRepository,
@@ -43,20 +43,21 @@ class GalleryViewModel(
         }
     }
 
-    // Satellite catalog rows carry no names (see SatelliteIds), so the repository leaves
-    // them blank. The acronyms are the same in every language.
+    // Satellite catalog rows have no names (see SatelliteIds), so the repository leaves them
+    // blank. Stopgap: English acronyms, untranslated.
     private fun withSatelliteLabels(items: List<GalleryItem>): List<GalleryItem> =
         items
             .map { item ->
-                if (item.name.isNotEmpty()) {
-                    item
-                } else {
-                    when (SatelliteIds.noradIdFor(item.id)) {
-                        SpaceStations.ISS_NORAD_ID -> item.copy(name = "ISS")
-                        SpaceStations.TIANGONG_NORAD_ID -> item.copy(name = "CSS")
-                        else -> item
-                    }
-                }
+                val label = SATELLITE_LABELS[SatelliteIds.noradIdFor(item.id)]
+                if (item.name.isEmpty() && label != null) item.copy(name = label) else item
             }
             .sortedBy { it.name }
+
+    private companion object {
+        val SATELLITE_LABELS =
+            mapOf(
+                SpaceStations.ISS_NORAD_ID to "ISS",
+                SpaceStations.TIANGONG_NORAD_ID to "CSS",
+            )
+    }
 }
