@@ -30,7 +30,7 @@ data class ShareSize(
  * when it already fits and should be used as-is (audit-2026-08 M5).
  *
  * Aspect is preserved and the long edge is capped at [maxEdge]. Split out from
- * `SkyShare.toShareSize` because this arithmetic — not the `Bitmap` plumbing around it — is
+ * each platform's capture because this arithmetic — not the bitmap plumbing around it — is
  * what decides the resolution of every image the app shares.
  */
 fun shareScaledSize(

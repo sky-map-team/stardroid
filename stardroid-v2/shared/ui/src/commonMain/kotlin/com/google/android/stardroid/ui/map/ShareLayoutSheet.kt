@@ -9,7 +9,6 @@
 
 package com.google.android.stardroid.ui.map
 
-import android.graphics.Bitmap
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -28,12 +27,15 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.asImageBitmap
+import androidx.compose.ui.graphics.ImageBitmap
 import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import com.google.android.stardroid.R
-import com.google.android.stardroid.share.SkyShare
+import com.google.android.stardroid.share.ShareLayouts
+import com.google.android.stardroid.ui.resources.Res
+import com.google.android.stardroid.ui.resources.share_chooser_title
+import com.google.android.stardroid.ui.resources.share_layout_overlay
+import com.google.android.stardroid.ui.resources.share_layout_side_by_side
+import org.jetbrains.compose.resources.stringResource
 
 /**
  * The share layout picker (camera-ar-mode.md slice 4): while the camera layer is on, a
@@ -43,14 +45,14 @@ import com.google.android.stardroid.share.SkyShare
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ShareLayoutSheet(
-    layouts: SkyShare.ShareLayouts,
-    onPick: (Bitmap) -> Unit,
+    layouts: ShareLayouts,
+    onPick: (ImageBitmap) -> Unit,
     onDismiss: () -> Unit,
 ) {
     ModalBottomSheet(onDismissRequest = onDismiss) {
         Column(Modifier.padding(horizontal = 24.dp).padding(bottom = 24.dp)) {
             Text(
-                stringResource(R.string.share_chooser_title),
+                stringResource(Res.string.share_chooser_title),
                 style = MaterialTheme.typography.titleMedium,
             )
             Row(
@@ -59,13 +61,13 @@ fun ShareLayoutSheet(
             ) {
                 LayoutChoice(
                     bitmap = layouts.overlay,
-                    label = stringResource(R.string.share_layout_overlay),
+                    label = stringResource(Res.string.share_layout_overlay),
                     onClick = { onPick(layouts.overlay) },
                     modifier = Modifier.weight(1f),
                 )
                 LayoutChoice(
                     bitmap = layouts.sideBySide,
-                    label = stringResource(R.string.share_layout_side_by_side),
+                    label = stringResource(Res.string.share_layout_side_by_side),
                     onClick = { onPick(layouts.sideBySide) },
                     modifier = Modifier.weight(1f),
                 )
@@ -76,7 +78,7 @@ fun ShareLayoutSheet(
 
 @Composable
 private fun LayoutChoice(
-    bitmap: Bitmap,
+    bitmap: ImageBitmap,
     label: String,
     onClick: () -> Unit,
     modifier: Modifier = Modifier,
@@ -92,7 +94,7 @@ private fun LayoutChoice(
                     .clickable(onClick = onClick),
         ) {
             Image(
-                bitmap.asImageBitmap(),
+                bitmap,
                 contentDescription = label,
                 contentScale = ContentScale.Fit,
                 modifier = Modifier.fillMaxWidth(),

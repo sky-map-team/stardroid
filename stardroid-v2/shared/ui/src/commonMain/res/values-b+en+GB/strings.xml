@@ -594,4 +594,10 @@ Line brightness: normal, bright or brightest, for twilight, daylight or light-po
     <!-- tm:omitted name="countdown_shower_peak" reason="identical_to_source" -->
     <!-- tm:omitted name="countdown_full_moon" reason="identical_to_source" -->
     <!-- tm:omitted name="countdown_new_moon" reason="identical_to_source" -->
+    <!-- tm:omitted name="share_chooser_title" reason="identical_to_source" -->
+    <!-- tm:omitted name="share_invitation" reason="identical_to_source" -->
+    <!-- tm:omitted name="share_text" reason="identical_to_source" -->
+    <!-- tm:omitted name="share_layout_overlay" reason="identical_to_source" -->
+    <!-- tm:omitted name="share_layout_side_by_side" reason="identical_to_source" -->
+    <!-- tm:omitted name="share_failed_message" reason="identical_to_source" -->
 </resources>
