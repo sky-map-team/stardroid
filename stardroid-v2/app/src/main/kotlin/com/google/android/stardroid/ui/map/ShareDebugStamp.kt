@@ -26,6 +26,7 @@ internal fun debugStampLines(
     mapViewModel: MapViewModel,
     arCamera: SkyCameraPreview,
     pointingBefore: ArStampPointing,
+    track: List<ArStampPointing>,
     map: Bitmap,
     still: Bitmap,
     appliedScrim: Double,
@@ -44,5 +45,6 @@ internal fun debugStampLines(
         crop = ArStampCrop(region.width, region.height),
         appVersion = version,
         device = "${Build.MODEL} API${Build.VERSION.SDK_INT}",
+        track = track,
     )
 }

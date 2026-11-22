@@ -15,10 +15,14 @@ import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.graphics.ImageFormat
 import android.graphics.Matrix
+import android.graphics.Rect
+import android.hardware.camera2.CameraCaptureSession
 import android.hardware.camera2.CameraCharacteristics
 import android.hardware.camera2.CameraManager
 import android.hardware.camera2.CameraMetadata
 import android.hardware.camera2.CaptureRequest
+import android.hardware.camera2.CaptureResult
+import android.hardware.camera2.TotalCaptureResult
 import android.media.ExifInterface
 import android.os.Build
 import android.os.SystemClock
@@ -51,6 +55,7 @@ import com.google.android.stardroid.ui.map.ArStillReport
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.suspendCancellableCoroutine
 import java.io.ByteArrayInputStream
+import java.util.Locale
 import java.util.concurrent.ExecutorService
 import java.util.concurrent.Executors
 import kotlin.coroutines.resume
@@ -95,6 +100,26 @@ class SkyCameraPreview(
         private set
 
     private var lensSummary = "unknown"
+    private var activeArray: Rect? = null
+
+    @Volatile
+    private var lastStillCrop: Rect? = null
+
+    // Session-level results for the plain session only; vendor extension sessions don't expose
+    // them (TODO(ar-debug-stamp)).
+    private val stillResultCallback =
+        object : CameraCaptureSession.CaptureCallback() {
+            override fun onCaptureCompleted(
+                session: CameraCaptureSession,
+                request: CaptureRequest,
+                result: TotalCaptureResult,
+            ) {
+                val intent = request.get(CaptureRequest.CONTROL_CAPTURE_INTENT)
+                if (intent == CameraMetadata.CONTROL_CAPTURE_INTENT_STILL_CAPTURE) {
+                    lastStillCrop = result.get(CaptureResult.SCALER_CROP_REGION)
+                }
+            }
+        }
     private var lastCaptureInfo: CaptureInfo? = null
 
     /** Whether the device offers a vendor night mode (CameraX Extensions) for stills. */
@@ -308,6 +333,7 @@ class SkyCameraPreview(
     suspend fun takeStill(mode: StillMode): Bitmap? {
         val started = SystemClock.elapsedRealtime()
         lastCaptureInfo = null
+        lastStillCrop = null
         var usedNight = false
         var path = "auto"
         var still: Bitmap? = null
@@ -319,6 +345,8 @@ class SkyCameraPreview(
             path = "auto (night unavailable)"
         }
         if (still == null) still = takeAutoStill()
+        // The still's capture result can land just after its image.
+        if (still != null && !usedNight && lastStillCrop == null) delay(RESULT_WAIT_MS)
         lastStillReport =
             still?.let { stillReport(path, usedNight, it, SystemClock.elapsedRealtime() - started) }
         return still
@@ -359,7 +387,25 @@ class SkyCameraPreview(
             focalLengthMm = exif?.focalLengthMm,
             focalLength35mm = exif?.focalLength35mm,
             exifNote = exif?.note ?: "no capture info",
+            subjectDistanceM = exif?.subjectDistanceM,
+            imageCropRect = info?.cropRect ?: "n/a",
+            sensorToBuffer = info?.sensorToBuffer ?: "n/a",
+            scalerCrop = scalerCropSummary(usedNight),
         )
+    }
+
+    private fun scalerCropSummary(usedNight: Boolean): String {
+        val crop = lastStillCrop
+        val active = activeArray
+        return when {
+            crop == null -> if (usedNight) "n/a (extension session)" else "n/a (no still result)"
+            active == null -> crop.flattenToString()
+            else -> {
+                val pct = crop.width() * 100.0 / active.width()
+                "${crop.flattenToString()} of ${active.width()}x${active.height()} " +
+                    String.format(Locale.ROOT, "(%.1f%% of width)", pct)
+            }
+        }
     }
 
     private class CaptureInfo(
@@ -368,6 +414,8 @@ class SkyCameraPreview(
         val rotationDegrees: Int,
         val zoomReported: Double?,
         val exif: ExifSummary,
+        val cropRect: String,
+        val sensorToBuffer: String,
     )
 
     private class ExifSummary(
@@ -377,7 +425,22 @@ class SkyCameraPreview(
         val focalLengthMm: Double? = null,
         val focalLength35mm: Int? = null,
         val note: String? = null,
+        val subjectDistanceM: Double? = null,
     )
+
+    private fun matrixSummary(matrix: Matrix): String {
+        val v = FloatArray(MATRIX_VALUES).also { matrix.getValues(it) }
+        return String.format(
+            Locale.ROOT,
+            "sx %.4f sy %.4f tx %.1f ty %.1f skew %.4f/%.4f",
+            v[Matrix.MSCALE_X],
+            v[Matrix.MSCALE_Y],
+            v[Matrix.MTRANS_X],
+            v[Matrix.MTRANS_Y],
+            v[Matrix.MSKEW_X],
+            v[Matrix.MSKEW_Y],
+        )
+    }
 
     /** In-memory JPEG captures carry the camera's own EXIF; YUV ones have none. */
     private fun readExif(image: ImageProxy): ExifSummary {
@@ -405,6 +468,9 @@ class SkyCameraPreview(
                     focalLength35mm =
                         exif.getAttributeInt(ExifInterface.TAG_FOCAL_LENGTH_IN_35MM_FILM, -1)
                             .takeIf { it > 0 },
+                    subjectDistanceM =
+                        exif.getAttributeDouble(ExifInterface.TAG_SUBJECT_DISTANCE, -1.0)
+                            .takeIf { it >= 0.0 },
                 )
             if (summary.exposureTimeSec == null && summary.iso == null) {
                 ExifSummary(note = "JPEG has no exposure tags")
@@ -458,6 +524,9 @@ class SkyCameraPreview(
                                 zoomReported =
                                     camera?.cameraInfo?.zoomState?.value?.zoomRatio?.toDouble(),
                                 exif = readExif(image),
+                                cropRect = image.cropRect.flattenToString(),
+                                sensorToBuffer =
+                                    matrixSummary(image.imageInfo.sensorToBufferTransformMatrix),
                             )
                         val bitmap =
                             image.use { proxy ->
@@ -649,7 +718,11 @@ class SkyCameraPreview(
             ImageCapture.Builder()
                 .setCaptureMode(ImageCapture.CAPTURE_MODE_MAXIMIZE_QUALITY)
                 .setTargetRotation(rotation)
-        if (tuned) applySkyTuning(Camera2Interop.Extender(builder))
+        if (tuned) {
+            val extender = Camera2Interop.Extender(builder)
+            applySkyTuning(extender)
+            extender.setSessionCaptureCallback(stillResultCallback)
+        }
         return builder.build()
     }
 
@@ -695,6 +768,8 @@ class SkyCameraPreview(
                     .getSystemService(CameraManager::class.java)
                     ?.getCameraCharacteristics(characteristics.cameraId)
             }.getOrNull()
+        activeArray =
+            frameworkCharacteristics?.get(CameraCharacteristics.SENSOR_INFO_ACTIVE_ARRAY_SIZE)
         val capabilities =
             frameworkCharacteristics
                 ?.get(CameraCharacteristics.REQUEST_AVAILABLE_CAPABILITIES)
@@ -748,6 +823,8 @@ class SkyCameraPreview(
                 ExtensionMode.FACE_RETOUCH to "face",
             )
 
+        private const val RESULT_WAIT_MS = 250L
+        private const val MATRIX_VALUES = 9
         private const val LUMA_INTERVAL_MS = 250L
         private const val LUMA_GRID = 24
 

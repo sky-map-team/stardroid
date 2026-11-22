@@ -73,6 +73,10 @@ data class ArStillReport(
     val focalLengthMm: Double?,
     val focalLength35mm: Int?,
     val exifNote: String?,
+    val subjectDistanceM: Double? = null,
+    val imageCropRect: String = "n/a",
+    val sensorToBuffer: String = "n/a",
+    val scalerCrop: String = "n/a",
 )
 
 /** The share's centre-crop of the still, in the still's pixels. */
@@ -103,6 +107,7 @@ object ArStampFormat {
     private const val WRAP_COLUMNS = 62
     private const val MOVED_WARN_DEG = 0.5
     private const val SKY_TIME_DIFF_MS = 2_000L
+    private const val TRACK_SAMPLES = 5
 
     fun lines(
         before: ArStampPointing,
@@ -112,6 +117,7 @@ object ArStampFormat {
         crop: ArStampCrop,
         appVersion: String,
         device: String,
+        track: List<ArStampPointing> = emptyList(),
     ): List<String> =
         buildList {
             add("SKY MAP DEBUG $appVersion  $device")
@@ -132,6 +138,7 @@ object ArStampFormat {
                     if (before.sensorFrame) "sensor" else "MANUAL",
             )
             if (after != null) add(movedLine(before, after))
+            addAll(trackLines(before, track))
             addAll(mapLines(map))
             addAll(stillLines(still, crop))
             addAll(settingLines(map))
@@ -161,6 +168,27 @@ object ArStampFormat {
         val dAlt = after.altDeg - before.altDeg
         val flag = if (abs(dAz) > MOVED_WARN_DEG || abs(dAlt) > MOVED_WARN_DEG) " MOVED" else ""
         return "moved dAz ${signed(dAz, 2)} dAlt ${signed(dAlt, 2)}$flag"
+    }
+
+    /** Up to [TRACK_SAMPLES] evenly spaced pose samples taken during the capture. */
+    private fun trackLines(
+        before: ArStampPointing,
+        track: List<ArStampPointing>,
+    ): List<String> {
+        if (track.size < 2) return emptyList()
+        val picks =
+            (0 until TRACK_SAMPLES)
+                .map { track[it * (track.size - 1) / (TRACK_SAMPLES - 1)] }
+                .distinct()
+        return listOf(
+            "track " +
+                picks.joinToString(" ") { sample ->
+                    val t = (sample.epochMillis - before.epochMillis) / 1000.0
+                    "${fixed(t, 1)}s:" +
+                        "${signed(wrap180(sample.azDeg - before.azDeg), 1)}/" +
+                        signed(sample.altDeg - before.altDeg, 1)
+                },
+        )
     }
 
     private fun mapLines(map: ArStampMap): List<String> {
@@ -198,8 +226,13 @@ object ArStampFormat {
             )
             add(
                 "cam zoom reported " +
-                    (still.zoomReported?.let { fixed(it, 2) } ?: "n/a"),
+                    (still.zoomReported?.let { fixed(it, 2) } ?: "n/a") +
+                    "  subj dist " +
+                    (still.subjectDistanceM?.let { "${fixed(it, 2)}m" } ?: "n/a"),
             )
+            addAll(wrap("img cropRect ${still.imageCropRect}"))
+            addAll(wrap("sensor->buffer ${still.sensorToBuffer}"))
+            addAll(wrap("scaler crop ${still.scalerCrop}"))
             add(
                 "exif " +
                     if (exposure.isEmpty()) {

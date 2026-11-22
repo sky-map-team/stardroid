@@ -70,8 +70,10 @@ import com.google.android.stardroid.ui.objectinfo.ObjectInfoViewModel
 import com.google.android.stardroid.ui.search.SearchViewModel
 import com.google.android.stardroid.ui.timetravel.TimeTravelViewModel
 import kotlinx.coroutines.NonCancellable
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.isActive
 import kotlinx.coroutines.launch
 import kotlin.math.max
 import kotlin.math.min
@@ -136,8 +138,23 @@ fun MapRoute(
             val map = if (arModeOn) SkyShare.captureMap(glSurfaceView) else null
             val pointingBefore = if (map != null) mapViewModel.arStampPointing() else null
             var still: Bitmap? = null
+            val track = mutableListOf<ArStampPointing>()
+            // Samples the pose through the exposure so the stamp shows how the phone drifted.
+            val sampler =
+                if (capture.debugStamp && pointingBefore != null) {
+                    track += pointingBefore
+                    launch {
+                        while (isActive) {
+                            delay(STAMP_TRACK_INTERVAL_MS)
+                            track += mapViewModel.arStampPointing()
+                        }
+                    }
+                } else {
+                    null
+                }
             try {
                 still = if (map != null) arCamera.takeStill(capture.stillMode) else null
+                sampler?.cancel()
                 if (map != null && still != null) {
                     // The composites use the scrim exactly as rendered (night floor included).
                     val scrim = mapViewModel.renderState.first().cameraScrim
@@ -148,6 +165,7 @@ fun MapRoute(
                                 mapViewModel,
                                 arCamera,
                                 pointingBefore,
+                                track,
                                 map,
                                 still,
                                 scrim,
@@ -463,3 +481,6 @@ private suspend fun PointerInputScope.detectSkyGestures(
 
 /** Max distance between two taps that still counts as a double tap (in dp). */
 private const val DOUBLE_TAP_SLOP_DP = 32
+
+// TODO(ar-debug-stamp)
+private const val STAMP_TRACK_INTERVAL_MS = 250L

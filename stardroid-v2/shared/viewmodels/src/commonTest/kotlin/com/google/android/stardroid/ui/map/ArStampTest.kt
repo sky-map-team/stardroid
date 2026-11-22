@@ -164,4 +164,55 @@ class ArStampTest {
         assertThat(text.contains("SKY TIME")).isTrue()
         assertThat(text.contains("manual ISO3200 2.0s")).isTrue()
     }
+
+    @Test
+    fun `track samples are shown relative to the start, evenly spaced`() {
+        val track =
+            (0..8).map { i ->
+                pointing.copy(
+                    epochMillis = pointing.epochMillis + i * 1_000L,
+                    azDeg = pointing.azDeg + i * 0.5,
+                    altDeg = pointing.altDeg - i * 0.25,
+                )
+            }
+        val lines =
+            ArStampFormat.lines(
+                before = pointing,
+                after = track.last(),
+                map = map,
+                still = still,
+                crop = ArStampCrop(864, 1920),
+                appVersion = "2.0",
+                device = "x",
+                track = track,
+            )
+        assertThat(
+            lines.contains(
+                "track 0.0s:+0.0/+0.0 2.0s:+1.0/-0.5 4.0s:+2.0/-1.0 6.0s:+3.0/-1.5 8.0s:+4.0/-2.0",
+            ),
+        ).isTrue()
+    }
+
+    @Test
+    fun `crop and focus fields are printed`() {
+        val lines =
+            ArStampFormat.lines(
+                before = pointing,
+                after = null,
+                map = map,
+                still =
+                    still.copy(
+                        subjectDistanceM = 0.9,
+                        imageCropRect = "Rect(0, 0 - 4080, 3072)",
+                        scalerCrop = "Rect(0, 0 - 8160, 6120) of 8160x6120 (100.0% of width)",
+                    ),
+                crop = ArStampCrop(864, 1920),
+                appVersion = "2.0",
+                device = "x",
+            )
+        val text = lines.joinToString("\n")
+        assertThat(text.contains("subj dist 0.90m")).isTrue()
+        assertThat(text.contains("img cropRect Rect(0, 0 - 4080, 3072)")).isTrue()
+        assertThat(text.contains("scaler crop Rect(0, 0 - 8160, 6120)")).isTrue()
+    }
 }
