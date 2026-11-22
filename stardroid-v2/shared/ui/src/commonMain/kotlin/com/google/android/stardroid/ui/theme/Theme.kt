@@ -230,8 +230,8 @@ private val DayColors =
         onError = Color(0xFF4A0E00),
         errorContainer = Color(0xFF6E2010),
         onErrorContainer = Color(0xFFFFDAD1),
-        // Snackbars draw on the inverse roles. A near-white bar on a black sky ruins dark
-        // adaptation, so use a deep navy with dimmed text and the gold accent for actions.
+        // Snackbars and tooltips draw on the inverse roles; a near-white bar would wreck dark
+        // adaptation.
         inverseSurface = Color(0xFF141C36),
         inverseOnSurface = Color(0xFFA9B4D0),
         inversePrimary = Color(0xFFF5C77E),
