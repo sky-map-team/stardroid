@@ -508,8 +508,8 @@ Decided 2026-11-03/04:
    - The strings behind the ids that iOS needs (`channel_*`, `notif_*`, now Android-only in
      `app/res`) move into `shared/ui`'s `values/strings.xml`, where `tm` translates them once
      for both platforms. Android's implementation reads the same copy.
-   - `LayerStrings` folds into `TextSource` later, which removes both `ResourceLayerStrings`
-     implementations. Nothing forces that now: iOS already has translated layer labels, from its
+   - `LayerStrings` folds into `TextSource` later, which removes the Android and iOS
+     `ResourceLayerStrings`. Nothing forces that now: iOS already has translated layer labels, from its
      own `ResourceLayerStrings` over `:shared:ui`'s resources.
    - The widget extension is Swift and cannot read Compose resources. It gets `.strings`
      generated from the same `values-*/` XML (the phase 7 export), the one new mechanism.
