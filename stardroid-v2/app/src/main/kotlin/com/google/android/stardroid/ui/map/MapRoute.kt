@@ -193,12 +193,7 @@ fun MapRoute(
         // plane sits under the (translucent, media-overlay) GL surface — the stacked-surface
         // compositing model of camera-ar-mode.md/D64, Option A.
         if (arModeOn) {
-            LaunchedEffect(Unit) {
-                mapViewModel.arZoomRatio.collect { arCamera.setZoomRatio(it) }
-            }
-            LaunchedEffect(Unit) {
-                mapViewModel.arExposureIndex.collect { arCamera.setExposureIndex(it) }
-            }
+            LaunchedEffect(Unit) { arCamera.followControls(mapViewModel) }
             LaunchedEffect(Unit) {
                 mapViewModel.arManualExposure.collect { arCamera.setManualExposure(it) }
             }
@@ -209,9 +204,12 @@ fun MapRoute(
                         val long = maxOf(metrics.widthPixels, metrics.heightPixels).toDouble()
                         val short = minOf(metrics.widthPixels, metrics.heightPixels).toDouble()
                         arCamera.bind(
-                            previewView = view,
-                            lifecycleOwner = lifecycleOwner,
-                            viewAspectLongOverShort = long / short,
+                            target =
+                                SkyCameraPreview.Target(
+                                    previewView = view,
+                                    lifecycleOwner = lifecycleOwner,
+                                    viewAspectLongOverShort = long / short,
+                                ),
                             onPreviewLuma = mapViewModel::onArPreviewLuma,
                             onReady = mapViewModel::onArCameraReady,
                         )
