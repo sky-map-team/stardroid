@@ -88,6 +88,7 @@ import kotlinx.coroutines.flow.debounce
 import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.emptyFlow
 import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.sync.Mutex
@@ -264,7 +265,7 @@ class IosAppGraph(
                 ?: LayerRegistry.create(
                     catalog = repository,
                     locale = locale,
-                    strings = flowOf(EnglishLayerStrings),
+                    strings = flow { emit(ResourceLayerStrings.load()) },
                     clock = timeController.times,
                     location = locationController.locations,
                     ephemeris = MeeusEphemeris,

@@ -3,15 +3,6 @@
 
     <!-- Launch splash banner. -->
 
-    <!-- tm:omitted name="north_pole" reason="identical_to_source" -->
-    <!-- tm:omitted name="south_pole" reason="identical_to_source" -->
-    <string name="zenith">SENIT</string>
-    <!-- tm:omitted name="nadir" reason="identical_to_source" -->
-    <string name="north">NORD</string>
-    <string name="south">SØR</string>
-    <string name="east">ØST</string>
-    <string name="west">VEST</string>
-    <string name="ecliptic">Ekliptikken</string>
 
     <!-- Solar-system body names, drawn as labels next to each body. -->
 

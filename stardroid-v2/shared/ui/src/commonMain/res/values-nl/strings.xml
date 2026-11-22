@@ -684,4 +684,13 @@ Lijnhelderheid: normaal, helder of helderst, voor de schemering, daglicht of een
     <string name="countdown_shower_peak" translation_description="Countdown-widget event name; %1$s is a meteor shower name">%1$s piek</string>
     <string name="countdown_new_moon" translation_description="Countdown-widget event name for the next new moon">Nieuwe Maan</string>
     <string name="countdown_full_moon" translation_description="Countdown-widget event name for the next full moon">Volle Maan</string>
+    <!-- tm:omitted name="north_pole" reason="identical_to_source" -->
+    <string name="south_pole">ZP</string>
+    <string name="zenith">ZENIT</string>
+    <!-- tm:omitted name="nadir" reason="identical_to_source" -->
+    <string name="north">NOORD</string>
+    <string name="south">ZUID</string>
+    <string name="east">OOST</string>
+    <!-- tm:omitted name="west" reason="identical_to_source" -->
+    <string name="ecliptic">Ecliptica</string>
 </resources>

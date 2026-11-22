@@ -664,4 +664,13 @@
     <string name="countdown_shower_peak" translation_description="Countdown-widget event name; %1$s is a meteor shower name">ذروة %1$s</string>
     <string name="countdown_new_moon" translation_description="Countdown-widget event name for the next new moon">القمر الجديد</string>
     <string name="countdown_full_moon" translation_description="Countdown-widget event name for the next full moon">البدر</string>
+    <string name="north_pole">القطب السماوي الشمالي</string>
+    <string name="south_pole">القطب السماوي الجنوبي</string>
+    <string name="zenith">سمت الرأس</string>
+    <string name="nadir">النظير</string>
+    <string name="north">شمال</string>
+    <string name="south">جنوب</string>
+    <string name="east">شرق</string>
+    <string name="west">غرب</string>
+    <string name="ecliptic">مسير الشمس</string>
 </resources>
