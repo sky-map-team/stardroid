@@ -77,8 +77,12 @@ remote was deleted. It shows a dry-run plan first and skips worktrees with uncom
 
 Each worktree already contains the v2 build-critical files excluded from version control:
 `stardroid-v2/local.properties`, `stardroid-v2/app/no-checkin.properties`,
-`stardroid-v2/fastlane/play-store-credentials.json` and `stardroid-v2/.env`. v1 is deprecated, so
-worktrees don't need its equivalents.
+`stardroid-v2/fastlane/play-store-credentials.json`, `stardroid-v2/.env`, and the two Firebase
+plists `stardroid-v2/ios/SkyMap/GoogleService-Info.plist` and `GoogleService-Info-Dev.plist`. A
+worktree without the plists builds an iOS app with Firebase unconfigured: no analytics, and every
+Remote Config flag reads its shipped default. v1 is deprecated, so worktrees don't need its
+equivalents. The same list is in `.worktreeinclude`, which Claude Code uses for worktrees it
+creates; keep the two in step.
 
 Signing keystores are not per-worktree: `no-checkin.properties` points at them by absolute path
 under `~/.android/`. If you add a new worktree, copy the files above from the main checkout

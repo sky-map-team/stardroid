@@ -1,0 +1,8 @@
+# Gitignored files Claude Code copies into the worktrees it creates (gitignore syntax; only files
+# that are also gitignored are copied). Keep in step with AGENTS.md "Git Worktrees".
+stardroid-v2/local.properties
+stardroid-v2/app/no-checkin.properties
+stardroid-v2/fastlane/play-store-credentials.json
+stardroid-v2/.env
+stardroid-v2/ios/SkyMap/GoogleService-Info.plist
+stardroid-v2/ios/SkyMap/GoogleService-Info-Dev.plist

@@ -199,7 +199,6 @@ private val DayColors =
         onPrimary = Color(0xFF231A00),
         primaryContainer = Color(0xFF5A4200),
         onPrimaryContainer = Color(0xFFFFDF9C),
-        inversePrimary = Color(0xFF7A5A00),
         secondary = Color(0xFF7EC8E3),
         onSecondary = Color(0xFF00344A),
         secondaryContainer = Color(0xFF1E3A4C),
@@ -231,9 +230,11 @@ private val DayColors =
         onError = Color(0xFF4A0E00),
         errorContainer = Color(0xFF6E2010),
         onErrorContainer = Color(0xFFFFDAD1),
-        // Snackbars draw on the inverse roles; keep them Starlight-on-navy.
-        inverseSurface = Color(0xFFE0E1DD),
-        inverseOnSurface = Color(0xFF0E1428),
+        // Snackbars and tooltips draw on the inverse roles; a near-white bar would wreck dark
+        // adaptation.
+        inverseSurface = Color(0xFF141C36),
+        inverseOnSurface = Color(0xFFA9B4D0),
+        inversePrimary = Color(0xFFF5C77E),
     )
 
 private val NightColors =

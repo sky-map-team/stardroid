@@ -518,6 +518,7 @@ This is the part that protects the install base, and it inverts normal retry ins
 
   A timeout has no HTTP code, so `lastStatusCode` keeps the last real response, Diagnostics
   shows the open circuit and its failure count, and no `satellite_fetch_failed` event is sent.
+  Alerting is therefore blind to a firewall block until #1348 is fixed.
 - **On any non-200**, increment a failure counter and set `circuitOpenUntil = now + backoff`,
   where backoff runs **24 h → 48 h → 7 days**, capped. Far more conservative than typical retry
   policy, deliberately.
@@ -544,6 +545,13 @@ This is the part that protects the install base, and it inverts normal retry ins
   Both are cheap, both are gms-only same as the rest of the app's analytics, and together they are
   what would tell us — before CelesTrak firewalls anyone — that a retry bug is loose in
   production, which is the entire reason the circuit breaker exists.
+
+  **Someone has to be told (#1273).** A Google Apps Script,
+  [`tools/satellite-alerts`](../../tools/satellite-alerts/README.md), emails the maintainer when
+  failures pass a fixed daily limit, or when downloads estimated from the sampled
+  `satellite_fetch_ok` pass the budget (#1274). The limit is fixed because a trailing average
+  absorbed the November 2026 incident. GA4 custom insights can't do this, as they can't filter
+  on an event name. The GitHub Action from #1273 is deferred; that README says why.
 
 ### Forcing a fetch — debug builds only
 

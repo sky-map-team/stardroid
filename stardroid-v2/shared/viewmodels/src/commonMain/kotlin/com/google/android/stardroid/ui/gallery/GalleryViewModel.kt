@@ -11,9 +11,11 @@ package com.google.android.stardroid.ui.gallery
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.google.android.stardroid.astronomy.SpaceStations
 import com.google.android.stardroid.catalog.CatalogRepository
 import com.google.android.stardroid.catalog.GalleryItem
 import com.google.android.stardroid.catalog.LocaleSpec
+import com.google.android.stardroid.catalog.SatelliteIds
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -24,7 +26,7 @@ import kotlinx.coroutines.launch
  * The image-gallery grid content: every catalog object with a photo, name-sorted for the
  * requested locale (v1's `ImageGalleryActivity` over `ObjectInfoRegistry.getAllWithImages`).
  * Tapping a tile opens the object's info card, owned by `ObjectInfoViewModel` — this view
- * model only lists.
+ * model only lists. Satellite tiles are labelled here, as the catalog holds no names for them.
  */
 class GalleryViewModel(
     private val catalog: suspend () -> CatalogRepository,
@@ -37,7 +39,26 @@ class GalleryViewModel(
     // switch triggers, so a once-only load would keep showing the old language's names.
     init {
         viewModelScope.launch {
-            locale.collectLatest { _items.value = catalog().galleryItems(it) }
+            locale.collectLatest { _items.value = withSatelliteLabels(catalog().galleryItems(it)) }
         }
+    }
+
+    // Satellite catalog rows have no names (see SatelliteIds), so the repository leaves them
+    // blank. Stopgap: English acronyms, untranslated;
+    // see issue 1352.
+    private fun withSatelliteLabels(items: List<GalleryItem>): List<GalleryItem> =
+        items
+            .map { item ->
+                val label = SATELLITE_LABELS[SatelliteIds.noradIdFor(item.id)]
+                if (item.name.isEmpty() && label != null) item.copy(name = label) else item
+            }
+            .sortedBy { it.name }
+
+    private companion object {
+        val SATELLITE_LABELS =
+            mapOf(
+                SpaceStations.ISS_NORAD_ID to "ISS",
+                SpaceStations.TIANGONG_NORAD_ID to "CSS",
+            )
     }
 }
