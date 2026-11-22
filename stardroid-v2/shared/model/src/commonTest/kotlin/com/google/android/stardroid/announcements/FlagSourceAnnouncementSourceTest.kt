@@ -21,6 +21,7 @@ class FlagSourceAnnouncementSourceTest {
     ) : FlagSource {
         val fetches = mutableListOf<Boolean>()
         var fetched: String? = null
+        var error: String? = null
 
         override fun serverValue(key: String): Boolean? = null
 
@@ -33,8 +34,8 @@ class FlagSourceAnnouncementSourceTest {
             onDone: (updated: Boolean, error: String?) -> Unit,
         ) {
             fetches += ignoreThrottle
-            text = fetched
-            onDone(true, null)
+            if (error == null) text = fetched
+            onDone(error == null, error)
         }
     }
 
@@ -53,6 +54,22 @@ class FlagSourceAnnouncementSourceTest {
 
             assertThat(remote.fetches).containsExactly(false)
             assertThat(source.current().map { it.id }).containsExactly("a")
+        }
+
+    @Test
+    fun aFailedRefreshKeepsWhatWasCached() =
+        runTest {
+            val cached =
+                """{"v":1,"messages":[{"id":"cached","start":"2026-10-03T16:00:00Z",""" +
+                    """"end":"2026-10-04T10:00:00Z","surfaces":["interstitial"],""" +
+                    """"text":{"en":{"title":"T"}}}]}"""
+            val remote = FakeSource(text = cached)
+            remote.error = "offline"
+            val source = FlagSourceAnnouncementSource(remote)
+
+            source.refresh()
+
+            assertThat(source.current().map { it.id }).containsExactly("cached")
         }
 
     @Test

@@ -12,27 +12,41 @@ package com.google.android.stardroid.startup
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.suspendCancellableCoroutine
-import kotlinx.coroutines.sync.Mutex
-import kotlinx.coroutines.sync.withLock
 import kotlin.coroutines.resume
 
 /**
  * Runs [source]'s fetches one at a time. Firebase answers a fetch made during another with
- * success and the old values, which would pass for a fresh kill-switch read.
+ * success and the old values, which would pass for a fresh kill-switch read. Whoever asks during
+ * a fetch shares the next one, forced if any of them forced it. No timeout: moving on from a
+ * fetch still running would be that same overlap. [scope] must be single-threaded.
  */
 class SerializedFlagSource(
     private val source: FlagSource,
     private val scope: CoroutineScope,
 ) : FlagSource by source {
-    private val mutex = Mutex()
+    private class Caller(
+        val ignoreThrottle: Boolean,
+        val onDone: (updated: Boolean, error: String?) -> Unit,
+    )
+
+    private var waiting = mutableListOf<Caller>()
+    private var fetching = false
 
     override fun fetch(
         ignoreThrottle: Boolean,
         onDone: (updated: Boolean, error: String?) -> Unit,
     ) {
         scope.launch {
-            val (updated, error) = mutex.withLock { fetchOne(ignoreThrottle) }
-            onDone(updated, error)
+            waiting += Caller(ignoreThrottle, onDone)
+            if (fetching) return@launch
+            fetching = true
+            while (waiting.isNotEmpty()) {
+                val callers = waiting
+                waiting = mutableListOf()
+                val (updated, error) = fetchOne(callers.any { it.ignoreThrottle })
+                callers.forEach { it.onDone(updated, error) }
+            }
+            fetching = false
         }
     }
 

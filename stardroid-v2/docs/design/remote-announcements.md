@@ -80,7 +80,7 @@ scope (ios-platform-surfaces.md §5.4).
   that comes later shows in the sheet, and in the dialog at the next open.
 - **The dialog is per open, not per process**, since an iOS process can be suspended for days.
   Still one message at a time and each only once. It waits for the startup gates, the version
-  banner and any full-screen page. One left up is withdrawn at the next open if it is no longer
+  banner, and a bare map (no page, search, sheet or card). One left up is withdrawn at the next open if it is no longer
   live.
 - **The Tonight sheet** lists every active message, as on Android.
 - **No notification and no widget banner.** A message that lists only those surfaces appears
@@ -96,7 +96,9 @@ scope (ios-platform-surfaces.md §5.4).
   launch, as the flags are frozen for a launch (`announcementsOn`).
 - **Fetches run one at a time** (`SerializedFlagSource`). Firebase answers a fetch made during
   another with success and the old values, which the satellite kill switch would take as fresh.
-  When both are due, that costs a second request.
+  Whoever asks during a fetch shares the next one, so at most one waits. When both are due,
+  that costs a second request, and a first fetch slower than the satellite gate's 10 s skips
+  that open's download (fails safe).
 
 ## Publishing
 

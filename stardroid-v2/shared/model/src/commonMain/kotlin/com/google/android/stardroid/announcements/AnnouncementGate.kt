@@ -15,8 +15,8 @@ import com.google.android.stardroid.startup.ExperimentConfig
 import kotlinx.coroutines.flow.first
 
 /**
- * The kill switch and the user's opt-out. Where flags are frozen for the launch, switching off
- * counts at once and switching on waits for the next launch, when Settings has the opt-out too.
+ * The kill switch and the user's opt-out. The switch turns off at once, but on only at the next
+ * launch where flags are frozen, so messages never show before Settings offers the opt-out.
  */
 suspend fun announcementsOn(
     experiments: ExperimentConfig,

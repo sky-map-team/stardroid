@@ -15,7 +15,8 @@ import kotlin.coroutines.resume
 
 /**
  * [AnnouncementSource] over a [FlagSource] (iOS). Not frozen at launch like the flags: an
- * activated fetch shows in [current] at once. [refresh] keeps the 12 h throttle; don't bypass it.
+ * activated fetch shows in [current] at once. [refresh] keeps the 12 h throttle, as it runs on
+ * every open of every install.
  */
 class FlagSourceAnnouncementSource(
     private val source: FlagSource,

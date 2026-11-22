@@ -58,6 +58,57 @@ class SerializedFlagSourceTest {
         }
 
     @Test
+    fun callersDuringAFetchShareOneFollowingFetchForcedIfAnyForcedIt() =
+        runTest {
+            val slow = SlowSource()
+            val source = SerializedFlagSource(slow, this)
+            var answered = 0
+            source.fetch(false) { _, _ -> answered++ }
+            runCurrent()
+            repeat(20) { source.fetch(false) { _, _ -> answered++ } }
+            source.fetch(true) { _, _ -> answered++ }
+            runCurrent()
+
+            slow.replies[0](false, null)
+            runCurrent()
+            assertThat(slow.throttleIgnored).containsExactly(false, true).inOrder()
+            assertThat(answered).isEqualTo(1)
+
+            slow.replies[1](true, null)
+            runCurrent()
+            assertThat(answered).isEqualTo(22)
+        }
+
+    @Test
+    fun aFetchThatNeverAnswersIsNotOverlapped() =
+        runTest {
+            val slow = SlowSource()
+            val source = SerializedFlagSource(slow, backgroundScope)
+            var answered = 0
+            repeat(5) { source.fetch(true) { _, _ -> answered++ } }
+            runCurrent()
+
+            assertThat(slow.replies.size).isEqualTo(1)
+            assertThat(answered).isEqualTo(0)
+        }
+
+    @Test
+    fun aRepeatedCallbackIsIgnored() =
+        runTest {
+            val slow = SlowSource()
+            val source = SerializedFlagSource(slow, this)
+            var answered = 0
+            source.fetch(false) { _, _ -> answered++ }
+            runCurrent()
+
+            slow.replies[0](true, null)
+            slow.replies[0](true, null)
+            runCurrent()
+
+            assertThat(answered).isEqualTo(1)
+        }
+
+    @Test
     fun aFailedFetchReleasesTheNext() =
         runTest {
             val slow = SlowSource()

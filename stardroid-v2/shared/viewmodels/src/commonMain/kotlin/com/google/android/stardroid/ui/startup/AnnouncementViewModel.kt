@@ -23,6 +23,7 @@ import com.google.android.stardroid.announcements.announcementsOn
 import com.google.android.stardroid.catalog.LocaleSpec
 import com.google.android.stardroid.settings.Settings
 import com.google.android.stardroid.startup.ExperimentConfig
+import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -43,8 +44,8 @@ data class PendingAnnouncement(
 
 /**
  * The interstitial surface. [loadIfNeeded] runs after the startup gates (EULA, welcome, What's
- * New) have cleared: once per process on Android, and once per open on iOS, whose process can
- * outlive many ([onAppOpened]). A message is recorded as shown the moment it is picked, so a
+ * New) have cleared: once per process on Android, once per open on iOS ([onAppOpened]).
+ * A message is recorded as shown the moment it is picked, so a
  * rotation or relaunch never shows it twice and a notification already posted for it suppresses
  * this dialog ([AnnouncementPolicy]).
  */
@@ -67,23 +68,26 @@ class AnnouncementViewModel(
     private val _readyOpen = MutableStateFlow<Int?>(null)
 
     /**
-     * iOS: the number of the open whose refresh has settled, or null during one. A number, as a
-     * cached fetch settles within a frame and a conflated flag would look unchanged to Compose.
+     * iOS: the open whose refresh has settled, or null during one. Numbered, because Compose
+     * would conflate a flag that a cached fetch flips within a frame.
      */
     val readyOpen: StateFlow<Int?> = _readyOpen.asStateFlow()
     private var opens = 0
 
     private var loaded = false
+    private var loading: Job? = null
 
     /**
-     * iOS, which has no background refresh: each open fetches, waiting only briefly so that a
-     * slow reply can't raise a dialog in mid-use. A later reply is there for the next open.
+     * iOS, which can't refresh in the background. The wait is brief so that a slow reply can't
+     * raise a dialog in mid-use.
      */
     suspend fun onAppOpened() {
         _readyOpen.value = null
         val open = ++opens
         // Whatever the flag says, as this fetch is also how the flags themselves are refreshed.
         withTimeoutOrNull(REFRESH_WAIT) { source.refresh() }
+        // A load from the last open may have recorded a message it has yet to show.
+        loading?.join()
         val at = now()
         val active = source.current()
         state.prune(active.map { it.id }.toSet(), at)
@@ -103,31 +107,32 @@ class AnnouncementViewModel(
     fun loadIfNeeded() {
         if (loaded) return
         loaded = true
-        viewModelScope.launch {
-            if (!announcementsOn(experimentConfig, settings)) return@launch
-            val now = now()
-            val message =
-                AnnouncementPolicy.next(
-                    Surface.INTERSTITIAL,
-                    now,
-                    source.current(),
-                    state.seen.first(),
-                    appVersion,
-                ) ?: return@launch
-            val text = message.localized(locale()) ?: return@launch
-            state.markShown(message.id, Surface.INTERSTITIAL, now)
-            analytics.trackEvent(
-                AnalyticsEvents.ANNOUNCEMENT_SHOWN_EVENT,
-                mapOf(
-                    AnalyticsEvents.ANNOUNCEMENT_ID to message.id,
-                    AnalyticsEvents.ANNOUNCEMENT_SURFACE to Surface.INTERSTITIAL.wire,
-                ),
-            )
-            _pending.value = PendingAnnouncement(message.id, text, message.action)
-        }
+        loading =
+            viewModelScope.launch {
+                if (!announcementsOn(experimentConfig, settings)) return@launch
+                val now = now()
+                val message =
+                    AnnouncementPolicy.next(
+                        Surface.INTERSTITIAL,
+                        now,
+                        source.current(),
+                        state.seen.first(),
+                        appVersion,
+                    ) ?: return@launch
+                val text = message.localized(locale()) ?: return@launch
+                state.markShown(message.id, Surface.INTERSTITIAL, now)
+                analytics.trackEvent(
+                    AnalyticsEvents.ANNOUNCEMENT_SHOWN_EVENT,
+                    mapOf(
+                        AnalyticsEvents.ANNOUNCEMENT_ID to message.id,
+                        AnalyticsEvents.ANNOUNCEMENT_SURFACE to Surface.INTERSTITIAL.wire,
+                    ),
+                )
+                _pending.value = PendingAnnouncement(message.id, text, message.action)
+            }
     }
 
-    /** Close the dialog, leaving the message eligible for the widget. */
+    /** Close the dialog, leaving the message eligible for the passive surfaces. */
     fun close() {
         _pending.value = null
     }

@@ -12,6 +12,7 @@ package com.google.android.stardroid.ui.startup
 import com.google.android.stardroid.analytics.NoOpAnalytics
 import com.google.android.stardroid.announcements.Announcement
 import com.google.android.stardroid.announcements.AnnouncementAction
+import com.google.android.stardroid.announcements.AnnouncementPolicy
 import com.google.android.stardroid.announcements.AnnouncementSource
 import com.google.android.stardroid.announcements.AnnouncementState
 import com.google.android.stardroid.announcements.AnnouncementText
@@ -22,6 +23,7 @@ import com.google.android.stardroid.settings.FakeSettings
 import com.google.android.stardroid.startup.Experiment
 import com.google.android.stardroid.startup.ExperimentConfig
 import com.google.android.stardroid.testing.assertThat
+import kotlinx.coroutines.CompletableDeferred
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.awaitCancellation
@@ -74,6 +76,7 @@ class AnnouncementViewModelTest {
 
     private class FakeState : AnnouncementState {
         override val seen = MutableStateFlow(emptyMap<String, SeenRecord>())
+        var writeFinished: CompletableDeferred<Unit>? = null
 
         override suspend fun markShown(
             id: String,
@@ -82,6 +85,7 @@ class AnnouncementViewModelTest {
         ) {
             val old = seen.value[id] ?: SeenRecord()
             seen.value += id to old.copy(shownOn = old.shownOn + surface)
+            writeFinished?.await()
         }
 
         override suspend fun dismiss(
@@ -196,6 +200,72 @@ class AnnouncementViewModelTest {
             vm.loadIfNeeded()
             runCurrent()
             assertThat(vm.pending.value).isNull()
+        }
+
+    @Test
+    fun anOpenWaitsForTheLastOpensLoadSoNoSecondMessageReplacesIt() =
+        runTest(dispatcher) {
+            source.cached = listOf(message("a"))
+            val vm = viewModel()
+            vm.onAppOpened()
+            val write = CompletableDeferred<Unit>()
+            state.writeFinished = write
+            vm.loadIfNeeded()
+            runCurrent()
+
+            source.cached = listOf(message("a"), message("b"))
+            launch { vm.onAppOpened() }
+            runCurrent()
+            assertThat(vm.readyOpen.value).isNull()
+
+            write.complete(Unit)
+            runCurrent()
+            vm.loadIfNeeded()
+            runCurrent()
+            assertThat(vm.pending.value?.id).isEqualTo("a")
+            assertThat(state.seen.value.keys).containsExactly("a")
+        }
+
+    @Test
+    fun anOpenCutShortByLeavingLeavesTheNextOneWorking() =
+        runTest(dispatcher) {
+            source.hangs = true
+            val vm = viewModel()
+            val open = launch { vm.onAppOpened() }
+            runCurrent()
+            open.cancel()
+            runCurrent()
+            assertThat(vm.readyOpen.value).isNull()
+
+            source.hangs = false
+            source.onServer = listOf(message("next"))
+            vm.onAppOpened()
+            vm.loadIfNeeded()
+            runCurrent()
+            assertThat(vm.pending.value?.id).isEqualTo("next")
+        }
+
+    @Test
+    fun dismissTakesTheMessageOutOfTheSheetAndCloseLeavesIt() =
+        runTest(dispatcher) {
+            source.cached = listOf(message("a"))
+            val vm = viewModel()
+
+            fun sheet() = AnnouncementPolicy.forSheet(now, source.cached, state.seen.value, 0)
+
+            vm.onAppOpened()
+            vm.loadIfNeeded()
+            runCurrent()
+            vm.close()
+            assertThat(sheet().map { it.id }).containsExactly("a")
+
+            source.cached = listOf(message("b"))
+            vm.onAppOpened()
+            vm.loadIfNeeded()
+            runCurrent()
+            vm.dismiss()
+            runCurrent()
+            assertThat(sheet()).isEmpty()
         }
 
     @Test

@@ -174,6 +174,7 @@ private fun SkyMapScreen(
     // The full-screen pages over the map, standing in for Android's navigation routes: a stack,
     // so back from a page opened from another (Settings from Help) returns there, as Android pops.
     var showBanner by remember { mutableStateOf(true) }
+    var mapIdle by remember { mutableStateOf(false) }
     var pages by remember { mutableStateOf(listOf<Page>()) }
     val page = pages.lastOrNull()
 
@@ -241,6 +242,7 @@ private fun SkyMapScreen(
                 onRequestAutoLocation = onRequestAutoLocation,
                 onOpenAppSettings = onOpenAppSettings,
                 covered = covered,
+                onIdleChanged = { mapIdle = it },
                 // Calibrate lives in Diagnostics (and Help links to it).
                 calibrationInMenu = false,
                 mapApiKey = GEOAPIFY_MAPS_API_KEY.takeUnless { it == "unset" || it.isEmpty() },
@@ -391,9 +393,12 @@ private fun SkyMapScreen(
                     }
                 }
             }
-            // As on Android, only once every startup gate has cleared. iOS's pages and banner
-            // aren't separate destinations, so the dialog waits for those too.
-            val announceable = !covered && !showBanner && current?.needsWhatsNew == false
+            // Only once the startup gates have cleared, as on Android. It can come up to 3 s into
+            // an open here, so also only over the bare map: a tap outside it dismisses for good.
+            val tonightShowing by tonightViewModel.visible.collectAsState()
+            val announceable =
+                !covered && mapIdle && !tonightShowing && !showBanner &&
+                    current?.needsWhatsNew == false
             val readyOpen by announcementViewModel.readyOpen.collectAsState()
             LaunchedEffect(announceable, readyOpen) {
                 if (announceable && readyOpen != null) announcementViewModel.loadIfNeeded()
