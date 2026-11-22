@@ -127,8 +127,11 @@ available here — crash data lives in Crashlytics, say so rather than guessing.
 - `satellite_fetch_failed` split by `customEvent:circuit_opened` and the `open_hours` of
   `satellite_circuit_closed`: circuits opening means the backoff is working; many long-open
   circuits means a sustained outage.
-- Cross-check with `tools/satellite_alerts.py` (the scheduled alert) if the user wants to know
-  why it did or didn't fire; its thresholds are in that file's docstring.
+- Cross-check with `tools/satellite-alerts/` (the alert, a Google Apps Script deployed by hand)
+  if the user wants to know why it did or didn't fire: thresholds are at the top of `Code.gs`,
+  blind spots in its README. `tools/satellite_alerts.py` (the GitHub Action) is deferred and
+  unconfigured: its green runs check nothing. Don't suggest a GA4 custom insight for a single
+  event: insight segments can't filter on event name or custom dimensions.
 
 **5. Top searches**
 `customEvent:search_term[search]` × `eventCount` where `eventName == search`, last 7 days,

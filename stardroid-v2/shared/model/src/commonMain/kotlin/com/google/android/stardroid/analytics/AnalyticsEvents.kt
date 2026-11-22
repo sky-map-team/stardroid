@@ -135,7 +135,8 @@ object AnalyticsEvents {
     const val SATELLITE_FETCH_CIRCUIT_OPEN_UNTIL = "circuit_open_until"
 
     // Samples 1 in SATELLITE_FETCH_OK_SAMPLE_ONE_IN successes so volume can be estimated.
-    // Keep SAMPLE_ONE_IN in tools/satellite_alerts.py equal.
+    // Keep SAMPLE_ONE_IN equal in tools/satellite-alerts/Code.gs (redeploy it by hand) and in
+    // tools/satellite_alerts.py.
     const val SATELLITE_FETCH_OK_EVENT = "satellite_fetch_ok"
     const val SATELLITE_FETCH_OK_SAMPLE_ONE_IN = 100
 
