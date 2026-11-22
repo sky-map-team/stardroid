@@ -160,11 +160,11 @@ internal class CameraSession(
         observers =
             listOf(
                 observe(AVCaptureSessionWasInterruptedNotification) { previewView.setHidden(true) },
+                // Either can arrive late enough to follow a pause.
                 observe(AVCaptureSessionInterruptionEndedNotification) {
-                    previewView.setHidden(false)
+                    if (active) previewView.setHidden(false)
                 },
                 observe(AVCaptureSessionDidStartRunningNotification) {
-                    // It arrives late enough to follow a pause.
                     if (active) previewView.setHidden(false)
                 },
                 observe(AVCaptureSessionRuntimeErrorNotification) {
