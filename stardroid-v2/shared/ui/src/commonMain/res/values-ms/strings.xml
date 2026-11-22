@@ -150,7 +150,7 @@ Kecerahan garis: biasa, cerah atau paling cerah, untuk langit senja, siang hari 
     <!-- tm:omitted name="ar_shutter_slider_label" reason="identical_to_source" -->
     <string name="ar_shutter_slider" translation_description="Accessibility label for the temporary developer slider setting the camera\'s manual shutter (exposure) time in through-camera mode.">Masa pengatup kamera</string>
     <string name="ar_controls_title" translation_description="Heading of the collapsible through-camera panel holding the exposure and dimmer sliders.">Kamera</string>
-    <string name="ar_controls_expand" translation_description="Accessibility label for the header that opens the collapsed through-camera exposure and dimmer panel.">Tunjukkan kawalan kamera</string>
+    <string name="ar_controls_expand" translation_description="Accessibility label for the header that opens the collapsed through-camera exposure and dimmer panel.">Tunjuk kawalan kamera</string>
     <string name="ar_controls_collapse" translation_description="Accessibility label for the header that collapses the through-camera exposure and dimmer panel.">Sembunyikan kawalan kamera</string>
     <string name="ar_group_auto" translation_description="Heading above the through-camera slider that adjusts the camera\'s automatic exposure.">Pendedahan auto</string>
     <string name="ar_group_manual" translation_description="Heading above the through-camera sliders that set the camera\'s ISO and shutter time by hand.">Pendedahan manual</string>
@@ -692,4 +692,16 @@ Kecerahan garis: biasa, cerah atau paling cerah, untuk langit senja, siang hari 
     <string name="countdown_shower_peak" translation_description="Countdown-widget event name; %1$s is a meteor shower name">Kemuncak %1$s</string>
     <string name="countdown_new_moon" translation_description="Countdown-widget event name for the next new moon">Bulan Baru</string>
     <string name="countdown_full_moon" translation_description="Countdown-widget event name for the next full moon">Bulan Penuh</string>
+    <string name="announcement_dialog_dismiss" translation_description="Button that closes an announcement dialog and hides that message everywhere">Tutup</string>
+    <string name="announcement_dialog_open" translation_description="Button on an announcement dialog that jumps to the sky object the message is about">Lihat</string>
+    <string name="announcement_dialog_continue" translation_description="Button on an announcement dialog that closes it and continues to the sky map">Lanjutkan</string>
+    <string name="north_pole">KU</string>
+    <string name="south_pole">KS</string>
+    <string name="zenith">ZENIT</string>
+    <!-- tm:omitted name="nadir" reason="identical_to_source" -->
+    <string name="north">UTARA</string>
+    <string name="south">SELATAN</string>
+    <string name="east">TIMUR</string>
+    <string name="west">BARAT</string>
+    <string name="ecliptic">Ekliptika</string>
 </resources>

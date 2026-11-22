@@ -1408,12 +1408,12 @@
    "image_credit": "ESO/R. Fosbury/ST-ECF"
   },
   "dso/ton_618": {
-   "description": "TON 618 é um quasar hiperlaminoso perto da fronteira entre Canes Venatici e Coma Berenices, alimentado por um dos buracos negros mais massivos conhecidos, estimado em cerca de 40 bilhões de massas solares. À medida que o gás cai, o quasar brilha com a luz de aproximadamente 140 trilhões de Sóis.",
+   "description": "TON 618 é um quasar hiperluminoso perto da fronteira entre Canes Venatici e Coma Berenices, alimentado por um dos buracos negros mais massivos conhecidos, estimado em cerca de 40 bilhões de massas solares. À medida que o gás cai, o quasar brilha com a luz de aproximadamente 140 trilhões de Sóis.",
    "fun_fact": "O horizonte de eventos do buraco negro tem um raio de cerca de 800 unidades astronômicas, muitas vezes maior do que a órbita de Netuno.",
    "distance": "~10,8 mil milhões de anos-luz (distância de viagem da luz)",
    "size": "Massa do buraco negro: ~40 mil milhões de massas solares",
    "image_credit": "Artist's concept of a supermassive black hole, not TON 618 itself. NASA/JPL-Caltech",
-   "search_subtext": "Quasar hiperluminoso"
+   "search_subtext": "Quasar hiperlumninoso"
   },
   "dso/v838_mon": {
    "description": "V838 Monocerotis é uma estrela variável incomum em Monoceros que sofreu uma explosão espetacular em 2002, tornando-se brevemente uma das estrelas mais luminosas da Via Láctea. Embora seja atualmente muito fraca para observadores visuais, seu eco de luz em expansão — uma frente de onda de luz iluminando antigas cascas de poeira — produziu algumas das imagens mais dramáticas do Telescópio Espacial Hubble já capturadas.",
@@ -1639,7 +1639,7 @@
    "image_credit": "NASA/JPL"
   },
   "probe/bepicolombo": {
-   "description": "A BepiColombo é uma missão conjunta da ESA e da JAXA a Mercúrio, sendo a primeira da Europa ao planeta. Lançada em 20 de outubro de 2018, utilizou sobrevoos gravitacionais da Terra (2020), de Vénus (2020 e 2021) e do próprio Mercúrio (seis, entre 2021 e 2025) para abrandar o suficiente para ser capturada. Atinge a órbita de Mercúrio em novembro de 2026, com operações científicas planeadas a partir de 2027. Dois orbitadores viajam juntos, o Mercury Planetary Orbiter da ESA e o Mio da JAXA. Perdida no brilho de Mercúrio, é mostrada apontando para o planeta.",
+   "description": "BepiColombo é uma missão conjunta da ESA e da JAXA a Mercúrio, sendo a primeira missão da Europa a este planeta. Lançada em 20 de outubro de 2018, utilizou sobrevoos gravitacionais da Terra (2020), de Vénus (2020 e 2021) e do próprio Mercúrio (seis, entre 2021 e 2025) para abrandar o suficiente para ser capturada. A sonda alcança a órbita de Mercúrio em novembro de 2026, estando as operações científicas planeadas para 2027. Dois orbitadores viajam juntos: o Mercury Planetary Orbiter da ESA e o Mio da JAXA. Perdido no brilho de Mercúrio, é indicado apontando para o planeta.",
    "fun_fact": "Deve o seu nome a Giuseppe \"Bepi\" Colombo, o matemático italiano que descobriu porque é que Mercúrio roda exatamente três vezes por cada duas órbitas, e cuja ideia de assistência gravitacional permitiu à Mariner 10 visitar o planeta três vezes em 1974–75.",
    "distance": "Em Mercúrio, a cerca de 58 milhões de km do Sol",
    "mass": "Cerca de 4.100 kg no lançamento",
@@ -1647,18 +1647,18 @@
    "search_subtext": "Sonda espacial em Mercúrio"
   },
   "probe/voyager_1": {
-   "description": "A Voyager 1 é o objeto feito pelo homem mais distante, agora no espaço interestelar. Lançada em 5 de setembro de 1977, ela passou por Júpiter em 5 de março de 1979 e Saturno em 12 de novembro de 1980, seguindo então para fora do sistema solar. Ela cruzou a heliopausa, a borda da bolha de vento solar do Sol, em 25 de agosto de 2012, e em 18 de novembro de 2026 tornou-se a primeira espaçonave a estar a um dia-luz da Terra. Fraca demais para ser vista, ela está localizada em Ophiuchus, a poucos graus de Rasalhague.",
+   "description": "A Voyager 1 é o objeto feito pelo homem mais distante, estando agora no espaço interestelar. Lançada em 5 de setembro de 1977, sobrevoou Júpiter em 5 de março de 1979 e Saturno em 12 de novembro de 1980, seguindo então para fora do sistema solar. Cruzou a heliopausa, a borda da bolha de vento solar do Sol, em 25 de agosto de 2012, e em 18 de novembro de 2026 tornou-se a primeira sonda a estar a um dia-luz da Terra. Demasiado fraca para ser vista, encontra-se em Ophiuchus, a poucos graus de Rasalhague.",
    "fun_fact": "Em 14 de fevereiro de 1990, a cerca de 6 bilhões de km de distância, a Voyager 1 virou sua câmera para trás e fotografou os planetas, capturando a Terra como o \"Pálido Ponto Azul\", com menos de um pixel de largura. Ela ainda carrega o Disco de Ouro, um disco banhado a ouro com sons e imagens da Terra.",
-   "distance": "Cerca de 173 UA (25,9 mil milhões de km) da Terra, nov. de 2026",
+   "distance": "Cerca de 173 UA (25,9 mil milhões de km) da Terra, nov. 2026",
    "size": "Antena parabólica de 3,7 m",
    "mass": "825 kg no lançamento",
    "image_credit": "NASA/JPL",
    "search_subtext": "Sonda espacial"
   },
   "probe/voyager_2": {
-   "description": "A Voyager 2 é a única sonda espacial a ter visitado todos os quatro planetas gigantes. Lançada em 20 de agosto de 1977, um pouco antes da Voyager 1, ela sobrevoou Júpiter em 9 de julho de 1979, Saturno em 25 de agosto de 1981, Urano em 24 de janeiro de 1986 e Netuno em 25 de agosto de 1989. Ela cruzou a heliopausa para o espaço interestelar em 5 de novembro de 2018 e ainda continua enviando dados para a Terra. Assim como a Voyager 1, ela carrega um Disco de Ouro com sons e imagens da Terra.",
-   "fun_fact": "O voo rasante da Voyager 2 sobre o polo norte de Netuno em 1989 a lançou para o sul, para fora do plano dos planetas, de modo que agora ela se encontra bem ao sul na esfera celeste. Ela deve alcançar a distância de um dia-luz da Terra por volta de novembro de 2035.",
-   "distance": "Cerca de 145 UA (21,7 mil milhões de km) da Terra, nov. de 2026",
+   "description": "A Voyager 2 é a única nave espacial a ter visitado todos os quatro gigantes gasosos. Lançada em 20 de agosto de 1977, pouco antes da Voyager 1, ela sobrevoou Júpiter em 9 de julho de 1979, Saturno em 25 de agosto de 1981, Urano em 24 de janeiro de 1986 e Netuno em 25 de agosto de 1989. Ela cruzou a heliopausa para o espaço interestelar em 5 de novembro de 2018 e continua enviando dados para a Terra. Assim como a Voyager 1, ela carrega um Disco de Ouro com sons e imagens da Terra.",
+   "fun_fact": "O voo rasante da Voyager 2 sobre o polo norte de Netuno em 1989 a lançou para o sul, para fora do plano dos planetas, de modo que agora ela se encontra bem distante no céu do sul. Ela deve alcançar uma distância de um dia-luz da Terra por volta de novembro de 2035.",
+   "distance": "Cerca de 145 UA (21,7 mil milhões de km) da Terra, nov. 2026",
    "size": "Antena parabólica de 3,7 m",
    "mass": "825 kg no lançamento",
    "image_credit": "NASA/JPL-Caltech",

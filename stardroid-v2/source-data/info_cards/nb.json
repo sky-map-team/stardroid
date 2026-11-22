@@ -1408,12 +1408,12 @@
    "image_credit": "ESO/R. Fosbury/ST-ECF"
   },
   "dso/ton_618": {
-   "description": "TON 618 er en hyperluminiscent kvasar nær grensen mellom Jakthundene og Berenikes hår, drevet av et av de mest massive svarte hullene som er kjent, anslått til omtrent 40 milliarder solmasser. Når gass faller inn, skinnes kvasaren med lyset fra omtrent 140 billioner soler.",
-   "fun_fact": "Hendelseshorisonten til det svarte hullet har en radius på omtrent 800 astronomiske enheter, som er mange ganger større enn Neptuns bane.",
-   "distance": "~10,8 milliarder lysår (lyset-reise-avstand)",
+   "description": "TON 618 er en hyperlaminos kvasar nær grensen mellom Jakthundene og Berenikes hår, drevet av et av de mest massive svarte hullene som er kjent, anslått til omtrent 40 milliarder solmasser. Når gass faller inn, skinner kvasaren med lyset fra omtrent 140 billioner soler.",
+   "fun_fact": "Hendelseshorisonten til det svarte hullet har en radius på omtrent 800 astronomiske enheter, mange ganger bredere enn Neptuns bane.",
+   "distance": "~10,8 milliarder lysår (lyset avstand)",
    "size": "Svart hull-masse: ~40 milliarder solmasser",
    "image_credit": "Artist's concept of a supermassive black hole, not TON 618 itself. NASA/JPL-Caltech",
-   "search_subtext": "Hyperluminøs kvasar"
+   "search_subtext": "Hyperlaminær kvasar"
   },
   "dso/v838_mon": {
    "description": "V838 Monocerotis er en uvanlig variabel stjerne i Monoceros som gjennomgikk et spektakulært utbrudd i 2002, og ble kort tid en av de mest lysende stjernene i Melkeveien. Selv om den er altfor svak for visuelle observatører i dag, produserte dens ekspanderende lysekko — en bølgefront av lys som belyser gamle støvskall — noen av de mest dramatiske Hubble Space Telescope-bildene som noen gang er tatt.",
@@ -1639,26 +1639,26 @@
    "image_credit": "NASA/JPL"
   },
   "probe/bepicolombo": {
-   "description": "BepiColombo er et felles ESA–JAXA-oppdrag til Merkur, og Europas første til planeten. Den ble skutt opp 20. oktober 2018, og brukte forbiflygninger av Jorden (2020), Venus (2020 og 2021) og Merkur selv (seks stykker, fra 2021 til 2025) for å bremse nok til å bli fanget opp. Den når Merkurs bane i november 2026, med vitenskapelige operasjoner planlagt fra 2027. To banefartøyer reiser sammen, ESAs Mercury Planetary Orbiter og JAXAs Mio. Den er tapt i Merkurs gjenskinn, og vises ved å peke mot planeten.",
-   "fun_fact": "Den er oppkalt etter Giuseppe \"Bepi\" Colombo, den italienske matematikeren som fant ut hvorfor Merkur roterer nøyaktig tre ganger for hver to baneomløp, og hvis idé om gravitasjonsslynge lot Mariner 10 besøke planeten tre ganger i 1974–75.",
+   "description": "BepiColombo er et felles ESA–JAXA-oppdrag til Merkur, og Europas første til planeten. Den ble skutt opp 20. oktober 2018, og brukte forbiflyvninger av Jorden (2020), Venus (2020 og 2021) og Merkur selv (seks stykker fra 2021 til 2025) for å bremse ned nok til å bli fanget inn. Den når Merkurs bane i november 2026, med vitenskapelige observasjoner planlagt fra 2027. To banefartøyer reiser sammen, ESAs Mercury Planetary Orbiter og JAXAs Mio. Den skjules av Merkurs gjenskinn, og vises ved å peke på planeten.",
+   "fun_fact": "Den er oppkalt etter Giuseppe \"Bepi\" Colombo, den italienske matematikeren som fant ut hvorfor Merkur roterer nøyaktig tre ganger for hver to baneomløp, og hvis tyngdekraftsslynging-idé lot Mariner 10 besøke planeten tre ganger i 1974–75.",
    "distance": "Ved Merkur, ca. 58 millioner km fra sola",
-   "mass": "Ca. 4 100 kg ved oppskyting",
+   "mass": "Omtrent 4 100 kg ved oppskyting",
    "image_credit": "NASA",
    "search_subtext": "Romsonde ved Merkur"
   },
   "probe/voyager_1": {
-   "description": "Voyager 1 er det mest fjerne menneskeskapte objektet, og befinner seg nå i det interstellare rommet. Den ble skutt opp 5. september 1977, fløy forbi Jupiter 5. mars 1979 og Saturn 12. november 1980, og satte deretter kursen ut av solsystemet. Den krysset heliopausen, kanten av Solens boble av solvind, 25. august 2012, og ble 18. november 2026 den første romsonden som var én lysdag unna Jorden. Den er for svak til å ses, og ligger i Slangemannen, noen få grader fra Rasalhague.",
-   "fun_fact": "Den 14. februar 1990, fra omtrent 6 milliarder km unna, snudde Voyager 1 kameraet tilbake og fotografert planetene, og fanget Jorden som den «bleke blå prikken», mindre enn en piksel bred. Den bærer fremdeles på gullplaten (Golden Record), en gullbelagt plate med lyder og bilder fra Jorden.",
-   "distance": "Ca. 173 AE (25,9 milliarder km) fra jorda, nov. 2026",
+   "description": "Voyager 1 er det mest fjerne menneskeskapte objektet, og befinner seg nå i det interstellare rommet. Den ble sendt opp 5. september 1977, fløy forbi Jupiter 5. mars 1979 og Saturn 12. november 1980, og satte deretter kursen ut av solsystemet. Den krysset heliopausen, kanten av Solens boble av solvind, 25. august 2012, og ble 18. november 2026 den første romsonden som var én lysdag unna Jorden. Den er for svak til å sees, og ligger i Slangemorderen, noen få grader fra Rasalhague.",
+   "fun_fact": "Den 14. februar 1990, fra omtrent 6 milliarder km unna, snudde Voyager 1 kameraet tilbake og fotograferte planetene, og fanget opp Jorden som den «bleke blå prikken», mindre enn én piksel bred. Den bærer fremdeles på gullplaten Golden Record, en gullbelagt plate med lyder og bilder fra Jorden.",
+   "distance": "Omtrent 173 AU (25,9 milliarder km) fra jorden, nov. 2026",
    "size": "3,7 m parabolantenne",
    "mass": "825 kg ved oppskyting",
    "image_credit": "NASA/JPL",
    "search_subtext": "Romsonde"
   },
   "probe/voyager_2": {
-   "description": "Voyager 2 er den eneste romsonden som har besøkt alle de fire gassplanetene. Den ble skutt opp 20. august 1977, litt før Voyager 1, fløy forbi Jupiter 9. juli 1979, Saturn 25. august 1981, Uranus 24. januar 1986 og Neptun 25. august 1989. Den krysset heliopausen og kom inn i det interstellare rommet 5. november 2018, og sender fremdeles data hjem. I likhet med Voyager 1 har den med seg en gyllen plate med lyder og bilder fra jorden.",
-   "fun_fact": "Voyager 2 sin forbiflyvning av Neptuns nordpol i 1989 slynget den sørover, ut av planet for planetene, slik at den nå befinner seg langt sør på himmelen. Den vil nå en lysdøgn fra Jorden rundt november 2035.",
-   "distance": "Ca. 145 AE (21,7 milliarder km) fra jorda, nov. 2026",
+   "description": "Voyager 2 er den eneste romsonden som har besøkt alle de fire gasskjempene. Den ble skutt opp 20. august 1977, litt før Voyager 1, fløy forbi Jupiter 9. juli 1979, Saturn 25. august 1981, Uranus 24. januar 1986 og Neptun 25. august 1989. Den krysset heliopausen og kom inn i det interstellare rommet 5. november 2018, og sender fremdeles data hjem. I likhet med Voyager 1 har den med seg en gyllen plate med lyder og bilder fra Jorden.",
+   "fun_fact": "Voyager 2 sin nære passering av Neptuns nordpol i 1989 slynget den sørover, ut av planet for planetene, slik at den nå befinner seg langt sør på himmelen. Den vil nå én lysdag fra Jorden rundt november 2035.",
+   "distance": "Omtrent 145 AU (21,7 milliarder km) fra jorden, nov. 2026",
    "size": "3,7 m parabolantenne",
    "mass": "825 kg ved oppskyting",
    "image_credit": "NASA/JPL-Caltech",

@@ -1408,9 +1408,9 @@
    "image_credit": "ESO/R. Fosbury/ST-ECF"
   },
   "dso/ton_618": {
-   "description": "TON 618 è un quasar iperluminoso situato vicino al confine tra i Cani da Caccia e la Chioma di Berenice, alimentato da uno dei buchi neri più massicci conosciuti, stimato in circa 40 miliardi di masse solari. Mentre il gas vi precipita dentro, il quasar brilla con la luce di circa 140 mila miliardi di Soli.",
+   "description": "TON 618 è un quasar iperluminoso situato vicino al confine tra Cani da Caccia e Chioma di Berenice, alimentato da uno dei buchi neri più massicci conosciuti, stimato in circa 40 miliardi di masse solari. Man mano che il gas vi cade dentro, il quasar brilla con la luce di circa 140 trilioni di Soli.",
    "fun_fact": "L'orizzonte degli eventi del buco nero ha un raggio di circa 800 unità astronomiche, molte volte più ampio dell'orbita di Nettuno.",
-   "distance": "~10,8 miliardi di anni luce (distanza di percorso della luce)",
+   "distance": "~10,8 miliardi di anni luce (distanza di viaggio della luce)",
    "size": "Massa del buco nero: ~40 miliardi di masse solari",
    "image_credit": "Artist's concept of a supermassive black hole, not TON 618 itself. NASA/JPL-Caltech",
    "search_subtext": "Quasar iperluminoso"
@@ -1639,16 +1639,16 @@
    "image_credit": "NASA/JPL"
   },
   "probe/bepicolombo": {
-   "description": "BepiColombo è una missione congiunta ESA-JAXA verso Mercurio, la prima dell'Europa verso questo pianeta. Lanciata il 20 ottobre 2018, ha sfruttato sorvoli gravitazionali di Terra (2020), Venere (2020 e 2021) e dello stesso Mercurio (sei, dal 2021 al 2025) per decelerare a sufficienza ed essere catturata in orbita. Raggiungerà l'orbita di Mercurio nel novembre 2026, con operazioni scientifiche previste a partire dal 2027. Due orbiter viaggiano insieme, il Mercury Planetary Orbiter dell'ESA e il Mio della JAXA. Poiché si perde nel chiarore di Mercurio, viene mostrato puntando verso il pianeta.",
-   "fun_fact": "È intitolata a Giuseppe \"Bepi\" Colombo, il matematico italiano che ha calcolato il motivo per cui Mercurio ruota esattamente tre volte ogni due orbite e la cui idea di fionda gravitazionale ha permesso al Mariner 10 di visitare il pianeta tre volte nel 1974-75.",
-   "distance": "A Mercurio, a circa 58 milioni di km dal Sole",
+   "description": "BepiColombo è una missione congiunta ESA-JAXA diretta a Mercurio ed è la prima missione europea verso questo pianeta. Lanciata il 20 ottobre 2018, ha sfruttato sorvoli ravvicinati (flyby) della Terra (2020), di Venere (2020 e 2021) e dello stesso Mercurio (sei, dal 2021 al 2025) per rallentare a sufficienza e farsi catturare dalla gravità del pianeta. Raggiungerà l'orbita di Mercurio nel novembre 2026, con attività scientifiche previste a partire dal 2027. La sonda è composta da due orbiter che viaggiano insieme: il Mercury Planetary Orbiter dell'ESA e il Mio della JAXA. Poiché si perde nel riverbero di Mercurio, viene indicata puntando verso il pianeta.",
+   "fun_fact": "Deve il suo nome a Giuseppe \"Bepi\" Colombo, il matematico italiano che calcolò perché Mercurio compie esattamente tre rotazioni ogni due orbite, e la cui intuizione sulla fionda gravitazionale permise al Mariner 10 di visitare il pianeta tre volte nel 1974-75.",
+   "distance": "Presso Mercurio, a circa 58 milioni di km dal Sole",
    "mass": "Circa 4.100 kg al lancio",
    "image_credit": "NASA",
    "search_subtext": "Sonda spaziale su Mercurio"
   },
   "probe/voyager_1": {
-   "description": "Voyager 1 è l'oggetto artificiale più distante in assoluto, attualmente nello spazio interstellare. Lanciata il 5 settembre 1977, ha sorvolato Giove il 5 marzo 1979 e Saturno il 12 novembre 1980, dirigendosi poi fuori dal sistema solare. Ha superato l'eliopausa, il confine della bolla di vento solare del Sole, il 25 agosto 2012, e il 18 novembre 2026 è diventata la prima sonda a trovarsi a un giorno luce dalla Terra. Troppo debole per essere vista, si trova nella costellazione di Ofiuco, a pochi gradi da Rasalhague.",
-   "fun_fact": "Il 14 febbraio 1990, da circa 6 miliardi di km di distanza, la sonda Voyager 1 ha girato la sua fotocamera e ha fotografato i pianeti, catturando la Terra come \"Pale Blue Dot\" (Un pallido puntino azzurro), larga meno di un pixel. Porta ancora con sé il Golden Record, un disco placcato d'oro contenente suoni e immagini della Terra.",
+   "description": "Voyager 1 è l'oggetto di origine umana più distante, ora nello spazio interstellare. Lanciata il 5 settembre 1977, ha sorvolato Giove il 5 marzo 1979 e Saturno il 12 novembre 1980, dirigendosi poi fuori dal sistema solare. Ha attraversato l'eliopausa, il confine della bolla di vento solare del Sole, il 25 agosto 2012, e il 18 novembre 2026 è diventata la prima sonda a trovarsi a un giorno-luce dalla Terra. Troppo debole per essere vista, si trova nella costellazione di Ofiuco, a pochi gradi da Rasalhague.",
+   "fun_fact": "Il 14 febbraio 1990, da circa 6 miliardi di km di distanza, la Voyager 1 girò la sua fotocamera e immortalò i pianeti, catturando la Terra come \"Un puntino azzurro\" (Pale Blue Dot), largo meno di un pixel. Porta ancora con sé il Golden Record, un disco placcato d'oro contenente suoni e immagini della Terra.",
    "distance": "Circa 173 UA (25,9 miliardi di km) dalla Terra, nov 2026",
    "size": "Antenna parabolica da 3,7 m",
    "mass": "825 kg al lancio",
@@ -1656,8 +1656,8 @@
    "search_subtext": "Sonda spaziale"
   },
   "probe/voyager_2": {
-   "description": "Voyager 2 è l'unica sonda spaziale ad aver visitato tutti e quattro i pianeti giganti. Lanciata il 20 agosto 1977, poco prima del Voyager 1, è passata vicino a Giove il 9 luglio 1979, a Saturno il 25 agosto 1981, a Urano il 24 gennaio 1986 e a Nettuno il 25 agosto 1989. Ha attraversato l'eliopausa entrando nello spazio interstellare il 5 novembre 2018 e continua a trasmettere dati a Terra. Come il Voyager 1, trasporta un Disco d'Oro contenente suoni e immagini della Terra.",
-   "fun_fact": "Il passaggio ravvicinato di Voyager 2 sul polo nord di Nettuno nel 1989 l'ha spinta verso sud, fuori dal piano dei pianeti, per cui ora si trova molto lontano nel cielo australe. Dovrebbe raggiungere la distanza di un giorno-luce dalla Terra intorno a novembre del 2035.",
+   "description": "Voyager 2 è l'unica sonda spaziale ad aver visitato tutti e quattro i pianeti giganti. Lanciata il 20 agosto 1977, poco prima di Voyager 1, è passata vicino a Giove il 9 luglio 1979, a Saturno il 25 agosto 1981, a Urano il 24 gennaio 1986 e a Nettuno il 25 agosto 1989. Ha oltrepassato l'eliopausa entrando nello spazio interstellare il 5 novembre 2018 e sta ancora inviando dati a Terra. Come Voyager 1, trasporta un Disco d'Oro contenente suoni e immagini della Terra.",
+   "fun_fact": "Il passaggio ravvicinato di Voyager 2 sul polo nord di Nettuno nel 1989 l'ha spinta verso sud, fuori dal piano dei pianeti, facendola trovare ora molto lontana nel cielo australe. Dovrebbe raggiungere la distanza di un giorno-luce dalla Terra intorno a novembre 2035.",
    "distance": "Circa 145 UA (21,7 miliardi di km) dalla Terra, nov 2026",
    "size": "Antenna parabolica da 3,7 m",
    "mass": "825 kg al lancio",

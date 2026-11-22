@@ -1408,8 +1408,8 @@
    "image_credit": "ESO/R. Fosbury/ST-ECF"
   },
   "dso/ton_618": {
-   "description": "TON 618 adalah quasar hiperluminous di dekat perbatasan rasi bintang Canes Venatici dan Coma Berenices, yang ditenagai oleh salah satu lubang hitam paling masif yang pernah dikenal, diperkirakan memiliki massa sekitar 40 miliar massa matahari. Saat gas jatuh ke dalamnya, quasar ini memancarkan cahaya yang setara dengan sekitar 140 triliun Matahari.",
-   "fun_fact": "Cakrawala peristiwa lubang hitam ini memiliki jari-jari sekitar 800 satuan astronomi, berkali-kali lipat lebih besar daripada orbit Neptunus.",
+   "description": "TON 618 adalah quasar super terang di dekat perbatasan rasi bintang Canes Venatici dan Coma Berenices, yang ditenagai oleh salah satu lubang hitam paling masif yang pernah diketahui, diperkirakan mencapai sekitar 40 miliar massa matahari. Saat gas jatuh ke dalamnya, quasar ini memancarkan cahaya yang setara dengan sekitar 140 triliun Matahari.",
+   "fun_fact": "Cakrawala peristiwa lubang hitam ini memiliki jari-jari sekitar 800 satuan astronomi, berkali-kali lipat lebih luas daripada orbit Neptunus.",
    "distance": "~10,8 miliar tahun cahaya (jarak tempuh cahaya)",
    "size": "Massa lubang hitam: ~40 miliar massa matahari",
    "image_credit": "Artist's concept of a supermassive black hole, not TON 618 itself. NASA/JPL-Caltech",
@@ -1639,16 +1639,16 @@
    "image_credit": "NASA/JPL"
   },
   "probe/bepicolombo": {
-   "description": "BepiColombo adalah misi bersama ESA dan JAXA ke Merkurius, serta misi pertama Eropa ke planet tersebut. Diluncurkan pada 20 Oktober 2018, misi ini memanfaatkan terbang lintas (flyby) Bumi (2020), Venus (2020 dan 2021), serta Merkurius sendiri (enam kali, dari 2021 hingga 2025) untuk mengurangi kecepatan agar dapat masuk ke orbit. Pesawat ini mencapai orbit Merkurius pada November 2026, dengan operasional sains yang direncanakan mulai tahun 2027. Dua wahana pengorbit terbang bersama, yaitu Mercury Planetary Orbiter milik ESA dan Mio milik JAXA. Karena tersamar oleh silau Merkurius, wahana ini ditampilkan dengan mengarahkannya ke planet tersebut.",
-   "fun_fact": "Dinamai menurut Giuseppe \"Bepi\" Colombo, matematikawan Italia yang menemukan alasan mengapa Merkurius berotasi tepat tiga kali untuk setiap dua kali orbitnya, dan gagasan bantuan gravitasinya memungkinkan Mariner 10 mengunjungi planet tersebut tiga kali pada tahun 1974–75.",
+   "description": "BepiColombo adalah misi bersama ESA–JAXA ke Merkurius, dan misi pertama Eropa ke planet tersebut. Diluncurkan pada 20 Oktober 2018, misi ini menggunakan lintas terbang Bumi (2020), Venus (2020 dan 2021), serta Merkurius sendiri (enam kali, dari 2021 hingga 2025) untuk memperlambat lajunya agar dapat tertangkap gravitasi. Wahana ini mencapai orbit Merkurius pada November 2026, dengan operasional sains direncanakan mulai 2027. Dua pengorbit bepergian bersama, yaitu Mercury Planetary Orbiter milik ESA dan Mio milik JAXA. Karena tersamar oleh silau Merkurius, posisi wahana ini ditunjukkan dengan mengarahkannya ke planet tersebut.",
+   "fun_fact": "Dinamai menurut Giuseppe \"Bepi\" Colombo, matematikawan Italia yang menghitung alasan planet Merkurius berotasi tepat tiga kali untuk setiap dua kali orbitnya, dan gagasan bantuan gravitasinya memungkinkan Mariner 10 mengunjungi planet tersebut tiga kali pada tahun 1974–75.",
    "distance": "Di Merkurius, sekitar 58 juta km dari Matahari",
    "mass": "Sekitar 4.100 kg saat peluncuran",
    "image_credit": "NASA",
    "search_subtext": "Wahana antariksa di Merkurius"
   },
   "probe/voyager_1": {
-   "description": "Voyager 1 adalah objek buatan manusia yang paling jauh, kini berada di ruang antarbintang. Diluncurkan pada 5 September 1977, pesawat ini terbang melewati Jupiter pada 5 Maret 1979 dan Saturnus pada 12 November 1980, lalu menuju ke luar tata surya. Pesawat ini melintasi heliopause, batas gelembung angin surya Matahari, pada 25 Agustus 2012, dan pada 18 November 2026 menjadi wahana antariksa pertama yang berada pada jarak satu hari cahaya dari Bumi. Terlalu redup untuk dilihat, wahana ini berada di rasi bintang Ophiuchus, beberapa derajat dari Rasalhague.",
-   "fun_fact": "Pada 14 Februari 1990, dari jarak sekitar 6 miliar km, Voyager 1 membalikkan kameranya dan memotret planet-planet, menangkap Bumi sebagai \"Titik Biru Pucat\", dengan lebar kurang dari satu piksel. Wahana ini masih membawa Rekaman Emas, sebuah piringan berlapis emas yang berisi suara dan gambar dari Bumi.",
+   "description": "Voyager 1 adalah objek buatan manusia yang paling jauh, kini berada di ruang antarbintang. Diluncurkan pada 5 September 1977, pesawat ini terbang melintasi Jupiter pada 5 Maret 1979 dan Saturnus pada 12 November 1980, lalu menuju ke luar tata surya. Pesawat ini melintasi heliopause, tepi gelembung angin matahari, pada 25 Agustus 2012, dan pada 18 November 2026 menjadi pesawat ruang angkasa pertama yang berjarak satu hari cahaya dari Bumi. Terlalu redup untuk dilihat, wahana ini terletak di rasi bintang Ophiuchus, beberapa derajat dari Rasalhague.",
+   "fun_fact": "Pada 14 Februari 1990, dari jarak sekitar 6 miliar km, Voyager 1 membalikkan kameranya dan memotret planet-planet, menangkap Bumi sebagai \"Titik Biru Pucat\", dengan lebar kurang dari satu piksel. Wahana ini masih membawa Rekaman Emas, piringan berlapis emas berisi suara dan gambar tentang Bumi.",
    "distance": "Sekitar 173 AU (25,9 miliar km) dari Bumi, Nov 2026",
    "size": "Antena piringan 3,7 m",
    "mass": "825 kg saat peluncuran",
@@ -1656,8 +1656,8 @@
    "search_subtext": "Wahana antariksa"
   },
   "probe/voyager_2": {
-   "description": "Voyager 2 adalah satu-satunya pesawat ruang angkasa yang pernah mengunjungi keempat planet raksasa. Diluncurkan pada 20 Agustus 1977, sedikit sebelum Voyager 1, pesawat ini terbang melewati Jupiter pada 9 Juli 1979, Saturnus pada 25 Agustus 1981, Uranus pada 24 Januari 1986, dan Neptunus pada 25 Agustus 1989. Voyager 2 melintasi heliopause menuju ruang antarbintang pada 5 November 2018 dan masih mengirimkan data ke bumi. Seperti Voyager 1, pesawat ini membawa Piringan Emas yang berisi suara dan gambar dari Bumi.",
-   "fun_fact": "Lintasan dekat Voyager 2 di atas kutub utara Neptunus pada tahun 1989 melontarkannya ke selatan, keluar dari bidang planet, sehingga sekarang ia berada jauh di langit selatan. Wahana ini diperkirakan akan mencapai jarak satu hari cahaya dari Bumi sekitar bulan November 2035.",
+   "description": "Voyager 2 adalah satu-satunya wahana antariksa yang pernah mengunjungi keempat planet raksasa. Diluncurkan pada 20 Agustus 1977, sedikit sebelum Voyager 1, wahana ini terbang melewati Yupiter pada 9 Juli 1979, Saturnus pada 25 Agustus 1981, Uranus pada 24 Januari 1986, dan Neptunus pada 25 Agustus 1989. Wahana ini melintasi heliopause ke ruang antarbintang pada 5 November 2018 dan masih mengirimkan data ke Bumi. Seperti Voyager 1, wahana ini membawa Piringan Emas (Golden Record) berisi suara dan gambar dari Bumi.",
+   "fun_fact": "Lintasan dekat Voyager 2 di atas kutub utara Neptunus pada tahun 1989 melontarkannya ke selatan, keluar dari bidang planet-planet, sehingga kini posisinya berada jauh di langit selatan. Wahana ini diperkirakan akan mencapai jarak satu hari cahaya dari Bumi sekitar November 2035.",
    "distance": "Sekitar 145 AU (21,7 miliar km) dari Bumi, Nov 2026",
    "size": "Antena piringan 3,7 m",
    "mass": "825 kg saat peluncuran",

@@ -611,9 +611,9 @@
     <string name="satellite_name_iss" translation_description="Display name for the International Space Station.">宇宙ステーション</string>
     <string name="satellite_name_tiangong" translation_description="Display name for the Chinese space station Tiangong.">天宮</string>
     <string name="tonight_trailing_pass_peak" translation_description="Small trailing note on a satellite pass row. %1$d is the peak altitude in degrees, %2$.1f is a brightness magnitude.">最高高度 %1$d°、等級 %2$.1f</string>
-    <string name="tonight_sheet_title" translation_description="Title of the sheet listing what is worth seeing in tonight\'s sky">今夜の空</string>
-    <string name="tonight_button" translation_description="Map-screen menu item that opens the Tonight sheet: what is worth seeing in tonight\'s sky">今夜の空</string>
-    <string name="tonight_announcements_heading" translation_description="Heading above messages from the Sky Map team in the Tonight sheet">Sky Mapチームより</string>
+    <string name="tonight_sheet_title" translation_description="Title of the sheet listing what is worth seeing in tonight\'s sky">今夜</string>
+    <string name="tonight_button" translation_description="Map-screen menu item that opens the Tonight sheet: what is worth seeing in tonight\'s sky">今夜</string>
+    <string name="tonight_announcements_heading" translation_description="Heading above messages from the Sky Map team in the Tonight sheet">Sky Map チームより</string>
     <string name="tonight_widget_header" translation_description="Small header label on the tonight widget; %1$s is a short date like \'Wed 30 Jul\'">今夜 · %1$s</string>
     <string name="tonight_widget_sun_times" translation_description="Header line on the tonight widget; %1$s is the sunset time, %2$s the time the sky becomes fully dark">日没 %1$s · 暗くなる %2$s</string>
     <string name="tonight_widget_sunset_only" translation_description="Header fragment when only the sunset time is known; %1$s is the sunset time">日没 %1$s</string>
@@ -622,4 +622,16 @@
     <string name="countdown_shower_peak" translation_description="Countdown-widget event name; %1$s is a meteor shower name">%1$sのピーク</string>
     <string name="countdown_new_moon" translation_description="Countdown-widget event name for the next new moon">新月</string>
     <string name="countdown_full_moon" translation_description="Countdown-widget event name for the next full moon">満月</string>
+    <string name="announcement_dialog_dismiss" translation_description="Button that closes an announcement dialog and hides that message everywhere">閉じる</string>
+    <string name="announcement_dialog_open" translation_description="Button on an announcement dialog that jumps to the sky object the message is about">見てみる</string>
+    <string name="announcement_dialog_continue" translation_description="Button on an announcement dialog that closes it and continues to the sky map">続ける</string>
+    <string name="north_pole">北極点</string>
+    <string name="south_pole">南極点</string>
+    <string name="zenith">天頂</string>
+    <string name="nadir">天底</string>
+    <string name="north">北</string>
+    <string name="south">南</string>
+    <string name="east">東</string>
+    <string name="west">西</string>
+    <string name="ecliptic">黄道</string>
 </resources>

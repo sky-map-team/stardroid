@@ -4,15 +4,6 @@
     <!-- Launch splash banner. -->
 
     <!-- Sky-map labels drawn by the computed layers (LayerStrings). -->
-    <string name="north_pole">KU</string>
-    <string name="south_pole">KS</string>
-    <string name="zenith">ZENIT</string>
-    <!-- tm:omitted name="nadir" reason="identical_to_source" -->
-    <string name="north">UTARA</string>
-    <string name="south">SELATAN</string>
-    <string name="east">TIMUR</string>
-    <string name="west">BARAT</string>
-    <string name="ecliptic">Ekliptika</string>
 
     <!-- Solar-system body names, drawn as labels next to each body. -->
 
@@ -93,7 +84,7 @@
     </string>
     <string name="moon_widget_pin_unsupported_ok" translation_description="Confirmation button of the manual widget-adding instructions dialog">Mengerti</string>
     <string name="moon_widget_preview_illumination" translation_description="Representative illumination line shown in the widget picker\'s preview of the moon-phase widget">83% teriluminasi</string>
-    <string name="moon_widget_preview_age" translation_description="Representative Moon-age line shown in the widget picker\'s preview of the moon-phase widget; a day of the lunar cycle, counting the day of new moon as day 1">Hari ke-11</string>
+    <string name="moon_widget_preview_age" translation_description="Representative Moon-age line shown in the widget picker\'s preview of the moon-phase widget; a day of the lunar cycle, counting the day of new moon as day 1">Hari 11</string>
 
     <!-- Tonight's-sky and countdown home-screen widgets (D69 phase 2). -->
     <string name="tonight_widget_label" translation_description="Name of the tonight\'s-sky home-screen widget, shown in the launcher\'s widget picker">Langit malam ini</string>
@@ -112,9 +103,6 @@
     <!-- Sky-event notifications (D77). -->
     <string name="channel_announcements_name" translation_description="Notification channel name for occasional messages from the Sky Map team">Pesan dari Sky Map</string>
     <string name="channel_announcements_description" translation_description="Notification channel description for occasional messages from the Sky Map team">Informasi penting jarang tentang peristiwa langit penting</string>
-    <string name="announcement_dialog_dismiss" translation_description="Button that closes an announcement dialog and hides that message everywhere">Tutup</string>
-    <string name="announcement_dialog_open" translation_description="Button on an announcement dialog that jumps to the sky object the message is about">Lihat</string>
-    <string name="announcement_dialog_continue" translation_description="Button on an announcement dialog that closes it and continues to the sky map">Lanjutkan</string>
     <string name="channel_showers_name" translation_description="Name of the meteor-shower notification channel, shown in the system\'s notification settings">Puncak hujan meteor</string>
     <string name="channel_showers_description" translation_description="Description of the meteor-shower notification channel in the system\'s notification settings">Sekitar selusin setahun, pada malam puncak</string>
     <string name="channel_digest_name" translation_description="Name of the tonight-digest notification channel, shown in the system\'s notification settings">Ringkasan langit malam ini</string>

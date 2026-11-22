@@ -5,8 +5,8 @@ plugins {
 // The sky layers: everything that turns the catalog, the ephemeris, the clock and the settings
 // into the LayerScenes a renderer draws (layers-and-app.md), shared with the iOS app. Its Android
 // side is a multiplatform target rather than JVM because it depends on :data (the satellite
-// elements), which is Android + iOS. The one Android-resource piece, ResourceLayerStrings, stays
-// in :app behind the LayerStrings interface.
+// elements), which is Android + iOS. Each app keeps its own ResourceLayerStrings (:app on R.string,
+// :app-ios on Compose resources) behind the LayerStrings interface.
 kotlin {
     android {
         namespace = "com.google.android.stardroid.layers"

@@ -4,15 +4,6 @@
     <!-- Launch splash banner. -->
 
     <!-- Sky-map labels drawn by the computed layers (LayerStrings). -->
-    <string name="north_pole">PN</string>
-    <string name="south_pole">PS</string>
-    <string name="zenith">CENIT</string>
-    <!-- tm:omitted name="nadir" reason="identical_to_source" -->
-    <string name="north">NORTE</string>
-    <string name="south">SUR</string>
-    <string name="east">ESTE</string>
-    <string name="west">OESTE</string>
-    <string name="ecliptic">Eclíptica</string>
 
     <!-- Solar-system body names, drawn as labels next to each body. -->
 
@@ -112,9 +103,6 @@
     <!-- Sky-event notifications (D77). -->
     <string name="channel_announcements_name" translation_description="Notification channel name for occasional messages from the Sky Map team">Mensajes de Sky Map</string>
     <string name="channel_announcements_description" translation_description="Notification channel description for occasional messages from the Sky Map team">Avisos poco frecuentes sobre eventos celestes destacados</string>
-    <string name="announcement_dialog_dismiss" translation_description="Button that closes an announcement dialog and hides that message everywhere">Descartar</string>
-    <string name="announcement_dialog_open" translation_description="Button on an announcement dialog that jumps to the sky object the message is about">Echar un vistazo</string>
-    <string name="announcement_dialog_continue" translation_description="Button on an announcement dialog that closes it and continues to the sky map">Continuar</string>
     <string name="channel_showers_name" translation_description="Name of the meteor-shower notification channel, shown in the system\'s notification settings">Picos de lluvia de meteoros</string>
     <string name="channel_showers_description" translation_description="Description of the meteor-shower notification channel in the system\'s notification settings">Aproximadamente una docena al año, en la noche del pico</string>
     <string name="channel_digest_name" translation_description="Name of the tonight-digest notification channel, shown in the system\'s notification settings">Resumen del cielo de esta noche</string>

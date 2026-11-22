@@ -1408,10 +1408,10 @@
    "image_credit": "ESO/R. Fosbury/ST-ECF"
   },
   "dso/ton_618": {
-   "description": "TON 618 is een hyperheldere quasar nabij de grens van Jachthonden en Hoofdhaar, aangedreven door een van de meest zware zwarte gaten die we kennen, geschat op ongeveer 40 miljard zonsmassa's. Terwijl gas naar binnen valt, straalt de quasar met het licht van ruwweg 140 biljoen zonnen.",
+   "description": "TON 618 is een hyperluminieke quasar nabij de grens van Jachthonden en Hoofdhaar, aangedreven door een van de zwaarst bekende zwarte gaten, geschat op ongeveer 40 miljard zonsmassa's. Terwijl gas naar binnen valt, straalt de quasar met het licht van ruwweg 140 biljoen zonnen.",
    "fun_fact": "De waarnemingshorizon van het zwarte gat heeft een straal van ongeveer 800 astronomische eenheden, vele malen groter dan de baan van Neptunus.",
    "distance": "~10,8 miljard lichtjaar (lichtreistijd)",
-   "size": "Massa van zwart gat: ~40 miljard zonsmassa's",
+   "size": "Massa zwarte gat: ~40 miljard zonsmassa's",
    "image_credit": "Artist's concept of a supermassive black hole, not TON 618 itself. NASA/JPL-Caltech",
    "search_subtext": "Hyperlichtsterke quasar"
   },
@@ -1639,16 +1639,16 @@
    "image_credit": "NASA/JPL"
   },
   "probe/bepicolombo": {
-   "description": "BepiColombo is een gezamenlijke missie van de ESA en JAXA naar Mercurius, en Europa's eerste naar deze planeet. De sonde werd gelanceerd op 20 oktober 2018 en maakte gebruik van scheervluchten langs de Aarde (2020), Venus (2020 en 2021) en Mercurius zelf (zes stuks, van 2021 tot 2025) om voldoende af te remmen om in een baan om de planeet te komen. De sonde bereikt de baan om Mercurius in november 2026, en wetenschappelijke waarnemingen staan gepland vanaf 2027. Twee ruimtesondes reizen samen: de Mercury Planetary Orbiter van de ESA en Mio van JAXA. Omdat de sonde verloren gaat in de schittering van Mercurius, wordt deze weergegeven door naar de planeet te wijzen.",
-   "fun_fact": "Het is vernoemd naar Giuseppe \"Bepi\" Colombo, de Italiaanse wiskundige die berekende waarom Mercurius precies drie keer ronddraait voor elke twee banen, en wiens idee van de zwaartekrachtsslinger ervoor zorgde dat Mariner 10 de planeet in 1974–75 drie keer kon bezoeken.",
+   "description": "BepiColombo is een gezamenlijke missie van de ESA en JAXA naar Mercurius, en de eerste Europese missie naar deze planeet. De sonde werd gelanceerd op 20 oktober 2018 en gebruikte scheervluchten langs de aarde (2020), Venus (2020 en 2021) en Mercurius zelf (zes stuks, van 2021 tot 2025) om voldoende af te remmen om in een baan om de planeet te komen. De sonde bereikt de baan om Mercurius in november 2026, en de wetenschappelijke metingen staan gepland vanaf 2027. Twee ruimtesondes reizen samen: de Mercury Planetary Orbiter van de ESA en Mio van JAXA. Omdat de sonde schuilgaat in de schittering van Mercurius, wordt hij weergegeven door naar de planeet te wijzen.",
+   "fun_fact": "Het is vernoemd naar Giuseppe \"Bepi\" Colombo, de Italiaanse wiskundige die uitrekende waarom Mercurius precies drie keer ronddraait voor elke twee banen, en wiens idee van de zwaartekrachtsslinger ervoor zorgde dat Mariner 10 de planeet in 1974–75 drie keer kon bezoeken.",
    "distance": "Bij Mercurius, ongeveer 58 miljoen km van de Zon",
    "mass": "Ongeveer 4.100 kg bij lancering",
    "image_credit": "NASA",
    "search_subtext": "Ruimtesonde bij Mercurius"
   },
   "probe/voyager_1": {
-   "description": "Voyager 1 is het meest verre door mensen gemaakte object en bevindt zich nu in de interstellaire ruimte. Het werd gelanceerd op 5 september 1977, vloog langs Jupiter op 5 maart 1979 en Saturnus op 12 november 1980, en vervolgde daarna zijn weg het zonnestelsel uit. Het stak de heliopauze over – de rand van de zonnebloem van zonnewind – op 25 augustus 2012, en werd op 18 november 2026 het eerste ruimteschip op een lichtdag afstand van de aarde. Het is te zwak om te zien en bevindt zich in Slangendrager, een paar graden van Rasalhague.",
-   "fun_fact": "Op 14 februari 1990, vanaf ongeveer 6 miljard km afstand, draaide Voyager 1 zijn camera terug om de planeten te fotograferen en legde hij de Aarde vast als de \"Pale Blue Dot\", minder dan een pixel breed. Het vaartuig draagt nog steeds de Golden Record, een vergulde schijf met geluiden en beelden van de Aarde.",
+   "description": "Voyager 1 is het meest verre door mensen gemaakte object en bevindt zich in de interstellaire ruimte. Het werd gelanceerd op 5 september 1977, vloog langs Jupiter op 5 maart 1979 en Saturnus op 12 november 1980, en verliet vervolgens het zonnestelsel. Het passeerde de heliopauze, de rand van de zonnewindbel van de Zon, op 25 augustus 2012, en werd op 18 november 2026 het eerste ruimtevaartuig op een afstand van één lichtdag van de Aarde. Het is te zwak om te zien en bevindt zich in Slangendrager (Ophiuchus), op een paar graden van Rasalhague.",
+   "fun_fact": "Op 14 februari 1990, vanaf ongeveer 6 miljard kilometer afstand, draaide Voyager 1 zijn camera terug om de planeten te fotograferen en legde hij de Aarde vast als de \"Pale Blue Dot\" (Lichtblauwe Stip), minder dan één pixel breed. Het vaartuig draagt nog steeds de Golden Record, een vergulde plaat met geluiden en beelden van de Aarde.",
    "distance": "Ongeveer 173 AE (25,9 miljard km) van de Aarde, nov 2026",
    "size": "Schotelantenne van 3,7 m",
    "mass": "825 kg bij lancering",
@@ -1656,8 +1656,8 @@
    "search_subtext": "Ruimtesonde"
   },
   "probe/voyager_2": {
-   "description": "Voyager 2 is het enige ruimtevaartuig dat alle vier de reuzenplaneten heeft bezocht. Het werd gelanceerd op 20 augustus 1977, iets voor Voyager 1, en vloog langs Jupiter op 9 juli 1979, Saturnus op 25 augustus 1981, Uranus op 24 januari 1986 en Neptunus op 25 augustus 1989. Op 5 november 2018 stak het de heliopauze over naar de interstellaire ruimte en het stuurt nog steeds gegevens naar de aarde. Net als Voyager 1 heeft het een Golden Record met geluiden en beelden van de aarde aan boord.",
-   "fun_fact": "De dichtte vlucht van Voyager 2 over de noordpool van Neptunus in 1989 slingerde het zuidwaarts, uit het vlak van de planeten, waardoor het zich nu ver in de zuidelijke hemel bevindt. Rond november 2035 zal het een lichtdag van de Aarde bereiken.",
+   "description": "Voyager 2 is het enige ruimtevaartuig dat alle vier de reuzenplaneten heeft bezocht. Het werd gelanceerd op 20 augustus 1977, een beetje voor Voyager 1, en vloog langs Jupiter op 9 juli 1979, Saturnus op 25 augustus 1981, Uranus op 24 januari 1986 en Neptunus op 25 augustus 1989. Het doorbrak de heliopauze op 5 november 2018 en bevindt zich sindsdien in de interstellaire ruimte; het stuurt nog steeds gegevens naar de aarde. Net als Voyager 1 heeft het een Golden Record aan boord met geluiden en beelden van de aarde.",
+   "fun_fact": "De nabije vlucht van Voyager 2 over de noordpool van Neptunus in 1989 slingerde de sonde naar het zuiden, uit het vlak van de planeten, waardoor hij zich nu diep in de zuidelijke hemel bevindt. Rond november 2035 bereikt hij een afstand van één lichtdag vanaf de aarde.",
    "distance": "Ongeveer 145 AE (21,7 miljard km) van de Aarde, nov 2026",
    "size": "Schotelantenne van 3,7 m",
    "mass": "825 kg bij lancering",

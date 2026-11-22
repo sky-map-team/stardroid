@@ -2,9 +2,9 @@
 
 **Status: MOSTLY BUILT.** Flags (§3) and satellites (§4, including the background refresh) are
 built for iOS 2.0.1. Notifications (§5) are built through slice 6; the notice's translations
-and the review remain. Announcements on iOS (§5.4) are deferred. Widgets (§6) are under way:
-the groundwork and the Moon widget are built, Tonight and Countdown are not, and none ships
-until all three do (§6.3). Decision numbers are unassigned. Written while iOS 2.0.0 (build 6) waited on App
+and the review remain. Announcements (§5.4) are built for the launch dialog and the Tonight
+sheet, without notifications. All three widgets (§6) are merged (#1319), not yet in a tagged
+release. Decision numbers are unassigned. Written while iOS 2.0.0 (build 6) waited on App
 Review, so parts of the text below still describe the plan rather than the result; the "As
 built" notes and the slice notes in §5.2 say what was built.
 
@@ -68,6 +68,8 @@ the Kotlin framework at startup, implementing a small `RemoteConfigSource` inter
   conditions before any iOS-specific rollout.
 - **Fetch:** 12 h minimum interval, the same as Android. Activate on next launch, not mid-session,
   so a screen never changes under the user. `fetchNow` backs the Diagnostics button.
+  Since announcements (§5.4) the fetch runs on each foreground rather than once per process,
+  and their payload, unlike the flags, is read as soon as it is activated.
 - **Failure:** any error leaves the shipped defaults in force. Nothing blocks startup.
 - **Kill switch behaviour** matches Android: a flip reaches clients on their next fetch.
 
@@ -318,9 +320,13 @@ is already shared). The system setting is all-or-nothing per app.
 ### 5.4 Announcements
 
 Remote announcements need to learn about a message while the app is closed. On iOS that means
-a `BGAppRefreshTask` fetch, which is unreliable, or a push, which is out of scope. **Defer**
-announcements to after the widget work. The widget banner and the launch interstitial (both
-passive/foreground) can ship earlier since they need no background run.
+a `BGAppRefreshTask` fetch, which is unreliable, or a push, which is out of scope. So the
+surfaces that need no background run came first.
+
+**As built:** a Remote Config fetch on each foreground, the launch dialog and the Tonight
+sheet's messages, over the model, policy and dialog shared with Android. The behaviour is in
+[remote-announcements.md](remote-announcements.md#ios). The notification and the widget banner
+remain deferred.
 
 ### 5.5 Tests
 
@@ -508,8 +514,9 @@ Decided 2026-11-03/04:
    - The strings behind the ids that iOS needs (`channel_*`, `notif_*`, now Android-only in
      `app/res`) move into `shared/ui`'s `values/strings.xml`, where `tm` translates them once
      for both platforms. Android's implementation reads the same copy.
-   - `LayerStrings` folds into `TextSource` later, which removes `EnglishLayerStrings` and
-     `ResourceLayerStrings` and gives iOS translated layer labels. Nothing forces that now.
+   - `LayerStrings` folds into `TextSource` later, which removes the Android and iOS
+     `ResourceLayerStrings`. Nothing forces that now: iOS already has translated layer labels, from its
+     own `ResourceLayerStrings` over `:shared:ui`'s resources.
    - The widget extension is Swift and cannot read Compose resources. It gets `.strings`
      generated from the same `values-*/` XML (the phase 7 export), the one new mechanism.
    - Text is localised when it is scheduled, so a locale change triggers a replan.

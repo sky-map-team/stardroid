@@ -1408,12 +1408,12 @@
    "image_credit": "ESO/R. Fosbury/ST-ECF"
   },
   "dso/ton_618": {
-   "description": "TON 618 je hiperluminozni kvazar blizu meje med Lovskima psovoma in Berenikinimi kodri, ki ga poganja ena največjih znanih črnih lukenj z ocenjeno maso okoli 40 milijard sončevih mas. Ko plin pada vanj, kvazar sije z svetlobo približno 140 tisoč milijard Sonc.",
-   "fun_fact": "Horizont dogodkov črne luknje ima polmer okoli 800 astronomskih enot, kar je večkrat širše od Neptunovega tira.",
-   "distance": "~10,8 milijarde svetlobnih let (potovalna razdalja svetlobe)",
+   "description": "TON 618 je hiperluminozni kvazar blizu meje med Lovskima psovoma in Berenikinimi kodri, ki ga poganja ena največjih znanih črnih lukenj, ocenjena na približno 40 milijard sončnih mas. Ko plin pada vanj, kvazar sije z svetlobo približno 140 tisoč milijard Sonc.",
+   "fun_fact": "Horizona dogodkov črne luknje ima polmer približno 800 astronomskih enot, kar je večkrat širše od Neptunovega tira.",
+   "distance": "~10,8 milijarde svetlobnih let (razdalja potovanja svetlobe)",
    "size": "Masa črne luknje: ~40 milijard sončevih mas",
    "image_credit": "Artist's concept of a supermassive black hole, not TON 618 itself. NASA/JPL-Caltech",
-   "search_subtext": "Izjemno svetel kvazar"
+   "search_subtext": "Hipersvetel kvazar"
   },
   "dso/v838_mon": {
    "description": "V838 Monocerotis je nenavadna spremenljiva zvezda v ozvezdju Monoceros, ki je leta 2002 doživela spektakularen izbruh in se je na kratko uvrstila med najbolj svetleče zvezde v Rimski cesti. Čeprav je danes za vizualne opazovalce premalo svetla, je njena razširjajoča se svetlobna odmeva — valovna fronta svetlobe, ki osvetljuje stare plasti prahu — ustvarila nekatere najbolj dramatične slike, ki jih je kdaj posnel Hubbleov vesoljski teleskop.",
@@ -1639,7 +1639,7 @@
    "image_credit": "NASA/JPL"
   },
   "probe/bepicolombo": {
-   "description": "BepiColombo je skupna misija ESA-ja in JAXA-ja na Merkur ter prva evropska misija na ta planet. Izstreljena je bila 20. oktobra 2018, pri čemer je za upočasnitev uporabila mimolete Zemlje (2020), Venere (2020 in 2021) ter samega Merkurja (šest mimoletov med letoma 2021 in 2025). Okoli Merkurja bo utirjena novembra 2026, znanstvene operacije pa so načrtovane od leta 2027 dalje. Skupaj potujeta dva orbiterja, ESA-jev orbiter za preučevanje Merkurja (Mercury Planetary Orbiter) in JAXA-jev Mio. Ker se izgublja v bleščanju Merkurja, je prikazan tako, da kaže proti planetu.",
+   "description": "BepiColombo je skupna misija ESA in JAXA na Merkur in prva evropska misija k temu planetu. Izstreljena je bila 20. oktobra 2018, pri čemer je za zadostno upočasnitev za ujetje v tirnico uporabila mimolete Zemlje (2020), Venere (2020 in 2021) in samega Merkurja (šest mimoletov med letoma 2021 in 2025). Merkurjevo tirnico doseže novembra 2026, znanstvene operacije pa so načrtovane od leta 2027 dalje. Skupaj potujeta dva orbiterja, ESA-jev Merkurjev planetarni orbiter (MPO) in JAXA-jev Mio. Ker se izgublja v Merkurjevem siju, je prikazan tako, da kaže proti planetu.",
    "fun_fact": "Ime je dobil po Giuseppuju \"Bepiju\" Colombu, italijanskem matematiku, ki je izračunal, zakaj se Merkur zavrti natanko trikrat na vsaki dve obhodi, in čigar zamisel o gravitacijski pomoči je plovilu Mariner 10 omogočila, da je planet leta 1974–75 obiskalo trikrat.",
    "distance": "Pri Merkurju, približno 58 milijonov km od Sonca",
    "mass": "Približno 4100 kg ob izstrelitvi",
@@ -1647,19 +1647,19 @@
    "search_subtext": "Vesoljska sonda pri Merkurju"
   },
   "probe/voyager_1": {
-   "description": "Voyager 1 je najoddaljenejši predmet, ki ga je ustvaril človek, in se trenutno nahaja v medzvezdnem prostoru. Izstreljen je bil 5. septembra 1977, mimo Jupitra je letel 5. marca 1979 in mimo Saturna 12. novembra 1980, nato pa se je usmeril iz sončnega sistema. Heliopavzo, rob Sončevega mehurčka sončnega vetra, je prestopil 25. avgusta 2012, 18. novembra 2026 pa je postal prvo vesoljsko plovilo, ki je en svetlobni dan oddaljeno od Zemlje. Je preveč bled za opazovanje, nahaja se v ozvezdju Kačonosec, nekaj stopinj od zvezde Rasalhague.",
-   "fun_fact": "Voyager 1 je 14. februarja 1990 s približno 6 milijard kilometrov razdalje obrnil kamero nazaj in fotografiral planeṭe, pri čemer je Zemljo ujel kot »bledo modro pikico«, veliko manj kot en slikovni piksel. V vesolju še vedno nosi zlato ploščo (Golden Record), pozlačeni disk z zvoki in slikami Zemlje.",
+   "description": "Voyager 1 je najbolj oddaljen predmet, ki ga je ustvaril človek, in se trenutno nahaja v medzvezdnem prostoru. Izstreljen je bil 5. septembra 1977, 5. marca 1979 je letel mimo Jupitra in 12. novembra 1980 mimo Saturna ter nato odpotoval iz sončnega sistema. Heliopavzo, rob Sončevega mehurčka sončnega vetra, je prečkal 25. avgusta 2012, 18. novembra 2026 pa je postal prvo vesoljsko plovilo, ki je en svetlobni dan oddaljeno od Zemlje. Je preveč bled za opazovanje, nahaja se v ozvezdju Kačonosa (Ophiuchus), nekaj stopinj stran od Rasalhaguea.",
+   "fun_fact": "Voyager 1 je 14. februarja 1990 s približno 6 milijard kilometrov razdalje obrnil kamero nazaj in fotografiral planete ter ujel Zemljo kot »bledo modro točko«, manjšo od ene slikovne pike. Na krovu še vedno nosi zlato ploščo Voyager Golden Record, pozlačeno ploščo z zvoki in posnetki Zemlje.",
    "distance": "Približno 173 AU (25,9 milijarde km) od Zemlje, nov. 2026",
-   "size": "3,7-metrska krožna antena",
+   "size": "3,7-metrska krožnikasta antena",
    "mass": "825 kg ob izstrelitvi",
    "image_credit": "NASA/JPL",
    "search_subtext": "Vesoljska sonda"
   },
   "probe/voyager_2": {
-   "description": "Voyager 2 je edino vesoljsko plovilo, ki je obiskalo vse štiri veleslhane. Izstreljen je bil 20. avgusta 1977, malo pred Voyagerjem 1, mimo Jupitra je letel 9. julija 1979, mimo Saturna 25. avgusta 1981, mimo Urana 24. januarja 1986 in mimo Neptuna 25. avgusta 1989. Mejo heliopavze je prestopil v medzvezdni prostor 5. novembra 2018 in še vedno pošilja podatke na Zemljo. Tako kot Voyager 1 nosi zlato ploščo z zvoki in posnetki Zemlje.",
-   "fun_fact": "Voyager 2 je leta 1989 ob tesnem mimohodu Neptunovega severnega pola odnesel proti jugu, iz ravnine planetov, tako da se zdaj nahaja daleč na južnem nebu. Okoli novembra 2035 naj bi dosegel oddaljenost enega svetlobnega dne od Zemlje.",
+   "description": "Voyager 2 je edino vesoljsko plovilo, ki je obiskalo vse štiri veleslhane. Izstreljen je bil 20. avgusta 1977, nekaj pred Voyagerjem 1, mimo Jupitra pa je letel 9. julija 1979, mimo Saturna 25. avgusta 1981, mimo Urana 24. januarja 1986 in mimo Neptuna 25. avgusta 1989. Mejo heliopavze je prestopil v medzvezdni prostor 5. novembra 2018 in še vedno pošilja podatke na Zemljo. Tako kot Voyager 1 nosi zlato ploščo z zvoki in slikami Zemlje.",
+   "fun_fact": "Voyager 2 je leta 1989 ob tesnem mimohodu Neptunovega severnega pola odnesel proti jugu, iz ravnine planetov, tako da se zdaj nahaja globoko na južnem nebu. Okoli novembra 2035 naj bi dosegel razdaljo enega svetlobnega dne od Zemlje.",
    "distance": "Približno 145 AU (21,7 milijarde km) od Zemlje, nov. 2026",
-   "size": "3,7-metrska krožna antena",
+   "size": "3,7-metrska krožnikasta antena",
    "mass": "825 kg ob izstrelitvi",
    "image_credit": "NASA/JPL-Caltech",
    "search_subtext": "Vesoljska sonda"

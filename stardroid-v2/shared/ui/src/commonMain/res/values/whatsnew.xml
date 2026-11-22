@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[
-<h1>Curiosity: a new look, and the sky through your camera</h1>
+<h1>BepiColombo: a new look, and the sky through your camera</h1>
 <h2>Try the new graphics engine (beta)</h2>
 <p>A more realistic daytime and twilight sky, clearer labels, and a subtle underline on objects that have an info card. It is on by default in this beta. You can switch between <b>Enhanced</b> and <b>Classic</b> any time under <b>Settings → Appearance → Graphics engine</b>. We would love to hear how it works on your phone.</p>
 <h2>Through-camera mode (beta)</h2>
@@ -12,6 +12,12 @@
 <p>An exact name match now comes first, and you can find Orion\'s Belt, the Small Dipper and Tres Marias by name.</p>
 <h2>Support screen</h2>
 <p>The Support screen now asks for a store review, and its rows look tappable.</p>
+<h2>Tonight sheet</h2>
+<p>A new <b>Tonight</b> sheet gathers what is worth seeing right now — the Moon, visible planets, and any meteor shower or satellite pass coming up.</p>
+<h2>New objects</h2>
+<p>Search now finds <b>TON 618</b>, one of the most massive black holes known, and info cards for <b>Voyager 1</b>, <b>Voyager 2</b> and <b>BepiColombo</b>. An <b>Info</b> button in search jumps straight to an object\'s card.</p>
+<h2>Satellites are coming back</h2>
+<p>Satellites are returning in a gradual rollout, so you may not see them yet.</p>
 <h2>Recently, in Cassini</h2>
 <ul>
 <li><b>Satellites:</b> switch on the <b>Satellites</b> layer to find the ISS and Tiangong, and tap one for its next visible passes. Satellites are being rolled out gradually to protect the server, so you may not see them yet.</li>
@@ -22,7 +28,7 @@
 <h2>And this is just the start...</h2>
 <p>We have many long asked-for features coming very soon.</p>
 <h2>About the release name</h2>
-<p><b>Curiosity</b> is the NASA rover that has been exploring Gale crater on Mars since landing in 2012, studying whether the planet could once have supported microbial life.</p>
+<p><b>BepiColombo</b> is the ESA/JAXA spacecraft that reached Mercury in November 2026, after an eight-year journey, to study the planet closest to the Sun.</p>
     ]]></string>
     <string name="whats_new_content_ios" translation_description="HTML content for the iPhone release, shown in the What's new screen and the post-update dialog in place of the longer release notes of earlier versions. Please do not change the &lt; and &gt; markup."><![CDATA[
 <h1>What\'s new on iPhone and iPad</h1>
