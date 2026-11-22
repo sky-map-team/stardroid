@@ -695,4 +695,13 @@
     <string name="countdown_shower_peak" translation_description="Countdown-widget event name; %1$s is a meteor shower name">Κορύφωση %1$s</string>
     <string name="countdown_new_moon" translation_description="Countdown-widget event name for the next new moon">Νέα Σελήνη</string>
     <string name="countdown_full_moon" translation_description="Countdown-widget event name for the next full moon">Πανσέληνος</string>
+    <string name="north_pole">ΒΠ</string>
+    <string name="south_pole">ΝΠ</string>
+    <string name="zenith">ΖΕΝΙΘ</string>
+    <string name="nadir">ΝΑΔΙΡ</string>
+    <string name="north">ΒΟΡΡΑΣ</string>
+    <string name="south">ΝΟΤΟΣ</string>
+    <string name="east">ΑΝΑΤΟΛΗ</string>
+    <string name="west">ΔΥΣΗ</string>
+    <string name="ecliptic">Εκλειπτική</string>
 </resources>

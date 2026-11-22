@@ -385,6 +385,5 @@ Translations section for when to run it):
 
 `.tmconfig.toml`'s `primary_languages` lists the 28 core languages. `ca`, `hu` and `ru` exist as
 partial locale directories and are intentionally excluded. The first locales were salvaged from
-v1 (PR #70, D78; `tools/salvage-translations/review-manifest.md`). iOS's layer labels are still
-English (`EnglishLayerStrings`) until iOS reads localized layer strings; catalog names are
-unaffected.
+v1 (PR #70, D78; `tools/salvage-translations/review-manifest.md`). iOS's layer labels (compass, grid,
+planet names) are read from `:shared:ui`'s resources by `ResourceLayerStrings` in `app-ios`.

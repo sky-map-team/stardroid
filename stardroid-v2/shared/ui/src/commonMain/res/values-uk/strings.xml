@@ -682,4 +682,13 @@
     <string name="countdown_shower_peak" translation_description="Countdown-widget event name; %1$s is a meteor shower name">Пік %1$s</string>
     <string name="countdown_new_moon" translation_description="Countdown-widget event name for the next new moon">Молодик</string>
     <string name="countdown_full_moon" translation_description="Countdown-widget event name for the next full moon">Повня</string>
+    <string name="north_pole">Пн.П</string>
+    <string name="south_pole">Пд.П</string>
+    <string name="zenith">ЗЕНІТ</string>
+    <string name="nadir">НАДІР</string>
+    <string name="north">ПІВНІЧ</string>
+    <string name="south">ПІВДЕНЬ</string>
+    <string name="east">СХІД</string>
+    <string name="west">ЗАХІД</string>
+    <string name="ecliptic">Екліптика</string>
 </resources>

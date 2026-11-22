@@ -615,4 +615,13 @@
     <string name="countdown_shower_peak" translation_description="Countdown-widget event name; %1$s is a meteor shower name">%1$sのピーク</string>
     <string name="countdown_new_moon" translation_description="Countdown-widget event name for the next new moon">新月</string>
     <string name="countdown_full_moon" translation_description="Countdown-widget event name for the next full moon">満月</string>
+    <string name="north_pole">北極点</string>
+    <string name="south_pole">南極点</string>
+    <string name="zenith">天頂</string>
+    <string name="nadir">天底</string>
+    <string name="north">北</string>
+    <string name="south">南</string>
+    <string name="east">東</string>
+    <string name="west">西</string>
+    <string name="ecliptic">黄道</string>
 </resources>

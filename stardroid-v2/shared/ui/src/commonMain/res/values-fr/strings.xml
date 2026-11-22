@@ -700,4 +700,13 @@ Luminosité des lignes : normale, brillante ou très brillante, pour le crépusc
     <string name="countdown_shower_peak" translation_description="Countdown-widget event name; %1$s is a meteor shower name">Pic des %1$s</string>
     <string name="countdown_new_moon" translation_description="Countdown-widget event name for the next new moon">Nouvelle Lune</string>
     <string name="countdown_full_moon" translation_description="Countdown-widget event name for the next full moon">Pleine Lune</string>
+    <string name="north_pole">PN</string>
+    <string name="south_pole">PS</string>
+    <string name="zenith">ZÉNITH</string>
+    <!-- tm:omitted name="nadir" reason="identical_to_source" -->
+    <string name="north">NORD</string>
+    <string name="south">SUD</string>
+    <string name="east">EST</string>
+    <string name="west">OUEST</string>
+    <string name="ecliptic">Écliptique</string>
 </resources>

@@ -696,4 +696,13 @@ Linienhelligkeit: normal, hell oder am hellsten für Dämmerung, Tageslicht oder
     <string name="countdown_shower_peak" translation_description="Countdown-widget event name; %1$s is a meteor shower name">%1$s Höhepunkt</string>
     <string name="countdown_new_moon" translation_description="Countdown-widget event name for the next new moon">Neumond</string>
     <string name="countdown_full_moon" translation_description="Countdown-widget event name for the next full moon">Vollmond</string>
+    <!-- tm:omitted name="north_pole" reason="identical_to_source" -->
+    <!-- tm:omitted name="south_pole" reason="identical_to_source" -->
+    <string name="zenith">ZENIT</string>
+    <!-- tm:omitted name="nadir" reason="identical_to_source" -->
+    <string name="north">NORDEN</string>
+    <string name="south">SÜDEN</string>
+    <string name="east">OSTEN</string>
+    <string name="west">WESTEN</string>
+    <string name="ecliptic">Ekliptik</string>
 </resources>

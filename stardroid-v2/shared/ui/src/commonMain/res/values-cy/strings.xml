@@ -685,4 +685,13 @@ cael ei osod.
     <string name="countdown_shower_peak" translation_description="Countdown-widget event name; %1$s is a meteor shower name">uchafbwynt %1$s</string>
     <string name="countdown_new_moon" translation_description="Countdown-widget event name for the next new moon">Lleuad Newydd</string>
     <string name="countdown_full_moon" translation_description="Countdown-widget event name for the next full moon">Lleuad Llawn</string>
+    <string name="north_pole">PyG</string>
+    <string name="south_pole">PyD</string>
+    <string name="zenith">ANTERTH</string>
+    <string name="nadir">ISOD</string>
+    <string name="north">GOGLEDD</string>
+    <string name="south">DE</string>
+    <string name="east">DWYRAIN</string>
+    <string name="west">GORLLEWIN</string>
+    <string name="ecliptic">Ecliptig</string>
 </resources>

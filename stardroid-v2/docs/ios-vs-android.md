@@ -18,12 +18,12 @@ here may reach your phone a little after the update that carries it.
 | Sky, search, time travel, info cards | Yes | Yes |
 | Satellites and pass predictions | Yes | Yes |
 | Notifications (meteor showers, tonight's sky, satellite passes, eclipses) | Yes | Yes |
-| Home Screen widgets | Moon, Tonight, Countdown (coming) | Moon, Tonight, Countdown |
-| Lock Screen widgets | Moon, Tonight (coming) | No |
+| Home Screen widgets | Moon, Tonight, Countdown | Moon, Tonight, Countdown |
+| Lock Screen widgets | Moon, Tonight | No |
 | Through-the-camera (AR) mode | Not yet | In testing, not yet released |
 | Share a picture of the sky | Not yet | In testing, not yet released |
 | News and announcements from the Sky Map team | Not yet | Yes |
-| Compass and grid labels in your language | English only for now | Yes |
+| Compass and grid labels in your language | Yes | Yes |
 | Build without Google services | No | Yes, on F-Droid |
 | Oldest supported system | iOS 15 | Android 10 |
 
@@ -104,8 +104,8 @@ to be precise, on both platforms.
 - **News and announcements** (an aurora alert, a bright planet tonight) need the app to check for
   messages while it's closed. iOS doesn't reliably allow that without push notifications, so
   they're iPhone-only later.
-- **Compass and grid labels** (North, Zenith, Ecliptic and so on) are still in English on iPhone.
-  Everything else follows your language, including object names.
+- **Compass and grid labels** (North, Zenith, Ecliptic and so on) follow your language on both
+  platforms, as do planet names and object names.
 
 ## Things that are just different
 

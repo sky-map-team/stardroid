@@ -665,4 +665,13 @@
     <string name="countdown_shower_peak">Максимум %1$s</string>
     <string name="countdown_new_moon">Новолуние</string>
     <string name="countdown_full_moon">Полнолуние</string>
+    <string name="north_pole">СП</string>
+    <string name="south_pole">ЮП</string>
+    <string name="zenith">ЗЕНИТ</string>
+    <string name="nadir">НАДИР</string>
+    <string name="north">СЕВЕР</string>
+    <string name="south">ЮГ</string>
+    <string name="east">ВОСТОК</string>
+    <string name="west">ЗАПАД</string>
+    <string name="ecliptic">Эклиптика</string>
 </resources>

@@ -594,4 +594,13 @@ Line brightness: normal, bright or brightest, for twilight, daylight or light-po
     <!-- tm:omitted name="countdown_shower_peak" reason="identical_to_source" -->
     <!-- tm:omitted name="countdown_full_moon" reason="identical_to_source" -->
     <!-- tm:omitted name="countdown_new_moon" reason="identical_to_source" -->
+    <!-- tm:omitted name="north_pole" reason="identical_to_source" -->
+    <!-- tm:omitted name="south_pole" reason="identical_to_source" -->
+    <!-- tm:omitted name="zenith" reason="identical_to_source" -->
+    <!-- tm:omitted name="nadir" reason="identical_to_source" -->
+    <!-- tm:omitted name="north" reason="identical_to_source" -->
+    <!-- tm:omitted name="south" reason="identical_to_source" -->
+    <!-- tm:omitted name="east" reason="identical_to_source" -->
+    <!-- tm:omitted name="west" reason="identical_to_source" -->
+    <!-- tm:omitted name="ecliptic" reason="identical_to_source" -->
 </resources>

@@ -679,4 +679,13 @@
     <string name="countdown_shower_peak" translation_description="Countdown-widget event name; %1$s is a meteor shower name">%1$s चरम</string>
     <string name="countdown_new_moon" translation_description="Countdown-widget event name for the next new moon">अमावस्या</string>
     <string name="countdown_full_moon" translation_description="Countdown-widget event name for the next full moon">पूर्णिमा</string>
+    <string name="north_pole">उ.ध्रुव</string>
+    <string name="south_pole">द.ध्रुव</string>
+    <string name="zenith">शीर्ष बिंदु</string>
+    <string name="nadir">निम्न बिंदु</string>
+    <string name="north">उत्तर</string>
+    <string name="south">दक्षिण</string>
+    <string name="east">पूर्व</string>
+    <string name="west">पश्चिम</string>
+    <string name="ecliptic">क्रांतिवृत्त</string>
 </resources>

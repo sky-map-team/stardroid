@@ -681,4 +681,13 @@ Flytt deg til et åpent område vekk fra metall og prøv igjen.]]></string>
     <string name="countdown_shower_peak" translation_description="Countdown-widget event name; %1$s is a meteor shower name">%1$s topp</string>
     <string name="countdown_new_moon" translation_description="Countdown-widget event name for the next new moon">Nymåne</string>
     <string name="countdown_full_moon" translation_description="Countdown-widget event name for the next full moon">Fullmåne</string>
+    <!-- tm:omitted name="north_pole" reason="identical_to_source" -->
+    <!-- tm:omitted name="south_pole" reason="identical_to_source" -->
+    <string name="zenith">SENIT</string>
+    <!-- tm:omitted name="nadir" reason="identical_to_source" -->
+    <string name="north">NORD</string>
+    <string name="south">SØR</string>
+    <string name="east">ØST</string>
+    <string name="west">VEST</string>
+    <string name="ecliptic">Ekliptikken</string>
 </resources>
