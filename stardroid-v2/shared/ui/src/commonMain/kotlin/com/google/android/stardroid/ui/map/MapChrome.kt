@@ -323,10 +323,6 @@ fun MapChrome(
     onArIsoFractionChange: (Double) -> Unit = {},
     onArShutterFractionChange: (Double) -> Unit = {},
     arExtraControls: (@Composable () -> Unit)? = null,
-    onShareShutter: () -> Unit = {},
-    // The in-AR shutter is a share entry point, so it follows the SHARE_SKY experiment
-    // independently of the camera layer itself.
-    shareEnabled: Boolean = true,
     // Rail Display group; null hides the item (no camera, or CAMERA_AR off).
     skyGradientOn: Boolean? = null,
     onSetSkyGradient: (Boolean) -> Unit = {},
@@ -438,19 +434,6 @@ fun MapChrome(
                 railLabels = railLabels,
                 modifier = Modifier.fillMaxHeight().padding(start = 8.dp),
             )
-        }
-        if (arUi != null) {
-            // "Photograph the moment" is most compelling while the camera is live
-            // (camera-ar-mode.md slice 4): a transient shutter, lifted clear of the
-            // portrait action row.
-            if (shareEnabled) {
-                ChromeZone(visible, ChromeEdge.BOTTOM, Modifier.align(Alignment.BottomCenter)) {
-                    ShareShutter(
-                        onClick = onShareShutter,
-                        modifier = Modifier.padding(bottom = if (landscape) 8.dp else 68.dp),
-                    )
-                }
-            }
         }
         // In landscape the cluster is a right-edge column, so it leaves sideways; in portrait
         // it is a bottom row and drops through the bottom edge.
@@ -1025,7 +1008,7 @@ private fun ActionCluster(
 
 /** The in-AR share shutter: a camera-style ring, tinted through the theme for night. */
 @Composable
-private fun ShareShutter(
+internal fun ShareShutter(
     onClick: () -> Unit,
     modifier: Modifier = Modifier,
 ) {

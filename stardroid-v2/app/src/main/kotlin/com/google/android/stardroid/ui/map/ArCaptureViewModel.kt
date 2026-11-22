@@ -18,7 +18,9 @@ import com.google.android.stardroid.share.SkyShare
 
 /** State that must survive activity recreation; [SkyCameraPreview] itself does not. */
 class ArCaptureViewModel : ViewModel() {
-    var stillMode by mutableStateOf(SkyCameraPreview.StillMode.AUTO)
+    // Night by default; takeStill falls back to auto, and the switch greys out, where the
+    // device has no night mode.
+    var stillMode by mutableStateOf(SkyCameraPreview.StillMode.NIGHT)
 
     // Never recycled here: the layout sheet may still be drawing them (see SkyShare).
     var shareLayouts by mutableStateOf<SkyShare.ShareLayouts?>(null)
