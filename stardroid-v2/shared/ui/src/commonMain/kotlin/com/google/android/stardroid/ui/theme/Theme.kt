@@ -199,7 +199,6 @@ private val DayColors =
         onPrimary = Color(0xFF231A00),
         primaryContainer = Color(0xFF5A4200),
         onPrimaryContainer = Color(0xFFFFDF9C),
-        inversePrimary = Color(0xFF7A5A00),
         secondary = Color(0xFF7EC8E3),
         onSecondary = Color(0xFF00344A),
         secondaryContainer = Color(0xFF1E3A4C),
