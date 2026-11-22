@@ -1407,6 +1407,14 @@
    "size": "600 světelných let na průměr",
    "image_credit": "ESO/R. Fosbury/ST-ECF"
   },
+  "dso/ton_618": {
+   "description": "TON 618 je hyperluminózní kvasar poblíž hranice souhvězdí Honzských psů a Vlasů Bereniky, poháněný jednou z nejmasivnějších známých černých děr, jejíž hmotnost se odhaduje na zhruba 40 miliard hmotností Slunce. Jak plyn padá dovnitř, kvasar září světlem přibližně 140 bilionů Sluncí.",
+   "fun_fact": "Horizont událostí černé díry má poloměr přibližně 800 astronomických jednotek, což je mnohonásobně více než oběžná dráha Neptunu.",
+   "distance": "~10,8 miliardy světelných let (vzdálenost světelného letu)",
+   "size": "Hmotnost černé díry: ~40 miliard hmotností Slunce",
+   "image_credit": "Artist's concept of a supermassive black hole, not TON 618 itself. NASA/JPL-Caltech",
+   "search_subtext": "Hyperluminózní kvasar"
+  },
   "dso/v838_mon": {
    "description": "V838 Monocerotis je neobvyklá proměnná hvězda v souhvězdí Jednorožce, která v roce 2002 prodělala spektakulární výbuch a na krátkou dobu se stala jednou z nejjasnějších hvězd v Mléčné dráze. Přestože je dnes pro vizuální pozorovatele příliš slabá, její rozpínající se světelné echo — vlnoplocha světla osvětlující staré prachové slupky — vytvořila některé z nejdramatičtějších snímků kdy pořízených vesmírným teleskopem Hubble.",
    "fun_fact": "Povaha výbuchu V838 Mon zůstává předmětem diskuzí. Vedoucí teorie je hvězdné splynutí — dvě hvězdy spirálovitě padající do sebe a srážející se — spíše než klasická nova nebo erupce supergiantu. Pokud by byla potvrzena, šlo by o první pozorování v reálném čase \"zářivé červené novy\", vzácné třídy výbuchu způsobeného hvězdnými splynutími. Podobné jevy byly od té doby nalezeny v jiných galaxiích.",
@@ -1629,6 +1637,32 @@
    "size": "12 104 km průměr",
    "mass": "4,87 × 10²⁴ kg",
    "image_credit": "NASA/JPL"
+  },
+  "probe/bepicolombo": {
+   "description": "BepiColombo je společná mise ESA a JAXA k Merkuru a vůbec první evropská mise k této planetě. Byla odstartována 20. října 2018 a k potřebnému zpomalení pro navedení na oběžnou dráhu využila průlety kolem Zěme (2020), Venuše (2020 a 2021) a samotného Merkuru (šest průletů v letech 2021 až 2025). K oběžné dráze Merkuru dorazí v listopadu 2026, vědecký provoz je plánován od roku 2027. Společně cestují dvě oběžné sondy: Mercury Planetary Orbiter od ESA a Mio od JAXA. Protože zaniká v záři Merkuru, je zobrazena tak, že ukazuje na planetu.",
+   "fun_fact": "Je pojmenována po Giuseppemu \"Bepim\" Colombovi, italském matematikovi, který přišel na to, proč se Merkur otočí kolem své osy přesně třikrát za každé dvě oběhy, a jehož myšlenka gravitačního praku umožnila sondě Mariner 10 planetu v letech 1974–75 třikrát navštívit.",
+   "distance": "U Merkur, přibližně 58 milionů km od Slunce",
+   "mass": "Přibližně 4 100 kg při startu",
+   "image_credit": "NASA",
+   "search_subtext": "Vesmírná sonda u Merkuru"
+  },
+  "probe/voyager_1": {
+   "description": "Voyager 1 je nejvzdálenější lidmi vyrobený objekt, který se nyní nachází v mezihvězdném prostoru. Byl vypuštěn 5. září 1977, 5. března 1979 proletěl kolem Jupiteru a 12. listopadu 1980 kolem Saturnu a poté zamířil ven z ২১sluneční soustavy. Dne 25. srpna 2012 překročil heliopauzu, okraj sluneční bubliny slunečního větru, a 18. listopadu 2026 se stal první kosmickou lodí vzdálenou jedno světelné den od Země. Je příliš slabý na to, aby bylo možné jej vidět, a nachází se v souhvězdí Hadonoše, několik stupňů od hvězdy Rasalhague.",
+   "fun_fact": "Dne 14. února 1990 otočila sonda Voyager 1 ze vzdálenosti asi 6 miliard km svůj fotoaparát zpět a vyfotografovala planety, přičemž zachytila Zemi jako \"bledě modrou tečku\" menší než jeden pixel. Stále s sebou nese Zlatou desku, pozlacený disk se zvuky a obrazy Země.",
+   "distance": "Přibližně 173 AU (25,9 miliardy km) od Země, listopad 2026",
+   "size": "3,7m talířová anténa",
+   "mass": "825 kg při startu",
+   "image_credit": "NASA/JPL",
+   "search_subtext": "Vesmírná sonda"
+  },
+  "probe/voyager_2": {
+   "description": "Voyager 2 je jedinou vesmírnou sondou, která navštívila všechny čtyři plynné obry. Byla vypuštěna 20. srpna 1977, krátce před sondou Voyager 1, kolem Jupiteru proletěla 9. července 1979, kolem Saturnu 25. srpna 1981, kolem Uranu 24. ledna 1986 a kolem Neptunu 25. srpna 1989. Dne 5. listopadu 2018 překročila heliopauzu do mezihvězdného prostoru a stále domů posílá data. Podobně jako Voyager 1 nese zlatou desku se zvuky a obrazy ze Zemi.",
+   "fun_fact": "Průlet sondy Voyager 2 blízko severního pólu Neptunu v roce 1989 ji vymrštil na jih, mimo rovinu oběžných drah planet, takže se nyní nachází hluboko na jižní obloze. K hranici jedné světelné dne od Země by měla dorazit kolem listopadu 2035.",
+   "distance": "Přibližně 145 AU (21,7 miliardy km) od Země, listopad 2026",
+   "size": "3,7m talířová anténa",
+   "mass": "825 kg při startu",
+   "image_credit": "NASA/JPL-Caltech",
+   "search_subtext": "Vesmírná sonda"
   },
   "satellite/25544": {
    "description": "Mezinárodní vesmírná stanice je výzkumná laboratoř o velikosti fotbalového hřiště, která obíhá zhruba 420 km nad Zemi. Vybudovalo ji pět vesmírných agentur a astronauti na ní žijí a pracují. Ve své největší jasnosti předčí každou hvězdu i planetu a oblohu přejde za pouhých několik minut.",

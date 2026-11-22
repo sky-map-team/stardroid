@@ -1407,6 +1407,14 @@
    "size": "600 lysår på tværs",
    "image_credit": "ESO/R. Fosbury/ST-ECF"
   },
+  "dso/ton_618": {
+   "description": "TON 618 er en hyperluminiscerende kvasar nær grænsen mellem Jakthundene og Berenikes Hår, drevet af et af de mest massive kendte sorte huller, anslået til omkring 40 milliarder solmasser. Når gas falder ind, lyser kvasarer med lyset fra cirka 140 billioner Sole.",
+   "fun_fact": "Det sorte huls begivenhedshorisont har en radius på cirka 800 astronomiske enheder, hvilket er mange gange bredere end Neptuns bane.",
+   "distance": "~10,8 milliarder lysår (lysets rejseafstand)",
+   "size": "Sort hul-masse: ~40 milliarder solmasser",
+   "image_credit": "Artist's concept of a supermassive black hole, not TON 618 itself. NASA/JPL-Caltech",
+   "search_subtext": "Hyperluminøs kvasar"
+  },
   "dso/v838_mon": {
    "description": "V838 Monocerotis er en usædvanlig variabel stjerne i Monoceros, som gennemgik et spektakulært udbrud i 2002 og blev kortvarigt en af de mest lysende stjerner i Mælkevejen. Selvom den i dag er alt for svag til visuelle observatører, producerede dens ekspanderende lysekko – en lysbølgefront, der belyser gamle støvskaller – nogle af de mest dramatiske billeder, der nogensinde er taget med Hubble-rumteleskopet.",
    "fun_fact": "Karakteren af V838 Mon's udbrud er stadig omstridt. Den førende teori er en stjernesammensmeltning — to stjerner, der spiralerer ind i hinanden og kolliderer — snarere end en klassisk nova eller superkæmpe-udbrud. Hvis det bekræftes, var det det første realtids-glimt af en \"luminøs rød nova,\" en sjælden klasse af eksplosioner forårsaget af stjernesammensmeltninger, og lignende begivenheder er siden blevet fundet i andre galakser.",
@@ -1629,6 +1637,32 @@
    "size": "12.104 km diameter",
    "mass": "4,87 × 10²⁴ kg",
    "image_credit": "NASA/JPL"
+  },
+  "probe/bepicolombo": {
+   "description": "BepiColombo er en fælles mission mellem ESA og JAXA til Merkur og Europas første til planeten. Den blev opsendt den 20. oktober 2018 og brugte forbiflyvninger af Jorden (2020), Venus (2020 og 2021) og selve Merkur (seks styk fra 2021 til 2025) til at sænke farten nok til at blive indfanget. Den når i kredsløb om Merkur i november 2026 med videnskabelige observationer planlagt fra 2027. To fartøjer følges ad: ESAs Mercury Planetary Orbiter og JAXAs Mio. Da den er tabt i Merkurs genskin, vises den ved at pege på planeten.",
+   "fun_fact": "Den er opkaldt efter Giuseppe \"Bepi\" Colombo, den italienske matematiker, der udregnede, hvorfor Merkur roterer præcist tre gange for hver to omløb, og hvis idé om tyngdekraftsslyngning gjorde det muligt for Mariner 10 at besøge planeten tre gange i 1974–75.",
+   "distance": "Ved Merkur, ca. 58 millioner km fra Solen",
+   "mass": "Ca. 4.100 kg ved opsendelsen",
+   "image_credit": "NASA",
+   "search_subtext": "Rumsonde ved Merkur"
+  },
+  "probe/voyager_1": {
+   "description": "Voyager 1 er det mest fjerne menneskeskabte objekt og befinder sig nu i det interstellare rum. Opsendt den 5. september 1977 fløj den forbi Jupiter den 5. marts 1979 og Saturn den 12. november 1980 og satte derefter kursen ud af Solsystemet. Den krydsede heliopausen, kanten af Solens boble af solvind, den 25. august 2012, og den 18. november 2026 blev den det første rumfartøj til at være et lysdøgn fra Jorden. Den er for svag til at blive set og ligger i Slangebæreren, et par grader fra Rasalhague.",
+   "fun_fact": "Den 14. februar 1990 vendte Voyager 1 sit kamera om fra en afstand af ca. 6 milliarder km og fotograferede planeterne, hvor Jorden blev fanget som den \"blege blå prik\" (Pale Blue Dot), mindre end en pixel bred. Den medbringer stadig guldpladen \"Golden Record\", en forgyldt plade med lyde og billeder af Jorden.",
+   "distance": "Ca. 173 AE (25,9 milliarder km) fra Jorden, nov. 2026",
+   "size": "3,7 m parabolantenne",
+   "mass": "825 kg ved opsendelsen",
+   "image_credit": "NASA/JPL",
+   "search_subtext": "Rumsonde"
+  },
+  "probe/voyager_2": {
+   "description": "Voyager 2 er det eneste rumfartøj, der har besøgt alle fire kæmpeplaneter. Opsendt den 20. august 1977, lidt før Voyager 1, fløj den forbi Jupiter den 9. juli 1979, Saturn den 25. august 1981, Uranus den 24. januar 1986 og Neptun den 25. august 1989. Den krydsede heliopausen og fløj ud i det interstellare rum den 5. november 2018 og sender stadig data tilbage. Ligesom Voyager 1 medbringer den en gylden plade (Golden Record) med lyde og billeder af Jorden.",
+   "fun_fact": "Voyager 2's tæt på-passage af Neptuns nordpol i 1989 slyngede den mod syd, ud af planeternes plan, så den nu ligger langt ude på den sydlige stjernehimmel. Den forventes at nå en afstand af én lysdag fra Jorden omkring november 2035.",
+   "distance": "Ca. 145 AE (21,7 milliarder km) fra Jorden, nov. 2026",
+   "size": "3,7 m parabolantenne",
+   "mass": "825 kg ved opsendelsen",
+   "image_credit": "NASA/JPL-Caltech",
+   "search_subtext": "Rumsonde"
   },
   "satellite/25544": {
    "description": "Den Internationale Rumstation er et forskningslaboratorium på størrelse med en fodboldbane, der kredser ca. 420 km over Jorden. Fem rumfartsagenturer har bygget den, og astronauter bor og arbejder ombord. Når den er klarest, overstråler den alle stjerner og planeter og krydser nattehimlen på få minutter.",

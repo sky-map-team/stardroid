@@ -3,16 +3,8 @@
 
     <!-- Launch splash banner. -->
 
-    <!-- tm:omitted name="north_pole" reason="identical_to_source" -->
-    <!-- tm:omitted name="south_pole" reason="identical_to_source" -->
-    <!-- tm:omitted name="zenith" reason="identical_to_source" -->
-    <!-- tm:omitted name="nadir" reason="identical_to_source" -->
-    <!-- tm:omitted name="north" reason="identical_to_source" -->
-    <!-- tm:omitted name="south" reason="identical_to_source" -->
-    <!-- tm:omitted name="east" reason="identical_to_source" -->
-    <!-- tm:omitted name="west" reason="identical_to_source" -->
-    <!-- tm:omitted name="ecliptic" reason="identical_to_source" -->
 
+    <!-- Solar-system body names, drawn as labels next to each body. -->
 
     <!-- Search (map-screen search dialog and overlay). -->
 
@@ -54,7 +46,6 @@
 
     <!-- Settings screen (v1 wording where a v1 string existed) -->
 
-
     <!-- Compass calibration screen (slice 15) -->
 
     <!-- tm:omitted name="whats_new_version_heading" reason="identical_to_source" -->
@@ -82,6 +73,7 @@
     <!-- tm:omitted name="moon_widget_pin_unsupported_body" reason="identical_to_source" -->
     <!-- tm:omitted name="moon_widget_pin_unsupported_ok" reason="identical_to_source" -->
     <!-- tm:omitted name="moon_widget_preview_illumination" reason="identical_to_source" -->
+    <!-- tm:omitted name="moon_widget_preview_age" reason="identical_to_source" -->
 
     <!-- tm:omitted name="tonight_widget_label" reason="identical_to_source" -->
     <!-- tm:omitted name="tonight_widget_description" reason="identical_to_source" -->
@@ -96,12 +88,10 @@
 
     <!-- tm:omitted name="channel_announcements_name" reason="identical_to_source" -->
     <!-- tm:omitted name="channel_announcements_description" reason="identical_to_source" -->
-    <!-- tm:omitted name="announcement_dialog_dismiss" reason="identical_to_source" -->
-    <!-- tm:omitted name="announcement_dialog_open" reason="identical_to_source" -->
-    <!-- tm:omitted name="announcement_dialog_continue" reason="identical_to_source" -->
     <!-- tm:omitted name="channel_showers_name" reason="identical_to_source" -->
     <!-- tm:omitted name="channel_showers_description" reason="identical_to_source" -->
     <!-- tm:omitted name="channel_digest_name" reason="identical_to_source" -->
     <!-- tm:omitted name="channel_digest_description" reason="identical_to_source" -->
     <!-- tm:omitted name="notif_action_mute_showers" reason="identical_to_source" -->
+    <!-- Layers sheet: per-layer parameters (D87). -->
 </resources>

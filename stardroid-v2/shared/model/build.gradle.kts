@@ -18,7 +18,11 @@ kotlin {
             api(project(":core:astronomy"))
             api(project(":core:math"))
             api(project(":render:api"))
+            // An announcement's language lookup takes a LocaleSpec.
+            api(project(":core:catalog"))
             api(libs.kotlinx.coroutines.core)
+            // The announcements payload and seen-state, read as JSON trees (no compiler plugin).
+            implementation(libs.kotlinx.serialization.json)
             // DataStoreSettings and DataStoreStartupState. Multiplatform since DataStore 1.1, and
             // already what Android ships (under datastore-preferences), so no new library there.
             api(libs.androidx.datastore.preferences.core)

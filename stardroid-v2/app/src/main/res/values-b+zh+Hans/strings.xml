@@ -4,15 +4,6 @@
     <!-- Launch splash banner. -->
 
     <!-- Sky-map labels drawn by the computed layers (LayerStrings). -->
-    <string name="north_pole">北极</string>
-    <string name="south_pole">南极</string>
-    <string name="zenith">天顶</string>
-    <string name="nadir">天底</string>
-    <string name="north">北</string>
-    <string name="south">南</string>
-    <string name="east">东</string>
-    <string name="west">西</string>
-    <string name="ecliptic">黄道</string>
 
     <!-- Solar-system body names, drawn as labels next to each body. -->
 
@@ -58,8 +49,6 @@
 
     <!-- Settings screen (v1 wording where a v1 string existed) -->
 
-    <!-- Diagnostics screen (slice 15) -->
-
     <!-- Compass calibration screen (slice 15) -->
 
     <!-- Startup routing: EULA, warm welcome, What's New (slice 16) -->
@@ -91,6 +80,7 @@
     <string name="moon_widget_pin_unsupported_body" translation_description="Body of the fallback dialog explaining how to add the widget manually">您的启动器不支持从应用添加小部件。长按您的主屏幕，选择“小部件”，然后找到 Sky Map。</string>
     <string name="moon_widget_pin_unsupported_ok" translation_description="Confirmation button of the manual widget-adding instructions dialog">知道了</string>
     <string name="moon_widget_preview_illumination" translation_description="Representative illumination line shown in the widget picker\'s preview of the moon-phase widget">83% 已照亮</string>
+    <string name="moon_widget_preview_age" translation_description="Representative Moon-age line shown in the widget picker\'s preview of the moon-phase widget; a day of the lunar cycle, counting the day of new moon as day 1">第 11 天</string>
 
     <!-- Tonight's-sky and countdown home-screen widgets (D69 phase 2). -->
     <string name="tonight_widget_label" translation_description="Name of the tonight\'s-sky home-screen widget, shown in the launcher\'s widget picker">今晚的天空</string>
@@ -107,9 +97,6 @@
     <!-- Sky-event notifications (D77). -->
     <string name="channel_announcements_name" translation_description="Notification channel name for occasional messages from the Sky Map team">来自Sky Map的消息</string>
     <string name="channel_announcements_description" translation_description="Notification channel description for occasional messages from the Sky Map team">关于重大天文事件的罕见预告</string>
-    <string name="announcement_dialog_dismiss" translation_description="Button that closes an announcement dialog and hides that message everywhere">忽略</string>
-    <string name="announcement_dialog_open" translation_description="Button on an announcement dialog that jumps to the sky object the message is about">查看</string>
-    <string name="announcement_dialog_continue" translation_description="Button on an announcement dialog that closes it and continues to the sky map">继续</string>
     <string name="channel_showers_name" translation_description="Name of the meteor-shower notification channel, shown in the system\'s notification settings">流星雨极大</string>
     <string name="channel_showers_description" translation_description="Description of the meteor-shower notification channel in the system\'s notification settings">每年约十几次，在极大之夜通知</string>
     <string name="channel_digest_name" translation_description="Name of the tonight-digest notification channel, shown in the system\'s notification settings">今晚星空摘要</string>

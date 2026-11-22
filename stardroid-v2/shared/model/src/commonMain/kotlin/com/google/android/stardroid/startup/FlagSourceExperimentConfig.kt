@@ -27,6 +27,9 @@ interface FlagSource {
     /** The value the server has set for [key], or null if it has set none or it can't be read. */
     fun serverValue(key: String): Boolean?
 
+    /** The text the server has set for [key], for parameters that aren't flags, or null. */
+    fun serverText(key: String): String?
+
     /** Epoch millis of the last successful fetch, or null if there has been none. */
     val lastFetchTimeMillis: Long?
 

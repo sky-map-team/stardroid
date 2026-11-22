@@ -1407,6 +1407,14 @@
    "size": "600 años luz de diámetro",
    "image_credit": "ESO/R. Fosbury/ST-ECF"
   },
+  "dso/ton_618": {
+   "description": "TON 618 es un cuásar hiperluminoso situado cerca de la frontera entre Canes Venatici y Coma Berenices, alimentado por uno de los agujeros negros más masivos que se conocen, estimado en unas 40.000 millones de masas solares. A medida que el gas cae en él, el cuásar brilla con la luz de aproximadamente 140 billones de Soles.",
+   "fun_fact": "El horizonte de eventos del agujero negro tiene un radio de aproximadamente 800 unidades astronómicas, muchas veces más ancho que la órbita de Neptuno.",
+   "distance": "~10 800 millones de años luz (distancia de tiempo de viaje de la luz)",
+   "size": "Masa del agujero negro: ~40 000 millones de masas solares",
+   "image_credit": "Artist's concept of a supermassive black hole, not TON 618 itself. NASA/JPL-Caltech",
+   "search_subtext": "Cuásar hiperluminoso"
+  },
   "dso/v838_mon": {
    "description": "V838 Monocerotis es una estrella variable inusual en Monoceros que experimentó un espectacular estallido en 2002, convirtiéndose brevemente en una de las estrellas más luminosas de la Vía Láctea. Aunque demasiado débil para los observadores visuales hoy en día, su eco de luz en expansión —un frente de onda de luz iluminando antiguas capas de polvo— produjo algunas de las imágenes más dramáticas jamás capturadas por el Telescopio Espacial Hubble.",
    "fun_fact": "La naturaleza del estallido de V838 Mon sigue siendo debatida. La teoría principal es una fusión estelar — dos estrellas espiralizándose una hacia la otra y colisionando — en lugar de una nova clásica o erupción de supergigante. Si se confirma, fue el primer vistazo en tiempo real de una \"nova roja luminosa\", una clase rara de explosión causada por fusiones estelares; eventos similares se han encontrado desde entonces en otras galaxias.",
@@ -1629,6 +1637,32 @@
    "size": "12.104 km de diámetro",
    "mass": "4,87 × 10²⁴ kg",
    "image_credit": "NASA/JPL"
+  },
+  "probe/bepicolombo": {
+   "description": "BepiColombo es una misión conjunta de la ESA y la JAXA a Mercurio, la primera de Europa a dicho planeta. Lanzada el 20 de octubre de 2018, utilizó sobrevuelos de la Tierra (2020), Venus (2020 y 2021) y el propio Mercurio (seis, de 2021 a 2025) para frenar lo suficiente como para ser capturada. Llegará a la órbita de Mercurio en noviembre de 2026, con operaciones científicas previstas a partir de 2027. Dos orbitadores viajan juntos: el Mercury Planetary Orbiter de la ESA y el Mio de la JAXA. Perdido en el resplandor de Mercurio, se muestra señalando hacia el planeta.",
+   "fun_fact": "Lleva su nombre en honor a Giuseppe \"Bepi\" Colombo, el matemático italiano que descubrió por qué Mercurio gira exactamente tres veces por cada dos órbitas, y cuya idea de asistencia gravitacional permitió que el Mariner 10 visitara el planeta tres veces en 1974-75.",
+   "distance": "En Mercurio, a unos 58 millones de km del Sol",
+   "mass": "Unos 4100 kg en el lanzamiento",
+   "image_credit": "NASA",
+   "search_subtext": "Sonda espacial en Mercurio"
+  },
+  "probe/voyager_1": {
+   "description": "Voyager 1 es el objeto fabricado por el ser humano más distante; actualmente se encuentra en el espacio interestelar. Lanzada el 5 de septiembre de 1977, sobrevoló Júpiter el 5 de marzo de 1979 y Saturno el 12 de noviembre de 1980, para luego dirigirse fuera del sistema solar. Cruzó la heliopausa, el límite de la burbuja de viento solar del Sol, el 25 de agosto de 2012, y el 18 de noviembre de 2026 se convirtió en la primera nave espacial en encontrarse a un día luz de la Tierra. Demasiado débil para ser visible, se encuentra en Ofiuco, a pocos grados de Rasalhague.",
+   "fun_fact": "El 14 de febrero de 1990, desde una distancia de unos 6 mil millones de km, la Voyager 1 giró su cámara y fotografió los planetas, capturando a la Tierra como el \"punto azul pálido\", de menos de un píxel de ancho. Todavía lleva el Disco de Oro, un disco bañado en oro con sonidos e imágenes de la Tierra.",
+   "distance": "A unos 173 UA (25 900 millones de km) de la Tierra, nov. de 2026",
+   "size": "Antena parabólica de 3,7 m",
+   "mass": "825 kg en el lanzamiento",
+   "image_credit": "NASA/JPL",
+   "search_subtext": "Sonda espacial"
+  },
+  "probe/voyager_2": {
+   "description": "Voyager 2 es la única sonda espacial que ha visitado los cuatro gigantes gaseosos. Lanzada el 20 de agosto de 1977, un poco antes que la Voyager 1, sobrevoló Júpiter el 9 de julio de 1979, Saturno el 25 de agosto de 1981, Urano el 24 de enero de 1986 y Neptuno el 25 de agosto de 1989. Cruzó la heliopausa hacia el espacio interestelar el 5 de noviembre de 2018 y sigue enviando datos de vuelta. Al igual que la Voyager 1, lleva un Disco de Oro con sonidos e imágenes de la Tierra.",
+   "fun_fact": "El paso cercano de Voyager 2 sobre el polo norte de Neptuno en 1989 la lanzó hacia el sur, fuera del plano de los planetas, por lo que ahora se encuentra muy lejos en el cielo austral. Debería alcanzar una distancia de un día luz de la Tierra alrededor de noviembre de 2035.",
+   "distance": "A unos 145 UA (21 700 millones de km) de la Tierra, nov. de 2026",
+   "size": "Antena parabólica de 3,7 m",
+   "mass": "825 kg en el lanzamiento",
+   "image_credit": "NASA/JPL-Caltech",
+   "search_subtext": "Sonda espacial"
   },
   "satellite/25544": {
    "description": "La Estación Espacial Internacional es un laboratorio de investigación del tamaño de un campo de fútbol, que orbita a unos 420 km de la Tierra. Fue construida por cinco agencias espaciales y en ella viven y trabajan astronautas. En su punto más brillante supera a todas las estrellas y planetas, cruzando el cielo en pocos minutos.",

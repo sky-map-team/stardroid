@@ -64,12 +64,10 @@ private struct RootView: UIViewControllerRepresentable {
     let notificationCenter: LocalNotificationCenter
 
     func makeUIViewController(context: Context) -> UIViewController {
-        let controller = SkyMapScreenKt.skyMapViewController(
+        // Kotlin reads the flags here, then fetches on each foreground.
+        SkyMapScreenKt.skyMapViewController(
             analytics: analytics, tipStore: tipStore, flags: flags,
             notificationCenter: notificationCenter)
-        // Only now that the app has read its flags: a fetch applies from the next launch.
-        flags.fetch(ignoreThrottle: false) { _, _ in }
-        return controller
     }
 
     func updateUIViewController(_ viewController: UIViewController, context: Context) {}
