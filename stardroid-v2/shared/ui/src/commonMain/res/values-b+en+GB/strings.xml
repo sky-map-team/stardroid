@@ -110,6 +110,9 @@ Line brightness: normal, bright or brightest, for twilight, daylight or light-po
     <!-- tm:omitted name="ar_iso_slider" reason="identical_to_source" -->
     <!-- tm:omitted name="ar_shutter_slider_label" reason="identical_to_source" -->
     <!-- tm:omitted name="ar_shutter_slider" reason="identical_to_source" -->
+    <!-- tm:omitted name="ar_controls_title" reason="identical_to_source" -->
+    <!-- tm:omitted name="ar_controls_expand" reason="identical_to_source" -->
+    <!-- tm:omitted name="ar_controls_collapse" reason="identical_to_source" -->
     <!-- tm:omitted name="ar_group_auto" reason="identical_to_source" -->
     <!-- tm:omitted name="ar_group_manual" reason="identical_to_source" -->
     <!-- tm:omitted name="ar_auto_off_note" reason="identical_to_source" -->
@@ -162,6 +165,7 @@ Line brightness: normal, bright or brightest, for twilight, daylight or light-po
     <!-- tm:omitted name="search_hint" reason="identical_to_source" -->
     <!-- tm:omitted name="search_coordinates_hint" reason="identical_to_source" -->
     <!-- tm:omitted name="search_go" reason="identical_to_source" -->
+    <!-- tm:omitted name="search_target_info" reason="identical_to_source" -->
     <!-- tm:omitted name="search_cancel" reason="identical_to_source" -->
     <!-- tm:omitted name="search_no_results" reason="identical_to_source" -->
     <!-- tm:omitted name="search_standing_on_earth" reason="identical_to_source" -->
@@ -586,14 +590,17 @@ Line brightness: normal, bright or brightest, for twilight, daylight or light-po
     <!-- tm:omitted name="satellite_name_iss" reason="identical_to_source" -->
     <!-- tm:omitted name="satellite_name_tiangong" reason="identical_to_source" -->
     <!-- tm:omitted name="tonight_trailing_pass_peak" reason="identical_to_source" -->
+    <!-- tm:omitted name="tonight_sheet_title" reason="identical_to_source" -->
+    <!-- tm:omitted name="tonight_button" reason="identical_to_source" -->
+    <!-- tm:omitted name="tonight_announcements_heading" reason="identical_to_source" -->
     <!-- tm:omitted name="tonight_widget_header" reason="identical_to_source" -->
     <!-- tm:omitted name="tonight_widget_sun_times" reason="identical_to_source" -->
     <!-- tm:omitted name="tonight_widget_sunset_only" reason="identical_to_source" -->
     <!-- tm:omitted name="tonight_quiet" reason="identical_to_source" -->
     <!-- tm:omitted name="tonight_quiet_next" reason="identical_to_source" -->
     <!-- tm:omitted name="countdown_shower_peak" reason="identical_to_source" -->
-    <!-- tm:omitted name="countdown_full_moon" reason="identical_to_source" -->
     <!-- tm:omitted name="countdown_new_moon" reason="identical_to_source" -->
+    <!-- tm:omitted name="countdown_full_moon" reason="identical_to_source" -->
     <!-- tm:omitted name="announcement_dialog_dismiss" reason="identical_to_source" -->
     <!-- tm:omitted name="announcement_dialog_open" reason="identical_to_source" -->
     <!-- tm:omitted name="announcement_dialog_continue" reason="identical_to_source" -->

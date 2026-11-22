@@ -1407,6 +1407,14 @@
    "size": "600 ışık yılı çapında",
    "image_credit": "ESO/R. Fosbury/ST-ECF"
   },
+  "dso/ton_618": {
+   "description": "TON 618, Av Köpekleri ile Berenis'in Saçı takımyıldızlarının sınırına yakın, bilinen en büyük kütleli kara deliklerden biri tarafından barındırılan ve kütlesinin yaklaşık 40 milyar Güneş kütlesi olduğu tahmin edilen aşırı parlak bir kuasardır. Gaz içeri doğru düştükçe, kuasar yaklaşık 140 trilyon Güneş'in ışığıyla parlar.",
+   "fun_fact": "Karadeligin olay ufku yaklasik 800 astronomik birim yaricapindadir ve Neptun'un yorungesinden defalarca daha genistir.",
+   "distance": "~10,8 milyar ışık yılı (ışık seyahat mesafesi)",
+   "size": "Karadelik kütlesi: ~40 milyar güneş kütlesi",
+   "image_credit": "Artist's concept of a supermassive black hole, not TON 618 itself. NASA/JPL-Caltech",
+   "search_subtext": "Aşırı parlak kuazar"
+  },
   "dso/v838_mon": {
    "description": "V838 Monocerotis, Monoceros takımyıldızında yer alan ve 2002 yılında spektaküler bir patlamaya uğrayan olağandışı bir değişken yıldızdır; kısaca Samanyolu'nun en parlak yıldızlarından biri haline gelmiştir. Günümüzde görsel gözlemciler için çok soluk olmasına rağmen, genişleyen ışık yankısı — eski toz kabuklarını aydınlatan bir ışık cephesi — Hubble Uzay Teleskopu'nun çektiği en dramatik görüntülerinden bazılarını oluşturmuştur.",
    "fun_fact": "V838 Mon'un patlamasının doğası tartışmalı olmaya devam etmektedir. Öncü teori, klasik bir nova veya süpergigant patlaması yerine iki yıldızın birbirine spiral hareketle yaklaşıp çarpışması olan bir yıldız birleşmesidir. Eğer doğrulanırsa, bu yıldız birleşmelerinin neden olduğu nadir bir patlama sınıfı olan \"parlak kırmızı nova\"nın ilk gerçek zamanlı görüntüsü olacaktır ve benzer olaylar o zamandan beri diğer galaksilerde de bulunmuştur.",
@@ -1629,6 +1637,32 @@
    "size": "12.104 km çapında",
    "mass": "4,87 × 10²⁴ kg",
    "image_credit": "NASA/JPL"
+  },
+  "probe/bepicolombo": {
+   "description": "BepiColombo, ESA ve JAXA'nın Merkür'e yönelik ortak misyonudur ve Avrupa'nın bu gezegene düzenlediği ilk görevdir. 20 Ekim 2018'de fırlatılan uzay aracı; yörüngeye girebilecek kadar yavaşlamak için Dünya (2020), Venüs (2020 ve 2021) ve Merkür'ün (2021 ile 2025 arasında altı kez) yakın uçuşlarını kullanmıştır. Kasım 2026'da Merkür yörüngesine ulaşacak olan aracın bilimsel operasyonlarının 2027'de başlaması planlanmaktadır. ESA'nın Merkür Gezegen Yörünge Aracı (MPO) ve JAXA'nın Mio adlı aracı olmak üzere iki yörünge aracı birlikte seyahat etmektedir. Merkür'ün parıltısında kaybolduğu için gezegeni işaret ederek gösterilir.",
+   "fun_fact": "Adını, Merkür'ün her iki yörüngesinde neden tam üç kez döndüğünü hesaplayan ve yerçekimi yardımı fikriyle Mariner 10 uzay aracının 1974-75 yıllarında gezegeni üç kez ziyaret etmesini sağlayan İtalyan matematikçi Giuseppe \"Bepi\" Colombo'dan almıştır.",
+   "distance": "Merkür'de, Güneş'e yaklaşık 58 milyon km mesafede",
+   "mass": "Fırlatıldığında yaklaşık 4.100 kg",
+   "image_credit": "NASA",
+   "search_subtext": "Merkür'deki uzay sondası"
+  },
+  "probe/voyager_1": {
+   "description": "Voyager 1, şu anda yıldızlararası uzayda bulunan insan yapımı en uzak nesnedir. 5 Eylül 1977'de fırlatıldı, 5 Mart 1979'da Jüpiter'in ve 12 Kasım 1980'de Satürn'ün yakınından geçerek Güneş sistemi dışına doğru yöneldi. Güneş'in rüzgarı baloncuğunun sınırı olan helyopozu 25 Ağustos 2012'de geçti ve 18 Kasım 2026'da Dünya'dan bir Işık-günü uzaklıktaki ilk uzay aracı oldu. Görünemeyecek kadar sönüktür, Yılancı takımyıldızında, Rasalhague'in birkaç derece yakınında yer alır.",
+   "fun_fact": "14 Şubat 1990'da Voyager 1, yaklaşık 6 milyar km uzaklıktan kamerasını arkaya çevirerek gezegenlerin fotoğrafını çekti ve Dünya'yı bir pikselden daha küçük bir boyutta \"Soluk Mavi Nokta\" olarak yakaladı. Uzay aracı hâlâ Dünya'nın seslerini ve görüntülerinin yer aldığı altın kaplama bir disk olan Altın Plak'ı taşıyor.",
+   "distance": "Dünya'dan yaklaşık 173 AB (25,9 milyar km) uzaklıkta, Kas 2026",
+   "size": "3,7 m çanak anten",
+   "mass": "Fırlatıldığında 825 kg",
+   "image_credit": "NASA/JPL",
+   "search_subtext": "Uzay sondası"
+  },
+  "probe/voyager_2": {
+   "description": "Voyager 2, dev devi gezegenin dördünü birden ziyaret eden tek uzay aracıdır. Voyager 1'den biraz önce, 20 Ağustos 1977'de fırlatılan araç; 9 Temmuz 1979'da Jüpiter'in, 25 Ağustos 1981'de Satürn'ün, 24 Ocak 1986'da Uranüs'ün ve 25 Ağustos 1989'de Neptün'ün yakınından geçmiştir. 5 Kasım 2018'de heliopozu geçerek yıldızlararası uzaya girmiş ve hâlâ Dünya'ya veri göndermektedir. Voyager 1 gibi o da Dünya'nın seslerini ve görüntülerinden oluşan bir Altın Plak taşımaktadır.",
+   "fun_fact": "Voyager 2, 1989 yılında Neptün'ün kuzey kutbunun yakınından geçerken gezegen düzleminin güneyine doğru savruldu; bu nedenle şu anda gükyüzünün güneyinde uzak bir konumda yer almaktadır. Kasım 2035 civarında Dünya'dan bir ışık günü uzaklığa ulaşması beklenmektedir.",
+   "distance": "Dünya'dan yaklaşık 145 AB (21,7 milyar km) uzaklıkta, Kas 2026",
+   "size": "3,7 m çanak anten",
+   "mass": "Fırlatıldığında 825 kg",
+   "image_credit": "NASA/JPL-Caltech",
+   "search_subtext": "Uzay sondası"
   },
   "satellite/25544": {
    "description": "Uluslararası Uzay İstasyonu, bir futbol sahası büyüklüğünde ve Dünya'dan yaklaşık 420 km yükseklikte yörüngede dönen bir araştırma laboratuvarıdır. Beş uzay ajansı tarafından inşa edilmiştir ve astronotlar içinde yaşayıp çalışmaktadır. En parlak olduğu anlarda gökyüzündeki tüm yıldızları ve gezegenleri geride bırakarak gökyüzünü sadece birkaç dakikada geçer.",
