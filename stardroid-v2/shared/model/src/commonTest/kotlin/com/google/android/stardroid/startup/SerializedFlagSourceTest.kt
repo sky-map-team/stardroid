@@ -10,6 +10,10 @@
 package com.google.android.stardroid.startup
 
 import com.google.android.stardroid.testing.assertThat
+import kotlinx.coroutines.CoroutineExceptionHandler
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.SupervisorJob
+import kotlinx.coroutines.test.StandardTestDispatcher
 import kotlinx.coroutines.test.runCurrent
 import kotlinx.coroutines.test.runTest
 import kotlin.test.Test
@@ -106,6 +110,29 @@ class SerializedFlagSourceTest {
             runCurrent()
 
             assertThat(answered).isEqualTo(1)
+        }
+
+    @Test
+    fun aThrowingCallerDoesNotEndFetching() =
+        runTest {
+            val thrown = mutableListOf<Throwable>()
+            val scope =
+                CoroutineScope(
+                    StandardTestDispatcher(testScheduler) + SupervisorJob() +
+                        CoroutineExceptionHandler { _, e -> thrown += e },
+                )
+            val slow = SlowSource()
+            val source = SerializedFlagSource(slow, scope)
+            source.fetch(false) { _, _ -> error("caller") }
+            runCurrent()
+            slow.replies[0](false, null)
+            runCurrent()
+
+            source.fetch(true) { _, _ -> }
+            runCurrent()
+
+            assertThat(thrown).hasSize(1)
+            assertThat(slow.throttleIgnored).containsExactly(false, true).inOrder()
         }
 
     @Test

@@ -9,6 +9,7 @@
 
 package com.google.android.stardroid.ui.startup
 
+import androidx.datastore.core.IOException
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.google.android.stardroid.analytics.Analytics
@@ -90,7 +91,12 @@ class AnnouncementViewModel(
         loading?.join()
         val at = now()
         val active = source.current()
-        state.prune(active.map { it.id }.toSet(), at)
+        try {
+            state.prune(active.map { it.id }.toSet(), at)
+        } catch (e: IOException) {
+            // Only housekeeping, and a throw would end the caller's foreground collector, which
+            // also refreshes the flags.
+        }
         // A dialog left up when the app was last put away may have expired or been withdrawn.
         _pending.value?.let { shown ->
             val live =

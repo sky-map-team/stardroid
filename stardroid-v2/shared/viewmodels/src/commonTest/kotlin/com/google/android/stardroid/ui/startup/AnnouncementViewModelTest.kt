@@ -9,6 +9,7 @@
 
 package com.google.android.stardroid.ui.startup
 
+import androidx.datastore.core.IOException
 import com.google.android.stardroid.analytics.NoOpAnalytics
 import com.google.android.stardroid.announcements.Announcement
 import com.google.android.stardroid.announcements.AnnouncementAction
@@ -77,6 +78,7 @@ class AnnouncementViewModelTest {
     private class FakeState : AnnouncementState {
         override val seen = MutableStateFlow(emptyMap<String, SeenRecord>())
         var writeFinished: CompletableDeferred<Unit>? = null
+        var pruneFails = false
 
         override suspend fun markShown(
             id: String,
@@ -98,7 +100,9 @@ class AnnouncementViewModelTest {
         override suspend fun prune(
             activeIds: Set<String>,
             now: Instant,
-        ) = Unit
+        ) {
+            if (pruneFails) throw IOException("disk full")
+        }
     }
 
     @BeforeTest
@@ -224,6 +228,41 @@ class AnnouncementViewModelTest {
             runCurrent()
             assertThat(vm.pending.value?.id).isEqualTo("a")
             assertThat(state.seen.value.keys).containsExactly("a")
+        }
+
+    @Test
+    fun leavingWhileWaitingForALoadDoesNotCancelTheLoad() =
+        runTest(dispatcher) {
+            source.cached = listOf(message("a"))
+            val vm = viewModel()
+            vm.onAppOpened()
+            val write = CompletableDeferred<Unit>()
+            state.writeFinished = write
+            vm.loadIfNeeded()
+            runCurrent()
+            val open = launch { vm.onAppOpened() }
+            runCurrent()
+
+            open.cancel()
+            write.complete(Unit)
+            runCurrent()
+
+            assertThat(vm.readyOpen.value).isNull()
+            assertThat(vm.pending.value?.id).isEqualTo("a")
+        }
+
+    @Test
+    fun aFailedPruneStillFinishesTheOpen() =
+        runTest(dispatcher) {
+            state.pruneFails = true
+            source.cached = listOf(message("a"))
+            val vm = viewModel()
+
+            vm.onAppOpened()
+            vm.loadIfNeeded()
+            runCurrent()
+
+            assertThat(vm.pending.value?.id).isEqualTo("a")
         }
 
     @Test

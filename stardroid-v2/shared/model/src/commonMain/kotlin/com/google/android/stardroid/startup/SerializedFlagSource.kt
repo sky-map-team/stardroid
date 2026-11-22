@@ -40,13 +40,17 @@ class SerializedFlagSource(
             waiting += Caller(ignoreThrottle, onDone)
             if (fetching) return@launch
             fetching = true
-            while (waiting.isNotEmpty()) {
-                val callers = waiting
-                waiting = mutableListOf()
-                val (updated, error) = fetchOne(callers.any { it.ignoreThrottle })
-                callers.forEach { it.onDone(updated, error) }
+            try {
+                while (waiting.isNotEmpty()) {
+                    val callers = waiting
+                    waiting = mutableListOf()
+                    val (updated, error) = fetchOne(callers.any { it.ignoreThrottle })
+                    callers.forEach { it.onDone(updated, error) }
+                }
+            } finally {
+                // iOS's exception hook logs and carries on, so a throw mustn't end fetching.
+                fetching = false
             }
-            fetching = false
         }
     }
 
