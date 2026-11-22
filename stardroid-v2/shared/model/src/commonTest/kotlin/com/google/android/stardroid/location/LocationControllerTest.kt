@@ -122,6 +122,27 @@ class LocationControllerTest {
         }
 
     @Test
+    fun `the state is already final when startResolved turns true`() =
+        runTest {
+            val controller = controller()
+            controller.start()
+            runCurrent()
+            assertThat(controller.startResolved.value).isTrue()
+            assertThat(controller.state.value).isEqualTo(LocationState.Acquiring)
+        }
+
+    @Test
+    fun `a denial before start resolves also resolves`() =
+        runTest {
+            val controller = controller()
+            controller.start()
+            controller.onPermissionDenied(canAsk = true)
+            runCurrent()
+            assertThat(controller.startResolved.value).isTrue()
+            assertThat(controller.state.value).isEqualTo(LocationState.PermissionDenied)
+        }
+
+    @Test
     fun `start without permission rests at Unset`() =
         runTest {
             permissionGranted = false

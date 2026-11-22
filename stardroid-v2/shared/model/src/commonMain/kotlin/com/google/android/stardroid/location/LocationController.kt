@@ -115,7 +115,7 @@ class LocationController(
     /**
      * v1 `start()`, run on every activity start: manual mode loads the persisted location,
      * auto mode starts provider updates if permitted, and otherwise the state rests at
-     * [LocationState.Unset] so the UI offers the permission rationale.
+     * [LocationState.Unset] so the UI offers the permission rationale (once [startResolved]).
      */
     fun start() {
         startJob?.cancel()
@@ -170,6 +170,7 @@ class LocationController(
         cancelPendingStart()
         provider.stopUpdates()
         cancelAcquiringTimeout()
+        _startResolved.value = true
         _state.value =
             if (canAsk) {
                 LocationState.PermissionDenied
@@ -183,6 +184,7 @@ class LocationController(
         cancelPendingStart()
         provider.stopUpdates()
         cancelAcquiringTimeout()
+        _startResolved.value = true
         _state.value = LocationState.PermissionDenied
     }
 
