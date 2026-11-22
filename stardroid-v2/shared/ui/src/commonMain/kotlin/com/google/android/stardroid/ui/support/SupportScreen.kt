@@ -140,8 +140,7 @@ fun SupportScreen(
                     onRateApp()
                 }
             }
-            // Second, straight after Rate: the monetary ask earns its place near the top
-            // rather than under the free ones.
+            // Straight after Rate: the monetary ask sits near the top, not under the free ones.
             if (sponsorRow != null) {
                 sponsorRow()
             } else if (donationLinksAllowed) {

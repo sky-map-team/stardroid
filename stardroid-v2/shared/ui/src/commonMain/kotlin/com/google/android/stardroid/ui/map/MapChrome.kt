@@ -1101,8 +1101,7 @@ fun OverflowSheet(
     onOpenSupport: (() -> Unit)?,
     onDismiss: () -> Unit,
 ) {
-    // Skip the half-height stop: the rows are few enough to show in full, and a half-open sheet
-    // is what pushed Support below the fold.
+    // Skip the half-height stop so every row is visible without a drag.
     ModalBottomSheet(
         onDismissRequest = onDismiss,
         sheetState = rememberModalBottomSheetState(skipPartiallyExpanded = true),
@@ -1112,10 +1111,7 @@ fun OverflowSheet(
                 .verticalScroll(rememberScrollState())
                 .padding(horizontal = 12.dp, vertical = 4.dp),
         ) {
-            // Three themed groups, split by dividers: what to look at tonight; learning the app
-            // and supporting it; then configuration. Support sits in the middle group, mid-list
-            // and clear of the fold now the sheet opens at full height. Diagnostics has left for
-            // Settings → Advanced entirely.
+            // Three groups: what to look at tonight; learning and supporting the app; configuration.
             OverflowRow(Res.drawable.ic_moon, Res.string.tonight_button, onOpenTonight)
             OverflowRow(Res.drawable.ic_gallery, Res.string.gallery_button, onOpenGallery)
             OverflowDivider()
