@@ -9,7 +9,7 @@ options:
 # Shared by the app and its widget extension, whose versions must match.
 settings:
   base:
-    MARKETING_VERSION: "2.1.0"
+    MARKETING_VERSION: "2.1.2"
     SKYMAP_RELEASE_NAME: Izzie
     CURRENT_PROJECT_VERSION: "1"
   configs:
@@ -136,7 +136,7 @@ targets:
         PRODUCT_BUNDLE_IDENTIFIER: io.penterakt.skymap.dev
         DEVELOPMENT_TEAM: F98KUL97FJ
         CODE_SIGN_STYLE: Automatic
-        MARKETING_VERSION: "2.1.1"
+        MARKETING_VERSION: "2.1.2"
         SKYMAP_RELEASE_NAME: Izzie
         CURRENT_PROJECT_VERSION: "1"
         GENERATE_INFOPLIST_FILE: YES
