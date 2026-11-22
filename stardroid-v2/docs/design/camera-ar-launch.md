@@ -127,7 +127,7 @@ Core Motion and Metal code already is. (Fall back to Swift only if an API is not
 - **Lifecycle.** Stop the session when the app backgrounds or the layer turns off, and restart
   on return only if the layer was on. Follow `ProcessInfo.thermalState`: at `.serious`, stop
   AR with a snackbar explaining why. As built, an interruption or runtime error also hides the
-  preview, so no frozen frame sits under the moving map (an error gets one restart), and the
+  preview, so no frozen frame sits under the moving map (an error gets a restart, at most one every 10 s), and the
   screen's composition owns the camera, so a closed iPad window releases it.
 - **Orientation.** iPhone landscape is supported (D143). Keep the preview's rotation in step
   with the interface orientation. The FOV is defined on the shorter view side, so it does not
@@ -212,7 +212,9 @@ To check on an iPhone, none of which a simulator can show:
   system fall back to another lens;
 - exposure, low-light boost, focus on stars, and the permission prompt with a denial;
 - heat, battery, and an interruption (a call, another app taking the camera);
-- an iPad, whose windows can sit crossways to the interface.
+- an iPad, whose windows can sit crossways to the interface;
+- closing one of two iPad windows with AR on: the camera indicator must go out (this relies on
+  Compose disposing the composition when the scene goes).
 
 Found in shared or Android code during the port, and left as they are:
 

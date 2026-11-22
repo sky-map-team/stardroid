@@ -57,6 +57,7 @@ import platform.CoreGraphics.CGRectZero
 import platform.Foundation.NSData
 import platform.Foundation.NSNotificationCenter
 import platform.Foundation.NSOperationQueue
+import platform.Foundation.NSProcessInfo
 import platform.QuartzCore.CATransaction
 import platform.UIKit.UIImage
 import platform.UIKit.UIView
@@ -95,7 +96,7 @@ internal class CameraSession(
     private var zoomRatio = 1.0
     private var exposureIndex = 0
     private var observers = emptyList<NSObjectProtocol>()
-    private var retriedAfterError = false
+    private var lastRestartSeconds: Double? = null
 
     fun open() {
         observeSession()
@@ -136,7 +137,7 @@ internal class CameraSession(
     fun setActive(active: Boolean) {
         if (closed || active == this.active) return
         this.active = active
-        if (active) retriedAfterError = false else failPendingPhotos()
+        if (active) lastRestartSeconds = null else failPendingPhotos()
         dispatch_async(queue) {
             if (active && !session.running) session.startRunning()
             if (!active && session.running) session.stopRunning()
@@ -145,7 +146,7 @@ internal class CameraSession(
 
     // While the camera can't deliver, its last frame would sit still behind a moving map, so the
     // preview hides and the map is over black. An interruption ends by itself; an error, such as
-    // the media services resetting, gets one restart.
+    // the media services resetting, gets a restart unless one was only just tried.
     private fun observeSession() {
         fun observe(
             name: String?,
@@ -163,17 +164,25 @@ internal class CameraSession(
                     previewView.setHidden(false)
                 },
                 observe(AVCaptureSessionDidStartRunningNotification) {
-                    previewView.setHidden(false)
+                    // It arrives late enough to follow a pause.
+                    if (active) previewView.setHidden(false)
                 },
                 observe(AVCaptureSessionRuntimeErrorNotification) {
                     previewView.setHidden(true)
                     failPendingPhotos()
-                    if (active && !retriedAfterError) {
-                        retriedAfterError = true
-                        dispatch_async(queue) { session.startRunning() }
-                    }
+                    restartAfterError()
                 },
             )
+    }
+
+    private fun restartAfterError() {
+        if (!active) return
+        val now = NSProcessInfo.processInfo.systemUptime
+        val last = lastRestartSeconds
+        // An error straight after a restart would loop; a later one is worth another try.
+        if (last != null && now - last < RESTART_BACKOFF_SECONDS) return
+        lastRestartSeconds = now
+        dispatch_async(queue) { session.startRunning() }
     }
 
     // Their callbacks may never come once the session stops.
@@ -332,6 +341,7 @@ internal class CameraSession(
 
     private companion object {
         const val STILL_TIMEOUT_MILLIS = 10_000L
+        const val RESTART_BACKOFF_SECONDS = 10.0
     }
 }
 
