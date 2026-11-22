@@ -56,11 +56,10 @@ Removing the shared state also keeps iOS from inheriting it (§4.4).
 
 ### 3.2 Privacy and store forms
 
-`PRIVACY_POLICY.md` and `TERMS.md` do not mention the camera. In the same change as the launch
-flip, add: the camera is used only for the live background; frames are processed on the device
-and are never stored or sent; a still is created only when the user shares, and goes only to the
-app they choose. Check `eula.xml`, `TERMS.md` section 3, and the Play Data safety form (the
-`CAMERA` permission is declared; no data is collected). Update the policy's `Last Updated`.
+The policy's camera section landed with the iOS port, which had to add it along with its new
+permissions (`AGENTS.md` → Privacy), and covers Android too, including the copy it saves to
+Pictures/Sky Map. Left for launch: read it against what ships, and check the Play Data safety
+form (the `CAMERA` permission is declared; no data is collected).
 
 ### 3.3 Analytics
 
@@ -278,14 +277,13 @@ Slice 1 and 2 are Android-side refactors with no visible change and should merge
 
 ## 8. Privacy checklist
 
-The iOS port already made the camera part of this change, since it requests new permissions: the
-policy and `permissions_notice_ios` are updated. `TERMS.md` §3 (no data reaches us) and
-`PrivacyInfo.xcprivacy` (nothing collected, no new required-reason API) needed no change. The
-store forms still get their check at launch.
+Done with the iOS port, since `AGENTS.md` wants it in the change that adds the permissions: the
+policy and `permissions_notice_ios` are updated, and `TERMS.md` §3 (no data reaches us) and
+`PrivacyInfo.xcprivacy` (nothing collected, no new required-reason API) needed no change.
 
-Per `AGENTS.md`, in the launch change update `PRIVACY_POLICY.md`, `eula.xml`/`TERMS.md` section
-3, the iOS `PrivacyInfo.xcprivacy` (confirm no new required-reason API is used), the App Store
-privacy answers (no collection), and the Play Data safety form. Say in the PR that you checked.
+Left for the launch change: look at the live App Store privacy answers and Play Data safety form
+(neither should need a change, as nothing is collected), recheck all of the above if what ships
+differs, such as §3.3's analytics, and say in the PR that you checked.
 
 ## 9. Decisions and open questions
 
