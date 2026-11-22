@@ -30,6 +30,7 @@ import platform.CoreGraphics.CGRectMake
 import platform.UIKit.UIGraphicsPopContext
 import platform.UIKit.UIGraphicsPushContext
 import platform.UIKit.UIImage
+import platform.UIKit.UIScreen
 import platform.UIKit.UIView
 import kotlin.math.roundToInt
 
@@ -40,9 +41,10 @@ internal val DisplayRotation.isLandscape: Boolean
     get() = this == DisplayRotation.ROTATION_90 || this == DisplayRotation.ROTATION_270
 
 /**
- * The preview's shape as far as the FOV lock cares. A plain turn keeps it, and the specs must not
- * be reported again for one, since that resets the zoom; an iPad window can also sit crossways
- * to the interface, which is cropped differently.
+ * The preview's shape as far as the FOV lock cares, as if held upright: [crossways] means the
+ * camera's image lies on its side in it, as in an iPad window that is tall while the interface
+ * is landscape. A plain turn keeps the shape, and the specs must not be reported again for one,
+ * since that resets the zoom.
  */
 internal data class PreviewShape(
     val shortSide: Double,
@@ -50,13 +52,29 @@ internal data class PreviewShape(
     val crossways: Boolean,
 ) {
     companion object {
+        /**
+         * A view that fills the screen is never crossways, whatever [landscape] says: mid-turn an
+         * iPhone's interface orientation changes one layout before the bounds do.
+         */
         fun of(
             width: Double,
             height: Double,
             landscape: Boolean,
-        ) = PreviewShape(minOf(width, height), maxOf(width, height), (width > height) != landscape)
+            screen: Pair<Double, Double> = screenSizeInPoints(),
+        ): PreviewShape {
+            val short = minOf(width, height)
+            val long = maxOf(width, height)
+            val fillsScreen =
+                short == minOf(screen.first, screen.second) &&
+                    long == maxOf(screen.first, screen.second)
+            return PreviewShape(short, long, !fillsScreen && (width > height) != landscape)
+        }
     }
 }
+
+@OptIn(ExperimentalForeignApi::class)
+private fun screenSizeInPoints(): Pair<Double, Double> =
+    UIScreen.mainScreen.bounds.useContents { size.width to size.height }
 
 @OptIn(ExperimentalForeignApi::class)
 internal fun UIView.sizeInPoints(): Pair<Double, Double> =

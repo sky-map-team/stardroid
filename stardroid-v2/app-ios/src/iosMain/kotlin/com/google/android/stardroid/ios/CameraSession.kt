@@ -146,7 +146,7 @@ internal class CameraSession(
         val shape = PreviewShape.of(width, height, rotation.isLandscape)
         if (shape == reportedShape) return
         reportedShape = shape
-        onReady(optics.specsFor(width, height, rotation.isLandscape))
+        onReady(optics.specsFor(shape))
     }
 
     private fun layoutPreview() {

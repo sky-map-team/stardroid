@@ -57,13 +57,32 @@ class UIKitImagesTest {
         assertThat(still.height).isEqualTo(150)
     }
 
+    private val phone = 390.0 to 844.0
+
     @Test
     fun aTurnKeepsThePreviewsShape() {
-        val portrait = PreviewShape.of(390.0, 844.0, landscape = false)
-        val landscape = PreviewShape.of(844.0, 390.0, landscape = true)
-        val tallWindowSideways = PreviewShape.of(390.0, 844.0, landscape = true)
+        val portrait = PreviewShape.of(390.0, 844.0, landscape = false, screen = phone)
+        val landscape = PreviewShape.of(844.0, 390.0, landscape = true, screen = phone)
 
         assertThat(landscape).isEqualTo(portrait)
-        assertThat(tallWindowSideways == portrait).isFalse()
+    }
+
+    @Test
+    fun theLayoutsMidTurnKeepItToo() {
+        val portrait = PreviewShape.of(390.0, 844.0, landscape = false, screen = phone)
+        // The orientation has changed and the bounds haven't yet, turning either way.
+        val turning = PreviewShape.of(390.0, 844.0, landscape = true, screen = phone)
+        val turningBack = PreviewShape.of(844.0, 390.0, landscape = false, screen = phone)
+
+        assertThat(turning).isEqualTo(portrait)
+        assertThat(turningBack).isEqualTo(portrait)
+    }
+
+    @Test
+    fun aTallWindowOnASidewaysTabletIsCrossways() {
+        val tablet = 1366.0 to 1024.0
+        val window = PreviewShape.of(507.0, 1024.0, landscape = true, screen = tablet)
+
+        assertThat(window.crossways).isTrue()
     }
 }

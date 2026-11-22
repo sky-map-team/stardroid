@@ -57,9 +57,12 @@ final class ArModeTests: XCTestCase {
         capture(self, "3-aligned")
         app.buttons["Undo"].tap()
 
+        let unzoomed = ringWidth()
         window.pinch(withScale: 2, velocity: 2)
         sleep(2)
         capture(self, "4-zoomed")
+        let zoomed = ringWidth()
+        XCTAssertGreaterThan(zoomed, unzoomed * 1.3, "the camera didn't zoom")
 
         // The zoom holds through a turn.
         XCUIDevice.shared.orientation = .landscapeLeft
@@ -68,11 +71,13 @@ final class ArModeTests: XCTestCase {
         XCUIDevice.shared.orientation = .portrait
         sleep(3)
         capture(self, "5a-portrait-again")
+        XCTAssertEqual(ringWidth(), zoomed, accuracy: zoomed * 0.05, "a turn reset the zoom")
     }
 
     func testShareToTheSystemSheet() {
         let app = launch(flags: "camera_ar_enabled,share_sky_enabled")
         turnOn(app)
+        openCameraControls(app)
         // Dimmed, so the saved picture can be held against the screen's.
         element(app, "Camera dimmer").coordinate(withNormalizedOffset: CGVector(dx: 0.85, dy: 0.5))
             .tap()
@@ -151,6 +156,40 @@ final class ArModeTests: XCTestCase {
         let camera = element(app, toggle)
         XCTAssertTrue(camera.waitForExistence(timeout: 10), "no camera toggle")
         camera.tap()
+    }
+
+    /// The panel starts collapsed (PR 1339); its header is merged with its title for accessibility.
+    private func openCameraControls(_ app: XCUIApplication) {
+        let header = app.descendants(matching: .any)
+            .matching(NSPredicate(format: "label CONTAINS %@", "Show camera controls")).firstMatch
+        if header.waitForExistence(timeout: 3) {
+            header.tap()
+        }
+        XCTAssertTrue(element(app, "Camera dimmer").waitForExistence(timeout: 5), "no dimmer")
+    }
+
+    /// How wide the stand-in scene's magenta centre ring is across the screen, in pixels.
+    private func ringWidth() -> Double {
+        guard let image = XCUIScreen.main.screenshot().image.cgImage else { return 0 }
+        let width = image.width, height = image.height
+        var pixels = [UInt8](repeating: 0, count: width * height * 4)
+        let drawn = pixels.withUnsafeMutableBytes { buffer -> Bool in
+            guard let context = CGContext(
+                data: buffer.baseAddress, width: width, height: height, bitsPerComponent: 8,
+                bytesPerRow: width * 4, space: CGColorSpaceCreateDeviceRGB(),
+                bitmapInfo: CGImageAlphaInfo.premultipliedLast.rawValue
+            ) else { return false }
+            context.draw(image, in: CGRect(x: 0, y: 0, width: width, height: height))
+            return true
+        }
+        guard drawn else { return 0 }
+        let row = height / 2 * width
+        let magenta = (0..<width).filter { x in
+            let at = (row + x) * 4
+            return pixels[at] > 200 && pixels[at + 1] < 90 && pixels[at + 2] > 150
+        }
+        guard let left = magenta.first, let right = magenta.last else { return 0 }
+        return Double(right - left)
     }
 
     private func offerLayouts(_ app: XCUIApplication) {

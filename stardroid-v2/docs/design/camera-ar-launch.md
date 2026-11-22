@@ -2,8 +2,8 @@
 
 **Status: PARTLY BUILT, not launched.** Slices 2, 3, 4 and 6 (the shared camera math, the iOS
 layering, the iOS camera edge, and share on both) are built, and `CAMERA_AR` and `SHARE_SKY` are
-still off on both platforms. The iOS side has run only on the simulator with a stand-in camera: no
-real iPhone camera has been through it (§4.7). Slices 1, 5, 7 and 8 remain. Decision numbers are
+still off on both platforms. The iOS side has run only on iPhone and iPad simulators with a stand-in
+camera: no real camera has been through it (§4.7). Slices 1, 5, 7 and 8 remain. Decision numbers are
 unassigned.
 
 [camera-ar-mode.md](camera-ar-mode.md) designed AR mode, drag-to-align and share, and all four
@@ -130,7 +130,9 @@ Core Motion and Metal code already is. (Fall back to Swift only if an API is not
   AR with a snackbar explaining why.
 - **Orientation.** iPhone landscape is supported (D143). Keep the preview's rotation in step
   with the interface orientation. The FOV is defined on the shorter view side, so it does not
-  depend on orientation.
+  depend on orientation. As built, a turn doesn't report new specs (that would reset the zoom).
+  Mid-turn an iPhone's interface orientation changes one layout before the bounds do, so a view
+  that fills the screen is never treated as crossways (`PreviewShape`).
 
 ### 4.3 Matching the map zoom to the camera
 

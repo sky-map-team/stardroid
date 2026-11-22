@@ -54,11 +54,7 @@ internal class CameraOptics(
     private val exposureMin: Int,
     private val exposureMax: Int,
 ) {
-    fun specsFor(
-        viewWidth: Double,
-        viewHeight: Double,
-        landscape: Boolean,
-    ): ArCameraSpecs {
+    fun specsFor(shape: PreviewShape): ArCameraSpecs {
         val halfTans =
             lensFovsDeg.map { fov ->
                 fov?.let {
@@ -66,9 +62,9 @@ internal class CameraOptics(
                         it,
                         formatWidth,
                         formatHeight,
-                        viewWidth,
-                        viewHeight,
-                        landscape,
+                        shape.shortSide,
+                        shape.longSide,
+                        landscape = shape.crossways,
                     )
                 }
             }
