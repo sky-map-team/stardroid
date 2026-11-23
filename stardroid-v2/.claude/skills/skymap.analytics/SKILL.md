@@ -93,8 +93,9 @@ If they are missing or return auth errors, tell the user — don't try to work a
     at `warm_welcome_completed_ev`; missing iOS startup data is not a regression.
 
 15. **Renderer usage.** User property `renderer_backend_prop` (`gles1`/`gles3`, Android, the
-    backend actually running after any fallback) is set at each launch from the release that
-    added it. Register it as a user-scoped custom dimension in GA4 first; it is not backfilled.
+    backend actually running after any fallback) is set at each launch, from the first release
+    after 2026-11-23 (PR 1364); a user who has not relaunched since has no value, so early
+    counts undercount. Register it as a user-scoped custom dimension in GA4 first; it is not backfilled.
     Before then, the only signal is `preference_change_ev` with `customEvent:value` starting
     `renderer_backend:`, which counts switches only, not users on the default.
 

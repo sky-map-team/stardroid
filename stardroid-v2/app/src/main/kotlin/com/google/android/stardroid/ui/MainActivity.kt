@@ -568,7 +568,8 @@ class MainActivity : ComponentActivity() {
                 onRendererInfo = rendererInfoStore::set,
                 requestRender = { requestRender() },
             )
-        // The backend in use, not the one requested: a device without GL ES 3.0 falls back.
+        // The backend in use, not the one requested: the kill switch or a device without GL ES 3.0
+        // can force a fallback.
         lifecycleScope.launch {
             if (settings.enableAnalytics.first()) {
                 analytics.setUserProperty(AnalyticsEvents.RENDERER_BACKEND, backend.backendName)

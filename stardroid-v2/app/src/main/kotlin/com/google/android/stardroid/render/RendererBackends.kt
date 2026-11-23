@@ -57,8 +57,8 @@ class RendererBackendHandle(
  *   difference from `render-gles3.md` §6, which assumed GLES1 would be retired.
  *
  * Either way the fallback is silent by design. The caller records what was *asked for*, not what
- * was built, so a fallback cannot drive a recreate loop; `RendererInfo.backend` reports what
- * actually ran, and the diagnostics screen shows it.
+ * was built, so a fallback cannot drive a recreate loop; analytics and `RendererInfo.backend`
+ * (shown on the diagnostics screen) report what actually ran.
  *
  * @param requestRender wired to the surface's `requestRender`, so the GLES3 backend can ask for
  *   the frames a label fade needs. See [GLES3SkyRenderer.onAnimating].
