@@ -60,8 +60,8 @@ in `ios/SkyMap/project.yml`.
 
 | Icon | Name | First released | Subject |
 |---|---|---|---|
-| <img src="../assets/release-icons/2.1.0_izzie_icon.png" width="40" alt="Izzie" /> | **Izzie** | _unreleased (2.1.0)_ | A guinea pig. |
-| <img src="../assets/release-icons/2.0.0_gdc_icon.png" width="40" alt="GDC" /> | **GDC** | _unreleased (2.0.0)_ | _To be written._ |
+| <img src="../assets/release-icons/2.1.0_izzie_icon.png" width="40" alt="Izzie" /> | **Izzie** | 2026-11-18 (2.1.0) | A guinea pig. |
+| <img src="../assets/release-icons/2.0.0_gdc_icon.png" width="40" alt="GDC" /> | **GDC** | 2026-11-07 (2.0.0) | _To be written._ |
 
 ### v1
 
@@ -74,16 +74,41 @@ v1 predates the mission-name convention entirely — its names are mostly solar-
 |---|---|---|---|
 | <img src="../../stardroid-v1/assets/splashscreens/1_18_0_eclipse_icon.png" width="40" alt="Eclipse" /> | **Eclipse** | 2026-08-09 (1.18.0) | [Eclipse](https://en.wikipedia.org/wiki/Eclipse) — when one astronomical object is temporarily obscured by another passing between it and the observer or its light source. |
 | <img src="../../stardroid-v1/assets/splashscreens/1_17_0_neptune_icon.png" width="40" alt="Neptune" /> | **Neptune** | 2026-07-28 (1.17.0) | [Neptune](https://en.wikipedia.org/wiki/Neptune) — the eighth and outermost known planet of the Solar System. |
-| <img src="../../stardroid-v1/assets/splashscreens/1_16_0_caelus_icon.png" width="40" alt="Caelus" /> | **Caelus** | 2026-06-19 (1.16.0) | [Caelus](https://en.wikipedia.org/wiki/Caelus) — the primordial Roman god of the sky, the Roman-mythology counterpart to Uranus. |
-| <img src="../../stardroid-v1/assets/splashscreens/1_15_0_saturn_icon.png" width="40" alt="Saturn" /> | **Saturn** | 2026-05-22 (1.15.0) | [Saturn](https://en.wikipedia.org/wiki/Saturn) — the sixth planet from the Sun, known for its prominent ring system. |
-| <img src="../../stardroid-v1/assets/splashscreens/1_14_2_jupiter_icon.png" width="40" alt="Jupiter" /> | **Jupiter** | 2026-05-05 (1.14.2) | [Jupiter](https://en.wikipedia.org/wiki/Jupiter) — the fifth planet from the Sun and the largest in the Solar System. |
+| <img src="../../stardroid-v1/assets/splashscreens/1_16_0_caelus_icon.png" width="40" alt="Caelus" /> | **Caelus** | 2026-06-19 (1.16.0; on Play from 1.16.1, 2026-07-06) | [Caelus](https://en.wikipedia.org/wiki/Caelus) — the primordial Roman god of the sky, the Roman-mythology counterpart to Uranus. |
+| <img src="../../stardroid-v1/assets/splashscreens/1_15_0_saturn_icon.png" width="40" alt="Saturn" /> | **Saturn** | 2026-05-22 (1.15.0; on Play from 1.15.5, 2026-06-11) | [Saturn](https://en.wikipedia.org/wiki/Saturn) — the sixth planet from the Sun, known for its prominent ring system. |
+| <img src="../../stardroid-v1/assets/splashscreens/1_14_2_jupiter_icon.png" width="40" alt="Jupiter" /> | **Jupiter** | 2026-05-04 (1.14.2) | [Jupiter](https://en.wikipedia.org/wiki/Jupiter) — the fifth planet from the Sun and the largest in the Solar System. |
 | <img src="../../stardroid-v1/assets/splashscreens/1_13_3_mars_icon.png" width="40" alt="Mars" /> | **Mars** | 2026-04-12 (1.13.3) | [Mars](https://en.wikipedia.org/wiki/Mars) — the fourth planet from the Sun, known as the "Red Planet." |
-| <img src="../../stardroid-v1/assets/splashscreens/1_12_0_earth_icon.png" width="40" alt="Earth" /> | **Earth** | 2026-03-01 (1.12.0) | [Earth](https://en.wikipedia.org/wiki/Earth) — the third planet from the Sun and the only known astronomical object to harbor life. |
-| <img src="../../stardroid-v1/assets/splashscreens/1_10_11_venus_icon.png" width="40" alt="Venus" /> | **Venus** | 2026-02-03 (1.10.11) | [Venus](https://en.wikipedia.org/wiki/Venus) — the second planet from the Sun, similar in size to Earth but with a runaway-greenhouse atmosphere. |
+| <img src="../../stardroid-v1/assets/splashscreens/1_12_0_earth_icon.png" width="40" alt="Earth" /> | **Earth** | 2026-03-01 (1.12.0; on Play from 1.12.3, 2026-03-24) | [Earth](https://en.wikipedia.org/wiki/Earth) — the third planet from the Sun and the only known astronomical object to harbor life. |
+| <img src="../../stardroid-v1/assets/splashscreens/1_10_11_venus_icon.png" width="40" alt="Venus" /> | **Venus** | 2026-02-03 (1.10.11; on Play from 1.11.0, 2026-02-04) | [Venus](https://en.wikipedia.org/wiki/Venus) — the second planet from the Sun, similar in size to Earth but with a runaway-greenhouse atmosphere. |
 | — | **Mercury** | 2026-01-20 (1.10.10) | [Mercury](https://en.wikipedia.org/wiki/Mercury_(planet)) — the smallest planet in the Solar System and the closest to the Sun. |
 | — | **Comet Leonard** | 2021-12-21 (1.10.0) | [C/2021 A1 (Leonard)](https://en.wikipedia.org/wiki/C/2021_A1_(Leonard)) — a long-period comet discovered in January 2021, the brightest comet of that year. |
 | — | **Neowise** | 2020-07-17 (1.9.4) | [C/2020 F3 (NEOWISE)](https://en.wikipedia.org/wiki/C/2020_F3_(NEOWISE)) — a long-period comet discovered in March 2020 that became easily visible to the naked eye. |
 | <img src="../../stardroid-v1/assets/stardroid_logo_old.png" width="40" alt="Sky Map" /> | **1.0** | c. 2009-02 (best guess) | Original release, as **Google Sky Map** — this predates the app's git history (which starts 2012) and the naming convention entirely, so it has no mission name, just a version number. Date is a best guess based on Google Sky Map's public launch around the T-Mobile G1's UK debut in early 2009; not verified against a primary source. |
 
-Several early v1 releases (1.9.5–1.9.7, 1.10.4, 1.10.9) shipped without a release name at all —
-omitted from this table.
+### v1 release history
+
+Every v1 release without a name, plus the dates AppBrain saw them on Play. Named releases are in the
+table above. Dates for 2016 and earlier are AppBrain's (the git tags trail them by 3–4 days);
+later ones are git tag dates unless noted.
+
+| Version | Date | Notes |
+|---|---|---|
+| 1.4 | 2010-03-18 | Google Sky Map |
+| 1.5 / 1.5.1 / 1.5.2 | 2010-04-23 / 04-27 / 06-18 | |
+| 1.6 / 1.6.1 | 2010-11-18 / 12-24 | |
+| 1.6.3 / 1.6.4 | 2011-08-24 / 08-31 | |
+| 1.8.0 – 1.8.6b | 2016-02-29 – 2016-06-12 | First releases after open-sourcing (1.8.0, 1.8.2, 1.8.3, 1.8.4.1, 1.8.5, 1.8.6b) |
+| 1.9.0b / 1.9.1 / 1.9.2 | 2016-07-12 / 09-06 / 09-27 | |
+| 1.9.3 / 1.9.3-P | 2018-08-20 / 2018-09-03 | In AppBrain only; no git tag |
+| 1.9.4 | 2020-07-17 | Neowise (see above) |
+| 1.9.5 (RC2) | 2020-09-13 | CHANGELOG dates 1.9.5 as 2020-09-23 |
+| 1.9.6 (RC6) | 2020-12-14 | |
+| 1.10.0 (RC3) | 2021-12-21 | Comet Leonard (see above) |
+| 1.10.2 (RC5) | 2024-02-29 | In AppBrain only; no git tag |
+| 1.10.3 (RC1) | 2024-04-30 | Git tag is 2024-05-03 |
+| 1.10.4 | 2024-11-29 | CHANGELOG says 2024-11-30 |
+| 1.10.9 | 2025-01-10 | CHANGELOG says 2025-01-27; tag and AppBrain agree on 01-10 |
+| 1.10.10 | 2026-01-20 | Mercury (see above) |
+
+Not on AppBrain (tagged but never seen on Play): 1.10.11, 1.12.0, 1.13.4, 1.15.0–1.15.4, 1.16.0,
+1.16.2 and 1.17.x. They may still have shipped.
