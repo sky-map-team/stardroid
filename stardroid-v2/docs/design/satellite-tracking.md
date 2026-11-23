@@ -516,9 +516,12 @@ This is the part that protects the install base, and it inverts normal retry ins
   little. The expiry never applies once the breaker is climbing: its own week-long rung puts
   timeouts more than 72 h apart, and each must still climb it.
 
-  A timeout has no HTTP code, so `lastStatusCode` keeps the last real response, Diagnostics
-  shows the open circuit and its failure count, and no `satellite_fetch_failed` event is sent.
-  Alerting is therefore blind to a firewall block until #1348 is fixed.
+  A timeout has no HTTP code, so `lastStatusCode` keeps the last real response and Diagnostics
+  shows the open circuit and its failure count. A timeout that opens or extends the circuit is
+  reported as `satellite_fetch_failed` with `http_code=timeout` (#1348), so the existing alert
+  counts a firewall block; the first, circuit-shut timeout is not, which filters out a lone flaky
+  link at the cost of reporting a block one attempt (about 12 h) later. Only builds with this
+  change report, so installs on older releases stay silent when blocked.
 - **On any non-200**, increment a failure counter and set `circuitOpenUntil = now + backoff`,
   where backoff runs **24 h → 48 h → 7 days**, capped. Far more conservative than typical retry
   policy, deliberately.
@@ -539,8 +542,9 @@ This is the part that protects the install base, and it inverts normal retry ins
 
   **The analytics event, concretely** — this is the aggregate signal that stands in for the
   "report to a human" the policy demands, since we cannot see individual devices' logs: a
-  `satellite_fetch_failed` event on every non-200/301 (params: HTTP code, whether it opened or
-  extended the circuit breaker, and the new `circuitOpenUntil`), and a `satellite_circuit_closed`
+  `satellite_fetch_failed` event on every non-200/301, and on every timeout that opens or extends
+  the circuit (params: HTTP code, or `timeout`, whether the circuit is open
+  after the attempt, and the new `circuitOpenUntil`), and a `satellite_circuit_closed`
   event the next time a fetch succeeds after a breaker was open (param: how long it was open).
   Both are cheap, both are gms-only same as the rest of the app's analytics, and together they are
   what would tell us — before CelesTrak firewalls anyone — that a retry bug is loose in

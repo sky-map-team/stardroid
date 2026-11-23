@@ -32,8 +32,9 @@ def daily_counts(rows):
         totals.setdefault(event, {}).setdefault(day, 0)
         totals[event][day] += n
         if event == FAILED:
-            # http_code is client-supplied; only real status codes may reach the issue text.
-            code = code if re.fullmatch(r"\d{3}", code or "") else "other"
+            # http_code is client-supplied; only real status codes (or the timeout marker)
+            # may reach the issue text.
+            code = code if re.fullmatch(r"\d{3}|timeout", code or "") else "other"
             by_code.setdefault(day, {}).setdefault(code, 0)
             by_code[day][code] += n
     return totals, by_code

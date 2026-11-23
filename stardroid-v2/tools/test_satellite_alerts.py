@@ -37,6 +37,11 @@ class EvaluateTest(unittest.TestCase):
         self.assertIn("other: 1000", alerts[0])
         self.assertNotIn("@maintainer", alerts[0])
 
+    def test_timeout_is_labelled_separately(self):
+        rows = week(100) + [("2026-11-12", "satellite_fetch_failed", "timeout", 900)]
+        alerts, _ = evaluate(rows, TODAY)
+        self.assertIn("timeout: 900", alerts[0])
+
     def test_yesterday_alone_can_alert(self):
         rows = week(100) + [("2026-11-11", "satellite_fetch_failed", "503", 2000)]
         alerts, _ = evaluate(rows, TODAY)

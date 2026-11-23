@@ -256,9 +256,16 @@ object SatelliteFetchPolicy {
     /**
      * Whether [outcome] should be reported to a human, as CelesTrak's policy requires of us.
      *
-     * Only server refusals qualify. Being offline is not something anyone needs to hear about.
+     * Server refusals qualify, and so does a timeout that left the circuit open: a firewall block
+     * has no status code to report. A first timeout that left the circuit shut stays quiet, as
+     * does being offline.
      */
-    fun warrantsReporting(outcome: FetchOutcome): Boolean = outcome is FetchOutcome.HttpError
+    fun warrantsReporting(
+        outcome: FetchOutcome,
+        stateAfter: SatelliteFetchState,
+    ): Boolean =
+        outcome is FetchOutcome.HttpError ||
+            (outcome is FetchOutcome.ServerUnreachable && stateAfter.circuitIsOpen)
 
     private fun ladderBackoff(failures: Int): Duration =
         BACKOFF_LADDER[(failures - 1).coerceAtMost(BACKOFF_LADDER.lastIndex)]

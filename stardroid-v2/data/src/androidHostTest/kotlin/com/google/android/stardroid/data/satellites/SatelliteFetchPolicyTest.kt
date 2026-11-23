@@ -300,16 +300,34 @@ class SatelliteFetchPolicyTest {
     }
 
     @Test
-    fun `only server refusals are worth reporting to a human`() {
-        assertThat(SatelliteFetchPolicy.warrantsReporting(FetchOutcome.HttpError(503))).isTrue()
+    fun `refusals and circuit-opening timeouts are worth reporting to a human`() {
+        val closed = SatelliteFetchState()
+        val open = SatelliteFetchState(circuitOpenUntil = t0 + 1.days)
+        assertThat(SatelliteFetchPolicy.warrantsReporting(FetchOutcome.HttpError(503), open))
+            .isTrue()
         assertThat(
-            SatelliteFetchPolicy.warrantsReporting(FetchOutcome.TransportFailure(IOException())),
+            SatelliteFetchPolicy.warrantsReporting(
+                FetchOutcome.TransportFailure(IOException()),
+                closed,
+            ),
         ).isFalse()
-        // A timeout is not a response, so there is no status for anyone to act on.
-        assertThat(SatelliteFetchPolicy.warrantsReporting(timeout())).isFalse()
-        assertThat(
-            SatelliteFetchPolicy.warrantsReporting(FetchOutcome.Success("b")),
-        ).isFalse()
+        // A lone timeout left the circuit shut: indistinguishable from a flaky link.
+        assertThat(SatelliteFetchPolicy.warrantsReporting(timeout(), closed)).isFalse()
+        assertThat(SatelliteFetchPolicy.warrantsReporting(timeout(), open)).isTrue()
+        assertThat(SatelliteFetchPolicy.warrantsReporting(FetchOutcome.Success("b"), closed))
+            .isFalse()
+    }
+
+    @Test
+    fun `a timeout is reported from the second strike on, as afterOutcome decides`() {
+        val first = SatelliteFetchPolicy.afterOutcome(SatelliteFetchState(), timeout(), t0)
+        assertThat(SatelliteFetchPolicy.warrantsReporting(timeout(), first)).isFalse()
+
+        val second = SatelliteFetchPolicy.afterOutcome(first, timeout(), t0 + 12.hours)
+        assertThat(SatelliteFetchPolicy.warrantsReporting(timeout(), second)).isTrue()
+
+        val third = SatelliteFetchPolicy.afterOutcome(second, timeout(), t0 + 2.days)
+        assertThat(SatelliteFetchPolicy.warrantsReporting(timeout(), third)).isTrue()
     }
 
     @Test

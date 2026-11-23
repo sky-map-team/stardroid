@@ -18,6 +18,7 @@ import com.google.android.stardroid.testing.assertThat
 import kotlinx.datetime.Instant
 import kotlin.random.Random
 import kotlin.test.Test
+import kotlin.time.Duration.Companion.hours
 
 class SatelliteFetchReportingTest {
     private val now = Instant.parse("2026-11-12T12:00:00Z")
@@ -78,5 +79,53 @@ class SatelliteFetchReportingTest {
 
         assertThat(analytics.events.map { it.name })
             .containsExactly(AnalyticsEvents.SATELLITE_FETCH_FAILED_EVENT)
+    }
+
+    @Test
+    fun aTimeoutThatOpenedTheCircuitIsReportedAsATimeout() {
+        val open = SatelliteFetchState(circuitOpenUntil = now + 24.hours)
+        trackSatelliteFetchResult(
+            RefreshResult.Completed(
+                FetchOutcome.ServerUnreachable(Exception()),
+                open,
+                SatelliteFetchState(),
+            ),
+            analytics,
+            now,
+            neverSampled,
+        )
+
+        assertThat(analytics.events.map { it.name })
+            .containsExactly(AnalyticsEvents.SATELLITE_FETCH_FAILED_EVENT)
+        assertThat(analytics.events.single().params[AnalyticsEvents.SATELLITE_FETCH_HTTP_CODE])
+            .isEqualTo(AnalyticsEvents.SATELLITE_FETCH_TIMEOUT_CODE)
+    }
+
+    @Test
+    fun aFirstTimeoutThatLeftTheCircuitShutIsNotReported() {
+        trackSatelliteFetchResult(
+            completed(FetchOutcome.ServerUnreachable(Exception())),
+            analytics,
+            now,
+            neverSampled,
+        )
+
+        assertThat(analytics.events.size).isEqualTo(0)
+    }
+
+    @Test
+    fun beingOfflineIsNeverReported() {
+        trackSatelliteFetchResult(
+            RefreshResult.Completed(
+                FetchOutcome.TransportFailure(Exception()),
+                SatelliteFetchState(circuitOpenUntil = now + 24.hours),
+                SatelliteFetchState(circuitOpenUntil = now + 24.hours),
+            ),
+            analytics,
+            now,
+            neverSampled,
+        )
+
+        assertThat(analytics.events.size).isEqualTo(0)
     }
 }
