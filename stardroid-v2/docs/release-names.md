@@ -83,7 +83,7 @@ v1 predates the mission-name convention entirely — its names are mostly solar-
 | — | **Mercury** | 2026-01-20 (1.10.10) | [Mercury](https://en.wikipedia.org/wiki/Mercury_(planet)) — the smallest planet in the Solar System and the closest to the Sun. |
 | — | **Comet Leonard** | 2021-12-21 (1.10.0) | [C/2021 A1 (Leonard)](https://en.wikipedia.org/wiki/C/2021_A1_(Leonard)) — a long-period comet discovered in January 2021, the brightest comet of that year. |
 | — | **Neowise** | 2020-07-18 (1.9.4) | [C/2020 F3 (NEOWISE)](https://en.wikipedia.org/wiki/C/2020_F3_(NEOWISE)) — a long-period comet discovered in March 2020 that became easily visible to the naked eye. |
-| <img src="../../stardroid-v1/assets/stardroid_logo_old.png" width="40" alt="Sky Map" /> | **1.0** | c. 2009-02 (best guess) | Original release, as **Google Sky Map** — this predates the app's git history (which starts 2012) and the naming convention entirely, so it has no mission name, just a version number. Date is a best guess based on Google Sky Map's public launch around the T-Mobile G1's UK debut in early 2009; not verified against a primary source. |
+| <img src="../../stardroid-v1/assets/stardroid_logo_old.png" width="40" alt="Sky Map" /> | **1.0** | 2009-05-12 (announced) | Original release, as **Google Sky Map**, announced on the [Google Mobile Blog](https://googleblog.blogspot.com/2009/05/planetarium-in-your-pocket.html) on 12 May 2009 and distributed through Android Market. This predates the app's git history (which starts 2012) and the naming convention entirely, so it has no mission name, just a version number. The exact first Market listing date and version number are unverified; the earliest dated version we have is 1.4 (2010-03-18). |
 
 ### v1 release history
 
