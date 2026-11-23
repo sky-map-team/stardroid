@@ -26,7 +26,9 @@ const ogImage = new URL('/og.png', Astro.site).href;
     <meta name="description" content={description} />
     <meta name="theme-color" content="#080c1c" />
     <link rel="canonical" href={canonical} />
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     {links.appStoreId && <meta name="apple-itunes-app" content={`app-id=${links.appStoreId}`} />}
     {noindex && <meta name="robots" content="noindex" />}
     <meta property="og:type" content="website" />
