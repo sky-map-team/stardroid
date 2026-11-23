@@ -30,6 +30,9 @@ object AnalyticsEvents {
     const val USER_LOCALE = "user_locale_prop"
     const val COMPLETED_WARM_WELCOME = "warm_welcome_done_prop"
 
+    // The backend actually drawing the sky ("gles1"/"gles3"), after any fallback.
+    const val RENDERER_BACKEND = "renderer_backend_prop"
+
     // Startup gates.
     const val TOS_ACCEPTED_EVENT = "TOS_accepted_ev"
     const val TOS_REJECTED_EVENT = "TOS_rejected_ev"

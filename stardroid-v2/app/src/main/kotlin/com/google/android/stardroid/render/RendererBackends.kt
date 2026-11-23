@@ -34,6 +34,7 @@ class RendererBackendHandle(
     val skyRenderer: SkyRenderer,
     val surfaceRenderer: GLSurfaceView.Renderer,
     val eglContextClientVersion: Int,
+    val backendName: String,
 )
 
 /**
@@ -56,8 +57,8 @@ class RendererBackendHandle(
  *   difference from `render-gles3.md` §6, which assumed GLES1 would be retired.
  *
  * Either way the fallback is silent by design. The caller records what was *asked for*, not what
- * was built, so a fallback cannot drive a recreate loop; `RendererInfo.backend` reports what
- * actually ran, and the diagnostics screen shows it.
+ * was built, so a fallback cannot drive a recreate loop; analytics and `RendererInfo.backend`
+ * (shown on the diagnostics screen) report what actually ran.
  *
  * @param requestRender wired to the surface's `requestRender`, so the GLES3 backend can ask for
  *   the frames a label fade needs. See [GLES3SkyRenderer.onAnimating].
@@ -82,10 +83,20 @@ fun createRendererBackend(
                 onRendererInfo = onRendererInfo,
                 onAnimating = requestRender,
             )
-        RendererBackendHandle(renderer, renderer, eglContextClientVersion = 3)
+        RendererBackendHandle(
+            renderer,
+            renderer,
+            eglContextClientVersion = 3,
+            backendName = GLES3SkyRenderer.BACKEND_NAME,
+        )
     } else {
         val renderer = GLSkyRenderer(density, imageLoader, onRendererInfo)
-        RendererBackendHandle(renderer, renderer, eglContextClientVersion = 1)
+        RendererBackendHandle(
+            renderer,
+            renderer,
+            eglContextClientVersion = 1,
+            backendName = GLSkyRenderer.BACKEND_NAME,
+        )
     }
 
 /**
