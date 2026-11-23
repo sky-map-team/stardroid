@@ -568,6 +568,12 @@ class MainActivity : ComponentActivity() {
                 onRendererInfo = rendererInfoStore::set,
                 requestRender = { requestRender() },
             )
+        // The backend in use, not the one requested: a device without GL ES 3.0 falls back.
+        lifecycleScope.launch {
+            if (settings.enableAnalytics.first()) {
+                analytics.setUserProperty(AnalyticsEvents.RENDERER_BACKEND, backend.backendName)
+            }
+        }
         glSurfaceView =
             GLSurfaceView(this).apply {
                 setEGLContextClientVersion(backend.eglContextClientVersion)

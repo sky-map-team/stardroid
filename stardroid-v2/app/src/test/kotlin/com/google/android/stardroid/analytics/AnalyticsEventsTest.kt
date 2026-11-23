@@ -34,6 +34,7 @@ class AnalyticsEventsTest {
                 "FIRST_INSTALL_VERSION",
                 "USER_LOCALE",
                 "COMPLETED_WARM_WELCOME",
+                "RENDERER_BACKEND",
             )
     }
 }

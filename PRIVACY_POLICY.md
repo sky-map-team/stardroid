@@ -61,6 +61,8 @@ which anyone can read. If the categories change, we will update this policy.
   and when the app will try again) and, for about 1 in 100 successful downloads, a bare count
   with no details. We use these to spot problems and to estimate how much load Sky Map puts on
   the data provider.
+- **Graphics engine**: which of the two sky renderers the app is using (classic or enhanced),
+  so we can see how many people use the enhanced one and whether it falls back on some devices.
 - **Language**: your device locale (e.g. `en-US`) to help us prioritise translations.
 - **Install version**: for new installs only, the app version you first installed. This helps
   us understand user retention across releases.

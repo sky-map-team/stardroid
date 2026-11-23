@@ -34,6 +34,7 @@ class RendererBackendHandle(
     val skyRenderer: SkyRenderer,
     val surfaceRenderer: GLSurfaceView.Renderer,
     val eglContextClientVersion: Int,
+    val backendName: String,
 )
 
 /**
@@ -82,10 +83,20 @@ fun createRendererBackend(
                 onRendererInfo = onRendererInfo,
                 onAnimating = requestRender,
             )
-        RendererBackendHandle(renderer, renderer, eglContextClientVersion = 3)
+        RendererBackendHandle(
+            renderer,
+            renderer,
+            eglContextClientVersion = 3,
+            backendName = GLES3SkyRenderer.BACKEND_NAME,
+        )
     } else {
         val renderer = GLSkyRenderer(density, imageLoader, onRendererInfo)
-        RendererBackendHandle(renderer, renderer, eglContextClientVersion = 1)
+        RendererBackendHandle(
+            renderer,
+            renderer,
+            eglContextClientVersion = 1,
+            backendName = GLSkyRenderer.BACKEND_NAME,
+        )
     }
 
 /**
