@@ -19,7 +19,7 @@ import kotlin.random.Random
 
 /**
  * Reports what CelesTrak's usage policy asks us to report, as the aggregate signal that stands in
- * for logs we cannot see: a server refusal (and whether it opened the circuit), and a success
+ * for logs we cannot see: a server refusal or a circuit-opening timeout (and whether it opened the circuit), and a success
  * that closed a circuit which had been open, plus a sampled count of successful downloads for
  * estimating total volume. Shared so every platform's fetch reports the same.
  */
@@ -30,12 +30,17 @@ fun trackSatelliteFetchResult(
     random: Random = Random.Default,
 ) {
     val outcome = result.outcome
-    if (SatelliteFetchPolicy.warrantsReporting(outcome)) {
+    if (SatelliteFetchPolicy.warrantsReporting(outcome, result.state)) {
+        val code =
+            if (outcome is FetchOutcome.HttpError) {
+                outcome.statusCode.toString()
+            } else {
+                AnalyticsEvents.SATELLITE_FETCH_TIMEOUT_CODE
+            }
         analytics.trackEvent(
             AnalyticsEvents.SATELLITE_FETCH_FAILED_EVENT,
             mapOf(
-                AnalyticsEvents.SATELLITE_FETCH_HTTP_CODE to
-                    (outcome as FetchOutcome.HttpError).statusCode.toString(),
+                AnalyticsEvents.SATELLITE_FETCH_HTTP_CODE to code,
                 AnalyticsEvents.SATELLITE_FETCH_CIRCUIT_OPENED to
                     result.state.circuitIsOpen.toString(),
                 AnalyticsEvents.SATELLITE_FETCH_CIRCUIT_OPEN_UNTIL to

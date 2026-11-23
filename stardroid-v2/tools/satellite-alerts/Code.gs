@@ -70,8 +70,9 @@ function fetchDays(startDate) {
     if (event === OK) {
       day.sampled += count;
     } else {
-      // Clients supply http_code, so only real status codes may reach the email.
-      const code = /^\d{3}$/.test(rawCode) ? rawCode : 'other';
+      // Clients supply http_code, so only real status codes (or the timeout marker) may reach
+      // the email.
+      const code = /^(\d{3}|timeout)$/.test(rawCode) ? rawCode : 'other';
       day.failed += count;
       day.codes[code] = (day.codes[code] || 0) + count;
     }

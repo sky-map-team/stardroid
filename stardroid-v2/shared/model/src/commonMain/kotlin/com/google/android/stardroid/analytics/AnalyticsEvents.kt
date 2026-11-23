@@ -133,6 +133,10 @@ object AnalyticsEvents {
     // what would tell us a retry bug is loose in production *before* anyone gets firewalled.
     const val SATELLITE_FETCH_FAILED_EVENT = "satellite_fetch_failed"
     const val SATELLITE_FETCH_HTTP_CODE = "http_code"
+
+    // http_code for a timeout that opened or extended the circuit: no response, so no status.
+    // Keep equal in tools/satellite-alerts/Code.gs and tools/satellite_alerts.py.
+    const val SATELLITE_FETCH_TIMEOUT_CODE = "timeout"
     const val SATELLITE_FETCH_CIRCUIT_OPENED = "circuit_opened"
     const val SATELLITE_FETCH_CIRCUIT_OPEN_UNTIL = "circuit_open_until"
 
