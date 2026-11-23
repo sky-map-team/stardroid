@@ -87,28 +87,24 @@ v1 predates the mission-name convention entirely — its names are mostly solar-
 
 ### v1 release history
 
-Every v1 release without a name, plus the dates AppBrain saw them on Play. Named releases are in the
-table above. Dates for 2016 and earlier are AppBrain's (the git tags trail them by 3–4 days);
-later ones are git tag dates unless noted.
+Every v1 release without a name, newest first. Named releases are in the table above. Dates are
+the Play Store release dates where known, otherwise git tag dates.
 
 | Version | Date | Notes |
 |---|---|---|
-| 1.4 | 2010-03-18 | Google Sky Map |
-| 1.5 / 1.5.1 / 1.5.2 | 2010-04-23 / 04-27 / 06-18 | |
-| 1.6 / 1.6.1 | 2010-11-18 / 12-24 | |
-| 1.6.3 / 1.6.4 | 2011-08-24 / 08-31 | |
-| 1.8.0 – 1.8.6b | 2016-02-29 – 2016-06-12 | First releases after open-sourcing (1.8.0, 1.8.2, 1.8.3, 1.8.4.1, 1.8.5, 1.8.6b) |
-| 1.9.0b / 1.9.1 / 1.9.2 | 2016-07-12 / 09-06 / 09-27 | |
-| 1.9.3 / 1.9.3-P | 2018-08-20 / 2018-09-03 | In AppBrain only; no git tag |
-| 1.9.4 | 2020-07-17 | Neowise (see above) |
-| 1.9.5 (RC2) | 2020-09-13 | CHANGELOG dates 1.9.5 as 2020-09-23 |
-| 1.9.6 (RC6) | 2020-12-14 | |
-| 1.10.0 (RC3) | 2021-12-21 | Comet Leonard (see above) |
-| 1.10.2 (RC5) | 2024-02-29 | In AppBrain only; no git tag |
-| 1.10.3 (RC1) | 2024-04-30 | Git tag is 2024-05-03 |
-| 1.10.4 | 2024-11-29 | CHANGELOG says 2024-11-30 |
-| 1.10.9 | 2025-01-10 | CHANGELOG says 2025-01-27; tag and AppBrain agree on 01-10 |
 | 1.10.10 | 2026-01-20 | Mercury (see above) |
-
-Not on AppBrain (tagged but never seen on Play): 1.10.11, 1.12.0, 1.13.4, 1.15.0–1.15.4, 1.16.0,
-1.16.2 and 1.17.x. They may still have shipped.
+| 1.10.9 | 2025-01-10 | CHANGELOG says 2025-01-27; the git tag agrees with 01-10 |
+| 1.10.4 | 2024-11-29 | CHANGELOG says 2024-11-30 |
+| 1.10.3 (RC1) | 2024-04-30 | Git tag is 2024-05-03 |
+| 1.10.2 (RC5) | 2024-02-29 | No git tag |
+| 1.10.0 (RC3) | 2021-12-21 | Comet Leonard (see above) |
+| 1.9.6 (RC6) | 2020-12-14 | |
+| 1.9.5 (RC2) | 2020-09-13 | CHANGELOG dates 1.9.5 as 2020-09-23 |
+| 1.9.4 | 2020-07-17 | Neowise (see above) |
+| 1.9.3 / 1.9.3-P | 2018-08-20 / 2018-09-03 | No git tag |
+| 1.9.0b / 1.9.1 / 1.9.2 | 2016-07-12 / 09-06 / 09-27 | |
+| 1.8.0 – 1.8.6b | 2016-02-29 – 2016-06-12 | First releases after open-sourcing (1.8.0, 1.8.2, 1.8.3, 1.8.4.1, 1.8.5, 1.8.6b) |
+| 1.6.3 / 1.6.4 | 2011-08-24 / 08-31 | |
+| 1.6 / 1.6.1 | 2010-11-18 / 12-24 | |
+| 1.5 / 1.5.1 / 1.5.2 | 2010-04-23 / 04-27 / 06-18 | |
+| 1.4 | 2010-03-18 | Google Sky Map |
