@@ -319,6 +319,18 @@ class SatelliteFetchPolicyTest {
     }
 
     @Test
+    fun `a timeout is reported from the second strike on, as afterOutcome decides`() {
+        val first = SatelliteFetchPolicy.afterOutcome(SatelliteFetchState(), timeout(), t0)
+        assertThat(SatelliteFetchPolicy.warrantsReporting(timeout(), first)).isFalse()
+
+        val second = SatelliteFetchPolicy.afterOutcome(first, timeout(), t0 + 12.hours)
+        assertThat(SatelliteFetchPolicy.warrantsReporting(timeout(), second)).isTrue()
+
+        val third = SatelliteFetchPolicy.afterOutcome(second, timeout(), t0 + 2.days)
+        assertThat(SatelliteFetchPolicy.warrantsReporting(timeout(), third)).isTrue()
+    }
+
+    @Test
     fun `timeUntilFetchAllowed reports the longer of the two constraints`() {
         val refused =
             SatelliteFetchPolicy.afterOutcome(

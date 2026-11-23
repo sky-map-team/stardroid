@@ -543,8 +543,8 @@ This is the part that protects the install base, and it inverts normal retry ins
   **The analytics event, concretely** — this is the aggregate signal that stands in for the
   "report to a human" the policy demands, since we cannot see individual devices' logs: a
   `satellite_fetch_failed` event on every non-200/301, and on every timeout that opens or extends
-  the circuit (params: HTTP code, or `timeout`, whether it opened or
-  extended the circuit breaker, and the new `circuitOpenUntil`), and a `satellite_circuit_closed`
+  the circuit (params: HTTP code, or `timeout`, whether the circuit is open
+  after the attempt, and the new `circuitOpenUntil`), and a `satellite_circuit_closed`
   event the next time a fetch succeeds after a breaker was open (param: how long it was open).
   Both are cheap, both are gms-only same as the rest of the app's analytics, and together they are
   what would tell us — before CelesTrak firewalls anyone — that a retry bug is loose in

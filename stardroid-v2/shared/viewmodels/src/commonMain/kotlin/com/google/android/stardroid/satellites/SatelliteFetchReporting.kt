@@ -19,9 +19,9 @@ import kotlin.random.Random
 
 /**
  * Reports what CelesTrak's usage policy asks us to report, as the aggregate signal that stands in
- * for logs we cannot see: a server refusal or a circuit-opening timeout (and whether it opened the circuit), and a success
- * that closed a circuit which had been open, plus a sampled count of successful downloads for
- * estimating total volume. Shared so every platform's fetch reports the same.
+ * for logs we cannot see: a server refusal or circuit-opening timeout, and a success that closed
+ * a circuit which had been open, plus a sampled count of successful downloads for estimating
+ * total volume. Shared so every platform's fetch reports the same.
  */
 fun trackSatelliteFetchResult(
     result: RefreshResult.Completed,

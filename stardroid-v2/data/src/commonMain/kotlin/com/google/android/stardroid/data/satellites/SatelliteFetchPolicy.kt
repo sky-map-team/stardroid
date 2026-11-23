@@ -256,9 +256,9 @@ object SatelliteFetchPolicy {
     /**
      * Whether [outcome] should be reported to a human, as CelesTrak's policy requires of us.
      *
-     * Server refusals qualify, and so does a timeout that left the circuit open (it opened or
-     * extended it): that is a firewall block, which has no status code to report. A first timeout
-     * that left the circuit shut stays quiet, as does being offline.
+     * Server refusals qualify, and so does a timeout that left the circuit open: a firewall block
+     * has no status code to report. A first timeout that left the circuit shut stays quiet, as
+     * does being offline.
      */
     fun warrantsReporting(
         outcome: FetchOutcome,
