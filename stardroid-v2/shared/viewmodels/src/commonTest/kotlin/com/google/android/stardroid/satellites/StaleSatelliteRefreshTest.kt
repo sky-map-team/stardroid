@@ -229,7 +229,10 @@ class StaleSatelliteRefreshTest {
             refresh()
 
             assertThat(analytics.events.map { it.name })
-                .containsExactly(AnalyticsEvents.SATELLITE_CIRCUIT_CLOSED_EVENT)
+                .containsExactly(
+                    AnalyticsEvents.SATELLITE_FETCH_OK_EVENT,
+                    AnalyticsEvents.SATELLITE_CIRCUIT_CLOSED_EVENT,
+                )
         }
 
     private companion object {

@@ -552,7 +552,7 @@ This is the part that protects the install base, and it inverts normal retry ins
 
   **Someone has to be told (#1273).** A Google Apps Script,
   [`tools/satellite-alerts`](../../tools/satellite-alerts/README.md), emails the maintainer when
-  failures pass a fixed daily limit, or when downloads estimated from the sampled
+  failures pass a fixed daily limit, or when downloads counted by
   `satellite_fetch_ok` pass the budget (#1274). The limit is fixed because a trailing average
   absorbed the November 2026 incident. GA4 custom insights can't do this, as they can't filter
   on an event name. The GitHub Action from #1273 is deferred; that README says why.

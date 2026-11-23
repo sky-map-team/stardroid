@@ -38,8 +38,9 @@ If they are missing or return auth errors, tell the user — don't try to work a
    absolute numbers beside percentages and don't over-read day-to-day noise.
 5. Today's and (partly) yesterday's data is still processing — use `yesterday` as the end of
    ranges for trends, and `run_realtime_report` for "right now".
-6. satellite_fetch_ok is sampled 1-in-100 (`SATELLITE_FETCH_OK_SAMPLE_ONE_IN`) — multiply by
-   100 for an estimate of real successes. `satellite_fetch_failed` is unsampled.
+6. `satellite_fetch_ok` is unsampled from the build after the 2.4.0 beta; the 2.4.0 beta and
+   earlier sampled 1-in-100, so a thin beta cohort can show zero. `satellite_fetch_failed` is
+   unsampled.
 
 7. **High cardinality is fine via the API.** `search_term` has ~1,400 distinct values/day and the
    Data API returns them all (no `(other)` row, `data_loss_from_other_row: false`). Use `limit`.
@@ -120,7 +121,7 @@ available here — crash data lives in Crashlytics, say so rather than guessing.
 **4. Satellite fetches** (the CelesTrak-friendliness check; "hopefully requests have gone down")
 - `eventName in [satellite_fetch_ok, satellite_fetch_failed, satellite_circuit_closed]`,
   `dimensions: [date, eventName]`, `metrics: [eventCount, activeUsers]`, last 14 days.
-  Estimated successful fetches = `satellite_fetch_ok` × 100. Compare to the user count: fetches
+  Successful fetches = `satellite_fetch_ok` (×100 only for the 2.4.0 beta and earlier). Compare to the user count: fetches
   per active user per day should be roughly flat or falling; a rise means a retry loop.
 - Failures by `customEvent:http_code` (date × code). Anything that isn't a small trickle of
   5xx/timeouts matters — **429/403 means CelesTrak is rate-limiting or blocking us**, escalate.
@@ -213,7 +214,7 @@ with the `search` count for the same term (gotcha 13).
 ## Presenting results
 
 - Keep it short: a headline sentence, then per-section bullets/tables. Distinguish measured
-  GA4 numbers from your own estimates (e.g. ×100 for sampled satellite successes).
+  GA4 numbers from your own estimates (e.g. ×100 for the sampled 2.4.0-beta satellite successes).
 - If the user wants a chart, use the `dataviz` skill / `mcp__easel__chart`; for something they
   will revisit, offer a dashboard artifact instead of re-pasting tables.
 - End with 2–3 concrete follow-ups (things to investigate or ship), not a restatement.

@@ -26,7 +26,7 @@ class EvaluateTest(unittest.TestCase):
         self.assertEqual(evaluate(week(800), TODAY)[0], [])
 
     def test_volume_over_budget_alerts(self):
-        rows = [("2026-11-12", "satellite_fetch_ok", "", 50)]
+        rows = [("2026-11-12", "satellite_fetch_ok", "", 5000)]
         self.assertEqual(len(evaluate(rows, TODAY, budget=4000)[0]), 1)
         self.assertEqual(evaluate(rows, TODAY, budget=6000)[0], [])
 
