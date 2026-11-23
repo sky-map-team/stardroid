@@ -60,8 +60,8 @@ in `ios/SkyMap/project.yml`.
 
 | Icon | Name | First released | Subject |
 |---|---|---|---|
-| <img src="../assets/release-icons/2.1.0_izzie_icon.png" width="40" alt="Izzie" /> | **Izzie** | 2026-11-18 (2.1.0) | A guinea pig. |
-| <img src="../assets/release-icons/2.0.0_gdc_icon.png" width="40" alt="GDC" /> | **GDC** | 2026-11-07 (2.0.0) | _To be written._ |
+| <img src="../assets/release-icons/2.1.0_izzie_icon.png" width="40" alt="Izzie" /> | **Izzie** | 2026-11-18 (2.1.0) | Ginger |
+| <img src="../assets/release-icons/2.0.0_gdc_icon.png" width="40" alt="GDC" /> | **GDC** | 2026-11-07 (2.0.0) | Rosie |
 
 ### v1
 
