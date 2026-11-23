@@ -6,8 +6,8 @@ const FAILED = 'satellite_fetch_failed';
 const OK = 'satellite_fetch_ok';
 const FAILURE_THRESHOLD = 200; // failures per day
 const DAILY_BUDGET = null; // downloads per day agreed with CelesTrak (#1274); null = check off
-// Must match SATELLITE_FETCH_OK_SAMPLE_ONE_IN in AnalyticsEvents.kt.
-const SAMPLE_ONE_IN = 100;
+// Unsampled from 2.4.0 on; earlier builds sampled 1 in 100, a negligible cohort by now.
+const SAMPLE_ONE_IN = 1;
 const RENOTIFY_FACTOR = 10; // email again if a day grows this much after its alert
 
 // The installed trigger refers to this name. Rechecks 3 days back, as events arrive late.

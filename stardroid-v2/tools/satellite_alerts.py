@@ -21,8 +21,8 @@ from zoneinfo import ZoneInfo
 
 FAILED = "satellite_fetch_failed"
 OK = "satellite_fetch_ok"
-# Must match SATELLITE_FETCH_OK_SAMPLE_ONE_IN in AnalyticsEvents.kt.
-SAMPLE_ONE_IN = 100
+# Unsampled from 2.4.0 on; earlier builds sampled 1 in 100, a negligible cohort by now.
+SAMPLE_ONE_IN = 1
 API = "https://analyticsdata.googleapis.com/v1beta/properties/{}:runReport"
 
 

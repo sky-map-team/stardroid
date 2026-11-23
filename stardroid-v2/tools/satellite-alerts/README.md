@@ -5,7 +5,7 @@ for today or any of the previous 3 days:
 
 - `satellite_fetch_failed` is over 200 a day (split by `http_code`; `timeout` means a
   firewall block, reported once a timeout opens the circuit), or
-- estimated downloads (`satellite_fetch_ok` × 100) are over `DAILY_BUDGET`. This check is off
+- downloads (`satellite_fetch_ok`) are over `DAILY_BUDGET`. This check is off
   until a budget is agreed with CelesTrak (#1274).
 
 It emails once per day of data, and again only if that day grows tenfold.
