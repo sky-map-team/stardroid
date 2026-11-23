@@ -51,6 +51,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.viewinterop.AndroidView
+import androidx.core.view.doOnLayout
 import androidx.lifecycle.compose.LocalLifecycleOwner
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
@@ -239,16 +240,19 @@ fun MapRoute(
             AndroidView(
                 factory = { viewContext ->
                     PreviewView(viewContext).also { view ->
-                        val metrics = viewContext.resources.displayMetrics
-                        val long = maxOf(metrics.widthPixels, metrics.heightPixels).toDouble()
-                        val short = minOf(metrics.widthPixels, metrics.heightPixels).toDouble()
-                        arCamera.bind(
-                            previewView = view,
-                            lifecycleOwner = lifecycleOwner,
-                            viewAspectLongOverShort = long / short,
-                            onPreviewLuma = mapViewModel::onArPreviewLuma,
-                            onReady = mapViewModel::onArCameraReady,
-                        )
+                        // The FOV maths needs the preview's real aspect: displayMetrics can
+                        // exclude system bars the view still fills, skewing the map's FOV.
+                        view.doOnLayout {
+                            val long = maxOf(it.width, it.height).toDouble()
+                            val short = minOf(it.width, it.height).toDouble()
+                            arCamera.bind(
+                                previewView = view,
+                                lifecycleOwner = lifecycleOwner,
+                                viewAspectLongOverShort = long / short,
+                                onPreviewLuma = mapViewModel::onArPreviewLuma,
+                                onReady = mapViewModel::onArCameraReady,
+                            )
+                        }
                     }
                 },
                 modifier = Modifier.matchParentSize(),

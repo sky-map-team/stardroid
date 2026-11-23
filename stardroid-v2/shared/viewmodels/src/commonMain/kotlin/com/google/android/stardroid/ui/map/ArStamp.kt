@@ -77,6 +77,8 @@ data class ArStillReport(
     val imageCropRect: String = "n/a",
     val sensorToBuffer: String = "n/a",
     val scalerCrop: String = "n/a",
+    val resultExtras: String = "n/a",
+    val fovInputs: String = "n/a",
 )
 
 /** The share's centre-crop of the still, in the still's pixels. */
@@ -233,6 +235,8 @@ object ArStampFormat {
             addAll(wrap("img cropRect ${still.imageCropRect}"))
             addAll(wrap("sensor->buffer ${still.sensorToBuffer}"))
             addAll(wrap("scaler crop ${still.scalerCrop}"))
+            addAll(wrap("result ${still.resultExtras}"))
+            addAll(wrap("fov in ${still.fovInputs}"))
             add(
                 "exif " +
                     if (exposure.isEmpty()) {

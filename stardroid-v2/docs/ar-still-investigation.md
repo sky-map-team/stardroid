@@ -46,13 +46,15 @@ are not trustworthy (scale and rotation are not affected by a drag).
 
 ### Hypotheses and status
 
-1. **Aspect mismatch between FOV calc and share crop** — *rejected.* The FOV uses display
-   metrics (`MapRoute.kt` `viewAspectLongOverShort`), the map fills the screen, and
-   `SkyShare.drawCameraColumn` centre-crops to the map bitmap's own aspect (2.23).
+1. **Aspect mismatch between FOV calc and share crop** — *rejected for the share crop*
+   (`SkyShare.drawCameraColumn` centre-crops to the map bitmap's own aspect), but see 6: the
+   FOV calc's own aspect input came from `displayMetrics` and is **wrong on the Pixel 5**.
 2. **Night extension crops tighter than the preview** — *rejected indoors:* plain (`ext=none`)
    and night stills have the same scale. (Could still differ for dark astro scenes; unverified.)
-3. **CameraX still crop / `ImageProxy.cropRect` / camera pipeline crop** — *open, prime suspect.*
-   The stamp now records `cropRect`, sensor-to-buffer transform and `SCALER_CROP_REGION`.
+3. **CameraX still crop / `ImageProxy.cropRect` / camera pipeline crop** — *rejected (22 Nov
+   night shots, both phones):* `cropRect` is the full sensor frame (4080x3072 / 4032x3024) and
+   the sensor-to-buffer matrix is identity. `SCALER_CROP_REGION` also reads ~100% at zoom 3.2,
+   so zoom is applied via `CONTROL_ZOOM_RATIO` and that line says nothing about zoom.
 4. **FOV formula inputs** (`LENS_INFO_AVAILABLE_FOCAL_LENGTHS.firstOrNull()` and
    `SENSOR_INFO_PHYSICAL_SIZE` on what is a logical multi-camera) — *less likely:* the stamp
    shows `id 0, sensor 9.792x7.3728 mm, focal 6.9 mm`, matching the camera's EXIF (6.9 mm,
@@ -60,6 +62,35 @@ are not trustworthy (scale and rotation are not affected by a drag).
 5. **Zoom reapplied after the night rebind maps differently** — *open, weak:* the ratio
    varied (1.11 to 1.245) which could be zoom dependent, but reported zoom is 1.00 in the
    shots stamped so far. Needs zoomed shots (see test plan).
+
+6. **View aspect given to the FOV formula** — *confirmed on the Pixel 5, not the cause on the
+   Pixel 9 Pro.* See "Pixel 5 result" below.
+
+### Pixel 5 result (22 Nov night, no Night mode on that phone)
+
+Stamp: sensor 5.6448x4.2336 mm, focal 4.38 mm, still 4032x3024, map 945x2048 (aspect 2.167),
+yet `lens@1x 37.1`. 37.1 implies a view aspect of ~1.92, i.e. `displayMetrics` (which can
+exclude system bars the view still fills) rather than the 2.167 the GL/preview view really
+has. With 2.167 the formula gives 33.2 deg at 1x (18.8 deg at zoom 1.77).
+
+Measured in `sky_map_1795391418365.png` (Leo, zoom 1.77): Jupiter and Mars are both in the
+still (Mars is a faint dot, easy to miss in a downscaled view; crop and enlarge). Still
+separation 135.6 px at 29 deg, map separation 122.8 px at 30 deg: the still is **1.10x
+tighter** than the map. Still width works out at ~19.0 deg vs predicted 18.8 deg (formula
+with the real aspect) vs 21.0 deg claimed by the map. So the still is right and the map's FOV
+is wrong, because of the aspect input. This also skews the **live** overlay on such phones.
+
+Fix applied in `MapRoute.kt`: bind after layout and pass the PreviewView's measured
+long/short ratio (`doOnLayout`) instead of `displayMetrics`. Not yet run on a device.
+
+On the Pixel 9 Pro the formula and map agree (aspect 2.231 = display), yet the measured
+mismatch is still ~1.11-1.16x. That is **unexplained** and may be a different cause. The new
+stamp lines (`fov in`, `result`) are there to settle it.
+
+Other Pixel 5 observations: Jupiter sat ~1.4 deg right of the map's position in that shot
+(0.9-2.5 deg across shots, varying) while drift was only 0.1-0.4 deg, so it looks like
+compass error, which drag-to-match corrects. Plain stills are capped at ~1/28 s (ISO 3.5-7k)
+and stars barely register at zoom 1.0-1.77; at zoom 3.27 the sky is grainy but Jupiter shows.
 
 ### Reference: the stock camera frame
 
@@ -192,14 +223,21 @@ cleaner stock-vs-plain comparison than the first one did.
 
 ## 8. Next steps (ordered)
 
-1. Run the test plan; read the new crop/subject-distance/track stamp lines.
-2. Fix the still-vs-map FOV mismatch once the source is known. Likely: take the still's real
-   FOV from its own metadata and crop the map capture to match, so the share composite is
-   right whatever the camera pipeline does.
+1. Install the latest debug build on both phones (none was connected when last tried) and
+   take stamped shots. Check the Pixel 5 map now matches its still (aspect fix) and read the
+   new `result` (zoom ratio, stabilisation, distortion correction, focus distance, intrinsics)
+   and `fov in` (aspect used, PreviewView size) lines on the Pixel 9 Pro to explain its 1.12x.
+2. Pixel 9 Pro: if `LENS_INTRINSIC_CALIBRATION` gives a different FOV from the sensor maths,
+   use it; also consider reading the still's real FOV from its own metadata and cropping the
+   map capture to match, so the share composite is right whatever the pipeline does.
+2a. Take a Pixel 5 shot with two known bright objects (e.g. Orion's belt) to confirm the
+   scale directly after the fix.
 3. Overlay pose for night stills: pick the correct moment from the pose track and render the
    map for it (design open).
-4. Decide whether the plain (Night off) still should get a longer fixed exposure or Low Light
-   Boost so it is usable for sky shots; consider removing the Night off choice.
+4. Decide whether the plain (Night off) still should get a longer exposure so it is usable
+   for sky shots (Pixel 5 has no Night mode and is capped near 1/28 s). Idea: choose the
+   exposure time from gyro-measured motion so blur stays under a few pixels, or Low Light
+   Boost; consider removing the Night off choice.
 5. Check whether the extension's own autofocus is adequate for stars (`subj dist`).
 6. Look at noise: stack several short frames ourselves if the extension is not engaging in
    dark scenes.
@@ -214,6 +252,8 @@ cleaner stock-vs-plain comparison than the first one did.
 - `./gradlew check` passes (ktlint, Konsist, JVM and iOS-simulator tests). A first run failed
   at `iosSimulatorArm64Test` (`xcrun` exit 126) because the Gradle daemon predated the new
   Xcode (27.2); a fresh daemon fixed it.
-- Debug build installed with `./gradlew :app:installGmsDebug` (device `4C151FDAP000F6`).
+- Debug build installed with `./gradlew :app:installGmsDebug` (Pixel 9 Pro `4C151FDAP000F6`;
+  Pixel 5 `15271FDD4003KY`, where the old Play-signed app had to be uninstalled first). The
+  commits after `b5cf871e` (result/fov-in stamp lines and the aspect fix) are not installed.
 - Shared images and the stock original used here are in `~/Downloads`
   (`sky_map_17952*.png`, `PXL_20261121_010200461.NIGHT.jpg`, `PXL_20261122_000145630.jpg`).

@@ -105,6 +105,9 @@ class SkyCameraPreview(
     @Volatile
     private var lastStillCrop: Rect? = null
 
+    @Volatile
+    private var lastResultExtras: String? = null
+
     // Session-level results for the plain session only; vendor extension sessions don't expose
     // them (TODO(ar-debug-stamp)).
     private val stillResultCallback =
@@ -117,6 +120,7 @@ class SkyCameraPreview(
                 val intent = request.get(CaptureRequest.CONTROL_CAPTURE_INTENT)
                 if (intent == CameraMetadata.CONTROL_CAPTURE_INTENT_STILL_CAPTURE) {
                     lastStillCrop = result.get(CaptureResult.SCALER_CROP_REGION)
+                    lastResultExtras = resultExtras(result)
                 }
             }
         }
@@ -334,6 +338,7 @@ class SkyCameraPreview(
         val started = SystemClock.elapsedRealtime()
         lastCaptureInfo = null
         lastStillCrop = null
+        lastResultExtras = null
         var usedNight = false
         var path = "auto"
         var still: Bitmap? = null
@@ -391,7 +396,30 @@ class SkyCameraPreview(
             imageCropRect = info?.cropRect ?: "n/a",
             sensorToBuffer = info?.sensorToBuffer ?: "n/a",
             scalerCrop = scalerCropSummary(usedNight),
+            resultExtras = lastResultExtras ?: "n/a",
+            fovInputs = fovInputsSummary(),
         )
+    }
+
+    // TODO(ar-debug-stamp): what the ISP did to the field of view, and what the FOV maths was given.
+    private fun resultExtras(result: TotalCaptureResult): String {
+        fun fmt(value: Float?) = value?.let { String.format(Locale.ROOT, "%.3f", it) } ?: "-"
+        val intrinsics = result.get(CaptureResult.LENS_INTRINSIC_CALIBRATION)
+        return "zoomRatio ${fmt(result.get(CaptureResult.CONTROL_ZOOM_RATIO))} " +
+            "vstab ${result.get(CaptureResult.CONTROL_VIDEO_STABILIZATION_MODE)} " +
+            "ois ${result.get(CaptureResult.LENS_OPTICAL_STABILIZATION_MODE)} " +
+            "distCorr ${result.get(CaptureResult.DISTORTION_CORRECTION_MODE)} " +
+            "focusDist ${fmt(result.get(CaptureResult.LENS_FOCUS_DISTANCE))} " +
+            "focalLen ${fmt(result.get(CaptureResult.LENS_FOCAL_LENGTH))} " +
+            "intrinsics " +
+            (intrinsics?.joinToString(",") { String.format(Locale.ROOT, "%.0f", it) } ?: "-")
+    }
+
+    private fun fovInputsSummary(): String {
+        val view = previewView
+        val measured = view?.let { "${it.width}x${it.height}" } ?: "?"
+        return String.format(Locale.ROOT, "view aspect %.3f", viewAspectLongOverShort) +
+            " previewView $measured"
     }
 
     private fun scalerCropSummary(usedNight: Boolean): String {
