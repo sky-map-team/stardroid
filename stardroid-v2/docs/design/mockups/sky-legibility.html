@@ -1,0 +1,924 @@
+<title>Sky Map Legibility</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a working notebook of phone-sized sky mockups, each pairing "today" with "proposed", controls beneath. */
+:root {
+  --bg: #f3f4f7; --surface: #ffffff; --surface2: #e8ebf1; --fg: #182133; --muted: #5d6777;
+  --line: #d6dbe4; --accent: #b46a08; --accent-soft: rgba(180,106,8,.12);
+  --sheet: #142235; --sheet-fg: #e0e1dd; --sheet-muted: #94a3b8; --gold: #ff9f1c;
+  --font-display: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --font-body: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #0b1320; --surface: #111c2c; --surface2: #18263a; --fg: #e0e1dd; --muted: #93a0b4;
+  --line: #24344b; --accent: #ff9f1c; --accent-soft: rgba(255,159,28,.14); color-scheme: dark; } }
+:root[data-theme="dark"] {
+  --bg: #0b1320; --surface: #111c2c; --surface2: #18263a; --fg: #e0e1dd; --muted: #93a0b4;
+  --line: #24344b; --accent: #ff9f1c; --accent-soft: rgba(255,159,28,.14); color-scheme: dark; }
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--fg); margin: 0; font: 15px/1.55 var(--font-body);
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--bg); }
+.wrap { max-width: 1080px; margin: 0 auto; padding-block: 24px 64px; }
+h1, h2, h3 { font-family: var(--font-display); text-wrap: balance; line-height: 1.15; margin: 0; }
+h1 { font-size: clamp(28px, 4.4vw, 42px); font-weight: 700; letter-spacing: -.01em; }
+h2 { font-size: 24px; font-weight: 600; }
+h3 { font-size: 14px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+p { margin: 0; max-width: 68ch; }
+.mono { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
+.lede { color: var(--muted); font-size: 16px; }
+.topbar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--bg);
+  display: flex; gap: 12px; align-items: center; justify-content: space-between; flex-wrap: wrap;
+  padding-block: 10px; border-bottom: 1px solid var(--line); }
+.topbar .brand { font-family: var(--font-display); font-weight: 600; font-size: 15px; }
+.topbar .brand span { color: var(--accent); }
+header.intro { display: grid; gap: 14px; padding-block: 28px 8px; }
+.keys { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 12px; margin-top: 8px; }
+.key { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; display: grid; gap: 4px; min-width: 0; }
+.key b { font-family: var(--font-display); font-weight: 600; }
+.key span { color: var(--muted); font-size: 13.5px; }
+section { display: grid; gap: 16px; padding-block: 40px 8px; border-top: 1px solid var(--line); margin-top: 32px; }
+.eyebrow { font-family: var(--font-mono); font-size: 12px; color: var(--accent); letter-spacing: .04em; }
+.stage { display: flex; flex-wrap: wrap; gap: 20px; align-items: flex-start; }
+.fig { display: grid; gap: 8px; justify-items: center; min-width: 0; }
+.fig figcaption { font-size: 13px; color: var(--muted); text-align: center; max-width: 320px; }
+.fig .tag { font-family: var(--font-mono); font-size: 11.5px; letter-spacing: .06em; text-transform: uppercase; padding: 2px 8px; border-radius: 99px; background: var(--surface2); color: var(--muted); }
+.fig .tag.new { background: var(--accent-soft); color: var(--accent); }
+.phone { width: min(320px, 100%); aspect-ratio: 320 / 560; background: #05070b; border-radius: 30px; padding: 7px; box-shadow: 0 1px 0 rgba(255,255,255,.06) inset, 0 10px 30px rgba(0,0,0,.25); }
+.phone canvas { width: 100%; height: 100%; display: block; border-radius: 24px; background: #070b14; touch-action: none; }
+.controls { display: grid; gap: 12px; align-content: start; flex: 1 1 260px; min-width: 0; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 16px; }
+.row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.chip { font: 500 13px var(--font-body); border: 1px solid var(--line); background: var(--surface2); color: var(--fg); border-radius: 99px; padding: 6px 12px; cursor: pointer; }
+.chip[aria-pressed="true"] { background: var(--accent); color: var(--bg); border-color: var(--accent); }
+.chip:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+label.tog { display: flex; gap: 8px; align-items: center; font-size: 14px; cursor: pointer; }
+label.tog input { accent-color: var(--accent); width: 16px; height: 16px; }
+.slider { display: grid; gap: 2px; font-size: 13px; }
+.slider .lab { display: flex; justify-content: space-between; color: var(--muted); }
+.slider input { width: 100%; accent-color: var(--accent); }
+.note { font-size: 13px; color: var(--muted); }
+.notice { font-size: 13.5px; border-left: 3px solid var(--accent); padding: 4px 0 4px 12px; }
+hr.sep { border: 0; border-top: 1px dashed var(--line); margin: 2px 0; width: 100%; }
+/* The app's bottom sheet, drawn in the app's own palette regardless of page theme. */
+.sheet { background: var(--sheet); color: var(--sheet-fg); border-radius: 18px; padding: 16px; display: grid; gap: 12px; flex: 1 1 300px; min-width: 0; max-width: 420px; }
+.sheet .grab { width: 36px; height: 4px; border-radius: 4px; background: #3a4b63; justify-self: center; }
+.sheet h4 { margin: 0; font: 600 17px var(--font-display); }
+.sheet .sub { color: var(--sheet-muted); font-size: 13px; }
+.presets { display: grid; grid-template-columns: repeat(5, minmax(0,1fr)); gap: 6px; }
+.preset { background: #0d1b2a; border: 1.5px solid #26384f; border-radius: 12px; padding: 6px 4px 7px; display: grid; gap: 4px; justify-items: center; color: var(--sheet-fg); cursor: pointer; font: 500 12px var(--font-body); }
+.preset canvas { width: 100%; aspect-ratio: 1; border-radius: 8px; display: block; }
+.preset[aria-pressed="true"] { border-color: var(--gold); color: var(--gold); }
+.sheet .count { font-family: var(--font-mono); font-size: 13px; color: var(--sheet-fg); }
+.sheet button.ghost { justify-self: start; background: transparent; color: var(--gold); border: 1px solid #3a4b63; border-radius: 99px; padding: 6px 12px; font: 500 13px var(--font-body); cursor: pointer; }
+.sheet details { border-top: 1px solid #26384f; padding-top: 10px; }
+.sheet summary { cursor: pointer; font-size: 14px; color: var(--sheet-fg); }
+.sheet .slider .lab { color: var(--sheet-muted); }
+.sheet label.tog { color: var(--sheet-fg); }
+.sheet .inner { display: grid; gap: 10px; margin-top: 10px; }
+.check { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 6px; }
+.check button { background: #0d1b2a; border: 1.5px solid #26384f; border-radius: 10px; padding: 4px; cursor: pointer; color: var(--sheet-muted); font: 12px var(--font-body); display: grid; gap: 2px; }
+.check button[aria-pressed="true"] { border-color: var(--gold); color: var(--gold); }
+.check canvas { width: 100%; aspect-ratio: 1; display: block; border-radius: 6px; }
+.legend { width: 100%; max-width: 560px; }
+.legend canvas { width: 100%; height: 120px; display: block; border-radius: 10px; background: #070b14; }
+.sim { background: var(--surface2); border-radius: 10px; padding: 10px 12px; display: grid; gap: 8px; }
+.sim h3 { font-size: 11.5px; }
+.tablewrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); }
+table { border-collapse: collapse; width: 100%; font-size: 14px; min-width: 620px; }
+th, td { text-align: left; padding: 9px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { font: 600 12px var(--font-mono); letter-spacing: .04em; text-transform: uppercase; color: var(--muted); background: var(--surface2); }
+tr:last-child td { border-bottom: 0; }
+td.n { font-family: var(--font-mono); color: var(--accent); width: 32px; }
+.cost { font-family: var(--font-mono); font-size: 12.5px; padding: 1px 7px; border-radius: 6px; background: var(--surface2); white-space: nowrap; }
+.impact-vh { color: var(--accent); font-weight: 600; }
+.phases { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 10px; }
+.phase { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 12px; display: grid; gap: 4px; min-width: 0; }
+.phase b { font-family: var(--font-display); font-weight: 600; }
+.phase span { font-size: 13px; color: var(--muted); }
+@media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; } }
+</style>
+
+<div class="topbar">
+  <div class="brand">Sky Map <span>·</span> legibility mockups</div>
+  <label class="tog"><input type="checkbox" id="night"> Night mode (all skies)</label>
+</div>
+
+<div class="wrap">
+<header class="intro">
+  <span class="eyebrow">PROPOSED · companion to docs/design/sky-legibility.md</span>
+  <h1>A sky map that shows the sky you can actually see</h1>
+  <p class="lede">These mockups use the real v2 catalogue: 5,998 stars to magnitude 6.2, and the IAU stick figures. They're drawn in a canvas to show the proposed behaviour, not as pixel-exact renderer output. Star colours for most stars, the Milky Way shape, constellation boundaries and the Cygnus art are illustrative stand-ins, as each caption notes.</p>
+  <div class="keys">
+    <div class="key"><b>Most clutter is in how we draw</b><span>74% of catalogue stars are mag 5 or fainter, yet they're drawn at 60% of Sirius's size.</span></div>
+    <div class="key"><b>One threshold drives everything</b><span>Stars, lines, labels and the Milky Way all follow one limiting magnitude.</span></div>
+    <div class="key"><b>One control for casual users</b><span>"How dark is your sky?" with Auto as the default. Numbers only under Customize.</span></div>
+    <div class="key"><b>A map, not a photo</b><span>Graded discs, a chart halo, dashed boundaries, isophote Milky Way, line-art figures.</span></div>
+  </div>
+</header>
+
+<!-- 1 -->
+<section id="stars">
+  <span class="eyebrow">§2 · HOW STARS LOOK</span>
+  <h2>A continuous ramp and a chart halo</h2>
+  <p>Both skies show every star in the catalogue, with today's constellation lines. The difference is how stars are drawn (the proposed sky also uses the new label styles from §8). Proposed stars shrink smoothly with magnitude, carry a background-coloured ring so lines stop short of them, and (optionally) show colour on bright stars only.</p>
+  <div class="stage">
+    <figure class="fig"><span class="tag">Today</span><div class="phone"><canvas id="c1a" aria-label="Orion region drawn with today's two star sizes"></canvas></div><figcaption>Two sizes (3 and 5 dp), brightness 1.0 → 0.35.</figcaption></figure>
+    <figure class="fig"><span class="tag new">Proposed</span><div class="phone"><canvas id="c1b" aria-label="Orion region drawn with the proposed continuous star ramp"></canvas></div><figcaption>Continuous size from 7.5 dp down to 1.7 dp, brightness 1.0 → 0.45.</figcaption></figure>
+    <div class="controls">
+      <h3>Proposed options</h3>
+      <label class="tog"><input type="checkbox" id="o1halo" checked> Chart halo</label>
+      <label class="tog"><input type="checkbox" id="o1col" checked> Star colours (bright stars only)</label>
+      <label class="tog"><input type="checkbox" id="o1glow" checked> Glow on first-magnitude stars</label>
+      <hr class="sep">
+      <div class="slider"><div class="lab"><span>Field of view (both)</span><span class="mono" id="o1fovv">75°</span></div><input type="range" id="o1fov" min="20" max="100" value="75"></div>
+      <p class="note">Sizes are in dp and stay the same at every zoom (D12). Zoom changes how many stars fit, not how big they are.</p>
+      <p class="note">Colours: Betelgeuse, Rigel, Aldebaran and other named bright stars use real B−V values. The rest are random stand-ins until the Yale Bright Star Catalogue join is done.</p>
+    </div>
+  </div>
+  <div class="legend fig"><canvas id="legend" aria-label="Star size legend by magnitude, today versus proposed"></canvas><figcaption>Magnitude −1 to 6. Top row: today. Bottom row: proposed. The proposed ramp is absolute, so a mag-2 star never changes size when the sky preset changes.</figcaption></div>
+</section>
+
+<!-- 2 -->
+<section id="conditions">
+  <span class="eyebrow">§1 · SKY CONDITIONS</span>
+  <h2>"How dark is your sky?"</h2>
+  <p>One row at the top of the Layers sheet opens this half-height sheet. The map stays visible and updates live. Changing a preset animates the limit over 600 ms, so faint stars drain away or fill in. Try City, then Dark. Then move the Sun below the horizon and watch stars come out one by one.</p>
+  <div class="stage">
+    <figure class="fig"><span class="tag new">Proposed</span><div class="phone"><canvas id="c2" aria-label="Orion region with the sky-condition threshold applied"></canvas></div><figcaption id="c2cap">Facing south from 40°N. Stars near the horizon fade first.</figcaption></figure>
+    <div class="sheet" role="group" aria-label="Sky conditions sheet mockup">
+      <div class="grab"></div>
+      <div><h4>How dark is your sky?</h4><div class="sub" id="autoSub">Auto: suburban sky, from your location</div></div>
+      <div class="presets" id="presets"></div>
+      <div class="count" id="count">About 0 stars above the horizon right now</div>
+      <button class="ghost" id="checkBtn" aria-expanded="false">Check my sky</button>
+      <div id="checkPanel" hidden>
+        <div class="sub" style="margin-bottom:8px">Find the Little Dipper, high in the north. Tap the faintest group you can see.</div>
+        <div class="check" id="checkTiles"></div>
+      </div>
+      <details>
+        <summary>Customize</summary>
+        <div class="inner">
+          <div class="slider"><div class="lab"><span>Faintest star</span><span class="mono" id="limv">mag 4.6</span></div><input type="range" id="lim" min="1" max="6.5" step="0.1" value="4.6"></div>
+          <label class="tog"><input type="checkbox" id="o2hor" checked> Dim toward the horizon</label>
+          <label class="tog"><input type="checkbox" id="o2moon" checked> Moon washes out stars</label>
+          <label class="tog"><input type="checkbox" id="o2zoom"> Reveal fainter stars when zoomed in</label>
+        </div>
+      </details>
+    </div>
+    <div class="controls">
+      <div class="sim">
+        <h3>Simulation inputs (not in the app)</h3>
+        <div class="slider"><div class="lab"><span>Sun altitude</span><span class="mono" id="sunv">−24°</span></div><input type="range" id="sun" min="-24" max="10" step="0.5" value="-24"></div>
+        <div class="slider"><div class="lab"><span>Moon illuminated</span><span class="mono" id="moonv">0%</span></div><input type="range" id="moon" min="0" max="100" value="0"></div>
+        <div class="slider"><div class="lab"><span>Field of view</span><span class="mono" id="o2fovv">80°</span></div><input type="range" id="o2fov" min="20" max="100" value="80"></div>
+      </div>
+      <p class="notice" id="chip2" hidden></p>
+      <p class="note">Daytime floor: the limit never drops below mag 2, so the noon map still shows about 50 stars against a daylight sky.</p>
+      <p class="note">The light sensor isn't used. It faces the user, can't tell a suburb from the countryside, and iOS doesn't expose it. "Check my sky" replaces it.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 3 -->
+<section id="lines">
+  <span class="eyebrow">§4–5 · CONSTELLATION LINES AND BOUNDARIES</span>
+  <h2>Core shapes stay strong. The rest follows the stars.</h2>
+  <p>Each figure's recognisable shape (the Big Dipper inside Ursa Major) is drawn heavier. The extended figure is thinner, appears as you zoom in, and a segment fades when either of its stars is below the limit. In a city, Ursa Major reduces to the Big Dipper without any extra rule.</p>
+  <div class="stage">
+    <figure class="fig"><span class="tag">Today</span><div class="phone"><canvas id="c3a" aria-label="Ursa Major drawn with today's uniform lines"></canvas></div><figcaption>Every segment the same: 50% purple, one width, all stars.</figcaption></figure>
+    <figure class="fig"><span class="tag new">Proposed</span><div class="phone"><canvas id="c3b" aria-label="Ursa Major with core and extended lines"></canvas></div><figcaption id="c3cap">Core 2 dp at 70%, extended 1 dp at 36%.</figcaption></figure>
+    <div class="controls">
+      <h3>Sky (proposed)</h3>
+      <div class="row" id="chips3"></div>
+      <div class="slider"><div class="lab"><span>Field of view (both)</span><span class="mono" id="o3fovv">60°</span></div><input type="range" id="o3fov" min="25" max="100" value="60"></div>
+      <hr class="sep">
+      <label class="tog"><input type="checkbox" id="o3bnd"> Constellation boundaries (off by default)</label>
+      <label class="tog"><input type="checkbox" id="o3sel"> Select Ursa Major (search or tap its name)</label>
+      <p class="note">Boundaries are dashed and neutral, so they stay distinct from figures in night mode. Selecting a constellation draws its own boundary solid, with a faint fill, even when the layer is off.</p>
+      <p class="note">Core shapes are hand-tagged here for UMa, UMi, Ori, Cyg, Leo, Peg and Gem. Elsewhere, segments with both stars brighter than mag 3 stand in. The UMa boundary is an approximate stepped outline for style only. The real data is CDS VI/49, with constant-declination edges drawn as small circles.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 4 -->
+<section id="extended">
+  <span class="eyebrow">§6–7 · THE MILKY WAY AND CONSTELLATION ART</span>
+  <h2>Pictures that know when to step back</h2>
+  <p>The Milky Way is a stylised isophote band in three soft levels, the way printed atlases draw it. Its opacity follows the sky limit, so city users don't get a glowing band they can't see. Searching "Milky Way" points at its highest visible part. Constellation art is monochrome line art, shown for the focused constellation only, and it hands over to lines as you zoom in.</p>
+  <div class="stage">
+    <figure class="fig"><span class="tag new">Proposed</span><div class="phone"><canvas id="c4" aria-label="Summer Milky Way through Cygnus and Aquila"></canvas></div><figcaption>Summer sky facing south from 40°N: Cygnus, Aquila, Sagittarius low.</figcaption></figure>
+    <div class="controls">
+      <h3>Sky</h3>
+      <div class="row" id="chips4"></div>
+      <label class="tog"><input type="checkbox" id="o4force"> Show the Milky Way even when I can't see it</label>
+      <hr class="sep">
+      <div class="row"><button class="chip" id="o4search">Search: Milky Way</button><button class="chip" id="o4art" aria-pressed="false">Show the figure: Cygnus</button></div>
+      <div class="slider"><div class="lab"><span>Field of view</span><span class="mono" id="o4fovv">95°</span></div><input type="range" id="o4fov" min="20" max="110" value="95"></div>
+      <p class="note">The art fades out between 55° and 25° field of view, so zooming in always ends on lines and stars. Night mode caps both the art and the band at half opacity.</p>
+      <p class="note">The band here is procedural. The real one would be generated from Tycho-2 star counts, so the Great Rift comes from the data. The swan is a rough sketch where cleaned Bode <i>Uranographia</i> art would go, registered on Deneb, Albireo and the wing stars.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 5 -->
+<section id="transitions">
+  <span class="eyebrow">§8 · LABELS AND TRANSITIONS</span>
+  <h2>How things appear and disappear</h2>
+  <p>The proposed skies above use three label styles: constellations in spaced small caps, stars in regular weight, and planets in their own colour. Labels have a density budget of about one per 2 cm², try four positions before giving up, and never label a star the sky setting has hidden.</p>
+  <div class="tablewrap"><table>
+    <thead><tr><th>What drives the change</th><th>Transition</th><th>Why</th></tr></thead>
+    <tbody>
+      <tr><td>A continuous value: twilight, Moon, the sky limit</td><td>Fade by value over a 0.5-mag soft edge</td><td>Stars come out one by one, as they do outside. No timers and no lag.</td></tr>
+      <tr><td>Zoom: extended lines, art hand-over, label threshold</td><td>Fade by field of view, tied to the pinch</td><td>Reversible mid-gesture. Nothing catches up after you stop.</td></tr>
+      <tr><td>Pan and focus: the centred constellation, art dwell</td><td>Time-based, 400–600 ms, with hysteresis</td><td>Prevents flicker when sweeping across a boundary.</td></tr>
+      <tr><td>User changes a toggle or preset</td><td>~200 ms fade, or the limit animates over ~600 ms</td><td>Instant reads as a glitch. Slow reads as lag.</td></tr>
+      <tr><td>Off-screen</td><td>Hard cull</td><td>Nothing to see, so nothing to fade.</td></tr>
+    </tbody>
+  </table></div>
+  <p class="note">Night mode check: try the toggle at the top. Hierarchy is carried by size, luminance, width and dash pattern, so nothing above depends on hue.</p>
+</section>
+
+<!-- 6 -->
+<section id="order">
+  <span class="eyebrow">§9 · RECOMMENDED ORDER</span>
+  <h2>Bang for the buck</h2>
+  <div class="tablewrap"><table>
+    <thead><tr><th>#</th><th>Item</th><th>Cost</th><th>Impact</th><th>Notes</th></tr></thead>
+    <tbody>
+      <tr><td class="n">1</td><td>Continuous star ramp + chart halo</td><td><span class="cost">S</span></td><td class="impact-vh">Very high</td><td>Renderer and <span class="mono">StellarRamps</span> only. Fixes most of the clutter on its own.</td></tr>
+      <tr><td class="n">2</td><td>Sky presets wired to <span class="mono">magnitudeLimit</span>; labels obey it</td><td><span class="cost">S–M</span></td><td class="impact-vh">Very high</td><td>The uniform is already plumbed and nothing sets it yet.</td></tr>
+      <tr><td class="n">3</td><td>Star colour from Yale BSC B−V</td><td><span class="cost">S</span></td><td>Medium</td><td>A data join plus the existing <span class="mono">colorForIndex</span>.</td></tr>
+      <tr><td class="n">4</td><td>"Check my sky"</td><td><span class="cost">S–M</span></td><td>High</td><td>Accurate presets with no sensor and no dataset.</td></tr>
+      <tr><td class="n">5</td><td>Twilight, Moon and horizon terms</td><td><span class="cost">M</span></td><td>High</td><td>One shader function plus its Kotlin twin. Time travel across sunset gets better too.</td></tr>
+      <tr><td class="n">6</td><td>Core and extended lines; lines follow stars</td><td><span class="cost">M</span></td><td>High</td><td>About a day of curation, plus a build-time star snap.</td></tr>
+      <tr><td class="n">7</td><td>Asterisms with lines, searchable</td><td><span class="cost">S–M</span></td><td>Medium-high</td><td>The asterism type and the Summer Triangle already exist.</td></tr>
+      <tr><td class="n">8</td><td>Boundaries + "You're looking at Taurus"</td><td><span class="cost">M</span></td><td>Medium-high</td><td>The HUD readout and tap fallback are the real value.</td></tr>
+      <tr><td class="n">9</td><td>Auto site from a light-pollution grid</td><td><span class="cost">M–L</span></td><td>High</td><td>A few MB offline. Needs a licence check first.</td></tr>
+      <tr><td class="n">10</td><td>Milky Way band + extended-object search</td><td><span class="cost">M–L</span></td><td>Medium-high</td><td>Generated texture, sampled in galactic coordinates.</td></tr>
+      <tr><td class="n">11</td><td>DSO true outlines + surface-brightness visibility</td><td><span class="cost">M</span></td><td>Medium</td><td>OpenNGC join.</td></tr>
+      <tr><td class="n">12</td><td>Deep-star pack + Binoculars</td><td><span class="cost">L</span></td><td>Medium</td><td>For power users. Also brings B−V for every star.</td></tr>
+      <tr><td class="n">13</td><td>Constellation art</td><td><span class="cost">L</span></td><td>Medium-high</td><td>Mostly an art project. Ship as a data pack.</td></tr>
+    </tbody>
+  </table></div>
+  <div class="phases">
+    <div class="phase"><b>1 · A calmer map</b><span>Items 1–3. Small, and visibly fixes the clutter complaint.</span></div>
+    <div class="phase"><b>2 · Matches my sky</b><span>Items 4, 5 and 9.</span></div>
+    <div class="phase"><b>3 · Shapes you know</b><span>Items 6, 7 and 8.</span></div>
+    <div class="phase"><b>4 · Pictures</b><span>Items 10, 11 and 13.</span></div>
+    <div class="phase"><b>5 · Binoculars</b><span>Item 12, once a deeper catalogue is worth its size.</span></div>
+  </div>
+</section>
+</div>
+
+<script src="sky-legibility-data.js"></script>
+<script>
+(() => {
+const DATA = window.SKY_DATA;
+const D2R = Math.PI / 180;
+const LAT = 40;
+const BG = [7, 11, 20];
+const clamp = (x, a, b) => Math.max(a, Math.min(b, x));
+const lerp = (a, b, t) => a + (b - a) * t;
+const smooth = (e0, e1, x) => { const t = clamp((x - e0) / (e1 - e0), 0, 1); return t * t * (3 - 2 * t); };
+const unit = (ra, dec) => { const a = ra * D2R, d = dec * D2R; return [Math.cos(d) * Math.cos(a), Math.cos(d) * Math.sin(a), Math.sin(d)]; };
+const dot = (u, v) => u[0] * v[0] + u[1] * v[1] + u[2] * v[2];
+const angDeg = (u, v) => Math.acos(clamp(dot(u, v), -1, 1)) / D2R;
+const STARS = DATA.stars;
+const SU = STARS.map(s => unit(s[0], s[1]));
+const LABEL_OF = new Map(DATA.labels.map(([i, n]) => [i, n]));
+
+// ---------- physics of the proposal ----------
+const PRESETS = [
+  { id: 'auto', name: 'Auto', site: 4.6 },
+  { id: 'city', name: 'City', site: 3.6 },
+  { id: 'suburb', name: 'Suburb', site: 4.6 },
+  { id: 'country', name: 'Country', site: 5.6 },
+  { id: 'dark', name: 'Dark', site: 6.5 },
+];
+const TW = [[-18, 7], [-15, 5.5], [-12, 4.2], [-9, 3.0], [-6, 1.8], [-3, 0.8], [0, 0], [10, -1]];
+function twilightCap(sunAlt) {
+  if (sunAlt <= -18) return 99;
+  for (let i = 1; i < TW.length; i++) if (sunAlt <= TW[i][0]) {
+    const [a0, v0] = TW[i - 1], [a1, v1] = TW[i];
+    return lerp(v0, v1, (sunAlt - a0) / (a1 - a0));
+  }
+  return -1;
+}
+function limitAt(env, alt, moonAng) {
+  let L = Math.min(env.site, twilightCap(env.sunAlt));
+  if (env.moonOn && env.moonUp) {
+    L -= 1.5 * Math.pow(env.moon, 1.5);
+    L -= 1.2 * env.moon * Math.exp(-moonAng / 18);
+  }
+  if (env.horizonDim) L -= 1.4 * Math.pow(clamp((15 - alt) / 15, 0, 1), 1.5);
+  if (env.zoomReveal) L += 1.5 * clamp((30 - env.fov) / 20, 0, 1);
+  return Math.max(L, 2.0);
+}
+const vis = (m, L) => m <= L ? 1 : m >= L + 0.5 ? 0 : 1 - (m - L) / 0.5;
+function newSize(m) { return clamp(6.4 - 0.78 * m, 1.7, 7.5); }
+const BR = [[0, 1], [1, .95], [2, .88], [3, .78], [4, .66], [5, .54], [6, .45]];
+function newBright(m) {
+  if (m <= 0) return 1;
+  if (m >= 6) return .45;
+  const i = Math.floor(m), t = m - i;
+  return lerp(BR[i][1], BR[i + 1][1], t);
+}
+function bvColor(bv) {
+  const t = clamp((bv + 0.4) / 2.4, 0, 1);
+  const B = [0.65, 0.75, 1], W = [1, 1, 1], R = [1, 0.7, 0.4];
+  return t < .5 ? B.map((b, k) => lerp(b, W[k], t / .5)) : W.map((w, k) => lerp(w, R[k], (t - .5) / .5));
+}
+function tint(bv, m, on) {
+  if (!on) return [1, 1, 1];
+  const s = smooth(4.5, 1.0, m);
+  let c = bvColor(bv).map(x => lerp(1, x, s));
+  const lum = .299 * c[0] + .587 * c[1] + .114 * c[2];
+  return c.map(x => Math.min(1, x / lum));
+}
+const oldSize = m => m <= 1 ? 5 : 3;
+const oldShade = m => 1 - clamp(m, 0, 5.6) / 8.6;
+function labelThreshold(fov) {
+  const d = 45 - fov;
+  return 4 + d / (d >= 0 ? 10 : 45);
+}
+
+// galactic transform
+const T = [[-0.0548755604, -0.8734370902, -0.4838350155], [0.4941094279, -0.4448296300, 0.7469822445], [-0.8676661490, -0.1980763734, 0.4559837762]];
+function toGal(u) {
+  const g = [dot(T[0], u), dot(T[1], u), dot(T[2], u)];
+  return [Math.atan2(g[1], g[0]) / D2R, Math.asin(clamp(g[2], -1, 1)) / D2R];
+}
+function fromGal(l, b) {
+  const g = unit(l, b);
+  return [T[0][0] * g[0] + T[1][0] * g[1] + T[2][0] * g[2], T[0][1] * g[0] + T[1][1] * g[1] + T[2][1] * g[2], T[0][2] * g[0] + T[1][2] * g[1] + T[2][2] * g[2]];
+}
+const g2 = (L, b, l0, b0, sl, sb) => Math.exp(-((L - l0) ** 2) / (2 * sl * sl) - ((b - b0) ** 2) / (2 * sb * sb));
+function mwI(l, b) {
+  const L = ((l + 180) % 360 + 360) % 360 - 180;
+  const c = Math.exp(-(L * L) / (2 * 55 * 55));
+  const w = 5 + 4 * c;
+  let I = (0.42 + 0.7 * c) * Math.exp(-(b * b) / (2 * w * w));
+  I += 0.35 * g2(L, b, 5, -3, 7, 4) + 0.25 * g2(L, b, 27, -2, 5, 3) + 0.3 * g2(L, b, 78, 1, 9, 4) + 0.18 * g2(L, b, -73, -1, 8, 4);
+  if (L > 5 && L < 75) I *= 1 - 0.62 * Math.exp(-((b - 2.5) ** 2) / (2 * 2.2 * 2.2)) * Math.sin(Math.PI * (L - 5) / 70);
+  I *= 0.86 + 0.14 * Math.sin(L * 0.21 + b * 0.7) * Math.cos(L * 0.13 - b * 0.4);
+  return I;
+}
+function mwLevel(I) { return I > 0.62 ? 0.18 : I > 0.38 ? 0.12 : I > 0.18 ? 0.065 : 0; }
+
+const SKYCOL = [[-24, [7, 11, 20]], [-12, [14, 24, 42]], [-6, [30, 48, 80]], [0, [60, 92, 136]], [10, [86, 128, 184]]];
+function skyColor(sunAlt) {
+  if (sunAlt <= SKYCOL[0][0]) return SKYCOL[0][1];
+  for (let i = 1; i < SKYCOL.length; i++) if (sunAlt <= SKYCOL[i][0]) {
+    const t = (sunAlt - SKYCOL[i - 1][0]) / (SKYCOL[i][0] - SKYCOL[i - 1][0]);
+    return SKYCOL[i - 1][1].map((v, k) => lerp(v, SKYCOL[i][1][k], t));
+  }
+  return SKYCOL[SKYCOL.length - 1][1];
+}
+
+// ---------- view ----------
+function makeProj(ra0, dec0, fov, W, H) {
+  const sd0 = Math.sin(dec0 * D2R), cd0 = Math.cos(dec0 * D2R);
+  const scale = (W / 2) / (2 * Math.tan(fov * D2R / 4));
+  return {
+    scale,
+    project(ra, dec) {
+      const d = dec * D2R, da = (ra - ra0) * D2R;
+      const sd = Math.sin(d), cd = Math.cos(d), cda = Math.cos(da);
+      const cosc = sd0 * sd + cd0 * cd * cda;
+      if (cosc < -0.3) return null;
+      const k = 2 / (1 + cosc);
+      return [W / 2 - k * cd * Math.sin(da) * scale, H / 2 - k * (cd0 * sd - sd0 * cd * cda) * scale];
+    },
+    unproject(px, py) {
+      const x = (W / 2 - px) / scale, y = (H / 2 - py) / scale;
+      const rho = Math.hypot(x, y);
+      if (rho < 1e-9) return [ra0, dec0];
+      const c = 2 * Math.atan(rho / 2), sc = Math.sin(c), cc = Math.cos(c);
+      const dec = Math.asin(clamp(cc * sd0 + y * sc * cd0 / rho, -1, 1));
+      const ra = ra0 + Math.atan2(x * sc, rho * cd0 * cc - y * sd0 * sc) / D2R;
+      return [ra, dec / D2R];
+    },
+  };
+}
+function altOf(u, lst) {
+  const z = unit(lst, LAT);
+  return Math.asin(clamp(dot(u, z), -1, 1)) / D2R;
+}
+function horizonPoints(lst) {
+  const pts = [], sp = Math.sin(LAT * D2R), cp = Math.cos(LAT * D2R);
+  for (let A = 0; A <= 360; A += 2) {
+    const a = A * D2R;
+    const dec = Math.asin(cp * Math.cos(a)) / D2R;
+    const Hh = Math.atan2(-Math.sin(a), -Math.cos(a) * sp) / D2R;
+    pts.push([lst - Hh, dec]);
+  }
+  return pts;
+}
+
+let NIGHT = false;
+function setupCanvas(cv) {
+  const r = cv.getBoundingClientRect();
+  const dpr = Math.min(window.devicePixelRatio || 1, 2);
+  const W = Math.max(1, Math.round(r.width)), H = Math.max(1, Math.round(r.height));
+  if (cv.width !== W * dpr || cv.height !== H * dpr) { cv.width = W * dpr; cv.height = H * dpr; }
+  const ctx = cv.getContext('2d');
+  ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  return { ctx, W, H, dpr };
+}
+function nightPass(cv, ctx) {
+  if (!NIGHT) return;
+  ctx.save(); ctx.setTransform(1, 0, 0, 1, 0, 0);
+  const img = ctx.getImageData(0, 0, cv.width, cv.height), d = img.data;
+  for (let i = 0; i < d.length; i += 4) {
+    const l = .299 * d[i] + .587 * d[i + 1] + .114 * d[i + 2];
+    d[i] = l; d[i + 1] = 0; d[i + 2] = 0;
+  }
+  ctx.putImageData(img, 0, 0); ctx.restore();
+}
+
+const bgCache = new WeakMap();
+function drawBackground(ctx, cv, W, H, proj, o) {
+  const key = [W, H, o.ra0, o.dec0, o.fov, o.lst, o.sunAlt, o.mwOpacity, o.ground, o.moonGlow ? o.moon : -1].join('|');
+  let ent = bgCache.get(cv);
+  if (!ent || ent.key !== key) {
+    const s = 3, w = Math.ceil(W / s), h = Math.ceil(H / s);
+    const off = document.createElement('canvas'); off.width = w; off.height = h;
+    const octx = off.getContext('2d'), img = octx.createImageData(w, h), d = img.data;
+    const sky = skyColor(o.sunAlt), z = unit(o.lst, LAT);
+    const mu = o.moonU;
+    for (let y = 0; y < h; y++) for (let x = 0; x < w; x++) {
+      const [ra, dec] = proj.unproject(x * s + s / 2, y * s + s / 2);
+      const u = unit(ra, dec);
+      let c = sky.slice();
+      if (o.mwOpacity > 0) {
+        const [l, b] = toGal(u);
+        const a = mwLevel(mwI(l, b)) * o.mwOpacity;
+        c = c.map((v, k) => lerp(v, [160, 180, 214][k], a));
+      }
+      if (o.moonGlow && mu && o.moon > 0) {
+        const ang = angDeg(u, mu);
+        const g = 0.22 * o.moon * Math.exp(-ang / 14);
+        c = c.map((v, k) => lerp(v, [70, 86, 116][k], g));
+      }
+      if (o.ground) {
+        const alt = Math.asin(clamp(dot(u, z), -1, 1)) / D2R;
+        if (alt < 0) {
+          const g = 0.55 * smooth(0, -1.2, alt);
+          c = c.map((v, k) => lerp(v, [18, 22, 18][k], g));
+        }
+      }
+      const i = (y * w + x) * 4;
+      d[i] = c[0]; d[i + 1] = c[1]; d[i + 2] = c[2]; d[i + 3] = 255;
+    }
+    octx.putImageData(img, 0, 0);
+    ent = { key, off }; bgCache.set(cv, ent);
+  }
+  ctx.imageSmoothingEnabled = true; ctx.imageSmoothingQuality = 'high';
+  ctx.drawImage(ent.off, 0, 0, W, H);
+}
+
+// One sky renderer for every phone. `o.style` is 'today' or 'new'.
+function renderSky(cv, o) {
+  const { ctx, W, H } = setupCanvas(cv);
+  const proj = makeProj(o.ra0, o.dec0, o.fov, W, H);
+  const lst = o.lst ?? o.ra0;
+  const env = Object.assign({ site: 99, sunAlt: -30, moon: 0, moonOn: false, moonUp: false, horizonDim: false, zoomReveal: false }, o.env || {}, { fov: o.fov });
+  const moonU = o.moonPos ? unit(o.moonPos[0], o.moonPos[1]) : null;
+  if (moonU) env.moonUp = altOf(moonU, lst) > 0;
+  const isNew = o.style === 'new';
+  const centerU = unit(o.ra0, o.dec0);
+  drawBackground(ctx, cv, W, H, proj, { ra0: o.ra0, dec0: o.dec0, fov: o.fov, lst, sunAlt: isNew ? env.sunAlt : -30, mwOpacity: o.mwOpacity || 0, ground: true, moonGlow: isNew && env.moonOn && env.moonUp, moon: env.moon, moonU });
+  const limitFor = (u) => o.useLimit ? limitAt(env, altOf(u, lst), moonU ? angDeg(u, moonU) : 180) : 99;
+
+  // constellation art (under lines)
+  if (o.art && o.artAlpha > 0) drawArt(ctx, proj, o.artAlpha * (NIGHT ? 0.5 : 1));
+
+  // focus: the constellation whose label is nearest the centre of view
+  let focus = -1, best = 1e9;
+  DATA.cons.forEach((c, i) => { const a = angDeg(unit(c[1], c[2]), centerU); if (a < best) { best = a; focus = i; } });
+  const selected = o.selected ?? -1;
+
+  // boundaries
+  if (isNew && (o.boundaries || selected === UMA_IDX)) drawBoundary(ctx, proj, o.boundaries, selected === UMA_IDX);
+
+  // lines
+  ctx.lineCap = 'round';
+  for (const s of DATA.segs) {
+    const a = proj.project(s[0], s[1]), b = proj.project(s[2], s[3]);
+    if (!a || !b) continue;
+    if (Math.max(a[0], b[0]) < -20 || Math.min(a[0], b[0]) > W + 20 || Math.max(a[1], b[1]) < -20 || Math.min(a[1], b[1]) > H + 20) continue;
+    let alpha, width;
+    if (!isNew || o.oldLines) { alpha = 0.5; width = 1.3; }
+    else {
+      const la = limitFor(unit(s[0], s[1])), lb = limitFor(unit(s[2], s[3]));
+      const v = Math.min(vis(s[4], la), vis(s[5], lb));
+      const core = s[6] === 1;
+      alpha = (core ? 0.7 : 0.36 * smooth(88, 62, o.fov)) * v;
+      width = core ? 2 : 1;
+      if (selected >= 0) alpha *= s[7] === selected ? 1.3 : 0.45;
+      else alpha *= s[7] === focus ? 1 : 0.75;
+    }
+    if (alpha < 0.01) continue;
+    ctx.strokeStyle = `rgba(178,124,201,${Math.min(1, alpha)})`;
+    ctx.lineWidth = width;
+    ctx.beginPath(); ctx.moveTo(a[0], a[1]); ctx.lineTo(b[0], b[1]); ctx.stroke();
+  }
+
+  // stars
+  const starLabels = [];
+  const bgc = skyColor(isNew ? env.sunAlt : -30);
+  for (let i = 0; i < STARS.length; i++) {
+    const s = STARS[i];
+    if (dot(SU[i], centerU) < Math.cos(Math.min(89, o.fov) * D2R)) continue;
+    const p = proj.project(s[0], s[1]);
+    if (!p || p[0] < -10 || p[0] > W + 10 || p[1] < -10 || p[1] > H + 10) continue;
+    const m = s[2];
+    if (!isNew) {
+      const r = oldSize(m) / 2, sh = Math.round(255 * oldShade(m));
+      ctx.fillStyle = `rgb(${sh},${sh},${sh})`;
+      ctx.beginPath(); ctx.arc(p[0], p[1], r, 0, 7); ctx.fill();
+      if (LABEL_OF.has(i) && m <= labelThreshold(o.fov)) starLabels.push({ x: p[0], y: p[1], r, text: LABEL_OF.get(i), m });
+      continue;
+    }
+    const L = limitFor(SU[i]);
+    const v = vis(m, L);
+    if (v <= 0.01) continue;
+    const r = newSize(m) / 2;
+    if (o.halo !== false) {
+      ctx.fillStyle = `rgba(${bgc[0]},${bgc[1]},${bgc[2]},${0.75 * v})`;
+      ctx.beginPath(); ctx.arc(p[0], p[1], r + 1.4, 0, 7); ctx.fill();
+    }
+    if (o.glow !== false && m < 1.0) {
+      const gr = ctx.createRadialGradient(p[0], p[1], r, p[0], p[1], r * 2.6);
+      gr.addColorStop(0, `rgba(255,255,255,${0.16 * v})`); gr.addColorStop(1, 'rgba(255,255,255,0)');
+      ctx.fillStyle = gr; ctx.beginPath(); ctx.arc(p[0], p[1], r * 2.6, 0, 7); ctx.fill();
+    }
+    const c = tint(s[3], m, o.color !== false), br = newBright(m) * v;
+    ctx.fillStyle = `rgb(${Math.round(255 * c[0] * br)},${Math.round(255 * c[1] * br)},${Math.round(255 * c[2] * br)})`;
+    ctx.globalAlpha = Math.min(1, v * 1.2);
+    ctx.beginPath(); ctx.arc(p[0], p[1], r, 0, 7); ctx.fill();
+    ctx.globalAlpha = 1;
+    if (LABEL_OF.has(i) && v > 0.6 && m <= Math.min(labelThreshold(o.fov), L)) starLabels.push({ x: p[0], y: p[1], r, text: LABEL_OF.get(i), m });
+  }
+
+  // moon
+  if (moonU && env.moonOn && env.moon > 0) {
+    const p = proj.project(o.moonPos[0], o.moonPos[1]);
+    if (p) {
+      ctx.fillStyle = 'rgba(232,228,214,0.18)'; ctx.beginPath(); ctx.arc(p[0], p[1], 9, 0, 7); ctx.fill();
+      ctx.save(); ctx.beginPath(); ctx.arc(p[0], p[1], 9, 0, 7); ctx.clip();
+      ctx.fillStyle = '#e8e4d6'; const f = env.moon;
+      ctx.beginPath(); ctx.ellipse(p[0] + 9 * (1 - f) * 1.0, p[1], 9 * Math.max(0.05, f), 9, 0, 0, 7); ctx.fill();
+      ctx.restore();
+    }
+  }
+
+  // horizon line
+  ctx.strokeStyle = 'rgba(214,170,110,0.55)'; ctx.lineWidth = 1.6; ctx.beginPath();
+  let pen = false;
+  for (const [ra, dec] of horizonPoints(lst)) {
+    const p = proj.project(ra, dec);
+    if (!p || p[0] < -200 || p[0] > W + 200 || p[1] < -200 || p[1] > H + 200) { pen = false; continue; }
+    if (pen) ctx.lineTo(p[0], p[1]); else { ctx.moveTo(p[0], p[1]); pen = true; }
+  }
+  ctx.stroke();
+
+  // extra overlay hooks (search reticle)
+  if (o.overlay) o.overlay(ctx, proj, W, H);
+
+  // labels
+  const cand = [];
+  const wide = o.fov > 60;
+  const consFont = isNew ? '500 9.5px Inter, system-ui, sans-serif' : '11.5px Inter, system-ui, sans-serif';
+  const starFont = '11.5px Inter, system-ui, sans-serif';
+  DATA.cons.forEach((c, i) => {
+    const p = proj.project(c[1], c[2]);
+    if (!p || p[0] < 0 || p[0] > W || p[1] < 0 || p[1] > H) return;
+    const text = isNew ? c[0].toUpperCase() : c[0];
+    let col = 'rgba(178,124,201,1)';
+    if (isNew) {
+      const a = selected >= 0 ? (i === selected ? 1 : 0.45) : (i === focus ? 0.85 : 0.6);
+      col = `rgba(190,150,214,${a})`;
+    }
+    cand.push({ x: p[0], y: p[1], r: 0, text, font: consFont, col, prio: isNew ? (wide ? 900 : 300) + (i === focus ? 50 : 0) : 500, spacing: isNew ? 1.6 : 0, center: true });
+  });
+  for (const s of starLabels) cand.push({ x: s.x, y: s.y, r: s.r, text: s.text, font: starFont, col: isNew ? 'rgba(214,212,214,0.92)' : '#cfcccf', prio: isNew ? (wide ? 600 : 800) - s.m * 50 : 600 - s.m * 50 });
+  if (o.extraLabels) cand.push(...o.extraLabels(proj));
+  placeLabels(ctx, cand, W, H, isNew);
+  nightPass(cv, ctx);
+}
+
+function placeLabels(ctx, cand, W, H, isNew) {
+  cand.sort((a, b) => b.prio - a.prio);
+  const kept = [];
+  const budget = isNew ? Math.floor((W * H) / 7900) : 999;
+  const overlaps = (r) => kept.some(k => !(r[2] < k[0] || r[0] > k[2] || r[3] < k[1] || r[1] > k[3]));
+  ctx.textBaseline = 'middle';
+  for (const c of cand) {
+    if (kept.length >= budget) break;
+    ctx.font = c.font;
+    const tw = spacedWidth(ctx, c.text, c.spacing || 0), th = 12;
+    const offs = c.center ? [[-tw / 2, 0]] : isNew
+      ? [[c.r + 4, 0], [-c.r - 4 - tw, 0], [-tw / 2, -c.r - 9], [-tw / 2, c.r + 9]]
+      : [[c.r + 4, 0]];
+    for (const [dx, dy] of offs) {
+      const x = c.x + dx, y = c.y + dy;
+      const rect = [x - 2, y - th / 2 - 1, x + tw + 2, y + th / 2 + 1];
+      if (rect[0] < 2 || rect[2] > W - 2 || rect[1] < 2 || rect[3] > H - 2) continue;
+      if (overlaps(rect)) continue;
+      kept.push(rect);
+      if (isNew) { ctx.fillStyle = 'rgba(7,11,20,0.55)'; drawSpaced(ctx, c.text, x + 0.7, y + 0.7, c.spacing || 0); }
+      ctx.fillStyle = c.col; drawSpaced(ctx, c.text, x, y, c.spacing || 0);
+      break;
+    }
+  }
+}
+function spacedWidth(ctx, t, sp) { return ctx.measureText(t).width + sp * Math.max(0, t.length - 1); }
+function drawSpaced(ctx, t, x, y, sp) {
+  if (!sp) { ctx.fillText(t, x, y); return; }
+  for (const ch of t) { ctx.fillText(ch, x, y); x += ctx.measureText(ch).width + sp; }
+}
+
+// ---------- boundaries (approximate UMa outline, style only) ----------
+const UMA_BOUND = [[8.1, 40], [8.1, 73], [12.0, 73], [12.0, 66], [14.0, 66], [14.0, 55], [14.5, 55], [14.5, 48], [13.5, 48], [13.5, 29], [11.0, 29], [11.0, 33], [9.3, 33], [9.3, 40], [8.1, 40]];
+function densify(poly) {
+  const out = [];
+  for (let i = 0; i < poly.length - 1; i++) {
+    const [r0, d0] = poly[i], [r1, d1] = poly[i + 1];
+    const n = Math.max(1, Math.ceil(Math.max(Math.abs(r1 - r0) * 15, Math.abs(d1 - d0))));
+    for (let k = 0; k < n; k++) out.push([lerp(r0, r1, k / n) * 15, lerp(d0, d1, k / n)]);
+  }
+  out.push([poly[poly.length - 1][0] * 15, poly[poly.length - 1][1]]);
+  return out;
+}
+const UMA_PTS = densify(UMA_BOUND);
+function drawBoundary(ctx, proj, dashed, selected) {
+  const pts = UMA_PTS.map(([r, d]) => proj.project(r, d)).filter(Boolean);
+  if (pts.length < 3) return;
+  ctx.beginPath(); pts.forEach((p, i) => i ? ctx.lineTo(p[0], p[1]) : ctx.moveTo(p[0], p[1]));
+  if (selected) {
+    ctx.fillStyle = 'rgba(200,190,170,0.05)'; ctx.fill();
+    ctx.setLineDash([]); ctx.strokeStyle = 'rgba(210,198,176,0.42)'; ctx.lineWidth = 1.2; ctx.stroke();
+  } else if (dashed) {
+    ctx.setLineDash([4, 4]); ctx.strokeStyle = 'rgba(200,190,170,0.3)'; ctx.lineWidth = 1; ctx.stroke(); ctx.setLineDash([]);
+  }
+}
+
+// ---------- Cygnus art placeholder (sketch registered in sky coordinates) ----------
+const SWAN = [
+  [[292.7, 28.0], [296.5, 33.5], [301.5, 37.5], [305.6, 40.3]],
+  [[305.6, 40.3], [308.5, 42.8], [310.4, 45.3], [312.5, 49.0]],
+  [[312.5, 49.0], [314.5, 51.5], [311.0, 52.5], [309.5, 50.0]],
+  [[312.5, 49.0], [316.5, 50.0], [317.5, 53.0], [313.8, 52.8]],
+  [[305.6, 40.3], [300.0, 44.0], [296.2, 45.1], [289.5, 51.0]],
+  [[289.5, 51.0], [293.0, 47.0], [297.0, 43.0], [303.0, 41.5]],
+  [[305.6, 40.3], [309.0, 36.5], [311.6, 34.0], [318.5, 28.5]],
+  [[318.5, 28.5], [314.5, 32.5], [310.0, 36.5], [306.5, 39.2]],
+  [[292.7, 28.0], [291.0, 27.0], [290.2, 27.8], [291.3, 29.0]],
+];
+function drawArt(ctx, proj, alpha) {
+  ctx.strokeStyle = `rgba(240,228,204,${alpha})`; ctx.lineWidth = 1.4; ctx.lineJoin = 'round';
+  for (const c of SWAN) {
+    const p = c.map(([r, d]) => proj.project(r, d));
+    if (p.some(x => !x)) continue;
+    ctx.beginPath(); ctx.moveTo(p[0][0], p[0][1]); ctx.bezierCurveTo(p[1][0], p[1][1], p[2][0], p[2][1], p[3][0], p[3][1]); ctx.stroke();
+  }
+  for (let k = 0; k < 7; k++) {
+    const t = k / 6;
+    const a = proj.project(lerp(299, 304, t), lerp(45.5, 42, t) + 1.5), b = proj.project(lerp(296, 302, t), lerp(47.5, 43.6, t) + 1.5);
+    const c2 = proj.project(lerp(309, 314, t), lerp(36.5, 31.5, t)), d2 = proj.project(lerp(310.5, 316.5, t), lerp(38, 33.5, t));
+    ctx.lineWidth = 0.8;
+    if (a && b) { ctx.beginPath(); ctx.moveTo(a[0], a[1]); ctx.lineTo(b[0], b[1]); ctx.stroke(); }
+    if (c2 && d2) { ctx.beginPath(); ctx.moveTo(c2[0], c2[1]); ctx.lineTo(d2[0], d2[1]); ctx.stroke(); }
+  }
+}
+
+// ---------- state & wiring ----------
+const $ = id => document.getElementById(id);
+const S = {
+  f1: { fov: 75, halo: true, color: true, glow: true },
+  f2: { preset: 'auto', site: 4.6, siteShown: 4.6, sun: -24, moon: 0, fov: 80, hor: true, moonOn: true, zoom: false, anim: null, checked: null },
+  f3: { site: 4.6, fov: 60, bnd: false, sel: false },
+  f4: { site: 5.6, fov: 95, force: false, art: false, pulse: 0, search: null },
+};
+const UMA_IDX = DATA.cons.findIndex(c => c[0] === 'Ursa Major');
+
+function drawF1() {
+  const base = { ra0: 84, dec0: 8, fov: S.f1.fov, lst: 84, oldLines: true };
+  renderSky($('c1a'), Object.assign({ style: 'today' }, base));
+  renderSky($('c1b'), Object.assign({ style: 'new', halo: S.f1.halo, color: S.f1.color, glow: S.f1.glow }, base));
+}
+function f2env() {
+  return { site: S.f2.siteShown, sunAlt: S.f2.sun, moon: S.f2.moon / 100, moonOn: S.f2.moonOn, horizonDim: S.f2.hor, zoomReveal: S.f2.zoom };
+}
+const MOON_POS = [118, 30];
+function drawF2() {
+  renderSky($('c2'), { style: 'new', ra0: 84, dec0: 6, fov: S.f2.fov, lst: 84, useLimit: true, env: f2env(), moonPos: MOON_POS });
+  // honest feedback line: stars above the horizon at the current setting
+  const env = Object.assign(f2env(), { fov: S.f2.fov, moonUp: altOf(unit(...MOON_POS), 84) > 0 });
+  const mu = unit(...MOON_POS);
+  let n = 0;
+  for (let i = 0; i < STARS.length; i++) {
+    const alt = altOf(SU[i], 84);
+    if (alt <= 0) continue;
+    if (STARS[i][2] <= limitAt(env, alt, angDeg(SU[i], mu))) n++;
+  }
+  $('count').textContent = `About ${n < 100 ? n : Math.round(n / 10) * 10} stars above the horizon right now`;
+  let chip = '';
+  if (S.f2.sun > -6) chip = 'Daytime: only the brightest stars are shown, for reference.';
+  else if (S.f2.sun > -18) chip = 'Twilight: faint stars come out as the sky darkens.';
+  else if (S.f2.moon >= 60) chip = `Bright Moon tonight (${S.f2.moon}%): faint stars hidden.`;
+  $('chip2').hidden = !chip; $('chip2').textContent = chip ? `Map chip: "${chip}"` : '';
+}
+function drawF3() {
+  const base = { ra0: 175, dec0: 52, fov: S.f3.fov, lst: 175 };
+  renderSky($('c3a'), Object.assign({ style: 'today' }, base));
+  renderSky($('c3b'), Object.assign({ style: 'new', useLimit: true, env: { site: S.f3.site, sunAlt: -30, horizonDim: true }, boundaries: S.f3.bnd, selected: S.f3.sel ? UMA_IDX : -1 }, base));
+  $('c3cap').textContent = S.f3.site <= 3.7
+    ? 'City sky: Ursa Major is reduced to the Big Dipper, because the bear\'s legs are mag 3–4 stars.'
+    : 'Core 2 dp at 70%, extended 1 dp at 36%. Extended lines fade out above ~75° field of view.';
+}
+function highestGalacticPoint(lst) {
+  let best = null, bestAlt = -99;
+  for (let l = 0; l < 360; l += 2) {
+    const u = fromGal(l, 0), a = altOf(u, lst);
+    if (a > bestAlt) { bestAlt = a; best = u; }
+  }
+  return [Math.atan2(best[1], best[0]) / D2R, Math.asin(best[2]) / D2R];
+}
+function drawF4() {
+  const Lg = Math.max(2, S.f4.site);
+  let op = smooth(4.0, 6.0, Lg);
+  if (S.f4.force) op = Math.max(op, 0.5);
+  op *= 1 + 0.7 * S.f4.pulse;
+  if (NIGHT) op *= 0.5;
+  const artA = S.f4.art ? 0.32 * smooth(25, 55, S.f4.fov) : 0;
+  const target = S.f4.search;
+  renderSky($('c4'), {
+    style: 'new', ra0: 292, dec0: 14, fov: S.f4.fov, lst: 292, useLimit: true,
+    env: { site: S.f4.site, sunAlt: -30, horizonDim: true }, mwOpacity: op, art: S.f4.art, artAlpha: artA,
+    selected: S.f4.art ? DATA.cons.findIndex(c => c[0] === 'Cygnus') : -1,
+    overlay: target ? (ctx, proj) => {
+      const p = proj.project(target[0], target[1]);
+      if (!p) return;
+      ctx.strokeStyle = 'rgba(255,159,28,0.9)'; ctx.lineWidth = 1.5;
+      ctx.beginPath(); ctx.arc(p[0], p[1], 16, 0, 7); ctx.stroke();
+      ctx.font = '600 12px Inter, system-ui, sans-serif'; ctx.fillStyle = 'rgba(255,159,28,0.95)'; ctx.textBaseline = 'middle';
+      ctx.fillText('Milky Way', p[0] + 21, p[1]);
+    } : null,
+  });
+}
+function drawLegend() {
+  const cv = $('legend'), { ctx, W, H } = setupCanvas(cv);
+  ctx.fillStyle = 'rgb(7,11,20)'; ctx.fillRect(0, 0, W, H);
+  const mags = [-1, 0, 1, 2, 3, 4, 5, 6], x0 = 70, step = (W - x0 - 20) / (mags.length - 1);
+  ctx.font = '11px Inter, system-ui, sans-serif'; ctx.textBaseline = 'middle'; ctx.fillStyle = '#93a0b4';
+  ctx.fillText('Today', 12, 38); ctx.fillText('Proposed', 12, 78);
+  mags.forEach((m, k) => {
+    const x = x0 + k * step;
+    const sh = Math.round(255 * oldShade(m));
+    ctx.fillStyle = `rgb(${sh},${sh},${sh})`; ctx.beginPath(); ctx.arc(x, 38, oldSize(m) / 2, 0, 7); ctx.fill();
+    const b = Math.round(255 * newBright(m));
+    ctx.fillStyle = `rgb(${b},${b},${b})`; ctx.beginPath(); ctx.arc(x, 78, newSize(m) / 2, 0, 7); ctx.fill();
+    ctx.fillStyle = '#93a0b4'; ctx.textAlign = 'center'; ctx.fillText(String(m), x, 104); ctx.textAlign = 'left';
+  });
+  nightPass(cv, ctx);
+}
+
+// tiny previews: presets (Orion) and the Little Dipper check
+function drawMini(cv, o) {
+  const { ctx, W, H } = setupCanvas(cv);
+  const proj = makeProj(o.ra0, o.dec0, o.fov, W, H);
+  ctx.fillStyle = 'rgb(7,11,20)'; ctx.fillRect(0, 0, W, H);
+  if (o.lines) for (const s of DATA.segs) {
+    if (DATA.cons[s[7]][0] !== o.lines) continue;
+    if (Math.max(s[4], s[5]) > o.L) continue;
+    const a = proj.project(s[0], s[1]), b = proj.project(s[2], s[3]);
+    if (!a || !b) continue;
+    ctx.strokeStyle = 'rgba(178,124,201,0.55)'; ctx.lineWidth = 1; ctx.beginPath(); ctx.moveTo(a[0], a[1]); ctx.lineTo(b[0], b[1]); ctx.stroke();
+  }
+  const cu = unit(o.ra0, o.dec0);
+  for (let i = 0; i < STARS.length; i++) {
+    const s = STARS[i];
+    if (s[2] > o.L || dot(SU[i], cu) < Math.cos(o.fov * D2R)) continue;
+    const p = proj.project(s[0], s[1]);
+    if (!p || p[0] < 0 || p[0] > W || p[1] < 0 || p[1] > H) continue;
+    const b = Math.round(255 * newBright(s[2]));
+    ctx.fillStyle = `rgb(${b},${b},${b})`; ctx.beginPath(); ctx.arc(p[0], p[1], Math.max(0.6, newSize(s[2]) / 2 * o.k), 0, 7); ctx.fill();
+  }
+  nightPass(cv, ctx);
+}
+const CHECK = [2.3, 3.2, 4.3, 5.1];
+function buildSheet() {
+  const box = $('presets');
+  PRESETS.forEach(p => {
+    const b = document.createElement('button');
+    b.className = 'preset'; b.id = 'pr-' + p.id; b.setAttribute('aria-pressed', String(p.id === S.f2.preset));
+    b.innerHTML = `<canvas></canvas><span>${p.name}</span>`;
+    b.addEventListener('click', () => choosePreset(p.id, p.site));
+    box.appendChild(b);
+  });
+  const tiles = $('checkTiles');
+  CHECK.forEach((L, k) => {
+    const b = document.createElement('button');
+    b.id = 'ck-' + k; b.setAttribute('aria-pressed', 'false');
+    b.innerHTML = `<canvas></canvas><span>${'ABCD'[k]}</span>`;
+    b.addEventListener('click', () => {
+      S.f2.checked = k;
+      CHECK.forEach((_, j) => $('ck-' + j).setAttribute('aria-pressed', String(j === k)));
+      choosePreset('auto', L, true);
+      $('autoSub').textContent = `Auto: checked by you tonight (group ${'ABCD'[k]})`;
+    });
+    tiles.appendChild(b);
+  });
+}
+function drawSheetMinis() {
+  PRESETS.forEach(p => drawMini($('pr-' + p.id).querySelector('canvas'), { ra0: 84, dec0: 2, fov: 34, L: p.site, k: 0.55, lines: 'Orion' }));
+  CHECK.forEach((L, k) => drawMini($('ck-' + k).querySelector('canvas'), { ra0: 240, dec0: 80, fov: 26, L, k: 0.6, lines: 'Ursa Minor' }));
+}
+function choosePreset(id, site, keepSub) {
+  S.f2.preset = id;
+  PRESETS.forEach(p => $('pr-' + p.id).setAttribute('aria-pressed', String(p.id === id)));
+  if (!keepSub && id === 'auto') $('autoSub').textContent = 'Auto: suburban sky, from your location';
+  animateSite(site);
+}
+function animateSite(to) {
+  S.f2.site = to; $('lim').value = to; $('limv').textContent = `mag ${to.toFixed(1)}`;
+  const from = S.f2.siteShown, t0 = performance.now();
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const dur = reduce ? 0 : 600;
+  const step = (t) => {
+    const k = dur ? clamp((t - t0) / dur, 0, 1) : 1;
+    const e = k < .5 ? 2 * k * k : 1 - Math.pow(-2 * k + 2, 2) / 2;
+    S.f2.siteShown = lerp(from, to, e);
+    drawF2();
+    if (k < 1) requestAnimationFrame(step);
+  };
+  requestAnimationFrame(step);
+}
+
+function chipRow(boxId, current, onPick) {
+  const box = $(boxId); box.innerHTML = '';
+  PRESETS.slice(1).forEach(p => {
+    const b = document.createElement('button');
+    b.className = 'chip'; b.textContent = p.name; b.setAttribute('aria-pressed', String(p.site === current()));
+    b.addEventListener('click', () => { onPick(p.site); [...box.children].forEach(c => c.setAttribute('aria-pressed', String(c === b))); });
+    box.appendChild(b);
+  });
+}
+
+function bind() {
+  $('night').addEventListener('change', e => { NIGHT = e.target.checked; drawAll(); });
+  $('o1halo').addEventListener('change', e => { S.f1.halo = e.target.checked; drawF1(); });
+  $('o1col').addEventListener('change', e => { S.f1.color = e.target.checked; drawF1(); });
+  $('o1glow').addEventListener('change', e => { S.f1.glow = e.target.checked; drawF1(); });
+  $('o1fov').addEventListener('input', e => { S.f1.fov = +e.target.value; $('o1fovv').textContent = `${S.f1.fov}°`; drawF1(); });
+
+  $('sun').addEventListener('input', e => { S.f2.sun = +e.target.value; $('sunv').textContent = `${S.f2.sun < 0 ? '−' : '+'}${Math.abs(S.f2.sun)}°`; drawF2(); });
+  $('moon').addEventListener('input', e => { S.f2.moon = +e.target.value; $('moonv').textContent = `${S.f2.moon}%`; drawF2(); });
+  $('o2fov').addEventListener('input', e => { S.f2.fov = +e.target.value; $('o2fovv').textContent = `${S.f2.fov}°`; drawF2(); });
+  $('lim').addEventListener('input', e => {
+    const v = +e.target.value; S.f2.site = v; S.f2.siteShown = v; $('limv').textContent = `mag ${v.toFixed(1)}`;
+    S.f2.preset = 'custom'; PRESETS.forEach(p => $('pr-' + p.id).setAttribute('aria-pressed', 'false')); drawF2();
+  });
+  $('o2hor').addEventListener('change', e => { S.f2.hor = e.target.checked; drawF2(); });
+  $('o2moon').addEventListener('change', e => { S.f2.moonOn = e.target.checked; drawF2(); });
+  $('o2zoom').addEventListener('change', e => { S.f2.zoom = e.target.checked; drawF2(); });
+  $('checkBtn').addEventListener('click', () => {
+    const p = $('checkPanel'); p.hidden = !p.hidden; $('checkBtn').setAttribute('aria-expanded', String(!p.hidden));
+    if (!p.hidden) drawSheetMinis();
+  });
+
+  chipRow('chips3', () => S.f3.site, v => { S.f3.site = v; drawF3(); });
+  $('o3fov').addEventListener('input', e => { S.f3.fov = +e.target.value; $('o3fovv').textContent = `${S.f3.fov}°`; drawF3(); });
+  $('o3bnd').addEventListener('change', e => { S.f3.bnd = e.target.checked; drawF3(); });
+  $('o3sel').addEventListener('change', e => { S.f3.sel = e.target.checked; drawF3(); });
+
+  chipRow('chips4', () => S.f4.site, v => { S.f4.site = v; drawF4(); });
+  $('o4force').addEventListener('change', e => { S.f4.force = e.target.checked; drawF4(); });
+  $('o4fov').addEventListener('input', e => { S.f4.fov = +e.target.value; $('o4fovv').textContent = `${S.f4.fov}°`; drawF4(); });
+  $('o4art').addEventListener('click', e => { S.f4.art = !S.f4.art; e.target.setAttribute('aria-pressed', String(S.f4.art)); drawF4(); });
+  $('o4search').addEventListener('click', () => {
+    S.f4.search = highestGalacticPoint(292);
+    const t0 = performance.now(), reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const step = (t) => {
+      const k = (t - t0) / 2400;
+      S.f4.pulse = reduce || k >= 1 ? 0 : Math.sin(k * Math.PI * 3) ** 2 * (1 - k);
+      drawF4();
+      if (k < 1 && !reduce) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  });
+}
+function drawAll() { drawF1(); drawLegend(); drawF2(); drawF3(); drawF4(); drawSheetMinis(); }
+
+buildSheet(); bind();
+let rt = 0;
+new ResizeObserver(() => { cancelAnimationFrame(rt); rt = requestAnimationFrame(drawAll); }).observe(document.body);
+drawAll();
+if (document.fonts && document.fonts.ready) document.fonts.ready.then(drawAll);
+})();
+</script>
